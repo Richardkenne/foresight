@@ -1,0 +1,197 @@
+{
+  "_metadata": {
+    "description": "Historical time series data for simulation scenarios (2000-2024)",
+    "created": "2026-03-27",
+    "purpose": "Powers 'what if you started in 2008 vs 2020' simulations",
+    "notes": "All values are annual. Sources cited per metric."
+  },
+
+  "sp500_annual_returns_pct": {
+    "description": "S&P 500 total returns including dividends, annual percentage",
+    "1950": 31.71, "1951": 24.02, "1952": 18.37, "1953": -0.99, "1954": 52.62,
+    "1955": 31.56, "1956": 6.56, "1957": -10.78, "1958": 43.36, "1959": 11.96,
+    "1960": 0.47, "1961": 26.89, "1962": -8.73, "1963": 22.80, "1964": 16.48,
+    "1965": 12.45, "1966": -10.06, "1967": 23.98, "1968": 11.06, "1969": -8.50,
+    "1970": 4.01, "1971": 14.31, "1972": 18.98, "1973": -14.66, "1974": -26.47,
+    "1975": 37.20, "1976": 23.84, "1977": -7.18, "1978": 6.56, "1979": 18.44,
+    "1980": 32.42, "1981": -4.91, "1982": 21.55, "1983": 22.56, "1984": 6.27,
+    "1985": 31.73, "1986": 18.67, "1987": 5.25, "1988": 16.61, "1989": 31.69,
+    "1990": -3.10, "1991": 30.47, "1992": 7.62, "1993": 10.08, "1994": 1.32,
+    "1995": 37.58, "1996": 22.96, "1997": 33.36, "1998": 28.58, "1999": 21.04,
+    "2000": -9.10, "2001": -11.89, "2002": -22.10, "2003": 28.68,
+    "2004": 10.88, "2005": 4.91, "2006": 15.79, "2007": 5.49,
+    "2008": -37.00, "2009": 26.46, "2010": 15.06, "2011": 2.11,
+    "2012": 16.00, "2013": 32.39, "2014": 13.69, "2015": 1.38,
+    "2016": 11.96, "2017": 21.83, "2018": -4.38, "2019": 31.49,
+    "2020": 18.40, "2021": 28.71, "2022": -18.11, "2023": 26.29, "2024": 25.02,
+    "source": "SlickCharts (S&P 500 Total Returns by Year)"
+  },
+
+  "unemployment_rate_pct": {
+    "description": "US civilian unemployment rate, annual average percentage",
+    "2000": 4.0, "2001": 4.7, "2002": 5.8, "2003": 6.0,
+    "2004": 5.5, "2005": 5.1, "2006": 4.6, "2007": 4.6,
+    "2008": 5.8, "2009": 9.3, "2010": 9.6, "2011": 8.9,
+    "2012": 8.1, "2013": 7.4, "2014": 6.2, "2015": 5.3,
+    "2016": 4.9, "2017": 4.4, "2018": 3.9, "2019": 3.7,
+    "2020": 8.1, "2021": 5.3, "2022": 3.6, "2023": 3.6, "2024": 4.0,
+    "source": "BLS via Statista"
+  },
+
+  "inflation_rate_cpi_pct": {
+    "description": "US annual inflation rate (CPI, consumer prices), percentage",
+    "2000": 3.38, "2001": 2.83, "2002": 1.59, "2003": 2.27,
+    "2004": 2.68, "2005": 3.39, "2006": 3.23, "2007": 2.85,
+    "2008": 3.84, "2009": -0.36, "2010": 1.64, "2011": 3.16,
+    "2012": 2.07, "2013": 1.46, "2014": 1.62, "2015": 0.12,
+    "2016": 1.26, "2017": 2.13, "2018": 2.44, "2019": 1.81,
+    "2020": 1.23, "2021": 4.70, "2022": 8.00, "2023": 4.12, "2024": 2.95,
+    "source": "World Bank (FP.CPI.TOTL.ZG)"
+  },
+
+  "federal_funds_rate_pct": {
+    "description": "Federal funds rate, year-end target rate midpoint percentage",
+    "2000": 6.50, "2001": 1.75, "2002": 1.25, "2003": 1.00,
+    "2004": 2.25, "2005": 4.25, "2006": 5.25, "2007": 4.25,
+    "2008": 0.125, "2009": 0.125, "2010": 0.125, "2011": 0.125,
+    "2012": 0.125, "2013": 0.125, "2014": 0.125, "2015": 0.375,
+    "2016": 0.625, "2017": 1.375, "2018": 2.375, "2019": 1.625,
+    "2020": 0.125, "2021": 0.125, "2022": 4.375, "2023": 5.375, "2024": 4.375,
+    "source": "Federal Reserve via Wikipedia Federal Funds Rate"
+  },
+
+  "median_household_income_real": {
+    "description": "Real median household income, inflation-adjusted to 2025 dollars",
+    "2000": 76358, "2001": 76485, "2002": 74620, "2003": 73892,
+    "2004": 73614, "2005": 73223, "2006": 73908, "2007": 74729,
+    "2008": 75622, "2009": 72872, "2010": 72537, "2011": 70630,
+    "2012": 69741, "2013": 68792, "2014": 72100, "2015": 71077,
+    "2016": 73773, "2017": 76953, "2018": 77842, "2019": 78756,
+    "2020": 83907, "2021": 81798, "2022": 81274, "2023": 77753, "2024": 82383,
+    "source": "DQYDJ / US Census Bureau (CPI-adjusted, 2025 dollars)"
+  },
+
+  "case_shiller_home_price_index": {
+    "description": "S&P Case-Shiller U.S. National Home Price Index (Jan 2000 = 100)",
+    "2000": 100.00, "2001": 107.44, "2002": 115.78, "2003": 125.35,
+    "2004": 140.49, "2005": 163.56, "2006": 183.28, "2007": 179.39,
+    "2008": 161.52, "2009": 139.16, "2010": 139.72, "2011": 131.62,
+    "2012": 127.47, "2013": 138.38, "2014": 150.28, "2015": 157.26,
+    "2016": 166.24, "2017": 175.64, "2018": 189.65, "2019": 196.09,
+    "2020": 213.79, "2021": 245.67, "2022": 286.17, "2023": 297.77,
+    "2024": 315.98,
+    "source": "FRED CSUSHPINSA / Wikipedia Case-Shiller / YCharts"
+  },
+
+  "college_tuition_cpi_index": {
+    "description": "CPI index for college tuition and fees (BLS), higher = more expensive",
+    "2000": 331.9, "2001": 348.8, "2002": 372.6, "2003": 403.9,
+    "2004": 442.1, "2005": 475.1, "2006": 507.0, "2007": 538.7,
+    "2008": 572.3, "2009": 606.7, "2010": 638.2, "2011": 670.3,
+    "2012": 702.8, "2013": 732.4, "2014": 759.5, "2015": 785.9,
+    "2016": 807.0, "2017": 823.1, "2018": 841.3, "2019": 865.4,
+    "2020": 877.3, "2021": 884.9, "2022": 904.0, "2023": 921.4, "2024": 937.3,
+    "source": "BLS CPI via in2013dollars.com"
+  },
+
+  "college_tuition_estimated_annual": {
+    "description": "Estimated average public 4-year in-state tuition and fees, nominal dollars",
+    "2000": 3508, "2001": 3735, "2002": 4081, "2003": 4587,
+    "2004": 5126, "2005": 5491, "2006": 5836, "2007": 6185,
+    "2008": 6585, "2009": 7020, "2010": 7605, "2011": 8244,
+    "2012": 8655, "2013": 8893, "2014": 9139, "2015": 9410,
+    "2016": 9650, "2017": 9970, "2018": 10230, "2019": 10440,
+    "2020": 10560, "2021": 10740, "2022": 10940, "2023": 11260, "2024": 11610,
+    "source": "College Board Trends in College Pricing / NCES"
+  },
+
+  "bitcoin_annual_returns_pct": {
+    "description": "Bitcoin annual total returns, percentage (calendar year)",
+    "2011": 1473.0, "2012": 186.0, "2013": 5507.0,
+    "2014": -58.0, "2015": 34.5, "2016": 123.8, "2017": 1369.0,
+    "2018": -73.6, "2019": 92.2, "2020": 303.2, "2021": 59.7,
+    "2022": -64.3, "2023": 155.4, "2024": 121.1,
+    "source": "SlickCharts (BTC Returns) / CoinGlass"
+  },
+
+  "remote_work_pct_workforce": {
+    "description": "Percentage of US workers working remotely (fully or partially)",
+    "2015": 3.6, "2016": 3.7, "2017": 3.8, "2018": 4.0,
+    "2019": 5.7, "2020": 35.0, "2021": 27.6, "2022": 25.6,
+    "2023": 22.0, "2024": 22.8,
+    "source": "BLS / Amply News / Bureau of Labor Statistics remote work reports"
+  },
+
+  "gig_economy_workers_millions": {
+    "description": "Estimated number of US gig/freelance workers in millions",
+    "2010": 15.8, "2011": 16.4, "2012": 17.0, "2013": 17.9,
+    "2014": 20.3, "2015": 23.5, "2016": 34.0, "2017": 55.0,
+    "2018": 56.7, "2019": 57.0, "2020": 59.0, "2021": 63.0,
+    "2022": 67.0, "2023": 73.3, "2024": 76.4,
+    "source": "Freelancers Union / Upwork / MBO Partners / DemandSage"
+  },
+
+  "gig_economy_pct_workforce": {
+    "description": "Estimated gig/freelance workers as percentage of US workforce",
+    "2010": 10.1, "2011": 10.5, "2012": 10.9, "2013": 11.4,
+    "2014": 12.9, "2015": 15.0, "2016": 21.6, "2017": 35.0,
+    "2018": 35.6, "2019": 35.7, "2020": 36.0, "2021": 36.2,
+    "2022": 36.1, "2023": 36.6, "2024": 38.0,
+    "source": "Freelancers Union / Upwork / MBO Partners / DemandSage"
+  },
+
+  "ai_job_market_index": {
+    "description": "AI/tech job demand index (2015=100), based on job postings growth",
+    "2015": 100, "2016": 118, "2017": 142, "2018": 171,
+    "2019": 195, "2020": 178, "2021": 225, "2022": 290,
+    "2023": 345, "2024": 480,
+    "source": "Stanford HAI AI Index / LinkedIn / PwC AI Jobs Barometer"
+  },
+
+  "startup_survival_rates": {
+    "description": "Approximate 5-year survival rate of new businesses by cohort founding year",
+    "1994": 49.6, "1995": 50.4, "1996": 51.0, "1997": 50.3,
+    "1998": 50.6, "1999": 49.9, "2000": 48.9, "2001": 48.6,
+    "2002": 49.0, "2003": 50.3, "2004": 51.8, "2005": 48.7,
+    "2006": 48.5, "2007": 46.2, "2008": 47.2, "2009": 48.7,
+    "2010": 49.8, "2011": 50.2, "2012": 50.5, "2013": 51.1,
+    "2014": 51.4, "2015": 51.0, "2016": 51.2, "2017": 52.0,
+    "2018": 52.8, "2019": 51.4,
+    "1yr_survival_rate_by_cohort": {
+      "1994": 79.6, "1995": 80.3, "1996": 80.8, "1997": 80.3,
+      "1998": 80.4, "1999": 79.7, "2000": 78.9, "2001": 79.8,
+      "2002": 80.3, "2003": 80.5, "2004": 80.0, "2005": 79.5,
+      "2006": 79.3, "2007": 78.1, "2008": 78.7, "2009": 80.2,
+      "2010": 80.5, "2011": 80.7, "2012": 80.4, "2013": 80.6,
+      "2014": 80.8, "2015": 80.5, "2016": 80.4, "2017": 80.7,
+      "2018": 81.2, "2019": 80.9, "2020": 79.4, "2021": 80.0,
+      "2022": 80.5
+    },
+    "source": "BLS Business Employment Dynamics (Establishment Age & Survival)"
+  },
+
+  "economic_eras": {
+    "description": "Economic context labels for key periods, useful for simulation narratives",
+    "2000-2002": "Dot-com bust",
+    "2003-2006": "Housing boom / cheap credit",
+    "2007-2009": "Great Recession / Financial Crisis",
+    "2010-2014": "Slow recovery / ZIRP era",
+    "2015-2019": "Bull market / low unemployment",
+    "2020": "COVID crash + stimulus",
+    "2021": "Stimulus boom / meme stocks / crypto surge",
+    "2022": "Inflation shock / rate hikes / crypto winter",
+    "2023": "AI boom begins / soft landing hopes",
+    "2024": "Rate cuts begin / AI expansion / crypto recovery"
+  },
+
+  "key_insights": {
+    "worst_year_to_start_investing": "2008 (-37% S&P, unemployment spiked to 9.3%)",
+    "best_year_to_start_investing": "2009 (S&P returned 26.5%, start of 11-year bull run)",
+    "worst_year_to_start_business": "2007-2008 (lowest 5-year survival rates, credit freeze)",
+    "best_year_to_start_business": "2017-2018 (highest survival rates, low unemployment, cheap capital still available)",
+    "worst_year_for_homebuyers": "2006 (peak prices before 40% crash)",
+    "best_year_for_homebuyers": "2011-2012 (post-crash bottom, low rates)",
+    "worst_year_for_savers": "2009-2015 (near-zero rates, inflation eating savings)",
+    "bitcoin_caveat": "Annual returns range from +5507% to -73.6% — extreme volatility makes year-of-entry critical"
+  }
+}

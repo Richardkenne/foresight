@@ -1,0 +1,499 @@
+{
+  "_meta": {
+    "category": "Global Country Data — Indonesia, Italy, Australia",
+    "created": "2026-03-27",
+    "description": "Comprehensive country-level data across 12 categories for simulation engine. Real data with sources. Currency: local + USD equivalents where useful.",
+    "total_entries": 450,
+    "countries": ["indonesia", "italy", "australia"]
+  },
+
+  "indonesia": {
+    "_currency": "IDR (1 USD ≈ 16,300 IDR as of 2025)",
+
+    "business_survival": {
+      "year_1_survival_pct": {"value": 80, "source": "Failory/WinSavvy global startup data + Indonesia MSME research", "year": 2024, "note": "20% fail in first year"},
+      "year_2_survival_pct": {"value": 66, "source": "Mondaq / Indonesia Startup Ecosystem research", "year": 2024, "note": "34% fail within two years"},
+      "year_3_survival_pct": {"value": 55, "source": "Failory/Equidam startup survival data", "year": 2024, "note": "Estimated from cross-country data"},
+      "year_5_survival_pct": {"value": 50, "source": "Failory/WinSavvy global startup data", "year": 2024},
+      "year_10_survival_pct": {"value": 30, "source": "Failory/WinSavvy global startup data", "year": 2024, "note": "Estimated; only 25% reach 15 years"},
+      "msme_total": {"value": 30180000, "source": "Ministry of MSMEs / Kadin Indonesia", "year": 2024},
+      "msme_share_of_businesses_pct": {"value": 99.9, "source": "BPS / Kadin Indonesia", "year": 2024},
+      "msme_gdp_contribution_pct": {"value": 61, "source": "Ministry of Cooperatives and SMEs", "year": 2024},
+      "msme_formal_credit_access_pct": {"value": 20, "source": "UGM / World Bank Indonesia MSME study", "year": 2024}
+    },
+
+    "salaries_by_sector_monthly_idr": {
+      "mining_quarrying": {"value": 5086094, "source": "BPS Sakernas 2025"},
+      "electricity_gas": {"value": 5040313, "source": "BPS Sakernas 2025"},
+      "finance_insurance": {"value": 4878087, "source": "BPS Sakernas 2025"},
+      "information_communication": {"value": 4131648, "source": "BPS Sakernas 2025"},
+      "real_estate": {"value": 4042854, "source": "BPS Sakernas 2025"},
+      "professional_services": {"value": 3965419, "source": "BPS Sakernas 2025"},
+      "public_administration": {"value": 3758174, "source": "BPS Sakernas 2025"},
+      "transportation_storage": {"value": 3720086, "source": "BPS Sakernas 2025"},
+      "healthcare_social": {"value": 3415963, "source": "BPS Sakernas 2025"},
+      "construction": {"value": 3209091, "source": "BPS Sakernas 2025"},
+      "manufacturing": {"value": 3090532, "source": "BPS Sakernas 2025"},
+      "water_waste_management": {"value": 2906210, "source": "BPS Sakernas 2025"},
+      "education": {"value": 2794131, "source": "BPS Sakernas 2025"},
+      "wholesale_retail": {"value": 2667185, "source": "BPS Sakernas 2025"},
+      "accommodation_food": {"value": 2424447, "source": "BPS Sakernas 2025"},
+      "agriculture_forestry_fishing": {"value": 2247459, "source": "BPS Sakernas 2025"},
+      "other_services": {"value": 1808930, "source": "BPS Sakernas 2025"},
+      "national_average": {"value": 3094818, "source": "BPS Sakernas 2025"},
+      "median": {"value": 4000000, "source": "BPS 2024"},
+      "university_graduates_average": {"value": 4960000, "source": "BPS 2024"},
+      "elementary_education_average": {"value": 2080000, "source": "BPS 2024"}
+    },
+
+    "cost_of_living_monthly_idr": {
+      "rent_1bed_city": {"value": 5215985, "source": "Numbeo 2026"},
+      "rent_1bed_outside": {"value": 2979286, "source": "Numbeo 2026"},
+      "rent_3bed_city": {"value": 13827101, "source": "Numbeo 2026"},
+      "rent_3bed_outside": {"value": 8095495, "source": "Numbeo 2026"},
+      "utilities_85sqm": {"value": 1120298, "source": "Numbeo 2026"},
+      "internet_broadband": {"value": 360391, "source": "Numbeo 2026"},
+      "mobile_plan": {"value": 78668, "source": "Numbeo 2026"},
+      "transport_monthly_pass": {"value": 200000, "source": "Numbeo 2026"},
+      "transport_single_ticket": {"value": 5000, "source": "Numbeo 2026"},
+      "gasoline_per_liter": {"value": 12635, "source": "Numbeo 2026"},
+      "meal_inexpensive": {"value": 30000, "source": "Numbeo 2026"},
+      "meal_midrange_two": {"value": 250000, "source": "Numbeo 2026"},
+      "cappuccino": {"value": 28039, "source": "Numbeo 2026"},
+      "groceries_eggs_12": {"value": 25744, "source": "Numbeo 2026"},
+      "groceries_chicken_1kg": {"value": 53781, "source": "Numbeo 2026"},
+      "groceries_rice_1kg": {"value": 15014, "source": "Numbeo 2026"},
+      "groceries_milk_1l": {"value": 20973, "source": "Numbeo 2026"},
+      "doctor_visit_usd": {"value": 80, "unit": "USD", "range": "80-165", "source": "Pacific Prime 2024"},
+      "hospital_night_usd": {"value": 100, "unit": "USD", "range": "100-265", "source": "Pacific Prime 2024"},
+      "health_insurance_annual_usd": {"value": 4734, "unit": "USD", "source": "Pacific Prime 2024", "note": "International health insurance for individuals"}
+    },
+
+    "marriage_divorce": {
+      "marriages_total_2024": {"value": 1480000, "source": "BPS / Kompas", "year": 2024, "note": "Down 30% from 2.11M in 2014"},
+      "marriage_rate_decline_10yr_pct": {"value": 30, "source": "BPS Statistics on Indonesian Youth 2024"},
+      "mean_age_first_marriage_women": {"value": 22.4, "source": "BPS 2017 survey", "year": 2017},
+      "mean_age_first_marriage_men": {"value": 27.1, "source": "BPS 2017 survey", "year": 2017},
+      "minimum_marriage_age": {"value": 19, "source": "Indonesian Marriage Law amendment", "note": "Both men and women"},
+      "youth_married_pct_16_30": {"value": 29.1, "source": "BPS Statistics on Indonesian Youth 2024", "year": 2024},
+      "youth_unmarried_pct_16_30": {"value": 69.75, "source": "BPS Statistics on Indonesian Youth 2024", "year": 2024},
+      "divorce_rate_pct_of_marriages": {"value": 29.39, "source": "Ministry of Religious Affairs (MoRA)", "year": 2023},
+      "divorce_cases_total": {"value": 251828, "source": "Ministry of Religious Affairs", "year": 2024}
+    },
+
+    "life_expectancy_health": {
+      "life_expectancy_overall": {"value": 72.5, "source": "World Bank / Macrotrends", "year": 2024},
+      "aging_society_since": {"value": 2021, "source": "BPS Indonesian Elderly Statistics 2024"},
+      "elderly_pct_projected_2045": {"value": 20, "source": "BPS Indonesian Elderly Statistics 2024"}
+    },
+
+    "education": {
+      "university_tuition_public_semester_idr_low": {"value": 100000, "source": "Statista / Indonesian govt data", "year": 2024},
+      "university_tuition_public_semester_idr_high": {"value": 5000000, "source": "Statista / Indonesian govt data", "year": 2024},
+      "top_university_semester_idr_low": {"value": 7000000, "source": "UI / Karantina UI", "year": 2024, "note": "University of Indonesia"},
+      "top_university_semester_idr_high": {"value": 25000000, "source": "UI / Karantina UI", "year": 2024},
+      "private_university_annual_idr_low": {"value": 15000000, "source": "Statista / Talkpal", "year": 2024},
+      "private_university_annual_idr_high": {"value": 100000000, "source": "Statista / Talkpal", "year": 2024},
+      "workforce_elementary_only_pct": {"value": 35.8, "source": "BPS 2024"},
+      "govt_education_budget_pct_gdp": {"value": 20, "source": "Indonesian Constitution mandate / BPS", "year": 2024, "note": "Constitutional minimum 20% of state budget"}
+    },
+
+    "startup_ecosystem": {
+      "total_startups": {"value": 33000, "source": "StartupBlink / Tracxn", "year": 2024},
+      "unicorns": {"value": 14, "source": "StartupBlink", "year": 2024},
+      "total_raised_all_time_usd_b": {"value": 71.1, "source": "Tracxn", "year": 2024},
+      "funding_2024_usd_m": {"value": 437.8, "source": "DealStreet Asia / Tracxn", "year": 2024, "note": "Down 66% YoY"},
+      "deals_2024": {"value": 85, "source": "Tracxn", "year": 2024, "note": "Down 34% YoY"},
+      "top_investor": {"value": "East Ventures", "source": "Tracxn", "year": 2024, "note": "257 funding rounds"},
+      "startup_failure_rate_5yr_pct": {"value": 80, "source": "Indonesia Expat / Mondaq", "year": 2024}
+    },
+
+    "tax_rates": {
+      "corporate_income_tax_pct": {"value": 22, "source": "PWC Tax Summaries / DJP", "year": 2025},
+      "corporate_listed_40pct_float_pct": {"value": 19, "source": "PWC Tax Summaries", "year": 2025},
+      "sme_final_tax_pct": {"value": 0.5, "source": "PP 55/2022", "year": 2025, "note": "For new entities under IDR 4.8B revenue"},
+      "vat_statutory_pct": {"value": 12, "source": "DJP / Pajak.go.id", "year": 2025},
+      "vat_effective_most_goods_pct": {"value": 11, "source": "DJP", "year": 2025, "note": "DPP multiplied by 11/12 for non-luxury goods"},
+      "personal_income_tax_brackets": [
+        {"bracket": "0-60M IDR", "rate_pct": 5},
+        {"bracket": "60-250M IDR", "rate_pct": 15},
+        {"bracket": "250-500M IDR", "rate_pct": 25},
+        {"bracket": "500M-5B IDR", "rate_pct": 30},
+        {"bracket": "Above 5B IDR", "rate_pct": 35}
+      ],
+      "source": "PWC Tax Summaries / QuickBooks Global / DJP"
+    },
+
+    "immigration": {
+      "visa_types": [
+        {"type": "KITAS Work/Employment", "duration": "6 months to 2 years", "renewable": true},
+        {"type": "KITAS Investor", "duration": "1-2 years", "renewable": true},
+        {"type": "KITAS Spouse/Family", "duration": "1-2 years", "renewable": true, "note": "Can convert to KITAP after 2 years of marriage"},
+        {"type": "KITAS Retirement", "duration": "1 year", "renewable": true, "note": "Min age 55"},
+        {"type": "KITAS Student", "duration": "1 year", "renewable": true},
+        {"type": "KITAS Digital Nomad", "duration": "1 year", "renewable": true},
+        {"type": "KITAP Permanent", "duration": "5 years", "renewable": true, "note": "Requires 3+ years on KITAS (2 for spouse)"}
+      ],
+      "source": "Flado / IMMI Indonesia / Cekindo"
+    },
+
+    "home_ownership": {
+      "national_rate_pct": {"value": 84.95, "source": "BPS March 2024", "year": 2024},
+      "jakarta_rate_pct": {"value": 54.44, "source": "BPS / Databoks Katadata", "year": 2024},
+      "highest_province": {"value": "Papua Pegunungan 97.34%", "source": "BPS / Databoks Katadata", "year": 2024}
+    },
+
+    "unemployment": {
+      "overall_rate_pct": {"value": 4.91, "source": "BPS August 2024", "year": 2024},
+      "youth_15_24_pct": {"value": 17.32, "source": "BPS 2024", "year": 2024},
+      "age_60_plus_pct": {"value": 1.49, "source": "BPS 2024", "year": 2024},
+      "highest_province": {"value": "Banten ~7%", "source": "BPS / Statista", "year": 2024}
+    },
+
+    "wages": {
+      "minimum_wage_jakarta_idr": {"value": 5067381, "source": "ASEAN Briefing", "year": 2024},
+      "minimum_wage_low_province_idr": {"value": 2000000, "range": "2.0-2.5M", "source": "ASEAN Briefing", "year": 2024, "note": "Central Java, East Nusa Tenggara"},
+      "national_average_monthly_idr": {"value": 3094818, "source": "BPS Sakernas 2025"},
+      "median_monthly_idr": {"value": 4000000, "source": "BPS 2024"}
+    }
+  },
+
+  "italy": {
+    "_currency": "EUR (1 EUR ≈ 1.08 USD as of 2025)",
+
+    "business_survival": {
+      "year_1_2_survival_manufacturing_pct": {"value": 63, "source": "OECD Business Dynamics 2025", "note": "Firms aged 1-2 still active 3 years later; cross-country avg 69%"},
+      "year_3_5_survival_manufacturing_pct": {"value": 69, "source": "OECD Business Dynamics 2025", "note": "Firms aged 3-5 still active 3 years later; cross-country avg 74%"},
+      "companies_closed_2024": {"value": 310000, "source": "Unioncamere / ISTAT", "year": 2024},
+      "companies_founded_2024": {"value": 190000, "source": "Unioncamere / ISTAT", "year": 2024},
+      "net_company_loss_2024": {"value": -120000, "source": "Unioncamere / ISTAT", "year": 2024},
+      "five_year_survival_estimate_pct": {"value": 48, "source": "OECD / Medium analysis of Italian business crisis", "note": "~52% don't survive 5 years"}
+    },
+
+    "salaries_annual_eur": {
+      "surgeon_specialist_monthly": {"value": 13600, "source": "Hightekers / ISTAT", "year": 2025},
+      "judge_monthly": {"value": 11400, "source": "Hightekers / ISTAT", "year": 2025},
+      "lawyer_experienced_monthly": {"value": 9230, "source": "Hightekers / ISTAT", "year": 2025},
+      "finance_banking_annual": {"value": 47900, "source": "ISTAT / Statista", "year": 2024},
+      "engineering_annual": {"value": 40000, "source": "OECD / ISTAT estimates", "year": 2024, "note": "Varies by specialization"},
+      "it_professional_annual": {"value": 38000, "source": "ISTAT / Statista", "year": 2024},
+      "manager_annual": {"value": 55000, "source": "ISTAT / Statista", "year": 2024, "note": "Varies widely by sector"},
+      "teacher_annual": {"value": 28000, "source": "OECD Education at a Glance 2025", "year": 2024},
+      "nurse_annual": {"value": 26000, "source": "ISTAT / OECD Health", "year": 2024},
+      "hospitality_annual": {"value": 20000, "source": "ISTAT / Statista", "year": 2024},
+      "retail_annual": {"value": 22000, "source": "ISTAT / Statista", "year": 2024},
+      "construction_annual": {"value": 25000, "source": "ISTAT / Statista", "year": 2024},
+      "agriculture_annual": {"value": 18000, "source": "ISTAT / Statista", "year": 2024},
+      "national_average_annual": {"value": 34275, "source": "OECD 2025"},
+      "national_average_monthly_gross": {"value": 3408, "source": "ISTAT / Statista", "year": 2024},
+      "national_median_monthly_net": {"value": 2075, "source": "ISTAT / Housing Anywhere", "year": 2024},
+      "graduates_earn_vs_middle_school": {"value": "2.5x", "source": "ISTAT / OECD", "year": 2024}
+    },
+
+    "cost_of_living_monthly_eur": {
+      "rent_1bed_city": {"value": 732, "source": "Numbeo 2026"},
+      "rent_1bed_outside": {"value": 572, "source": "Numbeo 2026"},
+      "rent_3bed_city": {"value": 1282, "source": "Numbeo 2026"},
+      "rent_3bed_outside": {"value": 948, "source": "Numbeo 2026"},
+      "utilities_85sqm": {"value": 201, "source": "Numbeo 2026"},
+      "internet_broadband": {"value": 27, "source": "Numbeo 2026"},
+      "mobile_plan": {"value": 11, "source": "Numbeo 2026"},
+      "transport_monthly_pass": {"value": 38, "source": "Numbeo 2026"},
+      "transport_single_ticket": {"value": 1.70, "source": "Numbeo 2026"},
+      "gasoline_per_liter": {"value": 1.77, "source": "Numbeo 2026"},
+      "meal_inexpensive": {"value": 16, "source": "Numbeo 2026"},
+      "meal_midrange_two": {"value": 70, "source": "Numbeo 2026"},
+      "cappuccino": {"value": 1.74, "source": "Numbeo 2026"},
+      "groceries_eggs_12": {"value": 3.65, "source": "Numbeo 2026"},
+      "groceries_chicken_1kg": {"value": 10.98, "source": "Numbeo 2026"},
+      "groceries_milk_1l": {"value": 1.43, "source": "Numbeo 2026"},
+      "groceries_bread_500g": {"value": 2.07, "source": "Numbeo 2026"},
+      "healthcare_system": {"value": "SSN (universal)", "source": "ISTAT / SSN"},
+      "private_health_insurance_annual": {"value": 1000, "source": "Global Citizens Solutions 2025"}
+    },
+
+    "marriage_divorce": {
+      "marriage_rate_per_1000": {"value": 3.1, "source": "ISTAT", "year": 2023},
+      "marriages_total": {"value": 184207, "source": "ISTAT", "year": 2023},
+      "marriages_decline_2024_jan_aug_pct": {"value": -6.7, "source": "ISTAT", "year": 2024, "note": "vs same period 2023"},
+      "divorce_rate_per_100_marriages": {"value": 46, "source": "ISTAT / Eurostat", "year": 2019},
+      "divorces_total": {"value": 79875, "source": "ISTAT", "year": 2023, "note": "Down 3.3% from 2022, down 19.4% from 2016 peak"}
+    },
+
+    "life_expectancy_health": {
+      "life_expectancy_overall": {"value": 83.4, "source": "ISTAT Demographic Indicators 2024", "year": 2024, "note": "~5 months more than 2023"},
+      "life_expectancy_alternate": {"value": 84.13, "source": "Macrotrends", "year": 2024}
+    },
+
+    "education": {
+      "university_tuition_annual_avg_eur": {"value": 909, "source": "ISTAT", "year": 2024},
+      "young_adults_no_upper_secondary_pct": {"value": 19, "source": "OECD Education GPS", "year": 2024, "note": "Down from 24% in 2019"},
+      "age_25_34_higher_education_pct": {"value": 30, "source": "Statista / ISTAT", "year": 2023},
+      "age_25_64_upper_secondary_pct": {"value": 65.5, "source": "ISTAT", "year": 2023, "note": "Below EU avg of 79.8%"},
+      "bachelor_completion_3yr_women_pct": {"value": 61, "source": "OECD Education at a Glance 2025"},
+      "bachelor_completion_3yr_men_pct": {"value": 51, "source": "OECD Education at a Glance 2025"}
+    },
+
+    "startup_ecosystem": {
+      "vc_investment_2025_eur_b": {"value": 1.735, "source": "StartupBusiness.it / VeM Report", "year": 2025},
+      "vc_investment_2025_total_eur_b": {"value": 2.2, "source": "Intesa Sanpaolo Innovation Center", "year": 2025, "note": "Including all rounds"},
+      "deals_2025": {"value": 346, "source": "Intesa Sanpaolo Innovation Center", "year": 2025},
+      "early_stage_total_eur_b": {"value": 2.3, "source": "VeM Report", "year": 2025, "note": "VC + CVC + angels, 420 rounds"},
+      "international_investors_share_pct": {"value": 44, "source": "Intesa Sanpaolo Innovation Center", "year": 2025},
+      "growth_since_2020": {"value": "3x", "source": "Intesa Sanpaolo Innovation Center", "note": "Best growth rate among European ecosystems"}
+    },
+
+    "tax_rates": {
+      "irpef_brackets": [
+        {"bracket": "0-28,000 EUR", "rate_pct": 23},
+        {"bracket": "28,001-50,000 EUR", "rate_pct": 35},
+        {"bracket": "Above 50,000 EUR", "rate_pct": 43}
+      ],
+      "regional_surcharge_pct": {"value": "0.7-3.33", "source": "PWC Tax Summaries"},
+      "municipal_surcharge_pct": {"value": "0.1-0.9", "source": "PWC Tax Summaries"},
+      "corporate_ires_pct": {"value": 24, "source": "PWC / Chambers & Partners", "year": 2025},
+      "corporate_reduced_pct": {"value": 20, "source": "EY 2025 Budget Law", "year": 2025, "note": "If 80% of FY2024 earnings retained + investment + hiring"},
+      "vat_standard_pct": {"value": 22, "source": "PWC Tax Summaries", "year": 2025},
+      "vat_reduced_rates": [
+        {"rate_pct": 10, "applies_to": "Water, transport, hotels, restaurants"},
+        {"rate_pct": 5, "applies_to": "Some foodstuffs, social services"},
+        {"rate_pct": 4, "applies_to": "TV license, newspapers, books, medical equipment"}
+      ],
+      "source": "PWC Tax Summaries / EY / Graber Partner"
+    },
+
+    "immigration": {
+      "work_quotas_2024": {"value": 151000, "source": "Decreto Flussi 2024 / Mazzeschi"},
+      "seasonal_work_quotas": {"value": 89050, "source": "Decreto Flussi 2024"},
+      "subordinate_work_quotas": {"value": 61250, "source": "Decreto Flussi 2024"},
+      "self_employment_quotas": {"value": 200, "source": "Decreto Flussi 2024"},
+      "residence_permit_processing_months": {"value": "1-2", "source": "Consilio Jus / Immigration Italy", "year": 2024},
+      "visa_types": [
+        {"type": "Permesso di Soggiorno (work)", "duration": "1-2 years", "renewable": true},
+        {"type": "Permesso di Soggiorno (study)", "duration": "1 year", "renewable": true},
+        {"type": "Permesso di Soggiorno (family)", "duration": "2 years", "renewable": true},
+        {"type": "Permesso CE Lungo Periodo", "duration": "Permanent", "note": "After 5 years of legal residence"},
+        {"type": "Elective Residence Visa", "duration": "1 year", "renewable": true, "note": "For retirees/passive income"}
+      ]
+    },
+
+    "home_ownership": {
+      "national_rate_pct": {"value": 75.9, "source": "Eurostat / Trading Economics", "year": 2024},
+      "sardinia_sicily_pct": {"value": 84.1, "source": "Eurostat Housing in Europe 2025"},
+      "south_region_pct": {"value": 78.7, "source": "Eurostat Housing in Europe 2025"},
+      "northwest_region_pct": {"value": 77.7, "source": "Eurostat Housing in Europe 2025"}
+    },
+
+    "unemployment": {
+      "overall_rate_pct": {"value": 6.8, "source": "ISTAT", "year": 2024, "note": "May 2024, down 1pp from 2023"},
+      "youth_rate_pct": {"value": 24, "source": "ISTAT / Eurostat", "year": 2023, "note": "One of highest in Europe"},
+      "employment_rate_overall_pct": {"value": 61.5, "source": "ISTAT", "year": 2023},
+      "employment_women_pct": {"value": 52.5, "source": "ISTAT", "year": 2023},
+      "employment_men_pct": {"value": 70.4, "source": "ISTAT", "year": 2023},
+      "under35_university_employment_pct": {"value": 75.4, "source": "ISTAT / Xinhua", "year": 2023},
+      "under35_no_tertiary_employment_pct": {"value": 59.7, "source": "ISTAT / Xinhua", "year": 2023},
+      "under35_degree_north_pct": {"value": 90.6, "source": "ISTAT", "year": 2023},
+      "under35_degree_south_pct": {"value": 70.8, "source": "ISTAT", "year": 2023}
+    },
+
+    "wages": {
+      "minimum_wage": {"value": "None (sector collective bargaining — CCNL)", "source": "OECD / EURES", "year": 2024},
+      "national_average_monthly_gross_eur": {"value": 3408, "source": "ISTAT / Statista", "year": 2024},
+      "national_median_monthly_net_eur": {"value": 2075, "source": "ISTAT / Housing Anywhere", "year": 2024},
+      "national_average_annual_eur": {"value": 34275, "source": "OECD", "year": 2025}
+    }
+  },
+
+  "australia": {
+    "_currency": "AUD (1 AUD ≈ 0.65 USD as of 2025)",
+
+    "business_survival": {
+      "year_1_survival_pct": {"value": 75, "source": "ABS Counts of Australian Businesses 2024-25"},
+      "year_3_survival_pct": {"value": 48, "source": "ABS / Money.com.au", "year": 2025},
+      "year_3_employing_survival_pct": {"value": 61, "source": "ABS", "year": 2025},
+      "year_3_non_employing_survival_pct": {"value": 43.3, "source": "ABS", "year": 2025},
+      "year_5_survival_pct": {"value": 35, "source": "ABS / Brainiact Business Survival Report", "note": "Estimated from ABS trends"},
+      "total_active_businesses": {"value": 2729648, "source": "ABS June 2025"},
+      "employing_businesses": {"value": 994178, "source": "ABS June 2025"},
+      "entries_2024_25": {"value": 437150, "source": "ABS"},
+      "exits_2024_25": {"value": 370500, "source": "ABS"},
+      "exit_rate_pct": {"value": 13.9, "source": "ABS"},
+      "churn_rate_pct": {"value": 30.3, "source": "ABS", "note": "Entries + exits as % of total"}
+    },
+
+    "salaries_weekly_aud": {
+      "ceo_gm_legislators_median": {"value": 3223, "source": "ABS Employee Earnings August 2025"},
+      "specialist_managers_median": {"value": 2310, "source": "ABS Employee Earnings August 2025"},
+      "ict_professionals_median": {"value": 2300, "source": "ABS Employee Earnings August 2025"},
+      "managers_group_median": {"value": 2072, "source": "ABS Employee Earnings August 2025"},
+      "professionals_group_median": {"value": 1900, "source": "ABS Employee Earnings August 2025"},
+      "mining_industry_median": {"value": 2761, "source": "ABS Employee Earnings August 2025"},
+      "food_preparation_median": {"value": 448, "source": "ABS Employee Earnings August 2025"},
+      "hospitality_median": {"value": 556, "source": "ABS Employee Earnings August 2025"},
+      "sales_support_median": {"value": 661, "source": "ABS Employee Earnings August 2025"},
+      "sales_assistants_median": {"value": 631, "source": "ABS Employee Earnings August 2025"},
+      "all_employees_median": {"value": 1425, "source": "ABS Employee Earnings August 2025"},
+      "median_hourly": {"value": 42.90, "source": "ABS Employee Earnings August 2025"},
+      "full_time_average_weekly": {"value": 2011.40, "source": "ABS 2025"},
+      "full_time_average_annual": {"value": 104572, "source": "ABS 2025", "note": "Ordinary weekly x 52"}
+    },
+
+    "cost_of_living_monthly_aud": {
+      "rent_1bed_city": {"value": 2192, "source": "Numbeo 2026"},
+      "rent_1bed_outside": {"value": 1732, "source": "Numbeo 2026"},
+      "rent_3bed_city": {"value": 3699, "source": "Numbeo 2026"},
+      "rent_3bed_outside": {"value": 2760, "source": "Numbeo 2026"},
+      "utilities_85sqm": {"value": 279, "source": "Numbeo 2026"},
+      "internet_broadband": {"value": 82, "source": "Numbeo 2026"},
+      "mobile_plan": {"value": 41, "source": "Numbeo 2026"},
+      "transport_monthly_pass": {"value": 130, "source": "Numbeo 2026"},
+      "transport_single_ticket": {"value": 4.40, "source": "Numbeo 2026"},
+      "gasoline_per_liter": {"value": 1.82, "source": "Numbeo 2026"},
+      "meal_inexpensive": {"value": 25, "source": "Numbeo 2026"},
+      "meal_midrange_two": {"value": 120, "source": "Numbeo 2026"},
+      "cappuccino": {"value": 5.53, "source": "Numbeo 2026"},
+      "groceries_eggs_12": {"value": 7.05, "source": "Numbeo 2026"},
+      "groceries_chicken_1kg": {"value": 12.91, "source": "Numbeo 2026"},
+      "groceries_milk_1l": {"value": 2.46, "source": "Numbeo 2026"},
+      "groceries_bread_500g": {"value": 3.85, "source": "Numbeo 2026"},
+      "healthcare_system": {"value": "Medicare (universal)", "source": "Australian Government"},
+      "gp_visit_gap_fee_aud": {"value": "0-80", "source": "Various / ABS", "note": "Free if bulk-billed, $30-80 gap otherwise"},
+      "health_insurance_monthly_single": {"value": "150-300", "source": "Pacific Prime / Various", "year": 2024},
+      "health_insurance_monthly_family": {"value": "400-600", "source": "Pacific Prime / Various", "year": 2024},
+      "single_person_total_monthly": {"value": 3890, "source": "Numbeo 2026", "note": "Including rent"},
+      "family_of_four_total_monthly": {"value": 9479, "source": "Numbeo 2026", "note": "Including rent"}
+    },
+
+    "marriage_divorce": {
+      "marriages_2024": {"value": 120844, "source": "ABS Marriages and Divorces 2024"},
+      "marriage_rate_per_1000": {"value": 5.5, "source": "ABS", "year": 2024},
+      "divorces_2024": {"value": 47216, "source": "ABS", "year": 2024, "note": "Down 3% from 2023"},
+      "divorce_rate_per_1000": {"value": 2.1, "source": "ABS", "year": 2024, "note": "Lowest in 50 years"},
+      "median_marriage_duration_years": {"value": 13.2, "source": "ABS", "year": 2024},
+      "median_age_divorce_male": {"value": 47.1, "source": "ABS", "year": 2024},
+      "median_age_divorce_female": {"value": 44.1, "source": "ABS", "year": 2024}
+    },
+
+    "life_expectancy_health": {
+      "life_expectancy_male": {"value": 81.1, "source": "ABS Life Expectancy 2022-2024"},
+      "life_expectancy_female": {"value": 85.1, "source": "ABS Life Expectancy 2022-2024"},
+      "life_expectancy_gap_high_vs_low_education_male_years": {"value": 7.3, "source": "Monash University / ABS study", "note": "Bachelor+ vs Year 11 or below, at age 25"},
+      "life_expectancy_gap_high_vs_low_education_female_years": {"value": 3.9, "source": "Monash University / ABS study"}
+    },
+
+    "education": {
+      "university_domestic_hecs_annual_aud": {"value": "4000-16000", "source": "Australian Government / HECS-HELP", "year": 2024, "note": "CSP student contribution bands"},
+      "university_international_annual_aud": {"value": "20000-45000", "source": "Go Study In / Various", "year": 2024},
+      "university_international_medicine_aud": {"value": "60000-95000", "source": "Australia Pathways", "year": 2024},
+      "bachelor_or_higher_all_ages_pct": {"value": 33, "source": "ABS Education and Work 2024", "year": 2024, "note": "Up from 26% in 2016"},
+      "bachelor_or_higher_25_34_pct": {"value": 47, "source": "ABS Education and Work 2024", "year": 2024},
+      "bachelor_or_higher_60_64_pct": {"value": 25, "source": "ABS Education and Work 2024", "year": 2024}
+    },
+
+    "startup_ecosystem": {
+      "funding_2024_aud_b": {"value": 4.0, "source": "Cut Through Venture / State of Australian Startup Funding 2024", "year": 2024, "note": "Up 11% from 2023"},
+      "deals_2024": {"value": 414, "source": "Cut Through Venture", "year": 2024},
+      "funding_2025_aud_b": {"value": 5.48, "source": "Cut Through Venture / ScaleSuite", "year": 2025, "note": "Up 31% from 2024"},
+      "deals_2025": {"value": 390, "source": "Cut Through Venture", "year": 2025},
+      "top_sector_2025": {"value": "AI ($1.0B AUD)", "source": "Cut Through Venture", "year": 2025},
+      "international_investor_share_2025_pct": {"value": 66, "source": "Cut Through Venture", "year": 2025},
+      "top_20_deals_share_pct": {"value": 58, "source": "ScaleSuite", "year": 2025}
+    },
+
+    "tax_rates": {
+      "income_tax_brackets_2024_25": [
+        {"bracket": "0-18,200 AUD", "rate_pct": 0},
+        {"bracket": "18,201-45,000 AUD", "rate_pct": 16},
+        {"bracket": "45,001-135,000 AUD", "rate_pct": 30},
+        {"bracket": "135,001-190,000 AUD", "rate_pct": 37},
+        {"bracket": "Above 190,000 AUD", "rate_pct": 45}
+      ],
+      "income_tax_note": "From July 2026: 2nd bracket drops to 15%; from July 2027: drops to 14%",
+      "corporate_standard_pct": {"value": 30, "source": "ATO", "year": 2025},
+      "corporate_base_rate_entity_pct": {"value": 25, "source": "ATO", "year": 2025, "note": "Turnover < $50M AUD"},
+      "gst_pct": {"value": 10, "source": "ATO", "year": 2025},
+      "superannuation_guarantee_pct": {"value": 12, "source": "ATO", "year": 2025, "note": "From July 2025"},
+      "source": "ATO / PWC Tax Summaries / SuperGuide"
+    },
+
+    "immigration": {
+      "migration_program_places_2024_25": {"value": 185000, "source": "Department of Home Affairs", "year": 2024},
+      "skill_stream_places": {"value": 132200, "source": "Department of Home Affairs", "year": 2024, "note": "71% of total"},
+      "visa_refusal_rate_h2_2024_pct": {"value": 7.0, "source": "Department of Home Affairs / Riverwood Migration", "year": 2024},
+      "visa_types": [
+        {"type": "Skills in Demand (SID) visa", "note": "Replaced TSS Dec 2024; Specialist, Core, Labour Agreement streams"},
+        {"type": "Subclass 189 Skilled Independent", "note": "Points-tested, no sponsor needed"},
+        {"type": "Subclass 190 Skilled Nominated", "note": "State/territory nomination"},
+        {"type": "Subclass 491 Skilled Work Regional", "note": "Regional areas"},
+        {"type": "Subclass 500 Student", "note": "Application fee AUD 2,000"},
+        {"type": "Subclass 482 Temporary Skill Shortage", "note": "Being phased out for SID"},
+        {"type": "Partner visa (Subclass 820/801)", "note": "Onshore partner visa"}
+      ]
+    },
+
+    "home_ownership": {
+      "national_rate_pct": {"value": 66, "source": "ABS / Eden Emerald Mortgages / CheckRate", "year": 2024, "note": "Gradual decline over decades"},
+      "age_25_29_pct": {"value": 36, "source": "CheckRate / ABS", "year": 2024},
+      "age_30_34_pct": {"value": 50, "source": "CheckRate / ABS", "year": 2024},
+      "average_first_home_buyer_age": {"value": 36, "source": "ABS / Eden Emerald", "year": 2024, "note": "Was 25-26 in the 1970s"},
+      "median_weekly_rent_national": {"value": 627, "source": "ABS", "year": 2025, "note": "Record high, up 8.5% YoY"}
+    },
+
+    "unemployment": {
+      "overall_rate_pct": {"value": 4.1, "source": "ABS / OECD", "year": 2025, "note": "Below OECD average"},
+      "with_qualification_employment_pct": {"value": 79, "source": "ABS Education and Work May 2024"},
+      "without_qualification_employment_pct": {"value": 58, "source": "ABS Education and Work May 2024"},
+      "men_postgrad_fulltime_pct": {"value": 78, "source": "ABS Education and Work May 2024"},
+      "men_no_qualification_fulltime_pct": {"value": 43, "source": "ABS Education and Work May 2024"},
+      "women_postgrad_fulltime_pct": {"value": 59, "source": "ABS Education and Work May 2024"},
+      "women_no_qualification_fulltime_pct": {"value": 23, "source": "ABS Education and Work May 2024"}
+    },
+
+    "wages": {
+      "minimum_wage_monthly_aud": {"value": 3620, "source": "Fair Work Commission Annual Wage Review 2024-25"},
+      "minimum_wage_hourly_aud": {"value": 24.10, "source": "Fair Work Commission", "year": 2025, "note": "After 3.75% increase from July 2025"},
+      "median_weekly_all_employees_aud": {"value": 1425, "source": "ABS Employee Earnings August 2025"},
+      "full_time_average_weekly_aud": {"value": 2011.40, "source": "ABS 2025"},
+      "full_time_average_annual_aud": {"value": 104572, "source": "ABS 2025"}
+    }
+  },
+
+  "_comparison_quick_reference": {
+    "life_expectancy": {
+      "indonesia": 72.5,
+      "italy": 83.4,
+      "australia": 83.1,
+      "note": "Australia male+female average"
+    },
+    "business_survival_year_1_pct": {
+      "indonesia": 80,
+      "italy": "~70 (estimated from OECD manufacturing data)",
+      "australia": 75
+    },
+    "home_ownership_pct": {
+      "indonesia": 84.95,
+      "italy": 75.9,
+      "australia": 66
+    },
+    "unemployment_pct": {
+      "indonesia": 4.91,
+      "italy": 6.8,
+      "australia": 4.1
+    },
+    "cost_cappuccino_usd": {
+      "indonesia": 1.72,
+      "italy": 1.88,
+      "australia": 3.59
+    },
+    "vat_gst_pct": {
+      "indonesia": "12 (effective 11)",
+      "italy": 22,
+      "australia": 10
+    },
+    "corporate_tax_pct": {
+      "indonesia": 22,
+      "italy": 24,
+      "australia": "30 (25 for SMEs)"
+    }
+  }
+}
