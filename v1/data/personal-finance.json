@@ -1,0 +1,548 @@
+{
+  "_meta": {
+    "category": "Personal Finance",
+    "source_file": "personal-finance-data.md",
+    "converted": "2026-03-27",
+    "total_entries": 487
+  },
+  "sections": {
+    "emergency_fund_coverage_rates": [
+      {"metric": "Adults with 3-month emergency fund", "value": "55", "unit": "%", "source": "Federal Reserve SHED", "year": 2024, "evergreen": false},
+      {"metric": "Adults with NO emergency fund", "value": "13", "unit": "%", "source": "Bankrate", "year": 2025, "evergreen": false},
+      {"metric": "Cannot cover 3 months by ANY means", "value": "30", "unit": "%", "source": "Federal Reserve SHED", "year": 2024, "evergreen": false},
+      {"metric": "Cannot cover unexpected $1,000 expense", "value": "40", "unit": "%", "source": "Bankrate", "year": 2025, "evergreen": false},
+      {"metric": "Had unexpected expense in past year", "value": "60", "unit": "%", "source": "Bankrate", "year": 2025, "evergreen": false},
+      {"metric": "Cannot afford unexpected expense >$400", "value": "29", "unit": "%", "source": "Federal Reserve", "year": 2024, "evergreen": false},
+      {"metric": "Survey saying don't have fund", "value": "42", "unit": "%", "source": "U.S. News survey", "year": 2025, "evergreen": false},
+      {"metric": "Adults who increased savings in 2024", "value": "30", "unit": "%", "source": "Bankrate", "year": 2025, "evergreen": false},
+      {"metric": "Adults who saw savings shrink", "value": "27", "unit": "%", "source": "Bankrate", "year": 2025, "evergreen": false}
+    ],
+    "emergency_fund_by_income": [
+      {"metric": "Under $25,000 - with 3-month fund", "value": "24", "unit": "%", "source": "Federal Reserve SHED", "year": 2024, "evergreen": false},
+      {"metric": "$25,000-$49,999 - with 3-month fund", "value": "40", "unit": "%", "source": "Federal Reserve SHED", "year": 2024, "evergreen": false},
+      {"metric": "$50,000-$99,999 - with 3-month fund", "value": "56", "unit": "%", "source": "Federal Reserve SHED", "year": 2024, "evergreen": false},
+      {"metric": "$100,000+ - with 3-month fund", "value": "75", "unit": "%", "source": "Federal Reserve SHED", "year": 2024, "evergreen": false}
+    ],
+    "emergency_fund_peak_trough": [
+      {"metric": "Emergency fund coverage peak (pandemic savings)", "value": "59", "unit": "%", "source": "Federal Reserve", "year": 2021, "evergreen": false},
+      {"metric": "Emergency fund coverage 2023", "value": "54", "unit": "%", "source": "Federal Reserve", "year": 2023, "evergreen": false},
+      {"metric": "Emergency fund coverage 2024", "value": "55", "unit": "%", "source": "Federal Reserve", "year": 2024, "evergreen": false}
+    ],
+    "savings_account_balances": [
+      {"metric": "Median transaction account balance (all)", "value": "8000", "unit": "USD", "source": "Federal Reserve SCF", "year": 2022, "evergreen": false},
+      {"metric": "Average transaction account balance (all)", "value": "62410", "unit": "USD", "source": "Federal Reserve SCF", "year": 2022, "evergreen": false},
+      {"metric": "Average emergency fund amount", "value": "500", "unit": "USD", "source": "Empower Research", "year": 2025, "evergreen": false},
+      {"metric": "Median savings needed for 3 months (avg household)", "value": "15000-20000", "unit": "USD", "source": "Calculated", "year": 2025, "evergreen": false}
+    ],
+    "savings_by_age": [
+      {"metric": "Under 35 average transaction account balance", "value": "20540", "unit": "USD", "source": "Federal Reserve SCF", "year": 2022, "evergreen": false},
+      {"metric": "35-44 average transaction account balance", "value": "41540", "unit": "USD", "source": "Federal Reserve SCF", "year": 2022, "evergreen": false},
+      {"metric": "45-54 average transaction account balance", "value": "71000", "unit": "USD", "source": "Federal Reserve SCF", "year": 2022, "evergreen": false},
+      {"metric": "55-64 average transaction account balance", "value": "92000", "unit": "USD", "source": "Federal Reserve SCF", "year": 2022, "evergreen": false},
+      {"metric": "65-74 average transaction account balance", "value": "100250", "unit": "USD", "source": "Federal Reserve SCF", "year": 2022, "evergreen": false},
+      {"metric": "75+ average transaction account balance", "value": "82800", "unit": "USD", "source": "Federal Reserve SCF", "year": 2022, "evergreen": false}
+    ],
+    "savings_rate": [
+      {"metric": "US personal savings rate (annual avg)", "value": "4.9", "unit": "%", "source": "Bureau of Economic Analysis", "year": 2025, "evergreen": false},
+      {"metric": "US personal savings rate (June 2025)", "value": "4.5", "unit": "%", "source": "BEA / FRED", "year": 2025, "evergreen": false},
+      {"metric": "Pandemic savings rate peak", "value": "33", "unit": "%", "source": "BEA", "year": 2020, "evergreen": false},
+      {"metric": "Pre-pandemic avg savings rate", "value": "7-8", "unit": "%", "source": "BEA", "year": 2019, "evergreen": false}
+    ],
+    "savings_rate_by_income": [
+      {"metric": "Bottom quintile median savings rate", "value": "0", "unit": "%", "source": "Financial Samurai / Fed", "year": 2025, "evergreen": false},
+      {"metric": "$25K-$50K median savings rate", "value": "2-4", "unit": "%", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "$50K-$100K median savings rate", "value": "5-8", "unit": "%", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "$100K-$200K median savings rate", "value": "10-15", "unit": "%", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Top quintile ($245K+) median savings rate", "value": "25", "unit": "%", "source": "Federal Reserve", "year": 2025, "evergreen": false},
+      {"metric": "Top quintile ($245K+) median balance", "value": "111600", "unit": "USD", "source": "Federal Reserve", "year": 2025, "evergreen": false}
+    ],
+    "retirement_savings_overview": [
+      {"metric": "Households with NO retirement savings", "value": "54", "unit": "%", "source": "Federal Reserve SCF", "year": 2024, "evergreen": false},
+      {"metric": "Average 401(k) balance", "value": "148153", "unit": "USD", "source": "Vanguard How America Saves", "year": 2024, "evergreen": false},
+      {"metric": "Median 401(k) balance", "value": "38176", "unit": "USD", "source": "Vanguard How America Saves", "year": 2024, "evergreen": false},
+      {"metric": "Fidelity avg 401(k) balance (Q4 2025)", "value": "146400", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "YoY growth in avg 401(k)", "value": "11.2", "unit": "%", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "Avg total savings rate (employee+employer)", "value": "14.3", "unit": "%", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "Avg employee contribution rate", "value": "7.7", "unit": "%", "source": "Vanguard", "year": 2024, "evergreen": false},
+      {"metric": "Workers who increased contributions in 2024", "value": "45", "unit": "%", "source": "Fidelity", "year": 2025, "evergreen": false}
+    ],
+    "retirement_savings_by_generation": [
+      {"metric": "Gen Z avg 401(k)", "value": "13500", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "Gen Z avg IRA", "value": "6672", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "Gen Z total combined", "value": "20172", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "Millennials avg 401(k)", "value": "67300", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "Millennials avg IRA", "value": "25109", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "Millennials total combined", "value": "92409", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "Gen X avg 401(k)", "value": "192300", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "Gen X avg IRA", "value": "103952", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "Gen X total combined", "value": "296252", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "Baby Boomers avg 401(k)", "value": "249300", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "Baby Boomers avg IRA", "value": "257002", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "Baby Boomers total combined", "value": "506302", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false}
+    ],
+    "retirement_savings_benchmarks": [
+      {"metric": "Age 30 savings target (1x salary)", "value": "83592", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "Age 40 savings target (3x salary)", "value": "250776", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "Age 50 savings target (6x salary)", "value": "501552", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "Age 60 savings target (8x salary)", "value": "668736", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false},
+      {"metric": "Age 67 savings target (10x salary)", "value": "835920", "unit": "USD", "source": "Fidelity", "year": 2025, "evergreen": false}
+    ],
+    "retirement_adequacy_gap": [
+      {"metric": "Median savings ages 55-64", "value": "185000", "unit": "USD", "source": "Federal Reserve", "year": 2025, "evergreen": false},
+      {"metric": "Median savings ages 65-74", "value": "200000", "unit": "USD", "source": "Federal Reserve", "year": 2025, "evergreen": false},
+      {"metric": "Magic number Americans say they need", "value": "1260000", "unit": "USD", "source": "Northwestern Mutual", "year": 2024, "evergreen": false},
+      {"metric": "Gap for median 55-64 year old", "value": "1075000", "unit": "USD", "source": "Calculated", "year": 2025, "evergreen": false},
+      {"metric": "% of Americans on track for retirement", "value": "33", "unit": "%", "source": "Various studies", "year": 2025, "evergreen": false},
+      {"metric": "Americans worried about running out of money", "value": "67", "unit": "%", "source": "Multiple surveys", "year": 2025, "evergreen": false}
+    ],
+    "retirement_income_sources": [
+      {"metric": "Relying on Social Security", "value": "90", "unit": "%", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Relying on 401(k)/IRA", "value": "55", "unit": "%", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Relying on Pension/DB plan", "value": "22", "unit": "%", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Relying on Part-time work", "value": "35", "unit": "%", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Relying on Inheritance", "value": "15", "unit": "%", "source": "Various", "year": 2025, "evergreen": false}
+    ],
+    "millionaire_stats_count": [
+      {"metric": "Total millionaires in USA", "value": "23831000", "unit": "count", "source": "UBS Global Wealth Report", "year": 2024, "evergreen": false},
+      {"metric": "% of US adults who are millionaires", "value": "8", "unit": "%", "source": "UBS", "year": 2024, "evergreen": false},
+      {"metric": "New millionaires added in 2024", "value": "379000", "unit": "count", "source": "Various", "year": 2024, "evergreen": false},
+      {"metric": "New millionaires per day", "value": "1000", "unit": "count", "source": "CNBC / Various", "year": 2024, "evergreen": false},
+      {"metric": "Ultra-high-net-worth ($30M+) in USA", "value": "180000", "unit": "count", "source": "Wealth-X", "year": 2024, "evergreen": false},
+      {"metric": "Number of billionaires in USA", "value": "900", "unit": "count", "source": "Forbes", "year": 2025, "evergreen": false}
+    ],
+    "millionaire_stats_how_built": [
+      {"metric": "Self-made (no inheritance)", "value": "79", "unit": "%", "source": "Ramsey Solutions", "year": 2024, "evergreen": false},
+      {"metric": "Inherited significant wealth", "value": "21", "unit": "%", "source": "Ramsey Solutions", "year": 2024, "evergreen": false},
+      {"metric": "Avg age when hit $1M", "value": "49", "unit": "years", "source": "Ramsey Solutions", "year": 2024, "evergreen": false},
+      {"metric": "Avg years to reach $1M", "value": "28", "unit": "years", "source": "Ramsey Solutions", "year": 2024, "evergreen": false},
+      {"metric": "Primary wealth vehicle: stocks/equities portfolio share", "value": "65", "unit": "%", "source": "Empower", "year": 2024, "evergreen": false},
+      {"metric": "Bonds allocation", "value": "25", "unit": "%", "source": "Empower", "year": 2024, "evergreen": false},
+      {"metric": "Cash allocation", "value": "10", "unit": "%", "source": "Empower", "year": 2024, "evergreen": false},
+      {"metric": "Retirement accounts as % of HNW net worth", "value": "54", "unit": "%", "source": "Pew Research Center", "year": 2024, "evergreen": false},
+      {"metric": "Own a business", "value": "75", "unit": "%", "source": "Various", "year": 2024, "evergreen": false}
+    ],
+    "millionaire_stats_net_worth_distribution": [
+      {"metric": "$1M+ US households", "value": "18000000", "unit": "count", "source": "Various", "year": 2024, "evergreen": false},
+      {"metric": "$1M+ percentile", "value": "13", "unit": "%", "source": "Various", "year": 2024, "evergreen": false},
+      {"metric": "$5M+ US households", "value": "3700000", "unit": "count", "source": "Various", "year": 2024, "evergreen": false},
+      {"metric": "$5M+ percentile", "value": "3", "unit": "%", "source": "Various", "year": 2024, "evergreen": false},
+      {"metric": "$10M+ US households", "value": "1500000", "unit": "count", "source": "Various", "year": 2024, "evergreen": false},
+      {"metric": "$10M+ percentile", "value": "1", "unit": "%", "source": "Various", "year": 2024, "evergreen": false},
+      {"metric": "$30M+ count", "value": "180000", "unit": "count", "source": "Various", "year": 2024, "evergreen": false},
+      {"metric": "$30M+ percentile", "value": "0.1", "unit": "%", "source": "Various", "year": 2024, "evergreen": false}
+    ],
+    "debt_total_household": [
+      {"metric": "Total US household debt", "value": "18780000000000", "unit": "USD", "source": "NY Fed", "year": 2025, "evergreen": false},
+      {"metric": "Average household debt", "value": "105056", "unit": "USD", "source": "Motley Fool", "year": 2025, "evergreen": false},
+      {"metric": "YoY growth", "value": "5", "unit": "%", "source": "NY Fed", "year": 2025, "evergreen": false}
+    ],
+    "debt_by_category": [
+      {"metric": "Mortgages total", "value": "13070000000000", "unit": "USD", "source": "NY Fed", "year": 2025, "evergreen": false},
+      {"metric": "Mortgages % of all debt", "value": "70.3", "unit": "%", "source": "NY Fed", "year": 2025, "evergreen": false},
+      {"metric": "Student Loans total", "value": "1830000000000", "unit": "USD", "source": "NY Fed", "year": 2025, "evergreen": false},
+      {"metric": "Student Loans % of all debt", "value": "9.7", "unit": "%", "source": "NY Fed", "year": 2025, "evergreen": false},
+      {"metric": "Auto Loans total", "value": "1670000000000", "unit": "USD", "source": "NY Fed", "year": 2025, "evergreen": false},
+      {"metric": "Auto Loans % of all debt", "value": "8.9", "unit": "%", "source": "NY Fed", "year": 2025, "evergreen": false},
+      {"metric": "Credit Cards total", "value": "1210000000000", "unit": "USD", "source": "NY Fed", "year": 2025, "evergreen": false},
+      {"metric": "Credit Cards % of all debt", "value": "6.4", "unit": "%", "source": "NY Fed", "year": 2025, "evergreen": false},
+      {"metric": "HELOC total", "value": "411000000000", "unit": "USD", "source": "NY Fed", "year": 2025, "evergreen": false},
+      {"metric": "Medical Debt total", "value": "220000000000", "unit": "USD", "source": "CFPB", "year": 2024, "evergreen": false},
+      {"metric": "Personal Loans + Other", "value": "550000000000", "unit": "USD", "source": "Various", "year": 2025, "evergreen": false}
+    ],
+    "debt_delinquency_rates": [
+      {"metric": "Credit cards 30+ day delinquency", "value": "14.1", "unit": "%", "source": "NY Fed", "year": 2025, "evergreen": false},
+      {"metric": "Student loans 90+ day delinquency", "value": "9.36", "unit": "%", "source": "Dept of Education", "year": 2025, "evergreen": false},
+      {"metric": "Mortgages delinquency", "value": "1-2", "unit": "%", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Auto loans delinquency", "value": "3-4", "unit": "%", "source": "NY Fed", "year": 2025, "evergreen": false}
+    ],
+    "debt_credit_cards": [
+      {"metric": "Total credit card debt", "value": "1180000000000-1210000000000", "unit": "USD", "source": "NY Fed / Fed Reserve", "year": 2025, "evergreen": false},
+      {"metric": "Avg credit card balance per account", "value": "1942", "unit": "USD", "source": "Experian", "year": 2024, "evergreen": false},
+      {"metric": "Avg credit card balance per consumer", "value": "6500", "unit": "USD", "source": "Experian", "year": 2024, "evergreen": false},
+      {"metric": "Total credit card accounts", "value": "631000000", "unit": "count", "source": "Various", "year": 2024, "evergreen": false},
+      {"metric": "Avg credit card APR", "value": "21", "unit": "%", "source": "Fed Reserve", "year": 2025, "evergreen": false},
+      {"metric": "Credit card APR in 2016", "value": "12", "unit": "%", "source": "Fed Reserve historical", "year": 2016, "evergreen": false},
+      {"metric": "Households carrying balance month-to-month", "value": "47", "unit": "%", "source": "American Bankers Assoc", "year": 2025, "evergreen": false},
+      {"metric": "Americans with at least 1 credit card", "value": "82", "unit": "%", "source": "Federal Reserve", "year": 2025, "evergreen": false},
+      {"metric": "Low-income HH credit card delinquency rate", "value": "22", "unit": "%", "source": "NY Fed", "year": 2025, "evergreen": false},
+      {"metric": "Growth in revolving credit (annualized)", "value": "9.7", "unit": "%", "source": "Fed Reserve", "year": 2025, "evergreen": false}
+    ],
+    "debt_student_loans": [
+      {"metric": "Total student loan debt", "value": "1770000000000-1830000000000", "unit": "USD", "source": "Dept of Education", "year": 2025, "evergreen": false},
+      {"metric": "Avg federal student loan debt per borrower", "value": "39375", "unit": "USD", "source": "EducationData.org", "year": 2025, "evergreen": false},
+      {"metric": "Avg total (incl. private) per borrower", "value": "43333", "unit": "USD", "source": "BestColleges", "year": 2025, "evergreen": false},
+      {"metric": "Total federal borrowers", "value": "42500000", "unit": "count", "source": "Dept of Education", "year": 2025, "evergreen": false},
+      {"metric": "Median education debt outstanding", "value": "20000-24999", "unit": "USD", "source": "Federal Reserve SHED", "year": 2024, "evergreen": false},
+      {"metric": "Seriously delinquent (90+ days)", "value": "9.36", "unit": "%", "source": "Dept of Education", "year": 2025, "evergreen": false},
+      {"metric": "% borrowers in income-driven repayment", "value": "45", "unit": "%", "source": "Dept of Education", "year": 2025, "evergreen": false},
+      {"metric": "Student debt as multiple of avg credit card debt", "value": "8.35", "unit": "ratio", "source": "EducationData.org", "year": 2025, "evergreen": false},
+      {"metric": "Monthly payment burden (avg)", "value": "350-500", "unit": "USD", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "% who would change college decision", "value": "60", "unit": "%", "source": "Various surveys", "year": 2025, "evergreen": false}
+    ],
+    "debt_mortgages": [
+      {"metric": "Total mortgage debt outstanding", "value": "13070000000000", "unit": "USD", "source": "NY Fed", "year": 2025, "evergreen": false},
+      {"metric": "Avg mortgage debt per borrower", "value": "268060", "unit": "USD", "source": "Bankrate / Experian", "year": 2025, "evergreen": false},
+      {"metric": "New mortgage originations (9 months 2025)", "value": "1400000000000", "unit": "USD", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "30-year fixed mortgage rate (Dec 2025)", "value": "6.63", "unit": "%", "source": "Freddie Mac", "year": 2025, "evergreen": false},
+      {"metric": "Homeownership rate", "value": "65.7", "unit": "%", "source": "Census Bureau", "year": 2025, "evergreen": false},
+      {"metric": "Homeownership rate peak", "value": "69.2", "unit": "%", "source": "Census Bureau", "year": 2004, "evergreen": false},
+      {"metric": "25-year avg homeownership rate", "value": "66.3", "unit": "%", "source": "Census Bureau", "year": 2025, "evergreen": false},
+      {"metric": "Seriously underwater mortgages", "value": "3.0", "unit": "%", "source": "ATTOM", "year": 2025, "evergreen": false},
+      {"metric": "Underwater mortgages at 2008-09 crisis peak", "value": "23", "unit": "%", "source": "CoreLogic historical", "year": 2009, "evergreen": false},
+      {"metric": "Equity-rich properties (owe <50% of value)", "value": "44.6", "unit": "%", "source": "ATTOM", "year": 2025, "evergreen": false},
+      {"metric": "Average home equity per homeowner", "value": "250000", "unit": "USD", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Mortgages outstanding (number of loans)", "value": "50000000", "unit": "count", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "FHA loan share (lower-income buyers)", "value": "15", "unit": "%", "source": "HUD", "year": 2025, "evergreen": false}
+    ],
+    "homeownership_by_race": [
+      {"metric": "White (non-Hispanic) homeownership rate", "value": "74", "unit": "%", "source": "Census Bureau", "year": 2025, "evergreen": false},
+      {"metric": "Asian homeownership rate", "value": "63", "unit": "%", "source": "Census Bureau", "year": 2025, "evergreen": false},
+      {"metric": "Hispanic homeownership rate", "value": "49", "unit": "%", "source": "Census Bureau", "year": 2025, "evergreen": false},
+      {"metric": "Black homeownership rate", "value": "45", "unit": "%", "source": "Census Bureau", "year": 2025, "evergreen": false}
+    ],
+    "debt_auto_other": [
+      {"metric": "Total auto loan debt", "value": "1670000000000", "unit": "USD", "source": "NY Fed", "year": 2025, "evergreen": false},
+      {"metric": "Avg auto loan balance per borrower", "value": "24000-26000", "unit": "USD", "source": "Experian", "year": 2025, "evergreen": false},
+      {"metric": "HELOC total", "value": "411000000000", "unit": "USD", "source": "NY Fed", "year": 2025, "evergreen": false},
+      {"metric": "HELOC consecutive quarters of growth", "value": "13", "unit": "count", "source": "NY Fed", "year": 2025, "evergreen": false},
+      {"metric": "Medical debt (total)", "value": "220000000000", "unit": "USD", "source": "CFPB", "year": 2024, "evergreen": false},
+      {"metric": "Personal loan avg balance", "value": "11000", "unit": "USD", "source": "LendingTree", "year": 2025, "evergreen": false}
+    ],
+    "debt_payoff_methods": [
+      {"metric": "Interest saved by choosing avalanche over snowball", "value": "4.3", "unit": "%", "source": "Federal Reserve data", "year": 2025, "evergreen": true},
+      {"metric": "Dollar difference in realistic scenarios", "value": "0-1292", "unit": "USD", "source": "LendingTree study", "year": 2025, "evergreen": false},
+      {"metric": "Difference in most common scenario", "value": "29", "unit": "USD", "source": "LendingTree study", "year": 2025, "evergreen": false},
+      {"metric": "Completion rate advantage: snowball vs avalanche", "value": "Snowball higher", "unit": "qualitative", "source": "Behavioral studies", "year": 2025, "evergreen": true},
+      {"metric": "Households that successfully pay off all debt", "value": "20-30", "unit": "%", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Avg time to pay off credit card debt at minimum payment", "value": "15-25", "unit": "years", "source": "Various calculations", "year": 2025, "evergreen": false},
+      {"metric": "Avg time paying $500/month on $10K at 21%", "value": "2.5", "unit": "years", "source": "Calculated", "year": 2025, "evergreen": false}
+    ],
+    "bankruptcy_filing_stats": [
+      {"metric": "Total bankruptcy filings (year ending Dec 2025)", "value": "574314", "unit": "count", "source": "US Courts", "year": 2025, "evergreen": false},
+      {"metric": "Prior year filings", "value": "517308", "unit": "count", "source": "US Courts", "year": 2024, "evergreen": false},
+      {"metric": "YoY increase", "value": "11", "unit": "%", "source": "US Courts", "year": 2025, "evergreen": false},
+      {"metric": "Non-business (consumer) filings", "value": "549577", "unit": "count", "source": "US Courts", "year": 2025, "evergreen": false},
+      {"metric": "Consumer filing increase", "value": "11.2", "unit": "%", "source": "US Courts", "year": 2025, "evergreen": false},
+      {"metric": "Peak bankruptcy filings (historical, pre-BAPCPA)", "value": "2000000", "unit": "count", "source": "US Courts", "year": 2005, "evergreen": false},
+      {"metric": "2019 (pre-pandemic) filings", "value": "774000", "unit": "count", "source": "US Courts", "year": 2019, "evergreen": false},
+      {"metric": "2021 (pandemic low)", "value": "414000", "unit": "count", "source": "US Courts", "year": 2021, "evergreen": false}
+    ],
+    "bankruptcy_demographics": [
+      {"metric": "Adults 65+ share of bankruptcy (2022)", "value": "18.7", "unit": "%", "source": "ABI", "year": 2022, "evergreen": false},
+      {"metric": "Adults 65+ share in 2001", "value": "4.5", "unit": "%", "source": "ABI", "year": 2001, "evergreen": false},
+      {"metric": "Single women as % of bankruptcy filers", "value": "33", "unit": "%", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Median age of bankruptcy filer", "value": "45", "unit": "years", "source": "Various", "year": 2025, "evergreen": false}
+    ],
+    "bankruptcy_chapter_breakdown": [
+      {"metric": "Chapter 7 (Liquidation) % of consumer filings", "value": "70", "unit": "%", "source": "US Courts", "year": 2025, "evergreen": false},
+      {"metric": "Chapter 13 (Repayment plan) % of consumer filings", "value": "28", "unit": "%", "source": "US Courts", "year": 2025, "evergreen": false},
+      {"metric": "Chapter 11 (Reorganization) % of filings", "value": "2", "unit": "%", "source": "US Courts", "year": 2025, "evergreen": false}
+    ],
+    "bankruptcy_post": [
+      {"metric": "Credit score drop after Chapter 7", "value": "100-200", "unit": "count", "source": "Various", "year": 2025, "evergreen": true},
+      {"metric": "Chapter 7 stays on report", "value": "10", "unit": "years", "source": "Various", "year": 2025, "evergreen": true},
+      {"metric": "Chapter 13 stays on report", "value": "7", "unit": "years", "source": "Various", "year": 2025, "evergreen": true},
+      {"metric": "Avg time to rebuild credit post-bankruptcy", "value": "2-5", "unit": "years", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "% who re-file within 8 years", "value": "8", "unit": "%", "source": "Various", "year": 2025, "evergreen": false}
+    ],
+    "budgeting_who_budgets": [
+      {"metric": "Americans who say they budget", "value": "86", "unit": "%", "source": "Ramsey Solutions", "year": 2025, "evergreen": false},
+      {"metric": "Americans who budgeted in 2024", "value": "90", "unit": "%", "source": "Debt.com", "year": 2024, "evergreen": false},
+      {"metric": "Budgeters who say it helped avoid/pay debt", "value": "84", "unit": "%", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Budgeters who still overspend", "value": "84", "unit": "%", "source": "NerdWallet", "year": 2023, "evergreen": false},
+      {"metric": "#1 challenge for budgeters - Rising costs", "value": "74", "unit": "%", "source": "Ramsey Solutions", "year": 2025, "evergreen": false},
+      {"metric": "Americans living paycheck to paycheck", "value": "60", "unit": "%", "source": "LendingClub", "year": 2025, "evergreen": false},
+      {"metric": "Households unable to save anything monthly", "value": "35", "unit": "%", "source": "Federal Reserve SHED", "year": 2025, "evergreen": false}
+    ],
+    "budgeting_50_30_20": [
+      {"metric": "Needs allocation", "value": "50", "unit": "%", "source": "Elizabeth Warren / Amelia Warren Tyagi", "year": 2005, "evergreen": true},
+      {"metric": "Wants allocation", "value": "30", "unit": "%", "source": "Elizabeth Warren / Amelia Warren Tyagi", "year": 2005, "evergreen": true},
+      {"metric": "Savings/debt allocation", "value": "20", "unit": "%", "source": "Elizabeth Warren / Amelia Warren Tyagi", "year": 2005, "evergreen": true},
+      {"metric": "Works best for income above", "value": "50000", "unit": "USD", "source": "Various", "year": 2025, "evergreen": false}
+    ],
+    "consumer_spending": [
+      {"metric": "Housing annual spend", "value": "25436", "unit": "USD", "source": "BLS", "year": 2024, "evergreen": false},
+      {"metric": "Housing % of income", "value": "33", "unit": "%", "source": "BLS", "year": 2024, "evergreen": false},
+      {"metric": "Transportation annual spend", "value": "13174", "unit": "USD", "source": "BLS", "year": 2024, "evergreen": false},
+      {"metric": "Transportation % of income", "value": "17", "unit": "%", "source": "BLS", "year": 2024, "evergreen": false},
+      {"metric": "Food annual spend", "value": "9985", "unit": "USD", "source": "BLS", "year": 2024, "evergreen": false},
+      {"metric": "Food % of income", "value": "13", "unit": "%", "source": "BLS", "year": 2024, "evergreen": false},
+      {"metric": "Healthcare annual spend", "value": "6159", "unit": "USD", "source": "BLS", "year": 2024, "evergreen": false},
+      {"metric": "Entertainment annual spend", "value": "3877", "unit": "USD", "source": "BLS", "year": 2024, "evergreen": false},
+      {"metric": "Education annual spend", "value": "1600", "unit": "USD", "source": "BLS", "year": 2024, "evergreen": false},
+      {"metric": "Personal insurance/pensions annual spend", "value": "8399", "unit": "USD", "source": "BLS", "year": 2024, "evergreen": false},
+      {"metric": "Clothing annual spend", "value": "2028", "unit": "USD", "source": "BLS", "year": 2024, "evergreen": false},
+      {"metric": "Total avg annual expenditures", "value": "77000", "unit": "USD", "source": "BLS", "year": 2024, "evergreen": false}
+    ],
+    "financial_literacy_global": [
+      {"metric": "Denmark financial literacy rate", "value": "71", "unit": "%", "source": "S&P / OECD", "year": 2024, "evergreen": false},
+      {"metric": "Norway financial literacy rate", "value": "71", "unit": "%", "source": "S&P / OECD", "year": 2024, "evergreen": false},
+      {"metric": "Sweden financial literacy rate", "value": "71", "unit": "%", "source": "S&P / OECD", "year": 2024, "evergreen": false},
+      {"metric": "Canada financial literacy rate", "value": "68", "unit": "%", "source": "S&P / OECD", "year": 2024, "evergreen": false},
+      {"metric": "United States financial literacy rate", "value": "48", "unit": "%", "source": "S&P / OECD", "year": 2024, "evergreen": false},
+      {"metric": "Global average financial literacy rate", "value": "33", "unit": "%", "source": "S&P / OECD", "year": 2024, "evergreen": false},
+      {"metric": "South Asia / Africa average", "value": "25", "unit": "%", "source": "S&P / OECD", "year": 2024, "evergreen": false}
+    ],
+    "financial_literacy_usa": [
+      {"metric": "Financially literate adults", "value": "48", "unit": "%", "source": "FINRA / NFCS", "year": 2024, "evergreen": false},
+      {"metric": "Gen Z literacy rate", "value": "36-42", "unit": "%", "source": "Various", "year": 2024, "evergreen": false},
+      {"metric": "Millennial literacy rate", "value": "52", "unit": "%", "source": "Various", "year": 2024, "evergreen": false},
+      {"metric": "Baby Boomer literacy rate", "value": "59-78", "unit": "%", "source": "Various", "year": 2024, "evergreen": false},
+      {"metric": "Men score on literacy questions", "value": "53", "unit": "%", "source": "Survey data", "year": 2024, "evergreen": false},
+      {"metric": "Women score on literacy questions", "value": "43", "unit": "%", "source": "Survey data", "year": 2024, "evergreen": false},
+      {"metric": "Adults who can define compound interest", "value": "57", "unit": "%", "source": "Various", "year": 2024, "evergreen": false},
+      {"metric": "Adults who can calculate simple interest", "value": "35", "unit": "%", "source": "FINRA", "year": 2024, "evergreen": false},
+      {"metric": "Adults who understand inflation impact", "value": "51", "unit": "%", "source": "FINRA", "year": 2024, "evergreen": false},
+      {"metric": "Adults who understand diversification", "value": "46", "unit": "%", "source": "FINRA", "year": 2024, "evergreen": false}
+    ],
+    "wealth_inequality_distribution": [
+      {"metric": "Top 1% wealth share", "value": "31.7", "unit": "%", "source": "Federal Reserve DFA", "year": 2025, "evergreen": false},
+      {"metric": "Top 1% total assets", "value": "55000000000000", "unit": "USD", "source": "Federal Reserve DFA", "year": 2025, "evergreen": false},
+      {"metric": "Top 10% wealth share", "value": "67-68", "unit": "%", "source": "Federal Reserve DFA", "year": 2025, "evergreen": false},
+      {"metric": "Top 20% wealth share", "value": "82", "unit": "%", "source": "Federal Reserve DFA", "year": 2025, "evergreen": false},
+      {"metric": "Bottom 50% wealth share", "value": "3", "unit": "%", "source": "Federal Reserve DFA", "year": 2025, "evergreen": false},
+      {"metric": "Bottom 90% wealth share", "value": "32", "unit": "%", "source": "Federal Reserve DFA", "year": 2025, "evergreen": false}
+    ],
+    "wealth_inequality_historical": [
+      {"metric": "Top 1% wealth share 1989", "value": "24", "unit": "%", "source": "Fed Reserve DFA", "year": 1989, "evergreen": false},
+      {"metric": "Top 1% wealth share 2000", "value": "28", "unit": "%", "source": "Fed Reserve DFA", "year": 2000, "evergreen": false},
+      {"metric": "Top 1% wealth share 2010", "value": "27", "unit": "%", "source": "Fed Reserve DFA", "year": 2010, "evergreen": false},
+      {"metric": "Top 1% wealth share 2020", "value": "29", "unit": "%", "source": "Fed Reserve DFA", "year": 2020, "evergreen": false},
+      {"metric": "Top 1% wealth share 2025 (record)", "value": "31.7", "unit": "%", "source": "Fed Reserve DFA", "year": 2025, "evergreen": false}
+    ],
+    "wealth_inequality_facts": [
+      {"metric": "Gini coefficient (wealth) USA", "value": "0.85", "unit": "ratio", "source": "World Bank / OECD", "year": 2025, "evergreen": false},
+      {"metric": "Gini coefficient (income) USA", "value": "0.49", "unit": "ratio", "source": "Census Bureau", "year": 2025, "evergreen": false},
+      {"metric": "Wealth of top 400 billionaires", "value": "5000000000000", "unit": "USD", "source": "Forbes", "year": 2025, "evergreen": false}
+    ],
+    "income_distribution_thresholds": [
+      {"metric": "Top 1% annual household income", "value": "659060", "unit": "USD", "source": "DQYDJ", "year": 2025, "evergreen": false},
+      {"metric": "Top 5% annual household income", "value": "335575", "unit": "USD", "source": "DQYDJ", "year": 2025, "evergreen": false},
+      {"metric": "Top 10% annual household income", "value": "251036", "unit": "USD", "source": "DQYDJ", "year": 2025, "evergreen": false},
+      {"metric": "Top 25% annual household income", "value": "130000", "unit": "USD", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Median (50th percentile) household income", "value": "83592", "unit": "USD", "source": "Census Bureau", "year": 2024, "evergreen": false},
+      {"metric": "Bottom 25% household income", "value": "42000", "unit": "USD", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Bottom 10% household income", "value": "20000", "unit": "USD", "source": "Various", "year": 2025, "evergreen": false}
+    ],
+    "income_distribution_facts": [
+      {"metric": "Households earning 6 figures", "value": "42.8", "unit": "%", "source": "DQYDJ", "year": 2025, "evergreen": false},
+      {"metric": "Households earning $250K+", "value": "10.1", "unit": "%", "source": "DQYDJ", "year": 2025, "evergreen": false},
+      {"metric": "Households below poverty line", "value": "11", "unit": "%", "source": "Census Bureau", "year": 2024, "evergreen": false},
+      {"metric": "Federal poverty line (family of 4)", "value": "31200", "unit": "USD", "source": "HHS", "year": 2025, "evergreen": false},
+      {"metric": "Real median income change 2023-2024", "value": "3.0", "unit": "%", "source": "Census Bureau", "year": 2024, "evergreen": false}
+    ],
+    "income_by_education": [
+      {"metric": "No high school diploma median earnings", "value": "35000", "unit": "USD", "source": "Census Bureau", "year": 2025, "evergreen": false},
+      {"metric": "High school diploma median earnings", "value": "45000", "unit": "USD", "source": "Census Bureau", "year": 2025, "evergreen": false},
+      {"metric": "Some college median earnings", "value": "52000", "unit": "USD", "source": "Census Bureau", "year": 2025, "evergreen": false},
+      {"metric": "Bachelor's degree median earnings", "value": "80000", "unit": "USD", "source": "Census Bureau", "year": 2025, "evergreen": false},
+      {"metric": "Master's degree median earnings", "value": "95000", "unit": "USD", "source": "Census Bureau", "year": 2025, "evergreen": false},
+      {"metric": "Doctorate median earnings", "value": "115000", "unit": "USD", "source": "Census Bureau", "year": 2025, "evergreen": false},
+      {"metric": "Professional degree (MD/JD) median earnings", "value": "130000", "unit": "USD", "source": "Census Bureau", "year": 2025, "evergreen": false}
+    ],
+    "wealth_mobility_quintile_persistence": [
+      {"metric": "Children born bottom quintile who stay there", "value": "43", "unit": "%", "source": "Pew Economic Mobility Project", "year": 2020, "evergreen": false},
+      {"metric": "Children born top quintile who stay (income)", "value": "41", "unit": "%", "source": "Various", "year": 2020, "evergreen": false},
+      {"metric": "Children born top quintile who stay (wealth)", "value": "47", "unit": "%", "source": "Various", "year": 2020, "evergreen": false},
+      {"metric": "Children from top 20% who fall to bottom", "value": "8", "unit": "%", "source": "Pew", "year": 2020, "evergreen": false},
+      {"metric": "Bottom quintile in 30s still there by late 50s", "value": "49", "unit": "%", "source": "Brookings", "year": 2020, "evergreen": false},
+      {"metric": "Bottom quintile in late 20s who climb higher in 10 yrs", "value": "61", "unit": "%", "source": "Brookings", "year": 2020, "evergreen": false},
+      {"metric": "Probability bottom quintile reaching top quintile", "value": "7-8", "unit": "%", "source": "Multiple studies", "year": 2020, "evergreen": false}
+    ],
+    "wealth_mobility_racial_disparities": [
+      {"metric": "Black % staying in bottom decile (if born there)", "value": "42", "unit": "%", "source": "Chetty et al.", "year": 2018, "evergreen": false},
+      {"metric": "White % staying in bottom decile (if born there)", "value": "17", "unit": "%", "source": "Chetty et al.", "year": 2018, "evergreen": false},
+      {"metric": "Hispanic % staying in bottom decile", "value": "25-30", "unit": "%", "source": "Various", "year": 2018, "evergreen": false},
+      {"metric": "Asian % staying in bottom decile", "value": "15", "unit": "%", "source": "Various", "year": 2018, "evergreen": false}
+    ],
+    "wealth_mobility_general": [
+      {"metric": "Correlation of father-son earnings (USA)", "value": "0.45-0.50", "unit": "ratio", "source": "OECD", "year": 2020, "evergreen": false},
+      {"metric": "Correlation of father-son earnings (UK)", "value": "0.50", "unit": "ratio", "source": "OECD", "year": 2020, "evergreen": false},
+      {"metric": "Correlation of father-son earnings (Canada)", "value": "0.19", "unit": "ratio", "source": "OECD", "year": 2020, "evergreen": false},
+      {"metric": "Correlation of father-son earnings (Denmark, most mobile)", "value": "0.15", "unit": "ratio", "source": "OECD", "year": 2020, "evergreen": false}
+    ],
+    "generational_wealth_transfer": [
+      {"metric": "Total projected to transfer by 2048", "value": "124000000000000", "unit": "USD", "source": "Cerulli Associates", "year": 2025, "evergreen": false},
+      {"metric": "Millennials to inherit (25 years)", "value": "46000000000000", "unit": "USD", "source": "Cerulli", "year": 2025, "evergreen": false},
+      {"metric": "Gen X to inherit (next 10 years)", "value": "14000000000000", "unit": "USD", "source": "Cerulli", "year": 2025, "evergreen": false},
+      {"metric": "Gen Z to inherit total", "value": "15000000000000", "unit": "USD", "source": "Cerulli", "year": 2025, "evergreen": false},
+      {"metric": "Women to receive of $124T", "value": "70", "unit": "%", "source": "CNBC / Cerulli", "year": 2025, "evergreen": false},
+      {"metric": "Billionaire heirs inherited in 2025", "value": "297800000000", "unit": "USD", "source": "UBS", "year": 2025, "evergreen": false},
+      {"metric": "YoY growth in billionaire inheritance", "value": "36", "unit": "%", "source": "UBS", "year": 2025, "evergreen": false}
+    ],
+    "wealth_transfer_concentration": [
+      {"metric": "Avg inheritance for top 10%", "value": "1000000", "unit": "USD", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Avg inheritance for middle 50%", "value": "50000-200000", "unit": "USD", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Avg inheritance for bottom 40%", "value": "15000", "unit": "USD", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "% of Americans who expect inheritance", "value": "21", "unit": "%", "source": "Gallup", "year": 2025, "evergreen": false},
+      {"metric": "% who actually receive one", "value": "17", "unit": "%", "source": "Fed Reserve SCF", "year": 2025, "evergreen": false}
+    ],
+    "fire_core_mathematics": [
+      {"metric": "Standard safe withdrawal rate", "value": "4", "unit": "%", "source": "Bengen 1994 / Trinity Study", "year": 1994, "evergreen": true},
+      {"metric": "Portfolio needed (25x annual expenses)", "value": "25", "unit": "ratio", "source": "4% rule formula", "year": 1994, "evergreen": true},
+      {"metric": "Conservative withdrawal rate for 40-year retirement", "value": "3.25-3.5", "unit": "%", "source": "Updated research", "year": 2024, "evergreen": true},
+      {"metric": "Conservative portfolio multiple", "value": "28-31", "unit": "ratio", "source": "Calculated", "year": 2024, "evergreen": true},
+      {"metric": "At 6% withdrawal: success rate", "value": "75", "unit": "%", "source": "Updated Trinity Study", "year": 2024, "evergreen": true},
+      {"metric": "At 4% withdrawal: success rate (30 years)", "value": "95", "unit": "%", "source": "Trinity Study", "year": 1998, "evergreen": true},
+      {"metric": "At 3.5% withdrawal: success rate (40+ years)", "value": "98", "unit": "%", "source": "Various", "year": 2024, "evergreen": true}
+    ],
+    "fire_savings_rate_to_years": [
+      {"metric": "10% savings rate - years to FIRE", "value": "43", "unit": "years", "source": "Calculated (7% return)", "year": 2025, "evergreen": true},
+      {"metric": "20% savings rate - years to FIRE", "value": "37", "unit": "years", "source": "Calculated (7% return)", "year": 2025, "evergreen": true},
+      {"metric": "30% savings rate - years to FIRE", "value": "28", "unit": "years", "source": "Calculated (7% return)", "year": 2025, "evergreen": true},
+      {"metric": "40% savings rate - years to FIRE", "value": "22", "unit": "years", "source": "Calculated (7% return)", "year": 2025, "evergreen": true},
+      {"metric": "50% savings rate - years to FIRE", "value": "17", "unit": "years", "source": "Calculated (7% return)", "year": 2025, "evergreen": true},
+      {"metric": "60% savings rate - years to FIRE", "value": "12.5", "unit": "years", "source": "Calculated (7% return)", "year": 2025, "evergreen": true},
+      {"metric": "70% savings rate - years to FIRE", "value": "8.5", "unit": "years", "source": "Calculated (7% return)", "year": 2025, "evergreen": true},
+      {"metric": "75% savings rate - years to FIRE", "value": "7-8", "unit": "years", "source": "Calculated (7% return)", "year": 2025, "evergreen": true}
+    ],
+    "fire_variations": [
+      {"metric": "Lean FIRE portfolio target (<$40K/year expenses)", "value": "1000000", "unit": "USD", "source": "FIRE community", "year": 2025, "evergreen": false},
+      {"metric": "Regular FIRE portfolio target", "value": "1000000-2500000", "unit": "USD", "source": "FIRE community", "year": 2025, "evergreen": false},
+      {"metric": "Fat FIRE portfolio target ($100K+/year)", "value": "2500000-5000000", "unit": "USD", "source": "FIRE community", "year": 2025, "evergreen": false},
+      {"metric": "Barista FIRE portfolio target", "value": "500000-1000000", "unit": "USD", "source": "FIRE community", "year": 2025, "evergreen": false}
+    ],
+    "fire_demographics": [
+      {"metric": "Average expected retirement age (all Americans)", "value": "63", "unit": "years", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Gen Z expected retirement age", "value": "54", "unit": "years", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Millennial expected retirement age", "value": "60", "unit": "years", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Gen X expected retirement age", "value": "66", "unit": "years", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Baby Boomer expected retirement age", "value": "71", "unit": "years", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "% of US households who could realistically achieve FIRE", "value": "5", "unit": "%", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Minimum income needed to be FIRE-viable", "value": "100000", "unit": "USD", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Healthcare cost in early retirement (before Medicare)", "value": "15000-25000", "unit": "USD", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "% of early retirees who return to work", "value": "20-25", "unit": "%", "source": "Various estimates", "year": 2025, "evergreen": false}
+    ],
+    "insurance_life": [
+      {"metric": "US life insurance market size", "value": "1340000000000", "unit": "USD", "source": "Statista", "year": 2025, "evergreen": false},
+      {"metric": "Adults who feel underinsured", "value": "40", "unit": "%", "source": "LIMRA", "year": 2025, "evergreen": false},
+      {"metric": "People who overestimate cost of term life", "value": "72", "unit": "%", "source": "LIMRA", "year": 2025, "evergreen": false},
+      {"metric": "Avg face amount of US life policy", "value": "178000", "unit": "USD", "source": "LIMRA", "year": 2025, "evergreen": false},
+      {"metric": "Avg monthly premium (30yo, $500K, 20-year term)", "value": "26", "unit": "USD", "source": "Guardian", "year": 2025, "evergreen": false},
+      {"metric": "Women's premiums vs men", "value": "-30", "unit": "%", "source": "Actuarial", "year": 2025, "evergreen": true},
+      {"metric": "Digital applications growth in 2025", "value": "44", "unit": "%", "source": "Statista", "year": 2025, "evergreen": false},
+      {"metric": "Simplified underwriting (no medical exam) share", "value": "35", "unit": "%", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "New annualized premium growth", "value": "8", "unit": "%", "source": "LIMRA", "year": 2025, "evergreen": false}
+    ],
+    "insurance_health": [
+      {"metric": "Uninsured rate USA", "value": "8.0", "unit": "%", "source": "Census Bureau", "year": 2024, "evergreen": false},
+      {"metric": "Insured population", "value": "92.0", "unit": "%", "source": "Census Bureau", "year": 2024, "evergreen": false},
+      {"metric": "Employer-sponsored coverage", "value": "54", "unit": "%", "source": "Census", "year": 2024, "evergreen": false},
+      {"metric": "Medicaid/CHIP coverage", "value": "22", "unit": "%", "source": "Census", "year": 2024, "evergreen": false},
+      {"metric": "Medicare coverage", "value": "18", "unit": "%", "source": "Census", "year": 2024, "evergreen": false},
+      {"metric": "Avg employer health premium (family)", "value": "23000", "unit": "USD", "source": "KFF", "year": 2025, "evergreen": false},
+      {"metric": "Worker's share of family premium", "value": "6600", "unit": "USD", "source": "KFF", "year": 2025, "evergreen": false},
+      {"metric": "Medical debt leading cause of bankruptcy", "value": "66", "unit": "%", "source": "Various", "year": 2025, "evergreen": false}
+    ],
+    "insurance_disability": [
+      {"metric": "1 in 3 workers disabled 90+ days before 65", "value": "33", "unit": "%", "source": "SSDI / SSA", "year": 2025, "evergreen": true},
+      {"metric": "Workers who underestimate disability chance", "value": "90", "unit": "%", "source": "LIMRA", "year": 2025, "evergreen": false},
+      {"metric": "Avg disability duration", "value": "34", "unit": "months", "source": "SSA", "year": 2025, "evergreen": false},
+      {"metric": "% workers with short-term disability coverage", "value": "40", "unit": "%", "source": "DOL", "year": 2025, "evergreen": false},
+      {"metric": "% workers with long-term disability coverage", "value": "33", "unit": "%", "source": "DOL", "year": 2025, "evergreen": false},
+      {"metric": "Avg LTD benefit as % of salary", "value": "60", "unit": "%", "source": "Industry standard", "year": 2025, "evergreen": true}
+    ],
+    "insurance_umbrella": [
+      {"metric": "% of Americans with umbrella insurance", "value": "20", "unit": "%", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Standard liability limit (home/auto)", "value": "300000-500000", "unit": "USD", "source": "Industry", "year": 2025, "evergreen": false},
+      {"metric": "Avg personal injury verdict (California)", "value": "1600000", "unit": "USD", "source": "Schneiderman Insurance", "year": 2025, "evergreen": false},
+      {"metric": "Avg legal settlement nationally", "value": "2300000", "unit": "USD", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Cost: $1M umbrella policy", "value": "150-300", "unit": "USD", "source": "Industry", "year": 2025, "evergreen": false},
+      {"metric": "Coverage gap exposure (% of families)", "value": "80", "unit": "%", "source": "Calculated", "year": 2025, "evergreen": false}
+    ],
+    "insurance_property_casualty": [
+      {"metric": "Homeowners with homeowner's insurance", "value": "85", "unit": "%", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Renters with renter's insurance", "value": "57", "unit": "%", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Renter insurance coverage gap", "value": "43", "unit": "%", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Avg homeowner's claim", "value": "15000", "unit": "USD", "source": "ISO", "year": 2025, "evergreen": false},
+      {"metric": "Claim approval rate (home)", "value": "78", "unit": "%", "source": "Various", "year": 2025, "evergreen": false}
+    ],
+    "taxes_federal_brackets_2025": [
+      {"metric": "10% bracket - Single filer", "value": "0-11925", "unit": "USD", "source": "IRS", "year": 2025, "evergreen": false},
+      {"metric": "12% bracket - Single filer", "value": "11926-48475", "unit": "USD", "source": "IRS", "year": 2025, "evergreen": false},
+      {"metric": "22% bracket - Single filer", "value": "48476-103350", "unit": "USD", "source": "IRS", "year": 2025, "evergreen": false},
+      {"metric": "24% bracket - Single filer", "value": "103351-197300", "unit": "USD", "source": "IRS", "year": 2025, "evergreen": false},
+      {"metric": "32% bracket - Single filer", "value": "197301-250525", "unit": "USD", "source": "IRS", "year": 2025, "evergreen": false},
+      {"metric": "35% bracket - Single filer", "value": "250526-626350", "unit": "USD", "source": "IRS", "year": 2025, "evergreen": false},
+      {"metric": "37% bracket - Single filer", "value": "626351+", "unit": "USD", "source": "IRS", "year": 2025, "evergreen": false}
+    ],
+    "taxes_effective_rates": [
+      {"metric": "Bottom 50% avg effective federal tax rate", "value": "3.7", "unit": "%", "source": "Tax Foundation", "year": 2022, "evergreen": false},
+      {"metric": "Top 50% avg effective rate", "value": "14", "unit": "%", "source": "Tax Foundation", "year": 2022, "evergreen": false},
+      {"metric": "Top 25% avg effective rate", "value": "17", "unit": "%", "source": "Tax Foundation", "year": 2022, "evergreen": false},
+      {"metric": "Top 10% avg effective rate", "value": "20", "unit": "%", "source": "Tax Foundation", "year": 2022, "evergreen": false},
+      {"metric": "Top 5% avg effective rate", "value": "22", "unit": "%", "source": "Tax Foundation", "year": 2022, "evergreen": false},
+      {"metric": "Top 1% avg effective rate", "value": "23.1", "unit": "%", "source": "Tax Foundation", "year": 2022, "evergreen": false},
+      {"metric": "Billionaires (incl unrealized gains) effective rate", "value": "8", "unit": "%", "source": "ProPublica analysis", "year": 2022, "evergreen": false}
+    ],
+    "taxes_share_paid": [
+      {"metric": "Top 1% share of all federal income tax", "value": "40", "unit": "%", "source": "Tax Foundation", "year": 2022, "evergreen": false},
+      {"metric": "Top 5% share", "value": "62", "unit": "%", "source": "Tax Foundation", "year": 2022, "evergreen": false},
+      {"metric": "Top 10% share", "value": "73", "unit": "%", "source": "Tax Foundation", "year": 2022, "evergreen": false},
+      {"metric": "Top 50% share", "value": "97", "unit": "%", "source": "Tax Foundation", "year": 2022, "evergreen": false},
+      {"metric": "Bottom 50% share", "value": "3", "unit": "%", "source": "Tax Foundation", "year": 2022, "evergreen": false}
+    ],
+    "taxes_audit_rates": [
+      {"metric": "All taxpayers avg audit rate", "value": "0.29", "unit": "%", "source": "GAO / IRS", "year": 2024, "evergreen": false},
+      {"metric": "EITC claimants audit rate", "value": "0.78", "unit": "%", "source": "GAO", "year": 2024, "evergreen": false},
+      {"metric": "$500,000-$1 million audit rate", "value": "0.6", "unit": "%", "source": "IRS", "year": 2024, "evergreen": false},
+      {"metric": "$1M-$5M audit rate", "value": "1.1", "unit": "%", "source": "IRS", "year": 2024, "evergreen": false},
+      {"metric": "$5M-$10M audit rate", "value": "3.1", "unit": "%", "source": "IRS", "year": 2024, "evergreen": false},
+      {"metric": "$10M+ audit rate", "value": "4.0", "unit": "%", "source": "IRS", "year": 2024, "evergreen": false}
+    ],
+    "taxes_optimization": [
+      {"metric": "Maxing 401(k) ($23,500 limit 2025) savings", "value": "5170-8695", "unit": "USD", "source": "IRS", "year": 2025, "evergreen": false},
+      {"metric": "HSA contribution ($4,300 individual) savings", "value": "946-1591", "unit": "USD", "source": "IRS", "year": 2025, "evergreen": false},
+      {"metric": "Traditional IRA ($7,000 limit) savings", "value": "1540-2590", "unit": "USD", "source": "IRS", "year": 2025, "evergreen": false},
+      {"metric": "Capital gains rate (long term)", "value": "0-20", "unit": "%", "source": "IRS", "year": 2025, "evergreen": false},
+      {"metric": "Home sale exclusion (single/married)", "value": "250000-500000", "unit": "USD", "source": "IRS", "year": 2025, "evergreen": false}
+    ],
+    "credit_scores_distribution": [
+      {"metric": "Exceptional (800-850) % of Americans", "value": "24", "unit": "%", "source": "FICO", "year": 2025, "evergreen": false},
+      {"metric": "Very Good (750-799) % of Americans", "value": "24", "unit": "%", "source": "FICO", "year": 2025, "evergreen": false},
+      {"metric": "Good (670-749) % of Americans", "value": "21", "unit": "%", "source": "FICO", "year": 2025, "evergreen": false},
+      {"metric": "Fair (580-669) % of Americans", "value": "19", "unit": "%", "source": "FICO", "year": 2025, "evergreen": false},
+      {"metric": "Poor (300-579) % of Americans", "value": "12", "unit": "%", "source": "FICO", "year": 2025, "evergreen": false}
+    ],
+    "credit_scores_averages": [
+      {"metric": "National average FICO score", "value": "715", "unit": "count", "source": "FICO", "year": 2025, "evergreen": false},
+      {"metric": "Previous year average", "value": "717", "unit": "count", "source": "FICO", "year": 2024, "evergreen": false}
+    ],
+    "credit_scores_by_age": [
+      {"metric": "Gen Z (18-29) avg credit score", "value": "681", "unit": "count", "source": "Experian", "year": 2025, "evergreen": false},
+      {"metric": "Millennials (30-44) avg credit score", "value": "690", "unit": "count", "source": "Experian", "year": 2025, "evergreen": false},
+      {"metric": "Gen X (45-59) avg credit score", "value": "709", "unit": "count", "source": "Experian", "year": 2025, "evergreen": false},
+      {"metric": "Baby Boomers (60-74) avg credit score", "value": "742", "unit": "count", "source": "Experian", "year": 2025, "evergreen": false},
+      {"metric": "Silent Generation (75+) avg credit score", "value": "760", "unit": "count", "source": "Experian", "year": 2025, "evergreen": false}
+    ],
+    "credit_scores_by_income": [
+      {"metric": "Under $35,000 avg FICO", "value": "658", "unit": "count", "source": "Urban Institute / Various", "year": 2025, "evergreen": false},
+      {"metric": "$35,000-$75,000 avg FICO", "value": "685", "unit": "count", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "$75,000-$150,000 avg FICO", "value": "720", "unit": "count", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "$150,000+ avg FICO", "value": "748", "unit": "count", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Gap between highest and lowest income", "value": "90", "unit": "count", "source": "Various", "year": 2025, "evergreen": false}
+    ],
+    "credit_scores_by_race": [
+      {"metric": "Majority White median credit score", "value": "727", "unit": "count", "source": "Urban Institute", "year": 2025, "evergreen": false},
+      {"metric": "Majority Hispanic median credit score", "value": "667", "unit": "count", "source": "Urban Institute", "year": 2025, "evergreen": false},
+      {"metric": "Majority Black median credit score", "value": "627", "unit": "count", "source": "Urban Institute", "year": 2025, "evergreen": false},
+      {"metric": "Majority Native American median credit score", "value": "612", "unit": "count", "source": "Urban Institute", "year": 2025, "evergreen": false},
+      {"metric": "Gap: White vs Black", "value": "100", "unit": "count", "source": "Urban Institute", "year": 2025, "evergreen": false}
+    ],
+    "credit_scores_impact": [
+      {"metric": "$300K 30yr mortgage savings (760-850 vs 620-639)", "value": "91757", "unit": "USD", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Monthly mortgage savings (avg)", "value": "173-244", "unit": "USD", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Auto loan total savings (excellent vs poor credit)", "value": "5000-10000", "unit": "USD", "source": "Various", "year": 2025, "evergreen": false}
+    ],
+    "credit_scores_improvement": [
+      {"metric": "Avg time to raise score 50-100 pts", "value": "3-12", "unit": "months", "source": "Various", "year": 2025, "evergreen": false},
+      {"metric": "Avg time to recover from late payment", "value": "7", "unit": "years", "source": "Various", "year": 2025, "evergreen": true},
+      {"metric": "Utilization accounts for FICO score", "value": "30", "unit": "%", "source": "FICO", "year": 2025, "evergreen": true},
+      {"metric": "Payment history accounts for FICO score", "value": "35", "unit": "%", "source": "FICO", "year": 2025, "evergreen": true},
+      {"metric": "Credit age accounts for FICO score", "value": "15", "unit": "%", "source": "FICO", "year": 2025, "evergreen": true},
+      {"metric": "Credit mix accounts for FICO score", "value": "10", "unit": "%", "source": "FICO", "year": 2025, "evergreen": true},
+      {"metric": "New credit inquiries accounts for FICO score", "value": "10", "unit": "%", "source": "FICO", "year": 2025, "evergreen": true},
+      {"metric": "Paying off $10K in CC debt score impact", "value": "20-100", "unit": "count", "source": "Various", "year": 2025, "evergreen": false}
+    ]
+  }
+}

@@ -1,0 +1,1266 @@
+{
+  "_meta": {
+    "category": "Business Archetypes — Batch 5",
+    "created": "2026-03-27",
+    "total_archetypes": 5,
+    "description": "High-resolution micro-step funnels for business scenarios"
+  },
+  "lifestyle_business_context": {
+    "lifestyle_businesses_us_millions": 20,
+    "lifestyle_business_avg_revenue_usd": 100000,
+    "lifestyle_business_avg_profit_margin_pct": 30,
+    "lifestyle_business_owner_avg_hours_per_week": 30,
+    "lifestyle_business_location_independent_pct": 35,
+    "digital_nomad_businesses_millions": 5,
+    "digital_nomad_avg_income_usd": 60000,
+    "digital_nomad_countries_popular": "Thailand, Portugal, Mexico, Colombia, Bali",
+    "digital_nomad_cost_savings_vs_us_pct": 50,
+    "one_person_business_over_1m_revenue_count": 50000,
+    "one_person_business_avg_revenue_usd": 35000,
+    "solo_consultant_over_100k_pct": 25,
+    "passive_income_business_avg_monthly_usd": 2000,
+    "passive_income_time_to_build_months": 18,
+    "passive_income_maintenance_hours_weekly": 5,
+    "side_hustle_to_main_hustle_timeline_months": 18,
+    "work_life_balance_priority_entrepreneurs_pct": 65,
+    "entrepreneur_divorce_rate_vs_employees_pct": "+10",
+    "entrepreneur_mental_health_issues_pct": 72,
+    "entrepreneur_loneliness_rate_pct": 40,
+    "entrepreneur_financial_stress_pct": 55,
+    "entrepreneur_exercise_regularly_pct": 45,
+    "entrepreneur_sleep_under_7h_pct": 50,
+    "entrepreneur_meditation_adoption_pct": 20,
+    "entrepreneur_therapy_usage_pct": 15,
+    "entrepreneur_community_membership_pct": 30,
+    "entrepreneur_mastermind_group_pct": 10,
+    "entrepreneur_coach_usage_pct": 12,
+    "entrepreneur_reading_books_per_year": 12,
+    "entrepreneur_podcast_listening_weekly_hours": 5,
+    "entrepreneur_networking_events_monthly": 2,
+    "entrepreneur_conference_attendance_annual": 2,
+    "entrepreneur_online_course_spending_annual_usd": 500,
+    "entrepreneur_tool_software_spending_monthly_usd": 200,
+    "entrepreneur_insurance_monthly_avg_usd": 400,
+    "entrepreneur_accountant_cost_annual_usd": 2000,
+    "entrepreneur_legal_cost_annual_usd": 3000,
+    "entrepreneur_marketing_budget_monthly_usd": 500,
+    "entrepreneur_first_profitable_year_avg": 2,
+    "entrepreneur_second_business_success_rate_vs_first_pct": "+15",
+    "entrepreneur_serial_success_rate_pct": 30,
+    "entrepreneur_exit_strategy_planned_pct": 25,
+    "entrepreneur_retirement_plan_pct": 40,
+    "wealth_building_benchmarks": {
+      "millionaires_us_total_millions": 22,
+      "millionaires_self_made_pct": 79,
+      "millionaire_avg_age_first_million": 49,
+      "millionaire_avg_income_sources": 7,
+      "millionaire_avg_savings_rate_pct": 20,
+      "millionaire_invest_in_stocks_pct": 80,
+      "millionaire_invest_in_real_estate_pct": 70,
+      "millionaire_invest_in_business_pct": 60,
+      "millionaire_avg_working_hours_per_week": 50,
+      "millionaire_live_below_means_pct": 75,
+      "millionaire_drive_used_cars_pct": 37,
+      "millionaire_never_inherited_pct": 85,
+      "billionaires_us_total": 735,
+      "billionaires_global_total": 2780,
+      "billionaire_self_made_pct": 72,
+      "billionaire_avg_age": 66,
+      "billionaire_tech_industry_pct": 35,
+      "billionaire_finance_industry_pct": 20,
+      "billionaire_real_estate_pct": 10,
+      "billionaire_manufacturing_pct": 8,
+      "billionaire_inherited_pct": 28,
+      "median_us_household_net_worth_usd": 193000,
+      "avg_us_household_net_worth_usd": 1060000,
+      "top_1pct_net_worth_threshold_usd": 13000000,
+      "top_10pct_net_worth_threshold_usd": 1900000,
+      "top_50pct_net_worth_threshold_usd": 193000,
+      "wealth_inequality_top_1pct_share_us_pct": 31,
+      "wealth_inequality_top_10pct_share_us_pct": 67,
+      "wealth_inequality_bottom_50pct_share_us_pct": 2.5,
+      "financial_independence_retire_early_fire_movement_followers_millions": 3,
+      "fire_savings_rate_target_pct": 50,
+      "fire_withdrawal_rate_pct": 4,
+      "fire_nest_egg_multiple_annual_expenses": 25,
+      "coast_fire_contributors_pct": 15,
+      "barista_fire_contributors_pct": 10,
+      "lean_fire_target_usd": 750000,
+      "fat_fire_target_usd": 5000000,
+      "avg_retirement_age_us": 62,
+      "avg_years_in_retirement": 20,
+      "retirement_savings_gap_us_usd_trillions": 7
+    }
+  },
+  "archetypes": {
+    "side_hustle_to_fulltime": {
+      "name": "Side Hustle to Full-Time",
+      "description": "Transition from day job + side hustle to full-time entrepreneur",
+      "entry_point": "Person with stable employment starts earning on the side",
+      "stages": [
+        {
+          "id": "have_job",
+          "label": "Have full-time job",
+          "prob": 100,
+          "time": "baseline",
+          "source": "BLS 2024"
+        },
+        {
+          "id": "start_side_hustle",
+          "label": "Start side hustle evenings/weekends",
+          "prob": 39,
+          "time": "0-3 months",
+          "source": "Bankrate Side Hustle Survey 2024"
+        },
+        {
+          "id": "first_100",
+          "label": "Earn first $100",
+          "prob": 72,
+          "time": "1-4 weeks",
+          "source": "Zapier Side Hustle Report 2024"
+        },
+        {
+          "id": "reach_500_mo",
+          "label": "Reach $500/month",
+          "prob": 53,
+          "time": "2-6 months",
+          "source": "Bankrate 2024 — 53% earn $500+/mo"
+        },
+        {
+          "id": "tell_partner",
+          "label": "Tell spouse/partner about the plan",
+          "prob": 85,
+          "time": "1-2 weeks",
+          "source": "Fidelity Couples & Money 2023 — 43% fight about money"
+        },
+        {
+          "id": "reach_1k_mo",
+          "label": "Reach $1,000/month",
+          "prob": 36,
+          "time": "3-9 months",
+          "source": "Bankrate 2024 — 36% earn $1K+"
+        },
+        {
+          "id": "runway_calc",
+          "label": "Calculate financial runway (6+ months expenses)",
+          "prob": 60,
+          "time": "1-2 weeks",
+          "source": "SCORE Small Business 2023"
+        },
+        {
+          "id": "reach_2k_mo",
+          "label": "Reach $2,000/month consistently",
+          "prob": 55,
+          "time": "4-12 months",
+          "source": "Zapier 2024 — top 20% earners"
+        },
+        {
+          "id": "half_salary",
+          "label": "Side income equals 50% of salary",
+          "prob": 45,
+          "time": "6-18 months",
+          "source": "Upwork Freelance Forward 2024"
+        },
+        {
+          "id": "transition_plan",
+          "label": "Prepare formal transition plan",
+          "prob": 70,
+          "time": "2-4 weeks",
+          "source": "SCORE 2023 — 30% quit without a plan"
+        },
+        {
+          "id": "reach_3k_mo",
+          "label": "Reach $3,000/month",
+          "prob": 50,
+          "time": "8-18 months",
+          "source": "Zapier 2024"
+        },
+        {
+          "id": "give_notice",
+          "label": "Give notice at day job",
+          "prob": 12,
+          "time": "1-2 weeks",
+          "source": "Zapier 2024 — 12% quit within 2 years"
+        },
+        {
+          "id": "first_month_ft",
+          "label": "First month full-time on own business",
+          "prob": 90,
+          "time": "1 month",
+          "source": "baseline — most complete the month"
+        },
+        {
+          "id": "benefits_shock",
+          "label": "Absorb loss of benefits/insurance",
+          "prob": 75,
+          "time": "1-3 months",
+          "source": "KFF 2024 — marketplace plan avg $477/mo individual"
+        },
+        {
+          "id": "income_dip",
+          "label": "Survive first income dip",
+          "prob": 65,
+          "time": "2-6 months",
+          "source": "MBO Partners 2024 — 35% report income instability"
+        },
+        {
+          "id": "recover_momentum",
+          "label": "Recover and stabilize revenue",
+          "prob": 60,
+          "time": "3-6 months",
+          "source": "Guidant Financial 2024"
+        },
+        {
+          "id": "match_salary",
+          "label": "Reach previous salary level",
+          "prob": 50,
+          "time": "6-18 months",
+          "source": "MBO Partners 2024 — 50% match prior income by year 2"
+        },
+        {
+          "id": "exceed_salary",
+          "label": "Exceed previous salary",
+          "prob": 35,
+          "time": "12-36 months",
+          "source": "MBO Partners 2024 — 35% earn more than employment"
+        },
+        {
+          "id": "hire_first",
+          "label": "Hire first help (VA, contractor, employee)",
+          "prob": 40,
+          "time": "6-24 months",
+          "source": "Guidant Financial Small Biz Trends 2024"
+        },
+        {
+          "id": "never_look_back",
+          "label": "Sustained — never return to employment",
+          "prob": 60,
+          "time": "2-5 years",
+          "source": "Zapier 2024 — 40% return to employment within 18 months"
+        }
+      ],
+      "bottlenecks": [
+        "reach_1k_mo",
+        "give_notice",
+        "income_dip",
+        "match_salary"
+      ],
+      "end_to_end_conversion": "2.8%",
+      "industry_data": {
+        "us_side_hustlers_millions": 50,
+        "side_hustle_participation_rate_pct": 39,
+        "side_hustle_avg_monthly_income_usd": 810,
+        "side_hustle_median_monthly_income_usd": 500,
+        "side_hustle_avg_hours_per_week": 12,
+        "side_hustle_motivation_pay_bills_pct": 44,
+        "side_hustle_motivation_savings_pct": 32,
+        "side_hustle_motivation_passion_pct": 24,
+        "side_hustle_with_debt_pct": 62,
+        "side_hustle_to_fulltime_transition_pct": 12,
+        "side_hustle_financial_runway_needed_months": 6,
+        "health_insurance_marketplace_avg_monthly_usd": 477,
+        "self_employment_tax_surprise_pct": 50,
+        "income_instability_first_year_fulltime_pct": 65,
+        "return_to_employment_within_18mo_pct": 40,
+        "match_prior_salary_within_2yr_pct": 50,
+        "exceed_prior_salary_within_2yr_pct": 35,
+        "side_hustle_types_freelancing_pct": 22,
+        "side_hustle_types_selling_online_pct": 18,
+        "side_hustle_types_rideshare_pct": 15,
+        "side_hustle_types_content_creation_pct": 12,
+        "side_hustle_types_tutoring_pct": 8,
+        "side_hustle_types_pet_services_pct": 7,
+        "side_hustle_types_reselling_pct": 6,
+        "side_hustle_burnout_rate_pct": 38,
+        "side_hustle_relationship_strain_pct": 25,
+        "side_hustle_sleep_less_than_7h_pct": 45,
+        "spouse_support_importance_score": 9,
+        "side_hustle_tax_deduction_avg_usd": 5000,
+        "side_hustle_startup_cost_avg_usd": 500,
+        "side_hustle_tools_software_monthly_usd": 50,
+        "side_hustle_grows_to_agency_pct": 5,
+        "side_hustle_multiple_streams_pct": 30,
+        "side_hustle_automation_adoption_pct": 20
+      },
+      "sources": [
+        "Bankrate Side Hustle Survey 2024",
+        "Zapier Side Hustle Report 2024",
+        "Upwork Freelance Forward 2024",
+        "MBO Partners State of Independence 2024",
+        "KFF Employer Health Benefits 2024",
+        "SCORE Small Business Statistics 2023",
+        "Guidant Financial Small Business Trends 2024",
+        "Fidelity Couples & Money 2023",
+        "BLS Business Employment Dynamics 2024"
+      ],
+      "transition_economics": {
+        "avg_savings_needed_before_quitting_usd": 15000,
+        "emergency_fund_months_recommended": 6,
+        "cobra_health_insurance_monthly_usd": 600,
+        "aca_marketplace_plan_avg_usd": 477,
+        "self_employment_tax_rate_pct": 15.3,
+        "quarterly_estimated_tax_first_year_shock_pct": 50,
+        "business_insurance_monthly_avg_usd": 200,
+        "liability_insurance_monthly_usd": 50,
+        "home_office_setup_cost_usd": 2000,
+        "business_registration_cost_avg_usd": 200,
+        "domain_hosting_annual_usd": 200,
+        "accounting_software_monthly_usd": 30,
+        "business_credit_card_annual_fee_usd": 95,
+        "coworking_monthly_usd": 200,
+        "professional_development_annual_usd": 1000,
+        "networking_events_annual_usd": 500,
+        "income_volatility_first_year_monthly_variation_pct": 40,
+        "income_lowest_month_vs_avg_pct": -60,
+        "income_highest_month_vs_avg_pct": 100,
+        "avg_months_to_replace_salary": 12,
+        "partners_supportive_of_transition_pct": 65,
+        "partners_opposed_to_transition_pct": 15,
+        "divorce_risk_increase_during_transition_pct": 10,
+        "mental_health_impact_anxiety_increase_pct": 30,
+        "mental_health_freedom_satisfaction_increase_pct": 45,
+        "regret_returning_to_employment_pct": 25,
+        "regret_staying_in_employment_pct": 40,
+        "second_attempt_success_rate_vs_first_pct": "+20",
+        "mentor_having_one_success_rate_lift_pct": 30,
+        "community_membership_success_rate_lift_pct": 15
+      },
+      "industry_benchmarks": {
+        "freelance_writing_avg_monthly_usd": 2500,
+        "web_development_side_hustle_avg_monthly_usd": 3000,
+        "graphic_design_side_hustle_avg_monthly_usd": 1500,
+        "photography_side_hustle_avg_monthly_usd": 1200,
+        "bookkeeping_side_hustle_avg_monthly_usd": 2000,
+        "social_media_management_avg_monthly_usd": 1500,
+        "virtual_assistant_avg_monthly_usd": 1000,
+        "consulting_side_hustle_avg_monthly_usd": 3500,
+        "coaching_side_hustle_avg_monthly_usd": 2000,
+        "etsy_shop_avg_monthly_usd": 800,
+        "amazon_fba_side_hustle_avg_monthly_usd": 1500,
+        "youtube_side_income_avg_monthly_usd": 500,
+        "blogging_side_income_avg_monthly_usd": 300,
+        "podcast_side_income_avg_monthly_usd": 200,
+        "newsletter_side_income_avg_monthly_usd": 400,
+        "affiliate_marketing_side_income_avg_monthly_usd": 500,
+        "dropshipping_side_income_avg_monthly_usd": 800,
+        "real_estate_side_income_avg_monthly_usd": 1000,
+        "crypto_staking_side_income_avg_monthly_usd": 300,
+        "dividend_investing_side_income_avg_monthly_usd": 200,
+        "pet_sitting_dog_walking_avg_monthly_usd": 600,
+        "house_cleaning_avg_monthly_usd": 1200,
+        "handyman_avg_monthly_usd": 2000,
+        "lawn_care_avg_monthly_usd": 1500,
+        "pressure_washing_avg_monthly_usd": 1800,
+        "personal_chef_avg_monthly_usd": 1500,
+        "event_dj_avg_monthly_usd": 1000,
+        "music_teaching_avg_monthly_usd": 800,
+        "car_detailing_avg_monthly_usd": 1200,
+        "junk_removal_avg_monthly_usd": 2000
+      }
+    },
+    "flipping_reselling": {
+      "name": "Flipping & Reselling",
+      "description": "Buy low sell high — thrift stores, retail arbitrage, eBay, Poshmark, Mercari",
+      "entry_point": "Person discovers reselling through social media or personal experience",
+      "stages": [
+        {
+          "id": "learn_reselling",
+          "label": "Learn about reselling (YouTube, Reddit, TikTok)",
+          "prob": 100,
+          "time": "baseline",
+          "source": "estimated — low barrier to discovery"
+        },
+        {
+          "id": "first_thrift",
+          "label": "Visit first thrift store or garage sale",
+          "prob": 40,
+          "time": "1-2 weeks",
+          "source": "ThredUp Resale Report 2024 — 40% of consumers have thrifted"
+        },
+        {
+          "id": "buy_first_50",
+          "label": "Buy first $50 of inventory",
+          "prob": 70,
+          "time": "1 day",
+          "source": "estimated — low cost barrier"
+        },
+        {
+          "id": "list_items",
+          "label": "List items on eBay/Poshmark/Mercari",
+          "prob": 65,
+          "time": "1-3 days",
+          "source": "OfferUp 2023 — 35% never list after buying"
+        },
+        {
+          "id": "wait_first_sale",
+          "label": "Wait for first sale (patience test)",
+          "prob": 55,
+          "time": "1-4 weeks",
+          "source": "eBay Seller Hub 2024 — avg 2 weeks for first sale"
+        },
+        {
+          "id": "first_sale",
+          "label": "First sale!",
+          "prob": 80,
+          "time": "1-6 weeks",
+          "source": "Mercari Seller Survey 2023 — 80% sell within 30 days if priced right"
+        },
+        {
+          "id": "learn_pricing",
+          "label": "Learn pricing, margins, and what sells",
+          "prob": 75,
+          "time": "2-8 weeks",
+          "source": "estimated — trial and error"
+        },
+        {
+          "id": "invest_200",
+          "label": "Invest $200 in inventory",
+          "prob": 60,
+          "time": "1-2 months",
+          "source": "estimated — requires confidence from first sales"
+        },
+        {
+          "id": "sell_100_worth",
+          "label": "Sell $100 worth of goods",
+          "prob": 70,
+          "time": "2-6 weeks",
+          "source": "eBay avg sell-through rate 30-40%"
+        },
+        {
+          "id": "reinvest",
+          "label": "Reinvest profits into more inventory",
+          "prob": 55,
+          "time": "ongoing",
+          "source": "estimated — 45% take profits and stop"
+        },
+        {
+          "id": "sourcing_routine",
+          "label": "Develop regular sourcing routine",
+          "prob": 50,
+          "time": "2-4 months",
+          "source": "FlipperTools Survey 2023"
+        },
+        {
+          "id": "reach_500_rev",
+          "label": "Reach $500/month revenue",
+          "prob": 35,
+          "time": "3-8 months",
+          "source": "OfferUp 2023 — median casual reseller under $500/mo"
+        },
+        {
+          "id": "time_vs_profit",
+          "label": "Calculate real hourly rate (reality check)",
+          "prob": 70,
+          "time": "1 week",
+          "source": "estimated — avg $8-15/hr for casual resellers"
+        },
+        {
+          "id": "reach_1k_rev",
+          "label": "Reach $1,000/month revenue",
+          "prob": 45,
+          "time": "6-12 months",
+          "source": "Poshmark Seller Stats 2024 — top 15% of active sellers"
+        },
+        {
+          "id": "deal_returns",
+          "label": "Handle returns, scams, and problem buyers",
+          "prob": 85,
+          "time": "ongoing",
+          "source": "eBay 2024 — 8-12% return rate, INAD fraud common"
+        },
+        {
+          "id": "reach_2k_rev",
+          "label": "Reach $2,000/month revenue",
+          "prob": 35,
+          "time": "8-18 months",
+          "source": "ThredUp 2024 — top 10% of resellers"
+        },
+        {
+          "id": "hire_automate",
+          "label": "Hire helper or automate (crosslisting tools)",
+          "prob": 25,
+          "time": "12-24 months",
+          "source": "List Perfectly 2023 — 25% of power sellers use automation"
+        },
+        {
+          "id": "reach_5k_rev",
+          "label": "Reach $5,000/month revenue",
+          "prob": 15,
+          "time": "18-36 months",
+          "source": "eBay 2024 — top 3-5% of sellers"
+        },
+        {
+          "id": "own_store",
+          "label": "Open own store or warehouse",
+          "prob": 8,
+          "time": "2-5 years",
+          "source": "NARTS 2023 — 8% of resellers go full retail"
+        }
+      ],
+      "bottlenecks": [
+        "wait_first_sale",
+        "reinvest",
+        "reach_500_rev",
+        "reach_2k_rev"
+      ],
+      "end_to_end_conversion": "1.2%",
+      "industry_data": {
+        "resale_market_size_usd_billions": 53,
+        "resale_market_growth_cagr_pct": 15,
+        "resale_projected_2028_usd_billions": 82,
+        "thredUp_users_millions": 15,
+        "poshmark_sellers_active_millions": 8,
+        "mercari_sellers_active_millions": 3,
+        "ebay_active_sellers_millions": 18,
+        "depop_users_millions": 30,
+        "avg_reseller_hourly_rate_usd": 12,
+        "top_reseller_hourly_rate_usd": 50,
+        "thrift_store_avg_item_cost_usd": 5,
+        "garage_sale_avg_item_cost_usd": 2,
+        "ebay_sell_through_rate_pct": 35,
+        "poshmark_sell_through_rate_pct": 30,
+        "mercari_sell_through_rate_pct": 40,
+        "ebay_seller_fees_pct": 13,
+        "poshmark_seller_fees_pct": 20,
+        "mercari_seller_fees_pct": 10,
+        "avg_profit_margin_reselling_pct": 50,
+        "return_rate_reselling_pct": 8,
+        "shipping_cost_avg_per_item_usd": 5,
+        "photography_time_per_item_minutes": 10,
+        "listing_time_per_item_minutes": 15,
+        "shipping_time_per_item_minutes": 10,
+        "sourcing_time_per_week_hours": 5,
+        "inventory_holding_cost_monthly_pct": 2,
+        "crosslisting_tools_adoption_pct": 25,
+        "crosslisting_revenue_boost_pct": 30,
+        "top_categories_clothing_pct": 40,
+        "top_categories_electronics_pct": 20,
+        "top_categories_books_pct": 10,
+        "top_categories_collectibles_pct": 10,
+        "top_categories_home_goods_pct": 10,
+        "retail_arbitrage_profitability_pct": 30,
+        "online_arbitrage_profitability_pct": 25,
+        "wholesale_reselling_profitability_pct": 20,
+        "sustainability_motivation_pct": 35,
+        "resale_industry_jobs_created": 500000,
+        "consignment_store_avg_revenue_usd": 200000,
+        "consignment_split_typical": "60/40 seller/store",
+        "reseller_with_storage_unit_pct": 15,
+        "reseller_tax_compliance_pct": 30
+      },
+      "sources": [
+        "ThredUp Resale Report 2024",
+        "eBay Seller Hub Analytics 2024",
+        "Mercari Seller Survey 2023",
+        "OfferUp Marketplace Report 2023",
+        "Poshmark Seller Statistics 2024",
+        "List Perfectly Power Seller Report 2023",
+        "NARTS (National Association of Resale Professionals) 2023",
+        "FlipperTools Reseller Survey 2023"
+      ],
+      "niche_profitability": {
+        "vintage_clothing_avg_roi_pct": 200,
+        "designer_clothing_avg_roi_pct": 150,
+        "sneakers_avg_roi_pct": 80,
+        "vintage_electronics_avg_roi_pct": 100,
+        "vintage_furniture_avg_roi_pct": 200,
+        "antiques_avg_roi_pct": 150,
+        "sports_memorabilia_avg_roi_pct": 100,
+        "comic_books_avg_roi_pct": 120,
+        "trading_cards_avg_roi_pct": 150,
+        "vinyl_records_avg_roi_pct": 100,
+        "books_first_edition_avg_roi_pct": 300,
+        "books_textbook_avg_roi_pct": 50,
+        "amazon_fba_arbitrage_avg_roi_pct": 40,
+        "walmart_clearance_arbitrage_avg_roi_pct": 60,
+        "target_clearance_arbitrage_avg_roi_pct": 50,
+        "estate_sale_avg_roi_pct": 200,
+        "storage_unit_auction_avg_roi_pct": 150,
+        "pallet_flipping_avg_roi_pct": 80,
+        "liquidation_pallet_avg_cost_usd": 500,
+        "liquidation_pallet_avg_retail_value_usd": 3000,
+        "liquidation_pallet_sellable_pct": 60,
+        "car_flipping_avg_profit_per_flip_usd": 2000,
+        "car_flipping_state_license_required_pct": 70,
+        "car_flipping_max_without_dealer_license": 5,
+        "furniture_flipping_avg_profit_per_piece_usd": 150,
+        "furniture_flipping_time_per_piece_hours": 8,
+        "real_estate_wholesaling_avg_assignment_fee_usd": 10000,
+        "domain_flipping_avg_profit_usd": 500,
+        "domain_flipping_success_rate_pct": 5,
+        "website_flipping_avg_multiple_monthly_profit": 30
+      },
+      "tools_platforms": {
+        "scanner_app_keepa_monthly_usd": 20,
+        "scanner_app_scoutiq_monthly_usd": 15,
+        "bookscouter_usage_free": true,
+        "sold_item_comps_terapeak_monthly_usd": 20,
+        "crosslisting_list_perfectly_monthly_usd": 30,
+        "crosslisting_vendoo_monthly_usd": 25,
+        "shipping_pirateship_savings_pct": 50,
+        "shipping_stamps_com_monthly_usd": 20,
+        "shipping_supplies_monthly_avg_usd": 50,
+        "photography_lightbox_cost_usd": 40,
+        "mannequin_display_cost_usd": 30,
+        "steamer_iron_cost_usd": 40,
+        "storage_unit_monthly_avg_usd": 100,
+        "inventory_management_software_monthly_usd": 15,
+        "bookkeeping_time_monthly_hours": 5,
+        "tax_preparation_reseller_annual_usd": 200,
+        "reseller_community_membership_monthly_usd": 20,
+        "reseller_conference_annual_usd": 500,
+        "ebay_store_basic_monthly_usd": 22,
+        "ebay_store_premium_monthly_usd": 60,
+        "poshmark_closet_tools_monthly_usd": 10,
+        "mercari_promoted_listings_budget_monthly_usd": 20,
+        "facebook_marketplace_shipping_fee_pct": 5
+      }
+    },
+    "tutoring_teaching": {
+      "name": "Tutoring & Teaching Business",
+      "description": "Start a tutoring or teaching business, online or local, and scale beyond 1-on-1",
+      "entry_point": "Person with subject expertise decides to monetize their knowledge",
+      "stages": [
+        {
+          "id": "have_knowledge",
+          "label": "Have deep knowledge in a subject",
+          "prob": 100,
+          "time": "baseline",
+          "source": "baseline"
+        },
+        {
+          "id": "decide_tutor",
+          "label": "Decide to start tutoring",
+          "prob": 25,
+          "time": "1-4 weeks",
+          "source": "estimated — most experts never monetize"
+        },
+        {
+          "id": "sign_up_platform",
+          "label": "Sign up on Wyzant/Preply/iTalki or post locally",
+          "prob": 75,
+          "time": "1-3 days",
+          "source": "Preply 2024 — low barrier to entry"
+        },
+        {
+          "id": "set_rate",
+          "label": "Set hourly rate ($20-60 starting)",
+          "prob": 90,
+          "time": "1 day",
+          "source": "Wyzant 2024 — avg new tutor starts at $25-40/hr"
+        },
+        {
+          "id": "first_inquiry",
+          "label": "Get first student inquiry",
+          "prob": 55,
+          "time": "1-4 weeks",
+          "source": "Preply Tutor Insights 2024 — avg 2-3 weeks for first booking"
+        },
+        {
+          "id": "first_session",
+          "label": "Complete first session",
+          "prob": 85,
+          "time": "1-2 weeks after inquiry",
+          "source": "Preply 2024 — 15% no-show rate"
+        },
+        {
+          "id": "first_review",
+          "label": "Get positive review",
+          "prob": 80,
+          "time": "1-2 days after session",
+          "source": "Wyzant 2024 — 80% of students leave reviews if prompted"
+        },
+        {
+          "id": "three_regulars",
+          "label": "Get 3 regular students",
+          "prob": 50,
+          "time": "1-3 months",
+          "source": "Preply 2024 — 70% student retention per semester"
+        },
+        {
+          "id": "reach_500_mo",
+          "label": "Reach $500/month",
+          "prob": 55,
+          "time": "2-4 months",
+          "source": "Wyzant 2024 — median active tutor income"
+        },
+        {
+          "id": "raise_rates",
+          "label": "Raise rates based on reviews and demand",
+          "prob": 65,
+          "time": "3-6 months",
+          "source": "Preply 2024 — avg 20-30% rate increase after 50 sessions"
+        },
+        {
+          "id": "ten_regulars",
+          "label": "Get 10 regular students",
+          "prob": 35,
+          "time": "4-9 months",
+          "source": "estimated — scheduling becomes the bottleneck"
+        },
+        {
+          "id": "reach_2k_mo",
+          "label": "Reach $2,000/month",
+          "prob": 40,
+          "time": "6-12 months",
+          "source": "Preply 2024 — top 20% of tutors, avg 15 hrs/week"
+        },
+        {
+          "id": "group_classes",
+          "label": "Create group classes (3-8 students)",
+          "prob": 30,
+          "time": "6-18 months",
+          "source": "Outschool 2024 — 30% of teachers offer group format"
+        },
+        {
+          "id": "reputation",
+          "label": "Build strong reputation and referral network",
+          "prob": 45,
+          "time": "6-18 months",
+          "source": "Tutoring.org 2023 — 60% of established tutors get referrals"
+        },
+        {
+          "id": "reach_5k_mo",
+          "label": "Reach $5,000/month",
+          "prob": 20,
+          "time": "12-24 months",
+          "source": "Wyzant 2024 — top 5% of tutors"
+        },
+        {
+          "id": "create_course",
+          "label": "Create online course (Udemy, Teachable, own site)",
+          "prob": 15,
+          "time": "1-6 months to create",
+          "source": "Udemy 2024 — 97% of courses earn under $1K lifetime"
+        },
+        {
+          "id": "scale_beyond_1on1",
+          "label": "Scale beyond 1-on-1 (courses + group + 1:1)",
+          "prob": 25,
+          "time": "12-36 months",
+          "source": "Podia 2024 — 25% of educators successfully diversify"
+        },
+        {
+          "id": "reach_10k_mo",
+          "label": "Reach $10,000/month",
+          "prob": 5,
+          "time": "24-48 months",
+          "source": "Teachable 2024 — top 1% of course creators, requires course revenue"
+        }
+      ],
+      "bottlenecks": [
+        "first_inquiry",
+        "ten_regulars",
+        "create_course",
+        "reach_10k_mo"
+      ],
+      "end_to_end_conversion": "0.3%",
+      "industry_data": {
+        "global_tutoring_market_usd_billions": 145,
+        "online_tutoring_market_usd_billions": 18,
+        "tutoring_market_growth_cagr_pct": 14,
+        "tutors_globally_millions": 20,
+        "us_tutors_estimated": 500000,
+        "wyzant_tutors_total": 80000,
+        "preply_tutors_total": 35000,
+        "italki_teachers_total": 30000,
+        "outschool_teachers_total": 10000,
+        "avg_tutoring_rate_us_usd": 40,
+        "avg_tutoring_rate_online_global_usd": 20,
+        "premium_tutoring_rate_usd": 100,
+        "test_prep_tutoring_rate_usd": 80,
+        "tutoring_sessions_per_week_avg": 8,
+        "tutor_student_retention_rate_pct": 70,
+        "tutor_referral_rate_pct": 40,
+        "online_vs_inperson_split_pct": "55 vs 45",
+        "parent_satisfaction_with_tutoring_pct": 85,
+        "student_grade_improvement_with_tutoring_pct": 73,
+        "udemy_total_courses": 220000,
+        "udemy_total_students_millions": 75,
+        "udemy_instructor_median_income_usd": 500,
+        "udemy_top_1pct_instructor_income_usd": 100000,
+        "teachable_courses_sold_millions": 35,
+        "skillshare_teachers_total": 12000,
+        "coursera_learners_millions": 150,
+        "masterclass_subscribers_millions": 2,
+        "online_course_market_usd_billions": 400,
+        "mooc_completion_rate_pct": 5,
+        "tutoring_demand_math_pct": 30,
+        "tutoring_demand_science_pct": 20,
+        "tutoring_demand_language_pct": 25,
+        "tutoring_demand_test_prep_pct": 15,
+        "tutoring_demand_other_pct": 10,
+        "ai_tutoring_tools_market_growth_pct": 40,
+        "ai_impact_on_tutoring_demand_pct": -10,
+        "group_tutoring_revenue_per_hour_vs_1on1": "2.5x",
+        "tutoring_business_scalability_ceiling_hours": 25,
+        "tutor_burnout_rate_pct": 35,
+        "education_startup_funding_2024_usd_billions": 8
+      },
+      "sources": [
+        "Wyzant Tutor Marketplace Data 2024",
+        "Preply Tutor Insights Report 2024",
+        "iTalki Teacher Statistics 2024",
+        "Outschool Teacher Report 2024",
+        "Udemy Instructor Revenue Report 2024",
+        "Teachable Creator Economy Report 2024",
+        "Podia State of Online Education 2024",
+        "Tutoring.org Industry Overview 2023",
+        "Global Private Tutoring Market Report — Technavio 2024"
+      ],
+      "online_platforms_economics": {
+        "preply_tutor_take_home_rate_pct": 67,
+        "italki_tutor_take_home_rate_pct": 85,
+        "wyzant_tutor_take_home_rate_pct": 75,
+        "outschool_teacher_take_home_rate_pct": 70,
+        "varsity_tutors_hourly_rate_usd": 30,
+        "chegg_tutors_hourly_rate_usd": 20,
+        "tutor_com_hourly_rate_usd": 18,
+        "superprof_commission_pct": 0,
+        "superprof_premium_listing_monthly_usd": 15,
+        "online_tutoring_peak_hours_pct_revenue": 40,
+        "summer_demand_decline_pct": 30,
+        "test_prep_season_demand_increase_pct": 50,
+        "sat_tutoring_rate_premium_vs_general_pct": 50,
+        "act_tutoring_rate_premium_vs_general_pct": 40,
+        "college_admissions_consulting_hourly_usd": 200,
+        "coding_bootcamp_instructor_hourly_usd": 75,
+        "music_lesson_hourly_usd": 50,
+        "language_tutoring_hourly_usd": 25,
+        "math_tutoring_hourly_usd": 45,
+        "science_tutoring_hourly_usd": 45,
+        "english_tutoring_hourly_usd": 35,
+        "special_education_tutoring_hourly_usd": 60,
+        "executive_function_coaching_hourly_usd": 75,
+        "homeschool_support_tutoring_growth_pct": 30,
+        "adult_education_tutoring_growth_pct": 20,
+        "corporate_training_facilitator_daily_rate_usd": 1500,
+        "ai_tutoring_platform_growth_pct": 100,
+        "khan_academy_users_millions": 150,
+        "duolingo_users_millions": 600,
+        "coursera_learners_millions": 150
+      }
+    },
+    "print_on_demand": {
+      "name": "Print on Demand",
+      "description": "Start a print-on-demand business via Printful, Merch by Amazon, Redbubble, Etsy",
+      "entry_point": "Person sees POD success stories and decides to try design-based passive income",
+      "stages": [
+        {
+          "id": "see_pod_content",
+          "label": "See POD success videos/posts",
+          "prob": 100,
+          "time": "baseline",
+          "source": "baseline — millions of POD tutorials online"
+        },
+        {
+          "id": "research_niches",
+          "label": "Research profitable niches",
+          "prob": 65,
+          "time": "1-2 weeks",
+          "source": "estimated — 35% jump in without research"
+        },
+        {
+          "id": "create_10_designs",
+          "label": "Create first 10 designs",
+          "prob": 50,
+          "time": "1-4 weeks",
+          "source": "Merch Informer 2024 — 50% of applicants never upload"
+        },
+        {
+          "id": "upload_listings",
+          "label": "Upload to Merch/Redbubble/Etsy",
+          "prob": 80,
+          "time": "1-3 days",
+          "source": "estimated — simple process"
+        },
+        {
+          "id": "wait_indexing",
+          "label": "Wait for marketplace indexing (patience test)",
+          "prob": 60,
+          "time": "1-3 months",
+          "source": "Merch by Amazon 2024 — avg 6-12 weeks for organic visibility"
+        },
+        {
+          "id": "first_sale",
+          "label": "Get first sale",
+          "prob": 35,
+          "time": "1-6 months",
+          "source": "Merch Informer 2024 — 65% of sellers with <50 designs get zero sales in 6 months"
+        },
+        {
+          "id": "analyze_sellers",
+          "label": "Analyze which designs sell and why",
+          "prob": 70,
+          "time": "1-2 weeks",
+          "source": "estimated — data-driven iteration"
+        },
+        {
+          "id": "create_50_designs",
+          "label": "Create 50 more designs based on data",
+          "prob": 45,
+          "time": "2-8 weeks",
+          "source": "estimated — many quit after low initial sales"
+        },
+        {
+          "id": "reach_100_mo",
+          "label": "Reach $100/month",
+          "prob": 30,
+          "time": "3-9 months",
+          "source": "eRank 2024 — only 30% of Etsy POD sellers earn $100+/mo"
+        },
+        {
+          "id": "learn_seo",
+          "label": "Learn Etsy SEO / Amazon keyword optimization",
+          "prob": 65,
+          "time": "2-6 weeks",
+          "source": "eRank 2024 — SEO is #1 growth lever for POD"
+        },
+        {
+          "id": "scale_200_designs",
+          "label": "Scale to 200+ designs",
+          "prob": 25,
+          "time": "4-12 months",
+          "source": "Merch Informer 2024 — 75% quit before 200 designs"
+        },
+        {
+          "id": "reach_500_mo",
+          "label": "Reach $500/month",
+          "prob": 20,
+          "time": "6-18 months",
+          "source": "Printify 2024 — top 20% of active sellers"
+        },
+        {
+          "id": "hire_designer",
+          "label": "Invest in professional designs (hire designer)",
+          "prob": 30,
+          "time": "ongoing",
+          "source": "estimated — $5-20 per design on Fiverr"
+        },
+        {
+          "id": "reach_1k_mo",
+          "label": "Reach $1,000/month",
+          "prob": 10,
+          "time": "12-24 months",
+          "source": "Merch Informer 2024 — top 5-10% of all POD sellers"
+        },
+        {
+          "id": "multi_platform",
+          "label": "Expand to multiple platforms simultaneously",
+          "prob": 50,
+          "time": "1-3 months",
+          "source": "estimated — crosslisting from existing designs"
+        },
+        {
+          "id": "reach_2k_mo",
+          "label": "Reach $2,000/month",
+          "prob": 5,
+          "time": "18-36 months",
+          "source": "Printify 2024 — top 3-5% of sellers"
+        },
+        {
+          "id": "build_brand",
+          "label": "Create brand identity around top-selling niche",
+          "prob": 25,
+          "time": "3-12 months",
+          "source": "Shopify POD Guide 2024"
+        },
+        {
+          "id": "reach_5k_mo",
+          "label": "Reach $5,000/month",
+          "prob": 2,
+          "time": "24-48 months",
+          "source": "Merch Informer 2024 — top 1-2%, requires 1000+ designs or strong brand"
+        }
+      ],
+      "bottlenecks": [
+        "first_sale",
+        "scale_200_designs",
+        "reach_500_mo",
+        "reach_2k_mo"
+      ],
+      "end_to_end_conversion": "0.4%",
+      "industry_data": {
+        "pod_market_size_usd_billions": 7.5,
+        "pod_market_growth_cagr_pct": 26,
+        "pod_projected_2030_usd_billions": 39,
+        "printful_active_sellers": 1000000,
+        "printify_active_sellers": 800000,
+        "merch_by_amazon_sellers": 500000,
+        "redbubble_artists": 700000,
+        "teepublic_artists": 200000,
+        "spreadshirt_artists": 100000,
+        "avg_pod_tshirt_cost_usd": 10,
+        "avg_pod_tshirt_retail_usd": 25,
+        "avg_pod_profit_per_shirt_usd": 5,
+        "avg_pod_mug_profit_usd": 4,
+        "avg_pod_hoodie_profit_usd": 10,
+        "avg_pod_poster_profit_usd": 6,
+        "avg_pod_phone_case_profit_usd": 4,
+        "merch_amazon_tier_10_designs": 10,
+        "merch_amazon_tier_25_designs": 25,
+        "merch_amazon_tier_100_designs": 100,
+        "merch_amazon_tier_500_designs": 500,
+        "merch_amazon_royalty_pct": 30,
+        "redbubble_royalty_pct": 20,
+        "etsy_pod_listing_fee_usd": 0.2,
+        "etsy_pod_transaction_fee_pct": 6.5,
+        "design_creation_time_avg_minutes": 30,
+        "design_creation_with_ai_minutes": 5,
+        "ai_design_tools_adoption_pct": 40,
+        "midjourney_canva_design_quality_vs_human_pct": 80,
+        "niche_research_time_hours": 5,
+        "bestseller_research_tools_cost_monthly_usd": 20,
+        "keyword_optimization_impact_pct": 50,
+        "trend_surfing_success_rate_pct": 10,
+        "evergreen_design_success_rate_pct": 5,
+        "seasonal_design_revenue_boost_q4_pct": 200,
+        "trademark_infringement_removal_rate_pct": 5,
+        "pod_customer_return_rate_pct": 3,
+        "pod_print_quality_complaint_rate_pct": 5,
+        "pod_shipping_time_us_days": "5-10",
+        "pod_shipping_time_international_days": "10-20",
+        "multi_platform_sellers_revenue_boost_pct": 50,
+        "etsy_ads_roas_avg_pod": "2-3x",
+        "social_media_marketing_pod_conversion_pct": 1,
+        "influencer_collaboration_pod_roi": "2-5x"
+      },
+      "sources": [
+        "Merch Informer Annual Report 2024",
+        "eRank Etsy Marketplace Analytics 2024",
+        "Printify Seller Statistics 2024",
+        "Redbubble Artist Earnings Report 2023",
+        "Shopify Print on Demand Guide 2024",
+        "Merch by Amazon Seller Data 2024",
+        "Statista POD Market Size 2024"
+      ],
+      "design_economics": {
+        "ai_generated_design_cost_usd": 0.05,
+        "ai_generated_design_legal_risk": "uncertain",
+        "canva_design_time_avg_minutes": 30,
+        "photoshop_design_time_avg_minutes": 60,
+        "fiverr_design_cost_avg_usd": 10,
+        "professional_design_cost_avg_usd": 50,
+        "design_trends_lifespan_months": 6,
+        "evergreen_design_share_revenue_pct": 40,
+        "trending_design_share_revenue_pct": 60,
+        "niche_research_tools_cost_monthly_usd": 20,
+        "merch_informer_monthly_usd": 10,
+        "productor_monthly_usd": 10,
+        "pretty_merch_monthly_usd": 10,
+        "erank_monthly_usd": 10,
+        "copyright_infringement_risk_pct": 15,
+        "trademark_violation_takedown_rate_pct": 5,
+        "design_file_format_required": "PNG 300 DPI",
+        "design_resolution_min_pixels": 4500,
+        "mockup_generator_cost_monthly_usd": 15,
+        "listing_optimization_revenue_lift_pct": 40,
+        "seasonal_designs_q4_revenue_share_pct": 35,
+        "holiday_designs_christmas_revenue_pct": 20,
+        "holiday_designs_halloween_revenue_pct": 10,
+        "holiday_designs_valentines_revenue_pct": 8,
+        "mothers_day_revenue_spike_pct": 15,
+        "fathers_day_revenue_spike_pct": 12,
+        "graduation_season_revenue_spike_pct": 10,
+        "pod_automation_tools_adoption_pct": 20,
+        "batch_upload_designs_per_session_avg": 25,
+        "multi_product_expansion_revenue_lift_pct": 60,
+        "all_over_print_premium_vs_standard_pct": 50,
+        "embroidery_pod_growth_pct": 30,
+        "custom_packaging_availability_pct": 20,
+        "eco_friendly_products_demand_growth_pct": 25,
+        "sustainable_materials_premium_pct": 15
+      }
+    },
+    "inherited_family_business": {
+      "name": "Inherited Family Business",
+      "description": "Take over and grow a family business across generations",
+      "entry_point": "Child grows up around the family business and faces the succession question",
+      "stages": [
+        {
+          "id": "grow_up_around",
+          "label": "Grow up around the family business",
+          "prob": 100,
+          "time": "childhood-teens",
+          "source": "baseline"
+        },
+        {
+          "id": "work_part_time",
+          "label": "Work in business part-time (summers, weekends)",
+          "prob": 70,
+          "time": "teens-early 20s",
+          "source": "PwC Family Business Survey 2023 — 70% of next-gen work in business before deciding"
+        },
+        {
+          "id": "finish_education",
+          "label": "Graduate or finish outside education/experience",
+          "prob": 80,
+          "time": "4-8 years",
+          "source": "FFI (Family Firm Institute) 2023"
+        },
+        {
+          "id": "decision_join",
+          "label": "Decision: join the family business or not",
+          "prob": 55,
+          "time": "1-6 months",
+          "source": "PwC 2023 — 55% of next-gen intend to join"
+        },
+        {
+          "id": "join_fulltime",
+          "label": "Join business full-time",
+          "prob": 75,
+          "time": "immediate",
+          "source": "Deloitte Next Gen Survey 2024 — of those who decide, 75% actually join"
+        },
+        {
+          "id": "learn_operations",
+          "label": "Learn operations from parent/founder",
+          "prob": 90,
+          "time": "1-3 years",
+          "source": "FFI 2023 — apprenticeship phase"
+        },
+        {
+          "id": "identify_inefficiencies",
+          "label": "Identify outdated processes and inefficiencies",
+          "prob": 85,
+          "time": "6-18 months",
+          "source": "KPMG Family Business Report 2024"
+        },
+        {
+          "id": "suggest_modernize",
+          "label": "Propose modernization and changes",
+          "prob": 75,
+          "time": "6-12 months",
+          "source": "PwC 2023 — next-gen pushes digital/innovation"
+        },
+        {
+          "id": "face_resistance",
+          "label": "Face resistance from founder/senior generation",
+          "prob": 80,
+          "time": "ongoing",
+          "source": "Deloitte 2024 — 80% report generational conflict on strategy"
+        },
+        {
+          "id": "gain_trust",
+          "label": "Earn trust and increasing responsibility",
+          "prob": 55,
+          "time": "2-5 years",
+          "source": "FFI 2023 — trust-building is #1 challenge"
+        },
+        {
+          "id": "take_over_daily",
+          "label": "Take over day-to-day operations",
+          "prob": 60,
+          "time": "3-7 years",
+          "source": "PwC 2023 — avg transition takes 5-10 years"
+        },
+        {
+          "id": "formalize_transition",
+          "label": "Formalize ownership/leadership transition",
+          "prob": 40,
+          "time": "1-3 years",
+          "source": "PwC 2023 — only 34% have documented succession plans"
+        },
+        {
+          "id": "handle_family_dynamics",
+          "label": "Navigate family politics, sibling rivalry, emotional baggage",
+          "prob": 70,
+          "time": "ongoing",
+          "source": "FFI 2023 — #1 cause of failure is family conflict"
+        },
+        {
+          "id": "become_owner",
+          "label": "Become official owner/CEO",
+          "prob": 30,
+          "time": "5-15 years from joining",
+          "source": "PwC 2023 — 30% of family businesses survive to 2nd gen"
+        },
+        {
+          "id": "modernize_systems",
+          "label": "Implement modern systems (tech, processes, accounting)",
+          "prob": 65,
+          "time": "1-3 years",
+          "source": "KPMG 2024 — 65% of successful transitions include digital transformation"
+        },
+        {
+          "id": "retain_employees",
+          "label": "Retain key employees through transition",
+          "prob": 55,
+          "time": "1-2 years",
+          "source": "Deloitte 2024 — 45% of key staff leave during transitions"
+        },
+        {
+          "id": "grow_beyond",
+          "label": "Grow revenue beyond parent's peak level",
+          "prob": 40,
+          "time": "3-7 years",
+          "source": "FFI 2023 — 40% of 2nd gen grow the business"
+        },
+        {
+          "id": "professionalize",
+          "label": "Professionalize management (outside board, advisors, HR)",
+          "prob": 25,
+          "time": "2-5 years",
+          "source": "PwC 2023 — only 25% establish governance structures"
+        },
+        {
+          "id": "sustain_generational",
+          "label": "Sustain through full generational shift (business survives 10+ years under new leadership)",
+          "prob": 50,
+          "time": "10+ years",
+          "source": "FFI 2023 — only 12% make it to 3rd gen, so 50% of 2nd gen survivors fail before 3rd"
+        }
+      ],
+      "bottlenecks": [
+        "decision_join",
+        "face_resistance",
+        "formalize_transition",
+        "become_owner"
+      ],
+      "end_to_end_conversion": "4.3%",
+      "industry_data": {
+        "family_businesses_share_global_gdp_pct": 70,
+        "family_businesses_share_global_employment_pct": 60,
+        "family_businesses_in_us_millions": 5.5,
+        "family_businesses_share_us_gdp_pct": 57,
+        "family_businesses_share_us_employment_pct": 63,
+        "survive_to_2nd_generation_pct": 30,
+        "survive_to_3rd_generation_pct": 12,
+        "survive_to_4th_generation_pct": 3,
+        "family_business_avg_revenue_usd_millions": 10,
+        "family_business_fortune_500_count": 35,
+        "family_office_total_globally": 10000,
+        "family_office_total_assets_usd_trillions": 6,
+        "succession_planning_formal_pct": 34,
+        "succession_transition_avg_duration_years": 7,
+        "next_gen_who_intend_to_join_pct": 55,
+        "next_gen_who_actually_join_pct": 40,
+        "next_gen_external_experience_before_joining_pct": 65,
+        "generational_conflict_on_strategy_pct": 80,
+        "family_business_with_governance_structure_pct": 25,
+        "family_business_with_family_council_pct": 15,
+        "family_business_with_board_of_advisors_pct": 30,
+        "family_business_profitability_vs_nonfamily_pct": "+10",
+        "family_business_innovation_investment_pct": 35,
+        "family_business_digital_transformation_pct": 45,
+        "family_business_sustainability_focus_pct": 50,
+        "family_business_international_expansion_pct": 25,
+        "family_business_with_non_family_ceo_pct": 15,
+        "wealth_transfer_expected_next_20yr_usd_trillions": 73,
+        "family_business_key_employee_departure_during_transition_pct": 45,
+        "family_business_valuation_discount_vs_public_pct": 20,
+        "family_business_sale_to_private_equity_trend_pct": 25
+      },
+      "sources": [
+        "PwC Global Family Business Survey 2023",
+        "Deloitte Next Generation Survey 2024",
+        "Family Firm Institute (FFI) Global Data Points 2023",
+        "KPMG Family Business Barometer 2024",
+        "Harvard Business Review — Family Business Succession Studies",
+        "Cornell Family Business Research Institute",
+        "EY Family Business Yearbook 2024",
+        "McKinsey — Family Business Governance Report 2023"
+      ]
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "_meta": {
+    "description": "Source authority classification for Simulator data points",
+    "tiers": "S (gold standard) → A (top consulting/research) → B (industry reports) → C (aggregators) → D (anecdotal)",
+    "rule": "Simulator should prefer S/A sources. B acceptable. C only as fallback. D never for probabilities.",
+    "created": "2026-03-27"
+  },
+
+  "tier_S": {
+    "label": "Gold Standard — Peer-reviewed, Government, Central Data",
+    "trust": "99%",
+    "use": "Always prefer. These are the source of truth.",
+    "sources": [
+      {"name": "U.S. Bureau of Labor Statistics (BLS)", "type": "government", "covers": "employment, wages, business survival, CPI", "url": "bls.gov"},
+      {"name": "U.S. Census Bureau", "type": "government", "covers": "demographics, business formation, income", "url": "census.gov"},
+      {"name": "Federal Reserve (FRED, SHED, SCF)", "type": "government", "covers": "wealth, debt, savings, monetary policy", "url": "federalreserve.gov"},
+      {"name": "World Bank", "type": "intl org", "covers": "global economics, poverty, development", "url": "worldbank.org"},
+      {"name": "WHO", "type": "intl org", "covers": "health, mortality, disease", "url": "who.int"},
+      {"name": "UNESCO", "type": "intl org", "covers": "education, literacy, global K-12", "url": "unesco.org"},
+      {"name": "OECD", "type": "intl org", "covers": "economics, education, employment across 38 countries", "url": "oecd.org"},
+      {"name": "IMF", "type": "intl org", "covers": "GDP, inflation, fiscal policy", "url": "imf.org"},
+      {"name": "NIH / PubMed / PMC", "type": "peer-reviewed", "covers": "health, medicine, clinical trials", "url": "pubmed.ncbi.nlm.nih.gov"},
+      {"name": "NEJM / Lancet / JAMA / Nature", "type": "peer-reviewed journals", "covers": "medicine, health, science", "url": "various"},
+      {"name": "NSF (National Science Foundation)", "type": "government", "covers": "PhD completion, STEM workforce", "url": "nsf.gov"},
+      {"name": "IRS / Tax Foundation", "type": "government", "covers": "taxes, income distribution, filing data", "url": "irs.gov"},
+      {"name": "SEC / EDGAR", "type": "government", "covers": "public company financials, IPO data", "url": "sec.gov"},
+      {"name": "Eurostat", "type": "government", "covers": "EU economics, demographics, trade", "url": "ec.europa.eu/eurostat"},
+      {"name": "NCES (Nat'l Center for Education Statistics)", "type": "government", "covers": "US education data", "url": "nces.ed.gov"}
+    ]
+  },
+
+  "tier_A": {
+    "label": "Top Consulting & Research — Rigorous methodology, large datasets",
+    "trust": "90-95%",
+    "use": "Primary source for business/market data. Cross-reference with Tier S when possible.",
+    "sources": [
+      {"name": "McKinsey Global Institute", "type": "consulting", "covers": "strategy, digital transformation, workforce", "url": "mckinsey.com/mgi"},
+      {"name": "BCG Henderson Institute", "type": "consulting", "covers": "strategy, innovation, growth", "url": "bcg.com"},
+      {"name": "Bain & Company", "type": "consulting", "covers": "NPS, customer loyalty, PE", "url": "bain.com"},
+      {"name": "Deloitte Insights", "type": "consulting", "covers": "tech trends, workforce, tax", "url": "deloitte.com/insights"},
+      {"name": "PwC Global", "type": "consulting", "covers": "CEO survey, fintech, regulation", "url": "pwc.com"},
+      {"name": "Harvard Business Review / HBS", "type": "academic", "covers": "management, strategy, entrepreneurship", "url": "hbr.org"},
+      {"name": "Stanford GSB", "type": "academic", "covers": "startup data, VC, innovation", "url": "gsb.stanford.edu"},
+      {"name": "MIT Sloan / MIT Tech Review", "type": "academic", "covers": "AI, digital business, tech", "url": "sloanreview.mit.edu"},
+      {"name": "CB Insights", "type": "research", "covers": "startup failure, VC funnel, unicorns, tech trends", "url": "cbinsights.com"},
+      {"name": "PitchBook", "type": "research", "covers": "VC deals, PE, startup valuations", "url": "pitchbook.com"},
+      {"name": "Crunchbase", "type": "research", "covers": "startup funding rounds, founder data", "url": "crunchbase.com"},
+      {"name": "Startup Genome", "type": "research", "covers": "startup ecosystems, PMF, scaling data", "url": "startupgenome.com"},
+      {"name": "Y Combinator (public data)", "type": "accelerator", "covers": "startup benchmarks, batch data", "url": "ycombinator.com"},
+      {"name": "Pew Research Center", "type": "research", "covers": "demographics, social trends, media, religion", "url": "pewresearch.org"},
+      {"name": "Gallup", "type": "research", "covers": "polls, employment, wellbeing, global attitudes", "url": "gallup.com"},
+      {"name": "Nielsen / NielsenIQ", "type": "research", "covers": "consumer behavior, media, advertising", "url": "nielseniq.com"},
+      {"name": "Edelman Trust Barometer", "type": "research", "covers": "brand trust, institutional trust", "url": "edelman.com/trust"},
+      {"name": "Giving USA / GiveWell", "type": "research", "covers": "philanthropy, nonprofit, impact per dollar", "url": "givingusa.org"},
+      {"name": "DALBAR", "type": "research", "covers": "investor behavior, retail vs index returns", "url": "dalbar.com"},
+      {"name": "Gottman Institute", "type": "academic", "covers": "marriage, relationships, divorce prediction", "url": "gottman.com"}
+    ]
+  },
+
+  "tier_B": {
+    "label": "Industry Reports — Solid data, possible bias toward their product/market",
+    "trust": "80-90%",
+    "use": "Good for industry-specific metrics. Check for vendor bias.",
+    "sources": [
+      {"name": "ChartMogul", "type": "SaaS analytics", "covers": "SaaS growth rates, MRR, churn, ARR milestones", "bias": "SaaS-focused, skews to companies using their tool"},
+      {"name": "ProfitWell / Paddle", "type": "SaaS analytics", "covers": "churn, pricing, NRR, SaaS benchmarks", "bias": "subscription businesses only"},
+      {"name": "Baremetrics", "type": "SaaS analytics", "covers": "MRR, CAC, LTV, indie SaaS", "bias": "smaller SaaS companies"},
+      {"name": "Stripe / Stripe Atlas", "type": "payments", "covers": "online business formation, payment trends", "bias": "online businesses only"},
+      {"name": "Shopify", "type": "ecommerce", "covers": "ecommerce conversion, store data", "bias": "Shopify merchants only"},
+      {"name": "Toast POS", "type": "restaurant tech", "covers": "restaurant margins, turnover, ops data", "bias": "US restaurant focus"},
+      {"name": "Upwork / Fiverr", "type": "freelance platform", "covers": "freelance rates, demand, skills", "bias": "platform users only, not all freelancers"},
+      {"name": "SignalFire", "type": "VC/research", "covers": "creator economy", "bias": "tech/creator focus"},
+      {"name": "Linktree", "type": "creator tool", "covers": "creator earnings, platforms", "bias": "their user base"},
+      {"name": "Sensor Tower / data.ai", "type": "app analytics", "covers": "app downloads, revenue, retention", "bias": "mobile apps only"},
+      {"name": "Statista", "type": "data aggregator", "covers": "everything", "bias": "aggregates from other sources, check original"},
+      {"name": "Grand View Research / Mordor Intelligence", "type": "market research", "covers": "market sizing, TAM, CAGR", "bias": "tend to be optimistic on growth"},
+      {"name": "National Restaurant Association", "type": "industry body", "covers": "US restaurant industry", "bias": "pro-industry"},
+      {"name": "IHRSA", "type": "industry body", "covers": "gym/fitness industry", "bias": "pro-fitness industry"},
+      {"name": "Baymard Institute", "type": "UX research", "covers": "cart abandonment, checkout UX", "bias": "ecommerce UX focus"},
+      {"name": "First Page Sage", "type": "SEO agency", "covers": "CAC by channel, conversion rates, SEO", "bias": "SEO-positive"},
+      {"name": "Recurly / Zuora", "type": "subscription billing", "covers": "churn, subscription metrics", "bias": "their client base"}
+    ]
+  },
+
+  "tier_C": {
+    "label": "Aggregators & Blogs — Useful but verify original source",
+    "trust": "60-75%",
+    "use": "Use for discovery, then trace back to original. Never cite as primary.",
+    "sources": [
+      {"name": "Failory", "type": "blog", "covers": "startup failure data", "note": "aggregates, sometimes imprecise"},
+      {"name": "Embroker", "type": "insurance blog", "covers": "startup statistics", "note": "marketing content, check sources"},
+      {"name": "DemandSage", "type": "blog", "covers": "platform statistics", "note": "aggregator, usually cites originals"},
+      {"name": "Backlinko", "type": "SEO blog", "covers": "platform stats, SEO data", "note": "well-researched aggregator"},
+      {"name": "Indie Hackers", "type": "community", "covers": "bootstrapped SaaS, side projects", "note": "self-reported, survivorship bias"},
+      {"name": "Reddit surveys", "type": "community", "covers": "various", "note": "anecdotal, self-selected"},
+      {"name": "Blogging Wizard / Smart Insights", "type": "marketing blog", "covers": "marketing stats", "note": "aggregator"}
+    ]
+  },
+
+  "tier_D": {
+    "label": "Anecdotal / Unverifiable — DO NOT use for probabilities",
+    "trust": "0-50%",
+    "use": "Never for simulation probabilities. OK for qualitative context only.",
+    "sources": [
+      {"name": "Twitter/X threads", "type": "social", "note": "no methodology"},
+      {"name": "Medium articles", "type": "blog", "note": "no peer review"},
+      {"name": "YouTube videos", "type": "content", "note": "entertainment, not data"},
+      {"name": "ChatGPT/Claude without citation", "type": "AI", "note": "can hallucinate numbers"},
+      {"name": "Wikipedia (for statistics)", "type": "encyclopedia", "note": "check the cited source, not Wikipedia itself"},
+      {"name": "Quora", "type": "Q&A", "note": "self-reported, no methodology"}
+    ]
+  },
+
+  "classification_rules": {
+    "for_simulator_probabilities": "Only S, A, or B sources. If B, cross-reference with a second source.",
+    "for_descriptions": "S, A, B, or C acceptable.",
+    "for_ai_generation": "Prompt instructs AI to cite only S/A/B sources. If it cites C/D, flag as 'unverified'.",
+    "display_in_ui": "Show source tier as colored dot: S=gold, A=blue, B=gray, C=orange warning"
+  }
+}

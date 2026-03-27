@@ -1,0 +1,704 @@
+{
+  "meta": {
+    "category": "Health, Fitness & Wellness",
+    "total_datapoints": 503,
+    "compiled": "2026-03-27",
+    "sources": "PubMed, CDC, IHRSA, NIDDK, WHO, Harvard, Stanford, Nature, Lancet, JAMA, market research firms",
+    "format": "Each entry: metric, value, unit, source, year, note (optional)"
+  },
+
+  "weight_loss": {
+    "label": "Weight Loss — Diet Success & Long-Term Maintenance",
+    "data": [
+      { "metric": "Adults who successfully keep off 10%+ body weight for 1+ year", "value": 20, "unit": "%", "source": "National Weight Control Registry / AJCN", "year": 2020 },
+      { "metric": "Diets that 'fail' (weight regained within 5 years)", "value": 95, "unit": "%", "source": "Multiple meta-analyses, AJCN", "year": 2022 },
+      { "metric": "Lost weight regained within 2 years", "value": 50, "unit": "% of lost weight", "source": "Meta-analysis of 29 studies, AJCN", "year": 2022 },
+      { "metric": "Lost weight regained within 5 years", "value": 79, "unit": "% of lost weight", "source": "Meta-analysis, AJCN", "year": 2022 },
+      { "metric": "Average weight lost by NWCR members", "value": 33, "unit": "kg", "source": "National Weight Control Registry", "year": 2021 },
+      { "metric": "NWCR members who maintained loss for 5+ years", "value": 100, "unit": "% (by definition — registry entry requirement)", "source": "National Weight Control Registry", "year": 2021 },
+      { "metric": "Daily physical activity by successful weight maintainers", "value": 60, "unit": "minutes/day", "source": "National Weight Control Registry", "year": 2021 },
+      { "metric": "Success rate improvement after 2-5 years sustained maintenance", "value": "significantly increases", "unit": "qualitative", "source": "PMC5764193 — Maintenance of lost weight", "year": 2018 },
+      { "metric": "US adults currently trying to lose weight", "value": 49, "unit": "%", "source": "CDC NHANES", "year": 2023 },
+      { "metric": "US adults on a diet at any given time", "value": 45, "unit": "million people", "source": "Gitnux — Diet & Weight Loss Statistics", "year": 2024 },
+      { "metric": "US weight loss market annual revenue", "value": 90, "unit": "billion USD", "source": "Gitnux — Diet & Weight Loss Statistics", "year": 2024 },
+      { "metric": "People who lose weight only to regain it ('yo-yo dieting')", "value": 80, "unit": "%", "source": "Pharmko / NIDDK review", "year": 2022 },
+      { "metric": "Weight loss achievable at 12 months — intermittent fasting diet", "value": 4.0, "unit": "kg average", "source": "AJCN — IF vs Med vs Paleo RCT", "year": 2020 },
+      { "metric": "Weight loss achievable at 12 months — Mediterranean diet", "value": 2.8, "unit": "kg average", "source": "AJCN — IF vs Med vs Paleo RCT", "year": 2020 },
+      { "metric": "Weight loss achievable at 12 months — Paleo diet", "value": 1.8, "unit": "kg average", "source": "AJCN — IF vs Med vs Paleo RCT", "year": 2020 },
+      { "metric": "Diet adherence at 12 months — Intermittent Fasting", "value": 54, "unit": "%", "source": "AJCN — IF vs Med vs Paleo RCT", "year": 2020 },
+      { "metric": "Diet adherence at 12 months — Mediterranean diet", "value": 57, "unit": "%", "source": "AJCN — IF vs Med vs Paleo RCT", "year": 2020 },
+      { "metric": "Diet adherence at 12 months — Paleo diet", "value": 35, "unit": "%", "source": "AJCN — IF vs Med vs Paleo RCT", "year": 2020 },
+      { "metric": "Men meeting calorie targets on IF fasting days at 12 months", "value": 37.5, "unit": "%", "source": "AJCN — IF RCT", "year": 2020 },
+      { "metric": "Women meeting calorie targets on IF fasting days at 12 months", "value": 28.1, "unit": "%", "source": "AJCN — IF RCT", "year": 2020 },
+      { "metric": "Mediterranean diet — all-cause mortality reduction", "value": 23, "unit": "% lower risk", "source": "Harvard Brigham & Women's 25yr study (25,000 women)", "year": 2024 },
+      { "metric": "1-unit Mediterranean diet score increase → mortality reduction", "value": 21, "unit": "%", "source": "ScienceDirect / PMC review", "year": 2021 },
+      { "metric": "US adults classified as overweight or obese (BMI ≥25)", "value": 70, "unit": "%", "source": "NIDDK", "year": 2023 },
+      { "metric": "US adult obesity rate (BMI ≥30)", "value": 40.3, "unit": "%", "source": "CDC NCHS Data Brief 508", "year": 2023 },
+      { "metric": "US adult severe obesity rate (BMI ≥40)", "value": 9.4, "unit": "%", "source": "CDC NCHS Data Brief 508", "year": 2023 },
+      { "metric": "Global overweight + obese proportion (BMI ≥25)", "value": 38, "unit": "% of adults 5+", "source": "World Obesity Atlas 2023", "year": 2023 },
+      { "metric": "Projected global overweight/obese by 2035", "value": 51, "unit": "%", "source": "World Obesity Atlas 2023", "year": 2023 },
+      { "metric": "Adults living with obesity globally in 2020", "value": 810, "unit": "million", "source": "World Obesity Federation", "year": 2023 },
+      { "metric": "Projected adults with obesity globally by 2035", "value": 1530, "unit": "million", "source": "World Obesity Federation", "year": 2023 }
+    ]
+  },
+
+  "bariatric_surgery": {
+    "label": "Weight Loss Surgery — Outcomes",
+    "data": [
+      { "metric": "Gastric bypass — average excess weight lost", "value": 70, "unit": "% of excess weight", "source": "PMC10353499 — Long-term outcomes", "year": 2023 },
+      { "metric": "Duodenal switch — average excess weight lost", "value": 80, "unit": "% of excess weight", "source": "PMC10353499", "year": 2023 },
+      { "metric": "Sleeve gastrectomy — excess weight lost range", "value": "30-80", "unit": "% range within 18-24mo", "source": "PMC10353499", "year": 2023 },
+      { "metric": "Gastric bypass — 10yr excess weight loss", "value": 56.7, "unit": "%EWL", "source": "PMC6320354 — 10+ year meta-analysis", "year": 2019 },
+      { "metric": "Adjustable gastric band — 10yr excess weight loss", "value": 45.9, "unit": "%EWL", "source": "PMC6320354", "year": 2019 },
+      { "metric": "Biliopancreatic bypass — 10yr excess weight loss", "value": 74.1, "unit": "%EWL", "source": "PMC6320354", "year": 2019 },
+      { "metric": "Sleeve gastrectomy — 10yr excess weight loss", "value": 58.3, "unit": "%EWL", "source": "PMC6320354", "year": 2019 },
+      { "metric": "Roux-en-Y gastric bypass — mean weight loss at 6 years", "value": 28.0, "unit": "% body weight loss", "source": "NEJM — 12yr gastric bypass study", "year": 2017 },
+      { "metric": "Roux-en-Y gastric bypass — mean weight loss at 12 years", "value": 26.9, "unit": "% body weight loss", "source": "NEJM", "year": 2017 },
+      { "metric": "Gastric bypass patients maintaining 10%+ weight loss at 12yr", "value": 93, "unit": "%", "source": "NEJM", "year": 2017 },
+      { "metric": "Gastric bypass patients maintaining 20%+ weight loss at 12yr", "value": 70, "unit": "%", "source": "NEJM", "year": 2017 },
+      { "metric": "Gastric bypass patients maintaining 30%+ weight loss at 12yr", "value": 40, "unit": "%", "source": "NEJM", "year": 2017 },
+      { "metric": "Gastric bypass true long-term failure rate (back to baseline ±5%) at 10yr", "value": 3.4, "unit": "%", "source": "NIDDK LABS study", "year": 2020 },
+      { "metric": "T2 diabetes remission at 3 years post gastric bypass", "value": 54, "unit": "%", "source": "ASMBS / PMC review", "year": 2023 },
+      { "metric": "T2 diabetes remission at 15 years post gastric bypass", "value": 38, "unit": "%", "source": "ASMBS / PMC review", "year": 2023 },
+      { "metric": "Gastric bypass mortality risk", "value": 0.4, "unit": "% (comparable to gallbladder surgery)", "source": "PMC10353499", "year": 2023 },
+      { "metric": "Gastric bypass major postoperative complication rate", "value": "3.4-5.1", "unit": "%", "source": "PMC10353499", "year": 2023 }
+    ]
+  },
+
+  "gym_membership": {
+    "label": "Gym & Fitness Membership — Retention & Attendance",
+    "data": [
+      { "metric": "Annual gym member retention rate (industry average)", "value": 66.4, "unit": "%", "source": "Gymdesk — 100 Gym Membership Statistics", "year": 2025 },
+      { "metric": "IHRSA member clubs average retention rate", "value": 71.4, "unit": "%", "source": "IHRSA / Smart Health Clubs", "year": 2024 },
+      { "metric": "Studio fitness average retention rate", "value": 75.9, "unit": "%", "source": "AFS / Smart Health Clubs", "year": 2024 },
+      { "metric": "Personal training studio retention rate", "value": 80, "unit": "%", "source": "Smart Health Clubs", "year": 2024 },
+      { "metric": "Share of annual gym signups that happen in January", "value": 12, "unit": "%", "source": "IHRSA / Gymdesk", "year": 2024 },
+      { "metric": "January new gym members who quit within 5 months", "value": 80, "unit": "%", "source": "Smart Health Clubs / GymMaster", "year": 2024 },
+      { "metric": "New members who quit within first 6 months (all signups)", "value": 50, "unit": "%", "source": "Smart Health Clubs", "year": 2024 },
+      { "metric": "Members attending regularly in month 1", "value": 63, "unit": "%", "source": "GymMaster statistics", "year": 2024 },
+      { "metric": "Members attending regularly by month 6", "value": 33, "unit": "%", "source": "GymMaster statistics", "year": 2024 },
+      { "metric": "New members who cancel before end of first month", "value": 14, "unit": "%", "source": "Smart Health Clubs", "year": 2024 },
+      { "metric": "Gym memberships that go unused", "value": 67, "unit": "%", "source": "Mirrors Delivered / IHRSA", "year": 2025 },
+      { "metric": "Annual waste from unused gym memberships in USA", "value": 1.3, "unit": "billion USD", "source": "IHRSA / Gymdesk", "year": 2024 },
+      { "metric": "Cost of acquiring new gym member vs retaining existing", "value": "5-7x", "unit": "times more expensive to acquire", "source": "Smart Health Clubs", "year": 2024 },
+      { "metric": "'Quitter's Day' — when most NY resolution gym-goers quit", "value": "2nd Friday of January", "unit": "date", "source": "Strava data analysis", "year": 2024 },
+      { "metric": "US gym/health club industry total revenue", "value": 40.6, "unit": "billion USD", "source": "IHRSA / FitBudd Statistics", "year": 2024 },
+      { "metric": "US fitness industry projected revenue by 2026", "value": 115.6, "unit": "billion USD", "source": "Market research / FitBudd", "year": 2024 },
+      { "metric": "Gym members who use a fitness tracker during workouts", "value": 60, "unit": "%", "source": "NHLBI / Gymdesk", "year": 2023 },
+      { "metric": "1 in 3 Americans using wearable health device", "value": 33, "unit": "%", "source": "National Heart, Lung, Blood Institute", "year": 2023 }
+    ]
+  },
+
+  "fitness_goals_new_year": {
+    "label": "Fitness Goals & New Year Resolutions",
+    "data": [
+      { "metric": "People who successfully keep NY resolutions", "value": 9, "unit": "%", "source": "Discover Happy Habits / multiple surveys", "year": 2023 },
+      { "metric": "NY resolvers who quit by end of first week", "value": 23, "unit": "%", "source": "Inside Out Mastery / Drive Research", "year": 2024 },
+      { "metric": "NY resolvers who quit by end of first month", "value": 64, "unit": "%", "source": "Inside Out Mastery / Drive Research", "year": 2024 },
+      { "metric": "NY resolvers who quit before end of year 2", "value": 81, "unit": "%", "source": "Inside Out Mastery", "year": 2024 },
+      { "metric": "US adults committing to NY resolutions", "value": 58, "unit": "%", "source": "FitSmallBusiness consumer survey", "year": 2024 },
+      { "metric": "NY resolutions that are fitness/exercise related", "value": 48, "unit": "% (most popular category)", "source": "Forbes Health / FitSmallBusiness", "year": 2024 },
+      { "metric": "NY resolutions that are wellness related", "value": 41, "unit": "%", "source": "FitSmallBusiness", "year": 2024 },
+      { "metric": "People expecting to give up NY resolutions by February", "value": 43, "unit": "%", "source": "Sundried survey", "year": 2023 },
+      { "metric": "Top reason for giving up resolutions — lost motivation", "value": 35, "unit": "%", "source": "Drive Research", "year": 2024 },
+      { "metric": "Top reason for giving up resolutions — too busy", "value": 19, "unit": "%", "source": "Drive Research", "year": 2024 },
+      { "metric": "Top reason for giving up resolutions — changed priorities", "value": 18, "unit": "%", "source": "Drive Research", "year": 2024 },
+      { "metric": "People who set fitness goals vs achieve them (any fitness goal)", "value": "<20", "unit": "% achieve long-term", "source": "NASM / StatSpeak analysis", "year": 2024 },
+      { "metric": "People who set specific, written goals vs vague ones — success differential", "value": "42% more likely to succeed", "unit": "qualitative", "source": "Dominican University goal-setting study", "year": 2015 }
+    ]
+  },
+
+  "personal_training": {
+    "label": "Personal Training — Client Outcomes",
+    "data": [
+      { "metric": "Clients who moved up one stage of behavior change with PT (10 weeks)", "value": 60, "unit": "%", "source": "PMC3937569 — Effectiveness of PT on attitudes", "year": 2014 },
+      { "metric": "Clients who moved up two stages of behavior change with PT (10 weeks)", "value": 13, "unit": "%", "source": "PMC3937569", "year": 2014 },
+      { "metric": "Average body weight loss with PT (24-week program)", "value": 9, "unit": "% body weight", "source": "ACE Fitness / Paul Anthony Statistics", "year": 2021 },
+      { "metric": "Clients experiencing significant health gains after 12 weeks with PT", "value": 80, "unit": "%", "source": "Multiple RCTs / Gitnux PT statistics", "year": 2023 },
+      { "metric": "PT-trained group aerobic capacity increase vs self-trained", "value": 7, "unit": "% more gain", "source": "ACE Fitness evidence review", "year": 2022 },
+      { "metric": "PT clients maintaining or improving fitness level 1yr after 6+ month program", "value": 70, "unit": "%", "source": "International Journal of Exercise Science", "year": 2020 },
+      { "metric": "Personal trainers reporting higher client adherence with supervision", "value": 80, "unit": "%", "source": "Gitnux PT Statistics", "year": 2023 },
+      { "metric": "Personal training market size (US)", "value": 13.8, "unit": "billion USD", "source": "IBIS World / FitBudd", "year": 2024 },
+      { "metric": "Average cost to start personal training studio", "value": 352000, "unit": "USD", "source": "SharpSheets fitness industry stats", "year": 2024 },
+      { "metric": "Median health club revenue", "value": 395000, "unit": "USD/year", "source": "SharpSheets fitness industry stats", "year": 2023 }
+    ]
+  },
+
+  "marathon_running": {
+    "label": "Marathon & Running — Completion & Injury Rates",
+    "data": [
+      { "metric": "Registered marathon runners who complete the race", "value": 90, "unit": "% (approx)", "source": "Marathon Training Academy / RunRepeat", "year": 2023 },
+      { "metric": "NYC Marathon enrolled runners who started", "value": 86.5, "unit": "%", "source": "PMC10982772 — NYC Marathon injury study", "year": 2024 },
+      { "metric": "NYC Marathon starters who finished", "value": 98.8, "unit": "% of starters", "source": "PMC10982772", "year": 2024 },
+      { "metric": "Overall marathon registered runners who finished (both start and finish)", "value": 85.4, "unit": "%", "source": "PMC10982772", "year": 2024 },
+      { "metric": "Runners who don't cross finish line (DNF) — range", "value": "2-5", "unit": "%", "source": "Marathon Training Academy", "year": 2023 },
+      { "metric": "Running-related injury prevalence during marathon training — lower estimate", "value": 29.2, "unit": "%", "source": "PubMed 31855590", "year": 2020 },
+      { "metric": "Running-related injury prevalence during marathon training — upper estimate", "value": 43.5, "unit": "%", "source": "PubMed 31855590", "year": 2020 },
+      { "metric": "Marathon runners reporting injuries during training (specific study)", "value": 38.4, "unit": "%", "source": "PMC3625790", "year": 2013 },
+      { "metric": "Race-related injuries reported by half marathoners", "value": 24, "unit": "%", "source": "PubMed 31855590", "year": 2020 },
+      { "metric": "Race-related injuries reported by full marathoners", "value": 30, "unit": "%", "source": "PubMed 31855590", "year": 2020 },
+      { "metric": "Runners prevented from starting goal marathon due to injury", "value": 10, "unit": "% approx", "source": "Marathon Training Academy", "year": 2023 },
+      { "metric": "Annual running injury incidence rate (marathon training)", "value": "up to 90", "unit": "% reported in some studies", "source": "Marathon Training Academy review", "year": 2023, "note": "Wide variation — includes all minor injuries" }
+    ]
+  },
+
+  "mental_health_therapy": {
+    "label": "Mental Health — Therapy & Treatment Outcomes",
+    "data": [
+      { "metric": "CBT overall response rate for depression", "value": 50, "unit": "%", "source": "PMC9840507 — meta-analysis 409 trials, 52,702 patients", "year": 2023 },
+      { "metric": "CBT short-term remission rate for depression", "value": "55-94", "unit": "% range", "source": "Crown Counseling CBT statistics / PMC meta-analysis", "year": 2024 },
+      { "metric": "CBT remission rate for depression (standard)", "value": 41.6, "unit": "%", "source": "American Journal of Psychiatry RCT", "year": 2017 },
+      { "metric": "Computer-assisted CBT remission rate for depression", "value": 42.9, "unit": "%", "source": "American Journal of Psychiatry RCT", "year": 2017 },
+      { "metric": "Patients recovered 2-8 years post CBT (depression)", "value": "57-77", "unit": "% range", "source": "ScienceDirect 10yr follow-up study", "year": 2024 },
+      { "metric": "Individuals completing CBT who report satisfaction with outcomes", "value": 70, "unit": "%", "source": "Crown Counseling CBT statistics", "year": 2024 },
+      { "metric": "CBT dropout rate (adherence metric)", "value": 20, "unit": "% dropout (80% complete)", "source": "Crown Counseling CBT statistics", "year": 2024 },
+      { "metric": "CBT relapse rate for anxiety disorders", "value": 26, "unit": "%", "source": "ScienceDirect meta-analysis on relapse", "year": 2021 },
+      { "metric": "CBT relapse rate for depression", "value": 42, "unit": "%", "source": "ScienceDirect meta-analysis on relapse", "year": 2021 },
+      { "metric": "CBT effect size for anxiety disorders", "value": "0.88-1.20", "unit": "Cohen's g (large effect)", "source": "PMC9660212", "year": 2022 },
+      { "metric": "Youth in CBT for anxiety — remission rate", "value": 49.4, "unit": "%", "source": "PMC9660212", "year": 2022 },
+      { "metric": "Youth in waitlist/no treatment for anxiety — remission rate", "value": 17.8, "unit": "%", "source": "PMC9660212", "year": 2022 },
+      { "metric": "Antidepressant medication + behavioral therapy combined success rate", "value": "stronger, long-term abstinence", "unit": "qualitative (vs either alone)", "source": "Dialoghealth adherence review", "year": 2024 },
+      { "metric": "Depression global prevalence (affects)", "value": 280, "unit": "million people worldwide", "source": "WHO", "year": 2023 },
+      { "metric": "Anxiety disorders global prevalence", "value": 301, "unit": "million people worldwide", "source": "WHO", "year": 2023 },
+      { "metric": "Adults with mental illness who do NOT receive treatment", "value": 57, "unit": "%", "source": "NAMI / Mental Health America", "year": 2023 },
+      { "metric": "Smoking cessation + behavior therapy + pharmacotherapy combined 1yr success", "value": 24, "unit": "%", "source": "PMC10858725", "year": 2024 },
+      { "metric": "Smoking cessation with behavioral intervention only", "value": "7-16", "unit": "%", "source": "PMC10858725", "year": 2024 },
+      { "metric": "Adults who quit smoking in a given year (population level)", "value": 8.8, "unit": "% of smokers", "source": "CDC MMWR 2024", "year": 2022 },
+      { "metric": "Young adults (19-39) smoking cessation rate", "value": 31.5, "unit": "% success among those who tried", "source": "CDC", "year": 2022 },
+      { "metric": "Middle-aged (40-64) smoking cessation rate", "value": 54.7, "unit": "% success among those who tried", "source": "CDC", "year": 2022 },
+      { "metric": "Older adults (65+) smoking cessation rate", "value": 78.6, "unit": "% success among those who tried", "source": "CDC", "year": 2022 }
+    ]
+  },
+
+  "burnout": {
+    "label": "Burnout by Industry",
+    "data": [
+      { "metric": "Global employees reporting burnout at work", "value": 43, "unit": "%", "source": "Apollo Technical / Interview Guys 2025 report", "year": 2025 },
+      { "metric": "Global employees reporting burnout in 2023 (prior year baseline)", "value": 38, "unit": "%", "source": "Apollo Technical", "year": 2023 },
+      { "metric": "Healthcare workers experiencing burnout", "value": 50, "unit": "%", "source": "PMC12013355 — Burnout Trends Among US Health Care Workers", "year": 2023 },
+      { "metric": "Healthcare workers experiencing burnout (2022 peak)", "value": 54, "unit": "%", "source": "PMC12013355", "year": 2022 },
+      { "metric": "Physicians reporting at least one burnout symptom", "value": 48.2, "unit": "%", "source": "HealthLeaders Media", "year": 2024 },
+      { "metric": "Nurses experiencing burnout", "value": 62, "unit": "%", "source": "April 2024 healthcare report", "year": 2024 },
+      { "metric": "Pharmacy professionals burnout rate (highest healthcare profession)", "value": 62, "unit": "%", "source": "HealthLeaders burnout by profession", "year": 2023 },
+      { "metric": "Teacher burnout rate ('always' or 'very often')", "value": 44, "unit": "% — higher than healthcare/law enforcement", "source": "Gallup 2022 poll", "year": 2022 },
+      { "metric": "Female K-12 teacher burnout rate", "value": 63, "unit": "%", "source": "Devlin Peck teacher burnout stats", "year": 2023 },
+      { "metric": "Technology sector burnout rate", "value": 42, "unit": "%", "source": "Apollo Technical / Create and Grow", "year": 2024 },
+      { "metric": "Tech industry employees feeling 'close to burnout'", "value": 82, "unit": "% (some studies)", "source": "Apollo Technical compilation", "year": 2023 },
+      { "metric": "Mindfulness reducing employee burnout (UMass study)", "value": 40, "unit": "% decrease", "source": "University of Massachusetts / FitLyfe", "year": 2022 },
+      { "metric": "Engagement improvement from mindfulness programs", "value": 20, "unit": "% improvement", "source": "Workplace mindfulness research", "year": 2022 },
+      { "metric": "Nursing burnout reduction after mindfulness intervention", "value": 36, "unit": "% reduction", "source": "PMC11999806", "year": 2025 }
+    ]
+  },
+
+  "meditation_mindfulness": {
+    "label": "Meditation — Adoption, Retention & Effectiveness",
+    "data": [
+      { "metric": "Global meditation app market size", "value": 1131.9, "unit": "million USD", "source": "Grand View Research", "year": 2023 },
+      { "metric": "Projected meditation app market by 2030", "value": 3632.3, "unit": "million USD", "source": "Grand View Research", "year": 2030 },
+      { "metric": "Meditation app market CAGR 2024-2030", "value": 18.1, "unit": "%", "source": "Grand View Research", "year": 2024 },
+      { "metric": "Headspace total downloads", "value": 80, "unit": "million (2023)", "source": "Bigohtech meditation app stats", "year": 2023 },
+      { "metric": "Calm total downloads", "value": 133, "unit": "million (2023)", "source": "Bigohtech meditation app stats", "year": 2023 },
+      { "metric": "Meditation app users continuing after 30 days", "value": 4.7, "unit": "% (very low retention)", "source": "PMC meditation app study", "year": 2023 },
+      { "metric": "Average lifetime usage of meditation app (sessions)", "value": "1-4", "unit": "sessions", "source": "Research meta-analysis on meditation apps", "year": 2023 },
+      { "metric": "Meditators using apps weekly or more frequently", "value": 21.7, "unit": "%", "source": "PMC10182467 — Population survey", "year": 2023 },
+      { "metric": "Weighted attrition rate in mindfulness app RCTs", "value": 24, "unit": "%", "source": "ScienceDirect meta-analysis (Rates of attrition)", "year": 2023 },
+      { "metric": "Mindfulness app RCT attrition rate (adjusted for sample size)", "value": 38.7, "unit": "%", "source": "ScienceDirect meta-analysis", "year": 2023 },
+      { "metric": "Meditation app users who are women", "value": 65, "unit": "%", "source": "PMC population survey", "year": 2023 },
+      { "metric": "Meditation app users who are non-Latinx White", "value": 60, "unit": "%", "source": "PMC population survey", "year": 2023 },
+      { "metric": "US adults who have practiced meditation (ever)", "value": 14.2, "unit": "%", "source": "CDC NHIS", "year": 2022 },
+      { "metric": "Growth in US meditation practitioners 2012-2017", "value": "3x", "unit": "tripled", "source": "CDC NHIS", "year": 2018 }
+    ]
+  },
+
+  "habit_formation": {
+    "label": "Habit Formation — Science & App Retention",
+    "data": [
+      { "metric": "21-day habit myth origin", "value": "21 days", "unit": "myth — from Maxwell Maltz 1960s plastic surgery", "source": "ACSH / ScienceDaily", "year": 2025 },
+      { "metric": "Actual median time to habit formation (UCL study)", "value": "59-66", "unit": "days median", "source": "Dr. Pippa Lally, UCL — European Journal of Social Psychology", "year": 2010 },
+      { "metric": "Actual mean time to habit formation (systematic review)", "value": "106-154", "unit": "days mean", "source": "PMC11641623 — Systematic review & meta-analysis", "year": 2024 },
+      { "metric": "Range of individual variation in habit formation time", "value": "4-335", "unit": "days", "source": "PMC11641623 / Lally UCL", "year": 2024 },
+      { "metric": "Time to form exercise habit vs eating/drinking habit", "value": "1.5x longer", "unit": "relative to eating/drinking habits", "source": "UCL Lally study", "year": 2010 },
+      { "metric": "Habit tracking app users who discontinue in first 30 days", "value": 52, "unit": "% — due to lack of personalization", "source": "Global Growth Insights / App retention research", "year": 2024 },
+      { "metric": "Users who uninstall habit apps after missing streak", "value": 44, "unit": "%", "source": "Habit tracking app market research", "year": 2024 },
+      { "metric": "Average app loses daily active users within 3 days of install", "value": 77, "unit": "% lost within 3 days", "source": "Business of Apps retention data", "year": 2024 },
+      { "metric": "App retention rate at 30 days (all apps average)", "value": 5.6, "unit": "%", "source": "Business of Apps / Plotline", "year": 2024 },
+      { "metric": "Health & fitness app 30-day retention rate", "value": "~5-10", "unit": "% (above average for health vertical)", "source": "Adjust health tracker data", "year": 2023 },
+      { "metric": "Smoking cessation — relapse within 1 year of quitting", "value": "65-70", "unit": "%", "source": "Indian Journal of Psychological Medicine", "year": 2020 },
+      { "metric": "Smoking cessation — relapse risk after 5 years sober", "value": "<15", "unit": "%", "source": "Truth Initiative / Michael's House", "year": 2022 },
+      { "metric": "Alcohol treatment — patients relapsing within 3 months", "value": "~50", "unit": "%", "source": "Recovery Village / Michael's House", "year": 2021 },
+      { "metric": "Alcohol treatment — patients relapsing within 1 year", "value": "65-70", "unit": "%", "source": "Multiple studies / Recovery Village", "year": 2021 },
+      { "metric": "AUD patients who attempt to quit per year", "value": 33, "unit": "% of those with AUD", "source": "PMC6602820", "year": 2019 },
+      { "metric": "Those attempting to quit alcohol who succeed 1 year+", "value": 25, "unit": "%", "source": "American Addiction Centers", "year": 2022 },
+      { "metric": "Mean serious recovery attempts before success (alcohol/drug)", "value": 5.35, "unit": "attempts (median 2)", "source": "PMC6602820", "year": 2019 },
+      { "metric": "AA attendees — days sober before intervention (avg)", "value": 20, "unit": "%", "source": "AA effectiveness study", "year": 2020 },
+      { "metric": "AA attendees — days sober after 1 year (avg)", "value": 80, "unit": "% of days sober", "source": "AA effectiveness study", "year": 2020 },
+      { "metric": "People with alcohol problem who spent 27+ weeks in AA and remained abstinent at 16yr follow-up", "value": 70, "unit": "%", "source": "American Addiction Centers longitudinal study", "year": 2022 }
+    ]
+  },
+
+  "sleep": {
+    "label": "Sleep — Health Outcomes & Treatment",
+    "data": [
+      { "metric": "US recommended sleep duration for adults", "value": "7-9", "unit": "hours/night (CDC)", "source": "CDC Sleep guidelines", "year": 2022 },
+      { "metric": "US adults getting less than 7 hours sleep", "value": 35, "unit": "%", "source": "CDC", "year": 2022 },
+      { "metric": "Short sleep (<7h) associated mortality risk increase", "value": 14, "unit": "% higher mortality vs 7-8h", "source": "PMC12181477 — meta-analysis", "year": 2025 },
+      { "metric": "Long sleep (9h) mortality risk increase", "value": 14, "unit": "% higher mortality", "source": "PMC2864873 — systematic review", "year": 2010 },
+      { "metric": "Very long sleep (10h) mortality risk increase", "value": 30, "unit": "% higher mortality", "source": "PMC2864873", "year": 2010 },
+      { "metric": "Very long sleep (11h) mortality risk increase", "value": 47, "unit": "% higher mortality", "source": "PMC2864873", "year": 2010 },
+      { "metric": "Sleep regularity vs duration as mortality predictor", "value": "regularity is stronger", "unit": "qualitative", "source": "Oxford Academic SLEEP journal", "year": 2023 },
+      { "metric": "Imbalanced sleep increases mortality risk range", "value": "14-34", "unit": "% increase", "source": "PMC12181477", "year": 2025 },
+      { "metric": "CBT-I (insomnia) effect size post-intervention", "value": 0.779, "unit": "Hedges' g", "source": "ScienceDirect CBT-I meta-analysis", "year": 2022 },
+      { "metric": "CBT-I effect at 6-month follow-up", "value": 0.653, "unit": "Hedges' g", "source": "ScienceDirect CBT-I meta-analysis", "year": 2022 },
+      { "metric": "CBT-I effect at 12-month follow-up", "value": 0.335, "unit": "Hedges' g", "source": "ScienceDirect CBT-I meta-analysis", "year": 2022 },
+      { "metric": "Digital CBT-I effect size on insomnia severity", "value": 0.71, "unit": "SMD (moderate-large)", "source": "Nature npj Digital Medicine meta-analysis", "year": 2025 },
+      { "metric": "CBT-I vs medication for insomnia — long-term superiority", "value": "CBT-I superior", "unit": "qualitative — effects last 6+ months post-discontinuation", "source": "BMC Primary Care meta-analysis", "year": 2012 },
+      { "metric": "Sleep improvement effect on depression", "value": 0.63, "unit": "Cohen's g (medium-large)", "source": "ScienceDirect — sleep & mental health", "year": 2022 },
+      { "metric": "Sleep improvement effect on anxiety", "value": 0.51, "unit": "Cohen's g", "source": "ScienceDirect", "year": 2022 },
+      { "metric": "CBT-I adolescent effect size", "value": 1.06, "unit": "SMD (large)", "source": "Frontiers in Public Health meta-analysis", "year": 2024 },
+      { "metric": "Global insomnia disorder prevalence", "value": 10, "unit": "% of adults", "source": "American Academy of Sleep Medicine", "year": 2022 },
+      { "metric": "Short sleep linked to increased obesity risk", "value": "yes — via leptin/ghrelin disruption", "unit": "mechanistic", "source": "PMC2856739", "year": 2010 }
+    ]
+  },
+
+  "healthcare_adherence": {
+    "label": "Healthcare — Medication & Preventive Care Adherence",
+    "data": [
+      { "metric": "Patients failing to adhere to prescribed medication", "value": 50, "unit": "% (approx)", "source": "WHO / CDC MMWR medication adherence", "year": 2022 },
+      { "metric": "Patients not following prescribed treatment plans range", "value": "26-63", "unit": "% across chronic diseases", "source": "MDPI medication adherence review", "year": 2023 },
+      { "metric": "Patients complying when medication is preventive", "value": 63, "unit": "%", "source": "DialogHealth adherence statistics", "year": 2024 },
+      { "metric": "Patients complying with long-term medication regimens", "value": 50, "unit": "%", "source": "DialogHealth / WHO", "year": 2024 },
+      { "metric": "US annual deaths attributable to medication non-adherence", "value": 125000, "unit": "deaths/year", "source": "CDC MMWR Grand Rounds", "year": 2017 },
+      { "metric": "Hospitalizations linked to medication non-adherence", "value": 25, "unit": "%", "source": "CDC MMWR Grand Rounds", "year": 2017 },
+      { "metric": "Societal savings per patient from optimal adherence", "value": "316-700", "unit": "USD per patient", "source": "AJMC adherence cost analysis", "year": 2023 },
+      { "metric": "Women 50-74 up to date on mammogram screening (2023)", "value": 80.0, "unit": "%", "source": "CDC Preventing Chronic Disease 2025", "year": 2023 },
+      { "metric": "Women 40-49 who had mammogram within 2 years", "value": 62.1, "unit": "%", "source": "CDC Preventing Chronic Disease 2025", "year": 2023 },
+      { "metric": "Adults up to date on cervical cancer screening", "value": 75.4, "unit": "%", "source": "CDC Preventing Chronic Disease 2025", "year": 2023 },
+      { "metric": "Adults up to date on colorectal cancer screening", "value": 67.4, "unit": "%", "source": "CDC Preventing Chronic Disease 2025", "year": 2023 },
+      { "metric": "Adults aged 45-49 up to date on colorectal screening (lower rate)", "value": 37.1, "unit": "% (vs 73.4% for 50-75yr)", "source": "CDC Preventing Chronic Disease 2025", "year": 2023 },
+      { "metric": "Colonoscopies as share of all CRC screening tests", "value": 50, "unit": "%", "source": "PMC10728437 — CRC screening patterns", "year": 2023 },
+      { "metric": "Telemedicine users globally", "value": 116, "unit": "million (2024)", "source": "Doximity State of Telemedicine 2024", "year": 2024 },
+      { "metric": "Telemedicine users globally in 2019 (pre-COVID baseline)", "value": 57, "unit": "million", "source": "Doximity / Scnsoft statistics", "year": 2019 },
+      { "metric": "Patients who used telemedicine at least once (2023)", "value": 80, "unit": "%", "source": "Embryo telemedicine statistics", "year": 2023 },
+      { "metric": "Patients willing to use telemedicine again", "value": 94, "unit": "% (of those who used it)", "source": "Doximity 2024 report", "year": 2024 },
+      { "metric": "Patients who find telehealth as good or better than in-person", "value": 67, "unit": "%", "source": "AHA Telehealth Fact Sheet 2025", "year": 2025 },
+      { "metric": "Patient satisfaction with teletherapy (positive experience)", "value": 86, "unit": "%", "source": "Mastermindbehavior telehealth statistics", "year": 2023 },
+      { "metric": "Physicians using telemedicine weekly or more", "value": 77, "unit": "%", "source": "Doximity 2024 report", "year": 2024 },
+      { "metric": "Telehealth reduction in all-cause hospital days per patient", "value": 1.07, "unit": "days/patient", "source": "PMC12598373 — Systematic review", "year": 2025 }
+    ]
+  },
+
+  "exercise_longevity": {
+    "label": "Exercise & Longevity — Lifespan Impact",
+    "data": [
+      { "metric": "Life expectancy increase from regular physical activity — range", "value": "0.4-6.9", "unit": "years", "source": "PMC3395188 — systematic review", "year": 2012 },
+      { "metric": "Median life expectancy increase from regular PA (men & women)", "value": 3.7, "unit": "years each", "source": "PMC3395188", "year": 2012 },
+      { "metric": "All-cause mortality reduction — physically active vs inactive", "value": "30-35", "unit": "% lower in active", "source": "PMC3395188", "year": 2012 },
+      { "metric": "Mortality risk reduction at 2-4x recommended moderate PA", "value": "26-31", "unit": "% lower all-cause mortality", "source": "Harvard T.H. Chan / HSPH study", "year": 2024 },
+      { "metric": "CVD mortality reduction at 2-4x recommended PA", "value": "28-38", "unit": "% lower CVD mortality", "source": "Harvard T.H. Chan", "year": 2024 },
+      { "metric": "Optimal weekly exercise for maximum longevity benefit", "value": "2.6-4.5", "unit": "hours/week", "source": "ScienceDirect cohort analysis", "year": 2024 },
+      { "metric": "Mortality reduction at optimal 2.6-4.5hr/week exercise", "value": 50, "unit": "% less likely to die in 25-year period vs sedentary", "source": "ScienceDirect cohort analysis", "year": 2024 },
+      { "metric": "Additional years for top-quartile active women aged 60", "value": 3.4, "unit": "additional years vs least active", "source": "ScienceDirect cohort", "year": 2024 },
+      { "metric": "Additional years for top-quartile active men aged 60", "value": 4.6, "unit": "additional years vs least active", "source": "ScienceDirect cohort", "year": 2024 },
+      { "metric": "Life expectancy increase if all Americans 40+ exercised at top quartile level", "value": 5.3, "unit": "additional years (83.7yr vs ~78.4yr)", "source": "AMA / American Journal of Public Health", "year": 2024 },
+      { "metric": "Life expectancy gain from additional 10-min daily brisk walk (inactive women)", "value": 0.9, "unit": "years", "source": "AARP longevity study", "year": 2024 },
+      { "metric": "Life expectancy gain from additional 10-min daily brisk walk (inactive men)", "value": 1.4, "unit": "years", "source": "AARP longevity study", "year": 2024 },
+      { "metric": "US recommended weekly moderate exercise for adults", "value": 150, "unit": "minutes/week", "source": "US Physical Activity Guidelines", "year": 2018 },
+      { "metric": "US adults meeting physical activity guidelines", "value": 24, "unit": "%", "source": "CDC", "year": 2022 },
+      { "metric": "Mediterranean diet — telomere length association", "value": "longer telomeres", "unit": "qualitative biomarker of aging", "source": "PMC review of Mediterranean diet", "year": 2021 }
+    ]
+  },
+
+  "diet_longevity": {
+    "label": "Diet & Longevity",
+    "data": [
+      { "metric": "Mediterranean diet — women lower all-cause mortality risk", "value": 23, "unit": "% lower risk", "source": "Harvard Brigham & Women's 25yr (25,000 women)", "year": 2024 },
+      { "metric": "Mediterranean diet — cancer mortality reduction", "value": "significant", "unit": "qualitative", "source": "Harvard Brigham & Women's", "year": 2024 },
+      { "metric": "Mediterranean diet adherence score — 1-unit mortality reduction", "value": 21, "unit": "%", "source": "ScienceDirect / Cambridge nutrition", "year": 2021 },
+      { "metric": "Switching from Western to optimal diet at age 20 — life years gained", "value": 10.7, "unit": "years (women)", "source": "PLOS Medicine food modeling study", "year": 2022 },
+      { "metric": "Switching from Western to optimal diet at age 20 — life years gained (men)", "value": 13.0, "unit": "years", "source": "PLOS Medicine food modeling study", "year": 2022 },
+      { "metric": "Switching from Western to optimal diet at age 60 — life years gained", "value": 8.0, "unit": "years", "source": "PLOS Medicine food modeling study", "year": 2022 },
+      { "metric": "Switching from Western to optimal diet at age 80 — life years gained", "value": 3.4, "unit": "years", "source": "PLOS Medicine food modeling study", "year": 2022 }
+    ]
+  },
+
+  "social_connection_longevity": {
+    "label": "Social Connection — Mortality & Health Impact",
+    "data": [
+      { "metric": "World population affected by loneliness", "value": "1 in 6", "unit": "persons", "source": "WHO Commission on Social Connection", "year": 2025 },
+      { "metric": "Annual deaths attributed to loneliness (WHO estimate)", "value": 871000, "unit": "deaths/year (100/hour)", "source": "WHO Commission on Social Connection", "year": 2025 },
+      { "metric": "Lack of social connection — increased odds of death", "value": 50, "unit": "% higher (minimum)", "source": "Frontiers in Psychology meta-analysis / PMC4725506", "year": 2021 },
+      { "metric": "Multidimensional social isolation — mortality odds increase", "value": 91, "unit": "%", "source": "Springer Nature meta-analysis 2024", "year": 2024 },
+      { "metric": "Social isolation mortality risk — comparable to", "value": "smoking", "unit": "equal risk magnitude to smoking", "source": "Frontiers in Psychology", "year": 2021 },
+      { "metric": "Social isolation risk vs obesity", "value": "exceeds obesity risk", "unit": "qualitative", "source": "Frontiers in Psychology", "year": 2021 },
+      { "metric": "Loneliness — increased dementia risk", "value": 50, "unit": "% higher", "source": "Access Care Partners / Lancet Healthy Longevity", "year": 2024 },
+      { "metric": "Loneliness — increased heart disease risk", "value": 29, "unit": "% higher", "source": "Access Care Partners", "year": 2024 },
+      { "metric": "Loneliness — increased stroke risk", "value": 32, "unit": "% higher", "source": "Access Care Partners", "year": 2024 },
+      { "metric": "Young adults (13-29) reporting loneliness", "value": "17-21", "unit": "%", "source": "BMC Geriatrics / Springer meta-analysis", "year": 2024 },
+      { "metric": "Older adults affected by social isolation (estimate)", "value": "1 in 3", "unit": "older adults", "source": "Lancet Healthy Longevity", "year": 2024 },
+      { "metric": "Adolescents affected by social isolation", "value": "1 in 4", "unit": "adolescents", "source": "Lancet Healthy Longevity", "year": 2024 }
+    ]
+  },
+
+  "wearables": {
+    "label": "Wearables & Fitness Trackers — Behavior & Market",
+    "data": [
+      { "metric": "Global fitness tracker market size", "value": 60.9, "unit": "billion USD", "source": "Fortune Business Insights", "year": 2024 },
+      { "metric": "Projected fitness tracker market by 2030", "value": 162.8, "unit": "billion USD", "source": "Fortune Business Insights", "year": 2030 },
+      { "metric": "Fitness tracker market CAGR 2025-2030", "value": 18.0, "unit": "%", "source": "Fortune Business Insights", "year": 2024 },
+      { "metric": "Global wearable fitness trackers market size", "value": 62.92, "unit": "billion USD", "source": "SNS Insider / Straits Research", "year": 2024 },
+      { "metric": "Projected wearables market by 2033", "value": 352.03, "unit": "billion USD", "source": "SNS Insider", "year": 2033 },
+      { "metric": "Smartwatches share of fitness tracker market", "value": 48.5, "unit": "%", "source": "Grand View Research", "year": 2024 },
+      { "metric": "Running tracking segment share of fitness tracker market", "value": 25.6, "unit": "%", "source": "Grand View Research", "year": 2024 },
+      { "metric": "Wearable tracker daily step increase vs controls", "value": 1800, "unit": "extra steps/day (meta-analysis)", "source": "Systematic review — Lancet Digital Health / PubMed", "year": 2022 },
+      { "metric": "Wearable tracker walking increase vs controls", "value": 40, "unit": "extra minutes/day walking", "source": "Lancet Digital Health meta-analysis", "year": 2024 },
+      { "metric": "Wearable tracker standardized mean difference on steps", "value": 0.37, "unit": "SMD", "source": "PubMed 35868813 meta-analysis", "year": 2022 },
+      { "metric": "Wearable body weight reduction vs controls", "value": 1, "unit": "kg average reduction", "source": "JMIR / meta-analysis", "year": 2023 },
+      { "metric": "Americans who use wearable device for health/fitness", "value": 33, "unit": "% (1 in 3)", "source": "National Heart, Lung, Blood Institute", "year": 2023 },
+      { "metric": "Gym members using fitness tracker during workouts", "value": 60, "unit": "%", "source": "IHRSA / Gymdesk", "year": 2023 }
+    ]
+  },
+
+  "supplements": {
+    "label": "Dietary Supplements Market",
+    "data": [
+      { "metric": "Global dietary supplements market size", "value": 194.56, "unit": "billion USD", "source": "Grand View Research", "year": 2024 },
+      { "metric": "US dietary supplements market size", "value": 67.09, "unit": "billion USD", "source": "Polaris Market Research", "year": 2024 },
+      { "metric": "North America share of global supplement market", "value": 40, "unit": "% of global market", "source": "Straits Research", "year": 2024 },
+      { "metric": "Projected global supplement market by 2033", "value": 414, "unit": "billion USD", "source": "Grand View Research", "year": 2033 },
+      { "metric": "Global supplement market CAGR", "value": 8.80, "unit": "% CAGR", "source": "Grand View Research", "year": 2024 },
+      { "metric": "US supplement market projected by 2034", "value": 143.35, "unit": "billion USD", "source": "Polaris Market Research", "year": 2034 },
+      { "metric": "US supplement market CAGR", "value": 7.9, "unit": "%", "source": "Polaris Market Research", "year": 2024 },
+      { "metric": "Vitamin segment share of supplement market", "value": 31.80, "unit": "%", "source": "Straits Research", "year": 2024 },
+      { "metric": "Protein powder segment market form (powder) share", "value": 37, "unit": "% by revenue", "source": "Precedence Research", "year": 2025 },
+      { "metric": "Protein & amino acid segment CAGR", "value": 8.36, "unit": "% CAGR 2025-2034", "source": "Straits Research", "year": 2024 },
+      { "metric": "US adults taking dietary supplements", "value": 57.6, "unit": "%", "source": "NHANES / Council for Responsible Nutrition", "year": 2023 }
+    ]
+  },
+
+  "home_workout_online_fitness": {
+    "label": "Home Workout & Online Fitness — Adoption",
+    "data": [
+      { "metric": "US exercisers who prefer at-home workouts", "value": 51, "unit": "%", "source": "PT Pioneer Home Fitness Statistics", "year": 2023 },
+      { "metric": "US population exercising at home several times/week (vs gym)", "value": "10% more frequent than gym", "unit": "relative comparison", "source": "PT Pioneer", "year": 2023 },
+      { "metric": "Primary reason for home workout — convenience", "value": 51, "unit": "% cite convenience", "source": "PT Pioneer", "year": 2023 },
+      { "metric": "Primary reason for home workout — privacy", "value": 20, "unit": "% cite privacy", "source": "PT Pioneer", "year": 2023 },
+      { "metric": "Adults preferring flexibility of online fitness classes", "value": 72, "unit": "%", "source": "Muscle and Brawn / RunRepeat online fitness stats", "year": 2022 },
+      { "metric": "On-demand fitness video usage growth post-COVID", "value": 311, "unit": "% growth", "source": "RunRepeat online fitness statistics", "year": 2022 },
+      { "metric": "Online fitness market size", "value": 15.3, "unit": "billion USD", "source": "GM Insights", "year": 2023 },
+      { "metric": "Online fitness market projected CAGR 2024-2032", "value": 32, "unit": "%", "source": "GM Insights", "year": 2024 },
+      { "metric": "Fitness app downloads in 2023", "value": 3.76, "unit": "billion downloads", "source": "FitBudd fitness statistics", "year": 2023 },
+      { "metric": "Projected fitness app downloads by 2025", "value": 5, "unit": "billion", "source": "FitBudd", "year": 2025 },
+      { "metric": "Live/on-demand workout users exercise more per month than previous year", "value": 20, "unit": "% more frequent exercise", "source": "RunRepeat / Muscle and Brawn", "year": 2022 }
+    ]
+  },
+
+  "chronic_disease": {
+    "label": "Chronic Disease — Prevalence & Physical Activity Impact",
+    "data": [
+      { "metric": "US adults with at least 1 major chronic disease", "value": 129, "unit": "million people", "source": "CDC Chronic Disease About page", "year": 2023 },
+      { "metric": "US adults with chronic disease (proportion)", "value": 60, "unit": "% (6 in 10)", "source": "CDC", "year": 2023 },
+      { "metric": "US adults with 2+ chronic conditions", "value": 40, "unit": "% (4 in 10)", "source": "CDC", "year": 2023 },
+      { "metric": "US hypertension prevalence (steady 30 years)", "value": 32, "unit": "%", "source": "Peterson-KFF Health System Tracker", "year": 2023 },
+      { "metric": "US adult diabetes prevalence", "value": 12.5, "unit": "%", "source": "Peterson-KFF — US vs peer nations", "year": 2022 },
+      { "metric": "US adult obesity rate (chronic disease framing)", "value": 42, "unit": "% (most prevalent chronic condition)", "source": "CDC 2022", "year": 2022 },
+      { "metric": "Young adults (13-23) with any chronic condition — 2013", "value": 52.5, "unit": "%", "source": "PMC12007472 — BRFSS 2013-2023", "year": 2013 },
+      { "metric": "Young adults (13-23) with any chronic condition — 2023", "value": 59.5, "unit": "% (+7pp in 10 years)", "source": "PMC12007472", "year": 2023 },
+      { "metric": "Extra young adults with chronic disease 2013-2023", "value": 5.2, "unit": "million more people", "source": "PMC12007472", "year": 2023 },
+      { "metric": "US annual healthcare spending attributable to chronic disease", "value": 90, "unit": "% of $4.9T total = $4.41T", "source": "CDC / NAM", "year": 2023 },
+      { "metric": "US adults meeting recommended physical activity (chronic disease prevention)", "value": 25, "unit": "% (1 in 4)", "source": "CDC", "year": 2022 },
+      { "metric": "Young people meeting recommended physical activity", "value": 16.7, "unit": "% (1 in 6)", "source": "CDC", "year": 2022 },
+      { "metric": "Physical inactivity + poor nutrition as risk factors for chronic disease", "value": "type 2 diabetes, CVD, stroke, cancer, depression", "unit": "linked conditions", "source": "CDC", "year": 2023 },
+      { "metric": "Projected US cardiovascular disease prevalence by 2050", "value": "significantly higher — majority of adults", "unit": "qualitative AHA advisory", "source": "AHA Circulation Presidential Advisory", "year": 2024 },
+      { "metric": "T2 diabetes — regular exercise reduces risk by", "value": 30, "unit": "% lower incidence in active individuals", "source": "CDC / NIDDK prevention data", "year": 2022 }
+    ]
+  },
+
+  "strength_training_sarcopenia": {
+    "label": "Strength Training & Aging",
+    "data": [
+      { "metric": "US seniors with sarcopenia (muscle loss disorder)", "value": "25-45", "unit": "% range", "source": "UT Southwestern / Henry Ford Health", "year": 2023 },
+      { "metric": "Sarcopenia prevalence ages 40-64", "value": 8.85, "unit": "%", "source": "Henry Ford Health / research review", "year": 2023 },
+      { "metric": "Sarcopenia prevalence ages 65+", "value": 15.51, "unit": "%", "source": "Henry Ford Health", "year": 2023 },
+      { "metric": "Muscle mass loss per decade after age 30", "value": "3-8", "unit": "% per decade", "source": "Healthline / NIA review", "year": 2023 },
+      { "metric": "Muscle mass loss per year ages 50-70", "value": 8, "unit": "% per year (accelerated phase)", "source": "Frontiers in Sports and Active Living", "year": 2022 },
+      { "metric": "Resistance training — only proven intervention for sarcopenia", "value": true, "unit": "qualitative", "source": "Oxford Academic Age and Ageing", "year": 2022 },
+      { "metric": "Strength training improving grip strength in older adults", "value": "significant improvement", "unit": "qualitative — all RCTs show benefit", "source": "PMC6165967", "year": 2018 },
+      { "metric": "Strength training vs 50+ clinical studies — mental health benefits", "value": "reduced anxiety, depression, fibromyalgia pain; increased self-esteem", "unit": "qualitative meta-analysis", "source": "NIA / UCLA Health review", "year": 2023 },
+      { "metric": "CDC recommendation — strength training frequency", "value": 2, "unit": "days/week minimum", "source": "CDC Physical Activity Guidelines", "year": 2022 },
+      { "metric": "Strength training — minimum effective duration", "value": "10-30", "unit": "minutes per session", "source": "CDC / ACSM", "year": 2022 },
+      { "metric": "Multicomponent training (resistance + aerobic + balance) — benefit", "value": "biggest functional independence gains in older adults", "unit": "qualitative", "source": "Frontiers in Sports & Active Living", "year": 2022 },
+      { "metric": "US adults doing muscle-strengthening 2+ days/week", "value": 30.2, "unit": "%", "source": "CDC NHIS", "year": 2022 }
+    ]
+  },
+
+  "digital_fitness_platforms": {
+    "label": "Digital Fitness Platforms & App Economics",
+    "data": [
+      { "metric": "Global fitness apps market size", "value": 7.7, "unit": "billion USD", "source": "Polaris Market Research", "year": 2026 },
+      { "metric": "US fitness apps market size", "value": 4.75, "unit": "billion USD", "source": "Nova One Advisor", "year": 2024 },
+      { "metric": "US fitness apps market projected by 2034", "value": 12.55, "unit": "billion USD", "source": "Nova One Advisor", "year": 2034 },
+      { "metric": "Fitness apps market CAGR", "value": 10.2, "unit": "% CAGR", "source": "Nova One Advisor", "year": 2024 },
+      { "metric": "Peloton subscribers (Q4 2025)", "value": 2.8, "unit": "million subscribers", "source": "Statista / Business of Apps", "year": 2025 },
+      { "metric": "Peloton app monthly paid subscription churn", "value": 9.2, "unit": "% monthly churn", "source": "Peloton Q3 FY2024 Shareholder Letter", "year": 2024 },
+      { "metric": "Peloton annual subscription revenue", "value": 1.6, "unit": "billion USD", "source": "Business of Apps Peloton data", "year": 2024 },
+      { "metric": "Annual subscription health & fitness app retention rate", "value": 33, "unit": "% (1-year retention)", "source": "Business of Apps benchmarks", "year": 2025 },
+      { "metric": "Exercise & weight loss segment share of fitness app market", "value": 54, "unit": "% revenue share", "source": "Polaris Market Research", "year": 2024 },
+      { "metric": "Health & fitness app Day-7 retention benchmark", "value": 21, "unit": "%", "source": "Adjust health tracker insights 2023", "year": 2023 },
+      { "metric": "Health & fitness app Day-30 retention benchmark", "value": 9, "unit": "%", "source": "Adjust health tracker insights 2023", "year": 2023 },
+      { "metric": "Fitness app downloads globally 2023", "value": 3.76, "unit": "billion downloads", "source": "FitBudd / Nimble App Genie", "year": 2023 }
+    ]
+  },
+
+  "nutrition_coaching": {
+    "label": "Nutrition Coaching & Dietitian Outcomes",
+    "data": [
+      { "metric": "Dietitian intervention — BMI reduction (meta-analysis, 62 RCTs)", "value": -1.5, "unit": "BMI units mean difference", "source": "JAND 2022 / PMC6473916", "year": 2022 },
+      { "metric": "Dietitian intervention — percent weight loss", "value": -4.01, "unit": "% body weight (high certainty)", "source": "JAND 2022 / PubMed 35788061", "year": 2022 },
+      { "metric": "Dietitian intervention — waist circumference reduction", "value": -3.45, "unit": "cm (high certainty)", "source": "JAND 2022", "year": 2022 },
+      { "metric": "Health coaching trials showing improvement in at least one outcome", "value": 82, "unit": "% of trials", "source": "PMC6367877 — Health & Wellness Coaching", "year": 2019 },
+      { "metric": "Health coaching effective outcomes — most common", "value": "weight, blood pressure, fruit/veg intake", "unit": "outcomes", "source": "PMC6367877", "year": 2019 },
+      { "metric": "Nutrition professionals who identify as most qualified for weight management", "value": 92, "unit": "% self-identified", "source": "PMC4310773", "year": 2015 },
+      { "metric": "Other health professionals who agree dietitians most qualified for weight", "value": 57, "unit": "%", "source": "PMC4310773", "year": 2015 },
+      { "metric": "Health coaching effective across modalities (in-person & telehealth)", "value": true, "unit": "qualitative — both effective", "source": "PMC6367877", "year": 2019 },
+      { "metric": "Registered Dietitians in the US", "value": 112000, "unit": "professionals", "source": "Academy of Nutrition & Dietetics", "year": 2023 }
+    ]
+  },
+
+  "additional_fitness_stats": {
+    "label": "Additional Fitness & Wellness Data Points",
+    "data": [
+      { "metric": "Global gym & fitness club members", "value": 184, "unit": "million people", "source": "IHRSA / Gymdesk 2025", "year": 2024 },
+      { "metric": "Number of gym/health clubs worldwide", "value": 200000, "unit": "clubs", "source": "IHRSA Global Report", "year": 2024 },
+      { "metric": "Number of gym/health clubs in USA", "value": 41370, "unit": "clubs", "source": "IHRSA 2024", "year": 2024 },
+      { "metric": "Average US gym member annual fee", "value": "500-800", "unit": "USD/year range", "source": "IHRSA / Gymdesk", "year": 2024 },
+      { "metric": "Americans who exercise zero days per week (sedentary)", "value": 28, "unit": "%", "source": "CDC Physical Activity Statistics", "year": 2022 },
+      { "metric": "Adults meeting both aerobic AND muscle strengthening guidelines", "value": 24, "unit": "%", "source": "CDC National Health Interview Survey", "year": 2022 },
+      { "metric": "Strength training participation (adults)", "value": 30.2, "unit": "% train for muscle strength 2+ days/week", "source": "CDC NHIS", "year": 2022 },
+      { "metric": "Global physical inactivity prevalence", "value": 31, "unit": "% of adults worldwide", "source": "WHO Global Action Plan", "year": 2022 },
+      { "metric": "Physical inactivity projected economic cost by 2030", "value": 300, "unit": "billion USD globally", "source": "Lancet / WHO", "year": 2022 },
+      { "metric": "Personal training market CAGR", "value": 4.0, "unit": "% projected 2024-2032", "source": "IBIS World", "year": 2024 },
+      { "metric": "Certified personal trainers in USA", "value": 359900, "unit": "people", "source": "BLS Occupational Outlook Handbook", "year": 2023 },
+      { "metric": "Average personal training session cost (USA)", "value": "40-100", "unit": "USD per session", "source": "PT Pioneer / RunRepeat", "year": 2024 },
+      { "metric": "Clients who achieve their stated fitness goal with PT (12 weeks)", "value": "~50-65", "unit": "% partial or full goal achievement", "source": "ACE Fitness / RCT reviews", "year": 2022 },
+      { "metric": "Gym members who never use their membership (pure waste)", "value": 14, "unit": "% never set foot after signup", "source": "Mirrors Delivered unused memberships", "year": 2025 },
+      { "metric": "Average health & fitness app session duration", "value": 6.2, "unit": "minutes", "source": "Adjust health tracker insights", "year": 2023 },
+      { "metric": "Health & fitness apps — Day 7 retention rate", "value": 21, "unit": "%", "source": "Adjust health tracker insights", "year": 2023 },
+      { "metric": "Health & fitness apps — Day 30 retention rate", "value": 9, "unit": "%", "source": "Adjust health tracker insights", "year": 2023 },
+      { "metric": "CrossFit participation in US", "value": 4, "unit": "million people", "source": "CrossFit Inc.", "year": 2023 },
+      { "metric": "Yoga participation in US", "value": 36, "unit": "million people", "source": "Yoga Alliance", "year": 2023 },
+      { "metric": "Yoga market global size", "value": 115, "unit": "billion USD", "source": "Market research firms", "year": 2024 },
+      { "metric": "Pilates studios market CAGR", "value": 7.5, "unit": "% projected", "source": "Grand View Research", "year": 2024 },
+      { "metric": "US adults who are sufficiently active to get health benefits", "value": 53, "unit": "%", "source": "CDC", "year": 2022 },
+      { "metric": "Obese individuals who successfully lose weight through lifestyle alone (no surgery)", "value": "5-10", "unit": "% long term maintenance", "source": "NIDDK review", "year": 2022 },
+      { "metric": "Overweight adults who attempt to lose weight each year", "value": 47, "unit": "%", "source": "CDC NHANES", "year": 2023 },
+      { "metric": "Average time to first health improvement from regular exercise", "value": "4-8", "unit": "weeks", "source": "Multiple RCTs / ACSM guidelines", "year": 2022 },
+      { "metric": "Running/jogging — most popular fitness activity USA", "value": 60, "unit": "million participants", "source": "Statista", "year": 2023 },
+      { "metric": "Swimming participation as fitness activity USA", "value": 27, "unit": "million", "source": "USMS / Statista", "year": 2023 },
+      { "metric": "Cycling participation USA", "value": 51, "unit": "million", "source": "Statista", "year": 2023 },
+      { "metric": "Strength training — injury risk vs cardio", "value": "1-4", "unit": "injuries per 1,000 training hours (low risk)", "source": "NSCA research", "year": 2022 },
+      { "metric": "Contact sports injury rate per 1,000 exposures", "value": "15-20", "unit": "injuries (higher vs strength training)", "source": "Sports medicine literature", "year": 2022 },
+      { "metric": "Protein supplement usage among active adults", "value": 40, "unit": "%", "source": "NASM / survey data", "year": 2023 },
+      { "metric": "Multivitamin usage in US adults", "value": 33, "unit": "% use daily", "source": "NIH / NHANES", "year": 2023 },
+      { "metric": "Employee wellness program participation rate (companies that offer)", "value": 40, "unit": "% average participation", "source": "RAND Corporation wellness study", "year": 2023 },
+      { "metric": "Wellness program ROI (on average)", "value": "3:1 to 6:1", "unit": "USD return per dollar invested", "source": "RAND / Harvard Business Review", "year": 2022 },
+      { "metric": "Wellness programs reducing healthcare costs", "value": 28, "unit": "% reduction in sick days", "source": "RAND Corporation", "year": 2023 },
+      { "metric": "GLP-1 medication (Ozempic/Wegovy) weight loss at 68 weeks", "value": 14.9, "unit": "% body weight loss average", "source": "NEJM STEP-1 trial (semaglutide)", "year": 2021 },
+      { "metric": "GLP-1 medication weight regain after stopping (1 year)", "value": 67, "unit": "% of lost weight regained", "source": "NEJM post-trial study", "year": 2022 },
+      { "metric": "GLP-1 participants maintaining 5% weight loss 1yr post-discontinuation", "value": 17.5, "unit": "%", "source": "NEJM post-trial", "year": 2022 },
+      { "metric": "Intermittent fasting participants fasting 2x/week as recommended at 12mo", "value": 73.0, "unit": "%", "source": "AJCN IF RCT", "year": 2020 },
+      { "metric": "Calories burned per hour — vigorous exercise", "value": "400-600", "unit": "kcal/hour (avg adult)", "source": "ACSM Energy Expenditure guidelines", "year": 2022 },
+      { "metric": "Calories burned per hour — moderate exercise", "value": "250-400", "unit": "kcal/hour", "source": "ACSM guidelines", "year": 2022 },
+      { "metric": "Time to burn 1 lb of fat (3500 kcal deficit)", "value": "7-10", "unit": "days at moderate deficit", "source": "Clinical nutrition textbooks", "year": 2022 },
+      { "metric": "Recommended daily step count for health", "value": 7000, "unit": "steps/day (not the myth of 10,000)", "source": "JAMA Internal Medicine meta-analysis", "year": 2021 },
+      { "metric": "Steps/day associated with 50% lower all-cause mortality vs 2700 steps", "value": 7500, "unit": "steps/day", "source": "JAMA Internal Medicine", "year": 2021 },
+      { "metric": "Average American daily step count", "value": 4774, "unit": "steps/day", "source": "Stanford study / NHANES", "year": 2022 },
+      { "metric": "Average daily steps globally (Stanford comparison)", "value": 4961, "unit": "steps/day global average", "source": "Stanford Nature study", "year": 2017 }
+    ]
+  },
+
+  "weight_loss_program_types": {
+    "label": "Weight Loss Programs — Type-by-Type Outcomes",
+    "data": [
+      { "metric": "Very low calorie diet (VLCD) — average weight loss 12 weeks", "value": "12-23", "unit": "kg", "source": "NIDDK / Obesity Reviews", "year": 2021 },
+      { "metric": "VLCD weight maintained at 1 year", "value": "40-50", "unit": "% of initial loss", "source": "Obesity Reviews meta-analysis", "year": 2021 },
+      { "metric": "Low-fat diet vs low-carb diet — 12-month weight loss difference", "value": "minimal — both ~4-5kg", "unit": "kg", "source": "JAMA Gardner Stanford DIETFITS", "year": 2018 },
+      { "metric": "Keto diet 12-month weight loss", "value": "4-7", "unit": "kg average", "source": "Multiple RCTs / Stanford KetoMed", "year": 2022 },
+      { "metric": "Plant-based diet adherence at 12 months", "value": "40-50", "unit": "% adherent", "source": "PMC / plant-based diet RCTs", "year": 2022 },
+      { "metric": "Commercial weight loss program (WW) — 12mo weight loss", "value": 5.3, "unit": "kg average", "source": "Annals of Internal Medicine RCT", "year": 2015 },
+      { "metric": "Self-directed calorie restriction 12-month success rate", "value": 20, "unit": "% achieve 5%+ loss", "source": "NIDDK behavioral research", "year": 2022 },
+      { "metric": "Structured behavioral weight loss program (group) vs self-directed", "value": "2x more effective", "unit": "relative weight loss", "source": "CDC Weight Management evidence review", "year": 2022 },
+      { "metric": "Calorie tracking app users vs non-users — weight loss differential", "value": "up to 2x more weight lost", "unit": "relative", "source": "Obesity journal digital tracking review", "year": 2022 },
+      { "metric": "Meal replacement program (shakes/bars) 1-year weight loss", "value": "6-8", "unit": "kg average", "source": "Obesity Reviews", "year": 2020 },
+      { "metric": "Fasting mimicking diet (FMD) — 3-cycle weight loss", "value": 3, "unit": "kg average reduction", "source": "Science Translational Medicine Longo study", "year": 2017 },
+      { "metric": "Eating disorder prevalence linked to extreme dieting", "value": 9, "unit": "% lifetime prevalence USA", "source": "NEDA / NIMH", "year": 2023 }
+    ]
+  },
+
+  "mental_health_prevalence": {
+    "label": "Mental Health — Prevalence & Treatment Gaps",
+    "data": [
+      { "metric": "US adults with mental illness in past year", "value": 22.8, "unit": "% (~57 million)", "source": "SAMHSA National Survey 2022", "year": 2022 },
+      { "metric": "US adults with serious mental illness", "value": 5.5, "unit": "% (~14 million)", "source": "SAMHSA 2022", "year": 2022 },
+      { "metric": "US adults with major depressive episode", "value": 8.3, "unit": "% (~21 million)", "source": "SAMHSA 2022", "year": 2022 },
+      { "metric": "US adults with anxiety disorder (12-month)", "value": 19.1, "unit": "% — most common mental illness", "source": "NIMH", "year": 2023 },
+      { "metric": "Adults with mental illness NOT receiving treatment", "value": 57, "unit": "% do not receive treatment", "source": "NAMI State of Mental Health 2023", "year": 2023 },
+      { "metric": "Average delay from symptom onset to mental health treatment", "value": 11, "unit": "years", "source": "NAMI", "year": 2023 },
+      { "metric": "Mental health treatment costs — depression productivity loss", "value": 210, "unit": "billion USD/year USA", "source": "NIH / CDC", "year": 2022 },
+      { "metric": "Suicide rate USA (per 100,000)", "value": 14.2, "unit": "per 100,000", "source": "CDC WISQARS", "year": 2022 },
+      { "metric": "Therapy dropout rate — general mental health", "value": "20-50", "unit": "% drop out prematurely", "source": "APA review", "year": 2021 },
+      { "metric": "SSRI antidepressant response rate", "value": 50, "unit": "% respond to first medication", "source": "STAR*D study / NIMH", "year": 2006, "note": "Landmark study, still widely cited" },
+      { "metric": "Remission rate with SSRI treatment", "value": 33, "unit": "% achieve remission on first try", "source": "STAR*D study", "year": 2006 },
+      { "metric": "Treatment-resistant depression (fail 2+ treatments)", "value": 30, "unit": "% of depressed patients", "source": "NIMH", "year": 2023 },
+      { "metric": "CBT vs medication for anxiety disorders — long term", "value": "CBT superior for sustained effects", "unit": "qualitative meta-analysis", "source": "JAMA Psychiatry 2015", "year": 2015 },
+      { "metric": "ADHD prevalence USA adults", "value": 4.4, "unit": "% adults", "source": "NIMH", "year": 2023 },
+      { "metric": "PTSD lifetime prevalence USA", "value": 6.8, "unit": "%", "source": "NIMH / National Comorbidity Survey", "year": 2022 }
+    ]
+  },
+
+  "fitness_demographics": {
+    "label": "Fitness Participation — Demographics & Patterns",
+    "data": [
+      { "metric": "Gender gap in exercise: men meeting guidelines vs women", "value": "men 53% vs women 46% (meet aerobic guidelines)", "unit": "%", "source": "CDC NHIS 2022", "year": 2022 },
+      { "metric": "Age group most physically active (adults)", "value": "18-24 years", "unit": "most active group", "source": "CDC BRFSS", "year": 2022 },
+      { "metric": "Physical activity decline from age 18 to 60+", "value": "~40% less activity by retirement age", "unit": "relative decline", "source": "WHO / CDC trends", "year": 2022 },
+      { "metric": "College-educated vs non-college exercisers meeting guidelines", "value": "40% more likely to exercise regularly", "unit": "relative", "source": "CDC BRFSS", "year": 2022 },
+      { "metric": "Low-income adults less likely to exercise regularly vs high-income", "value": "25-30% less likely", "unit": "relative", "source": "CDC BRFSS", "year": 2022 },
+      { "metric": "Black adults meeting aerobic guidelines", "value": 44.5, "unit": "% (vs 54% for White adults)", "source": "CDC NHIS", "year": 2022 },
+      { "metric": "Hispanic adults meeting aerobic guidelines", "value": 45.2, "unit": "%", "source": "CDC NHIS", "year": 2022 },
+      { "metric": "Rural Americans meeting exercise guidelines", "value": 22, "unit": "% (vs 28% urban)", "source": "CDC / BRFSS", "year": 2022 },
+      { "metric": "Exercise motivation — most cited: health improvement", "value": 47, "unit": "% cite health as primary reason", "source": "IHRSA / Gallup", "year": 2023 },
+      { "metric": "Exercise motivation — most cited: weight loss", "value": 35, "unit": "%", "source": "IHRSA survey", "year": 2023 },
+      { "metric": "Exercise motivation — most cited: stress relief", "value": 31, "unit": "%", "source": "IHRSA survey", "year": 2023 },
+      { "metric": "Top barrier to exercise: lack of time", "value": 43, "unit": "% cite time as barrier", "source": "IHRSA / CDC Healthy People", "year": 2022 },
+      { "metric": "Top barrier to exercise: cost", "value": 23, "unit": "% cite cost as barrier", "source": "IHRSA", "year": 2022 },
+      { "metric": "Top barrier to exercise: lack of motivation", "value": 31, "unit": "% cite motivation", "source": "IHRSA", "year": 2022 },
+      { "metric": "Social support impact on exercise adherence", "value": "increased adherence by 20-30%", "unit": "relative improvement", "source": "Health Education Research meta-analysis", "year": 2021 },
+      { "metric": "Group exercise vs solo — attendance rate advantage", "value": "2x more consistent attendance", "unit": "relative", "source": "Journal of Sport Science review", "year": 2020 }
+    ]
+  },
+
+  "mental_health_exercise": {
+    "label": "Exercise as Mental Health Intervention",
+    "data": [
+      { "metric": "Exercise effect on depression vs antidepressants — equivalence", "value": "comparable effectiveness for mild-moderate depression", "unit": "qualitative meta-analysis", "source": "JAMA Psychiatry / Cochrane review", "year": 2023 },
+      { "metric": "Exercise — reduction in depression symptoms (meta-analysis)", "value": 0.82, "unit": "Cohen's d (large effect)", "source": "Cochrane review — exercise for depression", "year": 2023 },
+      { "metric": "Exercise — reduction in anxiety symptoms", "value": 0.58, "unit": "Cohen's d (medium effect)", "source": "Cochrane / JAMA meta-analysis", "year": 2023 },
+      { "metric": "Exercise sessions needed to see mood improvement", "value": 1, "unit": "single session improves mood (acute)", "source": "ACSM Position Stand", "year": 2021 },
+      { "metric": "Regular exercise and risk of depression (population)", "value": "17% lower risk", "unit": "% risk reduction", "source": "BMC Medicine meta-analysis", "year": 2022 },
+      { "metric": "Sedentary time per day above which mental health declines", "value": 11, "unit": "hours/day (critical threshold)", "source": "Lancet Psychiatry", "year": 2020 },
+      { "metric": "Exercise reducing cortisol (stress hormone) levels", "value": "20-30% reduction", "unit": "% chronic reduction with regular training", "source": "Psychoneuroendocrinology review", "year": 2021 },
+      { "metric": "Exercise and dementia risk reduction", "value": 35, "unit": "% lower risk in physically active adults", "source": "Lancet Commission on Dementia", "year": 2020 },
+      { "metric": "Aerobic exercise and BDNF (brain growth factor) increase", "value": "2-3x increase in BDNF with 30min moderate exercise", "unit": "fold increase", "source": "Nature Neuroscience review", "year": 2022 },
+      { "metric": "Walking 30min/day — anxiety reduction", "value": "significant reduction in trait anxiety", "unit": "qualitative RCTs", "source": "American Journal of Preventive Medicine", "year": 2020 }
+    ]
+  },
+
+  "preventive_health_habits": {
+    "label": "Preventive Health Behaviors",
+    "data": [
+      { "metric": "US adults who smoke (cigarettes)", "value": 11.5, "unit": "% (down from 42% in 1965)", "source": "CDC 2022 NHIS", "year": 2022 },
+      { "metric": "US adults who drink alcohol regularly", "value": 54.9, "unit": "% past 30 days", "source": "SAMHSA 2022", "year": 2022 },
+      { "metric": "US adults who binge drink", "value": 17.0, "unit": "% past 30 days", "source": "SAMHSA 2022", "year": 2022 },
+      { "metric": "Alcohol-related deaths per year USA", "value": 95000, "unit": "deaths/year", "source": "CDC", "year": 2022 },
+      { "metric": "US adults eating 5+ servings fruit/veg per day", "value": 12.3, "unit": "% (only 1 in 8)", "source": "CDC BRFSS", "year": 2022 },
+      { "metric": "US adults eating enough fruits (recommended amounts)", "value": 10, "unit": "% meet recommendations", "source": "CDC", "year": 2022 },
+      { "metric": "US adults eating enough vegetables", "value": 9, "unit": "% meet recommendations", "source": "CDC", "year": 2022 },
+      { "metric": "US adults with dental checkup in past year", "value": 65.5, "unit": "%", "source": "CDC NHIS 2022", "year": 2022 },
+      { "metric": "US adults with blood pressure checked in past 2 years", "value": 87.3, "unit": "%", "source": "CDC NHIS", "year": 2022 },
+      { "metric": "US adults with cholesterol checked in past 5 years", "value": 76.1, "unit": "%", "source": "CDC NHIS", "year": 2022 },
+      { "metric": "US adults who are current e-cigarette users", "value": 4.5, "unit": "%", "source": "CDC NHIS 2022", "year": 2022 },
+      { "metric": "Meditation/yoga practice in US adults", "value": 14.2, "unit": "% meditation, 14.3% yoga", "source": "CDC NHIS Complementary Health", "year": 2022 },
+      { "metric": "Adult bmi-related hospital costs per year USA", "value": 147, "unit": "billion USD", "source": "CDC / TFAH obesity report", "year": 2022 },
+      { "metric": "Preventable deaths from smoking per year USA", "value": 480000, "unit": "deaths/year", "source": "CDC smoking data", "year": 2022 },
+      { "metric": "Adults using fitness/workout apps (USA)", "value": 42, "unit": "million users", "source": "Statista US digital health", "year": 2024 }
+    ]
+  },
+
+  "longevity_factors_combined": {
+    "label": "Longevity — All Factors Combined",
+    "data": [
+      { "metric": "Non-smoking vs smoking — years of life gained", "value": 10, "unit": "years longer life for non-smokers", "source": "CDC / Doll-Hill epidemiology", "year": 2022 },
+      { "metric": "Normal weight vs obese — life expectancy gap", "value": "5-20", "unit": "years depending on severity", "source": "NEJM obesity mortality meta-analysis", "year": 2020 },
+      { "metric": "Regular exercisers vs sedentary — life expectancy gap", "value": 3.7, "unit": "years median", "source": "PMC3395188", "year": 2012 },
+      { "metric": "Strong social connections — survival odds increase vs isolated", "value": 50, "unit": "% higher survival odds", "source": "Frontiers in Psychology meta-analysis", "year": 2021 },
+      { "metric": "Optimal sleep (7-9h) vs short sleep (<6h) — mortality difference", "value": 14, "unit": "% lower mortality risk", "source": "PMC meta-analysis", "year": 2025 },
+      { "metric": "Mediterranean diet adherents — cancer mortality reduction", "value": 9, "unit": "% lower cancer mortality", "source": "Harvard Brigham & Women's 2024", "year": 2024 },
+      { "metric": "Combined healthy habits (5 factors: exercise, diet, sleep, no smoke, no alcohol) vs 0 habits", "value": 14, "unit": "years longer life", "source": "Harvard Chan School of Public Health", "year": 2018 },
+      { "metric": "Chronic stress — mortality risk increase", "value": 50, "unit": "% higher mortality risk (long-term high stress)", "source": "Psychosomatic Medicine / PMC review", "year": 2022 },
+      { "metric": "Purpose in life — mortality risk reduction", "value": 15, "unit": "% lower all-cause mortality", "source": "JAMA Network Open cohort study", "year": 2019 },
+      { "metric": "Volunteering/community — mortality risk reduction", "value": 22, "unit": "% lower mortality in regular volunteers", "source": "BMC Geriatrics meta-analysis", "year": 2022 },
+      { "metric": "VO2max (cardiorespiratory fitness) — top vs low quartile mortality difference", "value": 45, "unit": "% lower mortality in top vs bottom quartile", "source": "JAMA Network Open", "year": 2022 },
+      { "metric": "Centenarian countries with highest longevity (Blue Zones)", "value": "Sardinia, Okinawa, Nicoya, Icaria, Loma Linda", "unit": "5 regions", "source": "National Geographic / Dan Buettner", "year": 2023 },
+      { "metric": "Blue Zone common habits: plant-based diet adherence", "value": 95, "unit": "% of diet from plants", "source": "Dan Buettner Blue Zones research", "year": 2023 },
+      { "metric": "Blue Zone common habits: natural movement per day", "value": 60, "unit": "minutes+ of walking/activity", "source": "Dan Buettner", "year": 2023 }
+    ]
+  },
+
+  "fitness_industry_economics": {
+    "label": "Fitness Industry Economics — Full Market View",
+    "data": [
+      { "metric": "Global health and fitness market size", "value": 105, "unit": "billion USD", "source": "IHRSA Global Report", "year": 2024 },
+      { "metric": "US gym & fitness club industry size", "value": 40.6, "unit": "billion USD", "source": "IHRSA / IBISWorld", "year": 2024 },
+      { "metric": "Fitness industry jobs in USA", "value": 3.4, "unit": "million employed", "source": "BLS / IHRSA", "year": 2024 },
+      { "metric": "Average gym profit margin", "value": 10, "unit": "% (typical range 10-30%)", "source": "IBISWorld gym industry report", "year": 2024 },
+      { "metric": "Average cost per gym member to acquire", "value": 65, "unit": "USD CAC", "source": "Smart Health Clubs research", "year": 2024 },
+      { "metric": "Average lifetime value of gym member", "value": 517, "unit": "USD LTV", "source": "Smart Health Clubs / Gym Management research", "year": 2024 },
+      { "metric": "LTV:CAC ratio for typical gym", "value": "~8:1", "unit": "ratio", "source": "Smart Health Clubs", "year": 2024 },
+      { "metric": "Boutique fitness studio market share of fitness industry", "value": 35, "unit": "% revenue share", "source": "IBISWorld boutique fitness 2024", "year": 2024 },
+      { "metric": "Boutique fitness average monthly fee vs big box gym", "value": "3-5x higher", "unit": "relative pricing", "source": "IBISWorld", "year": 2024 },
+      { "metric": "Fitness equipment market size (home + commercial)", "value": 14.7, "unit": "billion USD", "source": "Grand View Research", "year": 2024 },
+      { "metric": "Sports nutrition market size (global)", "value": 45.2, "unit": "billion USD", "source": "Grand View Research sports nutrition", "year": 2024 },
+      { "metric": "Sports nutrition market CAGR", "value": 8.3, "unit": "% CAGR 2024-2030", "source": "Grand View Research", "year": 2024 },
+      { "metric": "Weight loss drug (GLP-1) market size", "value": 19.5, "unit": "billion USD", "source": "Market research firms / IQVIA", "year": 2024 },
+      { "metric": "GLP-1 market projected by 2030", "value": 100, "unit": "billion USD", "source": "Goldman Sachs / Morgan Stanley estimates", "year": 2030 },
+      { "metric": "Impact of GLP-1 drugs on gym memberships — net effect debated", "value": "mixed — some members join to preserve muscle", "unit": "qualitative", "source": "IHRSA commentary 2024", "year": 2024 },
+      { "metric": "Online personal training market CAGR", "value": 24.8, "unit": "% CAGR 2024-2030", "source": "Grand View Research", "year": 2024 },
+      { "metric": "AI fitness coaching market projected 2030", "value": 2.7, "unit": "billion USD", "source": "Fortune Business Insights", "year": 2024 }
+    ]
+  },
+
+  "behavior_change_psychology": {
+    "label": "Behavior Change Psychology — Key Stats",
+    "data": [
+      { "metric": "Stages of Change model: % in pre-contemplation for exercise", "value": 40, "unit": "% of sedentary adults not considering change", "source": "Prochaska / TTM research", "year": 2020 },
+      { "metric": "Implementation intentions boost goal achievement", "value": "2-3x", "unit": "times more likely to achieve goals", "source": "Gollwitzer meta-analysis", "year": 2010 },
+      { "metric": "Accountability partner — exercise adherence boost", "value": "65% stick to program vs 35% without", "unit": "% vs without partner", "source": "American Society of Training & Development", "year": 2015 },
+      { "metric": "Written goal vs unwritten — achievement rate", "value": "42% more likely to achieve written goals", "unit": "relative", "source": "Dominican University", "year": 2015 },
+      { "metric": "Gamification — exercise app engagement increase", "value": 47, "unit": "% more engagement vs non-gamified", "source": "Frontiers in Psychology gamification review", "year": 2022 },
+      { "metric": "Financial incentives on exercise — short-term effectiveness", "value": "significant while incentive active", "unit": "qualitative", "source": "PNAS Volpp et al.", "year": 2009 },
+      { "metric": "Financial incentives on exercise — after incentive removed", "value": "effects largely dissipate within 12 weeks", "unit": "qualitative", "source": "PNAS follow-up studies", "year": 2009 },
+      { "metric": "Identity-based goals ('I am a runner') vs outcome goals — long-term adherence", "value": "stronger long-term adherence", "unit": "qualitative", "source": "Personality and Social Psychology Bulletin", "year": 2021 },
+      { "metric": "Loss framing vs gain framing for health behavior", "value": "loss framing more effective short-term", "unit": "qualitative meta-analysis", "source": "Rothman & Salovey / Health Psychology", "year": 2018 },
+      { "metric": "Habit stacking (anchoring new habit to existing) — success rate", "value": "significantly higher than standalone habit attempts", "unit": "qualitative", "source": "BJ Fogg / Tiny Habits research", "year": 2020 },
+      { "metric": "Minimum viable workout to maintain fitness habit (not lose)", "value": 1, "unit": "session/week maintains 80% of gains", "source": "Medicine & Science in Sports & Exercise", "year": 2020 },
+      { "metric": "Detraining — significant fitness loss starts after", "value": "2-3", "unit": "weeks of complete inactivity", "source": "ACSM / Sports Medicine reviews", "year": 2022 },
+      { "metric": "Visualization/mental rehearsal improving athletic performance", "value": "23% improvement in motor performance", "unit": "% in meta-analysis", "source": "Journal of Sport & Exercise Psychology", "year": 2019 },
+      { "metric": "Self-monitoring (tracking food/exercise) — weight loss impact", "value": "twice as much weight loss vs non-trackers", "unit": "relative", "source": "American Journal of Preventive Medicine", "year": 2019 },
+      { "metric": "Stress as weight gain driver — cortisol-fat link", "value": "high-stress individuals gain 2x more abdominal fat", "unit": "relative to low stress", "source": "Psychosomatic Medicine", "year": 2022 }
+    ]
+  },
+
+  "key_ratios_and_benchmarks": {
+    "label": "Quick Reference — Rates, Ratios & Benchmarks for Simulator",
+    "data": [
+      { "metric": "People who start a diet and quit in first 2 weeks", "value": 25, "unit": "% quit in weeks 1-2", "source": "Multiple behavioral studies / NIDDK", "year": 2022 },
+      { "metric": "People who reach target weight at all (any diet)", "value": 35, "unit": "% reach their stated goal", "source": "Pharmko weight loss stats", "year": 2022 },
+      { "metric": "People who reach AND keep target weight at 2 years", "value": 12, "unit": "%", "source": "AJCN long-term maintenance meta-analysis", "year": 2022 },
+      { "metric": "Gym signup-to-regular-user conversion (attend 3+x/week)", "value": 18, "unit": "% of members", "source": "GymMaster / Smart Health Clubs", "year": 2024 },
+      { "metric": "Therapy referral to first session attended", "value": 60, "unit": "% of referrals attend first session", "source": "BMC Psychiatry research", "year": 2021 },
+      { "metric": "Therapy first session to completing 8+ sessions", "value": 40, "unit": "% complete a full course", "source": "APA / BMC Psychiatry", "year": 2021 },
+      { "metric": "Fitness app install to active user (7-day)", "value": 23, "unit": "% still active at day 7", "source": "Adjust 2023 benchmark", "year": 2023 },
+      { "metric": "Fitness app active user at day 30 to day 90 conversion", "value": 45, "unit": "% of day-30 users still active at day-90", "source": "Adjust 2023 / Business of Apps", "year": 2023 },
+      { "metric": "Paid fitness subscription churn (monthly average)", "value": "5-10", "unit": "% monthly churn", "source": "Peloton (9.2%) / general fitness sub data", "year": 2024 },
+      { "metric": "Wellness program signup to active participant", "value": 40, "unit": "% of eligible employees engage", "source": "RAND Corporation wellness study", "year": 2023 },
+      { "metric": "Weight loss program enrollee who loses 5%+ body weight", "value": 50, "unit": "% achieve 5% at 6 months (structured programs)", "source": "CDC Healthy Weight evidence", "year": 2022 },
+      { "metric": "Running event sign-up to race start (dropout from training)", "value": 88, "unit": "% start the race they registered for", "source": "Running USA / marathon data", "year": 2023 },
+      { "metric": "Nutrition tracking app — still tracking at 3 months", "value": 30, "unit": "% of starters still tracking", "source": "Obesity journal digital tracking study", "year": 2022 },
+      { "metric": "Sleep program (digital CBT-I) — completion rate", "value": 55, "unit": "% complete full 6-week program", "source": "Nature npj Digital Medicine 2025", "year": 2025 },
+      { "metric": "General health behavior change 1-year sustained rate (any behavior)", "value": 20, "unit": "% sustain meaningful change at 1 year without ongoing support", "source": "Prochaska TTM transtheoretical model", "year": 2020 },
+      { "metric": "Health behavior change with ongoing coaching/support 1-year", "value": 40, "unit": "% maintain change with support", "source": "Health coaching RCT meta-analysis", "year": 2022 },
+      { "metric": "Smoking quit attempt success without any help", "value": 3, "unit": "% succeed without assistance", "source": "CDC / Truth Initiative", "year": 2023 },
+      { "metric": "Physical therapy adherence for prescribed home exercises", "value": 35, "unit": "% fully adhere to prescribed PT home program", "source": "Physiotherapy Theory & Practice review", "year": 2021 }
+    ]
+  }
+}

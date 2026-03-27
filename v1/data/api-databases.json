@@ -1,0 +1,39 @@
+{
+  "_meta": {
+    "category": "Free Public APIs & Databases for Simulator",
+    "source_file": "api-databases.md",
+    "converted": "2026-03-27",
+    "total_entries": 23
+  },
+  "sections": {
+    "tier1_must_have": [
+      { "name": "FRED (Federal Reserve)", "python_package": "fredapi", "data": "800K+ serie: GDP, inflazione, unemployment, housing", "rate_limit": "~illimitato", "cost": 0 },
+      { "name": "World Bank API", "python_package": "wbdata", "data": "16K+ indicatori x 200 paesi: Gini, GDP/capita, poverty", "rate_limit": "illimitato", "cost": 0 },
+      { "name": "Our World in Data", "python_package": "pd.read_csv(url)", "data": "Happiness, mobilità sociale, salute, dal 1800", "rate_limit": "GitHub 5K/ora", "cost": 0 },
+      { "name": "Census Bureau API", "python_package": "censusdata", "data": "Reddito, istruzione per zip code, 330M americani", "rate_limit": "illimitato con key", "cost": 0 },
+      { "name": "OECD API", "python_package": "pandasdmx", "data": "Mobilità intergenerazionale, PISA, ore lavoro", "rate_limit": "illimitato", "cost": 0 },
+      { "name": "Nasdaq Data Link", "python_package": "nasdaqdatalink", "data": "Real estate, commodity, macro alternativo", "rate_limit": "50K/giorno", "cost": 0 },
+      { "name": "Semantic Scholar", "python_package": "semanticscholar", "data": "200M paper accademici, ricerca comportamentale", "rate_limit": "100 req/sec", "cost": 0 },
+      { "name": "BLS API", "python_package": "bls", "data": "Salari per professione, CPI, occupazione", "rate_limit": "500/giorno", "cost": 0 }
+    ],
+    "tier2_high_utility": [
+      { "name": "Kaggle API", "data": "200K+ dataset curati (consumer, HR, marketing)", "cost": 0 },
+      { "name": "CDC WONDER", "data": "Probabilità morte per causa/età/sesso USA", "cost": 0 },
+      { "name": "EDGAR SEC", "data": "Financials aziende quotate (revenue, growth, burn)", "cost": 0 },
+      { "name": "ClinicalTrials.gov", "data": "450K+ studi clinici, outcome salute", "cost": 0 },
+      { "name": "OSF API", "data": "Dataset psicologici validati scientificamente", "cost": 0 },
+      { "name": "CrossRef API", "data": "Metadata 140M paper", "cost": 0 },
+      { "name": "CORE API", "data": "200M paper open access con full text", "cost": 0 },
+      { "name": "CoinGecko", "data": "Crypto data, 10K req/mese free", "cost": 0 },
+      { "name": "ICPSR", "data": "17K+ dataset comportamentali (U. Michigan)", "cost": 0 },
+      { "name": "GBD (IHME)", "data": "Burden of disease globale, download CSV", "cost": 0 }
+    ],
+    "excluded_too_expensive": [
+      { "name": "Twitter/X API", "reason": "$200/mese minimo" },
+      { "name": "Crunchbase API", "reason": "$99/mese" },
+      { "name": "Alpha Vantage", "reason": "25 req/giorno" },
+      { "name": "Google Scholar", "reason": "No API" },
+      { "name": "Reddit API", "reason": "Approvazione richiesta" }
+    ]
+  }
+}

@@ -1,0 +1,649 @@
+{
+  "_meta": {
+    "category": "Failure Forensics",
+    "created": "2026-03-27",
+    "total_entries": 500,
+    "description": "Why businesses fail — specific failure reasons, rates, and patterns by business type"
+  },
+  "sections": {
+    "startup_failure_reasons_top20": [
+      {"metric": "No market need / no PMF", "value": "42", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Ran out of cash", "value": "29", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Not the right team", "value": "23", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Got outcompeted", "value": "19", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Pricing / cost issues", "value": "18", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Poor product", "value": "17", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Need / lack business model", "value": "17", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Poor marketing", "value": "14", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Ignore customers", "value": "14", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Product mis-timed", "value": "13", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Lose focus", "value": "13", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Disharmony among team / investors", "value": "13", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Pivot gone wrong", "value": "10", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Lack passion", "value": "9", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Bad location", "value": "9", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "No financing / investor interest", "value": "8", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Legal challenges", "value": "8", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Didn't use network / advisors", "value": "8", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Burned out", "value": "8", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Failure to pivot", "value": "7", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false}
+    ],
+    "startup_failure_by_stage": [
+      {"metric": "Startups that fail at idea stage (never build MVP)", "value": "30", "unit": "%", "source": "Startup Genome", "year": 2025, "evergreen": false},
+      {"metric": "Startups that fail at MVP stage (build but no traction)", "value": "40", "unit": "%", "source": "Startup Genome", "year": 2025, "evergreen": false},
+      {"metric": "Startups that fail at growth stage (traction but can't scale)", "value": "20", "unit": "%", "source": "Startup Genome", "year": 2025, "evergreen": false},
+      {"metric": "Startups that fail at scale stage (scaling too fast / wrong)", "value": "10", "unit": "%", "source": "Startup Genome", "year": 2025, "evergreen": false},
+      {"metric": "Premature scaling is #1 killer — happens in 74% of failures", "value": "74", "unit": "%", "source": "Startup Genome", "year": 2025, "evergreen": false},
+      {"metric": "Startups that scale prematurely are 3x more likely to fail", "value": "3", "unit": "x", "source": "Startup Genome", "year": 2025, "evergreen": true},
+      {"metric": "Average time from founding to failure", "value": "20", "unit": "months", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Median runway at time of failure", "value": "5", "unit": "months", "source": "Carta", "year": 2025, "evergreen": false}
+    ],
+    "startup_failure_by_funding_stage": [
+      {"metric": "Pre-seed startups that fail to reach seed", "value": "80", "unit": "%", "source": "Equidam", "year": 2025, "evergreen": false},
+      {"metric": "Only 2 in 100 startups get pre-seed funding", "value": "2", "unit": "%", "source": "Equidam", "year": 2025, "evergreen": false},
+      {"metric": "Seed-funded startups that fail to raise Series A", "value": "85", "unit": "%", "source": "Scaleup Finance", "year": 2025, "evergreen": false},
+      {"metric": "Seed-to-Series A graduation rate (historical norm)", "value": "20-30", "unit": "%", "source": "Crunchbase", "year": 2023, "evergreen": false},
+      {"metric": "Seed-to-Series A graduation rate (2025 crunch)", "value": "5-15", "unit": "%", "source": "Crunchbase", "year": 2025, "evergreen": false},
+      {"metric": "Series A startups that fail before Series B", "value": "35", "unit": "%", "source": "Eqvista", "year": 2025, "evergreen": false},
+      {"metric": "Series B startups that fail before Series C", "value": "15", "unit": "%", "source": "Eqvista", "year": 2025, "evergreen": false},
+      {"metric": "Failure rate drops past Series B", "value": "1", "unit": "%", "source": "Foundra AI", "year": 2025, "evergreen": false},
+      {"metric": "Seed-funded startups that become unicorns", "value": "1.3", "unit": "%", "source": "Carta / SaaStr", "year": 2025, "evergreen": false},
+      {"metric": "Seed-funded startups that eventually fail or dissolve", "value": "62", "unit": "%", "source": "Carta", "year": 2025, "evergreen": false},
+      {"metric": "Seed round volume drop YoY (Q1 2025)", "value": "-28", "unit": "%", "source": "Crunchbase", "year": 2025, "evergreen": false},
+      {"metric": "Series A round volume drop YoY (Q1 2025)", "value": "-10", "unit": "%", "source": "Crunchbase", "year": 2025, "evergreen": false}
+    ],
+    "startup_failure_by_industry": [
+      {"metric": "Information technology failure rate", "value": "63", "unit": "%", "source": "GrowthList / Demandsage", "year": 2025, "evergreen": false},
+      {"metric": "AI / ML startup failure rate", "value": "90", "unit": "%", "source": "Digital Silk", "year": 2025, "evergreen": false},
+      {"metric": "Blockchain / crypto startup failure rate", "value": "95", "unit": "%", "source": "GrowthList", "year": 2025, "evergreen": false},
+      {"metric": "Fintech startup failure rate", "value": "75", "unit": "%", "source": "AffMaven", "year": 2025, "evergreen": false},
+      {"metric": "E-commerce startup failure rate", "value": "80", "unit": "%", "source": "GrowthList", "year": 2025, "evergreen": false},
+      {"metric": "Healthcare tech startup failure rate", "value": "80", "unit": "%", "source": "GrowthList", "year": 2025, "evergreen": false},
+      {"metric": "Healthcare startups 5-year survival (vs avg)", "value": "+15", "unit": "pp", "source": "SPDload", "year": 2025, "evergreen": false},
+      {"metric": "EdTech startup failure rate", "value": "60", "unit": "%", "source": "Demandsage", "year": 2025, "evergreen": false},
+      {"metric": "Construction startup failure rate", "value": "25", "unit": "%", "source": "BLS / VictorFlow", "year": 2025, "evergreen": false},
+      {"metric": "Real estate startup failure rate", "value": "42", "unit": "%", "source": "VictorFlow", "year": 2025, "evergreen": false},
+      {"metric": "Transportation startup failure rate", "value": "50", "unit": "%", "source": "BLS", "year": 2025, "evergreen": false},
+      {"metric": "Retail startup failure rate (5yr)", "value": "60", "unit": "%", "source": "BLS", "year": 2025, "evergreen": false},
+      {"metric": "Food & hospitality startup failure rate (5yr)", "value": "50", "unit": "%", "source": "Datassential", "year": 2025, "evergreen": false}
+    ],
+    "startup_failure_by_founder": [
+      {"metric": "Solo founders are 54% less likely to dissolve vs 3-person teams", "value": "54", "unit": "%", "source": "MIT Sloan", "year": 2024, "evergreen": false},
+      {"metric": "Solo founders are 41% less likely to dissolve vs 2-person teams", "value": "41", "unit": "%", "source": "MIT Sloan", "year": 2024, "evergreen": false},
+      {"metric": "Startups with co-founders 3x more likely to succeed (VC view)", "value": "3", "unit": "x", "source": "TechCrunch", "year": 2024, "evergreen": false},
+      {"metric": "Successful exits with solo founder", "value": "50+", "unit": "%", "source": "TechCrunch / Crunchbase", "year": 2024, "evergreen": false},
+      {"metric": "Startups that fail due to co-founder conflict", "value": "65", "unit": "%", "source": "Noam Wasserman / Harvard", "year": 2024, "evergreen": true},
+      {"metric": "Average number of founders per startup", "value": "1.85", "unit": "founders", "source": "Crunchbase", "year": 2025, "evergreen": false},
+      {"metric": "Startups that fail due to team issues", "value": "60", "unit": "%", "source": "WinSavvy", "year": 2025, "evergreen": false},
+      {"metric": "First-time founders failure rate", "value": "82", "unit": "%", "source": "Demandsage", "year": 2025, "evergreen": false},
+      {"metric": "Second-time founders failure rate", "value": "70", "unit": "%", "source": "Demandsage", "year": 2025, "evergreen": false},
+      {"metric": "Serial entrepreneur success rate (3+ ventures)", "value": "30", "unit": "%", "source": "Harvard Business School", "year": 2024, "evergreen": false}
+    ],
+    "startup_failure_by_geography": [
+      {"metric": "US startup 10-year survival rate", "value": "25", "unit": "%", "source": "BLS", "year": 2025, "evergreen": false},
+      {"metric": "US startup 5-year survival rate", "value": "48", "unit": "%", "source": "BLS", "year": 2025, "evergreen": false},
+      {"metric": "US startup 1-year failure rate", "value": "20", "unit": "%", "source": "BLS", "year": 2025, "evergreen": false},
+      {"metric": "UK startup 5-year survival rate", "value": "42", "unit": "%", "source": "ONS UK", "year": 2024, "evergreen": false},
+      {"metric": "European startup 5-year survival rate", "value": "45", "unit": "%", "source": "Eurostat", "year": 2024, "evergreen": false},
+      {"metric": "India startup failure rate", "value": "90", "unit": "%", "source": "NASSCOM", "year": 2024, "evergreen": false},
+      {"metric": "Africa startup failure rate (within 2 years)", "value": "54", "unit": "%", "source": "Partech Africa", "year": 2024, "evergreen": false},
+      {"metric": "Southeast Asia startup 3-year survival", "value": "35", "unit": "%", "source": "SEA Startup Report", "year": 2024, "evergreen": false},
+      {"metric": "China startup failure rate (within 5 years)", "value": "80", "unit": "%", "source": "China Tech Report", "year": 2024, "evergreen": false},
+      {"metric": "Latin America startup failure rate", "value": "75", "unit": "%", "source": "LAVCA", "year": 2024, "evergreen": false}
+    ],
+    "startup_failure_postmortem_patterns": [
+      {"metric": "Cash flow mismanagement precedes failure", "value": "82", "unit": "%", "source": "CB Insights Post-Mortems", "year": 2025, "evergreen": false},
+      {"metric": "Ran out of capital (proximate cause)", "value": "70", "unit": "%", "source": "CB Insights 483 Post-Mortems", "year": 2025, "evergreen": false},
+      {"metric": "Poor product-market fit (root cause)", "value": "43", "unit": "%", "source": "CB Insights Post-Mortems", "year": 2025, "evergreen": false},
+      {"metric": "Bad timing (too early or too late)", "value": "29", "unit": "%", "source": "CB Insights Post-Mortems", "year": 2025, "evergreen": false},
+      {"metric": "Unsustainable unit economics", "value": "19", "unit": "%", "source": "CB Insights Post-Mortems", "year": 2025, "evergreen": false},
+      {"metric": "Founders misled by vanity metrics", "value": "68", "unit": "%", "source": "First Round Capital", "year": 2025, "evergreen": false},
+      {"metric": "Focused on vanity metrics instead of unit economics before failure", "value": "70", "unit": "%", "source": "First Round Capital", "year": 2025, "evergreen": false},
+      {"metric": "Founder burnout precedes voluntary shutdown", "value": "58", "unit": "%", "source": "Failory", "year": 2025, "evergreen": false},
+      {"metric": "Pivot hesitation increases failure likelihood", "value": "38", "unit": "%", "source": "Startup Genome", "year": 2025, "evergreen": false},
+      {"metric": "Stealth mode overextension correlates with higher failure", "value": "44", "unit": "%", "source": "Startup Genome", "year": 2025, "evergreen": false},
+      {"metric": "Less than 3 months runway correlates with 4x higher failure rate", "value": "4", "unit": "x", "source": "CB Insights", "year": 2025, "evergreen": true},
+      {"metric": "Total startup post-mortems analyzed (CB Insights)", "value": "483", "unit": "cases", "source": "CB Insights", "year": 2025, "evergreen": false}
+    ],
+
+    "ecommerce_overall_failure": [
+      {"metric": "E-commerce businesses that fail within first 2 years", "value": "80", "unit": "%", "source": "Global Work Digital", "year": 2025, "evergreen": false},
+      {"metric": "New e-commerce startups that fail within first 120 days", "value": "80-90", "unit": "%", "source": "Global Work Digital", "year": 2025, "evergreen": false},
+      {"metric": "E-commerce store average lifespan", "value": "14", "unit": "months", "source": "Shopify Industry Report", "year": 2025, "evergreen": false},
+      {"metric": "E-commerce stores that never reach $1K/month revenue", "value": "70", "unit": "%", "source": "Shopify", "year": 2025, "evergreen": false},
+      {"metric": "E-commerce cart abandonment rate (global)", "value": "70.19", "unit": "%", "source": "Baymard Institute", "year": 2025, "evergreen": false},
+      {"metric": "Returning customer rate needed for sustainability", "value": "30+", "unit": "%", "source": "Shopify", "year": 2025, "evergreen": true}
+    ],
+    "ecommerce_dropshipping_failure": [
+      {"metric": "Dropshipping stores that achieve consistent profitability", "value": "10-20", "unit": "%", "source": "FreightAmigo / Dropship Lifestyle", "year": 2025, "evergreen": false},
+      {"metric": "Dropshipping stores that fail within first year", "value": "90", "unit": "%", "source": "Cirklestudio", "year": 2025, "evergreen": false},
+      {"metric": "Dropshipping failure cause: unreliable suppliers", "value": "70+", "unit": "%", "source": "FreightAmigo", "year": 2025, "evergreen": false},
+      {"metric": "E-commerce retailers citing finding good supplier as biggest obstacle", "value": "84", "unit": "%", "source": "FreightAmigo", "year": 2025, "evergreen": false},
+      {"metric": "Dropshipping failure cause: shipping delays", "value": "40", "unit": "%", "source": "Cirklestudio", "year": 2025, "evergreen": false},
+      {"metric": "Average dropshipping profit margin", "value": "10-15", "unit": "%", "source": "Dropship Lifestyle", "year": 2025, "evergreen": false},
+      {"metric": "Dropshipping stores killed by slow China shipping", "value": "35", "unit": "%", "source": "DoDropshipping", "year": 2025, "evergreen": false},
+      {"metric": "Dropshippers who quit because margins too low", "value": "45", "unit": "%", "source": "Whop / Branvas", "year": 2025, "evergreen": false},
+      {"metric": "Average ad spend before first sale (dropshipping)", "value": "500-2000", "unit": "USD", "source": "DoDropshipping", "year": 2025, "evergreen": false},
+      {"metric": "Dropshippers who never recoup ad spend", "value": "60", "unit": "%", "source": "TrueProfit", "year": 2025, "evergreen": false}
+    ],
+    "ecommerce_shopify_failure": [
+      {"metric": "Shopify store survival rate (3 years)", "value": "20-35", "unit": "%", "source": "Global Work Digital", "year": 2025, "evergreen": false},
+      {"metric": "DTC brand failure rate (first 3 years)", "value": "65-80", "unit": "%", "source": "Global Work Digital", "year": 2025, "evergreen": false},
+      {"metric": "Shopify stores that close within 1 year", "value": "55", "unit": "%", "source": "Shopify Commerce Report", "year": 2025, "evergreen": false},
+      {"metric": "Shopify merchants with zero sales after 6 months", "value": "40", "unit": "%", "source": "Shopify", "year": 2025, "evergreen": false},
+      {"metric": "Average monthly cost to run a Shopify store (apps + ads)", "value": "200-500", "unit": "USD", "source": "Shopify App Ecosystem", "year": 2025, "evergreen": false},
+      {"metric": "DTC brands that fail to build sustainable organic traffic", "value": "70", "unit": "%", "source": "Global Work Digital", "year": 2025, "evergreen": false},
+      {"metric": "Shopify stores dependent on paid ads for 80%+ traffic", "value": "65", "unit": "%", "source": "Shopify Commerce Report", "year": 2025, "evergreen": false}
+    ],
+    "ecommerce_amazon_failure": [
+      {"metric": "New Amazon FBA sellers that fail", "value": "90", "unit": "%", "source": "WAH Academy", "year": 2025, "evergreen": false},
+      {"metric": "Amazon sellers profitable within first year", "value": "64", "unit": "%", "source": "GoFBAHub", "year": 2025, "evergreen": false},
+      {"metric": "Amazon sellers sustaining success beyond 2 years", "value": "10-20", "unit": "%", "source": "GoFBAHub", "year": 2025, "evergreen": false},
+      {"metric": "Amazon sellers with profit margins 11-25%", "value": "46", "unit": "%", "source": "Jungle Scout", "year": 2025, "evergreen": false},
+      {"metric": "Amazon seller failure cause: insufficient market research", "value": "35", "unit": "%", "source": "Garlic Press Seller", "year": 2025, "evergreen": false},
+      {"metric": "Amazon seller failure cause: poor product selection", "value": "30", "unit": "%", "source": "EcomClips", "year": 2025, "evergreen": false},
+      {"metric": "Amazon seller failure cause: underestimating FBA fees", "value": "25", "unit": "%", "source": "Thunderbit", "year": 2025, "evergreen": false},
+      {"metric": "Amazon seller failure cause: inventory cash flow crunch", "value": "28", "unit": "%", "source": "Panda-Boom", "year": 2025, "evergreen": false},
+      {"metric": "Amazon seller failure cause: account suspension/policy violations", "value": "15", "unit": "%", "source": "EcomClips", "year": 2025, "evergreen": false},
+      {"metric": "Amazon seller failure cause: competition saturation", "value": "40", "unit": "%", "source": "WAH Academy", "year": 2025, "evergreen": false},
+      {"metric": "Average startup investment for Amazon FBA", "value": "3000-5000", "unit": "USD", "source": "Jungle Scout", "year": 2025, "evergreen": false}
+    ],
+    "ecommerce_ad_spend_burnout": [
+      {"metric": "E-commerce stores where ad spend exceeds gross margin", "value": "55", "unit": "%", "source": "TrueProfit", "year": 2025, "evergreen": false},
+      {"metric": "Average Facebook CPM increase YoY", "value": "15-25", "unit": "%", "source": "Meta Business Report", "year": 2025, "evergreen": false},
+      {"metric": "E-commerce stores that can't sustain ROAS > 3x", "value": "60", "unit": "%", "source": "Shopify Commerce Report", "year": 2025, "evergreen": false},
+      {"metric": "Average CAC increase for e-commerce (2020-2025)", "value": "60", "unit": "%", "source": "Profitwell", "year": 2025, "evergreen": false},
+      {"metric": "E-commerce stores killed by iOS 14.5+ tracking changes", "value": "30", "unit": "%", "source": "Meta / Shopify", "year": 2023, "evergreen": false},
+      {"metric": "Stores that fail after losing primary ad channel", "value": "45", "unit": "%", "source": "TrueProfit", "year": 2025, "evergreen": false}
+    ],
+    "ecommerce_margin_competition": [
+      {"metric": "Average e-commerce gross margin", "value": "42", "unit": "%", "source": "NYU Stern", "year": 2025, "evergreen": false},
+      {"metric": "E-commerce net margin (after all costs)", "value": "5-10", "unit": "%", "source": "Shopify", "year": 2025, "evergreen": false},
+      {"metric": "Stores that fail due to margin compression from competition", "value": "35", "unit": "%", "source": "Global Work Digital", "year": 2025, "evergreen": false},
+      {"metric": "Products with 20+ competitors on same marketplace", "value": "78", "unit": "%", "source": "Jungle Scout", "year": 2025, "evergreen": false},
+      {"metric": "Stores that fail because suppliers raise prices", "value": "20", "unit": "%", "source": "FreightAmigo", "year": 2025, "evergreen": false},
+      {"metric": "Stores killed by race-to-bottom pricing", "value": "30", "unit": "%", "source": "Shopify Commerce Report", "year": 2025, "evergreen": false}
+    ],
+
+    "agency_overall_failure": [
+      {"metric": "New SMMA agencies that fail within first year", "value": "70", "unit": "%", "source": "Ippei / Agency Growth Events", "year": 2025, "evergreen": false},
+      {"metric": "Marketing agencies that survive past 5 years", "value": "30", "unit": "%", "source": "Agency Growth Events", "year": 2025, "evergreen": false},
+      {"metric": "Digital agencies that never exceed $10K MRR", "value": "65", "unit": "%", "source": "Focus Digital", "year": 2025, "evergreen": false},
+      {"metric": "Agencies stuck at 1-person (founder only) after 2 years", "value": "55", "unit": "%", "source": "Ippei", "year": 2025, "evergreen": false},
+      {"metric": "Agencies that close due to founder burnout", "value": "40", "unit": "%", "source": "Agency Growth Events", "year": 2025, "evergreen": false}
+    ],
+    "agency_client_acquisition_failure": [
+      {"metric": "Agency client churn rate (annual)", "value": "25-50", "unit": "%", "source": "Sakas & Company", "year": 2025, "evergreen": false},
+      {"metric": "SMMA client churn rate (can reach)", "value": "60", "unit": "%", "source": "Agency Growth Events", "year": 2025, "evergreen": false},
+      {"metric": "Agencies that rely on referrals only (no outbound system)", "value": "70", "unit": "%", "source": "Alex Berman", "year": 2025, "evergreen": false},
+      {"metric": "Agencies where top client = 40%+ of revenue (concentration risk)", "value": "45", "unit": "%", "source": "Focus Digital", "year": 2025, "evergreen": false},
+      {"metric": "Agencies that fail because no consistent lead gen pipeline", "value": "50", "unit": "%", "source": "Agency Growth Events", "year": 2025, "evergreen": false},
+      {"metric": "Cold outreach response rate for agency services", "value": "1-3", "unit": "%", "source": "Alex Berman", "year": 2025, "evergreen": false},
+      {"metric": "Agencies that lose clients due to poor communication (not results)", "value": "40", "unit": "%", "source": "Focus Digital", "year": 2025, "evergreen": false},
+      {"metric": "Months to close first agency client (average newbie)", "value": "3-6", "unit": "months", "source": "Ippei", "year": 2025, "evergreen": false}
+    ],
+    "agency_delivery_failure": [
+      {"metric": "Agencies that overpromise and underdeliver", "value": "55", "unit": "%", "source": "SEO Vendor", "year": 2025, "evergreen": false},
+      {"metric": "Agencies killed by scope creep", "value": "35", "unit": "%", "source": "Agency Growth Events", "year": 2025, "evergreen": false},
+      {"metric": "Agencies with no documented SOPs / processes", "value": "60", "unit": "%", "source": "Focus Digital", "year": 2025, "evergreen": false},
+      {"metric": "Client satisfaction drop after month 3 (honeymoon effect)", "value": "40", "unit": "%", "source": "Focus Digital", "year": 2025, "evergreen": false},
+      {"metric": "Agencies that fail to show ROI within 90 days (client leaves)", "value": "45", "unit": "%", "source": "SEO Vendor", "year": 2025, "evergreen": false},
+      {"metric": "Creative fatigue causes quality decline in agencies", "value": "50", "unit": "%", "source": "Agency Growth Events", "year": 2025, "evergreen": false}
+    ],
+    "agency_pricing_failure": [
+      {"metric": "New agencies that underprice services (below cost)", "value": "70", "unit": "%", "source": "Ippei", "year": 2025, "evergreen": false},
+      {"metric": "Average hourly rate that leads to burnout (< threshold)", "value": "50", "unit": "USD/hr", "source": "Alex Berman", "year": 2025, "evergreen": false},
+      {"metric": "Agencies that fail to raise prices as costs increase", "value": "55", "unit": "%", "source": "Sakas & Company", "year": 2025, "evergreen": false},
+      {"metric": "Agencies undercut by freelancers on Upwork/Fiverr", "value": "40", "unit": "%", "source": "Ippei", "year": 2025, "evergreen": false},
+      {"metric": "Agency average retainer that leads to churn (too low)", "value": "500-1000", "unit": "USD/mo", "source": "Focus Digital", "year": 2025, "evergreen": false},
+      {"metric": "Agencies that compete on price instead of value", "value": "65", "unit": "%", "source": "Agency Growth Events", "year": 2025, "evergreen": false},
+      {"metric": "AI agency failure rate (new 2024-2025 wave)", "value": "80", "unit": "%", "source": "Ippei", "year": 2025, "evergreen": false}
+    ],
+    "agency_competition_saturation": [
+      {"metric": "New SMMA agencies launched per month (estimated)", "value": "10000+", "unit": "agencies", "source": "Agency Growth Events", "year": 2025, "evergreen": false},
+      {"metric": "Agencies that fail due to no clear niche/differentiator", "value": "50", "unit": "%", "source": "Alex Berman", "year": 2025, "evergreen": false},
+      {"metric": "Agencies facing pressure from in-house marketing teams", "value": "45", "unit": "%", "source": "Focus Digital", "year": 2025, "evergreen": false},
+      {"metric": "Agencies threatened by AI tools replacing basic services", "value": "55", "unit": "%", "source": "Ippei", "year": 2025, "evergreen": false},
+      {"metric": "Agency employee turnover rate (annual)", "value": "30", "unit": "%", "source": "Opal / WorkWithOpal", "year": 2025, "evergreen": false},
+      {"metric": "Agencies that lose key employees and can't recover", "value": "25", "unit": "%", "source": "Opal", "year": 2025, "evergreen": false}
+    ],
+
+    "restaurant_cafe_overall_failure": [
+      {"metric": "Restaurant first-year failure rate (actual 2025 data)", "value": "0.9", "unit": "%", "source": "Datassential", "year": 2025, "evergreen": false},
+      {"metric": "Restaurant first-year closure rate (broader estimates)", "value": "17-30", "unit": "%", "source": "MenuTiger / Owner.com", "year": 2025, "evergreen": false},
+      {"metric": "Restaurant 5-year failure rate", "value": "50", "unit": "%", "source": "Owner.com", "year": 2025, "evergreen": false},
+      {"metric": "Restaurant 10-year survival rate", "value": "35", "unit": "%", "source": "OysterLink", "year": 2025, "evergreen": false},
+      {"metric": "The '90% fail in year 1' myth is FALSE — actual rate much lower", "value": "0.9-17", "unit": "%", "source": "Datassential / RestroWorks", "year": 2025, "evergreen": false},
+      {"metric": "Independent restaurant failure rate vs chain", "value": "60", "unit": "% higher", "source": "RestroWorks", "year": 2025, "evergreen": false}
+    ],
+    "restaurant_cafe_top_reasons": [
+      {"metric": "Poor financial management / cash flow", "value": "1st", "unit": "rank", "source": "Owner.com", "year": 2025, "evergreen": true},
+      {"metric": "Undercapitalization (insufficient startup funds)", "value": "2nd", "unit": "rank", "source": "RestroWorks", "year": 2025, "evergreen": true},
+      {"metric": "Bad location choice", "value": "3rd", "unit": "rank", "source": "MenuTiger", "year": 2025, "evergreen": true},
+      {"metric": "Ill-conceived concept / no market demand", "value": "4th", "unit": "rank", "source": "RestaurantOwner.com", "year": 2025, "evergreen": true},
+      {"metric": "Poor customer service", "value": "5th", "unit": "rank", "source": "MenuTiger", "year": 2025, "evergreen": true},
+      {"metric": "Inconsistent food quality", "value": "6th", "unit": "rank", "source": "Owner.com", "year": 2025, "evergreen": true},
+      {"metric": "Failure to adapt to market changes", "value": "7th", "unit": "rank", "source": "RestroWorks", "year": 2025, "evergreen": true},
+      {"metric": "Lack of marketing / online presence", "value": "8th", "unit": "rank", "source": "MenuTiger", "year": 2025, "evergreen": true},
+      {"metric": "Staff turnover / labor problems", "value": "9th", "unit": "rank", "source": "7shifts", "year": 2025, "evergreen": true},
+      {"metric": "Owner burnout / lack of management systems", "value": "10th", "unit": "rank", "source": "EatApp", "year": 2025, "evergreen": true}
+    ],
+    "restaurant_cafe_financial_failure": [
+      {"metric": "Restaurant food cost target (% of revenue)", "value": "28-35", "unit": "%", "source": "RestaurantOwner.com", "year": 2025, "evergreen": true},
+      {"metric": "Restaurant labor cost target (% of revenue)", "value": "30-35", "unit": "%", "source": "Restaurant365", "year": 2025, "evergreen": true},
+      {"metric": "Fast-food labor cost (% of revenue)", "value": "25", "unit": "%", "source": "Toast", "year": 2025, "evergreen": false},
+      {"metric": "Full-service labor cost (% of revenue)", "value": "25-35", "unit": "%", "source": "Toast / 7shifts", "year": 2025, "evergreen": false},
+      {"metric": "Fine dining labor cost (% of revenue)", "value": "30-40", "unit": "%", "source": "Toast", "year": 2025, "evergreen": false},
+      {"metric": "Full-service median labor as % of sales (2024 actual)", "value": "36.5", "unit": "%", "source": "National Restaurant Association", "year": 2024, "evergreen": false},
+      {"metric": "Prime cost target (food + labor, % of revenue)", "value": "55-65", "unit": "%", "source": "RestaurantOwner.com", "year": 2025, "evergreen": true},
+      {"metric": "Prime cost consumes of total sales (most restaurants)", "value": "60+", "unit": "%", "source": "RestaurantOwner.com", "year": 2025, "evergreen": false},
+      {"metric": "Restaurants that fail due to food waste (30-40% of inventory)", "value": "30-40", "unit": "%", "source": "RestroWorks", "year": 2025, "evergreen": false},
+      {"metric": "Average restaurant profit margin (net)", "value": "3-5", "unit": "%", "source": "NRA", "year": 2025, "evergreen": false},
+      {"metric": "Restaurants operating at a loss in any given year", "value": "30", "unit": "%", "source": "NRA", "year": 2025, "evergreen": false},
+      {"metric": "Undercapitalized restaurants (< 6 months reserve)", "value": "60", "unit": "%", "source": "RestroWorks", "year": 2025, "evergreen": false},
+      {"metric": "Average months to break even (restaurant)", "value": "18-24", "unit": "months", "source": "NRA", "year": 2025, "evergreen": false}
+    ],
+    "restaurant_cafe_labor_issues": [
+      {"metric": "Restaurant operators reporting increased labor costs (2024)", "value": "88", "unit": "%", "source": "National Restaurant Association", "year": 2024, "evergreen": false},
+      {"metric": "Operators expecting further labor cost increases", "value": "79", "unit": "%", "source": "National Restaurant Association", "year": 2025, "evergreen": false},
+      {"metric": "Annual staff turnover in restaurants", "value": "73", "unit": "%", "source": "7shifts", "year": 2025, "evergreen": false},
+      {"metric": "Cost to replace one restaurant employee", "value": "5000-6000", "unit": "USD", "source": "7shifts", "year": 2025, "evergreen": false},
+      {"metric": "Restaurants citing labor shortage as top challenge", "value": "62", "unit": "%", "source": "NRA", "year": 2025, "evergreen": false},
+      {"metric": "Restaurant managers working 50+ hours/week", "value": "70", "unit": "%", "source": "7shifts", "year": 2025, "evergreen": false}
+    ],
+    "restaurant_cafe_location_reviews": [
+      {"metric": "Restaurants that fail due to bad location", "value": "25", "unit": "%", "source": "MenuTiger", "year": 2025, "evergreen": false},
+      {"metric": "Rent-to-revenue ratio that kills profitability (threshold)", "value": "10+", "unit": "%", "source": "RestaurantOwner.com", "year": 2025, "evergreen": true},
+      {"metric": "Restaurants where 1-star rating decrease = 5-9% revenue drop", "value": "5-9", "unit": "%", "source": "Harvard Business School", "year": 2024, "evergreen": true},
+      {"metric": "Diners who won't visit a restaurant below 4 stars", "value": "33", "unit": "%", "source": "BrightLocal", "year": 2025, "evergreen": false},
+      {"metric": "Restaurants destroyed by viral negative reviews", "value": "15", "unit": "%", "source": "Owner.com", "year": 2025, "evergreen": false},
+      {"metric": "Seasonal revenue swing (high vs low month)", "value": "30-50", "unit": "%", "source": "NRA", "year": 2025, "evergreen": false},
+      {"metric": "Restaurants that didn't survive post-COVID shift to delivery", "value": "20", "unit": "%", "source": "Datassential", "year": 2025, "evergreen": false},
+      {"metric": "Dine-in traffic still below pre-COVID levels", "value": "10-15", "unit": "% below", "source": "Datassential", "year": 2025, "evergreen": false}
+    ],
+    "restaurant_cafe_health_compliance": [
+      {"metric": "Restaurants closed for health code violations (annual)", "value": "2-5", "unit": "%", "source": "FDA / State Health Depts", "year": 2025, "evergreen": false},
+      {"metric": "Restaurants that receive critical health violations per year", "value": "35", "unit": "%", "source": "FDA", "year": 2025, "evergreen": false},
+      {"metric": "Lawsuits from foodborne illness (% that lead to closure)", "value": "10", "unit": "%", "source": "CDC / NRA", "year": 2025, "evergreen": false},
+      {"metric": "Revenue drop after public health incident", "value": "20-30", "unit": "%", "source": "NRA", "year": 2025, "evergreen": false}
+    ],
+
+    "saas_overall_failure": [
+      {"metric": "SaaS startups that fail within 3 years", "value": "92", "unit": "%", "source": "Webapper", "year": 2025, "evergreen": false},
+      {"metric": "SaaS startups gone within 5 years", "value": "70", "unit": "%", "source": "Webapper", "year": 2025, "evergreen": false},
+      {"metric": "SaaS startups that never reach $10K MRR", "value": "75", "unit": "%", "source": "Lighter Capital", "year": 2025, "evergreen": false},
+      {"metric": "SaaS startups that reach $1M ARR", "value": "8", "unit": "%", "source": "Lighter Capital", "year": 2025, "evergreen": false},
+      {"metric": "SaaS startups that reach $10M ARR", "value": "1", "unit": "%", "source": "SaaStr", "year": 2025, "evergreen": false}
+    ],
+    "saas_churn_death_spiral": [
+      {"metric": "Average B2B SaaS monthly churn rate", "value": "3.5", "unit": "%", "source": "Recurly / Vitally", "year": 2025, "evergreen": false},
+      {"metric": "B2B SaaS voluntary churn (customer-initiated)", "value": "2.6", "unit": "%/mo", "source": "Recurly", "year": 2025, "evergreen": false},
+      {"metric": "B2B SaaS involuntary churn (payment failures)", "value": "0.8", "unit": "%/mo", "source": "Recurly", "year": 2025, "evergreen": false},
+      {"metric": "Small business SaaS annual churn", "value": "7.5", "unit": "%", "source": "Vitally", "year": 2025, "evergreen": false},
+      {"metric": "Enterprise SaaS annual churn", "value": "3.8", "unit": "%", "source": "Vitally", "year": 2025, "evergreen": false},
+      {"metric": "EdTech SaaS churn explosion (2024→2025)", "value": "11→22", "unit": "%", "source": "Dollar Pocket", "year": 2025, "evergreen": false},
+      {"metric": "Churn rate that kills SaaS (monthly threshold)", "value": "5+", "unit": "%/mo", "source": "Cobloom", "year": 2025, "evergreen": true},
+      {"metric": "Net revenue retention needed for growth (min)", "value": "100+", "unit": "%", "source": "SaaStr", "year": 2025, "evergreen": true},
+      {"metric": "Top SaaS companies net revenue retention", "value": "120-140", "unit": "%", "source": "Bessemer Venture Partners", "year": 2025, "evergreen": false},
+      {"metric": "SaaS companies where business customer failure = 13% of churn", "value": "13", "unit": "%", "source": "K38 Consulting", "year": 2025, "evergreen": false}
+    ],
+    "saas_premature_scaling": [
+      {"metric": "SaaS startups that scale before PMF", "value": "74", "unit": "%", "source": "Startup Genome", "year": 2025, "evergreen": false},
+      {"metric": "Average months to PMF for successful SaaS", "value": "18-24", "unit": "months", "source": "Lighter Capital", "year": 2025, "evergreen": false},
+      {"metric": "SaaS startups that hire sales before PMF (and fail)", "value": "45", "unit": "%", "source": "Startup Genome", "year": 2025, "evergreen": false},
+      {"metric": "SaaS that spend 3x more on sales & marketing pre-PMF vs post", "value": "3", "unit": "x", "source": "Startup Genome", "year": 2025, "evergreen": false},
+      {"metric": "Burn multiple for failed SaaS ($ burned per $ ARR added)", "value": "3-5", "unit": "x", "source": "Lighter Capital", "year": 2025, "evergreen": false}
+    ],
+    "saas_pricing_failure": [
+      {"metric": "SaaS startups that underprice (below value delivered)", "value": "60", "unit": "%", "source": "Profitwell / Paddle", "year": 2025, "evergreen": false},
+      {"metric": "SaaS startups that never change initial pricing", "value": "50", "unit": "%", "source": "Profitwell", "year": 2025, "evergreen": false},
+      {"metric": "Revenue increase from pricing optimization (average)", "value": "20-30", "unit": "%", "source": "Profitwell", "year": 2025, "evergreen": false},
+      {"metric": "SaaS free-to-paid conversion rate (freemium model)", "value": "2-5", "unit": "%", "source": "Lighter Capital", "year": 2025, "evergreen": false},
+      {"metric": "Free trial to paid conversion rate", "value": "15-25", "unit": "%", "source": "Lighter Capital", "year": 2025, "evergreen": false}
+    ],
+    "saas_cac_ltv_failure": [
+      {"metric": "Healthy LTV:CAC ratio (minimum)", "value": "3:1", "unit": "ratio", "source": "HiBob / Capchase", "year": 2025, "evergreen": true},
+      {"metric": "B2C SaaS LTV:CAC benchmark", "value": "2.5:1", "unit": "ratio", "source": "HiBob", "year": 2025, "evergreen": false},
+      {"metric": "B2B SaaS LTV:CAC benchmark", "value": "4:1", "unit": "ratio", "source": "HiBob", "year": 2025, "evergreen": false},
+      {"metric": "Average SaaS CAC payback period", "value": "12", "unit": "months", "source": "Capchase", "year": 2025, "evergreen": false},
+      {"metric": "Best SaaS CAC payback period", "value": "5-7", "unit": "months", "source": "Capchase", "year": 2025, "evergreen": false},
+      {"metric": "SaaS companies where CAC > LTV (doomed)", "value": "30", "unit": "%", "source": "Phoenix Strategy Group", "year": 2025, "evergreen": false},
+      {"metric": "Overestimating LTV leads to overspending on acquisition", "value": "true", "unit": "pattern", "source": "Phoenix Strategy Group", "year": 2025, "evergreen": true},
+      {"metric": "SaaS companies that run out of cash due to CAC > revenue", "value": "40", "unit": "%", "source": "Webapper", "year": 2025, "evergreen": false}
+    ],
+    "saas_technical_product_failure": [
+      {"metric": "SaaS killed by feature creep / bloat", "value": "30", "unit": "%", "source": "Webapper", "year": 2025, "evergreen": false},
+      {"metric": "SaaS killed by technical debt (can't iterate fast enough)", "value": "25", "unit": "%", "source": "Webapper", "year": 2025, "evergreen": false},
+      {"metric": "SaaS startups that ship too slowly (1 release/month or less)", "value": "40", "unit": "%", "source": "Lighter Capital", "year": 2025, "evergreen": false},
+      {"metric": "SaaS killed by big tech entering their market", "value": "20", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "SaaS that fail from poor onboarding (users don't see value)", "value": "35", "unit": "%", "source": "Userpilot / K38 Consulting", "year": 2025, "evergreen": false},
+      {"metric": "SaaS killed by security breach / data loss", "value": "5", "unit": "%", "source": "Webapper", "year": 2025, "evergreen": false},
+      {"metric": "SaaS where bugs/glitches/downtime cause churn", "value": "25", "unit": "%", "source": "K38 Consulting", "year": 2025, "evergreen": false}
+    ],
+    "saas_cofounder_timing": [
+      {"metric": "SaaS failures attributed to co-founder conflict", "value": "65", "unit": "%", "source": "Harvard / Noam Wasserman", "year": 2024, "evergreen": true},
+      {"metric": "SaaS startups that failed due to bad market timing", "value": "29", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "SaaS that launched too early (market not ready)", "value": "15", "unit": "%", "source": "Bill Gross TED Talk / CB Insights", "year": 2025, "evergreen": true},
+      {"metric": "SaaS that launched too late (market saturated)", "value": "14", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false}
+    ],
+
+    "freelance_overall_failure": [
+      {"metric": "Freelancers reporting no year-over-year financial improvement", "value": "77", "unit": "%", "source": "Creative Boom", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers who quit within first 2 years", "value": "50", "unit": "%", "source": "Jobbers", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers earning below minimum wage equivalent", "value": "35", "unit": "%", "source": "Creative Boom", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers who return to full-time employment", "value": "40", "unit": "%", "source": "Jobbers", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers struggling in 2026 (surviving, not thriving)", "value": "70", "unit": "%", "source": "Medium / Chizurum Enyinnaya", "year": 2026, "evergreen": false}
+    ],
+    "freelance_feast_famine": [
+      {"metric": "Freelancers experiencing feast-or-famine cycle", "value": "65", "unit": "%", "source": "Optimise & Grow", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers with no marketing during busy periods", "value": "80", "unit": "%", "source": "Helen Coston", "year": 2025, "evergreen": false},
+      {"metric": "Average famine period duration", "value": "2-4", "unit": "months", "source": "Self Employed", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers with less than 1 month cash reserve", "value": "45", "unit": "%", "source": "Creative Boom", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers who panic-discount during famine", "value": "55", "unit": "%", "source": "Freak Marketing", "year": 2025, "evergreen": false},
+      {"metric": "Income volatility (monthly variation) for freelancers", "value": "30-50", "unit": "%", "source": "Fynloapps", "year": 2025, "evergreen": false}
+    ],
+    "freelance_underpricing": [
+      {"metric": "Freelancers who underprice their services", "value": "60", "unit": "%", "source": "Creative Boom", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers who never raise rates after year 1", "value": "45", "unit": "%", "source": "Peak Freelance", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers who don't track billable vs non-billable time", "value": "70", "unit": "%", "source": "Self Employed", "year": 2025, "evergreen": false},
+      {"metric": "Average effective hourly rate after accounting for unpaid work", "value": "50", "unit": "% of quoted", "source": "Creative Boom", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers competing on price (race to bottom)", "value": "55", "unit": "%", "source": "Peak Freelance", "year": 2025, "evergreen": false}
+    ],
+    "freelance_client_risk": [
+      {"metric": "Freelancers dependent on 1-2 clients for 80%+ income", "value": "40", "unit": "%", "source": "Self Employed", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers who've been ghosted by a client", "value": "75", "unit": "%", "source": "Jobbers", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers experiencing scope creep on projects", "value": "65", "unit": "%", "source": "Peak Freelance", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers who don't use contracts", "value": "30", "unit": "%", "source": "Self Employed", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers with unpaid invoices (30+ days overdue)", "value": "50", "unit": "%", "source": "Jobbers", "year": 2025, "evergreen": false}
+    ],
+    "freelance_burnout_obsolescence": [
+      {"metric": "Freelancers experiencing burnout", "value": "63", "unit": "%", "source": "Peak Freelance", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers working 50+ hours/week", "value": "40", "unit": "%", "source": "Jobbers", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers worried about AI replacing their skills", "value": "45", "unit": "%", "source": "Creative Boom", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers who haven't upskilled in 12+ months", "value": "35", "unit": "%", "source": "Fynloapps", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers on platforms (Upwork/Fiverr) facing rate compression", "value": "50", "unit": "%", "source": "Medium", "year": 2025, "evergreen": false},
+      {"metric": "Platform-dependent freelancers (80%+ income from 1 platform)", "value": "35", "unit": "%", "source": "Jobbers", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers with no retirement savings", "value": "55", "unit": "%", "source": "Creative Boom", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers with no health insurance", "value": "40", "unit": "%", "source": "Jobbers", "year": 2025, "evergreen": false}
+    ],
+
+    "content_creator_burnout": [
+      {"metric": "Content creators experiencing burnout", "value": "52", "unit": "%", "source": "Billion Dollar Boy", "year": 2025, "evergreen": false},
+      {"metric": "Creators experiencing burnout (broader study)", "value": "79", "unit": "%", "source": "ION / Vibely", "year": 2025, "evergreen": false},
+      {"metric": "Creators considering leaving their career", "value": "37", "unit": "%", "source": "Billion Dollar Boy", "year": 2025, "evergreen": false},
+      {"metric": "Creators considering abandoning creative pursuits", "value": "52", "unit": "%", "source": "ION / Vibely", "year": 2025, "evergreen": false},
+      {"metric": "Burnout cause: creative fatigue", "value": "40", "unit": "%", "source": "Billion Dollar Boy", "year": 2025, "evergreen": false},
+      {"metric": "Burnout cause: demanding workloads", "value": "31", "unit": "%", "source": "Billion Dollar Boy", "year": 2025, "evergreen": false},
+      {"metric": "Burnout cause: constant screen time", "value": "27", "unit": "%", "source": "Billion Dollar Boy", "year": 2025, "evergreen": false},
+      {"metric": "Burnout severity #1 factor: financial instability", "value": "55", "unit": "%", "source": "Billion Dollar Boy", "year": 2025, "evergreen": false},
+      {"metric": "Burnout negatively impacts career", "value": "59", "unit": "%", "source": "Billion Dollar Boy", "year": 2025, "evergreen": false},
+      {"metric": "Burnout damages overall well-being", "value": "58", "unit": "%", "source": "Billion Dollar Boy", "year": 2025, "evergreen": false},
+      {"metric": "Full-time creators anxiety/burnout vs traditional freelancers", "value": "+42", "unit": "%", "source": "American Psychological Association", "year": 2024, "evergreen": false}
+    ],
+    "content_creator_algorithm_platform": [
+      {"metric": "Creators who believe algorithms punish inconsistency", "value": "75", "unit": "%", "source": "Patreon Survey", "year": 2025, "evergreen": false},
+      {"metric": "Traffic drop from single algorithm update", "value": "50", "unit": "%", "source": "WPBeginner / Spiralytics", "year": 2025, "evergreen": false},
+      {"metric": "Creators dependent on single platform for 80%+ income", "value": "60", "unit": "%", "source": "Spiralytics", "year": 2025, "evergreen": false},
+      {"metric": "YouTube channels that never reach 1K subscribers", "value": "90", "unit": "%", "source": "WPBeginner", "year": 2025, "evergreen": false},
+      {"metric": "YouTube channels that die within 12 months of starting", "value": "70", "unit": "%", "source": "Scrumball", "year": 2025, "evergreen": false},
+      {"metric": "Creators who lost significant income after platform policy change", "value": "35", "unit": "%", "source": "Spiralytics", "year": 2025, "evergreen": false},
+      {"metric": "Creators who've had content demonetized unexpectedly", "value": "45", "unit": "%", "source": "WPBeginner", "year": 2025, "evergreen": false}
+    ],
+    "content_creator_monetization": [
+      {"metric": "Creators earning over $100K/year (professional level)", "value": "4", "unit": "%", "source": "Spiralytics / TheCityCeleb", "year": 2025, "evergreen": false},
+      {"metric": "Creators earning below livable wage", "value": "65", "unit": "%", "source": "TheCityCeleb", "year": 2025, "evergreen": false},
+      {"metric": "Creators who monetize too early (audience pushback)", "value": "25", "unit": "%", "source": "Spiralytics", "year": 2025, "evergreen": false},
+      {"metric": "Creators who monetize too late (burned out before revenue)", "value": "35", "unit": "%", "source": "Spiralytics", "year": 2025, "evergreen": false},
+      {"metric": "Average brand deal rate decline due to market saturation", "value": "15-30", "unit": "%", "source": "Viral Nation", "year": 2025, "evergreen": false},
+      {"metric": "Creators with diversified income (3+ streams)", "value": "20", "unit": "%", "source": "WPBeginner", "year": 2025, "evergreen": false},
+      {"metric": "Creators relying solely on ad revenue", "value": "45", "unit": "%", "source": "Spiralytics", "year": 2025, "evergreen": false}
+    ],
+    "content_creator_niche_consistency": [
+      {"metric": "Creators who fail due to niche too broad", "value": "40", "unit": "%", "source": "Scrumball", "year": 2025, "evergreen": false},
+      {"metric": "Creators who fail due to niche too narrow", "value": "15", "unit": "%", "source": "Scrumball", "year": 2025, "evergreen": false},
+      {"metric": "Creators who quit due to lack of growth (plateau)", "value": "35", "unit": "%", "source": "WPBeginner", "year": 2025, "evergreen": false},
+      {"metric": "Creators posting inconsistently (less than 1x/week)", "value": "60", "unit": "%", "source": "Scrumball", "year": 2025, "evergreen": false},
+      {"metric": "Audience fatigue — followers who unfollow after 6 months", "value": "20-30", "unit": "%", "source": "Viral Nation", "year": 2025, "evergreen": false},
+      {"metric": "Creators trapped in comparison to larger creators", "value": "50", "unit": "%", "source": "ProTunes One", "year": 2025, "evergreen": false},
+      {"metric": "Creators who never find their unique voice/angle", "value": "55", "unit": "%", "source": "TheCityCeleb", "year": 2025, "evergreen": false}
+    ],
+
+    "partnership_overall_failure": [
+      {"metric": "Business partnerships that fail over time", "value": "70", "unit": "%", "source": "Exit Consulting Group", "year": 2025, "evergreen": true},
+      {"metric": "Partnerships between friends that fail (within 5 years)", "value": "70", "unit": "%", "source": "Kate De Jong", "year": 2025, "evergreen": true},
+      {"metric": "Startups that fail due to co-founder conflicts", "value": "65", "unit": "%", "source": "Noam Wasserman / Harvard", "year": 2024, "evergreen": true},
+      {"metric": "Failed startups with unresolved co-founder issues", "value": "50+", "unit": "%", "source": "WinSavvy", "year": 2025, "evergreen": false},
+      {"metric": "Business partnerships that end in legal disputes", "value": "20", "unit": "%", "source": "SAC Attorneys", "year": 2025, "evergreen": false}
+    ],
+    "partnership_equity_disputes": [
+      {"metric": "Co-founder disputes stemming from unclear equity arrangements", "value": "65", "unit": "%", "source": "Harvard / Eqvista", "year": 2024, "evergreen": true},
+      {"metric": "Partnerships with no written agreement at founding", "value": "40", "unit": "%", "source": "Exit Consulting Group", "year": 2025, "evergreen": false},
+      {"metric": "Equal (50/50) splits that lead to deadlock", "value": "50", "unit": "%", "source": "Fourscore Business Law", "year": 2025, "evergreen": false},
+      {"metric": "Equity disputes that result in company dissolution", "value": "30", "unit": "%", "source": "Eqvista", "year": 2025, "evergreen": false},
+      {"metric": "Partnerships where vesting was never implemented", "value": "55", "unit": "%", "source": "Fourscore Business Law", "year": 2025, "evergreen": false},
+      {"metric": "Average legal cost of partnership dissolution", "value": "30000-100000", "unit": "USD", "source": "SAC Attorneys", "year": 2025, "evergreen": false}
+    ],
+    "partnership_vision_effort": [
+      {"metric": "Partnerships that fail due to vision misalignment", "value": "45", "unit": "%", "source": "Pollack Peacebuilding", "year": 2025, "evergreen": false},
+      {"metric": "Partnerships that fail due to unequal effort/commitment", "value": "50", "unit": "%", "source": "Exit Consulting Group", "year": 2025, "evergreen": false},
+      {"metric": "Partners who feel the other isn't contributing equally", "value": "55", "unit": "%", "source": "Indeed", "year": 2025, "evergreen": false},
+      {"metric": "Partnerships where one partner wants to exit but can't", "value": "30", "unit": "%", "source": "Exit Consulting Group", "year": 2025, "evergreen": false},
+      {"metric": "Partnerships destroyed by disagreement on company direction", "value": "40", "unit": "%", "source": "Rolling Out", "year": 2025, "evergreen": false},
+      {"metric": "Partnerships that fail due to different risk tolerance", "value": "35", "unit": "%", "source": "Pollack Peacebuilding", "year": 2025, "evergreen": false}
+    ],
+    "partnership_money_disputes": [
+      {"metric": "Partnerships where money is primary source of conflict", "value": "60", "unit": "%", "source": "Indeed", "year": 2025, "evergreen": true},
+      {"metric": "Disputes over profit distribution", "value": "45", "unit": "%", "source": "SAC Attorneys", "year": 2025, "evergreen": false},
+      {"metric": "Disputes over reinvestment vs personal withdrawal", "value": "40", "unit": "%", "source": "Exit Consulting Group", "year": 2025, "evergreen": false},
+      {"metric": "Disputes over salary/compensation differences", "value": "35", "unit": "%", "source": "Fourscore Business Law", "year": 2025, "evergreen": false},
+      {"metric": "Partners who discover financial fraud by co-partner", "value": "15", "unit": "%", "source": "SAC Attorneys", "year": 2025, "evergreen": false}
+    ],
+    "partnership_role_relationship": [
+      {"metric": "Partnerships that fail due to role confusion / overlap", "value": "40", "unit": "%", "source": "Pollack Peacebuilding", "year": 2025, "evergreen": false},
+      {"metric": "Partnerships where personal relationship strain kills business", "value": "35", "unit": "%", "source": "Rolling Out", "year": 2025, "evergreen": false},
+      {"metric": "Married couples in business together that divorce/split", "value": "50", "unit": "%", "source": "Kate De Jong", "year": 2025, "evergreen": false},
+      {"metric": "Partnerships with no conflict resolution mechanism", "value": "60", "unit": "%", "source": "Exit Consulting Group", "year": 2025, "evergreen": false},
+      {"metric": "Partners who avoid difficult conversations until crisis", "value": "65", "unit": "%", "source": "Pollack Peacebuilding", "year": 2025, "evergreen": false},
+      {"metric": "Partnerships with no exit clause / buyout agreement", "value": "45", "unit": "%", "source": "SAC Attorneys", "year": 2025, "evergreen": false},
+      {"metric": "Average time from first conflict to partnership dissolution", "value": "12-18", "unit": "months", "source": "Exit Consulting Group", "year": 2025, "evergreen": false},
+      {"metric": "Partnerships that survive after mediator intervention", "value": "35", "unit": "%", "source": "Pollack Peacebuilding", "year": 2025, "evergreen": false}
+    ],
+
+    "business_survival_by_year": [
+      {"metric": "Businesses that fail in year 1", "value": "21.5", "unit": "%", "source": "U.S. Bureau of Labor Statistics", "year": 2025, "evergreen": false},
+      {"metric": "Businesses that fail within 2 years", "value": "32", "unit": "%", "source": "BLS / Commerce Institute", "year": 2025, "evergreen": false},
+      {"metric": "Businesses that fail within 3 years", "value": "38.6", "unit": "%", "source": "BLS", "year": 2025, "evergreen": false},
+      {"metric": "Businesses that fail within 5 years", "value": "48.4", "unit": "%", "source": "BLS", "year": 2025, "evergreen": false},
+      {"metric": "Businesses that fail within 10 years", "value": "65.1", "unit": "%", "source": "BLS", "year": 2025, "evergreen": false},
+      {"metric": "Businesses that fail within 15 years", "value": "75", "unit": "%", "source": "BLS", "year": 2025, "evergreen": false},
+      {"metric": "Businesses surviving 20+ years", "value": "15", "unit": "%", "source": "BLS", "year": 2025, "evergreen": false},
+      {"metric": "Highest first-year failure industry: Mining/Oil/Gas", "value": "30.8", "unit": "%", "source": "BLS", "year": 2025, "evergreen": false},
+      {"metric": "Lowest first-year failure industry: Agriculture", "value": "6.9", "unit": "%", "source": "BLS", "year": 2025, "evergreen": false},
+      {"metric": "New business establishments opened per year (US)", "value": "400000+", "unit": "businesses", "source": "BLS", "year": 2025, "evergreen": false},
+      {"metric": "Business closures exceed openings in recession years", "value": "true", "unit": "pattern", "source": "BLS", "year": 2025, "evergreen": true},
+      {"metric": "Highest state failure rate: Minnesota (year 1)", "value": "27.7", "unit": "%", "source": "BLS", "year": 2025, "evergreen": false}
+    ],
+
+    "ecommerce_returns_inventory": [
+      {"metric": "Average e-commerce return rate", "value": "20.8", "unit": "%", "source": "NRF / Ringly", "year": 2025, "evergreen": false},
+      {"metric": "US retail returns total (annual)", "value": "849.9", "unit": "billion USD", "source": "NRF", "year": 2025, "evergreen": false},
+      {"metric": "Return fraud as % of all returns", "value": "9", "unit": "%", "source": "NRF", "year": 2025, "evergreen": false},
+      {"metric": "Total return volume that is fraudulent/abusive", "value": "15.1", "unit": "%", "source": "Signifyd", "year": 2025, "evergreen": false},
+      {"metric": "Abusive returns surge (Jan 2024 to May 2025)", "value": "+64", "unit": "%", "source": "Signifyd", "year": 2025, "evergreen": false},
+      {"metric": "Cost to process a single return", "value": "10-65", "unit": "USD", "source": "Opensend", "year": 2025, "evergreen": false},
+      {"metric": "Return fraud costs retailers per year", "value": "100+", "unit": "billion USD", "source": "NRF", "year": 2025, "evergreen": false},
+      {"metric": "Apparel return rate (highest category)", "value": "25-30", "unit": "%", "source": "Shopify", "year": 2025, "evergreen": false},
+      {"metric": "Electronics return rate", "value": "15-20", "unit": "%", "source": "Return Prime", "year": 2025, "evergreen": false},
+      {"metric": "E-commerce stores that fail due to unmanaged returns", "value": "20", "unit": "%", "source": "ClickPost", "year": 2025, "evergreen": false}
+    ],
+
+    "startup_failure_financial_patterns": [
+      {"metric": "Startups that overestimate first-year revenue by 2x+", "value": "60", "unit": "%", "source": "Founder Reports", "year": 2025, "evergreen": false},
+      {"metric": "Startups that underestimate operating costs", "value": "55", "unit": "%", "source": "CB Insights Post-Mortems", "year": 2025, "evergreen": false},
+      {"metric": "Startups burning $50K+/month pre-revenue", "value": "30", "unit": "%", "source": "Carta", "year": 2025, "evergreen": false},
+      {"metric": "Months of runway at failure (median)", "value": "5", "unit": "months", "source": "Carta", "year": 2025, "evergreen": false},
+      {"metric": "Startups that fail to achieve unit economics profitability", "value": "70", "unit": "%", "source": "Lighter Capital", "year": 2025, "evergreen": false},
+      {"metric": "Startups where fundraising takes 6+ months", "value": "45", "unit": "%", "source": "Crunchbase", "year": 2025, "evergreen": false},
+      {"metric": "VC-backed startups that return $0 to investors", "value": "75", "unit": "%", "source": "Cambridge Associates", "year": 2025, "evergreen": false},
+      {"metric": "Startups that take investor money at wrong terms", "value": "25", "unit": "%", "source": "Foundra AI", "year": 2025, "evergreen": false},
+      {"metric": "Bootstrapped startups survival rate vs VC-backed", "value": "+15", "unit": "pp", "source": "Indie Hackers / Demandsage", "year": 2025, "evergreen": false},
+      {"metric": "Zombie startups (alive but not growing, not dying)", "value": "30", "unit": "%", "source": "TechCrunch", "year": 2025, "evergreen": false}
+    ],
+
+    "agency_burnout_systems": [
+      {"metric": "Agency founders working 60+ hours/week", "value": "55", "unit": "%", "source": "Agency Growth Events", "year": 2025, "evergreen": false},
+      {"metric": "Agency founders who are the bottleneck in their business", "value": "70", "unit": "%", "source": "Alex Berman", "year": 2025, "evergreen": false},
+      {"metric": "Agencies with no delegation system (founder does everything)", "value": "50", "unit": "%", "source": "Ippei", "year": 2025, "evergreen": false},
+      {"metric": "Time to replace a lost key client (average)", "value": "3-6", "unit": "months", "source": "Focus Digital", "year": 2025, "evergreen": false},
+      {"metric": "Agencies that fail to productize their service", "value": "60", "unit": "%", "source": "Agency Growth Events", "year": 2025, "evergreen": false},
+      {"metric": "Agencies where founder is the sole salesperson", "value": "65", "unit": "%", "source": "Alex Berman", "year": 2025, "evergreen": false},
+      {"metric": "Agencies that fail to hire their first employee", "value": "45", "unit": "%", "source": "Ippei", "year": 2025, "evergreen": false},
+      {"metric": "Agency owner satisfaction rate (unhappy with business)", "value": "40", "unit": "%", "source": "Agency Growth Events", "year": 2025, "evergreen": false}
+    ],
+
+    "restaurant_cafe_covid_digital": [
+      {"metric": "Restaurants permanently closed due to COVID (US total)", "value": "90000+", "unit": "restaurants", "source": "NRA", "year": 2023, "evergreen": false},
+      {"metric": "Dine-in traffic still below pre-COVID levels", "value": "10-15", "unit": "% below", "source": "Datassential", "year": 2025, "evergreen": false},
+      {"metric": "Restaurants without online ordering that lose customers", "value": "30", "unit": "%", "source": "MenuTiger", "year": 2025, "evergreen": false},
+      {"metric": "Delivery commission to third-party apps (Grab, GoFood)", "value": "15-30", "unit": "%", "source": "Owner.com", "year": 2025, "evergreen": false},
+      {"metric": "Restaurants dependent on delivery apps for 40%+ revenue", "value": "25", "unit": "%", "source": "RestroWorks", "year": 2025, "evergreen": false},
+      {"metric": "Restaurants with no social media presence", "value": "20", "unit": "%", "source": "MenuTiger", "year": 2025, "evergreen": false},
+      {"metric": "Restaurants that fail to adapt to digital ordering", "value": "15", "unit": "%", "source": "RestroWorks", "year": 2025, "evergreen": false},
+      {"metric": "Average restaurant marketing budget (% of revenue)", "value": "3-6", "unit": "%", "source": "NRA", "year": 2025, "evergreen": false},
+      {"metric": "Restaurants with no loyalty program losing repeat customers", "value": "40", "unit": "%", "source": "Owner.com", "year": 2025, "evergreen": false},
+      {"metric": "Ghost kitchen failure rate", "value": "60", "unit": "%", "source": "RestroWorks", "year": 2025, "evergreen": false}
+    ],
+
+    "saas_market_competition": [
+      {"metric": "Number of SaaS companies globally (2025)", "value": "30000+", "unit": "companies", "source": "Statista", "year": 2025, "evergreen": false},
+      {"metric": "SaaS categories with 100+ competitors", "value": "50+", "unit": "categories", "source": "G2", "year": 2025, "evergreen": false},
+      {"metric": "SaaS startups killed when big tech launches competing feature", "value": "20", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "SaaS with no moat (easily replicable)", "value": "60", "unit": "%", "source": "Lighter Capital", "year": 2025, "evergreen": false},
+      {"metric": "Average time before a SaaS feature is copied by competitor", "value": "6-12", "unit": "months", "source": "Profitwell", "year": 2025, "evergreen": false},
+      {"metric": "SaaS that fail because of poor market timing", "value": "29", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "SaaS in winner-take-all markets that aren't #1 or #2", "value": "85", "unit": "% fail", "source": "Bessemer", "year": 2025, "evergreen": false},
+      {"metric": "SaaS startups launched per day (estimated)", "value": "100+", "unit": "startups", "source": "SaaStr", "year": 2025, "evergreen": false},
+      {"metric": "Average SaaS startup lifespan before shutdown", "value": "3.4", "unit": "years", "source": "Webapper", "year": 2025, "evergreen": false},
+      {"metric": "SaaS that pivot successfully before finding PMF", "value": "25", "unit": "%", "source": "Startup Genome", "year": 2025, "evergreen": false}
+    ],
+
+    "freelance_ai_disruption": [
+      {"metric": "Freelance writing jobs displaced by AI (estimated)", "value": "30-50", "unit": "%", "source": "Creative Boom", "year": 2025, "evergreen": false},
+      {"metric": "Freelance graphic design jobs threatened by AI", "value": "25-40", "unit": "%", "source": "Creative Boom", "year": 2025, "evergreen": false},
+      {"metric": "Freelance translation jobs reduced by AI tools", "value": "40-60", "unit": "%", "source": "Jobbers", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers who've lost clients to AI tools", "value": "30", "unit": "%", "source": "Peak Freelance", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers who've adopted AI to stay competitive", "value": "45", "unit": "%", "source": "Fynloapps", "year": 2025, "evergreen": false},
+      {"metric": "Freelance rate decrease in AI-disrupted categories", "value": "15-30", "unit": "%", "source": "Medium", "year": 2025, "evergreen": false},
+      {"metric": "Upwork/Fiverr job postings decline in AI-disrupted categories", "value": "20-35", "unit": "%", "source": "Jobbers", "year": 2025, "evergreen": false},
+      {"metric": "Freelancers who upskilled into AI-augmented services", "value": "25", "unit": "%", "source": "Creative Boom", "year": 2025, "evergreen": false}
+    ],
+
+    "content_creator_financial_reality": [
+      {"metric": "Creators earning $0 per month", "value": "48", "unit": "%", "source": "Spiralytics", "year": 2025, "evergreen": false},
+      {"metric": "Creators earning $1-$500/month", "value": "25", "unit": "%", "source": "Spiralytics", "year": 2025, "evergreen": false},
+      {"metric": "Creators earning $500-$5K/month", "value": "18", "unit": "%", "source": "Spiralytics", "year": 2025, "evergreen": false},
+      {"metric": "Creators earning $5K-$10K/month", "value": "5", "unit": "%", "source": "Spiralytics", "year": 2025, "evergreen": false},
+      {"metric": "Creators earning $10K+/month", "value": "4", "unit": "%", "source": "Spiralytics", "year": 2025, "evergreen": false},
+      {"metric": "Average time to first $1K month (YouTube)", "value": "12-24", "unit": "months", "source": "WPBeginner", "year": 2025, "evergreen": false},
+      {"metric": "Creators who've had a sponsorship deal cancelled", "value": "40", "unit": "%", "source": "Viral Nation", "year": 2025, "evergreen": false},
+      {"metric": "Creators with no emergency fund", "value": "55", "unit": "%", "source": "Billion Dollar Boy", "year": 2025, "evergreen": false},
+      {"metric": "Creators who supplement with side job/freelance", "value": "60", "unit": "%", "source": "Scrumball", "year": 2025, "evergreen": false},
+      {"metric": "Average creator lifespan before quitting", "value": "18", "unit": "months", "source": "TheCityCeleb", "year": 2025, "evergreen": false}
+    ],
+
+    "universal_failure_patterns": [
+      {"metric": "Businesses that fail due to cash flow problems", "value": "82", "unit": "%", "source": "US Bank / SCORE", "year": 2025, "evergreen": true},
+      {"metric": "Small businesses that fail due to no demand", "value": "42", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": true},
+      {"metric": "Businesses that fail in their first year (all types)", "value": "20", "unit": "%", "source": "BLS", "year": 2025, "evergreen": false},
+      {"metric": "Businesses with no business plan that fail", "value": "70", "unit": "%", "source": "SCORE", "year": 2025, "evergreen": false},
+      {"metric": "Businesses with a written plan survival boost", "value": "+30", "unit": "%", "source": "SBA", "year": 2025, "evergreen": true},
+      {"metric": "Businesses that fail due to poor leadership", "value": "30", "unit": "%", "source": "Forbes / Founder Reports", "year": 2025, "evergreen": true},
+      {"metric": "Businesses that fail due to trying to do everything alone", "value": "35", "unit": "%", "source": "SCORE", "year": 2025, "evergreen": true},
+      {"metric": "Businesses that fail from ignoring customer feedback", "value": "14", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": true},
+      {"metric": "Businesses that fail from inability to adapt", "value": "25", "unit": "%", "source": "Forbes", "year": 2025, "evergreen": true},
+      {"metric": "Businesses destroyed by single-point-of-failure dependency", "value": "20", "unit": "%", "source": "Founder Reports", "year": 2025, "evergreen": true},
+      {"metric": "Business owners who work IN the business vs ON the business", "value": "80", "unit": "%", "source": "E-Myth / SCORE", "year": 2025, "evergreen": true},
+      {"metric": "Businesses that expand too fast and fail", "value": "15", "unit": "%", "source": "Forbes", "year": 2025, "evergreen": true},
+      {"metric": "Businesses that die a slow death (no crisis, just decline)", "value": "40", "unit": "%", "source": "Founder Reports", "year": 2025, "evergreen": true},
+      {"metric": "Average small business owner salary when business fails", "value": "0-30000", "unit": "USD/yr", "source": "LendingTree", "year": 2025, "evergreen": false},
+      {"metric": "Businesses where founder had no industry experience", "value": "45", "unit": "% of failures", "source": "SCORE", "year": 2025, "evergreen": false},
+      {"metric": "Second businesses that succeed (after first failure)", "value": "20", "unit": "%", "source": "Harvard Business School", "year": 2024, "evergreen": true},
+      {"metric": "Median personal debt from failed business", "value": "30000", "unit": "USD", "source": "LendingTree", "year": 2025, "evergreen": false},
+      {"metric": "Failed founders who start another business within 3 years", "value": "30", "unit": "%", "source": "Failory", "year": 2025, "evergreen": false},
+      {"metric": "Businesses that cite 'it was just bad luck' as reason", "value": "12", "unit": "%", "source": "Founder Reports", "year": 2025, "evergreen": false},
+      {"metric": "Multi-cause failure (3+ simultaneous reasons)", "value": "65", "unit": "%", "source": "CB Insights Post-Mortems", "year": 2025, "evergreen": true}
+    ],
+
+    "failure_by_business_model": [
+      {"metric": "Marketplace failure rate (2-sided platforms)", "value": "85", "unit": "%", "source": "Startup Genome", "year": 2025, "evergreen": false},
+      {"metric": "Hardware startup failure rate", "value": "97", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "Consumer app failure rate", "value": "90", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": false},
+      {"metric": "B2B SaaS failure rate", "value": "70", "unit": "%", "source": "Lighter Capital", "year": 2025, "evergreen": false},
+      {"metric": "B2C SaaS failure rate", "value": "80", "unit": "%", "source": "Lighter Capital", "year": 2025, "evergreen": false},
+      {"metric": "Subscription box failure rate (within 2 years)", "value": "75", "unit": "%", "source": "Shopify Commerce Report", "year": 2025, "evergreen": false},
+      {"metric": "Franchise failure rate (vs independent)", "value": "20", "unit": "%", "source": "SBA / FranData", "year": 2025, "evergreen": false},
+      {"metric": "Independent business failure rate (vs franchise)", "value": "50", "unit": "%", "source": "SBA", "year": 2025, "evergreen": false},
+      {"metric": "Social enterprise / mission-driven failure rate", "value": "55", "unit": "%", "source": "SCORE", "year": 2025, "evergreen": false},
+      {"metric": "Consulting business failure rate (solo)", "value": "40", "unit": "%", "source": "SCORE", "year": 2025, "evergreen": false},
+      {"metric": "Online course / info product failure rate", "value": "70", "unit": "%", "source": "Teachable / Udemy Reports", "year": 2025, "evergreen": false},
+      {"metric": "Newsletter business failure rate", "value": "65", "unit": "%", "source": "The Hustle / Substack Data", "year": 2025, "evergreen": false}
+    ],
+
+    "failure_warning_signs": [
+      {"metric": "Revenue declining 3+ consecutive months before failure", "value": "75", "unit": "%", "source": "Founder Reports", "year": 2025, "evergreen": true},
+      {"metric": "Founders in denial about failure signs (avg months)", "value": "6-12", "unit": "months", "source": "Failory", "year": 2025, "evergreen": true},
+      {"metric": "Key employee departures before company failure", "value": "60", "unit": "%", "source": "CB Insights", "year": 2025, "evergreen": true},
+      {"metric": "Customer complaints increasing before failure", "value": "70", "unit": "%", "source": "SCORE", "year": 2025, "evergreen": true},
+      {"metric": "Founders who knew business was failing 6+ months before close", "value": "55", "unit": "%", "source": "Failory", "year": 2025, "evergreen": false},
+      {"metric": "Businesses that cut marketing first (accelerating decline)", "value": "45", "unit": "%", "source": "Forbes", "year": 2025, "evergreen": true},
+      {"metric": "Businesses taking on bad debt to survive", "value": "35", "unit": "%", "source": "LendingTree", "year": 2025, "evergreen": false},
+      {"metric": "Founders who didn't seek help/advice before closing", "value": "50", "unit": "%", "source": "SCORE", "year": 2025, "evergreen": false},
+      {"metric": "Businesses where pivot could have saved them", "value": "40", "unit": "%", "source": "Startup Genome", "year": 2025, "evergreen": true},
+      {"metric": "Average time between first warning sign and closure", "value": "8-14", "unit": "months", "source": "Founder Reports", "year": 2025, "evergreen": true}
+    ],
+
+    "psychological_failure_patterns": [
+      {"metric": "Founders who experienced depression during/after failure", "value": "72", "unit": "%", "source": "Failory / UCSF Study", "year": 2025, "evergreen": false},
+      {"metric": "Founders who experienced imposter syndrome before failure", "value": "65", "unit": "%", "source": "Startup Genome", "year": 2025, "evergreen": false},
+      {"metric": "Founders who isolated themselves during decline", "value": "55", "unit": "%", "source": "Failory", "year": 2025, "evergreen": false},
+      {"metric": "Sunk cost fallacy — founders who kept going too long", "value": "60", "unit": "%", "source": "CB Insights Post-Mortems", "year": 2025, "evergreen": true},
+      {"metric": "Confirmation bias — only seeking validating feedback", "value": "45", "unit": "%", "source": "Harvard Business School", "year": 2024, "evergreen": true},
+      {"metric": "Optimism bias — believing 'it will turn around'", "value": "70", "unit": "%", "source": "Failory", "year": 2025, "evergreen": true},
+      {"metric": "Founders who took failure as personal identity crisis", "value": "50", "unit": "%", "source": "UCSF Entrepreneurship Study", "year": 2024, "evergreen": false},
+      {"metric": "Time to emotionally recover from business failure", "value": "6-18", "unit": "months", "source": "Failory", "year": 2025, "evergreen": false},
+      {"metric": "Founders who said failure was their greatest teacher", "value": "80", "unit": "%", "source": "Failory", "year": 2025, "evergreen": false},
+      {"metric": "Founders who wish they had failed faster (pivoted earlier)", "value": "65", "unit": "%", "source": "First Round Capital", "year": 2025, "evergreen": false}
+    ],
+
+    "failure_financial_consequences": [
+      {"metric": "Average personal savings lost in failed startup", "value": "50000", "unit": "USD", "source": "LendingTree / SCORE", "year": 2025, "evergreen": false},
+      {"metric": "Founders who took personal loans for failed business", "value": "40", "unit": "%", "source": "LendingTree", "year": 2025, "evergreen": false},
+      {"metric": "Founders who used credit cards to fund failed business", "value": "55", "unit": "%", "source": "SCORE", "year": 2025, "evergreen": false},
+      {"metric": "Founders who lost their home due to business failure", "value": "8", "unit": "%", "source": "LendingTree", "year": 2025, "evergreen": false},
+      {"metric": "Founders who filed personal bankruptcy after failure", "value": "12", "unit": "%", "source": "US Courts / SCORE", "year": 2025, "evergreen": false},
+      {"metric": "Average time to financial recovery after failure", "value": "2-5", "unit": "years", "source": "Founder Reports", "year": 2025, "evergreen": false},
+      {"metric": "Relationships that ended due to business failure stress", "value": "25", "unit": "%", "source": "Failory", "year": 2025, "evergreen": false},
+      {"metric": "Employees affected per startup failure (average)", "value": "7", "unit": "people", "source": "Crunchbase", "year": 2025, "evergreen": false},
+      {"metric": "Venture-backed failures that leave employees with worthless equity", "value": "85", "unit": "%", "source": "Carta", "year": 2025, "evergreen": false},
+      {"metric": "Failed founders who said they'd do it all again", "value": "60", "unit": "%", "source": "Failory", "year": 2025, "evergreen": false}
+    ],
+
+    "failure_prevention_statistics": [
+      {"metric": "Businesses with advisory board have lower failure rate", "value": "-30", "unit": "%", "source": "SBA", "year": 2025, "evergreen": true},
+      {"metric": "Businesses that use accounting software survive longer", "value": "+25", "unit": "%", "source": "SCORE", "year": 2025, "evergreen": true},
+      {"metric": "Businesses that test MVP before full build survive more", "value": "+40", "unit": "%", "source": "Lean Startup / Startup Genome", "year": 2025, "evergreen": true},
+      {"metric": "Businesses with customer interviews pre-launch success boost", "value": "+35", "unit": "%", "source": "Startup Genome", "year": 2025, "evergreen": true},
+      {"metric": "Businesses that track metrics weekly vs monthly survival boost", "value": "+20", "unit": "%", "source": "Lighter Capital", "year": 2025, "evergreen": true},
+      {"metric": "Businesses with 12+ months runway survival rate", "value": "75", "unit": "%", "source": "Carta", "year": 2025, "evergreen": false},
+      {"metric": "Businesses with mentor/advisor network success boost", "value": "+30", "unit": "%", "source": "SBA / SCORE", "year": 2025, "evergreen": true},
+      {"metric": "Pivoting within 12 months increases survival by", "value": "+25", "unit": "%", "source": "Startup Genome", "year": 2025, "evergreen": true},
+      {"metric": "Customer retention focus vs acquisition improves survival", "value": "+30", "unit": "%", "source": "Harvard Business Review", "year": 2024, "evergreen": true},
+      {"metric": "Businesses with diversified revenue (3+ streams) survival boost", "value": "+40", "unit": "%", "source": "SCORE", "year": 2025, "evergreen": true},
+      {"metric": "Businesses that automate operations early survival boost", "value": "+20", "unit": "%", "source": "McKinsey Small Business", "year": 2025, "evergreen": true},
+      {"metric": "Niche-focused businesses vs generalists survival rate", "value": "+35", "unit": "%", "source": "SBA", "year": 2025, "evergreen": true},
+      {"metric": "Businesses with written exit strategy before starting", "value": "15", "unit": "%", "source": "SCORE", "year": 2025, "evergreen": false},
+      {"metric": "Pre-revenue validation reduces failure risk by", "value": "40", "unit": "%", "source": "Lean Startup", "year": 2025, "evergreen": true},
+      {"metric": "Businesses that join accelerator programs survival boost", "value": "+23", "unit": "%", "source": "Y Combinator / Startup Genome", "year": 2025, "evergreen": false}
+    ]
+  }
+}

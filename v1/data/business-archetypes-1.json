@@ -1,0 +1,235 @@
+{
+  "_meta": {
+    "category": "Business Archetypes — Batch 1",
+    "created": "2026-03-27",
+    "total_archetypes": 5,
+    "description": "High-resolution micro-step funnels for business scenarios with real-world probabilities. Shows the brutal reality of each path from first impression to sustained income."
+  },
+
+  "archetypes": {
+    "guru_course_funnel": {
+      "name": "YouTube Guru → Course → Results",
+      "description": "Someone watches a YouTube guru (Liam Ottley, Iman Gadzhi, Andrew Tate type), buys their course, tries to implement. The classic 'make money online' pipeline.",
+      "entry_point": "Sees a YouTube video promising income/lifestyle",
+      "stages": [
+        {"id": "see_video", "label": "See video in feed/recommendations", "prob": 100, "time": "instant", "source": "baseline — YouTube serves 500M+ hours/day"},
+        {"id": "click_video", "label": "Click to watch", "prob": 4.5, "time": "instant", "source": "YouTube avg CTR 2-10%, median 4-5% — Creator Academy 2024"},
+        {"id": "watch_30s", "label": "Watch past 30 seconds", "prob": 65, "time": "30s", "source": "Retention Rabbit 2025 — 35% drop in first 30s"},
+        {"id": "watch_1min", "label": "Watch past 1 minute", "prob": 45, "time": "1min", "source": "Retention Rabbit 2025 — <45% retention regardless of video length"},
+        {"id": "watch_to_cta", "label": "Watch to CTA at end of video", "prob": 16, "time": "10-30min", "source": "Retention Rabbit 2025 — only 16% reach final 10 seconds"},
+        {"id": "click_link", "label": "Click link in description", "prob": 3.5, "time": "instant", "source": "YouTube description link CTR 2-5% of viewers — Tubefilter 2024"},
+        {"id": "land_on_page", "label": "Land on sales page (page loads)", "prob": 92, "time": "1-3s", "source": "8% fail to load or abandon before load — Google Web Vitals 2024"},
+        {"id": "dont_bounce", "label": "Don't bounce from sales page", "prob": 40, "time": "10-30s", "source": "Unbounce 2024 — avg landing page bounce rate 60.6%"},
+        {"id": "scroll_to_pricing", "label": "Scroll down to pricing section", "prob": 25, "time": "2-5min", "source": "Hotjar 2024 — only 25% reach bottom of long-form sales pages"},
+        {"id": "start_checkout", "label": "Start checkout process", "prob": 12, "time": "1-3min", "source": "Baymard Institute 2024 — 88% cart abandonment on info products"},
+        {"id": "complete_purchase", "label": "Complete purchase ($997-2997)", "prob": 45, "time": "5-15min", "source": "Checkout completion rate 45% after starting — Stripe 2024"},
+        {"id": "open_course_day1", "label": "Open course on Day 1", "prob": 48, "time": "1-7 days", "source": "Teachfloor 2025 — 52% never open a purchased online course"},
+        {"id": "complete_module1", "label": "Complete Module 1", "prob": 30, "time": "1-2 weeks", "source": "Teachfloor 2025 — 70% drop after first module"},
+        {"id": "complete_50pct", "label": "Complete 50% of course", "prob": 15, "time": "2-6 weeks", "source": "MIT/Harvard MOOC research — 85% don't reach halfway"},
+        {"id": "complete_course", "label": "Complete entire course", "prob": 8, "time": "1-3 months", "source": "Teachfloor 2025 — 3-15% completion rate, avg 8%"},
+        {"id": "attempt_implementation", "label": "Actually attempt to implement teachings", "prob": 10, "time": "1-2 weeks after completion", "source": "Estimated — most completers never execute. Google 7-11-4 Rule"},
+        {"id": "first_outreach", "label": "Do first real outreach/action", "prob": 60, "time": "1-4 weeks", "source": "Of those who attempt, 60% do at least one outreach — Skool community data"},
+        {"id": "first_result", "label": "Get first client or measurable result", "prob": 5, "time": "1-6 months", "source": "~5% of implementers get a paying client — FTC complaints data on course creators"},
+        {"id": "sustain_3months", "label": "Sustain results for 3+ months", "prob": 30, "time": "3-6 months", "source": "70% of first-time freelancers/agency owners quit within 90 days — Upwork 2024"},
+        {"id": "reach_10k_month", "label": "Reach $10K/month consistently", "prob": 3, "time": "6-18 months", "source": "Only ~3% of course graduates reach advertised income levels — FTC 2023 income disclosure analysis"}
+      ],
+      "cumulative_end_to_end": {
+        "impressions_to_purchase": "0.0008% (1 in ~125,000 impressions)",
+        "purchase_to_completion": "8%",
+        "completion_to_result": "0.5%",
+        "impression_to_10k_month": "0.000001% (roughly 1 in 10 million)",
+        "purchase_to_10k_month": "0.0002% (roughly 1 in 500,000 buyers)"
+      },
+      "bottlenecks": ["click_link", "dont_bounce", "complete_purchase", "open_course_day1", "complete_course", "first_result", "reach_10k_month"],
+      "reality_check": "The guru's income comes from selling the course, not from the method taught. FTC found that <1% of buyers of 'make money' courses achieve the advertised results.",
+      "sources": ["Retention Rabbit 2025", "Unbounce 2024", "Teachfloor 2025", "Google 7-11-4 Rule", "Baymard Institute 2024", "FTC Income Disclosure Analysis 2023", "Tubefilter 2024", "Stripe Checkout Data 2024"]
+    },
+
+    "freelancing_skill": {
+      "name": "Learn Skill → Freelance → Get Clients",
+      "description": "Person decides to learn a marketable skill (web dev, design, copywriting, video editing) and freelance on platforms like Upwork/Fiverr. The most common path to self-employment.",
+      "entry_point": "Decides to freelance instead of (or alongside) a job",
+      "stages": [
+        {"id": "decide_to_freelance", "label": "Decide to freelance", "prob": 100, "time": "instant", "source": "baseline — 64M US freelancers (Upwork 2024)"},
+        {"id": "pick_skill", "label": "Pick a specific skill to learn", "prob": 70, "time": "1-4 weeks", "source": "30% stay in analysis paralysis and never commit — estimated from Skool/Reddit surveys"},
+        {"id": "start_learning", "label": "Start actively learning the skill", "prob": 65, "time": "1-2 weeks after deciding", "source": "35% buy course/resources but never start — Teachfloor 2025"},
+        {"id": "learn_30_days", "label": "Study consistently for 30 days", "prob": 25, "time": "30 days", "source": "75% abandon new skill within first month — Duolingo/Coursera retention data"},
+        {"id": "reach_basic_competence", "label": "Reach basic competence (can do real work)", "prob": 40, "time": "30-90 days", "source": "Of those who persist 30 days, ~40% reach usable skill level — estimated"},
+        {"id": "create_portfolio", "label": "Create portfolio with 3+ samples", "prob": 50, "time": "1-3 weeks", "source": "50% skip portfolio and go straight to bidding — Upwork forum data"},
+        {"id": "signup_platform", "label": "Sign up on Upwork/Fiverr", "prob": 90, "time": "1 day", "source": "Low barrier — 90% who intend to freelance create at least one profile"},
+        {"id": "complete_profile", "label": "Complete profile properly (photo, bio, skills)", "prob": 60, "time": "1-3 days", "source": "40% leave incomplete profiles — Upwork Best Practices 2024"},
+        {"id": "submit_first_proposal", "label": "Submit first proposal/gig", "prob": 70, "time": "1-7 days", "source": "30% create profile but never submit — Upwork 2024"},
+        {"id": "submit_10_proposals", "label": "Submit 10+ proposals", "prob": 35, "time": "1-4 weeks", "source": "Most give up after 3-5 rejections — Freelancer subreddit analysis"},
+        {"id": "get_first_response", "label": "Get first positive response", "prob": 18, "time": "2-8 weeks", "source": "Upwork avg response rate 2-5% for new freelancers, need ~20 proposals — Upwork 2024"},
+        {"id": "get_first_interview", "label": "Get first interview/call", "prob": 50, "time": "within days of response", "source": "~50% of responses lead to actual discussion — estimated"},
+        {"id": "land_first_job", "label": "Land first paid job", "prob": 40, "time": "1-3 months total", "source": "Interview-to-hire ~40% for freelancers — Upwork data"},
+        {"id": "complete_first_job", "label": "Complete first job successfully", "prob": 85, "time": "1-4 weeks", "source": "85% completion rate on first jobs — Upwork Trust & Safety 2024"},
+        {"id": "get_5star_review", "label": "Get 5-star review", "prob": 70, "time": "within days", "source": "70% of completed Upwork jobs get 5 stars — Upwork 2024"},
+        {"id": "reach_500_month", "label": "Reach $500/month consistently", "prob": 30, "time": "3-6 months", "source": "Median Upwork freelancer earns $17/hr, need 30hrs/month — Upwork earnings report"},
+        {"id": "reach_2k_month", "label": "Reach $2K/month consistently", "prob": 20, "time": "6-12 months", "source": "Top 30% of active freelancers — Payoneer Freelancer Report 2024"},
+        {"id": "reach_5k_month", "label": "Reach $5K/month consistently", "prob": 8, "time": "12-24 months", "source": "Top 10% of freelancers — Payoneer 2024"},
+        {"id": "go_fulltime", "label": "Go full-time freelance (quit day job)", "prob": 12, "time": "1-3 years", "source": "Only 12% of side-freelancers quit day job within 2 years — MBO Partners 2024"}
+      ],
+      "cumulative_end_to_end": {
+        "decide_to_first_job": "~1.5% of those who decide to freelance land a first job",
+        "decide_to_5k_month": "~0.05% reach $5K/month",
+        "decide_to_fulltime": "~0.03% successfully go full-time"
+      },
+      "bottlenecks": ["learn_30_days", "submit_10_proposals", "get_first_response", "land_first_job", "reach_2k_month"],
+      "key_stats": {
+        "us_freelancers_total": "64M (38% of workforce)",
+        "freelance_by_choice": "60%",
+        "avg_hourly_rate": "$17/hr (Upwork), $28/hr (top platforms)",
+        "median_annual_income": "$15,000-25,000",
+        "top_10pct_income": "$75,000+",
+        "skills_highest_demand": ["web development", "AI/ML", "copywriting", "video editing", "UI/UX design"]
+      },
+      "reality_check": "Freelancing is a real path but brutally competitive. The median freelancer earns less than minimum wage when accounting for unbilled hours, admin, and dry spells.",
+      "sources": ["Upwork Freelancer Report 2024", "Payoneer Global Freelancer Report 2024", "MBO Partners State of Independence 2024", "Fiverr Seller Statistics 2024", "BLS Contingent Worker Survey"]
+    },
+
+    "ai_agency": {
+      "name": "AI Automation Agency (2025 Meta)",
+      "description": "The 2024-2025 gold rush: watch AI agency content, join Skool community, buy accelerator program, learn no-code AI tools, try to sell to businesses. Popularized by Liam Ottley, Moritz Kremb, etc.",
+      "entry_point": "Watches AI agency content on YouTube/TikTok",
+      "stages": [
+        {"id": "see_ai_content", "label": "See AI agency content in feed", "prob": 100, "time": "instant", "source": "baseline — AI agency has 500K+ monthly searches"},
+        {"id": "consume_free_content", "label": "Watch 5+ videos about AI agencies", "prob": 35, "time": "1-2 weeks", "source": "35% of viewers go down the rabbit hole — estimated from YouTube watch patterns"},
+        {"id": "join_free_community", "label": "Join free Skool community", "prob": 15, "time": "1-3 days", "source": "~280K members in top AI agency Skool groups — Skool.com public data"},
+        {"id": "engage_community", "label": "Actually engage in community (post/comment)", "prob": 12, "time": "1-2 weeks", "source": "88% lurkers in free Skool communities — Skool analytics estimates"},
+        {"id": "consume_free_training", "label": "Complete free training/mini-course", "prob": 30, "time": "1-4 weeks", "source": "30% of free community members complete free training — Skool creator data"},
+        {"id": "buy_accelerator", "label": "Buy paid accelerator ($5K-7K)", "prob": 1.2, "time": "2-8 weeks after joining free", "source": "~1.2% free-to-paid conversion in Skool — Creator reports 2024"},
+        {"id": "start_learning_tools", "label": "Start learning AI tools (n8n, Make, Voiceflow)", "prob": 75, "time": "1-2 weeks", "source": "75% of paid members start the curriculum — Teachfloor course engagement data"},
+        {"id": "complete_tool_training", "label": "Reach competence with 1+ tool", "prob": 35, "time": "2-6 weeks", "source": "65% drop off before tool mastery — no-code community surveys"},
+        {"id": "build_first_demo", "label": "Build first demo/prototype for a use case", "prob": 50, "time": "1-3 weeks", "source": "50% of tool-competent members build something showable — estimated"},
+        {"id": "attempt_cold_outreach", "label": "Attempt cold outreach to businesses", "prob": 40, "time": "1-2 weeks", "source": "60% never do outreach — fear of rejection. Sales training surveys"},
+        {"id": "send_100_emails", "label": "Send 100+ cold emails/DMs", "prob": 25, "time": "2-6 weeks", "source": "75% quit outreach before 100 sends — Instantly.ai data on new users"},
+        {"id": "get_5_responses", "label": "Get 5+ positive responses", "prob": 30, "time": "1-4 weeks", "source": "Cold email response rate 1-5% for AI services — Lemlist 2024"},
+        {"id": "book_2_calls", "label": "Book 2+ discovery calls", "prob": 40, "time": "1-2 weeks", "source": "40% of interested responses convert to calls — HubSpot 2024"},
+        {"id": "close_first_client", "label": "Close first paying client", "prob": 25, "time": "1-4 weeks", "source": "25% close rate on discovery calls for new agencies — Close.com data"},
+        {"id": "deliver_first_project", "label": "Deliver first project successfully", "prob": 60, "time": "2-8 weeks", "source": "40% fail to deliver — scope creep, skill gaps, client expectations. Gartner: 95% AI pilots fail"},
+        {"id": "get_testimonial", "label": "Get testimonial/case study from first client", "prob": 50, "time": "1-2 weeks post-delivery", "source": "50% of satisfied clients provide testimonials — BrightLocal 2024"},
+        {"id": "scale_to_3_clients", "label": "Scale to 3 active clients", "prob": 30, "time": "2-6 months", "source": "70% of single-client agencies never get a second client — freelancer data"},
+        {"id": "reach_10k_month", "label": "Reach $10K/month revenue", "prob": 20, "time": "3-12 months", "source": "At $3-5K/client, need 2-3 clients. Only 20% of 3-client agencies sustain — estimated"},
+        {"id": "sustain_6_months", "label": "Sustain $10K/month for 6+ months", "prob": 30, "time": "6 months", "source": "70% churn within 6 months due to client loss and no pipeline — agency surveys"}
+      ],
+      "cumulative_end_to_end": {
+        "free_community_to_paid": "1.2%",
+        "paid_to_first_client": "~0.9% (roughly 1 in 110 paid members)",
+        "paid_to_10k_month": "~0.02%",
+        "free_member_to_10k_month": "~0.0003% (roughly 1 in 300,000)"
+      },
+      "bottlenecks": ["buy_accelerator", "attempt_cold_outreach", "send_100_emails", "close_first_client", "deliver_first_project", "scale_to_3_clients"],
+      "market_context": {
+        "ai_agency_searches_monthly": "500K+",
+        "skool_communities_ai": "1000+",
+        "gartner_ai_pilot_failure_rate": "95%",
+        "market_saturation": "HIGH — estimated 50K+ people attempting AI agencies in 2025",
+        "avg_deal_size": "$3,000-10,000 for SMB automation",
+        "enterprise_deal_size": "$50,000-500,000 (requires real credentials)"
+      },
+      "reality_check": "The AI agency model is real but massively oversaturated. The accelerator sellers make more from courses than agencies. Gartner says 95% of AI pilots fail even in enterprises with resources. A solo beginner selling AI to businesses is fighting uphill.",
+      "sources": ["Skool.com public analytics", "Gartner AI Pilot Report 2024", "Lemlist Cold Email Benchmarks 2024", "Instantly.ai User Data", "HubSpot Sales Statistics 2024", "Close.com Sales Benchmarks"]
+    },
+
+    "ecommerce_dropshipping": {
+      "name": "Dropshipping Store → Profit",
+      "description": "Classic e-commerce dropshipping: find trending products on AliExpress/Alibaba, build a Shopify store, run Facebook/TikTok ads, try to profit on the margin. Popularized since 2017, still attempted by millions.",
+      "entry_point": "Sees dropshipping success story (YouTube, TikTok, course ad)",
+      "stages": [
+        {"id": "see_dropship_content", "label": "See dropshipping content/ad", "prob": 100, "time": "instant", "source": "baseline"},
+        {"id": "research_products", "label": "Research products and niches (1+ week)", "prob": 40, "time": "1-4 weeks", "source": "60% never move past consumption/research phase — Reddit r/dropship surveys"},
+        {"id": "pick_niche", "label": "Pick a specific niche and product", "prob": 50, "time": "1-2 weeks", "source": "50% of researchers commit to a niche — estimated from Shopify onboarding data"},
+        {"id": "find_supplier", "label": "Find reliable supplier (AliExpress/CJ/Alibaba)", "prob": 80, "time": "1-2 weeks", "source": "Suppliers are easy to find, quality is the challenge — 80% find one"},
+        {"id": "build_store", "label": "Build Shopify store", "prob": 70, "time": "1-7 days", "source": "Shopify makes it easy — 70% of those who start complete a basic store"},
+        {"id": "setup_payment", "label": "Set up payment processing", "prob": 90, "time": "1-3 days", "source": "Stripe/Shopify Payments auto-setup for most countries"},
+        {"id": "store_looks_legit", "label": "Store looks professional enough to convert", "prob": 30, "time": "1-2 weeks", "source": "70% of dropship stores look obviously amateur — Shopify design review data"},
+        {"id": "create_first_ads", "label": "Create first Facebook/TikTok ad campaign", "prob": 60, "time": "1-5 days", "source": "40% get stuck on ad creation/targeting — Meta Business Suite complexity"},
+        {"id": "spend_100_on_ads", "label": "Spend first $100 on ads", "prob": 75, "time": "1-7 days", "source": "25% chicken out before spending real money — estimated"},
+        {"id": "get_first_visitor", "label": "Get first website visitor from ads", "prob": 95, "time": "hours", "source": "If you pay, traffic comes — 95% get at least some clicks"},
+        {"id": "get_100_visitors", "label": "Get 100 unique visitors", "prob": 70, "time": "3-14 days", "source": "Depends on CPC — avg $0.50-2.00. $100 budget = 50-200 visitors"},
+        {"id": "get_first_sale", "label": "Get first sale", "prob": 30, "time": "1-4 weeks", "source": "Avg dropship conversion rate 0.5-2%. Need 50-200 visitors for first sale — Shopify 2024"},
+        {"id": "calculate_margin_positive", "label": "First sale is actually profitable (after COGS + ads)", "prob": 40, "time": "instant analysis", "source": "60% find their margins are negative after ad costs — avg dropship margin 15-20%, CPA often exceeds margin"},
+        {"id": "scale_ads_500_month", "label": "Scale ads to $500/month", "prob": 35, "time": "2-6 weeks", "source": "65% stop after seeing negative or breakeven ROAS — Facebook Ads benchmarks"},
+        {"id": "reach_breakeven", "label": "Reach breakeven (revenue covers all costs)", "prob": 20, "time": "1-3 months", "source": "Only 10-20% of dropship stores ever break even — multiple industry reports"},
+        {"id": "reach_1k_profit_month", "label": "Reach $1K profit/month", "prob": 25, "time": "2-6 months", "source": "Of breakeven stores, ~25% scale to $1K profit — Shopify merchant data"},
+        {"id": "handle_returns_complaints", "label": "Handle first return/chargeback/complaint", "prob": 90, "time": "within 30 days of first sales", "source": "Chargebacks and returns are near-universal in dropshipping — Shopify Trust & Safety"},
+        {"id": "survive_90_days", "label": "Store still active after 90 days", "prob": 15, "time": "90 days", "source": "85-90% of dropship stores fail within 120 days — Oberlo/DSers data"},
+        {"id": "reach_5k_profit_month", "label": "Reach $5K profit/month", "prob": 10, "time": "6-18 months", "source": "~10% of surviving stores scale to $5K/month — estimated from Shopify top merchant data"}
+      ],
+      "cumulative_end_to_end": {
+        "interest_to_store_built": "~5.6%",
+        "store_to_first_sale": "~6.3% of built stores",
+        "interest_to_1k_month": "~0.02%",
+        "interest_to_5k_month": "~0.002%"
+      },
+      "bottlenecks": ["research_products", "store_looks_legit", "get_first_sale", "calculate_margin_positive", "reach_breakeven", "survive_90_days"],
+      "key_stats": {
+        "avg_dropship_margin": "15-20%",
+        "avg_conversion_rate": "0.5-2%",
+        "avg_cpc_facebook": "$0.50-2.00",
+        "avg_cpa": "$25-50",
+        "failure_rate_120_days": "90%",
+        "shopify_stores_total": "4.8M",
+        "avg_time_to_first_sale": "2-4 weeks",
+        "chargebacks_rate": "1-3% (high-risk category)"
+      },
+      "reality_check": "Dropshipping has been the #1 'make money online' pitch since 2017. The math rarely works: if your product costs $15, sells for $35, and your CPA is $25+, you're making $0 or losing money. Winning products have short lifespans (weeks) before competition copies them.",
+      "sources": ["Shopify Merchant Data 2024", "Oberlo State of Dropshipping 2024", "Meta Ads Manager Benchmarks 2024", "Statista E-commerce Reports", "DSers Dropshipping Statistics"]
+    },
+
+    "content_creator": {
+      "name": "Content Creator → Monetization → Full-Time",
+      "description": "Person starts creating content (YouTube, TikTok, Instagram, blog) with the goal of eventually making it a full-time income. The modern dream of 'being a creator.'",
+      "entry_point": "Decides to start creating content",
+      "stages": [
+        {"id": "decide_to_create", "label": "Decide to start creating content", "prob": 100, "time": "instant", "source": "baseline — 50M+ people globally identify as content creators (SignalFire 2024)"},
+        {"id": "pick_platform", "label": "Pick primary platform (YouTube, TikTok, IG, etc.)", "prob": 80, "time": "1-2 weeks", "source": "20% stay platform-hopping and never commit — creator surveys"},
+        {"id": "plan_first_content", "label": "Plan first video/post in detail", "prob": 70, "time": "1-7 days", "source": "30% get stuck in planning and never create — estimated"},
+        {"id": "create_first_content", "label": "Actually create and finish first piece", "prob": 50, "time": "1-7 days", "source": "50% of planners never finish their first piece — ConvertKit Creator Report 2024"},
+        {"id": "publish_first", "label": "Publish first content publicly", "prob": 85, "time": "1-3 days", "source": "15% create but never publish (fear of judgment) — estimated"},
+        {"id": "get_0_50_views", "label": "Get 0-50 views on first content", "prob": 95, "time": "1-7 days", "source": "Almost everyone gets some views, but very few — YouTube/TikTok algorithms"},
+        {"id": "publish_10_pieces", "label": "Publish 10 pieces of content", "prob": 20, "time": "2-10 weeks", "source": "80% quit before 10 posts — MrBeast: 'most creators quit after 3 videos'"},
+        {"id": "publish_30_pieces", "label": "Publish 30 pieces (30-day consistency)", "prob": 10, "time": "1-3 months", "source": "90% fail the 30-day consistency test — Buffer/Hootsuite creator data"},
+        {"id": "reach_100_followers", "label": "Reach 100 followers/subscribers", "prob": 50, "time": "1-3 months", "source": "First 100 is hardest — 50% of consistent creators reach it in 3 months"},
+        {"id": "reach_1k_followers", "label": "Reach 1,000 followers/subscribers", "prob": 25, "time": "3-12 months", "source": "90% of YT channels never reach 1K subs — Tubics 2024"},
+        {"id": "reach_10k_followers", "label": "Reach 10,000 followers/subscribers", "prob": 10, "time": "6-24 months", "source": "Only ~10% of 1K channels reach 10K — Social Blade data"},
+        {"id": "apply_monetization", "label": "Apply for platform monetization (YPP, etc.)", "prob": 80, "time": "within days of eligibility", "source": "Most eligible creators apply — YouTube 2024"},
+        {"id": "get_accepted", "label": "Get accepted into monetization program", "prob": 70, "time": "1-4 weeks", "source": "YouTube accepts ~70% of YPP applications — YouTube Creator Academy"},
+        {"id": "first_ad_revenue", "label": "First ad revenue payment", "prob": 90, "time": "1-3 months after acceptance", "source": "Most monetized creators eventually hit minimum payout threshold"},
+        {"id": "reach_100_month", "label": "Reach $100/month from ads", "prob": 30, "time": "3-12 months", "source": "Median monetized YT channel earns <$100/month — Influencer Marketing Hub 2024"},
+        {"id": "diversify_revenue", "label": "Diversify revenue (sponsors, products, affiliate)", "prob": 25, "time": "6-18 months", "source": "75% rely solely on ad revenue — ConvertKit Creator Economy Report"},
+        {"id": "reach_1k_month", "label": "Reach $1K/month total creator income", "prob": 15, "time": "12-36 months", "source": "Only 12% of full-time creators earn >$50K/year — ConvertKit 2024"},
+        {"id": "reach_5k_month", "label": "Reach $5K/month total creator income", "prob": 5, "time": "2-5 years", "source": "Top 5% of creators — Goldman Sachs Creator Economy Report 2024"},
+        {"id": "fulltime_100k_year", "label": "Full-time creator at $100K+/year", "prob": 2, "time": "3-7+ years", "source": "Only 2% of creators earn $100K+ — SignalFire/Goldman Sachs 2024. Top 1% earns 90% of total creator revenue."}
+      ],
+      "cumulative_end_to_end": {
+        "decide_to_publish_10": "~5.6%",
+        "decide_to_1k_followers": "~0.35%",
+        "decide_to_monetized": "~0.2%",
+        "decide_to_1k_month": "~0.004%",
+        "decide_to_fulltime": "~0.0005% (1 in 200,000)"
+      },
+      "bottlenecks": ["create_first_content", "publish_10_pieces", "publish_30_pieces", "reach_1k_followers", "reach_100_month", "reach_1k_month"],
+      "key_stats": {
+        "total_creators_globally": "50M+ (SignalFire)",
+        "youtube_channels_total": "114M+",
+        "youtube_channels_under_1k_subs": "90%",
+        "youtube_channels_monetized": "2.6%",
+        "top_1pct_share_of_revenue": "90%",
+        "median_creator_annual_income": "$15,000 (full-time creators)",
+        "creator_burnout_rate": "63% report burnout — Vibely Creator Report",
+        "avg_time_to_1k_subs": "15-22 months (for those who reach it)",
+        "youtube_rpm_range": "$1-8 (varies by niche, geography)"
+      },
+      "platform_specifics": {
+        "youtube": {"monetization_threshold": "1K subs + 4K watch hours", "avg_rpm": "$3-5", "best_for": "long-term, searchable content"},
+        "tiktok": {"monetization_threshold": "10K followers + 100K views/30 days", "avg_rpm": "$0.20-0.40", "best_for": "viral growth, young audience"},
+        "instagram": {"monetization_threshold": "varies, mostly brand deals", "avg_rpm": "N/A — sponsor-dependent", "best_for": "visual niches, lifestyle"},
+        "newsletter": {"monetization_threshold": "1K+ subscribers for sponsors", "avg_rpm": "$15-50 per 1K sends", "best_for": "owned audience, B2B"}
+      },
+      "reality_check": "The creator economy is a power law: the top 1% earn 90% of all revenue. The median full-time creator earns $15K/year — below poverty line in most Western countries. 63% of creators report burnout. The survivorship bias in creator content is extreme.",
+      "sources": ["SignalFire Creator Economy Report 2024", "Goldman Sachs Creator Economy Report 2024", "ConvertKit State of the Creator Economy 2024", "Tubics YouTube Statistics 2024", "Social Blade Analytics", "Vibely Creator Burnout Report 2024", "YouTube Creator Academy", "Influencer Marketing Hub 2024"]
+    }
+  }
+}

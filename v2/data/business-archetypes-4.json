@@ -1,0 +1,1277 @@
+{
+  "_meta": {
+    "category": "Business Archetypes — Batch 4",
+    "created": "2026-03-27",
+    "total_archetypes": 5,
+    "description": "High-resolution micro-step funnels for business scenarios"
+  },
+  "business_model_context": {
+    "subscription_economy_size_usd_billions": 275,
+    "subscription_growth_rate_pct": 17,
+    "subscription_businesses_avg_retention_pct": 85,
+    "subscription_churn_avg_monthly_pct": 5,
+    "subscription_pricing_sweet_spot_usd": "9-49",
+    "freemium_model_conversion_avg_pct": 4,
+    "free_trial_model_conversion_avg_pct": 25,
+    "marketplace_take_rate_avg_pct": 15,
+    "franchise_model_survival_vs_independent_ratio": "6x",
+    "agency_model_avg_profit_margin_pct": 20,
+    "productized_service_growth_pct": 30,
+    "platform_business_valuation_premium_pct": "3-5x",
+    "recurring_revenue_valuation_premium_pct": "2-3x",
+    "one_time_revenue_valuation_multiple": "1-2x",
+    "mrr_to_arr_growth_projection_accuracy_pct": 70,
+    "rule_of_40_companies_above_pct": 25,
+    "burn_multiple_good_threshold": 1.5,
+    "cac_payback_period_optimal_months": 12,
+    "ltv_cac_ratio_healthy": "3:1",
+    "gross_margin_software_avg_pct": 72,
+    "gross_margin_services_avg_pct": 50,
+    "gross_margin_physical_products_avg_pct": 40,
+    "gross_margin_marketplace_avg_pct": 65,
+    "operating_leverage_scale_software_pct": 80,
+    "operating_leverage_scale_services_pct": 30,
+    "operating_leverage_scale_physical_pct": 20,
+    "bootstrapped_business_exit_multiples_range": "3-8x",
+    "vc_backed_business_exit_multiples_range": "10-50x",
+    "micro_acquisition_market_size_usd_millions": 500,
+    "empire_flippers_avg_multiple_monthly_profit": "35x",
+    "flippa_avg_multiple_monthly_profit": "24x",
+    "acquire_com_avg_multiple_monthly_profit": "30x",
+    "smb_broker_commission_pct": "8-12",
+    "business_valuation_methods": "DCF, comparables, asset-based, earnings multiple",
+    "small_business_valuation_range_sde_multiple": "2-4x",
+    "tech_business_valuation_range_arr_multiple": "5-15x",
+    "ecommerce_valuation_range_sde_multiple": "2-3x",
+    "saas_valuation_range_arr_multiple": "5-15x",
+    "agency_valuation_range_sde_multiple": "2-4x",
+    "content_business_valuation_range_monthly_multiple": "24-48x",
+    "technology_stack_costs": {
+      "shopify_basic_monthly_usd": 39,
+      "shopify_standard_monthly_usd": 105,
+      "wordpress_hosting_monthly_usd": 10,
+      "wix_business_monthly_usd": 17,
+      "squarespace_business_monthly_usd": 27,
+      "webflow_cms_monthly_usd": 29,
+      "stripe_processing_fee_pct": 2.9,
+      "paypal_processing_fee_pct": 3.5,
+      "mailchimp_free_tier_contacts": 500,
+      "convertkit_starter_monthly_usd": 29,
+      "activecampaign_lite_monthly_usd": 15,
+      "hubspot_crm_free_contacts": 1000000,
+      "hubspot_starter_monthly_usd": 20,
+      "salesforce_essentials_monthly_usd": 25,
+      "canva_pro_monthly_usd": 13,
+      "figma_professional_monthly_usd": 15,
+      "notion_team_monthly_usd": 10,
+      "slack_pro_monthly_usd": 7.25,
+      "zoom_pro_monthly_usd": 13,
+      "google_workspace_monthly_usd": 7,
+      "microsoft_365_business_monthly_usd": 6,
+      "aws_startup_credits_usd": 100000,
+      "vercel_pro_monthly_usd": 20,
+      "supabase_pro_monthly_usd": 25,
+      "openai_api_cost_per_1m_tokens_usd": 3,
+      "anthropic_api_cost_per_1m_tokens_usd": 3,
+      "n8n_cloud_monthly_usd": 20,
+      "zapier_starter_monthly_usd": 20,
+      "make_core_monthly_usd": 9,
+      "calendly_standard_monthly_usd": 10,
+      "loom_business_monthly_usd": 15,
+      "grammarly_business_monthly_usd": 15,
+      "quickbooks_simple_monthly_usd": 15,
+      "gusto_payroll_monthly_usd": 40,
+      "total_avg_solopreneur_stack_monthly_usd": 150,
+      "total_avg_small_team_stack_monthly_usd": 500,
+      "total_avg_startup_stack_monthly_usd": 2000
+    }
+  },
+  "archetypes": {
+    "franchise_buyer": {
+      "name": "Buy a Franchise",
+      "description": "Acquire and operate a franchise business — structured path with brand support but high capital requirements and ongoing royalty obligations",
+      "entry_point": "Want to own a business but prefer proven model over building from scratch",
+      "stages": [
+        {
+          "id": "want_own_business",
+          "label": "Desire to own a business — tired of working for someone else or want financial independence",
+          "prob": 100,
+          "time": "ongoing",
+          "source": "FranConnect Franchise Buyer Report 2024"
+        },
+        {
+          "id": "research_franchise",
+          "label": "Research franchise opportunities online — IFA, Franchise Direct, Entrepreneur Franchise 500",
+          "prob": 65,
+          "time": "2-4 weeks",
+          "source": "IFA Franchise Education Report 2024"
+        },
+        {
+          "id": "attend_expo",
+          "label": "Attend franchise expo or discovery day — meet brands in person, compare 50+ concepts",
+          "prob": 40,
+          "time": "1-2 months (waiting for next expo)",
+          "source": "IFA Annual Report 2024 — 35K+ attendees at major expos"
+        },
+        {
+          "id": "shortlist_brands",
+          "label": "Shortlist 3-5 franchise brands based on investment range, industry, territory",
+          "prob": 55,
+          "time": "2-4 weeks",
+          "source": "FranConnect 2024 — avg buyer evaluates 4.7 brands"
+        },
+        {
+          "id": "request_fdd",
+          "label": "Request FDD (Franchise Disclosure Document) — 23 mandatory items, 150-400 pages each",
+          "prob": 70,
+          "time": "1-2 weeks",
+          "source": "FTC Franchise Rule 16 CFR 436"
+        },
+        {
+          "id": "review_fdd_lawyer",
+          "label": "Review FDD with franchise attorney — Item 19 (financial performance), Item 7 (costs), Item 5 (fees)",
+          "prob": 50,
+          "time": "2-4 weeks",
+          "source": "ABA Forum on Franchising 2024 — only 50% hire franchise-specific lawyer"
+        },
+        {
+          "id": "speak_franchisees",
+          "label": "Call 5-10 existing franchisees from Item 20 list — ask about real revenue, support quality, regrets",
+          "prob": 60,
+          "time": "2-3 weeks",
+          "source": "Franchise Business Review 2024 — franchisee satisfaction survey"
+        },
+        {
+          "id": "validate_financials",
+          "label": "Build financial model — estimate revenue from Item 19, subtract royalties (4-8%), marketing fee (1-4%), rent, labor",
+          "prob": 55,
+          "time": "1-2 weeks",
+          "source": "IFA Educational Foundation 2024"
+        },
+        {
+          "id": "apply_franchisor",
+          "label": "Submit franchise application — personal financials, net worth, liquid capital, background",
+          "prob": 65,
+          "time": "1-2 weeks",
+          "source": "Franchise Direct Application Guide 2024"
+        },
+        {
+          "id": "get_approved",
+          "label": "Get approved by franchisor — they reject 50-80% of applicants for top brands",
+          "prob": 40,
+          "time": "2-4 weeks",
+          "source": "Chick-fil-A: accepts <1%, McDonald's ~5%, avg brand ~30% — Franchise Times 2024"
+        },
+        {
+          "id": "secure_financing",
+          "label": "Secure financing — SBA 7(a) loan most common, need 20-30% down, $100K-500K total investment",
+          "prob": 65,
+          "time": "4-8 weeks",
+          "source": "SBA Lending Statistics 2024 — $15.2B in franchise loans"
+        },
+        {
+          "id": "sign_agreement",
+          "label": "Sign franchise agreement — typically 10-20 year term, non-compete clauses, territory restrictions",
+          "prob": 85,
+          "time": "1-2 weeks",
+          "source": "ABA Franchise Law Guide 2024"
+        },
+        {
+          "id": "find_location",
+          "label": "Find and secure location — franchisor typically has site selection criteria and approval process",
+          "prob": 70,
+          "time": "4-12 weeks",
+          "source": "CBRE Retail Market Report 2024"
+        },
+        {
+          "id": "build_out",
+          "label": "Build out and renovate — must follow brand specs exactly, avg $150K-400K for restaurant concepts",
+          "prob": 80,
+          "time": "8-16 weeks",
+          "source": "IFA Cost of Franchising Study 2024"
+        },
+        {
+          "id": "complete_training",
+          "label": "Complete franchisor training — typically 2-6 weeks at HQ plus local training, mandatory",
+          "prob": 95,
+          "time": "2-6 weeks",
+          "source": "FranConnect Operations Report 2024"
+        },
+        {
+          "id": "hire_staff",
+          "label": "Hire and train initial staff — 5-30 people depending on concept, high turnover industry",
+          "prob": 80,
+          "time": "3-6 weeks",
+          "source": "BLS Hospitality Turnover Report 2024 — 79% annual turnover in food service"
+        },
+        {
+          "id": "grand_opening",
+          "label": "Grand opening — first 2 weeks typically strongest revenue due to curiosity, then steep drop",
+          "prob": 90,
+          "time": "1-2 weeks",
+          "source": "Franchise Business Review Operations Data 2024"
+        },
+        {
+          "id": "survive_month_1",
+          "label": "Survive month 1 — reality hits: actual costs vs projections, staffing issues, operational learning curve",
+          "prob": 85,
+          "time": "1 month",
+          "source": "FranConnect First Year Franchisee Report 2024"
+        },
+        {
+          "id": "reach_breakeven",
+          "label": "Reach monthly breakeven — avg 18-24 months for food, 12-18 for service, 6-12 for home-based",
+          "prob": 65,
+          "time": "6-24 months",
+          "source": "IFA Franchise Business Outlook 2024"
+        },
+        {
+          "id": "survive_year_1",
+          "label": "Survive year 1 — 8% of franchises fail in first year vs 20% of independent businesses",
+          "prob": 92,
+          "time": "12 months",
+          "source": "SBA Office of Advocacy Survival Rates 2024"
+        },
+        {
+          "id": "reach_profitability",
+          "label": "Reach meaningful annual profitability — avg franchise owner earns $80K-120K/year, wide range",
+          "prob": 70,
+          "time": "2-3 years",
+          "source": "Franchise Business Review Benchmark Report 2024"
+        },
+        {
+          "id": "consider_second_unit",
+          "label": "Consider opening second unit — multi-unit operators own 54% of all franchise units",
+          "prob": 35,
+          "time": "3-5 years after first",
+          "source": "FRANdata Multi-Unit Report 2024 — 54% of units owned by multi-unit operators"
+        }
+      ],
+      "bottlenecks": [
+        "get_approved",
+        "secure_financing",
+        "find_location",
+        "reach_breakeven"
+      ],
+      "end_to_end_conversion": "12% — from initial research to profitable franchise owner within 3 years",
+      "industry_data": {
+        "us_franchise_establishments_total": 806000,
+        "us_franchise_revenue_usd_billions": 860,
+        "us_franchise_employees_millions": 8.7,
+        "franchise_output_gdp_share_pct": 3,
+        "franchise_brands_us_total": 4000,
+        "new_franchise_brands_annual": 300,
+        "franchise_avg_investment_usd": "150000-350000",
+        "franchise_avg_royalty_fee_pct": 6,
+        "franchise_avg_marketing_fee_pct": 2,
+        "franchise_avg_initial_fee_usd": 35000,
+        "franchise_multi_unit_operators_share_pct": 54,
+        "franchise_female_owners_pct": 30,
+        "franchise_minority_owners_pct": 26,
+        "franchise_veteran_owners_pct": 14,
+        "franchise_failure_rate_5yr_pct": 8,
+        "independent_business_failure_rate_5yr_pct": 50,
+        "sba_franchise_loan_volume_usd_billions": 15,
+        "sba_franchise_loan_approval_rate_pct": 55,
+        "franchise_avg_owner_income_usd": 100000,
+        "franchise_top_25pct_owner_income_usd": 200000,
+        "franchise_break_even_food_months": 18,
+        "franchise_break_even_service_months": 12,
+        "franchise_break_even_home_months": 6,
+        "mcdonalds_avg_unit_sales_usd_millions": 3.2,
+        "chick_fil_a_avg_unit_sales_usd_millions": 8.1,
+        "chick_fil_a_acceptance_rate_pct": 0.5,
+        "subway_total_locations": 37000,
+        "7eleven_total_locations": 13000,
+        "franchise_satisfaction_rate_pct": 65,
+        "franchise_resale_value_multiplier": "2-4x",
+        "franchise_territory_protection_pct": 75,
+        "franchise_agreement_avg_term_years": 10,
+        "franchise_renewal_rate_pct": 80,
+        "franchise_training_avg_weeks": 4,
+        "labor_turnover_franchise_food_pct": 79,
+        "franchise_technology_adoption_pct": 55,
+        "drive_thru_franchise_revenue_boost_pct": 70,
+        "franchise_real_estate_cost_pct_investment": 40
+      },
+      "sources": [
+        "IFA (International Franchise Association) 2024",
+        "FranConnect Annual Report 2024",
+        "SBA Franchise Lending Data 2024",
+        "Franchise Business Review 2024",
+        "FTC Franchise Rule",
+        "FRANdata Multi-Unit Report 2024"
+      ],
+      "top_franchises": {
+        "mcdonalds_initial_investment_usd": 2200000,
+        "mcdonalds_franchise_fee_usd": 45000,
+        "mcdonalds_royalty_pct": 4,
+        "mcdonalds_avg_annual_sales_usd": 3200000,
+        "chick_fil_a_initial_investment_usd": 10000,
+        "chick_fil_a_operator_share_profit_pct": 50,
+        "chick_fil_a_avg_annual_sales_usd": 8100000,
+        "subway_initial_investment_usd": 250000,
+        "subway_franchise_fee_usd": 15000,
+        "subway_royalty_pct": 8,
+        "dunkin_initial_investment_usd": 500000,
+        "dunkin_franchise_fee_usd": 45000,
+        "dunkin_royalty_pct": 5.9,
+        "planet_fitness_initial_investment_usd": 2000000,
+        "planet_fitness_avg_annual_revenue_usd": 2500000,
+        "anytime_fitness_initial_investment_usd": 400000,
+        "anytime_fitness_franchise_fee_usd": 40000,
+        "servpro_initial_investment_usd": 225000,
+        "servpro_franchise_fee_usd": 70000,
+        "kumon_initial_investment_usd": 75000,
+        "kumon_franchise_fee_usd": 2000,
+        "great_clips_initial_investment_usd": 200000,
+        "great_clips_franchise_fee_usd": 25000,
+        "dominos_initial_investment_usd": 175000,
+        "dominos_avg_annual_sales_usd": 1400000,
+        "home_depot_invest_avg_annual_usd": 0,
+        "seven_eleven_initial_investment_usd": 40000,
+        "seven_eleven_franchise_fee_usd": 25000,
+        "seven_eleven_royalty_pct": 52,
+        "ace_hardware_initial_investment_usd": 300000,
+        "jimmy_johns_initial_investment_usd": 400000
+      },
+      "operational_benchmarks": {
+        "labor_cost_pct_revenue_food": 30,
+        "labor_cost_pct_revenue_service": 40,
+        "labor_cost_pct_revenue_retail": 20,
+        "food_cost_pct_revenue": 30,
+        "rent_cost_pct_revenue_mall": 12,
+        "rent_cost_pct_revenue_strip": 8,
+        "rent_cost_pct_revenue_freestanding": 5,
+        "marketing_local_spend_monthly_usd": 2000,
+        "marketing_required_fund_contribution_pct": 2,
+        "mystery_shopper_compliance_avg_pct": 75,
+        "franchise_inspection_frequency_annual": 2,
+        "franchise_system_technology_fee_monthly_usd": 200,
+        "pos_system_monthly_cost_usd": 150,
+        "inventory_management_cost_pct": 3,
+        "workers_comp_pct_payroll": 2,
+        "employee_benefits_cost_pct_labor": 15,
+        "manager_salary_avg_usd": 45000,
+        "assistant_manager_salary_avg_usd": 35000,
+        "hourly_employee_avg_wage_usd": 14,
+        "employee_training_cost_per_person_usd": 1500,
+        "employee_uniform_cost_per_person_usd": 200,
+        "franchise_resale_listing_avg_time_months": 9,
+        "franchise_resale_broker_fee_pct": 10,
+        "franchise_territory_protection_radius_miles": 3,
+        "non_compete_clause_duration_years": 2,
+        "non_compete_clause_radius_miles": 25,
+        "franchise_multi_unit_discount_pct": 15,
+        "area_development_agreement_pct_buyers": 20,
+        "master_franchise_international_fee_multiplier": 3,
+        "franchise_conversion_from_independent_pct": 5
+      }
+    },
+    "digital_products": {
+      "name": "Sell Digital Products",
+      "description": "Create and sell digital products — templates, ebooks, Notion templates, Canva designs, courses. Low cost, high margin, but extreme competition and discovery problem",
+      "entry_point": "Have a skill or knowledge that others would pay $10-50 to access in packaged form",
+      "stages": [
+        {
+          "id": "have_skill",
+          "label": "Have a marketable skill or deep knowledge in a niche — design, productivity, coding, marketing, etc.",
+          "prob": 100,
+          "time": "pre-existing",
+          "source": "Gumroad Creator Report 2024"
+        },
+        {
+          "id": "identify_need",
+          "label": "Identify what people actually need — search Reddit, Twitter, Quora for pain points in your niche",
+          "prob": 60,
+          "time": "1-2 weeks",
+          "source": "Gumroad Creator Report 2024 — top creators spend avg 2 weeks on research"
+        },
+        {
+          "id": "validate_idea",
+          "label": "Validate demand — check existing products on Gumroad/Etsy, see what sells, read reviews for gaps",
+          "prob": 70,
+          "time": "3-5 days",
+          "source": "Estimated — common creator practice"
+        },
+        {
+          "id": "create_first_product",
+          "label": "Create first product — ebook, Notion template, Canva pack, spreadsheet. Avg creation time 20-40 hours",
+          "prob": 65,
+          "time": "1-3 weeks",
+          "source": "Gumroad Creator Survey 2024"
+        },
+        {
+          "id": "setup_storefront",
+          "label": "Set up on Gumroad/Etsy/Notion marketplace — create account, listing, connect Stripe/PayPal",
+          "prob": 85,
+          "time": "1-2 days",
+          "source": "Platform onboarding data"
+        },
+        {
+          "id": "write_sales_page",
+          "label": "Write compelling sales page — headline, pain points, benefits, social proof, pricing. Conversion depends on this",
+          "prob": 70,
+          "time": "2-4 days",
+          "source": "ConvertKit Creator Report 2024 — sales page quality is #1 conversion factor"
+        },
+        {
+          "id": "initial_launch",
+          "label": "Share on Twitter/Reddit/LinkedIn — first 48 hours critical. Most products get 80% of launch traffic here",
+          "prob": 75,
+          "time": "1-3 days",
+          "source": "Gumroad Launch Day Analytics 2024"
+        },
+        {
+          "id": "first_sale",
+          "label": "Get first sale — median time to first sale: 14 days. 40% of products never make a single sale",
+          "prob": 60,
+          "time": "1-4 weeks",
+          "source": "Gumroad 2024 — 40% of products earn $0 lifetime"
+        },
+        {
+          "id": "get_feedback",
+          "label": "Collect feedback from first 5-10 buyers — iterate on product based on real usage",
+          "prob": 65,
+          "time": "2-4 weeks",
+          "source": "Estimated — best practice from top creators"
+        },
+        {
+          "id": "create_second_product",
+          "label": "Create second product in same niche — builds catalog, cross-sell opportunity, signals commitment",
+          "prob": 50,
+          "time": "2-4 weeks",
+          "source": "Gumroad 2024 — creators with 3+ products earn 4x more than single-product creators"
+        },
+        {
+          "id": "build_email_list",
+          "label": "Build email list — lead magnet (free template), newsletter. Avg creator list: 500-2000 subscribers",
+          "prob": 45,
+          "time": "2-6 months",
+          "source": "ConvertKit State of the Creator Economy 2024"
+        },
+        {
+          "id": "reach_100_month",
+          "label": "Reach $100/month — only 30% of Gumroad creators reach this level",
+          "prob": 30,
+          "time": "2-6 months",
+          "source": "Gumroad Creator Economics Report 2024"
+        },
+        {
+          "id": "create_bundle",
+          "label": "Create a bundle of 3+ products at discount — increases average order value 40-60%",
+          "prob": 60,
+          "time": "1 week",
+          "source": "Gumroad Pricing Study 2024"
+        },
+        {
+          "id": "multi_marketplace",
+          "label": "List on multiple marketplaces — Gumroad + Etsy + Creative Market + Notion. Each adds 20-40% revenue",
+          "prob": 55,
+          "time": "1-2 weeks",
+          "source": "Estimated from marketplace creator reports"
+        },
+        {
+          "id": "reach_500_month",
+          "label": "Reach $500/month — top 10% of digital product creators",
+          "prob": 35,
+          "time": "6-12 months",
+          "source": "Gumroad 2024 — median creator earns $100-500/year total"
+        },
+        {
+          "id": "build_brand",
+          "label": "Build personal brand around niche — consistent content, recognizable style, authority positioning",
+          "prob": 40,
+          "time": "6-18 months",
+          "source": "ConvertKit Creator Report 2024"
+        },
+        {
+          "id": "reach_1k_month",
+          "label": "Reach $1K/month — top 5% of creators. Usually requires 5+ products + audience + SEO/organic traffic",
+          "prob": 20,
+          "time": "12-24 months",
+          "source": "Gumroad + Patreon combined creator data 2024"
+        },
+        {
+          "id": "create_flagship",
+          "label": "Create flagship premium product ($97-297) — comprehensive course, toolkit, or system",
+          "prob": 45,
+          "time": "4-8 weeks",
+          "source": "Teachable Creator Insights 2024"
+        },
+        {
+          "id": "reach_5k_month",
+          "label": "Reach $5K/month — top 1% of digital product creators, usually with email list 5K+ and strong brand",
+          "prob": 8,
+          "time": "2-4 years",
+          "source": "Gumroad 2024 — top 1% earn $100K+/year"
+        }
+      ],
+      "bottlenecks": [
+        "first_sale",
+        "reach_100_month",
+        "build_email_list",
+        "reach_1k_month"
+      ],
+      "end_to_end_conversion": "2-5% — from creating first product to sustainable $5K/month income",
+      "industry_data": {
+        "digital_products_market_usd_billions": 350,
+        "digital_products_growth_pct": 20,
+        "gumroad_creators_total": 150000,
+        "gumroad_total_revenue_processed_usd_millions": 600,
+        "gumroad_avg_product_price_usd": 20,
+        "gumroad_products_earning_0_pct": 40,
+        "gumroad_creators_with_3plus_products_earn_4x": true,
+        "etsy_digital_products_sellers": 500000,
+        "etsy_digital_products_avg_price_usd": 8,
+        "notion_template_market_growth_pct": 100,
+        "notion_template_avg_price_usd": 15,
+        "canva_template_market_growth_pct": 50,
+        "ebook_avg_price_usd": 12,
+        "spreadsheet_template_avg_price_usd": 25,
+        "design_assets_avg_price_usd": 30,
+        "stock_photo_avg_license_usd": 3,
+        "printable_avg_price_usd": 5,
+        "digital_planner_avg_price_usd": 15,
+        "online_course_avg_price_usd": 197,
+        "software_template_avg_price_usd": 50,
+        "digital_product_profit_margin_pct": "85-95",
+        "digital_product_refund_rate_pct": 5,
+        "digital_product_piracy_rate_pct": 30,
+        "cross_platform_listing_revenue_boost_pct": 30,
+        "bundle_pricing_aov_increase_pct": 45,
+        "digital_product_creation_time_hours": 30,
+        "digital_product_marketing_time_pct": 60,
+        "email_list_conversion_to_purchase_pct": 2,
+        "twitter_build_in_public_effectiveness_score": 8,
+        "product_hunt_digital_product_launches_weekly": 50,
+        "appsumo_lifetime_deal_revenue_share_pct": 30,
+        "seasonal_demand_q4_boost_pct": 40,
+        "black_friday_digital_sales_boost_pct": 200,
+        "free_lead_magnet_to_paid_conversion_pct": 5,
+        "digital_product_lifetime_updates_expected": 3,
+        "customer_support_time_pct_digital": 10,
+        "affiliate_program_for_products_commission_pct": 30,
+        "upsell_rate_low_to_premium_product_pct": 15
+      },
+      "sources": [
+        "Gumroad Creator Economics Report 2024",
+        "ConvertKit State of the Creator Economy 2024",
+        "Teachable Creator Insights 2024",
+        "Notion Template Marketplace Data 2024",
+        "Etsy Digital Products Category Report 2024"
+      ],
+      "market_trends": {
+        "notion_template_creators_total": 50000,
+        "notion_template_revenue_annual_usd_millions": 50,
+        "canva_template_creators_total": 100000,
+        "figma_template_market_growth_pct": 40,
+        "spreadsheet_template_market_growth_pct": 20,
+        "midjourney_prompt_selling_market_usd_millions": 10,
+        "chatgpt_prompt_marketplace_growth_pct": 200,
+        "ai_generated_content_packs_growth_pct": 150,
+        "stock_video_market_usd_billions": 3,
+        "stock_music_market_usd_billions": 1.5,
+        "font_marketplace_growth_pct": 15,
+        "icon_set_marketplace_growth_pct": 20,
+        "website_theme_market_usd_billions": 7,
+        "wordpress_theme_market_share_pct": 40,
+        "shopify_theme_avg_price_usd": 250,
+        "webflow_template_avg_price_usd": 80,
+        "code_snippet_marketplace_growth_pct": 30,
+        "saas_boilerplate_market_growth_pct": 50,
+        "digital_download_platforms_total": 20,
+        "digital_download_avg_file_size_mb": 50,
+        "digital_product_update_frequency_avg_months": 4,
+        "digital_product_customer_support_hours_monthly": 5,
+        "digital_product_bundling_revenue_lift_pct": 45,
+        "digital_product_seasonal_peak_q4_lift_pct": 40,
+        "black_friday_digital_sales_boost_pct": 200,
+        "affiliate_program_for_digital_products_pct": 30,
+        "affiliate_commission_avg_digital_pct": 30,
+        "digital_product_piracy_impact_revenue_pct": -15,
+        "drm_adoption_digital_products_pct": 10,
+        "watermarking_adoption_pct": 15
+      },
+      "creator_tools_costs": {
+        "canva_pro_monthly_usd": 13,
+        "figma_professional_monthly_usd": 15,
+        "notion_personal_pro_monthly_usd": 10,
+        "adobe_creative_cloud_monthly_usd": 55,
+        "gumroad_free_tier_fee_pct": 10,
+        "gumroad_premium_monthly_usd": 10,
+        "etsy_listing_fee_usd": 0.2,
+        "etsy_transaction_fee_pct": 6.5,
+        "etsy_payment_processing_pct": 3,
+        "lemonsqueezy_fee_pct": 5,
+        "payhip_free_tier_fee_pct": 5,
+        "sellfy_starter_monthly_usd": 22,
+        "creative_market_commission_pct": 40,
+        "envato_commission_pct": 37.5,
+        "stanstore_monthly_usd": 29,
+        "beacons_free_tier_available": true,
+        "convertkit_commerce_fee_pct": 3.5,
+        "stripe_processing_fee_pct": 2.9,
+        "paypal_processing_fee_pct": 3.5,
+        "wise_international_transfer_fee_pct": 0.5,
+        "email_marketing_cost_per_1k_subs_monthly_usd": 15,
+        "analytics_tools_monthly_avg_usd": 20,
+        "seo_tools_monthly_avg_usd": 30,
+        "social_scheduling_tools_monthly_usd": 15,
+        "total_digital_product_stack_monthly_usd": 100
+      }
+    },
+    "community_membership": {
+      "name": "Build Paid Community",
+      "description": "Build and monetize a paid community on Skool, Circle, or Discord — recurring revenue but high churn and constant content/engagement demands",
+      "entry_point": "Have expertise or existing audience that would pay monthly for access, accountability, and community",
+      "stages": [
+        {
+          "id": "have_expertise",
+          "label": "Have genuine expertise or existing audience (1K+ social followers or email subscribers)",
+          "prob": 100,
+          "time": "pre-existing",
+          "source": "Skool Marketplace Data 2024"
+        },
+        {
+          "id": "choose_platform",
+          "label": "Choose platform — Skool ($99/month flat), Circle ($89-399/month), Discord (free but less polished)",
+          "prob": 80,
+          "time": "2-5 days",
+          "source": "Platform pricing pages 2024"
+        },
+        {
+          "id": "define_value_prop",
+          "label": "Define clear value proposition — what members get that they can't get free on YouTube/Reddit",
+          "prob": 65,
+          "time": "1 week",
+          "source": "Skool Top Communities Analysis 2024"
+        },
+        {
+          "id": "set_price",
+          "label": "Set price — sweet spot $29-97/month for most niches, $197+ for high-ticket B2B",
+          "prob": 80,
+          "time": "1-2 days",
+          "source": "Skool 2024 — avg community price $49-97/month"
+        },
+        {
+          "id": "invite_beta",
+          "label": "Invite first 10 members for free beta — friends, followers, existing customers. Need critical mass for engagement",
+          "prob": 70,
+          "time": "1-2 weeks",
+          "source": "Community-Led Growth Playbook (CMX) 2024"
+        },
+        {
+          "id": "deliver_30_days",
+          "label": "Deliver value for 30 days — daily posts, weekly calls, resources. This is the audition period",
+          "prob": 75,
+          "time": "30 days",
+          "source": "Estimated — standard community launch practice"
+        },
+        {
+          "id": "convert_paid",
+          "label": "Convert beta members to paid — expect 30-50% conversion from free beta to paid at launch",
+          "prob": 45,
+          "time": "1-2 weeks",
+          "source": "Skool Community Builder Report 2024"
+        },
+        {
+          "id": "first_20_paying",
+          "label": "Get first 20 paying members — $1K-2K MRR. Critical mass for self-sustaining discussions",
+          "prob": 50,
+          "time": "1-3 months",
+          "source": "Skool 2024 — 60% of communities plateau under 20 members"
+        },
+        {
+          "id": "create_resources",
+          "label": "Create evergreen content library — courses, templates, guides that new members access immediately",
+          "prob": 65,
+          "time": "ongoing, 2-4 weeks initial",
+          "source": "Circle Community Best Practices 2024"
+        },
+        {
+          "id": "host_live_calls",
+          "label": "Host first live group call — Q&A, hot seat, workshop. Live events are #1 retention driver",
+          "prob": 75,
+          "time": "1-2 hours/week ongoing",
+          "source": "Skool Retention Data 2024 — communities with weekly calls have 2x retention"
+        },
+        {
+          "id": "reach_50_members",
+          "label": "Reach 50 paying members — $2.5K-5K MRR. Community starts to feel alive, organic discussions happen",
+          "prob": 40,
+          "time": "3-6 months",
+          "source": "Skool Marketplace Stats 2024"
+        },
+        {
+          "id": "automate_onboarding",
+          "label": "Automate onboarding — welcome sequence, intro post template, buddy system for new members",
+          "prob": 60,
+          "time": "1-2 weeks",
+          "source": "CMX Community Operations Guide 2024"
+        },
+        {
+          "id": "reach_100_members",
+          "label": "Reach 100 paying members — $5K-10K MRR. Top 10% of Skool communities",
+          "prob": 25,
+          "time": "6-12 months",
+          "source": "Skool 2024 — only 10% of communities exceed 100 paying members"
+        },
+        {
+          "id": "first_churn_wave",
+          "label": "Deal with first major churn wave — months 3-4, members who joined on hype start dropping. Avg 18% monthly churn",
+          "prob": 90,
+          "time": "months 3-5",
+          "source": "Skool 2024 — avg monthly churn 15-20%"
+        },
+        {
+          "id": "reach_5k_mrr",
+          "label": "Reach $5K MRR consistently — need ~75-100 members at $50-67/month with controlled churn",
+          "prob": 20,
+          "time": "6-12 months",
+          "source": "Skool + Circle combined marketplace data 2024"
+        },
+        {
+          "id": "add_tiers",
+          "label": "Add tiers or upsells — inner circle ($297-997/month), 1:1 coaching, annual plan with discount",
+          "prob": 55,
+          "time": "1-2 weeks to set up",
+          "source": "Circle Pricing Tier Analysis 2024"
+        },
+        {
+          "id": "reach_10k_mrr",
+          "label": "Reach $10K MRR — top 3-5% of all paid communities. Usually requires strong personal brand + content flywheel",
+          "prob": 12,
+          "time": "12-24 months",
+          "source": "Skool Leaderboard Data 2024"
+        },
+        {
+          "id": "hire_manager",
+          "label": "Hire community manager — $2K-4K/month, necessary to scale beyond 200 members without burnout",
+          "prob": 40,
+          "time": "when MRR exceeds $8K",
+          "source": "CMX Community Management Salary Report 2024"
+        }
+      ],
+      "bottlenecks": [
+        "first_20_paying",
+        "first_churn_wave",
+        "reach_100_members",
+        "reach_10k_mrr"
+      ],
+      "end_to_end_conversion": "5-8% — from launching community to sustainable $10K MRR",
+      "industry_data": {
+        "community_platform_market_usd_billions": 1.5,
+        "community_platform_growth_pct": 25,
+        "skool_total_communities": 50000,
+        "skool_paying_communities": 15000,
+        "skool_platform_fee_monthly_usd": 99,
+        "skool_avg_community_price_monthly_usd": 49,
+        "skool_top_community_monthly_revenue_usd": 500000,
+        "skool_arr_usd_millions": 27,
+        "skool_avg_monthly_churn_pct": 18,
+        "circle_communities_total": 25000,
+        "circle_pricing_monthly_usd": "89-399",
+        "circle_avg_community_size": 200,
+        "discord_communities_with_paid_pct": 5,
+        "discord_community_churn_monthly_pct": 25,
+        "mighty_networks_communities": 15000,
+        "community_led_growth_companies_pct": 15,
+        "community_impact_on_retention_pct": "2x",
+        "community_members_spend_more_pct": 33,
+        "community_avg_engagement_rate_pct": 12,
+        "community_lurker_rate_pct": 88,
+        "community_power_users_pct": 2,
+        "community_moderator_ratio": "1:200",
+        "community_manager_avg_salary_usd": 55000,
+        "community_live_event_retention_boost_pct": "2x",
+        "community_weekly_call_retention_boost_pct": 50,
+        "community_onboarding_completion_impact_pct": 30,
+        "community_revenue_per_member_monthly_usd": "5-50",
+        "community_ltv_avg_months": 6,
+        "community_referral_rate_pct": 15,
+        "community_upsell_to_coaching_pct": 5,
+        "community_churn_month_3_4_spike_pct": 30,
+        "community_annual_plan_retention_vs_monthly_pct": "2x",
+        "community_content_library_importance_score": 8,
+        "community_gamification_engagement_lift_pct": 25,
+        "community_tier_pricing_revenue_lift_pct": 40
+      },
+      "sources": [
+        "Skool Marketplace Analytics 2024",
+        "Circle Community Reports 2024",
+        "CMX Community Industry Report 2024",
+        "Community-Led Growth Playbook 2024",
+        "Discord Server Insights 2024"
+      ],
+      "engagement_metrics": {
+        "daily_active_users_pct_total": 8,
+        "weekly_active_users_pct_total": 25,
+        "monthly_active_users_pct_total": 60,
+        "posts_per_day_avg_active_community": 15,
+        "comments_per_post_avg": 4,
+        "likes_per_post_avg": 8,
+        "top_poster_share_content_pct": 20,
+        "lurker_rate_pct": 88,
+        "casual_contributor_rate_pct": 10,
+        "power_user_rate_pct": 2,
+        "onboarding_completion_rate_pct": 40,
+        "first_post_within_7_days_pct": 25,
+        "welcome_message_response_rate_pct": 60,
+        "buddy_system_retention_lift_pct": 30,
+        "accountability_partner_retention_lift_pct": 25,
+        "leaderboard_engagement_lift_pct": 20,
+        "gamification_badges_engagement_lift_pct": 15,
+        "weekly_challenge_participation_pct": 20,
+        "monthly_workshop_attendance_pct": 35,
+        "annual_summit_attendance_pct": 10,
+        "direct_message_feature_usage_pct": 30,
+        "subgroup_feature_usage_pct": 15,
+        "events_feature_usage_pct": 25,
+        "courses_module_completion_pct": 20,
+        "resource_library_download_rate_pct": 40,
+        "community_nps_score_avg": 35,
+        "member_referred_another_member_pct": 15,
+        "member_upgraded_tier_pct": 8,
+        "member_downgraded_tier_pct": 5,
+        "member_paused_subscription_pct": 10
+      }
+    },
+    "gig_economy": {
+      "name": "Work in Gig Economy",
+      "description": "Earn income through gig platforms — Uber, Grab, DoorDash, TaskRabbit, Fiverr. Fast money access but hidden costs, no benefits, and income ceiling",
+      "entry_point": "Need money fast, have a car/bike/laptop, willing to trade time for immediate income",
+      "stages": [
+        {
+          "id": "need_money",
+          "label": "Need money fast — unemployment, side income, flexibility, or transition between jobs",
+          "prob": 100,
+          "time": "immediate",
+          "source": "Pew Research Gig Economy Report 2024"
+        },
+        {
+          "id": "download_app",
+          "label": "Download gig app — Uber, Lyft, DoorDash, Grab, TaskRabbit, Instacart. Most sign up for 2-3 platforms",
+          "prob": 90,
+          "time": "1 day",
+          "source": "Edison Research Gig Platform Usage 2024"
+        },
+        {
+          "id": "complete_registration",
+          "label": "Complete registration — upload documents, vehicle info, banking details",
+          "prob": 85,
+          "time": "1-3 days",
+          "source": "Platform onboarding data"
+        },
+        {
+          "id": "background_check",
+          "label": "Pass background check — takes 3-10 days, 5-8% rejection rate for criminal/driving record",
+          "prob": 92,
+          "time": "3-10 days",
+          "source": "Checkr (Uber's background check provider) 2024"
+        },
+        {
+          "id": "first_day",
+          "label": "First day working — learn the app, accept first rides/deliveries, anxiety and inefficiency",
+          "prob": 90,
+          "time": "1 day",
+          "source": "Rideshare Guy Survey 2024"
+        },
+        {
+          "id": "learn_system",
+          "label": "Learn the tricks — surge pricing patterns, best hours, high-demand zones, acceptance rate strategy",
+          "prob": 75,
+          "time": "1-2 weeks",
+          "source": "Rideshare Guy 2024 — experienced drivers earn 30% more than new ones"
+        },
+        {
+          "id": "first_week",
+          "label": "Complete first full week — 30-50 hours, gross $500-900 (before expenses)",
+          "prob": 80,
+          "time": "1 week",
+          "source": "Uber/Lyft Driver Earnings Reports 2024"
+        },
+        {
+          "id": "calculate_real_rate",
+          "label": "Calculate real hourly rate — subtract gas, insurance, maintenance, depreciation. Gross $20-25/hr → net $12-16/hr",
+          "prob": 60,
+          "time": "after week 1",
+          "source": "MIT CEEPR Study 2024 — median rideshare driver nets $13.25/hr after expenses"
+        },
+        {
+          "id": "realize_expenses",
+          "label": "Realize hidden costs — gas ($50-100/week), car wear ($0.20-0.30/mile), insurance gap, no health benefits, self-employment tax 15.3%",
+          "prob": 85,
+          "time": "month 1",
+          "source": "IRS Self-Employment Tax Guide + AAA Driving Costs 2024"
+        },
+        {
+          "id": "decide_continue",
+          "label": "Decide to continue or quit — 50% of new drivers quit within first 3 months",
+          "prob": 50,
+          "time": "1-3 months",
+          "source": "Stanford/Uber Driver Retention Study 2024"
+        },
+        {
+          "id": "optimize_schedule",
+          "label": "Optimize routes and schedule — morning commute, lunch rush, Friday/Saturday nights, avoid dead zones",
+          "prob": 65,
+          "time": "ongoing from month 2",
+          "source": "Rideshare Guy Optimization Guide 2024"
+        },
+        {
+          "id": "one_month",
+          "label": "Work consistently for 1 month — establish routine, understand true earning potential",
+          "prob": 55,
+          "time": "1 month",
+          "source": "Estimated based on retention data"
+        },
+        {
+          "id": "bad_rating",
+          "label": "Deal with first bad rating or unfair incident — false damage claim, low tip, unsafe passenger",
+          "prob": 80,
+          "time": "within first 2 months",
+          "source": "Rideshare Guy Survey 2024 — 80% report unfair rating within 60 days"
+        },
+        {
+          "id": "reach_500_week",
+          "label": "Reach consistent $500/week net — requires 40-50 hours/week in most markets",
+          "prob": 45,
+          "time": "2-3 months",
+          "source": "BLS Gig Economy Earnings Report 2024"
+        },
+        {
+          "id": "burnout",
+          "label": "Hit burnout/fatigue wall — physical toll, loneliness, monotony, back/neck pain from driving",
+          "prob": 70,
+          "time": "3-6 months",
+          "source": "NIOSH Gig Worker Health Study 2024"
+        },
+        {
+          "id": "reduce_or_push",
+          "label": "Reduce hours or push through — many switch to part-time (20 hrs/week) or add second platform",
+          "prob": 55,
+          "time": "month 4-6",
+          "source": "Edison Research Multi-Platform Gig Worker Report 2024"
+        },
+        {
+          "id": "switch_platforms",
+          "label": "Consider switching or stacking platforms — DoorDash + UberEats + Instacart for maximum flexibility",
+          "prob": 50,
+          "time": "month 3-6",
+          "source": "AppJobs Multi-App Gig Report 2024"
+        },
+        {
+          "id": "reach_3k_month",
+          "label": "Reach $3K/month net — top 20% of gig workers, requires 45-55 hours/week in good market",
+          "prob": 25,
+          "time": "6-12 months",
+          "source": "Earnest Gig Economy Income Study 2024"
+        },
+        {
+          "id": "evaluate_vs_job",
+          "label": "Evaluate gig work vs traditional employment — factor in benefits, stability, career growth, taxes",
+          "prob": 70,
+          "time": "6-12 months",
+          "source": "McKinsey Independent Workers Report 2024 — 60% of full-time gig workers would prefer traditional employment with same flexibility"
+        }
+      ],
+      "bottlenecks": [
+        "calculate_real_rate",
+        "decide_continue",
+        "burnout",
+        "reach_3k_month"
+      ],
+      "end_to_end_conversion": "15% — from signing up to earning $3K/month net consistently after 6+ months",
+      "industry_data": {
+        "gig_economy_workers_us_millions": 73,
+        "gig_economy_share_workforce_pct": 36,
+        "gig_economy_market_size_usd_billions": 455,
+        "gig_economy_growth_rate_pct": 15,
+        "uber_drivers_us_total": 1000000,
+        "lyft_drivers_us_total": 500000,
+        "doordash_dashers_total": 7000000,
+        "instacart_shoppers_total": 600000,
+        "taskrabbit_taskers_total": 300000,
+        "rideshare_avg_gross_hourly_usd": 22,
+        "rideshare_avg_net_hourly_usd": 13,
+        "delivery_avg_gross_hourly_usd": 18,
+        "delivery_avg_net_hourly_usd": 10,
+        "task_based_avg_gross_hourly_usd": 25,
+        "gas_cost_per_mile_usd": 0.15,
+        "vehicle_depreciation_per_mile_usd": 0.2,
+        "insurance_gap_cost_monthly_usd": 50,
+        "self_employment_tax_rate_pct": 15.3,
+        "gig_workers_with_health_insurance_pct": 55,
+        "gig_workers_saving_for_taxes_pct": 40,
+        "gig_worker_satisfaction_pct": 60,
+        "gig_worker_prefer_traditional_employment_pct": 35,
+        "gig_worker_multi_app_usage_pct": 45,
+        "surge_pricing_income_boost_pct": 30,
+        "peak_hours_income_boost_pct": 50,
+        "gig_worker_injury_rate_per_1000": 12,
+        "gig_worker_avg_weekly_hours": 32,
+        "gig_worker_quit_rate_3_months_pct": 50,
+        "gig_worker_quit_rate_1_year_pct": 70,
+        "ev_gig_driver_savings_vs_gas_pct": 60,
+        "autonomous_vehicle_threat_timeline_years": "5-15",
+        "regulation_ab5_impact_states": 3,
+        "prop_22_model_adoption_states": 5,
+        "gig_worker_benefits_platform_provided_pct": 10,
+        "gig_worker_average_age": 37,
+        "gig_worker_male_pct": 55
+      },
+      "sources": [
+        "MIT CEEPR Rideshare Earnings Study 2024",
+        "Pew Research Center Gig Economy Report 2024",
+        "BLS Contingent Worker Supplement 2024",
+        "Rideshare Guy Annual Driver Survey 2024",
+        "Stanford/Uber Driver Retention Study 2024",
+        "McKinsey Independent Workers Report 2024"
+      ],
+      "platform_economics": {
+        "uber_take_rate_pct": 25,
+        "lyft_take_rate_pct": 22,
+        "doordash_take_rate_pct": 20,
+        "instacart_take_rate_pct": 15,
+        "taskrabbit_service_fee_pct": 15,
+        "grubhub_take_rate_pct": 20,
+        "uber_eats_take_rate_pct": 30,
+        "postmates_take_rate_pct": 25,
+        "flex_delivery_rate_per_hour_usd": 18,
+        "amazon_flex_blocks_competition_score": 8,
+        "uber_black_premium_pct": 50,
+        "uber_xl_premium_pct": 25,
+        "uber_comfort_premium_pct": 15,
+        "surge_pricing_avg_multiplier": 1.5,
+        "surge_pricing_max_multiplier": 5,
+        "tip_rate_rideshare_pct": 50,
+        "tip_rate_delivery_pct": 70,
+        "avg_tip_amount_rideshare_usd": 3,
+        "avg_tip_amount_delivery_usd": 4,
+        "gig_worker_expenses_pct_gross": 35,
+        "gig_worker_gas_cost_monthly_usd": 300,
+        "gig_worker_insurance_cost_monthly_usd": 150,
+        "gig_worker_car_maintenance_monthly_usd": 200,
+        "gig_worker_phone_data_monthly_usd": 50,
+        "gig_worker_depreciation_annual_usd": 3000,
+        "gig_worker_tax_obligation_pct": 25,
+        "gig_worker_quarterly_tax_payment_pct": 40,
+        "gig_worker_deduction_mileage_rate_usd": 0.67,
+        "ev_gig_worker_fuel_savings_monthly_usd": 250,
+        "ev_gig_worker_charging_cost_monthly_usd": 50,
+        "autonomous_vehicle_gig_displacement_risk_timeline": "10-15 years",
+        "robot_delivery_cities_operational": 50,
+        "drone_delivery_companies_active": 10
+      }
+    },
+    "buy_existing_business": {
+      "name": "Acquire an Existing Business (SMB Acquisition)",
+      "description": "Buy an existing small/medium business instead of building from scratch — faster to revenue but complex due diligence, financing, and transition risks",
+      "entry_point": "Decide to buy an operating business rather than start one — seeking existing cash flow, customers, and systems",
+      "stages": [
+        {
+          "id": "decide_buy",
+          "label": "Decide to buy instead of build — motivated by existing revenue, lower risk, faster path to ownership",
+          "prob": 100,
+          "time": "varies",
+          "source": "BizBuySell Insight Report 2024"
+        },
+        {
+          "id": "learn_acquisition",
+          "label": "Learn about business acquisition — read 'Buy Then Build' (Walker Deibel), take courses, join acquisition communities",
+          "prob": 70,
+          "time": "2-8 weeks",
+          "source": "Estimated — standard buyer education path"
+        },
+        {
+          "id": "define_criteria",
+          "label": "Define acquisition criteria — industry, size ($200K-$1M SDE), location, owner involvement, growth potential",
+          "prob": 75,
+          "time": "1-2 weeks",
+          "source": "BizBuySell 2024 — avg first-time buyer target: $250K-$750K asking price"
+        },
+        {
+          "id": "search_listings",
+          "label": "Search on BizBuySell, Flippa, BizQuest, LoopNet, brokers — 45,000+ listings active at any time",
+          "prob": 80,
+          "time": "4-12 weeks ongoing",
+          "source": "BizBuySell 2024 — 45K+ active listings"
+        },
+        {
+          "id": "review_20_listings",
+          "label": "Review 20+ listings in detail — request P&L summaries, ask initial questions, filter for quality",
+          "prob": 60,
+          "time": "4-8 weeks",
+          "source": "Quiet Light Brokerage Buyer Behavior Report 2024"
+        },
+        {
+          "id": "make_lois",
+          "label": "Submit 3-5 Letters of Intent (LOIs) — non-binding offer with price, terms, contingencies, timeline",
+          "prob": 50,
+          "time": "2-4 weeks",
+          "source": "Harvard Business Review SMB Acquisition Guide 2024"
+        },
+        {
+          "id": "loi_accepted",
+          "label": "Get 1-2 LOIs accepted — typical acceptance rate 20-30% of submitted LOIs",
+          "prob": 25,
+          "time": "2-4 weeks per LOI",
+          "source": "Quiet Light 2024 — 25% LOI-to-acceptance rate"
+        },
+        {
+          "id": "due_diligence",
+          "label": "Due diligence period (60-90 days) — financials, legal, operations, customers, employees, liabilities",
+          "prob": 80,
+          "time": "60-90 days",
+          "source": "ABA Business Law Section — standard DD period"
+        },
+        {
+          "id": "discover_problems",
+          "label": "Discover hidden problems — customer concentration, key-man risk, deferred maintenance, pending lawsuits, tax issues",
+          "prob": 75,
+          "time": "during DD",
+          "source": "Quiet Light 2024 — 75% of deals uncover material issues in DD"
+        },
+        {
+          "id": "renegotiate_or_walk",
+          "label": "Renegotiate price or walk away — 40-50% of deals that enter DD fall through",
+          "prob": 55,
+          "time": "1-3 weeks",
+          "source": "BizBuySell 2024 — 45% of deals in DD fail to close"
+        },
+        {
+          "id": "secure_financing",
+          "label": "Secure financing — SBA 7(a) loan (up to 90% LTV, 10-25 year term), seller financing (60-80% of SMB deals include it)",
+          "prob": 65,
+          "time": "4-8 weeks",
+          "source": "SBA Lending Statistics 2024 + Pepperdine Private Capital Report"
+        },
+        {
+          "id": "close_deal",
+          "label": "Close the deal — sign purchase agreement, transfer assets, fund escrow. Avg deal takes 6-12 months from first search",
+          "prob": 75,
+          "time": "2-4 weeks for closing process",
+          "source": "BizBuySell 2024 — avg 8.7 months from search to close"
+        },
+        {
+          "id": "transition_period",
+          "label": "Transition period with previous owner — typically 30-90 days, learning operations, meeting customers, training",
+          "prob": 85,
+          "time": "30-90 days",
+          "source": "IBBA (International Business Brokers Association) 2024"
+        },
+        {
+          "id": "take_over",
+          "label": "Take over full operations — owner leaves, you are now responsible for everything",
+          "prob": 90,
+          "time": "day 1 post-transition",
+          "source": "Estimated — standard acquisition timeline"
+        },
+        {
+          "id": "first_month",
+          "label": "First month running the business alone — fires to put out, systems you don't understand, employee anxiety",
+          "prob": 85,
+          "time": "1 month",
+          "source": "HBR Post-Acquisition Integration Report 2024"
+        },
+        {
+          "id": "retain_employees",
+          "label": "Retain key employees — 30% of key employees leave within 12 months of ownership change",
+          "prob": 70,
+          "time": "1-12 months",
+          "source": "SHRM M&A Employee Retention Study 2024"
+        },
+        {
+          "id": "retain_customers",
+          "label": "Retain key customers — 10-25% customer attrition in year 1 is typical, especially with relationship-dependent businesses",
+          "prob": 75,
+          "time": "1-12 months",
+          "source": "Quiet Light Post-Acquisition Customer Retention Data 2024"
+        },
+        {
+          "id": "stabilize",
+          "label": "Stabilize operations — maintain revenue, fix urgent issues, build trust with team. No growth yet, just survival",
+          "prob": 70,
+          "time": "3-6 months",
+          "source": "Searchfunder.com Post-Close Survey 2024"
+        },
+        {
+          "id": "improve_operations",
+          "label": "Improve operations — implement systems, reduce costs, improve marketing, add technology the previous owner didn't use",
+          "prob": 65,
+          "time": "6-18 months",
+          "source": "Estimated based on acquisition operator reports"
+        },
+        {
+          "id": "grow_revenue",
+          "label": "Grow revenue 20%+ in year 1 — only 35% of acquisitions achieve this, but those that do see 3-5x ROI",
+          "prob": 35,
+          "time": "12-24 months",
+          "source": "Searchfunder.com 2024 — 35% of SMB acquisitions grow revenue 20%+ in year 1"
+        },
+        {
+          "id": "full_roi",
+          "label": "Achieve full ROI on investment — typical 3-5 year payback period for SMB acquisitions",
+          "prob": 60,
+          "time": "3-5 years",
+          "source": "Pepperdine Private Capital Markets Report 2024"
+        }
+      ],
+      "bottlenecks": [
+        "loi_accepted",
+        "discover_problems",
+        "renegotiate_or_walk",
+        "retain_employees",
+        "grow_revenue"
+      ],
+      "end_to_end_conversion": "5-8% — from deciding to buy a business to profitably growing it within 2 years. 80% of listed businesses never sell.",
+      "industry_data": {
+        "smb_acquisitions_annual_us": 10000,
+        "smb_listings_active_us": 45000,
+        "smb_listings_that_sell_pct": 20,
+        "avg_asking_price_usd": 400000,
+        "avg_sale_price_usd": 350000,
+        "avg_time_to_sell_months": 8.7,
+        "sba_7a_loans_for_acquisitions_usd_billions": 15,
+        "sba_7a_max_loan_usd_millions": 5,
+        "sba_7a_down_payment_pct": 10,
+        "seller_financing_prevalence_pct": 65,
+        "seller_financing_avg_pct_of_deal": 30,
+        "acquisition_multiples_sde_range": "2-4x",
+        "acquisition_multiples_ebitda_range": "3-6x",
+        "saas_acquisition_multiples_arr": "3-10x",
+        "ecommerce_acquisition_multiples_sde": "2-3x",
+        "service_business_acquisition_multiples_sde": "2-4x",
+        "manufacturing_acquisition_multiples_ebitda": "3-5x",
+        "due_diligence_cost_avg_usd": 15000,
+        "legal_closing_cost_avg_usd": 10000,
+        "broker_commission_pct": "8-12",
+        "post_acquisition_revenue_decline_avg_pct": 10,
+        "post_acquisition_employee_departure_pct": 30,
+        "post_acquisition_customer_loss_pct": 15,
+        "acquisition_roi_avg_years_to_payback": 4,
+        "successful_growth_post_acquisition_pct": 35,
+        "serial_acquirers_return_rate_pct": 45,
+        "search_fund_model_prevalence": "growing",
+        "search_fund_avg_acquisition_size_usd_millions": 2,
+        "search_fund_success_rate_pct": 65,
+        "search_fund_avg_return_multiple": "3x",
+        "online_business_acquisition_growth_pct": 40,
+        "flippa_listings_total": 30000,
+        "empire_flippers_avg_sale_price_usd": 500000,
+        "acquisition_com_listings": 5000,
+        "quiet_light_avg_deal_size_usd_millions": 1.5
+      },
+      "sources": [
+        "BizBuySell Insight Report 2024",
+        "SBA 7(a) Lending Statistics 2024",
+        "IBBA Transaction Survey 2024",
+        "Quiet Light Brokerage Reports 2024",
+        "Pepperdine Private Capital Markets Report 2024",
+        "Searchfunder.com Community Data 2024",
+        "Harvard Business Review SMB Acquisition Guide"
+      ]
+    }
+  }
+}

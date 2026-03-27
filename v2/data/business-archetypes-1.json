@@ -1,0 +1,1321 @@
+{
+  "_meta": {
+    "category": "Business Archetypes — Batch 1",
+    "created": "2026-03-27",
+    "total_archetypes": 5,
+    "description": "High-resolution micro-step funnels for business scenarios with real-world probabilities. Shows the brutal reality of each path from first impression to sustained income."
+  },
+  "global_context": {
+    "total_entrepreneurs_globally_millions": 582,
+    "entrepreneurship_rate_global_pct": 10,
+    "entrepreneurship_rate_us_pct": 16,
+    "entrepreneurship_rate_sub_saharan_africa_pct": 22,
+    "entrepreneurship_rate_europe_pct": 8,
+    "entrepreneurship_rate_asia_pct": 13,
+    "entrepreneur_avg_age_first_business": 34,
+    "serial_entrepreneurs_pct": 15,
+    "female_entrepreneurs_global_pct": 40,
+    "necessity_vs_opportunity_driven_ratio": "40:60",
+    "startup_funding_global_2024_usd_billions": 285,
+    "bootstrapped_businesses_pct": 85,
+    "angel_funded_pct": 5,
+    "vc_funded_pct": 2,
+    "crowdfunded_pct": 1,
+    "bank_loan_funded_pct": 7,
+    "avg_startup_capital_usd": 30000,
+    "median_startup_capital_usd": 5000,
+    "businesses_started_from_home_pct": 50,
+    "solopreneurs_total_us_millions": 41,
+    "solopreneurs_avg_income_usd": 49000,
+    "small_business_failure_rate_5yr_pct": 50,
+    "small_business_failure_rate_10yr_pct": 66,
+    "top_failure_reason_no_market_need_pct": 42,
+    "top_failure_reason_cash_flow_pct": 29,
+    "top_failure_reason_wrong_team_pct": 23,
+    "top_failure_reason_competition_pct": 19,
+    "top_failure_reason_pricing_pct": 18,
+    "digital_nomad_entrepreneurs_millions": 35,
+    "remote_first_businesses_pct": 25,
+    "ai_augmented_businesses_2025_pct": 35,
+    "businesses_using_social_media_marketing_pct": 77,
+    "businesses_with_website_pct": 71,
+    "businesses_selling_online_pct": 42,
+    "ecommerce_share_of_retail_pct": 22,
+    "subscription_economy_size_usd_billions": 275,
+    "platform_economy_size_usd_trillions": 7,
+    "passion_economy_size_usd_billions": 100,
+    "creator_economy_size_usd_billions": 254,
+    "gig_economy_size_usd_billions": 455,
+    "franchise_economy_size_usd_billions": 860,
+    "marketing_channels_effectiveness": {
+      "seo_organic_avg_conversion_pct": 3,
+      "ppc_google_avg_conversion_pct": 2.5,
+      "social_media_organic_conversion_pct": 1.5,
+      "email_marketing_conversion_pct": 4.3,
+      "referral_marketing_conversion_pct": 3.7,
+      "content_marketing_roi_per_dollar": 3,
+      "influencer_marketing_roi_per_dollar": 5.2,
+      "affiliate_marketing_avg_commission_pct": 15,
+      "podcast_advertising_cpm_usd": 25,
+      "youtube_advertising_cpv_usd": 0.02,
+      "tiktok_advertising_cpm_usd": 10,
+      "facebook_advertising_cpc_usd": 0.97,
+      "google_advertising_cpc_usd": 2.69,
+      "linkedin_advertising_cpc_usd": 5.58,
+      "instagram_advertising_cpc_usd": 1.28,
+      "twitter_advertising_cpc_usd": 0.38,
+      "sms_marketing_open_rate_pct": 98,
+      "sms_marketing_conversion_pct": 8,
+      "push_notification_open_rate_pct": 20,
+      "direct_mail_response_rate_pct": 4.9,
+      "cold_email_reply_rate_pct": 3,
+      "cold_call_connect_rate_pct": 2,
+      "webinar_registration_rate_pct": 20,
+      "webinar_attendance_rate_pct": 40,
+      "webinar_to_sale_conversion_pct": 10,
+      "landing_page_avg_conversion_pct": 6.6,
+      "popup_opt_in_rate_pct": 3,
+      "exit_intent_popup_conversion_pct": 4,
+      "retargeting_roi_vs_cold_multiplier": "3-5x",
+      "word_of_mouth_customer_acquisition_pct": 20,
+      "community_led_growth_retention_lift_pct": 30
+    },
+    "psychology_of_entrepreneurship": {
+      "entrepreneurs_with_adhd_pct": 29,
+      "entrepreneurs_with_depression_pct": 30,
+      "entrepreneurs_with_anxiety_pct": 27,
+      "entrepreneurs_with_bipolar_pct": 11,
+      "entrepreneurs_with_substance_abuse_pct": 12,
+      "imposter_syndrome_entrepreneurs_pct": 84,
+      "fear_of_failure_blockers_pct": 33,
+      "perfectionism_delays_launch_pct": 45,
+      "comparison_to_others_anxiety_pct": 72,
+      "burnout_rate_startup_founders_pct": 63,
+      "avg_hours_worked_per_week_founders": 55,
+      "founders_who_take_no_vacation_pct": 30,
+      "founders_with_strained_relationships_pct": 60,
+      "founders_who_exercise_regularly_pct": 45,
+      "founders_who_meditate_pct": 20,
+      "motivation_money_pct": 35,
+      "motivation_freedom_pct": 55,
+      "motivation_impact_pct": 40,
+      "motivation_status_pct": 15,
+      "motivation_passion_pct": 50
+    }
+  },
+  "archetypes": {
+    "guru_course_funnel": {
+      "name": "YouTube Guru → Course → Results",
+      "description": "Someone watches a YouTube guru (Liam Ottley, Iman Gadzhi, Andrew Tate type), buys their course, tries to implement. The classic 'make money online' pipeline.",
+      "entry_point": "Sees a YouTube video promising income/lifestyle",
+      "stages": [
+        {
+          "id": "see_video",
+          "label": "See video in feed/recommendations",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline — YouTube serves 500M+ hours/day"
+        },
+        {
+          "id": "click_video",
+          "label": "Click to watch",
+          "prob": 4.5,
+          "time": "instant",
+          "source": "YouTube avg CTR 2-10%, median 4-5% — Creator Academy 2024"
+        },
+        {
+          "id": "watch_30s",
+          "label": "Watch past 30 seconds",
+          "prob": 65,
+          "time": "30s",
+          "source": "Retention Rabbit 2025 — 35% drop in first 30s"
+        },
+        {
+          "id": "watch_1min",
+          "label": "Watch past 1 minute",
+          "prob": 45,
+          "time": "1min",
+          "source": "Retention Rabbit 2025 — <45% retention regardless of video length"
+        },
+        {
+          "id": "watch_to_cta",
+          "label": "Watch to CTA at end of video",
+          "prob": 16,
+          "time": "10-30min",
+          "source": "Retention Rabbit 2025 — only 16% reach final 10 seconds"
+        },
+        {
+          "id": "click_link",
+          "label": "Click link in description",
+          "prob": 3.5,
+          "time": "instant",
+          "source": "YouTube description link CTR 2-5% of viewers — Tubefilter 2024"
+        },
+        {
+          "id": "land_on_page",
+          "label": "Land on sales page (page loads)",
+          "prob": 92,
+          "time": "1-3s",
+          "source": "8% fail to load or abandon before load — Google Web Vitals 2024"
+        },
+        {
+          "id": "dont_bounce",
+          "label": "Don't bounce from sales page",
+          "prob": 40,
+          "time": "10-30s",
+          "source": "Unbounce 2024 — avg landing page bounce rate 60.6%"
+        },
+        {
+          "id": "scroll_to_pricing",
+          "label": "Scroll down to pricing section",
+          "prob": 25,
+          "time": "2-5min",
+          "source": "Hotjar 2024 — only 25% reach bottom of long-form sales pages"
+        },
+        {
+          "id": "start_checkout",
+          "label": "Start checkout process",
+          "prob": 12,
+          "time": "1-3min",
+          "source": "Baymard Institute 2024 — 88% cart abandonment on info products"
+        },
+        {
+          "id": "complete_purchase",
+          "label": "Complete purchase ($997-2997)",
+          "prob": 45,
+          "time": "5-15min",
+          "source": "Checkout completion rate 45% after starting — Stripe 2024"
+        },
+        {
+          "id": "open_course_day1",
+          "label": "Open course on Day 1",
+          "prob": 48,
+          "time": "1-7 days",
+          "source": "Teachfloor 2025 — 52% never open a purchased online course"
+        },
+        {
+          "id": "complete_module1",
+          "label": "Complete Module 1",
+          "prob": 30,
+          "time": "1-2 weeks",
+          "source": "Teachfloor 2025 — 70% drop after first module"
+        },
+        {
+          "id": "complete_50pct",
+          "label": "Complete 50% of course",
+          "prob": 15,
+          "time": "2-6 weeks",
+          "source": "MIT/Harvard MOOC research — 85% don't reach halfway"
+        },
+        {
+          "id": "complete_course",
+          "label": "Complete entire course",
+          "prob": 8,
+          "time": "1-3 months",
+          "source": "Teachfloor 2025 — 3-15% completion rate, avg 8%"
+        },
+        {
+          "id": "attempt_implementation",
+          "label": "Actually attempt to implement teachings",
+          "prob": 10,
+          "time": "1-2 weeks after completion",
+          "source": "Estimated — most completers never execute. Google 7-11-4 Rule"
+        },
+        {
+          "id": "first_outreach",
+          "label": "Do first real outreach/action",
+          "prob": 60,
+          "time": "1-4 weeks",
+          "source": "Of those who attempt, 60% do at least one outreach — Skool community data"
+        },
+        {
+          "id": "first_result",
+          "label": "Get first client or measurable result",
+          "prob": 5,
+          "time": "1-6 months",
+          "source": "~5% of implementers get a paying client — FTC complaints data on course creators"
+        },
+        {
+          "id": "sustain_3months",
+          "label": "Sustain results for 3+ months",
+          "prob": 30,
+          "time": "3-6 months",
+          "source": "70% of first-time freelancers/agency owners quit within 90 days — Upwork 2024"
+        },
+        {
+          "id": "reach_10k_month",
+          "label": "Reach $10K/month consistently",
+          "prob": 3,
+          "time": "6-18 months",
+          "source": "Only ~3% of course graduates reach advertised income levels — FTC 2023 income disclosure analysis"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "impressions_to_purchase": "0.0008% (1 in ~125,000 impressions)",
+        "purchase_to_completion": "8%",
+        "completion_to_result": "0.5%",
+        "impression_to_10k_month": "0.000001% (roughly 1 in 10 million)",
+        "purchase_to_10k_month": "0.0002% (roughly 1 in 500,000 buyers)"
+      },
+      "bottlenecks": [
+        "click_link",
+        "dont_bounce",
+        "complete_purchase",
+        "open_course_day1",
+        "complete_course",
+        "first_result",
+        "reach_10k_month"
+      ],
+      "reality_check": "The guru's income comes from selling the course, not from the method taught. FTC found that <1% of buyers of 'make money' courses achieve the advertised results.",
+      "sources": [
+        "Retention Rabbit 2025",
+        "Unbounce 2024",
+        "Teachfloor 2025",
+        "Google 7-11-4 Rule",
+        "Baymard Institute 2024",
+        "FTC Income Disclosure Analysis 2023",
+        "Tubefilter 2024",
+        "Stripe Checkout Data 2024"
+      ],
+      "industry_data": {
+        "online_education_market_size_2024_usd_billions": 325,
+        "online_education_cagr_pct": 14,
+        "info_product_market_size_usd_billions": 70,
+        "course_creator_tools_market_usd_billions": 4.5,
+        "avg_course_price_usd": 197,
+        "median_course_price_usd": 97,
+        "premium_course_avg_price_usd": 1997,
+        "high_ticket_coaching_avg_price_usd": 5000,
+        "mastermind_avg_price_usd": 25000,
+        "course_creation_avg_time_hours": 200,
+        "course_creators_total_globally": 500000,
+        "course_creators_earning_over_100k_pct": 3,
+        "course_buyers_who_buy_multiple_courses_pct": 60,
+        "avg_courses_owned_per_buyer": 5.5,
+        "course_refund_request_rate_pct": 8,
+        "course_chargeback_rate_pct": 1,
+        "course_affiliate_commission_pct": "30-50",
+        "webinar_funnel_conversion_rate_pct": "5-15",
+        "challenge_funnel_conversion_rate_pct": "8-15",
+        "free_to_paid_funnel_conversion_pct": "1-5",
+        "email_list_value_per_subscriber_monthly_usd": "1-5",
+        "youtube_to_course_sale_conversion_pct": "0.01-0.1",
+        "podcast_to_course_sale_conversion_pct": "0.05-0.2",
+        "instagram_to_course_sale_conversion_pct": "0.005-0.05",
+        "course_completion_impact_on_refund_rate_pct": -80,
+        "community_reduces_refund_by_pct": 50,
+        "live_coaching_reduces_refund_by_pct": 60,
+        "ftc_enforcement_actions_course_creators": 15,
+        "avg_ftc_fine_misleading_claims_usd": 500000,
+        "course_buyers_achieving_advertised_results_pct": 1,
+        "teachable_total_revenue_processed_usd_billions": 2,
+        "kajabi_total_revenue_processed_usd_billions": 5,
+        "thinkific_total_revenue_processed_usd_billions": 1,
+        "skool_total_communities": 50000,
+        "skool_avg_community_revenue_monthly_usd": 500,
+        "skool_top_100_communities_avg_revenue_monthly_usd": 100000,
+        "course_piracy_rate_pct": 30,
+        "course_lifetime_value_avg_months": 6,
+        "course_creator_burnout_rate_pct": 55,
+        "course_launch_revenue_vs_evergreen_ratio": "3:1"
+      },
+      "buyer_psychology": {
+        "fomo_driven_purchase_pct": 45,
+        "social_proof_influenced_pct": 60,
+        "urgency_scarcity_influenced_pct": 35,
+        "testimonial_influenced_pct": 55,
+        "price_anchoring_effective_pct": 70,
+        "money_back_guarantee_purchase_lift_pct": 30,
+        "payment_plan_adoption_pct": 45,
+        "payment_plan_default_rate_pct": 15,
+        "impulse_purchase_regret_rate_pct": 40,
+        "buyer_remorse_within_48_hours_pct": 25,
+        "course_buyer_avg_annual_income_usd": 55000,
+        "course_buyer_already_has_n_courses_avg": 5.5,
+        "course_buyer_credit_card_purchase_pct": 70,
+        "course_buyer_debt_funded_purchase_pct": 20
+      }
+    },
+    "freelancing_skill": {
+      "name": "Learn Skill → Freelance → Get Clients",
+      "description": "Person decides to learn a marketable skill (web dev, design, copywriting, video editing) and freelance on platforms like Upwork/Fiverr. The most common path to self-employment.",
+      "entry_point": "Decides to freelance instead of (or alongside) a job",
+      "stages": [
+        {
+          "id": "decide_to_freelance",
+          "label": "Decide to freelance",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline — 64M US freelancers (Upwork 2024)"
+        },
+        {
+          "id": "pick_skill",
+          "label": "Pick a specific skill to learn",
+          "prob": 70,
+          "time": "1-4 weeks",
+          "source": "30% stay in analysis paralysis and never commit — estimated from Skool/Reddit surveys"
+        },
+        {
+          "id": "start_learning",
+          "label": "Start actively learning the skill",
+          "prob": 65,
+          "time": "1-2 weeks after deciding",
+          "source": "35% buy course/resources but never start — Teachfloor 2025"
+        },
+        {
+          "id": "learn_30_days",
+          "label": "Study consistently for 30 days",
+          "prob": 25,
+          "time": "30 days",
+          "source": "75% abandon new skill within first month — Duolingo/Coursera retention data"
+        },
+        {
+          "id": "reach_basic_competence",
+          "label": "Reach basic competence (can do real work)",
+          "prob": 40,
+          "time": "30-90 days",
+          "source": "Of those who persist 30 days, ~40% reach usable skill level — estimated"
+        },
+        {
+          "id": "create_portfolio",
+          "label": "Create portfolio with 3+ samples",
+          "prob": 50,
+          "time": "1-3 weeks",
+          "source": "50% skip portfolio and go straight to bidding — Upwork forum data"
+        },
+        {
+          "id": "signup_platform",
+          "label": "Sign up on Upwork/Fiverr",
+          "prob": 90,
+          "time": "1 day",
+          "source": "Low barrier — 90% who intend to freelance create at least one profile"
+        },
+        {
+          "id": "complete_profile",
+          "label": "Complete profile properly (photo, bio, skills)",
+          "prob": 60,
+          "time": "1-3 days",
+          "source": "40% leave incomplete profiles — Upwork Best Practices 2024"
+        },
+        {
+          "id": "submit_first_proposal",
+          "label": "Submit first proposal/gig",
+          "prob": 70,
+          "time": "1-7 days",
+          "source": "30% create profile but never submit — Upwork 2024"
+        },
+        {
+          "id": "submit_10_proposals",
+          "label": "Submit 10+ proposals",
+          "prob": 35,
+          "time": "1-4 weeks",
+          "source": "Most give up after 3-5 rejections — Freelancer subreddit analysis"
+        },
+        {
+          "id": "get_first_response",
+          "label": "Get first positive response",
+          "prob": 18,
+          "time": "2-8 weeks",
+          "source": "Upwork avg response rate 2-5% for new freelancers, need ~20 proposals — Upwork 2024"
+        },
+        {
+          "id": "get_first_interview",
+          "label": "Get first interview/call",
+          "prob": 50,
+          "time": "within days of response",
+          "source": "~50% of responses lead to actual discussion — estimated"
+        },
+        {
+          "id": "land_first_job",
+          "label": "Land first paid job",
+          "prob": 40,
+          "time": "1-3 months total",
+          "source": "Interview-to-hire ~40% for freelancers — Upwork data"
+        },
+        {
+          "id": "complete_first_job",
+          "label": "Complete first job successfully",
+          "prob": 85,
+          "time": "1-4 weeks",
+          "source": "85% completion rate on first jobs — Upwork Trust & Safety 2024"
+        },
+        {
+          "id": "get_5star_review",
+          "label": "Get 5-star review",
+          "prob": 70,
+          "time": "within days",
+          "source": "70% of completed Upwork jobs get 5 stars — Upwork 2024"
+        },
+        {
+          "id": "reach_500_month",
+          "label": "Reach $500/month consistently",
+          "prob": 30,
+          "time": "3-6 months",
+          "source": "Median Upwork freelancer earns $17/hr, need 30hrs/month — Upwork earnings report"
+        },
+        {
+          "id": "reach_2k_month",
+          "label": "Reach $2K/month consistently",
+          "prob": 20,
+          "time": "6-12 months",
+          "source": "Top 30% of active freelancers — Payoneer Freelancer Report 2024"
+        },
+        {
+          "id": "reach_5k_month",
+          "label": "Reach $5K/month consistently",
+          "prob": 8,
+          "time": "12-24 months",
+          "source": "Top 10% of freelancers — Payoneer 2024"
+        },
+        {
+          "id": "go_fulltime",
+          "label": "Go full-time freelance (quit day job)",
+          "prob": 12,
+          "time": "1-3 years",
+          "source": "Only 12% of side-freelancers quit day job within 2 years — MBO Partners 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "decide_to_first_job": "~1.5% of those who decide to freelance land a first job",
+        "decide_to_5k_month": "~0.05% reach $5K/month",
+        "decide_to_fulltime": "~0.03% successfully go full-time"
+      },
+      "bottlenecks": [
+        "learn_30_days",
+        "submit_10_proposals",
+        "get_first_response",
+        "land_first_job",
+        "reach_2k_month"
+      ],
+      "key_stats": {
+        "us_freelancers_total": "64M (38% of workforce)",
+        "freelance_by_choice": "60%",
+        "avg_hourly_rate": "$17/hr (Upwork), $28/hr (top platforms)",
+        "median_annual_income": "$15,000-25,000",
+        "top_10pct_income": "$75,000+",
+        "skills_highest_demand": [
+          "web development",
+          "AI/ML",
+          "copywriting",
+          "video editing",
+          "UI/UX design"
+        ]
+      },
+      "reality_check": "Freelancing is a real path but brutally competitive. The median freelancer earns less than minimum wage when accounting for unbilled hours, admin, and dry spells.",
+      "sources": [
+        "Upwork Freelancer Report 2024",
+        "Payoneer Global Freelancer Report 2024",
+        "MBO Partners State of Independence 2024",
+        "Fiverr Seller Statistics 2024",
+        "BLS Contingent Worker Survey"
+      ],
+      "industry_data": {
+        "global_freelance_market_size_usd_billions": 1500,
+        "freelance_market_growth_rate_pct": 15,
+        "us_freelancers_millions": 64,
+        "us_freelance_share_workforce_pct": 38,
+        "freelancers_globally_millions": 1100,
+        "upwork_gmv_annual_usd_billions": 4.1,
+        "fiverr_revenue_annual_usd_millions": 350,
+        "toptal_freelancers_in_network": 10000,
+        "toptal_acceptance_rate_pct": 3,
+        "freelance_skills_highest_demand": [
+          "AI/ML",
+          "web development",
+          "copywriting",
+          "video editing",
+          "UI/UX"
+        ],
+        "ai_skills_premium_vs_avg_pct": 75,
+        "web_dev_avg_rate_usd": 75,
+        "graphic_design_avg_rate_usd": 45,
+        "copywriting_avg_rate_usd": 60,
+        "video_editing_avg_rate_usd": 50,
+        "ai_ml_avg_rate_usd": 120,
+        "seo_avg_rate_usd": 65,
+        "social_media_avg_rate_usd": 40,
+        "virtual_assistant_avg_rate_usd": 20,
+        "data_science_avg_rate_usd": 100,
+        "mobile_dev_avg_rate_usd": 80,
+        "blockchain_dev_avg_rate_usd": 150,
+        "freelance_proposal_response_rate_new_pct": 3,
+        "freelance_proposal_response_rate_experienced_pct": 15,
+        "freelance_client_retention_rate_pct": 45,
+        "freelance_repeat_client_revenue_pct": 70,
+        "freelance_unpaid_hours_per_week_avg": 12,
+        "freelance_invoicing_late_payment_rate_pct": 29,
+        "freelance_avg_payment_delay_days": 14,
+        "freelance_health_insurance_own_pct": 65,
+        "freelance_retirement_savings_pct": 40,
+        "freelance_taxes_self_employment_pct": 15.3,
+        "freelance_quarterly_tax_compliance_pct": 55,
+        "freelance_burnout_rate_pct": 43,
+        "freelance_income_volatility_monthly_pct": 30,
+        "freelance_feast_famine_cycle_pct": 65,
+        "freelance_passive_income_streams_avg": 1.5,
+        "freelance_niche_specialists_earn_more_pct": 55,
+        "freelance_generalists_earn_less_pct": 30,
+        "freelance_referral_source_revenue_pct": 40,
+        "freelance_cold_outreach_success_pct": 3,
+        "freelance_content_marketing_lead_gen_pct": 25,
+        "freelance_agency_transition_pct": 8,
+        "freelance_productized_service_adoption_pct": 12,
+        "freelance_ai_tools_adoption_pct": 60,
+        "freelance_ai_threat_perceived_pct": 45,
+        "freelance_remote_work_pct": 85,
+        "freelance_coworking_usage_pct": 15,
+        "freelance_international_clients_pct": 35
+      },
+      "market_trends": {
+        "ai_tools_freelancer_adoption_pct": 60,
+        "ai_threat_perceived_by_freelancers_pct": 45,
+        "ai_augmented_freelancers_earn_more_pct": 35,
+        "freelance_to_agency_transition_pct": 8,
+        "productized_service_adoption_pct": 12,
+        "value_based_pricing_adoption_pct": 15,
+        "retainer_model_adoption_pct": 25,
+        "freelance_marketplace_consolidation_trend": "increasing",
+        "direct_client_vs_platform_revenue_split": "60:40",
+        "international_freelancers_competing_for_us_jobs_pct": 40,
+        "rate_compression_due_to_global_competition_pct": 20,
+        "upwork_connects_cost_increase_5yr_pct": 200,
+        "fiverr_seller_levels_impact_on_visibility": "critical",
+        "freelance_union_membership_pct": 3,
+        "freelance_insurance_marketplace_options": 15,
+        "freelance_coworking_membership_pct": 15,
+        "freelance_conference_attendance_pct": 10,
+        "freelance_community_membership_pct": 25,
+        "freelance_mentorship_received_pct": 12,
+        "freelance_subcontracting_to_others_pct": 20
+      }
+    },
+    "ai_agency": {
+      "name": "AI Automation Agency (2025 Meta)",
+      "description": "The 2024-2025 gold rush: watch AI agency content, join Skool community, buy accelerator program, learn no-code AI tools, try to sell to businesses. Popularized by Liam Ottley, Moritz Kremb, etc.",
+      "entry_point": "Watches AI agency content on YouTube/TikTok",
+      "stages": [
+        {
+          "id": "see_ai_content",
+          "label": "See AI agency content in feed",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline — AI agency has 500K+ monthly searches"
+        },
+        {
+          "id": "consume_free_content",
+          "label": "Watch 5+ videos about AI agencies",
+          "prob": 35,
+          "time": "1-2 weeks",
+          "source": "35% of viewers go down the rabbit hole — estimated from YouTube watch patterns"
+        },
+        {
+          "id": "join_free_community",
+          "label": "Join free Skool community",
+          "prob": 15,
+          "time": "1-3 days",
+          "source": "~280K members in top AI agency Skool groups — Skool.com public data"
+        },
+        {
+          "id": "engage_community",
+          "label": "Actually engage in community (post/comment)",
+          "prob": 12,
+          "time": "1-2 weeks",
+          "source": "88% lurkers in free Skool communities — Skool analytics estimates"
+        },
+        {
+          "id": "consume_free_training",
+          "label": "Complete free training/mini-course",
+          "prob": 30,
+          "time": "1-4 weeks",
+          "source": "30% of free community members complete free training — Skool creator data"
+        },
+        {
+          "id": "buy_accelerator",
+          "label": "Buy paid accelerator ($5K-7K)",
+          "prob": 1.2,
+          "time": "2-8 weeks after joining free",
+          "source": "~1.2% free-to-paid conversion in Skool — Creator reports 2024"
+        },
+        {
+          "id": "start_learning_tools",
+          "label": "Start learning AI tools (n8n, Make, Voiceflow)",
+          "prob": 75,
+          "time": "1-2 weeks",
+          "source": "75% of paid members start the curriculum — Teachfloor course engagement data"
+        },
+        {
+          "id": "complete_tool_training",
+          "label": "Reach competence with 1+ tool",
+          "prob": 35,
+          "time": "2-6 weeks",
+          "source": "65% drop off before tool mastery — no-code community surveys"
+        },
+        {
+          "id": "build_first_demo",
+          "label": "Build first demo/prototype for a use case",
+          "prob": 50,
+          "time": "1-3 weeks",
+          "source": "50% of tool-competent members build something showable — estimated"
+        },
+        {
+          "id": "attempt_cold_outreach",
+          "label": "Attempt cold outreach to businesses",
+          "prob": 40,
+          "time": "1-2 weeks",
+          "source": "60% never do outreach — fear of rejection. Sales training surveys"
+        },
+        {
+          "id": "send_100_emails",
+          "label": "Send 100+ cold emails/DMs",
+          "prob": 25,
+          "time": "2-6 weeks",
+          "source": "75% quit outreach before 100 sends — Instantly.ai data on new users"
+        },
+        {
+          "id": "get_5_responses",
+          "label": "Get 5+ positive responses",
+          "prob": 30,
+          "time": "1-4 weeks",
+          "source": "Cold email response rate 1-5% for AI services — Lemlist 2024"
+        },
+        {
+          "id": "book_2_calls",
+          "label": "Book 2+ discovery calls",
+          "prob": 40,
+          "time": "1-2 weeks",
+          "source": "40% of interested responses convert to calls — HubSpot 2024"
+        },
+        {
+          "id": "close_first_client",
+          "label": "Close first paying client",
+          "prob": 25,
+          "time": "1-4 weeks",
+          "source": "25% close rate on discovery calls for new agencies — Close.com data"
+        },
+        {
+          "id": "deliver_first_project",
+          "label": "Deliver first project successfully",
+          "prob": 60,
+          "time": "2-8 weeks",
+          "source": "40% fail to deliver — scope creep, skill gaps, client expectations. Gartner: 95% AI pilots fail"
+        },
+        {
+          "id": "get_testimonial",
+          "label": "Get testimonial/case study from first client",
+          "prob": 50,
+          "time": "1-2 weeks post-delivery",
+          "source": "50% of satisfied clients provide testimonials — BrightLocal 2024"
+        },
+        {
+          "id": "scale_to_3_clients",
+          "label": "Scale to 3 active clients",
+          "prob": 30,
+          "time": "2-6 months",
+          "source": "70% of single-client agencies never get a second client — freelancer data"
+        },
+        {
+          "id": "reach_10k_month",
+          "label": "Reach $10K/month revenue",
+          "prob": 20,
+          "time": "3-12 months",
+          "source": "At $3-5K/client, need 2-3 clients. Only 20% of 3-client agencies sustain — estimated"
+        },
+        {
+          "id": "sustain_6_months",
+          "label": "Sustain $10K/month for 6+ months",
+          "prob": 30,
+          "time": "6 months",
+          "source": "70% churn within 6 months due to client loss and no pipeline — agency surveys"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "free_community_to_paid": "1.2%",
+        "paid_to_first_client": "~0.9% (roughly 1 in 110 paid members)",
+        "paid_to_10k_month": "~0.02%",
+        "free_member_to_10k_month": "~0.0003% (roughly 1 in 300,000)"
+      },
+      "bottlenecks": [
+        "buy_accelerator",
+        "attempt_cold_outreach",
+        "send_100_emails",
+        "close_first_client",
+        "deliver_first_project",
+        "scale_to_3_clients"
+      ],
+      "market_context": {
+        "ai_agency_searches_monthly": "500K+",
+        "skool_communities_ai": "1000+",
+        "gartner_ai_pilot_failure_rate": "95%",
+        "market_saturation": "HIGH — estimated 50K+ people attempting AI agencies in 2025",
+        "avg_deal_size": "$3,000-10,000 for SMB automation",
+        "enterprise_deal_size": "$50,000-500,000 (requires real credentials)"
+      },
+      "reality_check": "The AI agency model is real but massively oversaturated. The accelerator sellers make more from courses than agencies. Gartner says 95% of AI pilots fail even in enterprises with resources. A solo beginner selling AI to businesses is fighting uphill.",
+      "sources": [
+        "Skool.com public analytics",
+        "Gartner AI Pilot Report 2024",
+        "Lemlist Cold Email Benchmarks 2024",
+        "Instantly.ai User Data",
+        "HubSpot Sales Statistics 2024",
+        "Close.com Sales Benchmarks"
+      ],
+      "industry_data": {
+        "ai_market_size_2024_usd_billions": 150,
+        "ai_market_growth_cagr_pct": 37,
+        "ai_automation_market_usd_billions": 15,
+        "ai_chatbot_market_usd_billions": 5,
+        "ai_agent_market_usd_billions": 3,
+        "no_code_ai_tools_available": 500,
+        "n8n_users_total": 2000000,
+        "make_com_users_total": 5000000,
+        "zapier_users_total": 10000000,
+        "voiceflow_users_total": 500000,
+        "ai_agency_avg_monthly_retainer_usd": "3000-8000",
+        "ai_agency_avg_project_fee_usd": "5000-25000",
+        "ai_agency_enterprise_project_fee_usd": "50000-500000",
+        "ai_implementation_timeline_weeks": "4-12",
+        "ai_implementation_failure_rate_pct": 60,
+        "ai_roi_when_successful_pct": "200-500",
+        "businesses_using_ai_2024_pct": 35,
+        "businesses_planning_ai_adoption_pct": 55,
+        "smb_ai_budget_avg_annual_usd": 15000,
+        "enterprise_ai_budget_avg_annual_usd": 500000,
+        "ai_talent_shortage_unfilled_roles": 500000,
+        "ai_agency_competitors_estimated_2025": 50000,
+        "ai_agency_avg_lifespan_months": 8,
+        "ai_agency_profitable_in_6mo_pct": 15,
+        "cold_email_deliverability_rate_pct": 85,
+        "cold_email_open_rate_pct": 45,
+        "cold_email_reply_rate_pct": 3,
+        "cold_email_positive_reply_rate_pct": 1,
+        "linkedin_connection_acceptance_rate_pct": 30,
+        "linkedin_message_response_rate_pct": 15,
+        "discovery_call_close_rate_new_agency_pct": 15,
+        "discovery_call_close_rate_experienced_pct": 35,
+        "client_onboarding_avg_time_days": 14,
+        "client_churn_rate_monthly_agency_pct": 8,
+        "client_lifetime_avg_months": 6,
+        "referral_rate_from_satisfied_clients_pct": 30,
+        "ai_agency_sole_operator_pct": 70,
+        "ai_agency_with_team_pct": 30,
+        "ai_agency_avg_team_size": 3,
+        "ai_tools_cost_monthly_per_client_usd": "50-200",
+        "ai_agency_profit_margin_pct": "40-70"
+      },
+      "competitive_landscape": {
+        "ai_agencies_founded_2024_estimated": 25000,
+        "ai_agencies_founded_2025_estimated": 50000,
+        "ai_agency_avg_lifespan_months": 8,
+        "ai_agency_profitable_in_6mo_pct": 15,
+        "ai_agency_with_no_revenue_6mo_pct": 60,
+        "ai_agency_solo_operator_pct": 70,
+        "ai_agency_with_team_of_3_plus_pct": 10,
+        "ai_agency_niching_down_success_multiplier": 3,
+        "ai_agency_healthcare_vertical_pct": 10,
+        "ai_agency_ecommerce_vertical_pct": 15,
+        "ai_agency_real_estate_vertical_pct": 8,
+        "ai_agency_legal_vertical_pct": 5,
+        "ai_agency_financial_vertical_pct": 12,
+        "ai_agency_marketing_vertical_pct": 20,
+        "ai_agency_manufacturing_vertical_pct": 5,
+        "ai_agency_education_vertical_pct": 8,
+        "ai_agency_hr_vertical_pct": 7,
+        "ai_agency_customer_service_vertical_pct": 10,
+        "enterprise_ai_consulting_firms_competition": "Accenture, Deloitte, McKinsey",
+        "big_tech_ai_services_threat_level": "HIGH"
+      }
+    },
+    "ecommerce_dropshipping": {
+      "name": "Dropshipping Store → Profit",
+      "description": "Classic e-commerce dropshipping: find trending products on AliExpress/Alibaba, build a Shopify store, run Facebook/TikTok ads, try to profit on the margin. Popularized since 2017, still attempted by millions.",
+      "entry_point": "Sees dropshipping success story (YouTube, TikTok, course ad)",
+      "stages": [
+        {
+          "id": "see_dropship_content",
+          "label": "See dropshipping content/ad",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "research_products",
+          "label": "Research products and niches (1+ week)",
+          "prob": 40,
+          "time": "1-4 weeks",
+          "source": "60% never move past consumption/research phase — Reddit r/dropship surveys"
+        },
+        {
+          "id": "pick_niche",
+          "label": "Pick a specific niche and product",
+          "prob": 50,
+          "time": "1-2 weeks",
+          "source": "50% of researchers commit to a niche — estimated from Shopify onboarding data"
+        },
+        {
+          "id": "find_supplier",
+          "label": "Find reliable supplier (AliExpress/CJ/Alibaba)",
+          "prob": 80,
+          "time": "1-2 weeks",
+          "source": "Suppliers are easy to find, quality is the challenge — 80% find one"
+        },
+        {
+          "id": "build_store",
+          "label": "Build Shopify store",
+          "prob": 70,
+          "time": "1-7 days",
+          "source": "Shopify makes it easy — 70% of those who start complete a basic store"
+        },
+        {
+          "id": "setup_payment",
+          "label": "Set up payment processing",
+          "prob": 90,
+          "time": "1-3 days",
+          "source": "Stripe/Shopify Payments auto-setup for most countries"
+        },
+        {
+          "id": "store_looks_legit",
+          "label": "Store looks professional enough to convert",
+          "prob": 30,
+          "time": "1-2 weeks",
+          "source": "70% of dropship stores look obviously amateur — Shopify design review data"
+        },
+        {
+          "id": "create_first_ads",
+          "label": "Create first Facebook/TikTok ad campaign",
+          "prob": 60,
+          "time": "1-5 days",
+          "source": "40% get stuck on ad creation/targeting — Meta Business Suite complexity"
+        },
+        {
+          "id": "spend_100_on_ads",
+          "label": "Spend first $100 on ads",
+          "prob": 75,
+          "time": "1-7 days",
+          "source": "25% chicken out before spending real money — estimated"
+        },
+        {
+          "id": "get_first_visitor",
+          "label": "Get first website visitor from ads",
+          "prob": 95,
+          "time": "hours",
+          "source": "If you pay, traffic comes — 95% get at least some clicks"
+        },
+        {
+          "id": "get_100_visitors",
+          "label": "Get 100 unique visitors",
+          "prob": 70,
+          "time": "3-14 days",
+          "source": "Depends on CPC — avg $0.50-2.00. $100 budget = 50-200 visitors"
+        },
+        {
+          "id": "get_first_sale",
+          "label": "Get first sale",
+          "prob": 30,
+          "time": "1-4 weeks",
+          "source": "Avg dropship conversion rate 0.5-2%. Need 50-200 visitors for first sale — Shopify 2024"
+        },
+        {
+          "id": "calculate_margin_positive",
+          "label": "First sale is actually profitable (after COGS + ads)",
+          "prob": 40,
+          "time": "instant analysis",
+          "source": "60% find their margins are negative after ad costs — avg dropship margin 15-20%, CPA often exceeds margin"
+        },
+        {
+          "id": "scale_ads_500_month",
+          "label": "Scale ads to $500/month",
+          "prob": 35,
+          "time": "2-6 weeks",
+          "source": "65% stop after seeing negative or breakeven ROAS — Facebook Ads benchmarks"
+        },
+        {
+          "id": "reach_breakeven",
+          "label": "Reach breakeven (revenue covers all costs)",
+          "prob": 20,
+          "time": "1-3 months",
+          "source": "Only 10-20% of dropship stores ever break even — multiple industry reports"
+        },
+        {
+          "id": "reach_1k_profit_month",
+          "label": "Reach $1K profit/month",
+          "prob": 25,
+          "time": "2-6 months",
+          "source": "Of breakeven stores, ~25% scale to $1K profit — Shopify merchant data"
+        },
+        {
+          "id": "handle_returns_complaints",
+          "label": "Handle first return/chargeback/complaint",
+          "prob": 90,
+          "time": "within 30 days of first sales",
+          "source": "Chargebacks and returns are near-universal in dropshipping — Shopify Trust & Safety"
+        },
+        {
+          "id": "survive_90_days",
+          "label": "Store still active after 90 days",
+          "prob": 15,
+          "time": "90 days",
+          "source": "85-90% of dropship stores fail within 120 days — Oberlo/DSers data"
+        },
+        {
+          "id": "reach_5k_profit_month",
+          "label": "Reach $5K profit/month",
+          "prob": 10,
+          "time": "6-18 months",
+          "source": "~10% of surviving stores scale to $5K/month — estimated from Shopify top merchant data"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "interest_to_store_built": "~5.6%",
+        "store_to_first_sale": "~6.3% of built stores",
+        "interest_to_1k_month": "~0.02%",
+        "interest_to_5k_month": "~0.002%"
+      },
+      "bottlenecks": [
+        "research_products",
+        "store_looks_legit",
+        "get_first_sale",
+        "calculate_margin_positive",
+        "reach_breakeven",
+        "survive_90_days"
+      ],
+      "key_stats": {
+        "avg_dropship_margin": "15-20%",
+        "avg_conversion_rate": "0.5-2%",
+        "avg_cpc_facebook": "$0.50-2.00",
+        "avg_cpa": "$25-50",
+        "failure_rate_120_days": "90%",
+        "shopify_stores_total": "4.8M",
+        "avg_time_to_first_sale": "2-4 weeks",
+        "chargebacks_rate": "1-3% (high-risk category)"
+      },
+      "reality_check": "Dropshipping has been the #1 'make money online' pitch since 2017. The math rarely works: if your product costs $15, sells for $35, and your CPA is $25+, you're making $0 or losing money. Winning products have short lifespans (weeks) before competition copies them.",
+      "sources": [
+        "Shopify Merchant Data 2024",
+        "Oberlo State of Dropshipping 2024",
+        "Meta Ads Manager Benchmarks 2024",
+        "Statista E-commerce Reports",
+        "DSers Dropshipping Statistics"
+      ],
+      "industry_data": {
+        "global_dropshipping_market_usd_billions": 300,
+        "dropshipping_market_growth_cagr_pct": 24,
+        "shopify_stores_total_millions": 4.8,
+        "shopify_stores_active_pct": 20,
+        "aliexpress_suppliers_millions": 10,
+        "alibaba_suppliers_millions": 40,
+        "cjdropshipping_suppliers": 500000,
+        "avg_product_margin_before_ads_pct": 50,
+        "avg_product_margin_after_ads_pct": 15,
+        "avg_cpc_facebook_usd": 1,
+        "avg_cpc_tiktok_usd": 0.5,
+        "avg_cpc_google_shopping_usd": 0.7,
+        "avg_roas_breakeven": "2.5x",
+        "avg_roas_profitable": "4x+",
+        "winning_product_lifespan_weeks": "4-12",
+        "product_testing_budget_avg_usd": 500,
+        "products_tested_before_winner_avg": 10,
+        "facebook_ad_account_ban_rate_pct": 15,
+        "payment_processing_hold_rate_pct": 5,
+        "chargeback_rate_dropshipping_pct": 2,
+        "shipping_time_china_to_us_days": "7-20",
+        "shipping_time_us_warehouse_days": "2-5",
+        "customer_complaint_rate_pct": 12,
+        "customer_return_rate_pct": 8,
+        "branded_dropshipping_growth_pct": 30,
+        "private_label_success_vs_generic_pct": "2x",
+        "tiktok_shop_dropshipping_growth_pct": 200,
+        "one_product_store_vs_general_conversion_pct": "+40",
+        "influencer_marketing_roi_dropshipping": "3-5x",
+        "ugc_ads_performance_vs_stock_pct": "+60",
+        "pixel_data_importance_min_events": 50,
+        "lookalike_audience_effectiveness_vs_broad_pct": "+30",
+        "retargeting_conversion_vs_cold_pct": "+70",
+        "email_marketing_revenue_share_pct": 15,
+        "sms_marketing_revenue_share_pct": 5,
+        "post_purchase_upsell_rate_pct": 12,
+        "avg_order_value_increase_with_upsells_pct": 25,
+        "subscription_box_model_retention_pct": 60,
+        "dropshipping_to_own_brand_transition_pct": 8,
+        "amazon_fba_vs_shopify_success_rate_ratio": "1.5x"
+      }
+    },
+    "content_creator": {
+      "name": "Content Creator → Monetization → Full-Time",
+      "description": "Person starts creating content (YouTube, TikTok, Instagram, blog) with the goal of eventually making it a full-time income. The modern dream of 'being a creator.'",
+      "entry_point": "Decides to start creating content",
+      "stages": [
+        {
+          "id": "decide_to_create",
+          "label": "Decide to start creating content",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline — 50M+ people globally identify as content creators (SignalFire 2024)"
+        },
+        {
+          "id": "pick_platform",
+          "label": "Pick primary platform (YouTube, TikTok, IG, etc.)",
+          "prob": 80,
+          "time": "1-2 weeks",
+          "source": "20% stay platform-hopping and never commit — creator surveys"
+        },
+        {
+          "id": "plan_first_content",
+          "label": "Plan first video/post in detail",
+          "prob": 70,
+          "time": "1-7 days",
+          "source": "30% get stuck in planning and never create — estimated"
+        },
+        {
+          "id": "create_first_content",
+          "label": "Actually create and finish first piece",
+          "prob": 50,
+          "time": "1-7 days",
+          "source": "50% of planners never finish their first piece — ConvertKit Creator Report 2024"
+        },
+        {
+          "id": "publish_first",
+          "label": "Publish first content publicly",
+          "prob": 85,
+          "time": "1-3 days",
+          "source": "15% create but never publish (fear of judgment) — estimated"
+        },
+        {
+          "id": "get_0_50_views",
+          "label": "Get 0-50 views on first content",
+          "prob": 95,
+          "time": "1-7 days",
+          "source": "Almost everyone gets some views, but very few — YouTube/TikTok algorithms"
+        },
+        {
+          "id": "publish_10_pieces",
+          "label": "Publish 10 pieces of content",
+          "prob": 20,
+          "time": "2-10 weeks",
+          "source": "80% quit before 10 posts — MrBeast: 'most creators quit after 3 videos'"
+        },
+        {
+          "id": "publish_30_pieces",
+          "label": "Publish 30 pieces (30-day consistency)",
+          "prob": 10,
+          "time": "1-3 months",
+          "source": "90% fail the 30-day consistency test — Buffer/Hootsuite creator data"
+        },
+        {
+          "id": "reach_100_followers",
+          "label": "Reach 100 followers/subscribers",
+          "prob": 50,
+          "time": "1-3 months",
+          "source": "First 100 is hardest — 50% of consistent creators reach it in 3 months"
+        },
+        {
+          "id": "reach_1k_followers",
+          "label": "Reach 1,000 followers/subscribers",
+          "prob": 25,
+          "time": "3-12 months",
+          "source": "90% of YT channels never reach 1K subs — Tubics 2024"
+        },
+        {
+          "id": "reach_10k_followers",
+          "label": "Reach 10,000 followers/subscribers",
+          "prob": 10,
+          "time": "6-24 months",
+          "source": "Only ~10% of 1K channels reach 10K — Social Blade data"
+        },
+        {
+          "id": "apply_monetization",
+          "label": "Apply for platform monetization (YPP, etc.)",
+          "prob": 80,
+          "time": "within days of eligibility",
+          "source": "Most eligible creators apply — YouTube 2024"
+        },
+        {
+          "id": "get_accepted",
+          "label": "Get accepted into monetization program",
+          "prob": 70,
+          "time": "1-4 weeks",
+          "source": "YouTube accepts ~70% of YPP applications — YouTube Creator Academy"
+        },
+        {
+          "id": "first_ad_revenue",
+          "label": "First ad revenue payment",
+          "prob": 90,
+          "time": "1-3 months after acceptance",
+          "source": "Most monetized creators eventually hit minimum payout threshold"
+        },
+        {
+          "id": "reach_100_month",
+          "label": "Reach $100/month from ads",
+          "prob": 30,
+          "time": "3-12 months",
+          "source": "Median monetized YT channel earns <$100/month — Influencer Marketing Hub 2024"
+        },
+        {
+          "id": "diversify_revenue",
+          "label": "Diversify revenue (sponsors, products, affiliate)",
+          "prob": 25,
+          "time": "6-18 months",
+          "source": "75% rely solely on ad revenue — ConvertKit Creator Economy Report"
+        },
+        {
+          "id": "reach_1k_month",
+          "label": "Reach $1K/month total creator income",
+          "prob": 15,
+          "time": "12-36 months",
+          "source": "Only 12% of full-time creators earn >$50K/year — ConvertKit 2024"
+        },
+        {
+          "id": "reach_5k_month",
+          "label": "Reach $5K/month total creator income",
+          "prob": 5,
+          "time": "2-5 years",
+          "source": "Top 5% of creators — Goldman Sachs Creator Economy Report 2024"
+        },
+        {
+          "id": "fulltime_100k_year",
+          "label": "Full-time creator at $100K+/year",
+          "prob": 2,
+          "time": "3-7+ years",
+          "source": "Only 2% of creators earn $100K+ — SignalFire/Goldman Sachs 2024. Top 1% earns 90% of total creator revenue."
+        }
+      ],
+      "cumulative_end_to_end": {
+        "decide_to_publish_10": "~5.6%",
+        "decide_to_1k_followers": "~0.35%",
+        "decide_to_monetized": "~0.2%",
+        "decide_to_1k_month": "~0.004%",
+        "decide_to_fulltime": "~0.0005% (1 in 200,000)"
+      },
+      "bottlenecks": [
+        "create_first_content",
+        "publish_10_pieces",
+        "publish_30_pieces",
+        "reach_1k_followers",
+        "reach_100_month",
+        "reach_1k_month"
+      ],
+      "key_stats": {
+        "total_creators_globally": "50M+ (SignalFire)",
+        "youtube_channels_total": "114M+",
+        "youtube_channels_under_1k_subs": "90%",
+        "youtube_channels_monetized": "2.6%",
+        "top_1pct_share_of_revenue": "90%",
+        "median_creator_annual_income": "$15,000 (full-time creators)",
+        "creator_burnout_rate": "63% report burnout — Vibely Creator Report",
+        "avg_time_to_1k_subs": "15-22 months (for those who reach it)",
+        "youtube_rpm_range": "$1-8 (varies by niche, geography)"
+      },
+      "platform_specifics": {
+        "youtube": {
+          "monetization_threshold": "1K subs + 4K watch hours",
+          "avg_rpm": "$3-5",
+          "best_for": "long-term, searchable content"
+        },
+        "tiktok": {
+          "monetization_threshold": "10K followers + 100K views/30 days",
+          "avg_rpm": "$0.20-0.40",
+          "best_for": "viral growth, young audience"
+        },
+        "instagram": {
+          "monetization_threshold": "varies, mostly brand deals",
+          "avg_rpm": "N/A — sponsor-dependent",
+          "best_for": "visual niches, lifestyle"
+        },
+        "newsletter": {
+          "monetization_threshold": "1K+ subscribers for sponsors",
+          "avg_rpm": "$15-50 per 1K sends",
+          "best_for": "owned audience, B2B"
+        }
+      },
+      "reality_check": "The creator economy is a power law: the top 1% earn 90% of all revenue. The median full-time creator earns $15K/year — below poverty line in most Western countries. 63% of creators report burnout. The survivorship bias in creator content is extreme.",
+      "sources": [
+        "SignalFire Creator Economy Report 2024",
+        "Goldman Sachs Creator Economy Report 2024",
+        "ConvertKit State of the Creator Economy 2024",
+        "Tubics YouTube Statistics 2024",
+        "Social Blade Analytics",
+        "Vibely Creator Burnout Report 2024",
+        "YouTube Creator Academy",
+        "Influencer Marketing Hub 2024"
+      ],
+      "industry_data": {
+        "creator_economy_market_size_usd_billions": 254,
+        "creator_economy_projected_2027_usd_billions": 480,
+        "total_creators_globally_millions": 207,
+        "professional_creators_millions": 2,
+        "amateur_creators_millions": 205,
+        "youtube_channels_total_millions": 114,
+        "youtube_channels_under_1k_subs_pct": 90,
+        "youtube_channels_monetized_pct": 2.6,
+        "youtube_partner_program_requirements": "1K subs + 4K watch hours",
+        "youtube_avg_rpm_usd": "3-5",
+        "youtube_avg_cpm_usd": "7-15",
+        "youtube_shorts_rpm_usd": "0.04-0.06",
+        "tiktok_creator_fund_rpm_usd": "0.02-0.04",
+        "tiktok_avg_engagement_rate_pct": 5.96,
+        "instagram_avg_engagement_rate_pct": 1.16,
+        "instagram_reels_reach_boost_vs_posts_pct": 200,
+        "twitter_avg_engagement_rate_pct": 0.05,
+        "linkedin_avg_engagement_rate_pct": 2.3,
+        "podcast_listeners_monthly_us_millions": 100,
+        "podcast_ad_revenue_annual_usd_billions": 2.5,
+        "newsletter_creators_total_millions": 5,
+        "substack_paid_subscribers_millions": 3,
+        "patreon_creators_total": 250000,
+        "patreon_avg_patron_pledge_usd": 12,
+        "creator_burnout_rate_pct": 63,
+        "creator_mental_health_issues_pct": 54,
+        "creator_income_under_1k_annual_pct": 85,
+        "creator_income_over_100k_annual_pct": 2,
+        "brand_deal_avg_10k_followers_usd": 200,
+        "brand_deal_avg_100k_followers_usd": 2000,
+        "brand_deal_avg_1m_followers_usd": 15000,
+        "influencer_marketing_market_size_usd_billions": 21,
+        "influencer_marketing_growth_rate_pct": 30,
+        "micro_influencer_engagement_rate_pct": 4,
+        "macro_influencer_engagement_rate_pct": 1.5,
+        "creator_diversification_revenue_streams_avg": 2.5,
+        "creator_with_merch_pct": 15,
+        "creator_with_courses_pct": 12,
+        "creator_with_membership_pct": 8,
+        "creator_with_affiliate_pct": 25,
+        "creator_with_sponsorships_pct": 30,
+        "creator_who_hire_editor_pct": 20,
+        "creator_who_hire_manager_pct": 5,
+        "avg_time_to_1k_subs_months": "15-22",
+        "avg_time_to_10k_subs_months": "24-36",
+        "avg_time_to_100k_subs_months": "36-60",
+        "content_consistency_quit_before_10_posts_pct": 80,
+        "content_consistency_quit_before_30_posts_pct": 90,
+        "algorithm_change_impact_on_revenue_pct": "-20 to -50",
+        "platform_demonetization_risk_pct": 10,
+        "multi_platform_creators_pct": 45,
+        "owned_audience_email_list_pct_creators": 20,
+        "platform_revenue_share": {
+          "youtube_creator_share_pct": 55,
+          "tiktok_creator_fund_total_usd_billions": 1,
+          "instagram_reels_bonus_program_total_usd_millions": 500,
+          "twitter_revenue_share_pct": 70,
+          "substack_fee_pct": 10,
+          "patreon_fee_pct": "5-12",
+          "gumroad_fee_pct": 10,
+          "etsy_fee_pct": 6.5,
+          "teachable_fee_pct": "0-5",
+          "kajabi_monthly_usd": "149-399",
+          "shopify_monthly_usd": "39-399",
+          "skool_monthly_usd": 99,
+          "circle_monthly_usd": "89-399",
+          "beehiiv_monthly_usd": "0-99",
+          "convertkit_monthly_usd": "0-59",
+          "stripe_fee_pct": 2.9,
+          "paypal_fee_pct": 3.5,
+          "apple_app_store_fee_pct": 30,
+          "google_play_fee_pct": 15,
+          "amazon_kdp_royalty_70pct_threshold": "2.99-9.99",
+          "audible_acx_royalty_pct": "25-40",
+          "spotify_per_stream_usd": 0.004,
+          "apple_music_per_stream_usd": 0.008
+        }
+      }
+    }
+  }
+}

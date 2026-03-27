@@ -1,0 +1,1696 @@
+{
+  "_meta": {
+    "description": "Master funnel probabilities for Simulator — all scenarios",
+    "created": "2026-03-27",
+    "total_funnels": 25,
+    "sources": "CB Insights, BLS, ChartMogul, Startup Genome, McKinsey, Nielsen, Edelman, ProfitWell, Baremetrics, NRA, Toast, Upwork, SignalFire, Goldman Sachs, DALBAR, Gallup, Retention Rabbit, Teachfloor, Bankrate, Zapier, Gartner, NAR, BiggerPockets, ICF, Gemini, CoinGecko, Chainalysis, IFA, FTC, AFP, Giving USA, GiveWell, ACFE, IRS, M+R Benchmarks"
+  },
+  "startup": {
+    "stages": [
+      {
+        "id": "idea",
+        "label": "Have an idea",
+        "prob": 100,
+        "source": "baseline"
+      },
+      {
+        "id": "action",
+        "label": "Actually start",
+        "prob": 8,
+        "source": "Embroker 2023"
+      },
+      {
+        "id": "survive_y1",
+        "label": "Survive year 1",
+        "prob": 80,
+        "source": "BLS 2024"
+      },
+      {
+        "id": "funding",
+        "label": "Get funding (if VC path)",
+        "prob": 0.05,
+        "source": "Failory 2024"
+      },
+      {
+        "id": "pmf",
+        "label": "Find product-market fit",
+        "prob": 58,
+        "source": "CB Insights 2023"
+      },
+      {
+        "id": "revenue",
+        "label": "Reach meaningful revenue",
+        "prob": 25,
+        "source": "ChartMogul 2025"
+      },
+      {
+        "id": "profitable",
+        "label": "Become profitable",
+        "prob": 40,
+        "source": "composite"
+      },
+      {
+        "id": "scale",
+        "label": "Scale ($1M+ ARR)",
+        "prob": 4,
+        "source": "ChartMogul 2025"
+      },
+      {
+        "id": "exit",
+        "label": "Exit (M&A/IPO)",
+        "prob": 30,
+        "source": "CB Insights 2020"
+      }
+    ],
+    "survival_by_year": {
+      "1": 79.6,
+      "2": 70,
+      "3": 62,
+      "5": 50.6,
+      "10": 34.7,
+      "15": 25.6,
+      "20": 21.2
+    },
+    "failure_reasons": {
+      "no_market_need": 42,
+      "ran_out_of_cash": 29,
+      "wrong_team": 23,
+      "outcompeted": 19,
+      "pricing": 18,
+      "no_biz_model": 17,
+      "bad_marketing": 14,
+      "poor_product": 17,
+      "ignore_customers": 14,
+      "bad_timing": 13,
+      "lost_focus": 13,
+      "disharmony_team": 13,
+      "pivot_gone_wrong": 10,
+      "burnout": 8,
+      "legal_issues": 8,
+      "no_network": 8,
+      "geographic_expansion_fail": 9
+    },
+    "funding_stages": {
+      "pre_seed_avg_usd": 500000,
+      "seed_avg_usd": 2500000,
+      "series_a_avg_usd": 15000000,
+      "series_b_avg_usd": 35000000,
+      "series_c_avg_usd": 60000000,
+      "pre_seed_valuation_avg_usd": 5000000,
+      "seed_valuation_avg_usd": 15000000,
+      "series_a_valuation_avg_usd": 60000000,
+      "bootstrapped_to_1m_arr_pct": 65,
+      "time_seed_to_series_a_months": 18,
+      "time_series_a_to_b_months": 24,
+      "startups_that_raise_series_a_pct": 35,
+      "startups_that_raise_series_b_pct": 55,
+      "startups_that_raise_series_c_pct": 60
+    },
+    "by_industry": {
+      "tech_survival_5yr_pct": 63,
+      "restaurant_survival_5yr_pct": 40,
+      "retail_survival_5yr_pct": 47,
+      "construction_survival_5yr_pct": 53,
+      "healthcare_survival_5yr_pct": 60,
+      "finance_survival_5yr_pct": 58,
+      "manufacturing_survival_5yr_pct": 52,
+      "real_estate_survival_5yr_pct": 58,
+      "education_survival_5yr_pct": 56
+    },
+    "geographic": {
+      "silicon_valley_startup_density_per_capita": 0.009,
+      "nyc_startup_density_per_capita": 0.005,
+      "london_startup_density_per_capita": 0.004,
+      "berlin_startup_density_per_capita": 0.003,
+      "bangalore_startup_density_per_capita": 0.002,
+      "tel_aviv_startup_density_per_capita": 0.012,
+      "us_startup_share_global_vc_pct": 50,
+      "europe_share_global_vc_pct": 18,
+      "asia_share_global_vc_pct": 25
+    },
+    "demographics": {
+      "avg_founder_age_successful": 45,
+      "avg_founder_age_at_founding": 42,
+      "female_founded_pct": 20,
+      "female_founded_vc_pct": 2,
+      "solo_founder_success_rate_vs_cofounded": 0.7,
+      "serial_entrepreneurs_success_pct": 30,
+      "first_time_founder_success_pct": 18,
+      "immigrant_founders_fortune500_pct": 45
+    }
+  },
+  "consumer_funnel": {
+    "stages": [
+      {
+        "id": "desire",
+        "label": "People want something",
+        "prob": 100,
+        "source": "baseline"
+      },
+      {
+        "id": "search",
+        "label": "Search for solutions",
+        "prob": 100,
+        "source": "Google"
+      },
+      {
+        "id": "click",
+        "label": "Click/engage (CTR)",
+        "prob": 3,
+        "source": "WordStream 2024"
+      },
+      {
+        "id": "trust",
+        "label": "Trust the brand",
+        "prob": 22,
+        "source": "Edelman 2023"
+      },
+      {
+        "id": "convert",
+        "label": "Purchase (conversion)",
+        "prob": 2.5,
+        "source": "Shopify avg"
+      },
+      {
+        "id": "satisfied",
+        "label": "Satisfied",
+        "prob": 80,
+        "source": "Retently 2024"
+      },
+      {
+        "id": "repeat",
+        "label": "Come back (retention)",
+        "prob": 75,
+        "source": "Triple Whale 2024"
+      },
+      {
+        "id": "refer",
+        "label": "Refer others",
+        "prob": 14,
+        "source": "Annex Cloud 2024"
+      }
+    ],
+    "cart_abandonment": 70.19,
+    "review_impact": {
+      "reviews_needed_for_trust": 10,
+      "negative_review_lost_customers": 22
+    },
+    "by_channel": {
+      "organic_search_conversion_pct": 3,
+      "paid_search_conversion_pct": 2.5,
+      "social_media_conversion_pct": 1.5,
+      "email_conversion_pct": 4.3,
+      "referral_conversion_pct": 3.7,
+      "direct_conversion_pct": 2.8,
+      "display_ads_conversion_pct": 0.7,
+      "affiliate_conversion_pct": 3.2
+    },
+    "by_device": {
+      "desktop_conversion_pct": 3.8,
+      "mobile_conversion_pct": 1.9,
+      "tablet_conversion_pct": 3.1,
+      "mobile_traffic_share_pct": 60,
+      "desktop_traffic_share_pct": 35,
+      "tablet_traffic_share_pct": 5
+    },
+    "by_industry": {
+      "fashion_conversion_pct": 1.7,
+      "electronics_conversion_pct": 1.8,
+      "health_beauty_conversion_pct": 3.3,
+      "food_beverage_conversion_pct": 4.6,
+      "home_garden_conversion_pct": 2.3,
+      "pet_care_conversion_pct": 3.5,
+      "automotive_conversion_pct": 2.2,
+      "luxury_conversion_pct": 0.8
+    },
+    "trust_signals": {
+      "reviews_increase_conversion_pct": 270,
+      "trust_badges_increase_conversion_pct": 42,
+      "money_back_guarantee_increase_pct": 21,
+      "free_shipping_threshold_increase_pct": 47,
+      "live_chat_increase_conversion_pct": 20,
+      "user_generated_content_lift_pct": 29,
+      "social_proof_notifications_lift_pct": 15
+    },
+    "retention_metrics": {
+      "repeat_purchase_rate_avg": 28,
+      "avg_time_between_purchases_days": 45,
+      "customer_lifetime_purchases": 3.5,
+      "nps_score_avg_ecommerce": 36,
+      "loyalty_program_participation_pct": 55,
+      "loyalty_members_spend_more_pct": 67,
+      "subscription_box_churn_monthly_pct": 10,
+      "reorder_rate_consumables_pct": 45
+    }
+  },
+  "cafe": {
+    "stages": [
+      {
+        "id": "dream",
+        "label": "Dream of owning cafe",
+        "prob": 100,
+        "source": "baseline"
+      },
+      {
+        "id": "open",
+        "label": "Actually open",
+        "prob": 15,
+        "source": "estimated"
+      },
+      {
+        "id": "location",
+        "label": "Good location",
+        "prob": 45,
+        "source": "Restaurant.org"
+      },
+      {
+        "id": "survive_y1",
+        "label": "Survive year 1",
+        "prob": 83,
+        "source": "Datassential 2025"
+      },
+      {
+        "id": "survive_y3",
+        "label": "Survive year 3",
+        "prob": 65,
+        "source": "research-archive"
+      },
+      {
+        "id": "survive_y5",
+        "label": "Survive year 5",
+        "prob": 51,
+        "source": "Savory Hospitality"
+      },
+      {
+        "id": "regulars",
+        "label": "Build regulars (70% revenue)",
+        "prob": 30,
+        "source": "Toast POS"
+      },
+      {
+        "id": "profitable",
+        "label": "Truly profitable",
+        "prob": 17,
+        "source": "industry benchmark"
+      }
+    ],
+    "margins": {
+      "food_gross": 65,
+      "beverage_gross": 77,
+      "net_restaurant": 6,
+      "net_coffee_shop": 11,
+      "labor_cost_pct": 30,
+      "rent_cost_pct": 10,
+      "cogs_pct": 30,
+      "utilities_pct": 5,
+      "marketing_pct": 3,
+      "misc_overhead_pct": 10,
+      "owner_take_home_pct": 12
+    },
+    "indonesia": {
+      "market_2023_usd_b": 26.3,
+      "cagr_2026_2031": 12.84,
+      "cafe_cagr": 15.23,
+      "startup_cost_idr_range": "50M-200M",
+      "total_cafes_estimate": 60000,
+      "coffee_consumption_growth_yoy_pct": 8,
+      "avg_coffee_price_idr": 25000,
+      "avg_spend_per_visit_idr": 55000,
+      "wifi_expected_pct": 95,
+      "instagrammable_premium_pct": 30
+    },
+    "operational": {
+      "avg_startup_cost_us_usd": 275000,
+      "avg_daily_customers": 200,
+      "avg_ticket_size_usd": 5.5,
+      "peak_hours_pct_revenue": 60,
+      "labor_turnover_annual_pct": 73,
+      "employee_avg_tenure_months": 8,
+      "food_waste_pct": 10,
+      "theft_shrinkage_pct": 4,
+      "health_inspection_fail_first_pct": 20,
+      "avg_monthly_rent_us_usd": 4000,
+      "breakeven_months_avg": 18,
+      "franchise_fee_avg_usd": 35000,
+      "franchise_royalty_pct": 6,
+      "online_ordering_share_pct": 30,
+      "delivery_margin_hit_pct": 15,
+      "seating_turnover_per_hour": 1.5,
+      "wifi_dwell_time_increase_min": 45,
+      "loyalty_program_repeat_increase_pct": 35,
+      "google_reviews_avg_new_cafe": 4.2,
+      "1star_review_revenue_impact_pct": -9
+    }
+  },
+  "creator": {
+    "stages": [
+      {
+        "id": "want",
+        "label": "Want to be a creator",
+        "prob": 100,
+        "source": "baseline"
+      },
+      {
+        "id": "post",
+        "label": "Post first content",
+        "prob": 17,
+        "source": "Creator Economy Report"
+      },
+      {
+        "id": "consistent_30d",
+        "label": "Stay consistent 30 days",
+        "prob": 25,
+        "source": "industry consensus"
+      },
+      {
+        "id": "1k_followers",
+        "label": "Reach 1K followers",
+        "prob": 10,
+        "source": "YouTube: 90% < 1K subs"
+      },
+      {
+        "id": "10k_followers",
+        "label": "Reach 10K followers",
+        "prob": 3,
+        "source": "estimated from data"
+      },
+      {
+        "id": "100k_followers",
+        "label": "Reach 100K followers",
+        "prob": 0.76,
+        "source": "Awesome Creator Academy"
+      },
+      {
+        "id": "monetize",
+        "label": "Earn any money",
+        "prob": 2.6,
+        "source": "YouTube YPP 3M/115M"
+      },
+      {
+        "id": "fulltime",
+        "label": "Full-time income ($100K+)",
+        "prob": 4,
+        "source": "Electroiq 2025"
+      }
+    ],
+    "burnout_rate": 63,
+    "revenue_distribution": "Top 1% earns 90% of total creator revenue (Goldman Sachs)",
+    "platform_metrics": {
+      "youtube_channels_total": 114000000,
+      "youtube_channels_monetized_pct": 2.6,
+      "youtube_avg_rpm_usd": "3-5",
+      "youtube_avg_cpm_usd": "7-15",
+      "youtube_shorts_rpm_usd": "0.04-0.06",
+      "youtube_avg_ctr_pct": 4.5,
+      "youtube_avg_retention_pct": 23.7,
+      "youtube_watch_time_daily_hours_global": 1000000000,
+      "tiktok_creator_fund_rpm_usd": "0.02-0.04",
+      "tiktok_avg_engagement_rate_pct": 5.96,
+      "tiktok_viral_threshold_views": 500000,
+      "tiktok_shop_commission_pct": "5-20",
+      "instagram_avg_engagement_rate_pct": 1.16,
+      "instagram_reels_reach_vs_posts_pct": 200,
+      "instagram_story_completion_rate_pct": 70,
+      "instagram_branded_content_avg_usd": 1000,
+      "twitter_avg_engagement_rate_pct": 0.05,
+      "twitter_blue_revenue_share_pct": 70,
+      "linkedin_avg_post_engagement_rate_pct": 2.3,
+      "linkedin_newsletter_avg_open_rate_pct": 35,
+      "pinterest_avg_monthly_users_millions": 480,
+      "pinterest_avg_order_value_usd": 50,
+      "substack_total_paid_subscribers_millions": 3,
+      "substack_top_writer_annual_usd": 1000000,
+      "patreon_creators_total": 250000,
+      "patreon_avg_patron_pledge_usd": 12
+    },
+    "income_distribution": {
+      "creators_earning_0_pct": 60,
+      "creators_earning_1_1000_annual_pct": 25,
+      "creators_earning_1k_10k_annual_pct": 9,
+      "creators_earning_10k_50k_annual_pct": 4,
+      "creators_earning_50k_100k_annual_pct": 1.2,
+      "creators_earning_100k_plus_annual_pct": 0.8,
+      "median_fulltime_creator_income_usd": 15000,
+      "avg_fulltime_creator_income_usd": 50000,
+      "top_1pct_avg_income_usd": 500000
+    },
+    "monetization": {
+      "brand_deals_decline_yoy_pct": -52,
+      "digital_products_growth_pct": 20,
+      "communities_growth_pct": 10,
+      "community_income_multiplier": "2x",
+      "avg_sponsored_post_10k_followers_usd": 200,
+      "avg_sponsored_post_100k_followers_usd": 2000,
+      "avg_sponsored_post_1m_followers_usd": 15000,
+      "affiliate_income_pct_of_total": 15,
+      "course_income_pct_of_total": 20,
+      "membership_income_pct_of_total": 18,
+      "ad_revenue_pct_of_total": 30,
+      "brand_deals_pct_of_total": 17
+    }
+  },
+  "saas": {
+    "stages": [
+      {
+        "id": "idea",
+        "label": "See a problem",
+        "prob": 100,
+        "source": "baseline"
+      },
+      {
+        "id": "mvp",
+        "label": "Build MVP",
+        "prob": 50,
+        "source": "estimated"
+      },
+      {
+        "id": "first_10",
+        "label": "Get 10 paying users",
+        "prob": 20,
+        "source": "Practical Founders"
+      },
+      {
+        "id": "1k_mrr",
+        "label": "Reach $1K MRR",
+        "prob": 70,
+        "source": "of launched, MicroConf"
+      },
+      {
+        "id": "10k_mrr",
+        "label": "Reach $10K MRR",
+        "prob": 20,
+        "source": "estimated"
+      },
+      {
+        "id": "1m_arr",
+        "label": "Reach $1M ARR",
+        "prob": 13.4,
+        "source": "ChartMogul (3yr)"
+      },
+      {
+        "id": "10m_arr",
+        "label": "Reach $10M ARR",
+        "prob": 10,
+        "source": "ChartMogul 2025"
+      },
+      {
+        "id": "25m_arr",
+        "label": "Reach $25M ARR",
+        "prob": 2,
+        "source": "ChartMogul 2025"
+      }
+    ],
+    "churn": {
+      "b2c_monthly": 6,
+      "b2b_smb_monthly": 3,
+      "b2b_enterprise_monthly": 0.75,
+      "b2c_annual": 52,
+      "b2b_smb_annual": 31,
+      "b2b_enterprise_annual": 8.5,
+      "voluntary_churn_pct": 60,
+      "involuntary_churn_pct": 40,
+      "logo_churn_vs_revenue_churn": "logo is higher",
+      "good_net_revenue_retention_pct": 110,
+      "great_net_revenue_retention_pct": 130,
+      "median_net_revenue_retention_pct": 100,
+      "expansion_revenue_offsets_churn_pct": 30
+    },
+    "conversion": {
+      "trial_optin": 12,
+      "trial_optout": 48,
+      "freemium": 4,
+      "product_led_growth_conversion_pct": 7,
+      "sales_led_conversion_pct": 25,
+      "free_to_paid_avg_days": 14,
+      "trial_length_optimal_days": 14,
+      "credit_card_required_conversion_boost_pct": -50,
+      "activation_rate_good_pct": 40
+    },
+    "ltv_cac_target": "3:1 minimum, 4:1 good",
+    "metrics": {
+      "median_cac_smb_usd": 500,
+      "median_cac_mid_market_usd": 5000,
+      "median_cac_enterprise_usd": 25000,
+      "cac_payback_good_months": 12,
+      "cac_payback_median_months": 18,
+      "arpu_b2c_avg_usd": 10,
+      "arpu_b2b_smb_avg_usd": 50,
+      "arpu_b2b_enterprise_avg_usd": 500,
+      "magic_number_good": 0.75,
+      "rule_of_40_benchmark": 40,
+      "median_gross_margin_pct": 72,
+      "median_time_to_1m_arr_years": 5,
+      "median_time_seed_to_series_a_months": 18,
+      "support_tickets_per_100_customers_monthly": 8,
+      "nps_score_good_saas": 30,
+      "nps_score_great_saas": 50,
+      "feature_adoption_rate_avg_pct": 25,
+      "daily_active_user_ratio_good_pct": 20,
+      "weekly_active_user_ratio_good_pct": 40
+    },
+    "by_vertical": {
+      "devtools_median_arr_usd": 800000,
+      "martech_median_arr_usd": 1200000,
+      "fintech_median_arr_usd": 2000000,
+      "healthtech_median_arr_usd": 1500000,
+      "edtech_median_arr_usd": 600000,
+      "hr_tech_median_arr_usd": 1000000,
+      "cybersecurity_median_arr_usd": 3000000,
+      "proptech_median_arr_usd": 700000
+    }
+  },
+  "freelance": {
+    "stages": [
+      {
+        "id": "want",
+        "label": "Want to freelance",
+        "prob": 100,
+        "source": "baseline"
+      },
+      {
+        "id": "start",
+        "label": "Actually start",
+        "prob": 20,
+        "source": "estimated from Upwork"
+      },
+      {
+        "id": "first_client",
+        "label": "Land first client",
+        "prob": 60,
+        "source": "of starters, 3mo"
+      },
+      {
+        "id": "consistent",
+        "label": "Consistent $2K+/mo",
+        "prob": 50,
+        "source": "of first client"
+      },
+      {
+        "id": "fulltime",
+        "label": "Go full-time",
+        "prob": 19,
+        "source": "SurveyMonkey 2024"
+      },
+      {
+        "id": "premium",
+        "label": "Premium $100K+",
+        "prob": 9,
+        "source": "5.6M/64M workforce"
+      }
+    ],
+    "burnout_rate": 43,
+    "platforms": {
+      "upwork_commission": 10,
+      "fiverr_commission": 20,
+      "toptal_commission": 0,
+      "upwork_active_freelancers_millions": 12,
+      "fiverr_active_sellers_millions": 4,
+      "toptal_acceptance_rate_pct": 3,
+      "99designs_active_designers": 300000
+    },
+    "rates": {
+      "web_dev_avg_hourly_usd": 75,
+      "graphic_design_avg_hourly_usd": 45,
+      "copywriting_avg_hourly_usd": 60,
+      "video_editing_avg_hourly_usd": 50,
+      "data_science_avg_hourly_usd": 100,
+      "ai_ml_avg_hourly_usd": 120,
+      "seo_avg_hourly_usd": 65,
+      "social_media_mgmt_avg_hourly_usd": 40,
+      "virtual_assistant_avg_hourly_usd": 20,
+      "translation_avg_hourly_usd": 30,
+      "accounting_avg_hourly_usd": 55,
+      "legal_avg_hourly_usd": 90
+    },
+    "demographics": {
+      "us_freelancers_total_millions": 64,
+      "freelancers_share_workforce_pct": 38,
+      "freelance_by_choice_pct": 60,
+      "avg_hourly_rate_global_usd": 21,
+      "median_annual_income_usd": 18000,
+      "top_10pct_income_usd": 75000,
+      "gen_z_freelancers_pct": 53,
+      "millennials_freelancers_pct": 44,
+      "with_health_insurance_pct": 65,
+      "save_for_retirement_pct": 40
+    }
+  },
+  "ecommerce": {
+    "stages": [
+      {
+        "id": "idea",
+        "label": "Want to sell online",
+        "prob": 100,
+        "source": "baseline"
+      },
+      {
+        "id": "open",
+        "label": "Open a store",
+        "prob": 12,
+        "source": "estimated"
+      },
+      {
+        "id": "first_sale",
+        "label": "Get first sale",
+        "prob": 35,
+        "source": "of openers"
+      },
+      {
+        "id": "1k_month",
+        "label": "Reach $1K/month",
+        "prob": 15,
+        "source": "estimated"
+      },
+      {
+        "id": "10k_month",
+        "label": "Reach $10K/month",
+        "prob": 4,
+        "source": "Amazon: 6% do $1M+/yr"
+      },
+      {
+        "id": "sustainable",
+        "label": "Sustainable 5+ years",
+        "prob": 7,
+        "source": "Shopify 5-10%"
+      }
+    ],
+    "shopify_success_rate": 7.5,
+    "amazon_profitability_y1": 63,
+    "dropshipping_success_y1": 10,
+    "product_launch_failure": 85,
+    "cart_abandonment": 70,
+    "detailed_metrics": {
+      "global_ecommerce_sales_2024_usd_trillions": 6.3,
+      "ecommerce_share_retail_pct": 22,
+      "amazon_share_us_ecommerce_pct": 38,
+      "shopify_stores_total_millions": 4.8,
+      "etsy_active_sellers_millions": 7.5,
+      "ebay_active_sellers_millions": 18,
+      "avg_ecommerce_conversion_rate_pct": 2.3,
+      "avg_aov_usd": 85,
+      "mobile_ecommerce_share_pct": 60,
+      "social_commerce_share_pct": 5,
+      "avg_customer_acquisition_cost_usd": 45,
+      "avg_ltv_to_cac_ratio": 2.5,
+      "return_rate_avg_pct": 20,
+      "return_rate_apparel_pct": 30,
+      "return_rate_electronics_pct": 15,
+      "avg_shipping_cost_impact_on_conversion_pct": -18,
+      "free_shipping_increase_conversion_pct": 30,
+      "same_day_delivery_willingness_to_pay_more_pct": 41,
+      "abandoned_cart_email_recovery_rate_pct": 8,
+      "product_reviews_with_photos_conversion_lift_pct": 91,
+      "video_on_product_page_conversion_lift_pct": 80,
+      "personalization_revenue_lift_pct": 15
+    },
+    "amazon_fba": {
+      "sellers_total_millions": 2,
+      "new_sellers_daily": 3700,
+      "profitable_sellers_pct": 63,
+      "sellers_over_100k_annual_pct": 20,
+      "sellers_over_1m_annual_pct": 6,
+      "avg_startup_cost_usd": 3000,
+      "fba_fees_pct_of_revenue": "30-40",
+      "advertising_cost_avg_pct": 15,
+      "private_label_vs_arbitrage_pct": "55 vs 25",
+      "avg_profit_margin_pct": 20,
+      "time_to_profitability_months": 6,
+      "review_importance_score": 9.5
+    },
+    "subscription_commerce": {
+      "subscription_box_market_usd_billions": 32,
+      "subscription_box_growth_pct": 15,
+      "subscription_box_churn_monthly_pct": 10,
+      "subscription_box_avg_price_usd": 40,
+      "subscription_box_categories_beauty_pct": 25,
+      "subscription_box_categories_food_pct": 20,
+      "subscription_box_categories_health_pct": 15,
+      "subscription_box_categories_pet_pct": 10,
+      "subscription_box_categories_clothing_pct": 10,
+      "subscription_box_categories_other_pct": 20,
+      "dtc_brands_total_us": 115000,
+      "dtc_market_size_usd_billions": 155,
+      "dtc_avg_customer_acquisition_cost_usd": 45,
+      "dtc_avg_customer_lifetime_value_usd": 250,
+      "dtc_return_rate_avg_pct": 20,
+      "live_shopping_market_us_usd_billions": 20,
+      "live_shopping_growth_pct": 100,
+      "live_shopping_conversion_rate_pct": 10,
+      "social_commerce_market_us_usd_billions": 65,
+      "social_commerce_growth_pct": 25
+    }
+  },
+  "investing": {
+    "real_estate": {
+      "want_to_buy_actually_do": 28,
+      "first_property_positive_cashflow": 55,
+      "survive_5_years": 54,
+      "reach_5_plus_properties": 18,
+      "avg_roi_residential": 10.6,
+      "avg_roi_reits": 11.8,
+      "source": "Clever RE, iPropertyManagement, BiggerPockets",
+      "avg_cap_rate_us_pct": "5-10",
+      "avg_cash_on_cash_target_pct": "8-12",
+      "avg_vacancy_rate_pct": 6.6,
+      "avg_maintenance_cost_yearly_usd": 1200,
+      "avg_appreciation_annual_pct": 4.3,
+      "mortgage_rate_30yr_avg_pct": 6.5,
+      "first_time_buyer_down_payment_pct": 6,
+      "investor_down_payment_pct": 25,
+      "house_hacking_success_rate_pct": 70,
+      "airbnb_vs_longterm_revenue_premium_pct": 40,
+      "airbnb_occupancy_rate_avg_pct": 65,
+      "airbnb_regulatory_risk_cities_pct": 45,
+      "1031_exchange_usage_pct_investors": 15,
+      "commercial_re_avg_roi_pct": 9.5,
+      "brrrr_strategy_success_rate_pct": 35,
+      "foreclosure_flip_avg_profit_usd": 30000
+    },
+    "day_trading": {
+      "open_account_trade_actively": 30,
+      "profitable_after_1_year": 5,
+      "profitable_sustainably": 1,
+      "lose_money": 97,
+      "quit_within_2_years": 80,
+      "source": "FINRA, Barber/Odean UC Davis, FGV Brazil",
+      "avg_account_size_retail_usd": 5000,
+      "avg_daily_volume_pct_of_account": 50,
+      "leveraged_traders_blow_up_rate_pct": 90,
+      "avg_holding_period_minutes": 30,
+      "options_traders_lose_pct": 77,
+      "forex_traders_lose_pct": 73,
+      "futures_traders_lose_pct": 85,
+      "crypto_day_traders_lose_pct": 80,
+      "avg_annual_return_day_traders_pct": -15,
+      "top_1pct_avg_return_pct": 35,
+      "screen_time_avg_hours_day": 8,
+      "correlation_trading_frequency_losses": 0.72,
+      "algorithmic_trading_share_volume_pct": 60,
+      "retail_vs_institutional_edge": "strongly institutional"
+    },
+    "passive_investing": {
+      "sp500_avg_annual": 10.5,
+      "retail_investor_avg": 8.7,
+      "underperformance_gap": 1,
+      "time_in_market_captures": 92,
+      "source": "DALBAR 2025, Schwab Research",
+      "missing_10_best_days_20yr_impact_pct": -50,
+      "dollar_cost_avg_vs_lump_sum_win_rate_pct": 33,
+      "avg_holding_period_mutual_fund_years": 3.8,
+      "index_fund_expense_ratio_avg_pct": 0.03,
+      "active_fund_expense_ratio_avg_pct": 0.68,
+      "active_funds_beating_index_15yr_pct": 12,
+      "bond_avg_annual_return_pct": 5,
+      "real_estate_avg_annual_return_pct": 9,
+      "gold_avg_annual_return_pct": 7,
+      "inflation_avg_annual_pct": 3,
+      "compound_interest_rule_of_72": true,
+      "retirement_savings_median_us_usd": 87000,
+      "americans_with_no_retirement_savings_pct": 25
+    },
+    "crypto": {
+      "profitable_consistently": 15,
+      "source": "MEXC/Bitget 2024",
+      "btc_avg_annual_return_since_2013_pct": 85,
+      "btc_max_drawdown_pct": -80,
+      "btc_full_cycle_length_years": "3-4",
+      "altcoin_lose_vs_btc_pct": 90,
+      "meme_coin_rug_pull_rate_pct": 50,
+      "defi_hack_losses_2024_usd_billions": 3,
+      "nft_market_decline_from_peak_pct": -95,
+      "stablecoin_market_cap_usd_billions": 170,
+      "crypto_users_globally_millions": 560,
+      "crypto_adoption_rate_nigeria_pct": 45,
+      "crypto_adoption_rate_us_pct": 14,
+      "avg_first_deposit_usd": "200-500",
+      "avg_hold_time_months": 9,
+      "sell_within_12_months_pct": 46,
+      "avg_retail_loss_usd": 2000,
+      "long_term_holders_profitable_pct": 40,
+      "institutional_crypto_adoption_pct": 60,
+      "bitcoin_etf_assets_usd_billions": 50
+    },
+    "stock_market": {
+      "avg_annual_return_100yr_pct": 10.5,
+      "median_annual_return_pct": 13,
+      "negative_year_frequency_pct": 26,
+      "bear_market_avg_decline_pct": -35,
+      "bear_market_avg_duration_months": 14,
+      "bull_market_avg_duration_months": 60,
+      "market_timing_failure_rate_pct": 95,
+      "behavioral_gap_annual_pct": 1.5,
+      "panic_selling_cost_avg_per_event_pct": -7,
+      "avg_pe_ratio_sp500": 22,
+      "dividend_yield_avg_sp500_pct": 1.5,
+      "total_us_stock_market_cap_usd_trillions": 50
+    },
+    "alternative_investments": {
+      "art_market_annual_usd_billions": 65,
+      "art_avg_annual_return_pct": 7.5,
+      "wine_market_annual_usd_billions": 5,
+      "wine_avg_annual_return_pct": 10,
+      "collectibles_market_usd_billions": 400,
+      "sneaker_resale_market_usd_billions": 10,
+      "sports_cards_market_usd_billions": 5,
+      "vintage_car_market_usd_billions": 20,
+      "farmland_avg_annual_return_pct": 11,
+      "farmland_market_cap_us_usd_trillions": 3,
+      "timber_avg_annual_return_pct": 7,
+      "private_credit_market_usd_trillions": 1.7,
+      "private_credit_yield_avg_pct": 10,
+      "venture_capital_avg_fund_return_pct": 12,
+      "venture_capital_top_quartile_return_pct": 25,
+      "angel_investing_avg_return_pct": 20,
+      "angel_investing_loss_rate_pct": 50,
+      "pe_avg_annual_return_pct": 15,
+      "hedge_fund_avg_annual_return_pct": 8,
+      "commodities_avg_annual_return_pct": 5,
+      "reits_avg_annual_return_pct": 11.8,
+      "reits_dividend_yield_avg_pct": 4,
+      "infrastructure_avg_annual_return_pct": 9,
+      "music_royalties_avg_annual_return_pct": 10,
+      "fractional_real_estate_platforms_total": 30,
+      "fractional_art_platforms_total": 10,
+      "crowdfunded_real_estate_market_usd_billions": 5
+    }
+  },
+  "business_archetypes": {
+    "_note": "Detailed archetype data in business-archetypes-*.json files",
+    "files": [
+      "business-archetypes-1.json",
+      "business-archetypes-2.json",
+      "business-archetypes-3.json",
+      "business-archetypes-4.json",
+      "business-archetypes-5.json"
+    ],
+    "total_archetypes": 25,
+    "categories": [
+      "creator_education",
+      "tech_saas",
+      "local_services",
+      "asset_leverage",
+      "low_barrier_entry"
+    ]
+  },
+  "guru_course": {
+    "stages": [
+      {
+        "id": "impression",
+        "label": "See video in feed",
+        "prob": 100,
+        "source": "baseline"
+      },
+      {
+        "id": "click",
+        "label": "Click to watch",
+        "prob": 4.5,
+        "source": "YouTube avg CTR"
+      },
+      {
+        "id": "watch_30s",
+        "label": "Watch past 30 seconds",
+        "prob": 65,
+        "source": "Retention Rabbit 2025"
+      },
+      {
+        "id": "watch_end",
+        "label": "Watch to CTA",
+        "prob": 16,
+        "source": "Retention Rabbit 2025"
+      },
+      {
+        "id": "click_link",
+        "label": "Click description link",
+        "prob": 3,
+        "source": "avg 1-5% of viewers"
+      },
+      {
+        "id": "land_page",
+        "label": "Don't bounce",
+        "prob": 40,
+        "source": "60-90% bounce rate"
+      },
+      {
+        "id": "checkout",
+        "label": "Start checkout",
+        "prob": 10,
+        "source": "of landers"
+      },
+      {
+        "id": "buy",
+        "label": "Complete purchase",
+        "prob": 45,
+        "source": "55% digital abandonment"
+      },
+      {
+        "id": "open_course",
+        "label": "Open course within 7 days",
+        "prob": 48,
+        "source": "Teachfloor 2025"
+      },
+      {
+        "id": "complete_mod1",
+        "label": "Complete Module 1",
+        "prob": 60,
+        "source": "of those who opened"
+      },
+      {
+        "id": "complete_course",
+        "label": "Complete full course",
+        "prob": 15,
+        "source": "self-paced avg"
+      },
+      {
+        "id": "implement",
+        "label": "Actually implement",
+        "prob": 30,
+        "source": "of completers"
+      },
+      {
+        "id": "first_result",
+        "label": "Get first result",
+        "prob": 33,
+        "source": "estimated"
+      },
+      {
+        "id": "sustain",
+        "label": "Sustain 3+ months",
+        "prob": 50,
+        "source": "estimated"
+      }
+    ]
+  },
+  "ai_agency": {
+    "stages": [
+      {
+        "id": "watch_content",
+        "label": "Watch AI agency content",
+        "prob": 100,
+        "source": "baseline"
+      },
+      {
+        "id": "join_free",
+        "label": "Join free community",
+        "prob": 15,
+        "source": "estimated from 280K/millions views"
+      },
+      {
+        "id": "consume_training",
+        "label": "Complete free training",
+        "prob": 30,
+        "source": "MOOC completion data"
+      },
+      {
+        "id": "buy_accelerator",
+        "label": "Buy accelerator ($5-7K)",
+        "prob": 1.2,
+        "source": "3800/305000 ratio"
+      },
+      {
+        "id": "learn_tools",
+        "label": "Learn tools (n8n, Make)",
+        "prob": 70,
+        "source": "paid course completion"
+      },
+      {
+        "id": "build_demo",
+        "label": "Build first demo",
+        "prob": 50,
+        "source": "estimated"
+      },
+      {
+        "id": "cold_outreach",
+        "label": "Start cold outreach",
+        "prob": 30,
+        "source": "sales fear is #1 blocker"
+      },
+      {
+        "id": "send_100",
+        "label": "Send 100+ cold emails",
+        "prob": 40,
+        "source": "of those who start"
+      },
+      {
+        "id": "get_response",
+        "label": "Get meaningful responses",
+        "prob": 5,
+        "source": "cold email avg"
+      },
+      {
+        "id": "first_client",
+        "label": "Close first client",
+        "prob": 20,
+        "source": "of those with responses"
+      },
+      {
+        "id": "deliver",
+        "label": "Deliver successfully",
+        "prob": 60,
+        "source": "95% AI pilots fail - Gartner"
+      },
+      {
+        "id": "ten_k_month",
+        "label": "Reach $10K/month",
+        "prob": 15,
+        "source": "of those delivering"
+      },
+      {
+        "id": "sustain_6mo",
+        "label": "Sustain 6+ months",
+        "prob": 50,
+        "source": "estimated"
+      }
+    ],
+    "market_context": {
+      "ai_agency_searches_monthly": "500K+",
+      "skool_communities_ai": "1000+",
+      "gartner_ai_pilot_failure_rate_pct": 95,
+      "market_saturation": "HIGH",
+      "avg_deal_size_smb_usd": "3000-10000",
+      "enterprise_deal_size_usd": "50000-500000",
+      "ai_automation_market_size_2024_usd_billions": 15,
+      "ai_market_growth_rate_pct": 37,
+      "chatbot_market_size_usd_billions": 5,
+      "ai_agent_market_size_usd_billions": 3,
+      "no_code_ai_tools_total": 500,
+      "ai_agency_saturation_index": 85
+    }
+  },
+  "side_hustle": {
+    "stages": [
+      {
+        "id": "want",
+        "label": "Want extra income",
+        "prob": 100,
+        "source": "baseline"
+      },
+      {
+        "id": "research",
+        "label": "Research options",
+        "prob": 70,
+        "source": "estimated"
+      },
+      {
+        "id": "start",
+        "label": "Actually start",
+        "prob": 39,
+        "source": "Bankrate 2024 - 39% of US adults"
+      },
+      {
+        "id": "first_month",
+        "label": "Survive first month",
+        "prob": 60,
+        "source": "estimated"
+      },
+      {
+        "id": "earn_500",
+        "label": "Reach $500/month",
+        "prob": 53,
+        "source": "53% earn $500+, Bankrate"
+      },
+      {
+        "id": "earn_1k",
+        "label": "Reach $1,000/month",
+        "prob": 36,
+        "source": "36% earn $1K+, Bankrate"
+      },
+      {
+        "id": "six_months",
+        "label": "Still doing it after 6 months",
+        "prob": 50,
+        "source": "estimated"
+      },
+      {
+        "id": "consider_fulltime",
+        "label": "Consider going full-time",
+        "prob": 40,
+        "source": "Zapier 2024"
+      },
+      {
+        "id": "quit_job",
+        "label": "Actually quit day job",
+        "prob": 12,
+        "source": "Zapier 2024"
+      },
+      {
+        "id": "survive_fulltime",
+        "label": "Survive 18 months full-time",
+        "prob": 60,
+        "source": "40% return to employment"
+      }
+    ],
+    "popular_side_hustles": {
+      "freelancing_pct": 22,
+      "selling_products_online_pct": 18,
+      "rideshare_delivery_pct": 15,
+      "content_creation_pct": 12,
+      "tutoring_pct": 8,
+      "pet_services_pct": 7,
+      "reselling_pct": 6,
+      "consulting_pct": 5,
+      "rental_income_pct": 4,
+      "other_pct": 3
+    },
+    "avg_hours_per_week": 12,
+    "avg_monthly_income_usd": 810,
+    "side_hustlers_with_debt_pct": 62,
+    "side_hustle_to_pay_bills_pct": 44,
+    "side_hustle_for_savings_pct": 32,
+    "side_hustle_passion_project_pct": 24
+  },
+  "nonprofit": {
+    "stages": [
+      {
+        "id": "want_to_help",
+        "label": "Want to make a difference",
+        "prob": 100,
+        "source": "baseline"
+      },
+      {
+        "id": "research_formation",
+        "label": "Research nonprofit formation",
+        "prob": 40,
+        "source": "Estimated"
+      },
+      {
+        "id": "file_formation",
+        "label": "File formation documents",
+        "prob": 15,
+        "source": "IRS Data"
+      },
+      {
+        "id": "get_501c3",
+        "label": "Receive 501(c)(3) status",
+        "prob": 85,
+        "source": "IRS 2024"
+      },
+      {
+        "id": "first_10k",
+        "label": "Raise first $10K",
+        "prob": 60,
+        "source": "Nonprofit Finance Fund 2024"
+      },
+      {
+        "id": "first_100k",
+        "label": "Raise first $100K",
+        "prob": 25,
+        "source": "Nonprofit Finance Fund 2024"
+      },
+      {
+        "id": "hire_first_staff",
+        "label": "Hire first paid staff",
+        "prob": 26,
+        "source": "Urban Institute 2024"
+      },
+      {
+        "id": "survive_y1",
+        "label": "Survive year 1",
+        "prob": 85,
+        "source": "National Council of Nonprofits 2024"
+      },
+      {
+        "id": "survive_y3",
+        "label": "Survive year 3",
+        "prob": 65,
+        "source": "National Council of Nonprofits 2024"
+      },
+      {
+        "id": "survive_y5",
+        "label": "Survive year 5",
+        "prob": 50,
+        "source": "National Council of Nonprofits 2024"
+      },
+      {
+        "id": "reach_1m_budget",
+        "label": "Reach $1M annual budget",
+        "prob": 5,
+        "source": "NCCS 2024"
+      },
+      {
+        "id": "self_sustaining",
+        "label": "Self-sustaining (not founder-dependent)",
+        "prob": 25,
+        "source": "Estimated"
+      },
+      {
+        "id": "measurable_impact",
+        "label": "Achieve measurable impact at scale",
+        "prob": 10,
+        "source": "Estimated"
+      }
+    ],
+    "donor_retention_overall_pct": 43,
+    "first_time_donor_retention_pct": 19,
+    "fundraising_cost_per_dollar": 0.2,
+    "total_us_giving_annual_usd_billions": 557,
+    "volunteer_retention_pct": 65,
+    "detailed_fundraising": {
+      "online_giving_growth_yoy_pct": 7,
+      "mobile_giving_share_pct": 28,
+      "recurring_giving_share_online_pct": 31,
+      "peer_to_peer_fundraising_total_usd_billions": 3.5,
+      "giving_tuesday_raised_usd_billions": 3.5,
+      "year_end_giving_share_pct": 31,
+      "december_giving_share_pct": 17,
+      "avg_gift_size_online_usd": 128,
+      "avg_gift_size_offline_usd": 210,
+      "major_gift_share_revenue_pct": 76,
+      "email_fundraising_open_rate_pct": 24,
+      "email_fundraising_click_rate_pct": 2.8,
+      "email_fundraising_conversion_pct": 0.5,
+      "sms_fundraising_response_rate_pct": 8,
+      "direct_mail_response_rate_pct": 4.9,
+      "gala_event_avg_net_usd": 75000,
+      "capital_campaign_success_rate_pct": 70,
+      "fundraising_staff_turnover_pct": 45,
+      "google_ad_grants_monthly_value_usd": 10000,
+      "matching_gift_unclaimed_annual_usd_billions": 6
+    },
+    "donor_demographics": {
+      "baby_boomers_share_giving_pct": 43,
+      "gen_x_share_giving_pct": 28,
+      "millennials_share_giving_pct": 20,
+      "gen_z_share_giving_pct": 5,
+      "households_giving_pct": 53,
+      "avg_giving_share_income_pct": 2.1,
+      "religion_cause_share_pct": 27,
+      "education_cause_share_pct": 14,
+      "human_services_cause_share_pct": 13,
+      "health_cause_share_pct": 10
+    },
+    "volunteer_data": {
+      "us_volunteers_millions": 77,
+      "volunteer_rate_pct": 25,
+      "volunteer_hours_annual_billions": 8.8,
+      "volunteer_value_per_hour_usd": 31.8,
+      "volunteer_total_value_usd_billions": 280,
+      "volunteer_retention_rate_pct": 65,
+      "first_year_volunteer_retention_pct": 45,
+      "volunteer_who_also_donate_pct": 80,
+      "corporate_volunteer_programs_pct": 65,
+      "skills_based_volunteering_pct": 30
+    },
+    "social_enterprise": {
+      "social_enterprises_us": 80000,
+      "social_enterprise_market_usd_billions": 500,
+      "benefit_corporations_us": 10000,
+      "b_corps_certified": 8000,
+      "cooperative_businesses_us": 65000,
+      "impact_investing_total_usd_trillions": 1.1,
+      "esg_aum_usd_trillions": 35,
+      "microfinance_borrowers_millions": 140,
+      "fair_trade_market_usd_billions": 12,
+      "cdfi_assets_usd_billions": 300
+    }
+  },
+  "real_estate_agent": {
+    "stages": [
+      {
+        "id": "get_license",
+        "label": "Get real estate license",
+        "prob": 100,
+        "source": "baseline"
+      },
+      {
+        "id": "join_brokerage",
+        "label": "Join a brokerage",
+        "prob": 90,
+        "source": "NAR 2024"
+      },
+      {
+        "id": "first_lead",
+        "label": "Generate first lead",
+        "prob": 70,
+        "source": "NAR 2024"
+      },
+      {
+        "id": "first_closing",
+        "label": "Close first deal",
+        "prob": 50,
+        "source": "NAR 2024"
+      },
+      {
+        "id": "close_6_year1",
+        "label": "Close 6 deals in year 1",
+        "prob": 30,
+        "source": "NAR 2024"
+      },
+      {
+        "id": "survive_y1",
+        "label": "Still active after year 1",
+        "prob": 25,
+        "source": "NAR: 75% fail in first year"
+      },
+      {
+        "id": "full_time_income",
+        "label": "Full-time income ($50K+)",
+        "prob": 50,
+        "source": "NAR 2024 median income $56K"
+      },
+      {
+        "id": "top_producer",
+        "label": "Become top producer ($100K+)",
+        "prob": 20,
+        "source": "NAR 2024"
+      },
+      {
+        "id": "build_team",
+        "label": "Build a team",
+        "prob": 10,
+        "source": "estimated"
+      },
+      {
+        "id": "survive_y5",
+        "label": "Still active after 5 years",
+        "prob": 13,
+        "source": "NAR 2024: 87% leave within 5 years"
+      }
+    ],
+    "median_income_usd": 56000,
+    "avg_commission_pct": 2.5,
+    "avg_deals_per_agent_annually": 8,
+    "total_agents_us": 1500000,
+    "active_agents_pct": 60
+  },
+  "app_development": {
+    "stages": [
+      {
+        "id": "idea",
+        "label": "Have an app idea",
+        "prob": 100,
+        "source": "baseline"
+      },
+      {
+        "id": "research",
+        "label": "Research competition",
+        "prob": 55,
+        "source": "estimated"
+      },
+      {
+        "id": "build",
+        "label": "Actually build it",
+        "prob": 20,
+        "source": "estimated"
+      },
+      {
+        "id": "launch",
+        "label": "Launch on App Store/Play Store",
+        "prob": 60,
+        "source": "of builders"
+      },
+      {
+        "id": "first_100_users",
+        "label": "Get 100 users",
+        "prob": 35,
+        "source": "estimated"
+      },
+      {
+        "id": "first_1000_users",
+        "label": "Get 1,000 users",
+        "prob": 15,
+        "source": "estimated"
+      },
+      {
+        "id": "monetize",
+        "label": "Generate any revenue",
+        "prob": 30,
+        "source": "estimated"
+      },
+      {
+        "id": "earn_1k_month",
+        "label": "Earn $1K/month",
+        "prob": 8,
+        "source": "Sensor Tower 2024"
+      },
+      {
+        "id": "earn_10k_month",
+        "label": "Earn $10K/month",
+        "prob": 2,
+        "source": "Sensor Tower 2024"
+      },
+      {
+        "id": "sustainable",
+        "label": "Sustainable business (2+ years)",
+        "prob": 5,
+        "source": "estimated"
+      }
+    ],
+    "app_store_metrics": {
+      "total_apps_apple": 1800000,
+      "total_apps_google": 2800000,
+      "new_apps_daily": 1000,
+      "apps_removed_annually_pct": 30,
+      "avg_app_downloads_first_month": 500,
+      "avg_app_revenue_lifetime_usd": 1000,
+      "top_1pct_earn_pct_of_revenue": 93,
+      "avg_development_cost_usd": 50000,
+      "avg_app_rating_needed_for_discovery": 4.5,
+      "organic_discovery_rate_pct": 65,
+      "day_1_retention_avg_pct": 25,
+      "day_7_retention_avg_pct": 12,
+      "day_30_retention_avg_pct": 6,
+      "in_app_purchase_conversion_pct": 3,
+      "subscription_apps_revenue_share_pct": 85
+    },
+    "monetization": {
+      "freemium_model_pct_apps": 95,
+      "in_app_purchase_revenue_share_pct": 48,
+      "subscription_revenue_share_pct": 37,
+      "ad_revenue_share_pct": 12,
+      "paid_app_revenue_share_pct": 3,
+      "avg_revenue_per_user_gaming_usd": 0.5,
+      "avg_revenue_per_user_social_usd": 1.2,
+      "avg_revenue_per_user_dating_usd": 5,
+      "avg_revenue_per_user_fitness_usd": 2.5,
+      "avg_revenue_per_user_music_usd": 3,
+      "apple_app_store_commission_pct": 30,
+      "google_play_commission_pct": 15,
+      "apple_small_business_commission_pct": 15,
+      "app_store_rejection_rate_pct": 20,
+      "app_update_frequency_avg_weeks": 4,
+      "app_rating_4plus_revenue_multiplier": 3,
+      "push_notification_opt_in_pct": 60,
+      "app_uninstall_rate_30_day_pct": 72,
+      "user_acquisition_cost_avg_usd": 3.5,
+      "user_acquisition_cost_ios_usd": 4.5,
+      "user_acquisition_cost_android_usd": 2.5,
+      "cost_per_install_gaming_usd": 2,
+      "cost_per_install_finance_usd": 5,
+      "cost_per_install_ecommerce_usd": 3,
+      "apple_search_ads_avg_cpt_usd": 1.5,
+      "aso_keyword_optimization_lift_pct": 50,
+      "app_store_screenshot_impact_on_install_pct": 30,
+      "app_video_preview_install_lift_pct": 25,
+      "referral_program_viral_coefficient_good": 1.5,
+      "app_localization_revenue_lift_pct": 25
+    }
+  },
+  "consulting_firm": {
+    "stages": [
+      {
+        "id": "expertise",
+        "label": "Have deep domain expertise",
+        "prob": 100,
+        "source": "baseline"
+      },
+      {
+        "id": "first_client",
+        "label": "Get first consulting client",
+        "prob": 55,
+        "source": "ICF 2023"
+      },
+      {
+        "id": "consistent_pipeline",
+        "label": "Build consistent pipeline",
+        "prob": 35,
+        "source": "estimated"
+      },
+      {
+        "id": "reach_10k_month",
+        "label": "Reach $10K/month",
+        "prob": 25,
+        "source": "ICF 2023"
+      },
+      {
+        "id": "hire_first",
+        "label": "Hire first team member",
+        "prob": 30,
+        "source": "estimated"
+      },
+      {
+        "id": "reach_50k_month",
+        "label": "Reach $50K/month",
+        "prob": 10,
+        "source": "estimated"
+      },
+      {
+        "id": "productize",
+        "label": "Productize services",
+        "prob": 20,
+        "source": "estimated"
+      },
+      {
+        "id": "million_revenue",
+        "label": "Reach $1M annual revenue",
+        "prob": 5,
+        "source": "estimated"
+      }
+    ],
+    "metrics": {
+      "avg_hourly_rate_solo_usd": 250,
+      "avg_day_rate_usd": 2000,
+      "utilization_rate_target_pct": 70,
+      "proposal_win_rate_pct": 25,
+      "avg_project_size_usd": 25000,
+      "client_retention_rate_pct": 60,
+      "referral_rate_pct": 40,
+      "median_solo_consultant_income_usd": 80000
+    }
+  },
+  "fitness_wellness": {
+    "stages": [
+      {
+        "id": "certification",
+        "label": "Get fitness certification",
+        "prob": 100,
+        "source": "baseline"
+      },
+      {
+        "id": "first_client",
+        "label": "Get first paying client",
+        "prob": 65,
+        "source": "NSCA 2024"
+      },
+      {
+        "id": "ten_clients",
+        "label": "Build to 10 regular clients",
+        "prob": 45,
+        "source": "estimated"
+      },
+      {
+        "id": "reach_3k_month",
+        "label": "Reach $3K/month",
+        "prob": 35,
+        "source": "NSCA 2024"
+      },
+      {
+        "id": "online_presence",
+        "label": "Build online presence/brand",
+        "prob": 40,
+        "source": "estimated"
+      },
+      {
+        "id": "reach_5k_month",
+        "label": "Reach $5K/month",
+        "prob": 20,
+        "source": "NSCA 2024"
+      },
+      {
+        "id": "online_coaching",
+        "label": "Add online coaching/programs",
+        "prob": 30,
+        "source": "estimated"
+      },
+      {
+        "id": "reach_10k_month",
+        "label": "Reach $10K/month",
+        "prob": 10,
+        "source": "estimated"
+      },
+      {
+        "id": "own_studio",
+        "label": "Open own studio/gym",
+        "prob": 8,
+        "source": "IHRSA 2024"
+      }
+    ],
+    "metrics": {
+      "avg_pt_hourly_rate_usd": 60,
+      "median_pt_annual_income_usd": 42000,
+      "top_10pct_pt_income_usd": 85000,
+      "personal_trainer_burnout_rate_pct": 50,
+      "career_longevity_avg_years": 5,
+      "client_retention_rate_pct": 60,
+      "gym_membership_churn_monthly_pct": 4,
+      "online_fitness_market_size_usd_billions": 14,
+      "fitness_app_download_growth_yoy_pct": 25
+    },
+    "industry_data": {
+      "global_fitness_market_usd_billions": 96,
+      "us_fitness_market_usd_billions": 35,
+      "gym_membership_us_millions": 66,
+      "gym_revenue_per_member_monthly_usd": 58,
+      "gym_utilization_rate_pct": 50,
+      "boutique_fitness_market_share_pct": 35,
+      "peloton_subscribers_millions": 7,
+      "peloton_churn_monthly_pct": 1,
+      "mirror_lululemon_market_share_pct": 2,
+      "wearable_fitness_market_usd_billions": 30,
+      "fitness_app_market_usd_billions": 14,
+      "fitness_app_paying_users_millions": 100,
+      "new_year_gym_signup_spike_pct": 40,
+      "new_year_quit_by_february_pct": 80,
+      "personal_trainer_certification_cost_usd": 500,
+      "personal_trainer_total_us": 350000,
+      "yoga_practitioners_us_millions": 36,
+      "pilates_practitioners_us_millions": 9,
+      "crossfit_affiliates_total": 15000,
+      "f45_locations_total": 2800,
+      "orangetheory_locations_total": 1500
+    }
+  },
+  "wedding_events": {
+    "stages": [
+      {
+        "id": "start_planning",
+        "label": "Start event planning business",
+        "prob": 100,
+        "source": "baseline"
+      },
+      {
+        "id": "first_event",
+        "label": "Plan first event",
+        "prob": 55,
+        "source": "estimated"
+      },
+      {
+        "id": "portfolio",
+        "label": "Build portfolio (5+ events)",
+        "prob": 40,
+        "source": "estimated"
+      },
+      {
+        "id": "referrals",
+        "label": "Get referral-based bookings",
+        "prob": 50,
+        "source": "WeddingWire 2024"
+      },
+      {
+        "id": "reach_5k_month",
+        "label": "Reach $5K/month average",
+        "prob": 30,
+        "source": "estimated"
+      },
+      {
+        "id": "premium_tier",
+        "label": "Break into premium market ($10K+ per event)",
+        "prob": 15,
+        "source": "estimated"
+      },
+      {
+        "id": "team",
+        "label": "Build team",
+        "prob": 20,
+        "source": "estimated"
+      }
+    ],
+    "metrics": {
+      "avg_wedding_cost_us_usd": 35000,
+      "wedding_planner_fee_pct": "10-20",
+      "avg_planner_income_usd": 52000,
+      "weddings_per_year_us": 2500000,
+      "booking_lead_time_months": 12,
+      "peak_season_revenue_share_pct": 60
+    }
+  }
+}

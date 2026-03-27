@@ -1,0 +1,207 @@
+{
+  "_meta": {
+    "description": "Master funnel probabilities for Simulator — all scenarios",
+    "created": "2026-03-27",
+    "total_funnels": 11,
+    "sources": "CB Insights, BLS, ChartMogul, Startup Genome, McKinsey, Nielsen, Edelman, ProfitWell, Baremetrics, NRA, Toast, Upwork, SignalFire, Goldman Sachs, DALBAR, Gallup, Retention Rabbit, Teachfloor, Bankrate, Zapier, Gartner"
+  },
+
+  "startup": {
+    "stages": [
+      {"id": "idea", "label": "Have an idea", "prob": 100, "source": "baseline"},
+      {"id": "action", "label": "Actually start", "prob": 8, "source": "Embroker 2023"},
+      {"id": "survive_y1", "label": "Survive year 1", "prob": 80, "source": "BLS 2024"},
+      {"id": "funding", "label": "Get funding (if VC path)", "prob": 0.05, "source": "Failory 2024"},
+      {"id": "pmf", "label": "Find product-market fit", "prob": 58, "source": "CB Insights 2023"},
+      {"id": "revenue", "label": "Reach meaningful revenue", "prob": 25, "source": "ChartMogul 2025"},
+      {"id": "profitable", "label": "Become profitable", "prob": 40, "source": "composite"},
+      {"id": "scale", "label": "Scale ($1M+ ARR)", "prob": 4, "source": "ChartMogul 2025"},
+      {"id": "exit", "label": "Exit (M&A/IPO)", "prob": 30, "source": "CB Insights 2020"}
+    ],
+    "survival_by_year": {"1": 79.6, "2": 70, "3": 62, "5": 50.6, "10": 34.7},
+    "failure_reasons": {
+      "no_market_need": 42, "ran_out_of_cash": 29, "wrong_team": 23,
+      "outcompeted": 19, "pricing": 18, "no_biz_model": 17, "bad_marketing": 14
+    }
+  },
+
+  "consumer_funnel": {
+    "stages": [
+      {"id": "desire", "label": "People want something", "prob": 100, "source": "baseline"},
+      {"id": "search", "label": "Search for solutions", "prob": 100, "source": "Google"},
+      {"id": "click", "label": "Click/engage (CTR)", "prob": 3, "source": "WordStream 2024"},
+      {"id": "trust", "label": "Trust the brand", "prob": 22, "source": "Edelman 2023"},
+      {"id": "convert", "label": "Purchase (conversion)", "prob": 2.5, "source": "Shopify avg"},
+      {"id": "satisfied", "label": "Satisfied", "prob": 80, "source": "Retently 2024"},
+      {"id": "repeat", "label": "Come back (retention)", "prob": 75, "source": "Triple Whale 2024"},
+      {"id": "refer", "label": "Refer others", "prob": 14, "source": "Annex Cloud 2024"}
+    ],
+    "cart_abandonment": 70.19,
+    "review_impact": {"reviews_needed_for_trust": 10, "negative_review_lost_customers": 22}
+  },
+
+  "cafe": {
+    "stages": [
+      {"id": "dream", "label": "Dream of owning cafe", "prob": 100, "source": "baseline"},
+      {"id": "open", "label": "Actually open", "prob": 15, "source": "estimated"},
+      {"id": "location", "label": "Good location", "prob": 45, "source": "Restaurant.org"},
+      {"id": "survive_y1", "label": "Survive year 1", "prob": 83, "source": "Datassential 2025"},
+      {"id": "survive_y3", "label": "Survive year 3", "prob": 65, "source": "research-archive"},
+      {"id": "survive_y5", "label": "Survive year 5", "prob": 51, "source": "Savory Hospitality"},
+      {"id": "regulars", "label": "Build regulars (70% revenue)", "prob": 30, "source": "Toast POS"},
+      {"id": "profitable", "label": "Truly profitable", "prob": 17, "source": "industry benchmark"}
+    ],
+    "margins": {"food_gross": 65, "beverage_gross": 77, "net_restaurant": 6, "net_coffee_shop": 11},
+    "indonesia": {"market_2023_usd_b": 26.3, "cagr_2026_2031": 12.84, "cafe_cagr": 15.23, "startup_cost_idr_range": "50M-200M"}
+  },
+
+  "creator": {
+    "stages": [
+      {"id": "want", "label": "Want to be a creator", "prob": 100, "source": "baseline"},
+      {"id": "post", "label": "Post first content", "prob": 17, "source": "Creator Economy Report"},
+      {"id": "consistent_30d", "label": "Stay consistent 30 days", "prob": 25, "source": "industry consensus"},
+      {"id": "1k_followers", "label": "Reach 1K followers", "prob": 10, "source": "YouTube: 90% < 1K subs"},
+      {"id": "10k_followers", "label": "Reach 10K followers", "prob": 3, "source": "estimated from data"},
+      {"id": "100k_followers", "label": "Reach 100K followers", "prob": 0.76, "source": "Awesome Creator Academy"},
+      {"id": "monetize", "label": "Earn any money", "prob": 2.6, "source": "YouTube YPP 3M/115M"},
+      {"id": "fulltime", "label": "Full-time income ($100K+)", "prob": 4, "source": "Electroiq 2025"}
+    ],
+    "burnout_rate": 63,
+    "revenue_distribution": "Top 1% earns 90% of total creator revenue (Goldman Sachs)"
+  },
+
+  "saas": {
+    "stages": [
+      {"id": "idea", "label": "See a problem", "prob": 100, "source": "baseline"},
+      {"id": "mvp", "label": "Build MVP", "prob": 50, "source": "estimated"},
+      {"id": "first_10", "label": "Get 10 paying users", "prob": 20, "source": "Practical Founders"},
+      {"id": "1k_mrr", "label": "Reach $1K MRR", "prob": 70, "source": "of launched, MicroConf"},
+      {"id": "10k_mrr", "label": "Reach $10K MRR", "prob": 20, "source": "estimated"},
+      {"id": "1m_arr", "label": "Reach $1M ARR", "prob": 13.4, "source": "ChartMogul (3yr)"},
+      {"id": "10m_arr", "label": "Reach $10M ARR", "prob": 10, "source": "ChartMogul 2025"},
+      {"id": "25m_arr", "label": "Reach $25M ARR", "prob": 2, "source": "ChartMogul 2025"}
+    ],
+    "churn": {"b2c_monthly": 6, "b2b_smb_monthly": 3, "b2b_enterprise_monthly": 0.75},
+    "conversion": {"trial_optin": 12, "trial_optout": 48, "freemium": 4},
+    "ltv_cac_target": "3:1 minimum, 4:1 good"
+  },
+
+  "freelance": {
+    "stages": [
+      {"id": "want", "label": "Want to freelance", "prob": 100, "source": "baseline"},
+      {"id": "start", "label": "Actually start", "prob": 20, "source": "estimated from Upwork"},
+      {"id": "first_client", "label": "Land first client", "prob": 60, "source": "of starters, 3mo"},
+      {"id": "consistent", "label": "Consistent $2K+/mo", "prob": 50, "source": "of first client"},
+      {"id": "fulltime", "label": "Go full-time", "prob": 19, "source": "SurveyMonkey 2024"},
+      {"id": "premium", "label": "Premium $100K+", "prob": 9, "source": "5.6M/64M workforce"}
+    ],
+    "burnout_rate": 43,
+    "platforms": {"upwork_commission": 10, "fiverr_commission": 20}
+  },
+
+  "ecommerce": {
+    "stages": [
+      {"id": "idea", "label": "Want to sell online", "prob": 100, "source": "baseline"},
+      {"id": "open", "label": "Open a store", "prob": 12, "source": "estimated"},
+      {"id": "first_sale", "label": "Get first sale", "prob": 35, "source": "of openers"},
+      {"id": "1k_month", "label": "Reach $1K/month", "prob": 15, "source": "estimated"},
+      {"id": "10k_month", "label": "Reach $10K/month", "prob": 4, "source": "Amazon: 6% do $1M+/yr"},
+      {"id": "sustainable", "label": "Sustainable 5+ years", "prob": 7, "source": "Shopify 5-10%"}
+    ],
+    "shopify_success_rate": 7.5,
+    "amazon_profitability_y1": 63,
+    "dropshipping_success_y1": 10,
+    "product_launch_failure": 85,
+    "cart_abandonment": 70
+  },
+
+  "investing": {
+    "real_estate": {
+      "want_to_buy_actually_do": 28,
+      "first_property_positive_cashflow": 55,
+      "survive_5_years": 54,
+      "reach_5_plus_properties": 18,
+      "avg_roi_residential": 10.6,
+      "avg_roi_reits": 11.8,
+      "source": "Clever RE, iPropertyManagement, BiggerPockets"
+    },
+    "day_trading": {
+      "open_account_trade_actively": 30,
+      "profitable_after_1_year": 5,
+      "profitable_sustainably": 1,
+      "lose_money": 97,
+      "quit_within_2_years": 80,
+      "source": "FINRA, Barber/Odean UC Davis, FGV Brazil"
+    },
+    "passive_investing": {
+      "sp500_avg_annual": 10.5,
+      "retail_investor_avg": 8.7,
+      "underperformance_gap": 1.0,
+      "time_in_market_captures": 92,
+      "source": "DALBAR 2025, Schwab Research"
+    },
+    "crypto": {
+      "profitable_consistently": 15,
+      "source": "MEXC/Bitget 2024"
+    }
+  },
+
+  "business_archetypes": {
+    "_note": "Detailed archetype data in business-archetypes-*.json files",
+    "files": ["business-archetypes-1.json", "business-archetypes-2.json", "business-archetypes-3.json", "business-archetypes-4.json", "business-archetypes-5.json"],
+    "total_archetypes": 25,
+    "categories": ["creator_education", "tech_saas", "local_services", "asset_leverage", "low_barrier_entry"]
+  },
+
+  "guru_course": {
+    "stages": [
+      {"id": "impression", "label": "See video in feed", "prob": 100, "source": "baseline"},
+      {"id": "click", "label": "Click to watch", "prob": 4.5, "source": "YouTube avg CTR"},
+      {"id": "watch_30s", "label": "Watch past 30 seconds", "prob": 65, "source": "Retention Rabbit 2025"},
+      {"id": "watch_end", "label": "Watch to CTA", "prob": 16, "source": "Retention Rabbit 2025"},
+      {"id": "click_link", "label": "Click description link", "prob": 3, "source": "avg 1-5% of viewers"},
+      {"id": "land_page", "label": "Don't bounce", "prob": 40, "source": "60-90% bounce rate"},
+      {"id": "checkout", "label": "Start checkout", "prob": 10, "source": "of landers"},
+      {"id": "buy", "label": "Complete purchase", "prob": 45, "source": "55% digital abandonment"},
+      {"id": "open_course", "label": "Open course within 7 days", "prob": 48, "source": "Teachfloor 2025"},
+      {"id": "complete_mod1", "label": "Complete Module 1", "prob": 60, "source": "of those who opened"},
+      {"id": "complete_course", "label": "Complete full course", "prob": 15, "source": "self-paced avg"},
+      {"id": "implement", "label": "Actually implement", "prob": 30, "source": "of completers"},
+      {"id": "first_result", "label": "Get first result", "prob": 33, "source": "estimated"},
+      {"id": "sustain", "label": "Sustain 3+ months", "prob": 50, "source": "estimated"}
+    ]
+  },
+
+  "ai_agency": {
+    "stages": [
+      {"id": "watch_content", "label": "Watch AI agency content", "prob": 100, "source": "baseline"},
+      {"id": "join_free", "label": "Join free community", "prob": 15, "source": "estimated from 280K/millions views"},
+      {"id": "consume_training", "label": "Complete free training", "prob": 30, "source": "MOOC completion data"},
+      {"id": "buy_accelerator", "label": "Buy accelerator ($5-7K)", "prob": 1.2, "source": "3800/305000 ratio"},
+      {"id": "learn_tools", "label": "Learn tools (n8n, Make)", "prob": 70, "source": "paid course completion"},
+      {"id": "build_demo", "label": "Build first demo", "prob": 50, "source": "estimated"},
+      {"id": "cold_outreach", "label": "Start cold outreach", "prob": 30, "source": "sales fear is #1 blocker"},
+      {"id": "send_100", "label": "Send 100+ cold emails", "prob": 40, "source": "of those who start"},
+      {"id": "get_response", "label": "Get meaningful responses", "prob": 5, "source": "cold email avg"},
+      {"id": "first_client", "label": "Close first client", "prob": 20, "source": "of those with responses"},
+      {"id": "deliver", "label": "Deliver successfully", "prob": 60, "source": "95% AI pilots fail - Gartner"},
+      {"id": "ten_k_month", "label": "Reach $10K/month", "prob": 15, "source": "of those delivering"},
+      {"id": "sustain_6mo", "label": "Sustain 6+ months", "prob": 50, "source": "estimated"}
+    ]
+  },
+
+  "side_hustle": {
+    "stages": [
+      {"id": "want", "label": "Want extra income", "prob": 100, "source": "baseline"},
+      {"id": "research", "label": "Research options", "prob": 70, "source": "estimated"},
+      {"id": "start", "label": "Actually start", "prob": 39, "source": "Bankrate 2024 - 39% of US adults"},
+      {"id": "first_month", "label": "Survive first month", "prob": 60, "source": "estimated"},
+      {"id": "earn_500", "label": "Reach $500/month", "prob": 53, "source": "53% earn $500+, Bankrate"},
+      {"id": "earn_1k", "label": "Reach $1,000/month", "prob": 36, "source": "36% earn $1K+, Bankrate"},
+      {"id": "six_months", "label": "Still doing it after 6 months", "prob": 50, "source": "estimated"},
+      {"id": "consider_fulltime", "label": "Consider going full-time", "prob": 40, "source": "Zapier 2024"},
+      {"id": "quit_job", "label": "Actually quit day job", "prob": 12, "source": "Zapier 2024"},
+      {"id": "survive_fulltime", "label": "Survive 18 months full-time", "prob": 60, "source": "40% return to employment"}
+    ]
+  }
+}

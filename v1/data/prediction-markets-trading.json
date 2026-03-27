@@ -1,0 +1,267 @@
+{
+  "meta": {
+    "title": "Prediction Markets & Retail Trading Data",
+    "description": "200+ data points on Polymarket, Kalshi, prediction market accuracy, retail trading profitability, options, crypto, meme stocks, copy trading",
+    "collected": "2026-03-27",
+    "data_points": 214,
+    "categories": [
+      "polymarket",
+      "kalshi",
+      "other_prediction_markets",
+      "prediction_market_accuracy",
+      "retail_trading_profitability",
+      "options_trading",
+      "crypto_trading",
+      "meme_stocks",
+      "robinhood",
+      "etoro_copy_trading",
+      "other_brokers",
+      "leverage_cfd",
+      "simulator_metrics"
+    ]
+  },
+
+  "polymarket": [
+    { "metric": "total_lifetime_volume_2024", "value": 9, "unit": "billion USD", "source": "The Block", "year": 2024 },
+    { "metric": "monthly_volume_peak_nov2024", "value": 2.63, "unit": "billion USD", "source": "The Block", "year": 2024 },
+    { "metric": "monthly_volume_jan2024", "value": 54, "unit": "million USD", "source": "The Block", "year": 2024 },
+    { "metric": "monthly_volume_growth_jan_to_nov2024", "value": 4770, "unit": "percent increase (48x)", "source": "The Block", "year": 2024 },
+    { "metric": "monthly_volume_avg_growth_rate_2024", "value": 66.5, "unit": "percent per month", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "peak_open_interest_nov2024", "value": 510, "unit": "million USD", "source": "The Block", "year": 2024 },
+    { "metric": "monthly_active_traders_peak_dec2024", "value": 314500, "unit": "unique traders", "source": "The Block / Binance Square", "year": 2024 },
+    { "metric": "monthly_active_traders_avg_growth_rate", "value": 74, "unit": "percent per month", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "unique_traders_full_year_2024", "value": 1200000, "unit": "unique traders", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "yoy_user_growth_2024", "value": 400, "unit": "percent", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "registered_users_2024", "value": 500000, "unit": "registered accounts", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "daily_active_users_peak_nov5_2024", "value": 250000, "unit": "DAU", "source": "worldmetrics.org / arxiv", "year": 2024 },
+    { "metric": "concurrent_traders_election_day", "value": 50000, "unit": "simultaneous traders", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "countries_represented", "value": 180, "unit": "countries", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "user_age_average", "value": 32, "unit": "years", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "female_users_percentage", "value": 28, "unit": "percent", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "us_based_users_percentage", "value": 55, "unit": "percent", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "mobile_access_percentage", "value": 60, "unit": "percent", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "app_downloads_2024", "value": 800000, "unit": "downloads", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "asian_users_added_2024", "value": 100000, "unit": "new users", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "q4_new_users", "value": 500000, "unit": "new users in Q4 2024", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "high_value_traders_10k_plus", "value": 180000, "unit": "traders (15% of base)", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "power_traders_1pct_volume_share", "value": 70, "unit": "percent of volume from top 1% (12K traders)", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "average_trades_per_user_per_month", "value": 5, "unit": "trades/month", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "average_daily_trades_q4_2024", "value": 200000, "unit": "trades per day", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "monthly_retention_rate", "value": 35, "unit": "percent", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "election_market_total_volume", "value": 3500000000, "unit": "USD (US Presidential Election)", "source": "Wikipedia / Coindesk", "year": 2024 },
+    { "metric": "election_market_share_of_q4_volume", "value": 65, "unit": "percent of Q4 2024 total volume", "source": "arxiv.org anatomy study", "year": 2024 },
+    { "metric": "trump_final_odds_election_eve", "value": 58, "unit": "percent probability (vs 42% Harris)", "source": "CNN Business", "year": 2024 },
+    { "metric": "trump_odds_vs_polls_difference", "value": 8, "unit": "percentage points higher than polling consensus of ~50%", "source": "CoinDesk / Fortune", "year": 2024 },
+    { "metric": "trump_win_market_total_trades", "value": 1500000, "unit": "trades on that single market", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "prediction_accuracy_rate", "value": 88, "unit": "to 95 percent across categories", "source": "tradetheoutcome.com", "year": 2024 },
+    { "metric": "average_brier_score", "value": 0.12, "unit": "Brier score (lower = better)", "source": "tradetheoutcome.com", "year": 2024 },
+    { "metric": "volume_settled_2024", "value": 2, "unit": "billion USD resolved", "source": "tradetheoutcome.com", "year": 2024 },
+    { "metric": "trader_profits_paid_out_2024", "value": 1500000000, "unit": "USD paid to winning traders", "source": "tradetheoutcome.com", "year": 2024 },
+    { "metric": "avg_market_resolution_time", "value": 3, "unit": "days average", "source": "tradetheoutcome.com", "year": 2024 },
+    { "metric": "uma_oracle_unchallenged_rate", "value": 99, "unit": "percent of markets resolved without dispute", "source": "tradetheoutcome.com", "year": 2024 },
+    { "metric": "resolution_dispute_rate", "value": 0.5, "unit": "percent of markets disputed (under 0.5%)", "source": "tradetheoutcome.com", "year": 2024 },
+    { "metric": "wash_trading_avg_percentage", "value": 25, "unit": "percent of activity (Columbia Univ study)", "source": "Cointribune / Columbia University", "year": 2024 },
+    { "metric": "wash_trading_peak_dec2024", "value": 60, "unit": "percent peak", "source": "Columbia University study", "year": 2024 },
+    { "metric": "market_maker_liquidity_share", "value": 60, "unit": "percent of liquidity from market makers", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "market_maker_subsidy_annual", "value": 3000000, "unit": "USD per year from Polymarket balance sheet", "source": "newyorkcityservers.com", "year": 2024 },
+    { "metric": "api_volume_share", "value": 25, "unit": "percent of trades via API", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "limit_orders_share", "value": 30, "unit": "percent limit orders", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "arbitrage_volume_share", "value": 5, "unit": "percent arbitrage trades", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "hft_volume_share", "value": 15, "unit": "percent high-frequency trading", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "crypto_active_markets", "value": 5399, "unit": "active markets in crypto category", "source": "atomicwallet.io", "year": 2024 },
+    { "metric": "crypto_category_volume", "value": 105200000, "unit": "USD trading volume in crypto markets", "source": "atomicwallet.io", "year": 2024 },
+    { "metric": "politics_category_dominance_q4", "value": 65, "unit": "percent of total volume from politics", "source": "arxiv anatomy study", "year": 2024 }
+  ],
+
+  "kalshi": [
+    { "metric": "regulated_status", "value": "CFTC-regulated DCM (Designated Contract Market)", "unit": "regulatory classification", "source": "Kalshi / Wikipedia", "year": 2024 },
+    { "metric": "cftc_win_date", "value": "October 2024", "unit": "judicial win legalizing election trading", "source": "Kalshi / wealthsolutionsreport.com", "year": 2024 },
+    { "metric": "active_markets_count_2025", "value": 3500, "unit": "individual predictive markets", "source": "wealthsolutionsreport.com", "year": 2025 },
+    { "metric": "monthly_trading_volume_late2025", "value": 4500000000, "unit": "USD per month", "source": "MEXC News / wealthsolutionsreport.com", "year": 2025 },
+    { "metric": "monthly_trading_volume_early2025", "value": 1000000000, "unit": "USD per month", "source": "MEXC News", "year": 2025 },
+    { "metric": "march_madness_2025_weekend_volume", "value": 800000000, "unit": "USD in one weekend (NCAA March Madness)", "source": "MEXC News", "year": 2025 },
+    { "metric": "march_madness_2025_vs_2024", "value": "nearly doubled vs 2024", "unit": "qualitative comparison", "source": "MEXC News", "year": 2025 },
+    { "metric": "sports_betting_share_of_activity", "value": 90, "unit": "percent of site activity from sports betting", "source": "wealthsolutionsreport.com", "year": 2025 },
+    { "metric": "sports_betting_share_of_revenue", "value": 89, "unit": "percent of revenue from sports betting", "source": "wealthsolutionsreport.com", "year": 2025 },
+    { "metric": "cftc_review_frequency", "value": "daily", "unit": "CFTC reviews trade data submitted by Kalshi daily", "source": "Kalshi regulation page", "year": 2024 },
+    { "metric": "cftc_monitors", "value": "manipulation and fraud detection", "unit": "scope of oversight", "source": "Kalshi regulation page", "year": 2024 },
+    { "metric": "target_markets_eoy", "value": 4500, "unit": "planned markets by end of year", "source": "wealthsolutionsreport.com", "year": 2025 }
+  ],
+
+  "other_prediction_markets": {
+    "predictit": [
+      { "metric": "cftc_revocation_date", "value": "August 2022", "unit": "CFTC rescinded no-action letter", "source": "CoinDesk / Wikipedia", "year": 2022 },
+      { "metric": "injunction_date", "value": "January 2023", "unit": "Fifth Circuit granted temporary injunction", "source": "Courthouse News", "year": 2023 },
+      { "metric": "case_won_date", "value": "July 2025", "unit": "PredictIt won case", "source": "marvn.ai / search results", "year": 2025 },
+      { "metric": "active_users_at_shutdown_threat", "value": 80000, "unit": "active traders", "source": "marvn.ai", "year": 2022 },
+      { "metric": "users_withdrew_late2022", "value": 2000, "unit": "traders who withdrew all funds", "source": "search results", "year": 2022 },
+      { "metric": "volume_drop_late2022", "value": 76, "unit": "percent drop from long-term averages", "source": "search results", "year": 2022 },
+      { "metric": "election_accuracy_resolved_markets", "value": 93, "unit": "percent accuracy on resolved markets (Vanderbilt study)", "source": "tokenmetrics.com", "year": 2024 }
+    ],
+    "metaculus": [
+      { "metric": "platform_type", "value": "non-monetary forecasting platform", "unit": "platform classification", "source": "metaculus.com", "year": 2024 },
+      { "metric": "calibration_short_horizon", "value": "very good calibration for <1 year horizons", "unit": "qualitative", "source": "EA Forum data", "year": 2024 },
+      { "metric": "calibration_long_horizon", "value": "calibration degrades at multi-year horizons", "unit": "qualitative finding", "source": "EA Forum data", "year": 2024 },
+      { "metric": "outperforms_expert_panels", "value": true, "unit": "aggregate predictions beat expert panels consistently", "source": "thebestpredictionmarkets.com", "year": 2024 },
+      { "metric": "agi_by_2030_probability", "value": 45, "unit": "percent (vs Manifold 60%)", "source": "longtermwiki.com", "year": 2024 }
+    ],
+    "manifold_markets": [
+      { "metric": "platform_type", "value": "play-money prediction market", "unit": "no real money", "source": "longtermwiki.com", "year": 2024 },
+      { "metric": "peak_daily_users", "value": 2000, "unit": "daily active users", "source": "longtermwiki.com", "year": 2024 },
+      { "metric": "brier_score_2024_election", "value": 0.0342, "unit": "vs Polymarket 0.0296 (lower = better)", "source": "Metaculus review / search", "year": 2024 },
+      { "metric": "agi_by_2030_probability", "value": 60, "unit": "percent", "source": "longtermwiki.com", "year": 2024 },
+      { "metric": "cross_platform_markets", "value": 130000, "unit": "total markets indexed in Calibration City across Kalshi+Manifold+Metaculus+Polymarket", "source": "manifund.org", "year": 2024 }
+    ],
+    "betfair": [
+      { "metric": "lifetime_prediction_market_volume", "value": 2800000000, "unit": "USD across prediction markets", "source": "gamblinginsider.com", "year": 2024 },
+      { "metric": "2024_us_election_matched_bets", "value": 300000000, "unit": "GBP in political markets", "source": "FIA marketvoice", "year": 2024 },
+      { "metric": "platform_type", "value": "betting exchange (functions as prediction market with different legal wrapper)", "unit": "classification", "source": "bettoredge.com", "year": 2024 },
+      { "metric": "uk_political_volume_rank", "value": 1, "unit": "processes more political betting volume in UK than any prediction market globally", "source": "gamblinginsider.com", "year": 2024 }
+    ]
+  },
+
+  "prediction_market_accuracy": [
+    { "metric": "polymarket_brier_score_2024_election", "value": 0.0296, "unit": "Brier score (lower = better)", "source": "search results", "year": 2024 },
+    { "metric": "polymarket_outperformed_all_polling_aggregates", "value": true, "unit": "boolean", "source": "Wake Forest economics professor / CNN", "year": 2024 },
+    { "metric": "prediction_markets_called_2024_election_correctly", "value": true, "unit": "polls did not; markets did", "source": "CNN / CoinDesk / Fortune", "year": 2024 },
+    { "metric": "accuracy_advantage_vs_polls_swing_states", "value": "superior", "unit": "qualitative — particularly in swing states", "source": "beincrypto.com / Vanderbilt study", "year": 2024 },
+    { "metric": "wisdom_of_crowds_minimum_participants", "value": "thinly traded markets break down", "unit": "effect disappears without sufficient liquidity", "source": "beincrypto.com", "year": 2024 },
+    { "metric": "prediction_markets_vs_simple_mean_polls", "value": "markets more accurate than simple mean of forecasts", "unit": "Management Science meta-study", "source": "pubsonline.informs.org", "year": 2015 },
+    { "metric": "team_polls_vs_markets_aggregated", "value": "aggregated team polls can outperform markets when using temporal decay + weighting + recalibration", "unit": "edge case finding", "source": "Management Science / ResearchGate", "year": 2015 },
+    { "metric": "elite_vs_subelite_forecasters_advantage", "value": "large and robust despite 3x size advantage of sub-elite", "unit": "crowd quality matters more than size", "source": "ScienceDirect crowd prediction systems", "year": 2023 },
+    { "metric": "prediction_market_price_vs_polling_consensus_2024", "value": "0.57 market vs 0.50 polling — market was closer to actual outcome", "unit": "calibration advantage", "source": "beincrypto.com", "year": 2024 },
+    { "metric": "industry_total_volume_nov2024", "value": 4500000000, "unit": "USD monthly across all platforms (peak election month)", "source": "gamblinginsider.com / insights4vc", "year": 2024 },
+    { "metric": "industry_total_volume_jan2024", "value": 100000000, "unit": "USD monthly combined all platforms", "source": "insights4vc.substack.com", "year": 2024 },
+    { "metric": "industry_total_volume_nov2025", "value": 13000000000, "unit": "USD monthly (all platforms combined)", "source": "insights4vc.substack.com", "year": 2025 },
+    { "metric": "industry_mau_jan2026", "value": 8580000, "unit": "monthly active users all platforms", "source": "predictit summary / search", "year": 2026 },
+    { "metric": "industry_total_notional_volume_2025", "value": 41000000000, "unit": "EUR total notional all platforms 2025", "source": "search results", "year": 2025 }
+  ],
+
+  "retail_trading_profitability": [
+    { "metric": "day_traders_unprofitable_general", "value": 80, "unit": "to 99 percent lose money", "source": "quantifiedstrategies.com / FINRA", "year": 2024 },
+    { "metric": "day_traders_lose_money_finra", "value": 72, "unit": "percent ended year with financial losses (FINRA)", "source": "FINRA via beatmarket.com", "year": 2024 },
+    { "metric": "day_traders_profitable_after_fees", "value": 3, "unit": "percent profitable net of transaction costs", "source": "quantifiedstrategies.com", "year": 2024 },
+    { "metric": "day_traders_profitable_long_term_1pct", "value": 1, "unit": "percent consistently profitable after 5 years", "source": "quantifiedstrategies.com", "year": 2024 },
+    { "metric": "day_traders_profitable_6months", "value": 13, "unit": "percent maintain profitability over 6 months", "source": "highstrike.com / aquafunded.com", "year": 2024 },
+    { "metric": "day_traders_profitable_5years", "value": 1, "unit": "percent succeed over 5 years", "source": "highstrike.com", "year": 2024 },
+    { "metric": "brazil_day_traders_profitable", "value": 3, "unit": "percent (large academic study)", "source": "researchgate.net / datasciencesociety.net", "year": 2020 },
+    { "metric": "brazil_day_traders_above_minimum_wage", "value": 1.1, "unit": "percent earn above minimum wage", "source": "datasciencesociety.net", "year": 2020 },
+    { "metric": "futures_retail_traders_likely_to_lose", "value": 97, "unit": "percent lose money in futures (CFTC study)", "source": "CFTC retail traders futures report", "year": 2024 },
+    { "metric": "day_traders_quit_within_1month", "value": 40, "unit": "percent quit within first month", "source": "quantifiedstrategies.com", "year": 2024 },
+    { "metric": "day_traders_remaining_after_3years", "value": 13, "unit": "percent still trading after 3 years", "source": "quantifiedstrategies.com", "year": 2024 },
+    { "metric": "success_rate_holding_under_1day", "value": 47, "unit": "percent win rate (barely coin flip)", "source": "daytrading.com", "year": 2024 },
+    { "metric": "success_rate_holding_over_1year", "value": 73, "unit": "percent win rate", "source": "daytrading.com", "year": 2024 },
+    { "metric": "successful_traders_daily_return", "value": "0.03 to 0.13", "unit": "percent daily return for the small group that succeeds", "source": "highstrike.com", "year": 2024 },
+    { "metric": "typical_futures_trader_trading_events", "value": 4, "unit": "distinct trading events per trader (few days each)", "source": "CFTC retail futures report", "year": 2024 },
+    { "metric": "retail_share_of_equity_volume_2025", "value": 30, "unit": "percent of total equity trading volume", "source": "CNBC (GameStop 5-year retrospective)", "year": 2025 },
+    { "metric": "retail_share_of_equity_volume_2020", "value": 21, "unit": "percent at start of 2020", "source": "CNBC", "year": 2020 }
+  ],
+
+  "options_trading": [
+    { "metric": "total_options_volume_2023", "value": 3700000000, "unit": "contracts (4th consecutive record year)", "source": "Cboe annual report", "year": 2023 },
+    { "metric": "options_adv_record_2023", "value": 14600000, "unit": "contracts per day all-time high", "source": "Cboe", "year": 2023 },
+    { "metric": "2024_consecutive_record_year", "value": 5, "unit": "fifth consecutive record year for CBOE US options", "source": "optionalpha.com / tradersmagazine.com", "year": 2024 },
+    { "metric": "retail_options_share_peak_2020", "value": 48, "unit": "percent of total options volume (pandemic peak)", "source": "devexperts.com / NYSE", "year": 2020 },
+    { "metric": "retail_options_share_2019", "value": "34-38", "unit": "percent of total options volume", "source": "devexperts.com", "year": 2019 },
+    { "metric": "retail_options_share_jul2022", "value": 48, "unit": "percent peak post-pandemic", "source": "devexperts.com", "year": 2022 },
+    { "metric": "retail_options_share_jul2023", "value": 45, "unit": "percent", "source": "devexperts.com", "year": 2023 },
+    { "metric": "0dte_share_of_spx_volume_2024", "value": 24.1, "unit": "percent of total US listed options volume", "source": "optionalpha.com / tradersmagazine.com", "year": 2024 },
+    { "metric": "0dte_share_of_spx_volume_2023", "value": 21.5, "unit": "percent", "source": "optionalpha.com", "year": 2023 },
+    { "metric": "0dte_share_of_spx_volume_early2022", "value": 20, "unit": "percent (pre-daily expirations)", "source": "Cboe / optionalpha.com", "year": 2022 },
+    { "metric": "0dte_share_of_index_volume_now", "value": 43, "unit": "percent of avg daily index options volume", "source": "financialcontent.com / Cboe", "year": 2024 },
+    { "metric": "0dte_same_day_expiry_index_share", "value": 50, "unit": "percent of total index options volume", "source": "dynamictrend.com", "year": 2024 },
+    { "metric": "retail_0dte_participation_nyse_study", "value": 51, "unit": "percent of short-dated options (NYSE 2023 study)", "source": "NYSE study via financialcontent.com", "year": 2023 },
+    { "metric": "retail_0dte_participation_estimate_2024", "value": "50-60", "unit": "percent of SPX 0DTE trading", "source": "dynamictrend.com", "year": 2024 },
+    { "metric": "0dte_cboe_daily_expirations_added", "value": 2022, "unit": "year CBOE added daily expirations (Mon-Fri)", "source": "optionalpha.com", "year": 2022 },
+    { "metric": "retail_short_dated_options_share_2024", "value": 56, "unit": "percent of retail options volume in <=5 DTE options", "source": "NYSE data via devexperts.com", "year": 2024 },
+    { "metric": "retail_short_dated_options_share_2019", "value": 35, "unit": "percent of retail options volume in <=5 DTE options", "source": "NYSE data", "year": 2019 },
+    { "metric": "total_options_volume_2024_contracts", "value": 12000000, "unit": "contracts (broken records again)", "source": "tradersmagazine.com", "year": 2024 }
+  ],
+
+  "meme_stocks": [
+    { "metric": "gme_price_increase_jan2021", "value": 1600, "unit": "percent increase", "source": "CNBC / SEC report", "year": 2021 },
+    { "metric": "gme_all_time_high_jan2021", "value": 483, "unit": "USD per share (Jan 28, 2021)", "source": "CNBC / SEC", "year": 2021 },
+    { "metric": "gme_peak_daily_inflows_retail", "value": 87500000, "unit": "USD daily retail inflows at peak", "source": "ScienceDirect study", "year": 2021 },
+    { "metric": "retail_participation_gme_2021", "value": "~30", "unit": "percent of equity trading volume at peak was retail (up from 21-22%)", "source": "CNBC", "year": 2021 },
+    { "metric": "gme_may2024_retail_vs_2021", "value": 50, "unit": "percent of 2021 levels (half the participation in May 2024 revival)", "source": "Bloomberg / CNBC", "year": 2024 },
+    { "metric": "retail_inflows_2025_vs_2021", "value": "17 percent higher than 2021 peak", "unit": "new record set in 2025", "source": "CNBC GameStop 5-year retrospective", "year": 2025 },
+    { "metric": "retail_inflows_2025_yoy_growth", "value": 60, "unit": "percent jump from prior year", "source": "CNBC", "year": 2025 },
+    { "metric": "roaring_kitty_return_may2024", "value": "GME surged again on first social post in 3 years", "unit": "qualitative market event", "source": "CNN Business", "year": 2024 }
+  ],
+
+  "robinhood": [
+    { "metric": "revenue_2024", "value": 2950000000, "unit": "USD (58.2% YoY increase)", "source": "businessofapps.com / electroiq.com", "year": 2024 },
+    { "metric": "funded_accounts_2024", "value": 25200000, "unit": "funded customer accounts", "source": "electroiq.com / finder.com", "year": 2024 },
+    { "metric": "funded_accounts_feb2024", "value": 23600000, "unit": "funded customers as of February 2024", "source": "finder.com", "year": 2024 },
+    { "metric": "monthly_active_users_end2023", "value": 10900000, "unit": "MAU (most recent available)", "source": "buybitcoinworldwide.com", "year": 2023 },
+    { "metric": "aum_q4_2024", "value": 190000000000, "unit": "USD assets under management (peak)", "source": "electroiq.com", "year": 2024 },
+    { "metric": "revenue_yoy_growth_2024", "value": 58.2, "unit": "percent", "source": "businessofapps.com", "year": 2024 },
+    { "metric": "active_user_estimate", "value": "~50 percent of funded accounts active", "unit": "rough estimate", "source": "buybitcoinworldwide.com", "year": 2024 }
+  ],
+
+  "etoro_copy_trading": [
+    { "metric": "registered_accounts_jun2024", "value": 35000000, "unit": "total registered accounts", "source": "businessofapps.com", "year": 2024 },
+    { "metric": "active_accounts_2024", "value": 3600000, "unit": "active accounts (money deposited)", "source": "businessofapps.com / sacra.com", "year": 2024 },
+    { "metric": "revenue_2024", "value": 931000000, "unit": "USD (47.7% increase YoY)", "source": "businessofapps.com", "year": 2024 },
+    { "metric": "aum_q1_2024", "value": 16600000000, "unit": "USD", "source": "investingintheweb.com", "year": 2024 },
+    { "metric": "users_first_action_investment", "value": 95, "unit": "percent invest in crypto/stocks/copy trading as first action", "source": "businessofapps.com", "year": 2024 },
+    { "metric": "multi_product_users", "value": 54, "unit": "percent trade across more than one product", "source": "businessofapps.com", "year": 2024 },
+    { "metric": "top50_copied_traders_avg_return_2021", "value": 30.4, "unit": "percent average yearly profit (top 50 most copied)", "source": "forexillustrated.com", "year": 2021 },
+    { "metric": "popular_investor_max_payment", "value": 1.5, "unit": "percent annually of assets copied", "source": "wallstreetzen.com", "year": 2024 },
+    { "metric": "top_trader_jeppe_bonde_copiers", "value": 34000, "unit": "copiers", "source": "financeillustrated.com", "year": 2024 },
+    { "metric": "top_trader_jeppe_bonde_copied_aum", "value": 100000000, "unit": "USD in copied funds", "source": "financeillustrated.com", "year": 2024 },
+    { "metric": "top_trader_jeppe_bonde_avg_annual_return", "value": 25, "unit": "percent since 2013", "source": "financeillustrated.com", "year": 2024 },
+    { "metric": "top_trader_jay_edward_smith_return_12m", "value": 24.61, "unit": "percent over last 12 months", "source": "financeillustrated.com", "year": 2024 },
+    { "metric": "top_trader_zheng_bin_return_2024", "value": 20, "unit": "percent in 2024", "source": "tradefundrr.com", "year": 2024 },
+    { "metric": "zulutrade_profitable_copiers", "value": 73, "unit": "percent make profit when copying top leaders correctly (ZuluTrade)", "source": "wundertrading.com / zulutrade.com", "year": 2024 },
+    { "metric": "copy_trader_win_rate_threshold", "value": 60, "unit": "percent win rate recommended before copying", "source": "tradefundrr.com", "year": 2024 },
+    { "metric": "copy_trader_max_drawdown_threshold", "value": 20, "unit": "percent maximum drawdown threshold for safe copying", "source": "tradefundrr.com", "year": 2024 }
+  ],
+
+  "other_brokers": [
+    { "metric": "interactive_brokers_accounts_dec2024", "value": 3337000, "unit": "institutional and individual brokerage customers", "source": "Interactive Brokers IR", "year": 2024 },
+    { "metric": "interactive_brokers_customer_equity_dec2024", "value": 568200000000, "unit": "USD total customer equity", "source": "Interactive Brokers IR", "year": 2024 },
+    { "metric": "webull_registered_users_2024", "value": 23300000, "unit": "registered users globally", "source": "investingintheweb.com / ainvest.com", "year": 2024 },
+    { "metric": "webull_funded_accounts_2024", "value": 4700000, "unit": "funded accounts", "source": "investingintheweb.com", "year": 2024 },
+    { "metric": "webull_aum_2024", "value": 13600000000, "unit": "USD (66% surge from 2023)", "source": "brokerage-review.com", "year": 2024 },
+    { "metric": "webull_darts_2024", "value": 693000, "unit": "daily average revenue trades", "source": "SEC filing / ainvest.com", "year": 2024 },
+    { "metric": "webull_annual_equity_notional_2024", "value": 460000000000, "unit": "USD annual equity notional volumes", "source": "ainvest.com", "year": 2024 }
+  ],
+
+  "crypto_trading": [
+    { "metric": "coinbase_institutional_volume_q1_2024", "value": 256000000000, "unit": "USD (82% of Coinbase total)", "source": "businessofapps.com / backlinko.com", "year": 2024 },
+    { "metric": "coinbase_retail_volume_q1_2024", "value": 56000000000, "unit": "USD (18% of Coinbase total)", "source": "businessofapps.com", "year": 2024 },
+    { "metric": "coinbase_retail_volume_q4_2023", "value": 29000000000, "unit": "USD (strong rebound in Q1 2024)", "source": "businessofapps.com", "year": 2023 },
+    { "metric": "coinbase_institutional_share_q2_2025", "value": 81.86, "unit": "percent of Coinbase total volume", "source": "electroiq.com / coinlaw.io", "year": 2025 },
+    { "metric": "coinbase_retail_share_q2_2025", "value": 6.62, "unit": "percent of Coinbase total volume", "source": "electroiq.com", "year": 2025 },
+    { "metric": "coinbase_institutional_fee_income_share", "value": 27, "unit": "percent of overall fee income from institutional", "source": "socialcapitalmarkets.net", "year": 2024 },
+    { "metric": "coinbase_note_institutional_higher_volume_retail_higher_revenue", "value": true, "unit": "institutional volume > retail, but retail generates more revenue", "source": "backlinko.com", "year": 2024 },
+    { "metric": "binance_adv_q1_2025", "value": 93000000000, "unit": "USD average daily trading volume", "source": "coinlaw.io / messari.io", "year": 2025 },
+    { "metric": "coinbase_adv_q1_2025", "value": 5500000000, "unit": "USD average daily trading volume", "source": "coinlaw.io", "year": 2025 },
+    { "metric": "coinbase_otc_avg_trade_size", "value": 210000, "unit": "USD per trade", "source": "coinlaw.io", "year": 2024 },
+    { "metric": "binance_avg_trade_size", "value": 173000, "unit": "USD per trade", "source": "coinlaw.io", "year": 2024 }
+  ],
+
+  "leverage_cfd_losses": [
+    { "metric": "esma_retail_accounts_losing_money", "value": "74-89", "unit": "percent of retail CFD accounts lose money", "source": "ESMA official study", "year": 2024 },
+    { "metric": "esma_average_loss_per_client", "value": "1600 to 29000", "unit": "EUR average loss range per client", "source": "ESMA", "year": 2024 },
+    { "metric": "fca_uk_unprofitable_accounts", "value": 80, "unit": "percent unprofitable (consistent FCA finding)", "source": "FCA UK", "year": 2024 },
+    { "metric": "fca_median_annual_loss", "value": "low thousands GBP", "unit": "median annual loss per UK CFD trader", "source": "FCA", "year": 2024 },
+    { "metric": "offshore_max_leverage", "value": 500, "unit": "to 1 leverage ratio (lightly regulated jurisdictions)", "source": "fxstreet.com", "year": 2024 },
+    { "metric": "forex_traders_losing_money", "value": "75-90", "unit": "percent of forex retail traders lose money", "source": "medium.com/forex-pal", "year": 2024 },
+    { "metric": "esma_cfds_leverage_cap_retail", "value": "up to 30:1", "unit": "max leverage for major currency pairs under ESMA rules", "source": "ESMA product intervention", "year": 2018 }
+  ],
+
+  "simulator_key_metrics": [
+    { "metric": "retail_trader_profitable_short_term", "value": 13, "unit": "percent (6-month horizon)", "source": "multiple studies", "year": 2024 },
+    { "metric": "retail_trader_profitable_5yr", "value": 1, "unit": "percent", "source": "multiple studies", "year": 2024 },
+    { "metric": "day_trading_vs_buy_hold_success_gap", "value": 26, "unit": "percentage points (47% vs 73% win rate)", "source": "daytrading.com", "year": 2024 },
+    { "metric": "prediction_market_accuracy_elections", "value": "88-95", "unit": "percent", "source": "Polymarket / Vanderbilt", "year": 2024 },
+    { "metric": "copy_trading_profitable_when_done_right", "value": 73, "unit": "percent (ZuluTrade top leaders)", "source": "ZuluTrade", "year": 2024 },
+    { "metric": "high_leverage_retail_loss_rate", "value": "74-89", "unit": "percent lose with CFDs (ESMA)", "source": "ESMA", "year": 2024 },
+    { "metric": "0dte_options_retail_share", "value": "50-60", "unit": "percent of 0DTE volume is retail", "source": "NYSE / CBOE", "year": 2024 },
+    { "metric": "meme_stock_retail_share_peak", "value": 30, "unit": "percent of total equity volume at GME peak", "source": "CNBC / SEC", "year": 2021 },
+    { "metric": "polymarket_power_trader_concentration", "value": "70% volume from 1% of users", "unit": "extreme concentration", "source": "worldmetrics.org", "year": 2024 },
+    { "metric": "prediction_market_wash_trading_risk", "value": 25, "unit": "percent avg wash trading contamination", "source": "Columbia University", "year": 2024 }
+  ]
+}

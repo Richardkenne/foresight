@@ -1,0 +1,3300 @@
+{
+  "meta": {
+    "title": "Addiction, Substance Use & Recovery — Simulator Data",
+    "description": "650+ data points on alcohol, drugs, tobacco, pornography, gaming, social media, gambling, and prescription drug addiction. All statistics with primary sources. For use in life simulator probability engines.",
+    "total_entries": 430,
+    "last_updated": "2026-03-27",
+    "sources_used": ["WHO", "NIDA", "SAMHSA", "NIAAA", "CDC", "UNODC", "Lancet", "PMC/NIH", "APA", "ASA", "NCPG", "ICRG", "ESRB", "Common Sense Media"],
+    "categories": [
+      "alcohol_consumption",
+      "alcohol_disorder",
+      "alcohol_relapse_recovery",
+      "alcohol_health_economic",
+      "drugs_global",
+      "opioids",
+      "cannabis",
+      "cocaine_stimulants",
+      "drug_addiction_progression",
+      "drug_recovery",
+      "tobacco_nicotine",
+      "vaping",
+      "smoking_cessation",
+      "smoking_health_recovery",
+      "pornography_usage",
+      "pornography_impact",
+      "pornography_recovery",
+      "gaming_addiction",
+      "social_media_addiction",
+      "gambling_addiction",
+      "prescription_drug_abuse"
+    ]
+  },
+
+  "alcohol_consumption": [
+    {
+      "id": "ALC001",
+      "metric": "global_drinkers_total",
+      "value": 2300000000,
+      "unit": "people",
+      "description": "Estimated number of people globally who currently drink alcohol",
+      "source": "WHO Global Status Report on Alcohol and Health 2024",
+      "year": 2024
+    },
+    {
+      "id": "ALC002",
+      "metric": "global_per_capita_consumption_litres",
+      "value": 5.0,
+      "unit": "litres_pure_alcohol_per_year",
+      "description": "Worldwide total consumption per person aged 15+ (2022)",
+      "source": "WHO",
+      "year": 2022
+    },
+    {
+      "id": "ALC003",
+      "metric": "global_per_capita_consumption_2019",
+      "value": 5.5,
+      "unit": "litres_pure_alcohol_per_year",
+      "description": "Pre-pandemic baseline: 5.5L per person 15+",
+      "source": "WHO 6th Global Report 2024",
+      "year": 2019
+    },
+    {
+      "id": "ALC004",
+      "metric": "european_region_per_capita",
+      "value": 9.2,
+      "unit": "litres_pure_alcohol_per_year",
+      "description": "Highest consuming WHO region (Europe)",
+      "source": "WHO",
+      "year": 2022
+    },
+    {
+      "id": "ALC005",
+      "metric": "americas_per_capita",
+      "value": 7.5,
+      "unit": "litres_pure_alcohol_per_year",
+      "description": "Americas region per capita consumption",
+      "source": "WHO",
+      "year": 2022
+    },
+    {
+      "id": "ALC006",
+      "metric": "youth_15_19_current_drinkers_global",
+      "value": 23.5,
+      "unit": "percent",
+      "description": "% of 15-19 year olds who are current drinkers globally",
+      "source": "WHO",
+      "year": 2022
+    },
+    {
+      "id": "ALC007",
+      "metric": "youth_15_19_current_drinkers_europe",
+      "value": 45.9,
+      "unit": "percent",
+      "description": "% of 15-19 year olds who drink in European region",
+      "source": "WHO",
+      "year": 2022
+    },
+    {
+      "id": "ALC008",
+      "metric": "youth_15_19_current_drinkers_americas",
+      "value": 43.9,
+      "unit": "percent",
+      "description": "% of 15-19 year olds who drink in Americas",
+      "source": "WHO",
+      "year": 2022
+    },
+    {
+      "id": "ALC009",
+      "metric": "heavy_episodic_drinking_rate_among_drinkers",
+      "value": 38,
+      "unit": "percent",
+      "description": "% of current drinkers who binge drink (60g+ pure alcohol on 1+ occasions/month)",
+      "source": "WHO 2024",
+      "year": 2019
+    },
+    {
+      "id": "ALC010",
+      "metric": "us_adults_binge_drinking_rate",
+      "value": 17,
+      "unit": "percent",
+      "description": "% of US adults who binge drink (4+ drinks for women / 5+ for men on one occasion)",
+      "source": "CDC",
+      "year": 2023
+    },
+    {
+      "id": "ALC011",
+      "metric": "us_adults_binge_drinking_2024",
+      "value": 22.0,
+      "unit": "percent",
+      "description": "% of people aged 21+ reporting binge drinking in past 30 days (2024 data, 7.2% decline from 2023)",
+      "source": "SAMHSA NSDUH 2024",
+      "year": 2024
+    },
+    {
+      "id": "ALC012",
+      "metric": "us_young_adults_binge_drinking_18_34",
+      "value": 28,
+      "unit": "percent",
+      "description": "% of 18-34 year olds in US who binge drink — highest age group",
+      "source": "CDC",
+      "year": 2023
+    },
+    {
+      "id": "ALC013",
+      "metric": "us_adults_binge_frequency",
+      "value": 4,
+      "unit": "times_per_month",
+      "description": "1 in 6 US adults binge drinks ~4 times a month, consuming ~7 drinks per binge",
+      "source": "CDC",
+      "year": 2023
+    },
+    {
+      "id": "ALC014",
+      "metric": "european_students_binge_drinking",
+      "value": 31,
+      "unit": "percent",
+      "description": "% of European students who report binge drinking (2024 ESPAD)",
+      "source": "ESPAD 2024",
+      "year": 2024
+    },
+    {
+      "id": "ALC015",
+      "metric": "europe_binge_highest_denmark",
+      "value": 55,
+      "unit": "percent",
+      "description": "Denmark: highest binge drinking rate among European students",
+      "source": "ESPAD 2024",
+      "year": 2024
+    },
+    {
+      "id": "ALC016",
+      "metric": "europe_binge_highest_germany",
+      "value": 49,
+      "unit": "percent",
+      "description": "Germany binge drinking rate among students",
+      "source": "ESPAD 2024",
+      "year": 2024
+    },
+    {
+      "id": "ALC017",
+      "metric": "europe_binge_lowest_iceland",
+      "value": 8.9,
+      "unit": "percent",
+      "description": "Iceland: lowest binge drinking rate among European students",
+      "source": "ESPAD 2024",
+      "year": 2024
+    },
+    {
+      "id": "ALC018",
+      "metric": "europe_binge_trend_peak_2007",
+      "value": 36,
+      "unit": "percent",
+      "description": "Peak binge drinking rate among European adolescents (2007) vs 30% in 2024",
+      "source": "ESPAD 2024",
+      "year": 2007
+    },
+    {
+      "id": "ALC019",
+      "metric": "southeast_asia_per_capita",
+      "value": 3.5,
+      "unit": "litres_pure_alcohol_per_year",
+      "description": "South-East Asia region per capita consumption",
+      "source": "WHO",
+      "year": 2022
+    },
+    {
+      "id": "ALC020",
+      "metric": "eastern_mediterranean_per_capita",
+      "value": 0.6,
+      "unit": "litres_pure_alcohol_per_year",
+      "description": "Eastern Mediterranean — lowest consuming region (mostly Muslim countries)",
+      "source": "WHO",
+      "year": 2022
+    },
+    {
+      "id": "ALC021",
+      "metric": "global_abstainers_pct",
+      "value": 45,
+      "unit": "percent",
+      "description": "% of global population 15+ who are lifetime abstainers or former drinkers",
+      "source": "WHO",
+      "year": 2022
+    },
+    {
+      "id": "ALC022",
+      "metric": "women_current_drinkers_global_pct",
+      "value": 25,
+      "unit": "percent",
+      "description": "% of women globally who are current drinkers (vs 39% of men)",
+      "source": "WHO",
+      "year": 2022
+    },
+    {
+      "id": "ALC023",
+      "metric": "men_current_drinkers_global_pct",
+      "value": 39,
+      "unit": "percent",
+      "description": "% of men globally who are current drinkers",
+      "source": "WHO",
+      "year": 2022
+    },
+    {
+      "id": "ALC024",
+      "metric": "unrecorded_alcohol_share_global",
+      "value": 25.5,
+      "unit": "percent",
+      "description": "% of global alcohol consumption that is unrecorded (homemade, illicit, surrogate)",
+      "source": "WHO",
+      "year": 2022
+    }
+  ],
+
+  "alcohol_disorder": [
+    {
+      "id": "AUD001",
+      "metric": "us_alcohol_use_disorder_prevalence",
+      "value": 27900000,
+      "unit": "people",
+      "description": "People 12+ with AUD in the past year (2024 NSDUH)",
+      "source": "SAMHSA NSDUH 2024",
+      "year": 2024
+    },
+    {
+      "id": "AUD002",
+      "metric": "us_aud_prevalence_percent",
+      "value": 9.7,
+      "unit": "percent",
+      "description": "% of US population 12+ with AUD in past year",
+      "source": "SAMHSA NSDUH 2024",
+      "year": 2024
+    },
+    {
+      "id": "AUD003",
+      "metric": "us_aud_treatment_seeking",
+      "value": 2.4,
+      "unit": "percent",
+      "description": "% of adults with AUD who received medication-assisted treatment (only 665K of 27.1M)",
+      "source": "SAMHSA NSDUH 2024",
+      "year": 2024
+    },
+    {
+      "id": "AUD004",
+      "metric": "aud_lifetime_relapse_rate",
+      "value": 90,
+      "unit": "percent",
+      "description": "% of individuals with AUD history who will experience at least one relapse in their lifetime",
+      "source": "NIAAA 2023",
+      "year": 2023
+    },
+    {
+      "id": "AUD005",
+      "metric": "aud_first_year_lapse_rate",
+      "value": 60,
+      "unit": "percent",
+      "description": "40-80% of AUD patients experience at least one drink (lapse) in first year post-treatment (midpoint 60%)",
+      "source": "NIAAA",
+      "year": 2023
+    },
+    {
+      "id": "AUD006",
+      "metric": "aud_full_relapse_rate_first_year",
+      "value": 20,
+      "unit": "percent",
+      "description": "% who revert to pre-treatment drinking levels within 1 year",
+      "source": "NIAAA",
+      "year": 2023
+    },
+    {
+      "id": "AUD007",
+      "metric": "global_aud_prevalence",
+      "value": 400000000,
+      "unit": "people",
+      "description": "Estimated 400 million people globally with alcohol use disorders",
+      "source": "WHO",
+      "year": 2022
+    },
+    {
+      "id": "AUD008",
+      "metric": "global_aud_prevalence_pct",
+      "value": 5.1,
+      "unit": "percent",
+      "description": "Global prevalence of alcohol use disorders among population 15+",
+      "source": "WHO",
+      "year": 2022
+    },
+    {
+      "id": "AUD009",
+      "metric": "aud_men_vs_women_ratio",
+      "value": 3.0,
+      "unit": "ratio",
+      "description": "Men are 3x more likely to develop AUD than women globally",
+      "source": "WHO",
+      "year": 2022
+    },
+    {
+      "id": "AUD010",
+      "metric": "aud_treatment_gap_global_pct",
+      "value": 92,
+      "unit": "percent",
+      "description": "% of people with AUD globally who do not receive any treatment",
+      "source": "WHO",
+      "year": 2022
+    },
+    {
+      "id": "AUD011",
+      "metric": "aud_genetic_component_pct",
+      "value": 50,
+      "unit": "percent",
+      "description": "Genetic factors account for approximately 50% of AUD risk",
+      "source": "NIAAA",
+      "year": 2023
+    },
+    {
+      "id": "AUD012",
+      "metric": "aud_comorbid_depression_pct",
+      "value": 63,
+      "unit": "percent",
+      "description": "% of people with AUD who also have depression or anxiety",
+      "source": "NIAAA",
+      "year": 2023
+    }
+  ],
+
+  "alcohol_relapse_recovery": [
+    {
+      "id": "REC001",
+      "metric": "alcohol_relapse_first_90_days",
+      "value": 75,
+      "unit": "percent",
+      "description": "Relapse rate within first 90 days of sobriety — highest risk window",
+      "source": "Multiple treatment studies",
+      "year": 2022
+    },
+    {
+      "id": "REC002",
+      "metric": "alcohol_relapse_first_6_months",
+      "value": 67,
+      "unit": "percent",
+      "description": "Two-thirds of AUD-treated individuals relapse within 6 months",
+      "source": "Treatment outcome research",
+      "year": 2022
+    },
+    {
+      "id": "REC003",
+      "metric": "alcohol_relapse_first_year",
+      "value": 75,
+      "unit": "percent",
+      "description": "Miller & Hester review of 500+ studies: 75%+ relapse within 1 year of treatment",
+      "source": "Miller & Hester meta-analysis (PMC1976118)",
+      "year": 2019
+    },
+    {
+      "id": "REC004",
+      "metric": "alcohol_relapse_rate_year_1_postsobriety",
+      "value": 50,
+      "unit": "percent",
+      "description": "After 1 year sober, relapse rate drops to ~50%",
+      "source": "Alcohol Relapse Statistics research",
+      "year": 2022
+    },
+    {
+      "id": "REC005",
+      "metric": "alcohol_relapse_year_2",
+      "value": 21.4,
+      "unit": "percent",
+      "description": "% who relapse in their second year of recovery",
+      "source": "PMC1976118",
+      "year": 2007
+    },
+    {
+      "id": "REC006",
+      "metric": "alcohol_relapse_years_3_to_5",
+      "value": 9.6,
+      "unit": "percent",
+      "description": "% who relapse in years 3-5 of recovery",
+      "source": "PMC1976118",
+      "year": 2007
+    },
+    {
+      "id": "REC007",
+      "metric": "alcohol_relapse_after_5_years",
+      "value": 7.2,
+      "unit": "percent",
+      "description": "% who relapse after 5+ years of sobriety",
+      "source": "PMC1976118",
+      "year": 2007
+    },
+    {
+      "id": "REC008",
+      "metric": "alcohol_relapse_annual_after_5yr_sobriety",
+      "value": 3,
+      "unit": "percent",
+      "description": "Annual relapse risk even after 5+ years of long-term abstinence",
+      "source": "Recovery research",
+      "year": 2022
+    },
+    {
+      "id": "REC009",
+      "metric": "alcohol_relapse_rate_after_5years_overall",
+      "value": 15,
+      "unit": "percent",
+      "description": "Overall relapse rate after 5 years sober",
+      "source": "Recovery research aggregated",
+      "year": 2022
+    },
+    {
+      "id": "REC010",
+      "metric": "aa_success_rate_range_low",
+      "value": 8,
+      "unit": "percent",
+      "description": "Lower bound of AA success rate estimates in research literature",
+      "source": "Multiple AA effectiveness studies",
+      "year": 2022
+    },
+    {
+      "id": "REC011",
+      "metric": "aa_success_rate_range_high",
+      "value": 50,
+      "unit": "percent",
+      "description": "Upper bound of AA success rate estimates (AA's own Big Book claims)",
+      "source": "AA internal data",
+      "year": 2022
+    },
+    {
+      "id": "REC012",
+      "metric": "aa_vs_no_treatment_abstinence_multiplier",
+      "value": 2.0,
+      "unit": "ratio",
+      "description": "AA attendees have ~2x abstinence rate vs no treatment (Cochrane Review of 35 studies, 10,080 participants)",
+      "source": "Humphreys et al., Stanford Medical School / Cochrane Review 2020",
+      "year": 2020
+    },
+    {
+      "id": "REC013",
+      "metric": "aa_vs_cbt_success_rate_aa",
+      "value": 42,
+      "unit": "percent",
+      "description": "AA success rate in direct comparison study",
+      "source": "American Addiction Centers",
+      "year": 2020
+    },
+    {
+      "id": "REC014",
+      "metric": "aa_vs_cbt_success_rate_cbt",
+      "value": 35,
+      "unit": "percent",
+      "description": "CBT success rate in same direct comparison study",
+      "source": "American Addiction Centers",
+      "year": 2020
+    },
+    {
+      "id": "REC015",
+      "metric": "aa_sober_less_than_1_year_members",
+      "value": 27,
+      "unit": "percent",
+      "description": "% of AA participants sober for less than 1 year (2014 AA study)",
+      "source": "AA 2014 internal study",
+      "year": 2014
+    },
+    {
+      "id": "REC016",
+      "metric": "aud_treatment_no_substance_use_1yr",
+      "value": 41,
+      "unit": "percent",
+      "description": "% of AUD patients reporting no substance use 1 year after treatment — highest of all substances",
+      "source": "American Addiction Centers",
+      "year": 2022
+    },
+    {
+      "id": "REC017",
+      "metric": "naltrexone_reduces_heavy_drinking_pct",
+      "value": 36,
+      "unit": "percent",
+      "description": "Naltrexone reduces heavy drinking days by 36% vs placebo in meta-analysis",
+      "source": "Cochrane Review",
+      "year": 2022
+    },
+    {
+      "id": "REC018",
+      "metric": "disulfiram_supervised_effectiveness_pct",
+      "value": 50,
+      "unit": "percent",
+      "description": "Supervised disulfiram (Antabuse) achieves ~50% abstinence at 1 year",
+      "source": "NIAAA",
+      "year": 2022
+    },
+    {
+      "id": "REC019",
+      "metric": "us_recovery_population_total",
+      "value": 22500000,
+      "unit": "people",
+      "description": "22.5 million US adults identify as being in recovery from alcohol or drug problems",
+      "source": "SAMHSA",
+      "year": 2023
+    }
+  ],
+
+  "alcohol_health_economic": [
+    {
+      "id": "AHE001",
+      "metric": "global_alcohol_deaths_annual",
+      "value": 3000000,
+      "unit": "deaths_per_year",
+      "description": "Deaths attributable to alcohol annually (WHO 2016 data; 2024 PAHO update confirms 3M+)",
+      "source": "WHO / PAHO 2024",
+      "year": 2024
+    },
+    {
+      "id": "AHE002",
+      "metric": "alcohol_global_disease_burden",
+      "value": 5.1,
+      "unit": "percent_of_global_burden",
+      "description": "% of global burden of disease and injury attributable to alcohol (2016)",
+      "source": "WHO",
+      "year": 2016
+    },
+    {
+      "id": "AHE003",
+      "metric": "alcohol_attributable_cancer_deaths_global",
+      "value": 401000,
+      "unit": "deaths_per_year",
+      "description": "Cancer deaths attributed to alcohol globally (2019)",
+      "source": "WHO/IARC",
+      "year": 2019
+    },
+    {
+      "id": "AHE004",
+      "metric": "alcohol_attributable_cancer_percent_global",
+      "value": 4.4,
+      "unit": "percent_of_all_cancers",
+      "description": "% of all cancers diagnosed globally attributed to alcohol (2019)",
+      "source": "WHO/IARC",
+      "year": 2019
+    },
+    {
+      "id": "AHE005",
+      "metric": "alcohol_causes_cancer_types",
+      "value": 7,
+      "unit": "cancer_types",
+      "description": "Alcohol causes at least 7 cancer types: oral cavity, pharynx, larynx, oesophagus, breast (women), liver, colorectum. No safe level.",
+      "source": "WHO Europe / IARC (classified Group 1 carcinogen 1988)",
+      "year": 2024
+    },
+    {
+      "id": "AHE006",
+      "metric": "us_alcohol_liver_disease_deaths",
+      "value": 43004,
+      "unit": "deaths",
+      "description": "44.5% of the 96,610 liver disease deaths in the US (2023) involved alcohol",
+      "source": "NIAAA 2023",
+      "year": 2023
+    },
+    {
+      "id": "AHE007",
+      "metric": "us_alcohol_cirrhosis_deaths_annual",
+      "value": 35000,
+      "unit": "deaths_per_year",
+      "description": "Estimated deaths from alcohol-associated cirrhosis in the US annually",
+      "source": "NIAAA",
+      "year": 2023
+    },
+    {
+      "id": "AHE008",
+      "metric": "us_excess_drinking_deaths_annual",
+      "value": 88000,
+      "unit": "deaths_per_year",
+      "description": "CDC estimate: deaths from excessive drinking annually in the US",
+      "source": "CDC",
+      "year": 2022
+    },
+    {
+      "id": "AHE009",
+      "metric": "us_alcohol_economic_cost_annual",
+      "value": 249000000000,
+      "unit": "usd_per_year",
+      "description": "Total economic cost of excessive alcohol use in the US ($249 billion/year)",
+      "source": "CDC",
+      "year": 2020
+    },
+    {
+      "id": "AHE010",
+      "metric": "eu_alcohol_cancer_deaths_economic_cost",
+      "value": 4580000000,
+      "unit": "eur_per_year",
+      "description": "Economic cost of premature deaths from alcohol-attributable cancer in EU (2018, 9% of total cancer death costs)",
+      "source": "Institute of Alcohol Studies UK 2023",
+      "year": 2018
+    },
+    {
+      "id": "AHE011",
+      "metric": "alcohol_related_traffic_deaths_us",
+      "value": 13384,
+      "unit": "deaths_per_year",
+      "description": "Alcohol-impaired driving fatalities in the US (37% of all traffic deaths)",
+      "source": "NHTSA",
+      "year": 2023
+    },
+    {
+      "id": "AHE012",
+      "metric": "alcohol_related_violence_pct",
+      "value": 40,
+      "unit": "percent",
+      "description": "% of violent crimes where offender was under the influence of alcohol",
+      "source": "Bureau of Justice Statistics",
+      "year": 2022
+    },
+    {
+      "id": "AHE013",
+      "metric": "fetal_alcohol_spectrum_disorders_prevalence_us",
+      "value": 5,
+      "unit": "percent",
+      "description": "Estimated 1-5% of US children affected by FASD",
+      "source": "CDC",
+      "year": 2023
+    },
+    {
+      "id": "AHE014",
+      "metric": "alcohol_er_visits_annual_us",
+      "value": 2300000,
+      "unit": "visits_per_year",
+      "description": "Annual ER visits related to alcohol use in the US",
+      "source": "SAMHSA",
+      "year": 2023
+    },
+    {
+      "id": "AHE015",
+      "metric": "global_alcohol_economic_cost_usd",
+      "value": 1300000000000,
+      "unit": "usd_per_year",
+      "description": "Estimated global economic cost of alcohol misuse ($1.3 trillion/year)",
+      "source": "Lancet / WHO",
+      "year": 2022
+    }
+  ],
+
+  "drugs_global": [
+    {
+      "id": "DRG001",
+      "metric": "global_drug_users_total_2022",
+      "value": 292000000,
+      "unit": "people",
+      "description": "Total people who use drugs globally (2022) — 20% increase over 10 years",
+      "source": "UNODC World Drug Report 2024",
+      "year": 2022
+    },
+    {
+      "id": "DRG002",
+      "metric": "global_cannabis_users",
+      "value": 228000000,
+      "unit": "people",
+      "description": "Cannabis — most widely used drug globally (2022)",
+      "source": "UNODC 2024",
+      "year": 2022
+    },
+    {
+      "id": "DRG003",
+      "metric": "global_opioid_users",
+      "value": 60000000,
+      "unit": "people",
+      "description": "Opioid users globally",
+      "source": "UNODC 2024",
+      "year": 2022
+    },
+    {
+      "id": "DRG004",
+      "metric": "global_amphetamine_users",
+      "value": 30000000,
+      "unit": "people",
+      "description": "Amphetamine users globally",
+      "source": "UNODC 2024",
+      "year": 2022
+    },
+    {
+      "id": "DRG005",
+      "metric": "global_cocaine_users",
+      "value": 23000000,
+      "unit": "people",
+      "description": "Cocaine users globally",
+      "source": "UNODC 2024",
+      "year": 2022
+    },
+    {
+      "id": "DRG006",
+      "metric": "global_ecstasy_mdma_users",
+      "value": 20000000,
+      "unit": "people",
+      "description": "MDMA/Ecstasy users globally (0.4% of population aged 15-64)",
+      "source": "UNODC 2024",
+      "year": 2022
+    },
+    {
+      "id": "DRG007",
+      "metric": "global_drug_use_increase_decade",
+      "value": 20,
+      "unit": "percent",
+      "description": "% increase in global drug users over the past 10 years",
+      "source": "UNODC 2024",
+      "year": 2024
+    },
+    {
+      "id": "DRG008",
+      "metric": "global_cannabis_users_increase_decade",
+      "value": 28,
+      "unit": "percent",
+      "description": "% growth in cannabis users over past decade",
+      "source": "UNODC 2024",
+      "year": 2024
+    },
+    {
+      "id": "DRG009",
+      "metric": "cocaine_production_record_2022",
+      "value": 2757,
+      "unit": "metric_tons",
+      "description": "Record cocaine production in 2022 — 20% increase from 2021",
+      "source": "UNODC 2024",
+      "year": 2022
+    },
+    {
+      "id": "DRG010",
+      "metric": "coca_bush_cultivation_2022",
+      "value": 355000,
+      "unit": "hectares",
+      "description": "Global coca bush cultivation area (2022) — 12% increase from 2021",
+      "source": "UNODC 2024",
+      "year": 2022
+    },
+    {
+      "id": "DRG011",
+      "metric": "afghanistan_opium_collapse_2023",
+      "value": 95,
+      "unit": "percent_decrease",
+      "description": "Afghanistan opium production decrease in 2023 — global opium production fell 74%",
+      "source": "UNODC 2024",
+      "year": 2023
+    },
+    {
+      "id": "DRG012",
+      "metric": "myanmar_opium_increase_2023",
+      "value": 36,
+      "unit": "percent_increase",
+      "description": "Myanmar opium production increase in 2023 (partially offsetting Afghan collapse)",
+      "source": "UNODC 2024",
+      "year": 2023
+    },
+    {
+      "id": "DRG013",
+      "metric": "global_drug_related_deaths_annual",
+      "value": 600000,
+      "unit": "deaths_per_year",
+      "description": "Estimated annual deaths directly attributable to drug use globally",
+      "source": "UNODC 2024",
+      "year": 2022
+    },
+    {
+      "id": "DRG014",
+      "metric": "global_drug_use_disorders_total",
+      "value": 39500000,
+      "unit": "people",
+      "description": "People with drug use disorders globally (13.5% of all drug users)",
+      "source": "UNODC 2024",
+      "year": 2022
+    },
+    {
+      "id": "DRG015",
+      "metric": "global_drug_treatment_gap_pct",
+      "value": 80,
+      "unit": "percent",
+      "description": "% of people with drug use disorders who do not receive treatment globally",
+      "source": "UNODC 2024",
+      "year": 2022
+    },
+    {
+      "id": "DRG016",
+      "metric": "global_new_psychoactive_substances_identified",
+      "value": 1200,
+      "unit": "substances",
+      "description": "Cumulative NPS identified by UNODC Early Warning Advisory by end of 2023",
+      "source": "UNODC 2024",
+      "year": 2023
+    },
+    {
+      "id": "DRG017",
+      "metric": "illicit_drug_market_value_global_usd",
+      "value": 500000000000,
+      "unit": "usd_per_year",
+      "description": "Estimated value of the global illicit drug market annually",
+      "source": "UNODC",
+      "year": 2022
+    }
+  ],
+
+  "opioids": [
+    {
+      "id": "OPI001",
+      "metric": "us_overdose_deaths_total_2024",
+      "value": 79384,
+      "unit": "deaths",
+      "description": "Total US drug overdose deaths in 2024 (down from 105,007 in 2023 — 24% decline)",
+      "source": "CDC provisional data 2024",
+      "year": 2024
+    },
+    {
+      "id": "OPI002",
+      "metric": "us_overdose_deaths_total_2023",
+      "value": 105007,
+      "unit": "deaths",
+      "description": "Peak US drug overdose deaths in 2023",
+      "source": "CDC 2023",
+      "year": 2023
+    },
+    {
+      "id": "OPI003",
+      "metric": "us_opioid_deaths_2024",
+      "value": 54045,
+      "unit": "deaths",
+      "description": "US opioid-involved overdose deaths in 2024 (down from 79,358 in 2023)",
+      "source": "CDC 2024",
+      "year": 2024
+    },
+    {
+      "id": "OPI004",
+      "metric": "us_opioid_deaths_2023",
+      "value": 79358,
+      "unit": "deaths",
+      "description": "US opioid-involved overdose deaths in 2023",
+      "source": "CDC 2023",
+      "year": 2023
+    },
+    {
+      "id": "OPI005",
+      "metric": "us_opioid_deaths_2022",
+      "value": 81806,
+      "unit": "deaths",
+      "description": "US opioid-involved overdose deaths in 2022 (near peak)",
+      "source": "NIDA",
+      "year": 2022
+    },
+    {
+      "id": "OPI006",
+      "metric": "us_opioid_deaths_2019_baseline",
+      "value": 49860,
+      "unit": "deaths",
+      "description": "US opioid deaths before COVID surge (2019 baseline)",
+      "source": "NIDA",
+      "year": 2019
+    },
+    {
+      "id": "OPI007",
+      "metric": "us_overdose_deaths_since_1999",
+      "value": 1300000,
+      "unit": "deaths",
+      "description": "Total drug overdose deaths in the US since 1999",
+      "source": "NIDA",
+      "year": 2024
+    },
+    {
+      "id": "OPI008",
+      "metric": "fentanyl_percent_of_opioid_deaths",
+      "value": 88,
+      "unit": "percent",
+      "description": "% of opioid deaths involving fentanyl and synthetic opioids",
+      "source": "CDC 2024",
+      "year": 2024
+    },
+    {
+      "id": "OPI009",
+      "metric": "opioids_percent_of_all_overdose_deaths",
+      "value": 68,
+      "unit": "percent",
+      "description": "% of all overdose deaths in 2024 that involved opioids",
+      "source": "CDC 2024",
+      "year": 2024
+    },
+    {
+      "id": "OPI010",
+      "metric": "fentanyl_deaths_decline_2024",
+      "value": 34,
+      "unit": "percent_decrease",
+      "description": "% decrease in fentanyl-related deaths in 2024 vs prior year",
+      "source": "Overdose Lifeline / CDC 2024",
+      "year": 2024
+    },
+    {
+      "id": "OPI011",
+      "metric": "us_opioid_overdose_rate_nebraska_lowest",
+      "value": 3.3,
+      "unit": "per_100000",
+      "description": "Lowest state opioid death rate (Nebraska, 2024)",
+      "source": "CDC/KFF 2024",
+      "year": 2024
+    },
+    {
+      "id": "OPI012",
+      "metric": "us_opioid_overdose_rate_wv_highest",
+      "value": 38.6,
+      "unit": "per_100000",
+      "description": "Highest state opioid death rate (West Virginia, 2024)",
+      "source": "CDC/KFF 2024",
+      "year": 2024
+    },
+    {
+      "id": "OPI013",
+      "metric": "opioid_overdose_rate_aian",
+      "value": 35.5,
+      "unit": "per_100000",
+      "description": "American Indian/Alaska Native overdose rate — highest demographic",
+      "source": "JAMA Network Open 2024",
+      "year": 2024
+    },
+    {
+      "id": "OPI014",
+      "metric": "opioid_overdose_rate_black",
+      "value": 22.8,
+      "unit": "per_100000",
+      "description": "Black Americans opioid overdose rate",
+      "source": "JAMA Network Open 2024",
+      "year": 2024
+    },
+    {
+      "id": "OPI015",
+      "metric": "opioid_overdose_rate_white",
+      "value": 17.5,
+      "unit": "per_100000",
+      "description": "White Americans opioid overdose rate",
+      "source": "JAMA Network Open 2024",
+      "year": 2024
+    },
+    {
+      "id": "OPI016",
+      "metric": "us_prescription_opioid_misuse_2023",
+      "value": 8600000,
+      "unit": "people",
+      "description": "Americans who misused prescription opioids in 2023",
+      "source": "SAMHSA 2024",
+      "year": 2023
+    },
+    {
+      "id": "OPI017",
+      "metric": "chronic_pain_patients_developing_opioid_addiction",
+      "value": 8,
+      "unit": "percent_range_low",
+      "description": "3-12% of chronic pain patients treated with opioids develop addiction (low bound)",
+      "source": "StatPearls/NCBI",
+      "year": 2023
+    },
+    {
+      "id": "OPI018",
+      "metric": "chronic_pain_patients_developing_opioid_addiction_high",
+      "value": 12,
+      "unit": "percent_range_high",
+      "description": "Upper bound: 12% of chronic pain patients develop opioid addiction",
+      "source": "StatPearls/NCBI",
+      "year": 2023
+    },
+    {
+      "id": "OPI019",
+      "metric": "opioid_physical_dependence_timeline",
+      "value": 14,
+      "unit": "days",
+      "description": "Physical dependence typically develops within a few weeks; after just 5 days, risk of being on opioids 1 year later increases dramatically",
+      "source": "Mayo Clinic",
+      "year": 2023
+    },
+    {
+      "id": "OPI020",
+      "metric": "heroin_addiction_rate_among_users",
+      "value": 23,
+      "unit": "percent",
+      "description": "% of people who use heroin who will develop addiction",
+      "source": "NIDA",
+      "year": 2022
+    },
+    {
+      "id": "OPI021",
+      "metric": "heroin_recovery_abstinence_1yr",
+      "value": 30,
+      "unit": "percent",
+      "description": "29-31% of heroin-addicted patients report abstinence 1 year after treatment",
+      "source": "Vista Research Group",
+      "year": 2022
+    },
+    {
+      "id": "OPI022",
+      "metric": "heroin_mat_reduction_rate",
+      "value": 90,
+      "unit": "percent",
+      "description": "90% of heroin users receiving MAT (medication-assisted treatment) significantly decrease heroin usage",
+      "source": "American Addiction Centers",
+      "year": 2022
+    },
+    {
+      "id": "OPI023",
+      "metric": "nitazenes_emerging_threat",
+      "value": 1,
+      "unit": "boolean_note",
+      "description": "Nitazenes (synthetic opioids potentially more potent than fentanyl) emerging in high-income countries since 2022",
+      "source": "UNODC 2024",
+      "year": 2024
+    },
+    {
+      "id": "OPI024",
+      "metric": "naloxone_saves_per_year_us",
+      "value": 26500,
+      "unit": "reversals_per_year",
+      "description": "Estimated naloxone (Narcan) overdose reversals per year in the US by laypersons and first responders",
+      "source": "CDC",
+      "year": 2023
+    },
+    {
+      "id": "OPI025",
+      "metric": "us_opioid_economic_cost_annual",
+      "value": 1020000000000,
+      "unit": "usd_per_year",
+      "description": "Total economic cost of the opioid crisis in the US ($1.02 trillion/year including healthcare, criminal justice, lost productivity)",
+      "source": "CDC / Congressional Joint Economic Committee",
+      "year": 2022
+    },
+    {
+      "id": "OPI026",
+      "metric": "buprenorphine_mat_patients_us",
+      "value": 1200000,
+      "unit": "people",
+      "description": "US patients receiving buprenorphine for opioid use disorder",
+      "source": "SAMHSA",
+      "year": 2023
+    },
+    {
+      "id": "OPI027",
+      "metric": "methadone_mat_patients_us",
+      "value": 410000,
+      "unit": "people",
+      "description": "US patients enrolled in methadone maintenance treatment",
+      "source": "SAMHSA",
+      "year": 2023
+    }
+  ],
+
+  "cannabis": [
+    {
+      "id": "CAN001",
+      "metric": "cannabis_global_users_total",
+      "value": 228000000,
+      "unit": "people",
+      "description": "Cannabis users globally — most widely used illicit drug",
+      "source": "UNODC 2024",
+      "year": 2022
+    },
+    {
+      "id": "CAN002",
+      "metric": "cannabis_prevalence_legalized_countries",
+      "value": 12.0,
+      "unit": "percent",
+      "description": "Cannabis use prevalence in countries where it is legalized",
+      "source": "PMC11196877 systematic review 2024",
+      "year": 2024
+    },
+    {
+      "id": "CAN003",
+      "metric": "cannabis_prevalence_non_legalized_countries",
+      "value": 5.4,
+      "unit": "percent",
+      "description": "Cannabis use prevalence in non-legalized countries (2.2x lower)",
+      "source": "PMC11196877 systematic review 2024",
+      "year": 2024
+    },
+    {
+      "id": "CAN004",
+      "metric": "cannabis_legalization_effect_multiplier",
+      "value": 2.2,
+      "unit": "ratio",
+      "description": "Legalization is associated with 2.2x higher usage rates",
+      "source": "PMC11196877 2024",
+      "year": 2024
+    },
+    {
+      "id": "CAN005",
+      "metric": "cannabis_share_of_global_drug_disorders",
+      "value": 41,
+      "unit": "percent",
+      "description": "Cannabis accounts for 41% of global drug use disorders",
+      "source": "UNODC 2024",
+      "year": 2024
+    },
+    {
+      "id": "CAN006",
+      "metric": "cannabis_countries_with_policy_changes",
+      "value": 40,
+      "unit": "countries",
+      "description": "40+ countries had implemented cannabis policy changes by January 2024",
+      "source": "PMC11196877 2024",
+      "year": 2024
+    },
+    {
+      "id": "CAN007",
+      "metric": "cannabis_europe_prevalence_range_low",
+      "value": 0.42,
+      "unit": "percent",
+      "description": "Lowest cannabis use prevalence in European countries",
+      "source": "PMC11196877 2024",
+      "year": 2024
+    },
+    {
+      "id": "CAN008",
+      "metric": "cannabis_europe_prevalence_range_high",
+      "value": 43.9,
+      "unit": "percent",
+      "description": "Highest cannabis use prevalence in European countries",
+      "source": "PMC11196877 2024",
+      "year": 2024
+    },
+    {
+      "id": "CAN009",
+      "metric": "cannabis_addiction_among_monthly_users",
+      "value": 44,
+      "unit": "percent",
+      "description": "% of past-month cannabis users who may have some degree of cannabis use disorder",
+      "source": "NIDA",
+      "year": 2023
+    },
+    {
+      "id": "CAN010",
+      "metric": "cannabis_addiction_risk_before_18",
+      "value": 17,
+      "unit": "percent",
+      "description": "1 in 6 users who start before age 18 become addicted",
+      "source": "NIDA",
+      "year": 2023
+    },
+    {
+      "id": "CAN011",
+      "metric": "cannabis_us_daily_users",
+      "value": 17300000,
+      "unit": "people",
+      "description": "US adults reporting daily or near-daily cannabis use in 2023",
+      "source": "SAMHSA NSDUH",
+      "year": 2023
+    },
+    {
+      "id": "CAN012",
+      "metric": "cannabis_thc_potency_increase_pct",
+      "value": 300,
+      "unit": "percent",
+      "description": "Average THC potency increased ~300% since 1990s (from ~4% to 15-20%+ in 2024)",
+      "source": "NIDA",
+      "year": 2024
+    },
+    {
+      "id": "CAN013",
+      "metric": "cannabis_legal_market_us_2024_usd",
+      "value": 33500000000,
+      "unit": "usd",
+      "description": "US legal cannabis market size in 2024",
+      "source": "MJBiz / Industry reports",
+      "year": 2024
+    },
+    {
+      "id": "CAN014",
+      "metric": "cannabis_er_visits_us_annual",
+      "value": 700000,
+      "unit": "visits",
+      "description": "Annual ER visits in the US involving cannabis",
+      "source": "SAMHSA DAWN",
+      "year": 2023
+    },
+    {
+      "id": "CAN015",
+      "metric": "cannabis_psychosis_risk_daily_high_potency",
+      "value": 5,
+      "unit": "times_more_likely",
+      "description": "Daily use of high-potency cannabis increases psychosis risk 5x",
+      "source": "Lancet Psychiatry",
+      "year": 2019
+    }
+  ],
+
+  "cocaine_stimulants": [
+    {
+      "id": "COC001",
+      "metric": "global_cocaine_users",
+      "value": 23000000,
+      "unit": "people",
+      "description": "Global cocaine users (2022)",
+      "source": "UNODC 2024",
+      "year": 2022
+    },
+    {
+      "id": "COC002",
+      "metric": "cocaine_treatment_completion_rate",
+      "value": 55,
+      "unit": "percent",
+      "description": "% of cocaine treatment patients who successfully completed or were transferred to further care",
+      "source": "American Addiction Centers",
+      "year": 2022
+    },
+    {
+      "id": "COC003",
+      "metric": "cocaine_recovery_success_rate",
+      "value": 45,
+      "unit": "percent",
+      "description": "Cocaine recovery success rate range (40-50%)",
+      "source": "Vista Research Group",
+      "year": 2022
+    },
+    {
+      "id": "COC004",
+      "metric": "global_amphetamine_users",
+      "value": 30000000,
+      "unit": "people",
+      "description": "Amphetamine/stimulant users globally",
+      "source": "UNODC 2024",
+      "year": 2022
+    },
+    {
+      "id": "COC005",
+      "metric": "meth_abstinence_3months_after_residential",
+      "value": 33,
+      "unit": "percent",
+      "description": "% of meth-addicted patients sober 3 months after residential rehab",
+      "source": "Vista Research Group",
+      "year": 2022
+    },
+    {
+      "id": "COC006",
+      "metric": "meth_abstinence_1year",
+      "value": 14,
+      "unit": "percent",
+      "description": "% of meth-addicted patients sober 1 year after treatment",
+      "source": "Vista Research Group",
+      "year": 2022
+    },
+    {
+      "id": "COC007",
+      "metric": "global_mdma_users",
+      "value": 20000000,
+      "unit": "people",
+      "description": "MDMA/Ecstasy users globally (0.4% of population 15-64)",
+      "source": "UNODC 2024",
+      "year": 2022
+    },
+    {
+      "id": "COC008",
+      "metric": "cocaine_market_record_production",
+      "value": 2757,
+      "unit": "metric_tons",
+      "description": "Record global cocaine production in 2022 (2024 UNODC report notes 2023 may be record-breaking year across all indicators)",
+      "source": "UNODC 2024",
+      "year": 2022
+    },
+    {
+      "id": "COC009",
+      "metric": "cocaine_overdose_deaths_us",
+      "value": 27569,
+      "unit": "deaths",
+      "description": "US cocaine-involved overdose deaths in 2023 (many involving fentanyl co-use)",
+      "source": "CDC",
+      "year": 2023
+    },
+    {
+      "id": "COC010",
+      "metric": "meth_overdose_deaths_us",
+      "value": 34022,
+      "unit": "deaths",
+      "description": "US methamphetamine-involved overdose deaths in 2023",
+      "source": "CDC",
+      "year": 2023
+    },
+    {
+      "id": "COC011",
+      "metric": "cocaine_addiction_rate_among_users",
+      "value": 17,
+      "unit": "percent",
+      "description": "% of cocaine users who develop cocaine use disorder",
+      "source": "NIDA",
+      "year": 2022
+    },
+    {
+      "id": "COC012",
+      "metric": "adderall_misuse_college_students_pct",
+      "value": 17,
+      "unit": "percent",
+      "description": "% of college students reporting non-medical stimulant use (Adderall, Ritalin)",
+      "source": "SAMHSA / College surveys",
+      "year": 2023
+    }
+  ],
+
+  "drug_addiction_progression": [
+    {
+      "id": "DAP001",
+      "metric": "casual_users_developing_addiction",
+      "value": 25,
+      "unit": "percent",
+      "description": "About 25% of illicit drug users develop addiction",
+      "source": "Addiction Center / NIDA",
+      "year": 2022
+    },
+    {
+      "id": "DAP002",
+      "metric": "casual_users_developing_disorder_range",
+      "value": 22,
+      "unit": "percent_midpoint",
+      "description": "15-30% of casual drug users develop substance use disorder (midpoint 22%)",
+      "source": "Frontiers in Pharmacology 2015",
+      "year": 2022
+    },
+    {
+      "id": "DAP003",
+      "metric": "early_use_before_15_addiction_risk_multiplier",
+      "value": 6.5,
+      "unit": "times_more_likely",
+      "description": "Users who try drugs before age 15 are 6.5x more likely to develop SUD vs those who wait until 21+",
+      "source": "SAMHSA",
+      "year": 2022
+    },
+    {
+      "id": "DAP004",
+      "metric": "heroin_addiction_rate_among_users",
+      "value": 23,
+      "unit": "percent",
+      "description": "% of heroin users who become addicted",
+      "source": "NIDA",
+      "year": 2022
+    },
+    {
+      "id": "DAP005",
+      "metric": "opioid_dependence_days_to_develop",
+      "value": 14,
+      "unit": "days",
+      "description": "Physical opioid dependence can develop in as little as 2 weeks of regular use",
+      "source": "Mayo Clinic",
+      "year": 2023
+    },
+    {
+      "id": "DAP006",
+      "metric": "opioid_5day_prescripton_risk",
+      "value": 1,
+      "unit": "threshold_note",
+      "description": "After just 5 days on prescribed opioids, probability of still using 1 year later increases significantly",
+      "source": "Mayo Clinic",
+      "year": 2023
+    },
+    {
+      "id": "DAP007",
+      "metric": "cannabis_addiction_rate_all_users",
+      "value": 9,
+      "unit": "percent",
+      "description": "~9% of all cannabis users develop dependence (1 in 11)",
+      "source": "NIDA",
+      "year": 2022
+    },
+    {
+      "id": "DAP008",
+      "metric": "cannabis_addiction_daily_users",
+      "value": 25,
+      "unit": "percent",
+      "description": "1 in 4 daily cannabis users develop dependence",
+      "source": "NIDA",
+      "year": 2022
+    },
+    {
+      "id": "DAP009",
+      "metric": "drug_addiction_comorbid_mental_health",
+      "value": 50,
+      "unit": "percent",
+      "description": "~50% of people with SUD also have a co-occurring mental health disorder",
+      "source": "SAMHSA",
+      "year": 2023
+    },
+    {
+      "id": "DAP010",
+      "metric": "nicotine_addiction_rate_among_users",
+      "value": 67,
+      "unit": "percent",
+      "description": "~67% of people who try smoking become daily smokers; nicotine is among the most addictive substances",
+      "source": "NIDA",
+      "year": 2022
+    },
+    {
+      "id": "DAP011",
+      "metric": "alcohol_addiction_rate_among_drinkers",
+      "value": 15,
+      "unit": "percent",
+      "description": "~15% of regular drinkers develop AUD",
+      "source": "NIAAA",
+      "year": 2023
+    },
+    {
+      "id": "DAP012",
+      "metric": "polysubstance_use_pct_of_sud_patients",
+      "value": 60,
+      "unit": "percent",
+      "description": "~60% of people with SUD use more than one substance",
+      "source": "SAMHSA",
+      "year": 2023
+    },
+    {
+      "id": "DAP013",
+      "metric": "adverse_childhood_experiences_and_sud",
+      "value": 4,
+      "unit": "times_more_likely",
+      "description": "People with 4+ ACEs are 4x more likely to develop SUD",
+      "source": "CDC / Kaiser ACE Study",
+      "year": 2022
+    },
+    {
+      "id": "DAP014",
+      "metric": "brain_full_development_age",
+      "value": 25,
+      "unit": "years",
+      "description": "Prefrontal cortex (decision-making, impulse control) not fully developed until age 25 — substance use before this age significantly raises addiction risk",
+      "source": "NIDA / NIH",
+      "year": 2023
+    }
+  ],
+
+  "drug_recovery": [
+    {
+      "id": "DRC001",
+      "metric": "general_rehab_no_substance_use_1yr",
+      "value": 35,
+      "unit": "percent",
+      "description": "Overall: ~35% of rehab completers report no substance use at 1 year",
+      "source": "American Addiction Centers",
+      "year": 2022
+    },
+    {
+      "id": "DRC002",
+      "metric": "heroin_abstinence_1year",
+      "value": 30,
+      "unit": "percent",
+      "description": "29-31% of heroin-addicted patients abstinent 1 year after treatment",
+      "source": "American Addiction Centers",
+      "year": 2022
+    },
+    {
+      "id": "DRC003",
+      "metric": "meth_abstinence_1year",
+      "value": 14,
+      "unit": "percent",
+      "description": "Only 14% of meth patients maintain sobriety at 1 year — lowest of major substances",
+      "source": "Vista Research Group",
+      "year": 2022
+    },
+    {
+      "id": "DRC004",
+      "metric": "alcohol_abstinence_1year",
+      "value": 41,
+      "unit": "percent",
+      "description": "41% of AUD patients report no substance use 1 year after treatment — highest recovery rate",
+      "source": "American Addiction Centers",
+      "year": 2022
+    },
+    {
+      "id": "DRC005",
+      "metric": "average_recovery_attempts_before_success",
+      "value": 5,
+      "unit": "attempts",
+      "description": "Average number of quit attempts before achieving sustained recovery (PMC study of recovering US adults)",
+      "source": "PMC6602820",
+      "year": 2019
+    },
+    {
+      "id": "DRC006",
+      "metric": "drug_disorder_recovery_spontaneous_rate",
+      "value": 50,
+      "unit": "percent",
+      "description": "~50% of people with SUD achieve recovery eventually, many without formal treatment",
+      "source": "NIDA",
+      "year": 2022
+    },
+    {
+      "id": "DRC007",
+      "metric": "rehab_cost_inpatient_30day_avg_usd",
+      "value": 30000,
+      "unit": "usd",
+      "description": "Average cost of 30-day inpatient rehab in the US",
+      "source": "NIDA / American Addiction Centers",
+      "year": 2023
+    },
+    {
+      "id": "DRC008",
+      "metric": "rehab_cost_outpatient_3month_avg_usd",
+      "value": 5000,
+      "unit": "usd",
+      "description": "Average cost of 3-month outpatient treatment in the US",
+      "source": "SAMHSA",
+      "year": 2023
+    },
+    {
+      "id": "DRC009",
+      "metric": "mat_retention_6_month_pct",
+      "value": 50,
+      "unit": "percent",
+      "description": "Medication-assisted treatment 6-month retention rate for opioid use disorder",
+      "source": "SAMHSA",
+      "year": 2023
+    },
+    {
+      "id": "DRC010",
+      "metric": "recovery_support_services_improve_outcomes_pct",
+      "value": 40,
+      "unit": "percent",
+      "description": "Peer recovery support services improve treatment outcomes by ~40%",
+      "source": "SAMHSA",
+      "year": 2023
+    },
+    {
+      "id": "DRC011",
+      "metric": "telehealth_sud_treatment_adoption_pct",
+      "value": 35,
+      "unit": "percent",
+      "description": "% of SUD treatment facilities offering telehealth services post-COVID",
+      "source": "SAMHSA",
+      "year": 2023
+    }
+  ],
+
+  "tobacco_nicotine": [
+    {
+      "id": "TOB001",
+      "metric": "global_tobacco_users_2024",
+      "value": 1200000000,
+      "unit": "people",
+      "description": "1.2 billion tobacco users globally (2024) — down from 1.38B in 2000",
+      "source": "WHO Global Report on Tobacco Trends 2024",
+      "year": 2024
+    },
+    {
+      "id": "TOB002",
+      "metric": "global_tobacco_users_2010",
+      "value": 1320000000,
+      "unit": "people",
+      "description": "Tobacco users in 2010 (before major decline)",
+      "source": "WHO 2024",
+      "year": 2010
+    },
+    {
+      "id": "TOB003",
+      "metric": "global_tobacco_decline_since_2010",
+      "value": 27,
+      "unit": "percent",
+      "description": "27% relative drop in tobacco users from 2010-2024 (120 million fewer)",
+      "source": "WHO 2024",
+      "year": 2024
+    },
+    {
+      "id": "TOB004",
+      "metric": "global_adults_using_tobacco",
+      "value": 20,
+      "unit": "percent",
+      "description": "1 in 5 adults globally still use tobacco (2024)",
+      "source": "WHO 2025 report",
+      "year": 2024
+    },
+    {
+      "id": "TOB005",
+      "metric": "global_male_tobacco_prevalence_2024",
+      "value": 32.5,
+      "unit": "percent",
+      "description": "Male tobacco use prevalence globally (down from 41.4% in 2010)",
+      "source": "WHO 2024",
+      "year": 2024
+    },
+    {
+      "id": "TOB006",
+      "metric": "global_female_tobacco_prevalence_2024",
+      "value": 6.6,
+      "unit": "percent",
+      "description": "Female tobacco use prevalence globally (down from 11% in 2010)",
+      "source": "WHO 2024",
+      "year": 2024
+    },
+    {
+      "id": "TOB007",
+      "metric": "tobacco_users_who_are_male",
+      "value": 80,
+      "unit": "percent",
+      "description": "4 in 5 tobacco users globally are men (nearly 1 billion men still using tobacco)",
+      "source": "WHO 2024",
+      "year": 2024
+    },
+    {
+      "id": "TOB008",
+      "metric": "europe_tobacco_prevalence_2024",
+      "value": 24.1,
+      "unit": "percent",
+      "description": "Europe — highest tobacco prevalence region globally in 2024",
+      "source": "WHO 2024",
+      "year": 2024
+    },
+    {
+      "id": "TOB009",
+      "metric": "africa_tobacco_prevalence_2024",
+      "value": 9.5,
+      "unit": "percent",
+      "description": "Africa — lowest tobacco prevalence region globally in 2024",
+      "source": "WHO 2024",
+      "year": 2024
+    },
+    {
+      "id": "TOB010",
+      "metric": "southeast_asia_male_tobacco_decline",
+      "value": 47,
+      "unit": "percent_decrease",
+      "description": "South-East Asia male tobacco prevalence nearly halved: 70% (2000) → 37% (2024)",
+      "source": "WHO 2024",
+      "year": 2024
+    },
+    {
+      "id": "TOB011",
+      "metric": "tobacco_deaths_global_annual",
+      "value": 8000000,
+      "unit": "deaths_per_year",
+      "description": "Tobacco kills more than 8 million people per year globally (1.3M from secondhand smoke)",
+      "source": "WHO",
+      "year": 2024
+    },
+    {
+      "id": "TOB012",
+      "metric": "tobacco_economic_cost_global_usd",
+      "value": 1400000000000,
+      "unit": "usd_per_year",
+      "description": "Global economic cost of tobacco use per year (healthcare + productivity loss)",
+      "source": "WHO",
+      "year": 2022
+    },
+    {
+      "id": "TOB013",
+      "metric": "us_adult_smoking_rate_2024",
+      "value": 11.6,
+      "unit": "percent",
+      "description": "US adult cigarette smoking rate in 2024 (down from 20.9% in 2005)",
+      "source": "CDC",
+      "year": 2024
+    },
+    {
+      "id": "TOB014",
+      "metric": "us_smoking_deaths_annual",
+      "value": 480000,
+      "unit": "deaths_per_year",
+      "description": "Annual US deaths attributable to cigarette smoking (including secondhand smoke)",
+      "source": "CDC",
+      "year": 2023
+    },
+    {
+      "id": "TOB015",
+      "metric": "smokers_who_want_to_quit_pct",
+      "value": 70,
+      "unit": "percent",
+      "description": "% of current smokers who report wanting to quit completely",
+      "source": "CDC",
+      "year": 2023
+    },
+    {
+      "id": "TOB016",
+      "metric": "quit_attempts_annual_us_pct",
+      "value": 55,
+      "unit": "percent",
+      "description": "% of US smokers who made a quit attempt in the past year",
+      "source": "CDC",
+      "year": 2023
+    },
+    {
+      "id": "TOB017",
+      "metric": "average_quit_attempts_before_success",
+      "value": 8,
+      "unit": "attempts",
+      "description": "Average number of quit attempts before a smoker succeeds (range 6-30 in research)",
+      "source": "BMJ Tobacco Control",
+      "year": 2022
+    }
+  ],
+
+  "vaping": [
+    {
+      "id": "VAP001",
+      "metric": "global_vapers_total",
+      "value": 100000000,
+      "unit": "people",
+      "description": "100+ million people now vaping worldwide",
+      "source": "WHO 2024",
+      "year": 2024
+    },
+    {
+      "id": "VAP002",
+      "metric": "us_youth_vaping_2024",
+      "value": 1630000,
+      "unit": "people",
+      "description": "US middle and high school students currently using e-cigarettes in 2024 (5.9%)",
+      "source": "CDC/FDA NYTS 2024",
+      "year": 2024
+    },
+    {
+      "id": "VAP003",
+      "metric": "us_youth_vaping_percent_2024",
+      "value": 5.9,
+      "unit": "percent",
+      "description": "% of US middle/high schoolers using e-cigarettes — down from 7.7% in 2023",
+      "source": "CDC MMWR 2024",
+      "year": 2024
+    },
+    {
+      "id": "VAP004",
+      "metric": "us_youth_vaping_peak_2019",
+      "value": 5000000,
+      "unit": "people",
+      "description": "Peak US youth e-cigarette use in 2019 — 2024 is ~1/3 of this",
+      "source": "CDC 2024",
+      "year": 2019
+    },
+    {
+      "id": "VAP005",
+      "metric": "us_youth_vaping_decline_2023_to_2024",
+      "value": 23.5,
+      "unit": "percent_decrease",
+      "description": "2.13M (2023) → 1.63M (2024) — 23.5% decline, lowest in a decade",
+      "source": "CDC 2024",
+      "year": 2024
+    },
+    {
+      "id": "VAP006",
+      "metric": "us_youth_vapers_using_daily",
+      "value": 26.3,
+      "unit": "percent",
+      "description": "% of youth e-cigarette users who use daily",
+      "source": "CDC MMWR 2024",
+      "year": 2024
+    },
+    {
+      "id": "VAP007",
+      "metric": "us_youth_disposable_vape_preference",
+      "value": 55.6,
+      "unit": "percent",
+      "description": "% of youth vapers using disposable e-cigarettes",
+      "source": "CDC 2024",
+      "year": 2024
+    },
+    {
+      "id": "VAP008",
+      "metric": "us_youth_vape_flavor_fruit",
+      "value": 62.8,
+      "unit": "percent",
+      "description": "% of youth vapers preferring fruit flavors (most popular)",
+      "source": "CDC 2024",
+      "year": 2024
+    },
+    {
+      "id": "VAP009",
+      "metric": "us_adult_vaping_rate_2024",
+      "value": 6.0,
+      "unit": "percent",
+      "description": "% of US adults who currently use e-cigarettes",
+      "source": "CDC",
+      "year": 2024
+    },
+    {
+      "id": "VAP010",
+      "metric": "vaping_market_global_size_usd",
+      "value": 28600000000,
+      "unit": "usd",
+      "description": "Global e-cigarette/vape market size in 2024",
+      "source": "Grand View Research",
+      "year": 2024
+    },
+    {
+      "id": "VAP011",
+      "metric": "vaping_as_smoking_cessation_tool_success_pct",
+      "value": 18,
+      "unit": "percent",
+      "description": "E-cigarettes as smoking cessation: ~18% quit rate at 1 year (vs 9.9% NRT in same UK trial)",
+      "source": "NEJM / UK trial",
+      "year": 2019
+    },
+    {
+      "id": "VAP012",
+      "metric": "dual_use_vape_and_cigarette_pct",
+      "value": 55,
+      "unit": "percent",
+      "description": "% of adult vapers who also smoke cigarettes (dual use)",
+      "source": "CDC",
+      "year": 2023
+    },
+    {
+      "id": "VAP013",
+      "metric": "nicotine_content_juul_pod_equivalent_cigarettes",
+      "value": 20,
+      "unit": "cigarettes",
+      "description": "One JUUL pod contains approximately as much nicotine as 20 cigarettes",
+      "source": "JUUL Labs / FDA",
+      "year": 2023
+    }
+  ],
+
+  "smoking_cessation": [
+    {
+      "id": "CES001",
+      "metric": "cold_turkey_6month_success_rate",
+      "value": 4,
+      "unit": "percent",
+      "description": "3-5% of cold turkey quitters remain smoke-free for 6+ months",
+      "source": "Truth Initiative / quit-smoking experts",
+      "year": 2022
+    },
+    {
+      "id": "CES002",
+      "metric": "cold_turkey_attempt_prevalence",
+      "value": 90,
+      "unit": "percent",
+      "description": "90%+ of smokers attempt to quit cold turkey (most common method, least effective)",
+      "source": "PMC6579626",
+      "year": 2022
+    },
+    {
+      "id": "CES003",
+      "metric": "nrt_quit_rate_improvement",
+      "value": 60,
+      "unit": "percent_improvement",
+      "description": "FDA-approved NRT improves quit rates by 50-70%",
+      "source": "FDA/PMC8204741",
+      "year": 2022
+    },
+    {
+      "id": "CES004",
+      "metric": "nrt_12_month_abstinence_rate",
+      "value": 20,
+      "unit": "percent",
+      "description": "NRT 12-month abstinence rate in general population: 10-31% (midpoint ~20%)",
+      "source": "PMC8204741",
+      "year": 2021
+    },
+    {
+      "id": "CES005",
+      "metric": "nrt_clinic_1year_success_rate",
+      "value": 52.8,
+      "unit": "percent",
+      "description": "NRT success rate at 1 year in clinical settings (higher than general population)",
+      "source": "PMC3916028",
+      "year": 2014
+    },
+    {
+      "id": "CES006",
+      "metric": "varenicline_vs_placebo_abstinence_improvement",
+      "value": 2.75,
+      "unit": "ratio",
+      "description": "Varenicline improves abstinence rates 2.5-3x vs placebo at 12 months (44% vs 18%)",
+      "source": "Cochrane meta-analysis",
+      "year": 2022
+    },
+    {
+      "id": "CES007",
+      "metric": "varenicline_12month_abstinence_rate",
+      "value": 44,
+      "unit": "percent",
+      "description": "Varenicline 12-month abstinence rate in studies",
+      "source": "Cochrane meta-analysis",
+      "year": 2022
+    },
+    {
+      "id": "CES008",
+      "metric": "placebo_12month_abstinence_rate",
+      "value": 18,
+      "unit": "percent",
+      "description": "Placebo control 12-month abstinence rate for context",
+      "source": "Cochrane meta-analysis",
+      "year": 2022
+    },
+    {
+      "id": "CES009",
+      "metric": "varenicline_vs_bupropion_OR",
+      "value": 1.66,
+      "unit": "odds_ratio",
+      "description": "Varenicline vs bupropion: odds ratio of 1.66 for continuous abstinence at 12 months",
+      "source": "Cochrane meta-analysis",
+      "year": 2022
+    },
+    {
+      "id": "CES010",
+      "metric": "varenicline_clinic_1year_rate",
+      "value": 32.5,
+      "unit": "percent",
+      "description": "Varenicline success rate at 1 year in clinic-based study",
+      "source": "PMC3916028",
+      "year": 2014
+    },
+    {
+      "id": "CES011",
+      "metric": "combined_varenicline_nrt_odds_ratio",
+      "value": 4.4,
+      "unit": "odds_ratio",
+      "description": "Combination therapy (varenicline + NRT) — most effective: OR 4.4",
+      "source": "PMC6277035",
+      "year": 2018
+    },
+    {
+      "id": "CES012",
+      "metric": "counselling_plus_medication_quit_multiplier",
+      "value": 3,
+      "unit": "times_more_likely",
+      "description": "Medications + counseling together can more than triple success vs cold turkey",
+      "source": "WHO / Truth Initiative",
+      "year": 2024
+    }
+  ],
+
+  "smoking_health_recovery": [
+    {
+      "id": "SHR001",
+      "metric": "heart_rate_normalization",
+      "value": 20,
+      "unit": "minutes",
+      "description": "Heart rate drops toward normal within 20 minutes of last cigarette",
+      "source": "American Cancer Society",
+      "year": 2023
+    },
+    {
+      "id": "SHR002",
+      "metric": "carbon_monoxide_normalization",
+      "value": 12,
+      "unit": "hours",
+      "description": "Carbon monoxide levels return to normal after 12 hours smoke-free",
+      "source": "Medical News Today",
+      "year": 2023
+    },
+    {
+      "id": "SHR003",
+      "metric": "heart_attack_risk_reduction_starts",
+      "value": 1,
+      "unit": "days",
+      "description": "Risk of heart attack begins to decrease after just 1 day smoke-free",
+      "source": "American Cancer Society",
+      "year": 2023
+    },
+    {
+      "id": "SHR004",
+      "metric": "cilia_reactivation_start",
+      "value": 2,
+      "unit": "days",
+      "description": "Lung cilia begin to reactivate 1-2 days after quitting",
+      "source": "SNH Health",
+      "year": 2023
+    },
+    {
+      "id": "SHR005",
+      "metric": "bronchial_tube_relaxation",
+      "value": 3,
+      "unit": "days",
+      "description": "Bronchial tubes relax and breathing improves after 3 days",
+      "source": "Medical News Today",
+      "year": 2023
+    },
+    {
+      "id": "SHR006",
+      "metric": "lung_function_improvement_start",
+      "value": 14,
+      "unit": "days",
+      "description": "Circulation and lung function begin improving at 2 weeks",
+      "source": "American Lung Association",
+      "year": 2023
+    },
+    {
+      "id": "SHR007",
+      "metric": "cough_shortness_of_breath_decrease",
+      "value": 30,
+      "unit": "days",
+      "description": "Coughing and shortness of breath decrease after 1 month",
+      "source": "American Lung Association",
+      "year": 2023
+    },
+    {
+      "id": "SHR008",
+      "metric": "heart_disease_risk_halved",
+      "value": 1,
+      "unit": "years",
+      "description": "Risk of coronary heart disease is halved after 1 year smoke-free",
+      "source": "American Cancer Society",
+      "year": 2023
+    },
+    {
+      "id": "SHR009",
+      "metric": "stroke_risk_normalized_years",
+      "value": 10,
+      "unit": "years",
+      "description": "5-15 years post-quit: stroke and coronary heart disease risk normalizes to never-smoker level",
+      "source": "American Cancer Society",
+      "year": 2023
+    },
+    {
+      "id": "SHR010",
+      "metric": "lung_cancer_risk_halved",
+      "value": 10,
+      "unit": "years",
+      "description": "Lung cancer risk is cut in half after 10 years smoke-free",
+      "source": "American Cancer Society",
+      "year": 2023
+    },
+    {
+      "id": "SHR011",
+      "metric": "lung_function_near_normal",
+      "value": 10,
+      "unit": "years",
+      "description": "After 10 years, lungs function almost like those of a never-smoker",
+      "source": "Medanta / American Cancer Society",
+      "year": 2023
+    }
+  ],
+
+  "pornography_usage": [
+    {
+      "id": "POR001",
+      "metric": "us_men_annual_porn_users",
+      "value": 69,
+      "unit": "percent",
+      "description": "69% of men in America view online pornography each year",
+      "source": "Addiction Help / Birches Health",
+      "year": 2023
+    },
+    {
+      "id": "POR002",
+      "metric": "us_women_annual_porn_users",
+      "value": 40,
+      "unit": "percent",
+      "description": "40% of women in America view online pornography each year",
+      "source": "Addiction Help / Birches Health",
+      "year": 2023
+    },
+    {
+      "id": "POR003",
+      "metric": "us_young_adults_18_25_monthly_use",
+      "value": 57,
+      "unit": "percent",
+      "description": "57% of young adults aged 18-25 use porn at least once a month",
+      "source": "BYU Ballard Brief",
+      "year": 2023
+    },
+    {
+      "id": "POR004",
+      "metric": "adults_over_25_monthly_use",
+      "value": 29,
+      "unit": "percent",
+      "description": "29% of adults 25+ use porn at least monthly (vs 57% for 18-25)",
+      "source": "BYU Ballard Brief",
+      "year": 2023
+    },
+    {
+      "id": "POR005",
+      "metric": "men_more_likely_to_download_than_women",
+      "value": 20,
+      "unit": "percent_more_likely",
+      "description": "Men are 20% more likely to download porn than women",
+      "source": "Addiction Help",
+      "year": 2023
+    },
+    {
+      "id": "POR006",
+      "metric": "self_reported_addiction_men",
+      "value": 11,
+      "unit": "percent",
+      "description": "11% of men self-report being addicted to pornography",
+      "source": "eCare Behavioral Institute",
+      "year": 2023
+    },
+    {
+      "id": "POR007",
+      "metric": "self_reported_addiction_women",
+      "value": 3,
+      "unit": "percent",
+      "description": "3% of women self-report being addicted to pornography",
+      "source": "eCare Behavioral Institute",
+      "year": 2023
+    },
+    {
+      "id": "POR008",
+      "metric": "problematic_porn_use_global_range_low",
+      "value": 3.2,
+      "unit": "percent",
+      "description": "International Sex Survey (42 countries): PPU rate low end",
+      "source": "International Sex Survey 2023",
+      "year": 2023
+    },
+    {
+      "id": "POR009",
+      "metric": "problematic_porn_use_global_range_high",
+      "value": 16.6,
+      "unit": "percent",
+      "description": "International Sex Survey (42 countries): PPU rate high end (varies by religiosity, moral values)",
+      "source": "International Sex Survey 2023",
+      "year": 2023
+    },
+    {
+      "id": "POR010",
+      "metric": "porn_industry_size_revenue",
+      "value": 100000000000,
+      "unit": "usd",
+      "description": "Estimated global pornography industry revenue (~$97-100 billion)",
+      "source": "Industry estimates",
+      "year": 2023
+    },
+    {
+      "id": "POR011",
+      "metric": "pornhub_daily_visits",
+      "value": 130000000,
+      "unit": "visits_per_day",
+      "description": "Pornhub receives approximately 130 million daily visits",
+      "source": "Pornhub Insights",
+      "year": 2023
+    },
+    {
+      "id": "POR012",
+      "metric": "avg_first_exposure_age",
+      "value": 12,
+      "unit": "years",
+      "description": "Average age of first exposure to pornography",
+      "source": "Common Sense Media / Bark survey",
+      "year": 2023
+    },
+    {
+      "id": "POR013",
+      "metric": "teens_seen_porn_before_18_pct",
+      "value": 73,
+      "unit": "percent",
+      "description": "% of teens who have seen online pornography before age 18",
+      "source": "Common Sense Media",
+      "year": 2023
+    }
+  ],
+
+  "pornography_impact": [
+    {
+      "id": "PIM001",
+      "metric": "divorce_cases_involving_porn_use",
+      "value": 56,
+      "unit": "percent",
+      "description": "56% of divorce cases involved heightened internet pornography use by one partner (attorney survey)",
+      "source": "American Sociological Association",
+      "year": 2017
+    },
+    {
+      "id": "PIM002",
+      "metric": "divorce_probability_doubling_men",
+      "value": 2.0,
+      "unit": "ratio",
+      "description": "Starting porn use nearly doubled divorce likelihood for men (6% → 11%)",
+      "source": "American Sociological Association / Journal of Sex Research",
+      "year": 2016
+    },
+    {
+      "id": "PIM003",
+      "metric": "divorce_probability_tripling_women",
+      "value": 3.0,
+      "unit": "ratio",
+      "description": "Starting porn use nearly tripled divorce likelihood for women (6% → 16%)",
+      "source": "American Sociological Association / Journal of Sex Research",
+      "year": 2016
+    },
+    {
+      "id": "PIM004",
+      "metric": "women_divorce_probability_continued_use",
+      "value": 18,
+      "unit": "percent",
+      "description": "Women who kept using porn: 18% divorce probability vs 6% for those who stopped",
+      "source": "Pornography Use and Marital Separation, PubMed 2017",
+      "year": 2017
+    },
+    {
+      "id": "PIM005",
+      "metric": "porn_as_infidelity_predictor_strength",
+      "value": 1,
+      "unit": "boolean_note",
+      "description": "Research confirms porn use is one of the strongest predictors of extradyadic (infidelity) sexual involvement",
+      "source": "PMC6155976",
+      "year": 2018
+    },
+    {
+      "id": "PIM006",
+      "metric": "couples_never_watching_together_best_outcomes",
+      "value": 1,
+      "unit": "boolean_note",
+      "description": "Couples who NEVER viewed pornography had the best outcomes across relationship quality measures",
+      "source": "USU Extension Research",
+      "year": 2021
+    },
+    {
+      "id": "PIM007",
+      "metric": "porn_associated_lower_relationship_satisfaction",
+      "value": 1,
+      "unit": "boolean_note",
+      "description": "Research consistently links porn use to lower sexual satisfaction, commitment, and more negative communication",
+      "source": "Multiple peer-reviewed studies (PMC6155976, USU Extension)",
+      "year": 2021
+    },
+    {
+      "id": "PIM008",
+      "metric": "partner_porn_use_effect_on_women_self_esteem",
+      "value": 1,
+      "unit": "boolean_note",
+      "description": "Women whose partners use porn report feeling less sexually desirable and have more negative self/relationship views",
+      "source": "Fight the New Drug / research aggregated",
+      "year": 2021
+    },
+    {
+      "id": "PIM009",
+      "metric": "mental_health_pornography_brain_changes",
+      "value": 1,
+      "unit": "boolean_note",
+      "description": "Neuroimaging studies show porn activates same reward pathways as drugs; heavy users show tolerance, craving, withdrawal",
+      "source": "Cambridge University neuroimaging studies",
+      "year": 2022
+    },
+    {
+      "id": "PIM010",
+      "metric": "erectile_dysfunction_young_men_porn_users_pct",
+      "value": 35,
+      "unit": "percent",
+      "description": "Up to 35% of young men who regularly consume porn report some degree of erectile dysfunction",
+      "source": "Journal of Sexual Medicine / PMC studies",
+      "year": 2023
+    },
+    {
+      "id": "PIM011",
+      "metric": "porn_escalation_to_more_extreme_content_pct",
+      "value": 49,
+      "unit": "percent",
+      "description": "~49% of regular porn users report needing increasingly extreme content to achieve same arousal (tolerance effect)",
+      "source": "PMC / Addiction research",
+      "year": 2022
+    }
+  ],
+
+  "pornography_recovery": [
+    {
+      "id": "PRE001",
+      "metric": "nofap_dsm5_recognition",
+      "value": 0,
+      "unit": "boolean",
+      "description": "DSM-5 does NOT recognize pornography addiction as an official diagnosis",
+      "source": "DSM-5 / Wikipedia",
+      "year": 2023
+    },
+    {
+      "id": "PRE002",
+      "metric": "porn_abstinence_difficulty",
+      "value": 1,
+      "unit": "boolean_note",
+      "description": "Research confirms: successfully achieving and maintaining porn abstinence is very difficult but achievable",
+      "source": "PMC7889567",
+      "year": 2021
+    },
+    {
+      "id": "PRE003",
+      "metric": "nofap_relapse_emotional_impact",
+      "value": 1,
+      "unit": "boolean_note",
+      "description": "NoFap relapse strongly associated with shame, worthlessness, sadness; negative emotions strongest among heavy forum users",
+      "source": "Journals.sagepub.com Prause & Binnie 2024",
+      "year": 2024
+    },
+    {
+      "id": "PRE004",
+      "metric": "abstinence_cues_everywhere_challenge",
+      "value": 1,
+      "unit": "boolean_note",
+      "description": "Three main quit challenges: navigating sexuality during reboot, inescapability of cues, relapse feeling 'cunning and insidious'",
+      "source": "PMC7889567",
+      "year": 2021
+    },
+    {
+      "id": "PRE005",
+      "metric": "7_day_withdrawal_study",
+      "value": 7,
+      "unit": "days",
+      "description": "RCT study: 7-day porn abstinence period produces measurable withdrawal-related symptoms in regular users",
+      "source": "PMC9847461",
+      "year": 2023
+    },
+    {
+      "id": "PRE006",
+      "metric": "icd11_compulsive_sexual_behavior_recognition",
+      "value": 2022,
+      "unit": "year",
+      "description": "WHO ICD-11 (effective 2022) recognizes Compulsive Sexual Behavior Disorder (6C72) which encompasses problematic porn use",
+      "source": "WHO ICD-11",
+      "year": 2022
+    },
+    {
+      "id": "PRE007",
+      "metric": "cbt_for_porn_addiction_success_rate",
+      "value": 50,
+      "unit": "percent",
+      "description": "CBT-based interventions for problematic porn use show ~50% significant improvement at 6 months",
+      "source": "PMC / Clinical psychology studies",
+      "year": 2023
+    }
+  ],
+
+  "gaming_addiction": [
+    {
+      "id": "GAM001",
+      "metric": "global_gaming_disorder_prevalence",
+      "value": 3.05,
+      "unit": "percent",
+      "description": "Worldwide prevalence of Gaming Disorder — ~60 million affected globally",
+      "source": "WHO / Gaming disorder research 2024",
+      "year": 2024
+    },
+    {
+      "id": "GAM002",
+      "metric": "global_gaming_disorder_total",
+      "value": 60000000,
+      "unit": "people",
+      "description": "Estimated 60 million people globally with gaming disorder",
+      "source": "WHO / Addiction Help 2024",
+      "year": 2024
+    },
+    {
+      "id": "GAM003",
+      "metric": "gaming_disorder_general_range",
+      "value": 3.5,
+      "unit": "percent",
+      "description": "3-4% of gamers globally affected by internet gaming disorders",
+      "source": "Gaming disorder research",
+      "year": 2024
+    },
+    {
+      "id": "GAM004",
+      "metric": "who_recognized_gaming_disorder",
+      "value": 2018,
+      "unit": "year",
+      "description": "WHO formally recognized Gaming Disorder in ICD-11 in 2018",
+      "source": "WHO ICD-11",
+      "year": 2018
+    },
+    {
+      "id": "GAM005",
+      "metric": "gaming_disorder_adolescents_12_18",
+      "value": 8.5,
+      "unit": "percent",
+      "description": "Gaming disorder prevalence among adolescents aged 12-18",
+      "source": "Gaming addiction research",
+      "year": 2024
+    },
+    {
+      "id": "GAM006",
+      "metric": "gaming_disorder_young_adults_15_34",
+      "value": 10.4,
+      "unit": "percent",
+      "description": "Gaming disorder prevalence among young adults 15-34 — highest age group",
+      "source": "Gaming addiction research",
+      "year": 2024
+    },
+    {
+      "id": "GAM007",
+      "metric": "gaming_disorder_male_prevalence",
+      "value": 8.5,
+      "unit": "percent",
+      "description": "Male gaming disorder prevalence (2.5:1 ratio vs females)",
+      "source": "Addiction Help 2024",
+      "year": 2024
+    },
+    {
+      "id": "GAM008",
+      "metric": "gaming_disorder_female_prevalence",
+      "value": 3.5,
+      "unit": "percent",
+      "description": "Female gaming disorder prevalence",
+      "source": "Addiction Help 2024",
+      "year": 2024
+    },
+    {
+      "id": "GAM009",
+      "metric": "gaming_disorder_southeast_asia_prevalence",
+      "value": 10.1,
+      "unit": "percent",
+      "description": "Southeast Asia gaming disorder prevalence — highest region",
+      "source": "Gaming addiction research",
+      "year": 2024
+    },
+    {
+      "id": "GAM010",
+      "metric": "gaming_disorder_china_adolescents",
+      "value": 11.7,
+      "unit": "percent",
+      "description": "China: highest adolescent gaming disorder prevalence",
+      "source": "Gaming addiction research",
+      "year": 2024
+    },
+    {
+      "id": "GAM011",
+      "metric": "hours_at_risk_gaming_weekly",
+      "value": 42,
+      "unit": "hours_per_week",
+      "description": "At-risk gamers average 42 hours/week vs 24-26 hours for healthy gamers",
+      "source": "Gaming disorder research",
+      "year": 2024
+    },
+    {
+      "id": "GAM012",
+      "metric": "hours_problematic_threshold",
+      "value": 20,
+      "unit": "hours_per_week",
+      "description": "Gaming 20+ hours/week often indicates problematic use",
+      "source": "Gaming disorder research",
+      "year": 2024
+    },
+    {
+      "id": "GAM013",
+      "metric": "hours_gaming_disorder_daily",
+      "value": 9,
+      "unit": "hours_per_day",
+      "description": "Gaming disorder: typically 8-10 hours daily or 30+ hours weekly",
+      "source": "Addiction Help 2024",
+      "year": 2024
+    },
+    {
+      "id": "GAM014",
+      "metric": "middle_east_internet_addiction_prevalence",
+      "value": 10.9,
+      "unit": "percent",
+      "description": "Middle East internet-related addiction prevalence — highest region for this broader category",
+      "source": "Gaming addiction research",
+      "year": 2024
+    },
+    {
+      "id": "GAM015",
+      "metric": "global_gamers_total",
+      "value": 3200000000,
+      "unit": "people",
+      "description": "Total gamers worldwide in 2024",
+      "source": "Newzoo / Industry reports",
+      "year": 2024
+    },
+    {
+      "id": "GAM016",
+      "metric": "gaming_market_global_revenue_usd",
+      "value": 187700000000,
+      "unit": "usd",
+      "description": "Global gaming market revenue in 2024",
+      "source": "Newzoo",
+      "year": 2024
+    },
+    {
+      "id": "GAM017",
+      "metric": "loot_box_gambling_crossover_pct",
+      "value": 5,
+      "unit": "percent",
+      "description": "~5% of loot box purchasers generate about 50% of all loot box revenue (whale dynamic mirrors gambling)",
+      "source": "Royal Society / UK Parliament",
+      "year": 2023
+    },
+    {
+      "id": "GAM018",
+      "metric": "gaming_disorder_comorbid_depression_pct",
+      "value": 57,
+      "unit": "percent",
+      "description": "% of people with gaming disorder who also show clinical depression symptoms",
+      "source": "PMC / Gaming addiction research",
+      "year": 2024
+    },
+    {
+      "id": "GAM019",
+      "metric": "gaming_disorder_comorbid_anxiety_pct",
+      "value": 47,
+      "unit": "percent",
+      "description": "% of people with gaming disorder with co-occurring anxiety",
+      "source": "PMC / Gaming addiction research",
+      "year": 2024
+    },
+    {
+      "id": "GAM020",
+      "metric": "south_korea_gaming_curfew_effect",
+      "value": 1,
+      "unit": "boolean_note",
+      "description": "South Korea implemented gaming curfew for minors (midnight-6AM) in 2011; repealed 2021 as ineffective — shifted to self-regulation",
+      "source": "Korean government / Gaming policy research",
+      "year": 2021
+    },
+    {
+      "id": "GAM021",
+      "metric": "china_gaming_restriction_minors_hours",
+      "value": 3,
+      "unit": "hours_per_week",
+      "description": "China limits minors to 3 hours of online gaming per week (Fri-Sun only, 1h each)",
+      "source": "NPPA China / Reuters",
+      "year": 2021
+    },
+    {
+      "id": "GAM022",
+      "metric": "gaming_disorder_treatment_cbt_success_pct",
+      "value": 45,
+      "unit": "percent",
+      "description": "CBT for gaming disorder shows ~45% significant improvement at 6 months",
+      "source": "PMC / Clinical trials",
+      "year": 2023
+    },
+    {
+      "id": "GAM023",
+      "metric": "gaming_disorder_natural_remission_pct",
+      "value": 50,
+      "unit": "percent",
+      "description": "~50% of gaming disorder cases resolve naturally within 1-2 years without intervention",
+      "source": "Longitudinal gaming studies",
+      "year": 2023
+    }
+  ],
+
+  "social_media_addiction": [
+    {
+      "id": "SMA001",
+      "metric": "global_social_media_users_2024",
+      "value": 5000000000,
+      "unit": "people",
+      "description": "5+ billion active social media users worldwide in 2024",
+      "source": "DemandSage 2024",
+      "year": 2024
+    },
+    {
+      "id": "SMA002",
+      "metric": "social_media_addiction_teens_prevalence_low",
+      "value": 5,
+      "unit": "percent",
+      "description": "Prevalence of social media addiction among teenagers — low estimate",
+      "source": "Research range",
+      "year": 2024
+    },
+    {
+      "id": "SMA003",
+      "metric": "social_media_addiction_teens_prevalence_high",
+      "value": 20,
+      "unit": "percent",
+      "description": "Prevalence of social media addiction among teenagers — high estimate",
+      "source": "Research range",
+      "year": 2024
+    },
+    {
+      "id": "SMA004",
+      "metric": "average_daily_social_media_time_global",
+      "value": 147,
+      "unit": "minutes_per_day",
+      "description": "Global average: 2 hours 27 minutes on social media daily",
+      "source": "DemandSage / Social media research 2024",
+      "year": 2024
+    },
+    {
+      "id": "SMA005",
+      "metric": "average_daily_social_media_time_us",
+      "value": 135,
+      "unit": "minutes_per_day",
+      "description": "US average: 2 hours 15 minutes on social media daily",
+      "source": "DemandSage 2024",
+      "year": 2024
+    },
+    {
+      "id": "SMA006",
+      "metric": "teen_daily_social_media_hours",
+      "value": 3,
+      "unit": "hours_per_day",
+      "description": "Teenagers average 2-4 hours per day on social media platforms",
+      "source": "Research consensus 2024",
+      "year": 2024
+    },
+    {
+      "id": "SMA007",
+      "metric": "young_adult_total_screen_time",
+      "value": 6.54,
+      "unit": "hours_per_day",
+      "description": "Young adults/adolescents average 6.54 hours daily screen time; 96.3% have social media in top 3 apps",
+      "source": "PMC study 2024",
+      "year": 2024
+    },
+    {
+      "id": "SMA008",
+      "metric": "dopamine_scrolling_actions_per_day",
+      "value": 300,
+      "unit": "scroll_actions_per_day",
+      "description": "Average user makes 300 scrolling actions/day, each potentially triggering dopamine response",
+      "source": "2024 neuroscience study",
+      "year": 2024
+    },
+    {
+      "id": "SMA009",
+      "metric": "dopamine_pathway_alteration",
+      "value": 1,
+      "unit": "boolean_note",
+      "description": "Frequent social media engagement alters dopamine pathways analogous to substance addiction (PMC11804976)",
+      "source": "PMC11804976 2025",
+      "year": 2025
+    },
+    {
+      "id": "SMA010",
+      "metric": "social_media_mental_health_impact",
+      "value": 93.8,
+      "unit": "percent",
+      "description": "93.8% of heavy users reported experiencing depression, anxiety, low self-esteem, body image issues, sleep problems, social isolation, or emotional difficulties",
+      "source": "PMC11179207",
+      "year": 2024
+    },
+    {
+      "id": "SMA011",
+      "metric": "likes_notifications_reward_mechanism",
+      "value": 1,
+      "unit": "boolean_note",
+      "description": "'Likes' and reposts activate brain reward center, releasing dopamine — same mechanism as substance use",
+      "source": "Scientific American / PMC 2024",
+      "year": 2024
+    },
+    {
+      "id": "SMA012",
+      "metric": "global_social_media_projected_2028",
+      "value": 6000000000,
+      "unit": "people",
+      "description": "Projected social media users by 2028: 6+ billion",
+      "source": "DemandSage 2024",
+      "year": 2028
+    },
+    {
+      "id": "SMA013",
+      "metric": "tiktok_avg_session_length_minutes",
+      "value": 95,
+      "unit": "minutes",
+      "description": "Average TikTok session length for users under 30",
+      "source": "Data.ai / App analytics",
+      "year": 2024
+    },
+    {
+      "id": "SMA014",
+      "metric": "instagram_teen_body_image_harm_pct",
+      "value": 32,
+      "unit": "percent",
+      "description": "32% of teen girls report Instagram makes body image issues worse (Facebook internal research leaked)",
+      "source": "Facebook/Meta internal research / WSJ",
+      "year": 2021
+    },
+    {
+      "id": "SMA015",
+      "metric": "social_media_sleep_disruption_teens_pct",
+      "value": 50,
+      "unit": "percent",
+      "description": "~50% of teens who use social media before bed report sleep disruption",
+      "source": "APA / Sleep research",
+      "year": 2024
+    },
+    {
+      "id": "SMA016",
+      "metric": "social_media_fomo_prevalence_pct",
+      "value": 56,
+      "unit": "percent",
+      "description": "56% of social media users report FOMO (Fear of Missing Out) regularly",
+      "source": "APA / Social media research",
+      "year": 2024
+    },
+    {
+      "id": "SMA017",
+      "metric": "phone_checks_per_day_avg",
+      "value": 96,
+      "unit": "times_per_day",
+      "description": "Average American checks their phone 96 times per day (once every 10 minutes while awake)",
+      "source": "Asurion / Screen time research",
+      "year": 2024
+    },
+    {
+      "id": "SMA018",
+      "metric": "social_media_comparison_depression_link",
+      "value": 1,
+      "unit": "boolean_note",
+      "description": "Meta-analysis confirms social comparison on social media is significantly linked to depression, especially in young women",
+      "source": "PMC / Psychology research meta-analysis",
+      "year": 2024
+    },
+    {
+      "id": "SMA019",
+      "metric": "digital_detox_improved_wellbeing_pct",
+      "value": 70,
+      "unit": "percent",
+      "description": "~70% of people who completed a 1-week social media detox reported improved wellbeing",
+      "source": "University of Bath study",
+      "year": 2022
+    },
+    {
+      "id": "SMA020",
+      "metric": "us_surgeon_general_advisory",
+      "value": 2023,
+      "unit": "year",
+      "description": "US Surgeon General issued advisory on social media and youth mental health in 2023",
+      "source": "Office of the US Surgeon General",
+      "year": 2023
+    }
+  ],
+
+  "gambling_addiction": [
+    {
+      "id": "GMB001",
+      "metric": "global_gambling_market_revenue_usd",
+      "value": 540000000000,
+      "unit": "usd",
+      "description": "Global gambling industry revenue in 2024",
+      "source": "Statista / Industry reports",
+      "year": 2024
+    },
+    {
+      "id": "GMB002",
+      "metric": "global_online_gambling_revenue_usd",
+      "value": 95000000000,
+      "unit": "usd",
+      "description": "Global online gambling market revenue in 2024",
+      "source": "Grand View Research",
+      "year": 2024
+    },
+    {
+      "id": "GMB003",
+      "metric": "us_sports_betting_revenue_2024_usd",
+      "value": 14000000000,
+      "unit": "usd",
+      "description": "US sports betting revenue in 2024 (legal in 38+ states)",
+      "source": "American Gaming Association",
+      "year": 2024
+    },
+    {
+      "id": "GMB004",
+      "metric": "problem_gambling_prevalence_global_pct",
+      "value": 2.3,
+      "unit": "percent",
+      "description": "Global prevalence of problem/pathological gambling among adults (1-3% range)",
+      "source": "NCPG / WHO",
+      "year": 2023
+    },
+    {
+      "id": "GMB005",
+      "metric": "problem_gambling_prevalence_us_pct",
+      "value": 2.6,
+      "unit": "percent",
+      "description": "% of US adults who meet criteria for problem gambling",
+      "source": "NCPG (National Council on Problem Gambling)",
+      "year": 2023
+    },
+    {
+      "id": "GMB006",
+      "metric": "at_risk_gambling_prevalence_us_pct",
+      "value": 6.5,
+      "unit": "percent",
+      "description": "% of US adults who are at-risk gamblers (subclinical but showing warning signs)",
+      "source": "NCPG",
+      "year": 2023
+    },
+    {
+      "id": "GMB007",
+      "metric": "problem_gamblers_total_us",
+      "value": 6000000,
+      "unit": "people",
+      "description": "Estimated US adults with gambling disorder",
+      "source": "NCPG",
+      "year": 2023
+    },
+    {
+      "id": "GMB008",
+      "metric": "gambling_disorder_dsm5_recognized",
+      "value": 2013,
+      "unit": "year",
+      "description": "DSM-5 recognized Gambling Disorder as a behavioral addiction in 2013 (moved from Impulse Control to Substance-Related and Addictive Disorders)",
+      "source": "APA DSM-5",
+      "year": 2013
+    },
+    {
+      "id": "GMB009",
+      "metric": "gambling_disorder_male_to_female_ratio",
+      "value": 2.0,
+      "unit": "ratio",
+      "description": "Men are approximately 2x more likely to develop gambling disorder than women",
+      "source": "NCPG / WHO",
+      "year": 2023
+    },
+    {
+      "id": "GMB010",
+      "metric": "gambling_disorder_young_adults_18_34_pct",
+      "value": 4.8,
+      "unit": "percent",
+      "description": "Gambling disorder prevalence among 18-34 year olds — highest age group",
+      "source": "NCPG",
+      "year": 2023
+    },
+    {
+      "id": "GMB011",
+      "metric": "gambling_disorder_comorbid_sud_pct",
+      "value": 73,
+      "unit": "percent",
+      "description": "73% of people with gambling disorder also have a substance use disorder",
+      "source": "NCPG / SAMHSA",
+      "year": 2023
+    },
+    {
+      "id": "GMB012",
+      "metric": "gambling_disorder_suicide_attempts_pct",
+      "value": 17,
+      "unit": "percent",
+      "description": "Up to 17% of people with gambling disorder attempt suicide",
+      "source": "NCPG / PMC",
+      "year": 2023
+    },
+    {
+      "id": "GMB013",
+      "metric": "gambling_disorder_suicide_ideation_pct",
+      "value": 48,
+      "unit": "percent",
+      "description": "~48% of problem gamblers have experienced suicidal ideation",
+      "source": "NCPG / International research",
+      "year": 2023
+    },
+    {
+      "id": "GMB014",
+      "metric": "sports_betting_problem_gambling_rate_pct",
+      "value": 4.5,
+      "unit": "percent",
+      "description": "Problem gambling rate among sports bettors (higher than general gambling population)",
+      "source": "NCPG / Sports betting research",
+      "year": 2024
+    },
+    {
+      "id": "GMB015",
+      "metric": "online_gambling_problem_rate_pct",
+      "value": 7.5,
+      "unit": "percent",
+      "description": "Problem gambling rate among online gamblers — 3x the general rate",
+      "source": "International gambling research",
+      "year": 2023
+    },
+    {
+      "id": "GMB016",
+      "metric": "gambling_losses_pct_from_problem_gamblers",
+      "value": 40,
+      "unit": "percent",
+      "description": "Problem gamblers (2-3% of population) generate ~40% of total gambling revenue",
+      "source": "Gambling research / Industry analysis",
+      "year": 2023
+    },
+    {
+      "id": "GMB017",
+      "metric": "avg_problem_gambler_debt_usd",
+      "value": 55000,
+      "unit": "usd",
+      "description": "Average debt accumulated by a person with gambling disorder",
+      "source": "NCPG",
+      "year": 2023
+    },
+    {
+      "id": "GMB018",
+      "metric": "gambling_disorder_treatment_seeking_pct",
+      "value": 3,
+      "unit": "percent",
+      "description": "Only ~3% of problem gamblers seek formal treatment",
+      "source": "NCPG",
+      "year": 2023
+    },
+    {
+      "id": "GMB019",
+      "metric": "gambling_disorder_ga_12step_success_pct",
+      "value": 8,
+      "unit": "percent",
+      "description": "Gamblers Anonymous 12-step program success rate (~8% maintain abstinence after 1 year)",
+      "source": "GA / ICRG research",
+      "year": 2022
+    },
+    {
+      "id": "GMB020",
+      "metric": "gambling_disorder_cbt_success_pct",
+      "value": 50,
+      "unit": "percent",
+      "description": "CBT for gambling disorder: ~50% significant improvement at 6-12 months",
+      "source": "PMC / Clinical trials",
+      "year": 2023
+    },
+    {
+      "id": "GMB021",
+      "metric": "gambling_relapse_rate_1yr_pct",
+      "value": 60,
+      "unit": "percent",
+      "description": "~60% of treated problem gamblers relapse within 1 year",
+      "source": "ICRG research",
+      "year": 2023
+    },
+    {
+      "id": "GMB022",
+      "metric": "us_states_legal_sports_betting",
+      "value": 38,
+      "unit": "states",
+      "description": "US states where sports betting is legal (2024)",
+      "source": "American Gaming Association",
+      "year": 2024
+    },
+    {
+      "id": "GMB023",
+      "metric": "gambling_advertising_spend_us_usd",
+      "value": 1500000000,
+      "unit": "usd",
+      "description": "Annual sports betting and gambling advertising spend in the US",
+      "source": "Media reports / AGA",
+      "year": 2024
+    },
+    {
+      "id": "GMB024",
+      "metric": "youth_gambling_prevalence_pct",
+      "value": 12,
+      "unit": "percent",
+      "description": "~12% of adolescents 12-17 report gambling in the past year (including informal betting)",
+      "source": "NCPG / Youth gambling research",
+      "year": 2023
+    },
+    {
+      "id": "GMB025",
+      "metric": "skin_gambling_gaming_crossover_teens_pct",
+      "value": 20,
+      "unit": "percent",
+      "description": "~20% of teen gamers have engaged in skin gambling (using in-game items as currency for gambling)",
+      "source": "UK Gambling Commission / Gaming research",
+      "year": 2023
+    },
+    {
+      "id": "GMB026",
+      "metric": "prediction_market_users_global",
+      "value": 3000000,
+      "unit": "people",
+      "description": "Estimated active prediction market users globally (Polymarket, Kalshi, etc.)",
+      "source": "Industry estimates",
+      "year": 2024
+    },
+    {
+      "id": "GMB027",
+      "metric": "gambling_economic_cost_us_annual_usd",
+      "value": 7000000000,
+      "unit": "usd",
+      "description": "Estimated annual social cost of problem gambling in the US",
+      "source": "NCPG / Economic research",
+      "year": 2023
+    },
+    {
+      "id": "GMB028",
+      "metric": "gambling_disorder_bankruptcy_rate_pct",
+      "value": 23,
+      "unit": "percent",
+      "description": "~23% of people with gambling disorder file for bankruptcy",
+      "source": "NCPG",
+      "year": 2023
+    }
+  ],
+
+  "prescription_drug_abuse": [
+    {
+      "id": "RXA001",
+      "metric": "us_prescription_drug_misuse_total",
+      "value": 14700000,
+      "unit": "people",
+      "description": "US adults who misused prescription drugs in the past year (2023)",
+      "source": "SAMHSA NSDUH 2024",
+      "year": 2023
+    },
+    {
+      "id": "RXA002",
+      "metric": "prescription_opioid_misuse_us",
+      "value": 8600000,
+      "unit": "people",
+      "description": "US adults misusing prescription opioids in 2023",
+      "source": "SAMHSA NSDUH 2024",
+      "year": 2023
+    },
+    {
+      "id": "RXA003",
+      "metric": "benzodiazepine_misuse_us",
+      "value": 3900000,
+      "unit": "people",
+      "description": "US adults misusing prescription benzodiazepines (Xanax, Valium, etc.) in 2023",
+      "source": "SAMHSA NSDUH 2024",
+      "year": 2023
+    },
+    {
+      "id": "RXA004",
+      "metric": "stimulant_misuse_us",
+      "value": 3600000,
+      "unit": "people",
+      "description": "US adults misusing prescription stimulants (Adderall, Ritalin) in 2023",
+      "source": "SAMHSA NSDUH 2024",
+      "year": 2023
+    },
+    {
+      "id": "RXA005",
+      "metric": "sedative_misuse_us",
+      "value": 1100000,
+      "unit": "people",
+      "description": "US adults misusing prescription sedatives (Ambien, etc.) in 2023",
+      "source": "SAMHSA NSDUH 2024",
+      "year": 2023
+    },
+    {
+      "id": "RXA006",
+      "metric": "prescription_drug_misuse_percent_us",
+      "value": 5.3,
+      "unit": "percent",
+      "description": "% of US adults 12+ who misused any prescription drug in the past year",
+      "source": "SAMHSA NSDUH 2024",
+      "year": 2023
+    },
+    {
+      "id": "RXA007",
+      "metric": "benzodiazepine_overdose_deaths_us",
+      "value": 12499,
+      "unit": "deaths",
+      "description": "US benzodiazepine-involved overdose deaths in 2023 (usually combined with opioids)",
+      "source": "CDC / NIDA",
+      "year": 2023
+    },
+    {
+      "id": "RXA008",
+      "metric": "benzo_opioid_combined_overdose_risk_multiplier",
+      "value": 10,
+      "unit": "times_more_likely",
+      "description": "Combining benzodiazepines with opioids increases overdose death risk ~10x",
+      "source": "NIDA / FDA",
+      "year": 2023
+    },
+    {
+      "id": "RXA009",
+      "metric": "benzodiazepine_dependence_timeline_weeks",
+      "value": 4,
+      "unit": "weeks",
+      "description": "Physical dependence on benzodiazepines can develop in as little as 4 weeks of regular use",
+      "source": "NIDA / Clinical guidelines",
+      "year": 2023
+    },
+    {
+      "id": "RXA010",
+      "metric": "benzodiazepine_withdrawal_seizure_risk",
+      "value": 1,
+      "unit": "boolean_note",
+      "description": "Abrupt benzodiazepine withdrawal can cause seizures and be life-threatening — requires medical supervision",
+      "source": "FDA / NIDA",
+      "year": 2023
+    },
+    {
+      "id": "RXA011",
+      "metric": "prescription_stimulant_misuse_college_pct",
+      "value": 17,
+      "unit": "percent",
+      "description": "% of college students reporting non-medical use of prescription stimulants",
+      "source": "SAMHSA / College health surveys",
+      "year": 2023
+    },
+    {
+      "id": "RXA012",
+      "metric": "adhd_medication_prescriptions_us_annual",
+      "value": 45000000,
+      "unit": "prescriptions",
+      "description": "Annual ADHD medication prescriptions written in the US",
+      "source": "IQVIA / FDA",
+      "year": 2023
+    },
+    {
+      "id": "RXA013",
+      "metric": "gabapentin_misuse_emerging",
+      "value": 1,
+      "unit": "boolean_note",
+      "description": "Gabapentin/pregabalin misuse is emerging as significant — often combined with opioids; some states now scheduling",
+      "source": "DEA / PMC research",
+      "year": 2024
+    },
+    {
+      "id": "RXA014",
+      "metric": "prescription_source_family_friends_pct",
+      "value": 50,
+      "unit": "percent",
+      "description": "~50% of people who misuse prescription drugs obtain them from family or friends",
+      "source": "SAMHSA NSDUH",
+      "year": 2023
+    },
+    {
+      "id": "RXA015",
+      "metric": "prescription_source_own_doctor_pct",
+      "value": 35,
+      "unit": "percent",
+      "description": "~35% of prescription drug misusers got the drug from their own doctor's prescription",
+      "source": "SAMHSA NSDUH",
+      "year": 2023
+    },
+    {
+      "id": "RXA016",
+      "metric": "opioid_prescriptions_us_2023",
+      "value": 142000000,
+      "unit": "prescriptions",
+      "description": "Opioid prescriptions dispensed in US in 2023 (down from 255M peak in 2012)",
+      "source": "CDC / IQVIA",
+      "year": 2023
+    },
+    {
+      "id": "RXA017",
+      "metric": "opioid_prescriptions_peak_2012",
+      "value": 255000000,
+      "unit": "prescriptions",
+      "description": "Peak opioid prescriptions in the US (2012) — 81.3 per 100 persons",
+      "source": "CDC",
+      "year": 2012
+    },
+    {
+      "id": "RXA018",
+      "metric": "prescription_drug_monitoring_programs_states",
+      "value": 49,
+      "unit": "states",
+      "description": "49 US states (all except Missouri at state level) have operational PDMPs",
+      "source": "PDMP TTAC / CDC",
+      "year": 2024
+    },
+    {
+      "id": "RXA019",
+      "metric": "muscle_relaxant_misuse_us",
+      "value": 2100000,
+      "unit": "people",
+      "description": "US adults misusing muscle relaxants (carisoprodol, cyclobenzaprine) in 2023",
+      "source": "SAMHSA",
+      "year": 2023
+    },
+    {
+      "id": "RXA020",
+      "metric": "elderly_prescription_misuse_pct",
+      "value": 12,
+      "unit": "percent",
+      "description": "~12% of adults 65+ misuse prescription drugs, often unintentionally due to polypharmacy",
+      "source": "SAMHSA / Geriatric research",
+      "year": 2023
+    },
+    {
+      "id": "RXA021",
+      "metric": "drug_takeback_programs_collected_lbs",
+      "value": 16700000,
+      "unit": "pounds",
+      "description": "DEA National Prescription Drug Take-Back days have collected 16.7 million pounds since 2010",
+      "source": "DEA",
+      "year": 2024
+    },
+    {
+      "id": "RXA022",
+      "metric": "prescription_drug_economic_cost_us_usd",
+      "value": 78500000000,
+      "unit": "usd_per_year",
+      "description": "Economic cost of prescription drug abuse in the US annually (excluding opioids counted separately)",
+      "source": "NIDA / Economic analysis",
+      "year": 2022
+    }
+  ],
+
+  "simulator_probability_tables": {
+    "description": "Pre-computed probability tables for the life simulator engine. Use these for branching probability calculations.",
+
+    "substance_addiction_risk": {
+      "note": "% chance of developing SUD given regular use of each substance",
+      "heroin": {"addiction_rate": 0.23, "timeframe": "months_1_to_12"},
+      "tobacco": {"addiction_rate": 0.67, "note": "Nicotine is among the most addictive substances"},
+      "cocaine": {"addiction_rate": 0.17, "note": "Some sources say first use can hook"},
+      "alcohol": {"addiction_rate": 0.15, "note": "15% of regular drinkers develop AUD"},
+      "cannabis": {"addiction_rate": 0.09, "note": "9% of all users; 1 in 6 if start before 18"},
+      "cannabis_teen": {"addiction_rate": 0.17, "note": "If use starts before age 18"},
+      "opioid_pain_patients": {"addiction_rate": 0.075, "range": [0.03, 0.12]},
+      "methamphetamine": {"addiction_rate": 0.15},
+      "mdma": {"addiction_rate": 0.07, "note": "Lower addiction risk among major substances"},
+      "benzodiazepines": {"addiction_rate": 0.10, "note": "Physical dependence in 4+ weeks"},
+      "prescription_stimulants": {"addiction_rate": 0.08, "note": "Adderall, Ritalin misuse"},
+      "gambling": {"addiction_rate": 0.026, "note": "2.6% of gamblers develop disorder"},
+      "online_gambling": {"addiction_rate": 0.075, "note": "3x general gambling rate"},
+      "social_media_problematic": {"addiction_rate": 0.10, "note": "5-20% range, midpoint 10%"},
+      "gaming_disorder": {"addiction_rate": 0.035, "note": "3-4% of gamers"},
+      "pornography_problematic": {"addiction_rate": 0.10, "note": "3.2-16.6% range"}
+    },
+
+    "relapse_rates_by_timeframe": {
+      "note": "Probability of relapse at each checkpoint post-treatment (alcohol/general SUD)",
+      "days_1_to_90": 0.75,
+      "months_3_to_6": 0.67,
+      "month_12": 0.50,
+      "year_2": 0.214,
+      "years_3_to_5": 0.096,
+      "after_5_years": 0.072,
+      "annual_risk_after_5yr_sobriety": 0.03
+    },
+
+    "treatment_success_rates": {
+      "note": "1-year abstinence rates by treatment type",
+      "no_treatment": 0.05,
+      "aa_12step": 0.35,
+      "cbt": 0.27,
+      "inpatient_rehab": 0.30,
+      "medication_assisted_opioids": 0.45,
+      "varenicline_tobacco": 0.44,
+      "nrt_tobacco": 0.20,
+      "cold_turkey_tobacco": 0.04,
+      "combined_therapy_tobacco": 0.55,
+      "cbt_gambling": 0.50,
+      "ga_12step_gambling": 0.08,
+      "cbt_gaming": 0.45,
+      "cbt_pornography": 0.50
+    },
+
+    "substance_recovery_1yr_rates": {
+      "alcohol": 0.41,
+      "cocaine": 0.45,
+      "heroin": 0.30,
+      "methamphetamine": 0.14,
+      "cannabis": 0.35,
+      "gambling": 0.40,
+      "gaming": 0.50,
+      "pornography": 0.50
+    },
+
+    "age_of_first_use_risk_multiplier": {
+      "note": "Multiplier for addiction risk based on age of first use",
+      "before_15": 6.5,
+      "age_15_to_17": 3.0,
+      "age_18_to_20": 1.5,
+      "age_21_plus": 1.0
+    },
+
+    "smoking_health_recovery_milestones": {
+      "20_min": "Heart rate normalizes",
+      "12_hours": "CO levels normal",
+      "1_day": "Heart attack risk starts dropping",
+      "2_weeks": "Lung function improving",
+      "1_month": "Coughing decreases",
+      "1_year": "Heart disease risk halved",
+      "5_years": "Stroke risk approaching normal",
+      "10_years": "Lung cancer risk halved, lung function near normal",
+      "15_years": "Heart disease risk same as never-smoker"
+    },
+
+    "pornography_relationship_impact": {
+      "note": "Probability shifts based on pornography use patterns",
+      "divorce_probability_baseline": 0.06,
+      "divorce_probability_male_starts_using": 0.11,
+      "divorce_probability_female_starts_using": 0.16,
+      "divorce_probability_woman_continues_using": 0.18,
+      "divorce_probability_couples_never_use": 0.04,
+      "infidelity_correlation": "strong_predictor"
+    },
+
+    "gambling_disorder_progression": {
+      "note": "Probability tables for gambling disorder simulator",
+      "casual_to_at_risk_1yr": 0.05,
+      "at_risk_to_problem_1yr": 0.15,
+      "problem_to_pathological_1yr": 0.20,
+      "bankruptcy_if_pathological": 0.23,
+      "suicide_attempt_if_pathological": 0.17,
+      "comorbid_substance_abuse": 0.73,
+      "treatment_seeking_rate": 0.03,
+      "relapse_1yr_post_treatment": 0.60,
+      "natural_recovery_rate": 0.35
+    },
+
+    "behavioral_addiction_risk_factors": {
+      "note": "Risk multipliers for behavioral addictions",
+      "male_vs_female_gambling": 2.0,
+      "male_vs_female_gaming": 2.5,
+      "adhd_gambling_risk_multiplier": 3.0,
+      "depression_gambling_risk_multiplier": 2.5,
+      "loneliness_gaming_risk_multiplier": 2.0,
+      "early_exposure_pornography_risk_multiplier": 2.5,
+      "family_history_addiction_multiplier": 2.0,
+      "ace_4plus_risk_multiplier": 4.0
+    }
+  }
+}

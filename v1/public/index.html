@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulator</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  /* Lucide icons via inline SVG — no emoji */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #fafafa;
+    color: #1a1a1a;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  /* ============ TOP BAR ============ */
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0;
+    height: 52px;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 20px;
+    z-index: 100;
+  }
+  .topbar h1 { font-size: 14px; font-weight: 700; color: #111; letter-spacing: -0.3px; }
+  .topbar-actions { display: flex; gap: 8px; align-items: center; }
+
+  .btn {
+    padding: 6px 14px; border-radius: 8px; border: 1px solid #d4d4d4;
+    background: #fff; color: #555; font-size: 12px; font-weight: 500;
+    cursor: pointer; transition: all 0.15s; font-family: inherit;
+  }
+  .btn:hover { background: #f5f5f5; color: #111; }
+  .btn-primary { background: #111; border-color: #111; color: #fff; }
+  .btn-primary:hover { background: #333; }
+  .btn-sim { background: #2563eb; border-color: #2563eb; color: #fff; padding: 6px 20px; }
+  .btn-sim:hover { background: #1d4ed8; }
+  .btn-sim.running { background: #dc2626; border-color: #dc2626; }
+  .btn-pause { background: #f59e0b; border-color: #f59e0b; color: #fff; padding: 6px 16px; }
+  .btn-pause:hover { background: #d97706; }
+  .btn-stop { background: #dc2626; border-color: #dc2626; color: #fff; padding: 6px 16px; }
+  .btn-stop:hover { background: #b91c1c; }
+
+  /* ============ SCENARIO BAR ============ */
+  .scenario-bar {
+    position: fixed; top: 52px; left: 0; right: 0;
+    height: 48px; background: #fff; border-bottom: 1px solid #e5e5e5;
+    display: flex; align-items: center; padding: 0 20px; gap: 10px; z-index: 99;
+  }
+  .scenario-input {
+    flex: 1; padding: 8px 14px; border-radius: 8px;
+    border: 1px solid #e0e0e0; background: #f9f9f9;
+    font-size: 13px; font-family: inherit; color: #111;
+  }
+  .scenario-input:focus { outline: none; border-color: #2563eb; background: #fff; }
+  .scenario-input::placeholder { color: #aaa; }
+
+  /* ============ TEMPLATES ============ */
+  .templates-wrap { position: relative; }
+  .templates-dropdown {
+    position: absolute; top: 40px; right: 0;
+    background: #fff; border: 1px solid #e0e0e0; border-radius: 12px;
+    padding: 6px; min-width: 280px; z-index: 200;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1); display: none;
+  }
+  .templates-dropdown.show { display: block; }
+  .tmpl-item { padding: 10px 14px; border-radius: 8px; cursor: pointer; font-size: 12px; color: #444; transition: background 0.1s; }
+  .tmpl-item:hover { background: #f5f5f5; }
+  .tmpl-item strong { color: #111; font-weight: 600; display: block; margin-bottom: 2px; font-size: 13px; }
+  .tmpl-item span { color: #888; font-size: 11px; }
+
+  /* ============ CANVAS ============ */
+  #canvas {
+    position: fixed;
+    top: 100px; left: 0; right: 0; bottom: 0;
+    cursor: grab; overflow: hidden;
+  }
+  .grid-bg {
+    position: fixed; top: 100px; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(circle, #e0e0e0 1px, transparent 1px);
+    background-size: 24px 24px; z-index: 1; pointer-events: none;
+  }
+  #svg-layer {
+    position: fixed; top: 100px; left: 0;
+    width: 100%; height: calc(100vh - 100px);
+    pointer-events: none; z-index: 5;
+  }
+  .edge-line { fill: none; stroke: #d4d4d4; stroke-width: 2; }
+  .edge-label { fill: #aaa; font-size: 10px; font-family: 'Inter', sans-serif; font-weight: 500; }
+
+  /* ============ NODES ============ */
+  .node {
+    position: absolute; min-width: 140px; max-width: 180px;
+    border-radius: 10px; padding: 12px 14px;
+    cursor: grab; user-select: none; z-index: 10;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    transition: box-shadow 0.2s, opacity 0.8s ease, transform 0.6s ease, filter 0.6s ease;
+  }
+  .node.hidden-node {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.9);
+  }
+  .node.revealed {
+    opacity: 1;
+    filter: none;
+    transform: scale(1);
+  }
+  .node:hover { z-index: 20; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+  .node.dragging { cursor: grabbing; z-index: 30; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+
+  .node-start {
+    background: none; border: none; box-shadow: none;
+    padding: 8px 0;
+  }
+  .node-start .node-label { font-size: 15px; font-weight: 700; color: #333; }
+  .node-start .node-desc { font-size: 11px; color: #999; }
+  .node-start .node-stat { border: none; padding-top: 2px; }
+  .node-start .node-icon svg { width: 20px; height: 20px; }
+  .node-start:hover { box-shadow: none; }
+  .node-desire { background: #faf5ff; border: 2px solid #a78bfa; }
+  .node-action { background: #f0fdf4; border: 2px solid #4ade80; }
+  .node-bottleneck { background: #fff7ed; border: 2px solid #fb923c; }
+  .node-decision { background: #fefce8; border: 2px solid #facc15; }
+  .node-outcome-good { background: #ecfdf5; border: 2px solid #34d399; }
+  .node-outcome-bad { background: #fef2f2; border: 2px solid #f87171; }
+  .node-loop { background: #f0f9ff; border: 2px solid #38bdf8; }
+
+  .node-icon { margin-bottom: 6px; display: flex; align-items: center; }
+  .node-icon svg { width: 16px; height: 16px; stroke-width: 2; }
+  .node-label { font-size: 12px; font-weight: 600; color: #111; line-height: 1.3; }
+  .node-desc { font-size: 10px; color: #888; line-height: 1.3; margin-top: 3px; }
+  .node-stat {
+    font-size: 9px; color: #999; margin-top: 5px;
+    padding-top: 5px; border-top: 1px solid rgba(0,0,0,0.06); font-weight: 500;
+  }
+
+  .port {
+    position: absolute; width: 10px; height: 10px;
+    border-radius: 50%; background: #ddd; border: 2px solid #ccc;
+    cursor: crosshair; z-index: 15; transition: all 0.15s;
+  }
+  .port:hover { background: #2563eb; border-color: #60a5fa; }
+  .port-out { right: -5px; top: 50%; transform: translateY(-50%); }
+  .port-in { left: -5px; top: 50%; transform: translateY(-50%); }
+  .port:hover { transform: translateY(-50%) scale(1.3); }
+
+  /* ============ PERSON SVG ============ */
+  .particle {
+    position: absolute; z-index: 25; pointer-events: none;
+    width: 24px; height: 32px;
+    transition: none;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
+  }
+  .particle-blocked { opacity: 0.3; filter: grayscale(1); }
+  .particle-success { filter: drop-shadow(0 0 6px rgba(52,211,153,0.7)); }
+
+  /* ============ STATS ============ */
+  .stats-bar {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: #fff; border: 1px solid #e5e5e5; border-radius: 12px;
+    padding: 10px 28px; display: flex; gap: 28px; z-index: 50;
+    font-size: 12px; opacity: 0; transition: opacity 0.3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  .stats-bar.visible { opacity: 1; }
+  .stat { display: flex; align-items: center; gap: 6px; }
+  .stat-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .stat-value { color: #111; font-weight: 700; font-size: 14px; }
+  .stat-label { color: #888; }
+
+  /* ============ DASHBOARD ============ */
+  .dashboard {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    height: 0; max-height: 50vh; overflow: hidden;
+    background: #fff; border-top: 1px solid #e5e5e5;
+    z-index: 60; transition: height 0.35s ease;
+    box-shadow: 0 -4px 30px rgba(0,0,0,0.08);
+  }
+  .dashboard.open { height: 45vh; overflow-y: auto; }
+  .dashboard-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 24px 10px; border-bottom: 1px solid #f0f0f0;
+    position: sticky; top: 0; background: #fff; z-index: 2;
+  }
+  .dashboard-header h2 { font-size: 13px; font-weight: 700; color: #111; letter-spacing: -0.3px; }
+  .dashboard-body {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    padding: 16px 24px 24px;
+  }
+  .dashboard-col h3 {
+    font-size: 10px; font-weight: 600; color: #999;
+    text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px;
+  }
+  .dash-funnel-row {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 6px;
+  }
+  .dash-funnel-label {
+    font-size: 11px; color: #555; width: 120px; text-align: right;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .dash-funnel-bar-wrap {
+    flex: 1; height: 22px; background: #f5f5f5; border-radius: 4px; overflow: hidden;
+  }
+  .dash-funnel-bar {
+    height: 100%; border-radius: 4px; transition: width 0.6s ease;
+    display: flex; align-items: center; padding-left: 8px;
+    font-size: 10px; font-weight: 600; color: #fff; min-width: 32px;
+  }
+  .dash-bottleneck-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 12px; border-radius: 8px; margin-bottom: 4px;
+    background: #fef2f2; border: 1px solid #fecaca;
+  }
+  .dash-bn-rank {
+    font-size: 16px; font-weight: 700; color: #ef4444; min-width: 24px;
+  }
+  .dash-bn-info { flex: 1; }
+  .dash-bn-name { font-size: 12px; font-weight: 600; color: #111; }
+  .dash-bn-stat { font-size: 10px; color: #888; margin-top: 2px; }
+  .dash-bn-bar {
+    width: 60px; height: 6px; background: #fee2e2; border-radius: 3px; overflow: hidden;
+  }
+  .dash-bn-bar-fill {
+    height: 100%; background: #ef4444; border-radius: 3px; transition: width 0.6s ease;
+  }
+  .dash-summary {
+    grid-column: 1 / -1; display: flex; gap: 32px; justify-content: center;
+    padding: 12px 0; border-top: 1px solid #f0f0f0; margin-top: 8px;
+  }
+  .dash-summary-item { text-align: center; }
+  .dash-summary-value { font-size: 20px; font-weight: 700; color: #111; }
+  .dash-summary-label { font-size: 10px; color: #999; margin-top: 2px; }
+
+  /* ============ TOOLBAR ============ */
+  .toolbar {
+    position: fixed; top: 112px; left: 14px;
+    display: flex; flex-direction: column; gap: 4px; z-index: 50;
+  }
+  .tool-btn {
+    width: 36px; height: 36px; border-radius: 8px;
+    border: 1px solid #d4d4d4; background: #fff; color: #888;
+    font-size: 15px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+  .tool-btn:hover { background: #f5f5f5; color: #111; }
+  .tool-btn.active { background: #2563eb; border-color: #2563eb; color: #fff; }
+
+  /* ============ ADD MENU ============ */
+  .add-menu {
+    position: fixed; background: #fff; border: 1px solid #e0e0e0;
+    border-radius: 12px; padding: 6px; z-index: 200;
+    display: none; min-width: 180px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  }
+  .add-menu.show { display: block; }
+  .add-menu-item {
+    padding: 8px 12px; border-radius: 8px; cursor: pointer;
+    font-size: 12px; color: #444; display: flex; align-items: center; gap: 8px;
+    transition: background 0.1s;
+  }
+  .add-menu-item:hover { background: #f5f5f5; }
+
+  /* ============ EDIT PANEL ============ */
+  .panel {
+    position: fixed; top: 100px; right: 0;
+    width: 240px; height: calc(100vh - 100px);
+    background: #fff; border-left: 1px solid #e5e5e5;
+    padding: 16px; z-index: 50; overflow-y: auto;
+    transform: translateX(100%); transition: transform 0.2s ease;
+  }
+  .panel.open { transform: translateX(0); }
+  .panel h3 { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px; }
+  .panel-group { margin-bottom: 14px; }
+  .panel-group label { display: block; font-size: 11px; color: #888; margin-bottom: 4px; font-weight: 500; }
+  .panel-group input {
+    width: 100%; padding: 7px 10px; border-radius: 6px;
+    border: 1px solid #e0e0e0; background: #fafafa;
+    color: #111; font-size: 12px; font-family: inherit;
+  }
+  .panel-group input:focus { outline: none; border-color: #2563eb; }
+
+  /* ============ DARK MODE (system) ============ */
+  @media (prefers-color-scheme: dark) {
+    body { background: #0a0a0a; color: #e0e0e0; }
+    .topbar { background: #111; border-color: #222; }
+    .topbar h1 { color: #fff; }
+    .scenario-bar { background: #111; border-color: #222; }
+    .scenario-input { background: #1a1a1a; border-color: #333; color: #fff; }
+    .scenario-input::placeholder { color: #555; }
+    .scenario-input:focus { border-color: #2563eb; background: #1a1a1a; }
+    .btn { background: #1a1a1a; border-color: #333; color: #aaa; }
+    .btn:hover { background: #252525; color: #fff; border-color: #444; }
+    .grid-bg { background-image: radial-gradient(circle, #1a1a1a 1px, transparent 1px); }
+    .edge-line { stroke: #333; }
+    .edge-label { fill: #555; }
+
+    .node { box-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+    .node:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+    .node-start { background: none; }
+    .node-start .node-label { color: #ddd; }
+    .node-desire { background: #1e1b3a; border-color: #7c6fbd; }
+    .node-action { background: #0a2015; border-color: #2d9a5a; }
+    .node-bottleneck { background: #2a1508; border-color: #d4752a; }
+    .node-decision { background: #2a2505; border-color: #c9a820; }
+    .node-outcome-good { background: #082a1c; border-color: #28b07a; }
+    .node-outcome-bad { background: #2a0a0a; border-color: #d45555; }
+    .node-loop { background: #081e2a; border-color: #2da5d4; }
+    .node-label { color: #eee; }
+    .node-desc { color: #888; }
+    .node-stat { color: #666; border-color: rgba(255,255,255,0.08); }
+
+    .port { background: #333; border-color: #444; }
+    .tool-btn { background: #1a1a1a; border-color: #333; color: #888; }
+    .tool-btn:hover { background: #252525; color: #fff; }
+    .stats-bar { background: #111; border-color: #222; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+    .stat-value { color: #fff; }
+    .stat-label { color: #666; }
+    .dashboard { background: #111; border-color: #222; box-shadow: 0 -4px 30px rgba(0,0,0,0.4); }
+    .dashboard-header { background: #111; border-color: #222; }
+    .dashboard-header h2 { color: #fff; }
+    .dashboard-col h3 { color: #666; }
+    .dash-funnel-label { color: #aaa; }
+    .dash-funnel-bar-wrap { background: #1a1a1a; }
+    .dash-bottleneck-item { background: #1e0a0a; border-color: #3d1515; }
+    .dash-bn-name { color: #eee; }
+    .dash-bn-stat { color: #777; }
+    .dash-bn-bar { background: #2a1010; }
+    .dash-summary { border-color: #222; }
+    .dash-summary-value { color: #fff; }
+    .panel { background: #111; border-color: #222; }
+    .panel h3 { color: #666; }
+    .panel-group label { color: #777; }
+    .panel-group input { background: #1a1a1a; border-color: #333; color: #fff; }
+    .add-menu { background: #1a1a1a; border-color: #333; box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
+    .add-menu-item { color: #ccc; }
+    .add-menu-item:hover { background: #252525; }
+    .templates-dropdown { background: #1a1a1a; border-color: #333; box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
+    .tmpl-item { color: #ccc; }
+    .tmpl-item:hover { background: #252525; }
+    .tmpl-item strong { color: #fff; }
+    .tmpl-item span { color: #666; }
+  }
+
+  /* ============ MOBILE & TABLET ============ */
+  @media (max-width: 1024px) {
+    .topbar { padding: 0 12px; height: 48px; }
+    .topbar h1 { font-size: 13px; }
+    .scenario-bar { padding: 0 12px; height: 44px; top: 48px; }
+    .scenario-input { font-size: 14px; padding: 8px 10px; }
+    #canvas { top: 92px; }
+    .grid-bg { top: 92px; }
+    #svg-layer { top: 92px; height: calc(100vh - 92px); }
+    .toolbar { top: 100px; left: 8px; }
+    .tool-btn { width: 32px; height: 32px; font-size: 14px; }
+    .node { min-width: 120px; max-width: 160px; padding: 10px 12px; }
+    .node-label { font-size: 11px; }
+    .node-desc { font-size: 9px; }
+    .node-stat { font-size: 8px; }
+    .node-icon svg { width: 14px; height: 14px; }
+    .panel { width: 220px; top: 92px; height: calc(100vh - 92px); }
+    .stats-bar { padding: 8px 16px; gap: 16px; font-size: 11px; bottom: 12px; }
+    .stat-value { font-size: 13px; }
+    .btn { padding: 5px 10px; font-size: 11px; }
+    .btn-sim { padding: 5px 14px; }
+    .templates-dropdown { min-width: 240px; }
+  }
+
+  @media (max-width: 768px) {
+    .topbar { height: 44px; }
+    .topbar-actions { gap: 4px; }
+    .scenario-bar { top: 44px; height: 40px; gap: 6px; padding: 0 8px; }
+    .scenario-input { font-size: 13px; padding: 6px 8px; }
+    #canvas { top: 84px; }
+    .grid-bg { top: 84px; }
+    #svg-layer { top: 84px; height: calc(100vh - 84px); }
+    .toolbar { top: 92px; left: 4px; }
+    .tool-btn { width: 28px; height: 28px; font-size: 12px; border-radius: 6px; }
+    .node { min-width: 100px; max-width: 140px; padding: 8px 10px; border-radius: 8px; }
+    .node-label { font-size: 10px; }
+    .node-desc { font-size: 8px; }
+    .node-stat { font-size: 7px; padding-top: 3px; margin-top: 3px; }
+    .node-icon { margin-bottom: 3px; }
+    .node-icon svg { width: 12px; height: 12px; }
+    .port { width: 8px; height: 8px; }
+    .port-out { right: -4px; }
+    .port-in { left: -4px; }
+    .panel { width: 100%; max-width: 260px; }
+    .stats-bar { padding: 6px 12px; gap: 10px; font-size: 10px; border-radius: 10px; }
+    .stat-value { font-size: 12px; }
+    .stat-label { font-size: 9px; }
+    .btn { padding: 4px 8px; font-size: 10px; }
+    .btn-sim { padding: 4px 12px; }
+    .btn-pause, .btn-stop { padding: 4px 10px; font-size: 10px; }
+    .templates-dropdown { min-width: 220px; right: -60px; }
+    .tmpl-item { padding: 8px 10px; }
+    .tmpl-item strong { font-size: 12px; }
+    .tmpl-item span { font-size: 10px; }
+    .add-menu { min-width: 160px; }
+    .add-menu-item { padding: 6px 10px; font-size: 11px; }
+    .particle { width: 18px; height: 24px; font-size: 14px; }
+    .particle svg { width: 18px; height: 24px; }
+  }
+
+  /* Touch: make nodes easier to grab */
+  @media (pointer: coarse) {
+    .node { padding: 14px 16px; }
+    .port { width: 14px; height: 14px; }
+    .port-out { right: -7px; }
+    .port-in { left: -7px; }
+    .tool-btn { width: 40px; height: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>SIMULATOR</h1>
+  <div class="topbar-actions">
+    <button class="btn" onclick="resetCanvas()">Clear</button>
+    <button class="btn btn-pause" id="btn-pause" onclick="pauseResume()" style="display:none">Pause</button>
+    <button class="btn btn-stop" id="btn-stop" onclick="stopSim()" style="display:none">Stop</button>
+    <button class="btn btn-sim" id="btn-simulate" onclick="simulate()">Simulate</button>
+  </div>
+</div>
+
+<div class="scenario-bar">
+  <input class="scenario-input" id="scenario-input" placeholder="Describe a scenario... e.g. 'I want to open a cafe in Indonesia'" />
+  <div class="templates-wrap">
+    <button class="btn" onclick="toggleTemplates(event)">Templates</button>
+    <div class="templates-dropdown" id="templates-dropdown">
+      <div class="tmpl-item" onclick="loadScenario('startup')">Launch a Startup</div>
+      <div class="tmpl-item" onclick="loadScenario('money')">Making Money on Desires</div>
+      <div class="tmpl-item" onclick="loadScenario('cafe')">Open a Cafe</div>
+      <div class="tmpl-item" onclick="loadScenario('content')">Content Creator Journey</div>
+      <div class="tmpl-item" onclick="loadScenario('saas')">Build a SaaS</div>
+      <div class="tmpl-item" onclick="loadScenario('freelance')">Go Freelance</div>
+      <div class="tmpl-item" onclick="loadScenario('app')">Create an App</div>
+      <div class="tmpl-item" onclick="loadScenario('lend_money')">Friend Asks to Borrow Money</div>
+      <div class="tmpl-item" onclick="loadScenario('lose_weight')">Lose Weight</div>
+      <div class="tmpl-item" onclick="loadScenario('learn_skill')">Learn a New Skill</div>
+      <div class="tmpl-item" onclick="loadScenario('move_abroad')">Move to Another Country</div>
+      <div class="tmpl-item" onclick="loadScenario('buy_house')">Buy a House</div>
+      <div class="tmpl-item" onclick="loadScenario('quit_job')">Quit Your Job</div>
+      <div class="tmpl-item" onclick="loadScenario('invest_crypto')">Invest in Crypto</div>
+      <div class="tmpl-item" onclick="loadScenario('get_married')">Get Married</div>
+      <div class="tmpl-item" onclick="loadScenario('start_youtube')">Start a YouTube Channel</div>
+      <div class="tmpl-item" onclick="loadScenario('pay_off_debt')">Pay Off Debt</div>
+      <div class="tmpl-item" onclick="loadScenario('have_baby')">Have a Baby</div>
+      <div class="tmpl-item" onclick="loadScenario('overcome_addiction')">Overcome Addiction</div>
+      <div class="tmpl-item" onclick="loadScenario('drop_out')">Drop Out of College</div>
+    </div>
+  </div>
+  <button class="btn btn-primary" onclick="generateFlow()">Generate</button>
+</div>
+
+<div class="grid-bg"></div>
+<svg id="svg-layer"></svg>
+<div id="canvas"></div>
+
+<div class="toolbar">
+  <button class="tool-btn" onclick="openAddMenu(event)" id="btn-add">+</button>
+  <button class="tool-btn" onclick="toggleConnect()" id="btn-connect">&#8594;</button>
+  <button class="tool-btn" onclick="deleteSelected()" id="btn-delete">&#10005;</button>
+</div>
+
+<div class="stats-bar" id="stats-bar">
+  <div class="stat"><div class="stat-dot" style="background:#2563eb"></div><span class="stat-value" id="stat-total">0</span><span class="stat-label">people</span></div>
+  <div class="stat"><div class="stat-dot" style="background:#34d399"></div><span class="stat-value" id="stat-success">0</span><span class="stat-label">made it</span></div>
+  <div class="stat"><div class="stat-dot" style="background:#f87171"></div><span class="stat-value" id="stat-blocked">0</span><span class="stat-label">stopped</span></div>
+  <div class="stat"><span class="stat-value" id="stat-rate">0%</span><span class="stat-label">success rate</span></div>
+</div>
+
+<div class="dashboard" id="dashboard">
+  <div class="dashboard-header">
+    <h2>Simulation Results</h2>
+    <button class="btn" onclick="hideDashboard()" style="padding:4px 10px;font-size:14px;line-height:1;">&times;</button>
+  </div>
+  <div class="dashboard-body">
+    <div class="dashboard-col">
+      <h3>Survival Funnel</h3>
+      <div id="dash-funnel"></div>
+    </div>
+    <div class="dashboard-col">
+      <h3>Deadliest Bottlenecks</h3>
+      <div id="dash-bottlenecks"></div>
+    </div>
+    <div class="dash-summary" id="dash-summary"></div>
+  </div>
+</div>
+
+<div class="add-menu" id="add-menu">
+  <div class="add-menu-item" onclick="addNode('start')"><span style="color:#818cf8;font-weight:700">—</span> Start</div>
+  <div class="add-menu-item" onclick="addNode('desire')"><span style="color:#a78bfa;font-weight:700">—</span> Desire</div>
+  <div class="add-menu-item" onclick="addNode('action')"><span style="color:#4ade80;font-weight:700">—</span> Action</div>
+  <div class="add-menu-item" onclick="addNode('bottleneck')"><span style="color:#fb923c;font-weight:700">—</span> Bottleneck</div>
+  <div class="add-menu-item" onclick="addNode('decision')"><span style="color:#facc15;font-weight:700">—</span> Decision</div>
+  <div class="add-menu-item" onclick="addNode('loop')"><span style="color:#38bdf8;font-weight:700">—</span> Loop</div>
+  <div class="add-menu-item" onclick="addNode('outcome-good')"><span style="color:#34d399;font-weight:700">—</span> Good outcome</div>
+  <div class="add-menu-item" onclick="addNode('outcome-bad')"><span style="color:#f87171;font-weight:700">—</span> Bad outcome</div>
+</div>
+
+<div class="panel" id="edit-panel">
+  <h3>Edit Node</h3>
+  <div class="panel-group"><label>Label</label><input type="text" id="edit-label" oninput="updateSelectedNode()"></div>
+  <div class="panel-group"><label>Pass rate (%)</label><input type="number" id="edit-prob" min="0" max="100" oninput="updateSelectedNode()"></div>
+  <div class="panel-group"><label>Description</label><input type="text" id="edit-desc" oninput="updateSelectedNode()"></div>
+  <div class="panel-group"><label>Source</label><input type="text" id="edit-source" readonly style="color:#aaa;font-size:10px;"></div>
+  <button class="btn btn-sim" style="width:100%;margin-top:8px;" onclick="simulateFromNode()">Simulate from here</button>
+</div>
+
+<script>
+// ============ SVG PERSON GENERATOR ============
+const SKIN_TONES = ['#F5D0A9','#D4A574','#8D5524','#C68642','#E0AC69','#6B4226','#F1C27D','#FFDBAC'];
+const SHIRT_COLORS = ['#3B82F6','#EF4444','#10B981','#F59E0B','#8B5CF6','#EC4899','#06B6D4','#F97316','#6366F1','#14B8A6'];
+const HAIR_COLORS = ['#1a1a1a','#3d2314','#8B4513','#D2691E','#F4C430','#B22222','#2F1B14'];
+
+function createPersonSVG() {
+  const skin = SKIN_TONES[Math.floor(Math.random()*SKIN_TONES.length)];
+  const shirt = SHIRT_COLORS[Math.floor(Math.random()*SHIRT_COLORS.length)];
+  const hair = HAIR_COLORS[Math.floor(Math.random()*HAIR_COLORS.length)];
+  const pants = Math.random()>0.5 ? '#1e3a5f' : '#374151';
+  const isWoman = Math.random()>0.5;
+  const hairStyle = isWoman
+    ? `<ellipse cx="12" cy="5" rx="5" ry="4.5" fill="${hair}"/><path d="M7 6 Q7 12 9 13" stroke="${hair}" stroke-width="1.5" fill="none"/><path d="M17 6 Q17 12 15 13" stroke="${hair}" stroke-width="1.5" fill="none"/>`
+    : `<ellipse cx="12" cy="5" rx="4.5" ry="3.5" fill="${hair}"/>`;
+
+  return `<svg viewBox="0 0 24 32" width="24" height="32" xmlns="http://www.w3.org/2000/svg">
+    ${hairStyle}
+    <circle cx="12" cy="8" r="4" fill="${skin}"/>
+    <circle cx="10.5" cy="7.5" r="0.5" fill="#333"/>
+    <circle cx="13.5" cy="7.5" r="0.5" fill="#333"/>
+    <path d="M10.8 9.5 Q12 10.3 13.2 9.5" stroke="#333" stroke-width="0.4" fill="none"/>
+    <rect x="8" y="12" width="8" height="${isWoman?9:10}" rx="2" fill="${shirt}"/>
+    ${isWoman?`<path d="M8 15 L6 20" stroke="${shirt}" stroke-width="2" stroke-linecap="round"/><path d="M16 15 L18 20" stroke="${shirt}" stroke-width="2" stroke-linecap="round"/>`
+    :`<path d="M8 14 L5 21" stroke="${shirt}" stroke-width="2" stroke-linecap="round"/><path d="M16 14 L19 21" stroke="${shirt}" stroke-width="2" stroke-linecap="round"/>`}
+    <rect x="9" y="${isWoman?21:22}" width="2.5" height="7" rx="1" fill="${pants}"/>
+    <rect x="12.5" y="${isWoman?21:22}" width="2.5" height="7" rx="1" fill="${pants}"/>
+    <rect x="8.5" y="${isWoman?27:28}" width="3.5" height="2" rx="1" fill="#333"/>
+    <rect x="12" y="${isWoman?27:28}" width="3.5" height="2" rx="1" fill="#333"/>
+    <circle cx="${5+(isWoman?1:0)}" cy="${isWoman?20:21}" r="1.2" fill="${skin}"/>
+    <circle cx="${19-(isWoman?1:0)}" cy="${isWoman?20:21}" r="1.2" fill="${skin}"/>
+  </svg>`;
+}
+
+// Lucide-style SVG icons — no emoji
+const ICONS = {
+  'start':     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="#818cf8" stroke="none"/></svg>',
+  'desire':    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>',
+  'action':    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
+  'bottleneck':'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+  'decision':  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></svg>',
+  'loop':      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>',
+  'outcome-good':'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+  'outcome-bad':'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'
+};
+
+// ============ STATE ============
+let nodes=[], edges=[], particles=[];
+let nextId=1, selectedNode=null, connectMode=false, connectFrom=null;
+let dragging=null, dragOffset={x:0,y:0}, menuPos={x:200,y:200};
+let simRunning=false;
+let simPaused=false;
+let revealedNodes = new Set();
+let pendingTimeouts = [];
+const TOP=100;
+
+// ============ STATS TRACKING ============
+let nodeStats = {}; // nodeId -> { arrived, passed, blocked }
+const particleVisits = new WeakMap(); // dot -> { nodeId: visitCount }
+let simFinishedCount = 0;
+let simTotalExpected = 0;
+
+// ============ SPEED (VERY SLOW) ============
+const SPD = { move:2.5, wait:3000, launch:600, wavePause:4000, fade:3000, waves:3, perWave:6 };
+
+// ============ AUTO-FIT ============
+function autoFitNodes() {
+  if (nodes.length === 0) return;
+  const vw = window.innerWidth - 80;
+  const vh = window.innerHeight - TOP - 60;
+  const nodeW = 160;
+  const nodeH = 130;
+  const padX = 40;
+  const padY = 40;
+  const minGapX = 20;
+  const minGapY = 20;
+
+  // Find the original graph bounds
+  const minX = Math.min(...nodes.map(n=>n.x));
+  const maxX = Math.max(...nodes.map(n=>n.x)) + nodeW;
+  const minY = Math.min(...nodes.map(n=>n.y));
+  const maxY = Math.max(...nodes.map(n=>n.y)) + nodeH;
+  const graphW = maxX - minX || 1;
+  const graphH = maxY - minY || 1;
+
+  // Scale to fit viewport — ensure nodes don't get too small
+  const scaleX = (vw - padX * 2) / graphW;
+  const scaleY = (vh - padY * 2) / graphH;
+  const scale = Math.min(scaleX, scaleY, 1);
+
+  // If too many nodes would overlap, cap the scale so nodes stay readable
+  const minScale = Math.min(1, vw / (nodes.length * (nodeW + minGapX) * 0.6));
+  const finalScale = Math.max(scale, minScale);
+
+  // Center in viewport
+  const scaledW = graphW * finalScale;
+  const scaledH = graphH * finalScale;
+  const offsetX = Math.max(padX, (vw - scaledW) / 2 + 40);
+  const offsetY = Math.max(padY, (vh - scaledH) / 2 + 20);
+
+  nodes.forEach(n => {
+    n._rx = (n.x - minX) * finalScale + offsetX;
+    n._ry = (n.y - minY) * finalScale + offsetY;
+  });
+
+  // Multiple passes to resolve overlaps
+  for (let pass = 0; pass < 5; pass++) {
+    let moved = false;
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const a = nodes[i], b = nodes[j];
+        const dx = Math.abs(a._rx - b._rx);
+        const dy = Math.abs(a._ry - b._ry);
+        const overlapX = (nodeW + minGapX) - dx;
+        const overlapY = (nodeH + minGapY) - dy;
+        if (overlapX > 0 && overlapY > 0) {
+          // Push apart in the direction of least overlap
+          if (overlapX < overlapY) {
+            const pushX = overlapX / 2 + 5;
+            if (a._rx < b._rx) { a._rx -= pushX; b._rx += pushX; }
+            else { a._rx += pushX; b._rx -= pushX; }
+          } else {
+            const pushY = overlapY / 2 + 5;
+            if (a._ry < b._ry) { a._ry -= pushY; b._ry += pushY; }
+            else { a._ry += pushY; b._ry -= pushY; }
+          }
+          moved = true;
+        }
+      }
+    }
+    if (!moved) break;
+  }
+}
+
+// ============ SCENARIOS ============
+const SCENARIOS = {
+  startup: {
+    title:'Launch a Startup', input:'I want to launch a startup',
+    nodes: [
+      {id:1,type:'desire',label:'Have a startup idea',x:0,y:100,prob:100,desc:'90% of adults have business ideas',source:'Gallup 2023'},
+      {id:2,type:'action',label:'Actually start building',x:240,y:100,prob:100,desc:'Only 5-10% of people act on ideas',source:'GEM Global Report',time:'1-3 months'},
+      {id:3,type:'bottleneck',label:'Run out of money',x:480,y:100,prob:38,desc:'38% of startups fail from cash problems',source:'CB Insights',time:'6-18 months'},
+      {id:4,type:'outcome-bad',label:'Dead: no funding',x:480,y:300,prob:100,desc:'62% never raise or run dry',source:'CB Insights'},
+      {id:5,type:'decision',label:'Find product-market fit?',x:720,y:100,prob:40,desc:'Only 40% of funded startups find PMF',source:'Startup Genome 2023',time:'6-24 months'},
+      {id:6,type:'outcome-bad',label:'Nobody wants this',x:720,y:300,prob:100,desc:'#1 reason startups die',source:'CB Insights #1'},
+      {id:7,type:'bottleneck',label:'Scale the team',x:960,y:100,prob:60,desc:'23% fail from wrong team',source:'CB Insights',time:'1-2 years'},
+      {id:8,type:'outcome-bad',label:'Team implodes',x:960,y:300,prob:100,desc:'Co-founder conflict kills 65%',source:'Noam Wasserman'},
+      {id:9,type:'decision',label:'Reach profitability?',x:1200,y:100,prob:33,desc:'Only 33% of VC-backed reach profit',source:'PitchBook 2023',time:'2-5 years'},
+      {id:10,type:'outcome-good',label:'Sustainable business',x:1440,y:40,prob:100,desc:'~6% of all startups reach this',source:'Startup Genome'},
+      {id:11,type:'outcome-bad',label:'Zombie company',x:1440,y:220,prob:100,desc:'Alive but not growing',source:'YC pattern'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3},{from:3,to:4,label:'fail'},{from:3,to:5,label:'pass'},
+      {from:5,to:6,label:'no'},{from:5,to:7,label:'yes'},{from:7,to:8,label:'fail'},
+      {from:7,to:9,label:'pass'},{from:9,to:10,label:'yes'},{from:9,to:11,label:'no'},
+    ]
+  },
+  money: {
+    title:'Making Money on Desires', input:'Making money on what people want',
+    nodes: [
+      {id:1,type:'start',label:'People desire something',x:0,y:120,prob:100,desc:'Wealth, Status, Ego, Comfort',source:'Maslow + Consumer Research'},
+      {id:2,type:'desire',label:'Wealth',x:220,y:0,prob:100,desc:'78% want more money',source:'Gallup World Poll'},
+      {id:3,type:'desire',label:'Status & Ego',x:220,y:140,prob:100,desc:'92% driven by social proof',source:'Nielsen'},
+      {id:4,type:'desire',label:'Comfort',x:220,y:280,prob:100,desc:'$4.8T convenience economy',source:'McKinsey 2023'},
+      {id:5,type:'action',label:'They search for solutions',x:460,y:140,prob:100,desc:'8.5B Google searches/day',source:'Google',time:'seconds'},
+      {id:6,type:'bottleneck',label:'Do they trust you?',x:700,y:140,prob:22,desc:'Only 22% trust online brands',source:'Edelman Trust 2023',time:'3-8 seconds'},
+      {id:7,type:'outcome-bad',label:'Scroll past, forget',x:700,y:320,prob:100,desc:'78% bounce',source:'Industry avg'},
+      {id:8,type:'action',label:'They pay you',x:940,y:140,prob:100,desc:'Avg conversion: 2-3%',source:'Shopify',time:'1-7 days'},
+      {id:9,type:'bottleneck',label:'Do you deliver value?',x:1180,y:140,prob:65,desc:'65% satisfied, 35% churn',source:'Bain & Company',time:'30-90 days'},
+      {id:10,type:'outcome-good',label:'Repeat customer',x:1420,y:80,prob:100,desc:'LTV 5-7x higher',source:'Harvard Business Review'},
+      {id:11,type:'outcome-bad',label:'Refund / bad review',x:1420,y:240,prob:100,desc:'1 bad review = 22 lost customers',source:'Lee Resources'},
+    ],
+    edges: [
+      {from:1,to:2},{from:1,to:3},{from:1,to:4},
+      {from:2,to:5},{from:3,to:5},{from:4,to:5},
+      {from:5,to:6},{from:6,to:7,label:'fail'},{from:6,to:8,label:'pass'},
+      {from:8,to:9},{from:9,to:10,label:'pass'},{from:9,to:11,label:'fail'},
+    ]
+  },
+  cafe: {
+    title:'Open a Cafe', input:'I want to open a cafe',
+    nodes: [
+      {id:1,type:'desire',label:'Dream of owning a cafe',x:0,y:120,prob:100,desc:'Top 5 most desired business',source:'NRA 2023'},
+      {id:2,type:'action',label:'Find location + capital',x:240,y:120,prob:100,desc:'Cost: 50-200M IDR',source:'Indonesia avg',time:'2-6 months'},
+      {id:3,type:'bottleneck',label:'Location good enough?',x:480,y:120,prob:45,desc:'#1 factor for success',source:'Restaurant.org',time:'1-3 months'},
+      {id:4,type:'outcome-bad',label:'Bad location, low traffic',x:480,y:300,prob:100,desc:'55% choose wrong location',source:'FSR Magazine'},
+      {id:5,type:'action',label:'Open doors, first month',x:720,y:120,prob:100,desc:'Honeymoon: friends & family',source:'Common pattern',time:'1 month'},
+      {id:6,type:'bottleneck',label:'Survive month 3-6',x:960,y:120,prob:40,desc:'60% fail in year 1',source:'National Restaurant Assoc',time:'3-6 months'},
+      {id:7,type:'outcome-bad',label:'Closed: no customers',x:960,y:300,prob:100,desc:'Avg cafe lasts 4.5 years',source:'BLS'},
+      {id:8,type:'decision',label:'Build regulars?',x:1200,y:120,prob:50,desc:'70% revenue from regulars',source:'Toast POS',time:'6-12 months'},
+      {id:9,type:'outcome-good',label:'Profitable, growing',x:1440,y:60,prob:100,desc:'~17% become profitable',source:'Industry benchmark'},
+      {id:10,type:'outcome-bad',label:'Breakeven forever',x:1440,y:220,prob:100,desc:'Survive but never profit',source:'Common'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3},{from:3,to:4,label:'fail'},{from:3,to:5,label:'pass'},
+      {from:5,to:6},{from:6,to:7,label:'fail'},{from:6,to:8,label:'pass'},
+      {from:8,to:9,label:'yes'},{from:8,to:10,label:'no'},
+    ]
+  },
+  content: {
+    title:'Content Creator Journey', input:'I want to become a content creator',
+    nodes: [
+      {id:1,type:'desire',label:'Want to be a creator',x:0,y:120,prob:100,desc:'50M+ consider themselves creators',source:'SignalFire 2023'},
+      {id:2,type:'action',label:'Post first content',x:240,y:120,prob:100,desc:'Only 12% actually post',source:'Creator Economy Report',time:'1-2 weeks'},
+      {id:3,type:'bottleneck',label:'Stay consistent 90 days',x:480,y:120,prob:20,desc:'80% quit within 90 days',source:'YouTube Creator Academy',time:'90 days'},
+      {id:4,type:'outcome-bad',label:'Quit: no views',x:480,y:300,prob:100,desc:'Avg: 50 views/video',source:'Tubics'},
+      {id:5,type:'bottleneck',label:'Reach 1K followers',x:720,y:120,prob:35,desc:'35% of consistent reach 1K',source:'Linktree',time:'3-12 months'},
+      {id:6,type:'outcome-bad',label:'Small audience forever',x:720,y:300,prob:100,desc:'Median: 500 subscribers',source:'Social Blade'},
+      {id:7,type:'decision',label:'Monetize?',x:960,y:120,prob:30,desc:'4% earn >$100K/yr',source:'Linktree 2023',time:'1-3 years'},
+      {id:8,type:'outcome-good',label:'Full-time creator',x:1200,y:60,prob:100,desc:'Top 1% earn 90% of revenue',source:'Goldman Sachs'},
+      {id:9,type:'outcome-bad',label:'Hobby income only',x:1200,y:220,prob:100,desc:'Median earns $0/yr',source:'Linktree'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3},{from:3,to:4,label:'fail'},{from:3,to:5,label:'pass'},
+      {from:5,to:6,label:'fail'},{from:5,to:7,label:'pass'},
+      {from:7,to:8,label:'yes'},{from:7,to:9,label:'no'},
+    ]
+  },
+  saas: {
+    title:'Build a SaaS', input:'I want to build a SaaS product',
+    nodes: [
+      {id:1,type:'desire',label:'See a problem worth solving',x:0,y:100,prob:100,desc:'Avg dev has 3-5 ideas/year',source:'Indie Hackers'},
+      {id:2,type:'action',label:'Build an MVP',x:240,y:100,prob:100,desc:'Avg 2-4 months solo',source:'YC benchmark',time:'2-4 months'},
+      {id:3,type:'bottleneck',label:'Get 10 paying users',x:480,y:100,prob:25,desc:'75% never get 10 customers',source:'Baremetrics',time:'1-6 months'},
+      {id:4,type:'outcome-bad',label:'$0 MRR forever',x:480,y:280,prob:100,desc:'Most common outcome',source:'Indie Hackers'},
+      {id:5,type:'bottleneck',label:'Reach $1K MRR',x:720,y:100,prob:40,desc:'10% reach $1K MRR',source:'MicroConf',time:'3-12 months'},
+      {id:6,type:'outcome-bad',label:'Side project purgatory',x:720,y:280,prob:100,desc:'Not enough to quit job',source:'Common'},
+      {id:7,type:'decision',label:'Churn below 5%?',x:960,y:100,prob:45,desc:'Avg churn: 5-7%/month',source:'ProfitWell',time:'3-6 months'},
+      {id:8,type:'bottleneck',label:'Scale to $10K MRR',x:1200,y:100,prob:50,desc:'$1K to $10K: 11 months avg',source:'Baremetrics',time:'6-18 months'},
+      {id:9,type:'outcome-bad',label:'Churn kills growth',x:1200,y:280,prob:100,desc:'Leaky bucket',source:'ProfitWell'},
+      {id:10,type:'outcome-good',label:'Ramen profitable',x:1440,y:40,prob:100,desc:'~2% of ideas reach this',source:'Composite'},
+      {id:11,type:'outcome-bad',label:'Burnout, shut down',x:1440,y:200,prob:100,desc:'Solo burnout: 72%',source:'Indie survey'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3},{from:3,to:4,label:'fail'},{from:3,to:5,label:'pass'},
+      {from:5,to:6,label:'fail'},{from:5,to:7,label:'pass'},
+      {from:7,to:8,label:'yes'},{from:7,to:9,label:'no'},
+      {from:8,to:10,label:'pass'},{from:8,to:11,label:'fail'},
+    ]
+  },
+  freelance: {
+    title:'Go Freelance', input:'I want to go freelance',
+    nodes: [
+      {id:1,type:'desire',label:'Want freedom & flexibility',x:0,y:120,prob:100,desc:'36% of US workforce freelances',source:'Upwork 2023'},
+      {id:2,type:'action',label:'Send proposals',x:240,y:120,prob:100,desc:'10 proposals to first gig',source:'Upwork',time:'2-8 weeks'},
+      {id:3,type:'bottleneck',label:'Land first client',x:480,y:120,prob:45,desc:'55% quit before first client',source:'Payoneer',time:'1-3 months'},
+      {id:4,type:'outcome-bad',label:'No clients, back to job',x:480,y:300,prob:100,desc:'Most common outcome',source:'Industry'},
+      {id:5,type:'bottleneck',label:'Earn $2K+/month',x:720,y:120,prob:40,desc:'31% earn >$75K/yr',source:'Upwork'},
+      {id:6,type:'outcome-bad',label:'Feast-famine cycle',x:720,y:300,prob:100,desc:'#1 freelance fear',source:'Freelancers Union'},
+      {id:7,type:'decision',label:'Raise rates?',x:960,y:120,prob:50,desc:'Top 10% earn 3-5x market',source:'Toptal'},
+      {id:8,type:'outcome-good',label:'Premium freelancer',x:1200,y:60,prob:100,desc:'$100K+ earners',source:'McKinsey'},
+      {id:9,type:'outcome-bad',label:'Stuck at low rates',x:1200,y:220,prob:100,desc:'Race to bottom',source:'Common'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3},{from:3,to:4,label:'fail'},{from:3,to:5,label:'pass'},
+      {from:5,to:6,label:'fail'},{from:5,to:7,label:'pass'},
+      {from:7,to:8,label:'yes'},{from:7,to:9,label:'no'},
+    ]
+  },
+
+  app: {
+    title:'Create an App', input:'I want to create an app',
+    nodes: [
+      {id:1,type:'desire',label:'Have an app idea',x:0,y:100,prob:100,desc:'Every developer has 3-5 ideas/year',source:'Indie Hackers'},
+      {id:2,type:'action',label:'Design & build it',x:240,y:100,prob:100,desc:'Avg cost: $5K-$50K solo, 3-6 months',source:'Clutch 2024'},
+      {id:3,type:'bottleneck',label:'Submit to app store',x:480,y:100,prob:75,desc:'25% of submissions get rejected',source:'Apple 2024'},
+      {id:4,type:'outcome-bad',label:'Rejected / stuck in dev',x:480,y:280,prob:100,desc:'Many never finish or pass review',source:'Apple data'},
+      {id:5,type:'bottleneck',label:'Get first 100 downloads',x:720,y:100,prob:30,desc:'Most apps get <1K total downloads',source:'Statista'},
+      {id:6,type:'outcome-bad',label:'Zero traction',x:720,y:280,prob:100,desc:'70% of apps get under 5K downloads ever',source:'AppFollow'},
+      {id:7,type:'bottleneck',label:'Day 30 retention > 4%',x:960,y:100,prob:25,desc:'Avg day 30 retention: 2-4%',source:'AppsFlyer 2024'},
+      {id:8,type:'outcome-bad',label:'Users download, never return',x:960,y:280,prob:100,desc:'96% of users churn in 30 days',source:'AppsFlyer'},
+      {id:9,type:'decision',label:'Monetize?',x:1200,y:100,prob:30,desc:'Avg app revenue: $1,100/month',source:'BuildFire'},
+      {id:10,type:'outcome-good',label:'Sustainable app business',x:1440,y:40,prob:100,desc:'Top 1% earn 90%+ of all revenue',source:'Sensor Tower'},
+      {id:11,type:'outcome-bad',label:'Costs more than it earns',x:1440,y:200,prob:100,desc:'Most apps never recoup dev cost',source:'Industry avg'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3},{from:3,to:4,label:'fail'},{from:3,to:5,label:'pass'},
+      {from:5,to:6,label:'fail'},{from:5,to:7,label:'pass'},
+      {from:7,to:8,label:'fail'},{from:7,to:9,label:'pass'},
+      {from:9,to:10,label:'yes'},{from:9,to:11,label:'no'},
+    ]
+  },
+
+  lend_money: {
+    title:'Friend Asks to Borrow Money', input:'A friend without a job asks me to borrow money',
+    nodes: [
+      {id:1,type:'start',label:'Friend asks for money',x:0,y:140,prob:100,desc:'43% of people have lent to friends/family',source:'Bankrate 2024'},
+      {id:2,type:'decision',label:'Do you lend?',x:240,y:140,prob:60,desc:'60% say yes when close friend asks',source:'LendingTree 2023'},
+      {id:3,type:'outcome-good',label:'Say no, relationship survives',x:240,y:320,prob:100,desc:'71% of those who say no keep the friendship',source:'Bankrate'},
+      {id:4,type:'action',label:'You give them money',x:480,y:140,prob:100,desc:'Avg personal loan to friend: $500-$3K',source:'LendingTree'},
+      {id:5,type:'bottleneck',label:'Do they pay you back?',x:720,y:140,prob:47,desc:'53% of lenders lose money on personal loans',source:'Bankrate 2024'},
+      {id:6,type:'outcome-bad',label:'Never paid back',x:720,y:320,prob:100,desc:'$3,257 avg amount lost forever',source:'LendingTree 2023'},
+      {id:7,type:'decision',label:'Does it damage the relationship?',x:960,y:140,prob:46,desc:'46% say lending damaged a relationship',source:'Bankrate 2024'},
+      {id:8,type:'outcome-good',label:'Paid back, friendship intact',x:1200,y:80,prob:100,desc:'Only ~25% of all loans end well',source:'Composite'},
+      {id:9,type:'outcome-bad',label:'Lost money AND the friend',x:1200,y:240,prob:100,desc:'37% lost a relationship over money',source:'Bankrate'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3,label:'no'},{from:2,to:4,label:'yes'},
+      {from:4,to:5},{from:5,to:6,label:'fail'},{from:5,to:7,label:'pass'},
+      {from:7,to:9,label:'yes'},{from:7,to:8,label:'no'},
+    ]
+  },
+
+  lose_weight: {
+    title:'Lose Weight & Keep It Off', input:'I want to lose weight',
+    nodes: [
+      {id:1,type:'desire',label:'Want to lose weight',x:0,y:120,prob:100,desc:'49% of adults tried in the past year',source:'CDC 2024'},
+      {id:2,type:'action',label:'Start a diet / gym',x:240,y:120,prob:100,desc:'Jan gym sign-ups spike 50-67%',source:'IHRSA'},
+      {id:3,type:'bottleneck',label:'Survive past week 3',x:480,y:120,prob:36,desc:'64% quit new habits within 30 days',source:'Strava/Habit research'},
+      {id:4,type:'outcome-bad',label:'Quit after 2-3 weeks',x:480,y:300,prob:100,desc:'Average gym visits: 4.7x/month',source:'IHRSA'},
+      {id:5,type:'bottleneck',label:'Lose 5%+ body weight',x:720,y:120,prob:50,desc:'50% of dieters hit initial target',source:'NEJM'},
+      {id:6,type:'outcome-bad',label:'No visible progress, stop',x:720,y:300,prob:100,desc:'Metabolic adaptation slows loss',source:'Lancet'},
+      {id:7,type:'bottleneck',label:'Keep it off 1 year',x:960,y:120,prob:40,desc:'80% regain within 1-2 years',source:'AJCN'},
+      {id:8,type:'outcome-bad',label:'Regain all the weight',x:960,y:300,prob:100,desc:'95% regain within 5 years',source:'NEJM/UCLA meta-analysis'},
+      {id:9,type:'outcome-good',label:'Sustained weight loss 5yr+',x:1200,y:60,prob:100,desc:'Only 5-10% keep weight off long-term',source:'NWCR'},
+      {id:10,type:'outcome-bad',label:'Yo-yo cycle repeats',x:1200,y:220,prob:100,desc:'Avg person attempts 4-7 diets/year',source:'CDC'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3},{from:3,to:4,label:'fail'},{from:3,to:5,label:'pass'},
+      {from:5,to:6,label:'fail'},{from:5,to:7,label:'pass'},
+      {from:7,to:8,label:'fail'},{from:7,to:9,label:'pass'},
+      {from:7,to:10,label:'fail'},
+    ]
+  },
+
+  learn_skill: {
+    title:'Learn a New Skill', input:'I want to learn a new skill',
+    nodes: [
+      {id:1,type:'desire',label:'Want to learn something new',x:0,y:120,prob:100,desc:'74% of workers want to learn new skills',source:'PwC 2024'},
+      {id:2,type:'action',label:'Buy course / start learning',x:240,y:120,prob:100,desc:'$400B online learning market',source:'Statista'},
+      {id:3,type:'bottleneck',label:'Complete the course',x:480,y:120,prob:8,desc:'3-15% completion rate for MOOCs',source:'MIT/Harvard 2024'},
+      {id:4,type:'outcome-bad',label:'Abandoned halfway',x:480,y:300,prob:100,desc:'Avg Udemy completion: 7%',source:'Udemy data'},
+      {id:5,type:'bottleneck',label:'Practice 20+ hours',x:720,y:120,prob:40,desc:'20hrs = functional competence',source:'Josh Kaufman'},
+      {id:6,type:'outcome-bad',label:'Learned theory, never applied',x:720,y:300,prob:100,desc:'Retention without practice: 10% after 1mo',source:'Ebbinghaus'},
+      {id:7,type:'decision',label:'Use skill professionally?',x:960,y:120,prob:30,desc:'Skill half-life: 2.5-5 years',source:'WEF 2025'},
+      {id:8,type:'outcome-good',label:'Career upgrade / new income',x:1200,y:60,prob:100,desc:'Upskilling = 8-25% salary increase',source:'LinkedIn 2024'},
+      {id:9,type:'outcome-bad',label:'Skill unused, forgotten',x:1200,y:220,prob:100,desc:'Forgetting curve: 70% lost in 24hrs without review',source:'Ebbinghaus'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3},{from:3,to:4,label:'fail'},{from:3,to:5,label:'pass'},
+      {from:5,to:6,label:'fail'},{from:5,to:7,label:'pass'},
+      {from:7,to:8,label:'yes'},{from:7,to:9,label:'no'},
+    ]
+  },
+
+  move_abroad: {
+    title:'Move to Another Country', input:'I want to move abroad',
+    nodes: [
+      {id:1,type:'desire',label:'Dream of living abroad',x:0,y:120,prob:100,desc:'87M expats worldwide',source:'UN Migration 2024'},
+      {id:2,type:'action',label:'Research visa & destination',x:240,y:120,prob:100,desc:'Top: US, Germany, Canada, Australia',source:'OECD'},
+      {id:3,type:'bottleneck',label:'Get visa approved',x:480,y:120,prob:35,desc:'65% of visa applications rejected',source:'Various embassies'},
+      {id:4,type:'outcome-bad',label:'Visa denied',x:480,y:300,prob:100,desc:'Most common blocker',source:'IOM'},
+      {id:5,type:'action',label:'Move & settle in',x:720,y:120,prob:100,desc:'Avg relocation cost: $5K-$20K',source:'ECA International'},
+      {id:6,type:'bottleneck',label:'Survive culture shock',x:960,y:120,prob:60,desc:'40% of expats return early',source:'HSBC Expat Survey'},
+      {id:7,type:'outcome-bad',label:'Go back home',x:960,y:300,prob:100,desc:'Homesickness + isolation',source:'InterNations'},
+      {id:8,type:'decision',label:'Build a life there?',x:1200,y:120,prob:50,desc:'50% stay long-term (5+ years)',source:'UN Migration'},
+      {id:9,type:'outcome-good',label:'New home, new life',x:1440,y:60,prob:100,desc:'Expats report 67% life satisfaction',source:'InterNations 2024'},
+      {id:10,type:'outcome-bad',label:'Stuck between two worlds',x:1440,y:220,prob:100,desc:'Neither here nor there',source:'Common pattern'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3},{from:3,to:4,label:'fail'},{from:3,to:5,label:'pass'},
+      {from:5,to:6},{from:6,to:7,label:'fail'},{from:6,to:8,label:'pass'},
+      {from:8,to:9,label:'yes'},{from:8,to:10,label:'no'},
+    ]
+  },
+
+  buy_house: {
+    title:'Buy a House', input:'I want to buy a house',
+    nodes: [
+      {id:1,type:'desire',label:'Want to own a home',x:0,y:120,prob:100,desc:'73% of renters want to buy',source:'NAR 2024'},
+      {id:2,type:'action',label:'Save for down payment',x:240,y:120,prob:100,desc:'Avg time: 7-10 years',source:'Zillow'},
+      {id:3,type:'bottleneck',label:'Save enough (20%)',x:480,y:120,prob:30,desc:'Median savings: $35K, need $60K+',source:'Federal Reserve'},
+      {id:4,type:'outcome-bad',label:'Priced out forever',x:480,y:300,prob:100,desc:'Home prices rise 5%/yr avg',source:'Case-Shiller'},
+      {id:5,type:'bottleneck',label:'Get mortgage approved',x:720,y:120,prob:70,desc:'30% of applications denied',source:'HMDA'},
+      {id:6,type:'outcome-bad',label:'Credit too low',x:720,y:300,prob:100,desc:'Need 620+ FICO',source:'Experian'},
+      {id:7,type:'action',label:'Find & close on house',x:960,y:120,prob:100,desc:'Avg 4.5 months house hunting',source:'NAR'},
+      {id:8,type:'bottleneck',label:'Afford the payments?',x:1200,y:120,prob:55,desc:'28% rule: payment < 28% income',source:'HUD'},
+      {id:9,type:'outcome-good',label:'Homeowner, building equity',x:1440,y:60,prob:100,desc:'Avg equity gain: $50K in 5 years',source:'CoreLogic'},
+      {id:10,type:'outcome-bad',label:'House poor, cash strapped',x:1440,y:220,prob:100,desc:'38% of owners regret buying',source:'Bankrate 2024'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3},{from:3,to:4,label:'fail'},{from:3,to:5,label:'pass'},
+      {from:5,to:6,label:'fail'},{from:5,to:7,label:'pass'},
+      {from:7,to:8},{from:8,to:9,label:'pass'},{from:8,to:10,label:'fail'},
+    ]
+  },
+
+  quit_job: {
+    title:'Quit Your Job', input:'I want to quit my job',
+    nodes: [
+      {id:1,type:'desire',label:'Hate your current job',x:0,y:120,prob:100,desc:'60% of workers are disengaged',source:'Gallup 2024'},
+      {id:2,type:'decision',label:'Have savings to survive?',x:240,y:120,prob:40,desc:'57% have <$1K savings',source:'Bankrate'},
+      {id:3,type:'outcome-bad',label:'Stuck: can\'t afford to quit',x:240,y:300,prob:100,desc:'Golden handcuffs',source:'Common'},
+      {id:4,type:'action',label:'Submit resignation',x:480,y:120,prob:100,desc:'Avg tenure: 4.1 years',source:'BLS'},
+      {id:5,type:'bottleneck',label:'Find new job in 3 months',x:720,y:120,prob:55,desc:'Avg job search: 5.5 months',source:'BLS 2024'},
+      {id:6,type:'outcome-bad',label:'Unemployment drags on',x:720,y:300,prob:100,desc:'Savings burn rate: $3K/month',source:'Common'},
+      {id:7,type:'decision',label:'Better than before?',x:960,y:120,prob:65,desc:'65% say quitting was right call',source:'LinkedIn'},
+      {id:8,type:'outcome-good',label:'Career upgrade',x:1200,y:60,prob:100,desc:'Avg 10-20% salary bump on switch',source:'ADP'},
+      {id:9,type:'outcome-bad',label:'Grass wasn\'t greener',x:1200,y:220,prob:100,desc:'26% regret quitting',source:'Joblist 2024'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3,label:'no'},{from:2,to:4,label:'yes'},
+      {from:4,to:5},{from:5,to:6,label:'fail'},{from:5,to:7,label:'pass'},
+      {from:7,to:8,label:'yes'},{from:7,to:9,label:'no'},
+    ]
+  },
+
+  invest_crypto: {
+    title:'Invest in Crypto', input:'I want to invest in cryptocurrency',
+    nodes: [
+      {id:1,type:'desire',label:'Want to get rich with crypto',x:0,y:120,prob:100,desc:'420M+ crypto owners worldwide',source:'Triple-A 2024'},
+      {id:2,type:'action',label:'Buy first crypto',x:240,y:120,prob:100,desc:'Avg first investment: $100-$500',source:'Gemini'},
+      {id:3,type:'bottleneck',label:'Survive first crash (-30%)',x:480,y:120,prob:40,desc:'60% panic sell during dips',source:'Chainalysis'},
+      {id:4,type:'outcome-bad',label:'Panic sold, lost money',x:480,y:300,prob:100,desc:'Avg retail loss: 50%+',source:'BIS 2023'},
+      {id:5,type:'decision',label:'HODLing or trading?',x:720,y:120,prob:50,desc:'50/50 split among retail',source:'Binance'},
+      {id:6,type:'bottleneck',label:'Day trading profitable?',x:960,y:40,prob:5,desc:'95% of day traders lose money',source:'SEC/Academic studies'},
+      {id:7,type:'outcome-bad',label:'Account blown',x:1200,y:40,prob:100,desc:'Avg day trader lasts 6 months',source:'Barber & Odean'},
+      {id:8,type:'bottleneck',label:'Hold through full cycle',x:960,y:220,prob:35,desc:'65% sell before recovery',source:'Glassnode'},
+      {id:9,type:'outcome-good',label:'Long-term gains',x:1200,y:160,prob:100,desc:'BTC avg return: 230%/yr (2011-2024)',source:'CoinGecko'},
+      {id:10,type:'outcome-bad',label:'Held altcoin to zero',x:1200,y:300,prob:100,desc:'92% of altcoins die',source:'CoinGecko'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3},{from:3,to:4,label:'fail'},{from:3,to:5,label:'pass'},
+      {from:5,to:6,label:'yes'},{from:5,to:8,label:'no'},
+      {from:6,to:7,label:'fail'},{from:6,to:9,label:'pass'},
+      {from:8,to:9,label:'pass'},{from:8,to:10,label:'fail'},
+    ]
+  },
+
+  get_married: {
+    title:'Get Married', input:'I want to get married',
+    nodes: [
+      {id:1,type:'desire',label:'Want to get married',x:0,y:120,prob:100,desc:'Avg age at first marriage: 30',source:'Census 2024'},
+      {id:2,type:'bottleneck',label:'Find the right partner',x:240,y:120,prob:45,desc:'Avg 6-8 relationships before marriage',source:'Match.com'},
+      {id:3,type:'outcome-bad',label:'Still searching',x:240,y:300,prob:100,desc:'31% of adults are single',source:'Pew 2024'},
+      {id:4,type:'action',label:'Commit & plan wedding',x:480,y:120,prob:100,desc:'Avg wedding cost: $35K',source:'The Knot 2024'},
+      {id:5,type:'bottleneck',label:'Survive first 2 years',x:720,y:120,prob:80,desc:'20% divorce within 5 years',source:'APA'},
+      {id:6,type:'outcome-bad',label:'Early divorce',x:720,y:300,prob:100,desc:'Avg divorce cost: $15K-$20K',source:'NOLO'},
+      {id:7,type:'decision',label:'Stay happy long-term?',x:960,y:120,prob:55,desc:'45% of marriages end in divorce',source:'CDC'},
+      {id:8,type:'outcome-good',label:'Lasting partnership',x:1200,y:60,prob:100,desc:'Married people earn 10-40% more',source:'BLS'},
+      {id:9,type:'outcome-bad',label:'Unhappy but staying',x:1200,y:220,prob:100,desc:'36% of married couples are unhappy',source:'Gallup'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3,label:'fail'},{from:2,to:4,label:'pass'},
+      {from:4,to:5},{from:5,to:6,label:'fail'},{from:5,to:7,label:'pass'},
+      {from:7,to:8,label:'yes'},{from:7,to:9,label:'no'},
+    ]
+  },
+
+  start_youtube: {
+    title:'Start a YouTube Channel', input:'I want to start a YouTube channel',
+    nodes: [
+      {id:1,type:'desire',label:'Want to be a YouTuber',x:0,y:100,prob:100,desc:'500hrs video uploaded/minute',source:'YouTube 2024'},
+      {id:2,type:'action',label:'Upload first 10 videos',x:240,y:100,prob:100,desc:'90% never upload a second video',source:'Tubics'},
+      {id:3,type:'bottleneck',label:'Keep going for 6 months',x:480,y:100,prob:15,desc:'85% quit within 6 months',source:'YouTube Creator Academy'},
+      {id:4,type:'outcome-bad',label:'Quit: talking to nobody',x:480,y:280,prob:100,desc:'Median views: 50/video',source:'Social Blade'},
+      {id:5,type:'bottleneck',label:'Reach 1K subs (monetize)',x:720,y:100,prob:30,desc:'Only 15% ever reach 1K',source:'VidIQ'},
+      {id:6,type:'outcome-bad',label:'Small audience forever',x:720,y:280,prob:100,desc:'Median channel: 300 subs',source:'Social Blade'},
+      {id:7,type:'bottleneck',label:'Earn $1K/month from YT',x:960,y:100,prob:25,desc:'Avg CPM: $3-5, need 300K views/mo',source:'Social Blade'},
+      {id:8,type:'outcome-bad',label:'Hobby income only',x:960,y:280,prob:100,desc:'97.5% earn below poverty line',source:'Bloomberg'},
+      {id:9,type:'outcome-good',label:'Full-time YouTuber',x:1200,y:40,prob:100,desc:'Top 3% earn $100K+',source:'Oxford Economics'},
+      {id:10,type:'outcome-bad',label:'Burnout, content treadmill',x:1200,y:200,prob:100,desc:'71% of creators report burnout',source:'Vibely'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3},{from:3,to:4,label:'fail'},{from:3,to:5,label:'pass'},
+      {from:5,to:6,label:'fail'},{from:5,to:7,label:'pass'},
+      {from:7,to:8,label:'fail'},{from:7,to:9,label:'pass'},{from:7,to:10,label:'fail'},
+    ]
+  },
+
+  pay_off_debt: {
+    title:'Pay Off All Debt', input:'I want to pay off my debt',
+    nodes: [
+      {id:1,type:'start',label:'Drowning in debt',x:0,y:120,prob:100,desc:'Avg American: $104K total debt',source:'Experian 2024'},
+      {id:2,type:'action',label:'Make a payoff plan',x:240,y:120,prob:100,desc:'Snowball vs avalanche method',source:'Dave Ramsey / Math'},
+      {id:3,type:'bottleneck',label:'Stick to budget 90 days',x:480,y:120,prob:33,desc:'67% abandon budgets within 3 months',source:'NFCC'},
+      {id:4,type:'outcome-bad',label:'Back to old habits',x:480,y:300,prob:100,desc:'Lifestyle creep',source:'Common'},
+      {id:5,type:'bottleneck',label:'Pay off first card',x:720,y:120,prob:50,desc:'Small wins: 50% keep going after first payoff',source:'Kellogg Research'},
+      {id:6,type:'loop',label:'Unexpected expense hits',x:720,y:300,prob:100,desc:'60% face $1K+ emergency/year',source:'Bankrate'},
+      {id:7,type:'bottleneck',label:'Become debt-free',x:960,y:120,prob:40,desc:'Avg time to pay off: 5-7 years',source:'Federal Reserve'},
+      {id:8,type:'outcome-good',label:'Debt-free, building wealth',x:1200,y:60,prob:100,desc:'Debt-free save 3x more',source:'Ramsey Solutions'},
+      {id:9,type:'outcome-bad',label:'Minimum payments forever',x:1200,y:220,prob:100,desc:'Min payment = 20+ years to clear',source:'CFPB'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3},{from:3,to:4,label:'fail'},{from:3,to:5,label:'pass'},
+      {from:5,to:7,label:'pass'},{from:5,to:6,label:'fail'},
+      {from:6,to:3},{from:7,to:8,label:'pass'},{from:7,to:9,label:'fail'},
+    ]
+  },
+
+  have_baby: {
+    title:'Have a Baby', input:'I want to have a baby',
+    nodes: [
+      {id:1,type:'desire',label:'Want to become a parent',x:0,y:120,prob:100,desc:'Fertility rate declining globally',source:'UN 2024'},
+      {id:2,type:'bottleneck',label:'Conceive successfully',x:240,y:120,prob:85,desc:'15% of couples face infertility',source:'WHO'},
+      {id:3,type:'outcome-bad',label:'Fertility struggles',x:240,y:300,prob:100,desc:'IVF: $12K-$17K per cycle, 30% success',source:'ASRM'},
+      {id:4,type:'action',label:'Pregnancy & birth',x:480,y:120,prob:100,desc:'Avg birth cost: $13K (US)',source:'KFF 2024'},
+      {id:5,type:'bottleneck',label:'Survive first year',x:720,y:120,prob:75,desc:'67% of couples less happy after baby',source:'Gottman Institute'},
+      {id:6,type:'outcome-bad',label:'Relationship under stress',x:720,y:300,prob:100,desc:'Postpartum depression: 15%',source:'CDC'},
+      {id:7,type:'bottleneck',label:'Afford childcare',x:960,y:120,prob:55,desc:'Avg daycare: $1,230/month (US)',source:'Care.com 2024'},
+      {id:8,type:'outcome-good',label:'Growing family, adapting',x:1200,y:60,prob:100,desc:'Parents report more meaning in life',source:'APA'},
+      {id:9,type:'outcome-bad',label:'Financial strain, no sleep',x:1200,y:220,prob:100,desc:'Cost to raise a child: $310K to 18',source:'USDA'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3,label:'fail'},{from:2,to:4,label:'pass'},
+      {from:4,to:5},{from:5,to:6,label:'fail'},{from:5,to:7,label:'pass'},
+      {from:7,to:8,label:'pass'},{from:7,to:9,label:'fail'},
+    ]
+  },
+
+  overcome_addiction: {
+    title:'Overcome an Addiction', input:'I want to quit my addiction',
+    nodes: [
+      {id:1,type:'desire',label:'Want to quit',x:0,y:120,prob:100,desc:'21M+ Americans have addiction',source:'SAMHSA 2024'},
+      {id:2,type:'action',label:'Attempt to stop',x:240,y:120,prob:100,desc:'Avg person tries 7 times before success',source:'NIDA'},
+      {id:3,type:'bottleneck',label:'Survive first 2 weeks',x:480,y:120,prob:35,desc:'65% relapse within 2 weeks',source:'JAMA'},
+      {id:4,type:'outcome-bad',label:'Relapse, shame spiral',x:480,y:300,prob:100,desc:'Relapse is part of recovery',source:'NIDA'},
+      {id:5,type:'bottleneck',label:'Stay clean 90 days',x:720,y:120,prob:40,desc:'Only 30-40% reach 90 days',source:'SAMHSA'},
+      {id:6,type:'loop',label:'Triggered, try again',x:720,y:300,prob:100,desc:'40-60% relapse rate overall',source:'NIDA'},
+      {id:7,type:'bottleneck',label:'1 year sober',x:960,y:120,prob:50,desc:'50% who reach 1yr stay sober',source:'Recovery Research Institute'},
+      {id:8,type:'outcome-good',label:'Long-term recovery',x:1200,y:60,prob:100,desc:'23M Americans in recovery',source:'SAMHSA'},
+      {id:9,type:'outcome-bad',label:'Chronic relapse cycle',x:1200,y:220,prob:100,desc:'Addiction is chronic like diabetes',source:'NIDA'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3},{from:3,to:4,label:'fail'},{from:3,to:5,label:'pass'},
+      {from:4,to:6},{from:6,to:2},
+      {from:5,to:7,label:'pass'},{from:5,to:6,label:'fail'},
+      {from:7,to:8,label:'pass'},{from:7,to:9,label:'fail'},
+    ]
+  },
+
+  drop_out: {
+    title:'Drop Out of College', input:'I want to drop out of college',
+    nodes: [
+      {id:1,type:'desire',label:'Thinking of dropping out',x:0,y:120,prob:100,desc:'40% of US college students drop out',source:'NCES 2024'},
+      {id:2,type:'decision',label:'Have a plan B?',x:240,y:120,prob:30,desc:'70% drop out without a plan',source:'Strada Education'},
+      {id:3,type:'action',label:'Drop out with plan',x:480,y:40,prob:100,desc:'Trade school, startup, or job',source:'Various'},
+      {id:4,type:'action',label:'Drop out, no plan',x:480,y:240,prob:100,desc:'Most common scenario',source:'NCES'},
+      {id:5,type:'bottleneck',label:'Find stable income in 1yr',x:720,y:40,prob:60,desc:'HS diploma median: $37K/yr',source:'BLS'},
+      {id:6,type:'bottleneck',label:'Find stable income in 1yr',x:720,y:240,prob:30,desc:'Dropouts: 33% higher unemployment',source:'BLS'},
+      {id:7,type:'outcome-good',label:'Self-made success',x:960,y:40,prob:100,desc:'Rare but real: 1-2% become rich',source:'Composite'},
+      {id:8,type:'outcome-bad',label:'Regret, lower earnings',x:960,y:240,prob:100,desc:'Lifetime loss: $500K vs degree holder',source:'Georgetown CEW'},
+      {id:9,type:'outcome-bad',label:'Stuck in low-wage jobs',x:960,y:360,prob:100,desc:'62% of dropouts earn <$30K',source:'BLS'},
+    ],
+    edges: [
+      {from:1,to:2},{from:2,to:3,label:'yes'},{from:2,to:4,label:'no'},
+      {from:3,to:5},{from:4,to:6},
+      {from:5,to:7,label:'pass'},{from:5,to:8,label:'fail'},
+      {from:6,to:7,label:'pass'},{from:6,to:9,label:'fail'},
+    ]
+  }
+};
+
+// ============ LOAD SCENARIO ============
+function loadScenario(key) {
+  stopSim();
+  const s = SCENARIOS[key];
+  if (!s) return;
+  document.getElementById('scenario-input').value = s.input;
+  document.getElementById('templates-dropdown').classList.remove('show');
+  nodes = JSON.parse(JSON.stringify(s.nodes));
+  edges = JSON.parse(JSON.stringify(s.edges));
+  nextId = Math.max(...nodes.map(n=>n.id)) + 1;
+  selectedNode = null;
+  revealedNodes = new Set();
+  document.getElementById('edit-panel').classList.remove('open');
+  autoFitNodes();
+  render();
+}
+
+function toggleTemplates(e) { e.stopPropagation(); document.getElementById('templates-dropdown').classList.toggle('show'); }
+
+async function generateFlow() {
+  const input = document.getElementById('scenario-input').value.trim();
+  if (!input) return;
+  const inputLower = input.toLowerCase();
+
+  // First try keyword match to existing templates
+  const kw = {
+    startup:['startup','company','venture','founder'],
+    money:['money','desire','want','sell','profit','rich','wealth'],
+    cafe:['cafe','coffee','restaurant','food','bar'],
+    content:['content','creator','youtube','tiktok','influencer','video'],
+    saas:['saas','software','app','tool','platform','subscription'],
+    freelance:['freelance','consulting','independent','gig'],
+    app:['app','mobile','ios','android','application','download'],
+    lend_money:['lend','borrow','loan','friend','money','debt','prestito','amico'],
+    lose_weight:['weight','lose','diet','gym','fat','fitness','exercise','dimagrire','palestra'],
+    learn_skill:['learn','skill','course','study','tutorial','certification','imparare'],
+    move_abroad:['move','abroad','country','emigrate','expat','visa','relocate','trasferire','estero','another country','new country'],
+    buy_house:['buy','house','home','mortgage','property','apartment','casa','comprare','rent','affitto'],
+    quit_job:['quit','job','resign','leave','work','licenziare','dimissioni','lavoro','hate my job','fired'],
+    invest_crypto:['crypto','bitcoin','ethereum','invest','trading','hodl','coin','token','btc','eth'],
+    get_married:['marry','married','marriage','wedding','spouse','husband','wife','sposare','matrimonio','engaged','propose','ring'],
+    start_youtube:['youtube','channel','video','vlog','subscriber','youtuber','creator','streamer','twitch'],
+    pay_off_debt:['debt','pay off','credit card','student loan','debito','pagare','owe','broke','creditor'],
+    have_baby:['baby','pregnant','child','parent','birth','bambino','figlio','incinta','kid','newborn','conceive'],
+    overcome_addiction:['addiction','addict','sober','quit smoking','rehab','recovery','dipendenza','drunk','alcoholic','drugs'],
+    drop_out:['drop out','dropout','leave school','college','university','abbandonare','quit school','quit college'],
+  };
+  let best=null, bs=0;
+  for (const [k,words] of Object.entries(kw)) { const sc=words.filter(w=>inputLower.includes(w)).length; if(sc>bs){bs=sc;best=k;} }
+
+  // Use template if strong match (2+ keywords) — otherwise let AI generate
+  if (bs >= 2) { loadScenario(best); return; }
+
+  // Otherwise, call AI to generate
+  const btn = document.querySelector('.btn-primary');
+  const origText = btn.textContent;
+  btn.textContent = 'Generating...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('/api/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ scenario: input })
+    });
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.error || 'Server error');
+    }
+
+    const flow = await res.json();
+    if (!flow.nodes || !flow.edges) throw new Error('Invalid flow structure');
+
+    // Load AI-generated flow
+    stopSim();
+    nodes = flow.nodes.map(n => ({ ...n, source: n.source || 'AI generated' }));
+    edges = flow.edges;
+    nextId = Math.max(...nodes.map(n => n.id)) + 1;
+    selectedNode = null;
+    revealedNodes = new Set();
+    document.getElementById('edit-panel').classList.remove('open');
+    autoFitNodes();
+    render();
+  } catch (e) {
+    console.error('AI generation failed:', e);
+    // Fallback to best keyword match (even weak)
+    if (best && bs >= 1) loadScenario(best);
+    else loadScenario('money');
+  } finally {
+    btn.textContent = origText;
+    btn.disabled = false;
+  }
+}
+
+// ============ RENDER ============
+function render() { renderNodes(); renderEdges(); }
+
+function renderNodes() {
+  const canvas = document.getElementById('canvas');
+  canvas.querySelectorAll('.node').forEach(el=>el.remove());
+
+  nodes.forEach(n => {
+    const div = document.createElement('div');
+    const isRevealed = revealedNodes.has(n.id) || !simRunning;
+    div.className = `node node-${n.type} ${simRunning && !isRevealed ? 'hidden-node' : 'revealed'}`;
+    div.style.left = (n._rx || n.x) + 'px';
+    div.style.top = (n._ry || n.y) + 'px';
+    div.dataset.id = n.id;
+    if (selectedNode===n.id) { div.style.outline='2px solid #2563eb'; div.style.outlineOffset='2px'; }
+
+    const hasProb = ['bottleneck','decision'].includes(n.type);
+    const timeTag = n.time ? `<span style="opacity:0.7"> &middot; ${n.time}</span>` : '';
+    div.innerHTML = `
+      <div class="node-icon">${ICONS[n.type]||''}</div>
+      <div class="node-label">${n.label}</div>
+      ${n.desc?`<div class="node-desc">${n.desc}</div>`:''}
+      ${hasProb?`<div class="node-stat">Pass: ${n.prob}%${timeTag} &middot; ${n.source||''}</div>`:''}
+      ${!hasProb&&n.source?`<div class="node-stat">${n.time?n.time+' &middot; ':''}${n.source}</div>`:''}
+      <div class="port port-in"></div>
+      <div class="port port-out"></div>
+    `;
+
+    div.addEventListener('mousedown', (e) => {
+      if (e.target.classList.contains('port')) return;
+      if (connectMode) { handleConnectClick(n.id); return; }
+      dragging=n.id;
+      const rect=div.getBoundingClientRect();
+      dragOffset.x=e.clientX-rect.left; dragOffset.y=e.clientY-rect.top;
+      div.classList.add('dragging'); e.preventDefault();
+    });
+    div.addEventListener('click', (e) => { if(!e.target.classList.contains('port')) selectNode(n.id); });
+    div.querySelectorAll('.port').forEach(port => {
+      port.addEventListener('mousedown', (e) => {
+        e.stopPropagation(); e.preventDefault();
+        connectMode=true; connectFrom=n.id;
+        document.getElementById('btn-connect').classList.add('active');
+      });
+    });
+    canvas.appendChild(div);
+  });
+}
+
+function renderEdges() {
+  const svg = document.getElementById('svg-layer');
+  svg.innerHTML = '';
+  edges.forEach(e => {
+    const fromEl=document.querySelector(`.node[data-id="${e.from}"]`);
+    const toEl=document.querySelector(`.node[data-id="${e.to}"]`);
+    if(!fromEl||!toEl) return;
+    // Hide edges to unrevealed nodes during simulation
+    if(fromEl.classList.contains('hidden-node') || toEl.classList.contains('hidden-node')) return;
+    const fr=fromEl.getBoundingClientRect();
+    const tr=toEl.getBoundingClientRect();
+    const goDown=Math.abs(tr.top-fr.top)>Math.abs(tr.left-fr.left);
+    let x1,y1,x2,y2;
+    if(goDown){x1=fr.left+fr.width/2;y1=fr.bottom-TOP;x2=tr.left+tr.width/2;y2=tr.top-TOP;}
+    else{x1=fr.right;y1=fr.top+fr.height/2-TOP;x2=tr.left;y2=tr.top+tr.height/2-TOP;}
+    const dx=Math.abs(x2-x1)*0.4, dy=Math.abs(y2-y1)*0.4;
+    const d=goDown?`M${x1},${y1} C${x1},${y1+dy} ${x2},${y2-dy} ${x2},${y2}`:`M${x1},${y1} C${x1+dx},${y1} ${x2-dx},${y2} ${x2},${y2}`;
+    const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d',d); path.setAttribute('class','edge-line');
+    if(e.label==='fail'||e.label==='no') path.style.stroke='#fca5a5';
+    else if(e.label==='pass'||e.label==='yes') path.style.stroke='#86efac';
+    svg.appendChild(path);
+    if(e.label){
+      const t=document.createElementNS('http://www.w3.org/2000/svg','text');
+      t.setAttribute('x',(x1+x2)/2); t.setAttribute('y',(y1+y2)/2-6);
+      t.setAttribute('class','edge-label'); t.setAttribute('text-anchor','middle');
+      t.textContent=e.label; svg.appendChild(t);
+    }
+  });
+}
+
+// ============ INTERACTION ============
+document.addEventListener('mousemove',(e)=>{
+  if(dragging!==null){
+    const node=nodes.find(n=>n.id===dragging);
+    if(node){node._rx=e.clientX-dragOffset.x;node._ry=e.clientY-dragOffset.y-TOP;render();}
+  }
+});
+document.addEventListener('mouseup',()=>{if(dragging!==null){document.querySelectorAll('.node.dragging').forEach(el=>el.classList.remove('dragging'));dragging=null;}});
+document.getElementById('canvas').addEventListener('click',(e)=>{if(e.target.id==='canvas'){selectedNode=null;document.getElementById('edit-panel').classList.remove('open');render();}});
+document.addEventListener('click',(e)=>{
+  const m1=document.getElementById('add-menu'),m2=document.getElementById('templates-dropdown');
+  if(!m1.contains(e.target)&&e.target.id!=='btn-add') m1.classList.remove('show');
+  if(!m2.contains(e.target)&&!e.target.closest('.templates-wrap')) m2.classList.remove('show');
+});
+
+function selectNode(id){selectedNode=id;const n=nodes.find(x=>x.id===id);if(!n)return;document.getElementById('edit-label').value=n.label;document.getElementById('edit-prob').value=n.prob;document.getElementById('edit-desc').value=n.desc||'';document.getElementById('edit-source').value=n.source||'Custom';document.getElementById('edit-panel').classList.add('open');render();}
+function updateSelectedNode(){if(!selectedNode)return;const n=nodes.find(x=>x.id===selectedNode);if(!n)return;n.label=document.getElementById('edit-label').value;n.prob=parseInt(document.getElementById('edit-prob').value)||0;n.desc=document.getElementById('edit-desc').value;render();}
+function deleteSelected(){if(!selectedNode)return;nodes=nodes.filter(n=>n.id!==selectedNode);edges=edges.filter(e=>e.from!==selectedNode&&e.to!==selectedNode);selectedNode=null;document.getElementById('edit-panel').classList.remove('open');render();}
+
+function openAddMenu(e){const m=document.getElementById('add-menu');menuPos.x=100;menuPos.y=e.clientY-TOP;m.style.left=(e.clientX+10)+'px';m.style.top=e.clientY+'px';m.classList.toggle('show');e.stopPropagation();}
+function addNode(type){const labels={'start':'Start','desire':'Desire','action':'Action','bottleneck':'Bottleneck','decision':'Decision','loop':'Loop','outcome-good':'Good outcome','outcome-bad':'Bad outcome'};const n={id:nextId++,type,label:labels[type],x:menuPos.x,y:menuPos.y,_rx:menuPos.x,_ry:menuPos.y,prob:type==='bottleneck'?30:type==='decision'?50:100,desc:'',source:''};nodes.push(n);document.getElementById('add-menu').classList.remove('show');render();selectNode(n.id);}
+function toggleConnect(){connectMode=!connectMode;connectFrom=null;document.getElementById('btn-connect').classList.toggle('active',connectMode);}
+function handleConnectClick(id){if(!connectFrom){connectFrom=id;}else if(connectFrom!==id){if(!edges.find(e=>e.from===connectFrom&&e.to===id))edges.push({from:connectFrom,to:id,label:''});connectFrom=null;connectMode=false;document.getElementById('btn-connect').classList.remove('active');render();}}
+function resetCanvas(){stopSim();nodes=[];edges=[];selectedNode=null;revealedNodes=new Set();document.getElementById('edit-panel').classList.remove('open');render();}
+
+// ============ REVEAL NODE ============
+function revealNode(nodeId) {
+  if (revealedNodes.has(nodeId)) return;
+  revealedNodes.add(nodeId);
+  const el = document.querySelector(`.node[data-id="${nodeId}"]`);
+  if (el) { el.classList.remove('hidden-node'); el.classList.add('revealed'); }
+  // Re-render edges so newly revealed connections appear
+  renderEdges();
+}
+
+// ============ TRACKED TIMEOUT ============
+function simTimeout(fn, ms) {
+  const id = setTimeout(() => {
+    pendingTimeouts = pendingTimeouts.filter(x => x !== id);
+    if (!simPaused) fn();
+    else {
+      // Store for resume
+      const entry = { fn, resumed: false };
+      pausedCallbacks.push(entry);
+    }
+  }, ms);
+  pendingTimeouts.push(id);
+  return id;
+}
+let pausedCallbacks = [];
+let simStats = { total:0, success:0, blocked:0 };
+let simWave = 0;
+let simStartNodes = [];
+
+function updateStats() {
+  document.getElementById('stat-total').textContent = simStats.total;
+  document.getElementById('stat-success').textContent = simStats.success;
+  document.getElementById('stat-blocked').textContent = simStats.blocked;
+  document.getElementById('stat-rate').textContent = simStats.total > 0 ? Math.round(simStats.success/simStats.total*100)+'%' : '0%';
+}
+
+function showSimButtons(state) {
+  const btnSim = document.getElementById('btn-simulate');
+  const btnPause = document.getElementById('btn-pause');
+  const btnStop = document.getElementById('btn-stop');
+  if (state === 'running') {
+    btnSim.style.display = 'none';
+    btnPause.style.display = ''; btnPause.textContent = 'Pause'; btnPause.className = 'btn btn-pause';
+    btnStop.style.display = '';
+  } else if (state === 'paused') {
+    btnSim.style.display = 'none';
+    btnPause.style.display = ''; btnPause.textContent = 'Resume'; btnPause.className = 'btn btn-sim';
+    btnStop.style.display = '';
+  } else {
+    btnSim.style.display = '';
+    btnPause.style.display = 'none';
+    btnStop.style.display = 'none';
+  }
+}
+
+// ============ SIMULATION ============
+function simulate() {
+  if (simRunning) return;
+  if (nodes.length === 0) return;
+  simRunning = true;
+  simPaused = false;
+  revealedNodes = new Set();
+  pausedCallbacks = [];
+  simStats = { total:0, success:0, blocked:0 };
+  simWave = 0;
+  nodeStats = {};
+  simFinishedCount = 0;
+  simTotalExpected = SPD.waves * SPD.perWave;
+  hideDashboard();
+
+  const hasIncoming = new Set(edges.map(e => e.to));
+  simStartNodes = nodes.filter(n => !hasIncoming.has(n.id));
+  simStartNodes.forEach(n => revealNode(n.id));
+
+  render();
+  showSimButtons('running');
+  document.getElementById('stats-bar').classList.add('visible');
+
+  if (simStartNodes.length === 0) { stopSim(); return; }
+  launchWave();
+}
+
+function pauseResume() {
+  if (!simRunning) return;
+  if (!simPaused) {
+    // PAUSE
+    simPaused = true;
+    showSimButtons('paused');
+    // Freeze all particle CSS transitions
+    particles.forEach(p => {
+      const cs = getComputedStyle(p);
+      p.style.transition = 'none';
+      p.style.left = cs.left;
+      p.style.top = cs.top;
+    });
+  } else {
+    // RESUME
+    simPaused = false;
+    showSimButtons('running');
+    // Execute all stored callbacks
+    const cbs = pausedCallbacks.slice();
+    pausedCallbacks = [];
+    cbs.forEach(entry => entry.fn());
+    // Continue launching waves if not done
+    if (simWave < SPD.waves) {
+      simTimeout(launchWave, 500);
+    }
+  }
+}
+
+function launchWave() {
+  if (simWave >= SPD.waves || !simRunning || simPaused) return;
+  for (let i = 0; i < SPD.perWave; i++) {
+    simTimeout(() => {
+      if (!simRunning) return;
+      simStats.total++; updateStats();
+      const start = simStartNodes[Math.floor(Math.random() * simStartNodes.length)];
+      launchPerson(start, (r) => { if(r==='success') simStats.success++; else simStats.blocked++; updateStats(); });
+    }, i * SPD.launch);
+  }
+  simWave++;
+  simTimeout(launchWave, SPD.perWave * SPD.launch + SPD.wavePause);
+}
+
+function launchPerson(startNode, cb) {
+  const dot = document.createElement('div');
+  dot.className = 'particle';
+  dot.innerHTML = createPersonSVG();
+  document.getElementById('canvas').appendChild(dot);
+  particles.push(dot);
+  moveTo(dot, startNode, cb);
+}
+
+function moveTo(dot, node, cb) {
+  if (!simRunning) { dot.remove(); return; }
+  revealNode(node.id);
+
+  // Track visits per particle (loop prevention)
+  if (!particleVisits.has(dot)) particleVisits.set(dot, {});
+  const visits = particleVisits.get(dot);
+  visits[node.id] = (visits[node.id] || 0) + 1;
+
+  // Track global node stats
+  if (!nodeStats[node.id]) nodeStats[node.id] = { arrived: 0, passed: 0, blocked: 0 };
+  nodeStats[node.id].arrived++;
+
+  // Loop prevention: if visited same node 3+ times, force terminal
+  if (visits[node.id] >= 3 && node.type === 'loop') {
+    dot.classList.add('particle-blocked');
+    nodeStats[node.id].blocked++;
+    finishParticle(dot, cb, 'blocked');
+    return;
+  }
+
+  const el = document.querySelector(`.node[data-id="${node.id}"]`);
+  if (!el) { dot.remove(); cb('blocked'); return; }
+  const r = el.getBoundingClientRect();
+  const tx = r.left + r.width/2 - 12;
+  const ty = r.top + r.height/2 - 16 - TOP;
+
+  dot.style.transition = `left ${SPD.move}s ease-in-out, top ${SPD.move}s ease-in-out`;
+  dot.style.left = tx + 'px';
+  dot.style.top = ty + 'px';
+
+  simTimeout(() => {
+    if (!simRunning) { dot.remove(); return; }
+
+    if (node.type==='bottleneck' || node.type==='decision') {
+      // Conditional probability: reduce success by 10% on each revisit
+      const revisitPenalty = Math.max(0, (visits[node.id] - 1) * 10);
+      const effectiveProb = Math.max(5, node.prob - revisitPenalty);
+      const pass = Math.random()*100 < effectiveProb;
+      const out = edges.filter(e => e.from===node.id);
+      const passE = out.find(e => e.label==='pass' || e.label==='yes');
+      const failE = out.find(e => e.label==='fail' || e.label==='no');
+
+      if (pass) nodeStats[node.id].passed++;
+      else nodeStats[node.id].blocked++;
+
+      let next;
+      if (pass && passE) next = passE;
+      else if (!pass && failE) next = failE;
+      else next = out[pass ? 0 : (out.length>1 ? 1 : 0)];
+      if (next) { const nn = nodes.find(n => n.id===next.to); if (nn) { moveTo(dot,nn,cb); return; } }
+    }
+
+    // Loop nodes: follow outgoing edges (may go backward)
+    const out = edges.filter(e => e.from===node.id);
+    if (out.length === 0) {
+      const isSuccess = node.type==='outcome-good';
+      dot.classList.add(isSuccess ? 'particle-success' : 'particle-blocked');
+      finishParticle(dot, cb, isSuccess ? 'success' : 'blocked');
+      return;
+    }
+
+    const nextE = out.length>1 && !['bottleneck','decision'].includes(node.type) ? out[Math.floor(Math.random()*out.length)] : out[0];
+    const nn = nodes.find(n => n.id===nextE.to);
+    if (nn) moveTo(dot, nn, cb);
+    else { dot.remove(); cb('blocked'); }
+  }, SPD.wait);
+}
+
+function finishParticle(dot, cb, result) {
+  const isSuccess = result === 'success';
+  // Stay parked on terminal node — scatter around it
+  const ox = (Math.random() - 0.5) * 60;
+  const oy = (Math.random() - 0.5) * 40;
+  const curLeft = parseFloat(dot.style.left) || 0;
+  const curTop = parseFloat(dot.style.top) || 0;
+  dot.style.transition = 'left 0.8s ease, top 0.8s ease, opacity 0.6s ease';
+  dot.style.left = (curLeft + ox) + 'px';
+  dot.style.top = (curTop + oy) + 'px';
+  if (!isSuccess) dot.style.opacity = '0.4';
+  cb(result);
+
+  // Check if all particles finished → show dashboard
+  simFinishedCount++;
+  if (simFinishedCount >= simTotalExpected) {
+    setTimeout(() => { if (simRunning) showDashboard(); }, 1500);
+  }
+}
+
+function simulateFromNode() {
+  if (!selectedNode) return;
+  const startNode = nodes.find(n => n.id === selectedNode);
+  if (!startNode) return;
+
+  // Stop any existing sim but keep revealed nodes and parked people
+  if (simRunning) {
+    simRunning = false;
+    pendingTimeouts.forEach(id => clearTimeout(id));
+    pendingTimeouts = [];
+    pausedCallbacks = [];
+  }
+
+  simRunning = true;
+  simPaused = false;
+  simStats = { total: 0, success: 0, blocked: 0 };
+  simWave = 0;
+  simStartNodes = [startNode];
+
+  // Reveal all nodes up to this point
+  revealNode(startNode.id);
+  render();
+  showSimButtons('running');
+  document.getElementById('stats-bar').classList.add('visible');
+  document.getElementById('edit-panel').classList.remove('open');
+  selectedNode = null;
+
+  // Launch waves from this specific node
+  launchWave();
+}
+
+function stopSim() {
+  simRunning = false;
+  simPaused = false;
+  pendingTimeouts.forEach(id => clearTimeout(id));
+  pendingTimeouts = [];
+  pausedCallbacks = [];
+  particles.forEach(p => p.remove());
+  particles = [];
+  revealedNodes = new Set();
+  document.getElementById('stats-bar').classList.remove('visible');
+  hideDashboard();
+  showSimButtons('idle');
+  render();
+}
+
+// ============ DASHBOARD ============
+function showDashboard() {
+  const dash = document.getElementById('dashboard');
+  dash.classList.add('open');
+
+  // Build funnel: order nodes by topological depth
+  const nodeDepth = {};
+  const visited = new Set();
+  function calcDepth(id, depth) {
+    if (visited.has(id)) return;
+    visited.add(id);
+    nodeDepth[id] = Math.max(nodeDepth[id] || 0, depth);
+    edges.filter(e => e.from === id).forEach(e => calcDepth(e.to, depth + 1));
+  }
+  const hasIncoming = new Set(edges.map(e => e.to));
+  nodes.filter(n => !hasIncoming.has(n.id)).forEach(n => calcDepth(n.id, 0));
+
+  // Group nodes by depth, get arrival counts
+  const depthGroups = {};
+  nodes.forEach(n => {
+    const d = nodeDepth[n.id] || 0;
+    if (!depthGroups[d]) depthGroups[d] = [];
+    depthGroups[d].push(n);
+  });
+
+  const maxArrivals = Math.max(...Object.values(nodeStats).map(s => s.arrived), 1);
+
+  // Render funnel
+  const funnelEl = document.getElementById('dash-funnel');
+  funnelEl.innerHTML = '';
+  const depths = Object.keys(depthGroups).map(Number).sort((a, b) => a - b);
+  depths.forEach(d => {
+    const group = depthGroups[d];
+    group.forEach(n => {
+      const stats = nodeStats[n.id];
+      if (!stats || stats.arrived === 0) return;
+      const pct = Math.round(stats.arrived / maxArrivals * 100);
+      const color = n.type === 'outcome-good' ? '#34d399'
+        : n.type === 'outcome-bad' ? '#f87171'
+        : n.type === 'bottleneck' ? '#fb923c'
+        : n.type === 'decision' ? '#facc15'
+        : '#60a5fa';
+      const row = document.createElement('div');
+      row.className = 'dash-funnel-row';
+      row.innerHTML = `
+        <div class="dash-funnel-label" title="${n.label}">${n.label}</div>
+        <div class="dash-funnel-bar-wrap">
+          <div class="dash-funnel-bar" style="width:${pct}%;background:${color}">${stats.arrived}</div>
+        </div>
+      `;
+      funnelEl.appendChild(row);
+    });
+  });
+
+  // Render bottlenecks (sorted by kill rate)
+  const bnEl = document.getElementById('dash-bottlenecks');
+  bnEl.innerHTML = '';
+  const bottlenecks = nodes
+    .filter(n => (n.type === 'bottleneck' || n.type === 'decision') && nodeStats[n.id] && nodeStats[n.id].arrived > 0)
+    .map(n => {
+      const s = nodeStats[n.id];
+      const killRate = s.blocked / s.arrived;
+      return { ...n, killRate, stats: s };
+    })
+    .sort((a, b) => b.killRate - a.killRate);
+
+  bottlenecks.forEach((bn, i) => {
+    const killPct = Math.round(bn.killRate * 100);
+    const item = document.createElement('div');
+    item.className = 'dash-bottleneck-item';
+    item.innerHTML = `
+      <div class="dash-bn-rank">#${i + 1}</div>
+      <div class="dash-bn-info">
+        <div class="dash-bn-name">${bn.label}</div>
+        <div class="dash-bn-stat">${bn.stats.blocked}/${bn.stats.arrived} stopped (${killPct}%)</div>
+      </div>
+      <div class="dash-bn-bar"><div class="dash-bn-bar-fill" style="width:${killPct}%"></div></div>
+    `;
+    bnEl.appendChild(item);
+  });
+
+  if (bottlenecks.length === 0) {
+    bnEl.innerHTML = '<div style="font-size:11px;color:#999;">No bottleneck data</div>';
+  }
+
+  // Render summary
+  const summaryEl = document.getElementById('dash-summary');
+  const rate = simStats.total > 0 ? Math.round(simStats.success / simStats.total * 100) : 0;
+  const avgPath = Object.values(nodeStats).reduce((s, v) => s + v.arrived, 0) / Math.max(simStats.total, 1);
+  const deadliest = bottlenecks.length > 0 ? bottlenecks[0].label : 'N/A';
+  summaryEl.innerHTML = `
+    <div class="dash-summary-item">
+      <div class="dash-summary-value" style="color:#34d399">${rate}%</div>
+      <div class="dash-summary-label">Success Rate</div>
+    </div>
+    <div class="dash-summary-item">
+      <div class="dash-summary-value">${simStats.total}</div>
+      <div class="dash-summary-label">People Simulated</div>
+    </div>
+    <div class="dash-summary-item">
+      <div class="dash-summary-value" style="color:#ef4444">${deadliest}</div>
+      <div class="dash-summary-label">Biggest Killer</div>
+    </div>
+    <div class="dash-summary-item">
+      <div class="dash-summary-value">${avgPath.toFixed(1)}</div>
+      <div class="dash-summary-label">Avg Nodes Visited</div>
+    </div>
+  `;
+}
+
+function hideDashboard() {
+  document.getElementById('dashboard').classList.remove('open');
+}
+
+// ============ KEYBOARD ============
+document.addEventListener('keydown',(e)=>{
+  if(e.target.tagName==='INPUT')return;
+  if(e.key===' '&&simRunning){e.preventDefault();pauseResume();}
+  if(e.key==='Delete'||e.key==='Backspace')deleteSelected();
+  if(e.key==='Escape'){connectMode=false;connectFrom=null;document.getElementById('btn-connect').classList.remove('active');document.getElementById('add-menu').classList.remove('show');selectedNode=null;document.getElementById('edit-panel').classList.remove('open');render();}
+});
+document.getElementById('scenario-input').addEventListener('keydown',(e)=>{if(e.key==='Enter')generateFlow();});
+
+// ============ INIT ============
+loadScenario('money');
+window.addEventListener('resize',()=>{autoFitNodes();render();});
+</script>
+</body>
+</html>

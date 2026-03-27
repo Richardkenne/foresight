@@ -1,0 +1,541 @@
+@import "tailwindcss";
+@import "@xyflow/react/dist/style.css";
+
+/* ─── Design Tokens ─── */
+:root {
+  --background: #f8f9fb;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+  --border: #e2e8f0;
+  --border-subtle: #f1f5f9;
+  --muted: #94a3b8;
+  --muted-foreground: #64748b;
+  --radius: 12px;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-foreground: #ffffff;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --warning: #f59e0b;
+  --warning-hover: #d97706;
+  --success: #10b981;
+  --purple: #8b5cf6;
+  --purple-hover: #7c3aed;
+  --shadow-sm: 0 1px 2px rgba(15,23,42,0.04);
+  --shadow-md: 0 4px 12px rgba(15,23,42,0.06), 0 1px 3px rgba(15,23,42,0.04);
+  --shadow-lg: 0 8px 24px rgba(15,23,42,0.08), 0 2px 6px rgba(15,23,42,0.04);
+  --shadow-xl: 0 16px 40px rgba(15,23,42,0.10), 0 4px 12px rgba(15,23,42,0.06);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0c0f1a;
+    --foreground: #e2e8f0;
+    --surface: #151927;
+    --surface-hover: #1e2336;
+    --border: #1e293b;
+    --border-subtle: #1e293b;
+    --muted: #475569;
+    --muted-foreground: #94a3b8;
+    --accent: #60a5fa;
+    --accent-hover: #3b82f6;
+    --accent-foreground: #ffffff;
+    --danger: #f87171;
+    --danger-hover: #ef4444;
+    --warning: #fbbf24;
+    --warning-hover: #f59e0b;
+    --success: #34d399;
+    --purple: #a78bfa;
+    --purple-hover: #8b5cf6;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.2);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.2);
+    --shadow-xl: 0 16px 40px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3);
+  }
+}
+
+/* ─── Base Reset ─── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  overflow: hidden;
+  height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── React Flow Canvas ─── */
+.react-flow__node {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  width: auto !important;
+}
+
+.react-flow__node.selected {
+  box-shadow: none !important;
+}
+
+.react-flow__background {
+  background: var(--background) !important;
+}
+
+/* ─── Edges ─── */
+.react-flow__edge-path {
+  stroke: var(--border);
+  stroke-width: 1.5;
+  transition: stroke 0.3s ease;
+}
+
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: var(--muted);
+  stroke-width: 2;
+}
+
+.react-flow__edge-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  fill: var(--muted);
+}
+
+.edge-label-pass {
+  fill: #22c55e;
+  font-weight: 700;
+  font-size: 10px;
+}
+
+.edge-label-fail {
+  fill: #ef4444;
+  font-weight: 700;
+  font-size: 10px;
+}
+
+/* ─── Minimap ─── */
+.react-flow__minimap {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface) !important;
+  box-shadow: var(--shadow-md);
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.react-flow__minimap:hover {
+  opacity: 1;
+}
+
+/* ─── Controls ─── */
+.react-flow__controls {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  background: var(--surface);
+}
+
+.react-flow__controls button {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--foreground);
+  width: 28px;
+  height: 28px;
+  transition: background 0.15s ease;
+}
+
+.react-flow__controls button:hover {
+  background: var(--surface-hover);
+}
+
+.react-flow__controls button svg {
+  fill: var(--foreground);
+}
+
+/* ─── SimNode: Base ─── */
+.sim-node {
+  position: relative;
+  font-family: 'Inter', -apple-system, sans-serif;
+  animation: nodeReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes nodeReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* ─── SimNode: Start ─── */
+.sim-node--start {
+  padding: 6px 0;
+}
+
+.sim-node__start-inner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px 6px 10px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sim-node--start:hover .sim-node__start-inner {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--node-accent);
+}
+
+.sim-node__start-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.sim-node__start-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--foreground);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+/* ─── SimNode: Card ─── */
+.sim-node--card {
+  width: 200px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: grab;
+}
+
+.sim-node--card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--node-accent);
+}
+
+.sim-node--card:active {
+  cursor: grabbing;
+  transform: translateY(-1px);
+}
+
+/* Left accent bar */
+.sim-node__accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+
+/* Body */
+.sim-node__body {
+  padding: 10px 12px 10px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Header */
+.sim-node__header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sim-node__icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.sim-node__label {
+  flex: 1;
+  font-size: 11.5px;
+  font-weight: 650;
+  color: var(--foreground);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  min-width: 0;
+}
+
+/* Probability badge */
+.sim-node__prob {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Description */
+.sim-node__desc {
+  font-size: 10.5px;
+  line-height: 1.4;
+  color: var(--muted-foreground);
+  letter-spacing: -0.005em;
+  padding-left: 20px;
+}
+
+/* Footer */
+.sim-node__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding-top: 6px;
+  margin-top: 2px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.sim-node__source {
+  font-size: 9.5px;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 120px;
+}
+
+.sim-node__time {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 9.5px;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ─── Handles ─── */
+.sim-handle {
+  width: 8px !important;
+  height: 8px !important;
+  background: var(--border) !important;
+  border: 2px solid var(--surface) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all 0.15s ease !important;
+}
+
+.sim-handle:hover {
+  background: var(--node-accent, var(--muted)) !important;
+  transform: scale(1.3);
+}
+
+/* ─── Particle Layer ─── */
+.particle-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 25;
+}
+
+.particle {
+  position: absolute;
+  z-index: 25;
+  pointer-events: none;
+  width: 24px;
+  height: 32px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.particle-blocked {
+  opacity: 0.25;
+  filter: grayscale(1) drop-shadow(0 0 0 transparent);
+}
+
+.particle-success {
+  filter: drop-shadow(0 0 8px rgba(16,185,129,0.6)) drop-shadow(0 0 2px rgba(16,185,129,0.3));
+}
+
+/* ─── Stats Bar ─── */
+.stats-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.04);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--muted-foreground);
+  backdrop-filter: blur(8px);
+}
+
+.stats-bar__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stats-bar__value {
+  font-weight: 700;
+  color: var(--foreground);
+  font-variant-numeric: tabular-nums;
+}
+
+.stats-bar__label {
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.stats-bar__divider {
+  width: 1px;
+  height: 16px;
+  background: var(--border);
+}
+
+/* ─── Dark Mode Edge Overrides ─── */
+@media (prefers-color-scheme: dark) {
+  .react-flow__edge-path {
+    stroke: #1e293b;
+  }
+
+  .react-flow__edge:hover .react-flow__edge-path {
+    stroke: #334155;
+  }
+
+  .react-flow__edge-text {
+    fill: #475569;
+  }
+
+  .sim-node--card {
+    background: var(--surface);
+  }
+
+  .stats-bar {
+    background: rgba(21, 25, 39, 0.9);
+    backdrop-filter: blur(12px);
+  }
+}
+
+/* ─── Selection Ring ─── */
+.react-flow__node.selected .sim-node--card {
+  border-color: var(--node-accent) !important;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--node-accent) 20%, transparent), var(--shadow-lg) !important;
+}
+
+.react-flow__node.selected .sim-node__start-inner {
+  border-color: var(--node-accent) !important;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--node-accent) 20%, transparent), var(--shadow-md) !important;
+}
+
+/* ─── Animations ─── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translate(-50%, -4px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translate(-50%, 12px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .sim-node--card {
+    width: 170px;
+  }
+
+  .sim-node__label {
+    font-size: 11px;
+  }
+
+  .sim-node__desc {
+    font-size: 10px;
+  }
+
+  .stats-bar {
+    padding: 6px 12px;
+    font-size: 11px;
+    gap: 10px;
+  }
+}

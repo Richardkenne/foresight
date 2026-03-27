@@ -1,0 +1,1281 @@
+{
+  "_meta": {
+    "category": "Business Archetypes — Batch 3",
+    "created": "2026-03-27",
+    "total_archetypes": 5,
+    "description": "High-resolution micro-step funnels for business scenarios"
+  },
+  "investment_context": {
+    "global_investable_assets_usd_trillions": 300,
+    "us_household_wealth_usd_trillions": 160,
+    "us_stock_market_cap_usd_trillions": 50,
+    "us_bond_market_cap_usd_trillions": 52,
+    "us_real_estate_market_usd_trillions": 47,
+    "crypto_total_market_cap_usd_trillions": 2.5,
+    "gold_market_cap_usd_trillions": 14,
+    "private_equity_aum_usd_trillions": 6.5,
+    "hedge_fund_aum_usd_trillions": 4.5,
+    "retail_investors_us_millions": 150,
+    "retail_investors_brokerage_accounts_millions": 200,
+    "robinhood_users_millions": 23,
+    "schwab_accounts_millions": 35,
+    "fidelity_accounts_millions": 42,
+    "vanguard_aum_usd_trillions": 8.6,
+    "blackrock_aum_usd_trillions": 10,
+    "index_fund_share_total_market_pct": 45,
+    "passive_investing_growth_rate_pct": 15,
+    "active_fund_underperformance_15yr_pct": 88,
+    "avg_expense_ratio_index_fund_pct": 0.03,
+    "avg_expense_ratio_active_fund_pct": 0.68,
+    "financial_literacy_adequate_us_pct": 34,
+    "americans_investing_in_stock_market_pct": 61,
+    "americans_with_no_savings_pct": 25,
+    "median_retirement_savings_us_usd": 87000,
+    "recommended_retirement_savings_multiple_salary": "10-12x",
+    "compound_interest_doubling_time_7pct_years": 10,
+    "dollar_cost_averaging_adoption_pct": 40,
+    "robo_advisor_aum_usd_billions": 500,
+    "robo_advisor_users_millions": 30,
+    "etf_total_assets_us_usd_trillions": 9,
+    "etf_launches_annual": 500,
+    "alternative_investments_retail_access_growth_pct": 25,
+    "fractional_investing_adoption_pct": 15,
+    "social_trading_platforms_users_millions": 50,
+    "investment_education_market_usd_billions": 5,
+    "financial_advisor_avg_fee_pct": 1,
+    "diy_investors_pct": 55,
+    "financial_advisor_users_pct": 35,
+    "robo_advisor_users_pct": 10,
+    "economic_indicators": {
+      "sp500_avg_annual_return_pct": 10.5,
+      "nasdaq_avg_annual_return_pct": 12,
+      "dow_avg_annual_return_pct": 9.5,
+      "bond_market_avg_annual_return_pct": 5,
+      "real_estate_avg_annual_return_pct": 9,
+      "gold_avg_annual_return_pct": 7,
+      "bitcoin_avg_annual_return_since_2013_pct": 85,
+      "inflation_avg_annual_us_pct": 3,
+      "risk_free_rate_treasury_10yr_pct": 4.3,
+      "fed_funds_rate_pct": 5.25,
+      "us_national_debt_usd_trillions": 34,
+      "us_deficit_annual_usd_trillions": 1.7,
+      "us_cpi_2024_pct": 3.1,
+      "us_pce_2024_pct": 2.6,
+      "us_unemployment_rate_pct": 3.7,
+      "us_job_openings_millions": 8,
+      "us_gdp_growth_2024_pct": 2.5,
+      "china_gdp_growth_2024_pct": 5,
+      "india_gdp_growth_2024_pct": 7,
+      "eurozone_gdp_growth_2024_pct": 0.8,
+      "global_gdp_growth_2024_pct": 3.2,
+      "oil_price_brent_usd": 75,
+      "housing_starts_us_annual_millions": 1.4,
+      "existing_home_sales_annual_millions": 4,
+      "mortgage_application_volume_trend": "declining",
+      "consumer_spending_growth_pct": 2.5,
+      "manufacturing_pmi_us": 49,
+      "services_pmi_us": 54,
+      "trade_deficit_us_annual_usd_billions": 800,
+      "dollar_index_dxy": 104,
+      "vix_volatility_avg": 15,
+      "recession_probability_next_12mo_pct": 25,
+      "yield_curve_inversion_duration_months": 18,
+      "corporate_earnings_growth_sp500_pct": 8,
+      "pe_ratio_sp500_avg": 22,
+      "dividend_yield_sp500_pct": 1.5,
+      "buyback_yield_sp500_pct": 2,
+      "market_concentration_top_10_sp500_pct": 35
+    }
+  },
+  "archetypes": {
+    "real_estate_investing": {
+      "name": "Real Estate Investing",
+      "description": "Path from aspiring investor to owning 5+ rental units generating $5K/month cash flow",
+      "entry_point": "Get interested in real estate through social media, books, or someone who owns rentals",
+      "stages": [
+        {
+          "id": "interest",
+          "label": "Get interested in RE investing",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "consume_content",
+          "label": "Consume RE content (books, YouTube, podcasts)",
+          "prob": 85,
+          "time": "1-3 months",
+          "source": "NAR 2024 Member Profile"
+        },
+        {
+          "id": "save_downpayment",
+          "label": "Start saving for down payment (avg 20%)",
+          "prob": 45,
+          "time": "6-24 months",
+          "source": "NAR 2024 Home Buyers Report"
+        },
+        {
+          "id": "research_markets",
+          "label": "Research target markets and neighborhoods",
+          "prob": 72,
+          "time": "1-3 months",
+          "source": "BiggerPockets 2024 Survey"
+        },
+        {
+          "id": "run_numbers",
+          "label": "Learn to analyze deals (cap rate, cash-on-cash, NOI)",
+          "prob": 60,
+          "time": "2-4 weeks",
+          "source": "BiggerPockets 2024 Survey"
+        },
+        {
+          "id": "get_preapproved",
+          "label": "Get pre-approved for mortgage",
+          "prob": 55,
+          "time": "1-2 weeks",
+          "source": "Freddie Mac 2024"
+        },
+        {
+          "id": "start_looking",
+          "label": "Actively look at properties and tour them",
+          "prob": 50,
+          "time": "1-6 months",
+          "source": "NAR 2024 Member Profile"
+        },
+        {
+          "id": "first_offer",
+          "label": "Make first offer on a property",
+          "prob": 35,
+          "time": "1-2 weeks",
+          "source": "Zillow 2024 Consumer Survey"
+        },
+        {
+          "id": "get_rejected",
+          "label": "Get rejected or outbid on first offers",
+          "prob": 80,
+          "time": "1-4 weeks",
+          "source": "Redfin 2024 Market Report"
+        },
+        {
+          "id": "make_5_offers",
+          "label": "Make 5+ offers before acceptance",
+          "prob": 65,
+          "time": "2-6 months",
+          "source": "NAR 2024 Buyer Data"
+        },
+        {
+          "id": "offer_accepted",
+          "label": "Get an offer accepted",
+          "prob": 70,
+          "time": "1 week",
+          "source": "NAR 2024 Buyer Data"
+        },
+        {
+          "id": "inspection",
+          "label": "Inspection and due diligence (20% deals fall through)",
+          "prob": 80,
+          "time": "2-4 weeks",
+          "source": "Trulia 2024"
+        },
+        {
+          "id": "close_deal",
+          "label": "Close the deal (sign papers, get keys)",
+          "prob": 90,
+          "time": "30-45 days",
+          "source": "ICE Mortgage Technology 2024"
+        },
+        {
+          "id": "find_tenant",
+          "label": "Find first tenant",
+          "prob": 85,
+          "time": "2-6 weeks",
+          "source": "Zillow Rental Manager 2024"
+        },
+        {
+          "id": "first_rent",
+          "label": "Receive first rent payment",
+          "prob": 95,
+          "time": "1 month",
+          "source": "TransUnion 2024"
+        },
+        {
+          "id": "first_maintenance",
+          "label": "Handle first maintenance issue (avg $1,200/year)",
+          "prob": 95,
+          "time": "1-6 months",
+          "source": "HomeAdvisor 2024"
+        },
+        {
+          "id": "first_vacancy",
+          "label": "Experience first vacancy (avg 6.6% rate)",
+          "prob": 75,
+          "time": "6-18 months",
+          "source": "Census Bureau Q3 2024"
+        },
+        {
+          "id": "survive_year1",
+          "label": "Survive year 1 as landlord without selling",
+          "prob": 70,
+          "time": "12 months",
+          "source": "BiggerPockets 2023 Survey"
+        },
+        {
+          "id": "refinance_or_second",
+          "label": "Refinance or buy second property",
+          "prob": 40,
+          "time": "12-24 months",
+          "source": "CoreLogic 2024"
+        },
+        {
+          "id": "build_to_5",
+          "label": "Build portfolio to 5 units",
+          "prob": 25,
+          "time": "3-7 years",
+          "source": "NARPM 2024"
+        },
+        {
+          "id": "5k_cashflow",
+          "label": "Achieve $5K/month net cash flow",
+          "prob": 15,
+          "time": "5-10 years",
+          "source": "BiggerPockets 2024 Wealth Report"
+        }
+      ],
+      "bottlenecks": [
+        "save_downpayment",
+        "first_offer",
+        "get_rejected",
+        "survive_year1"
+      ],
+      "end_to_end_conversion": "3.8%",
+      "industry_data": {
+        "us_residential_real_estate_market_usd_trillions": 47,
+        "us_commercial_real_estate_market_usd_trillions": 21,
+        "us_rental_properties_total_millions": 49,
+        "us_landlords_total_millions": 11,
+        "us_homeownership_rate_pct": 65.6,
+        "avg_home_price_us_usd": 420000,
+        "avg_rental_yield_us_pct": 6.5,
+        "avg_appreciation_annual_pct": 4.3,
+        "mortgage_rate_30yr_fixed_pct": 6.5,
+        "mortgage_rate_15yr_fixed_pct": 5.8,
+        "avg_down_payment_investor_pct": 25,
+        "avg_down_payment_first_time_pct": 6,
+        "dscr_loan_availability_pct": 85,
+        "brrrr_strategy_users_pct": 15,
+        "house_hacking_users_pct": 10,
+        "airbnb_active_listings_us": 1500000,
+        "airbnb_avg_occupancy_rate_pct": 65,
+        "airbnb_avg_daily_rate_usd": 160,
+        "airbnb_vs_longterm_premium_pct": 40,
+        "airbnb_regulatory_risk_cities_pct": 45,
+        "reits_avg_annual_return_pct": 11.8,
+        "syndication_min_investment_usd": 25000,
+        "property_management_fee_pct": "8-12",
+        "maintenance_cost_annual_pct_property_value": 1,
+        "vacancy_rate_avg_us_pct": 6.6,
+        "eviction_rate_avg_pct": 2.5,
+        "tenant_screening_reduces_issues_pct": 60,
+        "insurance_cost_avg_annual_usd": 1500,
+        "property_tax_avg_pct": 1.1,
+        "1031_exchange_usage_pct": 15,
+        "depreciation_tax_benefit_annual_pct": 3.6,
+        "real_estate_investors_under_35_pct": 15,
+        "real_estate_investors_35_54_pct": 45,
+        "real_estate_investors_over_55_pct": 40,
+        "biggerPockets_members_millions": 2.5,
+        "real_estate_education_market_usd_billions": 3,
+        "wholesaling_success_rate_pct": 5,
+        "fix_and_flip_avg_profit_usd": 30000,
+        "fix_and_flip_failure_rate_pct": 30
+      },
+      "key_metrics": {
+        "avg_down_payment_pct": 20,
+        "avg_cap_rate": "5-10%",
+        "cash_on_cash_target": "8-12%",
+        "avg_vacancy_rate": 6.6,
+        "avg_maintenance_cost_yearly": 1200,
+        "first_deal_search_time": "6-18 months",
+        "aspiring_who_never_buy": "72%",
+        "1031_exchange_tax_deferral": true
+      },
+      "sources": [
+        "NAR 2024 Member Profile & Home Buyers Report",
+        "BiggerPockets 2024 State of RE Investing Survey",
+        "Freddie Mac 2024 Mortgage Data",
+        "Zillow 2024 Consumer Housing Trends",
+        "Redfin 2024 Market Report",
+        "Census Bureau Q3 2024 Vacancy Report",
+        "CoreLogic 2024 Equity Report",
+        "NARPM 2024 Industry Report",
+        "ICE Mortgage Technology 2024 Origination Insight"
+      ],
+      "market_trends": {
+        "institutional_investors_single_family_pct": 5,
+        "institutional_single_family_homes_owned": 800000,
+        "ibuyer_market_share_pct": 2,
+        "proptech_investment_2024_usd_billions": 12,
+        "smart_home_technology_premium_pct": 5,
+        "energy_efficient_home_premium_pct": 8,
+        "climate_risk_insurance_increase_pct": 25,
+        "flood_zone_property_discount_pct": 15,
+        "wildfire_risk_area_property_discount_pct": 10,
+        "avg_days_on_market_us": 45,
+        "avg_offers_per_listing": 3,
+        "cash_buyer_share_market_pct": 30,
+        "foreign_buyer_share_market_pct": 2,
+        "first_time_buyer_share_pct": 26,
+        "multigenerational_housing_trend_pct": 15,
+        "adu_accessory_dwelling_unit_permits_growth_pct": 30,
+        "short_term_rental_regulations_cities_total": 400,
+        "build_to_rent_market_growth_pct": 20,
+        "modular_construction_cost_savings_pct": 20,
+        "construction_labor_shortage_pct": 25,
+        "housing_deficit_us_units_millions": 4,
+        "housing_affordability_index_us": 95,
+        "rent_to_price_ratio_avg_us_pct": 0.6,
+        "rent_growth_yoy_us_pct": 3,
+        "real_estate_syndication_min_investment_usd": 25000,
+        "real_estate_crowdfunding_min_investment_usd": 500,
+        "fundrise_users_total": 400000,
+        "roofstock_transactions_total": 50000,
+        "arrived_homes_investors_total": 500000,
+        "groundfloor_loans_funded_total": 10000,
+        "yieldstreet_aum_usd_billions": 3
+      },
+      "tax_strategies": {
+        "depreciation_annual_deduction_pct": 3.6,
+        "depreciation_recapture_rate_pct": 25,
+        "cost_segregation_study_cost_usd": 5000,
+        "cost_segregation_first_year_deduction_pct": 25,
+        "bonus_depreciation_2024_pct": 60,
+        "bonus_depreciation_2025_pct": 40,
+        "bonus_depreciation_2026_pct": 20,
+        "section_1031_exchange_tax_deferral": true,
+        "section_1031_exchange_deadline_days": 180,
+        "section_1031_identification_period_days": 45,
+        "qualified_intermediary_fee_usd": 1000,
+        "opportunity_zone_investments_usd_billions": 100,
+        "opportunity_zone_tax_benefit_10yr_pct": 100,
+        "real_estate_professional_status_hours": 750,
+        "real_estate_professional_status_material_participation_hours": 750,
+        "passive_activity_loss_rules_limit_usd": 25000,
+        "passive_activity_loss_phaseout_income_usd": 100000,
+        "long_term_capital_gains_rate_pct": "0-20",
+        "net_investment_income_tax_pct": 3.8,
+        "state_property_tax_avg_pct": 1.1,
+        "mortgage_interest_deduction_limit_usd": 750000,
+        "home_office_deduction_method": "simplified or actual",
+        "entity_structure_llc_usage_pct": 75,
+        "entity_structure_lp_usage_pct": 10,
+        "entity_structure_s_corp_usage_pct": 10,
+        "entity_structure_c_corp_usage_pct": 5,
+        "self_directed_ira_real_estate_pct": 5,
+        "solo_401k_real_estate_investment_pct": 3
+      }
+    },
+    "coaching_consulting": {
+      "name": "Coaching & Consulting Business",
+      "description": "Turn professional expertise into a paid coaching/consulting business reaching $20K/month",
+      "entry_point": "Have 5+ years of expertise in a field and realize others would pay for your knowledge",
+      "stages": [
+        {
+          "id": "expertise",
+          "label": "Have deep expertise or experience in a field",
+          "prob": 100,
+          "time": "5-15 years prior",
+          "source": "baseline"
+        },
+        {
+          "id": "decide_monetize",
+          "label": "Decide to monetize knowledge (stop trading time for salary)",
+          "prob": 30,
+          "time": "1-6 months",
+          "source": "ICF 2023 Global Coaching Study"
+        },
+        {
+          "id": "define_offer",
+          "label": "Define specific offer (who you help, what outcome)",
+          "prob": 70,
+          "time": "2-4 weeks",
+          "source": "ICF 2023 Global Coaching Study"
+        },
+        {
+          "id": "set_price",
+          "label": "Set initial price ($500-2K for first package)",
+          "prob": 85,
+          "time": "1 week",
+          "source": "ICF 2023 Global Coaching Study"
+        },
+        {
+          "id": "tell_network",
+          "label": "Tell friends and professional network",
+          "prob": 75,
+          "time": "1-2 weeks",
+          "source": "CoachFoundation 2024"
+        },
+        {
+          "id": "first_free_client",
+          "label": "Get first free or discounted client",
+          "prob": 60,
+          "time": "2-6 weeks",
+          "source": "CoachFoundation 2024"
+        },
+        {
+          "id": "deliver_result",
+          "label": "Deliver a measurable result for first client",
+          "prob": 55,
+          "time": "1-3 months",
+          "source": "ICF 2023 Global Coaching Study"
+        },
+        {
+          "id": "get_testimonial",
+          "label": "Get a strong testimonial or case study",
+          "prob": 70,
+          "time": "1-2 weeks",
+          "source": "CoachFoundation 2024"
+        },
+        {
+          "id": "create_landing",
+          "label": "Create landing page or simple website",
+          "prob": 65,
+          "time": "1-2 weeks",
+          "source": "CoachFoundation 2024"
+        },
+        {
+          "id": "cold_outreach",
+          "label": "Start cold outreach (LinkedIn, email, content)",
+          "prob": 50,
+          "time": "ongoing",
+          "source": "LinkedIn 2024 B2B Report"
+        },
+        {
+          "id": "discovery_calls",
+          "label": "Book discovery calls (avg 2-5% response rate on cold)",
+          "prob": 40,
+          "time": "2-8 weeks",
+          "source": "LinkedIn 2024 B2B Report"
+        },
+        {
+          "id": "first_paid_client",
+          "label": "Close first full-price paying client",
+          "prob": 55,
+          "time": "1-3 months",
+          "source": "ICF 2023 Global Coaching Study"
+        },
+        {
+          "id": "deliver_paid",
+          "label": "Deliver paid engagement successfully",
+          "prob": 80,
+          "time": "1-3 months",
+          "source": "ICF 2023 Global Coaching Study"
+        },
+        {
+          "id": "raise_prices",
+          "label": "Raise prices based on results (to $2K-5K)",
+          "prob": 45,
+          "time": "3-6 months",
+          "source": "ICF 2023 Global Coaching Study"
+        },
+        {
+          "id": "reach_5k_month",
+          "label": "Reach $5K/month recurring",
+          "prob": 30,
+          "time": "6-18 months",
+          "source": "ICF 2023 Global Coaching Study"
+        },
+        {
+          "id": "systematize",
+          "label": "Systematize (group coaching, templates, courses)",
+          "prob": 40,
+          "time": "2-6 months",
+          "source": "Kajabi 2024 Creator Economy Report"
+        },
+        {
+          "id": "reach_10k_month",
+          "label": "Reach $10K/month",
+          "prob": 50,
+          "time": "6-12 months",
+          "source": "ICF 2023 Global Coaching Study"
+        },
+        {
+          "id": "hire_support",
+          "label": "Hire VA or support staff",
+          "prob": 45,
+          "time": "1-3 months",
+          "source": "CoachFoundation 2024"
+        },
+        {
+          "id": "reach_20k_month",
+          "label": "Reach $20K/month",
+          "prob": 35,
+          "time": "12-24 months",
+          "source": "ICF 2023 Global Coaching Study"
+        }
+      ],
+      "bottlenecks": [
+        "decide_monetize",
+        "cold_outreach",
+        "first_paid_client",
+        "reach_5k_month"
+      ],
+      "end_to_end_conversion": "1.2%",
+      "industry_data": {
+        "global_coaching_market_usd_billions": 20,
+        "coaching_market_growth_cagr_pct": 15,
+        "total_coaches_globally": 109200,
+        "total_coaches_us": 23000,
+        "icf_certified_coaches": 55000,
+        "coaching_certifications_icf_acc_hours": 60,
+        "coaching_certifications_icf_pcc_hours": 500,
+        "coaching_certifications_icf_mcc_hours": 2500,
+        "executive_coaching_avg_hourly_usd": 350,
+        "life_coaching_avg_hourly_usd": 150,
+        "business_coaching_avg_hourly_usd": 250,
+        "health_coaching_avg_hourly_usd": 100,
+        "career_coaching_avg_hourly_usd": 175,
+        "coaching_package_avg_price_usd": 3000,
+        "group_coaching_avg_price_usd": 500,
+        "mastermind_avg_price_usd": 10000,
+        "coaching_session_avg_duration_minutes": 60,
+        "coaching_engagement_avg_duration_months": 6,
+        "coaching_roi_per_dollar_invested": "7:1",
+        "coaching_client_satisfaction_pct": 85,
+        "coaching_client_goal_achievement_pct": 70,
+        "consulting_market_size_usd_billions": 300,
+        "management_consulting_avg_daily_rate_usd": 2000,
+        "strategy_consulting_avg_daily_rate_usd": 4000,
+        "it_consulting_avg_daily_rate_usd": 1500,
+        "fractional_executive_market_growth_pct": 30,
+        "fractional_cmo_avg_monthly_usd": 7500,
+        "fractional_cfo_avg_monthly_usd": 8000,
+        "fractional_cto_avg_monthly_usd": 10000,
+        "online_coaching_share_pct": 55,
+        "in_person_coaching_share_pct": 25,
+        "hybrid_coaching_share_pct": 20,
+        "coaching_platform_market_usd_millions": 500,
+        "zoom_coaching_sessions_monthly_millions": 10,
+        "coaching_burnout_rate_pct": 35,
+        "coaching_income_under_25k_pct": 40,
+        "coaching_income_25k_75k_pct": 35,
+        "coaching_income_over_75k_pct": 25
+      },
+      "key_metrics": {
+        "global_coaching_market": "$20B (2024)",
+        "fail_rate_2_years": "82%",
+        "avg_hourly_rate": "$200-500",
+        "median_coach_income": "$27,100/year",
+        "top_10pct_income": "$200K+/year",
+        "avg_clients_per_coach": 12,
+        "discovery_call_close_rate": "20-35%",
+        "cold_outreach_response_rate": "2-5%"
+      },
+      "sources": [
+        "ICF 2023 Global Coaching Study",
+        "CoachFoundation 2024 Industry Report",
+        "LinkedIn 2024 B2B Marketing Report",
+        "Kajabi 2024 Creator Economy Report",
+        "Sherpa Executive Coaching Survey 2023"
+      ],
+      "market_trends": {
+        "ai_coaching_tools_market_usd_millions": 200,
+        "ai_coaching_adoption_pct": 10,
+        "virtual_coaching_share_post_covid_pct": 55,
+        "coaching_app_market_growth_pct": 25,
+        "betterup_valuation_usd_billions": 4.7,
+        "noom_coaching_users_millions": 3,
+        "executive_coaching_demand_growth_pct": 15,
+        "leadership_coaching_demand_growth_pct": 20,
+        "wellness_coaching_demand_growth_pct": 30,
+        "financial_coaching_demand_growth_pct": 25,
+        "relationship_coaching_demand_growth_pct": 18,
+        "career_coaching_demand_growth_pct": 22,
+        "adhd_coaching_demand_growth_pct": 40,
+        "coaching_niches_saturated_life_business_pct": 80,
+        "coaching_niches_underserved_pct": 20,
+        "coaching_certification_programs_total": 500,
+        "coaching_certification_avg_cost_usd": 5000,
+        "coaching_certification_completion_rate_pct": 70,
+        "coaches_with_no_certification_pct": 40,
+        "corporate_coaching_budget_avg_usd": 50000,
+        "corporate_coaching_programs_fortune_500_pct": 80,
+        "coaching_roi_corporate_measured_pct": 40,
+        "coaching_roi_corporate_avg_return_pct": 700,
+        "group_coaching_revenue_per_hour_vs_1on1": "3-5x",
+        "mastermind_facilitator_income_avg_usd": 150000,
+        "coaching_retreat_avg_price_usd": 3000,
+        "coaching_retreat_market_growth_pct": 15,
+        "coaching_book_authorship_pct": 15,
+        "coaching_speaking_income_avg_usd": 25000,
+        "coaching_podcast_income_avg_usd": 5000
+      }
+    },
+    "crypto_investing": {
+      "name": "Crypto Investing Journey",
+      "description": "From hearing about crypto to surviving a full market cycle and (maybe) profiting",
+      "entry_point": "Hear about crypto from friends, social media, or news during a bull run",
+      "stages": [
+        {
+          "id": "hear_about",
+          "label": "Hear about crypto (usually during bull market hype)",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "research_btc",
+          "label": "Research Bitcoin basics (YouTube, Reddit, Twitter)",
+          "prob": 70,
+          "time": "1-4 weeks",
+          "source": "Gemini 2024 State of Crypto"
+        },
+        {
+          "id": "download_exchange",
+          "label": "Download exchange app (Coinbase, Binance)",
+          "prob": 60,
+          "time": "1-2 days",
+          "source": "Gemini 2024 State of Crypto"
+        },
+        {
+          "id": "kyc",
+          "label": "Complete KYC verification",
+          "prob": 80,
+          "time": "1-7 days",
+          "source": "Chainalysis 2024"
+        },
+        {
+          "id": "first_deposit",
+          "label": "Deposit first money ($50-500 avg)",
+          "prob": 75,
+          "time": "1-3 days",
+          "source": "Gemini 2024 State of Crypto"
+        },
+        {
+          "id": "first_buy",
+          "label": "Buy first crypto (usually BTC or ETH)",
+          "prob": 90,
+          "time": "same day",
+          "source": "Gemini 2024 State of Crypto"
+        },
+        {
+          "id": "check_obsession",
+          "label": "Check price 10+ times per day",
+          "prob": 85,
+          "time": "1-4 weeks",
+          "source": "BankRate 2024 Crypto Survey"
+        },
+        {
+          "id": "first_dip",
+          "label": "See first significant dip (-20%)",
+          "prob": 95,
+          "time": "1-8 weeks",
+          "source": "CoinGecko 2024 Market Data"
+        },
+        {
+          "id": "panic_or_hold",
+          "label": "Hold through dip (vs panic sell)",
+          "prob": 55,
+          "time": "1-3 days",
+          "source": "Glassnode 2024 On-Chain Report"
+        },
+        {
+          "id": "buy_more",
+          "label": "Buy more (DCA or FOMO buying)",
+          "prob": 60,
+          "time": "1-6 months",
+          "source": "Gemini 2024 State of Crypto"
+        },
+        {
+          "id": "discover_altcoins",
+          "label": "Discover altcoins and meme coins",
+          "prob": 75,
+          "time": "1-3 months",
+          "source": "CoinGecko 2024 Annual Report"
+        },
+        {
+          "id": "diversify",
+          "label": "Diversify into 5-10 different tokens",
+          "prob": 55,
+          "time": "1-3 months",
+          "source": "CoinGecko 2024 Annual Report"
+        },
+        {
+          "id": "try_trading",
+          "label": "Try active trading (leverage, day trading)",
+          "prob": 40,
+          "time": "1-6 months",
+          "source": "eToro 2024 Retail Investor Report"
+        },
+        {
+          "id": "lose_trading",
+          "label": "Lose money on active trading",
+          "prob": 80,
+          "time": "1-3 months",
+          "source": "eToro 2024 Retail Investor Report"
+        },
+        {
+          "id": "major_crash",
+          "label": "Experience first major crash (-50%+)",
+          "prob": 90,
+          "time": "6-24 months",
+          "source": "CoinGecko Historical Data"
+        },
+        {
+          "id": "hold_or_capitulate",
+          "label": "Hold through crash (vs sell at loss)",
+          "prob": 35,
+          "time": "1-6 months",
+          "source": "Glassnode 2024 On-Chain Report"
+        },
+        {
+          "id": "survive_bear",
+          "label": "Survive full bear market (12-18 months)",
+          "prob": 25,
+          "time": "12-18 months",
+          "source": "Chainalysis 2024 Crypto Crime Report"
+        },
+        {
+          "id": "portfolio_recovers",
+          "label": "Portfolio recovers to break-even or profit",
+          "prob": 60,
+          "time": "12-36 months",
+          "source": "CoinGecko Historical Data"
+        },
+        {
+          "id": "take_profit",
+          "label": "Actually take profit (sell some at a gain)",
+          "prob": 30,
+          "time": "variable",
+          "source": "Glassnode 2024 On-Chain Report"
+        },
+        {
+          "id": "long_term_profitable",
+          "label": "Be net profitable after full cycle",
+          "prob": 40,
+          "time": "3-5 years",
+          "source": "Fidelity Digital Assets 2024"
+        }
+      ],
+      "bottlenecks": [
+        "panic_or_hold",
+        "lose_trading",
+        "hold_or_capitulate",
+        "take_profit"
+      ],
+      "end_to_end_conversion": "5.2%",
+      "industry_data": {
+        "global_crypto_market_cap_usd_trillions": 2.5,
+        "bitcoin_market_cap_usd_trillions": 1.3,
+        "ethereum_market_cap_usd_billions": 400,
+        "crypto_users_globally_millions": 560,
+        "crypto_exchanges_total": 500,
+        "crypto_exchange_daily_volume_usd_billions": 100,
+        "coinbase_users_millions": 110,
+        "binance_users_millions": 200,
+        "defi_tvl_usd_billions": 80,
+        "nft_market_size_usd_billions": 2,
+        "nft_decline_from_peak_pct": -95,
+        "stablecoin_market_cap_usd_billions": 170,
+        "bitcoin_etf_assets_usd_billions": 50,
+        "bitcoin_halving_cycle_years": 4,
+        "bitcoin_max_drawdown_historical_pct": -83,
+        "altcoin_max_drawdown_avg_pct": -95,
+        "meme_coin_rug_pull_rate_pct": 50,
+        "crypto_scam_losses_2024_usd_billions": 5,
+        "crypto_hack_losses_2024_usd_billions": 3,
+        "bitcoin_hodlers_over_1yr_pct": 70,
+        "crypto_day_traders_lose_pct": 80,
+        "crypto_tax_compliance_pct": 45,
+        "crypto_lending_yield_avg_pct": 5,
+        "staking_yield_avg_pct": 6,
+        "bitcoin_mining_difficulty_growth_annual_pct": 50,
+        "crypto_regulations_countries_with_framework": 85,
+        "crypto_adoption_us_pct": 14,
+        "crypto_adoption_nigeria_pct": 45,
+        "crypto_adoption_vietnam_pct": 20,
+        "crypto_adoption_india_pct": 7,
+        "crypto_adoption_indonesia_pct": 12,
+        "bitcoin_correlation_with_sp500": 0.5,
+        "bitcoin_correlation_with_gold": 0.15,
+        "retail_crypto_avg_portfolio_usd": 1500,
+        "institutional_crypto_allocation_pct": 2,
+        "crypto_fear_greed_index_avg": 50
+      },
+      "key_metrics": {
+        "day_traders_lose_money": "80%",
+        "avg_hold_time": "9 months",
+        "sell_within_12_months": "46%",
+        "avg_retail_loss": "$2,000",
+        "profitable_long_term_traders": "5%",
+        "avg_first_deposit": "$200-500",
+        "btc_max_drawdowns": "-50% to -80% per cycle",
+        "full_cycle_length": "3-4 years"
+      },
+      "sources": [
+        "Gemini 2024 State of Crypto Report",
+        "CoinGecko 2024 Annual Crypto Report",
+        "Chainalysis 2024 Crypto Crime Report",
+        "Glassnode 2024 On-Chain Analysis",
+        "eToro 2024 Retail Investor Beat",
+        "BankRate 2024 Cryptocurrency Survey",
+        "Fidelity Digital Assets 2024 Institutional Survey"
+      ],
+      "defi_data": {
+        "defi_protocols_total": 3000,
+        "defi_tvl_usd_billions": 80,
+        "defi_lending_tvl_usd_billions": 25,
+        "defi_dex_volume_daily_usd_billions": 5,
+        "uniswap_daily_volume_usd_billions": 2,
+        "aave_tvl_usd_billions": 10,
+        "compound_tvl_usd_billions": 3,
+        "makerdao_tvl_usd_billions": 8,
+        "lido_tvl_usd_billions": 15,
+        "defi_hack_losses_cumulative_usd_billions": 10,
+        "defi_rug_pull_losses_2024_usd_billions": 1,
+        "yield_farming_avg_apy_pct": 8,
+        "staking_eth_apy_pct": 4,
+        "liquid_staking_market_share_pct": 35,
+        "defi_insurance_market_usd_millions": 200,
+        "defi_governance_token_holders_active_pct": 5,
+        "cross_chain_bridge_volume_daily_usd_billions": 1,
+        "layer_2_tvl_total_usd_billions": 30,
+        "arbitrum_tvl_usd_billions": 10,
+        "optimism_tvl_usd_billions": 5,
+        "base_tvl_usd_billions": 3,
+        "polygon_tvl_usd_billions": 2,
+        "solana_defi_tvl_usd_billions": 5,
+        "meme_coin_market_cap_total_usd_billions": 50,
+        "meme_coin_traders_lose_money_pct": 90,
+        "nft_daily_volume_usd_millions": 20,
+        "nft_market_peak_monthly_volume_usd_billions": 5,
+        "nft_floor_price_decline_from_peak_pct": -90,
+        "real_world_assets_tokenized_usd_billions": 10,
+        "tokenized_treasuries_usd_billions": 2,
+        "cbdc_countries_exploring": 130,
+        "cbdc_countries_launched": 11
+      }
+    },
+    "marketplace_platform": {
+      "name": "Two-Sided Marketplace",
+      "description": "Build a two-sided marketplace from zero to $10K/month revenue and 1K active users",
+      "entry_point": "Identify a supply-demand gap where buyers and sellers can't find each other efficiently",
+      "stages": [
+        {
+          "id": "identify_gap",
+          "label": "Identify supply-demand gap in a market",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "validate_users",
+          "label": "Talk to 10+ potential users on both sides",
+          "prob": 40,
+          "time": "2-4 weeks",
+          "source": "Startup Genome 2024"
+        },
+        {
+          "id": "build_mvp",
+          "label": "Build MVP (even if it's a spreadsheet or WhatsApp group)",
+          "prob": 60,
+          "time": "2-8 weeks",
+          "source": "Lenny Rachitsky 2024 Marketplace Guide"
+        },
+        {
+          "id": "recruit_suppliers",
+          "label": "Recruit first 10 suppliers/sellers",
+          "prob": 50,
+          "time": "2-6 weeks",
+          "source": "a16z Marketplace Handbook 2023"
+        },
+        {
+          "id": "recruit_buyers",
+          "label": "Recruit first 10 buyers/demand side",
+          "prob": 45,
+          "time": "2-6 weeks",
+          "source": "a16z Marketplace Handbook 2023"
+        },
+        {
+          "id": "first_transaction",
+          "label": "Facilitate first transaction (manually if needed)",
+          "prob": 65,
+          "time": "1-4 weeks",
+          "source": "Lenny Rachitsky 2024 Marketplace Guide"
+        },
+        {
+          "id": "ten_transactions",
+          "label": "Reach 10 completed transactions",
+          "prob": 55,
+          "time": "2-8 weeks",
+          "source": "Lenny Rachitsky 2024 Marketplace Guide"
+        },
+        {
+          "id": "automate_matching",
+          "label": "Automate matching/booking process",
+          "prob": 60,
+          "time": "2-6 weeks",
+          "source": "a16z Marketplace Handbook 2023"
+        },
+        {
+          "id": "fifty_transactions",
+          "label": "Reach 50 transactions",
+          "prob": 50,
+          "time": "1-3 months",
+          "source": "Lenny Rachitsky 2024 Marketplace Guide"
+        },
+        {
+          "id": "chicken_egg_solved",
+          "label": "Solve chicken-and-egg problem (self-sustaining liquidity)",
+          "prob": 40,
+          "time": "3-12 months",
+          "source": "a16z Marketplace Handbook 2023"
+        },
+        {
+          "id": "hundred_users",
+          "label": "Reach 100 active users (both sides combined)",
+          "prob": 45,
+          "time": "2-6 months",
+          "source": "Startup Genome 2024"
+        },
+        {
+          "id": "first_revenue_month",
+          "label": "First month with meaningful revenue",
+          "prob": 50,
+          "time": "3-9 months",
+          "source": "Startup Genome 2024"
+        },
+        {
+          "id": "reach_1k_month",
+          "label": "Reach $1K/month revenue",
+          "prob": 55,
+          "time": "2-6 months",
+          "source": "Startup Genome 2024"
+        },
+        {
+          "id": "first_dispute",
+          "label": "Handle first serious dispute or fraud",
+          "prob": 90,
+          "time": "1-6 months",
+          "source": "a16z Marketplace Handbook 2023"
+        },
+        {
+          "id": "add_payments",
+          "label": "Add integrated payment processing",
+          "prob": 65,
+          "time": "2-4 weeks",
+          "source": "Stripe 2024 Marketplace Guide"
+        },
+        {
+          "id": "thousand_users",
+          "label": "Reach 1,000 active users",
+          "prob": 30,
+          "time": "6-18 months",
+          "source": "Startup Genome 2024"
+        },
+        {
+          "id": "reach_10k_month",
+          "label": "Reach $10K/month revenue",
+          "prob": 25,
+          "time": "12-36 months",
+          "source": "Startup Genome 2024"
+        },
+        {
+          "id": "raise_or_bootstrap",
+          "label": "Raise funding or achieve sustainable bootstrapped growth",
+          "prob": 35,
+          "time": "6-18 months",
+          "source": "Crunchbase 2024"
+        }
+      ],
+      "bottlenecks": [
+        "validate_users",
+        "recruit_suppliers",
+        "chicken_egg_solved",
+        "thousand_users"
+      ],
+      "end_to_end_conversion": "2.1%",
+      "industry_data": {
+        "marketplace_economy_gmv_usd_trillions": 4,
+        "marketplace_share_of_ecommerce_pct": 67,
+        "amazon_gmv_usd_billions": 750,
+        "etsy_gmv_usd_billions": 13,
+        "airbnb_gmv_usd_billions": 73,
+        "uber_gmv_usd_billions": 35,
+        "doordash_gmv_usd_billions": 18,
+        "marketplace_avg_take_rate_pct": 15,
+        "marketplace_avg_time_to_liquidity_months": 18,
+        "chicken_egg_problem_kills_pct": 60,
+        "network_effects_threshold_users": 1000,
+        "marketplace_supply_acquisition_cost_usd": 50,
+        "marketplace_demand_acquisition_cost_usd": 25,
+        "marketplace_supply_side_churn_monthly_pct": 8,
+        "marketplace_demand_side_churn_monthly_pct": 15,
+        "marketplace_vc_funding_share_pct": 12,
+        "marketplace_avg_seed_round_usd_millions": 3,
+        "marketplace_avg_series_a_usd_millions": 15,
+        "managed_marketplace_premium_pct": 30,
+        "saas_enabled_marketplace_growth_pct": 40,
+        "vertical_marketplace_success_vs_horizontal_pct": "2x",
+        "marketplace_geographic_expansion_failure_pct": 50,
+        "marketplace_regulatory_risk_pct": 25,
+        "marketplace_payment_processing_cost_pct": "2.9+0.30",
+        "marketplace_fraud_rate_pct": 2,
+        "marketplace_dispute_resolution_cost_pct": 1,
+        "marketplace_review_system_importance_score": 9,
+        "marketplace_seo_traffic_share_pct": 35,
+        "marketplace_word_of_mouth_growth_pct": 40
+      },
+      "key_metrics": {
+        "marketplace_startup_success_rate": "10%",
+        "chicken_egg_kills": "60% of marketplaces",
+        "avg_time_to_liquidity": "18-36 months",
+        "typical_take_rate": "10-30%",
+        "etsy_started_manual": true,
+        "uber_started_manual": true,
+        "avg_gmv_to_revenue_ratio": "15-20%",
+        "supply_side_churn_rate": "5-10% monthly",
+        "network_effects_kick_in": "500-1000 active users"
+      },
+      "sources": [
+        "a16z Marketplace Handbook 2023",
+        "Lenny Rachitsky 2024 Marketplace Guide",
+        "Startup Genome 2024 Global Ecosystem Report",
+        "Stripe 2024 Marketplace Payments Guide",
+        "Crunchbase 2024 Funding Data",
+        "Version One Ventures Marketplace 100"
+      ],
+      "industry_benchmarks": {
+        "marketplace_businesses_globally": 10000,
+        "marketplace_gmv_top_100_usd_trillions": 3.5,
+        "amazon_gmv_usd_billions": 700,
+        "ebay_gmv_usd_billions": 75,
+        "airbnb_gmv_usd_billions": 70,
+        "uber_gmv_usd_billions": 130,
+        "etsy_gmv_usd_billions": 13,
+        "fiverr_gmv_usd_billions": 1,
+        "upwork_gmv_usd_billions": 4,
+        "marketplace_avg_take_rate_pct": 15,
+        "marketplace_take_rate_low_pct": 5,
+        "marketplace_take_rate_high_pct": 30,
+        "marketplace_network_effects_score_importance": 10,
+        "chicken_egg_solve_avg_time_months": 6,
+        "marketplace_vc_funding_share_total_vc_pct": 8,
+        "marketplace_liquidity_index_good": 0.3,
+        "marketplace_gmv_to_revenue_ratio_avg": "6:1",
+        "marketplace_buyer_acquisition_cost_usd": 20,
+        "marketplace_seller_acquisition_cost_usd": 50,
+        "marketplace_repeat_transaction_rate_good_pct": 40,
+        "marketplace_seller_churn_monthly_pct": 5,
+        "marketplace_buyer_churn_monthly_pct": 8,
+        "marketplace_fraud_rate_pct": 2,
+        "marketplace_dispute_rate_pct": 3,
+        "marketplace_payment_processing_cost_pct": 3,
+        "marketplace_multi_homing_rate_sellers_pct": 40,
+        "marketplace_managed_model_premium_pct": 20,
+        "marketplace_saas_enabled_model_growth_pct": 30,
+        "vertical_marketplace_success_vs_horizontal_pct": "+40"
+      }
+    },
+    "import_export": {
+      "name": "Import/Export Business",
+      "description": "Start an Alibaba-to-local-market import business and reach $2K/month net profit",
+      "entry_point": "Notice a product selling well locally that can be sourced cheaply from China",
+      "stages": [
+        {
+          "id": "spot_opportunity",
+          "label": "Spot a product opportunity (price gap, trending item)",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "research_alibaba",
+          "label": "Research product and suppliers on Alibaba",
+          "prob": 80,
+          "time": "1-2 weeks",
+          "source": "Alibaba 2024 Seller Report"
+        },
+        {
+          "id": "contact_suppliers",
+          "label": "Contact 10+ suppliers and compare quotes",
+          "prob": 65,
+          "time": "1-2 weeks",
+          "source": "Alibaba 2024 Seller Report"
+        },
+        {
+          "id": "request_samples",
+          "label": "Request samples ($5-50 each + shipping)",
+          "prob": 70,
+          "time": "1 week",
+          "source": "Import Dojo 2024"
+        },
+        {
+          "id": "receive_samples",
+          "label": "Receive and evaluate samples (avg 15-20 day delivery)",
+          "prob": 85,
+          "time": "15-25 days",
+          "source": "Flexport 2024 Shipping Index"
+        },
+        {
+          "id": "quality_check",
+          "label": "Assess quality honestly (90% have issues first time)",
+          "prob": 55,
+          "time": "1-3 days",
+          "source": "AsiaInspection 2024 Q4 Barometer"
+        },
+        {
+          "id": "negotiate",
+          "label": "Negotiate MOQ, price, payment terms",
+          "prob": 70,
+          "time": "1-2 weeks",
+          "source": "Alibaba 2024 Seller Report"
+        },
+        {
+          "id": "first_order",
+          "label": "Place first order ($500-2K typical)",
+          "prob": 60,
+          "time": "1-3 days",
+          "source": "Jungle Scout 2024 State of the Seller"
+        },
+        {
+          "id": "wait_shipping",
+          "label": "Wait for shipping (30-45 days sea, 7-15 days air)",
+          "prob": 95,
+          "time": "20-45 days",
+          "source": "Flexport 2024 Shipping Index"
+        },
+        {
+          "id": "customs_clearance",
+          "label": "Clear customs (adds 15-25% to total cost)",
+          "prob": 80,
+          "time": "3-10 days",
+          "source": "World Bank 2024 Doing Business"
+        },
+        {
+          "id": "receive_inventory",
+          "label": "Receive inventory and inspect full batch",
+          "prob": 85,
+          "time": "1-3 days",
+          "source": "AsiaInspection 2024 Q4 Barometer"
+        },
+        {
+          "id": "list_product",
+          "label": "List on marketplace or local channels",
+          "prob": 80,
+          "time": "1-2 weeks",
+          "source": "Jungle Scout 2024 State of the Seller"
+        },
+        {
+          "id": "first_sale",
+          "label": "Make first sale",
+          "prob": 65,
+          "time": "1-4 weeks",
+          "source": "Jungle Scout 2024 State of the Seller"
+        },
+        {
+          "id": "calculate_real_margin",
+          "label": "Calculate real margin after ALL costs (often 15-25% less than expected)",
+          "prob": 90,
+          "time": "after 10+ sales",
+          "source": "Jungle Scout 2024 State of the Seller"
+        },
+        {
+          "id": "handle_returns",
+          "label": "Handle first returns and quality complaints",
+          "prob": 80,
+          "time": "1-3 months",
+          "source": "Amazon 2024 Seller Report"
+        },
+        {
+          "id": "scale_100_month",
+          "label": "Scale to 100 units/month",
+          "prob": 40,
+          "time": "2-6 months",
+          "source": "Jungle Scout 2024 State of the Seller"
+        },
+        {
+          "id": "find_second_product",
+          "label": "Find and launch second product",
+          "prob": 35,
+          "time": "2-4 months",
+          "source": "Jungle Scout 2024 State of the Seller"
+        },
+        {
+          "id": "reach_5k_revenue",
+          "label": "Reach $5K/month revenue",
+          "prob": 30,
+          "time": "6-12 months",
+          "source": "Jungle Scout 2024 State of the Seller"
+        },
+        {
+          "id": "reach_2k_profit",
+          "label": "Reach $2K/month net profit",
+          "prob": 20,
+          "time": "9-18 months",
+          "source": "Jungle Scout 2024 State of the Seller"
+        }
+      ],
+      "bottlenecks": [
+        "quality_check",
+        "first_order",
+        "customs_clearance",
+        "calculate_real_margin",
+        "scale_100_month"
+      ],
+      "end_to_end_conversion": "4.5%",
+      "industry_data": {
+        "global_trade_volume_usd_trillions": 32,
+        "alibaba_b2b_gmv_usd_trillions": 1.2,
+        "amazon_third_party_sellers_millions": 2,
+        "amazon_fba_sellers_us_millions": 1,
+        "cross_border_ecommerce_market_usd_billions": 800,
+        "customs_clearance_avg_time_days": 5,
+        "customs_duty_avg_us_pct": 5,
+        "import_tariff_china_us_avg_pct": 19,
+        "shipping_container_cost_40ft_usd": 3000,
+        "air_freight_cost_per_kg_usd": 5,
+        "express_shipping_dhl_per_kg_usd": 15,
+        "product_sampling_cost_avg_usd": 50,
+        "product_photography_cost_per_product_usd": 100,
+        "amazon_listing_optimization_cost_usd": 500,
+        "amazon_ppc_avg_acos_pct": 30,
+        "amazon_organic_rank_importance_pct": 70,
+        "amazon_review_acquisition_cost_per_review_usd": 5,
+        "amazon_review_threshold_for_ranking": 15,
+        "fba_storage_fee_monthly_per_cbft_usd": 0.87,
+        "fba_fulfillment_fee_per_unit_usd": 3.5,
+        "amazon_referral_fee_pct": 15,
+        "private_label_success_rate_vs_arbitrage_pct": "2x",
+        "wholesale_success_rate_pct": 40,
+        "product_liability_insurance_cost_annual_usd": 1000,
+        "trademark_registration_cost_usd": 350,
+        "brand_registry_benefits_conversion_lift_pct": 20,
+        "a_plus_content_conversion_lift_pct": 10,
+        "import_quality_inspection_cost_pct": 2,
+        "container_damage_insurance_cost_pct": 1,
+        "supply_chain_disruption_frequency_annual": 3,
+        "inventory_holding_cost_pct_value_monthly": 2,
+        "product_obsolescence_risk_annual_pct": 15
+      },
+      "key_metrics": {
+        "first_order_quality_issues": "90%",
+        "avg_shipping_time_sea": "30-45 days",
+        "customs_cost_adder": "15-25%",
+        "typical_margin_physical_goods": "30-60%",
+        "real_margin_after_all_costs": "15-35%",
+        "typical_moq": "50-500 units",
+        "avg_first_order_cost": "$500-2000",
+        "amazon_seller_avg_monthly_revenue": "$1000-5000",
+        "pct_sellers_profitable_year1": "40%"
+      },
+      "sources": [
+        "Alibaba 2024 Global Seller Report",
+        "Jungle Scout 2024 State of the Amazon Seller",
+        "Flexport 2024 Global Shipping Index",
+        "AsiaInspection 2024 Q4 Quality Barometer",
+        "World Bank 2024 Doing Business Report",
+        "Amazon 2024 Small Business Empowerment Report"
+      ]
+    }
+  }
+}

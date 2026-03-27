@@ -1,0 +1,802 @@
+'use client';
+
+import { useCallback, useRef, useState, useEffect } from 'react';
+import {
+  ReactFlow,
+  MiniMap,
+  Controls,
+  Background,
+  BackgroundVariant,
+  useNodesState,
+  useEdgesState,
+  useReactFlow,
+  useViewport,
+  ReactFlowProvider,
+  type Node as RFNode,
+  type Edge as RFEdge,
+} from '@xyflow/react';
+import dagre from 'dagre';
+
+import SimNodeComponent from './nodes/SimNode';
+import TopBar from './TopBar';
+import Dashboard from './Dashboard';
+import Spinner from './ui/Spinner';
+import { createPersonSVG, type ParticleData } from './Particle';
+import { TEMPLATES, TEMPLATE_KEYWORDS, type TemplateNode, type TemplateEdge } from '@/lib/templates';
+
+const nodeTypes = { simNode: SimNodeComponent };
+
+// Particle layer that moves WITH the React Flow viewport (zoom/pan aware)
+function ParticleLayer({ particles, moveDuration }: { particles: ParticleData[]; moveDuration: number }) {
+  const { x, y, zoom } = useViewport();
+  if (particles.length === 0) return null;
+
+  return (
+    <div
+      className="absolute inset-0 pointer-events-none z-[25]"
+      style={{ transform: `translate(${x}px, ${y}px) scale(${zoom})`, transformOrigin: '0 0' }}
+    >
+      {particles.map((p) => (
+        <div
+          key={p.id}
+          className={`particle ${p.status === 'blocked' ? 'particle-blocked' : p.status === 'success' ? 'particle-success' : ''}`}
+          style={{
+            position: 'absolute',
+            left: p.x,
+            top: p.y,
+            transition: `left ${moveDuration}ms cubic-bezier(0.4, 0, 0.2, 1), top ${moveDuration}ms cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease`,
+          }}
+          dangerouslySetInnerHTML={{ __html: p.svg }}
+        />
+      ))}
+    </div>
+  );
+}
+
+// Dagre layout
+function getLayoutedElements(
+  nodes: RFNode[],
+  edges: RFEdge[],
+  direction: 'LR' | 'TB' = 'LR'
+): { nodes: RFNode[]; edges: RFEdge[] } {
+  const g = new dagre.graphlib.Graph();
+  g.setDefaultEdgeLabel(() => ({}));
+  g.setGraph({ rankdir: direction, nodesep: 80, ranksep: 220, edgesep: 40 });
+
+  nodes.forEach((node) => {
+    g.setNode(node.id, { width: 170, height: 100 });
+  });
+
+  edges.forEach((edge) => {
+    g.setEdge(edge.source, edge.target);
+  });
+
+  dagre.layout(g);
+
+  const layoutedNodes = nodes.map((node) => {
+    const nodeWithPosition = g.node(node.id);
+    return {
+      ...node,
+      position: {
+        x: nodeWithPosition.x - 85,
+        y: nodeWithPosition.y - 50,
+      },
+    };
+  });
+
+  return { nodes: layoutedNodes, edges };
+}
+
+// Convert template data to React Flow format
+function templateToFlow(templateNodes: TemplateNode[], templateEdges: TemplateEdge[]) {
+  const rfNodes: RFNode[] = templateNodes.map((n) => ({
+    id: String(n.id),
+    type: 'simNode',
+    position: { x: n.x, y: n.y },
+    data: {
+      label: n.label,
+      nodeType: n.type,
+      desc: n.desc,
+      source: n.source,
+      prob: n.prob,
+      time: n.time,
+    },
+  }));
+
+  const rfEdges: RFEdge[] = templateEdges.map((e, i) => ({
+    id: `e-${e.from}-${e.to}-${i}`,
+    source: String(e.from),
+    target: String(e.to),
+    label: e.label || '',
+    type: 'default',
+    animated: false,
+    style: {
+      stroke: e.label === 'fail' || e.label === 'no' ? '#fca5a5' : e.label === 'pass' || e.label === 'yes' ? '#86efac' : '#d4d4d4',
+      strokeWidth: 2,
+    },
+    labelStyle: {
+      fill: e.label === 'fail' || e.label === 'no' ? '#ef4444' : e.label === 'pass' || e.label === 'yes' ? '#22c55e' : '#aaa',
+      fontSize: 10,
+      fontWeight: 600,
+    },
+  }));
+
+  return getLayoutedElements(rfNodes, rfEdges);
+}
+
+// Simulation speed config
+const SPD = { move: 2000, wait: 2500, launch: 300, wavePause: 2000, waves: 10, perWave: 10 };
+
+function SimulatorCanvasInner() {
+  const [nodes, setNodes, onNodesChange] = useNodesState<RFNode>([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState<RFEdge>([]);
+  const { fitView, flowToScreenPosition } = useReactFlow();
+
+  const [scenario, setScenario] = useState('');
+  const [generating, setGenerating] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
+
+  // Simulation state
+  const [simRunning, setSimRunning] = useState(false);
+  const [simPaused, setSimPaused] = useState(false);
+  const [simStats, setSimStats] = useState({ total: 0, success: 0, blocked: 0 });
+  const [showDashboard, setShowDashboard] = useState(false);
+  const [particles, setParticles] = useState<ParticleData[]>([]);
+  const [currentWave, setCurrentWave] = useState(0);
+
+  const simRunningRef = useRef(false);
+  const simPausedRef = useRef(false);
+  const timeoutsRef = useRef<number[]>([]);
+  const particleIdRef = useRef(0);
+  const personIdRef = useRef(0);
+  const statsRef = useRef({ total: 0, success: 0, blocked: 0 });
+  const nodesRef = useRef<RFNode[]>([]);
+  const edgesRef = useRef<RFEdge[]>([]);
+  const nodeReachRef = useRef<Record<string, Set<number>>>({});
+  const particlesRef = useRef<ParticleData[]>([]);
+  const flowContainerRef = useRef<HTMLDivElement>(null);
+  const revealedNodesRef = useRef<Set<string>>(new Set());
+  const waveRef = useRef(0);
+  const finishedCountRef = useRef(0);
+
+  useEffect(() => { nodesRef.current = nodes; }, [nodes]);
+  useEffect(() => { edgesRef.current = edges; }, [edges]);
+
+  // Auto-dismiss error
+  useEffect(() => {
+    if (errorMsg) {
+      const t = setTimeout(() => setErrorMsg(''), 4000);
+      return () => clearTimeout(t);
+    }
+  }, [errorMsg]);
+
+  // Auto-show dashboard when simulation ends naturally
+  useEffect(() => {
+    if (simRunning && statsRef.current.total > 0) {
+      const done = statsRef.current.success + statsRef.current.blocked;
+      if (done >= statsRef.current.total && waveRef.current >= SPD.waves) {
+        // All waves launched and all particles finished
+        setTimeout(() => {
+          if (simRunningRef.current) {
+            stopSim();
+          }
+        }, 2000);
+      }
+    }
+  }, [simStats, simRunning]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Reveal a node during simulation (called when a particle reaches it)
+  const revealNode = useCallback((nodeId: string) => {
+    if (revealedNodesRef.current.has(nodeId)) return;
+    revealedNodesRef.current.add(nodeId);
+    // Make node visible via style on the React Flow wrapper
+    setNodes(prev => prev.map(n =>
+      n.id === nodeId
+        ? { ...n, style: { ...n.style, opacity: 1, transition: 'opacity 0.5s ease' } }
+        : n
+    ));
+    // Unhide edges where both source and target are revealed
+    setEdges(prev => prev.map(e => {
+      if (revealedNodesRef.current.has(e.source) && revealedNodesRef.current.has(e.target)) {
+        return { ...e, hidden: false };
+      }
+      return e;
+    }));
+  }, [setNodes, setEdges]);
+
+  // Load a template
+  const loadTemplate = useCallback((key: string) => {
+    const t = TEMPLATES[key];
+    if (!t) return;
+    // Reset stats before stopSim so dashboard doesn't auto-open
+    statsRef.current = { total: 0, success: 0, blocked: 0 };
+    setSimStats({ total: 0, success: 0, blocked: 0 });
+    stopSim();
+    setShowDashboard(false);
+    particlesRef.current = [];
+    setParticles([]);
+    setScenario(t.input);
+    const { nodes: ln, edges: le } = templateToFlow(t.nodes, t.edges);
+    setNodes(ln);
+    setEdges(le);
+    setErrorMsg('');
+    setTimeout(() => fitView({ padding: 0.2, duration: 400 }), 100);
+  }, [setNodes, setEdges, fitView]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Generate from AI
+  const generateFlow = useCallback(async () => {
+    const input = scenario.trim();
+    if (!input) {
+      // input is in TopBar now
+      return;
+    }
+    const inputLower = input.toLowerCase();
+
+    // Try keyword match first
+    let best: string | null = null;
+    let bestScore = 0;
+    for (const [k, words] of Object.entries(TEMPLATE_KEYWORDS)) {
+      const sc = words.filter(w => inputLower.includes(w)).length;
+      if (sc > bestScore) { bestScore = sc; best = k; }
+    }
+    if (bestScore >= 3 && best) { loadTemplate(best); return; }
+
+    // Call AI API
+    setGenerating(true);
+    setErrorMsg('');
+    try {
+      const res = await fetch('/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ scenario: input }),
+      });
+      if (!res.ok) throw new Error('Server error');
+      const flow = await res.json();
+      if (!flow.nodes || !flow.edges) throw new Error('Invalid flow');
+
+      statsRef.current = { total: 0, success: 0, blocked: 0 };
+      setSimStats({ total: 0, success: 0, blocked: 0 });
+      stopSim();
+      setShowDashboard(false);
+      particlesRef.current = [];
+      setParticles([]);
+      const tNodes: TemplateNode[] = flow.nodes.map((n: TemplateNode) => ({ ...n, source: n.source || 'AI generated' }));
+      const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges);
+      setNodes(ln);
+      setEdges(le);
+      setTimeout(() => fitView({ padding: 0.2, duration: 400 }), 100);
+    } catch {
+      if (best) {
+        loadTemplate(best);
+      } else {
+        setErrorMsg('Could not generate scenario. Try a different description or pick a template.');
+      }
+    } finally {
+      setGenerating(false);
+    }
+  }, [scenario, loadTemplate, setNodes, setEdges, fitView]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Simulation engine
+  const simTimeout = useCallback((fn: () => void, ms: number) => {
+    const id = window.setTimeout(() => {
+      timeoutsRef.current = timeoutsRef.current.filter(x => x !== id);
+      if (simRunningRef.current && !simPausedRef.current) fn();
+      else if (simRunningRef.current && simPausedRef.current) {
+        // Re-queue if paused
+        const newId = window.setTimeout(function retry() {
+          if (!simRunningRef.current) return;
+          if (simPausedRef.current) {
+            const retryId = window.setTimeout(retry, 200);
+            timeoutsRef.current.push(retryId);
+          } else {
+            fn();
+          }
+        }, 200);
+        timeoutsRef.current.push(newId);
+      }
+    }, ms);
+    timeoutsRef.current.push(id);
+    return id;
+  }, []);
+
+  const updateParticles = useCallback((updater: (prev: ParticleData[]) => ParticleData[]) => {
+    particlesRef.current = updater(particlesRef.current);
+    setParticles([...particlesRef.current]);
+  }, []);
+
+  const moveTo = useCallback((particle: ParticleData, nodeId: string, cb: (r: 'success' | 'blocked') => void) => {
+    if (!simRunningRef.current) return;
+
+    const node = nodesRef.current.find(n => n.id === nodeId);
+    if (!node) { cb('blocked'); return; }
+
+    // Reveal this node when particle arrives
+    revealNode(nodeId);
+
+    // Track unique reach
+    if (!nodeReachRef.current[nodeId]) nodeReachRef.current[nodeId] = new Set();
+    nodeReachRef.current[nodeId].add(particle.personId);
+    particle.visitedNodes.add(nodeId);
+
+    // Move particle to node position (canvas coordinates)
+    const tx = node.position.x + 85 - 12;
+    const ty = node.position.y + 50 - 16;
+    particle.x = tx;
+    particle.y = ty;
+    updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: tx, y: ty } : p));
+
+    simTimeout(() => {
+      if (!simRunningRef.current) return;
+      const data = node.data as Record<string, unknown>;
+      const nodeType = data.nodeType as string;
+      const prob = data.prob as number;
+
+      // Handle bottleneck/decision
+      if (nodeType === 'bottleneck' || nodeType === 'decision') {
+        const pass = Math.random() * 100 < prob;
+        const out = edgesRef.current.filter(e => e.source === nodeId);
+        const passE = out.find(e => e.label === 'pass' || e.label === 'yes');
+        const failE = out.find(e => e.label === 'fail' || e.label === 'no');
+        let next: RFEdge | undefined;
+        if (pass && passE) next = passE;
+        else if (!pass && failE) next = failE;
+        else next = out[pass ? 0 : (out.length > 1 ? 1 : 0)];
+        if (next) {
+          moveTo(particle, next.target, cb);
+          return;
+        }
+      }
+
+      // Follow edges
+      const out = edgesRef.current.filter(e => e.source === nodeId);
+      if (out.length === 0) {
+        const isSuccess = nodeType === 'outcome-good';
+        particle.status = isSuccess ? 'success' : 'blocked';
+        // Scatter around terminal node
+        const ox = (Math.random() - 0.5) * 60;
+        const oy = (Math.random() - 0.5) * 40;
+        updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: p.x + ox, y: p.y + oy, status: particle.status } : p));
+        finishedCountRef.current++;
+        cb(isSuccess ? 'success' : 'blocked');
+        return;
+      }
+
+      const nextE = out.length > 1 && nodeType !== 'bottleneck' && nodeType !== 'decision'
+        ? out[Math.floor(Math.random() * out.length)]
+        : out[0];
+      moveTo(particle, nextE.target, cb);
+    }, SPD.wait);
+  }, [simTimeout, updateParticles, revealNode]);
+
+  const launchPerson = useCallback((startNodeId: string) => {
+    const pid = ++personIdRef.current;
+    const pId = ++particleIdRef.current;
+    const startNode = nodesRef.current.find(n => n.id === startNodeId);
+    if (!startNode) return;
+
+    const particle: ParticleData = {
+      id: pId,
+      personId: pid,
+      x: startNode.position.x + 85 - 12,
+      y: startNode.position.y + 50 - 16,
+      svg: createPersonSVG(),
+      status: 'moving',
+      visitedNodes: new Set(),
+    };
+
+    updateParticles(prev => [...prev, particle]);
+
+    moveTo(particle, startNodeId, (result) => {
+      if (result === 'success') statsRef.current.success++;
+      else statsRef.current.blocked++;
+      setSimStats({ ...statsRef.current });
+    });
+  }, [moveTo, updateParticles]);
+
+  const launchWave = useCallback((waveNum: number, startNodeIds: string[]) => {
+    if (waveNum >= SPD.waves || !simRunningRef.current) {
+      // All waves done — check if we should auto-show dashboard
+      if (waveNum >= SPD.waves) {
+        simTimeout(() => {
+          if (simRunningRef.current) {
+            stopSim();
+          }
+        }, SPD.move + SPD.wait * 3); // Wait for last particles to finish
+      }
+      return;
+    }
+
+    waveRef.current = waveNum;
+    setCurrentWave(waveNum + 1);
+
+    for (let i = 0; i < SPD.perWave; i++) {
+      simTimeout(() => {
+        if (!simRunningRef.current) return;
+        statsRef.current.total++;
+        setSimStats({ ...statsRef.current });
+        const startId = startNodeIds[Math.floor(Math.random() * startNodeIds.length)];
+        launchPerson(startId);
+      }, i * SPD.launch);
+    }
+
+    simTimeout(() => launchWave(waveNum + 1, startNodeIds), SPD.perWave * SPD.launch + SPD.wavePause);
+  }, [simTimeout, launchPerson]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const simulate = useCallback(() => {
+    if (simRunningRef.current || nodesRef.current.length === 0) return;
+
+    simRunningRef.current = true;
+    simPausedRef.current = false;
+    setSimRunning(true);
+    setSimPaused(false);
+    statsRef.current = { total: 0, success: 0, blocked: 0 };
+    setSimStats({ total: 0, success: 0, blocked: 0 });
+    personIdRef.current = 0;
+    particleIdRef.current = 0;
+    finishedCountRef.current = 0;
+    waveRef.current = 0;
+    setCurrentWave(0);
+    nodeReachRef.current = {};
+    nodesRef.current.forEach(n => { nodeReachRef.current[n.id] = new Set(); });
+    particlesRef.current = [];
+    setParticles([]);
+    setShowDashboard(false);
+    setErrorMsg('');
+
+    // Hide all nodes and edges for sequential reveal
+    revealedNodesRef.current = new Set();
+    setNodes(prev => prev.map(n => ({
+      ...n,
+      style: { ...n.style, opacity: 0, transition: 'opacity 0.5s ease' },
+    })));
+    setEdges(prev => prev.map(e => ({ ...e, hidden: true })));
+
+    // Find start nodes (no incoming edges)
+    const hasIncoming = new Set(edgesRef.current.map(e => e.target));
+    const startNodeIds = nodesRef.current.filter(n => !hasIncoming.has(n.id)).map(n => n.id);
+    if (startNodeIds.length === 0) { stopSim(); return; }
+
+    launchWave(0, startNodeIds);
+  }, [launchWave, setNodes, setEdges]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  function stopSim() {
+    simRunningRef.current = false;
+    simPausedRef.current = false;
+    setSimRunning(false);
+    setSimPaused(false);
+    timeoutsRef.current.forEach(id => clearTimeout(id));
+    timeoutsRef.current = [];
+
+    // Reveal all nodes when simulation ends
+    revealedNodesRef.current = new Set();
+    setNodes(prev => prev.map(n => ({
+      ...n,
+      style: { ...n.style, opacity: 1, transition: 'opacity 0.5s ease' },
+    })));
+    setEdges(prev => prev.map(e => ({ ...e, hidden: false })));
+
+    if (statsRef.current.total > 0) {
+      setTimeout(() => setShowDashboard(true), 500);
+    }
+
+    // Keep particles visible — only clear on new simulation or Clear
+  }
+
+  const simulateReverse = useCallback(() => {
+    if (simRunningRef.current || nodesRef.current.length === 0) return;
+
+    simRunningRef.current = true;
+    simPausedRef.current = false;
+    setSimRunning(true);
+    setSimPaused(false);
+    statsRef.current = { total: 0, success: 0, blocked: 0 };
+    setSimStats({ total: 0, success: 0, blocked: 0 });
+    personIdRef.current = 0;
+    particleIdRef.current = 0;
+    finishedCountRef.current = 0;
+    waveRef.current = 0;
+    setCurrentWave(0);
+    nodeReachRef.current = {};
+    nodesRef.current.forEach(n => { nodeReachRef.current[n.id] = new Set(); });
+    particlesRef.current = [];
+    setParticles([]);
+    setShowDashboard(false);
+
+    // Build reverse edges BEFORE hiding (edgesRef still has originals)
+    const originalEdges = [...edgesRef.current];
+    const reverseEdges = originalEdges.map(e => ({ ...e, source: e.target, target: e.source }));
+
+    // Find end nodes (no outgoing edges in ORIGINAL graph)
+    const hasOutgoing = new Set(originalEdges.map(e => e.source));
+    const endNodeIds = nodesRef.current.filter(n => !hasOutgoing.has(n.id)).map(n => n.id);
+    if (endNodeIds.length === 0) { stopSim(); return; }
+
+    // Hide all nodes and edges for sequential reveal
+    revealedNodesRef.current = new Set();
+    setNodes(prev => prev.map(n => ({
+      ...n,
+      style: { ...n.style, opacity: 0, transition: 'opacity 0.5s ease' },
+    })));
+    setEdges(prev => prev.map(e => ({ ...e, hidden: true })));
+
+    // Override edgesRef with reversed edges AFTER a tick (so useEffect doesn't overwrite)
+    setTimeout(() => {
+      edgesRef.current = reverseEdges;
+      launchWave(0, endNodeIds);
+    }, 50);
+
+    // Restore after all waves
+    const totalTime = SPD.waves * (SPD.perWave * SPD.launch + SPD.wavePause) + 6000;
+    setTimeout(() => { edgesRef.current = originalEdges; }, totalTime);
+  }, [launchWave]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  function togglePause() {
+    if (!simRunningRef.current) return;
+    simPausedRef.current = !simPausedRef.current;
+    setSimPaused(simPausedRef.current);
+  }
+
+  // Get screen position for a canvas coordinate
+  const getScreenPos = useCallback((canvasX: number, canvasY: number) => {
+    try {
+      return flowToScreenPosition({ x: canvasX, y: canvasY });
+    } catch {
+      return { x: canvasX, y: canvasY };
+    }
+  }, [flowToScreenPosition]);
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement;
+      const isInput = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA';
+
+      // Enter in input = generate
+      if (e.key === 'Enter' && !e.shiftKey && isInput && scenario.trim()) {
+        e.preventDefault();
+        generateFlow();
+        return;
+      }
+
+      // Space = pause/resume (only when not in input)
+      if (e.key === ' ' && !isInput && simRunningRef.current) {
+        e.preventDefault();
+        togglePause();
+        return;
+      }
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [scenario, generateFlow]);
+
+  const hasNodes = nodes.length > 0;
+  const successRate = simStats.total > 0 ? Math.round(simStats.success / simStats.total * 100) : 0;
+
+  return (
+    <div className="h-screen w-screen flex flex-col bg-[var(--background)]">
+      {/* ========== TOP BAR + SCENARIO BAR ========== */}
+      <TopBar
+        scenario={scenario}
+        onScenarioChange={setScenario}
+        hasNodes={hasNodes}
+        simRunning={simRunning}
+        simPaused={simPaused}
+        generating={generating}
+        onGenerate={generateFlow}
+        onLoadTemplate={loadTemplate}
+        onSimulate={simulate}
+        onSimulateReverse={simulateReverse}
+        onTogglePause={togglePause}
+        onStop={stopSim}
+        onClear={() => { stopSim(); setNodes([]); setEdges([]); setShowDashboard(false); setScenario(''); setErrorMsg(''); }}
+      />
+
+      {/* ========== ERROR MESSAGE ========== */}
+      {errorMsg && (
+        <div className="absolute top-[56px] left-1/2 -translate-x-1/2 z-50 bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 text-[11px] px-4 py-2 rounded-lg backdrop-blur-sm animate-fade-in">
+          {errorMsg}
+        </div>
+      )}
+
+      {/* ========== GENERATING OVERLAY ========== */}
+      {generating && (
+        <div className="absolute inset-0 top-[56px] z-30 flex items-center justify-center bg-[var(--background)]/60 backdrop-blur-[2px]">
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center shadow-lg text-[var(--accent)]">
+              <Spinner size={20} />
+            </div>
+            <div className="text-[12px] text-[var(--muted)] font-medium">Analyzing scenario...</div>
+            <div className="flex gap-1">
+              {[0, 1, 2].map(i => (
+                <div
+                  key={i}
+                  className="w-1.5 h-1.5 rounded-full bg-blue-500/40"
+                  style={{
+                    animation: `pulse-dot 1.2s ease-in-out ${i * 0.2}s infinite`,
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ========== EMPTY STATE ========== */}
+      {!hasNodes && !generating && (
+        <div className="absolute inset-0 top-[94px] z-20 flex items-center justify-center pointer-events-none">
+          <div className="flex flex-col items-center gap-2 opacity-40">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v4l2.5 1.5" />
+            </svg>
+            <div className="text-[12px] text-[var(--muted)] text-center leading-relaxed">
+              Type a scenario above or pick a template to begin
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ========== REACT FLOW CANVAS ========== */}
+      <div className="flex-1 relative" ref={flowContainerRef}>
+        <ReactFlow
+          nodes={nodes}
+          edges={edges}
+          onNodesChange={onNodesChange}
+          onEdgesChange={onEdgesChange}
+          nodeTypes={nodeTypes}
+          fitView
+          fitViewOptions={{ padding: 0.2 }}
+          minZoom={0.3}
+          maxZoom={2}
+          defaultEdgeOptions={{
+            type: 'default',
+            style: { stroke: '#d4d4d4', strokeWidth: 2 },
+          }}
+        >
+          <Background variant={BackgroundVariant.Dots} gap={24} size={1} color="var(--muted)" style={{ opacity: 0.3 }} />
+          <Controls
+            position="bottom-left"
+            showInteractive={false}
+            className="!border-[var(--border)] !rounded-lg !shadow-sm !overflow-hidden !mb-4 !ml-4"
+          />
+          <MiniMap
+            position="bottom-right"
+            pannable
+            zoomable
+            nodeColor={(node) => {
+              const t = (node.data as Record<string, unknown>).nodeType as string;
+              if (t === 'outcome-good') return '#34d399';
+              if (t === 'outcome-bad') return '#f87171';
+              if (t === 'bottleneck') return '#fb923c';
+              if (t === 'decision') return '#facc15';
+              if (t === 'desire') return '#a78bfa';
+              if (t === 'action') return '#4ade80';
+              if (t === 'loop') return '#38bdf8';
+              return '#ddd';
+            }}
+            maskColor="rgba(0,0,0,0.08)"
+            style={{
+              opacity: 0.7,
+              width: 140,
+              height: 90,
+              marginBottom: 16,
+              marginRight: 16,
+            }}
+          />
+        </ReactFlow>
+
+        {/* ========== PARTICLE OVERLAY (inside React Flow viewport) ========== */}
+        <ParticleLayer particles={particles} moveDuration={SPD.move} />
+      </div>
+
+      {/* ========== STATS BAR (during simulation) ========== */}
+      {simRunning && (
+        <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 animate-slide-up">
+          <div
+            className="rounded-2xl px-1 py-1 flex items-center gap-1"
+            style={{
+              background: 'rgba(15, 23, 42, 0.88)',
+              backdropFilter: 'blur(16px)',
+              WebkitBackdropFilter: 'blur(16px)',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.24), 0 0 0 1px rgba(255,255,255,0.06) inset',
+            }}
+          >
+            {/* Wave progress */}
+            <div className="flex items-center gap-2 px-3 py-1.5">
+              <div className="flex gap-[3px]">
+                {Array.from({ length: SPD.waves }, (_, i) => (
+                  <div
+                    key={i}
+                    className="w-[6px] h-[14px] rounded-[2px] transition-all duration-300"
+                    style={{
+                      background: i < currentWave ? 'rgba(96, 165, 250, 0.9)' : 'rgba(255,255,255,0.1)',
+                    }}
+                  />
+                ))}
+              </div>
+              <span className="text-[11px] font-semibold text-white/50 tabular-nums">{currentWave}/{SPD.waves}</span>
+            </div>
+
+            {/* Divider */}
+            <div className="w-px h-5 bg-white/10" />
+
+            {/* Metrics */}
+            <div className="flex items-center gap-3 px-3 py-1.5">
+              <div className="flex items-center gap-1.5">
+                <div className="w-[6px] h-[6px] rounded-full bg-blue-400" />
+                <span className="text-[12px] font-bold text-white tabular-nums">{simStats.total}</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <div className="w-[6px] h-[6px] rounded-full bg-emerald-400" />
+                <span className="text-[12px] font-bold text-emerald-400 tabular-nums">{simStats.success}</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <div className="w-[6px] h-[6px] rounded-full bg-red-400" />
+                <span className="text-[12px] font-bold text-red-400 tabular-nums">{simStats.blocked}</span>
+              </div>
+            </div>
+
+            {/* Rate pill */}
+            <div
+              className="px-3 py-1.5 rounded-xl text-[12px] font-bold tabular-nums"
+              style={{
+                background: successRate >= 50 ? 'rgba(16, 185, 129, 0.15)' : successRate >= 25 ? 'rgba(245, 158, 11, 0.15)' : 'rgba(239, 68, 68, 0.15)',
+                color: successRate >= 50 ? '#34d399' : successRate >= 25 ? '#fbbf24' : '#f87171',
+              }}
+            >
+              {successRate}%
+            </div>
+
+            {/* Status */}
+            {simPaused ? (
+              <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-amber-500/15">
+                <div className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                <span className="text-[10px] text-amber-400 font-bold uppercase tracking-wider">Paused</span>
+              </div>
+            ) : (
+              <kbd className="text-[9px] text-white/30 bg-white/5 px-2 py-1 rounded-lg font-mono mx-1">space</kbd>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* ========== RESULTS TAB (right edge) ========== */}
+      {!simRunning && statsRef.current.total > 0 && !showDashboard && (
+        <button
+          onClick={() => setShowDashboard(true)}
+          className="fixed right-0 top-1/2 -translate-y-1/2 z-50 bg-white dark:bg-[#1a1a1a] border border-r-0 border-gray-200 dark:border-gray-700 rounded-l-lg px-2 py-4 shadow-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all cursor-pointer group"
+        >
+          <div className="flex flex-col items-center gap-1.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500 group-hover:text-blue-500 transition-colors">
+              <path d="M3 3v18h18" /><path d="M18 17V9" /><path d="M13 17V5" /><path d="M8 17v-3" />
+            </svg>
+            <span className="text-[9px] font-semibold text-gray-400 group-hover:text-blue-500 transition-colors" style={{ writingMode: 'vertical-lr' }}>
+              Results
+            </span>
+          </div>
+        </button>
+      )}
+
+      {/* ========== DASHBOARD PANEL ========== */}
+      {showDashboard && (
+        <Dashboard
+          stats={statsRef.current}
+          nodes={nodesRef.current}
+          nodeUniqueReach={nodeReachRef.current}
+          edges={edgesRef.current.map(e => ({ source: e.source, target: e.target, label: e.label as string | undefined }))}
+          onClose={() => setShowDashboard(false)}
+        />
+      )}
+
+    </div>
+  );
+}
+
+export default function SimulatorCanvas() {
+  return (
+    <ReactFlowProvider>
+      <SimulatorCanvasInner />
+    </ReactFlowProvider>
+  );
+}
