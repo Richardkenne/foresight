@@ -24,6 +24,7 @@ import Spinner from './ui/Spinner';
 import { createPersonSVG, type ParticleData } from './Particle';
 import { TEMPLATES, TEMPLATE_KEYWORDS, type TemplateNode, type TemplateEdge } from '@/lib/templates';
 import { SimulatorDataflow } from '@/lib/dataflow-engine';
+import { applyRealProbabilities } from '@/lib/probability-matcher';
 
 const nodeTypes = { simNode: SimNodeComponent };
 
@@ -294,7 +295,9 @@ function SimulatorCanvasInner() {
     particlesRef.current = [];
     setParticles([]);
     setScenario(t.input);
-    const { nodes: ln, edges: le } = templateToFlow(t.nodes, t.edges);
+    // Apply real probabilities from verified data (Layer 2 overrides AI estimates)
+    const enrichedNodes = applyRealProbabilities(t.nodes) as typeof t.nodes;
+    const { nodes: ln, edges: le } = templateToFlow(enrichedNodes, t.edges);
     setNodes(ln);
     setEdges(le);
     setErrorMsg('');

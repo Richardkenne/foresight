@@ -103,10 +103,10 @@ function SimNodeComponent({ data }: NodeProps) {
 
   if (isStart) {
     return (
-      <div className="sim-node sim-node--start" style={{ '--node-accent': isSacred ? '#a78bfa' : colors.accent } as React.CSSProperties}>
+      <div className="sim-node sim-node--start" style={{ '--node-accent': colors.accent } as React.CSSProperties}>
         <Handle type="target" position={Position.Left} className="sim-handle" />
         <div className="sim-node__start-inner">
-          <span className="sim-node__start-icon" style={{ color: isSacred ? '#a78bfa' : colors.accent }}>{icon}</span>
+          <span className="sim-node__start-icon" style={{ color: colors.accent }}>{icon}</span>
           <span className="sim-node__start-label">{isSacred ? sacredVerse.law : d.label}</span>
         </div>
         <Handle type="source" position={Position.Right} className="sim-handle" />
@@ -114,47 +114,44 @@ function SimNodeComponent({ data }: NodeProps) {
     );
   }
 
-  const sacredAccent = '#a78bfa';
-
   return (
     <div
       className="sim-node sim-node--card"
       style={{
-        '--node-accent': isSacred ? sacredAccent : colors.accent,
-        '--node-bg': isSacred ? '#f5f3ff' : colors.bg,
+        '--node-accent': colors.accent,
+        '--node-bg': colors.bg,
       } as React.CSSProperties}
     >
       <Handle type="target" position={Position.Left} className="sim-handle" />
 
-      {/* Left accent bar */}
-      <div className="sim-node__accent" style={{ background: isSacred ? sacredAccent : colors.accent }} />
+      {/* Left accent bar — keeps type color even in sacred mode */}
+      <div className="sim-node__accent" style={{ background: colors.accent }} />
 
       {/* Content */}
       <div className="sim-node__body">
         {isSacred ? (
           <>
-            {/* Sacred Mode */}
+            {/* Sacred Mode — keeps type color for pass/fail clarity */}
             <div className="sim-node__header">
-              <div className="sim-node__icon" style={{ color: sacredAccent }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  <path d="M2 17l10 5 10-5" />
-                  <path d="M2 12l10 5 10-5" />
-                </svg>
+              <div className="sim-node__icon" style={{ color: colors.accent }}>
+                {icon}
               </div>
-              <div className="sim-node__label" style={{ color: sacredAccent }}>{sacredVerse.law}</div>
+              <div className="sim-node__label">{sacredVerse.law}</div>
+              {hasProb && d.prob != null && (
+                <div className="sim-node__prob" style={{ background: colors.accent, color: '#fff' }}>
+                  {d.prob}%
+                </div>
+              )}
             </div>
             <div className="sim-node__desc" style={{ fontStyle: 'italic', fontSize: '9.5px', lineHeight: '1.4' }}>
               &ldquo;{sacredVerse.bible}&rdquo;
             </div>
-            <div className="sim-node__footer" style={{ borderTop: 'none', paddingTop: 0 }}>
-              <span className="sim-node__source" style={{ color: sacredAccent }}>{sacredVerse.bRef}</span>
-            </div>
-            <div className="sim-node__desc" style={{ fontStyle: 'italic', fontSize: '9.5px', lineHeight: '1.4', marginTop: '4px' }}>
+            <div className="sim-node__desc" style={{ fontStyle: 'italic', fontSize: '9.5px', lineHeight: '1.4', marginTop: '2px', opacity: 0.7 }}>
               &ldquo;{sacredVerse.quran}&rdquo;
             </div>
-            <div className="sim-node__footer" style={{ borderTop: 'none', paddingTop: 0 }}>
-              <span className="sim-node__source" style={{ color: sacredAccent }}>{sacredVerse.qRef}</span>
+            <div className="sim-node__footer">
+              <span className="sim-node__source">{sacredVerse.bRef}</span>
+              <span className="sim-node__source">{sacredVerse.qRef}</span>
             </div>
           </>
         ) : (
