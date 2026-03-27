@@ -235,12 +235,40 @@ function SimulatorCanvasInner() {
       return;
     }
     const inputLower = input.toLowerCase();
+    const inputWords = inputLower.split(/\s+/).filter(w => w.length > 2);
 
-    // Try keyword match first
+    // Fuzzy match: check if word is close enough (1-2 char typos)
+    const fuzzyMatch = (word: string, keyword: string): boolean => {
+      if (keyword.length < 3) return word === keyword;
+      // Exact substring match
+      if (inputLower.includes(keyword)) return true;
+      // Check each input word against keyword with typo tolerance
+      for (const w of inputWords) {
+        if (w.length < 3) continue;
+        // Starts-with match (handles partial stems)
+        if (w.startsWith(keyword) || keyword.startsWith(w)) return true;
+        // Simple distance: count differing chars (for same-length or +-1 words)
+        if (Math.abs(w.length - keyword.length) <= 1) {
+          const longer = w.length >= keyword.length ? w : keyword;
+          const shorter = w.length < keyword.length ? w : keyword;
+          let diffs = 0;
+          let si = 0;
+          for (let li = 0; li < longer.length && diffs <= 2; li++) {
+            if (shorter[si] === longer[li]) { si++; }
+            else { diffs++; if (longer.length === shorter.length) si++; }
+          }
+          diffs += shorter.length - si;
+          if (diffs <= 2 && shorter.length >= 4) return true;
+        }
+      }
+      return false;
+    };
+
+    // Try keyword match first (exact + fuzzy)
     let best: string | null = null;
     let bestScore = 0;
     for (const [k, words] of Object.entries(TEMPLATE_KEYWORDS)) {
-      const sc = words.filter(w => inputLower.includes(w)).length;
+      const sc = words.filter(w => fuzzyMatch(inputLower, w)).length;
       if (sc > bestScore) { bestScore = sc; best = k; }
     }
     if (bestScore >= 3 && best) { loadTemplate(best, true); return; }
@@ -476,23 +504,33 @@ function SimulatorCanvasInner() {
     timeoutsRef.current.forEach(id => clearTimeout(id));
     timeoutsRef.current = [];
 
+    // Restore original edges FIRST if we were in reverse mode
+    // This must happen before setEdges so React Flow gets the correct edges
+    if (originalEdgesRef.current) {
+      const origEdges = originalEdgesRef.current;
+      edgesRef.current = origEdges;
+      originalEdgesRef.current = null;
+      // Set React Flow edges to the original (un-reversed) edges, all visible
+      setEdges(origEdges.map(e => ({ ...e, hidden: false })));
+    } else {
+      setEdges(prev => prev.map(e => ({ ...e, hidden: false })));
+    }
+
     // Reveal all nodes when simulation ends
     revealedNodesRef.current = new Set();
     setNodes(prev => prev.map(n => ({
       ...n,
       style: { ...n.style, opacity: 1, transition: 'opacity 0.5s ease' },
     })));
-    setEdges(prev => prev.map(e => ({ ...e, hidden: false })));
-
-    // Restore original edges if we were in reverse mode
-    if (originalEdgesRef.current) {
-      edgesRef.current = originalEdgesRef.current;
-      originalEdgesRef.current = null;
-    }
 
     // Clear particles so the canvas returns to clean state
     particlesRef.current = [];
     setParticles([]);
+
+    // Reset stats refs for clean state
+    waveRef.current = 0;
+    setCurrentWave(0);
+    finishedCountRef.current = 0;
 
     if (statsRef.current.total > 0) {
       setTimeout(() => setShowDashboard(true), 500);
