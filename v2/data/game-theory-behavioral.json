@@ -1,0 +1,523 @@
+{
+  "_meta": {
+    "description": "Game theory behavioral data — competition, cooperation, trust patterns from experimental economics",
+    "datapoints": 247,
+    "sources": "Meta-analyses and laboratory experiments from peer-reviewed journals",
+    "last_updated": "2026-03-27"
+  },
+
+  "games": {
+    "prisoners_dilemma": {
+      "description": "Two players choose to cooperate or defect; mutual cooperation is optimal but defection is individually rational",
+      "cooperation_rate_overall": 0.47,
+      "source": "Sally 1995 meta-analysis of PD experiments 1958-1995; Embrey, Frechette & Yuksel 2017",
+      "factors": {
+        "one_shot": {
+          "cooperation_rate": 0.37,
+          "source": "Sally 1995 meta-review, one-shot PD games"
+        },
+        "repeated_finite": {
+          "cooperation_rate_range": [0.20, 0.50],
+          "cooperation_rate_typical": 0.40,
+          "source": "Sally 1995 — iterated PD cooperation 20-50%"
+        },
+        "repeated_long": {
+          "cooperation_rate": 0.76,
+          "note": "300-round games, 75.7% cooperative choices per pair",
+          "source": "Royal Society Open Science 2019, PMC6689633"
+        },
+        "communication_allowed": {
+          "cooperation_rate": 0.67,
+          "boost_from_baseline": 0.40,
+          "note": "Communication increases cooperation by ~40 percentage points",
+          "source": "Sally 1995 meta-analysis — communication one of few significant variables"
+        },
+        "anonymous_one_shot": {
+          "cooperation_rate": 0.33,
+          "source": "Brosig 2002, some experimental results in PD game"
+        },
+        "face_to_face": {
+          "cooperation_rate": 0.70,
+          "source": "Brosig 2002 — face-to-face communication condition"
+        }
+      },
+      "decline_over_rounds": {
+        "round_1": 0.55,
+        "round_5": 0.40,
+        "round_10": 0.25,
+        "final_round": 0.15,
+        "note": "Cooperation declines in finitely repeated games, especially in final rounds (end-game effect)",
+        "source": "Embrey, Frechette & Yuksel 2017, QJE"
+      },
+      "gender_effects": {
+        "men_cooperation": 0.44,
+        "women_cooperation": 0.48,
+        "note": "Small but persistent gender difference favoring women",
+        "source": "Ortmann & Tichy 1999; Branas-Garza et al. 2018"
+      }
+    },
+
+    "ultimatum_game": {
+      "description": "Proposer divides a sum; responder accepts or rejects (both get nothing if rejected)",
+      "average_offer_pct": 0.42,
+      "modal_offer_pct": 0.50,
+      "source": "Cross-cultural meta-analysis, Oosterbeek et al. 2004",
+      "offers": {
+        "mean_offer": 0.42,
+        "median_offer": 0.45,
+        "modal_offer": 0.50,
+        "offers_below_20pct": 0.05,
+        "offers_at_50pct": 0.35,
+        "source": "Camerer 2003 Behavioral Game Theory; Guth et al. 1982 original study"
+      },
+      "rejection_rates": {
+        "overall_rejection_rate": 0.16,
+        "source": "Meta-analysis of ultimatum experiments",
+        "by_offer_level": {
+          "offer_50pct": { "rejection_rate": 0.02 },
+          "offer_40pct": { "rejection_rate": 0.05 },
+          "offer_30pct": { "rejection_rate": 0.10 },
+          "offer_20pct": { "rejection_rate": 0.40, "note": "Rejected about half the time" },
+          "offer_10pct": { "rejection_rate": 0.60 },
+          "offer_5pct_or_less": { "rejection_rate": 0.80 }
+        },
+        "source_by_level": "Guth, Schmittberger & Schwarze 1982; Camerer 2003"
+      },
+      "high_stakes": {
+        "note": "With stakes up to 40 weeks wages (India), rejection rates approach zero",
+        "rejection_rate_high_stakes": 0.04,
+        "source": "Andersen et al. 2011, AER — high-stakes ultimatum in India"
+      },
+      "cross_cultural": {
+        "western_average_offer": 0.44,
+        "small_scale_societies_range": [0.26, 0.58],
+        "machiguenga_offer": 0.26,
+        "lamalera_offer": 0.58,
+        "source": "Henrich et al. 2001 — 15 small-scale societies"
+      },
+      "earned_entitlement": {
+        "offer_when_earned": 0.35,
+        "offer_when_random": 0.44,
+        "note": "When proposers earn the right to propose, offers decrease and rejections decrease",
+        "source": "Hoffman et al. 1994; Carr & Mellizo 2013"
+      }
+    },
+
+    "public_goods_game": {
+      "description": "Players decide how much of endowment to contribute to a shared pool; pool is multiplied and shared equally",
+      "initial_contribution_pct": 0.50,
+      "source": "Ledyard 1995 handbook chapter; Fehr & Gachter 2000",
+      "without_punishment": {
+        "round_1_contribution": 0.50,
+        "round_5_contribution": 0.30,
+        "round_10_contribution": 0.15,
+        "final_round_contribution": 0.05,
+        "note": "Contributions decline steadily to near zero without enforcement",
+        "source": "Fehr & Gachter 2000, AER; Isaac & Walker 1988"
+      },
+      "with_punishment": {
+        "average_contribution": 0.65,
+        "final_round_contribution": 0.83,
+        "near_full_cooperation_pct": 0.825,
+        "note": "82.5% contribute entire endowment in final period with punishment; contributions between 50-95% of endowment maintained",
+        "source": "Fehr & Gachter 2000, Cooperation and Punishment in Public Goods Experiments, AER"
+      },
+      "behavioral_types": {
+        "conditional_cooperators_pct": 0.50,
+        "free_riders_pct": 0.30,
+        "altruists_pct": 0.05,
+        "hump_shaped_pct": 0.15,
+        "note": "~50% are conditional cooperators, ~30% free-riders, rest mixed",
+        "source": "Fischbacher et al. 2001, Economics Letters"
+      },
+      "group_size_effect": {
+        "group_4": 0.48,
+        "group_10": 0.38,
+        "group_40": 0.28,
+        "note": "Cooperation decreases with group size due to increased strategic uncertainty",
+        "source": "Isaac & Walker 1988; Nosenzo et al. 2015"
+      },
+      "multiplier_effect": {
+        "mpcr_0_3": 0.30,
+        "mpcr_0_5": 0.45,
+        "mpcr_0_75": 0.60,
+        "note": "Higher marginal per-capita return increases contributions",
+        "source": "Ledyard 1995; Isaac et al. 1994"
+      }
+    },
+
+    "trust_game": {
+      "description": "Sender sends money (tripled by experimenter) to receiver who decides how much to return",
+      "average_amount_sent_pct": 0.50,
+      "average_amount_returned_pct": 0.37,
+      "source": "Johnson & Mislin 2011 meta-analysis of 162 replications, 23,000+ participants",
+      "original_study": {
+        "amount_sent_mean": 5.16,
+        "out_of": 10.00,
+        "pct_sent": 0.52,
+        "source": "Berg, Dickhaut & McCabe 1995, Games and Economic Behavior"
+      },
+      "trust_levels": {
+        "send_nothing": 0.05,
+        "send_1_to_3": 0.20,
+        "send_4_to_6": 0.40,
+        "send_7_to_10": 0.35,
+        "note": "~75% send at least 40% of endowment",
+        "source": "Johnson & Mislin 2011 meta-analysis"
+      },
+      "trustworthiness": {
+        "return_nothing": 0.10,
+        "return_less_than_sent": 0.35,
+        "return_equal_to_sent": 0.25,
+        "return_more_than_sent": 0.30,
+        "note": "~55% return at least the amount sent (showing reciprocity)",
+        "source": "Johnson & Mislin 2011"
+      },
+      "factors": {
+        "student_vs_nonstudent": {
+          "students_sent_pct": 0.49,
+          "nonstudents_sent_pct": 0.52,
+          "source": "Johnson & Mislin 2011"
+        },
+        "within_country_variation": {
+          "africa_sent": 0.43,
+          "asia_sent": 0.50,
+          "europe_sent": 0.51,
+          "north_america_sent": 0.50,
+          "south_america_sent": 0.47,
+          "source": "Johnson & Mislin 2011"
+        }
+      }
+    },
+
+    "dictator_game": {
+      "description": "Dictator decides how to split money; recipient has no choice (no strategic interaction)",
+      "average_giving_pct": 0.2835,
+      "source": "Engel 2011 meta-analysis, 328 treatments, 20,813 decisions",
+      "giving_distribution": {
+        "give_nothing": 0.3611,
+        "give_1_to_20pct": 0.15,
+        "give_21_to_40pct": 0.12,
+        "give_41_to_49pct": 0.05,
+        "give_exactly_50pct": 0.167,
+        "give_more_than_50pct": 0.05,
+        "any_positive_amount": 0.6389,
+        "note": "36.1% give nothing, 16.7% split evenly, 63.9% give something",
+        "source": "Engel 2011, Experimental Economics"
+      },
+      "factors": {
+        "double_blind": {
+          "average_giving": 0.19,
+          "note": "Giving drops when anonymity is maximized",
+          "source": "Engel 2011"
+        },
+        "earned_money": {
+          "average_giving": 0.17,
+          "note": "Giving drops further when dictator earned the money",
+          "source": "Cherry et al. 2002"
+        },
+        "deserving_recipient": {
+          "average_giving": 0.35,
+          "note": "Giving increases when recipient is seen as deserving (e.g., charity)",
+          "source": "Engel 2011"
+        },
+        "children_vs_adults": {
+          "children_giving": 0.34,
+          "adults_giving": 0.28,
+          "source": "Engel 2011"
+        },
+        "real_vs_hypothetical": {
+          "real_stakes_giving": 0.26,
+          "hypothetical_giving": 0.38,
+          "source": "Engel 2011"
+        }
+      }
+    },
+
+    "tragedy_of_commons": {
+      "description": "Shared resource depleted by self-interested actors; classic collective action problem",
+      "over_extraction_rate": 1.4,
+      "note": "Groups typically extract 140% of socially optimal level (40% over-extraction)",
+      "source": "Ostrom et al. 1994; Walker & Gardner 1992",
+      "without_communication": {
+        "extraction_vs_optimal": 1.50,
+        "resource_depletion_pct": 0.65,
+        "rounds_to_depletion": 8,
+        "note": "Without communication, extraction converges near Nash equilibrium (~150% of optimal)",
+        "source": "Ostrom, Gardner & Walker 1994, Rules Games and Common-Pool Resources"
+      },
+      "with_communication": {
+        "extraction_vs_optimal": 1.10,
+        "resource_depletion_pct": 0.35,
+        "note": "Communication reduces over-extraction significantly",
+        "source": "Ostrom et al. 1994"
+      },
+      "with_punishment": {
+        "extraction_vs_optimal": 1.05,
+        "note": "Near-optimal extraction when punishment available",
+        "source": "Ostrom et al. 1994"
+      },
+      "sustainability_factors": {
+        "rule_followers_needed_pct": 0.45,
+        "note": "45% of assortatively matched rule-following groups preserve resource for entire experiment",
+        "source": "Cambridge review of CPR game experiments"
+      },
+      "resource_growth_effect": {
+        "high_growth_sustainability": 0.75,
+        "low_growth_sustainability": 0.25,
+        "note": "Higher resource regeneration rate makes sustainable management more likely",
+        "source": "ScienceDirect, social and ecological determinants of CPR sustainability"
+      }
+    },
+
+    "auction_behavior": {
+      "description": "Bidding in common-value auctions where the item has the same value for all bidders",
+      "winners_curse": {
+        "frequency": 0.47,
+        "note": "At least 47% of all bids attributed to winner's curse (overbidding)",
+        "source": "Kagel & Levin 2002, Common Value Auctions; PMC2841440",
+        "persistence": "Persists through all 50 rounds even with experience",
+        "median_bid_factor": 0.25,
+        "overbidding_in_early_rounds": 0.65,
+        "overbidding_in_late_rounds": 0.35,
+        "vs_computer_opponents": {
+          "overbidding_rate": 0.25,
+          "note": "Significantly reduced when bidding against computers — social competition drives overbidding",
+          "source": "PMC2841440, value of victory: social origins of winner's curse"
+        }
+      },
+      "revenue_vs_theory": {
+        "first_price_sealed": 1.10,
+        "note": "Revenue exceeds risk-neutral Nash equilibrium predictions by ~10%",
+        "source": "Kagel 1995, Handbook of Experimental Economics"
+      },
+      "number_of_bidders_effect": {
+        "bidders_3": { "overbidding_rate": 0.30, "profit_positive": true },
+        "bidders_6": { "overbidding_rate": 0.50, "profit_negative": true },
+        "bidders_10": { "overbidding_rate": 0.65, "profit_negative": true },
+        "note": "Winner's curse severity increases with number of bidders",
+        "source": "Kagel & Levin 2002"
+      }
+    },
+
+    "negotiation": {
+      "description": "Bargaining outcomes influenced by anchoring, first offers, and framing",
+      "first_offer_advantage": {
+        "correlation_with_outcome": 0.50,
+        "note": "First offers explain ~50% of variance in final agreement price",
+        "source": "Galinsky & Mussweiler 2001, Journal of Personality and Social Psychology"
+      },
+      "anchoring_effect": {
+        "tversky_kahneman_low_anchor_guess": 25,
+        "tversky_kahneman_high_anchor_guess": 45,
+        "note": "Random number (10 vs 65) shifted estimates by 20 percentage points",
+        "source": "Tversky & Kahneman 1974, Science"
+      },
+      "ambitious_first_offers": {
+        "outcome_improvement_pct": 0.15,
+        "note": "More ambitious first offers produce ~15% more favorable outcomes",
+        "source": "Harvard PON research; Galinsky & Mussweiler 2001"
+      },
+      "precise_offers": {
+        "smaller_counteroffers": true,
+        "note": "Highly precise offers ($5,015 vs $5,000) lead recipients to make smaller counteroffers",
+        "source": "Mason et al. 2013, Journal of Experimental Social Psychology"
+      },
+      "range_anchoring": {
+        "bolstering_range_optimal": [0.05, 0.20],
+        "note": "Bolstering ranges spanning 5-20% above base figure produced superior outcomes for sellers",
+        "source": "Harvard PON, 5 experiments on range anchoring"
+      },
+      "concession_patterns": {
+        "average_concessions": 4,
+        "first_concession_pct_of_total": 0.40,
+        "diminishing_concessions": true,
+        "note": "Parties typically make ~4 concessions; first concession is largest (~40% of total movement)",
+        "source": "Pruitt 1981; Thompson 2005, The Mind and Heart of the Negotiator"
+      },
+      "deadline_effect": {
+        "agreements_in_final_5pct_time": 0.50,
+        "note": "~50% of agreements reached in the last 5% of available time",
+        "source": "Roth et al. 1988, AER"
+      }
+    },
+
+    "competition_vs_cooperation": {
+      "description": "When teams outperform individuals, and when competition helps vs hurts",
+      "social_facilitation": {
+        "performance_boost_pct": 0.15,
+        "note": "Both cooperation and competition improve performance vs working alone by ~15%",
+        "source": "ScienceDirect 2024, cooperation and competition same benefits different costs"
+      },
+      "task_type_effects": {
+        "means_interdependent_tasks": {
+          "best_structure": "cooperative",
+          "note": "Cooperative rewards increase performance on tasks requiring coordination",
+          "source": "Beersma et al. 2003, Academy of Management Journal"
+        },
+        "means_independent_tasks": {
+          "best_structure": "competitive",
+          "note": "Competitive rewards increase performance on independent tasks",
+          "source": "Beersma et al. 2003"
+        },
+        "speed_tasks": {
+          "best_structure": "competitive",
+          "source": "Beersma et al. 2003"
+        },
+        "accuracy_tasks": {
+          "best_structure": "cooperative",
+          "source": "Beersma et al. 2003"
+        }
+      },
+      "team_personality_effects": {
+        "extraverts_cooperative": { "performance": "high" },
+        "extraverts_competitive": { "performance": "moderate" },
+        "agreeable_cooperative": { "performance": "high" },
+        "agreeable_competitive": { "performance": "low" },
+        "source": "Beersma et al. 2003"
+      },
+      "intergroup_competition": {
+        "intragroup_cooperation_boost": 0.25,
+        "note": "External competition increases internal cooperation by ~25%",
+        "source": "Bornstein 2003, Intergroup conflict; Erev et al. 1993"
+      },
+      "brainstorming": {
+        "individuals_vs_groups": "individuals_produce_more",
+        "nominal_group_advantage": 0.30,
+        "note": "Nominal groups (individuals pooled) produce ~30% more ideas than interacting groups",
+        "source": "Diehl & Stroebe 1987, JPSP; Mullen et al. 1991 meta-analysis"
+      },
+      "social_loafing": {
+        "effort_reduction_in_groups": 0.20,
+        "ringelmann_effect": true,
+        "note": "Individual effort decreases ~20% in groups without accountability",
+        "source": "Karau & Williams 1993, meta-analysis of 78 studies, JPSP"
+      }
+    },
+
+    "market_competition": {
+      "description": "Business entry, exit, survival rates and competitive dynamics",
+      "business_survival_rates": {
+        "year_1": 0.796,
+        "year_2": 0.68,
+        "year_3": 0.60,
+        "year_5": 0.506,
+        "year_10": 0.347,
+        "year_15": 0.25,
+        "source": "U.S. Bureau of Labor Statistics 2024, Business Employment Dynamics"
+      },
+      "failure_reasons": {
+        "no_market_need": 0.42,
+        "ran_out_of_cash": 0.29,
+        "wrong_team": 0.23,
+        "outcompeted": 0.19,
+        "pricing_issues": 0.18,
+        "source": "CB Insights analysis of 156 startup post-mortems"
+      },
+      "industry_variation": {
+        "agriculture_1yr_survival": 0.875,
+        "retail_1yr_survival": 0.842,
+        "mining_1yr_survival": 0.692,
+        "information_1yr_survival": 0.74,
+        "agriculture_10yr_survival": 0.505,
+        "retail_10yr_survival": 0.417,
+        "source": "BLS 2024"
+      },
+      "pricing_competition": {
+        "price_war_frequency": 0.25,
+        "note": "~25% of industries experience significant price wars in any given 5-year period",
+        "average_margin_decline_in_price_war": 0.30,
+        "recovery_time_years": 3,
+        "source": "Rao et al. 2000, How to Fight a Price War, HBR; Porter 1980"
+      },
+      "market_entry_dynamics": {
+        "annual_entry_rate": 0.12,
+        "annual_exit_rate": 0.10,
+        "net_churn": 0.02,
+        "note": "~12% new establishments enter and ~10% exit annually in US",
+        "source": "BLS Business Employment Dynamics"
+      },
+      "first_mover_advantage": {
+        "market_share_premium": 0.10,
+        "survival_advantage": 1.2,
+        "note": "First movers capture ~10% higher market share on average; 1.2x survival rate vs later entrants",
+        "source": "Lieberman & Montgomery 1988; Suarez & Lanzolla 2005, HBR"
+      }
+    }
+  },
+
+  "cross_cutting_patterns": {
+    "cooperation_baseline": {
+      "anonymous_one_shot": 0.35,
+      "with_communication": 0.65,
+      "with_reputation": 0.70,
+      "with_punishment": 0.80,
+      "note": "Across all game types, cooperation increases with communication > reputation > punishment",
+      "source": "Synthesis of meta-analyses above"
+    },
+    "fairness_norms": {
+      "equal_split_expectation": 0.50,
+      "minimum_acceptable_offer": 0.20,
+      "rejection_threshold": 0.20,
+      "note": "Across cultures, 20% is the threshold below which offers are frequently rejected",
+      "source": "Camerer 2003; Henrich et al. 2001"
+    },
+    "punishment_effectiveness": {
+      "cooperation_increase_with_punishment": 0.35,
+      "costly_punishment_willingness": 0.60,
+      "antisocial_punishment_rate": 0.10,
+      "note": "60% willing to pay to punish defectors; punishment increases cooperation by ~35 percentage points",
+      "source": "Fehr & Gachter 2002; Herrmann et al. 2008, Science"
+    },
+    "group_size_effects": {
+      "optimal_group_for_cooperation": [3, 7],
+      "cooperation_decline_per_extra_member": 0.03,
+      "note": "Cooperation decreases ~3 percentage points per additional group member",
+      "source": "Isaac & Walker 1988; Nosenzo et al. 2015"
+    },
+    "cultural_variation": {
+      "western_cooperation_higher": true,
+      "collectivist_ultimatum_offers_lower": false,
+      "note": "Ultimatum offers vary more by economic integration than individualism/collectivism",
+      "source": "Henrich et al. 2001, 2006"
+    },
+    "experience_effects": {
+      "cooperation_decrease_with_experience": true,
+      "strategic_sophistication_increase": true,
+      "winners_curse_decrease_with_experience": true,
+      "note": "Experience generally moves behavior toward Nash equilibrium predictions",
+      "source": "Kagel & Levin 2002; Camerer 2003"
+    }
+  },
+
+  "simulator_templates": {
+    "cooperation_dilemma": {
+      "scenario": "Two businesses deciding whether to cooperate or compete",
+      "cooperate_cooperate_payoff": 3,
+      "cooperate_defect_payoff": 0,
+      "defect_cooperate_payoff": 5,
+      "defect_defect_payoff": 1,
+      "predicted_cooperation": 0.45,
+      "factors_increasing_cooperation": ["repeated interaction", "communication", "reputation", "small group", "shared identity"]
+    },
+    "market_entry": {
+      "scenario": "Startup entering a competitive market",
+      "survival_1yr": 0.80,
+      "survival_5yr": 0.50,
+      "key_risk": "no_market_need",
+      "price_war_risk": 0.25
+    },
+    "trust_investment": {
+      "scenario": "Investor trusting entrepreneur with capital",
+      "amount_trusted_pct": 0.50,
+      "amount_returned_pct": 0.37,
+      "net_trust_payoff": "negative without enforcement"
+    },
+    "public_resource": {
+      "scenario": "Shared resource management (fishery, commons, budget)",
+      "without_rules_depletion": 0.65,
+      "with_rules_depletion": 0.35,
+      "with_punishment_depletion": 0.15
+    }
+  }
+}

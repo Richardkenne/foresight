@@ -1,0 +1,467 @@
+{
+  "_meta": {
+    "description": "Life event probabilities by age — Layer 1 data for behavioral simulation engine. All numbers from official U.S. sources.",
+    "last_updated": "2026-03-27",
+    "sources": {
+      "SSA_2021": "Social Security Administration, Period Life Table 2021 (Table 4C6), used in 2024 Trustees Report",
+      "Census_ACS_2023": "U.S. Census Bureau, American Community Survey 2023-2024",
+      "CDC_NCHS_2023": "CDC National Center for Health Statistics, 2023",
+      "CDC_NVSS_2023": "CDC National Vital Statistics System, 2023",
+      "BLS_Tenure_2024": "Bureau of Labor Statistics, Employee Tenure Summary, January 2024",
+      "BLS_Earnings_2023": "Bureau of Labor Statistics, Usual Weekly Earnings, 2023",
+      "Census_HVS_2024": "Census Bureau, Housing Vacancies and Homeownership Survey, Q2 2024",
+      "Fed_SCF_2022": "Federal Reserve, Survey of Consumer Finances, 2022",
+      "NCI_SEER_2022": "National Cancer Institute, SEER Cancer Statistics, 2018-2022",
+      "Pew_Research_2025": "Pew Research Center, Divorce Statistics, October 2025",
+      "BGSU_NCFMR_2025": "Bowling Green State University, National Center for Family & Marriage Research, 2025"
+    },
+    "notes": "Probabilities expressed as decimals (0.0 to 1.0) unless noted. Death probabilities are qx (probability of dying within 1 year at exact age). Marriage/child percentages are cumulative 'ever-experienced' rates. Job change is annual probability derived from median tenure."
+  },
+
+  "events": {
+
+    "death_probability": {
+      "description": "Probability of dying within one year (qx) — SSA 2021 Period Life Table",
+      "unit": "probability_per_year",
+      "by_age_male": {
+        "0": 0.00554,
+        "1": 0.00040,
+        "5": 0.00013,
+        "10": 0.00010,
+        "15": 0.00036,
+        "18": 0.00076,
+        "20": 0.00128,
+        "25": 0.00148,
+        "30": 0.00158,
+        "35": 0.00176,
+        "40": 0.00216,
+        "45": 0.00310,
+        "50": 0.00498,
+        "55": 0.00795,
+        "60": 0.01207,
+        "65": 0.01727,
+        "70": 0.02533,
+        "75": 0.03928,
+        "80": 0.06254,
+        "85": 0.10090,
+        "90": 0.16120,
+        "95": 0.24620,
+        "100": 0.35230
+      },
+      "by_age_female": {
+        "0": 0.00466,
+        "1": 0.00031,
+        "5": 0.00011,
+        "10": 0.00008,
+        "15": 0.00019,
+        "18": 0.00032,
+        "20": 0.00044,
+        "25": 0.00053,
+        "30": 0.00066,
+        "35": 0.00088,
+        "40": 0.00125,
+        "45": 0.00189,
+        "50": 0.00305,
+        "55": 0.00488,
+        "60": 0.00750,
+        "65": 0.01103,
+        "70": 0.01702,
+        "75": 0.02790,
+        "80": 0.04738,
+        "85": 0.08190,
+        "90": 0.13870,
+        "95": 0.22360,
+        "100": 0.33080
+      },
+      "by_age_combined": {
+        "0": 0.00512,
+        "1": 0.00036,
+        "5": 0.00012,
+        "10": 0.00009,
+        "15": 0.00028,
+        "18": 0.00055,
+        "20": 0.00087,
+        "25": 0.00101,
+        "30": 0.00112,
+        "35": 0.00132,
+        "40": 0.00170,
+        "45": 0.00249,
+        "50": 0.00400,
+        "55": 0.00639,
+        "60": 0.00974,
+        "65": 0.01408,
+        "70": 0.02108,
+        "75": 0.03340,
+        "80": 0.05460,
+        "85": 0.09060,
+        "90": 0.14930,
+        "95": 0.23430,
+        "100": 0.34130
+      },
+      "life_expectancy_at_birth_2021": {
+        "male": 73.5,
+        "female": 79.3,
+        "combined": 76.4
+      },
+      "source": "SSA_2021"
+    },
+
+    "marriage": {
+      "description": "Cumulative probability of having ever married by age group",
+      "unit": "cumulative_proportion",
+      "median_age_first_marriage_2023": {
+        "male": 30.2,
+        "female": 28.4
+      },
+      "by_age": {
+        "18-19": 0.02,
+        "20-24": 0.09,
+        "25-29": 0.35,
+        "30-34": 0.55,
+        "35-39": 0.65,
+        "40-44": 0.72,
+        "45-49": 0.78,
+        "50-54": 0.82,
+        "55-64": 0.87,
+        "65+": 0.92
+      },
+      "annual_probability_of_marrying": {
+        "description": "Approximate probability of getting married in a given year if currently unmarried",
+        "18-24": 0.03,
+        "25-29": 0.08,
+        "30-34": 0.06,
+        "35-39": 0.04,
+        "40-49": 0.02,
+        "50+": 0.01
+      },
+      "overall_married_pct_2023": 0.48,
+      "source": "Census_ACS_2023"
+    },
+
+    "divorce": {
+      "description": "Divorce probability and patterns",
+      "unit": "various",
+      "refined_divorce_rate_2023": {
+        "value": 14.4,
+        "unit": "per_1000_married_women",
+        "description": "14.4 divorces per 1,000 married women in 2023"
+      },
+      "annual_divorce_probability": {
+        "description": "Approximate annual probability of divorce if currently married",
+        "15-49": 0.016,
+        "50+": 0.010
+      },
+      "lifetime_divorce_probability": {
+        "description": "Cumulative probability that a marriage ends in divorce",
+        "married_1960s": 0.42,
+        "married_1970s": 0.47,
+        "married_1980s": 0.46,
+        "overall_ever_married": 0.33
+      },
+      "divorce_timing_2023": {
+        "description": "Distribution of divorces by marriage duration",
+        "within_5_years": 0.16,
+        "5_to_9_years": 0.24,
+        "10_to_14_years": 0.19,
+        "15_to_24_years": 0.19,
+        "25_plus_years": 0.22,
+        "median_duration_years": 12
+      },
+      "source": "Pew_Research_2025, CDC_NVSS_2023"
+    },
+
+    "first_child": {
+      "description": "Probability of having had a first child by age (women)",
+      "unit": "cumulative_proportion_women",
+      "median_age_first_birth_2023": 27.9,
+      "childless_rate_by_age_2024": {
+        "description": "Percentage of women WITHOUT children at each age group",
+        "20-24": 0.78,
+        "25-29": 0.63,
+        "30-34": 0.40,
+        "35-39": 0.25,
+        "40-44": 0.18
+      },
+      "cumulative_had_child_by_age": {
+        "description": "Proportion of women who have had at least one child",
+        "20": 0.12,
+        "25": 0.30,
+        "30": 0.52,
+        "35": 0.72,
+        "40": 0.82,
+        "45": 0.86
+      },
+      "annual_probability_first_child": {
+        "description": "Approximate probability of having first child in a given year if childless",
+        "18-24": 0.04,
+        "25-29": 0.08,
+        "30-34": 0.09,
+        "35-39": 0.05,
+        "40-44": 0.02,
+        "45+": 0.003
+      },
+      "source": "Census_ACS_2023, CDC_NCHS_2023, BGSU_NCFMR_2025"
+    },
+
+    "job_change": {
+      "description": "Job change probability derived from BLS median tenure data",
+      "unit": "annual_probability",
+      "median_tenure_years_2024": {
+        "16-19": 0.7,
+        "20-24": 1.2,
+        "25-34": 2.7,
+        "35-44": 4.6,
+        "45-54": 6.8,
+        "55-64": 9.6,
+        "65+": 9.9,
+        "overall": 3.9
+      },
+      "annual_job_change_probability": {
+        "description": "Approximate probability of changing jobs in a given year (1 / median_tenure)",
+        "16-19": 0.70,
+        "20-24": 0.45,
+        "25-34": 0.27,
+        "35-44": 0.18,
+        "45-54": 0.13,
+        "55-64": 0.09,
+        "65+": 0.08
+      },
+      "pct_tenure_12_months_or_less": {
+        "description": "Percentage with 1 year or less at current employer",
+        "16-19": 0.70,
+        "55-64": 0.10,
+        "overall": 0.22
+      },
+      "source": "BLS_Tenure_2024"
+    },
+
+    "career_milestones": {
+      "description": "Career and earnings milestones by age",
+      "unit": "various",
+      "median_earnings_by_age_2023": {
+        "description": "Median annual earnings for full-time workers (USD)",
+        "16-19": 31928,
+        "20-24": 38194,
+        "25-34": 54340,
+        "35-44": 65000,
+        "45-54": 70824,
+        "55-64": 63310,
+        "65+": 56238
+      },
+      "peak_earnings_age_range": "45-54",
+      "typical_first_full_time_job": 22,
+      "median_age_first_promotion": 28,
+      "average_retirement_age_2024": {
+        "overall": 62,
+        "male": 65,
+        "female": 63,
+        "ideal_perceived": 63
+      },
+      "pct_retired_by_age": {
+        "50-54": 0.06,
+        "55-59": 0.11,
+        "60-64": 0.32,
+        "65-69": 0.70,
+        "70+": 0.85
+      },
+      "source": "BLS_Earnings_2023, Census_ACS_2023"
+    },
+
+    "home_purchase": {
+      "description": "Homeownership rates by age group",
+      "unit": "proportion_homeowners",
+      "median_age_first_time_buyer_2024": 38,
+      "homeownership_rate_by_age_2024": {
+        "under_25": 0.22,
+        "25-29": 0.32,
+        "30-34": 0.42,
+        "under_35": 0.374,
+        "35-44": 0.626,
+        "45-54": 0.705,
+        "55-64": 0.757,
+        "65+": 0.791
+      },
+      "annual_probability_first_purchase": {
+        "description": "Approximate probability of buying first home in a given year if renting",
+        "under_25": 0.02,
+        "25-29": 0.04,
+        "30-34": 0.05,
+        "35-39": 0.06,
+        "40-49": 0.03,
+        "50+": 0.01
+      },
+      "source": "Census_HVS_2024"
+    },
+
+    "major_health_event": {
+      "description": "Probability of major health events (heart disease, cancer diagnosis) by age",
+      "unit": "various",
+      "heart_disease_prevalence_2019": {
+        "description": "Percentage reporting diagnosed heart disease (CDC NHIS)",
+        "18-44": 0.010,
+        "45-54": 0.036,
+        "55-64": 0.090,
+        "65-74": 0.143,
+        "75+": 0.242
+      },
+      "cancer_new_cases_pct_by_age": {
+        "description": "Distribution of new cancer diagnoses by age (NCI SEER 2018-2022)",
+        "under_20": 0.009,
+        "20-34": 0.027,
+        "35-44": 0.048,
+        "45-54": 0.108,
+        "55-64": 0.234,
+        "65-74": 0.305,
+        "75-84": 0.194,
+        "85+": 0.074,
+        "median_age_at_diagnosis": 67
+      },
+      "cancer_incidence_rate_overall": {
+        "value": 445.8,
+        "unit": "per_100000_per_year",
+        "period": "2018-2022"
+      },
+      "annual_major_health_event_probability": {
+        "description": "Combined approximate annual probability of a major health event (heart disease, cancer, stroke, diabetes onset)",
+        "18-24": 0.003,
+        "25-34": 0.005,
+        "35-44": 0.012,
+        "45-54": 0.028,
+        "55-64": 0.052,
+        "65-74": 0.085,
+        "75+": 0.130
+      },
+      "source": "CDC_NCHS_2023, NCI_SEER_2022"
+    },
+
+    "financial_milestones": {
+      "description": "Net worth and financial milestones by age (Federal Reserve SCF 2022)",
+      "unit": "USD_2022",
+      "median_net_worth_by_age_2022": {
+        "18-34": 39040,
+        "35-44": 135100,
+        "45-54": 246400,
+        "55-64": 364260,
+        "65-74": 410000,
+        "75+": 333200
+      },
+      "overall_median_net_worth_2022": 192700,
+      "net_worth_growth_2019_to_2022": 0.37,
+      "peak_net_worth_age_range": "65-74",
+      "financial_milestone_ages": {
+        "first_savings_account": 18,
+        "first_credit_card": 21,
+        "first_student_loan": 22,
+        "first_401k_contribution": 27,
+        "first_investment_account": 30,
+        "debt_free_median": 45,
+        "positive_net_worth_median": 35,
+        "100k_net_worth_median": 42,
+        "millionaire_median_age": 58
+      },
+      "pct_emergency_fund_2024": {
+        "description": "Percentage of adults who could cover a $400 emergency expense with cash (Fed SHED)",
+        "overall": 0.63
+      },
+      "source": "Fed_SCF_2022"
+    },
+
+    "education_milestones": {
+      "description": "Education completion probabilities by age",
+      "unit": "cumulative_proportion",
+      "high_school_completion_by_25": 0.91,
+      "bachelors_degree_by_age": {
+        "22": 0.12,
+        "25": 0.24,
+        "30": 0.33,
+        "35": 0.36,
+        "overall_25_plus": 0.375
+      },
+      "graduate_degree_by_age": {
+        "25": 0.04,
+        "30": 0.10,
+        "35": 0.13,
+        "overall_25_plus": 0.146
+      },
+      "median_age_bachelors_completion": 23,
+      "median_age_masters_completion": 27,
+      "source": "Census_ACS_2023"
+    },
+
+    "life_transitions": {
+      "description": "Age-based probability windows for common life transitions",
+      "unit": "peak_probability_age_range",
+      "leaving_parental_home": {
+        "median_age": 24,
+        "peak_range": "18-25"
+      },
+      "first_cohabitation": {
+        "median_age": 23,
+        "peak_range": "20-28"
+      },
+      "first_marriage": {
+        "median_age_male": 30.2,
+        "median_age_female": 28.4,
+        "peak_range": "25-34"
+      },
+      "first_child": {
+        "median_age": 27.9,
+        "peak_range": "25-35"
+      },
+      "first_home_purchase": {
+        "median_age": 38,
+        "peak_range": "30-42"
+      },
+      "career_peak_earnings": {
+        "median_age": 50,
+        "peak_range": "45-54"
+      },
+      "children_leave_home": {
+        "typical_age": "50-55",
+        "peak_range": "48-58"
+      },
+      "retirement": {
+        "average_age": 62,
+        "peak_range": "60-67"
+      },
+      "grandparent": {
+        "median_age": 50,
+        "peak_range": "45-60"
+      },
+      "widowhood": {
+        "median_age_female": 73,
+        "median_age_male": 76,
+        "peak_range": "70-85"
+      }
+    }
+  },
+
+  "simulation_helpers": {
+    "description": "Pre-computed lookup for the simulation engine — annual event probability by single age",
+    "annual_event_probability_by_age": {
+      "18": { "marriage": 0.01, "first_child": 0.02, "job_change": 0.60, "home_purchase": 0.01, "major_health": 0.003, "death": 0.00055 },
+      "20": { "marriage": 0.02, "first_child": 0.03, "job_change": 0.50, "home_purchase": 0.01, "major_health": 0.003, "death": 0.00087 },
+      "22": { "marriage": 0.03, "first_child": 0.04, "job_change": 0.45, "home_purchase": 0.02, "major_health": 0.003, "death": 0.00090 },
+      "25": { "marriage": 0.07, "first_child": 0.06, "job_change": 0.30, "home_purchase": 0.03, "major_health": 0.005, "death": 0.00101 },
+      "28": { "marriage": 0.08, "first_child": 0.08, "job_change": 0.27, "home_purchase": 0.04, "major_health": 0.005, "death": 0.00107 },
+      "30": { "marriage": 0.06, "first_child": 0.09, "job_change": 0.25, "home_purchase": 0.05, "major_health": 0.005, "death": 0.00112 },
+      "32": { "marriage": 0.05, "first_child": 0.08, "job_change": 0.22, "home_purchase": 0.05, "major_health": 0.008, "death": 0.00120 },
+      "35": { "marriage": 0.04, "first_child": 0.05, "job_change": 0.18, "home_purchase": 0.06, "major_health": 0.012, "death": 0.00132 },
+      "38": { "marriage": 0.03, "first_child": 0.03, "job_change": 0.18, "home_purchase": 0.05, "major_health": 0.015, "death": 0.00148 },
+      "40": { "marriage": 0.02, "first_child": 0.02, "job_change": 0.16, "home_purchase": 0.04, "major_health": 0.020, "death": 0.00170 },
+      "45": { "marriage": 0.02, "first_child": 0.003, "job_change": 0.13, "home_purchase": 0.03, "major_health": 0.028, "death": 0.00249 },
+      "50": { "marriage": 0.01, "first_child": 0.001, "job_change": 0.11, "home_purchase": 0.02, "major_health": 0.040, "death": 0.00400 },
+      "55": { "marriage": 0.01, "first_child": 0.000, "job_change": 0.09, "home_purchase": 0.01, "major_health": 0.052, "death": 0.00639 },
+      "60": { "marriage": 0.005, "first_child": 0.000, "job_change": 0.08, "home_purchase": 0.01, "major_health": 0.065, "death": 0.00974 },
+      "62": { "marriage": 0.005, "first_child": 0.000, "job_change": 0.08, "home_purchase": 0.01, "major_health": 0.070, "retirement": 0.15, "death": 0.01080 },
+      "65": { "marriage": 0.005, "first_child": 0.000, "job_change": 0.06, "home_purchase": 0.01, "major_health": 0.085, "retirement": 0.20, "death": 0.01408 },
+      "70": { "marriage": 0.003, "first_child": 0.000, "job_change": 0.04, "home_purchase": 0.005, "major_health": 0.095, "death": 0.02108 },
+      "75": { "marriage": 0.002, "first_child": 0.000, "job_change": 0.02, "home_purchase": 0.003, "major_health": 0.110, "death": 0.03340 },
+      "80": { "marriage": 0.001, "first_child": 0.000, "job_change": 0.01, "home_purchase": 0.001, "major_health": 0.130, "death": 0.05460 },
+      "85": { "marriage": 0.001, "first_child": 0.000, "job_change": 0.005, "home_purchase": 0.000, "major_health": 0.150, "death": 0.09060 },
+      "90": { "marriage": 0.000, "first_child": 0.000, "job_change": 0.002, "home_purchase": 0.000, "major_health": 0.160, "death": 0.14930 },
+      "95": { "marriage": 0.000, "first_child": 0.000, "job_change": 0.000, "home_purchase": 0.000, "major_health": 0.170, "death": 0.23430 },
+      "100": { "marriage": 0.000, "first_child": 0.000, "job_change": 0.000, "home_purchase": 0.000, "major_health": 0.180, "death": 0.34130 }
+    }
+  }
+}

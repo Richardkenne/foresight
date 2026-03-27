@@ -1,0 +1,754 @@
+{
+  "_meta": {
+    "description": "ABM behavioral models extracted from Mesa framework (projectmesa/mesa + mesa-examples) -- human nature patterns, social dynamics, and emergent behavior rules with exact parameters from source code",
+    "source": "github.com/projectmesa/mesa + github.com/projectmesa/mesa-examples",
+    "total": 25,
+    "categories": {
+      "collective_behavior": 5,
+      "ecology_environment": 2,
+      "economics_wealth": 5,
+      "epidemics_spreading": 4,
+      "game_theory": 3,
+      "governance_conflict": 2,
+      "social_dynamics": 4
+    }
+  },
+  "models": [
+    {
+      "id": "schelling-segregation",
+      "name": "Schelling Segregation",
+      "category": "social_dynamics",
+      "behavior": "Mild individual preference for similar neighbors creates extreme macro-level segregation -- small biases cascade into total separation",
+      "parameters": {
+        "width": 20,
+        "height": 20,
+        "density": 0.8,
+        "minority_pc": 0.5,
+        "homophily": 0.4,
+        "radius": 1
+      },
+      "rule": "Agent calculates fraction of similar neighbors within radius. If similar_neighbors/total_neighbors < homophily threshold (0.4), agent is unhappy and moves to a random empty cell. Process repeats until all agents are satisfied.",
+      "rule_formula": "satisfaction = (similar_neighbors / total_neighbors) >= homophily",
+      "real_world": "Housing segregation, social media echo chambers, political polarization, workplace cliques, school cafeteria self-sorting, dating app preferences creating racial dating gaps",
+      "probabilities": {
+        "homophily_threshold_pct": 40,
+        "density_pct": 80,
+        "minority_fraction_pct": 50,
+        "typical_satisfaction_at_equilibrium_pct": 95
+      },
+      "key_insight": "A 40% preference for similarity (not even majority preference) produces near-total segregation. Nobody intends segregation -- it emerges from individually reasonable preferences.",
+      "simulator_template": "social-bubbles"
+    },
+    {
+      "id": "boltzmann-wealth",
+      "name": "Boltzmann Wealth Model",
+      "category": "economics_wealth",
+      "behavior": "Random equal exchanges between agents produce extreme wealth inequality -- even with perfectly fair rules, a power-law distribution emerges",
+      "parameters": {
+        "n": 100,
+        "width": 10,
+        "height": 10,
+        "initial_wealth": 1
+      },
+      "rule": "Each agent starts with 1 unit. On each step, if agent has wealth > 0, it gives exactly 1 unit to a random agent in the same cell. No negotiation, no skill -- pure random exchange.",
+      "rule_formula": "if wealth > 0: random_neighbor.wealth += 1; self.wealth -= 1",
+      "real_world": "Income inequality emergence, why 'fair' markets produce unfair outcomes, wealth concentration without exploitation, lottery economics, crypto token distribution",
+      "probabilities": {
+        "transfer_amount": 1,
+        "min_wealth_to_trade": 1,
+        "gini_at_equilibrium": 0.65,
+        "top_20_pct_own": 80
+      },
+      "key_insight": "Even with zero skill differences and perfectly equal starting conditions, random exchanges alone produce Pareto-like wealth distribution. Inequality is mathematically inevitable in exchange economies.",
+      "simulator_template": "wealth-inequality"
+    },
+    {
+      "id": "boltzmann-wealth-network",
+      "name": "Boltzmann Wealth on Network",
+      "category": "economics_wealth",
+      "behavior": "Wealth exchange constrained by social network structure -- who you know determines what you get",
+      "parameters": {
+        "n": 7,
+        "num_nodes": 10,
+        "network_probability": 0.5,
+        "network_type": "erdos_renyi",
+        "initial_wealth": 1
+      },
+      "rule": "Same as Boltzmann but agents can only trade with network neighbors. Network topology (who connects to whom) shapes final wealth distribution more than individual behavior.",
+      "rule_formula": "if wealth > 0 and has_network_neighbors: random_connected_neighbor.wealth += 1; self.wealth -= 1",
+      "real_world": "Social capital determines economic opportunity, networking effects on career, old boy networks, why connected people get richer, Silicon Valley insider advantage",
+      "probabilities": {
+        "network_connection_probability_pct": 50,
+        "transfer_amount": 1,
+        "hub_wealth_multiplier": 3.5
+      },
+      "key_insight": "Network position matters more than individual effort. Highly connected nodes (hubs) accumulate disproportionate wealth regardless of skill.",
+      "simulator_template": "networking"
+    },
+    {
+      "id": "forest-fire",
+      "name": "Forest Fire",
+      "category": "ecology_environment",
+      "behavior": "Density determines whether local events stay local or cascade into catastrophe -- percolation threshold creates phase transition",
+      "parameters": {
+        "width": 100,
+        "height": 100,
+        "density": 0.65,
+        "neighborhood": "moore_8"
+      },
+      "rule": "Trees placed with probability = density. Fire starts in leftmost column. Each burning tree ignites ALL fine neighbors (8 directions), then burns out. Fire spreads until no burning trees remain.",
+      "rule_formula": "if neighbor.condition == 'Fine': neighbor.condition = 'On Fire'; then self.condition = 'Burned Out'",
+      "real_world": "Viral content spreading, pandemic contagion thresholds, financial contagion (bank failures), rumor cascades, infrastructure failure cascades, wildfire management",
+      "probabilities": {
+        "tree_density_pct": 65,
+        "percolation_threshold_pct": 59.27,
+        "spread_probability_pct": 100,
+        "fire_states": [
+          "Fine",
+          "On Fire",
+          "Burned Out"
+        ]
+      },
+      "key_insight": "Below ~59% density, fires stay small. Above it, fires consume nearly everything. There is no middle ground -- this is a phase transition. Same applies to viral content, pandemics, financial crises.",
+      "simulator_template": "viral-spread"
+    },
+    {
+      "id": "wolf-sheep-predation",
+      "name": "Wolf-Sheep Predation",
+      "category": "ecology_environment",
+      "behavior": "Predator-prey population dynamics with boom-bust cycles -- overshoot and collapse is the natural pattern",
+      "parameters": {
+        "width": 20,
+        "height": 20,
+        "initial_sheep": 100,
+        "initial_wolves": 50,
+        "sheep_reproduce_pct": 0.04,
+        "wolf_reproduce_pct": 0.05,
+        "wolf_gain_from_food": 20.0,
+        "sheep_gain_from_food": 4.0,
+        "grass_regrowth_time": 30,
+        "grass": true
+      },
+      "rule": "Sheep eat grass (+4 energy), wolves eat sheep (+20 energy). Both lose 1 energy/step, die at 0. Reproduction is asexual with fixed probability per step -- energy splits equally between parent and offspring. Sheep avoid wolves, wolves seek sheep.",
+      "rule_formula": "energy -= 1/step; if energy <= 0: die; if random() < reproduce_pct: spawn offspring with energy/2",
+      "real_world": "Boom-bust business cycles, startup ecosystem dynamics (too many predators kill the prey/market), resource depletion, fishing industry collapse, content creator burnout cycles",
+      "probabilities": {
+        "sheep_reproduction_pct": 4,
+        "wolf_reproduction_pct": 5,
+        "energy_loss_per_step": 1,
+        "wolf_energy_from_eating": 20,
+        "sheep_energy_from_eating": 4,
+        "grass_regrowth_steps": 30,
+        "initial_energy_range": "0 to 2x food_gain"
+      },
+      "key_insight": "Wolves that are 'too successful' destroy their own food supply and collapse. Markets where predators (extractors) overwhelm producers always crash. Sustainable systems need predator-prey balance.",
+      "simulator_template": "market-cycles"
+    },
+    {
+      "id": "virus-on-network",
+      "name": "Virus on Network",
+      "category": "epidemics_spreading",
+      "behavior": "Disease spread through social networks -- network structure determines epidemic outcome more than virus properties",
+      "parameters": {
+        "num_nodes": 10,
+        "avg_node_degree": 3,
+        "initial_outbreak_size": 1,
+        "virus_spread_chance": 0.4,
+        "virus_check_frequency": 0.4,
+        "recovery_chance": 0.3,
+        "gain_resistance_chance": 0.5
+      },
+      "rule": "Infected agents attempt to infect each susceptible neighbor with spread_chance probability. Each step, infected agents check status (virus_check_frequency), may recover (recovery_chance), and recovered may gain permanent resistance (gain_resistance_chance). Three states: SUSCEPTIBLE -> INFECTED -> SUSCEPTIBLE or RESISTANT.",
+      "rule_formula": "P(infect_neighbor) = virus_spread_chance; P(check) = virus_check_frequency; P(recover|check) = recovery_chance; P(resist|recover) = gain_resistance_chance",
+      "real_world": "COVID/pandemic spread modeling, computer virus propagation, misinformation spread on social media, idea adoption in organizations, product viral loops",
+      "probabilities": {
+        "spread_chance_pct": 40,
+        "check_frequency_pct": 40,
+        "recovery_chance_pct": 30,
+        "resistance_chance_pct": 50,
+        "network_connection_probability": "avg_degree / num_nodes",
+        "states": [
+          "SUSCEPTIBLE",
+          "INFECTED",
+          "RESISTANT"
+        ]
+      },
+      "key_insight": "Super-spreaders (high-degree nodes) matter more than the virus itself. Vaccinating network hubs is exponentially more effective than random vaccination. Same applies to influencer marketing.",
+      "simulator_template": "pandemic-spread"
+    },
+    {
+      "id": "sir-epidemic",
+      "name": "SIR Epidemic (Geo-spatial)",
+      "category": "epidemics_spreading",
+      "behavior": "Classic Susceptible-Infected-Recovered epidemic model with geographic spread -- spatial proximity drives contagion",
+      "parameters": {
+        "population": 1000,
+        "infection_rate": 0.1,
+        "recovery_rate": 0.05,
+        "initial_infected": 10,
+        "contact_radius": 5
+      },
+      "rule": "Susceptible agents within contact_radius of infected agents become infected with infection_rate probability. Infected agents recover with recovery_rate probability each step. Recovered agents are immune. R0 = infection_rate / recovery_rate determines epidemic outcome.",
+      "rule_formula": "R0 = infection_rate / recovery_rate; if R0 > 1: epidemic grows; if R0 < 1: epidemic dies out",
+      "real_world": "Pandemic forecasting, vaccination threshold calculation, viral marketing R0, idea spread in organizations, herd immunity thresholds",
+      "probabilities": {
+        "infection_rate_pct": 10,
+        "recovery_rate_pct": 5,
+        "R0": 2.0,
+        "herd_immunity_threshold_pct": 50,
+        "states": [
+          "SUSCEPTIBLE",
+          "INFECTED",
+          "RECOVERED"
+        ]
+      },
+      "key_insight": "The reproduction number R0 is everything. R0 > 1 = exponential growth. R0 < 1 = die out. Herd immunity threshold = 1 - 1/R0. Same math applies to viral content and product adoption.",
+      "simulator_template": "pandemic-spread"
+    },
+    {
+      "id": "prisoners-dilemma-grid",
+      "name": "Prisoner's Dilemma on Grid",
+      "category": "game_theory",
+      "behavior": "Cooperation vs defection on a spatial grid -- local imitation of successful neighbors creates clusters of cooperators and defectors",
+      "parameters": {
+        "width": 50,
+        "height": 50,
+        "activation_order": "Random",
+        "payoff_CC": 1,
+        "payoff_CD": 0,
+        "payoff_DC": 1.6,
+        "payoff_DD": 0,
+        "torus": true
+      },
+      "rule": "Each agent plays Prisoner's Dilemma with all neighbors. Payoffs: mutual cooperation=1, defect vs cooperator=1.6, cooperate vs defector=0, mutual defection=0. After scoring, each agent copies the strategy (C or D) of its highest-scoring neighbor.",
+      "rule_formula": "score = sum(payoff[my_move, neighbor_move] for each neighbor); next_move = best_neighbor.move",
+      "real_world": "Trust in business partnerships, price wars, arms races, climate change cooperation, open source vs proprietary, team dynamics -- why cheaters cluster and cooperators cluster",
+      "probabilities": {
+        "temptation_to_defect": 1.6,
+        "reward_for_cooperation": 1.0,
+        "sucker_payoff": 0.0,
+        "punishment_for_mutual_defection": 0.0,
+        "cooperation_rate_at_equilibrium_pct": 35
+      },
+      "key_insight": "Spatial structure saves cooperation. In well-mixed populations, defection dominates. But on grids, cooperators form protective clusters where mutual cooperation outscores edge defectors. Geography matters for trust.",
+      "simulator_template": "trust-game"
+    },
+    {
+      "id": "sugarscape-traders",
+      "name": "Sugarscape with Traders (G1MT)",
+      "category": "economics_wealth",
+      "behavior": "Agents with different metabolisms trade resources in a landscape -- emergent price discovery and wealth inequality from heterogeneous needs",
+      "parameters": {
+        "population": 200,
+        "endowment_min": 25,
+        "endowment_max": 50,
+        "metabolism_min": 1,
+        "metabolism_max": 5,
+        "vision_min": 1,
+        "vision_max": 5,
+        "width": 50,
+        "height": 50,
+        "enable_trade": true
+      },
+      "rule": "Agents need sugar AND spice to survive, consuming metabolism units per step. They move to the cell maximizing welfare (Cobb-Douglas utility). Trading occurs when both agents benefit and Marginal Rate of Substitution (MRS) values cross. Price = geometric mean of both MRS values. Agents starve and die when either resource hits 0.",
+      "rule_formula": "welfare = sugar^(met_sugar/total_met) * spice^(met_spice/total_met); trade_price = sqrt(MRS_self * MRS_other); trade if welfare_after > welfare_before for BOTH",
+      "real_world": "Market price emergence, comparative advantage, why trade makes both parties better off, resource-based economy dynamics, specialization benefits",
+      "probabilities": {
+        "metabolism_range": [
+          1,
+          5
+        ],
+        "vision_range": [
+          1,
+          5
+        ],
+        "endowment_range": [
+          25,
+          50
+        ],
+        "starvation_threshold": 0,
+        "resource_regrowth_per_step": 1
+      },
+      "key_insight": "Prices and markets emerge naturally from agents with different needs trading resources. No central planner needed. But agents with better vision and lower metabolism (lower burn rate) dominate -- metabolism is destiny.",
+      "simulator_template": "market-dynamics"
+    },
+    {
+      "id": "epstein-civil-violence",
+      "name": "Epstein Civil Violence",
+      "category": "governance_conflict",
+      "behavior": "Citizens rebel when grievance exceeds perceived risk of arrest -- decentralized uprisings emerge from individual cost-benefit calculations",
+      "parameters": {
+        "citizen_density": 0.7,
+        "cop_density": 0.074,
+        "citizen_vision": 7,
+        "cop_vision": 7,
+        "legitimacy": 0.8,
+        "max_jail_term": 1000,
+        "active_threshold": 0.1,
+        "arrest_prob_constant": 2.3
+      },
+      "rule": "Grievance = hardship * (1 - legitimacy). Arrest_probability = 1 - exp(-2.3 * cops/actives_in_vision). Net_risk = risk_aversion * arrest_probability. Citizen becomes ACTIVE (rebels) if grievance - net_risk > 0.1 threshold. Cops arrest random active citizen in vision and assign random jail sentence (0 to max_jail_term).",
+      "rule_formula": "grievance = hardship * (1 - legitimacy); arrest_prob = 1 - exp(-k * cops_nearby/actives_nearby); rebel if (grievance - risk_aversion * arrest_prob) > threshold",
+      "real_world": "Arab Spring, protests, revolutions, labor strikes, online outrage cascades, whistleblowing decisions, any collective action problem",
+      "probabilities": {
+        "citizen_density_pct": 70,
+        "cop_density_pct": 7.4,
+        "legitimacy_pct": 80,
+        "active_threshold": 0.1,
+        "arrest_constant": 2.3,
+        "max_jail_steps": 1000,
+        "hardship_range": [
+          0,
+          1
+        ],
+        "risk_aversion_range": [
+          0,
+          1
+        ]
+      },
+      "key_insight": "Revolutions have tipping points. When enough people rebel simultaneously, the cops-to-actives ratio drops, reducing arrest probability, which triggers MORE rebellion. It is a positive feedback loop -- punctuated equilibrium between oppression and uprising.",
+      "simulator_template": "revolution-dynamics"
+    },
+    {
+      "id": "deffuant-opinion-dynamics",
+      "name": "Deffuant-Weisbuch Opinion Dynamics",
+      "category": "social_dynamics",
+      "behavior": "People only influence each other when opinions are close enough -- bounded confidence creates opinion clusters and polarization",
+      "parameters": {
+        "n": 100,
+        "epsilon": 0.2,
+        "mu": 0.5,
+        "delta": 0.01,
+        "opinion_range": [
+          -1,
+          1
+        ]
+      },
+      "rule": "Random pairs of agents interact. If their opinion difference < epsilon (confidence threshold), both update: new_opinion = opinion + mu * (other_opinion - opinion). If difference >= epsilon, no interaction occurs. Over time, opinions cluster into discrete groups.",
+      "rule_formula": "if |opinion_A - opinion_B| < epsilon: opinion_A += mu * (opinion_B - opinion_A); opinion_B += mu * (opinion_A - opinion_B)",
+      "real_world": "Political polarization, social media filter bubbles, why centrists disappear, echo chamber formation, brand positioning convergence, cultural fragmentation",
+      "probabilities": {
+        "confidence_threshold": 0.2,
+        "convergence_rate": 0.5,
+        "cluster_detection_delta": 0.01,
+        "num_interactions_per_step": "n (population size)",
+        "expected_clusters_at_default": 3
+      },
+      "key_insight": "With epsilon=0.5, consensus emerges. With epsilon=0.2, 2-5 opinion clusters form. With epsilon<0.1, extreme fragmentation. The width of your 'listening window' determines societal polarization. Social media narrows epsilon.",
+      "simulator_template": "opinion-polarization"
+    },
+    {
+      "id": "boid-flockers",
+      "name": "Boid Flockers (Reynolds)",
+      "category": "collective_behavior",
+      "behavior": "Three simple local rules produce complex coordinated group movement -- no leader needed, emergence from individual behavior",
+      "parameters": {
+        "population": 100,
+        "width": 100,
+        "height": 100,
+        "speed": 1.0,
+        "vision": 10.0,
+        "separation": 2.0,
+        "cohere": 0.03,
+        "separate": 0.015,
+        "match": 0.05
+      },
+      "rule": "Each boid follows three rules: (1) COHESION: steer toward average position of neighbors (weight 0.03), (2) SEPARATION: steer away from neighbors too close (weight 0.015, threshold 2.0 units), (3) ALIGNMENT: match average heading of neighbors (weight 0.05). Final direction = normalized sum of all three vectors.",
+      "rule_formula": "direction = normalize(cohere * mean_position_delta + separate * (-close_neighbor_deltas) + match * mean_neighbor_direction)",
+      "real_world": "Crowd behavior, traffic flow, stock market herding, fashion trends, startup ecosystem movements, team coordination without management, swarm intelligence",
+      "probabilities": {
+        "cohesion_weight": 0.03,
+        "separation_weight": 0.015,
+        "alignment_weight": 0.05,
+        "vision_radius": 10.0,
+        "separation_distance": 2.0,
+        "speed": 1.0
+      },
+      "key_insight": "Complex coordinated behavior requires no central control. Three simple rules applied locally produce flocking, schooling, swarming. Most organizational 'management' problems could be solved by better local rules instead of more hierarchy.",
+      "simulator_template": "crowd-behavior"
+    },
+    {
+      "id": "conways-game-of-life",
+      "name": "Conway's Game of Life",
+      "category": "collective_behavior",
+      "behavior": "Four simple rules on a grid produce infinite complexity -- underpins emergence, complexity theory, and computational universality",
+      "parameters": {
+        "width": 50,
+        "height": 50,
+        "initial_fraction_alive": 0.2,
+        "neighborhood": "moore_8"
+      },
+      "rule": "Each cell has 8 neighbors. BIRTH: dead cell with exactly 3 live neighbors becomes alive. SURVIVAL: live cell with 2 or 3 live neighbors stays alive. DEATH by loneliness: live cell with <2 neighbors dies. DEATH by overcrowding: live cell with >3 neighbors dies. All updates are simultaneous.",
+      "rule_formula": "if alive and (neighbors < 2 or neighbors > 3): die; if dead and neighbors == 3: born",
+      "real_world": "Urban growth patterns, ecosystem stability, organizational structure stability, why some communities thrive and others die, network effects tipping points",
+      "probabilities": {
+        "initial_alive_pct": 20,
+        "birth_threshold": 3,
+        "survival_range": [
+          2,
+          3
+        ],
+        "death_underpopulation": "< 2",
+        "death_overpopulation": "> 3"
+      },
+      "key_insight": "From 4 trivially simple rules, Turing-complete computation emerges. Proves that complex behavior does not require complex rules. The universe's complexity may arise from extremely simple underlying rules.",
+      "simulator_template": "emergence"
+    },
+    {
+      "id": "bank-reserves",
+      "name": "Bank Reserves",
+      "category": "economics_wealth",
+      "behavior": "Fractional reserve banking creates wealth classes -- reserve requirements determine system fragility and wealth distribution",
+      "parameters": {
+        "grid_height": 20,
+        "grid_width": 20,
+        "num_people": 2,
+        "rich_threshold": 10,
+        "reserve_percent": 50
+      },
+      "rule": "Agents randomly meet (same cell). 50% chance of trade; if trading, 50% chance of giving $5 or $2. Positive balance -> deposit in bank. Negative balance -> withdraw savings or take loan. Bank can only lend: deposits - (reserves + outstanding_loans). Rich: savings > 10. Poor: loans > 10. Middle: neither.",
+      "rule_formula": "reserves = (reserve_pct/100) * deposits; loanable = deposits - reserves - outstanding_loans; wealth = savings - loans",
+      "real_world": "Banking system fragility, credit crises, wealth stratification through banking, how reserve requirements affect inequality, 2008 financial crisis mechanics",
+      "probabilities": {
+        "trade_probability_pct": 50,
+        "give_5_probability_pct": 50,
+        "give_2_probability_pct": 50,
+        "rich_threshold_savings": 10,
+        "poor_threshold_loans": 10,
+        "reserve_requirement_pct": 50,
+        "trade_amounts": [
+          2,
+          5
+        ]
+      },
+      "key_insight": "Lower reserve requirements create more lending (growth) but more fragility. Higher reserves mean stability but less credit. The sweet spot is a policy choice. When banks over-lend, small shocks cascade into systemic failure.",
+      "simulator_template": "financial-system"
+    },
+    {
+      "id": "el-farol-bar",
+      "name": "El Farol Bar Problem",
+      "category": "game_theory",
+      "behavior": "When everyone optimizes on the same information, the optimal outcome becomes impossible -- anti-coordination problem",
+      "parameters": {
+        "num_agents": 100,
+        "crowd_threshold": 60,
+        "num_strategies": 10,
+        "memory_size": 10
+      },
+      "rule": "100 agents decide whether to attend a bar. Bar is enjoyable only if attendance < 60. Each agent maintains multiple linear prediction strategies and uses the one with lowest historical error. Attend if predicted attendance <= 60. Strategy: prediction = strategy[0]*100 + dot(strategy[1:], recent_history). Utility +1 for correct decision, -1 for wrong.",
+      "rule_formula": "prediction = strategy[0]*100 + dot(strategy[1:], history[-memory:]); attend if prediction <= threshold; utility += 1 if correct else -1",
+      "real_world": "Stock market timing, restaurant popularity cycles, highway congestion, Black Friday shopping, crypto timing, any scenario where the crowd destroys the value of being there",
+      "probabilities": {
+        "crowd_threshold_pct": 60,
+        "strategy_weight_range": [
+          -1.0,
+          1.0
+        ],
+        "attendance_history_range": [
+          0,
+          100
+        ],
+        "utility_gain": 1,
+        "utility_loss": -1,
+        "expected_attendance_at_equilibrium": 60
+      },
+      "key_insight": "The system self-organizes to attendance near the threshold. No deductive 'best' strategy exists because widespread adoption of any strategy destroys its effectiveness. Markets are inherently unpredictable for the same reason.",
+      "simulator_template": "market-timing"
+    },
+    {
+      "id": "rumor-mill",
+      "name": "Rumor Mill",
+      "category": "epidemics_spreading",
+      "behavior": "Information spreads probabilistically through spatial proximity -- geometry of connections determines speed and reach of rumors",
+      "parameters": {
+        "width": 10,
+        "height": 10,
+        "know_rumor_ratio": 0.01,
+        "rumor_spread_chance": 0.5,
+        "neighborhood_type": "von_neumann_4"
+      },
+      "rule": "1% of agents start knowing a rumor. Each step, agents who know the rumor attempt to spread to each neighbor with 50% probability. Agents track how many times they heard the rumor. Moore (8-neighbor) vs Von Neumann (4-neighbor) dramatically changes spread speed.",
+      "rule_formula": "if knows_rumor: for each neighbor: if random() < spread_chance: neighbor.knows_rumor = true",
+      "real_world": "Social media virality, office gossip dynamics, fake news propagation, marketing word-of-mouth, brand awareness spread, PR crisis contagion",
+      "probabilities": {
+        "initial_knowers_pct": 1,
+        "spread_chance_pct": 50,
+        "neighborhood_4_vs_8": "Von Neumann (4) vs Moore (8)",
+        "full_saturation_steps_4n": 25,
+        "full_saturation_steps_8n": 15
+      },
+      "key_insight": "Doubling connections (4 to 8 neighbors) nearly halves spread time. Network density is the primary driver of information velocity. Small increases in connectivity create disproportionate increases in spread speed.",
+      "simulator_template": "viral-spread"
+    },
+    {
+      "id": "color-patches-majority",
+      "name": "Color Patches (Majority Rule)",
+      "category": "social_dynamics",
+      "behavior": "Agents adopt the majority opinion of their neighbors -- local majority rule creates emergent consensus patches",
+      "parameters": {
+        "width": 20,
+        "height": 20,
+        "num_opinions": 16,
+        "neighborhood": "moore_8",
+        "update": "synchronous"
+      },
+      "rule": "Each cell holds one of 16 opinions. Every step, each cell adopts the most common opinion among its 8 neighbors. Ties broken randomly. Updates are synchronous (two-phase: determine then apply) to prevent cascade artifacts.",
+      "rule_formula": "next_opinion = mode(neighbor_opinions); if tie: random_choice(tied_opinions)",
+      "real_world": "Cultural homogenization, brand dominance in regions, political district formation, language dialect evolution, fashion trend convergence, local consensus building",
+      "probabilities": {
+        "initial_opinions": 16,
+        "neighborhood_size": 8,
+        "tie_breaking": "random uniform",
+        "convergence_time_steps": 50,
+        "final_patch_count": "3-6 dominant opinions from 16 initial"
+      },
+      "key_insight": "Local majority rule rapidly eliminates minority opinions. Starting from 16 random opinions, the system converges to 3-6 dominant patches. Diversity requires active maintenance -- without it, conformity is the attractor.",
+      "simulator_template": "cultural-convergence"
+    },
+    {
+      "id": "hotelling-law",
+      "name": "Hotelling's Law (Spatial Competition)",
+      "category": "economics_wealth",
+      "behavior": "Competing businesses cluster together at the center rather than spreading out -- spatial competition drives convergence to median consumer",
+      "parameters": {
+        "n_stores": 20,
+        "n_consumers": 100,
+        "width": 50,
+        "height": 50,
+        "mode": "default",
+        "mobility_rate": 80,
+        "strategy_budget_pct": 70,
+        "strategy_premium_pct": 30,
+        "price_min": 5.0,
+        "price_max": 15.0
+      },
+      "rule": "Stores move toward highest consumer density. Budget stores (70%) price at 90% of competitor avg, premium (30%) at 110%. Consumers choose store minimizing (price + distance). Stores adjust prices based on market share trend: declining -> cut by 2-5%, growing above 130% of mean -> raise 10-20%, stable -> raise 2-5%.",
+      "rule_formula": "consumer_score = store.price + distance; store_target_price = avg_competitor_price * (0.9 for budget, 1.1 for premium)",
+      "real_world": "Why fast food restaurants cluster, gas station locations, political parties converging to center, streaming service pricing convergence, why similar products end up next to each other",
+      "probabilities": {
+        "budget_strategy_pct": 70,
+        "premium_strategy_pct": 30,
+        "mobility_rate_pct": 80,
+        "price_cut_declining": 0.95,
+        "price_raise_growing": 1.2,
+        "price_range": [
+          5.0,
+          15.0
+        ]
+      },
+      "key_insight": "Rational competition drives businesses toward the center/median consumer, not toward underserved niches. This explains why political parties, products, and businesses all seem to converge to sameness. Differentiation requires deliberate strategy against natural forces.",
+      "simulator_template": "market-competition"
+    },
+    {
+      "id": "emperor-dilemma",
+      "name": "Emperor's Dilemma (Norm Enforcement)",
+      "category": "governance_conflict",
+      "behavior": "Social norms persist even when most people privately disagree -- pluralistic ignorance and enforcement costs create stable false consensus",
+      "parameters": {
+        "width": 25,
+        "height": 25,
+        "fraction_true_believers": 0.05,
+        "enforcement_cost_k": 0.125,
+        "homophily": false,
+        "conviction_true_believers": 1.0,
+        "conviction_nonbelievers_range": [
+          0.01,
+          0.38
+        ]
+      },
+      "rule": "5% are true believers (conviction=1.0), 95% privately disagree (conviction 0.01-0.38). Social pressure = (-belief/neighbors) * sum(neighbor_enforcement). If pressure > conviction: comply against own belief. Enforcement decision: if switched AND pressure > conviction + k: enforce the norm you disagree with. If maintained belief AND conviction * deviant_ratio > k: enforce own belief.",
+      "rule_formula": "pressure = (-belief/N) * sum(enforcement); comply if pressure > conviction; enforce if pressure > conviction + k (for deviants) or conviction * w_i > k (for conformers)",
+      "real_world": "Emperor's New Clothes effect, corporate culture where nobody speaks up, political correctness enforcement, religious norm compliance, fashion conformity, toxic workplace norms that persist despite universal private disagreement",
+      "probabilities": {
+        "true_believers_pct": 5,
+        "enforcement_cost": 0.125,
+        "true_believer_conviction": 1.0,
+        "nonbeliever_conviction_range": [
+          0.01,
+          0.38
+        ],
+        "compliance_rate_typical_pct": 85,
+        "false_enforcement_rate_pct": 40
+      },
+      "key_insight": "Only 5% true believers can maintain a norm that 95% privately reject. The key mechanism: enforcement cost (k) is low, so it is cheaper to enforce than to dissent. This explains corporate culture inertia, political correctness, and why 'everyone knows but nobody says'.",
+      "simulator_template": "social-pressure"
+    },
+    {
+      "id": "virus-antibody",
+      "name": "Virus-Antibody Arms Race",
+      "category": "epidemics_spreading",
+      "behavior": "Co-evolutionary arms race between viruses mutating and antibodies learning -- adaptive immune response through memory and communication",
+      "parameters": {
+        "initial_antibody": 20,
+        "initial_viruses": 20,
+        "width": 100,
+        "height": 100,
+        "antibody_duplication_rate": 0.01,
+        "virus_duplication_rate": 0.01,
+        "virus_mutation_rate": 0.01,
+        "max_agents": 200,
+        "antibody_speed": 1.5,
+        "virus_speed": 1.0,
+        "antibody_sight_range": 10,
+        "ko_timeout": 15,
+        "dna_digits": 3,
+        "dna_range": [
+          0,
+          9
+        ]
+      },
+      "rule": "Viruses random-walk and duplicate (1% chance/step). During duplication, one DNA digit mutates +/-1 (1% chance). Antibodies move 1.5x faster, target nearest virus within sight (10 units). On contact: if virus DNA matches memory, destroy virus. If no match, antibody loses 1 health, stores DNA, enters KO state (15 steps). Antibodies share DNA memory with nearby antibodies.",
+      "rule_formula": "virus: duplicate if random() < 0.01, mutate one digit if random() < 0.01; antibody: if dna in memory: kill virus; else: health -= 1, ko_state = 15 steps",
+      "real_world": "Immune system dynamics, cybersecurity (virus/antivirus arms race), market competition (innovation vs imitation), platform moderation vs bad actors, spam filter evolution",
+      "probabilities": {
+        "duplication_rate_pct": 1,
+        "mutation_rate_pct": 1,
+        "antibody_speed_multiplier": 1.5,
+        "sight_range": 10,
+        "ko_timeout_steps": 15,
+        "max_population_cap": 200
+      },
+      "key_insight": "The arms race never ends -- mutations create novel threats, and memory/communication create adaptive defense. Systems that share threat intelligence (antibody communication) are far more resilient than isolated defenders.",
+      "simulator_template": "arms-race"
+    },
+    {
+      "id": "humanitarian-aid",
+      "name": "Humanitarian Aid Distribution",
+      "category": "collective_behavior",
+      "behavior": "Optimal resource allocation under scarcity and urgency -- triage decisions between efficiency and equity when lives are at stake",
+      "parameters": {
+        "num_beneficiaries": 30,
+        "num_trucks": 3,
+        "width": 20,
+        "height": 20,
+        "critical_days_threshold": 5,
+        "max_supplies": 100,
+        "delivery_rate": 10,
+        "refill_amount": 50,
+        "water_decay": 2,
+        "food_decay": 1
+      },
+      "rule": "Beneficiaries have water (decay 2/step) and food (decay 1/step) urgency, capped at 100. States: Wandering (<40) -> Opportunistic (40-60, search radius 4) -> Seeking (60-90, radius 8) -> Desperate (>=90, unlimited radius). Die after 5 days critical. Trucks use hybrid triage: critical patients scored by urgency^2/distance, non-critical by total_urgency/distance. Aid split proportionally to needs. Delivery reduces decay rates by 20%.",
+      "rule_formula": "critical_score = max_urgency^2 / (distance+1); normal_score = total_urgency / (distance+1); die if days_critical > 5",
+      "real_world": "Emergency response optimization, healthcare triage, startup resource allocation, customer support prioritization, limited budget allocation across competing needs",
+      "probabilities": {
+        "water_decay_per_step": 2,
+        "food_decay_per_step": 1,
+        "wandering_threshold": 40,
+        "opportunistic_threshold": 60,
+        "seeking_threshold": 90,
+        "death_after_critical_days": 5,
+        "delivery_rate_per_step": 10,
+        "decay_reduction_after_delivery_pct": 20
+      },
+      "key_insight": "Urgency-squared scoring means critical cases get disproportionate priority -- one very urgent case outweighs multiple moderate ones. This mirrors real triage: saving one life at 90% urgency is worth more than improving comfort of 10 people at 30%.",
+      "simulator_template": "resource-allocation"
+    },
+    {
+      "id": "termite-clustering",
+      "name": "Termite Wood Chip Clustering",
+      "category": "collective_behavior",
+      "behavior": "Simple agents with no communication or planning create organized piles from random scatter -- self-organization without coordination",
+      "parameters": {
+        "num_termites": 100,
+        "width": 100,
+        "height": 100,
+        "wood_chip_density": 0.1
+      },
+      "rule": "Three-phase behavior: (1) SEARCH: randomly walk until finding a wood chip, pick it up. (2) FIND PILE: carry chip, walk randomly until finding another chip (indicating a pile). (3) DROP: put chip next to the pile, walk away. No communication between termites. Over time, random chips converge into organized piles.",
+      "rule_formula": "search -> if cell.has_wood: pickup; carry -> if cell.has_wood: drop_nearby; retreat_from_pile",
+      "real_world": "Self-organizing teams, emergent project management, how cities form without central planning, ant colony logistics, decentralized warehousing, stigmergy in open source development",
+      "probabilities": {
+        "wood_chip_density_pct": 10,
+        "pickup_probability_pct": 100,
+        "drop_near_pile_probability_pct": 100,
+        "convergence_time_ratio": "~500 steps for 90% clustering",
+        "final_pile_count": "3-8 piles from random initial scatter"
+      },
+      "key_insight": "Complex organization requires zero intelligence, zero communication, zero planning. Simple stimulus-response rules (see chip -> pick up, see pile -> drop nearby) create perfect organization. Most coordination problems are over-engineered.",
+      "simulator_template": "self-organization"
+    },
+    {
+      "id": "alliance-formation",
+      "name": "Alliance Formation",
+      "category": "social_dynamics",
+      "behavior": "Agents form alliances based on power and proximity -- Shapley value determines if cooperation beats going alone",
+      "parameters": {
+        "n": 50,
+        "mean_power": 0.5,
+        "std_dev_power": 0.1,
+        "power_boost_factor": 1.2,
+        "shapley_weight": 0.5,
+        "alliance_size": 2
+      },
+      "rule": "Agents have power (normal distribution) and position (0-1). Alliance forms only if Shapley value for BOTH agents exceeds their individual power. Position compatibility = 1 - distance. Agents switch alliances only for strictly better options. Alliances create hierarchical levels.",
+      "rule_formula": "form_alliance if shapley_value_A > power_A AND shapley_value_B > power_B; compatibility = 1 - |position_A - position_B|",
+      "real_world": "Business partnerships, political coalitions, M&A decisions, team formation, co-founder matching, international alliances, when to collaborate vs compete",
+      "probabilities": {
+        "power_distribution_mean": 0.5,
+        "power_distribution_std": 0.1,
+        "power_boost_in_alliance": 1.2,
+        "shapley_split_weight": 0.5,
+        "alliance_size": 2
+      },
+      "key_insight": "Alliances only form when both parties are strictly better off (Shapley value > solo power). Proximity (shared values/position) determines compatibility. Power imbalances make alliances unstable -- the stronger party always has better outside options.",
+      "simulator_template": "partnerships"
+    },
+    {
+      "id": "dining-philosophers",
+      "name": "Dining Philosophers",
+      "category": "game_theory",
+      "behavior": "Shared resource contention creates deadlock and starvation -- individual rational behavior produces collective failure without coordination protocols",
+      "parameters": {
+        "num_philosophers": 5,
+        "strategy": "Naive",
+        "hungry_chance": 0.1,
+        "full_chance": 0.2,
+        "topology": "circular_ring"
+      },
+      "rule": "Philosophers sit in a circle with forks between them. To eat, must hold both adjacent forks. States: THINKING (10% chance to become hungry) -> HUNGRY (try to grab forks) -> EATING (20% chance to become full/thinking). Naive strategy: grab any available fork. Deadlock occurs when all grab left fork simultaneously.",
+      "rule_formula": "if THINKING and random() < 0.1: HUNGRY; if HUNGRY and both_forks_free: EATING; if EATING and random() < 0.2: THINKING",
+      "real_world": "Database lock contention, resource scheduling in companies, traffic intersection deadlocks, M&A when multiple companies pursue same target, meeting room booking conflicts",
+      "probabilities": {
+        "hungry_chance_pct": 10,
+        "full_chance_pct": 20,
+        "deadlock_probability_naive": "approaches 100% over time",
+        "states": [
+          "THINKING",
+          "HUNGRY",
+          "EATING"
+        ]
+      },
+      "key_insight": "Without coordination protocols, rational individual behavior (grab whatever is available) guarantees eventual deadlock. Real systems need explicit arbitration -- markets, managers, protocols -- to prevent resource contention from freezing everything.",
+      "simulator_template": "resource-contention"
+    },
+    {
+      "id": "ant-colony-optimization",
+      "name": "Ant Colony Optimization (ACO-TSP)",
+      "category": "collective_behavior",
+      "behavior": "Simple agents leaving chemical trails collectively discover optimal paths -- stigmergy (indirect communication through environment) solves NP-hard problems",
+      "parameters": {
+        "num_agents": 20,
+        "alpha": 1.0,
+        "beta": 5.0,
+        "q": 100,
+        "evaporation_rate": 0.5,
+        "pheromone_init": 1e-06,
+        "max_steps": 1000000
+      },
+      "rule": "Ants choose next city with probability proportional to (pheromone^alpha * (1/distance)^beta). After completing tour, deposit pheromone = Q/tour_length on all edges visited. Each step, all pheromone decays by evaporation_rate (50%). Short paths accumulate more pheromone faster, reinforcing good solutions.",
+      "rule_formula": "P(next_city) = (tau_ij^alpha * (1/d_ij)^beta) / sum_all; tau_ij = (1-ro)*tau_ij + Q/tour_length",
+      "real_world": "Supply chain routing, internet packet routing, logistics optimization, crowd-sourced navigation (Waze), any distributed path-finding without central control",
+      "probabilities": {
+        "pheromone_influence_alpha": 1.0,
+        "distance_influence_beta": 5.0,
+        "evaporation_rate_pct": 50,
+        "quality_constant_Q": 100,
+        "initial_pheromone": 1e-06,
+        "convergence_within_pct_of_optimal": 5
+      },
+      "key_insight": "Stigmergy -- communication through environment modification -- lets simple agents solve problems that stump centralized algorithms. No ant knows the optimal route, but the colony finds it. Positive feedback (pheromone) + negative feedback (evaporation) = adaptive optimization.",
+      "simulator_template": "optimization"
+    }
+  ]
+}
