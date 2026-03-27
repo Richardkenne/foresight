@@ -25,6 +25,14 @@
 - `src/lib/templates.ts` — all template data
 - `src/app/api/generate/route.ts` — Claude API endpoint
 
+## Deploy Rules (NON-NEGOTIABLE — MASSIMA PRIORITA)
+- **MAI MAI MAI fare git push** — ogni push triggera un build Vercel che costa soldi reali ($25+ al mese).
+- Push SOLO quando l'utente dice ESPLICITAMENTE "pusha", "push", "deploy", o "metti online".
+- Anche se l'utente dice "salva", "commit", "backup" → fai SOLO `git commit`, MAI push.
+- Anche se l'utente dice "fai push" per un altro progetto → NON pushare questo.
+- Se per errore stai per fare push → FERMATI e chiedi conferma.
+- Questa regola vale fino a che l'utente non la rimuove esplicitamente.
+
 ## Simulation Flow
 - Nodes hidden (opacity 0) when simulation starts
 - Revealed one by one as particles reach them (opacity transition)
