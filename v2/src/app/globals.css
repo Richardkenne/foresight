@@ -344,6 +344,55 @@ body {
   flex-shrink: 0;
 }
 
+/* ─── Dataflow Value Bar ─── */
+.sim-node__value-bar {
+  position: relative;
+  height: 14px;
+  margin-top: 6px;
+  background: var(--border-subtle);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.sim-node__value-fill {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+}
+.sim-node__value-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  z-index: 1;
+}
+
+/* ─── Interactive Slider ─── */
+.sim-node__slider {
+  margin-top: 4px;
+}
+.sim-node__slider-input {
+  width: 100%;
+  height: 4px;
+  appearance: none;
+  background: var(--border-subtle);
+  border-radius: 2px;
+  cursor: pointer;
+  outline: none;
+}
+.sim-node__slider-input::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--node-accent, #6366f1);
+  cursor: pointer;
+  border: none;
+}
+
 /* ─── Handles ─── */
 .sim-handle {
   width: 8px !important;

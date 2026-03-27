@@ -66,6 +66,8 @@ interface SimNodeData {
   prob?: number;
   time?: string;
   hidden?: boolean;
+  computedValue?: number;
+  onSliderChange?: (value: number) => void;
   [key: string]: unknown;
 }
 
@@ -76,6 +78,12 @@ function SimNodeComponent({ data }: NodeProps) {
   const icon = ICONS[nodeType];
   const hasProb = nodeType === 'bottleneck' || nodeType === 'decision';
   const isStart = nodeType === 'start';
+  const computedValue = d.computedValue;
+  // Only show value bar if value is meaningful (> 0)
+  const hasValue = typeof computedValue === 'number' && computedValue > 0.001;
+  // Visual intensity: 0-1 scale, clamped
+  const intensity = hasValue ? Math.min(1, Math.max(0, computedValue)) : 0;
+  const isInteractive = isStart || hasProb;
 
   if (isStart) {
     return (
@@ -140,6 +148,7 @@ function SimNodeComponent({ data }: NodeProps) {
             )}
           </div>
         )}
+
       </div>
 
       <Handle type="source" position={Position.Right} className="sim-handle" />

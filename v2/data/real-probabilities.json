@@ -1,0 +1,734 @@
+{
+  "_meta": {
+    "description": "Real-data probability lookup table for life/career simulations. Every number sourced from official U.S. government statistics.",
+    "last_updated": "2026-03-27",
+    "total_entries": 78,
+    "sources": {
+      "BLS_OES": "Bureau of Labor Statistics, Occupational Employment & Wage Statistics, May 2024",
+      "BLS_BED": "Bureau of Labor Statistics, Business Employment Dynamics, 2024",
+      "BLS_CPS": "Bureau of Labor Statistics, Current Population Survey, 2024",
+      "BLS_EP": "Bureau of Labor Statistics, Employment Projections 2024-2034",
+      "BLS_CFOI": "Bureau of Labor Statistics, Census of Fatal Occupational Injuries, 2024",
+      "CDC_NVSS": "CDC National Vital Statistics System, 2024",
+      "CDC_NCHS": "CDC National Center for Health Statistics, 2024",
+      "NCES": "National Center for Education Statistics, 2024",
+      "NACE": "National Association of Colleges and Employers, Class of 2024",
+      "Census_ACS": "U.S. Census Bureau, American Community Survey, 2024",
+      "Census_CPS": "U.S. Census Bureau, Current Population Survey, 2024",
+      "Census_HVS": "U.S. Census Bureau, Housing Vacancies and Homeownership, 2024",
+      "Fed_SCF": "Federal Reserve, Survey of Consumer Finances, 2022 (latest available)",
+      "Fed_SHED": "Federal Reserve, Survey of Household Economics and Decisionmaking, 2024",
+      "USCIS": "U.S. Citizenship and Immigration Services, FY 2024",
+      "Atlanta_Fed": "Federal Reserve Bank of Atlanta, Wage Growth Tracker, 2024",
+      "SBA": "Small Business Administration, Office of Advocacy, 2024"
+    }
+  },
+
+  "business": {
+    "startup_survive_year1": {
+      "prob": 79.6,
+      "description": "Percentage of new business establishments surviving their first year",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_year5": {
+      "prob": 50.6,
+      "description": "Percentage of new business establishments surviving 5 years",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_year10": {
+      "prob": 34.7,
+      "description": "Percentage of business establishments born in 2013 still operating in 2023",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_profitable_ever": {
+      "prob": 40.0,
+      "description": "Percentage of small businesses that become profitable at some point (typically 2-3 years)",
+      "source": "SBA",
+      "year": 2024
+    },
+    "startup_currently_profitable": {
+      "prob": 65.3,
+      "description": "Percentage of active small businesses reporting current profitability",
+      "source": "SBA",
+      "year": 2024,
+      "note": "Guidant Financial survey of active small businesses"
+    },
+    "startup_revenue_over_1m": {
+      "prob": 9.0,
+      "description": "Percentage of small businesses generating over $1M annual revenue",
+      "source": "SBA",
+      "year": 2024
+    },
+    "startup_get_vc_funding": {
+      "prob": 0.05,
+      "description": "Percentage of startups that ever raise venture capital funding",
+      "source": "SBA",
+      "year": 2024
+    },
+    "startup_survive_agriculture": {
+      "prob": 50.5,
+      "description": "10-year survival rate for agriculture/forestry/fishing establishments (highest)",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_mining": {
+      "prob": 24.5,
+      "description": "10-year survival rate for mining/quarrying/oil-gas establishments (lowest)",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_manufacturing": {
+      "prob": 43.6,
+      "description": "10-year survival rate for manufacturing establishments",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_information": {
+      "prob": 29.1,
+      "description": "10-year survival rate for information sector establishments",
+      "source": "BLS_BED",
+      "year": 2024
+    }
+  },
+
+  "career": {
+    "software_engineer_median": {
+      "value": 133080,
+      "unit": "USD/year",
+      "description": "Median annual wage for software developers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "software_engineer_top10pct": {
+      "value": 211450,
+      "unit": "USD/year",
+      "description": "Top 10% annual wage for software developers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "software_engineer_bottom10pct": {
+      "value": 79850,
+      "unit": "USD/year",
+      "description": "Bottom 10% annual wage for software developers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "physician_surgeon_median": {
+      "value": 239200,
+      "unit": "USD/year",
+      "description": "Median annual wage for physicians and surgeons (equal to or greater than)",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "registered_nurse_median": {
+      "value": 98430,
+      "unit": "USD/year",
+      "description": "Median annual wage for registered nurses",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "nurse_practitioner_median": {
+      "value": 129480,
+      "unit": "USD/year",
+      "description": "Median annual wage for nurse practitioners",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "physician_assistant_median": {
+      "value": 133260,
+      "unit": "USD/year",
+      "description": "Median annual wage for physician assistants",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "lawyer_median": {
+      "value": 182760,
+      "unit": "USD/year",
+      "description": "Median annual wage for lawyers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "accountant_median": {
+      "value": 81680,
+      "unit": "USD/year",
+      "description": "Median annual wage for accountants and auditors",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "financial_analyst_median": {
+      "value": 101350,
+      "unit": "USD/year",
+      "description": "Median annual wage for financial analysts",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "data_scientist_median": {
+      "value": 112590,
+      "unit": "USD/year",
+      "description": "Median annual wage for data scientists",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "marketing_manager_median": {
+      "value": 161030,
+      "unit": "USD/year",
+      "description": "Median annual wage for marketing managers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "hr_manager_median": {
+      "value": 140030,
+      "unit": "USD/year",
+      "description": "Median annual wage for human resources managers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "chief_executive_median": {
+      "value": 206420,
+      "unit": "USD/year",
+      "description": "Median annual wage for chief executives",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "civil_engineer_median": {
+      "value": 116380,
+      "unit": "USD/year",
+      "description": "Median annual wage for civil engineers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "mechanical_engineer_median": {
+      "value": 102320,
+      "unit": "USD/year",
+      "description": "Median annual wage for mechanical engineers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "pharmacist_median": {
+      "value": 137210,
+      "unit": "USD/year",
+      "description": "Median annual wage for pharmacists",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "dentist_median": {
+      "value": 196100,
+      "unit": "USD/year",
+      "description": "Median annual wage for dentists (general)",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "physical_therapist_median": {
+      "value": 102400,
+      "unit": "USD/year",
+      "description": "Median annual wage for physical therapists",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "psychologist_median": {
+      "value": 94310,
+      "unit": "USD/year",
+      "description": "Median annual wage for psychologists",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "info_security_analyst_median": {
+      "value": 124910,
+      "unit": "USD/year",
+      "description": "Median annual wage for information security analysts",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "elementary_teacher_median": {
+      "value": 62340,
+      "unit": "USD/year",
+      "description": "Median annual wage for elementary school teachers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "high_school_teacher_median": {
+      "value": 64580,
+      "unit": "USD/year",
+      "description": "Median annual wage for high school teachers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "postsecondary_teacher_median": {
+      "value": 102410,
+      "unit": "USD/year",
+      "description": "Median annual wage for postsecondary teachers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "web_developer_median": {
+      "value": 90930,
+      "unit": "USD/year",
+      "description": "Median annual wage for web developers and digital designers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "graphic_designer_median": {
+      "value": 61300,
+      "unit": "USD/year",
+      "description": "Median annual wage for graphic designers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "electrician_median": {
+      "value": 62350,
+      "unit": "USD/year",
+      "description": "Median annual wage for electricians",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "plumber_median": {
+      "value": 62970,
+      "unit": "USD/year",
+      "description": "Median annual wage for plumbers, pipefitters, and steamfitters",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "all_workers_median": {
+      "value": 49500,
+      "unit": "USD/year",
+      "description": "Median annual wage for all workers in the U.S.",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "job_switch_salary_increase_median": {
+      "prob": 10.0,
+      "description": "Median year-over-year pay increase for job switchers (percentage)",
+      "source": "Atlanta_Fed",
+      "year": 2024,
+      "note": "March 2024 data; job stayers saw 5.1% increase"
+    },
+    "job_growth_healthcare_support": {
+      "prob": 12.4,
+      "description": "Projected job growth 2024-2034 for healthcare support occupations (percentage)",
+      "source": "BLS_EP",
+      "year": 2024
+    },
+    "job_growth_computer_math": {
+      "prob": 10.1,
+      "description": "Projected job growth 2024-2034 for computer and mathematical occupations (percentage)",
+      "source": "BLS_EP",
+      "year": 2024
+    },
+    "job_growth_software_dev": {
+      "prob": 15.0,
+      "description": "Projected job growth 2024-2034 for software developers (percentage)",
+      "source": "BLS_EP",
+      "year": 2024
+    },
+    "job_growth_total_economy": {
+      "prob": 3.1,
+      "description": "Projected total economy job growth 2024-2034 (percentage, 5.2M jobs)",
+      "source": "BLS_EP",
+      "year": 2024
+    },
+    "workplace_fatality_rate": {
+      "value": 3.3,
+      "unit": "per 100,000 FTE",
+      "description": "Fatal work injury rate per 100,000 full-time equivalent workers",
+      "source": "BLS_CFOI",
+      "year": 2024
+    },
+    "workplace_nonfatal_injury_rate": {
+      "value": 2.3,
+      "unit": "per 100 FTE",
+      "description": "Nonfatal workplace injury and illness rate per 100 full-time equivalent workers",
+      "source": "BLS_CFOI",
+      "year": 2024
+    },
+    "freelancer_workforce_pct": {
+      "prob": 36.0,
+      "description": "Percentage of U.S. workforce that freelances",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "labor_force_participation_total": {
+      "prob": 62.5,
+      "description": "Overall civilian labor force participation rate",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "labor_force_participation_women": {
+      "prob": 57.5,
+      "description": "Women's labor force participation rate",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "labor_force_participation_primeage_men": {
+      "prob": 89.0,
+      "description": "Prime-age (25-54) men's labor force participation rate",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "labor_force_participation_primeage_women": {
+      "prob": 78.1,
+      "description": "Prime-age (25-54) women's labor force participation rate (near record high)",
+      "source": "BLS_CPS",
+      "year": 2024
+    }
+  },
+
+  "education": {
+    "bachelors_completion_6year": {
+      "prob": 64.0,
+      "description": "Percentage of first-time, full-time students completing bachelor's degree within 6 years at same institution",
+      "source": "NCES",
+      "year": 2024,
+      "note": "Fall 2014 cohort measured through 2020"
+    },
+    "bachelors_completion_4year": {
+      "prob": 41.0,
+      "description": "Percentage completing bachelor's degree within 4 years",
+      "source": "NCES",
+      "year": 2024
+    },
+    "bachelors_completion_public": {
+      "prob": 63.0,
+      "description": "6-year graduation rate at public institutions",
+      "source": "NCES",
+      "year": 2024
+    },
+    "bachelors_completion_private_nonprofit": {
+      "prob": 68.0,
+      "description": "6-year graduation rate at private nonprofit institutions",
+      "source": "NCES",
+      "year": 2024
+    },
+    "bachelors_completion_forprofit": {
+      "prob": 29.0,
+      "description": "6-year graduation rate at private for-profit institutions",
+      "source": "NCES",
+      "year": 2024
+    },
+    "grad_employed_6months": {
+      "prob": 85.7,
+      "description": "Percentage of Class of 2024 bachelor's grads employed or in further education within 6 months",
+      "source": "NACE",
+      "year": 2024
+    },
+    "masters_grad_employed_6months": {
+      "prob": 89.0,
+      "description": "Percentage of Class of 2024 master's grads employed or in further education within 6 months",
+      "source": "NACE",
+      "year": 2024
+    },
+    "adults_bachelors_or_higher": {
+      "prob": 38.6,
+      "description": "Percentage of U.S. adults 25+ with bachelor's degree or higher",
+      "source": "Census_CPS",
+      "year": 2024
+    },
+    "unemployment_less_than_highschool": {
+      "prob": 6.2,
+      "description": "Unemployment rate for workers without high school diploma",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "unemployment_highschool": {
+      "prob": 4.3,
+      "description": "Unemployment rate for high school graduates with no college",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "unemployment_some_college": {
+      "prob": 3.1,
+      "description": "Unemployment rate for workers with some college or associate degree",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "unemployment_bachelors_plus": {
+      "prob": 2.1,
+      "description": "Unemployment rate for workers with bachelor's degree or higher",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "weekly_earnings_highschool": {
+      "value": 946,
+      "unit": "USD/week",
+      "description": "Median weekly earnings for high school graduates",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "weekly_earnings_bachelors": {
+      "value": 1541,
+      "unit": "USD/week",
+      "description": "Median weekly earnings for bachelor's degree holders",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "weekly_earnings_masters": {
+      "value": 1840,
+      "unit": "USD/week",
+      "description": "Median weekly earnings for master's degree holders",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "weekly_earnings_doctoral": {
+      "value": 2278,
+      "unit": "USD/week",
+      "description": "Median weekly earnings for doctoral degree holders",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "weekly_earnings_professional": {
+      "value": 2363,
+      "unit": "USD/week",
+      "description": "Median weekly earnings for professional degree holders (highest of all categories)",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "weekly_earnings_less_than_highschool": {
+      "value": 738,
+      "unit": "USD/week",
+      "description": "Median weekly earnings for workers without high school diploma",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "student_loan_avg_balance": {
+      "value": 39075,
+      "unit": "USD",
+      "description": "Average federal student loan debt per borrower",
+      "source": "Fed_SHED",
+      "year": 2024
+    },
+    "student_loan_delinquency_rate": {
+      "prob": 8.0,
+      "description": "Percentage of student loan borrowers behind on payments",
+      "source": "Fed_SHED",
+      "year": 2024
+    },
+    "student_loan_paid_off": {
+      "prob": 59.0,
+      "description": "Percentage of those who ever had education debt who have completely paid it off",
+      "source": "Fed_SHED",
+      "year": 2024
+    }
+  },
+
+  "financial": {
+    "retire_savings_1m_pct": {
+      "prob": 4.7,
+      "description": "Percentage of Americans with $1M+ in retirement accounts (401k, IRA)",
+      "source": "Fed_SCF",
+      "year": 2022
+    },
+    "retire_savings_any_pct": {
+      "prob": 54.3,
+      "description": "Percentage of U.S. households with any retirement account assets",
+      "source": "Fed_SCF",
+      "year": 2022
+    },
+    "retire_no_savings_over50": {
+      "prob": 20.0,
+      "description": "Percentage of adults age 50+ with zero retirement savings",
+      "source": "Fed_SHED",
+      "year": 2024,
+      "note": "AARP survey"
+    },
+    "retire_feel_on_track": {
+      "prob": 35.0,
+      "description": "Percentage of non-retired adults who feel on track for retirement",
+      "source": "Fed_SHED",
+      "year": 2024
+    },
+    "median_household_income": {
+      "value": 83730,
+      "unit": "USD/year",
+      "description": "Real median household income",
+      "source": "Census_CPS",
+      "year": 2024
+    },
+    "poverty_rate": {
+      "prob": 10.6,
+      "description": "Official poverty rate (percentage of population)",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "35.9 million people in poverty"
+    },
+    "sp500_positive_year_pct": {
+      "prob": 73.0,
+      "description": "Percentage of years S&P 500 posted positive returns (since 1928)",
+      "source": "Fed_SCF",
+      "year": 2024,
+      "note": "65 positive vs 24 negative years since 1928"
+    },
+    "sp500_real_return_annual": {
+      "value": 7.0,
+      "unit": "percent",
+      "description": "Annualized inflation-adjusted S&P 500 return since 1926",
+      "source": "Fed_SCF",
+      "year": 2024
+    },
+    "millionaire_households_pct": {
+      "prob": 18.0,
+      "description": "Percentage of U.S. households that are millionaire households (net worth $1M+)",
+      "source": "Fed_SCF",
+      "year": 2024
+    },
+    "median_net_worth_under35": {
+      "value": 39000,
+      "unit": "USD",
+      "description": "Median net worth for households under age 35",
+      "source": "Fed_SCF",
+      "year": 2022
+    },
+    "median_net_worth_35_44": {
+      "value": 135600,
+      "unit": "USD",
+      "description": "Median net worth for households age 35-44",
+      "source": "Fed_SCF",
+      "year": 2022
+    },
+    "median_net_worth_45_54": {
+      "value": 247200,
+      "unit": "USD",
+      "description": "Median net worth for households age 45-54",
+      "source": "Fed_SCF",
+      "year": 2022
+    },
+    "median_net_worth_55_64": {
+      "value": 364500,
+      "unit": "USD",
+      "description": "Median net worth for households age 55-64",
+      "source": "Fed_SCF",
+      "year": 2022
+    },
+    "median_net_worth_65_74": {
+      "value": 409900,
+      "unit": "USD",
+      "description": "Median net worth for households age 65-74",
+      "source": "Fed_SCF",
+      "year": 2022
+    },
+    "average_retirement_age": {
+      "value": 62,
+      "unit": "years",
+      "description": "Average retirement age in the United States",
+      "source": "Fed_SHED",
+      "year": 2024
+    }
+  },
+
+  "life": {
+    "marriage_survive_5years": {
+      "prob": 80.0,
+      "description": "Probability of first marriage lasting at least 5 years",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "marriage_survive_10years": {
+      "prob": 67.0,
+      "description": "Probability of first marriage lasting at least 10 years",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "marriage_survive_10years_black": {
+      "prob": 53.0,
+      "description": "Probability of first marriage lasting 10 years (Black non-Hispanic women)",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "marriage_survive_10years_hispanic": {
+      "prob": 66.0,
+      "description": "Probability of first marriage lasting 10 years (Hispanic women)",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "marriage_survive_10years_white": {
+      "prob": 68.0,
+      "description": "Probability of first marriage lasting 10 years (White non-Hispanic women)",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "marriage_survive_10years_asian": {
+      "prob": 80.0,
+      "description": "Probability of first marriage lasting 10 years (Asian non-Hispanic women)",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "divorce_rate_per_1000": {
+      "value": 2.3,
+      "unit": "per 1,000 population",
+      "description": "National divorce rate",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "life_expectancy_birth": {
+      "value": 79.0,
+      "unit": "years",
+      "description": "Life expectancy at birth (total population)",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "life_expectancy_at_65": {
+      "value": 19.7,
+      "unit": "additional years",
+      "description": "Life expectancy at age 65 (total population)",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "life_expectancy_at_65_female": {
+      "value": 20.8,
+      "unit": "additional years",
+      "description": "Life expectancy at age 65 (female)",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "life_expectancy_at_65_male": {
+      "value": 18.4,
+      "unit": "additional years",
+      "description": "Life expectancy at age 65 (male)",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "reach_age_90_female": {
+      "prob": 40.0,
+      "description": "Probability of a 65-year-old woman reaching age 90",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "reach_age_90_male": {
+      "prob": 30.0,
+      "description": "Probability of a 65-year-old man reaching age 90",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "homeownership_under35": {
+      "prob": 37.4,
+      "description": "Homeownership rate for householders under age 35 (Q2 2024, lowest in 4 years)",
+      "source": "Census_HVS",
+      "year": 2024
+    },
+    "immigration_h1b_approval_rate": {
+      "prob": 96.0,
+      "description": "H-1B visa approval rate (FY 2024, among adjudicated petitions)",
+      "source": "USCIS",
+      "year": 2024
+    },
+    "immigration_h1b_lottery_selection": {
+      "prob": 14.6,
+      "description": "H-1B lottery selection rate (110,791 selected from 758,994 eligible registrations)",
+      "source": "USCIS",
+      "year": 2024
+    },
+    "immigration_green_card_employment": {
+      "prob": 90.0,
+      "description": "Employment-based green card approval rate",
+      "source": "USCIS",
+      "year": 2024
+    },
+    "immigration_green_card_family": {
+      "prob": 90.0,
+      "description": "Family-sponsored green card approval rate (denial rate slightly above 10%)",
+      "source": "USCIS",
+      "year": 2024
+    }
+  }
+}

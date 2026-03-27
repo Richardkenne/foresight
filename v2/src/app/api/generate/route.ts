@@ -3,6 +3,25 @@ import fs from 'fs';
 import path from 'path';
 import https from 'https';
 
+// ============ REAL PROBABILITIES LOOKUP ============
+function loadRealProbabilities(): string {
+  const filePath = path.join(process.cwd(), 'data', 'real-probabilities.json');
+  try {
+    const raw = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    // Flatten into a readable format for Claude
+    const lines: string[] = [];
+    for (const [category, entries] of Object.entries(raw)) {
+      for (const [key, data] of Object.entries(entries as Record<string, { prob: number; source: string; year?: number }>)) {
+        const label = key.replace(/_/g, ' ');
+        lines.push(`${category}/${label}: ${data.prob}% (${data.source}${data.year ? ` ${data.year}` : ''})`);
+      }
+    }
+    return lines.join('\n');
+  } catch {
+    return '';
+  }
+}
+
 // ============ KNOWLEDGE BASE ============
 function loadKB() {
   const dataDir = path.join(process.cwd(), 'data');
@@ -787,6 +806,12 @@ Position: x increases by ~260, failures below (y+200). Min 260px horizontal spac
 JSON format: {"title":"...","nodes":[{"id":1,"type":"desire","label":"...","x":0,"y":120,"prob":100,"desc":"Real stat","source":"Source Year or Estimated","time":"30-90 days"}],"edges":[{"from":1,"to":2,"label":""}]}
 prob = conditional % of PASSING. Only bottleneck/decision need realistic prob (<100). Others = 100.
 desc MUST include a specific number/stat, not generic text.`;
+
+    // Inject real probabilities so Claude uses verified data
+    const realProbs = loadRealProbabilities();
+    if (realProbs) {
+      liveStr += `\n\nVERIFIED REAL PROBABILITIES (USE THESE EXACT NUMBERS when relevant — they are from official government sources):\n${realProbs}`;
+    }
 
     // Dynamic part — changes per request (live data, KB context)
     const dynamicPrompt = liveStr ? liveStr.trim() : '';

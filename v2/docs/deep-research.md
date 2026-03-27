@@ -7,12 +7,14 @@
 - [4. Decision Tree & Node-Based UI](#4-decision-tree--node-based-ui)
 - [5. Raccomandazioni operative](#5-raccomandazioni-operative)
 - [6. Meccaniche da portare nei template](#6-meccaniche-da-portare-nei-template)
-- [6. Scenario Datasets per template](#6-scenario-datasets-per-template-jsoncsv)
+- [6b. Scenario Datasets per template](#6-scenario-datasets-per-template-jsoncsv)
 - [7. AI/LLM-Powered Scenario & Simulation Projects](#7-aillm-powered-scenario--simulation-projects-github)
 - [8. Life Simulators, Decision Simulators & Financial Life Tools](#8-life-simulators-decision-simulators--financial-life-tools)
 - [9. Raccomandazioni — Life Simulator specifiche](#9-raccomandazioni--life-simulator-specifiche)
 - [10. React Flow Projects — Simulators, Workflow Engines, Scenario Tools](#10-react-flow-projects--simulators-workflow-engines-scenario-tools)
 - [11. Ricerche da completare](#11-ricerche-da-completare)
+
+> 130+ repo analizzati in 12 categorie. Ricerca completata 2026-03-27.
 
 ---
 

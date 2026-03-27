@@ -45,4 +45,5 @@ export interface ParticleData {
   svg: string;
   status: 'moving' | 'success' | 'blocked';
   visitedNodes: Set<string>;
+  signalDelta?: number;
 }

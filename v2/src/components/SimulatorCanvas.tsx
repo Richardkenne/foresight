@@ -23,6 +23,7 @@ import Dashboard from './Dashboard';
 import Spinner from './ui/Spinner';
 import { createPersonSVG, type ParticleData } from './Particle';
 import { TEMPLATES, TEMPLATE_KEYWORDS, type TemplateNode, type TemplateEdge } from '@/lib/templates';
+import { SimulatorDataflow } from '@/lib/dataflow-engine';
 
 const nodeTypes = { simNode: SimNodeComponent };
 
@@ -124,8 +125,11 @@ function templateToFlow(templateNodes: TemplateNode[], templateEdges: TemplateEd
   return getLayoutedElements(rfNodes, rfEdges);
 }
 
-// Simulation speed config
-const SPD = { move: 2000, wait: 2500, launch: 300, wavePause: 2000, waves: 10, perWave: 10 };
+// Simulation speed config — base values, scaled by speedMultiplier
+const SPD_BASE = { move: 2000, wait: 2500, launch: 300, wavePause: 2000, waves: 10, perWave: 10 };
+// Speed levels: 0=1x, 1=1.5x, 2=2x, 3=3x, 4=5x, 5=8x
+const SPEED_LEVELS = [1, 1.5, 2, 3, 5, 8];
+const SPEED_LABELS = ['1x', '1.5x', '2x', '3x', '5x', '8x'];
 
 function SimulatorCanvasInner() {
   const [nodes, setNodes, onNodesChange] = useNodesState<RFNode>([]);
@@ -143,6 +147,12 @@ function SimulatorCanvasInner() {
   const [showDashboard, setShowDashboard] = useState(false);
   const [particles, setParticles] = useState<ParticleData[]>([]);
   const [currentWave, setCurrentWave] = useState(0);
+  const [speedLevel, setSpeedLevel] = useState(0);
+  const speedRef = useRef(0);
+
+  // Node values — signal delta propagation (inspired by Loopy)
+  const [nodeValues, setNodeValues] = useState<Record<string, number>>({});
+  const nodeValuesRef = useRef<Record<string, number>>({});
 
   const simRunningRef = useRef(false);
   const simPausedRef = useRef(false);
@@ -159,9 +169,72 @@ function SimulatorCanvasInner() {
   const waveRef = useRef(0);
   const finishedCountRef = useRef(0);
   const originalEdgesRef = useRef<RFEdge[] | null>(null);
+  const dataflowRef = useRef<SimulatorDataflow>(new SimulatorDataflow());
 
   useEffect(() => { nodesRef.current = nodes; }, [nodes]);
   useEffect(() => { edgesRef.current = edges; }, [edges]);
+
+  // Speed-adjusted timing values
+  const getSPD = useCallback(() => {
+    const mult = SPEED_LEVELS[speedRef.current] || 1;
+    return {
+      move: Math.round(SPD_BASE.move / mult),
+      wait: Math.round(SPD_BASE.wait / mult),
+      launch: Math.round(SPD_BASE.launch / mult),
+      wavePause: Math.round(SPD_BASE.wavePause / mult),
+      waves: SPD_BASE.waves,
+      perWave: SPD_BASE.perWave,
+    };
+  }, []);
+
+  // Signal propagation: when a particle reaches a node, it carries a delta that modifies the node value
+  // and propagates to connected nodes (Loopy-style feedback)
+  const propagateSignal = useCallback((nodeId: string, delta: number) => {
+    // Update this node's value
+    const current = nodeValuesRef.current[nodeId] || 0;
+    nodeValuesRef.current[nodeId] = current + delta;
+    setNodeValues({ ...nodeValuesRef.current });
+
+    // Propagate to connected nodes with edge strength
+    const outEdges = edgesRef.current.filter(e => e.source === nodeId);
+    for (const edge of outEdges) {
+      const strength = (edge.data as Record<string, unknown>)?.strength as number ?? 1;
+      const propagatedDelta = delta * strength * 0.7; // decay factor
+      if (Math.abs(propagatedDelta) > 0.01) {
+        // Delayed propagation
+        const spd = getSPD();
+        setTimeout(() => {
+          if (simRunningRef.current) {
+            const targetCurrent = nodeValuesRef.current[edge.target] || 0;
+            nodeValuesRef.current[edge.target] = targetCurrent + propagatedDelta;
+            setNodeValues({ ...nodeValuesRef.current });
+          }
+        }, spd.move * 0.5);
+      }
+    }
+  }, [getSPD]);
+
+  // Handle slider change on a node — triggers cascading recalculation
+  const handleNodeSliderChange = useCallback(async (nodeId: string, value: number, nodeType: string) => {
+    if (nodeType === 'start') {
+      dataflowRef.current.updateParameter(nodeId, value / 100);
+    } else {
+      dataflowRef.current.updateProbability(nodeId, value);
+    }
+    // Recompute all values
+    const values = await dataflowRef.current.computeAll();
+    nodeValuesRef.current = values;
+    setNodeValues(values);
+    // Update all nodes with new computed values
+    setNodes(prev => prev.map(n => ({
+      ...n,
+      data: {
+        ...n.data,
+        computedValue: values[n.id],
+        onSliderChange: (n.data as Record<string, unknown>).onSliderChange,
+      },
+    })));
+  }, [setNodes]);
 
   // Auto-dismiss error
   useEffect(() => {
@@ -175,7 +248,7 @@ function SimulatorCanvasInner() {
   useEffect(() => {
     if (simRunning && statsRef.current.total > 0) {
       const done = statsRef.current.success + statsRef.current.blocked;
-      if (done >= statsRef.current.total && waveRef.current >= SPD.waves) {
+      if (done >= statsRef.current.total && waveRef.current >= SPD_BASE.waves) {
         // All waves launched and all particles finished
         setTimeout(() => {
           if (simRunningRef.current) {
@@ -221,6 +294,29 @@ function SimulatorCanvasInner() {
     setNodes(ln);
     setEdges(le);
     setErrorMsg('');
+
+    // Build dataflow graph and compute initial values
+    dataflowRef.current.buildFromTemplate(t.nodes, t.edges).then(async () => {
+      const values = await dataflowRef.current.computeAll();
+      nodeValuesRef.current = values;
+      setNodeValues(values);
+      // Update nodes with computed values + slider handlers
+      setNodes(prev => prev.map(n => {
+        const nt = (n.data as Record<string, unknown>).nodeType as string;
+        const isInteractive = nt === 'start' || nt === 'bottleneck' || nt === 'decision';
+        return {
+          ...n,
+          data: {
+            ...n.data,
+            computedValue: values[n.id],
+            onSliderChange: isInteractive
+              ? (val: number) => handleNodeSliderChange(n.id, val, nt)
+              : undefined,
+          },
+        };
+      }));
+    });
+
     setTimeout(() => {
       fitView({ padding: 0.2, duration: 400 });
       if (autoSim) setTimeout(() => simulate(), 500);
@@ -361,6 +457,11 @@ function SimulatorCanvasInner() {
     particle.y = ty;
     updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: tx, y: ty } : p));
 
+    // Signal propagation: particle carries a delta value that modifies the node
+    const signalDelta = particle.signalDelta ?? 0.33;
+    propagateSignal(nodeId, signalDelta);
+
+    const spd = getSPD();
     simTimeout(() => {
       if (!simRunningRef.current) return;
       const data = node.data as Record<string, unknown>;
@@ -397,12 +498,15 @@ function SimulatorCanvasInner() {
         return;
       }
 
+      // Apply edge strength to signal delta
       const nextE = out.length > 1 && nodeType !== 'bottleneck' && nodeType !== 'decision'
         ? out[Math.floor(Math.random() * out.length)]
         : out[0];
+      const edgeStrength = (nextE.data as Record<string, unknown>)?.strength as number ?? 1;
+      particle.signalDelta = (particle.signalDelta ?? 0.33) * edgeStrength;
       moveTo(particle, nextE.target, cb);
-    }, SPD.wait);
-  }, [simTimeout, updateParticles, revealNode]);
+    }, spd.wait);
+  }, [simTimeout, updateParticles, revealNode, propagateSignal, getSPD]);
 
   const launchPerson = useCallback((startNodeId: string) => {
     const pid = ++personIdRef.current;
@@ -430,14 +534,15 @@ function SimulatorCanvasInner() {
   }, [moveTo, updateParticles]);
 
   const launchWave = useCallback((waveNum: number, startNodeIds: string[]) => {
-    if (waveNum >= SPD.waves || !simRunningRef.current) {
+    const spd = getSPD();
+    if (waveNum >= spd.waves || !simRunningRef.current) {
       // All waves done — check if we should auto-show dashboard
-      if (waveNum >= SPD.waves) {
+      if (waveNum >= spd.waves) {
         simTimeout(() => {
           if (simRunningRef.current) {
             stopSim();
           }
-        }, SPD.move + SPD.wait * 3); // Wait for last particles to finish
+        }, spd.move + spd.wait * 3); // Wait for last particles to finish
       }
       return;
     }
@@ -445,18 +550,18 @@ function SimulatorCanvasInner() {
     waveRef.current = waveNum;
     setCurrentWave(waveNum + 1);
 
-    for (let i = 0; i < SPD.perWave; i++) {
+    for (let i = 0; i < spd.perWave; i++) {
       simTimeout(() => {
         if (!simRunningRef.current) return;
         statsRef.current.total++;
         setSimStats({ ...statsRef.current });
         const startId = startNodeIds[Math.floor(Math.random() * startNodeIds.length)];
         launchPerson(startId);
-      }, i * SPD.launch);
+      }, i * spd.launch);
     }
 
-    simTimeout(() => launchWave(waveNum + 1, startNodeIds), SPD.perWave * SPD.launch + SPD.wavePause);
-  }, [simTimeout, launchPerson]); // eslint-disable-line react-hooks/exhaustive-deps
+    simTimeout(() => launchWave(waveNum + 1, startNodeIds), spd.perWave * spd.launch + spd.wavePause);
+  }, [simTimeout, launchPerson, getSPD]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const simulate = useCallback(() => {
     if (simRunningRef.current || nodesRef.current.length === 0) return;
@@ -478,6 +583,10 @@ function SimulatorCanvasInner() {
     setParticles([]);
     setShowDashboard(false);
     setErrorMsg('');
+
+    // Reset node signal values
+    nodeValuesRef.current = {};
+    setNodeValues({});
 
     // Hide all nodes and edges for sequential reveal
     revealedNodesRef.current = new Set();
@@ -737,7 +846,7 @@ function SimulatorCanvasInner() {
         </ReactFlow>
 
         {/* ========== PARTICLE OVERLAY (inside React Flow viewport) ========== */}
-        <ParticleLayer particles={particles} moveDuration={SPD.move} />
+        <ParticleLayer particles={particles} moveDuration={getSPD().move} />
       </div>
 
       {/* ========== STATS BAR (during simulation) ========== */}
@@ -752,10 +861,35 @@ function SimulatorCanvasInner() {
               boxShadow: '0 8px 32px rgba(0,0,0,0.24), 0 0 0 1px rgba(255,255,255,0.06) inset',
             }}
           >
+            {/* Speed control */}
+            <div className="flex items-center gap-1.5 px-2.5 py-1.5">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+              <input
+                type="range"
+                min={0}
+                max={SPEED_LEVELS.length - 1}
+                step={1}
+                value={speedLevel}
+                onChange={(e) => {
+                  const v = Number(e.target.value);
+                  setSpeedLevel(v);
+                  speedRef.current = v;
+                }}
+                className="w-16 h-1 appearance-none bg-white/10 rounded-full cursor-pointer accent-blue-400"
+                style={{ accentColor: '#60a5fa' }}
+              />
+              <span className="text-[10px] font-bold text-white/50 tabular-nums w-6 text-center">{SPEED_LABELS[speedLevel]}</span>
+            </div>
+
+            {/* Divider */}
+            <div className="w-px h-5 bg-white/10" />
+
             {/* Wave progress */}
             <div className="flex items-center gap-2 px-3 py-1.5">
               <div className="flex gap-[3px]">
-                {Array.from({ length: SPD.waves }, (_, i) => (
+                {Array.from({ length: SPD_BASE.waves }, (_, i) => (
                   <div
                     key={i}
                     className="w-[6px] h-[14px] rounded-[2px] transition-all duration-300"
@@ -765,7 +899,7 @@ function SimulatorCanvasInner() {
                   />
                 ))}
               </div>
-              <span className="text-[11px] font-semibold text-white/50 tabular-nums">{currentWave}/{SPD.waves}</span>
+              <span className="text-[11px] font-semibold text-white/50 tabular-nums">{currentWave}/{SPD_BASE.waves}</span>
             </div>
 
             {/* Divider */}
