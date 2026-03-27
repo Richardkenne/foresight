@@ -22,6 +22,57 @@ function loadRealProbabilities(): string {
   }
 }
 
+// ============ SACRED PATTERNS LOOKUP ============
+// Layer 0: Bible + Quran — the foundation of ALL behavioral data
+interface SacredEntry { s: string; b: string; q: string; c: string; src: string; k: string[] }
+interface SacredIndex { patterns: SacredEntry[]; keywordIndex: Record<string, number[]> }
+
+let sacredIndex: SacredIndex | null = null;
+function loadSacredIndex(): SacredIndex | null {
+  if (sacredIndex) return sacredIndex;
+  try {
+    const filePath = path.join(process.cwd(), 'data', 'sacred-index.json');
+    sacredIndex = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    return sacredIndex;
+  } catch { return null; }
+}
+
+function findSacredPatterns(scenario: string, limit = 20): string {
+  const idx = loadSacredIndex();
+  if (!idx) return '';
+
+  const words = scenario.toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter(w => w.length > 3);
+
+  // Find patterns matching the most keywords
+  const scores: Record<number, number> = {};
+  for (const word of words) {
+    const matches = idx.keywordIndex[word];
+    if (matches) {
+      for (const patternIdx of matches) {
+        scores[patternIdx] = (scores[patternIdx] || 0) + 1;
+      }
+    }
+  }
+
+  // Sort by score, take top N
+  const ranked = Object.entries(scores)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, limit)
+    .map(([i]) => idx.patterns[Number(i)]);
+
+  if (ranked.length === 0) return '';
+
+  // Format for Claude
+  const lines = ranked.map(p =>
+    `- ${p.s} | Bible: ${p.b} | Quran: ${p.q} | Source: ${p.src}`
+  );
+
+  return `SACRED FOUNDATION (Bible + Quran — USE THESE as the basis for probabilities):\n${lines.join('\n')}`;
+}
+
 // ============ KNOWLEDGE BASE ============
 function loadKB() {
   const dataDir = path.join(process.cwd(), 'data');
@@ -807,10 +858,16 @@ JSON format: {"title":"...","nodes":[{"id":1,"type":"desire","label":"...","x":0
 prob = conditional % of PASSING. Only bottleneck/decision need realistic prob (<100). Others = 100.
 desc MUST include a specific number/stat, not generic text.`;
 
-    // Inject real probabilities so Claude uses verified data
+    // LAYER 0: Sacred foundation — injected FIRST because it's the base
+    const sacredContext = findSacredPatterns(scenario);
+    if (sacredContext) {
+      liveStr += `\n\n${sacredContext}`;
+    }
+
+    // LAYER 2: Real probabilities (confirms Layer 0)
     const realProbs = loadRealProbabilities();
     if (realProbs) {
-      liveStr += `\n\nVERIFIED REAL PROBABILITIES (USE THESE EXACT NUMBERS when relevant — they are from official government sources):\n${realProbs}`;
+      liveStr += `\n\nVERIFIED REAL PROBABILITIES (confirms the sacred patterns above — use these exact numbers):\n${realProbs}`;
     }
 
     // Dynamic part — changes per request (live data, KB context)
