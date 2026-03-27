@@ -28,30 +28,92 @@ function loadKB() {
 
 // ============ KEYWORD MAP ============
 const KEYWORDS: Record<string, string[]> = {
-  'master-funnels': ['startup', 'business', 'cafe', 'saas', 'freelance', 'creator', 'ecommerce', 'invest', 'impresa', 'attività', 'azienda', 'negozio', 'aprire'],
-  'education-stats': ['education', 'university', 'college', 'degree', 'bootcamp', 'mba', 'phd', 'learn', 'course', 'università', 'laurea', 'studio', 'studiare', 'corso', 'scuola'],
-  'health-fitness': ['health', 'fitness', 'gym', 'weight', 'diet', 'exercise', 'sleep', 'meditation', 'palestra', 'dieta', 'peso', 'dimagrire', 'salute', 'dormire'],
-  'relationships': ['relationship', 'marriage', 'divorce', 'dating', 'friend', 'love', 'partner', 'relazione', 'matrimonio', 'divorzio', 'sposare', 'fidanzat', 'amore'],
-  'personal-finance-data': ['money', 'finance', 'saving', 'credit', 'wealth', 'budget', 'soldi', 'risparmi', 'ricco', 'guadagn', 'debito', 'finanz'],
-  'marketing-growth-data': ['marketing', 'seo', 'ads', 'content', 'email', 'social media', 'growth', 'pubblicità', 'crescita', 'clienti', 'vendere', 'vendita'],
-  'tech-adoption-data-points': ['tech', 'ai', 'software', 'cloud', 'cyber', 'blockchain', 'digital', 'tecnologia', 'intelligenza artificiale', 'digitale'],
-  'immigration-relocation-research': ['immigrat', 'visa', 'expat', 'move', 'relocat', 'country', 'abroad', 'cittadin', 'emigr', 'trasferir', 'estero', 'visto', 'permesso'],
-  'cafe-restaurant-business': ['cafe', 'coffee', 'restaurant', 'food', 'bar', 'warung', 'barista', 'ristorante', 'caffè', 'cucina', 'pizzeria', 'locale'],
-  'career-employment': ['job', 'career', 'salary', 'hire', 'resume', 'interview', 'layoff', 'freelance', 'lavoro', 'carriera', 'stipendio', 'assunz', 'colloquio', 'licenzia'],
-  'crypto-trading-investing': ['crypto', 'bitcoin', 'trading', 'stock', 'forex', 'invest', 'etf', 'criptovalut', 'azioni', 'borsa', 'investir'],
-  'mental-health-psychology': ['mental', 'depress', 'anxiety', 'therapy', 'burnout', 'stress', 'depressione', 'ansia', 'terapia', 'psicologo'],
-  'side-hustle-entrepreneurship': ['side hustle', 'dropship', 'etsy', 'youtube', 'newsletter', 'lavoretto', 'secondo lavoro', 'extra'],
-  'dreams-ambition-failure': ['dream', 'ambition', 'fail', 'goal', 'impostor', 'perfect', 'motivat', 'sogno', 'ambizione', 'fallire', 'obiettivo', 'motivazione'],
-  'addiction-substance-use': ['addict', 'drug', 'alcohol', 'smoking', 'porn', 'cannabis', 'dipendenz', 'droga', 'alcol', 'fumare', 'sigarett'],
-  'family-dynamics': ['family', 'parent', 'child', 'marriage', 'divorce', 'elder', 'famiglia', 'genitori', 'figli', 'figlio'],
-  'real-estate-housing': ['house', 'rent', 'mortgage', 'property', 'real estate', 'apartment', 'casa', 'affitto', 'mutuo', 'immobil', 'appartamento', 'comprare casa'],
+  // === BUSINESS & MONEY ===
+  'master-funnels': ['startup', 'business', 'cafe', 'saas', 'freelance', 'creator', 'ecommerce', 'invest', 'impresa', 'attività', 'azienda', 'negozio', 'aprire', 'funnel', 'conversion', 'pipeline', 'imbuto', 'vendita online', 'bisnis', 'usaha', 'modal', 'jualan', 'toko', 'lead', 'landing page'],
+  'funding-finance-business': ['funding', 'finanziamento', 'pendanaan', 'venture capital', 'VC', 'angel', 'angel investor', 'seed', 'serie A', 'raising money', 'raccolta fondi', 'bootstrap', 'bootstrapping', 'investor', 'investitore', 'pitch deck', 'equity', 'dilution', 'crowdfunding', 'accelerator', 'incubator', 'round'],
+  'exit-acquisition-data': ['exit', 'acquisition', 'acquisizione', 'akuisisi', 'sell business', 'vendere azienda', 'M&A', 'merger', 'fusione', 'exit strategy', 'valuation', 'valutazione', 'multiple', 'EBITDA', 'due diligence', 'buyer', 'acquirente', 'IPO', 'liquidation', 'flip', 'acqui-hire'],
+  'scaling-bottlenecks': ['scaling', 'scalabilit', 'scale', 'bottleneck', 'collo di bottiglia', 'growth', 'crescita', 'hiring', 'assunzion', 'operations', 'operazion', 'systems', 'sistemi', 'constraint', 'capacity', 'delegation', 'delega', 'process', 'automation', 'team growth', 'pertumbuhan', 'skalabil'],
+  'pricing-psychology': ['pricing', 'price', 'anchor', 'freemium', 'discount', 'subscription', 'prezzo', 'sconto', 'abbonamento', 'harga', 'diskon'],
+  'platform-economics': ['platform', 'marketplace', 'network effect', 'two-sided', 'multi-sided', 'chicken and egg', 'liquidity', 'aggregator', 'winner take all', 'lock-in', 'switching cost', 'ecosystem', 'piattaforma', 'mercato', 'effetto rete', 'ekonomi platform', 'jaringan', 'pasar'],
+  'cac-benchmarks': ['cac', 'customer acquisition', 'ltv', 'lifetime value', 'unit econom', 'payback', 'churn', 'acquisizione client', 'costo acquisizione', 'benchmark', 'saas metric', 'arpu', 'mrr', 'arr', 'biaya akuisisi', 'pelanggan', 'monetiz'],
+  'post-purchase-retention': ['retention', 'churn', 'loyalty', 'repeat', 'repeat customer', 'LTV', 'lifetime value', 'reactivation', 'win-back', 'onboarding', 'renewal', 'NPS', 'fidelizzazione', 'ritenzione', 'abbandono', 'fedeltà', 'retensi', 'pelanggan setia'],
+  'country-specific-business': ['country', 'regulat', 'market', 'nation', 'indonesia', 'italy', 'usa', 'india', 'europe', 'asia', 'africa', 'regulation', 'tax', 'legal', 'regolament', 'paese', 'negara', 'peraturan', 'pajak', 'mercato', 'jurisdiction'],
+  'indonesia-business-deep': ['indonesia', 'bisnis', 'UMKM', 'usaha', 'Bandung', 'Jakarta', 'Surabaya', 'pasar indonesia', 'Indonesian market', 'mercato indonesiano', 'rupiah', 'IDR', 'startup indonesia', 'tokopedia', 'gojek', 'grab', 'izin usaha', 'franchise indonesia', 'warung'],
+  'cafe-restaurant-business': ['cafe', 'coffee', 'restaurant', 'food', 'bar', 'warung', 'barista', 'ristorante', 'caffè', 'cucina', 'pizzeria', 'locale', 'kedai', 'kopi', 'makanan'],
+  'failure-forensics': ['fail', 'failure', 'why', 'reason', 'mistake', 'shut down', 'bankrupt', 'falliment', 'perché', 'errore', 'chiudere', 'gagal', 'bangkrut', 'tutup'],
   'business-archetypes-1': ['guru', 'course', 'youtube', 'agency', 'smma', 'dropship', 'creator', 'agenzia'],
   'business-archetypes-2': ['saas', 'software', 'app', 'local business', 'restaurant', 'cafe', 'applicazione'],
   'business-archetypes-3': ['real estate', 'property', 'coaching', 'consult', 'crypto', 'marketplace', 'consulenz'],
-  'failure-forensics': ['fail', 'failure', 'why', 'reason', 'mistake', 'shut down', 'bankrupt', 'falliment', 'perché', 'errore', 'chiudere'],
-  'pricing-psychology': ['pricing', 'price', 'anchor', 'freemium', 'discount', 'subscription', 'prezzo', 'sconto', 'abbonamento'],
-  'sacred-texts-patterns': ['human nature', 'temptation', 'greed', 'pride', 'fear', 'faith', 'tentazione', 'avidità', 'paura', 'fede'],
-  'historical-cycles': ['bubble', 'crash', 'cycle', 'repeat', 'history', 'empire', 'mania', 'bolla', 'crisi', 'ciclo', 'storia'],
+  'business-archetypes-4': ['franchise', 'digital product', 'community', 'gig economy', 'acquisition', 'paid community', 'franchising', 'prodotto digitale', 'comunità', 'freelance', 'uber', 'grab', 'ojol', 'waralaba', 'produk digital'],
+  'business-archetypes-5': ['side hustle', 'flipping', 'resell', 'tutor', 'teaching', 'print on demand', 'family business', 'inherit', 'reselling', 'ripetizioni', 'insegnare', 'usato', 'rivendere', 'les privat', 'bisnis keluarga', 'jualan', 'thrift'],
+
+  // === MARKETING & SALES ===
+  'marketing-growth-data': ['marketing', 'seo', 'ads', 'content', 'email', 'social media', 'growth', 'pubblicità', 'crescita', 'clienti', 'vendere', 'vendita', 'pemasaran', 'iklan'],
+  'seo-organic-deep': ['seo', 'search engine', 'organic', 'organico', 'google', 'ranking', 'posizionamento', 'backlink', 'keyword', 'parole chiave', 'serp', 'domain authority', 'link building', 'content seo', 'technical seo', 'indicizzazione', 'traffico organico', 'kata kunci', 'peringkat'],
+  'email-marketing-deep': ['email', 'email marketing', 'newsletter', 'open rate', 'click rate', 'sequence', 'autoresponder', 'drip', 'campaign', 'campagna', 'subject line', 'deliverability', 'subscriber', 'iscritto', 'opt-in', 'lead magnet', 'segmentation', 'mailchimp', 'convertkit'],
+  'ad-channels-conversion': ['ad channel', 'advertis', 'conversion', 'paid ad', 'cpc', 'cpm', 'ctr', 'roas', 'facebook ad', 'google ad', 'tiktok ad', 'instagram ad', 'meta ad', 'campaign', 'pubblicit', 'annunci', 'conversione', 'iklan', 'paid media', 'ppc', 'retarget', 'remarketing'],
+  'sales-outreach-data': ['sales', 'vendite', 'penjualan', 'outreach', 'cold email', 'cold call', 'prospecting', 'prospect', 'lead gen', 'lead generation', 'pipeline', 'follow up', 'conversion rate', 'reply rate', 'cadence', 'b2b sales', 'sdr', 'generazione lead', 'email fredde'],
+  'negotiation-closing': ['negotiation', 'negotiate', 'closing', 'deal', 'persuasion', 'sales call', 'objection', 'anchor', 'BATNA', 'leverage', 'pitch', 'win-win', 'negoziazione', 'chiusura', 'trattativa', 'vendita', 'negosiasi', 'tawar'],
+  'social-proof-mechanics': ['social proof', 'prova sociale', 'testimonial', 'testimonianz', 'review', 'recension', 'ulasan', 'trust', 'fiducia', 'kepercayaan', 'credibility', 'credibilità', 'rating', 'case study', 'endorsement', 'word of mouth', 'passaparola', 'ugc'],
+  'community-engagement-deep': ['communit', 'engag', 'member', 'forum', 'discord', 'slack', 'group', 'tribe', 'comunità', 'coinvolgimento', 'membri', 'komunitas', 'anggota', 'loyalty', 'ambassador'],
+
+  // === CAREER & WORK ===
+  'career-employment': ['job', 'career', 'salary', 'hire', 'resume', 'interview', 'layoff', 'freelance', 'lavoro', 'carriera', 'stipendio', 'assunz', 'colloquio', 'licenzia', 'pekerjaan', 'gaji', 'karir'],
+  'side-hustle-entrepreneurship': ['side hustle', 'dropship', 'etsy', 'youtube', 'newsletter', 'lavoretto', 'secondo lavoro', 'extra', 'sampingan', 'usaha sampingan'],
+  'remote-work-digital-nomad': ['remote', 'remote work', 'lavoro remoto', 'kerja remote', 'digital nomad', 'nomade digitale', 'work from home', 'wfh', 'coworking', 'smart working', 'distributed', 'async', 'timezone', 'location independent', 'bali', 'bekerja dari rumah', 'hybrid work'],
+  'education-stats': ['education', 'university', 'college', 'degree', 'bootcamp', 'mba', 'phd', 'learn', 'course', 'università', 'laurea', 'studio', 'studiare', 'corso', 'scuola', 'training', 'upskill', 'reskill', 'formazione', 'pelatihan', 'belajar', 'kuliah', 'sekolah', 'certificat', 'pendidikan'],
+  'language-learning': ['language', 'lingua', 'bahasa', 'learn language', 'imparare lingua', 'belajar bahasa', 'polyglot', 'fluency', 'fluenza', 'immersion', 'immersione', 'vocabulary', 'grammar', 'pronunciation', 'bilingual', 'multilingual', 'Duolingo', 'Anki', 'conversation'],
+
+  // === FINANCE & INVESTING ===
+  'personal-finance-data': ['money', 'finance', 'saving', 'credit', 'wealth', 'budget', 'soldi', 'risparmi', 'ricco', 'guadagn', 'debito', 'finanz', 'invest', 'retire', 'emergency fund', 'compounding', 'interesse', 'tabungan', 'keuangan', 'hutang', 'pensione', 'menabung', 'investasi', 'dana darurat', 'cicilan'],
+  'crypto-trading-investing': ['crypto', 'bitcoin', 'trading', 'stock', 'forex', 'invest', 'etf', 'criptovalut', 'azioni', 'borsa', 'investir', 'saham', 'perdagangan'],
+  'prediction-markets-trading': ['prediction market', 'Polymarket', 'betting', 'odds', 'probability', 'forecast', 'wager', 'speculate', 'position', 'hedge', 'arbitrage', 'event contract', 'mercato predittivo', 'scommessa', 'probabilità', 'prediksi', 'taruhan'],
+  'debt-bankruptcy-financial-crisis': ['debt', 'debito', 'hutang', 'bankruptcy', 'bancarotta', 'bangkrut', 'broke', 'financial crisis', 'crisi finanziaria', 'indebitamento', 'insolvency', 'default', 'creditor', 'foreclosure', 'restructuring', 'ristrutturazione', 'pinjaman', 'debt free'],
+  'real-estate-housing': ['house', 'rent', 'mortgage', 'property', 'real estate', 'apartment', 'casa', 'affitto', 'mutuo', 'immobil', 'appartamento', 'comprare casa', 'rumah', 'sewa', 'KPR'],
+
+  // === HEALTH & WELLBEING ===
+  'health-fitness': ['health', 'fitness', 'gym', 'weight', 'diet', 'exercise', 'sleep', 'meditation', 'palestra', 'dieta', 'peso', 'dimagrire', 'salute', 'dormire', 'workout', 'running', 'muscle', 'yoga', 'mental health', 'benessere', 'olahraga', 'sehat', 'kebugaran', 'corsa', 'allenamento', 'nutrizione', 'calorie'],
+  'sports-fitness-goals': ['sports', 'sport', 'olahraga', 'athletic', 'atletica', 'marathon', 'maratona', 'strength', 'forza', 'training', 'allenamento', 'latihan', 'workout', 'running', 'corsa', 'gym', 'palestra', 'muscle', 'endurance', 'resistenza', 'personal record', 'prestazione'],
+  'mental-health-psychology': ['mental', 'depress', 'anxiety', 'therapy', 'burnout', 'stress', 'depressione', 'ansia', 'terapia', 'psicologo', 'kesehatan mental', 'terapi'],
+  'burnout-mental-health-entrepreneurs': ['burnout', 'burn out', 'founder', 'entrepreneur', 'depress', 'exhaust', 'wellbeing', 'esaurim', 'salute mentale', 'imprenditor', 'kelelahan', 'founder depression', 'overwhelm'],
+  'addiction-substance-use': ['addict', 'drug', 'alcohol', 'smoking', 'porn', 'cannabis', 'dipendenz', 'droga', 'alcol', 'fumare', 'sigarett', 'kecanduan', 'narkoba'],
+
+  // === RELATIONSHIPS & FAMILY ===
+  'relationships': ['relationship', 'marriage', 'divorce', 'dating', 'friend', 'love', 'partner', 'relazione', 'matrimonio', 'divorzio', 'sposare', 'fidanzat', 'amore', 'breakup', 'toxic', 'long distance', 'coppia', 'separazione', 'pacaran', 'hubungan', 'nikah', 'rottura', 'jodoh', 'putus', 'pasangan'],
+  'family-dynamics': ['family', 'parent', 'child', 'marriage', 'divorce', 'elder', 'famiglia', 'genitori', 'figli', 'figlio', 'keluarga', 'orang tua', 'anak'],
+  'parenting-child-development': ['parenting', 'parent', 'child', 'kid', 'raising kids', 'child development', 'pregnancy', 'toddler', 'baby', 'discipline', 'milestone', 'genitorialità', 'bambino', 'gravidanza', 'sviluppo', 'pengasuhan', 'anak', 'bayi', 'kehamilan'],
+  'trust-secrets-betrayal': ['trust', 'betray', 'betrayal', 'secret', 'loyalty', 'cheat', 'cheating', 'lies', 'lying', 'honest', 'affair', 'deceit', 'fiducia', 'tradimento', 'tradire', 'segreto', 'bugia', 'lealtà', 'kepercayaan', 'selingkuh', 'rahasia', 'bohong'],
+
+  // === LIFE & PSYCHOLOGY ===
+  'dreams-ambition-failure': ['dream', 'ambition', 'fail', 'goal', 'impostor', 'perfect', 'motivat', 'sogno', 'ambizione', 'fallire', 'obiettivo', 'motivazione', 'mimpi', 'cita-cita'],
+  'life-transitions-decisions': ['transition', 'life change', 'decision', 'big decision', 'career change', 'moving', 'midlife', 'quarter-life', 'pivot', 'crossroads', 'turning point', 'restart', 'transizione', 'cambiamento', 'decisione', 'scelta di vita', 'keputusan', 'perubahan hidup'],
+  'consumption-action-gap': ['consumption', 'action gap', 'procrastinat', 'knowing', 'doing', 'execut', 'tutorial hell', 'overthink', 'paralysis', 'analysis paralysis', 'azione', 'procrastin', 'blocco', 'penundaan', 'information overload', 'inaction'],
+  'psychology-behavioral-business': ['psychology', 'psicologia', 'psikologi', 'behavioral', 'bias', 'cognitive', 'nudge', 'decision making', 'heuristic', 'anchoring', 'framing', 'loss aversion', 'sunk cost', 'confirmation bias', 'persuasion', 'irrational', 'pregiudizi cognitivi', 'comportament'],
+  'social-dynamics-influence': ['social dynamics', 'influence', 'influenza', 'persuasion', 'persuasione', 'status', 'networking', 'power', 'potere', 'charisma', 'authority', 'autorità', 'hierarchy', 'social capital', 'pengaruh', 'reciprocity'],
+  'productivity-human-performance': ['productivity', 'habit', 'focus', 'deep work', 'performance', 'flow state', 'time management', 'routine', 'efficiency', 'procrastination', 'pomodoro', 'energy', 'peak performance', 'produttività', 'abitudine', 'concentrazione', 'produktivitas', 'kebiasaan', 'fokus'],
+  'aging-retirement-life-stages': ['age', 'aging', 'retire', 'retirement', 'pension', 'midlife', 'mid-life', 'life stage', '40s', '50s', '60s', 'senior', 'elder', 'longevity', 'pensione', 'vecchi', 'anzian', 'invecchi', 'mezza età', 'terza età', 'pensiun', 'lansia'],
+
+  // === TECH ===
+  'tech-adoption-data-points': ['tech', 'ai', 'software', 'cloud', 'cyber', 'blockchain', 'digital', 'tecnologia', 'intelligenza artificiale', 'digitale', 'teknologi'],
+  'ai-tools-impact-2025': ['ai', 'artificial intellig', 'chatgpt', 'gpt', 'automat', 'machine learn', 'job displace', 'robot', 'copilot', 'midjourney', 'generativ', 'llm', 'prompt', 'intelligenza artificial', 'automazione', 'kecerdasan buatan', 'ai tool', 'deep learn'],
+
+  // === LEGAL & TAX ===
+  'legal-datapoints': ['legal', 'legale', 'hukum', 'law', 'legge', 'contract', 'contratto', 'kontrak', 'IP', 'intellectual property', 'trademark', 'marchio', 'merek', 'copyright', 'patent', 'brevetto', 'NDA', 'license', 'licenza', 'compliance'],
+  'legal-tax-business-reality': ['tax', 'tasse', 'pajak', 'tax planning', 'LLC', 'incorporation', 'business structure', 'struttura aziendale', 'PT', 'S-corp', 'SRL', 'partita IVA', 'NPWP', 'deduction', 'detrazione', 'write-off', 'commercialista', 'akuntan'],
+
+  // === SOCIAL MEDIA ===
+  'twitter-x-behavior': ['twitter', 'tweet', 'x.com', 'viral', 'follower', 'posting', 'retweet', 'thread', 'influencer', 'engagement', 'algorithm', 'meme', 'troll', 'cancel', 'hashtag', 'social media', 'sosmed', 'trending', 'virale'],
+  'youtube-guru-funnel-data': ['youtube guru', 'guru', 'online course', 'info product', 'fake guru', 'webinar', 'masterclass', 'coaching', 'mentorship', 'scam', 'get rich', 'passive income', 'corso online', 'truffa', 'formatore', 'kursus', 'reddito passivo', 'fuffa'],
+
+  // === OTHER ===
+  'immigration-relocation-research': ['immigrat', 'visa', 'expat', 'move', 'relocat', 'country', 'abroad', 'cittadin', 'emigr', 'trasferir', 'estero', 'visto', 'permesso', 'pindah', 'imigrasi'],
+  'creative-arts-career': ['creativ', 'art', 'artist', 'music', 'musician', 'writing', 'writer', 'acting', 'actor', 'design', 'film', 'paint', 'photograph', 'arte', 'scrittura', 'seni', 'seniman', 'menulis', 'penulis'],
+  'nonprofit-social-impact': ['nonprofit', 'non-profit', 'NGO', 'social impact', 'charity', 'volunteering', 'donation', 'foundation', 'cause', 'grant', 'fundraising', 'philanthropy', 'no-profit', 'impatto sociale', 'beneficenza', 'volontariato', 'amal', 'yayasan'],
+  'crisis-survival-resilience': ['crisis', 'crisi', 'krisis', 'survive', 'survival', 'sopravvivere', 'resilience', 'resilienza', 'emergency', 'emergenza', 'darurat', 'recession', 'recessione', 'downturn', 'collapse', 'recover', 'recovery', 'ripresa', 'antifragile'],
+  'market-timing-trends': ['market timing', 'timing', 'trend', 'seasonal', 'cycle', 'launch timing', 'when to launch', 'window', 'momentum', 'wave', 'hype', 'tendenza', 'stagionale', 'tren', 'kapan', 'waktu pasar'],
+  'time-to-result-benchmarks': ['time to result', 'how long', 'quanto tempo', 'berapa lama', 'timeline', 'tempistic', 'benchmark', 'realistic', 'realistico', 'expectation', 'aspettativ', 'duration', 'durata', 'patience', 'pazienza', 'milestone', 'learning curve'],
+  'sacred-texts-patterns': ['human nature', 'temptation', 'greed', 'pride', 'fear', 'faith', 'tentazione', 'avidità', 'paura', 'fede', 'bible', 'bibbia', 'quran'],
+  'historical-cycles': ['bubble', 'crash', 'cycle', 'repeat', 'history', 'empire', 'mania', 'bolla', 'crisi', 'ciclo', 'storia', 'gelembung', 'sejarah'],
 };
 
 // ============ SMART EXTRACTION ============
@@ -574,12 +636,23 @@ async function getCityData(scenario: string): Promise<string | null> {
   return results.length > 0 ? results.join(' | ') : null;
 }
 
-// ============ CLAUDE API ============
-function callClaude(systemPrompt: string, userMsg: string): Promise<unknown> {
+// ============ CLAUDE API (with prompt caching) ============
+function callClaude(staticPrompt: string, dynamicPrompt: string, userMsg: string): Promise<unknown> {
+  const systemBlocks: Array<{ type: string; text: string; cache_control?: { type: string } }> = [
+    {
+      type: 'text',
+      text: staticPrompt,
+      cache_control: { type: 'ephemeral' }
+    },
+  ];
+  if (dynamicPrompt) {
+    systemBlocks.push({ type: 'text', text: dynamicPrompt });
+  }
+
   const body = JSON.stringify({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 3000,
-    system: systemPrompt,
+    system: systemBlocks,
     messages: [{ role: 'user', content: userMsg }]
   });
 
@@ -697,7 +770,8 @@ export async function POST(request: NextRequest) {
     if (cryptoData) liveStr += `\nCRYPTO MARKET DATA: ${cryptoData}`;
     if (cityData) liveStr += `\nCITY QUALITY OF LIFE: ${cityData}`;
 
-    const systemPrompt = `You are a life/business scenario simulator. Generate a realistic flowchart with nodes and edges.
+    // Static part — cached across requests (rules + format never change)
+    const staticPrompt = `You are a life/business scenario simulator. Generate a realistic flowchart with nodes and edges.
 
 CRITICAL RULES:
 1. DATA INTEGRITY: If you have a real stat with a real source, use it. If you DON'T have a verified source, write "Estimated" as source. NEVER invent fake source names.
@@ -712,16 +786,20 @@ Edges: pass/fail for bottleneck, yes/no for decision. Every bottleneck/decision 
 Position: x increases by ~260, failures below (y+200). Min 260px horizontal spacing.
 JSON format: {"title":"...","nodes":[{"id":1,"type":"desire","label":"...","x":0,"y":120,"prob":100,"desc":"Real stat","source":"Source Year or Estimated","time":"30-90 days"}],"edges":[{"from":1,"to":2,"label":""}]}
 prob = conditional % of PASSING. Only bottleneck/decision need realistic prob (<100). Others = 100.
-desc MUST include a specific number/stat, not generic text.${liveStr}`;
+desc MUST include a specific number/stat, not generic text.`;
+
+    // Dynamic part — changes per request (live data, KB context)
+    const dynamicPrompt = liveStr ? liveStr.trim() : '';
 
     const userMsg = `Scenario: "${scenario}"\n\nUSE THESE DATA POINTS:\n${kbContext || 'Use Tier S/A sources.'}\n\nReturn ONLY JSON.`;
 
     let flow: Record<string, unknown>;
     try {
-      flow = await callClaude(systemPrompt, userMsg) as Record<string, unknown>;
+      flow = await callClaude(staticPrompt, dynamicPrompt, userMsg) as Record<string, unknown>;
       flow._provider = 'claude';
     } catch {
-      flow = await callGroq(systemPrompt, userMsg) as Record<string, unknown>;
+      const fullPrompt = dynamicPrompt ? `${staticPrompt}\n\n${dynamicPrompt}` : staticPrompt;
+      flow = await callGroq(fullPrompt, userMsg) as Record<string, unknown>;
       flow._provider = 'groq';
     }
     flow._live_data = !!(live?.gdp || countryData || exchangeRates || laborData || cryptoData || cityData);

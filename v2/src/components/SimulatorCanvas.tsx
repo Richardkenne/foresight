@@ -158,6 +158,7 @@ function SimulatorCanvasInner() {
   const revealedNodesRef = useRef<Set<string>>(new Set());
   const waveRef = useRef(0);
   const finishedCountRef = useRef(0);
+  const originalEdgesRef = useRef<RFEdge[] | null>(null);
 
   useEffect(() => { nodesRef.current = nodes; }, [nodes]);
   useEffect(() => { edgesRef.current = edges; }, [edges]);
@@ -205,7 +206,7 @@ function SimulatorCanvasInner() {
   }, [setNodes, setEdges]);
 
   // Load a template
-  const loadTemplate = useCallback((key: string) => {
+  const loadTemplate = useCallback((key: string, autoSim = false) => {
     const t = TEMPLATES[key];
     if (!t) return;
     // Reset stats before stopSim so dashboard doesn't auto-open
@@ -220,7 +221,10 @@ function SimulatorCanvasInner() {
     setNodes(ln);
     setEdges(le);
     setErrorMsg('');
-    setTimeout(() => fitView({ padding: 0.2, duration: 400 }), 100);
+    setTimeout(() => {
+      fitView({ padding: 0.2, duration: 400 });
+      if (autoSim) setTimeout(() => simulate(), 500);
+    }, 100);
   }, [setNodes, setEdges, fitView]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Generate from AI
@@ -239,7 +243,7 @@ function SimulatorCanvasInner() {
       const sc = words.filter(w => inputLower.includes(w)).length;
       if (sc > bestScore) { bestScore = sc; best = k; }
     }
-    if (bestScore >= 3 && best) { loadTemplate(best); return; }
+    if (bestScore >= 3 && best) { loadTemplate(best, true); return; }
 
     // Call AI API
     setGenerating(true);
@@ -264,12 +268,16 @@ function SimulatorCanvasInner() {
       const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges);
       setNodes(ln);
       setEdges(le);
-      setTimeout(() => fitView({ padding: 0.2, duration: 400 }), 100);
+      setTimeout(() => {
+        fitView({ padding: 0.2, duration: 400 });
+        // Auto-start simulation after generate
+        setTimeout(() => simulate(), 500);
+      }, 100);
     } catch {
-      if (best) {
-        loadTemplate(best);
+      if (best && bestScore >= 2) {
+        loadTemplate(best, true);
       } else {
-        setErrorMsg('Could not generate scenario. Try a different description or pick a template.');
+        setErrorMsg('Could not generate scenario. Check your internet connection or pick a template.');
       }
     } finally {
       setGenerating(false);
@@ -476,11 +484,19 @@ function SimulatorCanvasInner() {
     })));
     setEdges(prev => prev.map(e => ({ ...e, hidden: false })));
 
+    // Restore original edges if we were in reverse mode
+    if (originalEdgesRef.current) {
+      edgesRef.current = originalEdgesRef.current;
+      originalEdgesRef.current = null;
+    }
+
+    // Clear particles so the canvas returns to clean state
+    particlesRef.current = [];
+    setParticles([]);
+
     if (statsRef.current.total > 0) {
       setTimeout(() => setShowDashboard(true), 500);
     }
-
-    // Keep particles visible — only clear on new simulation or Clear
   }
 
   const simulateReverse = useCallback(() => {
@@ -504,11 +520,11 @@ function SimulatorCanvasInner() {
     setShowDashboard(false);
 
     // Build reverse edges BEFORE hiding (edgesRef still has originals)
-    const originalEdges = [...edgesRef.current];
-    const reverseEdges = originalEdges.map(e => ({ ...e, source: e.target, target: e.source }));
+    originalEdgesRef.current = [...edgesRef.current];
+    const reverseEdges = originalEdgesRef.current.map(e => ({ ...e, source: e.target, target: e.source }));
 
     // Find end nodes (no outgoing edges in ORIGINAL graph)
-    const hasOutgoing = new Set(originalEdges.map(e => e.source));
+    const hasOutgoing = new Set(originalEdgesRef.current.map(e => e.source));
     const endNodeIds = nodesRef.current.filter(n => !hasOutgoing.has(n.id)).map(n => n.id);
     if (endNodeIds.length === 0) { stopSim(); return; }
 
@@ -521,14 +537,10 @@ function SimulatorCanvasInner() {
     setEdges(prev => prev.map(e => ({ ...e, hidden: true })));
 
     // Override edgesRef with reversed edges AFTER a tick (so useEffect doesn't overwrite)
-    setTimeout(() => {
+    simTimeout(() => {
       edgesRef.current = reverseEdges;
       launchWave(0, endNodeIds);
     }, 50);
-
-    // Restore after all waves
-    const totalTime = SPD.waves * (SPD.perWave * SPD.launch + SPD.wavePause) + 6000;
-    setTimeout(() => { edgesRef.current = originalEdges; }, totalTime);
   }, [launchWave]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function togglePause() {

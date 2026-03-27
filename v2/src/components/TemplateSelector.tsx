@@ -44,6 +44,11 @@ const CATEGORIES: CategoryDef[] = [
     icon: ICO('M4 17l6-6-6-6M12 19h8'),
     keys: ['app'],
   },
+  {
+    label: 'Me',
+    icon: ICO('M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8'),
+    keys: ['richard_cafepedia', 'richard_break_pattern', 'richard_first_million', 'richard_leverage', 'richard_polymarket', 'richard_provider', 'richard_perfectionism', 'richard_faith_business', 'richard_move_abroad', 'richard_interfaith'],
+  },
 ];
 
 // Build full list with descriptions
