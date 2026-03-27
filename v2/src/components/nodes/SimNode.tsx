@@ -68,8 +68,22 @@ interface SimNodeData {
   hidden?: boolean;
   computedValue?: number;
   onSliderChange?: (value: number) => void;
+  sacredMode?: boolean;
   [key: string]: unknown;
 }
+
+// Sacred verse mapping — based on node type and keywords in label
+// These are the foundational verses that explain WHY each node type exists
+const SACRED_VERSES: Record<string, { bible: string; bRef: string; quran: string; qRef: string; law: string }> = {
+  start:          { bible: 'Commit to the Lord whatever you do, and he will establish your plans.', bRef: 'Proverbs 16:3', quran: 'And whoever puts their trust in Allah, He will be enough for them.', qRef: 'Quran 65:3', law: 'Faith & Trust' },
+  desire:         { bible: 'Delight yourself in the Lord, and he will give you the desires of your heart.', bRef: 'Psalm 37:4', quran: 'And for those who fear Allah, He will make a way out.', qRef: 'Quran 65:2', law: 'Desire & Purpose' },
+  action:         { bible: 'Faith by itself, if it does not have works, is dead.', bRef: 'James 2:17', quran: 'Indeed, Allah will not change the condition of a people until they change what is in themselves.', qRef: 'Quran 13:11', law: 'Action & Works' },
+  bottleneck:     { bible: 'Enter through the narrow gate. For wide is the gate that leads to destruction.', bRef: 'Matthew 7:13-14', quran: 'Indeed, with hardship comes ease.', qRef: 'Quran 94:5-6', law: 'Testing & Trials' },
+  decision:       { bible: 'Plans fail for lack of counsel, but with many advisers they succeed.', bRef: 'Proverbs 15:22', quran: 'And whose affair is determined by consultation among themselves.', qRef: 'Quran 42:38', law: 'Counsel & Wisdom' },
+  'outcome-good': { bible: 'Let us not become weary in doing good, for at the proper time we will reap a harvest.', bRef: 'Galatians 6:9', quran: 'So whoever does an atom\'s weight of good will see it.', qRef: 'Quran 99:7', law: 'Harvest & Reward' },
+  'outcome-bad':  { bible: 'Do not be deceived: God cannot be mocked. A man reaps what he sows.', bRef: 'Galatians 6:7', quran: 'And whoever does an atom\'s weight of evil will see it.', qRef: 'Quran 99:8', law: 'Consequence & Justice' },
+  loop:           { bible: 'As iron sharpens iron, so one person sharpens another.', bRef: 'Proverbs 27:17', quran: 'And cooperate in righteousness and piety.', qRef: 'Quran 5:2', law: 'Growth & Refinement' },
+};
 
 function SimNodeComponent({ data }: NodeProps) {
   const d = data as SimNodeData;
@@ -78,6 +92,8 @@ function SimNodeComponent({ data }: NodeProps) {
   const icon = ICONS[nodeType];
   const hasProb = nodeType === 'bottleneck' || nodeType === 'decision';
   const isStart = nodeType === 'start';
+  const isSacred = d.sacredMode === true;
+  const sacredVerse = SACRED_VERSES[nodeType] || SACRED_VERSES.action;
   const computedValue = d.computedValue;
   // Only show value bar if value is meaningful (> 0)
   const hasValue = typeof computedValue === 'number' && computedValue > 0.001;
@@ -87,68 +103,98 @@ function SimNodeComponent({ data }: NodeProps) {
 
   if (isStart) {
     return (
-      <div className="sim-node sim-node--start" style={{ '--node-accent': colors.accent } as React.CSSProperties}>
+      <div className="sim-node sim-node--start" style={{ '--node-accent': isSacred ? '#a78bfa' : colors.accent } as React.CSSProperties}>
         <Handle type="target" position={Position.Left} className="sim-handle" />
         <div className="sim-node__start-inner">
-          <span className="sim-node__start-icon" style={{ color: colors.accent }}>{icon}</span>
-          <span className="sim-node__start-label">{d.label}</span>
+          <span className="sim-node__start-icon" style={{ color: isSacred ? '#a78bfa' : colors.accent }}>{icon}</span>
+          <span className="sim-node__start-label">{isSacred ? sacredVerse.law : d.label}</span>
         </div>
         <Handle type="source" position={Position.Right} className="sim-handle" />
       </div>
     );
   }
 
+  const sacredAccent = '#a78bfa';
+
   return (
     <div
       className="sim-node sim-node--card"
-      style={{ '--node-accent': colors.accent, '--node-bg': colors.bg } as React.CSSProperties}
+      style={{
+        '--node-accent': isSacred ? sacredAccent : colors.accent,
+        '--node-bg': isSacred ? '#f5f3ff' : colors.bg,
+      } as React.CSSProperties}
     >
       <Handle type="target" position={Position.Left} className="sim-handle" />
 
       {/* Left accent bar */}
-      <div className="sim-node__accent" style={{ background: colors.accent }} />
+      <div className="sim-node__accent" style={{ background: isSacred ? sacredAccent : colors.accent }} />
 
       {/* Content */}
       <div className="sim-node__body">
-        {/* Header row: icon + label + prob badge */}
-        <div className="sim-node__header">
-          <div className="sim-node__icon" style={{ color: colors.accent }}>
-            {icon}
-          </div>
-          <div className="sim-node__label">{d.label}</div>
-          {hasProb && d.prob != null && (
-            <div
-              className="sim-node__prob"
-              style={{
-                background: colors.accent,
-                color: '#fff',
-              }}
-            >
-              {d.prob}%
-            </div>
-          )}
-        </div>
-
-        {/* Description */}
-        {d.desc && (
-          <div className="sim-node__desc">{d.desc}</div>
-        )}
-
-        {/* Footer: source + time */}
-        {(d.source || d.time) && (
-          <div className="sim-node__footer">
-            {d.source && <span className="sim-node__source">{d.source}</span>}
-            {d.time && (
-              <span className="sim-node__time">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+        {isSacred ? (
+          <>
+            {/* Sacred Mode */}
+            <div className="sim-node__header">
+              <div className="sim-node__icon" style={{ color: sacredAccent }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5" />
+                  <path d="M2 12l10 5 10-5" />
                 </svg>
-                {d.time}
-              </span>
+              </div>
+              <div className="sim-node__label" style={{ color: sacredAccent }}>{sacredVerse.law}</div>
+            </div>
+            <div className="sim-node__desc" style={{ fontStyle: 'italic', fontSize: '9.5px', lineHeight: '1.4' }}>
+              &ldquo;{sacredVerse.bible}&rdquo;
+            </div>
+            <div className="sim-node__footer" style={{ borderTop: 'none', paddingTop: 0 }}>
+              <span className="sim-node__source" style={{ color: sacredAccent }}>{sacredVerse.bRef}</span>
+            </div>
+            <div className="sim-node__desc" style={{ fontStyle: 'italic', fontSize: '9.5px', lineHeight: '1.4', marginTop: '4px' }}>
+              &ldquo;{sacredVerse.quran}&rdquo;
+            </div>
+            <div className="sim-node__footer" style={{ borderTop: 'none', paddingTop: 0 }}>
+              <span className="sim-node__source" style={{ color: sacredAccent }}>{sacredVerse.qRef}</span>
+            </div>
+          </>
+        ) : (
+          <>
+            {/* Normal Data Mode */}
+            <div className="sim-node__header">
+              <div className="sim-node__icon" style={{ color: colors.accent }}>
+                {icon}
+              </div>
+              <div className="sim-node__label">{d.label}</div>
+              {hasProb && d.prob != null && (
+                <div
+                  className="sim-node__prob"
+                  style={{
+                    background: colors.accent,
+                    color: '#fff',
+                  }}
+                >
+                  {d.prob}%
+                </div>
+              )}
+            </div>
+            {d.desc && (
+              <div className="sim-node__desc">{d.desc}</div>
             )}
-          </div>
+            {(d.source || d.time) && (
+              <div className="sim-node__footer">
+                {d.source && <span className="sim-node__source">{d.source}</span>}
+                {d.time && (
+                  <span className="sim-node__time">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    {d.time}
+                  </span>
+                )}
+              </div>
+            )}
+          </>
         )}
-
       </div>
 
       <Handle type="source" position={Position.Right} className="sim-handle" />

@@ -145,6 +145,10 @@ function SimulatorCanvasInner() {
   const [simPaused, setSimPaused] = useState(false);
   const [simStats, setSimStats] = useState({ total: 0, success: 0, blocked: 0 });
   const [showDashboard, setShowDashboard] = useState(false);
+  const [sacredMode, setSacredMode] = useState(false);
+
+  // Sacred patterns data for sacred mode view
+  const sacredDataRef = useRef<Record<string, { bible: string; quran: string; pattern: string }>>({});
   const [particles, setParticles] = useState<ParticleData[]>([]);
   const [currentWave, setCurrentWave] = useState(0);
   const [speedLevel, setSpeedLevel] = useState(0);
@@ -742,6 +746,7 @@ function SimulatorCanvasInner() {
         simRunning={simRunning}
         simPaused={simPaused}
         generating={generating}
+        sacredMode={sacredMode}
         onGenerate={generateFlow}
         onLoadTemplate={loadTemplate}
         onSimulate={simulate}
@@ -749,6 +754,15 @@ function SimulatorCanvasInner() {
         onTogglePause={togglePause}
         onStop={stopSim}
         onClear={() => { stopSim(); setNodes([]); setEdges([]); setShowDashboard(false); setScenario(''); setErrorMsg(''); }}
+        onToggleSacredMode={() => {
+          const newMode = !sacredMode;
+          setSacredMode(newMode);
+          // Update all nodes with sacred mode flag
+          setNodes(prev => prev.map(n => ({
+            ...n,
+            data: { ...n.data, sacredMode: newMode },
+          })));
+        }}
       />
 
       {/* ========== ERROR MESSAGE ========== */}

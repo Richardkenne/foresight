@@ -11,6 +11,7 @@ interface TopBarProps {
   simRunning: boolean;
   simPaused: boolean;
   generating: boolean;
+  sacredMode: boolean;
   onGenerate: () => void;
   onLoadTemplate: (key: string) => void;
   onSimulate: () => void;
@@ -18,6 +19,7 @@ interface TopBarProps {
   onTogglePause: () => void;
   onStop: () => void;
   onClear: () => void;
+  onToggleSacredMode: () => void;
 }
 
 function Logo() {
@@ -37,8 +39,8 @@ function Logo() {
 }
 
 export default function TopBar({
-  scenario, onScenarioChange, hasNodes, simRunning, simPaused, generating,
-  onGenerate, onLoadTemplate, onSimulate, onSimulateReverse, onTogglePause, onStop, onClear,
+  scenario, onScenarioChange, hasNodes, simRunning, simPaused, generating, sacredMode,
+  onGenerate, onLoadTemplate, onSimulate, onSimulateReverse, onTogglePause, onStop, onClear, onToggleSacredMode,
 }: TopBarProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [showTemplates, setShowTemplates] = useState(false);
@@ -102,6 +104,26 @@ export default function TopBar({
         >
           {generating ? 'Generating...' : 'Generate'}
         </Button>
+
+        {/* Sacred Mode toggle */}
+        {hasNodes && (
+          <>
+            <div className="w-px h-5 bg-[var(--border)]" />
+            <Button
+              variant={sacredMode ? 'primary' : 'ghost'}
+              size="sm"
+              onClick={onToggleSacredMode}
+              title={sacredMode ? 'Switch to Data View' : 'Switch to Sacred View'}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg>
+              <span className="hidden sm:inline ml-1">{sacredMode ? 'Sacred' : 'Data'}</span>
+            </Button>
+          </>
+        )}
 
         {/* Separator */}
         {hasNodes && <div className="w-px h-5 bg-[var(--border)]" />}
