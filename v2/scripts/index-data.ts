@@ -190,8 +190,8 @@ async function main() {
     return true;
   }).map(c => ({ ...c, text: c.text.substring(0, 500) }));
 
-  // 3. Cap at 10K (prioritize probability/deep files)
-  const MAX_CHUNKS = 10000;
+  // 3. Cap at 50K — Supabase handles it fine
+  const MAX_CHUNKS = 50000;
   if (allChunks.length > MAX_CHUNKS) {
     allChunks.sort((a, b) => {
       const aScore = (a.file.includes('probab') || a.file.includes('deep') || a.file.includes('survival')) ? 1 : 0;
@@ -202,13 +202,7 @@ async function main() {
   }
   console.log(`Final chunks: ${allChunks.length}`);
 
-  // 4. Clear existing data
-  console.log('\nClearing existing embeddings...');
-  await fetch(`${SUPABASE_URL}/rest/v1/simulator_embeddings?id=neq.impossible`, {
-    method: 'DELETE',
-    headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` },
-  });
-
+  // 4. Skip clearing — upsert handles duplicates via merge-duplicates
   // 5. Embed + upload in batches
   console.log('Embedding + uploading to Supabase...');
   let uploaded = 0;
@@ -221,9 +215,9 @@ async function main() {
       const embeddings = await embedBatch(openai, texts);
       const rows = batch.map((c, j) => ({ ...c, embedding: embeddings[j] }));
 
-      // Upload to Supabase in smaller sub-batches (50 rows to avoid payload limits)
-      for (let s = 0; s < rows.length; s += 50) {
-        await uploadToSupabase(rows.slice(s, s + 50));
+      // Upload to Supabase in small sub-batches (20 rows to avoid timeout)
+      for (let s = 0; s < rows.length; s += 20) {
+        await uploadToSupabase(rows.slice(s, s + 20));
       }
 
       uploaded += batch.length;
