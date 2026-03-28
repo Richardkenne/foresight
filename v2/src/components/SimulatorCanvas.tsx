@@ -18,6 +18,7 @@ import {
 import dagre from 'dagre';
 
 import SimNodeComponent from './nodes/SimNode';
+import AnimatedEdgeComponent from './edges/AnimatedEdge';
 import TopBar from './TopBar';
 import Dashboard from './Dashboard';
 import Spinner from './ui/Spinner';
@@ -27,6 +28,50 @@ import { SimulatorDataflow } from '@/lib/dataflow-engine';
 import { applyRealProbabilities } from '@/lib/probability-matcher';
 
 const nodeTypes = { simNode: SimNodeComponent };
+const edgeTypes = { animated: AnimatedEdgeComponent };
+
+// Cut line indicator — vertical dashed line with scissors icon
+function CutLineIndicator({ cutNodeId, nodes }: { cutNodeId: string | null; nodes: RFNode[] }) {
+  const { x, y, zoom } = useViewport();
+  if (!cutNodeId) return null;
+  const node = nodes.find(n => n.id === cutNodeId);
+  if (!node) return null;
+
+  const lineX = node.position.x + 170 + 16;
+  const nodeY = node.position.y + 50;
+
+  return (
+    <div
+      className="absolute inset-0 pointer-events-none z-[20]"
+      style={{ transform: `translate(${x}px, ${y}px) scale(${zoom})`, transformOrigin: '0 0' }}
+    >
+      <div
+        style={{
+          position: 'absolute',
+          left: lineX,
+          top: -3000,
+          width: 2,
+          height: 8000,
+          background: 'repeating-linear-gradient(to bottom, #ef4444 0, #ef4444 8px, transparent 8px, transparent 16px)',
+          opacity: 0.5,
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          left: lineX - 10,
+          top: nodeY - 10,
+        }}
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
+          <line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/>
+          <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+        </svg>
+      </div>
+    </div>
+  );
+}
 
 // Particle layer that moves WITH the React Flow viewport (zoom/pan aware)
 function ParticleLayer({ particles, moveDuration }: { particles: ParticleData[]; moveDuration: number }) {
@@ -41,7 +86,7 @@ function ParticleLayer({ particles, moveDuration }: { particles: ParticleData[];
       {particles.map((p) => (
         <div
           key={p.id}
-          className={`particle ${p.status === 'blocked' ? 'particle-blocked' : p.status === 'success' ? 'particle-success' : ''}`}
+          className={`particle ${p.status === 'blocked' ? 'particle-blocked' : p.status === 'failing' ? 'particle-failing' : p.status === 'success' ? 'particle-success' : ''}`}
           style={{
             position: 'absolute',
             left: p.x,
@@ -105,23 +150,24 @@ function templateToFlow(templateNodes: TemplateNode[], templateEdges: TemplateEd
     },
   }));
 
-  const rfEdges: RFEdge[] = templateEdges.map((e, i) => ({
-    id: `e-${e.from}-${e.to}-${i}`,
-    source: String(e.from),
-    target: String(e.to),
-    label: e.label || '',
-    type: 'default',
-    animated: false,
-    style: {
-      stroke: e.label === 'fail' || e.label === 'no' ? '#fca5a5' : e.label === 'pass' || e.label === 'yes' ? '#86efac' : '#d4d4d4',
-      strokeWidth: 2,
-    },
-    labelStyle: {
-      fill: e.label === 'fail' || e.label === 'no' ? '#ef4444' : e.label === 'pass' || e.label === 'yes' ? '#22c55e' : '#aaa',
-      fontSize: 10,
-      fontWeight: 600,
-    },
-  }));
+  const rfEdges: RFEdge[] = templateEdges.map((e, i) => {
+    const isPass = e.label === 'pass' || e.label === 'yes';
+    const isFail = e.label === 'fail' || e.label === 'no';
+    return {
+      id: `e-${e.from}-${e.to}-${i}`,
+      source: String(e.from),
+      target: String(e.to),
+      label: e.label || '',
+      type: 'animated',
+      style: {
+        stroke: isFail ? '#fca5a5' : isPass ? '#86efac' : '#d4d4d8',
+        strokeWidth: isPass ? 2.5 : 1.5,
+      },
+      labelStyle: {
+        fill: isFail ? '#ef4444' : isPass ? '#10b981' : '#a1a1aa',
+      },
+    };
+  });
 
   return getLayoutedElements(rfNodes, rfEdges);
 }
@@ -157,6 +203,13 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
   const [currentWave, setCurrentWave] = useState(0);
   const [speedLevel, setSpeedLevel] = useState(0);
   const speedRef = useRef(0);
+
+  // Replay / scrubbing mode (TradingView-style)
+  const [replayMode, setReplayMode] = useState(false);
+  const [cutNodeId, setCutNodeId] = useState<string | null>(null);
+  const cutDownstreamRef = useRef<Set<string>>(new Set());
+  const cutReachCountRef = useRef(0); // how many people reached the cut node in the last sim
+  const replayOverrideRef = useRef<{ waves: number; perWave: number } | null>(null);
 
   // Node values — signal delta propagation (inspired by Loopy)
   const [nodeValues, setNodeValues] = useState<Record<string, number>>({});
@@ -270,7 +323,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
   useEffect(() => {
     if (simRunning && statsRef.current.total > 0) {
       const done = statsRef.current.success + statsRef.current.blocked;
-      if (done >= statsRef.current.total && waveRef.current >= SPD_BASE.waves) {
+      if (done >= statsRef.current.total && waveRef.current >= (replayOverrideRef.current?.waves ?? SPD_BASE.waves)) {
         // All waves launched and all particles finished
         setTimeout(() => {
           if (simRunningRef.current) {
@@ -299,6 +352,84 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       return e;
     }));
   }, [setNodes, setEdges]);
+
+  // ─── Replay / Scrubbing ───
+
+  // BFS: get all nodes downstream of a given node (following forward edges)
+  const getDownstreamNodes = useCallback((startNodeId: string): Set<string> => {
+    const downstream = new Set<string>();
+    const queue: string[] = [];
+    const outEdges = edgesRef.current.filter(e => e.source === startNodeId);
+    for (const e of outEdges) {
+      if (!downstream.has(e.target)) {
+        downstream.add(e.target);
+        queue.push(e.target);
+      }
+    }
+    while (queue.length > 0) {
+      const current = queue.shift()!;
+      const nextEdges = edgesRef.current.filter(e => e.source === current);
+      for (const e of nextEdges) {
+        if (!downstream.has(e.target)) {
+          downstream.add(e.target);
+          queue.push(e.target);
+        }
+      }
+    }
+    return downstream;
+  }, []);
+
+  // Exit replay mode — restore everything
+  const exitReplayMode = useCallback(() => {
+    setReplayMode(false);
+    setCutNodeId(null);
+    cutDownstreamRef.current = new Set();
+    setNodes(prev => prev.map(n => ({
+      ...n,
+      data: { ...n.data, isCutPoint: false },
+      style: { ...n.style, opacity: 1, transition: 'opacity 0.4s ease' },
+    })));
+    setEdges(prev => prev.map(e => ({ ...e, hidden: false })));
+  }, [setNodes, setEdges]);
+
+  // Handle node click in replay mode — cut the graph
+  const onNodeClickReplay = useCallback((_event: React.MouseEvent, node: RFNode) => {
+    if (!replayMode || simRunningRef.current) return;
+
+    const nodeId = node.id;
+    setCutNodeId(nodeId);
+
+    const downstream = getDownstreamNodes(nodeId);
+    cutDownstreamRef.current = downstream;
+
+    // Hide downstream nodes, mark cut point
+    setNodes(prev => prev.map(n => ({
+      ...n,
+      data: { ...n.data, isCutPoint: n.id === nodeId },
+      style: {
+        ...n.style,
+        opacity: downstream.has(n.id) ? 0 : 1,
+        transition: 'opacity 0.4s ease',
+      },
+    })));
+
+    // Hide edges touching downstream nodes
+    setEdges(prev => prev.map(e => ({
+      ...e,
+      hidden: downstream.has(e.source) || downstream.has(e.target),
+    })));
+
+    // Save how many people reached this node in the last simulation
+    const reachSet = nodeReachRef.current[nodeId];
+    cutReachCountRef.current = reachSet ? reachSet.size : 0;
+
+    // Clear particles and stats
+    particlesRef.current = [];
+    setParticles([]);
+    statsRef.current = { total: 0, success: 0, blocked: 0 };
+    setSimStats({ total: 0, success: 0, blocked: 0 });
+    setShowDashboard(false);
+  }, [replayMode, getDownstreamNodes, setNodes, setEdges]);
 
   // Load a template
   const loadTemplate = useCallback((key: string, autoSim = false) => {
@@ -513,11 +644,17 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       const out = edgesRef.current.filter(e => e.source === nodeId);
       if (out.length === 0) {
         const isSuccess = nodeType === 'outcome-good';
-        particle.status = isSuccess ? 'success' : 'blocked';
         // Scatter around terminal node
         const ox = (Math.random() - 0.5) * 60;
         const oy = (Math.random() - 0.5) * 40;
-        updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: p.x + ox, y: p.y + oy, status: particle.status } : p));
+        if (isSuccess) {
+          particle.status = 'success';
+          updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: p.x + ox, y: p.y + oy, status: 'success' } : p));
+        } else {
+          // Trigger falling animation — they stay on the ground
+          particle.status = 'failing';
+          updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: p.x + ox, y: p.y + oy, status: 'failing' } : p));
+        }
         finishedCountRef.current++;
         cb(isSuccess ? 'success' : 'blocked');
         return;
@@ -560,14 +697,18 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
   const launchWave = useCallback((waveNum: number, startNodeIds: string[]) => {
     const spd = getSPD();
-    if (waveNum >= spd.waves || !simRunningRef.current) {
-      // All waves done — check if we should auto-show dashboard
-      if (waveNum >= spd.waves) {
+    const override = replayOverrideRef.current;
+    const totalWaves = override ? override.waves : spd.waves;
+    const peoplePerWave = override ? override.perWave : spd.perWave;
+
+    if (waveNum >= totalWaves || !simRunningRef.current) {
+      if (waveNum >= totalWaves) {
         simTimeout(() => {
           if (simRunningRef.current) {
+            replayOverrideRef.current = null;
             stopSim();
           }
-        }, spd.move + spd.wait * 3); // Wait for last particles to finish
+        }, spd.move + spd.wait * 3);
       }
       return;
     }
@@ -575,7 +716,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     waveRef.current = waveNum;
     setCurrentWave(waveNum + 1);
 
-    for (let i = 0; i < spd.perWave; i++) {
+    for (let i = 0; i < peoplePerWave; i++) {
       simTimeout(() => {
         if (!simRunningRef.current) return;
         statsRef.current.total++;
@@ -587,6 +728,45 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
     simTimeout(() => launchWave(waveNum + 1, startNodeIds), spd.perWave * spd.launch + spd.wavePause);
   }, [simTimeout, launchPerson, getSPD]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Simulate from cut point (replay mode)
+  const simulateFromCut = useCallback(() => {
+    if (!cutNodeId || simRunningRef.current) return;
+
+    simRunningRef.current = true;
+    simPausedRef.current = false;
+    setSimRunning(true);
+    setSimPaused(false);
+    statsRef.current = { total: 0, success: 0, blocked: 0 };
+    setSimStats({ total: 0, success: 0, blocked: 0 });
+    personIdRef.current = 0;
+    particleIdRef.current = 0;
+    finishedCountRef.current = 0;
+    waveRef.current = 0;
+    setCurrentWave(0);
+    nodeReachRef.current = {};
+    nodesRef.current.forEach(n => { nodeReachRef.current[n.id] = new Set(); });
+    particlesRef.current = [];
+    setParticles([]);
+    setShowDashboard(false);
+    setErrorMsg('');
+    nodeValuesRef.current = {};
+    setNodeValues({});
+
+    // Pre-populate revealed nodes with everything upstream (already visible)
+    revealedNodesRef.current = new Set(
+      nodesRef.current.filter(n => !cutDownstreamRef.current.has(n.id)).map(n => n.id)
+    );
+
+    // Calculate waves/perWave from reach count
+    const reach = cutReachCountRef.current || SPD_BASE.waves * SPD_BASE.perWave;
+    const perWave = Math.min(10, Math.max(1, Math.ceil(reach / 10)));
+    const waves = Math.max(1, Math.ceil(reach / perWave));
+    replayOverrideRef.current = { waves, perWave };
+
+    // Launch waves from cut node
+    launchWave(0, [cutNodeId]);
+  }, [cutNodeId, launchWave]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const simulate = useCallback(() => {
     if (simRunningRef.current || nodesRef.current.length === 0) return;
@@ -650,10 +830,13 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       setEdges(prev => prev.map(e => ({ ...e, hidden: false })));
     }
 
-    // Reveal all nodes when simulation ends
+    // Reveal all nodes when simulation ends + clear cut point
     revealedNodesRef.current = new Set();
+    setCutNodeId(null);
+    cutDownstreamRef.current = new Set();
     setNodes(prev => prev.map(n => ({
       ...n,
+      data: { ...n.data, isCutPoint: false },
       style: { ...n.style, opacity: 1, transition: 'opacity 0.5s ease' },
     })));
 
@@ -818,16 +1001,20 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         return;
       }
 
-      // Space = pause/resume (only when not in input)
-      if (e.key === ' ' && !isInput && simRunningRef.current) {
+      // Space = start sim, or pause/resume if already running
+      if (e.key === ' ' && !isInput) {
         e.preventDefault();
-        togglePause();
+        if (simRunningRef.current) {
+          togglePause();
+        } else if (nodesRef.current.length > 0) {
+          simulate();
+        }
         return;
       }
     };
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
-  }, [scenario, generateFlow]);
+  }, [scenario, generateFlow, simulate]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const hasNodes = nodes.length > 0;
   const successRate = simStats.total > 0 ? Math.round(simStats.success / simStats.total * 100) : 0;
@@ -911,31 +1098,9 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         scenario={scenario}
         onScenarioChange={setScenario}
         hasNodes={hasNodes}
-        simRunning={simRunning}
-        simPaused={simPaused}
         generating={generating}
-        sacredMode={sacredMode}
         onGenerate={generateFlow}
         onLoadTemplate={loadTemplate}
-        onSimulate={simulate}
-        onSimulateReverse={simulateReverse}
-        onTogglePause={togglePause}
-        onStop={stopSim}
-        onClear={() => { stopSim(); setNodes([]); setEdges([]); setShowDashboard(false); setScenario(''); setErrorMsg(''); }}
-        onSave={handleSave}
-        onShare={handleShare}
-        onExportPNG={handleExportPNG}
-        saving={saving}
-        shareUrl={shareUrl}
-        onToggleSacredMode={() => {
-          const newMode = !sacredMode;
-          setSacredMode(newMode);
-          // Update all nodes with sacred mode flag
-          setNodes(prev => prev.map(n => ({
-            ...n,
-            data: { ...n.data, sacredMode: newMode },
-          })));
-        }}
       />
 
       {/* ========== ERROR MESSAGE ========== */}
@@ -986,13 +1151,15 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       {/* ========== MAIN LAYOUT: Canvas + Results Panel ========== */}
       <div className="flex-1 flex relative overflow-hidden">
         {/* ========== REACT FLOW CANVAS ========== */}
-        <div className="flex-1 relative" ref={flowContainerRef}>
+        <div className={`flex-1 relative ${replayMode && !simRunning ? 'cursor-crosshair' : ''}`} ref={flowContainerRef}>
           <ReactFlow
             nodes={nodes}
             edges={edges}
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
+            onNodeClick={onNodeClickReplay}
             nodeTypes={nodeTypes}
+            edgeTypes={edgeTypes}
             fitView
             fitViewOptions={{ padding: 0.2 }}
             minZoom={0.3}
@@ -1016,12 +1183,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
                 const t = (node.data as Record<string, unknown>).nodeType as string;
                 if (t === 'outcome-good') return '#34d399';
                 if (t === 'outcome-bad') return '#f87171';
-                if (t === 'bottleneck') return '#fb923c';
-                if (t === 'decision') return '#facc15';
-                if (t === 'desire') return '#a78bfa';
-                if (t === 'action') return '#4ade80';
-                if (t === 'loop') return '#38bdf8';
-                return '#ddd';
+                return '#cbd5e1';
               }}
               maskColor="rgba(0,0,0,0.08)"
               style={{
@@ -1033,6 +1195,9 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
               }}
             />
           </ReactFlow>
+
+          {/* ========== CUT LINE (replay mode) ========== */}
+          {replayMode && <CutLineIndicator cutNodeId={cutNodeId} nodes={nodes} />}
 
           {/* ========== PARTICLE OVERLAY (inside React Flow viewport) ========== */}
           <ParticleLayer particles={particles} moveDuration={getSPD().move} />
@@ -1050,21 +1215,147 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         )}
       </div>
 
+      {/* ========== FLOATING TOOLBAR (when nodes exist, sim not running) ========== */}
+      {hasNodes && !simRunning && (
+        <div className="fixed bottom-5 right-5 z-50 animate-slide-up">
+          <div
+            className="rounded-full px-2 py-1.5 flex items-center gap-1"
+            style={{
+              background: 'var(--surface)',
+              boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
+            }}
+          >
+            {/* Simulate */}
+            {replayMode && cutNodeId ? (
+              <button onClick={simulateFromCut} className="toolbar-btn toolbar-btn--primary" title="Replay from cut">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+              </button>
+            ) : (
+              <button onClick={simulate} disabled={replayMode} className="toolbar-btn toolbar-btn--primary" title="Simulate">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+              </button>
+            )}
+
+            {/* Reverse */}
+            <button onClick={simulateReverse} disabled={replayMode} className="toolbar-btn" title="Reverse">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 14L4 9l5-5" /><path d="M20 20v-7a4 4 0 0 0-4-4H4" />
+              </svg>
+            </button>
+
+            {/* Scissors / Replay mode */}
+            <button
+              onClick={() => replayMode ? exitReplayMode() : setReplayMode(true)}
+              className={`toolbar-btn ${replayMode ? 'toolbar-btn--active' : ''}`}
+              title={replayMode ? 'Exit replay mode' : 'Replay mode'}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
+                <line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/>
+                <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+              </svg>
+            </button>
+
+            <div className="w-px h-5 bg-[var(--border)] mx-0.5" />
+
+            {/* Sacred mode */}
+            <button
+              onClick={() => {
+                const newMode = !sacredMode;
+                setSacredMode(newMode);
+                setNodes(prev => prev.map(n => ({ ...n, data: { ...n.data, sacredMode: newMode } })));
+              }}
+              className={`toolbar-btn ${sacredMode ? 'toolbar-btn--active' : ''}`}
+              title={sacredMode ? 'Data view' : 'Sacred view'}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" />
+              </svg>
+            </button>
+
+            {/* Save */}
+            <button onClick={handleSave} disabled={saving} className="toolbar-btn" title="Save">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" />
+                <polyline points="17 21 17 13 7 13 7 21" /><polyline points="7 3 7 8 15 8" />
+              </svg>
+            </button>
+
+            {/* Share */}
+            <button onClick={handleShare} className="toolbar-btn" title={shareUrl ? 'Copied!' : 'Share'}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={shareUrl ? 'var(--accent)' : 'currentColor'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" />
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+              </svg>
+            </button>
+
+            {/* Export */}
+            <button onClick={handleExportPNG} className="toolbar-btn" title="Export PNG">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+            </button>
+
+            <div className="w-px h-5 bg-[var(--border)] mx-0.5" />
+
+            {/* Clear */}
+            <button onClick={() => { stopSim(); setNodes([]); setEdges([]); setShowDashboard(false); setScenario(''); setErrorMsg(''); }} className="toolbar-btn" title="Clear">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ========== FLOATING TOOLBAR (during simulation) ========== */}
+      {simRunning && (
+        <div className="fixed bottom-5 right-5 z-50 animate-slide-up">
+          <div
+            className="rounded-full px-2 py-1.5 flex items-center gap-1"
+            style={{
+              background: 'var(--surface)',
+              boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
+            }}
+          >
+            <button onClick={togglePause} className="toolbar-btn toolbar-btn--primary" title={simPaused ? 'Resume' : 'Pause'}>
+              {simPaused ? (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+              ) : (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="6" y="4" width="4" height="16" /><rect x="14" y="4" width="4" height="16" />
+                </svg>
+              )}
+            </button>
+            <button onClick={stopSim} className="toolbar-btn toolbar-btn--danger" title="Stop">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="6" y="6" width="12" height="12" rx="1" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* ========== STATS BAR (during simulation) ========== */}
       {simRunning && (
         <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 animate-slide-up">
           <div
-            className="rounded-2xl px-2 py-1.5 flex items-center gap-2"
+            className="rounded-full px-3 py-1.5 flex items-center gap-2"
             style={{
-              background: 'rgba(15, 23, 42, 0.88)',
-              backdropFilter: 'blur(16px)',
-              WebkitBackdropFilter: 'blur(16px)',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.24), 0 0 0 1px rgba(255,255,255,0.06) inset',
+              background: 'var(--surface)',
+              boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
             }}
           >
             {/* Speed control */}
             <div className="flex items-center gap-1.5 px-2.5 py-1.5">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="5 3 19 12 5 21 5 3" />
               </svg>
               <input
@@ -1078,56 +1369,55 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
                   setSpeedLevel(v);
                   speedRef.current = v;
                 }}
-                className="w-16 h-1 appearance-none bg-white/10 rounded-full cursor-pointer accent-blue-400"
-                style={{ accentColor: '#60a5fa' }}
+                className="w-16 h-1 appearance-none rounded-full cursor-pointer"
+                style={{ accentColor: 'var(--accent)', background: 'var(--border)' }}
               />
-              <span className="text-[10px] font-bold text-white/50 tabular-nums w-6 text-center">{SPEED_LABELS[speedLevel]}</span>
+              <span className="text-[10px] font-semibold tabular-nums w-6 text-center" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>{SPEED_LABELS[speedLevel]}</span>
             </div>
 
-            {/* Divider */}
-            <div className="w-px h-5 bg-white/10" />
+            <div className="w-px h-4" style={{ background: 'var(--border)' }} />
 
             {/* Wave progress */}
-            <div className="flex items-center gap-2 px-3 py-1.5">
+            <div className="flex items-center gap-2 px-2 py-1.5">
               <div className="flex gap-[3px]">
-                {Array.from({ length: SPD_BASE.waves }, (_, i) => (
+                {Array.from({ length: replayOverrideRef.current?.waves ?? SPD_BASE.waves }, (_, i) => (
                   <div
                     key={i}
-                    className="w-[6px] h-[14px] rounded-[2px] transition-all duration-300"
+                    className="w-[5px] h-[12px] rounded-[2px] transition-all duration-300"
                     style={{
-                      background: i < currentWave ? 'rgba(96, 165, 250, 0.9)' : 'rgba(255,255,255,0.1)',
+                      background: i < currentWave ? 'var(--accent)' : 'var(--border)',
                     }}
                   />
                 ))}
               </div>
-              <span className="text-[11px] font-semibold text-white/50 tabular-nums">{currentWave}/{SPD_BASE.waves}</span>
+              <span className="text-[10px] font-medium tabular-nums" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>{currentWave}/{replayOverrideRef.current?.waves ?? SPD_BASE.waves}</span>
             </div>
 
-            {/* Divider */}
-            <div className="w-px h-5 bg-white/10" />
+            <div className="w-px h-4" style={{ background: 'var(--border)' }} />
 
             {/* Metrics */}
-            <div className="flex items-center gap-4 px-4 py-1.5">
+            <div className="flex items-center gap-3 px-2 py-1.5">
               <div className="flex items-center gap-1.5">
-                <div className="w-[6px] h-[6px] rounded-full bg-blue-400" />
-                <span className="text-[12px] font-bold text-white tabular-nums">{simStats.total}</span>
+                <div className="w-[5px] h-[5px] rounded-full" style={{ background: 'var(--accent)' }} />
+                <span className="text-[11px] font-semibold tabular-nums" style={{ color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>{simStats.total}</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <div className="w-[6px] h-[6px] rounded-full bg-emerald-400" />
-                <span className="text-[12px] font-bold text-emerald-400 tabular-nums">{simStats.success}</span>
+                <div className="w-[5px] h-[5px] rounded-full bg-emerald-500" />
+                <span className="text-[11px] font-semibold text-emerald-600 tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)' }}>{simStats.success}</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <div className="w-[6px] h-[6px] rounded-full bg-red-400" />
-                <span className="text-[12px] font-bold text-red-400 tabular-nums">{simStats.blocked}</span>
+                <div className="w-[5px] h-[5px] rounded-full bg-red-500" />
+                <span className="text-[11px] font-semibold text-red-500 tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)' }}>{simStats.blocked}</span>
               </div>
             </div>
 
             {/* Rate pill */}
             <div
-              className="px-3 py-1.5 rounded-xl text-[12px] font-bold tabular-nums"
+              className="px-2 py-1 rounded-full text-[10px] font-semibold tabular-nums"
               style={{
-                background: successRate >= 50 ? 'rgba(16, 185, 129, 0.15)' : successRate >= 25 ? 'rgba(245, 158, 11, 0.15)' : 'rgba(239, 68, 68, 0.15)',
-                color: successRate >= 50 ? '#34d399' : successRate >= 25 ? '#fbbf24' : '#f87171',
+                background: successRate >= 50 ? 'rgba(16, 185, 129, 0.1)' : successRate >= 25 ? 'rgba(245, 158, 11, 0.1)' : 'rgba(239, 68, 68, 0.1)',
+                color: successRate >= 50 ? '#059669' : successRate >= 25 ? '#d97706' : '#dc2626',
+                fontFamily: 'var(--font-geist-mono)',
               }}
             >
               {successRate}%
@@ -1135,13 +1425,68 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
             {/* Status */}
             {simPaused ? (
-              <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-amber-500/15">
-                <div className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-                <span className="text-[10px] text-amber-400 font-bold uppercase tracking-wider">Paused</span>
+              <div className="flex items-center gap-1.5 px-2 py-1 rounded-full" style={{ background: 'rgba(245, 158, 11, 0.1)' }}>
+                <div className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                <span className="text-[9px] text-amber-600 font-semibold uppercase tracking-wider" style={{ fontFamily: 'var(--font-geist-mono)' }}>Paused</span>
               </div>
             ) : (
-              <kbd className="text-[9px] text-white/30 bg-white/5 px-2 py-1 rounded-lg font-mono mx-1">space</kbd>
+              <kbd className="text-[9px] px-2 py-0.5 rounded-md" style={{ color: 'var(--muted)', background: 'var(--surface-hover)', fontFamily: 'var(--font-geist-mono)' }}>space</kbd>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* ========== REPLAY MODE BAR (when replay active, sim not running) ========== */}
+      {replayMode && !simRunning && (
+        <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 animate-slide-up">
+          <div
+            className="rounded-full px-4 py-2 flex items-center gap-3"
+            style={{
+              background: 'var(--surface)',
+              boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
+            }}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
+              <line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/>
+              <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+            </svg>
+
+            {cutNodeId ? (
+              <>
+                <span className="text-[11px] font-medium" style={{ color: 'var(--muted-foreground)' }}>
+                  Cut at <span className="font-semibold" style={{ color: 'var(--foreground)' }}>{nodesRef.current.find(n => n.id === cutNodeId)?.data?.label as string || 'node'}</span>
+                  {cutReachCountRef.current > 0 && (
+                    <span style={{ color: 'var(--accent)' }} className="ml-1">({cutReachCountRef.current} people)</span>
+                  )}
+                </span>
+                <div className="w-px h-4" style={{ background: 'var(--border)' }} />
+                <button
+                  onClick={simulateFromCut}
+                  className="flex items-center gap-1.5 px-3 py-1 rounded-full hover:opacity-80 transition-opacity cursor-pointer"
+                  style={{ background: 'var(--accent)', color: 'white' }}
+                >
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                  <span className="text-[10px] font-semibold">Replay</span>
+                </button>
+              </>
+            ) : (
+              <span className="text-[11px] font-medium" style={{ color: 'var(--muted)' }}>Click a node to set the cut point</span>
+            )}
+
+            <div className="w-px h-4" style={{ background: 'var(--border)' }} />
+
+            <button
+              onClick={exitReplayMode}
+              className="flex items-center justify-center w-6 h-6 rounded-full transition-colors cursor-pointer"
+              style={{ color: 'var(--muted)' }}
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
           </div>
         </div>
       )}

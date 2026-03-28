@@ -3,15 +3,16 @@
 import { memo } from 'react';
 import { Handle, Position, type NodeProps } from '@xyflow/react';
 
+// Minimal palette: neutral for most nodes, green for success, red for fail
 const NODE_COLORS: Record<string, { accent: string; bg: string; bgDark: string; text: string }> = {
-  start:          { accent: '#6366f1', bg: '#eef2ff', bgDark: '#1e1b4b', text: '#4338ca' },
-  desire:         { accent: '#8b5cf6', bg: '#f5f3ff', bgDark: '#1e1b3a', text: '#7c3aed' },
-  action:         { accent: '#22c55e', bg: '#f0fdf4', bgDark: '#052e16', text: '#16a34a' },
-  bottleneck:     { accent: '#f97316', bg: '#fff7ed', bgDark: '#431407', text: '#ea580c' },
-  decision:       { accent: '#eab308', bg: '#fefce8', bgDark: '#422006', text: '#ca8a04' },
-  'outcome-good': { accent: '#10b981', bg: '#ecfdf5', bgDark: '#022c22', text: '#059669' },
+  start:          { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
+  desire:         { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
+  action:         { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
+  bottleneck:     { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
+  decision:       { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
+  'outcome-good': { accent: '#10b981', bg: '#f0fdf4', bgDark: '#022c22', text: '#059669' },
   'outcome-bad':  { accent: '#ef4444', bg: '#fef2f2', bgDark: '#450a0a', text: '#dc2626' },
-  loop:           { accent: '#06b6d4', bg: '#ecfeff', bgDark: '#083344', text: '#0891b2' },
+  loop:           { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
 };
 
 const ICONS: Record<string, React.ReactNode> = {
@@ -69,6 +70,7 @@ interface SimNodeData {
   computedValue?: number;
   onSliderChange?: (value: number) => void;
   sacredMode?: boolean;
+  isCutPoint?: boolean;
   [key: string]: unknown;
 }
 
@@ -101,12 +103,20 @@ function SimNodeComponent({ data }: NodeProps) {
   const intensity = hasValue ? Math.min(1, Math.max(0, computedValue)) : 0;
   const isInteractive = isStart || hasProb;
 
+  // Node type label (shown above node, monospace like Tersa)
+  const NODE_TYPE_LABELS: Record<string, string> = {
+    start: 'START', desire: 'DESIRE', action: 'ACTION',
+    bottleneck: 'BOTTLENECK', decision: 'DECISION',
+    'outcome-good': 'OUTCOME', 'outcome-bad': 'OUTCOME',
+    loop: 'LOOP',
+  };
+
   if (isStart) {
     return (
-      <div className="sim-node sim-node--start" style={{ '--node-accent': colors.accent } as React.CSSProperties}>
+      <div className="sim-node sim-node--start">
         <Handle type="target" position={Position.Left} className="sim-handle" />
         <div className="sim-node__start-inner">
-          <span className="sim-node__start-icon" style={{ color: colors.accent }}>{icon}</span>
+          <span className="sim-node__start-icon">{icon}</span>
           <span className="sim-node__start-label">{isSacred ? sacredVerse.law : d.label}</span>
         </div>
         <Handle type="source" position={Position.Right} className="sim-handle" />
@@ -116,37 +126,28 @@ function SimNodeComponent({ data }: NodeProps) {
 
   return (
     <div
-      className="sim-node sim-node--card"
-      style={{
-        '--node-accent': colors.accent,
-        '--node-bg': colors.bg,
-      } as React.CSSProperties}
+      className={`sim-node sim-node--card${nodeType === 'outcome-bad' ? ' sim-node--fail' : nodeType === 'outcome-good' ? ' sim-node--success' : ''}${d.isCutPoint ? ' sim-node--cut' : ''}`}
     >
       <Handle type="target" position={Position.Left} className="sim-handle" />
 
-      {/* Left accent bar — keeps type color even in sacred mode */}
-      <div className="sim-node__accent" style={{ background: colors.accent }} />
+      {/* Type label above node */}
+      <div className="sim-node__type-label">{NODE_TYPE_LABELS[nodeType] || 'NODE'}</div>
 
       {/* Content */}
       <div className="sim-node__body">
         {isSacred ? (
           <>
-            {/* Sacred Mode — keeps type color for pass/fail clarity */}
             <div className="sim-node__header">
-              <div className="sim-node__icon" style={{ color: colors.accent }}>
-                {icon}
-              </div>
+              <div className="sim-node__icon">{icon}</div>
               <div className="sim-node__label">{sacredVerse.law}</div>
               {hasProb && d.prob != null && (
-                <div className="sim-node__prob" style={{ background: colors.accent, color: '#fff' }}>
-                  {d.prob}%
-                </div>
+                <div className="sim-node__prob">{d.prob}%</div>
               )}
             </div>
-            <div className="sim-node__desc" style={{ fontStyle: 'italic', fontSize: '9.5px', lineHeight: '1.4' }}>
+            <div className="sim-node__desc sim-node__desc--sacred">
               &ldquo;{sacredVerse.bible}&rdquo;
             </div>
-            <div className="sim-node__desc" style={{ fontStyle: 'italic', fontSize: '9.5px', lineHeight: '1.4', marginTop: '2px', opacity: 0.7 }}>
+            <div className="sim-node__desc sim-node__desc--sacred" style={{ marginTop: '2px', opacity: 0.6 }}>
               &ldquo;{sacredVerse.quran}&rdquo;
             </div>
             <div className="sim-node__footer">
@@ -156,22 +157,11 @@ function SimNodeComponent({ data }: NodeProps) {
           </>
         ) : (
           <>
-            {/* Normal Data Mode */}
             <div className="sim-node__header">
-              <div className="sim-node__icon" style={{ color: colors.accent }}>
-                {icon}
-              </div>
+              <div className="sim-node__icon">{icon}</div>
               <div className="sim-node__label">{d.label}</div>
               {hasProb && d.prob != null && (
-                <div
-                  className="sim-node__prob"
-                  style={{
-                    background: colors.accent,
-                    color: '#fff',
-                  }}
-                >
-                  {d.prob}%
-                </div>
+                <div className="sim-node__prob">{d.prob}%</div>
               )}
             </div>
             {d.desc && (

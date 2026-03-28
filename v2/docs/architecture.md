@@ -235,12 +235,15 @@ src/lib/dataflow-engine.ts
 | File | Ruolo | LOC |
 |------|-------|-----|
 | `src/lib/dataflow-engine.ts` | Sacred foundation + cascading computation engine | ~300 |
-| `src/components/SimulatorCanvas.tsx` | Core: React Flow canvas + simulation loop + particle system | ~850 |
-| `src/components/nodes/SimNode.tsx` | Rendering nodi (8 tipi) | ~150 |
+| `src/components/SimulatorCanvas.tsx` | Core: React Flow canvas + simulation loop + particle system + replay mode + floating toolbar | ~1400 |
+| `src/components/nodes/SimNode.tsx` | Rendering nodi (8 tipi), flat enterprise design, type labels mono | ~210 |
+| `src/components/edges/AnimatedEdge.tsx` | Custom edge: dot animato su pass, tratteggio su fail | ~70 |
 | `src/components/Dashboard.tsx` | Pannello risultati laterale dx (400px), stats | ~200 |
-| `src/components/Particle.tsx` | Generatore SVG persone animate | ~80 |
+| `src/components/Particle.tsx` | Generatore SVG persone animate, status 'failing' con caduta | ~50 |
 | `src/components/TemplateSelector.tsx` | Picker template con categorie e ricerca | ~250 |
-| `src/components/TopBar.tsx` | Barra superiore con input, controlli sim, speed slider | ~150 |
+| `src/components/TopBar.tsx` | Barra superiore minimal (48px): Logo + Input + Templates + Generate | ~100 |
+| `src/components/ui/Button.tsx` | Button component (6 varianti) | ~54 |
+| `src/components/ui/Spinner.tsx` | Animated SVG loader | ~9 |
 | `src/lib/templates.ts` | Definizioni 50+ template con nodi, edge, metadata | ~500 |
 | `src/app/api/generate/route.ts` | Endpoint API: prompt + sacred data + real probs → Claude → JSON | ~800 |
 
@@ -318,9 +321,10 @@ AI Generation flow:
 | `@xyflow/react` | latest | Node graph rendering |
 | `dagre` | latest | Auto-layout |
 | `tailwindcss` | 4 | Styling |
+| `geist` | latest | Font Geist Sans + Mono (Vercel) |
 | `rete` | 2 | Dataflow engine types |
 | `rete-engine` | 2 | Dataflow computation |
 
 ---
 
-*Ultimo aggiornamento: 2026-03-28*
+*Ultimo aggiornamento: 2026-03-29*

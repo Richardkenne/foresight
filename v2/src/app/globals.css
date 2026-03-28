@@ -67,10 +67,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   background: var(--background);
   color: var(--foreground);
   overflow: hidden;
@@ -93,10 +101,12 @@ body {
   box-shadow: none !important;
 }
 .react-flow__node.selected .sim-node--card {
-  box-shadow: 0 0 0 2px var(--accent) !important;
+  outline: 2px solid var(--accent) !important;
+  outline-offset: -2px;
 }
 .react-flow__node.selected .sim-node__start-inner {
-  box-shadow: 0 0 0 2px var(--accent) !important;
+  outline: 2px solid var(--accent) !important;
+  outline-offset: -2px;
 }
 
 .react-flow__background {
@@ -116,7 +126,7 @@ body {
 }
 
 .react-flow__edge-text {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-geist-sans), sans-serif;
   font-size: 10px;
   font-weight: 600;
   fill: var(--muted);
@@ -179,21 +189,20 @@ body {
 /* ─── SimNode: Base ─── */
 .sim-node {
   position: relative;
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: var(--font-geist-sans), -apple-system, sans-serif;
   animation: nodeReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @keyframes nodeReveal {
   from {
     opacity: 0;
-    transform: translateY(8px) scale(0.97);
+    transform: translateY(6px) scale(0.96);
   }
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
 }
-
 
 /* ─── SimNode: Start ─── */
 .sim-node--start {
@@ -206,67 +215,87 @@ body {
   gap: 6px;
   padding: 8px 16px 8px 12px;
   background: var(--surface);
-  border: none;
   border-radius: 999px;
-  box-shadow: 0 0 0 1px var(--border), var(--shadow-sm);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: 1px solid var(--border);
+  transition: all 0.2s ease;
 }
 
 .sim-node--start:hover .sim-node__start-inner {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--node-accent);
+  outline-color: var(--muted);
+  background: var(--surface-hover);
 }
 
 .sim-node__start-icon {
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  color: var(--muted);
 }
 
 .sim-node__start-label {
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--foreground);
   letter-spacing: -0.01em;
   white-space: nowrap;
 }
 
-/* ─── SimNode: Card (Tersa-inspired) ─── */
+/* ─── SimNode: Card (enterprise flat) ─── */
 .sim-node--card {
   width: 210px;
   background: var(--surface);
-  border: none;
-  border-radius: 20px;
-  box-shadow: 0 0 0 1px var(--border);
-  overflow: hidden;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 16px;
+  outline: 1px solid var(--border);
+  transition: all 0.15s ease;
   cursor: grab;
+  position: relative;
+}
+
+/* Outcome-bad */
+.sim-node--fail {
+  outline-color: rgba(239, 68, 68, 0.35);
+}
+
+.sim-node--fail .sim-node__label {
+  color: #dc2626;
+}
+
+/* Cut point: replay mode */
+.sim-node--cut {
+  outline: 2px solid rgba(239, 68, 68, 0.6);
+}
+
+/* Outcome-good */
+.sim-node--success {
+  outline-color: rgba(16, 185, 129, 0.35);
 }
 
 .sim-node--card:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 0 0 1px var(--node-accent, var(--border)), var(--shadow-lg);
+  outline-color: var(--muted);
+  background: var(--surface-hover);
 }
 
 .sim-node--card:active {
   cursor: grabbing;
-  transform: none;
 }
 
-/* Left accent bar */
-.sim-node__accent {
+/* Type label above node */
+.sim-node__type-label {
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  border-radius: var(--radius) 0 0 var(--radius);
+  top: -18px;
+  left: 12px;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  pointer-events: none;
 }
 
 /* Body */
 .sim-node__body {
-  padding: 10px 12px 10px 16px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -283,13 +312,13 @@ body {
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  opacity: 0.9;
+  color: var(--muted);
 }
 
 .sim-node__label {
   flex: 1;
-  font-size: 11.5px;
-  font-weight: 650;
+  font-size: 12px;
+  font-weight: 600;
   color: var(--foreground);
   letter-spacing: -0.01em;
   line-height: 1.3;
@@ -300,21 +329,28 @@ body {
 .sim-node__prob {
   flex-shrink: 0;
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 600;
   padding: 2px 6px;
   border-radius: 6px;
   letter-spacing: 0.02em;
   line-height: 1;
   white-space: nowrap;
+  background: var(--border);
+  color: var(--foreground);
 }
 
 /* Description */
 .sim-node__desc {
-  font-size: 10.5px;
+  font-size: 11px;
   line-height: 1.4;
   color: var(--muted-foreground);
   letter-spacing: -0.005em;
   padding-left: 20px;
+}
+
+.sim-node__desc--sacred {
+  font-style: italic;
+  font-size: 10px;
 }
 
 /* Footer */
@@ -329,9 +365,10 @@ body {
 }
 
 .sim-node__source {
-  font-size: 9.5px;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
   color: var(--muted);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.01em;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -343,8 +380,9 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  font-size: 9.5px;
-  font-weight: 600;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  font-weight: 500;
   color: var(--muted);
   white-space: nowrap;
   flex-shrink: 0;
@@ -399,18 +437,66 @@ body {
   border: none;
 }
 
+/* ─── Floating Toolbar Buttons ─── */
+.toolbar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.toolbar-btn:hover {
+  background: var(--surface-hover);
+  color: var(--foreground);
+}
+.toolbar-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.toolbar-btn--primary {
+  background: var(--accent);
+  color: white;
+}
+.toolbar-btn--primary:hover {
+  background: var(--accent-hover);
+  color: white;
+}
+.toolbar-btn--danger {
+  color: var(--danger);
+}
+.toolbar-btn--danger:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+}
+.toolbar-btn--active {
+  background: var(--surface-hover);
+  color: var(--foreground);
+  outline: 1.5px solid var(--border);
+}
+
 /* ─── Handles ─── */
-/* Tersa-style handles: larger, outside the node, clean border */
 .sim-handle {
   width: 12px !important;
   height: 12px !important;
   background: var(--surface) !important;
   border: 2px solid var(--border) !important;
+  border-radius: 50% !important;
   transition: all 0.15s ease !important;
+  opacity: 0 !important;
+}
+.react-flow__node:hover .sim-handle {
+  opacity: 1 !important;
 }
 .sim-handle:hover {
   background: var(--accent) !important;
   border-color: var(--accent) !important;
+  opacity: 1 !important;
 }
 
 /* ─── Particle Layer ─── */
@@ -432,6 +518,40 @@ body {
   height: 32px;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
   transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+@keyframes fallDown {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+    filter: none;
+  }
+  15% {
+    transform: translateY(6px) rotate(-8deg) scale(0.95);
+    opacity: 0.85;
+    filter: saturate(0.5);
+  }
+  40% {
+    transform: translateY(35px) rotate(18deg) scale(0.7);
+    opacity: 0.6;
+    filter: grayscale(0.6) brightness(0.7);
+  }
+  70% {
+    transform: translateY(65px) rotate(30deg) scale(0.5);
+    opacity: 0.4;
+    filter: grayscale(0.9) brightness(0.5);
+  }
+  100% {
+    transform: translateY(80px) rotate(35deg) scale(0.45);
+    opacity: 0.3;
+    filter: grayscale(1) brightness(0.4);
+  }
+}
+
+.particle-failing {
+  animation: fallDown 1s cubic-bezier(0.45, 0, 0.95, 0.4) forwards !important;
+  transition: none !important;
+  pointer-events: none;
 }
 
 .particle-blocked {
@@ -457,7 +577,7 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-geist-sans), sans-serif;
   font-size: 12px;
   color: var(--muted-foreground);
   backdrop-filter: blur(8px);

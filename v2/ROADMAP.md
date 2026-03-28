@@ -138,14 +138,43 @@
 - [x] Mobile responsive (viewport meta, breakpoint 480px, Dashboard responsive)
 - [x] Pushed to Vercel
 
+## Completato (sessione 2026-03-28 notte / 2026-03-29)
+
+### Animazione Fail Marcata
+- [x] Particelle che falliscono "cadono nel vuoto" — keyframes fallDown (80px, rotazione 35deg, grayscale, scale 0.45)
+- [x] Restano a terra visibili (opacity 0.3) — non spariscono
+- [x] Nodi outcome-bad con outline rosso, outcome-good con outline verde
+
+### Replay Mode (TradingView Bar Replay-style)
+- [x] Bottone forbici nella toolbar — attiva replay mode
+- [x] Click su un nodo → tutto ciò a destra sparisce (BFS downstream)
+- [x] Linea di taglio rossa tratteggiata con icona forbici
+- [x] Nodo tagliato evidenziato con outline rosso
+- [x] Replay lancia simulazione dal nodo tagliato con il numero ESATTO di persone che lo avevano raggiunto
+- [x] Replay bar in basso mostra: nome nodo + reach count + bottone Replay + Exit
+- [x] Wave/perWave calcolati dal reach count (non sempre 100)
+- [x] Integrazione con pause/resume/speed esistenti
+
+### Enterprise UI Redesign (Tersa-inspired)
+- [x] **Font Geist** — Geist Sans + Geist Mono (come Vercel/Tersa)
+- [x] **Palette ridotta** — 3 colori: grigio (neutro), verde (success), rosso (fail). Nodi differenziati per icona, non colore
+- [x] **Nodi flat** — no ombre, outline 1px, radius 16px, type label monospace sopra (BOTTLENECK, DECISION...), footer mono
+- [x] **Edges animate** — custom edge component con dot verde animato su pass/yes (2.5s loop), fail tratteggiato
+- [x] **TopBar minimal** — 48px, solo Logo + Input + Templates + Generate
+- [x] **Floating toolbar pill** — bottom-right, rounded-full: Play, Reverse, Scissors, Sacred, Save, Share, Export, Clear
+- [x] **Toolbar durante sim** — Pause/Resume + Stop in pill separata
+- [x] **Stats bar light theme** — sfondo surface, colori tema, font mono, rounded-full
+- [x] **Handles nascosti** — appaiono solo su hover del nodo
+- [x] **Scrollbar thin** — custom scrollbar globale
+- [x] **Focus states** — outline accent su tutti gli elementi interattivi
+
 ## TODO Prossima Sessione
-1. **UI Rebuild** — vedere docs/ui-brief.md. Target: Flowise nodi + ncase/trust feel. 1-2 sessioni
-2. **Interactive sliders** — muovi parametro, grafo si ricalcola live (il "holy shit moment")
-3. **Fork tree counterfactual** — "cosa sarebbe cambiato se..." (da NegotiationForge)
-5. **Code decomposition** — SimulatorCanvas 850+ righe → moduli separati
-6. **Vercel deploy** — settare root directory "v2"
-7. **Share link** — URL con template encodato
-8. **Export PNG**
+1. **Input condizionali pre-simulazione** — 3-4 domande rapide che adattano le probabilità (bootstrapped/funded, solo/team, etc.)
+2. **Confronto scenari A vs B** — side-by-side dashboard
+3. **Interactive sliders** — muovi parametro, grafo si ricalcola live
+4. **Fork tree counterfactual** — "cosa sarebbe cambiato se..."
+5. **Code decomposition** — SimulatorCanvas 1200+ righe → moduli separati
+6. **Landing page** — social proof, counter simulazioni, embed demo
 
 ## Backlog
 - Template editor visuale (drag & drop nodi)

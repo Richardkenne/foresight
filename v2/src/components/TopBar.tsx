@@ -8,35 +8,21 @@ interface TopBarProps {
   scenario: string;
   onScenarioChange: (val: string) => void;
   hasNodes: boolean;
-  simRunning: boolean;
-  simPaused: boolean;
   generating: boolean;
-  sacredMode: boolean;
   onGenerate: () => void;
   onLoadTemplate: (key: string) => void;
-  onSimulate: () => void;
-  onSimulateReverse: () => void;
-  onTogglePause: () => void;
-  onStop: () => void;
-  onClear: () => void;
-  onToggleSacredMode: () => void;
-  onSave: () => void;
-  onShare: () => void;
-  onExportPNG: () => void;
-  saving?: boolean;
-  shareUrl?: string;
 }
 
 function Logo() {
   return (
     <div className="flex items-center gap-2 shrink-0 select-none">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-[var(--accent)]">
-        <path d="M12 2L2 7l10 5 10-5-10-5z" fill="currentColor" opacity="0.2" />
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-[var(--foreground)]">
+        <path d="M12 2L2 7l10 5 10-5-10-5z" fill="currentColor" opacity="0.15" />
         <path d="M2 17l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
-      <span className="text-[13px] font-bold text-[var(--foreground)] tracking-[0.08em] hidden sm:block">
+      <span className="text-[12px] font-semibold text-[var(--foreground)] tracking-[0.1em] hidden sm:block" style={{ fontFamily: 'var(--font-geist-mono), monospace' }}>
         SIMULATOR
       </span>
     </div>
@@ -44,54 +30,44 @@ function Logo() {
 }
 
 export default function TopBar({
-  scenario, onScenarioChange, hasNodes, simRunning, simPaused, generating, sacredMode,
-  onGenerate, onLoadTemplate, onSimulate, onSimulateReverse, onTogglePause, onStop, onClear, onToggleSacredMode,
-  onSave, onShare, onExportPNG, saving, shareUrl,
+  scenario, onScenarioChange, generating,
+  onGenerate, onLoadTemplate,
 }: TopBarProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [showTemplates, setShowTemplates] = useState(false);
 
   return (
     <div
-      className="h-[56px] shrink-0 z-50 flex items-center gap-3 px-4 border-b border-[var(--border)]"
+      className="h-[48px] shrink-0 z-50 flex items-center gap-3 px-4 border-b border-[var(--border)]"
       style={{
-        background: 'color-mix(in srgb, var(--surface) 85%, transparent)',
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
+        background: 'var(--surface)',
       }}
     >
-      {/* Logo */}
       <Logo />
 
-      {/* Separator */}
-      <div className="w-px h-6 bg-[var(--border)] hidden sm:block" />
+      <div className="w-px h-5 bg-[var(--border)] hidden sm:block" />
 
       {/* Scenario Input */}
       <div className="flex-1 relative min-w-0">
         <input
           ref={inputRef}
-          className="w-full px-3 py-1.5 rounded-lg text-[13px] text-[var(--foreground)] placeholder-[var(--muted)] bg-transparent border border-transparent focus:border-[var(--border)] focus:bg-[var(--surface)] focus:ring-1 focus:ring-[var(--accent)]/20 outline-none transition-all"
-          placeholder="Describe a scenario... e.g. 'I want to open a cafe in Indonesia'"
+          className="w-full px-3 py-1.5 rounded-lg text-[13px] text-[var(--foreground)] placeholder-[var(--muted)] bg-transparent border border-transparent focus:border-[var(--border)] focus:bg-[var(--surface-hover)] outline-none transition-all"
+          placeholder="Describe a scenario..."
           value={scenario}
           onChange={(e) => onScenarioChange(e.target.value)}
           disabled={generating}
         />
       </div>
 
-      {/* Actions */}
-      <div className="flex items-center gap-2 shrink-0">
-        {/* Templates */}
+      {/* Minimal actions */}
+      <div className="flex items-center gap-1.5 shrink-0">
         <div className="relative">
-          <Button
-            variant="secondary"
-            size="sm"
+          <button
             onClick={(e) => { e.stopPropagation(); setShowTemplates(!showTemplates); }}
+            className="h-8 px-3 text-[11px] font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-lg transition-colors cursor-pointer"
           >
-            <span className="hidden sm:inline">Templates</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="sm:hidden">
-              <rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" />
-            </svg>
-          </Button>
+            Templates
+          </button>
           {showTemplates && (
             <TemplateSelector
               onSelect={onLoadTemplate}
@@ -100,7 +76,6 @@ export default function TopBar({
           )}
         </div>
 
-        {/* Generate */}
         <Button
           variant="primary"
           size="sm"
@@ -110,90 +85,8 @@ export default function TopBar({
         >
           {generating ? 'Generating...' : 'Generate'}
         </Button>
-
-        {/* Sacred Mode toggle */}
-        {hasNodes && (
-          <>
-            <div className="w-px h-5 bg-[var(--border)]" />
-            <Button
-              variant={sacredMode ? 'primary' : 'ghost'}
-              size="sm"
-              onClick={onToggleSacredMode}
-              title={sacredMode ? 'Switch to Data View' : 'Switch to Sacred View'}
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                <path d="M2 17l10 5 10-5" />
-                <path d="M2 12l10 5 10-5" />
-              </svg>
-              <span className="hidden sm:inline ml-1">{sacredMode ? 'Sacred' : 'Data'}</span>
-            </Button>
-          </>
-        )}
-
-        {/* Separator */}
-        {hasNodes && <div className="w-px h-5 bg-[var(--border)]" />}
-
-        {/* Simulation controls */}
-        {simRunning ? (
-          <>
-            <Button variant="warning" size="sm" onClick={onTogglePause}>
-              {simPaused ? 'Resume' : 'Pause'}
-            </Button>
-            <Button variant="danger" size="sm" onClick={onStop}>
-              Stop
-            </Button>
-          </>
-        ) : (
-          <>
-            {hasNodes && (
-              <>
-                <Button variant="primary" size="sm" onClick={onSimulate}>
-                  Simulate
-                </Button>
-                <Button variant="purple" size="sm" onClick={onSimulateReverse} title="Reverse simulation">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M9 14L4 9l5-5" /><path d="M20 20v-7a4 4 0 0 0-4-4H4" />
-                  </svg>
-                </Button>
-                <Button variant="ghost" size="sm" onClick={onClear} title="Clear">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M18 6L6 18M6 6l12 12" />
-                  </svg>
-                </Button>
-
-                {/* Save */}
-                <Button variant="ghost" size="sm" onClick={onSave} disabled={saving} title="Save simulation">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" />
-                    <polyline points="17 21 17 13 7 13 7 21" />
-                    <polyline points="7 3 7 8 15 8" />
-                  </svg>
-                </Button>
-
-                {/* Share */}
-                <Button variant="ghost" size="sm" onClick={onShare} title={shareUrl ? 'Link copied!' : 'Share link'}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={shareUrl ? 'var(--accent)' : 'currentColor'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" />
-                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-                  </svg>
-                </Button>
-
-                {/* Export PNG */}
-                <Button variant="ghost" size="sm" onClick={onExportPNG} title="Export as PNG">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                    <line x1="12" y1="15" x2="12" y2="3" />
-                  </svg>
-                </Button>
-              </>
-            )}
-          </>
-        )}
       </div>
 
-      {/* Click outside to close templates */}
       {showTemplates && (
         <div className="fixed inset-0 z-30" onClick={() => setShowTemplates(false)} />
       )}
