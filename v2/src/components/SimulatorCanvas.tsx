@@ -674,33 +674,57 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
   const simulateReverse = useCallback(() => {
     if (simRunningRef.current || nodesRef.current.length === 0) return;
 
+    // Build the reverse traversal order using BFS on ORIGINAL edges (left→right)
+    const originalEdges = edgesRef.current;
+    const adjForward: Record<string, string[]> = {};
+    const hasIncoming = new Set<string>();
+    for (const e of originalEdges) {
+      if (!adjForward[e.source]) adjForward[e.source] = [];
+      adjForward[e.source].push(e.target);
+      hasIncoming.add(e.target);
+    }
+    // Find start nodes (no incoming) to do BFS
+    const startIds = nodesRef.current.filter(n => !hasIncoming.has(n.id)).map(n => n.id);
+
+    // BFS to get visit order (left to right)
+    const visitOrder: string[] = [];
+    const visited = new Set<string>();
+    const queue = [...startIds];
+    while (queue.length > 0) {
+      const id = queue.shift()!;
+      if (visited.has(id)) continue;
+      visited.add(id);
+      visitOrder.push(id);
+      for (const next of (adjForward[id] || [])) {
+        if (!visited.has(next)) queue.push(next);
+      }
+    }
+    // Add any unvisited nodes
+    for (const n of nodesRef.current) {
+      if (!visited.has(n.id)) visitOrder.push(n.id);
+    }
+
+    // Reverse the order → right to left
+    const reverseOrder = [...visitOrder].reverse();
+
+    // Setup simulation state
     simRunningRef.current = true;
     simPausedRef.current = false;
     setSimRunning(true);
     setSimPaused(false);
     statsRef.current = { total: 0, success: 0, blocked: 0 };
     setSimStats({ total: 0, success: 0, blocked: 0 });
-    personIdRef.current = 0;
-    particleIdRef.current = 0;
-    finishedCountRef.current = 0;
-    waveRef.current = 0;
-    setCurrentWave(0);
-    nodeReachRef.current = {};
-    nodesRef.current.forEach(n => { nodeReachRef.current[n.id] = new Set(); });
     particlesRef.current = [];
     setParticles([]);
     setShowDashboard(false);
+    waveRef.current = 0;
+    setCurrentWave(0);
+    finishedCountRef.current = 0;
 
-    // Build reverse edges BEFORE hiding (edgesRef still has originals)
-    originalEdgesRef.current = [...edgesRef.current];
-    const reverseEdges = originalEdgesRef.current.map(e => ({ ...e, source: e.target, target: e.source }));
+    // Save original edges for restore
+    originalEdgesRef.current = [...originalEdges];
 
-    // Find end nodes (no outgoing edges in ORIGINAL graph)
-    const hasOutgoing = new Set(originalEdgesRef.current.map(e => e.source));
-    const endNodeIds = nodesRef.current.filter(n => !hasOutgoing.has(n.id)).map(n => n.id);
-    if (endNodeIds.length === 0) { stopSim(); return; }
-
-    // Hide all nodes and edges for sequential reveal
+    // Hide all nodes and edges
     revealedNodesRef.current = new Set();
     setNodes(prev => prev.map(n => ({
       ...n,
@@ -708,12 +732,64 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     })));
     setEdges(prev => prev.map(e => ({ ...e, hidden: true })));
 
-    // Override edgesRef with reversed edges AFTER a tick (so useEffect doesn't overwrite)
-    simTimeout(() => {
-      edgesRef.current = reverseEdges;
-      launchWave(0, endNodeIds);
-    }, 50);
-  }, [launchWave]); // eslint-disable-line react-hooks/exhaustive-deps
+    // Reveal nodes one by one in reverse order, with particles moving right→left
+    const spd = getSPD();
+    const stepDelay = spd.move * 0.6;
+    let personCount = 0;
+
+    reverseOrder.forEach((nodeId, i) => {
+      simTimeout(() => {
+        if (!simRunningRef.current) return;
+
+        // Reveal the node
+        revealNode(nodeId);
+
+        // Create a particle at this node
+        const node = nodesRef.current.find(n => n.id === nodeId);
+        if (!node) return;
+
+        personCount++;
+        const pid = ++particleIdRef.current;
+        const particle: ParticleData = {
+          id: pid,
+          personId: personCount,
+          x: node.position.x + 85 - 12,
+          y: node.position.y + 50 - 16,
+          svg: createPersonSVG(),
+          status: 'moving',
+          visitedNodes: new Set([nodeId]),
+        };
+        updateParticles(prev => [...prev, particle]);
+
+        // Move particle to the PREVIOUS node in reverse order (one step left)
+        if (i < reverseOrder.length - 1) {
+          const nextNodeId = reverseOrder[i + 1];
+          const nextNode = nodesRef.current.find(n => n.id === nextNodeId);
+          if (nextNode) {
+            simTimeout(() => {
+              particle.x = nextNode.position.x + 85 - 12;
+              particle.y = nextNode.position.y + 50 - 16;
+              updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: particle.x, y: particle.y } : p));
+            }, stepDelay * 0.5);
+          }
+        }
+
+        // Track stats
+        const data = node.data as Record<string, unknown>;
+        const nodeType = data.nodeType as string;
+        if (nodeType === 'outcome-good') { statsRef.current.success++; statsRef.current.total++; }
+        else if (nodeType === 'outcome-bad') { statsRef.current.blocked++; statsRef.current.total++; }
+        setSimStats({ ...statsRef.current });
+
+        // If last node, stop simulation
+        if (i === reverseOrder.length - 1) {
+          simTimeout(() => {
+            if (simRunningRef.current) stopSim();
+          }, stepDelay);
+        }
+      }, i * stepDelay);
+    });
+  }, [simTimeout, updateParticles, revealNode, getSPD, createPersonSVG]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function togglePause() {
     if (!simRunningRef.current) return;
