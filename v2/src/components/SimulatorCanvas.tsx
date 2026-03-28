@@ -657,9 +657,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       style: { ...n.style, opacity: 1, transition: 'opacity 0.5s ease' },
     })));
 
-    // Clear particles so the canvas returns to clean state
-    particlesRef.current = [];
-    setParticles([]);
+    // Keep particles in their final positions — don't clear them
+    // They only get cleared on new simulation or clear button
 
     // Reset stats refs for clean state
     waveRef.current = 0;
@@ -984,64 +983,78 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         </div>
       )}
 
-      {/* ========== REACT FLOW CANVAS ========== */}
-      <div className="flex-1 relative" ref={flowContainerRef}>
-        <ReactFlow
-          nodes={nodes}
-          edges={edges}
-          onNodesChange={onNodesChange}
-          onEdgesChange={onEdgesChange}
-          nodeTypes={nodeTypes}
-          fitView
-          fitViewOptions={{ padding: 0.2 }}
-          minZoom={0.3}
-          maxZoom={2}
-          defaultEdgeOptions={{
-            type: 'default',
-            style: { stroke: '#d4d4d4', strokeWidth: 2 },
-          }}
-        >
-          <Background variant={BackgroundVariant.Dots} gap={24} size={1} color="var(--muted)" style={{ opacity: 0.3 }} />
-          <Controls
-            position="bottom-left"
-            showInteractive={false}
-            className="!border-[var(--border)] !rounded-lg !shadow-sm !overflow-hidden !mb-4 !ml-4"
-          />
-          <MiniMap
-            position="bottom-right"
-            pannable
-            zoomable
-            nodeColor={(node) => {
-              const t = (node.data as Record<string, unknown>).nodeType as string;
-              if (t === 'outcome-good') return '#34d399';
-              if (t === 'outcome-bad') return '#f87171';
-              if (t === 'bottleneck') return '#fb923c';
-              if (t === 'decision') return '#facc15';
-              if (t === 'desire') return '#a78bfa';
-              if (t === 'action') return '#4ade80';
-              if (t === 'loop') return '#38bdf8';
-              return '#ddd';
+      {/* ========== MAIN LAYOUT: Canvas + Results Panel ========== */}
+      <div className="flex-1 flex relative overflow-hidden">
+        {/* ========== REACT FLOW CANVAS ========== */}
+        <div className="flex-1 relative" ref={flowContainerRef}>
+          <ReactFlow
+            nodes={nodes}
+            edges={edges}
+            onNodesChange={onNodesChange}
+            onEdgesChange={onEdgesChange}
+            nodeTypes={nodeTypes}
+            fitView
+            fitViewOptions={{ padding: 0.2 }}
+            minZoom={0.3}
+            maxZoom={2}
+            defaultEdgeOptions={{
+              type: 'default',
+              style: { stroke: '#d4d4d4', strokeWidth: 2 },
             }}
-            maskColor="rgba(0,0,0,0.08)"
-            style={{
-              opacity: 0.7,
-              width: 140,
-              height: 90,
-              marginBottom: 16,
-              marginRight: 16,
-            }}
-          />
-        </ReactFlow>
+          >
+            <Background variant={BackgroundVariant.Dots} gap={24} size={1} color="var(--muted)" style={{ opacity: 0.3 }} />
+            <Controls
+              position="bottom-left"
+              showInteractive={false}
+              className="!border-[var(--border)] !rounded-lg !shadow-sm !overflow-hidden !mb-4 !ml-4"
+            />
+            <MiniMap
+              position="bottom-right"
+              pannable
+              zoomable
+              nodeColor={(node) => {
+                const t = (node.data as Record<string, unknown>).nodeType as string;
+                if (t === 'outcome-good') return '#34d399';
+                if (t === 'outcome-bad') return '#f87171';
+                if (t === 'bottleneck') return '#fb923c';
+                if (t === 'decision') return '#facc15';
+                if (t === 'desire') return '#a78bfa';
+                if (t === 'action') return '#4ade80';
+                if (t === 'loop') return '#38bdf8';
+                return '#ddd';
+              }}
+              maskColor="rgba(0,0,0,0.08)"
+              style={{
+                opacity: 0.7,
+                width: 140,
+                height: 90,
+                marginBottom: 16,
+                marginRight: 16,
+              }}
+            />
+          </ReactFlow>
 
-        {/* ========== PARTICLE OVERLAY (inside React Flow viewport) ========== */}
-        <ParticleLayer particles={particles} moveDuration={getSPD().move} />
+          {/* ========== PARTICLE OVERLAY (inside React Flow viewport) ========== */}
+          <ParticleLayer particles={particles} moveDuration={getSPD().move} />
+        </div>
+
+        {/* ========== RESULTS PANEL (fixed right, always visible when results exist) ========== */}
+        {showDashboard && (
+          <Dashboard
+            stats={statsRef.current}
+            nodes={nodesRef.current}
+            nodeUniqueReach={nodeReachRef.current}
+            edges={edgesRef.current.map(e => ({ source: e.source, target: e.target, label: e.label as string | undefined }))}
+            onClose={() => setShowDashboard(false)}
+          />
+        )}
       </div>
 
       {/* ========== STATS BAR (during simulation) ========== */}
       {simRunning && (
         <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 animate-slide-up">
           <div
-            className="rounded-2xl px-1 py-1 flex items-center gap-1"
+            className="rounded-2xl px-2 py-1.5 flex items-center gap-2"
             style={{
               background: 'rgba(15, 23, 42, 0.88)',
               backdropFilter: 'blur(16px)',
@@ -1094,7 +1107,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
             <div className="w-px h-5 bg-white/10" />
 
             {/* Metrics */}
-            <div className="flex items-center gap-3 px-3 py-1.5">
+            <div className="flex items-center gap-4 px-4 py-1.5">
               <div className="flex items-center gap-1.5">
                 <div className="w-[6px] h-[6px] rounded-full bg-blue-400" />
                 <span className="text-[12px] font-bold text-white tabular-nums">{simStats.total}</span>
@@ -1133,7 +1146,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         </div>
       )}
 
-      {/* ========== RESULTS TAB (right edge) ========== */}
+      {/* ========== RESULTS TAB (right edge, shows when dashboard is closed) ========== */}
       {!simRunning && statsRef.current.total > 0 && !showDashboard && (
         <button
           onClick={() => setShowDashboard(true)}
@@ -1148,17 +1161,6 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
             </span>
           </div>
         </button>
-      )}
-
-      {/* ========== DASHBOARD PANEL ========== */}
-      {showDashboard && (
-        <Dashboard
-          stats={statsRef.current}
-          nodes={nodesRef.current}
-          nodeUniqueReach={nodeReachRef.current}
-          edges={edgesRef.current.map(e => ({ source: e.source, target: e.target, label: e.label as string | undefined }))}
-          onClose={() => setShowDashboard(false)}
-        />
       )}
 
     </div>

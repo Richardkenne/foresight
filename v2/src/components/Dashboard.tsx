@@ -18,8 +18,6 @@ interface DashboardProps {
 }
 
 export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClose }: DashboardProps) {
-  const [visible, setVisible] = useState(false);
-  useEffect(() => { requestAnimationFrame(() => setVisible(true)); }, []);
 
   const totalPeople = stats.total;
 
@@ -73,21 +71,8 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
 
   return (
     <div
-      className="fixed inset-0 z-[1000] flex justify-end"
-      onClick={onClose}
-      style={{
-        backgroundColor: visible ? 'rgba(0,0,0,0.2)' : 'rgba(0,0,0,0)',
-        transition: 'background-color 0.3s ease-out',
-      }}
+      className="w-full sm:w-[360px] shrink-0 h-full bg-[var(--surface)] border-l border-[var(--border)] flex flex-col overflow-hidden"
     >
-      <div
-        onClick={(e) => e.stopPropagation()}
-        className="bg-[var(--surface)] w-full sm:w-[400px] max-w-full h-full overflow-hidden shadow-2xl flex flex-col border-l border-[var(--border)]"
-        style={{
-          transform: visible ? 'translateX(0)' : 'translateX(100%)',
-          transition: 'transform 0.3s cubic-bezier(0.16,1,0.3,1)',
-        }}
-      >
         {/* Header */}
         <div className="flex justify-between items-center px-5 pt-4 pb-3 border-b border-[var(--border)]" style={{ borderTop: '2px solid var(--accent)' }}>
           <div>
@@ -219,7 +204,6 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
             {totalPeople} unique people simulated. Metrics show unique reach, not visits.
           </p>
         </div>
-      </div>
     </div>
   );
 }
