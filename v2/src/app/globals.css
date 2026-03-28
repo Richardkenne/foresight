@@ -593,3 +593,29 @@ body {
     gap: 10px;
   }
 }
+
+@media (max-width: 480px) {
+  .sim-node--card {
+    width: 150px;
+    padding: 8px;
+  }
+
+  .sim-node__label {
+    font-size: 10px;
+  }
+
+  .sim-node__desc {
+    font-size: 9px;
+    -webkit-line-clamp: 2;
+  }
+
+  .sim-node__meta {
+    font-size: 8px;
+  }
+
+  .stats-bar {
+    padding: 4px 8px;
+    font-size: 10px;
+    gap: 6px;
+  }
+}

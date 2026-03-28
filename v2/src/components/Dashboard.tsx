@@ -82,7 +82,7 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-[var(--surface)] w-[400px] h-full overflow-hidden shadow-2xl flex flex-col border-l border-[var(--border)]"
+        className="bg-[var(--surface)] w-full sm:w-[400px] max-w-full h-full overflow-hidden shadow-2xl flex flex-col border-l border-[var(--border)]"
         style={{
           transform: visible ? 'translateX(0)' : 'translateX(100%)',
           transition: 'transform 0.3s cubic-bezier(0.16,1,0.3,1)',
@@ -108,7 +108,7 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
         <div className="overflow-y-auto px-5 py-4 flex-1" style={{ scrollbarWidth: 'thin' }}>
 
           {/* Summary cards */}
-          <div className="grid grid-cols-3 gap-2 mb-5">
+          <div className="grid grid-cols-3 gap-2 mb-5 max-sm:gap-1">
             <div className="relative overflow-hidden rounded-xl p-4 text-center" style={{ background: 'linear-gradient(135deg, rgba(22,163,106,0.06) 0%, rgba(22,163,106,0.12) 100%)', border: '1px solid rgba(22,163,106,0.12)' }}>
               <div className="text-2xl font-extrabold text-green-600 dark:text-green-400 tabular-nums">{stats.success}</div>
               <div className="text-[11px] font-medium text-green-700/60 dark:text-green-400/60 mt-1 uppercase tracking-wider">Made It</div>

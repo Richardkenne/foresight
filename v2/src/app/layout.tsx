@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Simulator — Life & Business Scenario Simulator",
   description: "Simulate any life or business scenario with real data. See who makes it and who doesn't.",
   icons: { icon: '/favicon.svg' },
+  viewport: { width: 'device-width', initialScale: 1, maximumScale: 1 },
   openGraph: {
     title: "Simulator",
     description: "Simulate any life or business scenario with real data.",

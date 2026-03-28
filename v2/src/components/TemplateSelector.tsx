@@ -123,7 +123,7 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
       }}
     >
       <div
-        className="bg-white dark:bg-[#141414] rounded-xl overflow-hidden min-w-[360px] max-w-[400px] max-h-[70vh] flex flex-col"
+        className="bg-white dark:bg-[#141414] rounded-xl overflow-hidden w-[95vw] sm:min-w-[360px] max-w-[400px] max-h-[70vh] flex flex-col"
         style={{
           boxShadow: '0 20px 60px rgba(0,0,0,0.15), 0 4px 16px rgba(0,0,0,0.08)',
           border: '1px solid rgba(0,0,0,0.08)',
