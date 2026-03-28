@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import 'react';
 import { type Node as RFNode } from '@xyflow/react';
 
 interface SimStats {
@@ -124,7 +124,7 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
                       <div
                         className="h-full rounded-md flex items-center transition-all duration-500 ease-out"
                         style={{
-                          width: visible ? `${barW}%` : '0%',
+                          width: `${barW}%`,
                           background: `linear-gradient(90deg, ${colors.bar}dd, ${colors.bar}88)`,
                           transitionDelay: `${i * 40}ms`,
                         }}
