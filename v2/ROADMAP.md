@@ -127,11 +127,21 @@
 - [x] Top 3: owid/owid-datasets (200+ dataset), fivethirtyeight/data (120+), actuarial-data-science
 - [x] Decisione: NON scaricare — dati pre-2022, i nostri 2023-2025 sono più freschi
 
+### UX Fixes (sessione 2026-03-28 sera)
+- [x] Reverse simulation riscritto — BFS forward → reverse order, nodi dx→sx
+- [x] Dashboard trasformato da overlay a pannello inline fisso (TradingView style)
+- [x] Particelle persistono dopo simulazione (non vengono cancellate)
+- [x] Stats bar spacing migliorato (gap e padding aumentati)
+- [x] Save/Share/Export PNG bottoni aggiunti nella TopBar
+- [x] Pagina /sim/[id] per simulazioni condivise
+- [x] Vercel env vars settate (5/5: SUPABASE, OPENAI, ANTHROPIC, GROQ)
+- [x] Mobile responsive (viewport meta, breakpoint 480px, Dashboard responsive)
+- [x] Pushed to Vercel
+
 ## TODO Prossima Sessione
-1. **Completare RAG** — ri-eseguire indexing (~25 min), verificare embeddings.json, 5 test API
-2. **Fork tree counterfactual** — "cosa sarebbe cambiato se..." (da NegotiationForge)
-3. **Interactive sliders** — muovi parametro, grafo si ricalcola live (il "holy shit moment")
-4. **Visual feedback nodi** — nodi pulsano/cambiano in base al valore computato
+1. **UI Rebuild** — vedere docs/ui-brief.md. Target: Flowise nodi + ncase/trust feel. 1-2 sessioni
+2. **Interactive sliders** — muovi parametro, grafo si ricalcola live (il "holy shit moment")
+3. **Fork tree counterfactual** — "cosa sarebbe cambiato se..." (da NegotiationForge)
 5. **Code decomposition** — SimulatorCanvas 850+ righe → moduli separati
 6. **Vercel deploy** — settare root directory "v2"
 7. **Share link** — URL con template encodato
