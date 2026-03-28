@@ -103,14 +103,18 @@
 - [x] **business-survival-probabilities.json** — 221 data points from 15 sources (SBA, BLS BDM, CB Insights, Failory, Kauffman, Startup Genome, GEM, ChartMogul, Bankrate, Crunchbase, MBO Partners, Datassential, McKinsey, Harvard Business School, DemandSage)
 - [x] 14 sezioni: survival by year, by industry, failure reasons, startup success by type, entrepreneurship by country, revenue milestones, funding success rates, cafe/restaurant, ecommerce, SaaS, agency/SMMA, freelance, content creator, side hustle
 
-### RAG Vector Search (in progress)
-- [x] `scripts/index-data.ts` — chunking + OpenAI text-embedding-3-small
-- [x] `src/lib/rag.ts` — cosine similarity search, top 30 results, file diversity cap
+### RAG Vector Search (COMPLETATO)
+- [x] Supabase progetto "Simulator" creato (ap-southeast-1, gratis)
+- [x] pgvector + HNSW index + `search_embeddings` function
+- [x] `scripts/index-data.ts` — chunking + OpenAI text-embedding-3-small → Supabase
+- [x] `src/lib/rag.ts` — Supabase vector search, top 30 results
 - [x] Integrato in `route.ts` — RAG primario, keyword matching fallback
-- [x] 54,862 entries embedded, 690K tokens usati (~$0.30)
-- [ ] **Embeddings.json save** — fix streaming write applicato, ri-esecuzione necessaria (~25 min)
-- [ ] **5 test API** con RAG attivo — verificare qualità vs keyword
-- [ ] **Cleanup** — rimuovere keyword matching se RAG confermato superiore
+- [x] **50,000 entries da 84+ file** indicizzate su Supabase pgvector
+- [x] 18 file con 0 chunks fixati (chunker migliorato per 3 strutture dati)
+- [x] 5 test API passati — tutti `_data_source: rag`
+- [x] `npm run index-data` aggiunto per re-indicizzazione facile
+- [x] Fix Claude Haiku parsing (JSON extraction da testo wrappato)
+- [x] Logging fallback Claude → Groq per debug
 
 ### Massive Probability Data Collection
 - [x] 11 agenti paralleli, 3,260+ nuovi data points di probabilità
@@ -148,9 +152,10 @@
 - Repo: github.com/Richardkenne/simulator
 - Stack: Next.js 16 + React Flow + Tailwind → Vercel
 - AI: Claude Haiku 4.5 + Groq fallback
-- Dati: 114 file JSON (~86MB) + 7 API live + 16K sacred patterns + 3,260+ probabilità deep + 54,862 RAG entries
-- Pipeline: RAG vector search (primario) + keyword matching (fallback) + 6 extractors universali
-- Copertura: 99.7% dei 40K scenari batch, 0 file orfani
-- RAG: OpenAI text-embedding-3-small, cosine similarity in-memory, ~$0.001/query
+- Dati: 114 file JSON (~86MB) + 7 API live + 16K sacred patterns + 3,260+ probabilità deep
+- Pipeline: RAG Supabase pgvector (primario) + keyword matching (fallback)
+- RAG: 50,000 entries da 84+ file, OpenAI text-embedding-3-small, HNSW index, ~$0.0001/query
+- Supabase: progetto "Simulator" (rkkfwsmoqylctprzqhfj), ap-southeast-1
+- Re-index: `npm run index-data`
 - Local: localhost:3002
 - v3: ~/Simulator/v3/ (research demos)

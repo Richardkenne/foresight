@@ -265,11 +265,15 @@ User types scenario or selects template
 
 AI Generation flow:
   User types free text
+  → API embeds scenario with OpenAI text-embedding-3-small
+  → Supabase pgvector finds top 30 most relevant data points (RAG)
   → API loads real-probabilities.json (106 verified stats)
-  → API loads sacred patterns context
-  → API loads relevant KB files (keyword match)
-  → API calls Claude Haiku with sacred + real data
-  → Claude generates nodes with VERIFIED probabilities
+  → API loads sacred patterns context (16K patterns)
+  → 7 live APIs called in parallel (World Bank, BLS, etc.)
+  → All data injected into Claude Haiku prompt
+  → Claude generates nodes with VERIFIED probabilities + sources
+  → Fallback: keyword matching if RAG unavailable
+  → Fallback: Groq Llama if Claude fails
   → Dataflow Engine applies sacred modifiers on top
 ```
 
@@ -277,21 +281,27 @@ AI Generation flow:
 
 ## Data Layer
 
-### Sacred Foundation (Layer 0)
-- `data/sacred-texts-patterns.json` — 250 patterns (Bible + Quran)
-- `data/sacred-batch-1-business.json` — expanding business patterns
-- `data/sacred-batch-2-finance.json` — expanding finance patterns
-- `data/sacred-batch-3-career.json` — expanding career patterns
-- `data/sacred-batch-4-marketing.json` — expanding marketing patterns
-- `data/sacred-batch-5-health.json` — expanding health patterns
-- `data/sacred-batch-6-life.json` — expanding life patterns
-- `data/sacred-batch-7-remaining.json` — expanding remaining patterns
-- Target: 1000+ patterns covering all 46K data entries
+### RAG Pipeline (Supabase pgvector)
+- **50,000 vector entries** from 84+ files indexed with OpenAI text-embedding-3-small
+- **HNSW index** for <50ms cosine similarity search
+- **Supabase project**: "Simulator" (rkkfwsmoqylctprzqhfj, ap-southeast-1)
+- **Re-index**: `npm run index-data`
+- **Fallback**: keyword matching (112 keyword entries, 114 files)
 
-### Real Data (Layer 2)
-- `data/real-probabilities.json` — 106 verified stats from BLS, CDC, Census, Fed, USCIS
-- `data/choices13k-summary.json` — 13K behavioral decision patterns
-- `data/*.json` — 69 files, 46,325+ data points across all categories
+### Sacred Foundation (Layer 0)
+- `data/sacred-texts-patterns.json` — 250 core patterns (Bible + Quran)
+- `data/sacred-batch-*.json` — 7 batch files, 16,095 total patterns
+- `data/sacred-texts-expanded.json` — 210 refined patterns
+- `data/sacred-index.json` — 5,774 patterns with keyword index
+
+### Probability Data (Layer 2)
+- `data/real-probabilities.json` — 106 verified stats (BLS, CDC, Census, Fed)
+- `data/*-probabilities-deep.json` — 3,260+ deep probability data points:
+  - business-survival (221 dp), career (346 dp), country (583 dp)
+  - crime-justice (213 dp), education (283 dp), fame-entertainment (187 dp)
+  - life/health/relationships (312 dp), psychology-habits (247 dp), tech-AI (236 dp)
+  - OpenLife repo (267 dp), Life-Simulator1 repo (412 dp)
+- `data/*.json` — 114 files total, ~86MB, covering all life/business categories
 - 7 live APIs: World Bank, REST Countries, Exchange Rates, BLS, Wikipedia, Teleport, CoinGecko
 
 ### AI Generation

@@ -26,24 +26,6 @@ interface DataChunk {
 
 // ============ CHUNKING (same as before) ============
 
-function chunkSectionsFormat(data: Record<string, unknown>, fileName: string): DataChunk[] {
-  const chunks: DataChunk[] = [];
-  const sections = data.sections as Record<string, unknown[]> | undefined;
-  if (!sections) return chunks;
-  for (const [secName, entries] of Object.entries(sections)) {
-    if (!Array.isArray(entries)) continue;
-    for (let i = 0; i < entries.length; i++) {
-      const e = entries[i];
-      if (!e || typeof e !== 'object') continue;
-      const entry = e as Record<string, unknown>;
-      const text = entry.metric
-        ? `${entry.metric}: ${entry.value}${entry.unit ? ' ' + entry.unit : ''} (${entry.source || fileName}, ${entry.year || ''})`
-        : Object.entries(entry).filter(([k]) => !k.startsWith('_')).map(([k, v]) => `${k}: ${v}`).join(', ');
-      if (text.length > 10) chunks.push({ id: `${fileName}:${secName}:${i}`, file: fileName, text, category: secName });
-    }
-  }
-  return chunks;
-}
 
 function chunkArchetypesFormat(data: Record<string, unknown>, fileName: string): DataChunk[] {
   const chunks: DataChunk[] = [];
@@ -90,26 +72,119 @@ function chunkListFormat(data: unknown[], fileName: string): DataChunk[] {
 
 function chunkNestedDict(data: Record<string, unknown>, fileName: string): DataChunk[] {
   const chunks: DataChunk[] = [];
+
+  function addMetricEntry(category: string, entry: Record<string, unknown>, idx: number | string) {
+    if (entry.metric && entry.value != null) {
+      const desc = entry.description ? ` — ${String(entry.description).substring(0, 100)}` : '';
+      chunks.push({ id: `${fileName}:${category}:${idx}`, file: fileName, text: `${category}/${entry.metric}: ${entry.value}${entry.unit ? ' ' + entry.unit : ''} (${entry.source || fileName}, ${entry.year || ''})${desc}`, category });
+    } else if (entry.data_entry) {
+      chunks.push({ id: `${fileName}:${category}:${idx}`, file: fileName, text: `${entry.data_entry} (${entry.data_source || entry.source || fileName})`, category });
+    } else if (entry.name && entry.behavior) {
+      // mesa-behavioral-models format
+      chunks.push({ id: `${fileName}:${category}:${idx}`, file: fileName, text: `Model: ${entry.name} — ${entry.behavior}${entry.parameters ? '. Params: ' + JSON.stringify(entry.parameters).substring(0, 150) : ''}`, category });
+    }
+  }
+
   for (const [topKey, topVal] of Object.entries(data)) {
     if (topKey.startsWith('_') || topKey === 'meta' || topKey === 'metadata') continue;
-    if (!topVal || typeof topVal !== 'object' || Array.isArray(topVal)) continue;
-    const topic = topVal as Record<string, unknown>;
-    if (Array.isArray(topic.data)) {
-      for (let i = 0; i < (topic.data as unknown[]).length; i++) {
-        const entry = (topic.data as Record<string, unknown>[])[i];
-        if (entry?.metric && entry?.value != null) {
-          chunks.push({ id: `${fileName}:${topKey}:${i}`, file: fileName, text: `${topKey}/${entry.metric}: ${entry.value}${entry.unit ? ' ' + entry.unit : ''} (${entry.source || fileName}, ${entry.year || ''})`, category: topKey });
-        }
+
+    // Pattern 1: { topic: [ {metric, value} ] } — most common (10+ files)
+    if (Array.isArray(topVal)) {
+      for (let i = 0; i < topVal.length; i++) {
+        const entry = topVal[i];
+        if (entry && typeof entry === 'object') addMetricEntry(topKey, entry as Record<string, unknown>, i);
       }
       continue;
     }
+
+    if (!topVal || typeof topVal !== 'object') continue;
+    const topic = topVal as Record<string, unknown>;
+
+    // Pattern 2: { topic: { data: [...] } } — career-probabilities-deep sections style
+    if (Array.isArray(topic.data)) {
+      for (let i = 0; i < (topic.data as unknown[]).length; i++) {
+        const entry = (topic.data as Record<string, unknown>[])[i];
+        if (entry && typeof entry === 'object') addMetricEntry(topKey, entry, i);
+      }
+      continue;
+    }
+
+    // Pattern 3: { topic: { subtopic: [...] or { sub: [...] } } } — deep nesting
     for (const [subKey, subVal] of Object.entries(topic)) {
-      if (subKey.startsWith('_')) continue;
-      if (subVal && typeof subVal === 'object' && !Array.isArray(subVal) && 'value' in (subVal as Record<string, unknown>)) {
+      if (subKey.startsWith('_') || subKey === 'description' || subKey === 'source') continue;
+
+      // Sub-topic is a list of metric entries
+      if (Array.isArray(subVal)) {
+        for (let i = 0; i < subVal.length; i++) {
+          const entry = subVal[i];
+          if (entry && typeof entry === 'object') addMetricEntry(`${topKey}/${subKey}`, entry as Record<string, unknown>, i);
+        }
+        continue;
+      }
+
+      // Sub-topic is an object with value
+      if (subVal && typeof subVal === 'object' && !Array.isArray(subVal)) {
         const sv = subVal as Record<string, unknown>;
-        chunks.push({ id: `${fileName}:${topKey}:${subKey}`, file: fileName, text: `${topKey}/${subKey.replace(/_/g, ' ')}: ${sv.value}${sv.unit ? ' ' + sv.unit : ''} (${sv.source || fileName}, ${sv.year || ''})`, category: topKey });
-      } else if (typeof subVal === 'number' || (typeof subVal === 'string' && /\d/.test(subVal as string))) {
+        if ('value' in sv) {
+          chunks.push({ id: `${fileName}:${topKey}:${subKey}`, file: fileName, text: `${topKey}/${subKey.replace(/_/g, ' ')}: ${sv.value}${sv.unit ? ' ' + sv.unit : ''} (${sv.source || fileName}, ${sv.year || ''})`, category: topKey });
+        } else {
+          // Go one level deeper: { sub: { sub_sub: [...] or {value} } }
+          for (const [ssKey, ssVal] of Object.entries(sv)) {
+            if (ssKey.startsWith('_')) continue;
+            if (Array.isArray(ssVal)) {
+              for (let i = 0; i < ssVal.length; i++) {
+                const entry = ssVal[i];
+                if (entry && typeof entry === 'object') addMetricEntry(`${topKey}/${subKey}/${ssKey}`, entry as Record<string, unknown>, i);
+              }
+            } else if (typeof ssVal === 'number' || (typeof ssVal === 'string' && /\d/.test(ssVal as string))) {
+              chunks.push({ id: `${fileName}:${topKey}:${subKey}:${ssKey}`, file: fileName, text: `${topKey}/${subKey}/${ssKey.replace(/_/g, ' ')}: ${ssVal}`, category: topKey });
+            }
+          }
+        }
+        continue;
+      }
+
+      // Primitive value
+      if (typeof subVal === 'number' || (typeof subVal === 'string' && /\d/.test(subVal as string))) {
         chunks.push({ id: `${fileName}:${topKey}:${subKey}`, file: fileName, text: `${topKey}/${subKey.replace(/_/g, ' ')}: ${subVal}`, category: topKey });
+      }
+    }
+  }
+  return chunks;
+}
+
+// Also handle sections with nested data wrapper
+function chunkSectionsFormat(data: Record<string, unknown>, fileName: string): DataChunk[] {
+  const chunks: DataChunk[] = [];
+  const sections = data.sections as Record<string, unknown> | undefined;
+  if (!sections) return chunks;
+  for (const [secName, secVal] of Object.entries(sections)) {
+    // Standard: sections.name = [ {metric, value} ]
+    if (Array.isArray(secVal)) {
+      for (let i = 0; i < secVal.length; i++) {
+        const e = secVal[i];
+        if (!e || typeof e !== 'object') continue;
+        const entry = e as Record<string, unknown>;
+        const text = entry.metric
+          ? `${entry.metric}: ${entry.value}${entry.unit ? ' ' + entry.unit : ''} (${entry.source || fileName}, ${entry.year || ''})`
+          : Object.entries(entry).filter(([k]) => !k.startsWith('_')).map(([k, v]) => `${k}: ${v}`).join(', ');
+        if (text.length > 10) chunks.push({ id: `${fileName}:${secName}:${i}`, file: fileName, text, category: secName });
+      }
+    }
+    // Wrapped: sections.name = { description, source, data: [...] }
+    else if (secVal && typeof secVal === 'object' && 'data' in (secVal as Record<string, unknown>)) {
+      const wrapper = secVal as Record<string, unknown>;
+      const dataArr = wrapper.data;
+      if (Array.isArray(dataArr)) {
+        for (let i = 0; i < dataArr.length; i++) {
+          const e = dataArr[i];
+          if (!e || typeof e !== 'object') continue;
+          const entry = e as Record<string, unknown>;
+          const text = entry.metric
+            ? `${entry.metric}: ${entry.value}${entry.unit ? ' ' + entry.unit : ''} (${entry.source || wrapper.source || fileName}, ${entry.year || ''})`
+            : Object.entries(entry).filter(([k]) => !k.startsWith('_')).map(([k, v]) => `${k}: ${v}`).join(', ');
+          if (text.length > 10) chunks.push({ id: `${fileName}:${secName}:${i}`, file: fileName, text, category: secName });
+        }
       }
     }
   }

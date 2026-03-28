@@ -972,7 +972,15 @@ function callClaude(staticPrompt: string, dynamicPrompt: string, userMsg: string
           const j = JSON.parse(d);
           if (j.error) return reject(new Error(j.error.message));
           let content = j.content[0].text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-          resolve(JSON.parse(content));
+          // Try direct parse first
+          try { resolve(JSON.parse(content)); return; } catch { /* continue */ }
+          // Extract JSON from surrounding text (Claude sometimes adds commentary)
+          const jsonMatch = content.match(/\{[\s\S]*\}/);
+          if (jsonMatch) {
+            resolve(JSON.parse(jsonMatch[0]));
+          } else {
+            reject(new Error('No valid JSON found in Claude response'));
+          }
         } catch (e) { reject(e); }
       });
     });
@@ -1118,7 +1126,8 @@ desc MUST include a specific number/stat, not generic text.`;
     try {
       flow = await callClaude(staticPrompt, dynamicPrompt, userMsg) as Record<string, unknown>;
       flow._provider = 'claude';
-    } catch {
+    } catch (claudeErr) {
+      console.warn('[API] Claude failed, falling back to Groq:', (claudeErr as Error).message);
       const fullPrompt = dynamicPrompt ? `${staticPrompt}\n\n${dynamicPrompt}` : staticPrompt;
       flow = await callGroq(fullPrompt, userMsg) as Record<string, unknown>;
       flow._provider = 'groq';
