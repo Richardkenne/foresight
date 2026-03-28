@@ -80,4 +80,19 @@
 4. `src/components/Dashboard.tsx` — mobile overlay
 5. `src/components/TopBar.tsx` — input sizing mobile
 
+## Dashboard — Pannello fisso (NON overlay)
+- **Layout**: `[Canvas nodi + omini | Pannello risultati]` — come TradingView
+- Dashboard NON è un drawer/overlay — è un pannello fisso a destra, sempre visibile quando ci sono risultati
+- Gli omini RESTANO nelle posizioni finali dopo la simulazione — MAI cancellarli
+- Il canvas occupa il centro, il pannello risultati è a fianco
+- Su mobile: pannello risultati diventa tab in basso o collapsibile
+
+## Stats Bar — Redesign completo
+- Troppo attaccata, spacing insufficiente tra elementi
+- Separatori visivi tra gruppi (speed | waves | people | rate | status)
+- Padding: min 8px tra ogni elemento
+- Font: numeri in font monospace per allineamento
+- Status (PAUSED/RUNNING): pill con background, non testo nudo
+- Altezza: 44px (era ~32px), respiro visivo
+
 ## Stima: 1-2 sessioni
