@@ -132,7 +132,7 @@ const SPD_BASE = { move: 2000, wait: 2500, launch: 300, wavePause: 2000, waves: 
 const SPEED_LEVELS = [1, 1.5, 2, 3, 5, 8];
 const SPEED_LABELS = ['1x', '1.5x', '2x', '3x', '5x', '8x'];
 
-function SimulatorCanvasInner() {
+function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<string, unknown> | null }) {
   const [nodes, setNodes, onNodesChange] = useNodesState<RFNode>([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState<RFEdge>([]);
   const { fitView, flowToScreenPosition } = useReactFlow();
@@ -147,6 +147,9 @@ function SimulatorCanvasInner() {
   const [simStats, setSimStats] = useState({ total: 0, success: 0, blocked: 0 });
   const [showDashboard, setShowDashboard] = useState(false);
   const [sacredMode, setSacredMode] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const [shareUrl, setShareUrl] = useState('');
+  const [lastFlowData, setLastFlowData] = useState<Record<string, unknown> | null>(null);
 
   // Sacred patterns data for sacred mode view
   const sacredDataRef = useRef<Record<string, { bible: string; quran: string; pattern: string }>>({});
@@ -157,6 +160,20 @@ function SimulatorCanvasInner() {
 
   // Node values — signal delta propagation (inspired by Loopy)
   const [nodeValues, setNodeValues] = useState<Record<string, number>>({});
+
+  // Load shared simulation if provided
+  useEffect(() => {
+    if (!sharedSimulation?.flow) return;
+    const flow = sharedSimulation.flow as Record<string, unknown>;
+    if (!flow.nodes || !flow.edges) return;
+    setScenario((sharedSimulation.scenario as string) || '');
+    setLastFlowData(flow);
+    const tNodes = (flow.nodes as TemplateNode[]).map(n => ({ ...n, source: n.source || 'Shared' }));
+    const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges as TemplateEdge[]);
+    setNodes(ln);
+    setEdges(le);
+    setTimeout(() => fitView({ padding: 0.2, duration: 400 }), 200);
+  }, [sharedSimulation]);
   const nodeValuesRef = useRef<Record<string, number>>({});
 
   const simRunningRef = useRef(false);
@@ -388,6 +405,7 @@ function SimulatorCanvasInner() {
       if (!res.ok) throw new Error('Server error');
       const flow = await res.json();
       if (!flow.nodes || !flow.edges) throw new Error('Invalid flow');
+      setLastFlowData(flow);
 
       statsRef.current = { total: 0, success: 0, blocked: 0 };
       setSimStats({ total: 0, success: 0, blocked: 0 });
@@ -739,6 +757,78 @@ function SimulatorCanvasInner() {
   const hasNodes = nodes.length > 0;
   const successRate = simStats.total > 0 ? Math.round(simStats.success / simStats.total * 100) : 0;
 
+  // Save simulation to Supabase
+  const handleSave = useCallback(async () => {
+    if (!lastFlowData || !scenario.trim()) return;
+    setSaving(true);
+    try {
+      const res = await fetch('/api/simulations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          scenario,
+          title: (lastFlowData as Record<string, unknown>).title || scenario.substring(0, 100),
+          flow: lastFlowData,
+          provider: (lastFlowData as Record<string, unknown>)._provider,
+          data_source: (lastFlowData as Record<string, unknown>)._data_source,
+        }),
+      });
+      if (res.ok) {
+        const saved = await res.json();
+        setShareUrl(`${window.location.origin}/sim/${saved.id}`);
+      }
+    } catch { /* silent */ }
+    setSaving(false);
+  }, [lastFlowData, scenario]);
+
+  // Share link (save first if needed, then copy URL)
+  const handleShare = useCallback(async () => {
+    if (shareUrl) {
+      await navigator.clipboard.writeText(shareUrl);
+      return;
+    }
+    if (!lastFlowData) return;
+    setSaving(true);
+    try {
+      const res = await fetch('/api/simulations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          scenario,
+          title: (lastFlowData as Record<string, unknown>).title || scenario.substring(0, 100),
+          flow: lastFlowData,
+          provider: (lastFlowData as Record<string, unknown>)._provider,
+          data_source: (lastFlowData as Record<string, unknown>)._data_source,
+        }),
+      });
+      if (res.ok) {
+        const saved = await res.json();
+        const url = `${window.location.origin}/sim/${saved.id}`;
+        setShareUrl(url);
+        await navigator.clipboard.writeText(url);
+      }
+    } catch { /* silent */ }
+    setSaving(false);
+  }, [lastFlowData, scenario, shareUrl]);
+
+  // Export canvas as PNG
+  const handleExportPNG = useCallback(() => {
+    const el = document.querySelector('.react-flow') as HTMLElement;
+    if (!el) return;
+    import('html-to-image').then(({ toPng }) => {
+      toPng(el, {
+        backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--background').trim() || '#ffffff',
+        quality: 1,
+        pixelRatio: 2,
+      }).then((dataUrl) => {
+        const a = document.createElement('a');
+        a.href = dataUrl;
+        a.download = `simulation-${Date.now()}.png`;
+        a.click();
+      });
+    });
+  }, []);
+
   return (
     <div className="h-screen w-screen flex flex-col bg-[var(--background)]">
       {/* ========== TOP BAR + SCENARIO BAR ========== */}
@@ -757,6 +847,11 @@ function SimulatorCanvasInner() {
         onTogglePause={togglePause}
         onStop={stopSim}
         onClear={() => { stopSim(); setNodes([]); setEdges([]); setShowDashboard(false); setScenario(''); setErrorMsg(''); }}
+        onSave={handleSave}
+        onShare={handleShare}
+        onExportPNG={handleExportPNG}
+        saving={saving}
+        shareUrl={shareUrl}
         onToggleSacredMode={() => {
           const newMode = !sacredMode;
           setSacredMode(newMode);
@@ -994,10 +1089,10 @@ function SimulatorCanvasInner() {
   );
 }
 
-export default function SimulatorCanvas() {
+export default function SimulatorCanvas({ sharedSimulation }: { sharedSimulation?: Record<string, unknown> | null }) {
   return (
     <ReactFlowProvider>
-      <SimulatorCanvasInner />
+      <SimulatorCanvasInner sharedSimulation={sharedSimulation} />
     </ReactFlowProvider>
   );
 }
