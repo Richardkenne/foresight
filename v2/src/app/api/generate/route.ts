@@ -1035,9 +1035,20 @@ export async function POST(request: NextRequest) {
     // RAG search (primary) + keyword matching (fallback)
     let kbContext: string | null = null;
     let dataSource: 'rag' | 'keyword' = 'keyword';
-    if (isRagReady()) {
-      kbContext = await ragSearch(scenario, 30);
-      if (kbContext) dataSource = 'rag';
+    const ragReady = isRagReady();
+    console.log(`[API] RAG ready: ${ragReady}`);
+    if (ragReady) {
+      try {
+        kbContext = await ragSearch(scenario, 30);
+        if (kbContext) {
+          dataSource = 'rag';
+          console.log(`[API] RAG returned ${kbContext.length} chars`);
+        } else {
+          console.warn('[API] RAG returned null, falling back to keyword');
+        }
+      } catch (ragErr) {
+        console.error('[API] RAG error:', ragErr);
+      }
     }
     if (!kbContext) {
       const kb = loadKB();

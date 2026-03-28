@@ -115,5 +115,9 @@ export async function ragSearch(scenario: string, topN: number = 30): Promise<st
  * Check if RAG is available (Supabase key configured)
  */
 export function isRagReady(): boolean {
-  return !!(SUPABASE_KEY && process.env.OPENAI_API_KEY);
+  const ready = !!(SUPABASE_KEY && process.env.OPENAI_API_KEY);
+  if (!ready) {
+    console.warn(`[RAG] Not ready — SUPABASE_KEY: ${SUPABASE_KEY ? 'set' : 'MISSING'}, OPENAI_API_KEY: ${process.env.OPENAI_API_KEY ? 'set' : 'MISSING'}`);
+  }
+  return ready;
 }
