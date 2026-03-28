@@ -1,0 +1,1132 @@
+{
+  "metadata": {
+    "title": "Career & Occupation Probabilities — Deep Dataset",
+    "description": "Comprehensive career data: top occupations, salaries, growth projections, automation risk, career transitions, education outcomes",
+    "sources": [
+      "BLS Occupational Employment and Wage Statistics (OEWS) May 2024",
+      "BLS Occupational Outlook Handbook 2024-2034",
+      "BLS Employment Projections 2024-2034",
+      "O*NET OnLine / O*NET Database 29.0",
+      "Frey & Osborne (Oxford) — Future of Employment / Automation Risk",
+      "Federal Reserve Bank of New York — College Labor Market",
+      "Pew Research Center — AI & Jobs Analysis",
+      "Zippia Career Change Statistics 2024",
+      "NovoResume Career Statistics 2024",
+      "High5Test Freelance & Career Statistics 2024-2025",
+      "World Economic Forum — Future of Jobs 2025",
+      "Upwork Freelancing Statistics 2025-2026"
+    ],
+    "last_updated": "2026-03-28",
+    "total_entries": 346
+  },
+
+  "sections": {
+
+    "top_occupations_by_employment": {
+      "description": "50 largest occupations in the US by employment level, with salary, growth, education, and automation risk",
+      "source": "BLS OEWS May 2024 + BLS OOH 2024-2034 + Frey-Osborne automation estimates",
+      "data": [
+        {
+          "rank": 1,
+          "occupation": "Home Health and Personal Care Aides",
+          "soc_code": "31-1120",
+          "employment_2024": 4028400,
+          "median_annual_wage": 33530,
+          "mean_annual_wage": 35200,
+          "projected_growth_2024_2034_pct": 20.5,
+          "new_jobs_projected": 739800,
+          "entry_education": "High school diploma or equivalent",
+          "automation_risk_pct": 39,
+          "category": "Healthcare Support"
+        },
+        {
+          "rank": 2,
+          "occupation": "Retail Salespersons",
+          "soc_code": "41-2031",
+          "employment_2024": 3800000,
+          "median_annual_wage": 33920,
+          "mean_annual_wage": 37460,
+          "projected_growth_2024_2034_pct": -2.0,
+          "new_jobs_projected": -76000,
+          "entry_education": "No formal educational credential",
+          "automation_risk_pct": 92,
+          "category": "Sales"
+        },
+        {
+          "rank": 3,
+          "occupation": "Fast Food and Counter Workers",
+          "soc_code": "35-3023",
+          "employment_2024": 3780000,
+          "median_annual_wage": 31350,
+          "mean_annual_wage": 32100,
+          "projected_growth_2024_2034_pct": -1.5,
+          "new_jobs_projected": -56700,
+          "entry_education": "No formal educational credential",
+          "automation_risk_pct": 81,
+          "category": "Food Preparation and Serving"
+        },
+        {
+          "rank": 4,
+          "occupation": "Registered Nurses",
+          "soc_code": "29-1141",
+          "employment_2024": 3308600,
+          "median_annual_wage": 98430,
+          "mean_annual_wage": 99980,
+          "projected_growth_2024_2034_pct": 6.0,
+          "new_jobs_projected": 197200,
+          "entry_education": "Bachelor's degree",
+          "automation_risk_pct": 1,
+          "category": "Healthcare Practitioners"
+        },
+        {
+          "rank": 5,
+          "occupation": "General and Operations Managers",
+          "soc_code": "11-1021",
+          "employment_2024": 3200000,
+          "median_annual_wage": 133120,
+          "mean_annual_wage": 142470,
+          "projected_growth_2024_2034_pct": 5.0,
+          "new_jobs_projected": 160000,
+          "entry_education": "Bachelor's degree",
+          "automation_risk_pct": 16,
+          "category": "Management"
+        },
+        {
+          "rank": 6,
+          "occupation": "Stockers and Order Fillers",
+          "soc_code": "53-7065",
+          "employment_2024": 2850000,
+          "median_annual_wage": 34280,
+          "mean_annual_wage": 35790,
+          "projected_growth_2024_2034_pct": -3.0,
+          "new_jobs_projected": -85500,
+          "entry_education": "No formal educational credential",
+          "automation_risk_pct": 64,
+          "category": "Transportation and Material Moving"
+        },
+        {
+          "rank": 7,
+          "occupation": "Cashiers",
+          "soc_code": "41-2011",
+          "employment_2024": 2700000,
+          "median_annual_wage": 30710,
+          "mean_annual_wage": 31820,
+          "projected_growth_2024_2034_pct": -10.0,
+          "new_jobs_projected": -270000,
+          "entry_education": "No formal educational credential",
+          "automation_risk_pct": 97,
+          "category": "Sales"
+        },
+        {
+          "rank": 8,
+          "occupation": "Office Clerks, General",
+          "soc_code": "43-9061",
+          "employment_2024": 2600000,
+          "median_annual_wage": 45470,
+          "mean_annual_wage": 46300,
+          "projected_growth_2024_2034_pct": -8.0,
+          "new_jobs_projected": -208000,
+          "entry_education": "High school diploma or equivalent",
+          "automation_risk_pct": 96,
+          "category": "Office and Administrative Support"
+        },
+        {
+          "rank": 9,
+          "occupation": "Laborers and Freight, Stock, and Material Movers",
+          "soc_code": "53-7062",
+          "employment_2024": 2540000,
+          "median_annual_wage": 37600,
+          "mean_annual_wage": 39200,
+          "projected_growth_2024_2034_pct": 2.0,
+          "new_jobs_projected": 50800,
+          "entry_education": "No formal educational credential",
+          "automation_risk_pct": 85,
+          "category": "Transportation and Material Moving"
+        },
+        {
+          "rank": 10,
+          "occupation": "Waiters and Waitresses",
+          "soc_code": "35-3031",
+          "employment_2024": 2460000,
+          "median_annual_wage": 32680,
+          "mean_annual_wage": 35100,
+          "projected_growth_2024_2034_pct": 3.0,
+          "new_jobs_projected": 73800,
+          "entry_education": "No formal educational credential",
+          "automation_risk_pct": 94,
+          "category": "Food Preparation and Serving"
+        },
+        {
+          "rank": 11,
+          "occupation": "Customer Service Representatives",
+          "soc_code": "43-4051",
+          "employment_2024": 2380000,
+          "median_annual_wage": 40060,
+          "mean_annual_wage": 42100,
+          "projected_growth_2024_2034_pct": -5.0,
+          "new_jobs_projected": -119000,
+          "entry_education": "High school diploma or equivalent",
+          "automation_risk_pct": 55,
+          "category": "Office and Administrative Support"
+        },
+        {
+          "rank": 12,
+          "occupation": "Software Developers",
+          "soc_code": "15-1252",
+          "employment_2024": 1870000,
+          "median_annual_wage": 132270,
+          "mean_annual_wage": 137600,
+          "projected_growth_2024_2034_pct": 15.8,
+          "new_jobs_projected": 267700,
+          "entry_education": "Bachelor's degree",
+          "automation_risk_pct": 13,
+          "category": "Computer and Information Technology"
+        },
+        {
+          "rank": 13,
+          "occupation": "Janitors and Cleaners",
+          "soc_code": "37-2011",
+          "employment_2024": 1800000,
+          "median_annual_wage": 35180,
+          "mean_annual_wage": 37400,
+          "projected_growth_2024_2034_pct": 2.0,
+          "new_jobs_projected": 36000,
+          "entry_education": "No formal educational credential",
+          "automation_risk_pct": 66,
+          "category": "Building and Grounds Cleaning"
+        },
+        {
+          "rank": 14,
+          "occupation": "Heavy and Tractor-Trailer Truck Drivers",
+          "soc_code": "53-3032",
+          "employment_2024": 1790000,
+          "median_annual_wage": 54320,
+          "mean_annual_wage": 57300,
+          "projected_growth_2024_2034_pct": 4.0,
+          "new_jobs_projected": 71600,
+          "entry_education": "Postsecondary nondegree award",
+          "automation_risk_pct": 79,
+          "category": "Transportation and Material Moving"
+        },
+        {
+          "rank": 15,
+          "occupation": "Secretaries and Administrative Assistants",
+          "soc_code": "43-6014",
+          "employment_2024": 1710000,
+          "median_annual_wage": 46010,
+          "mean_annual_wage": 48200,
+          "projected_growth_2024_2034_pct": -10.0,
+          "new_jobs_projected": -171000,
+          "entry_education": "High school diploma or equivalent",
+          "automation_risk_pct": 96,
+          "category": "Office and Administrative Support"
+        },
+        {
+          "rank": 16,
+          "occupation": "Nursing Assistants",
+          "soc_code": "31-1131",
+          "employment_2024": 1560000,
+          "median_annual_wage": 38200,
+          "mean_annual_wage": 39100,
+          "projected_growth_2024_2034_pct": 4.0,
+          "new_jobs_projected": 62400,
+          "entry_education": "Postsecondary nondegree award",
+          "automation_risk_pct": 29,
+          "category": "Healthcare Support"
+        },
+        {
+          "rank": 17,
+          "occupation": "Accountants and Auditors",
+          "soc_code": "13-2011",
+          "employment_2024": 1530000,
+          "median_annual_wage": 83980,
+          "mean_annual_wage": 91200,
+          "projected_growth_2024_2034_pct": 6.0,
+          "new_jobs_projected": 91800,
+          "entry_education": "Bachelor's degree",
+          "automation_risk_pct": 94,
+          "category": "Business and Financial"
+        },
+        {
+          "rank": 18,
+          "occupation": "Cooks, Restaurant",
+          "soc_code": "35-2014",
+          "employment_2024": 1500000,
+          "median_annual_wage": 35110,
+          "mean_annual_wage": 36800,
+          "projected_growth_2024_2034_pct": 5.0,
+          "new_jobs_projected": 75000,
+          "entry_education": "No formal educational credential",
+          "automation_risk_pct": 96,
+          "category": "Food Preparation and Serving"
+        },
+        {
+          "rank": 19,
+          "occupation": "Project Management Specialists",
+          "soc_code": "13-1082",
+          "employment_2024": 1020000,
+          "median_annual_wage": 98580,
+          "mean_annual_wage": 104700,
+          "projected_growth_2024_2034_pct": 7.0,
+          "new_jobs_projected": 71400,
+          "entry_education": "Bachelor's degree",
+          "automation_risk_pct": 12,
+          "category": "Business and Financial"
+        },
+        {
+          "rank": 20,
+          "occupation": "Elementary School Teachers",
+          "soc_code": "25-2021",
+          "employment_2024": 1500000,
+          "median_annual_wage": 65590,
+          "mean_annual_wage": 67800,
+          "projected_growth_2024_2034_pct": 1.0,
+          "new_jobs_projected": 15000,
+          "entry_education": "Bachelor's degree",
+          "automation_risk_pct": 1,
+          "category": "Education"
+        },
+        {
+          "rank": 21,
+          "occupation": "Construction Laborers",
+          "soc_code": "47-2061",
+          "employment_2024": 1460000,
+          "median_annual_wage": 44810,
+          "mean_annual_wage": 48300,
+          "projected_growth_2024_2034_pct": 5.0,
+          "new_jobs_projected": 73000,
+          "entry_education": "No formal educational credential",
+          "automation_risk_pct": 71,
+          "category": "Construction"
+        },
+        {
+          "rank": 22,
+          "occupation": "First-Line Supervisors of Retail Sales Workers",
+          "soc_code": "41-1011",
+          "employment_2024": 1370000,
+          "median_annual_wage": 48560,
+          "mean_annual_wage": 53100,
+          "projected_growth_2024_2034_pct": -2.0,
+          "new_jobs_projected": -27400,
+          "entry_education": "High school diploma or equivalent",
+          "automation_risk_pct": 28,
+          "category": "Sales"
+        },
+        {
+          "rank": 23,
+          "occupation": "Bookkeeping, Accounting, and Auditing Clerks",
+          "soc_code": "43-3031",
+          "employment_2024": 1350000,
+          "median_annual_wage": 47440,
+          "mean_annual_wage": 49600,
+          "projected_growth_2024_2034_pct": -7.0,
+          "new_jobs_projected": -94500,
+          "entry_education": "Some college, no degree",
+          "automation_risk_pct": 98,
+          "category": "Office and Administrative Support"
+        },
+        {
+          "rank": 24,
+          "occupation": "Maintenance and Repair Workers, General",
+          "soc_code": "49-9071",
+          "employment_2024": 1340000,
+          "median_annual_wage": 46700,
+          "mean_annual_wage": 49300,
+          "projected_growth_2024_2034_pct": 5.0,
+          "new_jobs_projected": 67000,
+          "entry_education": "High school diploma or equivalent",
+          "automation_risk_pct": 37,
+          "category": "Installation, Maintenance, and Repair"
+        },
+        {
+          "rank": 25,
+          "occupation": "Financial Managers",
+          "soc_code": "11-3031",
+          "employment_2024": 1280000,
+          "median_annual_wage": 166050,
+          "mean_annual_wage": 178200,
+          "projected_growth_2024_2034_pct": 12.0,
+          "new_jobs_projected": 153600,
+          "entry_education": "Bachelor's degree",
+          "automation_risk_pct": 7,
+          "category": "Management"
+        },
+        {
+          "rank": 26,
+          "occupation": "Medical Assistants",
+          "soc_code": "31-9092",
+          "employment_2024": 1260000,
+          "median_annual_wage": 42000,
+          "mean_annual_wage": 43500,
+          "projected_growth_2024_2034_pct": 14.0,
+          "new_jobs_projected": 176400,
+          "entry_education": "Postsecondary nondegree award",
+          "automation_risk_pct": 30,
+          "category": "Healthcare Support"
+        },
+        {
+          "rank": 27,
+          "occupation": "Business Operations Specialists",
+          "soc_code": "13-1199",
+          "employment_2024": 1250000,
+          "median_annual_wage": 83650,
+          "mean_annual_wage": 90400,
+          "projected_growth_2024_2034_pct": 7.0,
+          "new_jobs_projected": 87500,
+          "entry_education": "Bachelor's degree",
+          "automation_risk_pct": 23,
+          "category": "Business and Financial"
+        },
+        {
+          "rank": 28,
+          "occupation": "Teaching Assistants",
+          "soc_code": "25-9042",
+          "employment_2024": 1250000,
+          "median_annual_wage": 34560,
+          "mean_annual_wage": 35900,
+          "projected_growth_2024_2034_pct": 3.0,
+          "new_jobs_projected": 37500,
+          "entry_education": "Some college, no degree",
+          "automation_risk_pct": 56,
+          "category": "Education"
+        },
+        {
+          "rank": 29,
+          "occupation": "Security Guards",
+          "soc_code": "33-9032",
+          "employment_2024": 1190000,
+          "median_annual_wage": 36060,
+          "mean_annual_wage": 39300,
+          "projected_growth_2024_2034_pct": 2.0,
+          "new_jobs_projected": 23800,
+          "entry_education": "High school diploma or equivalent",
+          "automation_risk_pct": 84,
+          "category": "Protective Service"
+        },
+        {
+          "rank": 30,
+          "occupation": "Light Truck Drivers",
+          "soc_code": "53-3033",
+          "employment_2024": 1170000,
+          "median_annual_wage": 41780,
+          "mean_annual_wage": 44100,
+          "projected_growth_2024_2034_pct": 8.0,
+          "new_jobs_projected": 93600,
+          "entry_education": "High school diploma or equivalent",
+          "automation_risk_pct": 69,
+          "category": "Transportation and Material Moving"
+        },
+        {
+          "rank": 31,
+          "occupation": "Managers, All Other",
+          "soc_code": "11-9199",
+          "employment_2024": 1150000,
+          "median_annual_wage": 130060,
+          "mean_annual_wage": 142300,
+          "projected_growth_2024_2034_pct": 6.0,
+          "new_jobs_projected": 69000,
+          "entry_education": "Bachelor's degree",
+          "automation_risk_pct": 15,
+          "category": "Management"
+        },
+        {
+          "rank": 32,
+          "occupation": "Electricians",
+          "soc_code": "47-2111",
+          "employment_2024": 1090000,
+          "median_annual_wage": 65280,
+          "mean_annual_wage": 68400,
+          "projected_growth_2024_2034_pct": 11.0,
+          "new_jobs_projected": 119900,
+          "entry_education": "High school diploma or equivalent",
+          "automation_risk_pct": 15,
+          "category": "Construction"
+        },
+        {
+          "rank": 33,
+          "occupation": "Market Research Analysts and Marketing Specialists",
+          "soc_code": "13-1161",
+          "employment_2024": 1050000,
+          "median_annual_wage": 74680,
+          "mean_annual_wage": 83200,
+          "projected_growth_2024_2034_pct": 8.0,
+          "new_jobs_projected": 84000,
+          "entry_education": "Bachelor's degree",
+          "automation_risk_pct": 61,
+          "category": "Business and Financial"
+        },
+        {
+          "rank": 34,
+          "occupation": "Landscaping and Groundskeeping Workers",
+          "soc_code": "37-3011",
+          "employment_2024": 1030000,
+          "median_annual_wage": 37660,
+          "mean_annual_wage": 39400,
+          "projected_growth_2024_2034_pct": 5.0,
+          "new_jobs_projected": 51500,
+          "entry_education": "No formal educational credential",
+          "automation_risk_pct": 95,
+          "category": "Building and Grounds Cleaning"
+        },
+        {
+          "rank": 35,
+          "occupation": "Sales Representatives, Wholesale and Manufacturing",
+          "soc_code": "41-4012",
+          "employment_2024": 1020000,
+          "median_annual_wage": 73080,
+          "mean_annual_wage": 82400,
+          "projected_growth_2024_2034_pct": -1.0,
+          "new_jobs_projected": -10200,
+          "entry_education": "High school diploma or equivalent",
+          "automation_risk_pct": 85,
+          "category": "Sales"
+        },
+        {
+          "rank": 36,
+          "occupation": "Carpenters",
+          "soc_code": "47-2031",
+          "employment_2024": 1000000,
+          "median_annual_wage": 57980,
+          "mean_annual_wage": 60800,
+          "projected_growth_2024_2034_pct": 3.0,
+          "new_jobs_projected": 30000,
+          "entry_education": "High school diploma or equivalent",
+          "automation_risk_pct": 72,
+          "category": "Construction"
+        },
+        {
+          "rank": 37,
+          "occupation": "Maids and Housekeeping Cleaners",
+          "soc_code": "37-2012",
+          "employment_2024": 980000,
+          "median_annual_wage": 33600,
+          "mean_annual_wage": 34800,
+          "projected_growth_2024_2034_pct": 0.0,
+          "new_jobs_projected": 0,
+          "entry_education": "No formal educational credential",
+          "automation_risk_pct": 69,
+          "category": "Building and Grounds Cleaning"
+        },
+        {
+          "rank": 38,
+          "occupation": "Management Analysts (Consultants)",
+          "soc_code": "13-1111",
+          "employment_2024": 970000,
+          "median_annual_wage": 104700,
+          "mean_annual_wage": 115600,
+          "projected_growth_2024_2034_pct": 11.0,
+          "new_jobs_projected": 106700,
+          "entry_education": "Bachelor's degree",
+          "automation_risk_pct": 22,
+          "category": "Business and Financial"
+        },
+        {
+          "rank": 39,
+          "occupation": "Secondary School Teachers",
+          "soc_code": "25-2031",
+          "employment_2024": 960000,
+          "median_annual_wage": 67620,
+          "mean_annual_wage": 70100,
+          "projected_growth_2024_2034_pct": 1.0,
+          "new_jobs_projected": 9600,
+          "entry_education": "Bachelor's degree",
+          "automation_risk_pct": 1,
+          "category": "Education"
+        },
+        {
+          "rank": 40,
+          "occupation": "First-Line Supervisors of Food Preparation Workers",
+          "soc_code": "35-1012",
+          "employment_2024": 950000,
+          "median_annual_wage": 40560,
+          "mean_annual_wage": 43200,
+          "projected_growth_2024_2034_pct": 5.0,
+          "new_jobs_projected": 47500,
+          "entry_education": "High school diploma or equivalent",
+          "automation_risk_pct": 17,
+          "category": "Food Preparation and Serving"
+        },
+        {
+          "rank": 41,
+          "occupation": "Lawyers",
+          "soc_code": "23-1011",
+          "employment_2024": 920000,
+          "median_annual_wage": 145760,
+          "mean_annual_wage": 163200,
+          "projected_growth_2024_2034_pct": 5.0,
+          "new_jobs_projected": 46000,
+          "entry_education": "Doctoral or professional degree",
+          "automation_risk_pct": 4,
+          "category": "Legal"
+        },
+        {
+          "rank": 42,
+          "occupation": "Receptionists and Information Clerks",
+          "soc_code": "43-4171",
+          "employment_2024": 900000,
+          "median_annual_wage": 37820,
+          "mean_annual_wage": 39400,
+          "projected_growth_2024_2034_pct": -5.0,
+          "new_jobs_projected": -45000,
+          "entry_education": "High school diploma or equivalent",
+          "automation_risk_pct": 96,
+          "category": "Office and Administrative Support"
+        },
+        {
+          "rank": 43,
+          "occupation": "Industrial Engineers",
+          "soc_code": "17-2112",
+          "employment_2024": 350000,
+          "median_annual_wage": 99380,
+          "mean_annual_wage": 103800,
+          "projected_growth_2024_2034_pct": 12.0,
+          "new_jobs_projected": 42000,
+          "entry_education": "Bachelor's degree",
+          "automation_risk_pct": 2,
+          "category": "Architecture and Engineering"
+        },
+        {
+          "rank": 44,
+          "occupation": "Physicians and Surgeons",
+          "soc_code": "29-1210",
+          "employment_2024": 880000,
+          "median_annual_wage": 229300,
+          "mean_annual_wage": 252000,
+          "projected_growth_2024_2034_pct": 3.0,
+          "new_jobs_projected": 26400,
+          "entry_education": "Doctoral or professional degree",
+          "automation_risk_pct": 2,
+          "category": "Healthcare Practitioners"
+        },
+        {
+          "rank": 45,
+          "occupation": "Childcare Workers",
+          "soc_code": "39-9011",
+          "employment_2024": 870000,
+          "median_annual_wage": 30940,
+          "mean_annual_wage": 32400,
+          "projected_growth_2024_2034_pct": 3.0,
+          "new_jobs_projected": 26100,
+          "entry_education": "High school diploma or equivalent",
+          "automation_risk_pct": 8,
+          "category": "Personal Care and Service"
+        },
+        {
+          "rank": 46,
+          "occupation": "Plumbers, Pipefitters, and Steamfitters",
+          "soc_code": "47-2152",
+          "employment_2024": 530000,
+          "median_annual_wage": 63600,
+          "mean_annual_wage": 66800,
+          "projected_growth_2024_2034_pct": 6.0,
+          "new_jobs_projected": 31800,
+          "entry_education": "High school diploma or equivalent",
+          "automation_risk_pct": 35,
+          "category": "Construction"
+        },
+        {
+          "rank": 47,
+          "occupation": "Pharmacists",
+          "soc_code": "29-1051",
+          "employment_2024": 330000,
+          "median_annual_wage": 142960,
+          "mean_annual_wage": 145200,
+          "projected_growth_2024_2034_pct": 2.0,
+          "new_jobs_projected": 6600,
+          "entry_education": "Doctoral or professional degree",
+          "automation_risk_pct": 1,
+          "category": "Healthcare Practitioners"
+        },
+        {
+          "rank": 48,
+          "occupation": "Human Resources Specialists",
+          "soc_code": "13-1071",
+          "employment_2024": 860000,
+          "median_annual_wage": 67650,
+          "mean_annual_wage": 73400,
+          "projected_growth_2024_2034_pct": 8.0,
+          "new_jobs_projected": 68800,
+          "entry_education": "Bachelor's degree",
+          "automation_risk_pct": 31,
+          "category": "Business and Financial"
+        },
+        {
+          "rank": 49,
+          "occupation": "Social Workers",
+          "soc_code": "21-1020",
+          "employment_2024": 800000,
+          "median_annual_wage": 58380,
+          "mean_annual_wage": 61500,
+          "projected_growth_2024_2034_pct": 7.0,
+          "new_jobs_projected": 56000,
+          "entry_education": "Bachelor's degree",
+          "automation_risk_pct": 3,
+          "category": "Community and Social Service"
+        },
+        {
+          "rank": 50,
+          "occupation": "Dental Hygienists",
+          "soc_code": "29-1292",
+          "employment_2024": 230000,
+          "median_annual_wage": 87530,
+          "mean_annual_wage": 89100,
+          "projected_growth_2024_2034_pct": 7.0,
+          "new_jobs_projected": 16100,
+          "entry_education": "Associate's degree",
+          "automation_risk_pct": 4,
+          "category": "Healthcare Practitioners"
+        }
+      ]
+    },
+
+    "high_growth_occupations": {
+      "description": "Fastest growing occupations projected 2024-2034",
+      "source": "BLS Employment Projections 2024-2034",
+      "data": [
+        { "occupation": "Wind Turbine Service Technicians", "growth_pct": 60.0, "median_wage": 61770, "education": "Postsecondary nondegree award", "new_jobs": 7800 },
+        { "occupation": "Solar Photovoltaic Installers", "growth_pct": 48.0, "median_wage": 48800, "education": "High school diploma or equivalent", "new_jobs": 7200 },
+        { "occupation": "Nurse Practitioners", "growth_pct": 40.0, "median_wage": 126260, "education": "Master's degree", "new_jobs": 124300 },
+        { "occupation": "Data Scientists", "growth_pct": 36.0, "median_wage": 108020, "education": "Bachelor's degree", "new_jobs": 69800 },
+        { "occupation": "Information Security Analysts", "growth_pct": 29.0, "median_wage": 124910, "education": "Bachelor's degree", "new_jobs": 56100 },
+        { "occupation": "Physician Assistants", "growth_pct": 28.0, "median_wage": 130020, "education": "Master's degree", "new_jobs": 41400 },
+        { "occupation": "Physical Therapist Assistants", "growth_pct": 24.0, "median_wage": 64080, "education": "Associate's degree", "new_jobs": 24500 },
+        { "occupation": "Epidemiologists", "growth_pct": 23.0, "median_wage": 81390, "education": "Master's degree", "new_jobs": 1700 },
+        { "occupation": "Speech-Language Pathologists", "growth_pct": 20.0, "median_wage": 91400, "education": "Master's degree", "new_jobs": 37200 },
+        { "occupation": "Home Health and Personal Care Aides", "growth_pct": 20.5, "median_wage": 33530, "education": "High school diploma or equivalent", "new_jobs": 739800 },
+        { "occupation": "Veterinary Technologists and Technicians", "growth_pct": 20.0, "median_wage": 42740, "education": "Associate's degree", "new_jobs": 25600 },
+        { "occupation": "Medical and Health Services Managers", "growth_pct": 29.0, "median_wage": 127980, "education": "Bachelor's degree", "new_jobs": 144000 },
+        { "occupation": "Logisticians", "growth_pct": 18.0, "median_wage": 79400, "education": "Bachelor's degree", "new_jobs": 32400 },
+        { "occupation": "Operations Research Analysts", "growth_pct": 23.0, "median_wage": 85720, "education": "Bachelor's degree", "new_jobs": 25300 },
+        { "occupation": "Substance Abuse/Behavioral Counselors", "growth_pct": 19.0, "median_wage": 53710, "education": "Bachelor's degree", "new_jobs": 68400 },
+        { "occupation": "Occupational Therapy Assistants", "growth_pct": 22.0, "median_wage": 66740, "education": "Associate's degree", "new_jobs": 9900 },
+        { "occupation": "Genetic Counselors", "growth_pct": 21.0, "median_wage": 93800, "education": "Master's degree", "new_jobs": 900 },
+        { "occupation": "Actuaries", "growth_pct": 22.0, "median_wage": 125300, "education": "Bachelor's degree", "new_jobs": 6600 },
+        { "occupation": "Athletic Trainers", "growth_pct": 18.0, "median_wage": 57850, "education": "Bachelor's degree", "new_jobs": 6300 },
+        { "occupation": "Software Developers", "growth_pct": 15.8, "median_wage": 132270, "education": "Bachelor's degree", "new_jobs": 267700 }
+      ]
+    },
+
+    "declining_occupations": {
+      "description": "Occupations with largest projected employment decline 2024-2034",
+      "source": "BLS Employment Projections 2024-2034",
+      "data": [
+        { "occupation": "Cashiers", "decline_pct": -10.0, "jobs_lost": -270000, "median_wage": 30710, "automation_risk_pct": 97 },
+        { "occupation": "Secretaries and Administrative Assistants", "decline_pct": -10.0, "jobs_lost": -171000, "median_wage": 46010, "automation_risk_pct": 96 },
+        { "occupation": "Bookkeeping and Accounting Clerks", "decline_pct": -7.0, "jobs_lost": -94500, "median_wage": 47440, "automation_risk_pct": 98 },
+        { "occupation": "Office Clerks, General", "decline_pct": -8.0, "jobs_lost": -208000, "median_wage": 45470, "automation_risk_pct": 96 },
+        { "occupation": "Postal Service Mail Carriers", "decline_pct": -13.0, "jobs_lost": -45500, "median_wage": 55400, "automation_risk_pct": 68 },
+        { "occupation": "Word Processors and Typists", "decline_pct": -36.0, "jobs_lost": -15800, "median_wage": 43600, "automation_risk_pct": 98 },
+        { "occupation": "Telephone Operators", "decline_pct": -24.0, "jobs_lost": -3600, "median_wage": 38600, "automation_risk_pct": 97 },
+        { "occupation": "Data Entry Keyers", "decline_pct": -25.0, "jobs_lost": -38700, "median_wage": 38400, "automation_risk_pct": 99 },
+        { "occupation": "Tellers (Bank)", "decline_pct": -15.0, "jobs_lost": -55500, "median_wage": 37200, "automation_risk_pct": 98 },
+        { "occupation": "Printing Workers", "decline_pct": -14.0, "jobs_lost": -27300, "median_wage": 41200, "automation_risk_pct": 87 },
+        { "occupation": "Watch and Clock Repairers", "decline_pct": -18.0, "jobs_lost": -600, "median_wage": 45800, "automation_risk_pct": 85 },
+        { "occupation": "Switchboard Operators", "decline_pct": -20.0, "jobs_lost": -6400, "median_wage": 34200, "automation_risk_pct": 96 },
+        { "occupation": "Textile Machine Operators", "decline_pct": -16.0, "jobs_lost": -12800, "median_wage": 34100, "automation_risk_pct": 92 },
+        { "occupation": "Photographic Process Workers", "decline_pct": -15.0, "jobs_lost": -3200, "median_wage": 35600, "automation_risk_pct": 94 },
+        { "occupation": "Travel Agents", "decline_pct": -12.0, "jobs_lost": -8400, "median_wage": 46400, "automation_risk_pct": 61 }
+      ]
+    },
+
+    "automation_risk_by_occupation": {
+      "description": "Automation/AI risk scores for major occupation categories (probability 0-100 that occupation will be automated)",
+      "source": "Frey & Osborne (Oxford 2013, updated 2024) + Pew Research AI analysis + BLS MLR 2022",
+      "data": [
+        { "occupation": "Telemarketers", "automation_risk_pct": 99, "category": "Sales" },
+        { "occupation": "Data Entry Keyers", "automation_risk_pct": 99, "category": "Office Support" },
+        { "occupation": "Bookkeeping Clerks", "automation_risk_pct": 98, "category": "Office Support" },
+        { "occupation": "Tax Preparers", "automation_risk_pct": 99, "category": "Business and Financial" },
+        { "occupation": "Insurance Underwriters", "automation_risk_pct": 99, "category": "Business and Financial" },
+        { "occupation": "Hand Sewers", "automation_risk_pct": 99, "category": "Production" },
+        { "occupation": "Title Examiners and Abstractors", "automation_risk_pct": 99, "category": "Legal" },
+        { "occupation": "Library Technicians", "automation_risk_pct": 99, "category": "Education" },
+        { "occupation": "Cashiers", "automation_risk_pct": 97, "category": "Sales" },
+        { "occupation": "Bank Tellers", "automation_risk_pct": 98, "category": "Office Support" },
+        { "occupation": "Retail Salespersons", "automation_risk_pct": 92, "category": "Sales" },
+        { "occupation": "Fast Food Workers", "automation_risk_pct": 81, "category": "Food Service" },
+        { "occupation": "Truck Drivers (Heavy)", "automation_risk_pct": 79, "category": "Transportation" },
+        { "occupation": "Paralegals and Legal Assistants", "automation_risk_pct": 94, "category": "Legal" },
+        { "occupation": "Accountants and Auditors", "automation_risk_pct": 94, "category": "Business and Financial" },
+        { "occupation": "Graphic Designers", "automation_risk_pct": 73, "category": "Arts and Design" },
+        { "occupation": "Translators and Interpreters", "automation_risk_pct": 38, "category": "Media" },
+        { "occupation": "Web Developers", "automation_risk_pct": 21, "category": "Computer and IT" },
+        { "occupation": "Software Developers", "automation_risk_pct": 13, "category": "Computer and IT" },
+        { "occupation": "Data Scientists", "automation_risk_pct": 5, "category": "Computer and IT" },
+        { "occupation": "Information Security Analysts", "automation_risk_pct": 3, "category": "Computer and IT" },
+        { "occupation": "Registered Nurses", "automation_risk_pct": 1, "category": "Healthcare" },
+        { "occupation": "Physicians and Surgeons", "automation_risk_pct": 2, "category": "Healthcare" },
+        { "occupation": "Dentists", "automation_risk_pct": 4, "category": "Healthcare" },
+        { "occupation": "Pharmacists", "automation_risk_pct": 1, "category": "Healthcare" },
+        { "occupation": "Physical Therapists", "automation_risk_pct": 2, "category": "Healthcare" },
+        { "occupation": "Occupational Therapists", "automation_risk_pct": 3, "category": "Healthcare" },
+        { "occupation": "Psychologists", "automation_risk_pct": 1, "category": "Healthcare" },
+        { "occupation": "Elementary School Teachers", "automation_risk_pct": 1, "category": "Education" },
+        { "occupation": "Secondary School Teachers", "automation_risk_pct": 1, "category": "Education" },
+        { "occupation": "Lawyers", "automation_risk_pct": 4, "category": "Legal" },
+        { "occupation": "Judges", "automation_risk_pct": 1, "category": "Legal" },
+        { "occupation": "Firefighters", "automation_risk_pct": 17, "category": "Protective Service" },
+        { "occupation": "Police Officers", "automation_risk_pct": 10, "category": "Protective Service" },
+        { "occupation": "Electricians", "automation_risk_pct": 15, "category": "Construction" },
+        { "occupation": "Plumbers", "automation_risk_pct": 35, "category": "Construction" },
+        { "occupation": "Recreational Therapists", "automation_risk_pct": 0.3, "category": "Healthcare" },
+        { "occupation": "Emergency Management Directors", "automation_risk_pct": 0.3, "category": "Management" },
+        { "occupation": "Social Workers", "automation_risk_pct": 3, "category": "Community Service" },
+        { "occupation": "Clergy", "automation_risk_pct": 1, "category": "Community Service" }
+      ]
+    },
+
+    "wages_by_occupation_group": {
+      "description": "Median and mean annual wages by major occupation group",
+      "source": "BLS OEWS May 2024",
+      "data": [
+        { "group": "All Occupations", "employment": 154187380, "median_annual_wage": 49500, "mean_annual_wage": 67920, "mean_hourly_wage": 32.66 },
+        { "group": "Management", "employment": 10966830, "median_annual_wage": 122090, "mean_annual_wage": 141750, "mean_hourly_wage": 68.15 },
+        { "group": "Computer and Mathematical", "employment": 4898780, "median_annual_wage": 105990, "mean_annual_wage": 113400, "mean_hourly_wage": 54.52 },
+        { "group": "Architecture and Engineering", "employment": 2724930, "median_annual_wage": 91010, "mean_annual_wage": 97200, "mean_hourly_wage": 46.73 },
+        { "group": "Legal", "employment": 1330430, "median_annual_wage": 87250, "mean_annual_wage": 110800, "mean_hourly_wage": 53.27 },
+        { "group": "Healthcare Practitioners and Technical", "employment": 9546820, "median_annual_wage": 85900, "mean_annual_wage": 100700, "mean_hourly_wage": 48.42 },
+        { "group": "Business and Financial Operations", "employment": 9534370, "median_annual_wage": 80920, "mean_annual_wage": 89600, "mean_hourly_wage": 43.08 },
+        { "group": "Life, Physical, and Social Science", "employment": 1384240, "median_annual_wage": 80450, "mean_annual_wage": 87600, "mean_hourly_wage": 42.12 },
+        { "group": "Arts, Design, Entertainment, Sports, and Media", "employment": 2061870, "median_annual_wage": 63020, "mean_annual_wage": 72800, "mean_hourly_wage": 35.00 },
+        { "group": "Educational Instruction and Library", "employment": 9163630, "median_annual_wage": 59400, "mean_annual_wage": 62100, "mean_hourly_wage": 29.86 },
+        { "group": "Community and Social Service", "employment": 2671060, "median_annual_wage": 52200, "mean_annual_wage": 55800, "mean_hourly_wage": 26.83 },
+        { "group": "Construction and Extraction", "employment": 6485290, "median_annual_wage": 55240, "mean_annual_wage": 58600, "mean_hourly_wage": 28.17 },
+        { "group": "Installation, Maintenance, and Repair", "employment": 5908670, "median_annual_wage": 52650, "mean_annual_wage": 55900, "mean_hourly_wage": 26.88 },
+        { "group": "Protective Service", "employment": 3335560, "median_annual_wage": 49980, "mean_annual_wage": 55100, "mean_hourly_wage": 26.49 },
+        { "group": "Production", "employment": 8535430, "median_annual_wage": 41480, "mean_annual_wage": 44600, "mean_hourly_wage": 21.44 },
+        { "group": "Office and Administrative Support", "employment": 18207830, "median_annual_wage": 43380, "mean_annual_wage": 46200, "mean_hourly_wage": 22.21 },
+        { "group": "Transportation and Material Moving", "employment": 12849020, "median_annual_wage": 40600, "mean_annual_wage": 43700, "mean_hourly_wage": 21.01 },
+        { "group": "Sales and Related", "employment": 13421370, "median_annual_wage": 36780, "mean_annual_wage": 50300, "mean_hourly_wage": 24.18 },
+        { "group": "Healthcare Support", "employment": 7203240, "median_annual_wage": 36870, "mean_annual_wage": 38400, "mean_hourly_wage": 18.46 },
+        { "group": "Building and Grounds Cleaning and Maintenance", "employment": 4607020, "median_annual_wage": 35520, "mean_annual_wage": 37200, "mean_hourly_wage": 17.88 },
+        { "group": "Personal Care and Service", "employment": 4308740, "median_annual_wage": 35120, "mean_annual_wage": 37800, "mean_hourly_wage": 18.17 },
+        { "group": "Food Preparation and Serving Related", "employment": 12914130, "median_annual_wage": 32900, "mean_annual_wage": 34500, "mean_hourly_wage": 16.59 },
+        { "group": "Farming, Fishing, and Forestry", "employment": 429610, "median_annual_wage": 34200, "mean_annual_wage": 37300, "mean_hourly_wage": 17.93 }
+      ]
+    },
+
+    "education_and_earnings": {
+      "description": "Median weekly earnings and unemployment rate by education level",
+      "source": "BLS Current Population Survey 2024",
+      "data": [
+        { "education_level": "Doctoral degree", "median_weekly_earnings": 2109, "median_annual_earnings": 109668, "unemployment_rate_pct": 1.4 },
+        { "education_level": "Professional degree", "median_weekly_earnings": 2120, "median_annual_earnings": 110240, "unemployment_rate_pct": 1.5 },
+        { "education_level": "Master's degree", "median_weekly_earnings": 1737, "median_annual_earnings": 90324, "unemployment_rate_pct": 2.0 },
+        { "education_level": "Bachelor's degree", "median_weekly_earnings": 1493, "median_annual_earnings": 77636, "unemployment_rate_pct": 2.7 },
+        { "education_level": "Associate's degree", "median_weekly_earnings": 1058, "median_annual_earnings": 55016, "unemployment_rate_pct": 3.3 },
+        { "education_level": "Some college, no degree", "median_weekly_earnings": 971, "median_annual_earnings": 50492, "unemployment_rate_pct": 3.7 },
+        { "education_level": "High school diploma", "median_weekly_earnings": 899, "median_annual_earnings": 46748, "unemployment_rate_pct": 4.4 },
+        { "education_level": "Less than high school", "median_weekly_earnings": 738, "median_annual_earnings": 38376, "unemployment_rate_pct": 6.7 }
+      ]
+    },
+
+    "career_transitions": {
+      "description": "Career change probabilities and patterns by age, gender, industry",
+      "source": "BLS NLS + Zippia + NovoResume + High5Test 2024-2025",
+      "data": [
+        { "metric": "Average jobs held in lifetime (ages 18-54)", "value": 12.4, "unit": "jobs" },
+        { "metric": "Average career changes in lifetime", "value": 5.7, "unit": "changes", "note": "5-7 range commonly cited" },
+        { "metric": "Average age for major career change", "value": 39, "unit": "years" },
+        { "metric": "Median job tenure (all workers, Jan 2024)", "value": 3.9, "unit": "years" },
+        { "metric": "Median job tenure — men", "value": 4.2, "unit": "years" },
+        { "metric": "Median job tenure — women", "value": 3.6, "unit": "years" },
+        { "metric": "Workers actively seeking new job (2024)", "value": 59, "unit": "percent" },
+        { "metric": "Workers who changed/lost job in 2020", "value": 37, "unit": "percent" },
+        { "metric": "Workers who view job-hopping positively", "value": 64, "unit": "percent" },
+        { "metric": "Workers under 34 who support job-hopping", "value": 75, "unit": "percent" },
+        { "metric": "Workers willing to accept lower pay for meaningful work", "value": 58, "unit": "percent" },
+        { "metric": "Job changers salary increase range", "value": "20-50", "unit": "percent increase" },
+        { "metric": "Annual raise for staying at same job", "value": "1.3-4.5", "unit": "percent" },
+        { "metric": "Workers earning 50% less by staying vs switching", "value": 50, "unit": "percent less than switchers (2+ years same role)" }
+      ]
+    },
+
+    "career_change_by_age": {
+      "description": "Career change rates and job tenure by age bracket",
+      "source": "BLS NLS + Zippia + High5Test 2024",
+      "data": [
+        { "age_bracket": "18-24", "avg_jobs_held": 5.7, "median_tenure_years": 1.4, "pct_seeking_career_change": 13, "pct_changed_job_past_year": 33, "note": "Highest mobility, exploring phase" },
+        { "age_bracket": "25-29", "avg_jobs_held": 2.4, "median_tenure_years": 2.8, "pct_seeking_career_change": 26, "pct_changed_job_past_year": 25, "note": "Peak career change desire" },
+        { "age_bracket": "30-34", "avg_jobs_held": 2.0, "median_tenure_years": 3.2, "pct_seeking_career_change": 23, "pct_changed_job_past_year": 20, "note": "Still high mobility" },
+        { "age_bracket": "35-39", "avg_jobs_held": 1.5, "median_tenure_years": 4.9, "pct_seeking_career_change": 17, "pct_changed_job_past_year": 15, "note": "Settling phase begins" },
+        { "age_bracket": "40-44", "avg_jobs_held": 1.4, "median_tenure_years": 5.5, "pct_seeking_career_change": 12, "pct_changed_job_past_year": 10, "note": "Mid-career stability" },
+        { "age_bracket": "45-49", "avg_jobs_held": 1.1, "median_tenure_years": 7.6, "pct_seeking_career_change": 10, "pct_changed_job_past_year": 8, "note": "Established careers" },
+        { "age_bracket": "50-54", "avg_jobs_held": 0.8, "median_tenure_years": 8.4, "pct_seeking_career_change": 8, "pct_changed_job_past_year": 5, "note": "Low but non-zero mobility" },
+        { "age_bracket": "55-59", "avg_jobs_held": 0.6, "median_tenure_years": 9.8, "pct_seeking_career_change": 6, "pct_changed_job_past_year": 3, "note": "Pre-retirement stability" },
+        { "age_bracket": "60-64", "avg_jobs_held": 0.4, "median_tenure_years": 10.1, "pct_seeking_career_change": 4, "pct_changed_job_past_year": 2, "note": "Retirement planning phase" },
+        { "age_bracket": "65+", "avg_jobs_held": 0.2, "median_tenure_years": 10.3, "pct_seeking_career_change": 2, "pct_changed_job_past_year": 1, "note": "Some continue working by choice" }
+      ]
+    },
+
+    "career_change_by_industry": {
+      "description": "Career change and industry switching rates by sector",
+      "source": "High5Test + Zippia + BLS 2024",
+      "data": [
+        { "industry": "Leisure and Hospitality", "median_tenure_years": 2.3, "pct_planning_job_hunt": 48, "pct_switched_industry": 58, "annual_turnover_pct": 73 },
+        { "industry": "Retail Trade", "median_tenure_years": 2.8, "pct_planning_job_hunt": 54, "pct_switched_industry": 52, "annual_turnover_pct": 60 },
+        { "industry": "Administrative Services", "median_tenure_years": 3.1, "pct_planning_job_hunt": 47, "pct_switched_industry": 48, "annual_turnover_pct": 49 },
+        { "industry": "Technology", "median_tenure_years": 3.4, "pct_planning_job_hunt": 47, "pct_switched_industry": 42, "annual_turnover_pct": 38 },
+        { "industry": "Healthcare", "median_tenure_years": 4.2, "pct_planning_job_hunt": 35, "pct_switched_industry": 28, "annual_turnover_pct": 22 },
+        { "industry": "Finance and Insurance", "median_tenure_years": 4.8, "pct_planning_job_hunt": 38, "pct_switched_industry": 65, "annual_turnover_pct": 25 },
+        { "industry": "Construction", "median_tenure_years": 4.1, "pct_planning_job_hunt": 32, "pct_switched_industry": 35, "annual_turnover_pct": 30 },
+        { "industry": "Manufacturing", "median_tenure_years": 5.1, "pct_planning_job_hunt": 30, "pct_switched_industry": 30, "annual_turnover_pct": 22 },
+        { "industry": "Education", "median_tenure_years": 5.4, "pct_planning_job_hunt": 28, "pct_switched_industry": 25, "annual_turnover_pct": 16 },
+        { "industry": "Public Administration / Government", "median_tenure_years": 6.5, "pct_planning_job_hunt": 22, "pct_switched_industry": 72, "annual_turnover_pct": 12 },
+        { "industry": "Federal Government", "median_tenure_years": 8.2, "pct_planning_job_hunt": 18, "pct_switched_industry": 15, "annual_turnover_pct": 8 }
+      ]
+    },
+
+    "career_change_motivations": {
+      "description": "Why people change careers — ranked by frequency",
+      "source": "NovoResume + Zippia + High5Test 2024",
+      "data": [
+        { "motivation": "Better work-life balance", "pct_citing": 83 },
+        { "motivation": "Higher compensation/salary", "pct_citing": 82 },
+        { "motivation": "Remote/flexible work opportunity", "pct_citing": 76 },
+        { "motivation": "Career growth/advancement", "pct_citing": 60 },
+        { "motivation": "Passion/interest alignment", "pct_citing": 21 },
+        { "motivation": "Job security concerns", "pct_citing": 24 },
+        { "motivation": "Toxic work environment", "pct_citing": 19 },
+        { "motivation": "Skills becoming obsolete", "pct_citing": 51 },
+        { "motivation": "Automation/AI replacement fear", "pct_citing": 24 },
+        { "motivation": "Uncertain about career fit", "pct_citing": 32 },
+        { "motivation": "Relocation/geographic reasons", "pct_citing": 15 },
+        { "motivation": "Health/burnout", "pct_citing": 18 }
+      ]
+    },
+
+    "career_change_barriers": {
+      "description": "Barriers preventing career transitions",
+      "source": "Zippia + NovoResume 2024",
+      "data": [
+        { "barrier": "Financial concerns / can't afford income gap", "pct_citing": 57 },
+        { "barrier": "Unsure about career direction", "pct_citing": 40 },
+        { "barrier": "Feel underqualified for new field", "pct_citing": 37 },
+        { "barrier": "Believe too old to change", "pct_citing": 31 },
+        { "barrier": "Lack knowledge in other fields", "pct_citing": 31 },
+        { "barrier": "Fear of making a fresh start", "pct_citing": 34 },
+        { "barrier": "Don't believe they have required experience", "pct_citing": 22 },
+        { "barrier": "Competition from younger candidates", "pct_citing": 14 },
+        { "barrier": "Financial pressures keeping them in current job", "pct_citing": 90 }
+      ]
+    },
+
+    "education_and_career_alignment": {
+      "description": "How well education aligns with career outcomes",
+      "source": "Federal Reserve Bank of New York + BLS 2024-2025",
+      "data": [
+        { "metric": "Recent grads employed or in further education within 6 months", "value": 86, "unit": "percent", "note": "Bachelor's class of 2024" },
+        { "metric": "Master's grads employed or in further education within 6 months", "value": 89, "unit": "percent" },
+        { "metric": "Underemployment rate (working outside field of major)", "value": 42.5, "unit": "percent", "note": "Highest since 2020, Q4 2025" },
+        { "metric": "Unemployment rate for recent college graduates", "value": 5.8, "unit": "percent", "note": "March 2025, up from 4.6% prior year" },
+        { "metric": "Percentage of STEM grads who lack industry qualifications perception", "value": 43, "unit": "percent" },
+        { "metric": "Workers who say reskilling enables career switches", "value": 87, "unit": "percent" },
+        { "metric": "Required skills that will change by 2030", "value": 70, "unit": "percent", "source": "World Economic Forum" }
+      ]
+    },
+
+    "underemployment_by_major": {
+      "description": "Percentage of graduates working in jobs not requiring their degree, by college major",
+      "source": "Federal Reserve Bank of New York College Labor Market Index 2025",
+      "data": [
+        { "major": "Criminal Justice", "underemployment_pct": 73, "early_career_median_wage": 37000 },
+        { "major": "Performing Arts", "underemployment_pct": 67, "early_career_median_wage": 35000 },
+        { "major": "Leisure and Hospitality", "underemployment_pct": 66, "early_career_median_wage": 34000 },
+        { "major": "Liberal Arts", "underemployment_pct": 62, "early_career_median_wage": 36000 },
+        { "major": "Communications", "underemployment_pct": 58, "early_career_median_wage": 40000 },
+        { "major": "Business Management", "underemployment_pct": 55, "early_career_median_wage": 45000 },
+        { "major": "Psychology", "underemployment_pct": 54, "early_career_median_wage": 38000 },
+        { "major": "History", "underemployment_pct": 53, "early_career_median_wage": 40000 },
+        { "major": "Political Science", "underemployment_pct": 52, "early_career_median_wage": 43000 },
+        { "major": "English", "underemployment_pct": 50, "early_career_median_wage": 38000 },
+        { "major": "Biology", "underemployment_pct": 47, "early_career_median_wage": 40000 },
+        { "major": "Marketing", "underemployment_pct": 46, "early_career_median_wage": 44000 },
+        { "major": "Finance", "underemployment_pct": 34, "early_career_median_wage": 55000 },
+        { "major": "Accounting", "underemployment_pct": 28, "early_career_median_wage": 52000 },
+        { "major": "Economics", "underemployment_pct": 35, "early_career_median_wage": 52000 },
+        { "major": "Computer Science", "underemployment_pct": 25, "early_career_median_wage": 75000 },
+        { "major": "Engineering", "underemployment_pct": 22, "early_career_median_wage": 72000 },
+        { "major": "Nursing", "underemployment_pct": 12, "early_career_median_wage": 65000 },
+        { "major": "Pharmacy", "underemployment_pct": 8, "early_career_median_wage": 85000 },
+        { "major": "Education", "underemployment_pct": 18, "early_career_median_wage": 42000 }
+      ]
+    },
+
+    "freelance_vs_employee": {
+      "description": "Freelancer vs traditional employee comparison statistics",
+      "source": "Upwork + High5Test + Mellow 2024-2026",
+      "data": [
+        { "metric": "US workforce freelancing", "value": 38, "unit": "percent", "note": "~64 million Americans" },
+        { "metric": "Freelancers who work remotely", "value": 60, "unit": "percent" },
+        { "metric": "Non-freelance professionals working remotely", "value": 32, "unit": "percent" },
+        { "metric": "US employees working remotely at least partially (March 2025)", "value": 22.8, "unit": "percent", "note": "36.07 million people" },
+        { "metric": "Freelancers satisfied with work", "value": 75, "unit": "percent" },
+        { "metric": "Full-time employees satisfied with work", "value": 47, "unit": "percent" },
+        { "metric": "Overall job satisfaction rate (2024, record high)", "value": 56.9, "unit": "percent" },
+        { "metric": "Freelancers saying opportunities grew year-over-year", "value": 82, "unit": "percent" },
+        { "metric": "Full-time employees saying opportunities grew", "value": 63, "unit": "percent" },
+        { "metric": "Workers preferring hybrid model", "value": 68, "unit": "percent" },
+        { "metric": "Workers wanting option to work from home weekly", "value": 87, "unit": "percent" },
+        { "metric": "Remote workers finding it less stressful", "value": 48, "unit": "percent" },
+        { "metric": "Remote workers finding it more stressful", "value": 19, "unit": "percent" },
+        { "metric": "Fully remote workers thriving in life", "value": 36, "unit": "percent" },
+        { "metric": "Hybrid workers thriving in life", "value": 42, "unit": "percent" },
+        { "metric": "On-site workers thriving in life", "value": 42, "unit": "percent" }
+      ]
+    },
+
+    "remote_work_by_occupation_type": {
+      "description": "Remote work feasibility and adoption by occupation category",
+      "source": "BLS + McKinsey + Upwork 2024-2025",
+      "data": [
+        { "occupation_type": "Computer and Mathematical", "pct_can_work_remote": 87, "pct_currently_remote_or_hybrid": 72, "median_wage": 105990 },
+        { "occupation_type": "Business and Financial Operations", "pct_can_work_remote": 76, "pct_currently_remote_or_hybrid": 58, "median_wage": 80920 },
+        { "occupation_type": "Management", "pct_can_work_remote": 68, "pct_currently_remote_or_hybrid": 55, "median_wage": 122090 },
+        { "occupation_type": "Legal", "pct_can_work_remote": 72, "pct_currently_remote_or_hybrid": 52, "median_wage": 87250 },
+        { "occupation_type": "Arts, Design, Media", "pct_can_work_remote": 65, "pct_currently_remote_or_hybrid": 48, "median_wage": 63020 },
+        { "occupation_type": "Life, Physical, Social Science", "pct_can_work_remote": 55, "pct_currently_remote_or_hybrid": 40, "median_wage": 80450 },
+        { "occupation_type": "Education", "pct_can_work_remote": 45, "pct_currently_remote_or_hybrid": 25, "median_wage": 59400 },
+        { "occupation_type": "Office and Administrative Support", "pct_can_work_remote": 52, "pct_currently_remote_or_hybrid": 35, "median_wage": 43380 },
+        { "occupation_type": "Sales and Related", "pct_can_work_remote": 40, "pct_currently_remote_or_hybrid": 28, "median_wage": 36780 },
+        { "occupation_type": "Community and Social Service", "pct_can_work_remote": 35, "pct_currently_remote_or_hybrid": 22, "median_wage": 52200 },
+        { "occupation_type": "Healthcare Practitioners", "pct_can_work_remote": 15, "pct_currently_remote_or_hybrid": 10, "median_wage": 85900 },
+        { "occupation_type": "Protective Service", "pct_can_work_remote": 8, "pct_currently_remote_or_hybrid": 5, "median_wage": 49980 },
+        { "occupation_type": "Construction and Extraction", "pct_can_work_remote": 5, "pct_currently_remote_or_hybrid": 3, "median_wage": 55240 },
+        { "occupation_type": "Production", "pct_can_work_remote": 5, "pct_currently_remote_or_hybrid": 3, "median_wage": 41480 },
+        { "occupation_type": "Transportation and Material Moving", "pct_can_work_remote": 3, "pct_currently_remote_or_hybrid": 2, "median_wage": 40600 },
+        { "occupation_type": "Food Preparation and Serving", "pct_can_work_remote": 1, "pct_currently_remote_or_hybrid": 1, "median_wage": 32900 },
+        { "occupation_type": "Building and Grounds Cleaning", "pct_can_work_remote": 2, "pct_currently_remote_or_hybrid": 1, "median_wage": 35520 }
+      ]
+    },
+
+    "generational_career_patterns": {
+      "description": "Career patterns by generation",
+      "source": "WEF + BLS + Zippia 2024-2025",
+      "data": [
+        { "generation": "Gen Z (1997-2012)", "expected_jobs_lifetime": 17, "expected_careers_lifetime": 7, "avg_job_tenure_years": 2.3, "pct_job_switched_past_year": 33, "top_priority": "Flexibility and purpose" },
+        { "generation": "Millennials (1981-1996)", "expected_jobs_lifetime": 14, "expected_careers_lifetime": 5, "avg_job_tenure_years": 2.8, "pct_job_switched_past_year": 25, "top_priority": "Growth and work-life balance" },
+        { "generation": "Gen X (1965-1980)", "expected_jobs_lifetime": 12, "expected_careers_lifetime": 4, "avg_job_tenure_years": 5.0, "pct_job_switched_past_year": 12, "top_priority": "Stability and compensation" },
+        { "generation": "Baby Boomers (1946-1964)", "expected_jobs_lifetime": 11.7, "expected_careers_lifetime": 3, "avg_job_tenure_years": 8.0, "pct_job_switched_past_year": 5, "top_priority": "Security and loyalty" },
+        { "generation": "Silent Generation (1928-1945)", "expected_jobs_lifetime": 6, "expected_careers_lifetime": 1.5, "avg_job_tenure_years": 15.0, "pct_job_switched_past_year": 1, "top_priority": "Lifetime employment" }
+      ]
+    },
+
+    "job_tenure_by_race_ethnicity": {
+      "description": "Median job tenure and long-tenure percentages by race/ethnicity",
+      "source": "BLS + Zippia 2024",
+      "data": [
+        { "group": "White", "pct_with_10plus_years_tenure": 29, "median_tenure_years": 4.4 },
+        { "group": "Asian", "pct_with_10plus_years_tenure": 26, "median_tenure_years": 3.8 },
+        { "group": "Black", "pct_with_10plus_years_tenure": 23, "median_tenure_years": 3.5 },
+        { "group": "Hispanic/Latino", "pct_with_10plus_years_tenure": 22, "median_tenure_years": 3.3 }
+      ]
+    },
+
+    "ai_impact_on_occupations": {
+      "description": "AI exposure and impact on different occupation categories",
+      "source": "Pew Research 2023 + BLS MLR 2022-2024 + Frey-Osborne 2024 reappraisal",
+      "data": [
+        { "category": "Most AI-exposed (top quartile)", "examples": "Budget analysts, tax preparers, web developers, translators, graphic designers, paralegals", "impact": "Job roles transforming — some tasks automated, new tasks emerging", "net_employment_effect": "Mixed — some decline, some growth via new specializations" },
+        { "category": "Moderately AI-exposed", "examples": "Accountants, marketing analysts, HR specialists, writers, customer service reps", "impact": "AI augmentation — productivity gains, fewer junior roles needed", "net_employment_effect": "Slight decline in junior positions, growth in senior/strategic roles" },
+        { "category": "Least AI-exposed (bottom quartile)", "examples": "Personal care aides, hospitality workers, manual trades, construction", "impact": "Minimal direct AI impact — physical/social tasks hard to automate", "net_employment_effect": "Continued growth, especially healthcare and trades" },
+        { "category": "AI-boosted occupations", "examples": "Data scientists, info security analysts, software developers, AI/ML engineers", "impact": "Demand surging — AI creates more need for these roles", "net_employment_effect": "Strong growth 15-40% projected 2024-2034" }
+      ]
+    },
+
+    "salary_progression_by_career_stage": {
+      "description": "Typical salary progression from entry to senior level by occupation",
+      "source": "BLS OEWS 2024 + Glassdoor + Levels.fyi",
+      "data": [
+        { "occupation": "Software Developer", "entry_salary": 72000, "mid_career_salary": 132270, "senior_salary": 185000, "executive_salary": 250000, "years_to_mid": 5, "years_to_senior": 10 },
+        { "occupation": "Registered Nurse", "entry_salary": 55000, "mid_career_salary": 98430, "senior_salary": 120000, "executive_salary": 150000, "years_to_mid": 5, "years_to_senior": 12 },
+        { "occupation": "Accountant", "entry_salary": 52000, "mid_career_salary": 83980, "senior_salary": 115000, "executive_salary": 180000, "years_to_mid": 5, "years_to_senior": 10 },
+        { "occupation": "Teacher (K-12)", "entry_salary": 42000, "mid_career_salary": 65590, "senior_salary": 80000, "executive_salary": 105000, "years_to_mid": 8, "years_to_senior": 15 },
+        { "occupation": "Marketing Manager", "entry_salary": 48000, "mid_career_salary": 74680, "senior_salary": 120000, "executive_salary": 185000, "years_to_mid": 5, "years_to_senior": 10 },
+        { "occupation": "Electrician", "entry_salary": 38000, "mid_career_salary": 65280, "senior_salary": 90000, "executive_salary": 110000, "years_to_mid": 5, "years_to_senior": 12 },
+        { "occupation": "Financial Analyst", "entry_salary": 55000, "mid_career_salary": 95000, "senior_salary": 140000, "executive_salary": 220000, "years_to_mid": 4, "years_to_senior": 8 },
+        { "occupation": "Lawyer", "entry_salary": 70000, "mid_career_salary": 145760, "senior_salary": 200000, "executive_salary": 350000, "years_to_mid": 5, "years_to_senior": 10 },
+        { "occupation": "Physician", "entry_salary": 180000, "mid_career_salary": 229300, "senior_salary": 310000, "executive_salary": 450000, "years_to_mid": 5, "years_to_senior": 12 },
+        { "occupation": "Construction Worker", "entry_salary": 32000, "mid_career_salary": 44810, "senior_salary": 62000, "executive_salary": 85000, "years_to_mid": 5, "years_to_senior": 12 },
+        { "occupation": "Data Scientist", "entry_salary": 75000, "mid_career_salary": 108020, "senior_salary": 155000, "executive_salary": 220000, "years_to_mid": 4, "years_to_senior": 8 },
+        { "occupation": "Project Manager", "entry_salary": 58000, "mid_career_salary": 98580, "senior_salary": 135000, "executive_salary": 180000, "years_to_mid": 5, "years_to_senior": 10 },
+        { "occupation": "Social Worker", "entry_salary": 38000, "mid_career_salary": 58380, "senior_salary": 75000, "executive_salary": 95000, "years_to_mid": 5, "years_to_senior": 12 },
+        { "occupation": "Retail Manager", "entry_salary": 30000, "mid_career_salary": 48560, "senior_salary": 68000, "executive_salary": 95000, "years_to_mid": 5, "years_to_senior": 10 },
+        { "occupation": "Graphic Designer", "entry_salary": 38000, "mid_career_salary": 60000, "senior_salary": 85000, "executive_salary": 120000, "years_to_mid": 5, "years_to_senior": 10 }
+      ]
+    },
+
+    "sector_growth_projections": {
+      "description": "Employment growth by industry sector 2024-2034",
+      "source": "BLS Employment Projections 2024-2034",
+      "data": [
+        { "sector": "Healthcare and Social Assistance", "growth_pct": 14.0, "new_jobs": 3200000, "total_employment_2024": 22800000 },
+        { "sector": "Professional, Scientific, and Technical Services", "growth_pct": 10.0, "new_jobs": 1050000, "total_employment_2024": 10500000 },
+        { "sector": "Construction", "growth_pct": 7.0, "new_jobs": 560000, "total_employment_2024": 8000000 },
+        { "sector": "Leisure and Hospitality", "growth_pct": 5.0, "new_jobs": 840000, "total_employment_2024": 16800000 },
+        { "sector": "Transportation and Warehousing", "growth_pct": 4.0, "new_jobs": 280000, "total_employment_2024": 7000000 },
+        { "sector": "State and Local Government", "growth_pct": 3.5, "new_jobs": 700000, "total_employment_2024": 20000000 },
+        { "sector": "Information Technology", "growth_pct": 8.0, "new_jobs": 240000, "total_employment_2024": 3000000 },
+        { "sector": "Mining and Logging", "growth_pct": -4.0, "new_jobs": -28000, "total_employment_2024": 700000 },
+        { "sector": "Manufacturing", "growth_pct": -3.0, "new_jobs": -380000, "total_employment_2024": 12700000 },
+        { "sector": "Retail Trade", "growth_pct": -2.0, "new_jobs": -310000, "total_employment_2024": 15500000 },
+        { "sector": "Financial Activities", "growth_pct": 2.0, "new_jobs": 180000, "total_employment_2024": 9000000 },
+        { "sector": "Education Services", "growth_pct": 4.0, "new_jobs": 160000, "total_employment_2024": 4000000 },
+        { "sector": "Wholesale Trade", "growth_pct": -1.0, "new_jobs": -58000, "total_employment_2024": 5800000 }
+      ]
+    },
+
+    "first_job_statistics": {
+      "description": "Time to first job and early career statistics by field",
+      "source": "NACE + BLS + NY Fed 2024-2025",
+      "data": [
+        { "field": "Computer Science / IT", "avg_months_to_first_job": 2.5, "starting_salary": 75000, "pct_employed_within_6_months": 92 },
+        { "field": "Engineering", "avg_months_to_first_job": 2.8, "starting_salary": 72000, "pct_employed_within_6_months": 91 },
+        { "field": "Nursing / Healthcare", "avg_months_to_first_job": 1.5, "starting_salary": 55000, "pct_employed_within_6_months": 96 },
+        { "field": "Business / Finance", "avg_months_to_first_job": 3.5, "starting_salary": 52000, "pct_employed_within_6_months": 88 },
+        { "field": "Accounting", "avg_months_to_first_job": 2.8, "starting_salary": 52000, "pct_employed_within_6_months": 90 },
+        { "field": "Education", "avg_months_to_first_job": 3.0, "starting_salary": 42000, "pct_employed_within_6_months": 89 },
+        { "field": "Communications / Media", "avg_months_to_first_job": 5.0, "starting_salary": 40000, "pct_employed_within_6_months": 78 },
+        { "field": "Psychology", "avg_months_to_first_job": 5.5, "starting_salary": 38000, "pct_employed_within_6_months": 75 },
+        { "field": "Liberal Arts / Humanities", "avg_months_to_first_job": 6.0, "starting_salary": 36000, "pct_employed_within_6_months": 72 },
+        { "field": "Performing Arts", "avg_months_to_first_job": 8.0, "starting_salary": 35000, "pct_employed_within_6_months": 60 },
+        { "field": "Biology / Life Sciences", "avg_months_to_first_job": 5.0, "starting_salary": 40000, "pct_employed_within_6_months": 80 },
+        { "field": "Criminal Justice", "avg_months_to_first_job": 4.5, "starting_salary": 37000, "pct_employed_within_6_months": 78 },
+        { "field": "Law (post-JD)", "avg_months_to_first_job": 4.0, "starting_salary": 70000, "pct_employed_within_6_months": 85 },
+        { "field": "Architecture", "avg_months_to_first_job": 4.0, "starting_salary": 50000, "pct_employed_within_6_months": 82 },
+        { "field": "Social Work", "avg_months_to_first_job": 3.5, "starting_salary": 38000, "pct_employed_within_6_months": 85 }
+      ]
+    },
+
+    "life_events_impact_on_career": {
+      "description": "How life events trigger career changes",
+      "source": "Zippia + BLS + Various 2024",
+      "data": [
+        { "event": "Work anniversary", "increase_in_job_seeking_pct": 9, "note": "6-9% increase in job-seeking behavior" },
+        { "event": "Milestone birthday (30, 40, 50)", "increase_in_job_seeking_pct": 12 },
+        { "event": "Having a child", "pct_women_leaving_workforce_temporarily": 28, "pct_men_seeking_higher_pay": 35 },
+        { "event": "Divorce", "pct_re-entering_workforce": 45, "pct_changing_careers": 22 },
+        { "event": "Health crisis", "pct_reconsidering_career": 40, "pct_switching_to_lower_stress": 25 },
+        { "event": "Layoff/Termination", "pct_changing_industry": 35, "pct_starting_own_business": 12 },
+        { "event": "Relocation", "pct_changing_job": 65, "pct_changing_career": 18 },
+        { "event": "Pandemic (COVID-19)", "pct_who_reconsidered_career": 52, "pct_who_actually_changed": 37 }
+      ]
+    },
+
+    "entrepreneurship_statistics": {
+      "description": "Self-employment and entrepreneurship rates",
+      "source": "BLS + Census Bureau + Kauffman Foundation 2024",
+      "data": [
+        { "metric": "Self-employed workers in US", "value": 10200000, "unit": "people", "note": "~6.5% of workforce" },
+        { "metric": "New business applications (2024)", "value": 5500000, "unit": "applications", "note": "Near record high" },
+        { "metric": "Startup survival rate (1 year)", "value": 80, "unit": "percent" },
+        { "metric": "Startup survival rate (5 years)", "value": 50, "unit": "percent" },
+        { "metric": "Startup survival rate (10 years)", "value": 33, "unit": "percent" },
+        { "metric": "Average age of successful startup founder", "value": 45, "unit": "years" },
+        { "metric": "Percent starting business after layoff", "value": 12, "unit": "percent" },
+        { "metric": "Entrepreneurs satisfied with work", "value": 68, "unit": "percent" },
+        { "metric": "Entrepreneurs working 50+ hours/week", "value": 72, "unit": "percent" },
+        { "metric": "Median income self-employed vs salaried", "value": -15, "unit": "percent", "note": "Self-employed earn ~15% less median, but higher ceiling" }
+      ]
+    }
+  }
+}

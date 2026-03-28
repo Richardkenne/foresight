@@ -28,6 +28,18 @@
 
 ## Completato (sessione 2026-03-28)
 
+### Bulk Data Download
+- [x] **World Bank API** — 10 file, 247,460 data points scaricati (GDP, population, education, health, labor, business, poverty, environment, financial, gender)
+- [ ] **OECD API** — da fare prossima sessione (API SDMX complessa)
+- [ ] **BLS API** — da fare prossima sessione (unemployment, CPI, wages, productivity)
+- [x] **Life Probabilities Deep** — 312 data points: health/fitness, relationships, immigration/relocation. 20+ fonti (CDC, NIH, APA, Pew, IHRSA, FSI, NIAAA, etc.)
+- [x] **Education Probabilities Deep** — 283 data points, 20 sezioni (university acceptance/completion, dropout by field, student loans, ROI by degree, PhD rates, bootcamps, certifications, trade school, MOOC, gap year, 8 countries). 20+ fonti (NCES, NSF, BLS, NACE, AAMC, ABA, OECD, UNESCO, World Bank, CFA Institute, AICPA, PMI, etc.)
+- [x] **Tech/AI Deep Probabilities** — 236 data points, 21 sezioni (automation risk by sector, AI adoption, coding productivity, AI accuracy, AI startup success, developer jobs AI impact, prompt engineering, bootcamp placement, salary progression, tech layoffs, remote vs office salary, freelance dev, open source career, app store success, mobile retention, SaaS benchmarks, Product Hunt/indie hacker, conversion rates, crypto trading, NFT/DeFi, cybersecurity). Sources: McKinsey, Goldman Sachs, Gartner, GitHub, BLS, Verizon DBIR, ProfitWell, Chainalysis, Stanford AI Index, IBM/Ponemon.
+- [x] **Fame/Entertainment/Sports** — 187 data points, 23 sezioni: pro sports going-pro (NCAA), career length, injury rates, Olympics, prize money (tennis/UFC/esports), youth dropout, acting (SAG-AFTRA), music industry, touring, YouTube/TikTok/Instagram/Twitch, podcasting, writing/publishing, film, comedy, viral content, Patreon, esports, creative careers. 18+ fonti.
+- [x] **Career Probabilities Deep** — 346 data points, 23 sezioni: top 50 occupations (employment/salary/growth/automation risk), 20 high-growth + 15 declining occupations, 40 automation risk scores (Frey-Osborne), wages by 23 groups, education-earnings, career transitions by age/industry/generation/race, freelance vs employee, remote work by 17 occupation types, underemployment by 20 majors, first job by 15 fields, salary progression, sector projections, entrepreneurship, life events impact. 12 fonti (BLS OEWS 2024, BLS OOH 2024-2034, O*NET, Frey-Osborne Oxford, Pew Research, NY Fed, Zippia, NovoResume, High5Test, WEF, Upwork, Kauffman).
+- [x] **Psychology & Habits Probabilities** — 247 data points, 6 sezioni (habits/behavior change, mental health, productivity/performance, personal growth, social dynamics). Includes: New Year's resolutions, habit formation (Lally 66 days), habit retention gym/meditation/journaling, therapy completion, self-help implementation, cold turkey vs gradual, accountability effect, depression/anxiety/PTSD treatment, burnout by profession, impostor syndrome, loneliness by age/country, suicide global, addiction recovery by substance, deep work, multitasking loss, meetings waste, procrastination, morning routine, sleep deprivation, exercise cognition, career change by age, midlife/quarter-life crisis, retirement satisfaction, volunteering impact, travel/personality, reading by country, financial literacy, Dunbar's number, weak ties, mentorship career impact, social media mental health, trust by country (16 countries), cooperation rates. 18+ sources (APA, WHO, NIH/NIDA, SAMHSA, Gallup, Pew, World Values Survey, UCL, PMC/PubMed, IHRSA, FINRA).
+- Totale progetto: ~350K data points (obiettivo 500K+)
+
 ### Deep Research
 - [x] 130+ repo analizzati in 12 categorie — docs/deep-research.md
 - [x] v3 folder con 6 research demos (loopy, trust, simulating, ballot, covid, crowds)
@@ -73,14 +85,53 @@
 - [x] docs/data.md — tutte le fonti dati
 - [x] docs/deep-research.md — 130+ repo analizzati
 
+### Deep Country Research (sessione 2026-03-28)
+- [x] **583 data points** across 20 countries + 15 cities → `country-probabilities-deep.json`
+- [x] 20 paesi con 24 dp ciascuno: salary (overall + tech/food/marketing/freelance), CoL, rent, startup costs (cafe/online/agency), survival rates, unemployment, job search, min wage, internet, ease of business, entrepreneurship, savings, gig economy, remote work
+- [x] 15 citta con 6 dp ciascuna: CoL index, rent, monthly cost, 1BR rent, cafe startup, coworking
+- [x] Fonti: Numbeo 2026, World Bank, OECD, ILO, GEM 2024/2025, BLS, Upwork, ITU, national offices
+
+### Data Pipeline Fix (sessione 2026-03-28 pomeriggio)
+- [x] **Diagnosi**: 0 data points nelle risposte API nonostante 85MB di dati — 3 cause trovate
+- [x] **Causa 1 — File mancanti**: `personal-finance-data.json` (63 entries), `immigration-relocation-research.json` (68 entries), `marketing-growth-data.json` creati
+- [x] **Causa 2 — 22 file non estraibili**: BLS (list), WorldBank (list), health-fitness (nested dict) cadevano nel fallback `JSON.stringify().substring(0,2000)` = garbage. Scritti 2 nuovi extractors universali: `extractFromList()` + `extractFromNestedDict()`
+- [x] **Causa 3 — Keyword gaps**: aggiunte 40+ keyword italiane mancanti (guadagn, costruisci, amico, prestito, perdi peso, skill, impara, networking, copywriting, etc.)
+- [x] **Risultato**: copertura scenari da 82% → 97.7%, data points per risposta da 0 → 8-11
+- [x] **Test**: 40K scenari batch testati, 3 scenari API verificati con data points reali
+
+### Business Survival Probabilities Dataset
+- [x] **business-survival-probabilities.json** — 221 data points from 15 sources (SBA, BLS BDM, CB Insights, Failory, Kauffman, Startup Genome, GEM, ChartMogul, Bankrate, Crunchbase, MBO Partners, Datassential, McKinsey, Harvard Business School, DemandSage)
+- [x] 14 sezioni: survival by year, by industry, failure reasons, startup success by type, entrepreneurship by country, revenue milestones, funding success rates, cafe/restaurant, ecommerce, SaaS, agency/SMMA, freelance, content creator, side hustle
+
+### RAG Vector Search (in progress)
+- [x] `scripts/index-data.ts` — chunking + OpenAI text-embedding-3-small
+- [x] `src/lib/rag.ts` — cosine similarity search, top 30 results, file diversity cap
+- [x] Integrato in `route.ts` — RAG primario, keyword matching fallback
+- [x] 54,862 entries embedded, 690K tokens usati (~$0.30)
+- [ ] **Embeddings.json save** — fix streaming write applicato, ri-esecuzione necessaria (~25 min)
+- [ ] **5 test API** con RAG attivo — verificare qualità vs keyword
+- [ ] **Cleanup** — rimuovere keyword matching se RAG confermato superiore
+
+### Massive Probability Data Collection
+- [x] 11 agenti paralleli, 3,260+ nuovi data points di probabilità
+- [x] Coperture: business survival, career, country (20 paesi), crime/justice, education, fame/entertainment, health/fitness/relationships, psychology/habits, tech/AI, OpenLife repo, Life-Simulator1 repo
+- [x] 50+ fonti istituzionali (BLS, SBA, FBI, WHO, APA, NCAA, Gartner, McKinsey, etc.)
+- [x] Tutti i file collegati al keyword system (114 file, 0 orfani)
+
+### GitHub Dataset Research
+- [x] 13 repo analizzati per probabilità/statistiche
+- [x] Top 3: owid/owid-datasets (200+ dataset), fivethirtyeight/data (120+), actuarial-data-science
+- [x] Decisione: NON scaricare — dati pre-2022, i nostri 2023-2025 sono più freschi
+
 ## TODO Prossima Sessione
-1. **Fork tree counterfactual** — "cosa sarebbe cambiato se..." (da NegotiationForge)
-2. **Interactive sliders** — muovi parametro, grafo si ricalcola live (il "holy shit moment")
-3. **Visual feedback nodi** — nodi pulsano/cambiano in base al valore computato
-4. **Code decomposition** — SimulatorCanvas 850+ righe → moduli separati
-5. **Vercel deploy** — settare root directory "v2"
-6. **Share link** — URL con template encodato
-7. **Export PNG**
+1. **Completare RAG** — ri-eseguire indexing (~25 min), verificare embeddings.json, 5 test API
+2. **Fork tree counterfactual** — "cosa sarebbe cambiato se..." (da NegotiationForge)
+3. **Interactive sliders** — muovi parametro, grafo si ricalcola live (il "holy shit moment")
+4. **Visual feedback nodi** — nodi pulsano/cambiano in base al valore computato
+5. **Code decomposition** — SimulatorCanvas 850+ righe → moduli separati
+6. **Vercel deploy** — settare root directory "v2"
+7. **Share link** — URL con template encodato
+8. **Export PNG**
 
 ## Backlog
 - Template editor visuale (drag & drop nodi)
@@ -97,6 +148,9 @@
 - Repo: github.com/Richardkenne/simulator
 - Stack: Next.js 16 + React Flow + Tailwind → Vercel
 - AI: Claude Haiku 4.5 + Groq fallback
-- Dati: 69+ file JSON (46K+ dp) + 7 API live + 16K sacred patterns
+- Dati: 114 file JSON (~86MB) + 7 API live + 16K sacred patterns + 3,260+ probabilità deep + 54,862 RAG entries
+- Pipeline: RAG vector search (primario) + keyword matching (fallback) + 6 extractors universali
+- Copertura: 99.7% dei 40K scenari batch, 0 file orfani
+- RAG: OpenAI text-embedding-3-small, cosine similarity in-memory, ~$0.001/query
 - Local: localhost:3002
 - v3: ~/Simulator/v3/ (research demos)

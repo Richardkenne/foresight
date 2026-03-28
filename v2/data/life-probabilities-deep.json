@@ -1,0 +1,365 @@
+{
+  "metadata": {
+    "title": "Life Probabilities Deep — Health, Fitness, Relationships, Immigration",
+    "description": "Comprehensive probability data for life simulation covering weight loss, fitness, diets, addiction, mental health, relationships, marriage, friendship, and immigration/relocation",
+    "total_data_points": 312,
+    "categories": 3,
+    "subcategories": 26,
+    "sources": [
+      "CDC (Centers for Disease Control and Prevention)",
+      "NIH / NIAAA (National Institute on Alcohol Abuse and Alcoholism)",
+      "APA (American Psychological Association)",
+      "Pew Research Center",
+      "Journal of Marriage and Family",
+      "National Weight Control Registry",
+      "IHRSA (International Health, Racquet & Sportsclub Association)",
+      "American Journal of Clinical Nutrition",
+      "PMC / PubMed (National Library of Medicine)",
+      "WHO (World Health Organization)",
+      "FSI (Foreign Service Institute)",
+      "OECD Society at a Glance",
+      "World Population Review",
+      "Institute for Family Studies",
+      "Sleep Foundation",
+      "American Academy of Sleep Medicine",
+      "Bankrate / LendingTree surveys",
+      "Expat Insider Survey (InterNations)",
+      "British Council",
+      "U.S. State Department visa statistics"
+    ],
+    "created": "2026-03-28",
+    "version": "1.0"
+  },
+
+  "health_and_fitness": {
+    "weight_loss": {
+      "general_success_rates": [
+        { "metric": "Lose 10%+ body weight and keep off 1 year", "probability": 0.20, "source": "American Journal of Clinical Nutrition / National Weight Control Registry", "notes": "Only 20% of overweight individuals succeed at long-term weight loss (10%+ maintained 1yr)" },
+        { "metric": "Regain weight within 2 years", "probability": 0.50, "source": "PMC meta-analysis", "notes": "People regain more than half the weight lost within 2 years" },
+        { "metric": "Regain weight within 5 years", "probability": 0.80, "source": "American Journal of Clinical Nutrition", "notes": "80% regain most weight by 5 years" },
+        { "metric": "Maintain loss if already kept off 2-5 years", "probability": 0.70, "source": "National Weight Control Registry", "notes": "After 2-5yr maintenance, long-term success probability greatly increases" },
+        { "metric": "Average weight regained at 5 years (% of lost)", "value": 0.80, "source": "PMC longitudinal studies", "notes": "By 5 years, 80% of lost weight is regained on average" }
+      ],
+      "successful_maintainer_behaviors": [
+        { "behavior": "Exercise ~1 hour per day", "prevalence_among_maintainers": 0.90, "source": "National Weight Control Registry" },
+        { "behavior": "Eat breakfast regularly", "prevalence_among_maintainers": 0.78, "source": "National Weight Control Registry" },
+        { "behavior": "Self-monitor weight weekly", "prevalence_among_maintainers": 0.75, "source": "National Weight Control Registry" },
+        { "behavior": "Low-calorie low-fat diet", "prevalence_among_maintainers": 0.80, "source": "National Weight Control Registry" },
+        { "behavior": "Consistent eating pattern weekdays/weekends", "prevalence_among_maintainers": 0.70, "source": "National Weight Control Registry" }
+      ]
+    },
+
+    "diet_success_rates": [
+      { "diet_type": "Ketogenic (keto)", "short_term_weight_loss_kg": 7.0, "duration": "6 months", "advantage_vs_low_fat": "2x more effective short-term", "long_term_maintenance": 0.20, "source": "JAMA / randomized trials" },
+      { "diet_type": "Intermittent fasting (4:3)", "weight_change_pct": -0.076, "duration": "12 months", "achieved_5pct_loss": 0.58, "source": "PMC randomized controlled trial" },
+      { "diet_type": "Calorie restriction", "weight_change_pct": -0.05, "duration": "12 months", "achieved_5pct_loss": 0.47, "source": "PMC randomized controlled trial" },
+      { "diet_type": "Mediterranean + calorie restriction", "typical_loss_pct": "5-10%", "duration": "6 months", "adherence_12mo": 0.45, "source": "Multiple meta-analyses" },
+      { "diet_type": "Very-low-calorie diet (VLCD)", "typical_loss_kg": 15, "duration": "3 months", "regain_1yr_pct": 0.50, "source": "Obesity Reviews" },
+      { "diet_type": "Any diet (average)", "initial_success": 0.57, "maintain_1yr": 0.20, "maintain_5yr": 0.05, "source": "Multiple meta-analyses composite" }
+    ],
+
+    "gym_membership": {
+      "retention_rates": [
+        { "timeframe": "1 month", "still_attending_regularly": 0.63, "source": "IHRSA" },
+        { "timeframe": "3 months (90 days)", "still_attending_regularly": 0.50, "source": "IHRSA / Glofox", "notes": "Most new members who quit do so by 90 days" },
+        { "timeframe": "6 months", "still_attending_regularly": 0.33, "source": "IHRSA", "notes": "Half of new members quit within first 6 months" },
+        { "timeframe": "1 year", "still_member": 0.664, "source": "IHRSA annual report", "notes": "66.4% annual retention = 33.6% churn" },
+        { "timeframe": "1 year (IHRSA alt)", "still_member": 0.714, "source": "IHRSA", "notes": "71.4% retention in some reports" }
+      ],
+      "factors": [
+        { "factor": "Positive onboarding experience", "retention_6mo": 0.87, "source": "Industry surveys" },
+        { "factor": "Working with personal trainer", "retention_range": "0.60-0.85", "source": "Industry surveys" },
+        { "factor": "Group class attendance", "reduced_cancel_likelihood": 0.56, "source": "Industry surveys" },
+        { "factor": "No show in first 30 days", "cancel_within_6mo": 0.80, "source": "Industry surveys" }
+      ],
+      "cancellation_reasons": [
+        { "reason": "Cost", "pct": 0.41 },
+        { "reason": "Changed personal circumstances", "pct": 0.25 },
+        { "reason": "Moved away", "pct": 0.19 }
+      ],
+      "new_year_resolution": [
+        { "metric": "Resolutions that are fitness-related", "pct": 0.45, "source": "Health & Fitness Association 2025" },
+        { "metric": "Resolution-makers who maintain long-term", "pct": 0.08, "source": "Multiple surveys" },
+        { "metric": "Drop off by March", "pct": 0.80, "source": "Gym industry data" },
+        { "metric": "Habit solidification threshold", "days": 66, "source": "European Journal of Social Psychology" },
+        { "metric": "4 sessions in first weeks boost 6mo retention", "retention_boost": 0.17, "source": "Industry surveys" }
+      ]
+    },
+
+    "smoking_cessation": [
+      { "method": "Unassisted (cold turkey)", "success_rate_1yr": 0.07, "source": "CDC / PMC meta-analyses", "notes": "7-8% success rate; most common method attempted" },
+      { "method": "Nicotine replacement therapy (NRT) alone", "success_rate_1yr": 0.104, "source": "CDC MMWR 2022" },
+      { "method": "NRT patch + fast-acting NRT combined", "success_rate_1yr": 0.154, "source": "PMC meta-analysis", "notes": "5% boost over monotherapy" },
+      { "method": "Varenicline (Chantix)", "success_rate_1yr": 0.25, "source": "PMC review", "notes": "51% higher quit chance vs patch in women" },
+      { "method": "Counseling + medication combined", "success_rate_1yr": 0.30, "source": "CDC / APA guidelines", "notes": "Best documented outcomes" },
+      { "method": "Any attempt (overall)", "try_to_quit_pct": 0.50, "succeed_pct": 0.10, "source": "CDC MMWR 2022", "notes": "~50% try each year, <10% succeed" },
+      { "method": "Used any treatment when trying", "pct_who_used_treatment": 0.40, "source": "CDC", "notes": "Fewer than 40% use proven treatments" }
+    ],
+
+    "alcohol_recovery": [
+      { "metric": "Achieve recovery at some point in life", "probability": "0.30-0.60", "source": "NIAAA / Recovery Research Institute" },
+      { "metric": "NIAAA-defined recovery within 1 year of attempt", "probability": 0.35, "source": "NIAAA", "notes": "67% of those in recovery were fully abstinent" },
+      { "metric": "Relapse at least once within 4 years post-treatment", "probability": 0.90, "source": "NIAAA" },
+      { "metric": "Relapse rate if sober 5+ years", "probability": 0.15, "source": "Longitudinal studies" },
+      { "metric": "Relapse rate if sober 10+ years", "probability": 0.07, "source": "Longitudinal studies" },
+      { "metric": "AA members sober after 1 year (self-joined)", "probability": 0.50, "source": "AA outcome studies" },
+      { "metric": "Formal treatment sober after 1 year", "probability": 0.25, "source": "AA outcome studies" },
+      { "metric": "AA weekly attendance sobriety rate", "probability": 0.67, "source": "AA outcome studies", "notes": "vs 34% non-attenders" },
+      { "metric": "AA sober after 8 years", "probability": 0.49, "source": "Longitudinal tracking" },
+      { "metric": "Professional treatment sober after 8 years", "probability": 0.46, "source": "Longitudinal tracking" },
+      { "metric": "US adults who resolved substance use problem", "pct_of_population": 0.111, "count_millions": 29.3, "source": "Recovery Research Institute 2024" }
+    ],
+
+    "mental_health_treatment": [
+      { "condition": "Depression", "treatment": "Medication only", "response_rate": "0.50-0.70", "source": "JAMA Psychiatry meta-analyses" },
+      { "condition": "Depression", "treatment": "Psychotherapy only (all types)", "remission_rate": 0.43, "source": "PMC meta-analysis" },
+      { "condition": "Depression", "treatment": "CBT only", "response_rate": 0.60, "relapse_prevention": "superior to medication", "source": "APA / PMC" },
+      { "condition": "Depression", "treatment": "Medication + psychotherapy combined", "response_rate": 0.75, "source": "JAMA Psychiatry", "notes": "Significantly better than either alone for functioning + quality of life" },
+      { "condition": "PTSD", "treatment": "CBT", "effect_size_smd": 0.54, "source": "PMC meta-analysis", "notes": "Medium effect vs treatment as usual" },
+      { "condition": "Anxiety disorders", "treatment": "CBT", "response_rate": 0.60, "source": "APA clinical guidelines" },
+      { "condition": "Anxiety disorders", "treatment": "Medication (SSRI)", "response_rate": 0.55, "source": "APA clinical guidelines" },
+      { "condition": "Any mental health condition", "treatment": "Medication + therapy", "advantage_vs_mono": "10-20% better outcomes", "source": "PMC umbrella review" },
+      { "condition": "Depression", "treatment": "CBT 12-month follow-up", "sustained_response_vs_medication": "higher", "source": "PMC", "notes": "CBT prevents relapse better long-term" }
+    ],
+
+    "marathon_and_running": [
+      { "metric": "Marathon completion rate (among starters)", "probability": 0.988, "source": "NYC Marathon study (PMC)" },
+      { "metric": "Marathon completion rate (among enrollees)", "probability": 0.854, "source": "NYC Marathon study" },
+      { "metric": "Training injury rate", "probability": 0.384, "source": "PMC prospective studies", "notes": "38.4% report injury during training" },
+      { "metric": "Training injury rate (amateur)", "probability": 0.42, "source": "300-runner amateur study" },
+      { "metric": "Race-day injury rate (full marathon)", "probability": 0.30, "source": "PMC race-related injury studies" },
+      { "metric": "Race-day injury rate (half marathon)", "probability": 0.24, "source": "PMC race-related injury studies" },
+      { "metric": "Overall injury prevalence (training + race)", "probability": 0.426, "source": "PMC composite" },
+      { "metric": "Sought medical care on race day", "probability": 0.06, "source": "Historical marathon data" },
+      { "most_common_injuries": ["Medial tibial stress syndrome (24%)", "Iliotibial band syndrome (19%)", "Plantar fasciitis (15%)"], "source": "PMC" }
+    ],
+
+    "sleep_improvement": [
+      { "treatment": "CBT-I (Cognitive Behavioral Therapy for Insomnia)", "improvement_rate": "0.70-0.80", "source": "American Academy of Sleep Medicine / Sleep Foundation" },
+      { "treatment": "CBT-I", "sleep_latency_reduction_min": 19, "source": "2015 meta-analysis of 20 RCTs" },
+      { "treatment": "CBT-I", "wakefulness_reduction_min": 26, "source": "2015 meta-analysis" },
+      { "treatment": "CBT-I", "sleep_efficiency_improvement_pct": 10, "source": "2015 meta-analysis" },
+      { "treatment": "CBT-I", "total_sleep_time_gain_min": 8, "source": "2015 meta-analysis" },
+      { "treatment": "CBT-I vs sleep medication", "comparison": "equivalent short-term, superior long-term, fewer side effects, less relapse", "source": "AASM clinical guidelines" },
+      { "treatment": "Sleep hygiene alone", "recommendation": "NOT recommended as single-component therapy for chronic insomnia", "source": "AASM clinical practice guideline" },
+      { "metric": "Adults with regular sleep difficulty", "prevalence": "0.33-0.50", "source": "Multiple epidemiological studies" }
+    ],
+
+    "meditation_habit": [
+      { "metric": "New practitioners who stop within first few months", "probability": 0.50, "source": "PMC population study" },
+      { "metric": "App users still active after 30 days", "probability": 0.047, "source": "Meditation app industry data" },
+      { "metric": "Average app sessions before abandonment", "value": "1-4 sessions", "source": "App retention studies" },
+      { "metric": "US adults who meditate (2022)", "pct": 0.183, "count_millions": 60.53, "source": "Nature Scientific Reports 2024" },
+      { "metric": "Lifetime exposure to meditation", "pct": 0.493, "source": "PMC US population-based study" },
+      { "metric": "Practiced in past year", "pct": 0.35, "source": "PMC US population-based study" },
+      { "metric": "Global meditators", "count_millions": 275, "source": "Industry estimates" }
+    ]
+  },
+
+  "relationships": {
+    "divorce_rates_by_country": [
+      { "country": "USA", "divorce_to_marriage_ratio": 0.45, "crude_divorce_rate_per_1000": 2.5, "source": "World Population Review / OECD 2024", "notes": "First marriage divorce rate ~41%" },
+      { "country": "United Kingdom", "divorce_to_marriage_ratio": 0.41, "crude_divorce_rate_per_1000": 1.8, "source": "World Population Review / ONS" },
+      { "country": "Australia", "divorce_to_marriage_ratio": 0.43, "crude_divorce_rate_per_1000": 1.9, "source": "World Population Review / ABS" },
+      { "country": "Italy", "divorce_to_marriage_ratio": 0.46, "crude_divorce_rate_per_1000": 1.4, "source": "World Population Review / OECD", "notes": "Fastest increase in divorce rates among OECD since 1990" },
+      { "country": "Indonesia", "divorces_per_year": 463654, "crude_divorce_rate_provinces_highest": {"East Java": 0.0876, "Yogyakarta": 0.0804, "Central Java": 0.0758}, "source": "BPS / Supreme Court Indonesia 2023-2024", "notes": "Rising trend, especially wife-initiated (cerai gugat)" },
+      { "country": "India", "divorce_to_marriage_ratio": 0.01, "source": "World of Statistics" },
+      { "country": "Japan", "divorce_to_marriage_ratio": 0.35, "source": "World of Statistics" },
+      { "country": "Germany", "divorce_to_marriage_ratio": 0.38, "source": "World of Statistics" },
+      { "country": "Brazil", "divorce_to_marriage_ratio": 0.21, "source": "World of Statistics" },
+      { "country": "France", "divorce_to_marriage_ratio": 0.43, "source": "OECD" }
+    ],
+
+    "divorce_by_marriage_duration": [
+      { "duration": "0-2 years", "cumulative_divorce_pct": 0.10, "source": "Institute for Family Studies / BLS NLSY79", "notes": "Roughly 10% divorce in first 2 years" },
+      { "duration": "0-5 years", "cumulative_divorce_pct": 0.20, "source": "Institute for Family Studies", "notes": "20% end by year 5" },
+      { "duration": "0-10 years", "cumulative_divorce_pct": 0.32, "source": "Institute for Family Studies / Our World in Data", "notes": "Additional 12% from year 5-10" },
+      { "duration": "10-20 years", "additional_divorce_pct": 0.09, "source": "BLS longitudinal data", "notes": "Rate slows after year 10" },
+      { "duration": "20+ years", "additional_divorce_pct": 0.05, "source": "BLS / gray divorce research", "notes": "Gray divorce rising but still relatively low per-year risk" },
+      { "peak_risk_year": "2-3", "source": "Multiple longitudinal studies", "notes": "Highest per-year divorce risk is in years 2-3" },
+      { "trend": "Declining since 1990s peak", "first_5yr_divorce_halved_since_1990s": true, "source": "Institute for Family Studies" }
+    ],
+
+    "long_distance_relationships": [
+      { "metric": "LDR success rate (long-term)", "probability": 0.60, "source": "LDR Magazine / multiple surveys", "notes": "Some sources report 58%" },
+      { "metric": "Breakup rate in any 6-month period (LDR)", "probability": 0.40, "source": "Journal of Communication", "notes": "Same as local relationships" },
+      { "metric": "Trust as foundation of LDR", "pct_who_cite": 0.85, "source": "LDR surveys" },
+      { "metric": "Clear communication importance", "pct_who_cite": 0.82, "source": "LDR surveys" },
+      { "metric": "Concrete timeline to close distance improves success", "boost": 0.30, "source": "LDR research" },
+      { "metric": "College students in LDR at some point", "pct": 0.70, "source": "PMC college studies" },
+      { "metric": "Average weekly phone/video hours", "hours": 8, "source": "LDR surveys" },
+      { "metric": "Average weekly texts", "count": 343, "source": "LDR surveys" }
+    ],
+
+    "online_dating": [
+      { "metric": "Matches that convert to at least 1 date", "probability": 0.66, "source": "Pew Research Center" },
+      { "metric": "Users who entered committed relationship from app", "probability": 0.42, "source": "Pew Research Center" },
+      { "metric": "Newlyweds who met on dating app (2024)", "pct": 0.27, "source": "The Knot 2024/2025 survey (17,000 couples)" },
+      { "metric": "Newlyweds who met online (all channels)", "pct": 0.60, "source": "The Knot survey" },
+      { "metric": "Online-initiated marriages: separation/divorce rate", "pct": 0.0596, "source": "PNAS study", "notes": "vs 7.67% for offline-initiated" },
+      { "metric": "Public belief online relationships equally successful", "pct": 0.61, "source": "SSRS 2024 survey" },
+      { "metric": "Online-initiated marriages report higher satisfaction", "finding": true, "source": "PNAS study" }
+    ],
+
+    "reconciliation_after_breakup": [
+      { "metric": "Exes who get back together", "probability": "0.32-0.50", "source": "PMC / survey of 4,534 participants" },
+      { "metric": "Reconciled couples who stay together 1yr+", "probability": 0.18, "source": "Ex-back research surveys" },
+      { "metric": "Get back together and stay vs break up again", "stay": 0.15, "break_again": 0.14, "source": "Longitudinal surveys" },
+      { "metric": "Married couples who reconcile after separation", "probability": "0.10-0.15", "source": "Divorce research" },
+      { "metric": "Divorced couples who remarry each other", "probability": 0.06, "source": "Census / divorce research" },
+      { "reconciliation_by_breakup_type": [
+        { "type": "Miscommunication-based", "success_rate": 0.72, "condition": "improved communication" },
+        { "type": "Cooling-off/stress-related", "success_rate": 0.65, "condition": "2-6 week break" },
+        { "type": "External obstacles", "success_rate": 0.38, "condition": "obstacle removed" }
+      ], "source": "Relationship research / Ahead App analysis" }
+    ],
+
+    "infidelity_rates_by_country": [
+      { "country": "Thailand", "married_men_cheating_pct": 0.56, "overall_rate": 0.51, "source": "World of Statistics / Seasia 2024" },
+      { "country": "Denmark", "married_men_cheating_pct": 0.46, "source": "World of Statistics" },
+      { "country": "Italy", "married_men_cheating_pct": 0.45, "source": "World of Statistics" },
+      { "country": "France", "married_men_cheating_pct": 0.43, "source": "World of Statistics", "notes": "<50% consider cheating entirely unacceptable" },
+      { "country": "Germany", "married_men_cheating_pct": 0.40, "source": "World of Statistics" },
+      { "country": "USA", "married_men_cheating_pct": 0.39, "source": "World of Statistics" },
+      { "country": "Brazil", "married_men_cheating_pct": 0.38, "source": "World of Statistics" },
+      { "country": "United Kingdom", "married_men_cheating_pct": 0.36, "source": "World of Statistics" },
+      { "country": "Russia", "married_men_cheating_pct": 0.35, "source": "World of Statistics" },
+      { "country": "Japan", "married_men_cheating_pct": 0.31, "source": "World of Statistics" },
+      { "country": "Norway", "overall_rate": 0.41, "source": "Seasia 2024" },
+      { "country": "Belgium", "overall_rate": 0.41, "source": "Seasia 2024" },
+      { "country": "Spain", "overall_rate": 0.40, "source": "Seasia 2024" },
+      { "gender_note": "Men 30-60 most likely to admit; women's rates increasing and harder to detect", "source": "Multiple surveys" }
+    ],
+
+    "interracial_interfaith_marriage": {
+      "interracial": [
+        { "metric": "Interracial divorce by year 10 (overall)", "probability": 0.41, "vs_same_race": 0.31, "source": "PMC Journal of Marriage and Family" },
+        { "pairing": "White wife / Black husband", "divorce_10yr": "2x rate of White/White", "source": "PMC" },
+        { "pairing": "Black wife / White husband", "divorce_10yr": "44% less likely than White/White", "source": "PMC" },
+        { "pairing": "White / Asian", "divorce_10yr": 0.084, "source": "PMC", "notes": "Lowest divorce rate among interracial pairings" },
+        { "note": "After controlling for couple characteristics, elevated risk disappears", "source": "PMC" }
+      ],
+      "interfaith": [
+        { "metric": "US marriages that are interfaith", "pct": 0.45, "source": "Pew Research Center" },
+        { "pairing": "Two Catholics", "divorce_rate": 0.29, "source": "Institute for Family Studies" },
+        { "pairing": "Two Evangelical Protestants", "divorce_rate": 0.32, "source": "Institute for Family Studies" },
+        { "pairing": "None + Mainline Protestant", "divorce_rate": 0.63, "source": "Institute for Family Studies", "notes": "Highest divorce rate pairing" },
+        { "metric": "Interfaith marriages: generally higher divorce risk", "finding": true, "source": "Multiple studies" }
+      ]
+    },
+
+    "cohabitation_effect": [
+      { "scenario": "Cohabited before engagement", "divorce_rate": 0.34, "source": "PMC / University of Denver" },
+      { "scenario": "Cohabited after engagement or not until marriage", "divorce_rate": 0.23, "source": "PMC / University of Denver" },
+      { "scenario": "Pre-engagement cohabitation relative risk", "risk_increase": 0.48, "source": "PMC", "notes": "48% more likely to end vs post-engagement cohabiters" },
+      { "scenario": "Cohabited with 2+ partners before marriage", "divorce_risk_increase": 0.60, "source": "Institute for Family Studies" },
+      { "metric": "Americans who believe cohabitation improves marriage odds", "pct": "0.50-0.65", "source": "IFS / Gallup", "notes": "Evidence does not support this belief" },
+      { "theory": "Inertia effect", "explanation": "Couples who cohabit before engagement may marry due to sunk costs (lease, furniture, social pressure) rather than intentional commitment", "source": "University of Denver research" }
+    ],
+
+    "marriage_satisfaction_over_time": [
+      { "finding": "Satisfaction declines within first year of marriage", "source": "2025 New Zealand longitudinal study" },
+      { "finding": "After 5 years married, satisfaction lower than 6 years before marriage", "source": "2025 study (Dupuis et al.)" },
+      { "finding": "67.6% of couples show NO significant decline over 20 years", "source": "PMC latent class growth analysis" },
+      { "finding": "U-shaped curve: decline for first 10 years, then rebound for next 20 years", "source": "Multiple longitudinal studies / IFS" },
+      { "finding": "Transition to parenthood reduces satisfaction", "effect": "Small to medium negative effect", "source": "Frontiers in Psychology 2022 meta-analysis" },
+      { "finding": "Couples who stay together: quality does NOT decline on average", "source": "PMC 2010s research review" },
+      { "finding": "Spousal age gap >10 years: faster satisfaction decline", "source": "University of Colorado Boulder study" }
+    ],
+
+    "friendship": {
+      "retention_and_longevity": [
+        { "metric": "Average friendship duration", "years": 17, "source": "Social psychology research" },
+        { "metric": "Average lifetime real friends made", "count": 29, "source": "Friendship studies" },
+        { "metric": "Friends that last the distance", "count": 6, "out_of": 29, "source": "Friendship studies" },
+        { "metric": "Lose touch with friends over lifetime", "pct": 0.50, "source": "Multiple surveys" },
+        { "metric": "7-year friendship turnover", "pct_replaced": 0.50, "source": "PMC friendship turnover studies", "notes": "~50% of friends replaced every 7 years" },
+        { "metric": "Same best friend 30+ years", "pct": 0.17, "source": "Friendship surveys" },
+        { "metric": "No new friend in 5+ years", "pct": 0.22, "source": "American Survey Center" },
+        { "metric": "Young women lost touch with most friends", "pct": 0.16, "source": "American Survey Center" },
+        { "rule": "Friendships lasting 7+ years likely to endure for life", "source": "Social psychology research" }
+      ],
+      "lending_money": [
+        { "metric": "Lenders who had to ask more than once for repayment", "pct": 0.545, "source": "J.G. Wentworth survey" },
+        { "metric": "Lenders who ended up out of cash (partial or full loss)", "pct": 0.504, "source": "J.G. Wentworth survey" },
+        { "metric": "Lenders fully repaid by family members", "pct": 0.56, "source": "FinanceBuzz survey" },
+        { "metric": "Borrowers who never repaid friends", "pct": 0.30, "source": "LendingTree survey" },
+        { "metric": "No longer as close after money exchange", "pct": 0.751, "source": "StudyFinds survey" },
+        { "metric": "Communication break or cut off after lending", "pct": 0.713, "source": "StudyFinds survey" },
+        { "metric": "Regret lending money", "pct": 0.50, "source": "Bankrate survey" },
+        { "metric": "Friendship ruined by money", "pct": 0.21, "source": "Bread Financial study" },
+        { "metric": "Never set repayment timeline", "pct": 0.495, "source": "Survey data" },
+        { "metric": "Never put agreement in writing", "pct": 0.499, "source": "Survey data" }
+      ]
+    }
+  },
+
+  "immigration_and_relocation": {
+    "culture_shock": [
+      { "stage": "Honeymoon", "duration": "1-3 months", "description": "Excitement and fascination with new culture" },
+      { "stage": "Frustration/Crisis", "onset": "3-6 months", "description": "Homesickness, frustration, anxiety, feeling lost", "notes": "Most difficult stage" },
+      { "stage": "Adjustment", "onset": "6-12 months", "description": "Dramatic ups and downs diminish, recovery plateau" },
+      { "stage": "Adaptation", "onset": "12+ months", "description": "Comfort with new culture, productive phase" },
+      { "metric": "General culture shock duration", "typical": "a few weeks to 6 months", "can_extend": "years in some cases", "source": "PMC longitudinal 50-country study" }
+    ],
+
+    "expat_return_rates": [
+      { "metric": "Overall expat assignment failure rate", "rate": 0.40, "source": "INSEAD / xpath.global", "notes": "Consistent over past 40 years" },
+      { "metric": "Failure rate range", "range": "0.10-0.50", "source": "INSEAD research" },
+      { "metric": "Assignments to developed countries", "failure_rate": "0.25-0.40", "source": "Multiple HR studies" },
+      { "metric": "Assignments to emerging/underdeveloped markets", "failure_rate": 0.70, "source": "HR research" },
+      { "metric": "Early repatriation (premature return)", "rate": "0.20-0.40", "source": "Expatriate management research" },
+      { "metric": "US MNCs failure rate", "range": "0.10-0.40", "pct_of_companies": 0.76, "source": "Comparative MNC studies" },
+      { "metric": "European/Japanese MNCs failure rate", "range": "<0.05", "source": "Comparative MNC studies" },
+      { "metric": "Emerging market failure rate premium", "premium": "+30% vs Europe assignments", "source": "HR research" }
+    ],
+
+    "language_learning": {
+      "fsi_categories": [
+        { "category": "I (Easiest)", "hours": "600-750", "weeks": "23-30", "languages": ["Spanish", "French", "Italian", "Portuguese", "Dutch", "Norwegian", "Swedish", "Danish", "Romanian", "Afrikaans"], "source": "FSI / U.S. State Department" },
+        { "category": "II", "hours": 900, "weeks": 36, "languages": ["German"], "source": "FSI" },
+        { "category": "III", "hours": 900, "weeks": 36, "languages": ["Indonesian", "Swahili", "Malay"], "source": "FSI", "notes": "Linguistic/cultural differences from English but simpler grammar" },
+        { "category": "IV", "hours": 1100, "weeks": 44, "languages": ["Russian", "Hindi", "Thai", "Vietnamese", "Turkish", "Finnish", "Greek", "Hebrew", "Polish", "Farsi"], "source": "FSI" },
+        { "category": "V (Hardest)", "hours": 2200, "weeks": 88, "languages": ["Chinese (Mandarin)", "Cantonese", "Japanese", "Korean", "Arabic"], "source": "FSI" }
+      ],
+      "success_rates": [
+        { "metric": "Learners aiming for B2+", "pct": 0.75, "source": "British Council study" },
+        { "metric": "Hours to reach B1-B2", "hours": "400-900", "source": "Pearson / language learning research" },
+        { "metric": "Hours to reach C1", "hours": "1000-2200", "source": "Language learning research" },
+        { "metric": "Immersion vs classroom advantage", "finding": "Immersion significantly faster; classroom alone often insufficient for fluency", "source": "FSI / applied linguistics research" },
+        { "metric": "Language app completion rate", "estimate": "<10%", "source": "App retention data", "notes": "Most learners abandon apps within weeks" },
+        { "metric": "Self-study to B2 within 1 year", "probability": 0.15, "source": "Estimated from FSI hours + typical study patterns", "notes": "Requires 2-3hr/day consistent study" }
+      ]
+    },
+
+    "visa_approval_rates": {
+      "usa_2024": [
+        { "visa_type": "H-1B (work)", "applications": 225957, "approval_rate": 0.9721, "source": "U.S. State Department FY2024" },
+        { "visa_type": "F-1 (student)", "applications": 679290, "approval_rate": 0.590, "source": "U.S. State Department FY2024" },
+        { "visa_type": "B1/B2 (tourist/business)", "applications": 8995108, "approval_rate": 0.722, "source": "U.S. State Department FY2024" },
+        { "visa_type": "B-visa refusal range by nationality", "range": "0%-77%", "source": "State Department FY2024", "notes": "Dramatic disparity based on citizenship" },
+        { "visa_type": "F-1 African applicants (5yr average)", "denial_rate": 0.52, "source": "Visa analysis data" }
+      ],
+      "student_visas_international": [
+        { "country": "Ireland", "student_visa_success_rate": 0.96, "source": "upGrad GSP 2024" },
+        { "country": "New Zealand", "student_visa_success_rate": 0.80, "approved_count": 32706, "year": 2023, "source": "upGrad GSP" },
+        { "country": "Canada", "approved_count": 270000, "year": 2024, "change_yoy": -0.48, "source": "ApplyBoard", "notes": "48% drop from 2023" },
+        { "country": "UK", "sponsored_study_visas": 446924, "year": "2024 (ending March)", "source": "British Council" }
+      ]
+    },
+
+    "relocation_satisfaction": [
+      { "metric": "Employees satisfied with relocation decision", "pct": 0.61, "source": "Crown World Mobility 2024 survey" },
+      { "metric": "Improved job satisfaction after relocation", "pct": 0.53, "source": "Relocation industry surveys" },
+      { "metric": "Improved work-life balance after moving", "pct": 0.46, "source": "Crown World Mobility 2024" },
+      { "metric": "Settling in period (average)", "duration": "3-6 months", "source": "Expat surveys" },
+      { "metric": "Full adjustment period", "duration": "6-12 months", "source": "HR research" },
+      { "metric": "Struggle to make local friends (international hires)", "pct": 0.43, "source": "Expat surveys" },
+      { "metric": "Relocating spouses struggle with friends", "pct": 0.48, "source": "Expat surveys" },
+      { "metric": "Moved for better career opportunities", "pct": 0.30, "source": "Crown survey" },
+      { "metric": "Moved for better pay/benefits", "pct": 0.23, "source": "Crown survey" },
+      { "metric": "Moved for work-life balance", "pct": 0.21, "source": "Crown survey" },
+      { "metric": "Mexico: expat quality of life satisfaction", "pct": 0.90, "source": "Expat Insider 2023", "notes": "#1 destination for expat happiness" }
+    ]
+  }
+}

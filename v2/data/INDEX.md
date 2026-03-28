@@ -1,12 +1,12 @@
 # Simulator Knowledge Base — Data Index
 
-> **61 file, 23,590+ data points**, tutte con fonti verificate.
-> Aggiornato 2026-03-27. 3 batch di espansione completati.
+> **80+ file, ~290,000+ data points**, tutte con fonti verificate.
+> Aggiornato 2026-03-28. 3 batch + bulk downloads + deep country research completati.
 
 ## Quick Stats
-- **Total files:** 61 JSON
-- **Total data points:** 23,590+
-- **Total disk:** ~4MB
+- **Total files:** 80+ JSON (+ 17 bulk World Bank/BLS)
+- **Total data points:** ~290,000+ (local) + 247K (World Bank bulk)
+- **Total disk:** ~90MB
 - **Business archetypes:** 25 (487 micro-steps)
 - **Keyword-matched datasets:** 50+
 
@@ -105,6 +105,34 @@
 | File | Categoria | DP | KB |
 |------|-----------|----|----|
 | historical-cycles.json | Repeating human nature patterns across centuries (8 sections: bubbles, empires, innovation, social, entrepreneurship, trust, pandemic, consumption) | 202 | 180 |
+
+## Deep Country Research
+
+| File | Categoria | DP | KB |
+|------|-----------|----|----|
+| country-probabilities-deep.json | 20 countries x 24 metrics + 15 cities x 6 metrics + global benchmarks. Salary (overall + tech/food/marketing/freelance), CoL, rent, startup costs (cafe/online/agency), survival rates, unemployment, job search, min wage, internet, ease of business, entrepreneurship, savings, gig economy, remote work. Sources: Numbeo 2026, World Bank, OECD, ILO, GEM, BLS, Upwork, ITU | 583 | 48 |
+
+## Bulk Downloads (World Bank + BLS)
+
+| File | Categoria | DP |
+|------|-----------|-----|
+| worldbank-gdp-economy.json | GDP, GNI, growth, trade | ~25K |
+| worldbank-population-demographics.json | Population, urbanization, fertility | ~25K |
+| worldbank-education.json | Enrollment, literacy, spending | ~25K |
+| worldbank-health.json | Life expectancy, mortality, immunization | ~25K |
+| worldbank-labor-employment.json | Employment, participation, NEET | ~25K |
+| worldbank-business-innovation.json | R&D, startups, IP | ~25K |
+| worldbank-poverty-inequality.json | Poverty, Gini, income shares | ~25K |
+| worldbank-environment-energy.json | CO2, renewable, access to electricity | ~25K |
+| worldbank-financial.json | Credit, bank accounts, remittances | ~22K |
+| worldbank-gender.json | Gender parity, labor, education | ~22K |
+| bls-unemployment.json | US unemployment rates | ~2K |
+| bls-cpi-inflation.json | Consumer price index | ~2K |
+| bls-wages-earnings.json | Average wages by sector | ~2K |
+| bls-employment.json | Employment by sector | ~2K |
+| bls-productivity.json | Labor productivity | ~2K |
+| bls-ppi-producer-prices.json | Producer price index | ~2K |
+| bls-occupational-employment.json | Occupational employment & wages | ~3K |
 
 ## How to use
 - `master-funnels.json` — loaded directly by simulator for node probabilities

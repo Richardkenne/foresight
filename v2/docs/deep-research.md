@@ -1,4 +1,4 @@
-# Deep Research — Simulator v2
+si# Deep Research — Simulator v2
 
 ## Index
 - [1. Simulation Engines & Scenario Planning](#1-simulation-engines--scenario-planning)
@@ -13,6 +13,7 @@
 - [9. Raccomandazioni — Life Simulator specifiche](#9-raccomandazioni--life-simulator-specifiche)
 - [10. React Flow Projects — Simulators, Workflow Engines, Scenario Tools](#10-react-flow-projects--simulators-workflow-engines-scenario-tools)
 - [11. Ricerche da completare](#11-ricerche-da-completare)
+- [12. Data Pipeline Architecture — Come i Top Player Iniettano Dati nei Modelli](#12-data-pipeline-architecture--come-i-top-player-iniettano-dati-nei-modelli)
 
 > 130+ repo analizzati in 12 categorie. Ricerca completata 2026-03-27.
 
@@ -409,5 +410,49 @@ Dettaglio completo nella risposta conversazione (troppo lungo per markdown table
 
 ---
 
+## 13. GitHub Probability & Statistics Datasets
+> Ricerca: 2026-03-28 | Obiettivo: trovare dataset pronti con probabilità reali da scaricare
+
+### TOP 10 — Repo con dati scaricabili
+
+| # | Repo | Stars | Dati | Formato | DP stimati | Licenza | Scaricato? |
+|---|------|-------|------|---------|------------|---------|------------|
+| 1 | [owid/owid-datasets](https://github.com/owid/owid-datasets) | 755 | 200+ dataset: mortalità, divorzio, fertilità, depressione, cancro, disastri, crimini, imprenditorialità per paese | CSV | 100K+ | CC-BY | NO — da fare |
+| 2 | [fivethirtyeight/data](https://github.com/fivethirtyeight/data) | 17,323 | 120+ dataset: droghe per età, college majors + stipendi, sicurezza aerea, crimini, sport (NBA/NFL elo) | CSV | 50K+ | CC-BY 4.0 | NO — da fare |
+| 3 | [owid/covid-19-data](https://github.com/owid/covid-19-data) | 5,657 | COVID giornaliero tutti i paesi: casi, morti, vaccini, eccesso mortalità | CSV+JSON | Milioni | CC-BY 4.0 | NO — utile per epidemie |
+| 4 | [datasets/s-and-p-500](https://github.com/datasets/s-and-p-500) | 621 | S&P 500 storico | CSV | Migliaia | ODC | NO |
+| 5 | [datasets/population](https://github.com/datasets/population) | 105 | Popolazione per paese 1960-oggi | CSV | 10K+ | ODC | NO |
+| 6 | [datasets/gdp](https://github.com/datasets/gdp) | 87 | GDP per paese | CSV | 5K+ | ODC | PARZIALE (WorldBank) |
+| 7 | [jennybc/gapminder](https://github.com/jennybc/gapminder) | 302 | Life expectancy + GDP + pop, 142 paesi, 1952-2007 | TSV/CSV | 1,700 | CC-0 | NO |
+| 8 | [owid/poverty-data](https://github.com/owid/poverty-data) | 36 | Povertà, distribuzione reddito, Gini per paese | CSV | 10K+ | CC-BY | PARZIALE (WorldBank) |
+| 9 | [actuarial-data-science/Tutorials](https://github.com/actuarial-data-science/Tutorials) | 200 | Dati assicurativi: sinistri auto, tabelle mortalità, modelli sopravvivenza | R+data | Migliaia | MIT | NO |
+| 10 | [awesomedata/awesome-public-datasets](https://github.com/awesomedata/awesome-public-datasets) | 73,675 | Meta-indice: 500+ link a dataset pubblici per categoria | Markdown | Indice | CC-0 | N/A (indice) |
+
+### Dataset specifici più utili da owid/owid-datasets
+
+| Dataset | Cosa contiene | Valore per Simulator |
+|---------|---------------|---------------------|
+| Life expectancy (Gapminder, UN, IHME) | Aspettativa di vita per paese/anno | Nodi age/death |
+| Cumulative share of marriages ending in divorce | Tassi divorzio per durata | Nodi relationship |
+| Duration of marriages ending in divorce | Durata matrimoni | Nodi relationship |
+| Five year cancer survival rates | Sopravvivenza cancro | Nodi health |
+| Causes of death vs media coverage | Percezione vs realtà rischi | Nodi decision/bias |
+| Share of people with business intentions | Intenzioni imprenditoriali per paese | Nodi business |
+| Depression prevalence by education | Depressione per istruzione | Nodi mental health |
+| Fertility Rate | Tassi fertilità per paese | Nodi life events |
+| Drug overdose deaths | Mortalità overdose | Nodi addiction |
+| Fatal aviation accidents | Incidenti aerei | Nodi safety/travel |
+
+### Priorità download
+
+1. **owid/owid-datasets** — MASSIMA. 200+ dataset, copre buchi su mortalità, divorzio, cancro, disastri, crimini
+2. **fivethirtyeight/data** — ALTA. College majors ROI, sport, droghe, crimini
+3. **actuarial-data-science** — MEDIA. Tabelle mortalità granulari
+
+### Nota
+La maggior parte dei dataset GitHub contiene dati aggregati paese/anno. Per probabilità individuali granulari (es. "probabilità che 35enne maschio in Indonesia sviluppi diabete") servono fonti istituzionali (WHO API, CDC WONDER, SSA Life Tables) — non disponibili come repo GitHub.
+
+---
+
 *Ultimo aggiornamento: 2026-03-28*
-*Totale: 130+ repo analizzati in 12 categorie*
+*Totale: 140+ repo analizzati in 13 categorie*

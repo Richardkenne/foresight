@@ -1,0 +1,2010 @@
+{
+  "meta": {
+    "title": "Crime, Justice & Legal System Probabilities — Simulator Data",
+    "description": "200+ data points on crime victimization, recidivism, legal outcomes, lawsuit statistics, safety probabilities. All statistics with primary sources. For use in life simulator probability engines.",
+    "total_entries": 213,
+    "last_updated": "2026-03-28",
+    "sources_used": [
+      "FBI UCR/NIBRS",
+      "DOJ Bureau of Justice Statistics (BJS)",
+      "National Crime Victimization Survey (NCVS)",
+      "WHO",
+      "UNODC",
+      "Eurostat",
+      "UK Office for National Statistics (ONS)",
+      "Australian Bureau of Statistics (ABS)",
+      "FTC",
+      "IC3 (FBI Internet Crime Complaint Center)",
+      "NHTSA",
+      "BLS Census of Fatal Occupational Injuries",
+      "FEMA",
+      "NFPA",
+      "Identity Theft Resource Center",
+      "US Courts (uscourts.gov)",
+      "National Center for State Courts (NCSC)",
+      "American Bar Association (ABA)",
+      "Innocence Project",
+      "National Registry of Exonerations",
+      "Insurance Information Institute"
+    ],
+    "categories": [
+      "crime_victimization_us",
+      "crime_victimization_global",
+      "recidivism",
+      "arrest_conviction_rates",
+      "sentencing",
+      "wrongful_conviction",
+      "cybercrime",
+      "scam_fraud",
+      "lawsuit_outcomes",
+      "lawsuit_duration_cost",
+      "small_claims_mediation",
+      "patent_ip_lawsuits",
+      "divorce_family_court",
+      "bankruptcy",
+      "contract_disputes",
+      "car_accidents",
+      "workplace_injuries",
+      "natural_disasters",
+      "home_fire",
+      "identity_theft"
+    ]
+  },
+  "crime_victimization_us": [
+    {
+      "id": "CRM001",
+      "metric": "violent_crime_victimization_rate_us",
+      "value": 22.5,
+      "unit": "per_1000_persons_age_12_plus",
+      "description": "Rate of violent crime victimization in the US (2023). Includes rape/sexual assault, robbery, aggravated assault, simple assault.",
+      "source": "NCVS / Bureau of Justice Statistics 2023",
+      "year": 2023
+    },
+    {
+      "id": "CRM002",
+      "metric": "property_crime_victimization_rate_us",
+      "value": 101.1,
+      "unit": "per_1000_households",
+      "description": "Rate of property crime victimization (burglary, motor vehicle theft, other theft) per 1,000 households",
+      "source": "NCVS / Bureau of Justice Statistics 2023",
+      "year": 2023
+    },
+    {
+      "id": "CRM003",
+      "metric": "robbery_victimization_rate_us",
+      "value": 1.8,
+      "unit": "per_1000_persons_age_12_plus",
+      "description": "Robbery victimization rate in the US",
+      "source": "NCVS / Bureau of Justice Statistics 2023",
+      "year": 2023
+    },
+    {
+      "id": "CRM004",
+      "metric": "aggravated_assault_rate_us",
+      "value": 4.3,
+      "unit": "per_1000_persons_age_12_plus",
+      "description": "Aggravated assault victimization rate",
+      "source": "NCVS / Bureau of Justice Statistics 2023",
+      "year": 2023
+    },
+    {
+      "id": "CRM005",
+      "metric": "simple_assault_rate_us",
+      "value": 13.4,
+      "unit": "per_1000_persons_age_12_plus",
+      "description": "Simple assault victimization rate",
+      "source": "NCVS / Bureau of Justice Statistics 2023",
+      "year": 2023
+    },
+    {
+      "id": "CRM006",
+      "metric": "burglary_rate_us",
+      "value": 15.5,
+      "unit": "per_1000_households",
+      "description": "Household burglary/trespassing victimization rate",
+      "source": "NCVS / Bureau of Justice Statistics 2023",
+      "year": 2023
+    },
+    {
+      "id": "CRM007",
+      "metric": "motor_vehicle_theft_rate_us",
+      "value": 5.5,
+      "unit": "per_1000_households",
+      "description": "Motor vehicle theft victimization rate",
+      "source": "NCVS / Bureau of Justice Statistics 2023",
+      "year": 2023
+    },
+    {
+      "id": "CRM008",
+      "metric": "rape_sexual_assault_rate_us",
+      "value": 1.4,
+      "unit": "per_1000_persons_age_12_plus",
+      "description": "Rape/sexual assault victimization rate",
+      "source": "NCVS / Bureau of Justice Statistics 2023",
+      "year": 2023
+    },
+    {
+      "id": "CRM009",
+      "metric": "fraud_victimization_rate_us",
+      "value": 26.0,
+      "unit": "percent_of_adults",
+      "description": "Percentage of US adults who experienced some form of fraud in prior 12 months",
+      "source": "FTC Consumer Sentinel Network 2023",
+      "year": 2023
+    },
+    {
+      "id": "CRM010",
+      "metric": "identity_theft_reports_us",
+      "value": 1036903,
+      "unit": "reports_per_year",
+      "description": "Number of identity theft reports filed with FTC in 2023",
+      "source": "FTC Consumer Sentinel Network 2023",
+      "year": 2023
+    },
+    {
+      "id": "CRM011",
+      "metric": "identity_theft_rate_us",
+      "value": 3.3,
+      "unit": "percent_of_adults",
+      "description": "Percentage of US adults who were victims of identity theft",
+      "source": "BJS Identity Theft Supplement 2022",
+      "year": 2022
+    },
+    {
+      "id": "CRM012",
+      "metric": "lifetime_violent_crime_probability_us",
+      "value": 50.0,
+      "unit": "percent",
+      "description": "Estimated probability of being a victim of violent crime at least once in a lifetime (US)",
+      "source": "BJS / NCVS cumulative risk estimates",
+      "year": 2023
+    },
+    {
+      "id": "CRM013",
+      "metric": "homicide_rate_us",
+      "value": 6.1,
+      "unit": "per_100000_population",
+      "description": "US homicide rate per 100,000 people",
+      "source": "FBI UCR / CDC WONDER 2023",
+      "year": 2023
+    },
+    {
+      "id": "CRM014",
+      "metric": "theft_larceny_rate_us",
+      "value": 73.6,
+      "unit": "per_1000_households",
+      "description": "Other theft (not burglary or motor vehicle) victimization rate",
+      "source": "NCVS / Bureau of Justice Statistics 2023",
+      "year": 2023
+    }
+  ],
+  "crime_victimization_global": [
+    {
+      "id": "GLB001",
+      "metric": "homicide_rate_global",
+      "value": 5.8,
+      "unit": "per_100000_population",
+      "description": "Global average intentional homicide rate",
+      "source": "UNODC Global Study on Homicide 2023",
+      "year": 2022
+    },
+    {
+      "id": "GLB002",
+      "metric": "homicide_rate_latin_america_caribbean",
+      "value": 21.7,
+      "unit": "per_100000_population",
+      "description": "Latin America & Caribbean — highest regional homicide rate",
+      "source": "UNODC 2023",
+      "year": 2022
+    },
+    {
+      "id": "GLB003",
+      "metric": "homicide_rate_europe",
+      "value": 2.2,
+      "unit": "per_100000_population",
+      "description": "Europe average homicide rate",
+      "source": "Eurostat / UNODC 2023",
+      "year": 2022
+    },
+    {
+      "id": "GLB004",
+      "metric": "homicide_rate_asia",
+      "value": 2.3,
+      "unit": "per_100000_population",
+      "description": "Asia average homicide rate",
+      "source": "UNODC 2023",
+      "year": 2022
+    },
+    {
+      "id": "GLB005",
+      "metric": "homicide_rate_africa",
+      "value": 12.7,
+      "unit": "per_100000_population",
+      "description": "Africa average homicide rate",
+      "source": "UNODC 2023",
+      "year": 2022
+    },
+    {
+      "id": "GLB006",
+      "metric": "robbery_rate_uk",
+      "value": 1.4,
+      "unit": "per_1000_population",
+      "description": "Robbery victimization rate in England & Wales",
+      "source": "ONS Crime Survey for England and Wales 2023",
+      "year": 2023
+    },
+    {
+      "id": "GLB007",
+      "metric": "assault_rate_australia",
+      "value": 2.2,
+      "unit": "percent_of_population",
+      "description": "Percentage of Australians who experienced physical assault in prior 12 months",
+      "source": "ABS Personal Safety Survey 2022",
+      "year": 2022
+    },
+    {
+      "id": "GLB008",
+      "metric": "burglary_rate_uk",
+      "value": 14.0,
+      "unit": "per_1000_households",
+      "description": "Domestic burglary rate in England & Wales",
+      "source": "ONS Crime Survey 2023",
+      "year": 2023
+    },
+    {
+      "id": "GLB009",
+      "metric": "fraud_rate_uk",
+      "value": 41.0,
+      "unit": "per_1000_adults",
+      "description": "Fraud victimization rate in England & Wales",
+      "source": "ONS Crime Survey 2023",
+      "year": 2023
+    },
+    {
+      "id": "GLB010",
+      "metric": "homicide_rate_japan",
+      "value": 0.2,
+      "unit": "per_100000_population",
+      "description": "Japan — one of the lowest homicide rates globally",
+      "source": "UNODC 2023",
+      "year": 2022
+    },
+    {
+      "id": "GLB011",
+      "metric": "homicide_rate_brazil",
+      "value": 22.4,
+      "unit": "per_100000_population",
+      "description": "Brazil homicide rate",
+      "source": "UNODC / Brazilian Forum on Public Safety 2023",
+      "year": 2022
+    },
+    {
+      "id": "GLB012",
+      "metric": "homicide_rate_indonesia",
+      "value": 0.4,
+      "unit": "per_100000_population",
+      "description": "Indonesia homicide rate",
+      "source": "UNODC 2023",
+      "year": 2022
+    },
+    {
+      "id": "GLB013",
+      "metric": "homicide_rate_canada",
+      "value": 2.3,
+      "unit": "per_100000_population",
+      "description": "Canada homicide rate",
+      "source": "Statistics Canada 2023",
+      "year": 2022
+    },
+    {
+      "id": "GLB014",
+      "metric": "homicide_rate_australia",
+      "value": 0.9,
+      "unit": "per_100000_population",
+      "description": "Australia homicide rate",
+      "source": "ABS / Australian Institute of Criminology 2023",
+      "year": 2022
+    },
+    {
+      "id": "GLB015",
+      "metric": "global_crime_victimization_urban",
+      "value": 17.0,
+      "unit": "percent",
+      "description": "Percentage of urban population globally who experienced at least one crime in prior year",
+      "source": "UN-Habitat Global Urban Indicators 2023",
+      "year": 2022
+    }
+  ],
+  "recidivism": [
+    {
+      "id": "REC001",
+      "metric": "recidivism_1yr_us",
+      "value": 29.0,
+      "unit": "percent",
+      "description": "Percentage of released US prisoners rearrested within 1 year",
+      "source": "BJS Recidivism Study of State Prisoners 2023",
+      "year": 2023
+    },
+    {
+      "id": "REC002",
+      "metric": "recidivism_3yr_us",
+      "value": 57.0,
+      "unit": "percent",
+      "description": "Percentage of released US prisoners rearrested within 3 years",
+      "source": "BJS Recidivism Study of State Prisoners 2023",
+      "year": 2023
+    },
+    {
+      "id": "REC003",
+      "metric": "recidivism_5yr_us",
+      "value": 71.0,
+      "unit": "percent",
+      "description": "Percentage of released US prisoners rearrested within 5 years",
+      "source": "BJS Recidivism Study of State Prisoners 2023",
+      "year": 2023
+    },
+    {
+      "id": "REC004",
+      "metric": "recidivism_9yr_us",
+      "value": 83.0,
+      "unit": "percent",
+      "description": "Percentage of released US prisoners rearrested within 9 years",
+      "source": "BJS Recidivism Study 2018 (30-state, 2005 cohort)",
+      "year": 2018
+    },
+    {
+      "id": "REC005",
+      "metric": "recidivism_1yr_uk",
+      "value": 25.0,
+      "unit": "percent",
+      "description": "Proven reoffending rate within 1 year in England & Wales",
+      "source": "UK Ministry of Justice 2023",
+      "year": 2023
+    },
+    {
+      "id": "REC006",
+      "metric": "recidivism_1yr_australia",
+      "value": 46.0,
+      "unit": "percent",
+      "description": "Percentage of released Australian prisoners who return to prison within 2 years",
+      "source": "Productivity Commission, Report on Government Services 2023",
+      "year": 2023
+    },
+    {
+      "id": "REC007",
+      "metric": "recidivism_1yr_norway",
+      "value": 20.0,
+      "unit": "percent",
+      "description": "Recidivism rate within 2 years in Norway — known for rehabilitative prisons",
+      "source": "Norwegian Correctional Service 2022",
+      "year": 2022
+    },
+    {
+      "id": "REC008",
+      "metric": "recidivism_1yr_japan",
+      "value": 48.0,
+      "unit": "percent",
+      "description": "Reconviction rate within 2 years in Japan",
+      "source": "Japan Ministry of Justice White Paper on Crime 2023",
+      "year": 2023
+    },
+    {
+      "id": "REC009",
+      "metric": "recidivism_drug_offenders_us",
+      "value": 77.0,
+      "unit": "percent",
+      "description": "5-year rearrest rate for drug offenders in the US",
+      "source": "BJS Recidivism Study 2023",
+      "year": 2023
+    },
+    {
+      "id": "REC010",
+      "metric": "recidivism_property_offenders_us",
+      "value": 82.0,
+      "unit": "percent",
+      "description": "5-year rearrest rate for property crime offenders",
+      "source": "BJS Recidivism Study 2023",
+      "year": 2023
+    },
+    {
+      "id": "REC011",
+      "metric": "recidivism_violent_offenders_us",
+      "value": 64.0,
+      "unit": "percent",
+      "description": "5-year rearrest rate for violent offenders",
+      "source": "BJS Recidivism Study 2023",
+      "year": 2023
+    },
+    {
+      "id": "REC012",
+      "metric": "recidivism_sex_offenders_us",
+      "value": 33.0,
+      "unit": "percent",
+      "description": "5-year rearrest rate for sex offenders (lower than other categories)",
+      "source": "BJS Special Report on Sex Offender Recidivism 2019",
+      "year": 2019
+    }
+  ],
+  "arrest_conviction_rates": [
+    {
+      "id": "ACR001",
+      "metric": "clearance_rate_homicide_us",
+      "value": 52.3,
+      "unit": "percent",
+      "description": "Percentage of homicides 'cleared' (arrest made or exceptional means) in the US",
+      "source": "FBI UCR / NIBRS 2023",
+      "year": 2023
+    },
+    {
+      "id": "ACR002",
+      "metric": "clearance_rate_aggravated_assault_us",
+      "value": 50.4,
+      "unit": "percent",
+      "description": "Clearance rate for aggravated assault",
+      "source": "FBI UCR / NIBRS 2023",
+      "year": 2023
+    },
+    {
+      "id": "ACR003",
+      "metric": "clearance_rate_robbery_us",
+      "value": 30.2,
+      "unit": "percent",
+      "description": "Clearance rate for robbery",
+      "source": "FBI UCR / NIBRS 2023",
+      "year": 2023
+    },
+    {
+      "id": "ACR004",
+      "metric": "clearance_rate_burglary_us",
+      "value": 14.1,
+      "unit": "percent",
+      "description": "Clearance rate for burglary — very low",
+      "source": "FBI UCR / NIBRS 2023",
+      "year": 2023
+    },
+    {
+      "id": "ACR005",
+      "metric": "clearance_rate_motor_vehicle_theft_us",
+      "value": 12.0,
+      "unit": "percent",
+      "description": "Clearance rate for motor vehicle theft",
+      "source": "FBI UCR / NIBRS 2023",
+      "year": 2023
+    },
+    {
+      "id": "ACR006",
+      "metric": "clearance_rate_larceny_theft_us",
+      "value": 15.0,
+      "unit": "percent",
+      "description": "Clearance rate for larceny-theft",
+      "source": "FBI UCR / NIBRS 2023",
+      "year": 2023
+    },
+    {
+      "id": "ACR007",
+      "metric": "clearance_rate_rape_us",
+      "value": 26.1,
+      "unit": "percent",
+      "description": "Clearance rate for rape",
+      "source": "FBI UCR / NIBRS 2023",
+      "year": 2023
+    },
+    {
+      "id": "ACR008",
+      "metric": "federal_conviction_rate_us",
+      "value": 99.6,
+      "unit": "percent",
+      "description": "Federal criminal conviction rate (once prosecuted). Vast majority via plea bargain.",
+      "source": "US Sentencing Commission / Pew Research 2022",
+      "year": 2022
+    },
+    {
+      "id": "ACR009",
+      "metric": "state_conviction_rate_felony_us",
+      "value": 68.0,
+      "unit": "percent",
+      "description": "Felony conviction rate in state courts (of those prosecuted)",
+      "source": "BJS State Court Processing Statistics",
+      "year": 2022
+    },
+    {
+      "id": "ACR010",
+      "metric": "plea_bargain_rate_federal_us",
+      "value": 97.0,
+      "unit": "percent",
+      "description": "Percentage of federal convictions obtained via plea bargain (not trial)",
+      "source": "US Sentencing Commission 2023",
+      "year": 2023
+    },
+    {
+      "id": "ACR011",
+      "metric": "plea_bargain_rate_state_us",
+      "value": 94.0,
+      "unit": "percent",
+      "description": "Percentage of state-level felony convictions via guilty plea",
+      "source": "BJS / National Center for State Courts",
+      "year": 2022
+    },
+    {
+      "id": "ACR012",
+      "metric": "conviction_rate_japan",
+      "value": 99.9,
+      "unit": "percent",
+      "description": "Japan's criminal conviction rate — highest in developed world. Prosecutors only bring near-certain cases.",
+      "source": "Japan Ministry of Justice 2023",
+      "year": 2023
+    },
+    {
+      "id": "ACR013",
+      "metric": "conviction_rate_uk",
+      "value": 84.0,
+      "unit": "percent",
+      "description": "Crown Court conviction rate in England & Wales",
+      "source": "UK Ministry of Justice Criminal Justice Statistics 2023",
+      "year": 2023
+    },
+    {
+      "id": "ACR014",
+      "metric": "crimes_reported_to_police_us",
+      "value": 42.0,
+      "unit": "percent",
+      "description": "Percentage of crimes actually reported to police (many go unreported)",
+      "source": "NCVS / BJS 2023",
+      "year": 2023
+    }
+  ],
+  "sentencing": [
+    {
+      "id": "SEN001",
+      "metric": "avg_sentence_murder_us",
+      "value": 264,
+      "unit": "months",
+      "description": "Average sentence for murder/nonnegligent manslaughter (22 years)",
+      "source": "BJS Prisoners Series 2023",
+      "year": 2023
+    },
+    {
+      "id": "SEN002",
+      "metric": "avg_sentence_robbery_us",
+      "value": 72,
+      "unit": "months",
+      "description": "Average sentence for robbery (6 years)",
+      "source": "BJS Prisoners Series 2023",
+      "year": 2023
+    },
+    {
+      "id": "SEN003",
+      "metric": "avg_sentence_aggravated_assault_us",
+      "value": 48,
+      "unit": "months",
+      "description": "Average sentence for aggravated assault (4 years)",
+      "source": "BJS Prisoners Series 2023",
+      "year": 2023
+    },
+    {
+      "id": "SEN004",
+      "metric": "avg_sentence_burglary_us",
+      "value": 36,
+      "unit": "months",
+      "description": "Average sentence for burglary (3 years)",
+      "source": "BJS Prisoners Series 2023",
+      "year": 2023
+    },
+    {
+      "id": "SEN005",
+      "metric": "avg_sentence_drug_trafficking_us",
+      "value": 70,
+      "unit": "months",
+      "description": "Average federal sentence for drug trafficking",
+      "source": "US Sentencing Commission 2023",
+      "year": 2023
+    },
+    {
+      "id": "SEN006",
+      "metric": "avg_sentence_drug_possession_us",
+      "value": 18,
+      "unit": "months",
+      "description": "Average sentence for drug possession (state courts)",
+      "source": "BJS 2022",
+      "year": 2022
+    },
+    {
+      "id": "SEN007",
+      "metric": "avg_sentence_fraud_federal_us",
+      "value": 24,
+      "unit": "months",
+      "description": "Average federal sentence for fraud offenses (2 years)",
+      "source": "US Sentencing Commission 2023",
+      "year": 2023
+    },
+    {
+      "id": "SEN008",
+      "metric": "avg_sentence_sexual_assault_us",
+      "value": 108,
+      "unit": "months",
+      "description": "Average sentence for sexual assault (9 years)",
+      "source": "BJS 2023",
+      "year": 2023
+    },
+    {
+      "id": "SEN009",
+      "metric": "time_served_vs_sentence_us",
+      "value": 44.0,
+      "unit": "percent",
+      "description": "Average percentage of sentence actually served in state prison before release",
+      "source": "BJS Time Served in State Prison 2022",
+      "year": 2022
+    },
+    {
+      "id": "SEN010",
+      "metric": "incarceration_rate_us",
+      "value": 531,
+      "unit": "per_100000_population",
+      "description": "US incarceration rate — highest in the world",
+      "source": "BJS Prisoners in 2023",
+      "year": 2023
+    },
+    {
+      "id": "SEN011",
+      "metric": "incarceration_rate_uk",
+      "value": 130,
+      "unit": "per_100000_population",
+      "description": "UK incarceration rate",
+      "source": "World Prison Brief / Institute for Crime & Justice Policy Research 2023",
+      "year": 2023
+    },
+    {
+      "id": "SEN012",
+      "metric": "incarceration_rate_germany",
+      "value": 64,
+      "unit": "per_100000_population",
+      "description": "Germany incarceration rate",
+      "source": "World Prison Brief 2023",
+      "year": 2023
+    },
+    {
+      "id": "SEN013",
+      "metric": "incarceration_rate_japan",
+      "value": 36,
+      "unit": "per_100000_population",
+      "description": "Japan incarceration rate — among lowest in developed world",
+      "source": "World Prison Brief 2023",
+      "year": 2023
+    },
+    {
+      "id": "SEN014",
+      "metric": "death_row_population_us",
+      "value": 2331,
+      "unit": "inmates",
+      "description": "Number of inmates on death row in the US",
+      "source": "Death Penalty Information Center 2024",
+      "year": 2024
+    }
+  ],
+  "wrongful_conviction": [
+    {
+      "id": "WRC001",
+      "metric": "wrongful_conviction_rate_estimated",
+      "value": 2.0,
+      "unit": "percent",
+      "description": "Estimated percentage of US felony convictions that are wrongful (conservative estimate). Some studies suggest 4-6%.",
+      "source": "Innocence Project / National Academy of Sciences (Gross et al. 2014)",
+      "year": 2014
+    },
+    {
+      "id": "WRC002",
+      "metric": "death_row_wrongful_conviction_rate",
+      "value": 4.1,
+      "unit": "percent",
+      "description": "Estimated percentage of death row inmates who are innocent",
+      "source": "PNAS (Gross et al. 2014) / Innocence Project",
+      "year": 2014
+    },
+    {
+      "id": "WRC003",
+      "metric": "total_exonerations_us_since_1989",
+      "value": 3500,
+      "unit": "people",
+      "description": "Total known exonerations in the US since 1989 (as of 2024)",
+      "source": "National Registry of Exonerations 2024",
+      "year": 2024
+    },
+    {
+      "id": "WRC004",
+      "metric": "avg_years_before_exoneration",
+      "value": 14.0,
+      "unit": "years",
+      "description": "Average time spent in prison before exoneration",
+      "source": "Innocence Project 2024",
+      "year": 2024
+    },
+    {
+      "id": "WRC005",
+      "metric": "dna_exonerations_us",
+      "value": 375,
+      "unit": "people",
+      "description": "Number of DNA-based exonerations in the US since 1989",
+      "source": "Innocence Project 2024",
+      "year": 2024
+    },
+    {
+      "id": "WRC006",
+      "metric": "eyewitness_misidentification_in_wrongful",
+      "value": 64.0,
+      "unit": "percent",
+      "description": "Percentage of wrongful convictions involving eyewitness misidentification",
+      "source": "Innocence Project 2024",
+      "year": 2024
+    },
+    {
+      "id": "WRC007",
+      "metric": "false_confessions_in_wrongful",
+      "value": 29.0,
+      "unit": "percent",
+      "description": "Percentage of wrongful convictions involving false confessions",
+      "source": "Innocence Project 2024",
+      "year": 2024
+    }
+  ],
+  "cybercrime": [
+    {
+      "id": "CYB001",
+      "metric": "cybercrime_complaints_us",
+      "value": 880418,
+      "unit": "complaints_per_year",
+      "description": "Number of cybercrime complaints filed with IC3 in 2023",
+      "source": "FBI Internet Crime Complaint Center (IC3) 2023 Report",
+      "year": 2023
+    },
+    {
+      "id": "CYB002",
+      "metric": "cybercrime_losses_us",
+      "value": 12500000000,
+      "unit": "usd_per_year",
+      "description": "Total reported cybercrime losses in the US in 2023 ($12.5 billion)",
+      "source": "FBI IC3 2023 Report",
+      "year": 2023
+    },
+    {
+      "id": "CYB003",
+      "metric": "data_breach_probability_any_company",
+      "value": 29.0,
+      "unit": "percent",
+      "description": "Probability that a given company will experience a data breach within 2 years",
+      "source": "IBM / Ponemon Cost of a Data Breach Report 2023",
+      "year": 2023
+    },
+    {
+      "id": "CYB004",
+      "metric": "avg_data_breach_cost",
+      "value": 4450000,
+      "unit": "usd",
+      "description": "Average total cost of a data breach globally",
+      "source": "IBM / Ponemon Cost of a Data Breach Report 2023",
+      "year": 2023
+    },
+    {
+      "id": "CYB005",
+      "metric": "ransomware_attack_probability_org",
+      "value": 10.0,
+      "unit": "percent_per_year",
+      "description": "Estimated percentage of organizations hit by ransomware in a given year",
+      "source": "Verizon DBIR 2023 / Sophos State of Ransomware 2023",
+      "year": 2023
+    },
+    {
+      "id": "CYB006",
+      "metric": "business_email_compromise_losses_us",
+      "value": 2946000000,
+      "unit": "usd_per_year",
+      "description": "Total losses from business email compromise (BEC) in the US",
+      "source": "FBI IC3 2023",
+      "year": 2023
+    },
+    {
+      "id": "CYB007",
+      "metric": "phishing_emails_per_day_global",
+      "value": 3400000000,
+      "unit": "emails_per_day",
+      "description": "Estimated number of phishing emails sent daily worldwide",
+      "source": "Radicati Group / AAG IT Services 2023",
+      "year": 2023
+    },
+    {
+      "id": "CYB008",
+      "metric": "percent_emails_that_are_spam",
+      "value": 45.6,
+      "unit": "percent",
+      "description": "Percentage of all email traffic that is spam",
+      "source": "Kaspersky Security Bulletin 2023",
+      "year": 2023
+    },
+    {
+      "id": "CYB009",
+      "metric": "personal_data_exposed_in_breaches_us",
+      "value": 353000000,
+      "unit": "records_per_year",
+      "description": "Number of personal records exposed in data breaches in the US (2023)",
+      "source": "Identity Theft Resource Center 2023 Annual Report",
+      "year": 2023
+    },
+    {
+      "id": "CYB010",
+      "metric": "cybercrime_global_cost",
+      "value": 8000000000000,
+      "unit": "usd_per_year",
+      "description": "Estimated global cost of cybercrime in 2023 ($8 trillion)",
+      "source": "Cybersecurity Ventures 2023",
+      "year": 2023
+    }
+  ],
+  "scam_fraud": [
+    {
+      "id": "SCM001",
+      "metric": "phishing_click_rate",
+      "value": 3.4,
+      "unit": "percent",
+      "description": "Percentage of phishing emails that result in a click (average across industries)",
+      "source": "Verizon DBIR 2023",
+      "year": 2023
+    },
+    {
+      "id": "SCM002",
+      "metric": "phishing_credential_submission_rate",
+      "value": 12.0,
+      "unit": "percent_of_clickers",
+      "description": "Percentage of people who click phishing links AND then submit credentials",
+      "source": "KnowBe4 Phishing Benchmarking Report 2023",
+      "year": 2023
+    },
+    {
+      "id": "SCM003",
+      "metric": "romance_scam_reports_us",
+      "value": 64003,
+      "unit": "reports_per_year",
+      "description": "Number of romance scam reports filed with FTC in 2023",
+      "source": "FTC Consumer Sentinel Network 2023",
+      "year": 2023
+    },
+    {
+      "id": "SCM004",
+      "metric": "romance_scam_avg_loss",
+      "value": 2000,
+      "unit": "usd_median_loss",
+      "description": "Median reported loss per romance scam victim",
+      "source": "FTC 2023",
+      "year": 2023
+    },
+    {
+      "id": "SCM005",
+      "metric": "romance_scam_total_losses_us",
+      "value": 1140000000,
+      "unit": "usd_per_year",
+      "description": "Total reported romance scam losses in the US",
+      "source": "FTC 2023",
+      "year": 2023
+    },
+    {
+      "id": "SCM006",
+      "metric": "investment_scam_losses_us",
+      "value": 4570000000,
+      "unit": "usd_per_year",
+      "description": "Total reported investment scam losses — largest fraud category by $ lost",
+      "source": "FTC 2023",
+      "year": 2023
+    },
+    {
+      "id": "SCM007",
+      "metric": "imposter_scam_reports_us",
+      "value": 856000,
+      "unit": "reports_per_year",
+      "description": "Number of imposter scam reports (government, business, tech support) — most common fraud type",
+      "source": "FTC 2023",
+      "year": 2023
+    },
+    {
+      "id": "SCM008",
+      "metric": "total_fraud_reports_us",
+      "value": 5400000,
+      "unit": "reports_per_year",
+      "description": "Total fraud and identity theft reports filed with FTC in 2023",
+      "source": "FTC Consumer Sentinel Network 2023",
+      "year": 2023
+    },
+    {
+      "id": "SCM009",
+      "metric": "total_fraud_losses_us",
+      "value": 10000000000,
+      "unit": "usd_per_year",
+      "description": "Total reported fraud losses in the US ($10 billion in 2023)",
+      "source": "FTC 2023",
+      "year": 2023
+    },
+    {
+      "id": "SCM010",
+      "metric": "crypto_scam_losses_us",
+      "value": 3940000000,
+      "unit": "usd_per_year",
+      "description": "Reported cryptocurrency fraud losses in the US",
+      "source": "FBI IC3 2023",
+      "year": 2023
+    },
+    {
+      "id": "SCM011",
+      "metric": "elder_fraud_losses_us",
+      "value": 3400000000,
+      "unit": "usd_per_year",
+      "description": "Total reported fraud losses for victims age 60+ in the US",
+      "source": "FBI IC3 2023 Elder Fraud Report",
+      "year": 2023
+    },
+    {
+      "id": "SCM012",
+      "metric": "fraud_loss_age_20_29",
+      "value": 440,
+      "unit": "usd_median_loss",
+      "description": "Median fraud loss for 20-29 age group (report more, lose less)",
+      "source": "FTC 2023",
+      "year": 2023
+    },
+    {
+      "id": "SCM013",
+      "metric": "fraud_loss_age_70_plus",
+      "value": 1600,
+      "unit": "usd_median_loss",
+      "description": "Median fraud loss for 70+ age group (report less, lose more per incident)",
+      "source": "FTC 2023",
+      "year": 2023
+    },
+    {
+      "id": "SCM014",
+      "metric": "social_media_originated_fraud_losses",
+      "value": 2700000000,
+      "unit": "usd_per_year",
+      "description": "Fraud losses where contact originated on social media",
+      "source": "FTC 2023",
+      "year": 2023
+    }
+  ],
+  "lawsuit_outcomes": [
+    {
+      "id": "LAW001",
+      "metric": "plaintiff_win_rate_all_civil_trials",
+      "value": 59.0,
+      "unit": "percent",
+      "description": "Overall plaintiff win rate in civil bench and jury trials in state courts",
+      "source": "BJS Civil Justice Survey of State Courts / NCSC",
+      "year": 2022
+    },
+    {
+      "id": "LAW002",
+      "metric": "plaintiff_win_rate_personal_injury",
+      "value": 52.0,
+      "unit": "percent",
+      "description": "Plaintiff win rate in personal injury/tort trials",
+      "source": "BJS Civil Justice Survey / NCSC",
+      "year": 2022
+    },
+    {
+      "id": "LAW003",
+      "metric": "plaintiff_win_rate_medical_malpractice",
+      "value": 23.0,
+      "unit": "percent",
+      "description": "Plaintiff win rate in medical malpractice trials — defendants win 77%",
+      "source": "BJS Civil Justice Survey / Journal of Empirical Legal Studies",
+      "year": 2022
+    },
+    {
+      "id": "LAW004",
+      "metric": "plaintiff_win_rate_contract_disputes",
+      "value": 66.0,
+      "unit": "percent",
+      "description": "Plaintiff win rate in contract dispute trials",
+      "source": "BJS Civil Justice Survey / NCSC",
+      "year": 2022
+    },
+    {
+      "id": "LAW005",
+      "metric": "plaintiff_win_rate_employment_discrimination",
+      "value": 15.0,
+      "unit": "percent",
+      "description": "Plaintiff win rate in employment discrimination trials at federal level — very low",
+      "source": "Federal Judicial Center / Clermont & Schwab studies",
+      "year": 2022
+    },
+    {
+      "id": "LAW006",
+      "metric": "plaintiff_win_rate_product_liability",
+      "value": 38.0,
+      "unit": "percent",
+      "description": "Plaintiff win rate in product liability trials",
+      "source": "BJS Civil Justice Survey",
+      "year": 2022
+    },
+    {
+      "id": "LAW007",
+      "metric": "cases_settled_before_trial",
+      "value": 95.0,
+      "unit": "percent",
+      "description": "Percentage of civil cases that settle or are dismissed before going to trial",
+      "source": "NCSC / ABA Journal",
+      "year": 2022
+    },
+    {
+      "id": "LAW008",
+      "metric": "median_personal_injury_award_jury",
+      "value": 80000,
+      "unit": "usd",
+      "description": "Median jury award in personal injury cases that go to trial",
+      "source": "BJS Civil Justice Survey",
+      "year": 2022
+    },
+    {
+      "id": "LAW009",
+      "metric": "median_personal_injury_settlement",
+      "value": 31000,
+      "unit": "usd",
+      "description": "Median settlement amount in personal injury cases",
+      "source": "Insurance Information Institute / ABA",
+      "year": 2022
+    },
+    {
+      "id": "LAW010",
+      "metric": "wrongful_termination_plaintiff_win_rate",
+      "value": 37.0,
+      "unit": "percent",
+      "description": "Plaintiff win rate in wrongful termination lawsuits that go to trial",
+      "source": "ABA / NCSC Research",
+      "year": 2022
+    },
+    {
+      "id": "LAW011",
+      "metric": "class_action_settlement_avg",
+      "value": 56500000,
+      "unit": "usd",
+      "description": "Average class action settlement amount in the US",
+      "source": "Carlton Fields Class Action Survey 2023",
+      "year": 2023
+    }
+  ],
+  "lawsuit_duration_cost": [
+    {
+      "id": "LDC001",
+      "metric": "avg_lawsuit_duration_personal_injury",
+      "value": 23,
+      "unit": "months",
+      "description": "Average time from filing to resolution for personal injury cases",
+      "source": "NCSC / Nolo Lawyer Survey 2023",
+      "year": 2023
+    },
+    {
+      "id": "LDC002",
+      "metric": "avg_lawsuit_duration_contract",
+      "value": 18,
+      "unit": "months",
+      "description": "Average duration for contract dispute cases",
+      "source": "NCSC Research 2022",
+      "year": 2022
+    },
+    {
+      "id": "LDC003",
+      "metric": "avg_lawsuit_duration_employment",
+      "value": 24,
+      "unit": "months",
+      "description": "Average duration for employment discrimination cases (federal court)",
+      "source": "Federal Judicial Center / ABA",
+      "year": 2022
+    },
+    {
+      "id": "LDC004",
+      "metric": "avg_cost_personal_injury_plaintiff",
+      "value": 0,
+      "unit": "usd_upfront",
+      "description": "Most personal injury attorneys work on contingency (33% of settlement). No upfront cost.",
+      "source": "ABA / Nolo Lawyer Survey",
+      "year": 2023
+    },
+    {
+      "id": "LDC005",
+      "metric": "personal_injury_contingency_fee",
+      "value": 33.3,
+      "unit": "percent_of_award",
+      "description": "Standard contingency fee for personal injury attorneys",
+      "source": "ABA / Industry Standard",
+      "year": 2023
+    },
+    {
+      "id": "LDC006",
+      "metric": "avg_hourly_rate_attorney_us",
+      "value": 313,
+      "unit": "usd_per_hour",
+      "description": "Average attorney hourly rate in the US (varies widely by region and specialty)",
+      "source": "Clio Legal Trends Report 2023",
+      "year": 2023
+    },
+    {
+      "id": "LDC007",
+      "metric": "avg_total_cost_simple_lawsuit",
+      "value": 15000,
+      "unit": "usd",
+      "description": "Average total legal cost for a simple civil lawsuit",
+      "source": "ABA / Nolo Lawyer Survey 2023",
+      "year": 2023
+    },
+    {
+      "id": "LDC008",
+      "metric": "avg_total_cost_complex_lawsuit",
+      "value": 100000,
+      "unit": "usd",
+      "description": "Average total legal cost for a complex civil lawsuit that goes to trial",
+      "source": "ABA / Thomson Reuters Legal Department Operations Index",
+      "year": 2023
+    },
+    {
+      "id": "LDC009",
+      "metric": "federal_civil_case_median_duration",
+      "value": 10.3,
+      "unit": "months",
+      "description": "Median time from filing to disposition in federal civil cases",
+      "source": "US Courts Judicial Business Annual Report 2023",
+      "year": 2023
+    }
+  ],
+  "small_claims_mediation": [
+    {
+      "id": "SCR001",
+      "metric": "small_claims_plaintiff_win_rate",
+      "value": 60.0,
+      "unit": "percent",
+      "description": "Plaintiff win rate in small claims court (when defendant appears)",
+      "source": "NCSC Research / ABA",
+      "year": 2022
+    },
+    {
+      "id": "SCR002",
+      "metric": "small_claims_default_judgment_rate",
+      "value": 40.0,
+      "unit": "percent",
+      "description": "Percentage of small claims cases won by default (defendant doesn't show up)",
+      "source": "NCSC Research",
+      "year": 2022
+    },
+    {
+      "id": "SCR003",
+      "metric": "small_claims_max_amount_avg",
+      "value": 10000,
+      "unit": "usd",
+      "description": "Typical small claims court maximum amount (varies by state, $2,500-$25,000)",
+      "source": "Nolo / State court rules",
+      "year": 2023
+    },
+    {
+      "id": "SCR004",
+      "metric": "mediation_settlement_rate",
+      "value": 70.0,
+      "unit": "percent",
+      "description": "Percentage of cases referred to mediation that reach settlement",
+      "source": "ABA Section of Dispute Resolution / NCSC",
+      "year": 2022
+    },
+    {
+      "id": "SCR005",
+      "metric": "arbitration_faster_than_court",
+      "value": 50.0,
+      "unit": "percent_faster",
+      "description": "Arbitration resolves roughly 50% faster than traditional litigation",
+      "source": "American Arbitration Association 2023",
+      "year": 2023
+    },
+    {
+      "id": "SCR006",
+      "metric": "mediation_satisfaction_rate",
+      "value": 85.0,
+      "unit": "percent",
+      "description": "Percentage of parties satisfied with mediation outcome (both sides)",
+      "source": "ABA / NCSC Research",
+      "year": 2022
+    }
+  ],
+  "patent_ip_lawsuits": [
+    {
+      "id": "PAT001",
+      "metric": "patent_plaintiff_win_rate_trial",
+      "value": 59.0,
+      "unit": "percent",
+      "description": "Patent holder win rate at trial (when case reaches trial)",
+      "source": "PricewaterhouseCoopers Patent Litigation Study 2023",
+      "year": 2023
+    },
+    {
+      "id": "PAT002",
+      "metric": "patent_cases_reaching_trial",
+      "value": 3.0,
+      "unit": "percent",
+      "description": "Only ~3% of patent cases actually go to trial; most settle",
+      "source": "Lex Machina Patent Litigation Report 2023",
+      "year": 2023
+    },
+    {
+      "id": "PAT003",
+      "metric": "median_patent_damage_award",
+      "value": 7700000,
+      "unit": "usd",
+      "description": "Median patent infringement damages awarded at trial",
+      "source": "PwC Patent Litigation Study 2023",
+      "year": 2023
+    },
+    {
+      "id": "PAT004",
+      "metric": "avg_patent_litigation_cost",
+      "value": 3000000,
+      "unit": "usd",
+      "description": "Average cost to litigate a patent case through trial (each side)",
+      "source": "AIPLA Economic Survey 2023",
+      "year": 2023
+    },
+    {
+      "id": "PAT005",
+      "metric": "npe_troll_share_of_patent_cases",
+      "value": 53.0,
+      "unit": "percent",
+      "description": "Percentage of patent lawsuits filed by non-practicing entities (patent trolls)",
+      "source": "RPX / Unified Patents 2023",
+      "year": 2023
+    },
+    {
+      "id": "PAT006",
+      "metric": "trademark_infringement_plaintiff_win_rate",
+      "value": 56.0,
+      "unit": "percent",
+      "description": "Plaintiff win rate in trademark infringement cases at trial",
+      "source": "INTA / Federal court data",
+      "year": 2022
+    },
+    {
+      "id": "PAT007",
+      "metric": "copyright_infringement_plaintiff_win_rate",
+      "value": 62.0,
+      "unit": "percent",
+      "description": "Plaintiff win rate in copyright infringement cases at trial",
+      "source": "US Copyright Office / Federal court data",
+      "year": 2022
+    },
+    {
+      "id": "PAT008",
+      "metric": "ip_theft_annual_cost_us",
+      "value": 600000000000,
+      "unit": "usd_per_year",
+      "description": "Estimated annual cost of intellectual property theft to the US economy ($600B)",
+      "source": "Commission on the Theft of American IP 2023",
+      "year": 2023
+    }
+  ],
+  "divorce_family_court": [
+    {
+      "id": "DIV001",
+      "metric": "divorce_rate_us",
+      "value": 2.4,
+      "unit": "per_1000_population",
+      "description": "US divorce rate per 1,000 total population",
+      "source": "CDC National Vital Statistics System 2022",
+      "year": 2022
+    },
+    {
+      "id": "DIV002",
+      "metric": "first_marriage_divorce_probability",
+      "value": 41.0,
+      "unit": "percent",
+      "description": "Estimated probability that a first marriage ends in divorce",
+      "source": "APA / Census Bureau Current Population Survey",
+      "year": 2023
+    },
+    {
+      "id": "DIV003",
+      "metric": "second_marriage_divorce_probability",
+      "value": 60.0,
+      "unit": "percent",
+      "description": "Estimated probability that a second marriage ends in divorce",
+      "source": "APA / Census Bureau",
+      "year": 2023
+    },
+    {
+      "id": "DIV004",
+      "metric": "mother_primary_custody_rate",
+      "value": 79.9,
+      "unit": "percent",
+      "description": "Percentage of custodial parents who are mothers",
+      "source": "Census Bureau Custodial Mothers and Fathers 2022",
+      "year": 2022
+    },
+    {
+      "id": "DIV005",
+      "metric": "father_primary_custody_rate",
+      "value": 20.1,
+      "unit": "percent",
+      "description": "Percentage of custodial parents who are fathers (rising trend)",
+      "source": "Census Bureau 2022",
+      "year": 2022
+    },
+    {
+      "id": "DIV006",
+      "metric": "joint_custody_arrangements",
+      "value": 28.0,
+      "unit": "percent",
+      "description": "Percentage of custody cases resulting in joint/shared custody",
+      "source": "NCSC / Family Court Statistics 2022",
+      "year": 2022
+    },
+    {
+      "id": "DIV007",
+      "metric": "alimony_awarded_rate",
+      "value": 10.0,
+      "unit": "percent",
+      "description": "Percentage of divorces where alimony/spousal support is awarded (declining trend)",
+      "source": "ABA / AAML Survey 2023",
+      "year": 2023
+    },
+    {
+      "id": "DIV008",
+      "metric": "avg_divorce_cost_us",
+      "value": 15000,
+      "unit": "usd",
+      "description": "Average total cost of a divorce (attorneys, filing, etc.). Contested divorces much higher.",
+      "source": "Nolo Lawyer Survey / ABA 2023",
+      "year": 2023
+    },
+    {
+      "id": "DIV009",
+      "metric": "contested_divorce_avg_cost",
+      "value": 26000,
+      "unit": "usd",
+      "description": "Average cost of a contested divorce that goes to trial",
+      "source": "Nolo / Martindale-Nolo Survey 2023",
+      "year": 2023
+    },
+    {
+      "id": "DIV010",
+      "metric": "avg_divorce_duration",
+      "value": 11,
+      "unit": "months",
+      "description": "Average time from filing to finalization",
+      "source": "Nolo / ABA 2023",
+      "year": 2023
+    },
+    {
+      "id": "DIV011",
+      "metric": "child_support_compliance_rate",
+      "value": 62.0,
+      "unit": "percent",
+      "description": "Percentage of child support payments received in full",
+      "source": "Census Bureau Custodial Mothers and Fathers 2022",
+      "year": 2022
+    },
+    {
+      "id": "DIV012",
+      "metric": "prenuptial_agreement_rate",
+      "value": 15.0,
+      "unit": "percent",
+      "description": "Percentage of married couples with a prenuptial agreement (rising trend, especially millennials)",
+      "source": "Harris Poll / ABA 2023",
+      "year": 2023
+    }
+  ],
+  "bankruptcy": [
+    {
+      "id": "BNK001",
+      "metric": "chapter_7_success_rate",
+      "value": 95.0,
+      "unit": "percent",
+      "description": "Percentage of Chapter 7 (liquidation) bankruptcies that result in discharge",
+      "source": "US Courts Bankruptcy Statistics 2023",
+      "year": 2023
+    },
+    {
+      "id": "BNK002",
+      "metric": "chapter_13_success_rate",
+      "value": 33.0,
+      "unit": "percent",
+      "description": "Percentage of Chapter 13 (repayment plan) cases that complete the plan and get discharge. ~67% fail/dismiss.",
+      "source": "US Courts Bankruptcy Statistics 2023 / ABI",
+      "year": 2023
+    },
+    {
+      "id": "BNK003",
+      "metric": "total_bankruptcy_filings_us",
+      "value": 452990,
+      "unit": "filings_per_year",
+      "description": "Total bankruptcy filings (all chapters) in the US in fiscal year 2023",
+      "source": "US Courts Annual Bankruptcy Statistics 2023",
+      "year": 2023
+    },
+    {
+      "id": "BNK004",
+      "metric": "chapter_7_filings_share",
+      "value": 63.0,
+      "unit": "percent",
+      "description": "Percentage of consumer bankruptcies filed as Chapter 7",
+      "source": "US Courts 2023",
+      "year": 2023
+    },
+    {
+      "id": "BNK005",
+      "metric": "chapter_13_filings_share",
+      "value": 34.0,
+      "unit": "percent",
+      "description": "Percentage of consumer bankruptcies filed as Chapter 13",
+      "source": "US Courts 2023",
+      "year": 2023
+    },
+    {
+      "id": "BNK006",
+      "metric": "avg_chapter_7_cost",
+      "value": 1500,
+      "unit": "usd",
+      "description": "Average total cost to file Chapter 7 bankruptcy (attorney + filing fee)",
+      "source": "ABI / Nolo",
+      "year": 2023
+    },
+    {
+      "id": "BNK007",
+      "metric": "avg_chapter_13_cost",
+      "value": 3500,
+      "unit": "usd",
+      "description": "Average attorney fee for Chapter 13 bankruptcy",
+      "source": "ABI / Nolo",
+      "year": 2023
+    },
+    {
+      "id": "BNK008",
+      "metric": "repeat_bankruptcy_filing_rate",
+      "value": 8.0,
+      "unit": "percent",
+      "description": "Percentage of people who file bankruptcy a second time within 8 years",
+      "source": "ABI Consumer Bankruptcy Study",
+      "year": 2022
+    },
+    {
+      "id": "BNK009",
+      "metric": "business_bankruptcy_filings_us",
+      "value": 18926,
+      "unit": "filings_per_year",
+      "description": "Number of business bankruptcy filings in 2023",
+      "source": "US Courts 2023",
+      "year": 2023
+    }
+  ],
+  "contract_disputes": [
+    {
+      "id": "CTR001",
+      "metric": "contract_dispute_resolution_without_lawsuit",
+      "value": 60.0,
+      "unit": "percent",
+      "description": "Percentage of contract disputes resolved without filing a lawsuit (negotiation, demand letters)",
+      "source": "ABA / NCSC estimates",
+      "year": 2022
+    },
+    {
+      "id": "CTR002",
+      "metric": "contract_breach_prevalence_businesses",
+      "value": 21.0,
+      "unit": "percent_per_year",
+      "description": "Percentage of businesses that experience a material contract breach in a given year",
+      "source": "World Commerce & Contracting (IACCM) 2023",
+      "year": 2023
+    },
+    {
+      "id": "CTR003",
+      "metric": "contract_dispute_avg_duration",
+      "value": 16,
+      "unit": "months",
+      "description": "Average time to resolve a contract dispute through litigation",
+      "source": "NCSC / ABA",
+      "year": 2022
+    },
+    {
+      "id": "CTR004",
+      "metric": "commercial_arbitration_award_rate",
+      "value": 52.0,
+      "unit": "percent",
+      "description": "Percentage of commercial arbitration cases where claimant receives an award",
+      "source": "American Arbitration Association 2023",
+      "year": 2023
+    },
+    {
+      "id": "CTR005",
+      "metric": "international_arbitration_avg_duration",
+      "value": 22,
+      "unit": "months",
+      "description": "Average duration of international commercial arbitration proceedings",
+      "source": "ICC International Court of Arbitration 2023",
+      "year": 2023
+    }
+  ],
+  "car_accidents": [
+    {
+      "id": "CAR001",
+      "metric": "car_crash_annual_probability_us",
+      "value": 1.9,
+      "unit": "percent",
+      "description": "Annual probability of being in a car accident (any severity) in the US. ~6.75M police-reported crashes / 350M population",
+      "source": "NHTSA Traffic Safety Facts 2023",
+      "year": 2023
+    },
+    {
+      "id": "CAR002",
+      "metric": "fatal_car_crash_rate_us",
+      "value": 12.8,
+      "unit": "per_100000_population",
+      "description": "Motor vehicle fatality rate per 100,000 population in the US",
+      "source": "NHTSA / IIHS 2023",
+      "year": 2023
+    },
+    {
+      "id": "CAR003",
+      "metric": "car_crash_injuries_us",
+      "value": 2380000,
+      "unit": "injuries_per_year",
+      "description": "Number of people injured in motor vehicle crashes in the US annually",
+      "source": "NHTSA Traffic Safety Facts 2023",
+      "year": 2023
+    },
+    {
+      "id": "CAR004",
+      "metric": "car_crash_fatalities_us",
+      "value": 40990,
+      "unit": "deaths_per_year",
+      "description": "Number of motor vehicle fatalities in the US in 2023",
+      "source": "NHTSA 2023",
+      "year": 2023
+    },
+    {
+      "id": "CAR005",
+      "metric": "lifetime_car_crash_probability",
+      "value": 77.0,
+      "unit": "percent",
+      "description": "Estimated probability of being in at least one car accident in a lifetime (US driver)",
+      "source": "NSC / Forbes Advisor actuarial analysis",
+      "year": 2023
+    },
+    {
+      "id": "CAR006",
+      "metric": "fatal_crash_rate_uk",
+      "value": 2.5,
+      "unit": "per_100000_population",
+      "description": "UK road fatality rate — among lowest in the world",
+      "source": "UK Department for Transport 2023",
+      "year": 2023
+    },
+    {
+      "id": "CAR007",
+      "metric": "fatal_crash_rate_germany",
+      "value": 3.4,
+      "unit": "per_100000_population",
+      "description": "Germany road fatality rate",
+      "source": "Federal Statistical Office of Germany 2023",
+      "year": 2023
+    },
+    {
+      "id": "CAR008",
+      "metric": "fatal_crash_rate_japan",
+      "value": 2.1,
+      "unit": "per_100000_population",
+      "description": "Japan road fatality rate",
+      "source": "National Police Agency of Japan 2023",
+      "year": 2023
+    },
+    {
+      "id": "CAR009",
+      "metric": "fatal_crash_rate_indonesia",
+      "value": 11.5,
+      "unit": "per_100000_population",
+      "description": "Indonesia road fatality rate — relatively high due to motorcycle use",
+      "source": "WHO Global Status Report on Road Safety 2023",
+      "year": 2023
+    },
+    {
+      "id": "CAR010",
+      "metric": "global_road_deaths",
+      "value": 1350000,
+      "unit": "deaths_per_year",
+      "description": "Global road traffic deaths per year",
+      "source": "WHO Global Status Report on Road Safety 2023",
+      "year": 2023
+    },
+    {
+      "id": "CAR011",
+      "metric": "drunk_driving_share_fatalities_us",
+      "value": 32.0,
+      "unit": "percent",
+      "description": "Percentage of US traffic fatalities involving alcohol-impaired driving",
+      "source": "NHTSA 2023",
+      "year": 2023
+    },
+    {
+      "id": "CAR012",
+      "metric": "distracted_driving_share_fatalities_us",
+      "value": 8.0,
+      "unit": "percent",
+      "description": "Percentage of US traffic fatalities involving distracted driving (likely underreported)",
+      "source": "NHTSA 2023",
+      "year": 2023
+    }
+  ],
+  "workplace_injuries": [
+    {
+      "id": "WRK001",
+      "metric": "workplace_injury_rate_all_industries_us",
+      "value": 2.7,
+      "unit": "per_100_full_time_workers",
+      "description": "Total recordable nonfatal workplace injury/illness rate across all industries",
+      "source": "BLS Survey of Occupational Injuries and Illnesses 2023",
+      "year": 2023
+    },
+    {
+      "id": "WRK002",
+      "metric": "workplace_fatality_rate_us",
+      "value": 3.7,
+      "unit": "per_100000_full_time_workers",
+      "description": "Fatal work injury rate across all industries",
+      "source": "BLS Census of Fatal Occupational Injuries 2023",
+      "year": 2023
+    },
+    {
+      "id": "WRK003",
+      "metric": "workplace_fatalities_total_us",
+      "value": 5486,
+      "unit": "deaths_per_year",
+      "description": "Total workplace fatalities in the US in 2023",
+      "source": "BLS CFOI 2023",
+      "year": 2023
+    },
+    {
+      "id": "WRK004",
+      "metric": "injury_rate_construction",
+      "value": 2.8,
+      "unit": "per_100_workers",
+      "description": "Nonfatal injury rate in construction",
+      "source": "BLS 2023",
+      "year": 2023
+    },
+    {
+      "id": "WRK005",
+      "metric": "fatality_rate_agriculture_forestry_fishing",
+      "value": 20.2,
+      "unit": "per_100000_workers",
+      "description": "Fatal injury rate in agriculture/forestry/fishing/hunting — highest of all sectors",
+      "source": "BLS CFOI 2023",
+      "year": 2023
+    },
+    {
+      "id": "WRK006",
+      "metric": "fatality_rate_transportation_warehousing",
+      "value": 14.1,
+      "unit": "per_100000_workers",
+      "description": "Fatal injury rate in transportation and warehousing",
+      "source": "BLS CFOI 2023",
+      "year": 2023
+    },
+    {
+      "id": "WRK007",
+      "metric": "fatality_rate_construction",
+      "value": 9.7,
+      "unit": "per_100000_workers",
+      "description": "Fatal injury rate in construction",
+      "source": "BLS CFOI 2023",
+      "year": 2023
+    },
+    {
+      "id": "WRK008",
+      "metric": "fatality_rate_mining",
+      "value": 12.4,
+      "unit": "per_100000_workers",
+      "description": "Fatal injury rate in mining, quarrying, oil/gas extraction",
+      "source": "BLS CFOI 2023",
+      "year": 2023
+    },
+    {
+      "id": "WRK009",
+      "metric": "injury_rate_healthcare",
+      "value": 4.5,
+      "unit": "per_100_workers",
+      "description": "Nonfatal injury rate in healthcare and social assistance — highest nonfatal rate",
+      "source": "BLS 2023",
+      "year": 2023
+    },
+    {
+      "id": "WRK010",
+      "metric": "injury_rate_manufacturing",
+      "value": 3.2,
+      "unit": "per_100_workers",
+      "description": "Nonfatal injury rate in manufacturing",
+      "source": "BLS 2023",
+      "year": 2023
+    },
+    {
+      "id": "WRK011",
+      "metric": "injury_rate_retail_trade",
+      "value": 2.8,
+      "unit": "per_100_workers",
+      "description": "Nonfatal injury rate in retail trade",
+      "source": "BLS 2023",
+      "year": 2023
+    },
+    {
+      "id": "WRK012",
+      "metric": "injury_rate_tech_information",
+      "value": 0.7,
+      "unit": "per_100_workers",
+      "description": "Nonfatal injury rate in information/tech sector — lowest among major sectors",
+      "source": "BLS 2023",
+      "year": 2023
+    },
+    {
+      "id": "WRK013",
+      "metric": "global_workplace_fatalities",
+      "value": 2930000,
+      "unit": "deaths_per_year",
+      "description": "Estimated global work-related deaths per year (including occupational diseases)",
+      "source": "ILO / WHO Joint Estimates 2024",
+      "year": 2024
+    }
+  ],
+  "natural_disasters": [
+    {
+      "id": "NAT001",
+      "metric": "earthquake_fatality_probability_us",
+      "value": 0.001,
+      "unit": "percent_per_year",
+      "description": "Annual probability of dying from an earthquake in the US",
+      "source": "USGS / FEMA National Risk Index",
+      "year": 2023
+    },
+    {
+      "id": "NAT002",
+      "metric": "hurricane_affected_probability_us_coastal",
+      "value": 3.0,
+      "unit": "percent_per_year",
+      "description": "Annual probability of experiencing hurricane-level damage (US coastal residents)",
+      "source": "NOAA / FEMA National Risk Index",
+      "year": 2023
+    },
+    {
+      "id": "NAT003",
+      "metric": "tornado_probability_us_annually",
+      "value": 0.03,
+      "unit": "percent",
+      "description": "Probability of your specific home being hit by a tornado in a given year (US average)",
+      "source": "NOAA Storm Prediction Center / FEMA",
+      "year": 2023
+    },
+    {
+      "id": "NAT004",
+      "metric": "flood_damage_probability_us",
+      "value": 1.0,
+      "unit": "percent_per_year_100yr_floodplain",
+      "description": "Annual probability of flooding for properties in 100-year floodplain",
+      "source": "FEMA National Flood Insurance Program",
+      "year": 2023
+    },
+    {
+      "id": "NAT005",
+      "metric": "natural_disaster_economic_losses_global",
+      "value": 250000000000,
+      "unit": "usd_per_year",
+      "description": "Average global economic losses from natural disasters per year (2020s average)",
+      "source": "Munich Re NatCatSERVICE 2023",
+      "year": 2023
+    },
+    {
+      "id": "NAT006",
+      "metric": "natural_disaster_deaths_global",
+      "value": 45000,
+      "unit": "deaths_per_year_average",
+      "description": "Average annual deaths from natural disasters globally (highly variable year to year)",
+      "source": "EM-DAT / CRED 2023",
+      "year": 2023
+    },
+    {
+      "id": "NAT007",
+      "metric": "wildfire_probability_us_wui",
+      "value": 4.0,
+      "unit": "percent_per_year",
+      "description": "Annual probability of wildfire impact for homes in wildland-urban interface areas (western US)",
+      "source": "USFS / FEMA National Risk Index",
+      "year": 2023
+    },
+    {
+      "id": "NAT008",
+      "metric": "earthquake_probability_california_major",
+      "value": 60.0,
+      "unit": "percent_within_30_years",
+      "description": "Probability of a 6.7+ magnitude earthquake in San Francisco Bay Area within 30 years",
+      "source": "USGS 2023 Earthquake Hazard Assessment",
+      "year": 2023
+    },
+    {
+      "id": "NAT009",
+      "metric": "tsunami_probability_pacific_northwest",
+      "value": 10.0,
+      "unit": "percent_within_50_years",
+      "description": "Probability of a major Cascadia Subduction Zone earthquake/tsunami within 50 years",
+      "source": "USGS / Pacific Northwest Seismic Network",
+      "year": 2023
+    },
+    {
+      "id": "NAT010",
+      "metric": "flood_probability_indonesia",
+      "value": 6.0,
+      "unit": "percent_per_year_urban",
+      "description": "Annual flood exposure probability for urban Indonesian residents (Jakarta particularly high)",
+      "source": "BNPB (Indonesia Disaster Agency) / World Bank",
+      "year": 2023
+    }
+  ],
+  "home_fire": [
+    {
+      "id": "FIR001",
+      "metric": "home_fire_probability_us",
+      "value": 0.35,
+      "unit": "percent_per_year",
+      "description": "Annual probability of experiencing a home fire (any structure fire). ~490,000 fires / 140M housing units",
+      "source": "NFPA Fire Loss in the US Report 2023",
+      "year": 2023
+    },
+    {
+      "id": "FIR002",
+      "metric": "home_fire_deaths_us",
+      "value": 2810,
+      "unit": "deaths_per_year",
+      "description": "Annual civilian deaths from home structure fires in the US",
+      "source": "NFPA 2023",
+      "year": 2023
+    },
+    {
+      "id": "FIR003",
+      "metric": "home_fire_injuries_us",
+      "value": 11800,
+      "unit": "injuries_per_year",
+      "description": "Annual civilian injuries from home structure fires",
+      "source": "NFPA 2023",
+      "year": 2023
+    },
+    {
+      "id": "FIR004",
+      "metric": "cooking_fire_share",
+      "value": 49.0,
+      "unit": "percent",
+      "description": "Percentage of home fires caused by cooking — leading cause",
+      "source": "NFPA 2023",
+      "year": 2023
+    },
+    {
+      "id": "FIR005",
+      "metric": "heating_fire_share",
+      "value": 12.0,
+      "unit": "percent",
+      "description": "Percentage of home fires caused by heating equipment",
+      "source": "NFPA 2023",
+      "year": 2023
+    },
+    {
+      "id": "FIR006",
+      "metric": "electrical_fire_share",
+      "value": 6.0,
+      "unit": "percent",
+      "description": "Percentage of home fires caused by electrical malfunction",
+      "source": "NFPA 2023",
+      "year": 2023
+    },
+    {
+      "id": "FIR007",
+      "metric": "smoke_alarm_reduces_death_risk",
+      "value": 55.0,
+      "unit": "percent_reduction",
+      "description": "Working smoke alarms reduce the risk of dying in a home fire by 55%",
+      "source": "NFPA 2023",
+      "year": 2023
+    },
+    {
+      "id": "FIR008",
+      "metric": "homes_without_smoke_alarms",
+      "value": 3.0,
+      "unit": "percent",
+      "description": "Percentage of US homes with no smoke alarms (accounts for disproportionate share of fire deaths)",
+      "source": "NFPA 2023",
+      "year": 2023
+    }
+  ],
+  "identity_theft": [
+    {
+      "id": "IDT001",
+      "metric": "identity_theft_victims_us",
+      "value": 15000000,
+      "unit": "victims_per_year",
+      "description": "Estimated number of Americans who experience identity theft annually",
+      "source": "Javelin Strategy & Research Identity Fraud Study 2024",
+      "year": 2024
+    },
+    {
+      "id": "IDT002",
+      "metric": "identity_theft_total_losses_us",
+      "value": 23000000000,
+      "unit": "usd_per_year",
+      "description": "Total financial losses from identity theft in the US",
+      "source": "Javelin Strategy & Research 2024",
+      "year": 2024
+    },
+    {
+      "id": "IDT003",
+      "metric": "credit_card_fraud_most_common",
+      "value": 40.0,
+      "unit": "percent",
+      "description": "Credit card fraud is the most common type of identity theft (40% of all ID theft reports)",
+      "source": "FTC Consumer Sentinel Network 2023",
+      "year": 2023
+    },
+    {
+      "id": "IDT004",
+      "metric": "new_account_fraud_rate",
+      "value": 25.0,
+      "unit": "percent",
+      "description": "Percentage of identity theft involving opening new accounts in victim's name",
+      "source": "Javelin 2024",
+      "year": 2024
+    },
+    {
+      "id": "IDT005",
+      "metric": "identity_theft_probability_lifetime",
+      "value": 33.0,
+      "unit": "percent",
+      "description": "Estimated probability of experiencing identity theft at least once in a lifetime (US adult)",
+      "source": "Javelin / BJS Identity Theft Supplement cumulative estimates",
+      "year": 2023
+    },
+    {
+      "id": "IDT006",
+      "metric": "avg_time_to_discover_id_theft",
+      "value": 3,
+      "unit": "months",
+      "description": "Average time before a victim discovers they've been a victim of identity theft",
+      "source": "Identity Theft Resource Center 2023",
+      "year": 2023
+    },
+    {
+      "id": "IDT007",
+      "metric": "avg_resolution_time_id_theft",
+      "value": 200,
+      "unit": "hours",
+      "description": "Average hours spent resolving identity theft issues",
+      "source": "Identity Theft Resource Center 2023",
+      "year": 2023
+    },
+    {
+      "id": "IDT008",
+      "metric": "data_breaches_us",
+      "value": 3205,
+      "unit": "breaches_per_year",
+      "description": "Number of data breaches reported in the US in 2023 (record high)",
+      "source": "Identity Theft Resource Center 2023 Annual Data Breach Report",
+      "year": 2023
+    },
+    {
+      "id": "IDT009",
+      "metric": "synthetic_identity_fraud_losses",
+      "value": 3100000000,
+      "unit": "usd_per_year",
+      "description": "Losses from synthetic identity fraud (fake identities combining real and fabricated info)",
+      "source": "Federal Reserve / Aite-Novarica 2023",
+      "year": 2023
+    },
+    {
+      "id": "IDT010",
+      "metric": "child_identity_theft_rate",
+      "value": 1.25,
+      "unit": "percent_of_children",
+      "description": "Percentage of children who are victims of identity theft (often undiscovered for years)",
+      "source": "Javelin Strategy & Research 2024",
+      "year": 2024
+    }
+  ]
+}

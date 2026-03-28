@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 import https from 'https';
+import { ragSearch, isRagReady } from '@/lib/rag';
 
 // ============ REAL PROBABILITIES LOOKUP ============
 function loadRealProbabilities(): string {
@@ -99,7 +100,7 @@ function loadKB() {
 // ============ KEYWORD MAP ============
 const KEYWORDS: Record<string, string[]> = {
   // === BUSINESS & MONEY ===
-  'master-funnels': ['startup', 'business', 'cafe', 'saas', 'freelance', 'creator', 'ecommerce', 'invest', 'impresa', 'attività', 'azienda', 'negozio', 'aprire', 'funnel', 'conversion', 'pipeline', 'imbuto', 'vendita online', 'bisnis', 'usaha', 'modal', 'jualan', 'toko', 'lead', 'landing page'],
+  'master-funnels': ['startup', 'business', 'cafe', 'saas', 'freelance', 'creator', 'ecommerce', 'invest', 'impresa', 'attività', 'azienda', 'negozio', 'aprire', 'funnel', 'conversion', 'pipeline', 'imbuto', 'vendita online', 'bisnis', 'usaha', 'modal', 'jualan', 'toko', 'lead', 'landing page', 'guadagn', 'soldi', 'reddito', 'monetiz', 'costruisci', 'lancia', 'avvia'],
   'funding-finance-business': ['funding', 'finanziamento', 'pendanaan', 'venture capital', 'VC', 'angel', 'angel investor', 'seed', 'serie A', 'raising money', 'raccolta fondi', 'bootstrap', 'bootstrapping', 'investor', 'investitore', 'pitch deck', 'equity', 'dilution', 'crowdfunding', 'accelerator', 'incubator', 'round'],
   'exit-acquisition-data': ['exit', 'acquisition', 'acquisizione', 'akuisisi', 'sell business', 'vendere azienda', 'M&A', 'merger', 'fusione', 'exit strategy', 'valuation', 'valutazione', 'multiple', 'EBITDA', 'due diligence', 'buyer', 'acquirente', 'IPO', 'liquidation', 'flip', 'acqui-hire'],
   'scaling-bottlenecks': ['scaling', 'scalabilit', 'scale', 'bottleneck', 'collo di bottiglia', 'growth', 'crescita', 'hiring', 'assunzion', 'operations', 'operazion', 'systems', 'sistemi', 'constraint', 'capacity', 'delegation', 'delega', 'process', 'automation', 'team growth', 'pertumbuhan', 'skalabil'],
@@ -111,27 +112,27 @@ const KEYWORDS: Record<string, string[]> = {
   'indonesia-business-deep': ['indonesia', 'bisnis', 'UMKM', 'usaha', 'Bandung', 'Jakarta', 'Surabaya', 'pasar indonesia', 'Indonesian market', 'mercato indonesiano', 'rupiah', 'IDR', 'startup indonesia', 'tokopedia', 'gojek', 'grab', 'izin usaha', 'franchise indonesia', 'warung'],
   'cafe-restaurant-business': ['cafe', 'coffee', 'restaurant', 'food', 'bar', 'warung', 'barista', 'ristorante', 'caffè', 'cucina', 'pizzeria', 'locale', 'kedai', 'kopi', 'makanan'],
   'failure-forensics': ['fail', 'failure', 'why', 'reason', 'mistake', 'shut down', 'bankrupt', 'falliment', 'perché', 'errore', 'chiudere', 'gagal', 'bangkrut', 'tutup'],
-  'business-archetypes-1': ['guru', 'course', 'youtube', 'agency', 'smma', 'dropship', 'creator', 'agenzia'],
+  'business-archetypes-1': ['guru', 'course', 'youtube', 'agency', 'smma', 'dropship', 'creator', 'agenzia', 'nicchia', 'niche', 'lead', 'client'],
   'business-archetypes-2': ['saas', 'software', 'app', 'local business', 'restaurant', 'cafe', 'applicazione'],
   'business-archetypes-3': ['real estate', 'property', 'coaching', 'consult', 'crypto', 'marketplace', 'consulenz'],
   'business-archetypes-4': ['franchise', 'digital product', 'community', 'gig economy', 'acquisition', 'paid community', 'franchising', 'prodotto digitale', 'comunità', 'freelance', 'uber', 'grab', 'ojol', 'waralaba', 'produk digital'],
   'business-archetypes-5': ['side hustle', 'flipping', 'resell', 'tutor', 'teaching', 'print on demand', 'family business', 'inherit', 'reselling', 'ripetizioni', 'insegnare', 'usato', 'rivendere', 'les privat', 'bisnis keluarga', 'jualan', 'thrift'],
 
   // === MARKETING & SALES ===
-  'marketing-growth-data': ['marketing', 'seo', 'ads', 'content', 'email', 'social media', 'growth', 'pubblicità', 'crescita', 'clienti', 'vendere', 'vendita', 'pemasaran', 'iklan'],
+  'marketing-growth-data': ['marketing', 'seo', 'ads', 'content', 'email', 'social media', 'growth', 'pubblicità', 'crescita', 'clienti', 'vendere', 'vendita', 'pemasaran', 'iklan', 'personal brand', 'branding', 'networking', 'rete', 'contatti', 'visibilità', 'copywriting', 'copy'],
   'seo-organic-deep': ['seo', 'search engine', 'organic', 'organico', 'google', 'ranking', 'posizionamento', 'backlink', 'keyword', 'parole chiave', 'serp', 'domain authority', 'link building', 'content seo', 'technical seo', 'indicizzazione', 'traffico organico', 'kata kunci', 'peringkat'],
   'email-marketing-deep': ['email', 'email marketing', 'newsletter', 'open rate', 'click rate', 'sequence', 'autoresponder', 'drip', 'campaign', 'campagna', 'subject line', 'deliverability', 'subscriber', 'iscritto', 'opt-in', 'lead magnet', 'segmentation', 'mailchimp', 'convertkit'],
   'ad-channels-conversion': ['ad channel', 'advertis', 'conversion', 'paid ad', 'cpc', 'cpm', 'ctr', 'roas', 'facebook ad', 'google ad', 'tiktok ad', 'instagram ad', 'meta ad', 'campaign', 'pubblicit', 'annunci', 'conversione', 'iklan', 'paid media', 'ppc', 'retarget', 'remarketing'],
   'sales-outreach-data': ['sales', 'vendite', 'penjualan', 'outreach', 'cold email', 'cold call', 'prospecting', 'prospect', 'lead gen', 'lead generation', 'pipeline', 'follow up', 'conversion rate', 'reply rate', 'cadence', 'b2b sales', 'sdr', 'generazione lead', 'email fredde'],
   'negotiation-closing': ['negotiation', 'negotiate', 'closing', 'deal', 'persuasion', 'sales call', 'objection', 'anchor', 'BATNA', 'leverage', 'pitch', 'win-win', 'negoziazione', 'chiusura', 'trattativa', 'vendita', 'negosiasi', 'tawar'],
   'social-proof-mechanics': ['social proof', 'prova sociale', 'testimonial', 'testimonianz', 'review', 'recension', 'ulasan', 'trust', 'fiducia', 'kepercayaan', 'credibility', 'credibilità', 'rating', 'case study', 'endorsement', 'word of mouth', 'passaparola', 'ugc'],
-  'community-engagement-deep': ['communit', 'engag', 'member', 'forum', 'discord', 'slack', 'group', 'tribe', 'comunità', 'coinvolgimento', 'membri', 'komunitas', 'anggota', 'loyalty', 'ambassador'],
+  'community-engagement-deep': ['communit', 'engag', 'member', 'forum', 'discord', 'slack', 'group', 'tribe', 'comunità', 'coinvolgimento', 'membri', 'komunitas', 'anggota', 'loyalty', 'ambassador', 'networking', 'rete di contatti'],
 
   // === CAREER & WORK ===
-  'career-employment': ['job', 'career', 'salary', 'hire', 'resume', 'interview', 'layoff', 'freelance', 'lavoro', 'carriera', 'stipendio', 'assunz', 'colloquio', 'licenzia', 'pekerjaan', 'gaji', 'karir'],
+  'career-employment': ['job', 'career', 'salary', 'hire', 'resume', 'interview', 'layoff', 'freelance', 'lavoro', 'carriera', 'stipendio', 'assunz', 'colloquio', 'licenzia', 'pekerjaan', 'gaji', 'karir', 'skill', 'impara', 'competenz', 'portfolio', 'consulting', 'consulenz'],
   'side-hustle-entrepreneurship': ['side hustle', 'dropship', 'etsy', 'youtube', 'newsletter', 'lavoretto', 'secondo lavoro', 'extra', 'sampingan', 'usaha sampingan'],
   'remote-work-digital-nomad': ['remote', 'remote work', 'lavoro remoto', 'kerja remote', 'digital nomad', 'nomade digitale', 'work from home', 'wfh', 'coworking', 'smart working', 'distributed', 'async', 'timezone', 'location independent', 'bali', 'bekerja dari rumah', 'hybrid work'],
-  'education-stats': ['education', 'university', 'college', 'degree', 'bootcamp', 'mba', 'phd', 'learn', 'course', 'università', 'laurea', 'studio', 'studiare', 'corso', 'scuola', 'training', 'upskill', 'reskill', 'formazione', 'pelatihan', 'belajar', 'kuliah', 'sekolah', 'certificat', 'pendidikan'],
+  'education-stats': ['education', 'university', 'college', 'degree', 'bootcamp', 'mba', 'phd', 'learn', 'course', 'università', 'laurea', 'studio', 'studiare', 'corso', 'scuola', 'training', 'upskill', 'reskill', 'formazione', 'pelatihan', 'belajar', 'kuliah', 'sekolah', 'certificat', 'pendidikan', 'libro', 'book', 'leggere'],
   'language-learning': ['language', 'lingua', 'bahasa', 'learn language', 'imparare lingua', 'belajar bahasa', 'polyglot', 'fluency', 'fluenza', 'immersion', 'immersione', 'vocabulary', 'grammar', 'pronunciation', 'bilingual', 'multilingual', 'Duolingo', 'Anki', 'conversation'],
 
   // === FINANCE & INVESTING ===
@@ -142,14 +143,14 @@ const KEYWORDS: Record<string, string[]> = {
   'real-estate-housing': ['house', 'rent', 'mortgage', 'property', 'real estate', 'apartment', 'casa', 'affitto', 'mutuo', 'immobil', 'appartamento', 'comprare casa', 'rumah', 'sewa', 'KPR'],
 
   // === HEALTH & WELLBEING ===
-  'health-fitness': ['health', 'fitness', 'gym', 'weight', 'diet', 'exercise', 'sleep', 'meditation', 'palestra', 'dieta', 'peso', 'dimagrire', 'salute', 'dormire', 'workout', 'running', 'muscle', 'yoga', 'mental health', 'benessere', 'olahraga', 'sehat', 'kebugaran', 'corsa', 'allenamento', 'nutrizione', 'calorie'],
+  'health-fitness': ['health', 'fitness', 'gym', 'weight', 'diet', 'exercise', 'sleep', 'meditation', 'palestra', 'dieta', 'peso', 'dimagrire', 'salute', 'dormire', 'workout', 'running', 'muscle', 'yoga', 'mental health', 'benessere', 'olahraga', 'sehat', 'kebugaran', 'corsa', 'allenamento', 'nutrizione', 'calorie', 'perdi peso', 'massa muscolare', 'fisico', 'corpo'],
   'sports-fitness-goals': ['sports', 'sport', 'olahraga', 'athletic', 'atletica', 'marathon', 'maratona', 'strength', 'forza', 'training', 'allenamento', 'latihan', 'workout', 'running', 'corsa', 'gym', 'palestra', 'muscle', 'endurance', 'resistenza', 'personal record', 'prestazione'],
   'mental-health-psychology': ['mental', 'depress', 'anxiety', 'therapy', 'burnout', 'stress', 'depressione', 'ansia', 'terapia', 'psicologo', 'kesehatan mental', 'terapi'],
   'burnout-mental-health-entrepreneurs': ['burnout', 'burn out', 'founder', 'entrepreneur', 'depress', 'exhaust', 'wellbeing', 'esaurim', 'salute mentale', 'imprenditor', 'kelelahan', 'founder depression', 'overwhelm'],
   'addiction-substance-use': ['addict', 'drug', 'alcohol', 'smoking', 'porn', 'cannabis', 'dipendenz', 'droga', 'alcol', 'fumare', 'sigarett', 'kecanduan', 'narkoba'],
 
   // === RELATIONSHIPS & FAMILY ===
-  'relationships': ['relationship', 'marriage', 'divorce', 'dating', 'friend', 'love', 'partner', 'relazione', 'matrimonio', 'divorzio', 'sposare', 'fidanzat', 'amore', 'breakup', 'toxic', 'long distance', 'coppia', 'separazione', 'pacaran', 'hubungan', 'nikah', 'rottura', 'jodoh', 'putus', 'pasangan'],
+  'relationships': ['relationship', 'marriage', 'divorce', 'dating', 'friend', 'love', 'partner', 'relazione', 'matrimonio', 'divorzio', 'sposare', 'fidanzat', 'amore', 'breakup', 'toxic', 'long distance', 'coppia', 'separazione', 'pacaran', 'hubungan', 'nikah', 'rottura', 'jodoh', 'putus', 'pasangan', 'amico', 'amicizia', 'prestare', 'prestito'],
   'family-dynamics': ['family', 'parent', 'child', 'marriage', 'divorce', 'elder', 'famiglia', 'genitori', 'figli', 'figlio', 'keluarga', 'orang tua', 'anak'],
   'parenting-child-development': ['parenting', 'parent', 'child', 'kid', 'raising kids', 'child development', 'pregnancy', 'toddler', 'baby', 'discipline', 'milestone', 'genitorialità', 'bambino', 'gravidanza', 'sviluppo', 'pengasuhan', 'anak', 'bayi', 'kehamilan'],
   'trust-secrets-betrayal': ['trust', 'betray', 'betrayal', 'secret', 'loyalty', 'cheat', 'cheating', 'lies', 'lying', 'honest', 'affair', 'deceit', 'fiducia', 'tradimento', 'tradire', 'segreto', 'bugia', 'lealtà', 'kepercayaan', 'selingkuh', 'rahasia', 'bohong'],
@@ -164,7 +165,7 @@ const KEYWORDS: Record<string, string[]> = {
   'aging-retirement-life-stages': ['age', 'aging', 'retire', 'retirement', 'pension', 'midlife', 'mid-life', 'life stage', '40s', '50s', '60s', 'senior', 'elder', 'longevity', 'pensione', 'vecchi', 'anzian', 'invecchi', 'mezza età', 'terza età', 'pensiun', 'lansia'],
 
   // === TECH ===
-  'tech-adoption-data-points': ['tech', 'ai', 'software', 'cloud', 'cyber', 'blockchain', 'digital', 'tecnologia', 'intelligenza artificiale', 'digitale', 'teknologi'],
+  'tech-adoption': ['tech', 'ai', 'software', 'cloud', 'cyber', 'blockchain', 'digital', 'tecnologia', 'intelligenza artificiale', 'digitale', 'teknologi'],
   'ai-tools-impact-2025': ['ai', 'artificial intellig', 'chatgpt', 'gpt', 'automat', 'machine learn', 'job displace', 'robot', 'copilot', 'midjourney', 'generativ', 'llm', 'prompt', 'intelligenza artificial', 'automazione', 'kecerdasan buatan', 'ai tool', 'deep learn'],
 
   // === LEGAL & TAX ===
@@ -184,6 +185,67 @@ const KEYWORDS: Record<string, string[]> = {
   'time-to-result-benchmarks': ['time to result', 'how long', 'quanto tempo', 'berapa lama', 'timeline', 'tempistic', 'benchmark', 'realistic', 'realistico', 'expectation', 'aspettativ', 'duration', 'durata', 'patience', 'pazienza', 'milestone', 'learning curve'],
   'sacred-texts-patterns': ['human nature', 'temptation', 'greed', 'pride', 'fear', 'faith', 'tentazione', 'avidità', 'paura', 'fede', 'bible', 'bibbia', 'quran'],
   'historical-cycles': ['bubble', 'crash', 'cycle', 'repeat', 'history', 'empire', 'mania', 'bolla', 'crisi', 'ciclo', 'storia', 'gelembung', 'sejarah'],
+
+  // === BULK DATA (BLS) — auto-matched to scenarios needing macro data ===
+  'bls-unemployment': ['unemploy', 'disoccupazion', 'jobless', 'labor market', 'mercato del lavoro', 'pengangguran', 'job loss'],
+  'bls-employment': ['employ', 'nonfarm', 'occupazion', 'payroll', 'workforce', 'forza lavoro', 'tenaga kerja'],
+  'bls-cpi-inflation': ['inflation', 'CPI', 'inflazione', 'consumer price', 'prezzi', 'costo della vita', 'inflasi', 'harga'],
+  'bls-wages-earnings': ['wage', 'earning', 'salary', 'stipendio', 'salario', 'paga', 'compenso', 'gaji', 'upah', 'hourly'],
+  'bls-productivity': ['productivity', 'produttività', 'output', 'efficiency', 'produktivitas', 'labor productivity'],
+  'bls-ppi-producer-prices': ['producer price', 'PPI', 'wholesale', 'manufacturing cost', 'costo produzione', 'supply chain cost'],
+  'bls-occupational-employment': ['occupation', 'job title', 'profession', 'mestiere', 'professione', 'profesi', 'pekerjaan'],
+
+  // === BULK DATA (World Bank) — country/macro scenarios ===
+  'worldbank-gdp-economy': ['GDP', 'economy', 'economic growth', 'PIL', 'economia', 'crescita economica', 'ekonomi', 'pertumbuhan'],
+  'worldbank-population-demographics': ['population', 'demographic', 'birth rate', 'popolazione', 'demografia', 'natalità', 'penduduk', 'populasi'],
+  'worldbank-education': ['education', 'literacy', 'enrollment', 'school', 'istruzione', 'alfabetizzazione', 'pendidikan', 'sekolah'],
+  'worldbank-health': ['health', 'mortality', 'life expectancy', 'sanità', 'mortalità', 'aspettativa di vita', 'kesehatan'],
+  'worldbank-labor-employment': ['labor', 'employment rate', 'lavoro', 'tasso di occupazione', 'ketenagakerjaan'],
+  'worldbank-poverty-inequality': ['poverty', 'inequality', 'gini', 'povertà', 'disuguaglianza', 'kemiskinan', 'ketimpangan'],
+  'worldbank-financial': ['financial inclusion', 'banking', 'bank account', 'inclusione finanziaria', 'conto bancario', 'rekening bank'],
+  'worldbank-gender': ['gender', 'women', 'female', 'genere', 'donne', 'gender gap', 'perempuan', 'wanita'],
+  'worldbank-business-innovation': ['innovation', 'R&D', 'patent', 'research', 'innovazione', 'ricerca', 'brevetto', 'inovasi'],
+  'worldbank-environment-energy': ['environment', 'energy', 'carbon', 'CO2', 'renewable', 'ambiente', 'energia', 'rinnovabile', 'lingkungan', 'energi'],
+
+  // === BEHAVIORAL SCIENCE ===
+  'choices13k-summary': ['decision', 'choice', 'risk', 'gamble', 'decisione', 'scelta', 'rischio', 'keputusan', 'lottery', 'expected value'],
+  'game-theory-behavioral': ['game theory', 'cooperation', 'defect', 'prisoner', 'nash', 'trust game', 'ultimatum', 'cooperazione', 'teoria dei giochi'],
+  'mesa-behavioral-models': ['agent', 'simulation', 'model', 'ABM', 'agent-based', 'simulazione', 'emergent', 'complex system'],
+
+  // === LIFE DATA ===
+  'life-event-probabilities': ['life event', 'probability', 'death', 'birth', 'marriage', 'accident', 'probabilità', 'evento', 'morte', 'nascita'],
+  'life-events-granular': ['age', 'year by year', 'anno per anno', 'life stage', 'fase della vita', 'mortality', 'fertility'],
+  'country-data-global': ['country data', 'GDP per capita', 'cost of living', 'dati paese', 'costo della vita', 'data negara'],
+  'industry-specific-data': ['industry', 'sector', 'settore', 'industria', 'margin', 'survival rate', 'tasso di sopravvivenza', 'industri'],
+  'time-series-historical': ['historical', 'time series', 'storico', 'serie storica', 'S&P', 'returns', 'rendimenti', 'federal funds'],
+
+  // === SACRED DATA (supplementary — main sacred handled separately) ===
+  'sacred-texts-expanded': ['sacred', 'scripture', 'proverb', 'wisdom', 'sacro', 'scrittura', 'proverbio', 'saggezza', 'hikmat'],
+  'sacred-batch-1-business': ['business', 'startup', 'impresa', 'bisnis'],
+  'sacred-batch-2-finance': ['finance', 'money', 'finanza', 'soldi', 'keuangan'],
+  'sacred-batch-3-career': ['career', 'job', 'work', 'carriera', 'lavoro', 'karir'],
+  'sacred-batch-4-marketing': ['marketing', 'sales', 'vendita', 'pemasaran'],
+  'sacred-batch-5-health': ['health', 'wellness', 'salute', 'benessere', 'kesehatan'],
+  'sacred-batch-6-life': ['life', 'purpose', 'meaning', 'vita', 'scopo', 'significato', 'kehidupan'],
+  'sacred-batch-7-remaining': ['general', 'human', 'nature', 'umano', 'natura', 'manusia'],
+
+  // === DUPLICATE NAME ALIASES (file exists with slightly different name) ===
+  'immigration-relocation': ['immigrat', 'visa', 'expat', 'move', 'relocat', 'abroad', 'trasferir', 'estero', 'pindah'],
+  'marketing-growth': ['marketing', 'growth', 'crescita', 'pemasaran', 'pertumbuhan'],
+  'personal-finance': ['money', 'finance', 'saving', 'budget', 'soldi', 'risparmi', 'finanz', 'keuangan'],
+
+  // === DEEP PROBABILITY FILES (comprehensive probability data) ===
+  'business-survival-probabilities': ['startup', 'business', 'survival', 'fail', 'sopravvivenza', 'falliment', 'cafe', 'ecommerce', 'saas', 'agency', 'freelance', 'side hustle', 'creator', 'bisnis'],
+  'career-probabilities-deep': ['career', 'job', 'occupation', 'salary', 'profession', 'lavoro', 'carriera', 'stipendio', 'mestiere', 'automation', 'pekerjaan'],
+  'country-probabilities-deep': ['country', 'city', 'cost of living', 'paese', 'città', 'costo', 'negara', 'kota', 'rent', 'affitto', 'salary', 'stipendio'],
+  'crime-justice-probabilities': ['crime', 'law', 'court', 'prison', 'arrest', 'crimine', 'legge', 'tribunale', 'prigione', 'arresto', 'kejahatan', 'scam', 'fraud', 'truffa', 'lawsuit', 'causa'],
+  'education-probabilities-deep': ['university', 'college', 'degree', 'dropout', 'bootcamp', 'università', 'laurea', 'abbandono', 'kuliah', 'certification', 'PhD', 'MBA'],
+  'fame-entertainment-probabilities': ['fame', 'famous', 'viral', 'youtube', 'tiktok', 'music', 'sport', 'actor', 'singer', 'famoso', 'virale', 'musica', 'attore', 'cantante', 'influencer', 'streamer'],
+  'life-probabilities-deep': ['health', 'fitness', 'relationship', 'marriage', 'divorce', 'diet', 'gym', 'salute', 'relazione', 'matrimonio', 'divorzio', 'dieta', 'palestra', 'immigration', 'expat'],
+  'life-simulator1-probabilities': ['life', 'age', 'death', 'birth', 'vita', 'età', 'morte', 'nascita', 'pregnancy', 'gravidanza', 'addiction', 'crime', 'happiness'],
+  'openlife-probabilities': ['life', 'event', 'career', 'relationship', 'health', 'invest', 'social media', 'prison', 'lawsuit', 'emigrat'],
+  'psychology-habits-probabilities': ['habit', 'psychology', 'motivation', 'discipline', 'procrastinat', 'meditation', 'therapy', 'burnout', 'abitudine', 'psicologia', 'disciplina', 'terapia'],
+  'tech-ai-probabilities-deep': ['tech', 'AI', 'app', 'software', 'startup', 'saas', 'crypto', 'developer', 'coding', 'automation', 'cybersecurity', 'hacker'],
 };
 
 // ============ SMART EXTRACTION ============
@@ -285,6 +347,148 @@ function extractSacredContext(data: SectionData, scenario: string): string | nul
   }).join('\n');
 }
 
+// ============ UNIVERSAL EXTRACTORS (handle ALL data formats) ============
+
+// Extract from flat arrays (BLS, WorldBank, sacred-batch files)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function extractFromList(data: any[], scenario: string, maxEntries: number): string | null {
+  if (!Array.isArray(data) || data.length === 0) return null;
+  const lower = scenario.toLowerCase();
+  const words = lower.split(/\s+/).filter(w => w.length > 3);
+
+  // Score each item by keyword relevance
+  const scored: { item: Record<string, unknown>; score: number }[] = [];
+  for (const item of data) {
+    if (typeof item !== 'object' || !item) continue;
+    const text = Object.values(item).filter(v => typeof v === 'string').join(' ').toLowerCase();
+    const score = words.filter(w => text.includes(w)).length;
+    if (score > 0) scored.push({ item, score });
+  }
+  scored.sort((a, b) => b.score - a.score);
+  const top = scored.slice(0, maxEntries);
+  if (top.length === 0) {
+    // No keyword match — take most recent entries (last N items, often most recent data)
+    const fallback = data.slice(-Math.min(maxEntries, 10));
+    if (fallback.length === 0) return null;
+    return fallback.map(item => formatListItem(item)).filter(Boolean).join('\n');
+  }
+  return top.map(({ item }) => formatListItem(item)).filter(Boolean).join('\n');
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function formatListItem(item: any): string {
+  if (!item || typeof item !== 'object') return '';
+  // BLS format: series_name + year + period + value
+  if (item.series_name && item.value != null) {
+    const period = item.period ? `-${item.period}` : '';
+    return `  - ${item.series_name} (${item.year || ''}${period}): ${item.value} (${item.source || 'BLS'})`;
+  }
+  // WorldBank format: country + indicator + year + value
+  if (item.indicator && item.country && item.value != null) {
+    const val = typeof item.value === 'number' && item.value > 1e6
+      ? (item.value > 1e9 ? (item.value / 1e9).toFixed(1) + 'B' : (item.value / 1e6).toFixed(1) + 'M')
+      : item.value;
+    return `  - ${item.country} ${item.indicator} (${item.year || ''}): ${val} (${item.source || 'World Bank'})`;
+  }
+  // Sacred batch format: data_entry + data_source
+  if (item.data_entry) {
+    return `  - ${item.data_entry} (${item.data_source || item.source || 'Sacred'})`;
+  }
+  // Generic: metric + value
+  if (item.metric && item.value != null) {
+    return `  - ${item.metric}: ${item.value}${item.unit ? ' ' + item.unit : ''} (${item.source || 'Data'}, ${item.year || ''})`;
+  }
+  // Last resort: stringify key-value pairs with numbers
+  const parts: string[] = [];
+  for (const [k, v] of Object.entries(item)) {
+    if (k.startsWith('_') || k === 'meta') continue;
+    if (typeof v === 'number' || (typeof v === 'string' && /\d/.test(v))) {
+      parts.push(`${k.replace(/_/g, ' ')}: ${v}`);
+    }
+  }
+  return parts.length > 0 ? `  - ${parts.join(', ')}` : '';
+}
+
+// Extract from nested dicts (health-fitness, country-data-global, industry-specific, etc.)
+// Handles: { topic: { subtopic: { metric: value } } } or { topic: { data: [...] } }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function extractFromNestedDict(data: Record<string, any>, scenario: string, maxEntries: number): string | null {
+  const lower = scenario.toLowerCase();
+  const words = lower.split(/\s+/).filter(w => w.length > 3);
+
+  // Score top-level keys by relevance
+  const topicScores: { key: string; score: number }[] = [];
+  for (const key of Object.keys(data)) {
+    if (key === '_meta' || key === 'meta' || key === '_metadata') continue;
+    const keyWords = key.replace(/[_-]/g, ' ').toLowerCase();
+    const score = words.filter(w => keyWords.includes(w)).length;
+    topicScores.push({ key, score });
+  }
+  topicScores.sort((a, b) => b.score - a.score);
+  // Take top 3 topics (or all if few scored)
+  const bestTopics = topicScores.slice(0, 3).filter(t => t.score > 0);
+  if (bestTopics.length === 0) {
+    // No match — take first 3 non-meta topics
+    const fallbackTopics = topicScores.slice(0, 3);
+    if (fallbackTopics.length === 0) return null;
+    bestTopics.push(...fallbackTopics);
+  }
+
+  const lines: string[] = [];
+  for (const { key } of bestTopics) {
+    if (lines.length >= maxEntries) break;
+    const topic = data[key];
+    if (!topic || typeof topic !== 'object') continue;
+
+    // Pattern 1: { data: [{ metric, value, ... }] }
+    if (Array.isArray(topic.data)) {
+      for (const entry of topic.data.slice(0, 8)) {
+        if (lines.length >= maxEntries) break;
+        if (entry.metric && entry.value != null) {
+          lines.push(`  - ${entry.metric}: ${entry.value}${entry.unit ? ' ' + entry.unit : ''} (${entry.source || key}, ${entry.year || ''})`);
+        }
+      }
+      continue;
+    }
+
+    // Pattern 2: { subtopic: { value, source, year } } (country-data-global style)
+    if (!Array.isArray(topic)) {
+      for (const [subKey, subVal] of Object.entries(topic)) {
+        if (lines.length >= maxEntries) break;
+        if (subKey.startsWith('_')) continue;
+
+        // Direct value object
+        if (subVal && typeof subVal === 'object' && !Array.isArray(subVal) && 'value' in (subVal as Record<string, unknown>)) {
+          const sv = subVal as Record<string, unknown>;
+          lines.push(`  - ${key}/${subKey.replace(/_/g, ' ')}: ${sv.value}${sv.unit ? ' ' + sv.unit : ''} (${sv.source || key}, ${sv.year || ''})`);
+          continue;
+        }
+
+        // Nested category: { sub_sub: { value, source } }
+        if (subVal && typeof subVal === 'object' && !Array.isArray(subVal)) {
+          for (const [ssKey, ssVal] of Object.entries(subVal as Record<string, unknown>)) {
+            if (lines.length >= maxEntries) break;
+            if (ssVal && typeof ssVal === 'object' && !Array.isArray(ssVal) && 'value' in (ssVal as Record<string, unknown>)) {
+              const sv = ssVal as Record<string, unknown>;
+              lines.push(`  - ${subKey}/${ssKey.replace(/_/g, ' ')}: ${sv.value}${sv.unit ? ' ' + sv.unit : ''} (${sv.source || key}, ${sv.year || ''})`);
+            }
+          }
+          continue;
+        }
+
+        // Flat key-value (industry-specific style: { survival_y1: 0.62 })
+        if (typeof subVal === 'number') {
+          lines.push(`  - ${key}/${subKey.replace(/_/g, ' ')}: ${subVal}`);
+        } else if (typeof subVal === 'string' && /\d/.test(subVal)) {
+          lines.push(`  - ${key}/${subKey.replace(/_/g, ' ')}: ${subVal}`);
+        }
+      }
+    }
+  }
+
+  return lines.length > 0 ? lines.join('\n') : null;
+}
+
 function matchKB(kb: Record<string, unknown>, scenario: string): string {
   const lower = scenario.toLowerCase();
   const relevant: { key: string; score: number }[] = [];
@@ -297,28 +501,53 @@ function matchKB(kb: Record<string, unknown>, scenario: string): string {
   const top = relevant.slice(0, 8);
 
   let context = '';
+  let extractedCount = 0;
   for (const { key } of top) {
     const data = kb[key];
     if (!data) continue;
-    if (typeof data === 'string') { context += `\n--- ${key} ---\n${data}\n`; continue; }
+    if (typeof data === 'string') { context += `\n--- ${key} ---\n${data}\n`; extractedCount++; continue; }
+
+    let extracted: string | null = null;
+
+    // 1. Archetype format
     if ((data as ArchetypeData).archetypes) {
-      const archCtx = extractArchetypeContext(data as ArchetypeData, scenario);
-      if (archCtx) { context += archCtx; continue; }
+      extracted = extractArchetypeContext(data as ArchetypeData, scenario);
+      if (extracted) { context += extracted; extractedCount++; continue; }
     }
+    // 2. Sacred/historical format
     if (key === 'sacred-texts-patterns' || key === 'historical-cycles') {
-      const sacredCtx = extractSacredContext(data as SectionData, scenario);
-      if (sacredCtx) { context += `\n--- ${key} ---\n${sacredCtx}\n`; continue; }
+      extracted = extractSacredContext(data as SectionData, scenario);
+      if (extracted) { context += `\n--- ${key} ---\n${extracted}\n`; extractedCount++; continue; }
     }
+    // 3. Funnel format
     if (key === 'master-funnels') {
-      const funnelCtx = extractFunnelContext(data as Record<string, FunnelData>, scenario);
-      if (funnelCtx) { context += funnelCtx + '\n'; continue; }
+      extracted = extractFunnelContext(data as Record<string, FunnelData>, scenario);
+      if (extracted) { context += extracted + '\n'; extractedCount++; continue; }
     }
+    // 4. Sections format
     if ((data as SectionData).sections) {
-      const entries = extractSectionEntries(data as SectionData, scenario, 25);
-      if (entries) { context += `\n--- ${key} ---\n${entries}\n`; continue; }
+      extracted = extractSectionEntries(data as SectionData, scenario, 25);
+      if (extracted) { context += `\n--- ${key} ---\n${extracted}\n`; extractedCount++; continue; }
     }
+    // 5. List/Array format (BLS, WorldBank, sacred-batch)
+    if (Array.isArray(data)) {
+      extracted = extractFromList(data as Record<string, unknown>[], scenario, 15);
+      if (extracted) { context += `\n--- ${key} ---\n${extracted}\n`; extractedCount++; continue; }
+    }
+    // 6. Nested dict format (health-fitness, country-data, industry-specific, etc.)
+    if (typeof data === 'object' && !Array.isArray(data)) {
+      extracted = extractFromNestedDict(data as Record<string, unknown>, scenario, 15);
+      if (extracted) { context += `\n--- ${key} ---\n${extracted}\n`; extractedCount++; continue; }
+    }
+    // 7. LAST RESORT — should rarely happen now. Log which file fell through.
+    console.warn(`[KB WARN] No extractor matched for: ${key}`);
     context += `\n--- ${key} ---\n${JSON.stringify(data).substring(0, 2000)}\n`;
   }
+
+  if (extractedCount === 0) {
+    console.warn(`[KB WARN] Zero data extracted for scenario: "${scenario.substring(0, 80)}"`);
+  }
+
   return context.substring(0, 16000);
 }
 
@@ -793,9 +1022,19 @@ export async function POST(request: NextRequest) {
     const { scenario } = await request.json();
     if (!scenario) return NextResponse.json({ error: 'Missing scenario' }, { status: 400 });
 
-    const kb = loadKB();
-    const kbContext = matchKB(kb, scenario);
     const detectedCountries = detectCountries(scenario);
+
+    // RAG search (primary) + keyword matching (fallback)
+    let kbContext: string | null = null;
+    let dataSource: 'rag' | 'keyword' = 'keyword';
+    if (isRagReady()) {
+      kbContext = await ragSearch(scenario, 30);
+      if (kbContext) dataSource = 'rag';
+    }
+    if (!kbContext) {
+      const kb = loadKB();
+      kbContext = matchKB(kb, scenario);
+    }
 
     // Fetch all live data in parallel — none block on failure
     const [live, countryData, exchangeRates, laborData, wikiContext, cryptoData, cityData] = await Promise.all([
@@ -885,6 +1124,7 @@ desc MUST include a specific number/stat, not generic text.`;
       flow._provider = 'groq';
     }
     flow._live_data = !!(live?.gdp || countryData || exchangeRates || laborData || cryptoData || cityData);
+    flow._data_source = dataSource;
 
     return NextResponse.json(flow);
   } catch (e) {

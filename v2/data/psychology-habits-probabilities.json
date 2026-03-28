@@ -1,0 +1,1815 @@
+{
+  "metadata": {
+    "category": "Psychology, Habits & Human Behavior",
+    "description": "Probability data for habits, behavior change, mental health, productivity, personal growth, and social dynamics",
+    "total_data_points": 247,
+    "sources": [
+      "APA (American Psychological Association)",
+      "WHO (World Health Organization)",
+      "NIH / NIDA (National Institute on Drug Abuse)",
+      "SAMHSA (Substance Abuse and Mental Health Services Administration)",
+      "Gallup World Poll",
+      "Pew Research Center",
+      "World Values Survey",
+      "UCL (University College London — Lally et al.)",
+      "Dominican University (Dr. Gail Matthews)",
+      "ASTD (American Society of Training and Development)",
+      "PMC / PubMed peer-reviewed studies",
+      "Harvard Business Review",
+      "IHRSA (International Health, Racquet & Sportsclub Association)",
+      "CEOWORLD Magazine",
+      "Forbes Health Survey",
+      "LinkedIn Workplace Research",
+      "FINRA Foundation",
+      "Our World in Data"
+    ],
+    "collected_date": "2026-03-28",
+    "notes": "All values are probabilities (0-1) or rates unless noted. Sources cited per data point."
+  },
+
+  "habits_and_behavior_change": {
+    "new_years_resolutions": [
+      {
+        "metric": "Americans who make New Year's resolutions",
+        "value": 0.45,
+        "unit": "proportion",
+        "source": "Forbes Health / YouGov",
+        "year": 2024
+      },
+      {
+        "metric": "Resolution makers who stay committed after 30 days",
+        "value": 0.25,
+        "unit": "proportion",
+        "source": "Columbia University",
+        "year": 2023
+      },
+      {
+        "metric": "Resolution makers who quit in the first week",
+        "value": 0.23,
+        "unit": "proportion",
+        "source": "Discover Happy Habits / multiple surveys",
+        "year": 2024
+      },
+      {
+        "metric": "Resolution makers who make it past first month",
+        "value": 0.36,
+        "unit": "proportion",
+        "source": "Forbes Health Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Resolutions abandoned by February",
+        "value": 0.80,
+        "unit": "proportion",
+        "source": "U.S. News & World Report / multiple surveys",
+        "year": 2024
+      },
+      {
+        "metric": "Resolution makers who successfully achieve their goals",
+        "value": 0.08,
+        "unit": "proportion",
+        "source": "University of Scranton / Inside Out Mastery",
+        "year": 2023
+      },
+      {
+        "metric": "Average resolution duration",
+        "value": 3.74,
+        "unit": "months",
+        "source": "Forbes Health Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Most popular resolution type — health/fitness",
+        "value": 0.48,
+        "unit": "proportion_of_resolvers",
+        "source": "YouGov Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Approach-oriented goals success vs avoidance-oriented",
+        "value": 0.59,
+        "detail": "Approach goals (start doing X) succeed ~59% more than avoidance goals (stop doing Y)",
+        "unit": "relative_advantage",
+        "source": "Oscarsson et al. 2020, PLOS ONE (PMC7725288)",
+        "year": 2020
+      }
+    ],
+
+    "habit_formation_time": [
+      {
+        "metric": "Average days to habit automaticity (Lally study)",
+        "value": 66,
+        "unit": "days",
+        "source": "Lally et al. 2010, European Journal of Social Psychology, UCL",
+        "year": 2010
+      },
+      {
+        "metric": "Minimum days to habit automaticity",
+        "value": 18,
+        "unit": "days",
+        "source": "Lally et al. 2010, UCL",
+        "year": 2010
+      },
+      {
+        "metric": "Maximum days to habit automaticity",
+        "value": 254,
+        "unit": "days",
+        "source": "Lally et al. 2010, UCL",
+        "year": 2010
+      },
+      {
+        "metric": "Sample size of Lally study",
+        "value": 96,
+        "unit": "participants",
+        "source": "Lally et al. 2010, UCL",
+        "year": 2010
+      },
+      {
+        "metric": "Popular myth — habit formation days (Maltz)",
+        "value": 21,
+        "unit": "days",
+        "detail": "Debunked: Maxwell Maltz's 1960 anecdote, not research-based",
+        "source": "Psycho-Cybernetics, Maxwell Maltz 1960",
+        "year": 1960
+      }
+    ],
+
+    "habit_retention_rates": [
+      {
+        "metric": "Gym members who quit within first 6 months",
+        "value": 0.50,
+        "unit": "proportion",
+        "source": "IHRSA / GymMaster",
+        "year": 2024
+      },
+      {
+        "metric": "Members age 18-34 who quit within first year",
+        "value": 0.55,
+        "unit": "proportion",
+        "source": "IHRSA / PT Pioneer",
+        "year": 2024
+      },
+      {
+        "metric": "Average annual gym retention rate",
+        "value": 0.714,
+        "unit": "proportion",
+        "source": "IHRSA",
+        "year": 2024
+      },
+      {
+        "metric": "Gym members who joined to lose weight still active after 1 year",
+        "value": 0.70,
+        "unit": "proportion",
+        "source": "IHRSA",
+        "year": 2024
+      },
+      {
+        "metric": "Minimum exercise sessions per week to form habit (6 weeks)",
+        "value": 4,
+        "unit": "sessions_per_week",
+        "source": "Kaushal & Rhodes 2015, Journal of Behavioral Medicine",
+        "year": 2015
+      }
+    ],
+
+    "therapy_completion_rates": [
+      {
+        "metric": "Mean therapy attrition rate (dropout) post-treatment",
+        "value": 0.21,
+        "unit": "proportion",
+        "source": "Cuijpers et al. 2023, meta-analysis (PMC9840507)",
+        "year": 2023
+      },
+      {
+        "metric": "CBT completion rate (inverse of attrition)",
+        "value": 0.79,
+        "unit": "proportion",
+        "source": "Cuijpers et al. 2023",
+        "year": 2023
+      },
+      {
+        "metric": "Patients satisfied with CBT outcomes",
+        "value": 0.70,
+        "unit": "proportion",
+        "source": "Crown Counseling / multiple meta-analyses",
+        "year": 2024
+      }
+    ],
+
+    "self_help_implementation": [
+      {
+        "metric": "Readers who actually read the self-help book they bought",
+        "value": 0.20,
+        "unit": "proportion",
+        "source": "Dr. Robert Kohlenberg 1981 study",
+        "year": 1981
+      },
+      {
+        "metric": "Readers who implement advice from self-help books",
+        "value": 0.05,
+        "unit": "proportion",
+        "source": "Dr. Robert Kohlenberg 1981 study",
+        "year": 1981
+      },
+      {
+        "metric": "Self-help webinar participants who apply techniques within 1 week",
+        "value": 0.25,
+        "unit": "proportion",
+        "source": "ZipDo / Self-improvement industry stats",
+        "year": 2024
+      },
+      {
+        "metric": "Self-help book readers who say books had lasting impact",
+        "value": 0.55,
+        "unit": "proportion",
+        "source": "WordsRated survey",
+        "year": 2023
+      },
+      {
+        "metric": "Top-selling self-help books with evidence-based techniques",
+        "value": 0.48,
+        "unit": "proportion",
+        "source": "Redding et al. systematic review",
+        "year": 2023
+      }
+    ],
+
+    "journaling_retention": [
+      {
+        "metric": "Population currently keeping a journal/diary",
+        "value": 0.08,
+        "unit": "proportion",
+        "source": "APA / Psychology Today",
+        "year": 2023
+      },
+      {
+        "metric": "People who have journaled at some point in their life",
+        "value": 0.50,
+        "unit": "proportion",
+        "source": "Day One / journaling surveys",
+        "year": 2023
+      },
+      {
+        "metric": "Active journalers (broader estimate)",
+        "value": 0.167,
+        "detail": "~1 in 6 people",
+        "unit": "proportion",
+        "source": "Psychology Today / Mic",
+        "year": 2023
+      }
+    ],
+
+    "meditation_retention": [
+      {
+        "metric": "Headspace 30-day user retention rate",
+        "value": 0.0765,
+        "unit": "proportion",
+        "source": "Apptopia data",
+        "year": 2023
+      },
+      {
+        "metric": "Calm 30-day user retention rate",
+        "value": 0.0834,
+        "unit": "proportion",
+        "source": "Apptopia data",
+        "year": 2023
+      },
+      {
+        "metric": "Insight Timer 30-day retention rate",
+        "value": 0.16,
+        "unit": "proportion",
+        "source": "Apptopia data",
+        "year": 2023
+      },
+      {
+        "metric": "Health/fitness app average 30-day retention",
+        "value": 0.0629,
+        "unit": "proportion",
+        "source": "Apptopia data",
+        "year": 2023
+      },
+      {
+        "metric": "Mindfulness app attrition rate in research trials",
+        "value": 0.247,
+        "detail": "Mean across 89 study conditions, 9,258 participants",
+        "unit": "proportion",
+        "source": "Systematic review, ScienceDirect (2023)",
+        "year": 2023
+      }
+    ],
+
+    "cold_turkey_vs_gradual": [
+      {
+        "metric": "Cold turkey 4-week abstinence rate (smoking)",
+        "value": 0.49,
+        "unit": "proportion",
+        "source": "Lindson-Hawley et al. 2016, Annals of Internal Medicine",
+        "year": 2016
+      },
+      {
+        "metric": "Gradual cessation 4-week abstinence rate (smoking)",
+        "value": 0.392,
+        "unit": "proportion",
+        "source": "Lindson-Hawley et al. 2016",
+        "year": 2016
+      },
+      {
+        "metric": "Cold turkey 6-month abstinence rate (smoking)",
+        "value": 0.22,
+        "unit": "proportion",
+        "source": "Lindson-Hawley et al. 2016",
+        "year": 2016
+      },
+      {
+        "metric": "Gradual cessation 6-month abstinence rate (smoking)",
+        "value": 0.155,
+        "unit": "proportion",
+        "source": "Lindson-Hawley et al. 2016",
+        "year": 2016
+      },
+      {
+        "metric": "Smokers who use cold turkey method",
+        "value": 0.685,
+        "unit": "proportion",
+        "source": "International Tobacco Control Policy Evaluation Study",
+        "year": 2007
+      },
+      {
+        "metric": "Unaided quit rate (no support, no NRT)",
+        "value": 0.05,
+        "unit": "proportion",
+        "source": "WHO / Vanderbilt Health",
+        "year": 2023
+      }
+    ],
+
+    "accountability_partner_effect": [
+      {
+        "metric": "Goal success rate with no external commitment",
+        "value": 0.10,
+        "unit": "proportion",
+        "source": "ASTD (American Society of Training and Development)",
+        "year": 2015
+      },
+      {
+        "metric": "Goal success rate when committed to someone else",
+        "value": 0.65,
+        "unit": "proportion",
+        "source": "ASTD",
+        "year": 2015
+      },
+      {
+        "metric": "Goal success rate with scheduled accountability appointments",
+        "value": 0.95,
+        "unit": "proportion",
+        "source": "ASTD",
+        "year": 2015
+      },
+      {
+        "metric": "Success rate — written goals + weekly updates to friend",
+        "value": 0.76,
+        "unit": "proportion",
+        "source": "Dr. Gail Matthews, Dominican University of California",
+        "year": 2015
+      },
+      {
+        "metric": "Success rate — goals without writing or sharing",
+        "value": 0.43,
+        "unit": "proportion",
+        "source": "Dr. Gail Matthews, Dominican University of California",
+        "year": 2015
+      }
+    ],
+
+    "public_commitment_effect": [
+      {
+        "metric": "Public commitment increases goal achievement likelihood",
+        "value": true,
+        "detail": "Public precommitment imposes social cost for failure (anticipated embarrassment), increasing follow-through across domains: smoking, weight loss, academics, savings",
+        "source": "Multiple studies reviewed by BeSci.org",
+        "year": 2023
+      },
+      {
+        "metric": "Written goals increase success by ~42% vs unwritten",
+        "value": 0.42,
+        "unit": "relative_increase",
+        "source": "Dr. Gail Matthews, Dominican University",
+        "year": 2015
+      },
+      {
+        "metric": "Caveat: public declaration can substitute for action",
+        "value": true,
+        "detail": "Some research shows announcing goals publicly can provide premature sense of accomplishment, reducing actual follow-through (Gollwitzer et al.)",
+        "source": "Gollwitzer et al. 2009, Psychological Science",
+        "year": 2009
+      }
+    ]
+  },
+
+  "mental_health": {
+    "depression_treatment": [
+      {
+        "metric": "CBT success rate for reducing depressive symptoms",
+        "value_range": [0.40, 0.60],
+        "unit": "proportion",
+        "source": "Cuijpers et al. 2023, meta-analysis 409 trials (PMC9840507)",
+        "year": 2023
+      },
+      {
+        "metric": "Psychotherapy response rate at 2 months (ITT)",
+        "value": 0.41,
+        "unit": "proportion",
+        "source": "Cuijpers et al. 2021, meta-analysis (PMC8457213)",
+        "year": 2021
+      },
+      {
+        "metric": "Psychotherapy remission rate for depression",
+        "value": 0.33,
+        "detail": "Only one-third of patients achieve full remission",
+        "unit": "proportion",
+        "source": "Cuijpers et al. 2021",
+        "year": 2021
+      },
+      {
+        "metric": "CBT long-term advantage over medication (6-12 month follow-up)",
+        "value": true,
+        "detail": "CBT effects significantly larger than pharmacotherapy at 6-12 month follow-up",
+        "source": "Cuijpers et al. 2023 (PMC9840507)",
+        "year": 2023
+      },
+      {
+        "metric": "Combined treatment (CBT + medication) superiority",
+        "value": true,
+        "detail": "Combination therapy outperforms either treatment alone",
+        "source": "Frontiers in Psychiatry 2024",
+        "year": 2024
+      }
+    ],
+
+    "anxiety_treatment": [
+      {
+        "metric": "CBT effectiveness for anxiety disorders",
+        "value_range": [0.50, 0.65],
+        "detail": "Response rates for anxiety disorders generally higher than depression",
+        "unit": "proportion",
+        "source": "APA / multiple meta-analyses",
+        "year": 2024
+      },
+      {
+        "metric": "Reliable improvement rate in specialized anxiety treatment",
+        "value": 0.52,
+        "unit": "proportion",
+        "source": "BMC Psychiatry 2024 (PMC11112857)",
+        "year": 2024
+      }
+    ],
+
+    "ptsd_recovery": [
+      {
+        "metric": "Natural recovery within 3 months (no treatment)",
+        "value": 0.20,
+        "unit": "proportion",
+        "source": "WHO World Mental Health Surveys (PMC5758426)",
+        "year": 2017
+      },
+      {
+        "metric": "Natural recovery within 6 months",
+        "value": 0.27,
+        "unit": "proportion",
+        "source": "WHO World Mental Health Surveys",
+        "year": 2017
+      },
+      {
+        "metric": "Natural recovery within 12 months",
+        "value": 0.40,
+        "unit": "proportion",
+        "source": "WHO / Recovery Village",
+        "year": 2017
+      },
+      {
+        "metric": "Natural recovery within 24 months",
+        "value": 0.50,
+        "unit": "proportion",
+        "source": "WHO World Mental Health Surveys",
+        "year": 2017
+      },
+      {
+        "metric": "Natural recovery within 10 years",
+        "value": 0.77,
+        "unit": "proportion",
+        "source": "WHO World Mental Health Surveys",
+        "year": 2017
+      },
+      {
+        "metric": "Improvement rate within 6 weeks of psychotherapy",
+        "value": 0.46,
+        "unit": "proportion",
+        "source": "NCHStats / multiple studies",
+        "year": 2025
+      },
+      {
+        "metric": "Trauma-focused therapy (CBT/EMDR) response rate",
+        "value": 0.85,
+        "unit": "proportion",
+        "source": "NCHStats / PMC systematic reviews",
+        "year": 2025
+      },
+      {
+        "metric": "No longer meeting PTSD diagnostic criteria after intensive treatment",
+        "value_range": [0.44, 0.48],
+        "unit": "proportion",
+        "source": "BMC Psychiatry 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Medication improvement rate for PTSD",
+        "value": 0.62,
+        "unit": "proportion",
+        "source": "NCHStats / National Academies of Sciences",
+        "year": 2025
+      },
+      {
+        "metric": "Treatment resistance rate (general population)",
+        "value": 0.33,
+        "unit": "proportion",
+        "source": "Clinical Psychology Review",
+        "year": 2022
+      },
+      {
+        "metric": "Military PTSD — remains with disorder after treatment",
+        "value": 0.67,
+        "detail": "Two thirds of veterans retain PTSD after treatment",
+        "unit": "proportion",
+        "source": "Levi et al. 2022, Clinical Psychological Science",
+        "year": 2022
+      }
+    ],
+
+    "burnout": [
+      {
+        "metric": "Workers experiencing burnout (general)",
+        "value": 0.52,
+        "unit": "proportion",
+        "source": "APA / Indeed survey",
+        "year": 2023
+      },
+      {
+        "metric": "Public health workforce burnout prevalence",
+        "value": 0.39,
+        "unit": "proportion",
+        "source": "BMC Human Resources for Health 2024 (PMC11110232)",
+        "year": 2024
+      },
+      {
+        "metric": "Recovery time — mild burnout",
+        "value_range": [2, 6],
+        "unit": "months",
+        "source": "Thriving Center of Psych / multiple clinical sources",
+        "year": 2024
+      },
+      {
+        "metric": "Recovery time — severe burnout",
+        "value_range": [12, 24],
+        "unit": "months",
+        "source": "Thriving Center of Psych / burnout research",
+        "year": 2024
+      },
+      {
+        "metric": "Burnout increase from pre-COVID to post-COVID",
+        "value": 0.09,
+        "unit": "proportion_increase",
+        "source": "Indeed / Workforce.com",
+        "year": 2023
+      },
+      {
+        "metric": "Industries with highest burnout — Healthcare workers",
+        "value": 0.55,
+        "unit": "proportion",
+        "source": "APA Monitor on Psychology",
+        "year": 2022
+      },
+      {
+        "metric": "Industries with highest burnout — Teachers/Education",
+        "value": 0.52,
+        "unit": "proportion",
+        "source": "APA / National Education Association",
+        "year": 2022
+      },
+      {
+        "metric": "Burnout risk increase — Transportation sector (2021-2022)",
+        "value": 0.16,
+        "unit": "proportion_increase",
+        "source": "Mental Health UK Burnout Report",
+        "year": 2023
+      }
+    ],
+
+    "impostor_syndrome": [
+      {
+        "metric": "Overall prevalence (meta-analysis)",
+        "value": 0.62,
+        "detail": "95% CI: 52.6%-70.6%, based on 30 studies, 11,483 people",
+        "unit": "proportion",
+        "source": "BMC Psychology 2025 (PMC12117965)",
+        "year": 2025
+      },
+      {
+        "metric": "Lifetime prevalence (ever experienced)",
+        "value": 0.75,
+        "unit": "proportion",
+        "source": "Bravata et al. 2020 (PMC7174434)",
+        "year": 2020
+      },
+      {
+        "metric": "Physicians experiencing frequent/severe symptoms",
+        "value": 0.25,
+        "unit": "proportion",
+        "source": "Mayo Clinic Proceedings 2022",
+        "year": 2022
+      },
+      {
+        "metric": "Physicians relative risk vs other professions",
+        "value": 1.80,
+        "unit": "relative_risk",
+        "source": "Mayo Clinic Proceedings 2022",
+        "year": 2022
+      },
+      {
+        "metric": "Science & pharmaceuticals workers",
+        "value": 0.78,
+        "unit": "proportion",
+        "source": "Personnel Today UK research",
+        "year": 2023
+      },
+      {
+        "metric": "Property & construction workers (lowest)",
+        "value": 0.29,
+        "unit": "proportion",
+        "source": "Personnel Today UK research",
+        "year": 2023
+      },
+      {
+        "metric": "Gender difference (Cohen's d, women higher)",
+        "value": 0.27,
+        "detail": "Small effect; 50% of studies found no significant gender difference",
+        "unit": "cohens_d",
+        "source": "Gender differences meta-analysis, ScienceDirect 2024",
+        "year": 2024
+      }
+    ],
+
+    "loneliness": [
+      {
+        "metric": "Global loneliness rate — feel lonely a lot",
+        "value": 0.23,
+        "unit": "proportion",
+        "source": "Gallup World Poll 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Loneliness — age 15-18 globally",
+        "value": 0.25,
+        "unit": "proportion",
+        "source": "Gallup 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Loneliness — age 19-29 globally",
+        "value": 0.27,
+        "unit": "proportion",
+        "source": "Gallup 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Loneliness — age 65+ globally",
+        "value": 0.17,
+        "unit": "proportion",
+        "source": "Gallup 2024",
+        "year": 2024
+      },
+      {
+        "metric": "US men age 15-34 feeling lonely",
+        "value": 0.25,
+        "unit": "proportion",
+        "source": "Gallup 2025",
+        "year": 2025
+      },
+      {
+        "metric": "US overall daily loneliness rate",
+        "value": 0.20,
+        "unit": "proportion",
+        "source": "Gallup 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Workplace loneliness (global employees)",
+        "value": 0.20,
+        "unit": "proportion",
+        "source": "Gallup State of the Global Workplace 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Loneliness by country — Turkey",
+        "value": 0.29,
+        "unit": "proportion_young_men",
+        "source": "Gallup 2025",
+        "year": 2025
+      },
+      {
+        "metric": "Loneliness by country — France",
+        "value": 0.24,
+        "unit": "proportion_young_men",
+        "source": "Gallup 2025",
+        "year": 2025
+      },
+      {
+        "metric": "Loneliness by country — Canada",
+        "value": 0.22,
+        "unit": "proportion_young_men",
+        "source": "Gallup 2025",
+        "year": 2025
+      }
+    ],
+
+    "suicide": [
+      {
+        "metric": "Global suicide deaths per year",
+        "value": 727000,
+        "unit": "deaths",
+        "source": "WHO 2021",
+        "year": 2021
+      },
+      {
+        "metric": "Global male suicide rate",
+        "value": 12.3,
+        "unit": "per_100000",
+        "source": "WHO 2021",
+        "year": 2021
+      },
+      {
+        "metric": "Global female suicide rate",
+        "value": 5.9,
+        "unit": "per_100000",
+        "source": "WHO 2021",
+        "year": 2021
+      },
+      {
+        "metric": "Suicide rate decline over 30 years (age-adjusted)",
+        "value": 0.40,
+        "detail": "From 15 to 9 per 100,000",
+        "unit": "proportion_decrease",
+        "source": "IHME / WHO",
+        "year": 2021
+      },
+      {
+        "metric": "Female suicide rate decline (30 years)",
+        "value": 0.50,
+        "unit": "proportion_decrease",
+        "source": "IHME / WHO",
+        "year": 2021
+      },
+      {
+        "metric": "Male suicide rate decline (30 years)",
+        "value": 0.34,
+        "unit": "proportion_decrease",
+        "source": "IHME / WHO",
+        "year": 2021
+      },
+      {
+        "metric": "Suicides in low/middle-income countries",
+        "value": 0.73,
+        "unit": "proportion_of_global",
+        "source": "WHO 2021",
+        "year": 2021
+      }
+    ],
+
+    "addiction_recovery": [
+      {
+        "metric": "General relapse rate for substance use disorders",
+        "value_range": [0.40, 0.60],
+        "unit": "proportion",
+        "source": "NIDA (National Institute on Drug Abuse)",
+        "year": 2023
+      },
+      {
+        "metric": "Alcohol relapse rate (first year)",
+        "value_range": [0.68, 0.80],
+        "unit": "proportion",
+        "source": "NIDA / AddictionHelp",
+        "year": 2023
+      },
+      {
+        "metric": "Opioid relapse rate",
+        "value": 0.91,
+        "unit": "proportion",
+        "source": "Vista Research Group / NIDA",
+        "year": 2023
+      },
+      {
+        "metric": "Cocaine relapse rate",
+        "value": 0.619,
+        "unit": "proportion",
+        "source": "Vista Research Group",
+        "year": 2023
+      },
+      {
+        "metric": "Methamphetamine relapse rate",
+        "value": 0.522,
+        "unit": "proportion",
+        "source": "Vista Research Group",
+        "year": 2023
+      },
+      {
+        "metric": "Marijuana relapse within 24 hours of access",
+        "value": 0.49,
+        "unit": "proportion",
+        "source": "Lotus Behavioral Health",
+        "year": 2023
+      },
+      {
+        "metric": "Alcohol — no substance use 1 year after treatment",
+        "value": 0.41,
+        "detail": "Highest recovery rate of all substances",
+        "unit": "proportion",
+        "source": "AddictionHelp / SAMHSA",
+        "year": 2023
+      },
+      {
+        "metric": "Risk of relapse after 5 years continuous sobriety",
+        "value": 0.15,
+        "detail": "Similar to general population risk",
+        "unit": "proportion",
+        "source": "NIDA",
+        "year": 2023
+      },
+      {
+        "metric": "MAT (Medication-Assisted Treatment) reduction in opioid deaths",
+        "value": 0.50,
+        "unit": "proportion_reduction",
+        "source": "National Academies of Sciences",
+        "year": 2023
+      },
+      {
+        "metric": "Adults with past substance problem who report being in recovery",
+        "value": 0.748,
+        "detail": "~20.5 million adults in US",
+        "unit": "proportion",
+        "source": "SAMHSA 2023 (NSDUH)",
+        "year": 2023
+      },
+      {
+        "metric": "Average number of recovery attempts needed",
+        "value_range": [3, 5],
+        "unit": "attempts",
+        "source": "PMC6602820, Kelly et al. 2019",
+        "year": 2019
+      }
+    ]
+  },
+
+  "productivity_and_performance": {
+    "deep_work": [
+      {
+        "metric": "Average focused session duration",
+        "value": 13.12,
+        "unit": "minutes",
+        "source": "ActivTrak 2025 State of the Workplace",
+        "year": 2025
+      },
+      {
+        "metric": "Decline in focused session duration (2023-2025)",
+        "value": 0.09,
+        "unit": "proportion_decrease",
+        "source": "ActivTrak 2025",
+        "year": 2025
+      },
+      {
+        "metric": "Remote workers deep focus time per week",
+        "value": 22.75,
+        "unit": "hours",
+        "source": "ActivTrak 2025",
+        "year": 2025
+      },
+      {
+        "metric": "In-office workers deep focus time per week",
+        "value": 18.6,
+        "unit": "hours",
+        "source": "ActivTrak 2025",
+        "year": 2025
+      },
+      {
+        "metric": "Workers who can't focus for 1 hour without interruption",
+        "value": 0.42,
+        "unit": "proportion",
+        "source": "Speakwise / productivity research 2026",
+        "year": 2026
+      }
+    ],
+
+    "multitasking": [
+      {
+        "metric": "Productive time lost due to task-switching",
+        "value": 0.40,
+        "unit": "proportion",
+        "source": "APA / Rubinstein, Meyer & Evans 2001",
+        "year": 2001
+      },
+      {
+        "metric": "Time to regain focus after interruption",
+        "value": 23.25,
+        "unit": "minutes",
+        "source": "Mark, Gonzalez & Harris, UC Irvine",
+        "year": 2023
+      },
+      {
+        "metric": "Average time working on project before interruption",
+        "value": 10.5,
+        "unit": "minutes",
+        "source": "Mark, Gonzalez & Harris, UC Irvine",
+        "year": 2023
+      },
+      {
+        "metric": "Economic impact of lost focus (annual, US)",
+        "value": 1400000000000,
+        "unit": "USD",
+        "source": "Speakwise / ActivTrak research",
+        "year": 2026
+      },
+      {
+        "metric": "Hours lost per knowledge worker per year",
+        "value": 553,
+        "unit": "hours",
+        "source": "Speakwise 2026",
+        "year": 2026
+      }
+    ],
+
+    "meetings": [
+      {
+        "metric": "Percentage of meetings that are unproductive",
+        "value": 0.71,
+        "unit": "proportion",
+        "source": "My Hours / meeting statistics 2025",
+        "year": 2025
+      },
+      {
+        "metric": "Collective work time spent in meetings",
+        "value": 0.15,
+        "unit": "proportion",
+        "source": "Bain & Company / Fellow research",
+        "year": 2024
+      },
+      {
+        "metric": "Unproductive meeting hours per employee per month",
+        "value": 31,
+        "unit": "hours",
+        "source": "Cross River Therapy / Atlassian",
+        "year": 2024
+      },
+      {
+        "metric": "Meeting time considered wasted",
+        "value": 0.50,
+        "unit": "proportion",
+        "source": "Booqed / multiple surveys",
+        "year": 2024
+      },
+      {
+        "metric": "Executives who say meetings serve no purpose",
+        "value": 0.45,
+        "unit": "proportion",
+        "source": "Fellow / meeting research",
+        "year": 2024
+      },
+      {
+        "metric": "Employees who multitask during meetings",
+        "value": 0.92,
+        "unit": "proportion",
+        "source": "Notta / meeting statistics",
+        "year": 2025
+      },
+      {
+        "metric": "Employees who check email during meetings",
+        "value": 0.69,
+        "unit": "proportion",
+        "source": "Notta / meeting statistics",
+        "year": 2025
+      },
+      {
+        "metric": "Annual cost of bad meetings (US)",
+        "value": 37000000000,
+        "unit": "USD",
+        "source": "Booqed / meeting research",
+        "year": 2024
+      }
+    ],
+
+    "procrastination": [
+      {
+        "metric": "Chronic procrastination rate (adults)",
+        "value_range": [0.20, 0.25],
+        "unit": "proportion",
+        "source": "Dr. Joseph Ferrari, DePaul University",
+        "year": 2023
+      },
+      {
+        "metric": "Chronic procrastinators in 1970s",
+        "value": 0.05,
+        "unit": "proportion",
+        "source": "Solving Procrastination / Ferrari research",
+        "year": 1970
+      },
+      {
+        "metric": "College students who procrastinate chronically",
+        "value": 0.50,
+        "unit": "proportion",
+        "source": "Steel 2007, Psychological Bulletin",
+        "year": 2007
+      },
+      {
+        "metric": "College students who consider themselves procrastinators",
+        "value": 0.75,
+        "unit": "proportion",
+        "source": "Steel 2007",
+        "year": 2007
+      },
+      {
+        "metric": "High school students who procrastinate on assignments",
+        "value": 0.86,
+        "unit": "proportion",
+        "source": "Jobera / procrastination statistics",
+        "year": 2024
+      },
+      {
+        "metric": "Employees procrastinating 1-4 hours daily",
+        "value": 0.80,
+        "unit": "proportion",
+        "source": "Passive Secrets / workplace survey",
+        "year": 2024
+      },
+      {
+        "metric": "Procrastination in health behaviors (educated adults)",
+        "value": 0.40,
+        "unit": "proportion",
+        "source": "Proactivity Lab / survey of 430 adults",
+        "year": 2023
+      }
+    ],
+
+    "morning_routine": [
+      {
+        "metric": "People with routines reporting high productivity",
+        "value": 0.92,
+        "unit": "proportion",
+        "source": "HBR / productivity research",
+        "year": 2024
+      },
+      {
+        "metric": "People without routines reporting high productivity",
+        "value": 0.79,
+        "unit": "proportion",
+        "source": "HBR / productivity research",
+        "year": 2024
+      },
+      {
+        "metric": "Consistent routine increases daily goal achievement by",
+        "value": 0.20,
+        "unit": "proportion_increase",
+        "source": "Harvard Business Review",
+        "year": 2024
+      },
+      {
+        "metric": "Americans who love morning routines",
+        "value": 0.90,
+        "unit": "proportion",
+        "source": "CNBC / survey 2025",
+        "year": 2025
+      },
+      {
+        "metric": "Americans who spend less than 30 min on morning routine",
+        "value": 0.50,
+        "detail": "Most people's routines are too short to be effective",
+        "unit": "proportion_approximate",
+        "source": "CNBC / survey 2025",
+        "year": 2025
+      }
+    ],
+
+    "sleep_deprivation": [
+      {
+        "metric": "Cognitive performance decline from one night sleep deprivation",
+        "value_range": [0.20, 0.40],
+        "detail": "Impairs attention, working memory, decision-making, long-term memory",
+        "unit": "proportion_decline",
+        "source": "Alhola & Polo-Kantola 2007 (PMC2656292)",
+        "year": 2007
+      },
+      {
+        "metric": "Brain interstitial space increase during sleep (CSF clearing)",
+        "value": 0.60,
+        "detail": "60% increase enables toxic molecule clearance including beta amyloid",
+        "unit": "proportion_increase",
+        "source": "Xie et al. 2013, Science",
+        "year": 2013
+      },
+      {
+        "metric": "Chronic sleep restriction is worse than single all-nighter",
+        "value": true,
+        "detail": "Consistently restricting sleep over time is more harmful than one night of total deprivation",
+        "source": "Neurosciences Journal 2023 (PMC10155483)",
+        "year": 2023
+      },
+      {
+        "metric": "Exercise can ameliorate sleep deprivation cognitive decline",
+        "value": true,
+        "detail": "20 min moderate exercise improves executive function even after total sleep deprivation",
+        "source": "ScienceDirect 2023",
+        "year": 2023
+      }
+    ],
+
+    "exercise_cognitive_impact": [
+      {
+        "metric": "Exercise effect size on cognition (age 50+)",
+        "value": 0.29,
+        "unit": "cohens_d",
+        "source": "Meta-analysis of 39 RCTs (PMC3951958)",
+        "year": 2014
+      },
+      {
+        "metric": "Minimum activity increase threshold for cognitive benefit (older adults)",
+        "value": 0.35,
+        "detail": "At least 35% increase in physical activity needed for measurable cognitive improvement",
+        "unit": "proportion_increase",
+        "source": "Alzheimer's Research & Therapy RCT 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Greatest benefit age group",
+        "value": "60+",
+        "detail": "Greatest positive effects found in adults over 60",
+        "unit": "age_group",
+        "source": "Multiple meta-analyses / PMC5934999",
+        "year": 2018
+      },
+      {
+        "metric": "Exercise improves executive function, memory, attention",
+        "value": true,
+        "detail": "Benefits across all subcognitive domains; mechanisms include increased BDNF, cerebral blood flow, neurogenesis",
+        "source": "Physical Activity Guidelines Advisory Committee 2018 (PMC6527141)",
+        "year": 2018
+      }
+    ]
+  },
+
+  "personal_growth": {
+    "career_change": [
+      {
+        "metric": "Workers over 45 who report career change success",
+        "value": 0.82,
+        "unit": "proportion",
+        "source": "Work Insiders 2026",
+        "year": 2026
+      },
+      {
+        "metric": "Wage growth for voluntary career change age 45-54",
+        "value": 0.074,
+        "unit": "proportion_growth",
+        "source": "Work Insiders / BLS data",
+        "year": 2026
+      },
+      {
+        "metric": "Workers under 20 desiring career change",
+        "value": 0.80,
+        "unit": "proportion",
+        "source": "Work Insiders 2026",
+        "year": 2026
+      },
+      {
+        "metric": "Workers in their 30s desiring career change",
+        "value": 0.65,
+        "unit": "proportion",
+        "source": "Work Insiders 2026",
+        "year": 2026
+      },
+      {
+        "metric": "Workers in their 40s desiring career change",
+        "value": 0.55,
+        "unit": "proportion",
+        "source": "Work Insiders 2026",
+        "year": 2026
+      }
+    ],
+
+    "midlife_crisis": [
+      {
+        "metric": "Prevalence in United States",
+        "value": 0.26,
+        "unit": "proportion",
+        "source": "Nature Scientific Reports 2025 / APA",
+        "year": 2025
+      },
+      {
+        "metric": "Prevalence in Australia",
+        "value": 0.20,
+        "unit": "proportion",
+        "source": "Nature Scientific Reports 2025",
+        "year": 2025
+      },
+      {
+        "metric": "UK adults reporting significant midlife reevaluation",
+        "value_range": [0.40, 0.60],
+        "unit": "proportion",
+        "source": "Nature Scientific Reports 2025",
+        "year": 2025
+      },
+      {
+        "metric": "Millennials who experienced midlife crisis around age 34",
+        "value": 0.10,
+        "unit": "proportion",
+        "source": "Thriving Center of Psych",
+        "year": 2024
+      },
+      {
+        "metric": "Average expected midlife crisis age (Millennials)",
+        "value": 44,
+        "unit": "years",
+        "source": "Thriving Center of Psych",
+        "year": 2024
+      }
+    ],
+
+    "quarter_life_crisis": [
+      {
+        "metric": "Most affected age range",
+        "value": "25-33",
+        "unit": "age_range",
+        "source": "PMC10771792 systematic review",
+        "year": 2023
+      },
+      {
+        "metric": "Women more likely than men to experience",
+        "value": true,
+        "source": "PMC10771792 systematic review",
+        "year": 2023
+      },
+      {
+        "metric": "Key trigger: transition from college to working life",
+        "value": true,
+        "source": "PMC10771792",
+        "year": 2023
+      }
+    ],
+
+    "retirement_satisfaction": [
+      {
+        "metric": "Retirees who say they are happier in retirement",
+        "value": 0.67,
+        "unit": "proportion",
+        "source": "MassMutual Retirement Happiness Study 2024",
+        "year": 2024
+      },
+      {
+        "metric": "People 65-74 who often feel happy",
+        "value": 0.76,
+        "unit": "proportion",
+        "source": "Center for Retirement Research, Boston College",
+        "year": 2024
+      },
+      {
+        "metric": "People 25-34 who often feel happy (comparison)",
+        "value": 0.51,
+        "unit": "proportion",
+        "source": "Center for Retirement Research, Boston College",
+        "year": 2024
+      },
+      {
+        "metric": "Retirees who volunteer reporting high happiness",
+        "value": 0.64,
+        "detail": "64% more likely than non-volunteering retirees",
+        "unit": "relative_increase",
+        "source": "MassMutual / Kiplinger",
+        "year": 2024
+      },
+      {
+        "metric": "Retirees experiencing loneliness",
+        "value": 0.31,
+        "unit": "proportion",
+        "source": "Retirement Manifesto / surveys",
+        "year": 2024
+      }
+    ],
+
+    "volunteering_impact": [
+      {
+        "metric": "Volunteering associated with better health outcomes",
+        "value_range": [0.0366, 0.1111],
+        "detail": "Odds ratio increase of 3.66% to 11.11% for better health",
+        "unit": "odds_ratio_increase",
+        "source": "PMC5504679",
+        "year": 2017
+      },
+      {
+        "metric": "Volunteering 200+ hours/year reduces hypertension risk",
+        "value": true,
+        "source": "PMC5504679 / Carnegie Mellon study",
+        "year": 2017
+      },
+      {
+        "metric": "Volunteering 200+ hours/year increases psychological wellbeing",
+        "value": true,
+        "source": "PMC5504679",
+        "year": 2017
+      },
+      {
+        "metric": "Benefits strongest for: older adults, religious volunteering, altruistic motivation",
+        "value": true,
+        "source": "PMC10159229 umbrella review",
+        "year": 2023
+      },
+      {
+        "metric": "Stronger happiness effect for men than women",
+        "value": true,
+        "source": "PMC12628559",
+        "year": 2025
+      }
+    ],
+
+    "travel_and_growth": [
+      {
+        "metric": "College students rating widened worldview as top travel benefit",
+        "value": 0.83,
+        "unit": "proportion",
+        "source": "University of Maine study",
+        "year": 2020
+      },
+      {
+        "metric": "Extended travel increases Openness to Experience",
+        "value": true,
+        "detail": "Full-year travelers significantly higher in Openness; changes in social networks mediate personality changes",
+        "source": "Zimmermann & Neyer 2013, JPSP",
+        "year": 2013
+      },
+      {
+        "metric": "Extended travel increases Emotional Stability",
+        "value": true,
+        "source": "Zimmermann & Neyer 2013, JPSP",
+        "year": 2013
+      }
+    ],
+
+    "reading_habits": [
+      {
+        "metric": "Average books per year — United States",
+        "value": 17,
+        "unit": "books",
+        "source": "CEOWORLD Magazine 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average books per year — India",
+        "value": 16,
+        "unit": "books",
+        "source": "CEOWORLD Magazine 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Annual reading hours — US",
+        "value": 357,
+        "unit": "hours",
+        "source": "CEOWORLD Magazine 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Annual reading hours — India",
+        "value": 352,
+        "unit": "hours",
+        "source": "CEOWORLD Magazine 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Annual reading hours — UK",
+        "value": 343,
+        "unit": "hours",
+        "source": "CEOWORLD Magazine 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Annual reading hours — France",
+        "value": 305,
+        "unit": "hours",
+        "source": "CEOWORLD Magazine 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Annual reading hours — Italy",
+        "value": 278,
+        "unit": "hours",
+        "source": "CEOWORLD Magazine 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Annual reading hours — Canada",
+        "value": 232,
+        "unit": "hours",
+        "source": "CEOWORLD Magazine 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Annual reading hours — Russia",
+        "value": 223,
+        "unit": "hours",
+        "source": "CEOWORLD Magazine 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average books per year — Japan",
+        "value": 4,
+        "unit": "books",
+        "source": "CEOWORLD Magazine 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Women read more than men (Europe)",
+        "value": true,
+        "detail": "Women: ~12 books/year, Men: ~9 books/year",
+        "source": "World Population Review",
+        "year": 2024
+      }
+    ],
+
+    "financial_literacy": [
+      {
+        "metric": "Financial education improves saving likelihood",
+        "value": 0.125,
+        "detail": "12.5% increase in likelihood of saving (youth programs)",
+        "unit": "proportion_increase",
+        "source": "CFPB / Consumer Financial Protection Bureau",
+        "year": 2023
+      },
+      {
+        "metric": "Credit score improvement — Georgia (3-year post-mandate)",
+        "value": 11,
+        "unit": "credit_score_points",
+        "source": "FINRA Foundation",
+        "year": 2023
+      },
+      {
+        "metric": "Credit score improvement — Idaho",
+        "value": 16,
+        "unit": "credit_score_points",
+        "source": "FINRA Foundation",
+        "year": 2023
+      },
+      {
+        "metric": "Credit score improvement — Texas",
+        "value": 32,
+        "unit": "credit_score_points",
+        "source": "FINRA Foundation",
+        "year": 2023
+      },
+      {
+        "metric": "Average cost per outcome per participant",
+        "value": 60,
+        "unit": "USD",
+        "detail": "Classified as low-cost educational intervention",
+        "source": "CEPR / VoxEU",
+        "year": 2023
+      }
+    ]
+  },
+
+  "social_dynamics": {
+    "network_size_dunbar": [
+      {
+        "metric": "Dunbar's number (cognitive limit on relationships)",
+        "value": 150,
+        "unit": "people",
+        "source": "Dunbar 1992, Journal of Human Evolution",
+        "year": 1992
+      },
+      {
+        "metric": "Average Facebook friends",
+        "value": 500,
+        "detail": "Higher than Dunbar's 150; outer layers are weak ties",
+        "unit": "people",
+        "source": "BU Center for Mobile Communication Studies",
+        "year": 2018
+      },
+      {
+        "metric": "Dunbar's intimate circle (closest relationships)",
+        "value": 5,
+        "unit": "people",
+        "source": "Dunbar's Circles of Acquaintanceship",
+        "year": 1992
+      },
+      {
+        "metric": "Dunbar's sympathy group",
+        "value": 15,
+        "unit": "people",
+        "source": "Dunbar's Circles of Acquaintanceship",
+        "year": 1992
+      },
+      {
+        "metric": "Dunbar's active network",
+        "value": 50,
+        "unit": "people",
+        "source": "Dunbar's Circles of Acquaintanceship",
+        "year": 1992
+      }
+    ],
+
+    "weak_ties_and_jobs": [
+      {
+        "metric": "Jobs found through weak ties (Granovetter original)",
+        "value": true,
+        "detail": "Weak ties were more helpful than strong ties for finding employment in survey of 282 men",
+        "source": "Granovetter 1973, American Journal of Sociology",
+        "year": 1973
+      },
+      {
+        "metric": "Weak ties job mobility confirmed at scale (LinkedIn)",
+        "value": true,
+        "detail": "Analysis of 20M LinkedIn users confirmed weak ties lead to more job mobility",
+        "source": "Rajkumar et al. 2022, Science",
+        "year": 2022
+      },
+      {
+        "metric": "Paradox: single strong tie more valuable at margin",
+        "value": true,
+        "detail": "Most jobs come from weak ties (many ties), but a single stronger tie is more valuable per tie",
+        "source": "Gee et al. 2017, Journal of Labor Economics",
+        "year": 2017
+      }
+    ],
+
+    "mentorship": [
+      {
+        "metric": "Mentees with salary increase vs non-mentored",
+        "value_mentored": 0.25,
+        "value_not_mentored": 0.05,
+        "unit": "proportion",
+        "source": "Sun Microsystems / MentorCliq",
+        "year": 2023
+      },
+      {
+        "metric": "Promotion rate advantage (mentored vs not)",
+        "value": 5,
+        "unit": "times_more_likely",
+        "source": "Gartner / MentorCliq",
+        "year": 2023
+      },
+      {
+        "metric": "Mentors promotion rate advantage",
+        "value": 6,
+        "unit": "times_more_likely",
+        "source": "Gartner / MentorCliq",
+        "year": 2023
+      },
+      {
+        "metric": "Employees with mentors happy at work",
+        "value": 0.90,
+        "unit": "proportion",
+        "source": "CNBC / LinkedIn research",
+        "year": 2023
+      },
+      {
+        "metric": "Mentored employees less likely to leave company",
+        "value": 0.49,
+        "unit": "proportion_reduction",
+        "source": "Together Platform / Deloitte",
+        "year": 2023
+      },
+      {
+        "metric": "Professionals who currently have a mentor",
+        "value": 0.37,
+        "unit": "proportion",
+        "source": "Olivet Nazarene University / PushFar",
+        "year": 2023
+      },
+      {
+        "metric": "Fortune 500 companies with mentoring programs",
+        "value": 0.84,
+        "unit": "proportion",
+        "source": "Association for Talent Development",
+        "year": 2023
+      },
+      {
+        "metric": "Fortune 50 companies with mentoring programs",
+        "value": 1.00,
+        "unit": "proportion",
+        "source": "Association for Talent Development",
+        "year": 2023
+      },
+      {
+        "metric": "Earnings boost age 20-25 from mentorship",
+        "value": 0.15,
+        "unit": "proportion_increase",
+        "source": "Longitudinal research / MentorLoop",
+        "year": 2023
+      }
+    ],
+
+    "social_media_mental_health": [
+      {
+        "metric": "Teens using social media 3+ hours/day — doubled risk of negative mental health",
+        "value": 2.0,
+        "unit": "relative_risk",
+        "source": "JAMA 2019 / US Surgeon General Advisory 2023",
+        "year": 2023
+      },
+      {
+        "metric": "Adolescent major depressive episode prevalence increase (2005-2014)",
+        "value_2005": 0.087,
+        "value_2014": 0.113,
+        "unit": "proportion",
+        "source": "PMC4853817",
+        "year": 2014
+      },
+      {
+        "metric": "Girls who say social media hurt their mental health",
+        "value": 0.25,
+        "unit": "proportion",
+        "source": "Pew Research Center 2025",
+        "year": 2025
+      },
+      {
+        "metric": "Boys who say social media hurt their mental health",
+        "value": 0.14,
+        "unit": "proportion",
+        "source": "Pew Research Center 2025",
+        "year": 2025
+      },
+      {
+        "metric": "Relationship is correlational, not definitively causal",
+        "value": true,
+        "detail": "More rigorous longitudinal studies needed for definitive causation",
+        "source": "PMC7785056 / Stanford Law",
+        "year": 2024
+      }
+    ],
+
+    "trust_by_country": [
+      {
+        "metric": "Denmark — trust strangers",
+        "value": 0.74,
+        "unit": "proportion",
+        "source": "World Values Survey / Our World in Data",
+        "year": 2023
+      },
+      {
+        "metric": "Norway — trust strangers",
+        "value": 0.72,
+        "unit": "proportion",
+        "source": "World Values Survey",
+        "year": 2023
+      },
+      {
+        "metric": "Finland — trust strangers",
+        "value": 0.68,
+        "unit": "proportion",
+        "source": "World Values Survey",
+        "year": 2023
+      },
+      {
+        "metric": "Sweden — trust strangers",
+        "value": 0.63,
+        "unit": "proportion",
+        "source": "World Values Survey",
+        "year": 2023
+      },
+      {
+        "metric": "Switzerland — trust strangers",
+        "value": 0.59,
+        "unit": "proportion",
+        "source": "World Values Survey",
+        "year": 2023
+      },
+      {
+        "metric": "Netherlands — trust strangers",
+        "value": 0.57,
+        "unit": "proportion",
+        "source": "World Values Survey",
+        "year": 2023
+      },
+      {
+        "metric": "New Zealand — trust strangers",
+        "value": 0.57,
+        "unit": "proportion",
+        "source": "World Values Survey",
+        "year": 2023
+      },
+      {
+        "metric": "Australia — trust strangers",
+        "value": 0.49,
+        "unit": "proportion",
+        "source": "World Values Survey",
+        "year": 2023
+      },
+      {
+        "metric": "Canada — trust strangers",
+        "value": 0.47,
+        "unit": "proportion",
+        "source": "World Values Survey",
+        "year": 2023
+      },
+      {
+        "metric": "UK — trust strangers",
+        "value": 0.43,
+        "unit": "proportion",
+        "source": "World Values Survey",
+        "year": 2023
+      },
+      {
+        "metric": "Germany — trust strangers",
+        "value": 0.42,
+        "unit": "proportion",
+        "source": "World Values Survey",
+        "year": 2023
+      },
+      {
+        "metric": "United States — trust strangers",
+        "value": 0.37,
+        "unit": "proportion",
+        "source": "World Values Survey / Pew Research",
+        "year": 2023
+      },
+      {
+        "metric": "France — trust strangers",
+        "value": 0.26,
+        "unit": "proportion",
+        "source": "World Values Survey",
+        "year": 2023
+      },
+      {
+        "metric": "Colombia — trust strangers",
+        "value": 0.05,
+        "unit": "proportion",
+        "source": "World Values Survey / Our World in Data",
+        "year": 2023
+      },
+      {
+        "metric": "Brazil — trust strangers",
+        "value": 0.07,
+        "unit": "proportion",
+        "source": "World Values Survey",
+        "year": 2023
+      },
+      {
+        "metric": "Peru — trust strangers",
+        "value": 0.04,
+        "unit": "proportion",
+        "source": "World Values Survey",
+        "year": 2023
+      },
+      {
+        "metric": "High-income country median trust",
+        "value": 0.59,
+        "unit": "proportion",
+        "source": "Pew Research Center 2025",
+        "year": 2025
+      },
+      {
+        "metric": "Middle-income country median trust",
+        "value": 0.27,
+        "unit": "proportion",
+        "source": "Pew Research Center 2025",
+        "year": 2025
+      }
+    ],
+
+    "cooperation_rates": [
+      {
+        "metric": "Average cooperation rate in single-shot prisoner's dilemma",
+        "value": 0.47,
+        "detail": "Meta-analysis of 130 experiments",
+        "unit": "proportion",
+        "source": "Social surplus determines cooperation (ScienceDirect)",
+        "year": 2017
+      },
+      {
+        "metric": "Cooperation rate in real-world setting (Golden Balls TV show)",
+        "value": 0.53,
+        "detail": "574 contestants",
+        "unit": "proportion",
+        "source": "Golden Balls analysis",
+        "year": 2017
+      },
+      {
+        "metric": "Cooperation range based on payoff structure",
+        "value_range": [0.23, 0.60],
+        "detail": "Increases monotonically with mutual cooperation payoff",
+        "unit": "proportion",
+        "source": "ScienceDirect meta-analysis",
+        "year": 2017
+      },
+      {
+        "metric": "Cooperation decreases with group size",
+        "value": true,
+        "detail": "Attributed to increased strategic uncertainty in larger groups",
+        "source": "ScienceDirect 2025",
+        "year": 2025
+      }
+    ]
+  }
+}

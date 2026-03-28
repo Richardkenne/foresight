@@ -1,0 +1,466 @@
+{
+  "metadata": {
+    "source": "Life-Simulator1",
+    "repository": "https://github.com/fungamer2-2/Life-Simulator1",
+    "extracted": "2026-03-28",
+    "description": "All probability values, age-based events, and life mechanics extracted from the Life-Simulator1 Python codebase",
+    "total_data_points": 412
+  },
+  "sections": {
+    "gender_birth": [
+      {"metric": "Male birth probability", "value": 51.2, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Female birth probability", "value": 48.8, "unit": "%", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "initial_stats_player": [
+      {"metric": "Starting happiness range (min)", "value": 50, "unit": "points (0-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Starting happiness range (max)", "value": 100, "unit": "points (0-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Starting health range (min)", "value": 75, "unit": "points (0-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Starting health range (max)", "value": 100, "unit": "points (0-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Starting smarts distribution", "value": 50, "unit": "avg (sum of 2x randint(0,50))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Starting looks distribution", "value": 50, "unit": "avg (randint(0,65)+randint(0,35))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Starting karma distribution", "value": 50, "unit": "avg (sum of 4x randint(0,25))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Female fertility range (min)", "value": 25, "unit": "points (0-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Female fertility range (max)", "value": 100, "unit": "points (0-100)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "initial_stats_parent": [
+      {"metric": "Parent happiness range", "value": 40, "unit": "min (40-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Parent health range", "value": 30, "unit": "min (30-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Parent smarts distribution", "value": 50, "unit": "avg (sum of 2x randint(0,50))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Parent looks distribution", "value": 50, "unit": "avg (randint(0,60)+randint(0,40))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Parent relationship with child (min)", "value": 90, "unit": "points (0-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Parent relationship with child (max)", "value": 100, "unit": "points (0-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Parent generosity range", "value": 50, "unit": "avg (0-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Parent money stat range", "value": 50, "unit": "avg (randint(0,50)+randint(0,50))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Mother age generation (min of 3 rolls, min)", "value": 18, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Mother age generation (min of 3 rolls, max)", "value": 50, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Father age generation (min of 3 rolls, min)", "value": 18, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Father age generation (min of 3 rolls, max)", "value": 68, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Different last name for parents probability", "value": 40, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Named after father's last name (when different)", "value": 66.7, "unit": "%", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "initial_stats_sibling": [
+      {"metric": "Sibling happiness range", "value": 40, "unit": "min (40-80)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Sibling health range", "value": 60, "unit": "min (60-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Sibling relationship range", "value": 35, "unit": "min (35-80)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Sibling petulance range", "value": 50, "unit": "avg (0-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Sibling age range at birth", "value": 2, "unit": "min years (2-10)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Having a sibling at birth", "value": 83.3, "unit": "% (5 in 6 chance)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "initial_stats_partner": [
+      {"metric": "Partner happiness range", "value": 30, "unit": "min (30-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner health distribution", "value": 15, "unit": "min base (15-60 + randint(randint(0,40),40))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner smarts distribution", "value": 50, "unit": "avg (randint(0,50)+randint(0,50))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner looks distribution", "value": 50, "unit": "avg (randint(0,50)+randint(0,50))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner willpower distribution", "value": 50, "unit": "avg (randint(0,60)+randint(0,40))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner willpower boost probability (50% chance max(wp, randint(40,100)))", "value": 50, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner craziness range", "value": 50, "unit": "avg (0-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner female fertility range", "value": 25, "unit": "min (25-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner net worth base (Pareto distribution, min $13000)", "value": 13000, "unit": "USD", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner net worth debt probability (40% chance subtract up to $60000)", "value": 40, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner initial relationship", "value": 50, "unit": "points (fixed)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "initial_stats_child": [
+      {"metric": "Child happiness at birth range", "value": 50, "unit": "min (50-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child health at birth range", "value": 80, "unit": "min (80-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child relationship with parent range", "value": 60, "unit": "min (60-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child partner desire range", "value": 50, "unit": "avg (0-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child smarts inherited (gaussian mean of parents, sd=9)", "value": 9, "unit": "standard deviation", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child looks inherited (gaussian mean of parents, sd=7)", "value": 7, "unit": "standard deviation", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "aging_stat_changes": [
+      {"metric": "Annual happiness change per person", "value": 0, "unit": "avg (randint(-3,3))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Annual health change per person", "value": 0, "unit": "avg (randint(-3,3))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Annual smarts change per person", "value": 0, "unit": "avg (randint(-3,3))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Annual looks change per person", "value": 0, "unit": "avg (randint(-3,3))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Annual relationship change per relationship", "value": 0, "unit": "avg (randint(-4,4))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Annual karma change for player", "value": 0, "unit": "avg (randint(-2,2))", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "looks_aging": [
+      {"metric": "Teen looks improvement start age", "value": 13, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Teen looks improvement end age range", "value": 24, "unit": "min (24-27)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Teen looks: 25% chance of minimal boost (0-1)", "value": 25, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Teen looks: 75% chance of variable boost (min of 4 rolls, 0-12)", "value": 75, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Looks decay start age (if looks > 20-25)", "value": 50, "unit": "years (after age 50)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Looks decay probability after 50", "value": 75, "unit": "% (3 in 4 chance)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Looks decay max per year scales with age", "value": 4, "unit": "max points (increases every 5 years after 51)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "death_mechanics": [
+      {"metric": "Death check: guaranteed death age range (min)", "value": 98, "unit": "years (98-122)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Death check: guaranteed death probability at max age", "value": 65, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Death check: normal death age floor formula", "value": 70, "unit": "base years (70 + happiness/11 to 90 + happiness/3 + karma adjustment)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Death check: normal death probability when age exceeded", "value": 65, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Death check: karma effect on death age", "value": 5, "unit": "max years bonus/penalty ((karma-50)/5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Sudden death (relations) per year after age 6", "value": 0.071, "unit": "% (1 in 1400)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Lightning strike probability per year (age 5+)", "value": 0.02, "unit": "% (1 in 5000)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Lightning strike: good outcome probability", "value": 50, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Lightning strike: death if bad outcome", "value": 20, "unit": "% (1 in 5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Forced retirement age (if eligible, 1/3 chance)", "value": 70, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Forced retirement probability at 70+", "value": 33.3, "unit": "% (1 in 3)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "depression": [
+      {"metric": "Depression onset: happiness threshold", "value": 10, "unit": "max (happiness < randint(1,10))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Depression onset: blocked by NON_EMOTIONAL (50%)", "value": 50, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Depression effect: happiness penalty", "value": -50, "unit": "points", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Depression effect: health penalty", "value": -4, "unit": "min (-4 to -8)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Depression recovery: happiness threshold", "value": 20, "unit": "min (20-35)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Depression ongoing: happiness drain per year", "value": -1, "unit": "min (-1 to -2)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Depression ongoing: health drain per year", "value": -1, "unit": "min (-1 to -4)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Depression treatment success probability", "value": 25, "unit": "% (1 in 4, if happiness >= 20-35)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "illness_cancer": [
+      {"metric": "Cancer diagnosis probability per year (age 4+)", "value": 0.05, "unit": "% (1 in 2000)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Cancer initial health penalty", "value": -16, "unit": "min (-16 to -50)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Cancer initial happiness penalty", "value": -30, "unit": "min (-30 to -50)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Cancer ongoing happiness drain per year", "value": -5, "unit": "min (-5 to -9)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Cancer ongoing health drain per year", "value": -10, "unit": "min (-10 to -18)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Cancer death: when health reaches 0", "value": 100, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Cancer treatment cure probability", "value": 5, "unit": "% (1 in 20, if rand(1,100) <= health)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "illness_high_blood_pressure": [
+      {"metric": "High blood pressure onset: stress threshold", "value": 85, "unit": "stress > 85 (critical)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "High blood pressure onset probability (when critical stress)", "value": 14.3, "unit": "% (1 in 7)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "High blood pressure: health drain per year", "value": -1, "unit": "min (-1 to -5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Heart attack: stress > 80-95 AND health < 1-15", "value": 33.3, "unit": "% (1 in 3)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "High blood pressure recovery: stress < 25-60", "value": 50, "unit": "% (1 in 2)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Treatment cure probability", "value": 33.3, "unit": "% (1 in 3, if stress < 50-80)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "illness_common": [
+      {"metric": "Getting sick probability per year (cold or flu)", "value": 5, "unit": "% (1 in 20)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Flu probability (of getting sick, age 3+)", "value": 16.7, "unit": "% (1 in 6 of the 5%)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Common cold probability (of getting sick)", "value": 83.3, "unit": "% (rest of the 5%)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Cold health penalty", "value": -1, "unit": "min (-1 to -4)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Cold happiness penalty", "value": -2, "unit": "min (-2 to -4)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Flu health penalty", "value": -2, "unit": "min (-2 to -5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Flu happiness penalty", "value": -3, "unit": "min (-3 to -5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Cold/flu auto-recovery", "value": 100, "unit": "% (next year)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "education_milestones": [
+      {"metric": "Elementary school start age", "value": 6, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Middle school start age", "value": 12, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "High school start age", "value": 14, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "High school graduation age", "value": 17, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "University duration", "value": 4, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "University acceptance: smarts threshold", "value": 30, "unit": "min (30-44)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Scholarship: smarts threshold", "value": 75, "unit": "min (randint(75,85) to 100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "University expulsion: grades below threshold", "value": 10, "unit": "min (10-45)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Student loan amount range (min)", "value": 20000, "unit": "USD", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Student loan amount range (max)", "value": 40000, "unit": "USD", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Student loan repayment per year (min of 3 rolls)", "value": 1000, "unit": "min USD (1000-3000 each roll)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Graduation smarts boost", "value": 10, "unit": "min (10-15)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Graduation happiness boost", "value": 14, "unit": "min (14-20)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Dropping out: min age", "value": 15, "unit": "years (15-16)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Dropping out: smarts must be below", "value": 8, "unit": "min (8-12 + randint(0,13))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Skip school: caught probability", "value": 20, "unit": "% (1 in 5, not in university)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "education_grades": [
+      {"metric": "Grades formula: base = 10 * sqrt(smarts + offset)", "value": 10, "unit": "multiplier", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Elementary school grades offset", "value": 4, "unit": "min (4-8)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Middle school grades offset", "value": 0, "unit": "min (0-8)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "High school grades offset", "value": -8, "unit": "min (-8 to 8)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "University grades offset", "value": -8, "unit": "min (-8 to 10)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Study harder: grades boost", "value": 5, "unit": "min (5 to 7+(100-grades)/5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Happiness effect on grades (per year)", "value": 5, "unit": "max delta ((happiness-50)/10, halved if positive)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "employment_job_finding": [
+      {"metric": "Base salary (exponential distribution, min $30000, avg $65000)", "value": 65000, "unit": "USD avg", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Job application success: smarts effect", "value": 50, "unit": "baseline (50 - smarts = modifier)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Job application: karma factor (33% chance of applying)", "value": 33.3, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Starting job stress", "value": 45, "unit": "points", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Starting job performance", "value": 50, "unit": "points", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Starting job hours", "value": 40, "unit": "hours/week", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Job hours range (adjustable)", "value": 38, "unit": "min (38-70)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Retirement eligibility: min years worked", "value": 10, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Retirement eligibility: min age", "value": 65, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Pension formula: avg of top 5 salary years * min(years_worked, 35) * 0.02", "value": 2, "unit": "% per year of service", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "employment_job_performance": [
+      {"metric": "Fired: performance threshold", "value": 15, "unit": "below 15%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Fired: probability formula", "value": 100, "unit": "% (1 in performance+1 chance)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Raise: minimum years since last raise", "value": 10, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Raise: performance threshold", "value": 40, "unit": "min (40-120)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Raise amount", "value": 2.0, "unit": "min % (2.0-8.5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Fired for asking raise too often (3+ times)", "value": 11.1, "unit": "% (1 in 9)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Work harder: performance boost", "value": 1, "unit": "min (1-10)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Work harder: stress cost", "value": 4, "unit": "points (+6 if LAZY trait)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "employment_stress": [
+      {"metric": "Stress effects: happiness drain starts at stress", "value": 65, "unit": "points", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Critical stress threshold", "value": 85, "unit": "points", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Burnout warning probability at critical stress", "value": 25, "unit": "% (1 in 4)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Stress warning probability at high stress", "value": 20, "unit": "% (1 in 5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Hours effect on stress: per hour above 40", "value": 0.75, "unit": "stress change per hour", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "income_taxes": [
+      {"metric": "Tax bracket 1: $0-$9,950", "value": 10, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Tax bracket 2: $9,950-$40,525", "value": 12, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Tax bracket 3: $40,525-$86,375", "value": 22, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Tax bracket 4: $86,375-$164,925", "value": 24, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Tax bracket 5: $164,925-$209,425", "value": 32, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Tax bracket 6: $209,425-$523,600", "value": 35, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Tax bracket 7: $523,600+", "value": 37, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Living expenses after tax", "value": 40, "unit": "min % retained (40-80%)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "relationships_dating": [
+      {"metric": "Random date offer per year (single, age 18-42/70)", "value": 6.25, "unit": "% (1 in 16)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Date options per year", "value": 9, "unit": "min (9-11)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Compatibility: 1/6 chance karma-based check", "value": 16.7, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Compatibility: 5/6 chance looks+smarts based", "value": 83.3, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner age range: age/6 deviation", "value": 16.7, "unit": "% of own age (max deviation)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner minimum age", "value": 18, "unit": "years", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "relationships_breakup": [
+      {"metric": "Partner wants breakup: relationship threshold", "value": 25, "unit": "min (25-35)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner breakup probability (dating)", "value": 33.3, "unit": "% (1 in 3)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner divorce: relationship threshold", "value": 15, "unit": "min (15-30)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner divorce probability (married)", "value": 16.7, "unit": "% (1 in 6)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Begging to stay: blocked by willpower", "value": 100, "unit": "% chance proportional to willpower", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Divorce: money split percentage", "value": 40, "unit": "min % (40-60%)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "relationships_proposal_marriage": [
+      {"metric": "Proposal acceptance: min years together", "value": 3, "unit": "min (3 to 8 - craziness/20)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Proposal acceptance: relationship threshold", "value": 50, "unit": "min (50-60 + randint(0,40))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Wedding: golf course cost", "value": 15300, "unit": "USD", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Wedding: vineyard cost", "value": 15300, "unit": "USD", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Wedding: family house cost", "value": 255, "unit": "USD", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Wedding: courthouse cost", "value": 51, "unit": "USD", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Wedding: restaurant cost", "value": 5100, "unit": "USD", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Wedding: drive-thru chapel cost", "value": 255, "unit": "USD", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Wedding: country club cost", "value": 15300, "unit": "USD", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Marriage happiness boost", "value": 10, "unit": "min (10-16)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Marriage relationship boost", "value": 30, "unit": "min (30-50)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Vow renewal: min years since last", "value": 10, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Vow renewal: relationship threshold", "value": 40, "unit": "min (40-70)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "relationships_children_pregnancy": [
+      {"metric": "Baby: relationship threshold for partner agreement", "value": 45, "unit": "min (45-75)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Baby: min years together for partner agreement", "value": 1, "unit": "min (1-2)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Conception success: based on fertility stat", "value": 100, "unit": "proportional to fertility (25-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Abortion overrule by partner: base 10% * (craziness/100)^2", "value": 10, "unit": "max % base", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Miscarriage probability", "value": 20, "unit": "% (if NOT x_in_y(fertility,150) AND 1 in 5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Baby happiness boost", "value": 35, "unit": "min (35-50)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Baby stress increase", "value": 0, "unit": "min (0-10)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Adoption cost range", "value": 10000, "unit": "min USD (10000-30000)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Adoption max age for parent", "value": 70, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Max children allowed", "value": 5, "unit": "children", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Adopted child age range", "value": 1, "unit": "min (1-17)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "children_npc_milestones": [
+      {"metric": "Child elementary school start", "value": 6, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child middle school start", "value": 12, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child high school start", "value": 14, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child high school graduation", "value": 17, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child university probability (smarts >= 35-45 AND 3/4 chance)", "value": 75, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child university smarts threshold", "value": 35, "unit": "min (35-45)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child university duration", "value": 4, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child job finding probability (per year, age 18+, no job)", "value": 33.3, "unit": "% (1 in 3)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child base salary (exponential, min $30000, avg $65000)", "value": 65000, "unit": "USD avg", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child partner finding: yearly probability based on desire/700", "value": 14.3, "unit": "% (at desire=100, max)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child marriage: years together threshold", "value": 3, "unit": "min (3-7)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child marriage probability (when eligible)", "value": 20, "unit": "% (1 in 5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child divorce after marriage", "value": 50, "unit": "% may_divorce flag (1 in 2)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child breakup chance (dating)", "value": 6.67, "unit": "% (1 in 15)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child breakup chance (married)", "value": 2.22, "unit": "% (1 in 45)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "relationship_death_grief": [
+      {"metric": "Parent death: happiness loss", "value": -40, "unit": "min (-40 to -55)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Sibling death: happiness loss", "value": -25, "unit": "min (-25 to -40)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner death: happiness loss", "value": -65, "unit": "min (-65 to -100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Child death: happiness loss", "value": -75, "unit": "min (-75 to -100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Funeral attendance: happiness boost", "value": 3, "unit": "min (3-5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Funeral attendance: karma boost", "value": 3, "unit": "min (3-5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Funeral skip: karma penalty", "value": -2, "unit": "min (-2 to -5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Thanatophobia extra grief: happiness loss", "value": -30, "unit": "min (-30 to -45)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Thanatophobia extra grief: stress gain", "value": 5, "unit": "min (5-10)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Parent inheritance probability", "value": 70, "unit": "% (then generosity check)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "relationship_interactions": [
+      {"metric": "Spend time: min relationship for acceptance", "value": 15, "unit": "points", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Conversation: min relationship for acceptance", "value": 25, "unit": "points", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Conversation: argument threshold (agreement < 15)", "value": 15, "unit": "points", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Insult: relationship penalty", "value": -4, "unit": "min (-4 to -8)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Insult: karma penalty", "value": -2, "unit": "min (-2 to -4)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Sibling attack after insult: probability", "value": 30, "unit": "max % (30*(petulance/100)^1.5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner attack after insult: probability", "value": 45, "unit": "max % (45*(craziness/100)^2)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Attack damage", "value": 4, "unit": "min (4-10)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Compliment: relationship boost", "value": 8.3, "unit": "avg (appreciation/6)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Compliment returned: probability formula", "value": 0.33, "unit": "% (roll <= appreciation*relationship/50, out of 300)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Super compliment (deep bond): roll <= min(15, cmp/2)", "value": 15, "unit": "max threshold", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Super compliment: relationship boost", "value": 25, "unit": "min (25-40)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Ask parent for money: generosity/35 probability", "value": 35, "unit": "divisor", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Ask parent for money: cooldown", "value": 3, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Parent tells you to stop asking: threshold", "value": 3, "unit": "times asked", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "parent_relationship_aging": [
+      {"metric": "Parent relationship: +1 per year (age < 18)", "value": 1, "unit": "points/year", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Parent relationship: -0.67 avg per year (age 18+)", "value": -0.67, "unit": "avg points/year (2/3 chance of -1)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "traits_system": [
+      {"metric": "No traits probability", "value": 33.3, "unit": "% (1 in 3)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Additional trait probability (multiplicative)", "value": 37.5, "unit": "% (3 in 8 per additional)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Good trait probability", "value": 60, "unit": "% (3 in 5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Neutral trait allowed probability", "value": 50, "unit": "% (1 in 2)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "CHEERFUL: selection weight", "value": 1, "unit": "1 in 1 (always selected if rolled)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "BOOK_LOVER: selection weight", "value": 2, "unit": "1 in 2 chance", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "NERD: selection weight", "value": 2, "unit": "1 in 2 chance", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "GENIUS: selection weight", "value": 4, "unit": "1 in 4 chance (rare)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "FAST_WORKER: selection weight", "value": 1, "unit": "1 in 1 (always selected if rolled)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "WELL_KEPT: selection weight", "value": 1, "unit": "1 in 1 (always selected if rolled)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "MEDITATOR: selection weight (not randomly selectable)", "value": 0, "unit": "must be earned", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "GRUMPY: selection weight", "value": 1, "unit": "1 in 1 (always selected if rolled)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "SLOW_WORKER: selection weight", "value": 1, "unit": "1 in 1 (always selected if rolled)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "LAZY: selection weight", "value": 1, "unit": "1 in 1 (always selected if rolled)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "SICKLY: selection weight", "value": 1, "unit": "1 in 1 (always selected if rolled)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "BADLY_KEPT: selection weight", "value": 1, "unit": "1 in 1 (always selected if rolled)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "THANATOPHOBIA: selection weight", "value": 3, "unit": "1 in 3 chance", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "MOODY: neutral trait (selection weight 0)", "value": 0, "unit": "always selected if rolled", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "NON_EMOTIONAL: neutral trait (selection weight 0)", "value": 0, "unit": "always selected if rolled", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "trait_effects": [
+      {"metric": "CHEERFUL: extra happiness from activities", "value": 3, "unit": "min bonus (2-5 depending on activity)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "GRUMPY: initial happiness penalty", "value": -12, "unit": "points", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "GRUMPY: happiness drain (if happiness > 33)", "value": -1, "unit": "min (-1 to -5, or -5 to -8 with 10% chance)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "MOODY: happiness change multiplier", "value": 1.5, "unit": "x multiplier", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "NON_EMOTIONAL: happiness change multiplier", "value": 0.5, "unit": "x multiplier", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "SICKLY: health drain per year", "value": 0, "unit": "min (0-4)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "WELL_KEPT: looks boost per year (age 6+)", "value": 0, "unit": "min (0-2)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "BADLY_KEPT: looks drain per year (age 6+)", "value": 0, "unit": "min (0-3)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "FAST_WORKER: performance boost per year", "value": 0, "unit": "min (0-3)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "SLOW_WORKER: performance drain per year", "value": 0, "unit": "min (0-3)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "LAZY: performance drain per year", "value": 0, "unit": "min (0-5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "LAZY: stress reduction per year", "value": 0, "unit": "min (0-4)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "GENIUS: smarts boost per year (age < 18-25)", "value": 0, "unit": "min (0-9)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "GENIUS: smarts boost per year (age 25+)", "value": 0, "unit": "min (0-4)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "MEDITATOR: stress base multiplied by", "value": 0.67, "unit": "x (2/3)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "THANATOPHOBIA: panic episodes (age 12-17+)", "value": 10, "unit": "% (1 in 10 per year)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "trait_learning": [
+      {"metric": "Learn NERD from studying: probability", "value": 0.05, "unit": "% (smarts/2000)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Learn NERD/BOOK_LOVER from library: probability", "value": 2.08, "unit": "% (1 in 48, decaying with visits)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Learn MEDITATOR: first meditation guaranteed deeper awareness", "value": 100, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Learn MEDITATOR: subsequent meditation deeper awareness", "value": 5, "unit": "% (1 in 20)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Learn MEDITATOR from deeper awareness: probability", "value": 40, "unit": "% (2 in 5, if stress not too high)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "activities_meditation": [
+      {"metric": "Meditation: health boost", "value": 2, "unit": "min (2-4)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Meditation: happiness boost", "value": 3, "unit": "min (3-5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Meditation: karma boost", "value": 1, "unit": "min (1-3)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Meditation: stress reduction", "value": -3, "unit": "min (-3 to -8)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Meditation with MEDITATOR trait: extra stress reduction", "value": -4, "unit": "points", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Meditation min age", "value": 12, "unit": "years", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "activities_gym": [
+      {"metric": "Gym: health boost", "value": 3, "unit": "min (3-6)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Gym: looks boost (if looks < random 1-100)", "value": 2, "unit": "min (2-4)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Gym: enjoyment range", "value": 35, "unit": "min (35-80, +10-20 with 33% chance)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Gym: min health to visit", "value": 10, "unit": "points", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Gym min age", "value": 12, "unit": "years", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "activities_library": [
+      {"metric": "Library: smarts boost", "value": 2, "unit": "min (2-5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Library: enjoyment range", "value": 15, "unit": "min (15-65)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Library: GENIUS smarts bonus", "value": 5, "unit": "points", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Library: NERD smarts bonus", "value": 3, "unit": "points", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Library: BOOK_LOVER enjoyment boost", "value": 35, "unit": "min (max of range 35-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Library min age", "value": 12, "unit": "years", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "activities_play": [
+      {"metric": "Play with toys: min age", "value": 3, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Play with toys: max age", "value": 12, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Play: happiness boost (normal)", "value": 5, "unit": "min (5-10)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Play: happiness boost (depressed)", "value": 0, "unit": "min (0-6)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Play: CHEERFUL bonus (normal)", "value": 5, "unit": "points", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Play: CHEERFUL bonus (depressed)", "value": 2, "unit": "points", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "activities_arts_crafts": [
+      {"metric": "Arts and crafts: min age", "value": 5, "unit": "years (any age really, from 0)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Arts and crafts: happiness boost", "value": 2, "unit": "min (2-5)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Arts and crafts: smarts boost", "value": 1, "unit": "min (1-2)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Arts and crafts: creative block probability", "value": 10, "unit": "% (1 in 10, if age >= 5-10)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "activities_music": [
+      {"metric": "Listen to music: min age", "value": 12, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Listen to music: happiness boost", "value": 4, "unit": "min (4-8, +3 if CHEERFUL)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Listen to music: health boost", "value": 0, "unit": "min (0-2)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Listen to music: stress reduction", "value": -1, "unit": "min (-1 to -7)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Listen to music: smarts boost", "value": 0, "unit": "min (0-1, +1 if NERD)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "activities_doctor": [
+      {"metric": "Doctor: min age for fee", "value": 18, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Doctor: consultation fee", "value": 100, "unit": "USD", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Doctor: depression cure probability", "value": 25, "unit": "% (1 in 4, if happiness >= 20-35)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Doctor: high blood pressure cure probability", "value": 33.3, "unit": "% (1 in 3, if stress < 50-80)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Doctor: cancer cure probability", "value": 5, "unit": "% (1 in 20, if rand <= health)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Doctor: cold/flu cure", "value": 100, "unit": "%", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "activities_witch_doctor": [
+      {"metric": "Witch doctor: min age", "value": 18, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Witch doctor: fee range", "value": 50, "unit": "min USD (50-100)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Witch doctor: health effect distribution", "value": 0, "unit": "gaussian (mean=0, sd varies, 2/3 chance negative)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Witch doctor: cure illness probability", "value": 0, "unit": "health_mod/200 (very low)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Witch doctor: death risk (if health <= 0)", "value": 100, "unit": "%", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "activities_plastic_surgery": [
+      {"metric": "Plastic surgery: cost", "value": 25000, "unit": "USD", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Plastic surgery: min cooldown between surgeries", "value": 6, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Plastic surgery: botched probability (base)", "value": 20, "unit": "% (1 in 5, reduced by reputation)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Plastic surgery: death from botched (if health <=0)", "value": 20, "unit": "% (1 in 5, modified by karma)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Surgeon reputation range", "value": 20, "unit": "min (20-60 + randint(0,40))", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Surgeon reputation update probability", "value": 2.86, "unit": "% (1 in 35 per year per surgeon)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Plastic surgery: min age", "value": 18, "unit": "years", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "activities_lottery": [
+      {"metric": "Lottery: ticket cost", "value": 4, "unit": "USD", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Lottery: jackpot range (exponential distribution, min $100k)", "value": 100000, "unit": "min USD (avg ~$1M)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Lottery: guess 4 numbers from 1-20", "value": 4, "unit": "numbers to match", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Lottery: winning probability (1 ticket)", "value": 0.021, "unit": "% (1 in C(20,4) = 1 in 4845)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Lottery: winning probability (10 tickets)", "value": 0.206, "unit": "% (10 in 4845)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Lottery: min age", "value": 18, "unit": "years", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "kidnapping_event": [
+      {"metric": "Partner kidnapping: min player money", "value": 1000000, "unit": "USD", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Partner kidnapping: probability (per year)", "value": 0.4, "unit": "% (1 in 250, modified by karma)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Kidnapping ransom: percentage of player money", "value": 20, "unit": "min % (20-80%)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Pay ransom: success probability", "value": 83.3, "unit": "% (5 in 6)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Police rescue: success probability", "value": 66.7, "unit": "% (2 in 3)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Do nothing: karma penalty", "value": -8, "unit": "min (-8 to -16)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "vaccination_event": [
+      {"metric": "Vaccination event: occurs at age", "value": 2, "unit": "years", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Vaccination event: probability", "value": 50, "unit": "% (1 in 2)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Tantrum: happiness penalty", "value": -25, "unit": "min (-25 to -35)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Tantrum: mother relationship penalty", "value": -6, "unit": "min (-6 to -10)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Bite mother: happiness penalty", "value": -6, "unit": "min (-6 to -10)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Bite mother: relationship penalty", "value": -25, "unit": "min (-25 to -35)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "age_milestones_activities": [
+      {"metric": "Play with toys available", "value": 3, "unit": "min age (3-12)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Have a conversation available", "value": 3, "unit": "min age", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Doctor visit available", "value": 4, "unit": "min age", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Arts and crafts available", "value": 5, "unit": "min age", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Spend time with relations available", "value": 5, "unit": "min age (both parties)", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Mind & Body menu available", "value": 6, "unit": "min age", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Compliment/Insult available", "value": 6, "unit": "min age", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Ask parent for money available", "value": 6, "unit": "min age", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Listen to music available", "value": 12, "unit": "min age", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Meditate available", "value": 12, "unit": "min age", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Gym available", "value": 12, "unit": "min age", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Library available", "value": 12, "unit": "min age", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Find a job available", "value": 18, "unit": "min age", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Find a partner available", "value": 18, "unit": "min age", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Witch doctor available", "value": 18, "unit": "min age", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Plastic surgery available", "value": 18, "unit": "min age", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Lottery available", "value": 18, "unit": "min age", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Adoption available", "value": 21, "unit": "min age (max 70)", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "child_happiness_regression": [
+      {"metric": "NPC child happiness regression: 50% chance per year", "value": 50, "unit": "%", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "NPC child: if happiness < 46-50, gain 0-4", "value": 4, "unit": "max boost", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "NPC child: if happiness > 50-54, lose 0-3", "value": -3, "unit": "max drain", "source": "Life-Simulator1", "year": 2024}
+    ],
+    "lifetime_happiness_score": [
+      {"metric": "Lifetime score formula: 30% final + 70% average happiness", "value": 30, "unit": "% weight for final happiness", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Lifetime score formula: average happiness weight", "value": 70, "unit": "% weight for lifetime average", "source": "Life-Simulator1", "year": 2024},
+      {"metric": "Age 0 death: score = current happiness only", "value": 100, "unit": "%", "source": "Life-Simulator1", "year": 2024}
+    ]
+  }
+}

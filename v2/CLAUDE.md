@@ -25,6 +25,16 @@
 - `src/lib/templates.ts` — all template data
 - `src/app/api/generate/route.ts` — Claude API endpoint
 
+## Data Freshness Rules (NON-NEGOTIABLE)
+- **MAI usare dati più vecchi di 2-3 anni** — ogni data point deve essere 2023+ (salvo dati storici ancora validi: testi sacri, tabelle mortalità, serie storiche in corso).
+- Quando aggiungi dati, verifica l'anno. Se la fonte è pre-2022 → cerca una versione aggiornata o segnala "outdated".
+- Eccezioni: Bibbia, Corano, leggi fisiche, dati storici dichiarati come tali (es. "S&P 500 dal 1871").
+
+## Localhost Rules (NON-NEGOTIABLE)
+- **MAI dare un URL localhost senza prima verificare** — avvia il server (`npm run dev`), aspetta il boot, verifica con `curl` che risponda 200, e SOLO ALLORA dì all'utente di aprirlo.
+- Se il server non parte o non risponde → debugga e risolvi PRIMA di comunicare l'URL.
+- Vale per TUTTI gli endpoint (pagine, API, ecc.).
+
 ## Deploy Rules (NON-NEGOTIABLE — MASSIMA PRIORITA)
 - **MAI MAI MAI fare git push** — ogni push triggera un build Vercel che costa soldi reali ($25+ al mese).
 - Push SOLO quando l'utente dice ESPLICITAMENTE "pusha", "push", "deploy", o "metti online".
