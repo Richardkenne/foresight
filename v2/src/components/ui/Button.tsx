@@ -27,13 +27,13 @@ export default function Button({
   className = '',
   ...props
 }: ButtonProps) {
-  const sizeClass = size === 'sm' ? 'px-3 py-1.5 text-[11px]' : 'px-4 py-2 text-[13px]';
+  const sizeClass = size === 'sm' ? 'px-4 py-2 text-[13px]' : 'px-5 py-2.5 text-[14px]';
 
   return (
     <button
       disabled={disabled || loading}
       className={`
-        ${sizeClass} rounded-[8px] font-semibold
+        ${sizeClass} rounded-[10px] font-semibold
         transition-all duration-150 cursor-pointer
         disabled:opacity-30 disabled:cursor-not-allowed
         active:scale-[0.97]
@@ -44,7 +44,7 @@ export default function Button({
     >
       {loading ? (
         <span className="flex items-center gap-2">
-          <Spinner size={size === 'sm' ? 12 : 14} />
+          <Spinner size={size === 'sm' ? 14 : 16} />
           {children}
         </span>
       ) : children}

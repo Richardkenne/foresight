@@ -1024,13 +1024,22 @@ function callGroq(systemPrompt: string, userMsg: string): Promise<unknown> {
   });
 }
 
+// ============ CONTEXT TAGS ROUTING ============
+import { getTagKeywords, getTagPromptModifier, type ContextTags } from '@/lib/context-tags';
+
 // ============ HANDLER ============
 export async function POST(request: NextRequest) {
   try {
-    const { scenario } = await request.json();
+    const { scenario, tags } = await request.json() as { scenario: string; tags?: ContextTags };
     if (!scenario) return NextResponse.json({ error: 'Missing scenario' }, { status: 400 });
 
-    const detectedCountries = detectCountries(scenario);
+    // Inject tag keywords into scenario for better routing
+    const tagKeywords = tags ? getTagKeywords(tags) : [];
+    const enrichedScenario = tagKeywords.length > 0
+      ? `${scenario} [context: ${tagKeywords.join(', ')}]`
+      : scenario;
+
+    const detectedCountries = detectCountries(enrichedScenario);
 
     // RAG search (primary) + keyword matching (fallback)
     let kbContext: string | null = null;
@@ -1039,7 +1048,7 @@ export async function POST(request: NextRequest) {
     console.log(`[API] RAG ready: ${ragReady}`);
     if (ragReady) {
       try {
-        kbContext = await ragSearch(scenario, 30);
+        kbContext = await ragSearch(enrichedScenario, 30);
         if (kbContext) {
           dataSource = 'rag';
           console.log(`[API] RAG returned ${kbContext.length} chars`);
@@ -1052,7 +1061,7 @@ export async function POST(request: NextRequest) {
     }
     if (!kbContext) {
       const kb = loadKB();
-      kbContext = matchKB(kb, scenario);
+      kbContext = matchKB(kb, enrichedScenario);
     }
 
     // Fetch all live data in parallel — none block on failure
@@ -1128,7 +1137,14 @@ desc MUST include a specific number/stat, not generic text.`;
       liveStr += `\n\nVERIFIED REAL PROBABILITIES (confirms the sacred patterns above — use these exact numbers):\n${realProbs}`;
     }
 
-    // Dynamic part — changes per request (live data, KB context)
+    // CONTEXT TAGS: structured routing modifiers
+    const tagModifier = tags ? getTagPromptModifier(tags) : '';
+    if (tagModifier) {
+      liveStr += tagModifier;
+      console.log(`[API] Context tags active: ${Object.entries(tags || {}).filter(([,v]) => v).map(([k,v]) => `${k}=${v}`).join(', ')}`);
+    }
+
+    // Dynamic part — changes per request (live data, KB context, tags)
     const dynamicPrompt = liveStr ? liveStr.trim() : '';
 
     const userMsg = `Scenario: "${scenario}"\n\nUSE THESE DATA POINTS:\n${kbContext || 'Use Tier S/A sources.'}\n\nReturn ONLY JSON.`;

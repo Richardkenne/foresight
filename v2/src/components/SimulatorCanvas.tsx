@@ -18,16 +18,19 @@ import {
 import dagre from 'dagre';
 
 import SimNodeComponent from './nodes/SimNode';
+import ContextNodeComponent from './nodes/ContextNode';
 import AnimatedEdgeComponent from './edges/AnimatedEdge';
 import TopBar from './TopBar';
 import Dashboard from './Dashboard';
 import Spinner from './ui/Spinner';
 import { createPersonSVG, type ParticleData } from './Particle';
 import { TEMPLATES, TEMPLATE_KEYWORDS, type TemplateNode, type TemplateEdge } from '@/lib/templates';
+import type { ContextTags } from '@/lib/context-tags';
+import { saveToHistory, createThumbnail, type HistoryEntry } from '@/lib/history';
 import { SimulatorDataflow } from '@/lib/dataflow-engine';
 import { applyRealProbabilities } from '@/lib/probability-matcher';
 
-const nodeTypes = { simNode: SimNodeComponent };
+const nodeTypes = { simNode: SimNodeComponent, contextNode: ContextNodeComponent };
 const edgeTypes = { animated: AnimatedEdgeComponent };
 
 // Cut line indicator — vertical dashed line with scissors icon
@@ -108,10 +111,11 @@ function getLayoutedElements(
 ): { nodes: RFNode[]; edges: RFEdge[] } {
   const g = new dagre.graphlib.Graph();
   g.setDefaultEdgeLabel(() => ({}));
-  g.setGraph({ rankdir: direction, nodesep: 80, ranksep: 220, edgesep: 40 });
+  g.setGraph({ rankdir: direction, nodesep: 120, ranksep: 300, edgesep: 60 });
 
   nodes.forEach((node) => {
-    g.setNode(node.id, { width: 170, height: 100 });
+    const isContext = node.type === 'contextNode';
+    g.setNode(node.id, { width: isContext ? 240 : 220, height: isContext ? 200 : 110 });
   });
 
   edges.forEach((edge) => {
@@ -135,7 +139,11 @@ function getLayoutedElements(
 }
 
 // Convert template data to React Flow format
-function templateToFlow(templateNodes: TemplateNode[], templateEdges: TemplateEdge[]) {
+function templateToFlow(
+  templateNodes: TemplateNode[],
+  templateEdges: TemplateEdge[],
+  context?: { photoUrl?: string; scenario?: string }
+) {
   const rfNodes: RFNode[] = templateNodes.map((n) => ({
     id: String(n.id),
     type: 'simNode',
@@ -169,6 +177,32 @@ function templateToFlow(templateNodes: TemplateNode[], templateEdges: TemplateEd
     };
   });
 
+  // Add context node (photo + scenario) if provided
+  if (context?.photoUrl || context?.scenario) {
+    const contextId = 'ctx-0';
+    rfNodes.unshift({
+      id: contextId,
+      type: 'contextNode',
+      position: { x: 0, y: 0 },
+      data: {
+        photoUrl: context.photoUrl,
+        scenario: context.scenario || '',
+      },
+    });
+    // Connect context node to all start nodes (nodes with no incoming edges)
+    const hasIncoming = new Set(rfEdges.map(e => e.target));
+    const startIds = rfNodes.filter(n => n.id !== contextId && !hasIncoming.has(n.id)).map(n => n.id);
+    for (const sid of startIds) {
+      rfEdges.unshift({
+        id: `e-ctx-${sid}`,
+        source: contextId,
+        target: sid,
+        type: 'animated',
+        style: { stroke: '#d4d4d8', strokeWidth: 1.5 },
+      });
+    }
+  }
+
   return getLayoutedElements(rfNodes, rfEdges);
 }
 
@@ -186,6 +220,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
   const [scenario, setScenario] = useState('');
   const [generating, setGenerating] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+  const contextTagsRef = useRef<ContextTags>({});
+  const [photoPreview, setPhotoPreview] = useState<string | null>(null);
 
   // Simulation state
   const [simRunning, setSimRunning] = useState(false);
@@ -435,6 +471,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
   const loadTemplate = useCallback((key: string, autoSim = false) => {
     const t = TEMPLATES[key];
     if (!t) return;
+    setPhotoPreview(null); // Clear photo when loading template
     // Reset stats before stopSim so dashboard doesn't auto-open
     statsRef.current = { total: 0, success: 0, blocked: 0 };
     setSimStats({ total: 0, success: 0, blocked: 0 });
@@ -531,7 +568,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       const res = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ scenario: input }),
+        body: JSON.stringify({ scenario: input, tags: contextTagsRef.current }),
       });
       if (!res.ok) throw new Error('Server error');
       const flow = await res.json();
@@ -545,11 +582,27 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       particlesRef.current = [];
       setParticles([]);
       const tNodes: TemplateNode[] = flow.nodes.map((n: TemplateNode) => ({ ...n, source: n.source || 'AI generated' }));
-      const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges);
+      const ctx = photoPreview ? { photoUrl: photoPreview, scenario: input } : undefined;
+      const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges, ctx);
       setNodes(ln);
       setEdges(le);
+
+      // Save to history
+      const historyEntry: Omit<HistoryEntry, 'id' | 'timestamp'> = {
+        scenario: input,
+        tags: contextTagsRef.current ? { ...contextTagsRef.current } : undefined,
+        flowData: { nodes: flow.nodes, edges: flow.edges },
+      };
+      if (photoPreview) {
+        createThumbnail(photoPreview).then(thumb => {
+          saveToHistory({ ...historyEntry, photoThumbnail: thumb || undefined });
+        });
+      } else {
+        saveToHistory(historyEntry);
+      }
+
       setTimeout(() => {
-        fitView({ padding: 0.2, duration: 400 });
+        fitView({ padding: 0.15, duration: 400 });
         // Auto-start simulation after generate
         setTimeout(() => simulate(), 500);
       }, 100);
@@ -793,12 +846,19 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     nodeValuesRef.current = {};
     setNodeValues({});
 
-    // Hide all nodes and edges for sequential reveal
+    // Hide all nodes and edges for sequential reveal (keep context node visible)
     revealedNodesRef.current = new Set();
     setNodes(prev => prev.map(n => ({
       ...n,
-      style: { ...n.style, opacity: 0, transition: 'opacity 0.5s ease' },
+      style: {
+        ...n.style,
+        opacity: n.type === 'contextNode' ? 1 : 0,
+        transition: 'opacity 0.5s ease',
+      },
     })));
+    // Pre-reveal context node
+    const ctxNode = nodesRef.current.find(n => n.type === 'contextNode');
+    if (ctxNode) revealedNodesRef.current.add(ctxNode.id);
     setEdges(prev => prev.map(e => ({ ...e, hidden: true })));
 
     // Find start nodes (no incoming edges)
@@ -1091,6 +1151,35 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     });
   }, []);
 
+  // History: load a saved simulation entry
+  const handleHistorySelect = useCallback((entry: HistoryEntry) => {
+    const flow = entry.flowData;
+    if (!flow?.nodes || !flow?.edges) return;
+
+    setScenario(entry.scenario || '');
+    setPhotoPreview(entry.photoThumbnail || null);
+    setLastFlowData(flow as Record<string, unknown>);
+
+    statsRef.current = { total: 0, success: 0, blocked: 0 };
+    setSimStats({ total: 0, success: 0, blocked: 0 });
+    stopSim();
+    setShowDashboard(false);
+    particlesRef.current = [];
+    setParticles([]);
+    setErrorMsg('');
+
+    const tNodes = (flow.nodes as TemplateNode[]).map(n => ({ ...n, source: n.source || 'History' }));
+    const ctx = entry.photoThumbnail ? { photoUrl: entry.photoThumbnail, scenario: entry.scenario } : undefined;
+    const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges as TemplateEdge[], ctx);
+    setNodes(ln);
+    setEdges(le);
+
+    setTimeout(() => {
+      fitView({ padding: 0.15, duration: 400 });
+      setTimeout(() => simulate(), 500);
+    }, 100);
+  }, [setNodes, setEdges, fitView]); // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
     <div className="h-screen w-screen flex flex-col bg-[var(--background)]">
       {/* ========== TOP BAR + SCENARIO BAR ========== */}
@@ -1101,18 +1190,73 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         generating={generating}
         onGenerate={generateFlow}
         onLoadTemplate={loadTemplate}
+        photoPreview={photoPreview}
+        onPhotoScenario={(s, preview) => {
+          setScenario(s);
+          if (preview) setPhotoPreview(preview);
+          // Trigger generation after state update
+          setTimeout(() => {
+            const input = s.trim();
+            if (!input) return;
+            setGenerating(true);
+            setErrorMsg('');
+            fetch('/api/generate', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ scenario: input, tags: contextTagsRef.current }),
+            })
+              .then(res => { if (!res.ok) throw new Error('Server error'); return res.json(); })
+              .then(flow => {
+                if (!flow.nodes || !flow.edges) throw new Error('Invalid flow');
+                setLastFlowData(flow);
+                statsRef.current = { total: 0, success: 0, blocked: 0 };
+                setSimStats({ total: 0, success: 0, blocked: 0 });
+                stopSim();
+                setShowDashboard(false);
+                particlesRef.current = [];
+                setParticles([]);
+                const tNodes = flow.nodes.map((n: TemplateNode) => ({ ...n, source: n.source || 'AI generated (photo)' }));
+                const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges, preview ? { photoUrl: preview, scenario: s } : undefined);
+                setNodes(ln);
+                setEdges(le);
+
+                // Save to history
+                const photoHistEntry: Omit<HistoryEntry, 'id' | 'timestamp'> = {
+                  scenario: s,
+                  tags: contextTagsRef.current ? { ...contextTagsRef.current } : undefined,
+                  flowData: { nodes: flow.nodes, edges: flow.edges },
+                };
+                if (preview) {
+                  createThumbnail(preview).then(thumb => {
+                    saveToHistory({ ...photoHistEntry, photoThumbnail: thumb || undefined });
+                  });
+                } else {
+                  saveToHistory(photoHistEntry);
+                }
+
+                setTimeout(() => {
+                  fitView({ padding: 0.15, duration: 400 });
+                  setTimeout(() => simulate(), 500);
+                }, 100);
+              })
+              .catch(() => setErrorMsg('Could not generate scenario from photo.'))
+              .finally(() => setGenerating(false));
+          }, 50);
+        }}
+        onTagsChange={(t) => { contextTagsRef.current = t; }}
+        onHistorySelect={handleHistorySelect}
       />
 
       {/* ========== ERROR MESSAGE ========== */}
       {errorMsg && (
-        <div className="absolute top-[56px] left-1/2 -translate-x-1/2 z-50 bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 text-[11px] px-4 py-2 rounded-lg backdrop-blur-sm animate-fade-in">
+        <div className="absolute top-[96px] left-1/2 -translate-x-1/2 z-50 bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 text-[11px] px-6 py-2.5 rounded-lg backdrop-blur-sm animate-fade-in">
           {errorMsg}
         </div>
       )}
 
       {/* ========== GENERATING OVERLAY ========== */}
       {generating && (
-        <div className="absolute inset-0 top-[56px] z-30 flex items-center justify-center bg-[var(--background)]/60 backdrop-blur-[2px]">
+        <div className="absolute inset-0 top-[80px] z-30 flex items-center justify-center bg-[var(--background)]/60 backdrop-blur-[2px]">
           <div className="flex flex-col items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center shadow-lg text-[var(--accent)]">
               <Spinner size={20} />
@@ -1169,11 +1313,11 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
               style: { stroke: '#d4d4d4', strokeWidth: 2 },
             }}
           >
-            <Background variant={BackgroundVariant.Dots} gap={24} size={1} color="var(--muted)" style={{ opacity: 0.3 }} />
+            <Background variant={BackgroundVariant.Dots} gap={20} size={1.5} color="var(--muted)" style={{ opacity: 0.5 }} />
             <Controls
               position="bottom-left"
               showInteractive={false}
-              className="!border-[var(--border)] !rounded-lg !shadow-sm !overflow-hidden !mb-4 !ml-4"
+              className="!border-[var(--border)] !rounded-lg !shadow-sm !overflow-hidden !mb-6 !ml-6"
             />
             <MiniMap
               position="bottom-right"
@@ -1190,8 +1334,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
                 opacity: 0.7,
                 width: 140,
                 height: 90,
-                marginBottom: 16,
-                marginRight: 16,
+                marginBottom: 24,
+                marginRight: 24,
               }}
             />
           </ReactFlow>
@@ -1217,9 +1361,9 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
       {/* ========== FLOATING TOOLBAR (when nodes exist, sim not running) ========== */}
       {hasNodes && !simRunning && (
-        <div className="fixed bottom-5 right-5 z-50 animate-slide-up">
+        <div className="fixed bottom-6 right-6 z-50 animate-slide-up">
           <div
-            className="rounded-full px-2 py-1.5 flex items-center gap-1"
+            className="rounded-full px-3 py-2 flex items-center gap-2"
             style={{
               background: 'var(--surface)',
               boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
@@ -1315,9 +1459,9 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
       {/* ========== FLOATING TOOLBAR (during simulation) ========== */}
       {simRunning && (
-        <div className="fixed bottom-5 right-5 z-50 animate-slide-up">
+        <div className="fixed bottom-6 right-6 z-50 animate-slide-up">
           <div
-            className="rounded-full px-2 py-1.5 flex items-center gap-1"
+            className="rounded-full px-3 py-2 flex items-center gap-2"
             style={{
               background: 'var(--surface)',
               boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
@@ -1345,16 +1489,16 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
       {/* ========== STATS BAR (during simulation) ========== */}
       {simRunning && (
-        <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 animate-slide-up">
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 animate-slide-up">
           <div
-            className="rounded-full px-3 py-1.5 flex items-center gap-2"
+            className="rounded-full px-6 py-2 flex items-center gap-3"
             style={{
               background: 'var(--surface)',
               boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
             }}
           >
             {/* Speed control */}
-            <div className="flex items-center gap-1.5 px-2.5 py-1.5">
+            <div className="flex items-center gap-2 px-2.5 py-1.5">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="5 3 19 12 5 21 5 3" />
               </svg>
@@ -1378,7 +1522,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
             <div className="w-px h-4" style={{ background: 'var(--border)' }} />
 
             {/* Wave progress */}
-            <div className="flex items-center gap-2 px-2 py-1.5">
+            <div className="flex items-center gap-2.5 px-2.5 py-1.5">
               <div className="flex gap-[3px]">
                 {Array.from({ length: replayOverrideRef.current?.waves ?? SPD_BASE.waves }, (_, i) => (
                   <div
@@ -1396,7 +1540,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
             <div className="w-px h-4" style={{ background: 'var(--border)' }} />
 
             {/* Metrics */}
-            <div className="flex items-center gap-3 px-2 py-1.5">
+            <div className="flex items-center gap-3 px-2.5 py-1.5">
               <div className="flex items-center gap-1.5">
                 <div className="w-[5px] h-[5px] rounded-full" style={{ background: 'var(--accent)' }} />
                 <span className="text-[11px] font-semibold tabular-nums" style={{ color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>{simStats.total}</span>
@@ -1438,9 +1582,9 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
       {/* ========== REPLAY MODE BAR (when replay active, sim not running) ========== */}
       {replayMode && !simRunning && (
-        <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 animate-slide-up">
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 animate-slide-up">
           <div
-            className="rounded-full px-4 py-2 flex items-center gap-3"
+            className="rounded-full px-6 py-2.5 flex items-center gap-3"
             style={{
               background: 'var(--surface)',
               boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',

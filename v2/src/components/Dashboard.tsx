@@ -58,7 +58,7 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
   return (
     <div className="w-full sm:w-[380px] shrink-0 h-full bg-[var(--surface)] border-l border-[var(--border)] flex flex-col overflow-hidden">
       {/* Header */}
-      <div className="flex justify-between items-center px-5 pt-5 pb-4">
+      <div className="flex justify-between items-center px-6 pt-6 pb-4">
         <div>
           <h2 className="text-[15px] font-semibold text-[var(--foreground)] tracking-tight">Results</h2>
           <p className="text-[11px] mt-0.5" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>{totalPeople} simulated</p>
@@ -74,7 +74,7 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
       </div>
 
       {/* Scrollable content */}
-      <div className="overflow-y-auto px-5 pb-5 flex-1">
+      <div className="overflow-y-auto px-6 pb-6 flex-1">
 
         {/* Summary row */}
         <div className="flex gap-2 mb-6">
@@ -174,7 +174,7 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
       </div>
 
       {/* Footer */}
-      <div className="px-5 py-2.5 border-t" style={{ borderColor: 'var(--border)' }}>
+      <div className="px-6 py-3 border-t" style={{ borderColor: 'var(--border)' }}>
         <p className="text-[9px] text-center" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>
           Unique reach, not visits
         </p>

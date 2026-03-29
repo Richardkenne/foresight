@@ -123,16 +123,16 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
       }}
     >
       <div
-        className="bg-white dark:bg-[#141414] rounded-xl overflow-hidden w-[95vw] sm:min-w-[360px] max-w-[400px] max-h-[70vh] flex flex-col"
+        className="bg-white dark:bg-[#141414] rounded-2xl overflow-hidden w-[95vw] sm:min-w-[440px] max-w-[520px] max-h-[70vh] flex flex-col"
         style={{
           boxShadow: '0 20px 60px rgba(0,0,0,0.15), 0 4px 16px rgba(0,0,0,0.08)',
           border: '1px solid rgba(0,0,0,0.08)',
         }}
       >
         {/* Search */}
-        <div className="px-3 pt-3 pb-2">
+        <div className="p-7">
           <div className="relative">
-            <svg className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <svg className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <circle cx="11" cy="11" r="8" />
               <path d="M21 21l-4.35-4.35" />
             </svg>
@@ -142,16 +142,16 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search templates..."
               autoFocus
-              className="w-full pl-9 pr-3 py-2 text-[13px] bg-gray-50 dark:bg-gray-900/50 rounded-lg border border-gray-200 dark:border-gray-800 text-gray-900 dark:text-white placeholder-gray-400 outline-none focus:border-gray-300 dark:focus:border-gray-700 focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-800 transition-all"
+              className="w-full pl-11 pr-5 py-3 text-[14px] bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-200 dark:border-gray-800 text-gray-900 dark:text-white placeholder-gray-400 outline-none focus:border-gray-300 dark:focus:border-gray-700 focus:ring-1 focus:ring-gray-200 dark:focus:ring-gray-800 transition-all"
             />
           </div>
         </div>
 
         {/* Category pills */}
-        <div className="px-3 pb-2 flex gap-1.5 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+        <div className="px-7 pb-4 flex gap-2.5 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
           <button
             onClick={() => setActiveCategory(null)}
-            className="shrink-0 px-2.5 py-1 rounded-md text-[11px] font-medium transition-all cursor-pointer"
+            className="shrink-0 px-3.5 py-1.5 rounded-lg text-[12px] font-medium transition-all cursor-pointer"
             style={{
               background: !activeCategory ? 'rgba(59,130,246,0.1)' : 'transparent',
               color: !activeCategory ? '#3b82f6' : '#9ca3af',
@@ -164,14 +164,14 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
             <button
               key={cat.label}
               onClick={() => setActiveCategory(activeCategory === cat.label ? null : cat.label)}
-              className="shrink-0 px-2.5 py-1 rounded-md text-[11px] font-medium transition-all cursor-pointer whitespace-nowrap"
+              className="shrink-0 px-3.5 py-1.5 rounded-lg text-[12px] font-medium transition-all cursor-pointer whitespace-nowrap"
               style={{
                 background: activeCategory === cat.label ? 'rgba(59,130,246,0.1)' : 'transparent',
                 color: activeCategory === cat.label ? '#3b82f6' : '#9ca3af',
                 border: activeCategory === cat.label ? '1px solid rgba(59,130,246,0.2)' : '1px solid transparent',
               }}
             >
-              <span className="mr-1">{cat.icon}</span>
+              <span className="mr-1.5">{cat.icon}</span>
               {cat.label}
             </button>
           ))}
@@ -181,18 +181,18 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
         <div className="h-px bg-gray-100 dark:bg-gray-800/50" />
 
         {/* Template list */}
-        <div className="overflow-y-auto flex-1 py-1 px-1.5" style={{ scrollbarWidth: 'thin', maxHeight: 'calc(70vh - 120px)' }}>
+        <div className="overflow-y-auto flex-1 py-2 px-3" style={{ scrollbarWidth: 'thin', maxHeight: 'calc(70vh - 160px)' }}>
           {displayTemplates.length === 0 && (
-            <div className="py-8 text-center text-[12px] text-gray-400">
+            <div className="py-8 text-center text-[13px] text-gray-400">
               No templates match your search.
             </div>
           )}
           {displayTemplates.map(({ key, title, desc }) => (
             <div
               key={key}
-              className="group px-3 py-2.5 rounded-lg cursor-pointer transition-all"
+              className="group px-5 py-3.5 rounded-xl cursor-pointer transition-all"
               onClick={() => { onSelect(key); onClose(); }}
-              style={{ margin: '1px 0' }}
+              style={{ margin: '2px 0' }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(59,130,246,0.04)';
               }}
@@ -201,22 +201,22 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
               }}
             >
               <div className="flex items-center justify-between">
-                <div className="text-[13px] font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                <div className="text-[14px] font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {title}
                 </div>
-                <svg className="w-3.5 h-3.5 text-gray-300 dark:text-gray-600 group-hover:text-blue-400 transition-colors shrink-0 ml-2 opacity-0 group-hover:opacity-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <svg className="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-blue-400 transition-colors shrink-0 ml-3 opacity-0 group-hover:opacity-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </div>
-              <div className="text-[11px] text-gray-400 mt-0.5 line-clamp-1">{desc}</div>
+              <div className="text-[12px] text-gray-400 mt-1 line-clamp-1">{desc}</div>
             </div>
           ))}
         </div>
 
         {/* Footer count */}
         <div className="h-px bg-gray-100 dark:bg-gray-800/50" />
-        <div className="px-3 py-2 text-center">
-          <span className="text-[10px] text-gray-400">
+        <div className="px-7 py-4 text-center">
+          <span className="text-[11px] text-gray-400">
             {displayTemplates.length} of {ALL_TEMPLATES.length} templates
           </span>
         </div>
