@@ -114,16 +114,21 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
 
   return (
     <div
-      className="absolute top-12 right-0 z-[200]"
+      className="fixed z-[200]"
       onClick={(e) => e.stopPropagation()}
       style={{
+        top: '64px',
+        right: '24px',
+        left: '24px',
+        maxWidth: '480px',
+        marginLeft: 'auto',
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(-8px)',
         transition: 'all 0.2s cubic-bezier(0.16,1,0.3,1)',
       }}
     >
       <div
-        className="bg-white dark:bg-[#141414] rounded-2xl overflow-hidden w-[95vw] sm:min-w-[440px] max-w-[520px] max-h-[70vh] flex flex-col"
+        className="bg-white dark:bg-[#141414] rounded-2xl overflow-hidden w-full max-h-[70vh] flex flex-col"
         style={{
           boxShadow: '0 20px 60px rgba(0,0,0,0.15), 0 4px 16px rgba(0,0,0,0.08)',
           border: '1px solid rgba(0,0,0,0.08)',

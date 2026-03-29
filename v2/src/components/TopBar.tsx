@@ -182,38 +182,46 @@ export default function TopBar({
           </div>
         )}
 
-        {/* Scenario Input — expandable textarea */}
+        {/* Scenario Input — click to expand as overlay */}
         <div className="flex-1 relative min-w-0 max-w-[520px]">
-          {inputExpanded ? (
-            <textarea
-              ref={inputRef}
-              className="w-full px-3 py-2 rounded-lg text-[13px] text-[var(--foreground)] placeholder-[var(--muted)] bg-[var(--surface-hover)] border border-[var(--border)] outline-none transition-all resize-none"
-              style={{ minHeight: '60px', maxHeight: '160px' }}
-              placeholder="Describe a scenario..."
-              value={scenario}
-              onChange={(e) => onScenarioChange(e.target.value)}
-              disabled={generating}
-              onBlur={() => setInputExpanded(false)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' && !e.shiftKey && scenario.trim()) {
-                  e.preventDefault();
-                  setInputExpanded(false);
-                  onGenerate();
-                }
-                if (e.key === 'Escape') setInputExpanded(false);
-              }}
-              autoFocus
-            />
-          ) : (
-            <div
-              className="w-full px-3 py-2 rounded-lg text-[13px] text-[var(--foreground)] bg-transparent border border-transparent hover:border-[var(--border)] hover:bg-[var(--surface-hover)] cursor-text transition-all truncate"
-              onClick={() => { if (!generating) setInputExpanded(true); }}
-              title={scenario || 'Describe a scenario...'}
-            >
-              {scenario || <span className="text-[var(--muted)]">Describe a scenario...</span>}
-            </div>
-          )}
+          <div
+            className="w-full px-3 py-2 rounded-lg text-[13px] text-[var(--foreground)] bg-transparent border border-transparent hover:border-[var(--border)] hover:bg-[var(--surface-hover)] cursor-text transition-all truncate"
+            onClick={() => { if (!generating) setInputExpanded(true); }}
+            title={scenario || 'Describe a scenario...'}
+          >
+            {scenario || <span className="text-[var(--muted)]">Describe a scenario...</span>}
+          </div>
         </div>
+
+        {/* Expanded textarea overlay */}
+        {inputExpanded && (
+          <>
+            <div className="fixed inset-0 z-[250] bg-black/10" onClick={() => setInputExpanded(false)} />
+            <div className="fixed z-[251] left-6 right-6 max-w-[600px] mx-auto" style={{ top: '64px' }}>
+              <textarea
+                ref={inputRef}
+                className="w-full px-4 py-3 rounded-xl text-[14px] text-[var(--foreground)] placeholder-[var(--muted)] bg-white dark:bg-[#1a1a1a] border border-[var(--border)] outline-none resize-none shadow-lg"
+                style={{ minHeight: '80px', maxHeight: '200px' }}
+                placeholder="Describe a scenario..."
+                value={scenario}
+                onChange={(e) => onScenarioChange(e.target.value)}
+                disabled={generating}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && !e.shiftKey && scenario.trim()) {
+                    e.preventDefault();
+                    setInputExpanded(false);
+                    onGenerate();
+                  }
+                  if (e.key === 'Escape') setInputExpanded(false);
+                }}
+                autoFocus
+              />
+              <div className="mt-2 text-[11px] text-[var(--muted)] text-right">
+                Enter to generate / Esc to close
+              </div>
+            </div>
+          </>
+        )}
 
         {/* Actions */}
         <div className="flex items-center gap-3 shrink-0">
@@ -260,10 +268,11 @@ export default function TopBar({
 
           <Button
             variant="primary"
-            size="sm"
+            size="md"
             onClick={onGenerate}
             disabled={generating || !scenario.trim()}
             loading={generating}
+            className="!px-6 !py-2.5 !text-[14px] !rounded-full"
           >
             {generating ? 'Generating...' : 'Generate'}
           </Button>

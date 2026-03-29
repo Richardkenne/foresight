@@ -168,8 +168,8 @@ function templateToFlow(
       label: e.label || '',
       type: 'animated',
       style: {
-        stroke: isFail ? '#fca5a5' : isPass ? '#86efac' : '#d4d4d8',
-        strokeWidth: isPass ? 2.5 : 1.5,
+        stroke: isFail ? '#fca5a5' : isPass ? '#4ade80' : '#d4d4d8',
+        strokeWidth: isPass ? 4.5 : isFail ? 1.5 : 1.5,
       },
       labelStyle: {
         fill: isFail ? '#ef4444' : isPass ? '#10b981' : '#a1a1aa',
