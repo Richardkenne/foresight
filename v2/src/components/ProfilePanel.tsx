@@ -1,0 +1,240 @@
+'use client';
+
+import { useState, useEffect, useCallback } from 'react';
+import { type UserProfile, saveProfile, loadProfile, isProfileComplete } from '@/lib/user-profile';
+
+interface ProfilePanelProps {
+  onBack: () => void;
+  onProfileChange?: (profile: UserProfile) => void;
+}
+
+const SKILL_SUGGESTIONS = [
+  'AI/ML', 'React', 'Next.js', 'Python', 'Node.js', 'TypeScript',
+  'Web Dev', 'Mobile', 'Data Science', 'DevOps', 'UI/UX', 'Copywriting',
+  'SEO', 'Video Editing', 'Automation', 'Blockchain', 'Cloud/AWS',
+];
+
+const LANGUAGE_SUGGESTIONS = [
+  'English', 'Italian', 'Indonesian', 'Spanish', 'French', 'German',
+  'Portuguese', 'Chinese', 'Japanese', 'Korean', 'Arabic', 'Hindi',
+];
+
+export default function ProfilePanel({ onBack, onProfileChange }: ProfilePanelProps) {
+  const [profile, setProfile] = useState<UserProfile>({});
+  const [activeSection, setActiveSection] = useState<string | null>('identity');
+
+  useEffect(() => { setProfile(loadProfile()); }, []);
+
+  const update = useCallback((patch: Partial<UserProfile>) => {
+    setProfile(prev => {
+      const next = { ...prev, ...patch };
+      saveProfile(next);
+      onProfileChange?.(next);
+      return next;
+    });
+  }, [onProfileChange]);
+
+  const toggleArrayItem = useCallback((field: 'skills' | 'languages', item: string) => {
+    setProfile(prev => {
+      const arr = prev[field] || [];
+      const next = arr.includes(item) ? arr.filter(x => x !== item) : [...arr, item].slice(0, field === 'skills' ? 5 : 6);
+      const updated = { ...prev, [field]: next };
+      saveProfile(updated);
+      onProfileChange?.(updated);
+      return updated;
+    });
+  }, [onProfileChange]);
+
+  const complete = isProfileComplete(profile);
+  const filledCount = Object.entries(profile).filter(([, v]) => v != null && v !== '' && (!Array.isArray(v) || v.length > 0)).length;
+
+  const sections = [
+    { id: 'identity', label: 'Identity', icon: 'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2' },
+    { id: 'financial', label: 'Financial', icon: 'M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' },
+    { id: 'professional', label: 'Professional', icon: 'M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z' },
+    { id: 'network', label: 'Network', icon: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2' },
+    { id: 'upwork', label: 'Upwork', icon: 'M22 12h-4l-3 9L9 3l-3 9H2' },
+  ];
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', overflow: 'hidden' }}>
+      {/* Header */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 16px', borderBottom: '1px solid var(--border)' }}>
+        <button onClick={onBack} style={{ display: 'flex', alignItems: 'center', gap: '6px', background: 'none', border: 'none', color: 'var(--foreground)', fontSize: '13px', fontWeight: 600, cursor: 'pointer', padding: 0 }}>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5" /><path d="M12 19l-7-7 7-7" /></svg>
+          Profile
+        </button>
+        <span style={{
+          fontSize: '9px', fontWeight: 700, padding: '2px 8px', borderRadius: '10px', letterSpacing: '0.06em', fontFamily: 'var(--font-geist-mono), monospace',
+          background: complete ? 'rgba(16,185,129,0.1)' : 'var(--surface-hover)',
+          color: complete ? 'var(--success)' : 'var(--muted)',
+        }}>
+          {complete ? 'ACTIVE' : `${filledCount} FIELDS`}
+        </span>
+      </div>
+
+      {/* Section tabs */}
+      <div style={{ display: 'flex', gap: '2px', padding: '8px 12px', borderBottom: '1px solid var(--border)', overflowX: 'auto' }}>
+        {sections.map(s => (
+          <button
+            key={s.id}
+            onClick={() => setActiveSection(activeSection === s.id ? null : s.id)}
+            style={{
+              display: 'flex', alignItems: 'center', gap: '4px', padding: '5px 8px', borderRadius: '6px', border: 'none', cursor: 'pointer', fontSize: '10px', fontWeight: 500, whiteSpace: 'nowrap', transition: 'all 0.1s',
+              background: activeSection === s.id ? 'var(--foreground)' : 'transparent',
+              color: activeSection === s.id ? 'var(--background)' : 'var(--muted-foreground)',
+            }}
+          >
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d={s.icon} /></svg>
+            {s.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Content */}
+      <div style={{ flex: 1, overflowY: 'auto', padding: '12px 16px' }}>
+
+        {activeSection === 'identity' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <FieldRow label="Age" value={profile.age ?? ''} type="number" placeholder="29" onChange={v => update({ age: v ? parseInt(v) : undefined })} />
+            <FieldRow label="Country" value={profile.country ?? ''} placeholder="Indonesia" onChange={v => update({ country: v || undefined })} />
+            <FieldRow label="City" value={profile.city ?? ''} placeholder="Bandung" onChange={v => update({ city: v || undefined })} />
+            <FieldRow label="Nationality" value={profile.nationality ?? ''} placeholder="Italian" onChange={v => update({ nationality: v || undefined })} />
+            <ChipField label="Languages" options={LANGUAGE_SUGGESTIONS} selected={profile.languages || []} onToggle={item => toggleArrayItem('languages', item)} />
+          </div>
+        )}
+
+        {activeSection === 'financial' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <FieldRow label="Capital (USD)" value={profile.capital ?? ''} type="number" placeholder="5000" onChange={v => update({ capital: v ? parseInt(v) : undefined })} />
+            <FieldRow label="Monthly Income" value={profile.monthlyIncome ?? ''} type="number" placeholder="2000" onChange={v => update({ monthlyIncome: v ? parseInt(v) : undefined })} />
+            <FieldRow label="Monthly Expenses" value={profile.monthlyExpenses ?? ''} type="number" placeholder="800" onChange={v => update({ monthlyExpenses: v ? parseInt(v) : undefined })} />
+            <FieldRow label="Runway (months)" value={profile.canSurviveMonths ?? ''} type="number" placeholder="6" onChange={v => update({ canSurviveMonths: v ? parseInt(v) : undefined })} />
+            <ChipField label="Risk Tolerance" options={['conservative', 'moderate', 'aggressive']} selected={profile.riskTolerance ? [profile.riskTolerance] : []} onToggle={v => update({ riskTolerance: profile.riskTolerance === v ? undefined : v as UserProfile['riskTolerance'] })} />
+          </div>
+        )}
+
+        {activeSection === 'professional' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <FieldRow label="Current Role" value={profile.currentRole ?? ''} placeholder="Software Engineer" onChange={v => update({ currentRole: v || undefined })} />
+            <FieldRow label="Industry" value={profile.industry ?? ''} placeholder="Tech / AI" onChange={v => update({ industry: v || undefined })} />
+            <FieldRow label="Years Experience" value={profile.yearsExperience ?? ''} type="number" placeholder="3" onChange={v => update({ yearsExperience: v ? parseInt(v) : undefined })} />
+            <ChipField label="Education" options={['self-taught', 'bootcamp', 'high-school', 'bachelor', 'master', 'phd']} selected={profile.education ? [profile.education] : []} onToggle={v => update({ education: profile.education === v ? undefined : v as UserProfile['education'] })} />
+            <ChipField label="Skills (max 5)" options={SKILL_SUGGESTIONS} selected={profile.skills || []} onToggle={item => toggleArrayItem('skills', item)} />
+          </div>
+        )}
+
+        {activeSection === 'network' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <ChipField label="Network Size" options={['none', 'small', 'medium', 'large']} selected={profile.networkSize ? [profile.networkSize] : []} onToggle={v => update({ networkSize: profile.networkSize === v ? undefined : v as UserProfile['networkSize'] })} />
+            <ToggleField label="Has mentor/advisor" value={!!profile.hasMentor} onChange={v => update({ hasMentor: v || undefined })} />
+            <ToggleField label="Has co-founder/partner" value={!!profile.hasCofounder} onChange={v => update({ hasCofounder: v || undefined })} />
+            <ToggleField label="Has team (2+ people)" value={!!profile.hasTeam} onChange={v => update({ hasTeam: v || undefined })} />
+          </div>
+        )}
+
+        {activeSection === 'upwork' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <ChipField label="Badge" options={['none', 'rising-talent', 'top-rated', 'top-rated-plus', 'expert-vetted']} selected={profile.upworkBadge ? [profile.upworkBadge] : []} onToggle={v => update({ upworkBadge: profile.upworkBadge === v ? undefined : v as UserProfile['upworkBadge'] })} />
+            <FieldRow label="JSS (%)" value={profile.upworkJSS ?? ''} type="number" placeholder="92" onChange={v => update({ upworkJSS: v ? parseInt(v) : undefined })} />
+            <FieldRow label="Lifetime Earnings" value={profile.upworkEarnings ?? ''} type="number" placeholder="15000" onChange={v => update({ upworkEarnings: v ? parseInt(v) : undefined })} />
+            <FieldRow label="Hourly Rate (USD)" value={profile.freelanceRate ?? ''} type="number" placeholder="75" onChange={v => update({ freelanceRate: v ? parseInt(v) : undefined })} />
+          </div>
+        )}
+      </div>
+
+      {/* Footer */}
+      <div style={{ padding: '10px 16px', borderTop: '1px solid var(--border)' }}>
+        <button
+          onClick={() => { setProfile({}); saveProfile({}); onProfileChange?.({}); }}
+          style={{ width: '100%', padding: '7px', border: 'none', borderRadius: '6px', background: 'none', color: 'var(--muted)', fontSize: '10px', cursor: 'pointer', transition: 'color 0.15s' }}
+          onMouseEnter={e => { e.currentTarget.style.color = 'var(--danger)'; }}
+          onMouseLeave={e => { e.currentTarget.style.color = 'var(--muted)'; }}
+        >
+          Reset Profile
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ─── Field Components (inline styles — no CSS class dependency) ───
+
+function FieldRow({ label, value, type = 'text', placeholder, onChange }: {
+  label: string; value: string | number; type?: string; placeholder: string; onChange: (v: string) => void;
+}) {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+      <label style={{ fontSize: '9px', fontWeight: 700, color: 'var(--muted)', letterSpacing: '0.06em', textTransform: 'uppercase' as const, fontFamily: 'var(--font-geist-mono), monospace' }}>{label}</label>
+      <input
+        type={type}
+        value={value}
+        placeholder={placeholder}
+        onChange={e => onChange(e.target.value)}
+        style={{
+          width: '100%', padding: '7px 9px', border: '1px solid var(--border)', borderRadius: '6px',
+          background: 'var(--surface)', color: 'var(--foreground)', fontSize: '12px', fontFamily: 'inherit',
+          outline: 'none', transition: 'border-color 0.15s',
+        }}
+        onFocus={e => { e.currentTarget.style.borderColor = 'var(--accent)'; }}
+        onBlur={e => { e.currentTarget.style.borderColor = 'var(--border)'; }}
+      />
+    </div>
+  );
+}
+
+function ChipField({ label, options, selected, onToggle }: {
+  label: string; options: string[]; selected: string[]; onToggle: (v: string) => void;
+}) {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+      <label style={{ fontSize: '9px', fontWeight: 700, color: 'var(--muted)', letterSpacing: '0.06em', textTransform: 'uppercase' as const, fontFamily: 'var(--font-geist-mono), monospace' }}>{label}</label>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3px' }}>
+        {options.map(opt => {
+          const active = selected.includes(opt);
+          return (
+            <button
+              key={opt}
+              onClick={() => onToggle(opt)}
+              style={{
+                padding: '3px 8px', borderRadius: '5px', fontSize: '10px', fontWeight: 500, cursor: 'pointer', transition: 'all 0.1s',
+                border: `1px solid ${active ? 'var(--foreground)' : 'var(--border)'}`,
+                background: active ? 'var(--foreground)' : 'var(--surface)',
+                color: active ? 'var(--background)' : 'var(--muted-foreground)',
+              }}
+            >
+              {opt}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function ToggleField({ label, value, onChange }: {
+  label: string; value: boolean; onChange: (v: boolean) => void;
+}) {
+  return (
+    <button
+      onClick={() => onChange(!value)}
+      style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%',
+        padding: '6px 0', background: 'none', border: 'none', color: 'var(--foreground)',
+        fontSize: '11px', cursor: 'pointer', textAlign: 'left' as const,
+      }}
+    >
+      <span>{label}</span>
+      <div style={{
+        width: '28px', height: '16px', borderRadius: '8px', position: 'relative' as const, transition: 'background 0.2s',
+        background: value ? 'var(--success)' : 'var(--border)',
+      }}>
+        <div style={{
+          width: '12px', height: '12px', borderRadius: '6px', background: 'white',
+          position: 'absolute' as const, top: '2px', left: '2px',
+          transition: 'transform 0.2s', transform: value ? 'translateX(12px)' : 'none',
+        }} />
+      </div>
+    </button>
+  );
+}

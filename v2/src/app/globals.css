@@ -764,6 +764,239 @@ body {
   background: var(--muted);
 }
 
+/* ─── Profile Panel ─── */
+.profile-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--foreground);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.profile-back:hover { opacity: 0.7; }
+
+.profile-status { display: flex; }
+
+.profile-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.03em;
+}
+
+.profile-badge--complete {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+
+.profile-badge--incomplete {
+  background: var(--surface-hover);
+  color: var(--muted-foreground);
+}
+
+.profile-info {
+  padding: 12px 20px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+  line-height: 1.5;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-sections {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.profile-section {
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  color: var(--foreground);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  transition: background 0.1s;
+}
+
+.profile-section-header:hover { background: var(--surface-hover); }
+
+.profile-section-header svg:first-child {
+  color: var(--muted-foreground);
+  flex-shrink: 0;
+}
+
+.profile-section-title { flex-shrink: 0; }
+
+.profile-section-summary {
+  font-size: 10px;
+  color: var(--muted);
+  font-family: var(--font-geist-mono), monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: 4px;
+}
+
+.profile-section-body {
+  padding: 4px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-row label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.profile-row input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--foreground);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.profile-row input:focus { border-color: var(--accent); }
+
+.profile-row input::placeholder { color: var(--muted); }
+
+.profile-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.profile-chip {
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--muted-foreground);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.profile-chip:hover { border-color: var(--muted); }
+
+.profile-chip--active {
+  background: var(--foreground);
+  color: var(--background);
+  border-color: var(--foreground);
+}
+
+.profile-toggles {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  background: none;
+  border: none;
+  color: var(--foreground);
+  font-size: 12px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.profile-toggle-switch {
+  width: 32px;
+  height: 18px;
+  border-radius: 9px;
+  background: var(--border);
+  position: relative;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.profile-toggle--on .profile-toggle-switch { background: var(--success); }
+
+.profile-toggle-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  background: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s;
+}
+
+.profile-toggle--on .profile-toggle-dot { transform: translateX(14px); }
+
+.profile-footer {
+  padding: 12px 20px;
+  border-top: 1px solid var(--border);
+}
+
+.profile-clear {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background: none;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.profile-clear:hover { color: var(--danger); background: rgba(239, 68, 68, 0.06); }
+
 /* ─── Decision Pruning Modal ─── */
 .pruning-overlay {
   position: fixed;

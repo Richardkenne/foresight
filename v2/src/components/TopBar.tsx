@@ -5,8 +5,10 @@ import Button from './ui/Button';
 import TemplateSelector from './TemplateSelector';
 import PhotoUpload from './PhotoUpload';
 import HistoryPanel from './HistoryPanel';
+import ProfilePanel from './ProfilePanel';
 import type { ContextTags } from '@/lib/context-tags';
 import type { HistoryEntry } from '@/lib/history';
+import type { UserProfile } from '@/lib/user-profile';
 
 interface TopBarProps {
   scenario: string;
@@ -18,6 +20,7 @@ interface TopBarProps {
   onPhotoScenario?: (scenario: string, photoPreview?: string) => void;
   onTagsChange?: (tags: ContextTags) => void;
   onHistorySelect?: (entry: HistoryEntry) => void;
+  onProfileChange?: (profile: UserProfile) => void;
   photoPreview?: string | null;
 }
 
@@ -73,11 +76,12 @@ function TagIcon({ name }: { name: string }) {
 
 export default function TopBar({
   scenario, onScenarioChange, generating,
-  onGenerate, onLoadTemplate, onPhotoScenario, onTagsChange, onHistorySelect, photoPreview,
+  onGenerate, onLoadTemplate, onPhotoScenario, onTagsChange, onHistorySelect, onProfileChange, photoPreview,
 }: TopBarProps) {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const [showTemplates, setShowTemplates] = useState(false);
   const [showPhoto, setShowPhoto] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
   const [inputExpanded, setInputExpanded] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
@@ -469,7 +473,7 @@ export default function TopBar({
               </button>
             </div>
 
-            {/* Menu content — either nav items or history panel */}
+            {/* Menu content — nav items, history panel, or profile panel */}
             {showHistory ? (
               <HistoryPanel
                 onSelect={(entry) => {
@@ -479,13 +483,18 @@ export default function TopBar({
                 }}
                 onBack={() => setShowHistory(false)}
               />
+            ) : showProfile ? (
+              <ProfilePanel
+                onBack={() => setShowProfile(false)}
+                onProfileChange={onProfileChange}
+              />
             ) : (
               <nav className="flex-1 py-3 px-3">
                 {[
                   { icon: 'M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z', label: 'Home', active: true, action: () => setShowMenu(false) },
                   { icon: 'M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z', label: 'History', active: false, action: () => setShowHistory(true) },
+                  { icon: 'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2', label: 'Profile', active: false, extra: <circle cx="12" cy="7" r="4" />, action: () => setShowProfile(true) },
                   { icon: 'M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z', label: 'Saved', active: false, action: undefined },
-                  { icon: 'M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z', label: 'Settings', active: false, extra: <circle cx="12" cy="12" r="3" />, action: undefined },
                 ].map((item) => (
                   <button
                     key={item.label}
@@ -504,7 +513,7 @@ export default function TopBar({
                       {item.extra}
                     </svg>
                     {item.label}
-                    {!item.active && item.label !== 'History' && (
+                    {!item.active && !item.action && (
                       <span className="ml-auto text-[10px] text-[var(--muted)] bg-[var(--border)] px-2 py-1 rounded-md">Soon</span>
                     )}
                   </button>

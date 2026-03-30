@@ -30,6 +30,7 @@ import { saveToHistory, createThumbnail, type HistoryEntry } from '@/lib/history
 import { SimulatorDataflow } from '@/lib/dataflow-engine';
 import { applyRealProbabilities } from '@/lib/probability-matcher';
 import DecisionPruning, { type PruningResult } from './DecisionPruning';
+import { type UserProfile, loadProfile, getProfilePromptModifier } from '@/lib/user-profile';
 
 const nodeTypes = { simNode: SimNodeComponent, contextNode: ContextNodeComponent };
 const edgeTypes = { animated: AnimatedEdgeComponent };
@@ -222,6 +223,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
   const [generating, setGenerating] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const contextTagsRef = useRef<ContextTags>({});
+  const profileRef = useRef<UserProfile>(loadProfile());
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
 
   // Simulation state
@@ -574,7 +576,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       const res = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ scenario: input, tags: contextTagsRef.current }),
+        body: JSON.stringify({ scenario: input, tags: contextTagsRef.current, profile: profileRef.current }),
       });
       if (!res.ok) throw new Error('Server error');
       const flow = await res.json();
@@ -1259,7 +1261,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
             fetch('/api/generate', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ scenario: input, tags: contextTagsRef.current }),
+              body: JSON.stringify({ scenario: input, tags: contextTagsRef.current, profile: profileRef.current }),
             })
               .then(res => { if (!res.ok) throw new Error('Server error'); return res.json(); })
               .then(flow => {
@@ -1300,6 +1302,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
           }, 50);
         }}
         onTagsChange={(t) => { contextTagsRef.current = t; }}
+        onProfileChange={(p) => { profileRef.current = p; }}
         onHistorySelect={handleHistorySelect}
       />
 

@@ -1065,7 +1065,7 @@ import { getTagKeywords, getTagPromptModifier, type ContextTags } from '@/lib/co
 // ============ HANDLER ============
 export async function POST(request: NextRequest) {
   try {
-    const { scenario, tags } = await request.json() as { scenario: string; tags?: ContextTags };
+    const { scenario, tags, profile } = await request.json() as { scenario: string; tags?: ContextTags; profile?: Record<string, unknown> };
     if (!scenario) return NextResponse.json({ error: 'Missing scenario' }, { status: 400 });
 
     // Inject tag keywords into scenario for better routing
@@ -1211,7 +1211,17 @@ DECISION PRUNING QUESTIONS: Generate exactly 5-7 binary YES/NO questions that de
       console.log(`[API] Context tags active: ${Object.entries(tags || {}).filter(([,v]) => v).map(([k,v]) => `${k}=${v}`).join(', ')}`);
     }
 
-    // Dynamic part — changes per request (live data, KB context, tags)
+    // USER PROFILE: personalized probability calibration
+    if (profile && Object.keys(profile).length > 0) {
+      const { getProfilePromptModifier } = await import('@/lib/user-profile');
+      const profileMod = getProfilePromptModifier(profile as import('@/lib/user-profile').UserProfile);
+      if (profileMod) {
+        liveStr += profileMod;
+        console.log(`[API] Profile active: ${Object.keys(profile).filter(k => !k.startsWith('_') && profile![k] != null).length} fields`);
+      }
+    }
+
+    // Dynamic part — changes per request (live data, KB context, tags, profile)
     const dynamicPrompt = liveStr ? liveStr.trim() : '';
 
     const userMsg = `Scenario: "${scenario}"\n\nUSE THESE DATA POINTS:\n${kbContext || 'Use Tier S/A sources.'}\n\nReturn ONLY JSON.`;
