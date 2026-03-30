@@ -67,7 +67,16 @@
 
 ## Livello 90-100: Credibilita Assoluta
 
-### Data Points da Integrare nel RAG (prossima sessione)
+### Simulation Engine v2: Pre-determined Fate (PROSSIMA SESSIONE — PRIORITA')
+- [ ] Pre-calcolo: prima di animare, calcola il percorso completo di ogni persona (quali nodi visita, dove muore)
+- [ ] Lancio simultaneo: tutte le 100 persone partono insieme
+- [ ] Ogni persona segue le curve degli edge (SVG path + getPointAtLength)
+- [ ] Velocita' individuale: ogni persona cammina a velocita' leggermente diversa
+- [ ] Chi deve morire al nodo X, devia verso l'outcome-bad quando ci arriva
+- [ ] La simulazione e' un replay di una realta' gia' determinata, non un processo real-time
+- [ ] Stima: 40-50 minuti
+
+### Data Points da Integrare nel RAG
 - [ ] VC: vc-y-combinator, vc-sequoia, vc-a16z, vc-benchmark, vc-accel, vc-founders-fund, vc-lightspeed (7 file, ~1,460 dp)
 - [ ] Consulting: consulting-mckinsey, consulting-bcg, consulting-bain, consulting-deloitte, consulting-pwc (5 file, ~1,000 dp)
 - [ ] Banks: bank-jpmorgan, bank-goldman-sachs, bank-morgan-stanley, bank-ubs, bank-hsbc, bank-citibank, bank-deutsche-bank, bank-barclays, bank-bofa, bank-credit-suisse (10 file, ~2,000 dp)
