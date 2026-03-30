@@ -85,6 +85,23 @@ export default function TopBar({
   const [inputExpanded, setInputExpanded] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
+  const [displayMode, setDisplayMode] = useState<'minimal' | 'classic'>('minimal');
+
+  // Load display mode from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('sim-display-mode') as 'minimal' | 'classic' | null;
+    if (saved) {
+      setDisplayMode(saved);
+      document.documentElement.setAttribute('data-display', saved);
+    }
+  }, []);
+
+  const toggleDisplayMode = () => {
+    const next = displayMode === 'minimal' ? 'classic' : 'minimal';
+    setDisplayMode(next);
+    localStorage.setItem('sim-display-mode', next);
+    document.documentElement.setAttribute('data-display', next);
+  };
 
   // Context tags state
   const [tags, setTags] = useState<ContextTags>({});
@@ -520,6 +537,35 @@ export default function TopBar({
                 ))}
               </nav>
             )}
+
+            {/* Settings */}
+            <div className="px-3 py-3 border-t border-[var(--border)]">
+              <div className="text-[10px] font-semibold text-[var(--muted)] uppercase tracking-wider px-4 mb-2">Settings</div>
+              <button
+                onClick={toggleDisplayMode}
+                className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-[14px] transition-colors cursor-pointer hover:bg-[var(--surface-hover)]"
+                style={{ color: 'var(--foreground)' }}
+              >
+                <div className="flex items-center gap-3">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M3 9h18" />
+                    <path d="M9 21V9" />
+                  </svg>
+                  <span>{displayMode === 'classic' ? 'Classic' : 'Minimal'}</span>
+                </div>
+                {/* Toggle switch */}
+                <div
+                  className="relative w-[44px] h-[24px] rounded-full transition-colors"
+                  style={{ background: displayMode === 'classic' ? '#f59e0b' : '#cbd5e1' }}
+                >
+                  <div
+                    className="absolute top-[2px] w-[20px] h-[20px] rounded-full bg-white shadow transition-all"
+                    style={{ left: displayMode === 'classic' ? '22px' : '2px' }}
+                  />
+                </div>
+              </button>
+            </div>
 
             {/* Menu footer */}
             <div className="px-5 py-4 border-t border-[var(--border)]">

@@ -9,6 +9,15 @@
 - **Responsive** — Must work on mobile (320px+), tablet (768px+), and desktop (1024px+). Use Tailwind responsive prefixes. Test at all breakpoints.
 - **Quality bar** — Must look like a top-tier product (Linear, Vercel, Raycast level). No generic AI slop. Clean, minimal, professional.
 
+## Core Philosophy (NON-NEGOTIABLE)
+- **DETERMINISTIC** — The simulator maps observed reality. No randomness, no noise, no estimation.
+- Sacred texts describe deterministic laws. Psychology confirms them. Data measures them. All three converge.
+- Probabilities are FACTS, not dice rolls. "70% fail" means exactly 70 out of 100 fail. Always.
+- Same scenario = same graph = same result. Every run identical.
+- Temperature 0 on all AI providers. No "Estimated" probabilities — only verified data or null.
+- If data doesn't exist, say "No data" — never guess.
+- The only Math.random() allowed is COSMETIC (particle appearance, animation scatter).
+
 ## Stack
 - Next.js 16 + React + TypeScript
 - Tailwind CSS

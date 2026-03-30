@@ -88,19 +88,23 @@ function ParticleLayer({ particles, moveDuration }: { particles: ParticleData[];
       className="absolute inset-0 pointer-events-none z-[25]"
       style={{ transform: `translate(${x}px, ${y}px) scale(${zoom})`, transformOrigin: '0 0' }}
     >
-      {particles.map((p) => (
-        <div
-          key={p.id}
-          className={`particle ${p.status === 'blocked' ? 'particle-blocked' : p.status === 'failing' ? 'particle-failing' : p.status === 'success' ? 'particle-success' : ''}`}
-          style={{
-            position: 'absolute',
-            left: p.x,
-            top: p.y,
-            transition: `left ${moveDuration}ms cubic-bezier(0.4, 0, 0.2, 1), top ${moveDuration}ms cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease`,
-          }}
-          dangerouslySetInnerHTML={{ __html: p.svg }}
-        />
-      ))}
+      {particles.map((p) => {
+        const dur = Math.round(moveDuration * (p.speedMult || 1));
+        const isActive = p.status === 'moving';
+        return (
+          <div
+            key={p.id}
+            className={`particle ${isActive ? 'particle-walking' : ''} ${p.status === 'blocked' ? 'particle-blocked' : p.status === 'failing' ? 'particle-failing' : p.status === 'success' ? 'particle-success' : ''}`}
+            style={{
+              position: 'absolute',
+              left: p.x,
+              top: p.y,
+              transition: `left ${dur}ms cubic-bezier(0.4, 0, 0.2, 1), top ${dur}ms cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease`,
+            }}
+            dangerouslySetInnerHTML={{ __html: p.svg }}
+          />
+        );
+      })}
     </div>
   );
 }
@@ -113,7 +117,7 @@ function getLayoutedElements(
 ): { nodes: RFNode[]; edges: RFEdge[] } {
   const g = new dagre.graphlib.Graph();
   g.setDefaultEdgeLabel(() => ({}));
-  g.setGraph({ rankdir: direction, nodesep: 80, ranksep: 200, edgesep: 40 });
+  g.setGraph({ rankdir: direction, nodesep: 100, ranksep: 250, edgesep: 50 });
 
   nodes.forEach((node) => {
     const isContext = node.type === 'contextNode';
@@ -210,7 +214,7 @@ function templateToFlow(
 }
 
 // Simulation speed config — base values, scaled by speedMultiplier
-const SPD_BASE = { move: 2000, wait: 2500, launch: 300, wavePause: 2000, waves: 10, perWave: 10 };
+const SPD_BASE = { move: 1300, wait: 500, launch: 150, wavePause: 700, waves: 10, perWave: 10 };
 // Speed levels: 0=1x, 1=1.5x, 2=2x, 3=3x, 4=5x, 5=8x
 const SPEED_LEVELS = [1, 1.5, 2, 3, 5, 8];
 const SPEED_LABELS = ['1x', '1.5x', '2x', '3x', '5x', '8x'];
@@ -270,8 +274,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges as TemplateEdge[]);
     setNodes(ln);
     setEdges(le);
-    setTimeout(() => fitView({ padding: 0.2, duration: 400 }), 200);
-  }, [sharedSimulation]);
+    setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 200);
+  }, [sharedSimulation, fitView]);
   const nodeValuesRef = useRef<Record<string, number>>({});
 
   const simRunningRef = useRef(false);
@@ -519,7 +523,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     });
 
     setTimeout(() => {
-      fitView({ padding: 0.2, duration: 400 });
+      fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 });
       if (autoSim) setTimeout(() => simulate(), 500);
     }, 100);
   }, [setNodes, setEdges, fitView]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -618,7 +622,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       }
 
       setTimeout(() => {
-        fitView({ padding: 0.08, duration: 400 });
+        fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 });
         // Show Decision Pruning after generate (instead of auto-simulate)
         setTimeout(() => requestSimulate(), 500);
       }, 100);
@@ -693,18 +697,44 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       const nodeType = data.nodeType as string;
       const prob = data.prob as number;
 
-      // Handle bottleneck/decision
-      if (nodeType === 'bottleneck' || nodeType === 'decision') {
-        const pass = Math.random() * 100 < prob;
+      // Deterministic proportional filter: prob 70% → exactly 70 out of 100 pass
+      // No randomness. The observed reality IS the outcome.
+      const hasProb = typeof prob === 'number' && prob < 100;
+      if (hasProb) {
+        // Track how many have arrived and how many should pass at this node
+        const arrivalKey = `arrivals-${nodeId}`;
+        const passedKey = `passed-${nodeId}`;
+        const arrivals = ((node.data as Record<string, unknown>)[arrivalKey] as number || 0) + 1;
+        const passed = (node.data as Record<string, unknown>)[passedKey] as number || 0;
+        // Deterministic: should this person pass based on the ratio so far?
+        const shouldHavePassed = Math.floor(arrivals * prob / 100);
+        const pass = passed < shouldHavePassed;
+        // Update counters
+        setNodes(ns => ns.map(n => n.id === nodeId ? {
+          ...n, data: { ...n.data, [arrivalKey]: arrivals, [passedKey]: pass ? passed + 1 : passed }
+        } : n));
+        if (!pass) {
+          // Particle dies HERE — scatters around the bottom edge of the node
+          const fallX = (Math.random() - 0.5) * 80;
+          const fallY = 30 + Math.random() * 25; // Just below the node
+          particle.status = 'failing';
+          updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: p.x + fallX, y: p.y + fallY, status: 'failing' } : p));
+          // Track deaths per node for visual counter
+          const deathKey = `deaths-${nodeId}`;
+          const prev = (node.data as Record<string, unknown>)[deathKey] as number || 0;
+          setNodes(ns => ns.map(n => n.id === nodeId ? { ...n, data: { ...n.data, [deathKey]: prev + 1 } } : n));
+          finishedCountRef.current++;
+          cb('blocked');
+          return;
+        }
+      }
+
+      // For bottleneck/decision with branching edges, route to pass/fail paths
+      if ((nodeType === 'bottleneck' || nodeType === 'decision') && !hasProb) {
         const out = edgesRef.current.filter(e => e.source === nodeId);
         const passE = out.find(e => e.label === 'pass' || e.label === 'yes');
-        const failE = out.find(e => e.label === 'fail' || e.label === 'no');
-        let next: RFEdge | undefined;
-        if (pass && passE) next = passE;
-        else if (!pass && failE) next = failE;
-        else next = out[pass ? 0 : (out.length > 1 ? 1 : 0)];
-        if (next) {
-          moveTo(particle, next.target, cb);
+        if (passE) {
+          moveTo(particle, passE.target, cb);
           return;
         }
       }
@@ -730,8 +760,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       }
 
       // Apply edge strength to signal delta
-      const nextE = out.length > 1 && nodeType !== 'bottleneck' && nodeType !== 'decision'
-        ? out[Math.floor(Math.random() * out.length)]
+      const nextE = out.length > 1
+        ? out[0]
         : out[0];
       const edgeStrength = (nextE.data as Record<string, unknown>)?.strength as number ?? 1;
       particle.signalDelta = (particle.signalDelta ?? 0.33) * edgeStrength;
@@ -753,6 +783,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       svg: createPersonSVG(),
       status: 'moving',
       visitedNodes: new Set(),
+      speedMult: 0.8 + Math.random() * 0.4, // 0.8–1.2x individual speed
     };
 
     updateParticles(prev => [...prev, particle]);
@@ -790,7 +821,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         if (!simRunningRef.current) return;
         statsRef.current.total++;
         setSimStats({ ...statsRef.current });
-        const startId = startNodeIds[Math.floor(Math.random() * startNodeIds.length)];
+        const startId = startNodeIds[0];
         launchPerson(startId);
       }, i * spd.launch);
     }
@@ -902,16 +933,25 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     nodeValuesRef.current = {};
     setNodeValues({});
 
-    // Hide all nodes and edges for sequential reveal (keep context node visible)
+    // Hide all nodes, reset deterministic counters, sequential reveal
     revealedNodesRef.current = new Set();
-    setNodes(prev => prev.map(n => ({
-      ...n,
-      style: {
-        ...n.style,
-        opacity: n.type === 'contextNode' ? 1 : 0,
-        transition: 'opacity 0.5s ease',
-      },
-    })));
+    setNodes(prev => prev.map(n => {
+      const cleaned = { ...n.data };
+      Object.keys(cleaned).forEach(k => {
+        if (k.startsWith('arrivals-') || k.startsWith('passed-') || k.startsWith('deaths-')) {
+          delete cleaned[k];
+        }
+      });
+      return {
+        ...n,
+        data: cleaned,
+        style: {
+          ...n.style,
+          opacity: n.type === 'contextNode' ? 1 : 0,
+          transition: 'opacity 0.5s ease',
+        },
+      };
+    }));
     // Pre-reveal context node
     const ctxNode = nodesRef.current.find(n => n.type === 'contextNode');
     if (ctxNode) revealedNodesRef.current.add(ctxNode.id);
@@ -1014,7 +1054,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     finishedCountRef.current = 0;
 
     if (statsRef.current.total > 0) {
-      setTimeout(() => { setShowDashboard(true); setTimeout(() => fitView({ padding: 0.08, duration: 400 }), 100); }, 500);
+      setTimeout(() => { setShowDashboard(true); setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100); }, 500);
     }
   }
 
@@ -1105,6 +1145,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
           svg: createPersonSVG(),
           status: 'moving',
           visitedNodes: new Set([nodeId]),
+          speedMult: 0.8 + Math.random() * 0.4,
         };
         updateParticles(prev => [...prev, particle]);
 
@@ -1280,7 +1321,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     setEdges(le);
 
     setTimeout(() => {
-      fitView({ padding: 0.08, duration: 400 });
+      fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 });
       setTimeout(() => simulate(), 500);
     }, 100);
   }, [setNodes, setEdges, fitView]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -1340,7 +1381,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
                 }
 
                 setTimeout(() => {
-                  fitView({ padding: 0.08, duration: 400 });
+                  fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 });
                   setTimeout(() => simulate(), 500);
                 }, 100);
               })
@@ -1460,7 +1501,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
             nodes={nodesRef.current}
             nodeUniqueReach={nodeReachRef.current}
             edges={edgesRef.current.map(e => ({ source: e.source, target: e.target, label: e.label as string | undefined }))}
-            onClose={() => { setShowDashboard(false); setTimeout(() => fitView({ padding: 0.08, duration: 400 }), 100); }}
+            onClose={() => { setShowDashboard(false); setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100); }}
           />
         )}
       </div>
@@ -1606,15 +1647,15 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       {simRunning && (
         <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 animate-slide-up">
           <div
-            className="rounded-full px-6 py-2 flex items-center gap-3"
+            className="rounded-2xl px-8 py-4 flex items-center gap-5"
             style={{
               background: 'var(--surface)',
               boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
             }}
           >
             {/* Speed control */}
-            <div className="flex items-center gap-2 px-2.5 py-1.5">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <div className="flex items-center gap-3">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="5 3 19 12 5 21 5 3" />
               </svg>
               <input
@@ -1628,68 +1669,68 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
                   setSpeedLevel(v);
                   speedRef.current = v;
                 }}
-                className="w-16 h-1 appearance-none rounded-full cursor-pointer"
+                className="w-20 h-1 appearance-none rounded-full cursor-pointer"
                 style={{ accentColor: 'var(--accent)', background: 'var(--border)' }}
               />
-              <span className="text-[10px] font-semibold tabular-nums w-6 text-center" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>{SPEED_LABELS[speedLevel]}</span>
+              <span className="text-[11px] font-semibold tabular-nums w-7 text-center" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>{SPEED_LABELS[speedLevel]}</span>
             </div>
 
-            <div className="w-px h-4" style={{ background: 'var(--border)' }} />
+            <div className="w-px h-5" style={{ background: 'var(--border)' }} />
 
             {/* Wave progress */}
-            <div className="flex items-center gap-2.5 px-2.5 py-1.5">
+            <div className="flex items-center gap-3">
               <div className="flex gap-[3px]">
                 {Array.from({ length: replayOverrideRef.current?.waves ?? SPD_BASE.waves }, (_, i) => (
                   <div
                     key={i}
-                    className="w-[5px] h-[12px] rounded-[2px] transition-all duration-300"
+                    className="w-[6px] h-[14px] rounded-[2px] transition-all duration-300"
                     style={{
                       background: i < currentWave ? 'var(--accent)' : 'var(--border)',
                     }}
                   />
                 ))}
               </div>
-              <span className="text-[10px] font-medium tabular-nums" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>{currentWave}/{replayOverrideRef.current?.waves ?? SPD_BASE.waves}</span>
+              <span className="text-[11px] font-medium tabular-nums" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>{currentWave}/{replayOverrideRef.current?.waves ?? SPD_BASE.waves}</span>
             </div>
 
-            <div className="w-px h-4" style={{ background: 'var(--border)' }} />
+            <div className="w-px h-5" style={{ background: 'var(--border)' }} />
 
             {/* Metrics */}
-            <div className="flex items-center gap-3 px-2.5 py-1.5">
-              <div className="flex items-center gap-1.5">
-                <div className="w-[5px] h-[5px] rounded-full" style={{ background: 'var(--accent)' }} />
-                <span className="text-[11px] font-semibold tabular-nums" style={{ color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>{simStats.total}</span>
+            <div className="flex items-center gap-5">
+              <div className="flex items-center gap-2">
+                <div className="w-[7px] h-[7px] rounded-full" style={{ background: 'var(--accent)' }} />
+                <span className="text-[13px] font-bold tabular-nums" style={{ color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>{simStats.total}</span>
+                <span className="text-[11px] font-medium" style={{ color: 'var(--muted)' }}>people</span>
               </div>
-              <div className="flex items-center gap-1.5">
-                <div className="w-[5px] h-[5px] rounded-full bg-emerald-500" />
-                <span className="text-[11px] font-semibold text-emerald-600 tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)' }}>{simStats.success}</span>
+              <div className="flex items-center gap-2">
+                <div className="w-[7px] h-[7px] rounded-full bg-emerald-500" />
+                <span className="text-[13px] font-bold text-emerald-600 tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)' }}>{simStats.success}</span>
+                <span className="text-[11px] font-medium" style={{ color: 'var(--muted)' }}>made it</span>
               </div>
-              <div className="flex items-center gap-1.5">
-                <div className="w-[5px] h-[5px] rounded-full bg-red-500" />
-                <span className="text-[11px] font-semibold text-red-500 tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)' }}>{simStats.blocked}</span>
+              <div className="flex items-center gap-2">
+                <div className="w-[7px] h-[7px] rounded-full bg-red-500" />
+                <span className="text-[13px] font-bold text-red-500 tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)' }}>{simStats.blocked}</span>
+                <span className="text-[11px] font-medium" style={{ color: 'var(--muted)' }}>stopped</span>
               </div>
             </div>
 
-            {/* Rate pill */}
-            <div
-              className="px-2 py-1 rounded-full text-[10px] font-semibold tabular-nums"
-              style={{
-                background: successRate >= 50 ? 'rgba(16, 185, 129, 0.1)' : successRate >= 25 ? 'rgba(245, 158, 11, 0.1)' : 'rgba(239, 68, 68, 0.1)',
-                color: successRate >= 50 ? '#059669' : successRate >= 25 ? '#d97706' : '#dc2626',
-                fontFamily: 'var(--font-geist-mono)',
-              }}
-            >
+            {/* Rate */}
+            <span className="text-[14px] font-bold tabular-nums" style={{
+              color: successRate >= 50 ? '#059669' : successRate >= 25 ? '#d97706' : '#dc2626',
+              fontFamily: 'var(--font-geist-mono)',
+            }}>
               {successRate}%
-            </div>
+            </span>
+            <span className="text-[11px] font-medium" style={{ color: 'var(--muted)' }}>success rate</span>
 
             {/* Status */}
             {simPaused ? (
-              <div className="flex items-center gap-1.5 px-2 py-1 rounded-full" style={{ background: 'rgba(245, 158, 11, 0.1)' }}>
-                <div className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
-                <span className="text-[9px] text-amber-600 font-semibold uppercase tracking-wider" style={{ fontFamily: 'var(--font-geist-mono)' }}>Paused</span>
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full" style={{ background: 'rgba(245, 158, 11, 0.1)' }}>
+                <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+                <span className="text-[10px] text-amber-600 font-semibold uppercase tracking-wider" style={{ fontFamily: 'var(--font-geist-mono)' }}>Paused</span>
               </div>
             ) : (
-              <kbd className="text-[9px] px-2 py-0.5 rounded-md" style={{ color: 'var(--muted)', background: 'var(--surface-hover)', fontFamily: 'var(--font-geist-mono)' }}>space</kbd>
+              <kbd className="text-[10px] px-2.5 py-1 rounded-md" style={{ color: 'var(--muted)', background: 'var(--surface-hover)', fontFamily: 'var(--font-geist-mono)' }}>space</kbd>
             )}
           </div>
         </div>
@@ -1753,7 +1794,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       {/* ========== RESULTS TAB (right edge, shows when dashboard is closed) ========== */}
       {!simRunning && statsRef.current.total > 0 && !showDashboard && (
         <button
-          onClick={() => { setShowDashboard(true); setTimeout(() => fitView({ padding: 0.08, duration: 400 }), 100); }}
+          onClick={() => { setShowDashboard(true); setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100); }}
           className="fixed right-0 top-1/2 -translate-y-1/2 z-50 bg-white dark:bg-[#1a1a1a] border border-r-0 border-gray-200 dark:border-gray-700 rounded-l-lg px-2 py-4 shadow-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all cursor-pointer group"
         >
           <div className="flex flex-col items-center gap-1.5">

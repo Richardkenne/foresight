@@ -113,6 +113,23 @@
 - [x] Input espandibile: textarea overlay centrato (non inline)
 - [x] Stats bar, floating toolbar, Dashboard, SimNode — padding aumentato ovunque
 
+## Completato (sessione 2026-03-30 pomeriggio)
+
+### Deterministic Simulation Engine
+- [x] Eliminata TUTTA la randomness: proportional filtering, temperature 0, selezione deterministica edge/start
+- [x] Particle animation: walking bounce, speed variation, fall-at-bottleneck
+- [x] Speed tuning: move 1300ms, wait 500ms, launch 150ms
+
+### UI & Display
+- [x] Display mode toggle: Minimal/Classic nel hamburger menu settings
+- [x] Stats bar redesign: v1-style con labels (people, made it, stopped, success rate)
+- [x] Card sizing: 270px cards, 200px bottleneck (narrower = visual "tight passage")
+- [x] Node spacing: dagre ranksep 250, nodesep 100
+- [x] fitView maxZoom 0.85 per nodi leggibili
+
+### Backtesting Fix
+- [x] Formula fix: geometric mean invece di cascading multiplication
+
 ## In Corso — Day 1 (2026-03-30)
 
 ### RAG Full Re-Index (Task 1.1-1.3)
@@ -266,6 +283,11 @@
 - **Log**: /tmp/simulator-overnight.log
 - **Complementare**: non è una fase — rafforza TUTTE le fasi continuamente
 
+## Problemi da Risolvere / Prossimi Step Urgenti
+- [ ] AI prompt needs deeper flow generation — v1 produce lifecycle paths piu completi di v2
+- [ ] Backtest full run pendente (250 casi)
+- [ ] Import 62 data file di v1 nel RAG v2 (file presenti, serve verifica e indicizzazione)
+
 ## Backlog (feature secondarie)
 - [ ] Confronto scenari A vs B — side-by-side dashboard
 - [ ] Interactive sliders — muovi parametro, grafo si ricalcola live
@@ -296,4 +318,4 @@
 
 ---
 
-*Ultimo aggiornamento: 2026-03-30*
+*Ultimo aggiornamento: 2026-03-30 (pomeriggio)*

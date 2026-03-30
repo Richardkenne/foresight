@@ -118,4 +118,5 @@ export interface ParticleData {
   status: 'moving' | 'success' | 'blocked' | 'failing';
   visitedNodes: Set<string>;
   signalDelta?: number;
+  speedMult: number; // Per-person speed variation (0.8–1.2)
 }

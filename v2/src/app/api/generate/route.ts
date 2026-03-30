@@ -982,6 +982,7 @@ function callClaude(staticPrompt: string, dynamicPrompt: string, userMsg: string
   const body = JSON.stringify({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 4000,
+    temperature: 0,
     system: systemBlocks,
     messages: [{ role: 'user', content: userMsg }]
   });
@@ -1026,7 +1027,7 @@ function callOpenAI(systemPrompt: string, userMsg: string): Promise<unknown> {
   const body = JSON.stringify({
     model: 'gpt-4o-mini',
     messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userMsg }],
-    temperature: 0.7, max_tokens: 4000,
+    temperature: 0, max_tokens: 4000,
     response_format: { type: 'json_object' }
   });
 
@@ -1060,7 +1061,7 @@ function callGroq(systemPrompt: string, userMsg: string): Promise<unknown> {
   const body = JSON.stringify({
     model: 'llama-3.3-70b-versatile',
     messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userMsg }],
-    temperature: 0.7, max_tokens: 4000,
+    temperature: 0, max_tokens: 4000,
     response_format: { type: 'json_object' }
   });
 
@@ -1176,13 +1177,13 @@ export async function POST(request: NextRequest) {
     const staticPrompt = `You are a life/business scenario simulator. Generate a realistic flowchart with nodes and edges.
 
 CRITICAL RULES:
-1. DATA INTEGRITY: If you have a real stat with a real source, use it. If you DON'T have a verified source, write "Estimated" as source. NEVER invent fake source names like "Peak Freelance 2025" or "Upwork Business Report". Only cite sources you KNOW exist (Upwork 10-K, BLS, Payoneer, CB Insights, etc.).
+1. DATA INTEGRITY: If you have a real stat with a real source, use it. If you DON'T have a verified data source, set prob to null and source to "No data". NEVER estimate or guess probabilities.
 2. COMPLETE COVERAGE: The flow must cover the ENTIRE scenario from start to end. If the user says "move abroad and learn a language", cover BOTH — immigration steps AND language learning journey. Never stop halfway.
 3. EVERY STEP NEEDS A FAIL PATH: Every bottleneck/decision MUST have a fail/no edge leading to an outcome-bad node. This is non-negotiable. Real life has failure at every step.
 4. If an ARCHETYPE is provided, use its stages as the SKELETON with EXACT probabilities.
 5. If section data points are provided, use those specific numbers and CITE the source.
 6. NEVER HALLUCINATE PLATFORM FEATURES: Do NOT invent steps that don't exist on real platforms. Upwork has NO mandatory "skills test" or "AI developer test". Stick to real platform mechanics: profile creation, proposals (with Connects), interviews, contracts, JSS score, badges.
-7. USE RAG DATA FIRST: When the provided data includes a specific probability (e.g., "proposal_to_interview_new_pct: 2-5%"), use THAT number, not a higher one. The RAG data is verified — prefer it over your own estimates.
+7. USE RAG DATA FIRST: When the provided data includes a specific probability (e.g., "proposal_to_interview_new_pct: 2-5%"), use THAT number, not a higher one. The RAG data is verified — ONLY use verified data. Never estimate probabilities.
 
 STRUCTURE: Return ONLY valid JSON. 10-14 nodes. Include success AND failure paths.
 Node types: start, desire, action, bottleneck, decision, outcome-good, outcome-bad, loop.

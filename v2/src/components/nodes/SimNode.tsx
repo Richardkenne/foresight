@@ -104,6 +104,9 @@ function SimNodeComponent({ data }: NodeProps) {
   const intensity = hasValue ? Math.min(1, Math.max(0, computedValue)) : 0;
   const isInteractive = isStart || hasProb;
 
+  // Death counter — find any deaths-* key in data
+  const deathCount = Object.entries(d).reduce((sum, [k, v]) => k.startsWith('deaths-') ? sum + (v as number) : sum, 0);
+
   // Node type label (shown above node, monospace like Tersa)
   const NODE_TYPE_LABELS: Record<string, string> = {
     start: 'START', desire: 'DESIRE', action: 'ACTION',
@@ -127,7 +130,7 @@ function SimNodeComponent({ data }: NodeProps) {
 
   return (
     <div
-      className={`sim-node sim-node--card${nodeType === 'outcome-bad' ? ' sim-node--fail' : nodeType === 'outcome-good' ? ' sim-node--success' : ''}${d.isCutPoint ? ' sim-node--cut' : ''}`}
+      className={`sim-node sim-node--card${nodeType === 'bottleneck' ? ' sim-node--bottleneck' : ''}${nodeType === 'outcome-bad' ? ' sim-node--fail' : nodeType === 'outcome-good' ? ' sim-node--success' : ''}${d.isCutPoint ? ' sim-node--cut' : ''}`}
     >
       <Handle type="target" position={Position.Left} className="sim-handle" />
 
@@ -191,6 +194,31 @@ function SimNodeComponent({ data }: NodeProps) {
           </>
         )}
       </div>
+
+      {/* Death counter badge */}
+      {deathCount > 0 && (
+        <div style={{
+          position: 'absolute',
+          bottom: -22,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          display: 'flex',
+          alignItems: 'center',
+          gap: 3,
+          background: 'rgba(239, 68, 68, 0.1)',
+          border: '1px solid rgba(239, 68, 68, 0.25)',
+          borderRadius: 10,
+          padding: '1px 7px',
+          whiteSpace: 'nowrap',
+        }}>
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+          <span style={{ fontSize: 9, fontWeight: 600, color: '#ef4444', fontFamily: 'var(--font-geist-mono)' }}>
+            {deathCount} dropped
+          </span>
+        </div>
+      )}
 
       <Handle type="source" position={Position.Right} className="sim-handle" />
     </div>

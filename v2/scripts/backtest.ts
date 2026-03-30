@@ -57,14 +57,13 @@ function calculatePredictedRate(nodes: SimNode[]): { successPct: number; failPct
 
   if (bottlenecks.length === 0) return { successPct: 50, failPct: 50, avgBottleneckProb: 50, bottleneckCount: 0 };
 
-  // Cascading probability: multiply all bottleneck pass rates
-  let cascadingProb = 1.0;
-  for (const b of bottlenecks) {
-    cascadingProb *= (b.prob || 50) / 100;
-  }
+  // Geometric mean of bottleneck probabilities (less punitive than cascading multiplication)
+  const probs = bottlenecks.map(b => (b.prob || 50) / 100);
+  const product = probs.reduce((acc, p) => acc * p, 1.0);
+  const geometricMean = Math.pow(product, 1 / probs.length);
 
-  const successPct = Math.round(cascadingProb * 100 * 10) / 10;
-  const failPct = Math.round((1 - cascadingProb) * 100 * 10) / 10;
+  const successPct = Math.round(geometricMean * 100 * 10) / 10;
+  const failPct = Math.round((1 - geometricMean) * 100 * 10) / 10;
   const avgBottleneckProb = Math.round(bottlenecks.reduce((s, b) => s + (b.prob || 50), 0) / bottlenecks.length);
 
   return { successPct, failPct, avgBottleneckProb, bottleneckCount: bottlenecks.length };
@@ -86,8 +85,8 @@ async function runOne(c: HistoricalCase): Promise<BacktestResult> {
 
     const { successPct, failPct, avgBottleneckProb, bottleneckCount } = calculatePredictedRate(flow.nodes);
 
-    // Prediction: if cascading success < 20% → predict failure, else success
-    const predictedOutcome = successPct < 20 ? 'failed' : 'success';
+    // Prediction: geometric mean < 40% → predict failure, else success
+    const predictedOutcome = successPct < 40 ? 'failed' : 'success';
     const correct = predictedOutcome === c.outcome;
 
     // Confidence: how far from 50/50 (higher = more confident)
