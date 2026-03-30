@@ -57,8 +57,23 @@ Target: 100+/100 (absolute prediction engine)
 | 7 Public API | 59-63 | ~30h | ~1,500 | 0% | /api/predict, JS/Python SDK, $29/mo pricing |
 | **TOTAL** | **63 days** | **~372h** | **~16,000** | **~17%** | From 60/100 to 100+/100 credibility |
 
-**Current codebase: 10,519 LOC. Target: ~26,500 LOC.**
-**Hours remaining: ~310h (~52 sessions of 6h).**
+**Current codebase: 10,519 LOC. Target: ~50,500 LOC (prodotto completo vendibile).**
+
+### Full Product LOC Breakdown
+
+| Blocco | LOC | Quando |
+|--------|-----|--------|
+| Core engine (attuale) | 10,500 | FATTO |
+| Fasi 1-7 (piano 63gg) | +16,000 | In corso |
+| Auth + Billing (Stripe) | +5,000 | Post Fase 7 |
+| Admin + Analytics dashboard | +3,000 | Post Fase 7 |
+| Tests + CI/CD | +5,000 | Continuo |
+| Mobile responsive + PWA | +3,000 | Post Fase 4 |
+| Landing + Marketing pages | +5,000 | Post Fase 7 |
+| Infra (logging, monitoring, error tracking) | +3,000 | Post Fase 5 |
+| **Totale prodotto completo** | **~50,500** | **~6-8 mesi** |
+
+**Hours remaining (Fasi 1-7): ~310h (~52 sessions of 6h).**
 
 ---
 
