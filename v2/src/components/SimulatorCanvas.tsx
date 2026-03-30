@@ -29,6 +29,7 @@ import type { ContextTags } from '@/lib/context-tags';
 import { saveToHistory, createThumbnail, type HistoryEntry } from '@/lib/history';
 import { SimulatorDataflow } from '@/lib/dataflow-engine';
 import { applyRealProbabilities } from '@/lib/probability-matcher';
+import DecisionPruning, { type PruningResult } from './DecisionPruning';
 
 const nodeTypes = { simNode: SimNodeComponent, contextNode: ContextNodeComponent };
 const edgeTypes = { animated: AnimatedEdgeComponent };
@@ -249,6 +250,11 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
   // Node values — signal delta propagation (inspired by Loopy)
   const [nodeValues, setNodeValues] = useState<Record<string, number>>({});
+
+  // Decision Pruning — binary questions before simulation
+  const [showPruning, setShowPruning] = useState(false);
+  const pruningResultRef = useRef<PruningResult | null>(null);
+  const [apiPruningQuestions, setApiPruningQuestions] = useState<Array<{id:string;question:string;section:string;yesModifier:number;noModifier:number;yesLabel:string;noLabel:string;insight:string}>>([]);
 
   // Load shared simulation if provided
   useEffect(() => {
@@ -575,6 +581,13 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       if (!flow.nodes || !flow.edges) throw new Error('Invalid flow');
       setLastFlowData(flow);
 
+      // Store dynamic pruning questions from Claude if available
+      if (flow.pruning_questions && Array.isArray(flow.pruning_questions)) {
+        setApiPruningQuestions(flow.pruning_questions);
+      } else {
+        setApiPruningQuestions([]);
+      }
+
       statsRef.current = { total: 0, success: 0, blocked: 0 };
       setSimStats({ total: 0, success: 0, blocked: 0 });
       stopSim();
@@ -603,8 +616,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
       setTimeout(() => {
         fitView({ padding: 0.15, duration: 400 });
-        // Auto-start simulation after generate
-        setTimeout(() => simulate(), 500);
+        // Show Decision Pruning after generate (instead of auto-simulate)
+        setTimeout(() => requestSimulate(), 500);
       }, 100);
     } catch {
       if (best && bestScore >= 2) {
@@ -821,6 +834,46 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     launchWave(0, [cutNodeId]);
   }, [cutNodeId, launchWave]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Apply pruning modifiers to all bottleneck/decision nodes
+  const applyPruningModifiers = useCallback((modifier: number) => {
+    if (modifier === 1.0) return; // No change
+    setNodes(prev => prev.map(n => {
+      const data = n.data as Record<string, unknown>;
+      const nodeType = data.nodeType as string;
+      if (nodeType === 'bottleneck' || nodeType === 'decision') {
+        const origProb = data.prob as number;
+        // Apply modifier, clamp to 1-99 range
+        const newProb = Math.round(Math.max(1, Math.min(99, origProb * modifier)));
+        return { ...n, data: { ...data, prob: newProb } };
+      }
+      return n;
+    }));
+  }, [setNodes]);
+
+  // Request pruning before simulation
+  const requestSimulate = useCallback(() => {
+    if (simRunningRef.current || nodesRef.current.length === 0) return;
+    setShowPruning(true);
+  }, []);
+
+  // Pruning callbacks use simulateRef to avoid circular dependency
+  const simulateRef = useRef<() => void>(() => {});
+
+  // Handle pruning complete — apply modifiers, then start simulation
+  const handlePruningComplete = useCallback((result: PruningResult) => {
+    pruningResultRef.current = result;
+    setShowPruning(false);
+    applyPruningModifiers(result.combinedModifier);
+    setTimeout(() => simulateRef.current(), 150);
+  }, [applyPruningModifiers]);
+
+  // Handle pruning skip — run with no modifiers
+  const handlePruningSkip = useCallback(() => {
+    pruningResultRef.current = null;
+    setShowPruning(false);
+    setTimeout(() => simulateRef.current(), 150);
+  }, []);
+
   const simulate = useCallback(() => {
     if (simRunningRef.current || nodesRef.current.length === 0) return;
 
@@ -868,6 +921,9 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
     launchWave(0, startNodeIds);
   }, [launchWave, setNodes, setEdges]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Keep simulateRef in sync
+  simulateRef.current = simulate;
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   function stopSim() {
@@ -1067,7 +1123,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         if (simRunningRef.current) {
           togglePause();
         } else if (nodesRef.current.length > 0) {
-          simulate();
+          requestSimulate();
         }
         return;
       }
@@ -1359,6 +1415,15 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         )}
       </div>
 
+      {/* ========== DECISION PRUNING MODAL ========== */}
+      {showPruning && (
+        <DecisionPruning
+          onComplete={handlePruningComplete}
+          onSkip={handlePruningSkip}
+          questions={apiPruningQuestions.length >= 5 ? apiPruningQuestions : undefined}
+        />
+      )}
+
       {/* ========== FLOATING TOOLBAR (when nodes exist, sim not running) ========== */}
       {hasNodes && !simRunning && (
         <div className="fixed bottom-6 right-6 z-50 animate-slide-up">
@@ -1377,7 +1442,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
                 </svg>
               </button>
             ) : (
-              <button onClick={simulate} disabled={replayMode} className="toolbar-btn toolbar-btn--primary" title="Simulate">
+              <button onClick={requestSimulate} disabled={replayMode} className="toolbar-btn toolbar-btn--primary" title="Simulate">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <polygon points="5 3 19 12 5 21 5 3" />
                 </svg>

@@ -129,6 +129,7 @@ const KEYWORDS: Record<string, string[]> = {
   'community-engagement-deep': ['communit', 'engag', 'member', 'forum', 'discord', 'slack', 'group', 'tribe', 'comunità', 'coinvolgimento', 'membri', 'komunitas', 'anggota', 'loyalty', 'ambassador', 'networking', 'rete di contatti'],
 
   // === CAREER & WORK ===
+  'upwork-data': ['upwork', 'freelance', 'freelancer', 'freelancing', 'proposal', 'connects', 'top rated', 'expert vetted', 'fiverr', 'gig', 'client acquisition', 'JSS', 'job success', 'agency freelance', 'retainer', 'hourly rate'],
   'career-employment': ['job', 'career', 'salary', 'hire', 'resume', 'interview', 'layoff', 'freelance', 'lavoro', 'carriera', 'stipendio', 'assunz', 'colloquio', 'licenzia', 'pekerjaan', 'gaji', 'karir', 'skill', 'impara', 'competenz', 'portfolio', 'consulting', 'consulenz'],
   'side-hustle-entrepreneurship': ['side hustle', 'dropship', 'etsy', 'youtube', 'newsletter', 'lavoretto', 'secondo lavoro', 'extra', 'sampingan', 'usaha sampingan'],
   'remote-work-digital-nomad': ['remote', 'remote work', 'lavoro remoto', 'kerja remote', 'digital nomad', 'nomade digitale', 'work from home', 'wfh', 'coworking', 'smart working', 'distributed', 'async', 'timezone', 'location independent', 'bali', 'bekerja dari rumah', 'hybrid work'],
@@ -950,7 +951,7 @@ function callClaude(staticPrompt: string, dynamicPrompt: string, userMsg: string
 
   const body = JSON.stringify({
     model: 'claude-haiku-4-5-20251001',
-    max_tokens: 3000,
+    max_tokens: 4000,
     system: systemBlocks,
     messages: [{ role: 'user', content: userMsg }]
   });
@@ -990,12 +991,46 @@ function callClaude(staticPrompt: string, dynamicPrompt: string, userMsg: string
   });
 }
 
-// ============ GROQ FALLBACK ============
+// ============ OPENAI FALLBACK (GPT-4o-mini) ============
+function callOpenAI(systemPrompt: string, userMsg: string): Promise<unknown> {
+  const body = JSON.stringify({
+    model: 'gpt-4o-mini',
+    messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userMsg }],
+    temperature: 0.7, max_tokens: 4000,
+    response_format: { type: 'json_object' }
+  });
+
+  return new Promise((resolve, reject) => {
+    const req = https.request({
+      hostname: 'api.openai.com', path: '/v1/chat/completions', method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+        'Content-Length': Buffer.byteLength(body)
+      }
+    }, (res) => {
+      let d = '';
+      res.on('data', (c: Buffer) => d += c);
+      res.on('end', () => {
+        try {
+          const j = JSON.parse(d);
+          if (j.error) return reject(new Error(j.error.message));
+          resolve(JSON.parse(j.choices[0].message.content));
+        } catch (e) { reject(e); }
+      });
+    });
+    req.on('error', reject);
+    req.write(body);
+    req.end();
+  });
+}
+
+// ============ GROQ FALLBACK (3rd tier — free, fast, lower quality) ============
 function callGroq(systemPrompt: string, userMsg: string): Promise<unknown> {
   const body = JSON.stringify({
     model: 'llama-3.3-70b-versatile',
     messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userMsg }],
-    temperature: 0.7, max_tokens: 3000,
+    temperature: 0.7, max_tokens: 4000,
     response_format: { type: 'json_object' }
   });
 
@@ -1111,19 +1146,51 @@ export async function POST(request: NextRequest) {
     const staticPrompt = `You are a life/business scenario simulator. Generate a realistic flowchart with nodes and edges.
 
 CRITICAL RULES:
-1. DATA INTEGRITY: If you have a real stat with a real source, use it. If you DON'T have a verified source, write "Estimated" as source. NEVER invent fake source names.
+1. DATA INTEGRITY: If you have a real stat with a real source, use it. If you DON'T have a verified source, write "Estimated" as source. NEVER invent fake source names like "Peak Freelance 2025" or "Upwork Business Report". Only cite sources you KNOW exist (Upwork 10-K, BLS, Payoneer, CB Insights, etc.).
 2. COMPLETE COVERAGE: The flow must cover the ENTIRE scenario from start to end. If the user says "move abroad and learn a language", cover BOTH — immigration steps AND language learning journey. Never stop halfway.
 3. EVERY STEP NEEDS A FAIL PATH: Every bottleneck/decision MUST have a fail/no edge leading to an outcome-bad node. This is non-negotiable. Real life has failure at every step.
 4. If an ARCHETYPE is provided, use its stages as the SKELETON with EXACT probabilities.
 5. If section data points are provided, use those specific numbers and CITE the source.
+6. NEVER HALLUCINATE PLATFORM FEATURES: Do NOT invent steps that don't exist on real platforms. Upwork has NO mandatory "skills test" or "AI developer test". Stick to real platform mechanics: profile creation, proposals (with Connects), interviews, contracts, JSS score, badges.
+7. USE RAG DATA FIRST: When the provided data includes a specific probability (e.g., "proposal_to_interview_new_pct: 2-5%"), use THAT number, not a higher one. The RAG data is verified — prefer it over your own estimates.
 
 STRUCTURE: Return ONLY valid JSON. 10-14 nodes. Include success AND failure paths.
 Node types: start, desire, action, bottleneck, decision, outcome-good, outcome-bad, loop.
 Edges: pass/fail for bottleneck, yes/no for decision. Every bottleneck/decision MUST have both a pass/yes AND a fail/no edge.
 Position: x increases by ~260, failures below (y+200). Min 260px horizontal spacing.
-JSON format: {"title":"...","nodes":[{"id":1,"type":"desire","label":"...","x":0,"y":120,"prob":100,"desc":"Real stat","source":"Source Year or Estimated","time":"30-90 days"}],"edges":[{"from":1,"to":2,"label":""}]}
+JSON format: {"title":"...","nodes":[{"id":1,"type":"desire","label":"...","x":0,"y":120,"prob":100,"desc":"Real stat","source":"Source Year or Estimated","time":"30-90 days"}],"edges":[{"from":1,"to":2,"label":""}],"pruning_questions":[{"id":"q1","question":"Binary YES/NO question specific to this scenario","section":"community_and_counsel","yesModifier":1.8,"noModifier":0.35,"yesLabel":"Yes, short","noLabel":"No, short","insight":"Data-backed reason why this matters (stat + source)"}]}
 prob = conditional % of PASSING. Only bottleneck/decision need realistic prob (<100). Others = 100.
-desc MUST include a specific number/stat, not generic text.`;
+desc MUST include a specific number/stat, not generic text.
+
+UPWORK/FREELANCE PLATFORM MECHANICS (use when scenario involves Upwork or freelancing):
+- Profile approval: ~50-60% of submissions approved (Upwork tightened screening 2023)
+- Connects: $0.15 each, 2-16 per proposal. Average $9-27 spent before first hire.
+- Proposal-to-interview rate: 2-5% for new freelancers, 15-25% for established, 30-50% for Top Rated Plus
+- Proposals before first hire: 15-30 (median 20)
+- Time to first dollar: 1-3 months
+- 60-70% of new freelancers quit within year 1
+- Only 2.5% of signups get their first job. Only 0.8% still active after 1 year.
+- Income: median active freelancer earns $2-5K/year. Top 1% earns $150-500K/year.
+- JSS (Job Success Score) 90%+ = 2-3x higher hire rate. Top Rated = 3-5x more invites.
+- Expert-Vetted acceptance: 1%. Rates: $150-300/hr.
+- Repeat hire rate: 60%. 75% of GSV from returning clients.
+- Hourly-to-retainer conversion: 30-40% for 3+ month relationships.
+- Solo-to-agency transition: 5-7% overall, 15-20% of high earners. Takes 3-5 years.
+- Geographic rates: US $75-150/hr dev, India $15-40/hr, Indonesia $10-30/hr, Philippines $10-30/hr.
+- AI category: demand 2-3x supply, rates $75-150/hr median, +1400% YoY growth.
+
+DECISION PRUNING QUESTIONS: Generate exactly 5-7 binary YES/NO questions that determine success/failure for THIS specific scenario. Each question must:
+- Be a simple YES/NO binary decision the person makes BEFORE starting
+- Map to one of these sacred sections: community_and_counsel, deception_and_shortcuts, envy_and_comparison, fear_and_lack_of_faith, forbidden_fruit, greed_and_excess, patience_and_perseverance, pride_and_hubris, sloth_and_procrastination, stewardship_and_responsibility
+- Have yesModifier (1.2-2.5) and noModifier (0.05-0.5) that reflect real data
+- Include a data-backed "insight" with a real statistic
+- Be SPECIFIC to the scenario — ask about CONCRETE MECHANICS, not generic self-help. Examples:
+  - Upwork: "Do you have a Connects budget of $20+/month?" NOT "Are you willing to invest?"
+  - Upwork: "Have you specialized in ONE niche?" NOT "Do you have skills?"
+  - Upwork: "Do you have 5+ portfolio pieces?" NOT "Are you prepared?"
+  - Visa: "Do you have a sponsor employer?" NOT "Are you committed?"
+  - Startup: "Have you talked to 20+ potential customers?" NOT "Have you validated?"
+  - Weight loss: "Do you have a gym membership or home equipment?" NOT "Are you motivated?"`;
 
     // LAYER 0: Sacred foundation — injected FIRST because it's the base
     const sacredContext = findSacredPatterns(scenario);
@@ -1154,10 +1221,16 @@ desc MUST include a specific number/stat, not generic text.`;
       flow = await callClaude(staticPrompt, dynamicPrompt, userMsg) as Record<string, unknown>;
       flow._provider = 'claude';
     } catch (claudeErr) {
-      console.warn('[API] Claude failed, falling back to Groq:', (claudeErr as Error).message);
+      console.warn('[API] Claude failed, trying OpenAI:', (claudeErr as Error).message);
       const fullPrompt = dynamicPrompt ? `${staticPrompt}\n\n${dynamicPrompt}` : staticPrompt;
-      flow = await callGroq(fullPrompt, userMsg) as Record<string, unknown>;
-      flow._provider = 'groq';
+      try {
+        flow = await callOpenAI(fullPrompt, userMsg) as Record<string, unknown>;
+        flow._provider = 'openai';
+      } catch (openaiErr) {
+        console.warn('[API] OpenAI failed, trying Groq:', (openaiErr as Error).message);
+        flow = await callGroq(fullPrompt, userMsg) as Record<string, unknown>;
+        flow._provider = 'groq';
+      }
     }
     flow._live_data = !!(live?.gdp || countryData || exchangeRates || laborData || cryptoData || cityData);
     flow._data_source = dataSource;

@@ -764,6 +764,324 @@ body {
   background: var(--muted);
 }
 
+/* ─── Decision Pruning Modal ─── */
+.pruning-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  animation: pruning-fade-in 0.2s ease;
+}
+
+@keyframes pruning-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.pruning-modal {
+  width: 440px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-xl);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: pruning-slide-up 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes pruning-slide-up {
+  from { transform: translateY(16px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.pruning-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pruning-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--foreground);
+  letter-spacing: -0.01em;
+}
+
+.pruning-subtitle {
+  font-size: 12px;
+  color: var(--muted-foreground);
+  line-height: 1.4;
+}
+
+.pruning-progress {
+  height: 2px;
+  background: var(--border);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.pruning-progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 1px;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pruning-dots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.pruning-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.pruning-dot:hover {
+  border-color: var(--muted);
+}
+
+.pruning-dot--active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.pruning-dot--answered {
+  border-color: transparent;
+}
+
+.pruning-question-area {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 160px;
+}
+
+.pruning-question-number {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.pruning-question-text {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--foreground);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.pruning-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.pruning-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--foreground);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.pruning-btn:hover {
+  border-color: var(--muted);
+  background: var(--surface-hover);
+}
+
+.pruning-btn--yes.pruning-btn--selected {
+  border-color: var(--success);
+  background: rgba(16, 185, 129, 0.08);
+  color: var(--success);
+}
+
+.pruning-btn--no.pruning-btn--selected {
+  border-color: var(--danger);
+  background: rgba(239, 68, 68, 0.08);
+  color: var(--danger);
+}
+
+.pruning-insight {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+  line-height: 1.45;
+  padding: 8px 10px;
+  background: var(--surface-hover);
+  border-radius: 8px;
+}
+
+.pruning-insight svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  opacity: 0.6;
+}
+
+.pruning-meter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pruning-meter-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.pruning-meter-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.pruning-meter-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pruning-meter-value {
+  font-size: 13px;
+  font-weight: 700;
+  min-width: 48px;
+  text-align: right;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.pruning-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pruning-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.pruning-chip--yes {
+  background: rgba(16, 185, 129, 0.08);
+  color: var(--success);
+}
+
+.pruning-chip--no {
+  background: rgba(239, 68, 68, 0.08);
+  color: var(--danger);
+}
+
+.pruning-chip-mod {
+  font-family: var(--font-geist-mono), monospace;
+  font-weight: 600;
+  font-size: 9px;
+  opacity: 0.8;
+}
+
+.pruning-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.pruning-action-skip {
+  font-size: 12px;
+  color: var(--muted-foreground);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+}
+
+.pruning-action-skip:hover {
+  color: var(--foreground);
+  background: var(--surface-hover);
+}
+
+.pruning-action-run {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: var(--foreground);
+  color: var(--background);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.pruning-action-run:hover {
+  opacity: 0.9;
+}
+
+.pruning-action-run:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .pruning-modal {
+    padding: 20px;
+    gap: 16px;
+    border-radius: 12px;
+  }
+  .pruning-question-text {
+    font-size: 15px;
+  }
+  .pruning-btn {
+    padding: 12px;
+    font-size: 12px;
+  }
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
   .sim-node--card {

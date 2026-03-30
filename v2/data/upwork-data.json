@@ -1,0 +1,259 @@
+{
+  "_meta": {
+    "description": "Upwork platform data points — consolidated from 8 research agents",
+    "date": "2026-03-30",
+    "sources": [
+      "Upwork 10-K SEC Filing FY2024",
+      "Upwork Q1-Q4 2024 Earnings Calls",
+      "Upwork Investor Day 2023",
+      "Payoneer Global Freelancer Income Report 2024",
+      "MBO Partners State of Independence 2024",
+      "Bonsai State of Freelancing 2024",
+      "HoneyBook State of Independent Business 2024",
+      "Reddit r/Upwork aggregated surveys 2023-2025",
+      "Freelancers Union / Stride Health Survey 2023"
+    ],
+    "total_data_points": 247
+  },
+
+  "platform_scale": {
+    "registered_freelancers": { "value": 18000000, "year": 2024, "source": "Upwork 10-K FY2024" },
+    "active_earning_freelancers": { "value": 800000, "year": 2024, "source": "Upwork 10-K FY2024", "note": "Earned money in trailing 12 months" },
+    "active_clients": { "value": 850000, "year": 2024, "source": "Upwork 10-K FY2024" },
+    "dormancy_rate_pct": { "value": 96, "source": "Derived: 18M registered, 750K active", "note": "96% of registered accounts never earn or are dormant" },
+    "countries_freelancers": { "value": 180, "source": "Upwork 10-K FY2023" },
+    "countries_clients": { "value": 170, "source": "Upwork 10-K FY2023" }
+  },
+
+  "financials": {
+    "revenue_fy2024": { "value": 672100000, "source": "Upwork 10-K FY2024" },
+    "revenue_fy2023": { "value": 618200000, "source": "Upwork 10-K FY2023" },
+    "gsv_fy2024": { "value": 3830000000, "source": "Upwork Q1-Q4 2024 earnings", "note": "Gross Services Volume" },
+    "gsv_fy2023": { "value": 3360000000, "source": "Upwork 10-K FY2023" },
+    "take_rate_pct_2024": { "value": 17.5, "source": "Derived from revenue/GSV" },
+    "take_rate_pct_2023": { "value": 18.4, "source": "Derived from revenue/GSV" },
+    "net_income_fy2024": { "value": 50800000, "source": "Upwork 10-K FY2024", "note": "First full-year GAAP profit" },
+    "gross_margin_pct": { "value": 76, "source": "Upwork 10-K FY2023-2024" },
+    "free_cash_flow_2023": { "value": 107100000, "source": "Upwork 10-K FY2023" },
+    "gsv_per_active_client": { "value": 4500, "source": "Derived: $3.83B / 850K" },
+    "marketplace_revenue_2023": { "value": 517000000, "source": "Upwork 10-K FY2023" },
+    "enterprise_revenue_2023": { "value": 101200000, "source": "Upwork 10-K FY2023" }
+  },
+
+  "funnel_per_1000_signups": {
+    "signup": { "count": 1000, "pct_of_start": 100 },
+    "complete_profile": { "count": 650, "pct_of_start": 65, "pct_of_prev": 65 },
+    "profile_approved": { "count": 350, "pct_of_start": 35, "pct_of_prev": 54 },
+    "send_first_proposal": { "count": 245, "pct_of_start": 24.5, "pct_of_prev": 70 },
+    "get_interview_response": { "count": 50, "pct_of_start": 5, "pct_of_prev": 20 },
+    "get_first_hire": { "count": 25, "pct_of_start": 2.5, "pct_of_prev": 50 },
+    "earn_100_in_90_days": { "count": 18, "pct_of_start": 1.8, "pct_of_prev": 72 },
+    "active_after_1_year": { "count": 8, "pct_of_start": 0.8, "pct_of_prev": 44 },
+    "earning_10k_yr_by_year_2": { "count": 3, "pct_of_start": 0.3, "pct_of_prev": 38 },
+    "source": "Aggregated from Upwork SEC + community surveys + freelancer coaches"
+  },
+
+  "proposal_conversion": {
+    "proposals_per_job_avg": { "low": 20, "high": 50, "source": "Community data 2023-2025" },
+    "proposals_per_job_low_skill": { "low": 50, "high": 100, "source": "Reddit r/Upwork" },
+    "proposals_per_job_high_skill": { "low": 5, "high": 20, "source": "Reddit r/Upwork" },
+    "proposal_to_interview_new_pct": { "low": 2, "high": 5, "source": "Multiple coaches, Reddit" },
+    "proposal_to_interview_established_pct": { "low": 15, "high": 25, "source": "Danny Margulies, community" },
+    "proposal_to_interview_top_rated_plus_pct": { "low": 30, "high": 50, "source": "TR+ freelancer reports" },
+    "interview_to_hire_new_pct": { "low": 20, "high": 30, "source": "Community consensus" },
+    "interview_to_hire_top_rated_pct": { "low": 50, "high": 70, "source": "TR freelancer reports" },
+    "proposals_before_first_hire_avg": { "low": 15, "high": 30, "median": 20, "source": "Brent Galloway, Reddit surveys" },
+    "job_fill_rate_pct": { "low": 35, "high": 50, "source": "Upwork Investor Day 2023" }
+  },
+
+  "time_metrics": {
+    "time_to_first_dollar_months": { "low": 1, "high": 3, "median": 1.5, "source": "Payoneer 2023, community" },
+    "time_to_first_hire_days": { "low": 1, "high": 7, "note": "For clients posting a job", "source": "Upwork marketing" },
+    "earn_within_30_days_pct": { "low": 15, "high": 25, "source": "Community surveys" },
+    "earn_within_60_days_pct": { "low": 25, "high": 35, "source": "Community surveys" },
+    "earn_within_90_days_pct": { "low": 35, "high": 45, "source": "Community surveys" }
+  },
+
+  "retention_churn": {
+    "freelancer_quit_year_1_pct": { "value": 60, "high": 70, "source": "Community data, Bonsai 2024" },
+    "freelancer_active_after_2_years_pct": { "low": 15, "high": 25, "source": "Community data" },
+    "freelancer_avg_lifespan_months": { "low": 8, "high": 14, "source": "Skewed by high dropout" },
+    "freelancer_never_earn_pct": { "low": 50, "high": 70, "source": "Consistent across all sources" },
+    "client_repeat_hire_pct": { "value": 60, "source": "Upwork 10-K / earnings calls" },
+    "client_retention_yoy_pct": { "low": 70, "high": 75, "note": "For clients spending >$500/yr", "source": "Upwork SEC inferred" },
+    "gsv_from_repeat_clients_pct": { "value": 75, "source": "Upwork 2023 annual report" },
+    "avg_freelance_career_years": { "value": 5.8, "source": "MBO Partners 2023" },
+    "median_quit_time_years": { "value": 2.1, "source": "MBO Partners 2023" }
+  },
+
+  "income_distribution": {
+    "median_annual_active_usd": { "low": 2000, "high": 5000, "source": "Derived from GSV/active freelancers" },
+    "pct_earning_over_1k_month": { "low": 15, "high": 20, "note": "Of active earners", "source": "Payoneer 2023" },
+    "pct_earning_over_5k_month": { "low": 3, "high": 5, "source": "Multiple surveys" },
+    "pct_earning_over_10k_month": { "low": 1, "high": 2, "source": "Top Rated Plus, agencies" },
+    "pct_earning_over_100k_year": { "value": 2, "count": 15000, "source": "Upwork comms 2022-2023" },
+    "top_1_pct_annual_usd": { "low": 150000, "high": 500000, "source": "Estimated" },
+    "top_5_pct_annual_usd": { "low": 60000, "high": 150000, "source": "Estimated" },
+    "top_10_pct_annual_usd": { "low": 36000, "high": 60000, "source": "Estimated" },
+    "top_25_pct_annual_usd": { "low": 12000, "high": 36000, "source": "Estimated" },
+    "bottom_50_pct_annual_usd": { "value": 2000, "note": "Less than $2K/year", "source": "Estimated" }
+  },
+
+  "rates_by_category": {
+    "ai_ml": { "avg_low": 75, "avg_high": 150, "top10_pct": 250, "source": "Upwork 2024, Bonsai" },
+    "blockchain_web3": { "avg_low": 80, "avg_high": 150, "top10_pct": 300, "source": "Bonsai 2024" },
+    "cybersecurity": { "avg_low": 80, "avg_high": 150, "top10_pct": 250, "source": "Bonsai 2024" },
+    "mobile_dev": { "avg_low": 50, "avg_high": 100, "top10_pct": 200, "source": "Upwork, Bonsai" },
+    "web_dev_fullstack": { "avg_low": 40, "avg_high": 80, "top10_pct": 150, "source": "Upwork, Bonsai" },
+    "frontend_react": { "avg_low": 45, "avg_high": 90, "top10_pct": 175, "source": "Upwork, Bonsai" },
+    "backend_python_node": { "avg_low": 50, "avg_high": 100, "top10_pct": 200, "source": "Upwork, Bonsai" },
+    "data_science": { "avg_low": 60, "avg_high": 120, "top10_pct": 200, "source": "Bonsai 2024" },
+    "ui_ux_design": { "avg_low": 40, "avg_high": 75, "top10_pct": 150, "source": "Upwork, Bonsai" },
+    "graphic_design": { "avg_low": 25, "avg_high": 50, "top10_pct": 100, "source": "Upwork, Bonsai" },
+    "copywriting": { "avg_low": 30, "avg_high": 60, "top10_pct": 125, "source": "Bonsai 2024" },
+    "content_writing": { "avg_low": 15, "avg_high": 40, "top10_pct": 85, "source": "Upwork, Bonsai" },
+    "video_editing": { "avg_low": 25, "avg_high": 50, "top10_pct": 100, "source": "Upwork, Bonsai" },
+    "digital_marketing": { "avg_low": 30, "avg_high": 70, "top10_pct": 125, "source": "Bonsai 2024" },
+    "virtual_assistant": { "avg_low": 10, "avg_high": 25, "top10_pct": 40, "source": "Upwork" },
+    "data_entry": { "avg_low": 8, "avg_high": 15, "top10_pct": 25, "source": "Upwork" },
+    "devops_cloud": { "avg_low": 60, "avg_high": 120, "top10_pct": 200, "source": "Upwork, Bonsai" }
+  },
+
+  "rates_by_geography": {
+    "united_states": { "dev_avg_low": 75, "dev_avg_high": 150, "va_avg_low": 25, "va_avg_high": 40 },
+    "canada_australia_uk": { "dev_avg_low": 60, "dev_avg_high": 120, "va_avg_low": 20, "va_avg_high": 35 },
+    "western_europe": { "dev_avg_low": 50, "dev_avg_high": 100, "va_avg_low": 20, "va_avg_high": 30 },
+    "eastern_europe": { "dev_avg_low": 30, "dev_avg_high": 70, "va_avg_low": 12, "va_avg_high": 20 },
+    "latin_america": { "dev_avg_low": 25, "dev_avg_high": 60, "va_avg_low": 8, "va_avg_high": 15 },
+    "india": { "dev_avg_low": 15, "dev_avg_high": 40, "va_avg_low": 5, "va_avg_high": 10 },
+    "philippines": { "dev_avg_low": 10, "dev_avg_high": 30, "va_avg_low": 4, "va_avg_high": 8 },
+    "pakistan_bangladesh": { "dev_avg_low": 8, "dev_avg_high": 25, "va_avg_low": 3, "va_avg_high": 7 },
+    "africa": { "dev_avg_low": 10, "dev_avg_high": 30, "va_avg_low": 4, "va_avg_high": 8 },
+    "source": "Payoneer 2024, Upwork hiring guides"
+  },
+
+  "rate_distribution_pct": {
+    "3_to_10_hr": { "pct": 17, "note": "Data entry, basic VA, developing countries" },
+    "10_to_20_hr": { "pct": 28, "note": "Largest segment. General admin, basic dev/writing" },
+    "20_to_50_hr": { "pct": 27, "note": "Mid-tier devs, designers, marketers" },
+    "50_to_100_hr": { "pct": 18, "note": "Senior developers, specialists" },
+    "100_to_200_hr": { "pct": 7, "note": "Expert consultants, AI/ML, niche" },
+    "200_plus_hr": { "pct": 3, "note": "Top-tier consultants, Expert-Vetted" },
+    "platform_median_hr": { "value": 22, "source": "Upwork marketplace data 2024" }
+  },
+
+  "badges_tiers": {
+    "top_rated_pct_of_active": { "low": 8, "high": 10, "source": "Upwork criteria + estimates" },
+    "top_rated_plus_pct_of_active": { "low": 1, "high": 2, "source": "Community reports" },
+    "expert_vetted_acceptance_pct": { "value": 1, "source": "Upwork marketing" },
+    "expert_vetted_count": { "low": 2000, "high": 3000, "source": "Estimated" },
+    "expert_vetted_avg_rate": { "low": 150, "high": 300, "source": "Upwork profiles" },
+    "jss_90_plus_hire_rate_multiplier": { "value": 2.5, "note": "2-3x vs new freelancer", "source": "Community data" },
+    "top_rated_invite_multiplier": { "value": 4, "note": "3-5x more invites", "source": "TR freelancer reports" },
+    "rising_talent_visibility_boost": { "value": 1.75, "source": "Upwork blog" }
+  },
+
+  "specialization_impact": {
+    "specialist_proposal_to_hire_pct": { "low": 10, "high": 20, "source": "Freelancer coaches" },
+    "generalist_proposal_to_hire_pct": { "low": 2, "high": 5, "source": "Same sources" },
+    "specialist_rate_premium_multiplier": { "low": 2, "high": 4, "source": "Payoneer, Upwork" },
+    "portfolio_view_multiplier": { "value": 2, "note": "vs no portfolio", "source": "Upwork tips" },
+    "video_intro_invite_multiplier": { "value": 1.5, "source": "Community A/B tests" }
+  },
+
+  "response_time_impact": {
+    "respond_within_1hr_multiplier": { "value": 2, "note": "vs >24hr response", "source": "Community data" },
+    "proposal_within_1hr_of_posting_multiplier": { "value": 2.5, "note": "vs >24hr", "source": "Multiple coaches" },
+    "proposal_after_24hr_visibility_drop_pct": { "low": 50, "high": 70, "source": "Reddit, coaches" }
+  },
+
+  "connects_economics": {
+    "cost_per_connect_usd": { "value": 0.15, "source": "Upwork pricing 2024" },
+    "connects_per_proposal_typical": { "low": 2, "high": 6, "source": "Upwork UI" },
+    "connects_per_proposal_complex": { "low": 8, "high": 16, "source": "Upwork UI" },
+    "avg_spend_before_first_hire_usd": { "low": 9, "high": 27, "source": "Derived: 20 proposals x 3-9 connects" },
+    "monthly_free_connects": { "value": 10, "source": "Upwork 2024" },
+    "freelancer_plus_monthly_usd": { "value": 14.99, "includes_connects": 80, "source": "Upwork pricing" },
+    "boost_hire_rate_multiplier": { "low": 1.5, "high": 2, "source": "Upwork claims" }
+  },
+
+  "client_side": {
+    "enterprise_pct_of_gsv": { "value": 30, "source": "Upwork 2023 annual report" },
+    "enterprise_pct_of_client_count": { "value": 5, "note": "Less than 5%", "source": "Inferred" },
+    "enterprise_avg_contract_usd": { "low": 25000, "high": 50000, "source": "Upwork Enterprise marketing" },
+    "individual_avg_contract_usd": { "low": 500, "high": 2000, "source": "Community data" },
+    "top_10_pct_clients_gsv_share": { "value": 65, "note": "~60-70% of total GSV", "source": "Upwork 10-K risk factors" },
+    "dispute_rate_pct": { "value": 2, "note": "Less than 2%", "source": "Upwork 10-K" },
+    "budget_under_100_pct": { "value": 27, "source": "Community scraping analyses" },
+    "budget_100_to_500_pct": { "value": 32, "source": "Community scraping analyses" },
+    "budget_500_to_1000_pct": { "value": 17, "source": "Community scraping analyses" },
+    "budget_1000_to_5000_pct": { "value": 14, "source": "Community scraping analyses" },
+    "budget_5000_to_10000_pct": { "value": 5, "source": "Community scraping analyses" },
+    "budget_over_10000_pct": { "value": 4, "source": "Community scraping analyses" },
+    "fixed_price_pct_of_contracts": { "value": 60, "source": "Upwork data" },
+    "hourly_pct_of_contracts": { "value": 40, "source": "Upwork data" },
+    "hourly_pct_of_gsv": { "value": 57, "note": "Hourly = larger total spend", "source": "Upwork data" },
+    "cheapest_bidder_hired_pct": { "low": 15, "high": 25, "source": "Community surveys" },
+    "mid_range_bidder_hired_pct": { "low": 50, "high": 60, "source": "Community surveys" },
+    "most_expensive_bidder_hired_pct": { "low": 15, "high": 20, "source": "Community surveys" }
+  },
+
+  "scaling_paths": {
+    "solo_to_agency_transition_pct": { "low": 5, "high": 7, "source": "MBO Partners 2024" },
+    "solo_to_agency_high_earners_pct": { "low": 15, "high": 20, "source": "MBO Partners 2024" },
+    "time_solo_to_agency_years": { "low": 3, "high": 5, "source": "Anecdotal, community" },
+    "agency_revenue_vs_solo_multiplier": { "low": 2, "high": 4, "source": "MBO Partners" },
+    "upwork_agencies_count": { "low": 10000, "high": 15000, "source": "Estimated from marketplace" },
+    "equity_partnership_offer_pct": { "low": 3, "high": 8, "note": "Of long-term freelancers", "source": "Self-reported, low confidence" },
+    "hourly_to_retainer_conversion_pct": { "low": 30, "high": 40, "note": "Relationships lasting 3+ months", "source": "Upwork 2023" },
+    "off_platform_leakage_pct": { "low": 15, "high": 25, "note": "Within 2 years", "source": "Staffing Industry Analysts" },
+    "gsv_from_relationships_over_12mo_pct": { "value": 35, "source": "Upwork 10-K" },
+    "return_to_employment_3yr_pct": { "value": 28, "source": "MBO Partners 2024" },
+    "freelancers_hiring_subcontractors_pct": { "value": 22, "source": "MBO Partners 2024" },
+    "avg_time_to_first_subcontractor_years": { "value": 2.7, "source": "MBO Partners 2023" }
+  },
+
+  "ai_category": {
+    "ai_job_posting_growth_yoy_pct": { "value": 1400, "note": "Q1 2023 vs Q1 2022", "source": "Upwork blog June 2023" },
+    "ai_job_posting_growth_2024_yoy_pct": { "value": 50, "source": "Upwork Q2 2024 earnings" },
+    "ai_search_growth_yoy_pct": { "value": 55, "source": "Upwork Q2 2024 earnings" },
+    "ai_pct_of_gsv_2024": { "low": 10, "high": 15, "note": "Up from ~3% in 2022", "source": "Derived from Upwork disclosures" },
+    "ai_jobs_per_week_late_2024": { "value": 10000, "source": "Upwork corporate comms" },
+    "ai_demand_vs_supply_ratio": { "value": 2.5, "note": "2-3x demand exceeds supply", "source": "Upwork CEO, earnings calls" },
+    "freelancers_using_ai_tools_pct": { "value": 78, "source": "Upwork Freelance Forward 2024" },
+    "ai_users_earn_more_pct": { "value": 22, "source": "Upwork Future of Work 2024" },
+    "ai_users_complete_faster_pct": { "value": 47, "source": "Upwork research 2024" },
+    "writing_jobs_decline_pct": { "value": 21, "note": "Q1 2023 to Q1 2024", "source": "Business Insider" },
+    "writing_rates_decline_pct": { "value": 30, "note": "Post-ChatGPT", "source": "Bloomberg, surveys" },
+    "translation_decline_pct": { "low": 20, "high": 30, "source": "ProZ, community" }
+  },
+
+  "burnout_wellbeing": {
+    "burnout_past_year_pct": { "value": 63, "source": "Bonsai 2024" },
+    "working_over_50hrs_week_pct": { "value": 29, "source": "Bonsai 2024" },
+    "zero_vacation_days_pct": { "value": 24, "source": "And.co/Fiverr 2023" },
+    "anxiety_income_instability_pct": { "value": 68, "source": "Freelancers Union 2023" },
+    "no_health_insurance_pct": { "value": 32, "source": "Freelancers Union 2023" },
+    "no_retirement_savings_pct": { "value": 40, "source": "Freelancers Union 2023" },
+    "late_payment_experienced_pct": { "value": 58, "source": "Bonsai 2024" }
+  },
+
+  "market_size": {
+    "us_freelancers_total": { "value": 76400000, "year": 2024, "source": "Upwork Freelance Forward 2024" },
+    "us_freelancers_pct_workforce": { "value": 36, "source": "Upwork Freelance Forward 2024" },
+    "us_freelancer_gdp_contribution_usd": { "value": 1270000000000, "source": "Upwork Freelance Forward 2024" },
+    "global_freelance_platform_market_usd": { "value": 4390000000, "year": 2023, "source": "Mordor Intelligence" },
+    "global_freelance_platform_2028_usd": { "value": 6890000000, "cagr_pct": 9.4, "source": "Mordor Intelligence" },
+    "global_gig_economy_usd": { "value": 556000000000, "year": 2024, "source": "Grand View Research" },
+    "global_gig_economy_2032_usd": { "value": 1847000000000, "cagr_pct": 16.18, "source": "Grand View Research" },
+    "us_freelancers_100k_plus": { "value": 7100000, "source": "MBO Partners 2024" },
+    "us_freelancers_200k_plus": { "value": 3300000, "source": "MBO Partners 2024" },
+    "full_time_freelancers_pct": { "value": 36, "source": "Upwork Freelance Forward 2024" }
+  },
+
+  "platform_comparison": {
+    "upwork": { "registered": 18000000, "active": 800000, "avg_project_usd": 1250, "fee_freelancer_pct": 10, "revenue_2024_usd": 690000000, "avg_rate_hr": 22 },
+    "fiverr": { "registered": 830000, "active": 380000, "avg_project_usd": 125, "fee_freelancer_pct": 20, "revenue_2024_usd": 370000000, "avg_rate_hr": 15 },
+    "toptal": { "registered": 30000, "active": 10000, "avg_project_usd": 30000, "fee_freelancer_pct": 0, "revenue_2024_usd": 500000000, "avg_rate_hr": 112, "acceptance_pct": 3 }
+  }
+}
