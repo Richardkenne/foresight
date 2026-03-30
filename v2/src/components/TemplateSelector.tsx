@@ -58,6 +58,20 @@ const ALL_TEMPLATES = Object.entries(TEMPLATES).map(([key, t]) => ({
   desc: t.input,
 }));
 
+// Daily rotation: deterministic shuffle based on today's date
+// Shows ~20 templates per day, different every day, cycles through all
+function getDailyTemplates(templates: typeof ALL_TEMPLATES, count: number): typeof ALL_TEMPLATES {
+  const today = new Date();
+  const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+  // Simple seeded shuffle (mulberry32)
+  let s = seed;
+  const rand = () => { s |= 0; s = s + 0x6D2B79F5 | 0; let t = Math.imul(s ^ s >>> 15, 1 | s); t ^= t + Math.imul(t ^ t >>> 7, 61 | t); return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  const shuffled = [...templates].sort(() => rand() - 0.5);
+  return shuffled.slice(0, count);
+}
+
+const DAILY_TEMPLATES = getDailyTemplates(ALL_TEMPLATES, 20);
+
 export default function TemplateSelector({ onSelect, onClose }: TemplateSelectorProps) {
   const [search, setSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -94,7 +108,9 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
     );
   }, [search]);
 
-  // Get templates for active category
+  // Get templates for display
+  // No search + no category = daily rotation (20 random templates)
+  // Search or category = full list filtered
   const displayTemplates = useMemo(() => {
     if (activeCategory) {
       const cat = allCategories.find(c => c.label === activeCategory);
@@ -109,7 +125,9 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
         );
       }
     }
-    return filtered;
+    if (search.trim()) return filtered;
+    // No search, no category → daily rotation
+    return DAILY_TEMPLATES;
   }, [activeCategory, allCategories, filtered, search]);
 
   return (
@@ -222,7 +240,10 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
         <div className="h-px bg-gray-100 dark:bg-gray-800/50" />
         <div className="px-7 py-4 text-center">
           <span className="text-[11px] text-gray-400">
-            {displayTemplates.length} of {ALL_TEMPLATES.length} templates
+            {!search.trim() && !activeCategory
+              ? `Today's picks — ${displayTemplates.length} of ${ALL_TEMPLATES.length}`
+              : `${displayTemplates.length} of ${ALL_TEMPLATES.length} templates`
+            }
           </span>
         </div>
       </div>

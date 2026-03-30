@@ -56,7 +56,7 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
   const successRate = totalPeople > 0 ? Math.round(stats.success / totalPeople * 100) : 0;
 
   return (
-    <div className="w-full sm:w-[380px] shrink-0 h-full bg-[var(--surface)] border-l border-[var(--border)] flex flex-col overflow-hidden">
+    <div className="w-full sm:w-[380px] shrink-0 h-full bg-[var(--surface)] border-l border-[var(--border)] flex flex-col overflow-hidden" style={{ maxWidth: '100vw' }}>
       {/* Header */}
       <div className="flex justify-between items-center px-6 pt-6 pb-4">
         <div>
@@ -99,13 +99,13 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
             {rows.slice(0, 14).map((r, i) => {
               const barW = Math.max(4, Math.round(r.unique / maxReach * 100));
               return (
-                <div key={i} className="flex items-center gap-2">
-                  <div className="w-[110px] min-w-[110px] text-right">
+                <div key={i} className="flex items-center gap-2" style={{ minWidth: 0 }}>
+                  <div className="text-right shrink-0" style={{ width: '40%', maxWidth: '130px', minWidth: '70px' }}>
                     <span className="text-[10px] leading-tight line-clamp-2 block" style={{ color: 'var(--muted-foreground)' }} title={r.label}>{r.label}</span>
                   </div>
-                  <div className="flex-1 rounded h-[18px] overflow-hidden relative" style={{ background: 'var(--surface-hover)' }}>
+                  <div className="flex-1 rounded h-[18px] overflow-hidden relative" style={{ background: 'var(--surface-hover)', minWidth: 0 }}>
                     <div
-                      className="h-full rounded flex items-center transition-all duration-500 ease-out"
+                      className="h-full rounded transition-all duration-500 ease-out"
                       style={{
                         width: `${barW}%`,
                         background: 'var(--foreground)',
@@ -116,9 +116,6 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
                     <span className="absolute left-2 top-1/2 -translate-y-1/2 text-[9px] font-medium tabular-nums" style={{ color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>
                       {r.unique}
                     </span>
-                  </div>
-                  <div className="w-[34px] min-w-[34px] text-right">
-                    <span className="text-[10px] font-medium tabular-nums" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>{r.pct}%</span>
                   </div>
                 </div>
               );

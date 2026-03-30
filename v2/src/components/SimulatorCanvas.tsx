@@ -113,11 +113,11 @@ function getLayoutedElements(
 ): { nodes: RFNode[]; edges: RFEdge[] } {
   const g = new dagre.graphlib.Graph();
   g.setDefaultEdgeLabel(() => ({}));
-  g.setGraph({ rankdir: direction, nodesep: 120, ranksep: 300, edgesep: 60 });
+  g.setGraph({ rankdir: direction, nodesep: 80, ranksep: 200, edgesep: 40 });
 
   nodes.forEach((node) => {
     const isContext = node.type === 'contextNode';
-    g.setNode(node.id, { width: isContext ? 240 : 220, height: isContext ? 200 : 110 });
+    g.setNode(node.id, { width: isContext ? 220 : 190, height: isContext ? 180 : 100 });
   });
 
   edges.forEach((edge) => {
@@ -617,7 +617,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       }
 
       setTimeout(() => {
-        fitView({ padding: 0.15, duration: 400 });
+        fitView({ padding: 0.08, duration: 400 });
         // Show Decision Pruning after generate (instead of auto-simulate)
         setTimeout(() => requestSimulate(), 500);
       }, 100);
@@ -942,21 +942,67 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       const origEdges = originalEdgesRef.current;
       edgesRef.current = origEdges;
       originalEdgesRef.current = null;
-      // Set React Flow edges to the original (un-reversed) edges, all visible
       setEdges(origEdges.map(e => ({ ...e, hidden: false })));
-    } else {
-      setEdges(prev => prev.map(e => ({ ...e, hidden: false })));
     }
 
     // Reveal all nodes when simulation ends + clear cut point
+    // KILLER NODE HIGHLIGHTING: find the 3-5 deadliest bottlenecks and highlight them
     revealedNodesRef.current = new Set();
     setCutNodeId(null);
     cutDownstreamRef.current = new Set();
-    setNodes(prev => prev.map(n => ({
-      ...n,
-      data: { ...n.data, isCutPoint: false },
-      style: { ...n.style, opacity: 1, transition: 'opacity 0.5s ease' },
-    })));
+
+    // Calculate kill rates for bottleneck/decision nodes
+    const killerNodeIds = new Set<string>();
+    const bottleneckKills: { id: string; killRate: number }[] = [];
+    for (const n of nodesRef.current) {
+      const data = n.data as Record<string, unknown>;
+      const nodeType = data.nodeType as string;
+      if (nodeType !== 'bottleneck' && nodeType !== 'decision') continue;
+      const reached = nodeReachRef.current[n.id]?.size || 0;
+      if (reached === 0) continue;
+      // Find pass edge target
+      const passEdge = edgesRef.current.find(e => e.source === n.id && (e.label === 'pass' || e.label === 'yes'));
+      const passed = passEdge ? (nodeReachRef.current[passEdge.target]?.size || 0) : 0;
+      const killRate = 1 - (passed / reached); // 0 = nobody dies, 1 = everyone dies
+      bottleneckKills.push({ id: n.id, killRate });
+    }
+    // Top 3-5 killers (killRate > 30%)
+    bottleneckKills.sort((a, b) => b.killRate - a.killRate);
+    const topKillers = bottleneckKills.filter(b => b.killRate > 0.3).slice(0, 5);
+    for (const k of topKillers) killerNodeIds.add(k.id);
+    // Also highlight outcome nodes (always visible)
+    for (const n of nodesRef.current) {
+      const t = (n.data as Record<string, unknown>).nodeType as string;
+      if (t === 'outcome-good' || t === 'outcome-bad') killerNodeIds.add(n.id);
+    }
+
+    const hasKillers = topKillers.length > 0;
+    setNodes(prev => prev.map(n => {
+      const isKiller = killerNodeIds.has(n.id);
+      return {
+        ...n,
+        data: { ...n.data, isCutPoint: false },
+        style: {
+          ...n.style,
+          opacity: hasKillers ? (isKiller ? 1 : 0.4) : 1,
+          transition: 'opacity 0.8s ease',
+          filter: hasKillers && !isKiller ? 'grayscale(0.3)' : 'none',
+        },
+      };
+    }));
+
+    // Also dim non-critical edges
+    if (hasKillers) {
+      setEdges(prev => prev.map(e => ({
+        ...e,
+        hidden: false,
+        style: {
+          ...e.style,
+          opacity: (killerNodeIds.has(e.source) || killerNodeIds.has(e.target)) ? 1 : 0.25,
+          transition: 'opacity 0.8s ease',
+        },
+      })));
+    }
 
     // Keep particles in their final positions — don't clear them
     // They only get cleared on new simulation or clear button
@@ -967,7 +1013,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     finishedCountRef.current = 0;
 
     if (statsRef.current.total > 0) {
-      setTimeout(() => setShowDashboard(true), 500);
+      setTimeout(() => { setShowDashboard(true); setTimeout(() => fitView({ padding: 0.08, duration: 400 }), 100); }, 500);
     }
   }
 
@@ -1233,7 +1279,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     setEdges(le);
 
     setTimeout(() => {
-      fitView({ padding: 0.15, duration: 400 });
+      fitView({ padding: 0.08, duration: 400 });
       setTimeout(() => simulate(), 500);
     }, 100);
   }, [setNodes, setEdges, fitView]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -1293,7 +1339,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
                 }
 
                 setTimeout(() => {
-                  fitView({ padding: 0.15, duration: 400 });
+                  fitView({ padding: 0.08, duration: 400 });
                   setTimeout(() => simulate(), 500);
                 }, 100);
               })
@@ -1413,7 +1459,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
             nodes={nodesRef.current}
             nodeUniqueReach={nodeReachRef.current}
             edges={edgesRef.current.map(e => ({ source: e.source, target: e.target, label: e.label as string | undefined }))}
-            onClose={() => setShowDashboard(false)}
+            onClose={() => { setShowDashboard(false); setTimeout(() => fitView({ padding: 0.08, duration: 400 }), 100); }}
           />
         )}
       </div>
@@ -1706,7 +1752,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       {/* ========== RESULTS TAB (right edge, shows when dashboard is closed) ========== */}
       {!simRunning && statsRef.current.total > 0 && !showDashboard && (
         <button
-          onClick={() => setShowDashboard(true)}
+          onClick={() => { setShowDashboard(true); setTimeout(() => fitView({ padding: 0.08, duration: 400 }), 100); }}
           className="fixed right-0 top-1/2 -translate-y-1/2 z-50 bg-white dark:bg-[#1a1a1a] border border-r-0 border-gray-200 dark:border-gray-700 rounded-l-lg px-2 py-4 shadow-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all cursor-pointer group"
         >
           <div className="flex flex-col items-center gap-1.5">
