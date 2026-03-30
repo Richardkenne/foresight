@@ -602,8 +602,25 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       particlesRef.current = [];
       setParticles([]);
       const tNodes: TemplateNode[] = flow.nodes.map((n: TemplateNode) => ({ ...n, source: n.source || 'AI generated' }));
+      // Auto-label edges: if a bottleneck/decision has 2 outgoing edges,
+      // the one going to outcome-bad = fail, the other = pass
+      const nodeTypeMap: Record<number, string> = {};
+      for (const n of tNodes) nodeTypeMap[n.id] = n.type;
+      const tEdges: TemplateEdge[] = (flow.edges as TemplateEdge[]).map(e => {
+        if (e.label) return e; // already labeled
+        const srcType = nodeTypeMap[e.from];
+        const tgtType = nodeTypeMap[e.to];
+        if (srcType === 'bottleneck' || srcType === 'decision') {
+          if (tgtType === 'outcome-bad') return { ...e, label: srcType === 'decision' ? 'no' : 'fail' };
+          // Check if sibling edge goes to outcome-bad
+          const siblings = (flow.edges as TemplateEdge[]).filter(s => s.from === e.from && s !== e);
+          const siblingGoesToBad = siblings.some(s => nodeTypeMap[s.to] === 'outcome-bad');
+          if (siblingGoesToBad) return { ...e, label: srcType === 'decision' ? 'yes' : 'pass' };
+        }
+        return e;
+      });
       const ctx = photoPreview ? { photoUrl: photoPreview, scenario: input } : undefined;
-      const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges, ctx);
+      const { nodes: ln, edges: le } = templateToFlow(tNodes, tEdges, ctx);
       setNodes(ln);
       setEdges(le);
 
