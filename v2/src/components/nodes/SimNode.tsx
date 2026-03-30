@@ -65,6 +65,7 @@ interface SimNodeData {
   desc?: string;
   source?: string;
   prob?: number;
+  probRange?: { optimistic: number; adverse: number };
   time?: string;
   hidden?: boolean;
   computedValue?: number;
@@ -161,7 +162,14 @@ function SimNodeComponent({ data }: NodeProps) {
               <div className="sim-node__icon">{icon}</div>
               <div className="sim-node__label">{d.label}</div>
               {hasProb && d.prob != null && (
-                <div className="sim-node__prob">{d.prob}%</div>
+                <div className="sim-node__prob">
+                  {d.prob}%
+                  {d.probRange && (
+                    <span style={{ fontSize: '7px', opacity: 0.5, display: 'block', fontWeight: 400, letterSpacing: '0.02em' }}>
+                      {d.probRange.adverse}-{d.probRange.optimistic}
+                    </span>
+                  )}
+                </div>
               )}
             </div>
             {d.desc && (

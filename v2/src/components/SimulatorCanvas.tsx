@@ -156,6 +156,7 @@ function templateToFlow(
       desc: n.desc,
       source: n.source,
       prob: n.prob,
+      probRange: (n as unknown as Record<string, unknown>).probRange as { optimistic: number; adverse: number } | undefined,
       time: n.time,
     },
   }));

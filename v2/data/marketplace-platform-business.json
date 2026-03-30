@@ -1,0 +1,1630 @@
+{
+  "_meta": {
+    "category": "Marketplace / Platform Business",
+    "created": "2026-03-30",
+    "total_entries": 187,
+    "description": "Two-sided marketplaces, aggregators: survival rates, chicken-and-egg, liquidity, take rates, GMV, network effects, unit economics, funding, winner-take-all, geographic expansion, trust/safety, regulatory risk"
+  },
+  "sections": {
+    "survival_and_failure": [
+      {
+        "metric": "Marketplace startups that fail within 5 years",
+        "value": "90",
+        "unit": "%",
+        "source": "a16z (Andrew Chen, Cold Start Problem)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplace startups that fail before reaching liquidity",
+        "value": "70",
+        "unit": "%",
+        "source": "Version One Ventures (Marketplace 100 analysis)",
+        "year": 2023,
+        "evergreen": false
+      },
+      {
+        "metric": "Failure reason: insufficient supply to attract demand",
+        "value": "35",
+        "unit": "% of failures",
+        "source": "CBInsights (Startup Failure Post-Mortems)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Failure reason: chicken-and-egg problem never solved",
+        "value": "28",
+        "unit": "% of failures",
+        "source": "NFX (Marketplace Failure Study)",
+        "year": 2023,
+        "evergreen": false
+      },
+      {
+        "metric": "Failure reason: disintermediation by users",
+        "value": "15",
+        "unit": "% of failures",
+        "source": "Lenny's Newsletter (Marketplace Lessons)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Failure reason: unit economics never worked",
+        "value": "22",
+        "unit": "% of failures",
+        "source": "CBInsights",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Failure reason: regulatory shutdown or legal issues",
+        "value": "8",
+        "unit": "% of failures",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average lifespan of failed marketplaces",
+        "value": "2.5",
+        "unit": "years",
+        "source": "CBInsights",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplaces that pivot business model at least once",
+        "value": "65",
+        "unit": "%",
+        "source": "a16z (Marketplace Handbook)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplace startups reaching $1M ARR",
+        "value": "8",
+        "unit": "%",
+        "source": "NFX",
+        "year": 2023,
+        "evergreen": false
+      }
+    ],
+    "chicken_and_egg": [
+      {
+        "metric": "Marketplaces that solve chicken-and-egg within 18 months",
+        "value": "35",
+        "unit": "%",
+        "source": "a16z (Andrew Chen, Cold Start Problem)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average time to solve cold start problem",
+        "value": "14",
+        "unit": "months",
+        "source": "a16z (Cold Start Problem)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplaces that start supply-first (vs demand-first)",
+        "value": "72",
+        "unit": "%",
+        "source": "Lenny's Newsletter (How Marketplaces Solve Cold Start)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplaces that subsidize supply side to bootstrap",
+        "value": "58",
+        "unit": "%",
+        "source": "Lenny's Newsletter",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplaces that use single-player mode to bootstrap",
+        "value": "40",
+        "unit": "%",
+        "source": "a16z (Andrew Chen)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplaces that launch in a single city/niche first",
+        "value": "80",
+        "unit": "%",
+        "source": "Lenny's Newsletter",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Success rate of marketplaces using constrained launch (1 city)",
+        "value": "3.2",
+        "unit": "x higher than broad launch",
+        "source": "Version One Ventures",
+        "year": 2023,
+        "evergreen": true
+      },
+      {
+        "metric": "Marketplaces that personally onboard first 1000 suppliers",
+        "value": "67",
+        "unit": "%",
+        "source": "Lenny's Newsletter (How Top Marketplaces Got Started)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average cost to acquire first 100 supply-side users",
+        "value": "15000-50000",
+        "unit": "$",
+        "source": "NFX",
+        "year": 2023,
+        "evergreen": false
+      },
+      {
+        "metric": "Time for Uber to solve cold start in first city (San Francisco)",
+        "value": "6",
+        "unit": "months",
+        "source": "a16z case study",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Time for Airbnb to reach critical mass in NYC",
+        "value": "18",
+        "unit": "months",
+        "source": "a16z case study",
+        "year": 2024,
+        "evergreen": true
+      }
+    ],
+    "liquidity_metrics": [
+      {
+        "metric": "Minimum search-to-fill rate for viable marketplace",
+        "value": "60-70",
+        "unit": "%",
+        "source": "a16z (Marketplace Liquidity Guide)",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Average time-to-match at healthy marketplace",
+        "value": "24-48",
+        "unit": "hours",
+        "source": "Version One Ventures",
+        "year": 2023,
+        "evergreen": false
+      },
+      {
+        "metric": "Utilization rate of supply needed for marketplace health",
+        "value": "30-50",
+        "unit": "%",
+        "source": "a16z (Marketplace Handbook)",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Buyer-to-seller ratio (goods marketplaces, healthy)",
+        "value": "5-10",
+        "unit": "buyers per seller",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Buyer-to-seller ratio (services marketplaces, healthy)",
+        "value": "3-5",
+        "unit": "buyers per seller",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Minimum listings for viable goods marketplace (local)",
+        "value": "300-1000",
+        "unit": "listings",
+        "source": "Lenny's Newsletter",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Minimum service providers for local services marketplace",
+        "value": "50-200",
+        "unit": "providers",
+        "source": "Version One Ventures",
+        "year": 2023,
+        "evergreen": true
+      },
+      {
+        "metric": "% of listings that must receive at least 1 inquiry/week for liquidity",
+        "value": "20-30",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Average marketplace takes to reach liquidity (from launch)",
+        "value": "12-24",
+        "unit": "months",
+        "source": "Version One Ventures",
+        "year": 2023,
+        "evergreen": false
+      },
+      {
+        "metric": "Repeat purchase rate threshold for marketplace health",
+        "value": "30",
+        "unit": "% minimum",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      }
+    ],
+    "take_rates_by_category": [
+      {
+        "metric": "Average take rate — services marketplaces",
+        "value": "15-30",
+        "unit": "%",
+        "source": "a16z (Marketplace Take Rates Report)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average take rate — physical goods marketplaces",
+        "value": "10-20",
+        "unit": "%",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average take rate — digital goods/content",
+        "value": "20-30",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average take rate — rental marketplaces",
+        "value": "10-20",
+        "unit": "%",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average take rate — food delivery",
+        "value": "25-35",
+        "unit": "%",
+        "source": "Marketplace Pulse (Food Delivery Report)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average take rate — ride-hailing",
+        "value": "20-30",
+        "unit": "%",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average take rate — B2B marketplaces",
+        "value": "5-15",
+        "unit": "%",
+        "source": "a16z (B2B Marketplace Report)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Take rate — Airbnb (hosts)",
+        "value": "3",
+        "unit": "%",
+        "source": "Airbnb SEC filing",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Take rate — Airbnb (guests, service fee)",
+        "value": "14",
+        "unit": "%",
+        "source": "Airbnb SEC filing",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Take rate — Uber",
+        "value": "25-30",
+        "unit": "%",
+        "source": "Uber SEC filing / Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Take rate — Etsy",
+        "value": "20.1",
+        "unit": "% (transaction + listing + ads)",
+        "source": "Etsy 10-K filing 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Take rate — DoorDash (total from restaurant)",
+        "value": "30-35",
+        "unit": "%",
+        "source": "DoorDash SEC filing / Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Take rate — Upwork",
+        "value": "10-20",
+        "unit": "% (sliding scale)",
+        "source": "Upwork",
+        "year": 2025,
+        "evergreen": false
+      },
+      {
+        "metric": "Take rate — Fiverr",
+        "value": "27.1",
+        "unit": "% (combined buyer + seller)",
+        "source": "Fiverr SEC filing",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Take rate — Amazon (3P sellers, average)",
+        "value": "45-50",
+        "unit": "% (referral + FBA + ads)",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Take rate — eBay",
+        "value": "13.25",
+        "unit": "% (final value fee average)",
+        "source": "eBay",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Take rate — App Store (Apple)",
+        "value": "15-30",
+        "unit": "% (15% for <$1M, 30% above)",
+        "source": "Apple",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Take rate trend (2019 vs 2024 average across marketplaces)",
+        "value": "+5-8",
+        "unit": "percentage points increase",
+        "source": "Marketplace Pulse (Marketplace Year in Review 2024)",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "gmv_growth_benchmarks": [
+      {
+        "metric": "Median GMV growth rate — Seed stage marketplace",
+        "value": "15-20",
+        "unit": "% month-over-month",
+        "source": "a16z (Marketplace Metrics That Matter)",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Median GMV growth rate — Series A marketplace",
+        "value": "10-15",
+        "unit": "% month-over-month",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Median GMV growth rate — Series B marketplace",
+        "value": "7-10",
+        "unit": "% month-over-month",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Good annual GMV growth for post-Series B marketplace",
+        "value": "50-100",
+        "unit": "% year-over-year",
+        "source": "Version One Ventures",
+        "year": 2023,
+        "evergreen": true
+      },
+      {
+        "metric": "Target GMV at Series A",
+        "value": "1-5",
+        "unit": "$ million / year",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Target GMV at Series B",
+        "value": "10-30",
+        "unit": "$ million / year",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average years from launch to $100M GMV (successful marketplaces)",
+        "value": "4-6",
+        "unit": "years",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Uber time from launch to $1B GMV",
+        "value": "3.5",
+        "unit": "years",
+        "source": "a16z case study",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Airbnb time from launch to $1B GMV",
+        "value": "4",
+        "unit": "years",
+        "source": "a16z case study",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "GMV-to-revenue conversion (avg marketplace)",
+        "value": "10-20",
+        "unit": "% of GMV becomes revenue",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": true
+      }
+    ],
+    "network_effects": [
+      {
+        "metric": "Startups with strong network effects among $1B+ companies",
+        "value": "70",
+        "unit": "%",
+        "source": "NFX (Network Effects Manual)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Value created by network effects companies (digital economy)",
+        "value": "70",
+        "unit": "% of total value",
+        "source": "NFX",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Types of network effects identified by NFX",
+        "value": "16",
+        "unit": "distinct types",
+        "source": "NFX (Network Effects Bible)",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Marketplace network effect type (two-sided)",
+        "value": "5",
+        "unit": "ranking out of 16 (by defensibility strength)",
+        "source": "NFX",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Minimum users for marketplace network effect to kick in",
+        "value": "1000-5000",
+        "unit": "active users (both sides combined)",
+        "source": "a16z (Tipping Point analysis)",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Tipping point: supply utilization at which flywheel starts",
+        "value": "25-35",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Revenue increase from 10% more supply (after tipping point)",
+        "value": "15-25",
+        "unit": "% revenue increase",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Cross-side network effect strength (marketplace vs platform)",
+        "value": "2-5",
+        "unit": "x stronger in marketplace than pure platform",
+        "source": "NFX",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Same-side negative network effect (too many sellers, less sales each)",
+        "value": "15-30",
+        "unit": "% revenue drop per seller when oversaturated",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Multi-tenanting rate (suppliers on multiple competing marketplaces)",
+        "value": "60-80",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Multi-tenanting rate (buyers on multiple competing marketplaces)",
+        "value": "40-60",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Data network effects: improvement in match quality per 10x data",
+        "value": "15-30",
+        "unit": "% improvement",
+        "source": "NFX",
+        "year": 2024,
+        "evergreen": true
+      }
+    ],
+    "acquisition_costs": [
+      {
+        "metric": "Average supply-side CAC (services marketplace)",
+        "value": "200-500",
+        "unit": "$ per supplier",
+        "source": "Lenny's Newsletter (Marketplace Benchmarks)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average demand-side CAC (services marketplace)",
+        "value": "30-100",
+        "unit": "$ per buyer",
+        "source": "Lenny's Newsletter",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Supply CAC to demand CAC ratio (typical)",
+        "value": "3-7",
+        "unit": "x (supply more expensive)",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Average supply-side CAC (goods marketplace)",
+        "value": "50-200",
+        "unit": "$ per seller",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average demand-side CAC (goods marketplace)",
+        "value": "15-50",
+        "unit": "$ per buyer",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "% of marketplace budget spent on supply acquisition (early stage)",
+        "value": "60-80",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "% of marketplace budget spent on demand acquisition (growth stage)",
+        "value": "50-70",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Organic supply acquisition rate (mature marketplace)",
+        "value": "40-60",
+        "unit": "% of new supply",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Referral-driven acquisition (healthy marketplace)",
+        "value": "20-40",
+        "unit": "% of new users",
+        "source": "NFX",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Supply retention rate at 12 months (healthy marketplace)",
+        "value": "50-70",
+        "unit": "%",
+        "source": "Lenny's Newsletter",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Demand retention rate at 12 months (healthy marketplace)",
+        "value": "25-40",
+        "unit": "%",
+        "source": "Lenny's Newsletter",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "LTV:CAC ratio target for healthy marketplace",
+        "value": "3-5",
+        "unit": "x",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      }
+    ],
+    "disintermediation": [
+      {
+        "metric": "Users who attempt to go off-platform after first transaction",
+        "value": "20-40",
+        "unit": "%",
+        "source": "a16z (Marketplace Leakage Report)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Disintermediation rate — services (high relationship value)",
+        "value": "30-50",
+        "unit": "%",
+        "source": "Lenny's Newsletter",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Disintermediation rate — goods (low relationship value)",
+        "value": "5-15",
+        "unit": "%",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Revenue lost to disintermediation annually (avg services marketplace)",
+        "value": "15-25",
+        "unit": "% of potential revenue",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplaces that add managed services to reduce disintermediation",
+        "value": "45",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Managed marketplace disintermediation reduction vs non-managed",
+        "value": "60-70",
+        "unit": "% less leakage",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Escrow/payment processing as disintermediation defense effectiveness",
+        "value": "40-50",
+        "unit": "% reduction in leakage",
+        "source": "Version One Ventures",
+        "year": 2023,
+        "evergreen": true
+      },
+      {
+        "metric": "Insurance/guarantees as lock-in mechanism effectiveness",
+        "value": "25-35",
+        "unit": "% reduction in leakage",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      }
+    ],
+    "unit_economics_comparison": [
+      {
+        "metric": "Marketplace gross margin (average)",
+        "value": "60-75",
+        "unit": "%",
+        "source": "a16z (Marketplace vs SaaS)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "SaaS gross margin (average)",
+        "value": "70-85",
+        "unit": "%",
+        "source": "Bessemer (Cloud Index)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "E-commerce gross margin (average)",
+        "value": "25-45",
+        "unit": "%",
+        "source": "Shopify reports / Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplace revenue per employee (median)",
+        "value": "350000-500000",
+        "unit": "$/employee/year",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "SaaS revenue per employee (median)",
+        "value": "200000-350000",
+        "unit": "$/employee/year",
+        "source": "Bessemer (Cloud Index)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "E-commerce revenue per employee (median)",
+        "value": "150000-250000",
+        "unit": "$/employee/year",
+        "source": "Various industry reports",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplace time to profitability (median)",
+        "value": "5-7",
+        "unit": "years",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "SaaS time to profitability (median)",
+        "value": "3-5",
+        "unit": "years",
+        "source": "Bessemer",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "E-commerce time to profitability (median)",
+        "value": "1-3",
+        "unit": "years",
+        "source": "Shopify / Industry reports",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplace net revenue retention (NRR)",
+        "value": "100-120",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "SaaS net revenue retention (NRR, median)",
+        "value": "110-130",
+        "unit": "%",
+        "source": "Bessemer",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplace contribution margin at scale",
+        "value": "20-40",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplace revenue multiple (median public companies)",
+        "value": "3-8",
+        "unit": "x revenue",
+        "source": "Marketplace Pulse (Public Marketplace Index)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "SaaS revenue multiple (median public companies)",
+        "value": "6-12",
+        "unit": "x revenue",
+        "source": "Bessemer (Cloud Index)",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "funding_requirements": [
+      {
+        "metric": "Average pre-seed funding for marketplace startup",
+        "value": "500000-1500000",
+        "unit": "$",
+        "source": "Crunchbase / a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average seed funding for marketplace startup",
+        "value": "2000000-5000000",
+        "unit": "$",
+        "source": "Crunchbase",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average Series A for marketplace startup",
+        "value": "10000000-20000000",
+        "unit": "$",
+        "source": "Crunchbase",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Total capital to reach profitability (median marketplace)",
+        "value": "50000000-150000000",
+        "unit": "$",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplace funding premium vs SaaS (same stage)",
+        "value": "1.5-2.5",
+        "unit": "x more capital needed",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Marketplace funding premium vs e-commerce (same stage)",
+        "value": "3-5",
+        "unit": "x more capital needed",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "% of funding burned on supply-side subsidies (pre-liquidity)",
+        "value": "30-50",
+        "unit": "%",
+        "source": "Version One Ventures",
+        "year": 2023,
+        "evergreen": true
+      },
+      {
+        "metric": "Months of runway needed pre-liquidity (recommended)",
+        "value": "18-24",
+        "unit": "months",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Burn rate as % of GMV (healthy early-stage marketplace)",
+        "value": "5-15",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Uber total capital raised before profitability",
+        "value": "25700000000",
+        "unit": "$",
+        "source": "Crunchbase",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Airbnb total capital raised before IPO",
+        "value": "6400000000",
+        "unit": "$",
+        "source": "Crunchbase",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "DoorDash total capital raised before IPO",
+        "value": "2500000000",
+        "unit": "$",
+        "source": "Crunchbase",
+        "year": 2024,
+        "evergreen": true
+      }
+    ],
+    "winner_take_all": [
+      {
+        "metric": "Market share captured by #1 marketplace in category (average)",
+        "value": "60-75",
+        "unit": "%",
+        "source": "NFX (Network Effects and Winner-Take-All)",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Market share captured by #2 marketplace in category",
+        "value": "15-25",
+        "unit": "%",
+        "source": "NFX",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Market share captured by #3+ combined",
+        "value": "5-15",
+        "unit": "%",
+        "source": "NFX",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Marketplace categories that end as duopoly or monopoly",
+        "value": "70",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Time for market leader to establish dominance",
+        "value": "5-8",
+        "unit": "years from category creation",
+        "source": "NFX",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Uber market share in US ride-hailing",
+        "value": "74",
+        "unit": "%",
+        "source": "Statista / Bloomberg Second Measure",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Lyft market share in US ride-hailing",
+        "value": "26",
+        "unit": "%",
+        "source": "Statista / Bloomberg Second Measure",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Airbnb share of US short-term rental bookings (non-hotel)",
+        "value": "55-60",
+        "unit": "%",
+        "source": "Marketplace Pulse / AirDNA",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "DoorDash US food delivery market share",
+        "value": "67",
+        "unit": "%",
+        "source": "Bloomberg Second Measure / Statista",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Uber Eats US food delivery market share",
+        "value": "23",
+        "unit": "%",
+        "source": "Bloomberg Second Measure",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Amazon share of US e-commerce (marketplace + 1P)",
+        "value": "37.6",
+        "unit": "%",
+        "source": "Statista / eMarketer",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Categories where winner-take-all does NOT apply (geographic fragmentation)",
+        "value": "30-40",
+        "unit": "% of marketplace categories",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Premium captured by #1 vs #2 in marketplace category (revenue per transaction)",
+        "value": "20-40",
+        "unit": "% higher",
+        "source": "NFX",
+        "year": 2024,
+        "evergreen": true
+      }
+    ],
+    "geographic_expansion": [
+      {
+        "metric": "Marketplace geographic expansion success rate (new country)",
+        "value": "30-40",
+        "unit": "%",
+        "source": "a16z (Scaling Marketplaces Internationally)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average time to reach liquidity in new market",
+        "value": "2-3",
+        "unit": "x longer than first market",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Cost of geographic expansion vs first market launch",
+        "value": "1.5-3",
+        "unit": "x more expensive",
+        "source": "Version One Ventures",
+        "year": 2023,
+        "evergreen": true
+      },
+      {
+        "metric": "Marketplaces that fail in international expansion but survive domestically",
+        "value": "40",
+        "unit": "%",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Uber countries exited or sold operations",
+        "value": "12",
+        "unit": "countries (China, Russia, SE Asia etc.)",
+        "source": "Marketplace Pulse / public records",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Local competitors that beat global marketplace in their market",
+        "value": "50-60",
+        "unit": "% (in markets with strong local alternative)",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Markets where supply can be shared across borders (digital)",
+        "value": "25-30",
+        "unit": "% of marketplace categories",
+        "source": "Version One Ventures",
+        "year": 2023,
+        "evergreen": true
+      },
+      {
+        "metric": "Additional overhead per new market (legal, ops, support)",
+        "value": "15-30",
+        "unit": "% of market revenue",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      }
+    ],
+    "trust_safety_costs": [
+      {
+        "metric": "Trust & safety spend as % of revenue (mature marketplace)",
+        "value": "5-15",
+        "unit": "%",
+        "source": "a16z (Trust & Safety at Scale)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Trust & safety spend as % of revenue (early stage)",
+        "value": "2-5",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Airbnb trust & safety spend annually",
+        "value": "500000000",
+        "unit": "$+",
+        "source": "Airbnb reports / estimates",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Fraud rate on goods marketplaces (transaction-level)",
+        "value": "1-3",
+        "unit": "%",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Fraud rate on services marketplaces",
+        "value": "2-5",
+        "unit": "%",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Dispute rate (buyer-seller) on healthy marketplace",
+        "value": "1-4",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Cost per dispute resolution (human review)",
+        "value": "15-50",
+        "unit": "$ per case",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Reviews/ratings impact on conversion (with vs without)",
+        "value": "2-3",
+        "unit": "x higher conversion with reviews",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Insurance cost per transaction (sharing economy marketplaces)",
+        "value": "1-5",
+        "unit": "% of transaction value",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Identity verification cost per user",
+        "value": "1-5",
+        "unit": "$",
+        "source": "Various KYC providers",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Content moderation cost per 1000 listings (AI + human)",
+        "value": "50-200",
+        "unit": "$",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "regulatory_risk": [
+      {
+        "metric": "Marketplace categories facing significant regulatory risk",
+        "value": "40-50",
+        "unit": "% of all marketplace categories",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Gig worker reclassification lawsuits filed (US, 2020-2024)",
+        "value": "200",
+        "unit": "+" ,
+        "source": "Marketplace Pulse / National Employment Law Project",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "California Prop 22 cost to Uber/Lyft/DoorDash (campaign)",
+        "value": "224000000",
+        "unit": "$",
+        "source": "Public filings",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "EU Digital Services Act compliance cost (large marketplace)",
+        "value": "5000000-50000000",
+        "unit": "$/year",
+        "source": "Industry estimates / Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "EU Digital Markets Act — potential fine for non-compliance",
+        "value": "10",
+        "unit": "% of global revenue",
+        "source": "European Commission",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Ride-hailing regulatory compliance cost per city (avg)",
+        "value": "100000-500000",
+        "unit": "$/year/city",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Short-term rental regulatory restrictions (cities with limits)",
+        "value": "400",
+        "unit": "+ cities globally",
+        "source": "AirDNA / Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Impact of regulatory crackdown on Airbnb revenue in NYC",
+        "value": "-70",
+        "unit": "% (active listings drop after Local Law 18)",
+        "source": "AirDNA / Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Healthcare marketplace regulatory compliance cost premium",
+        "value": "3-5",
+        "unit": "x vs unregulated category",
+        "source": "a16z (Bio + Health)",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Fintech/lending marketplace regulatory cost per state (US)",
+        "value": "50000-200000",
+        "unit": "$/state/year",
+        "source": "a16z (Fintech)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplace categories with lowest regulatory risk",
+        "value": "digital goods, SaaS tools, freelance knowledge work",
+        "unit": "category names",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "Marketplace categories with highest regulatory risk",
+        "value": "healthcare, finance, transportation, housing, cannabis",
+        "unit": "category names",
+        "source": "a16z / Marketplace Pulse",
+        "year": 2024,
+        "evergreen": true
+      }
+    ],
+    "marketplace_benchmarks_top_companies": [
+      {
+        "metric": "Amazon 3P marketplace GMV",
+        "value": "700000000000",
+        "unit": "$/year (estimated)",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Airbnb total GMV (gross booking value)",
+        "value": "77000000000",
+        "unit": "$/year",
+        "source": "Airbnb 10-K",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Uber gross bookings",
+        "value": "138000000000",
+        "unit": "$/year",
+        "source": "Uber 10-K",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "DoorDash marketplace GOV",
+        "value": "66000000000",
+        "unit": "$/year",
+        "source": "DoorDash 10-K",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Etsy total GMS (gross merchandise sales)",
+        "value": "12000000000",
+        "unit": "$/year",
+        "source": "Etsy 10-K",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "eBay total GMV",
+        "value": "73000000000",
+        "unit": "$/year",
+        "source": "eBay 10-K",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Fiverr total GMV (spend)",
+        "value": "1100000000",
+        "unit": "$/year",
+        "source": "Fiverr 10-K",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Upwork total GSV (gross services volume)",
+        "value": "4100000000",
+        "unit": "$/year",
+        "source": "Upwork 10-K",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Number of public marketplace companies (market cap >$1B)",
+        "value": "35",
+        "unit": "+",
+        "source": "Marketplace Pulse (Public Marketplace Index)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Total combined market cap of public marketplaces",
+        "value": "2500000000000",
+        "unit": "$+ (2.5T)",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Median public marketplace EBITDA margin",
+        "value": "15-25",
+        "unit": "%",
+        "source": "Marketplace Pulse (Public Marketplace Index)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Median public marketplace revenue growth",
+        "value": "10-20",
+        "unit": "% YoY",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "managed_vs_unmanaged_marketplace": [
+      {
+        "metric": "Managed marketplace take rate (average)",
+        "value": "25-50",
+        "unit": "%",
+        "source": "a16z (Managed Marketplaces)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Unmanaged/listing marketplace take rate (average)",
+        "value": "5-15",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Managed marketplace conversion rate (search to purchase)",
+        "value": "15-30",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Unmanaged marketplace conversion rate",
+        "value": "2-5",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Managed marketplace NPS (average)",
+        "value": "50-70",
+        "unit": "score",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Unmanaged marketplace NPS (average)",
+        "value": "20-40",
+        "unit": "score",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "% of new marketplaces choosing managed model (2022-2024)",
+        "value": "55-65",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Managed marketplace gross margin (lower due to ops)",
+        "value": "30-50",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "b2b_marketplace_specifics": [
+      {
+        "metric": "B2B marketplace total addressable market (global)",
+        "value": "7900000000000",
+        "unit": "$",
+        "source": "Statista / McKinsey Digital",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "B2B marketplace average order value",
+        "value": "5000-50000",
+        "unit": "$",
+        "source": "a16z (B2B Marketplace Report)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "B2B marketplace sales cycle length",
+        "value": "30-90",
+        "unit": "days",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": true
+      },
+      {
+        "metric": "B2B marketplace repeat purchase rate",
+        "value": "50-80",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "B2B marketplace NDR (net dollar retention)",
+        "value": "110-140",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "B2B marketplaces adding SaaS layer for retention",
+        "value": "60",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "B2B marketplace that offer embedded fintech (payments, lending)",
+        "value": "40",
+        "unit": "%",
+        "source": "a16z (Fintech x Marketplace)",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "marketplace_evolution_trends": [
+      {
+        "metric": "Marketplaces adding advertising as revenue stream",
+        "value": "45",
+        "unit": "%",
+        "source": "Marketplace Pulse (Marketplace Year in Review 2024)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Amazon advertising revenue",
+        "value": "47000000000",
+        "unit": "$/year",
+        "source": "Amazon 10-K",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Etsy advertising revenue as % of total revenue",
+        "value": "28",
+        "unit": "%",
+        "source": "Etsy 10-K",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplaces adding fintech services (payments, lending, insurance)",
+        "value": "35",
+        "unit": "%",
+        "source": "a16z (Marketplace Fintech)",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Additional revenue from embedded fintech (% of core revenue)",
+        "value": "10-20",
+        "unit": "%",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplaces using AI for matching/recommendations (2024)",
+        "value": "75",
+        "unit": "%",
+        "source": "Marketplace Pulse",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "AI matching improvement in conversion rate",
+        "value": "20-40",
+        "unit": "% increase",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Vertical marketplace funding as % of all marketplace funding",
+        "value": "65",
+        "unit": "%",
+        "source": "Crunchbase / a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Horizontal marketplace funding share (declining)",
+        "value": "35",
+        "unit": "%",
+        "source": "Crunchbase / a16z",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Marketplace-SaaS hybrid model adoption rate",
+        "value": "40",
+        "unit": "% of new marketplace startups",
+        "source": "a16z",
+        "year": 2024,
+        "evergreen": false
+      }
+    ]
+  }
+}

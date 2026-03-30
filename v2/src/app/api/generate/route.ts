@@ -97,8 +97,38 @@ function loadKB() {
   return kb;
 }
 
+// ============ BUSINESS TYPE DETECTION ============
+// Auto-detect business model from scenario → loads specific data file
+const BUSINESS_TYPE_KEYWORDS: Record<string, string[]> = {
+  'saas-data': ['saas', 'software', 'app', 'subscription', 'mrr', 'arr', 'churn', 'b2b software', 'platform', 'tool', 'dashboard', 'api product'],
+  'fnb-data': ['cafe', 'coffee', 'restaurant', 'food', 'bar', 'kitchen', 'catering', 'food truck', 'bakery', 'pizzeria', 'warung', 'kedai', 'kopi', 'ristorante'],
+  'agency-data': ['agency', 'consulting', 'freelance to agency', 'smma', 'marketing agency', 'dev agency', 'design agency', 'agenzia', 'consulenza', 'service business', 'retainer'],
+  'marketplace-data': ['marketplace', 'platform', 'two-sided', 'network effect', 'aggregator', 'matching', 'uber for', 'airbnb for'],
+  'creator-data': ['youtube', 'tiktok', 'podcast', 'newsletter', 'substack', 'patreon', 'content creator', 'influencer', 'creator economy', 'streaming'],
+  'ecommerce-data': ['ecommerce', 'e-commerce', 'shopify', 'dropshipping', 'amazon fba', 'online store', 'dtc', 'direct to consumer', 'print on demand', 'toko online'],
+  'upwork-data': ['upwork', 'freelance', 'freelancer', 'freelancing', 'proposal', 'connects', 'top rated', 'expert vetted', 'fiverr', 'gig', 'client acquisition', 'JSS', 'job success'],
+};
+
+function detectBusinessType(scenario: string): string | null {
+  const lower = scenario.toLowerCase();
+  let bestMatch: string | null = null;
+  let bestScore = 0;
+  for (const [file, keywords] of Object.entries(BUSINESS_TYPE_KEYWORDS)) {
+    const score = keywords.filter(kw => lower.includes(kw)).length;
+    if (score > bestScore) { bestScore = score; bestMatch = file; }
+  }
+  return bestScore >= 1 ? bestMatch : null;
+}
+
 // ============ KEYWORD MAP ============
 const KEYWORDS: Record<string, string[]> = {
+  // === BUSINESS TYPE DATA (auto-matched) ===
+  'saas-data': ['saas', 'software', 'app', 'subscription', 'mrr', 'arr', 'churn', 'b2b', 'tool', 'dashboard'],
+  'fnb-data': ['cafe', 'coffee', 'restaurant', 'food', 'bar', 'kitchen', 'catering', 'food truck', 'bakery', 'warung', 'kedai', 'kopi', 'ristorante'],
+  'agency-data': ['agency', 'consulting', 'smma', 'marketing agency', 'dev agency', 'agenzia', 'consulenza', 'service business', 'retainer'],
+  'marketplace-data': ['marketplace', 'platform', 'two-sided', 'network effect', 'aggregator', 'uber for', 'airbnb for'],
+  'creator-data': ['youtube', 'tiktok', 'podcast', 'newsletter', 'substack', 'patreon', 'content creator', 'influencer', 'streaming'],
+  'ecommerce-data': ['ecommerce', 'e-commerce', 'shopify', 'dropshipping', 'amazon fba', 'online store', 'dtc', 'print on demand', 'toko online'],
   // === BUSINESS & MONEY ===
   'master-funnels': ['startup', 'business', 'cafe', 'saas', 'freelance', 'creator', 'ecommerce', 'invest', 'impresa', 'attività', 'azienda', 'negozio', 'aprire', 'funnel', 'conversion', 'pipeline', 'imbuto', 'vendita online', 'bisnis', 'usaha', 'modal', 'jualan', 'toko', 'lead', 'landing page', 'guadagn', 'soldi', 'reddito', 'monetiz', 'costruisci', 'lancia', 'avvia'],
   'funding-finance-business': ['funding', 'finanziamento', 'pendanaan', 'venture capital', 'VC', 'angel', 'angel investor', 'seed', 'serie A', 'raising money', 'raccolta fondi', 'bootstrap', 'bootstrapping', 'investor', 'investitore', 'pitch deck', 'equity', 'dilution', 'crowdfunding', 'accelerator', 'incubator', 'round'],
@@ -1159,7 +1189,8 @@ Node types: start, desire, action, bottleneck, decision, outcome-good, outcome-b
 Edges: pass/fail for bottleneck, yes/no for decision. Every bottleneck/decision MUST have both a pass/yes AND a fail/no edge.
 Position: x increases by ~260, failures below (y+200). Min 260px horizontal spacing.
 JSON format: {"title":"...","nodes":[{"id":1,"type":"desire","label":"...","x":0,"y":120,"prob":100,"desc":"Real stat","source":"Source Year or Estimated","time":"30-90 days"}],"edges":[{"from":1,"to":2,"label":""}],"pruning_questions":[{"id":"q1","question":"Binary YES/NO question specific to this scenario","section":"community_and_counsel","yesModifier":1.8,"noModifier":0.35,"yesLabel":"Yes, short","noLabel":"No, short","insight":"Data-backed reason why this matters (stat + source)"}]}
-prob = conditional % of PASSING. Only bottleneck/decision need realistic prob (<100). Others = 100.
+prob = conditional % of PASSING (BASE CASE). Only bottleneck/decision need realistic prob (<100). Others = 100.
+For bottleneck/decision nodes, also include "probRange" with optimistic and adverse: {"prob":40,"probRange":{"optimistic":65,"adverse":15}}.
 desc MUST include a specific number/stat, not generic text.
 
 UPWORK/FREELANCE PLATFORM MECHANICS (use when scenario involves Upwork or freelancing):
@@ -1191,6 +1222,12 @@ DECISION PRUNING QUESTIONS: Generate exactly 5-7 binary YES/NO questions that de
   - Visa: "Do you have a sponsor employer?" NOT "Are you committed?"
   - Startup: "Have you talked to 20+ potential customers?" NOT "Have you validated?"
   - Weight loss: "Do you have a gym membership or home equipment?" NOT "Are you motivated?"`;
+
+    // BUSINESS TYPE DETECTION: auto-select specific data
+    const businessType = detectBusinessType(scenario);
+    if (businessType) {
+      console.log(`[API] Business type detected: ${businessType}`);
+    }
 
     // LAYER 0: Sacred foundation — injected FIRST because it's the base
     const sacredContext = findSacredPatterns(scenario);

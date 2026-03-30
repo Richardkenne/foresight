@@ -1,0 +1,315 @@
+{
+  "_meta": {
+    "description": "SaaS business data points — survival rates, conversion funnels, churn, CAC/LTV, funding, pricing, team dynamics, tech benchmarks, geographic differences",
+    "date": "2026-03-30",
+    "sources": [
+      "ChartMogul SaaS Growth Report 2025",
+      "Startup Genome Report 2024",
+      "First Page Sage SaaS Benchmarks 2025-2026",
+      "OpenView SaaS Benchmarks 2024",
+      "ProfitWell/Paddle Retention Report 2024",
+      "Benchmarkit SaaS Performance Metrics 2025",
+      "SaaS Capital Benchmarking Report 2025",
+      "KeyBanc Capital Markets SaaS Survey 2024",
+      "Carta State of Startups 2024",
+      "Y Combinator Batch Data 2024-2025",
+      "CB Insights State of Venture 2024",
+      "Bessemer Cloud Index 2024",
+      "Indie Hackers / SaaSRanger Micro-SaaS Survey 2024",
+      "MIT Sloan Solo Founder Research 2024",
+      "Failory Startup Failure Analysis 2024",
+      "High Alpha SaaS Benchmarks Report 2025"
+    ],
+    "total_data_points": 214
+  },
+
+  "survival_funnel": {
+    "_description": "Percentage of SaaS startups surviving to each stage",
+    "idea_to_mvp_pct": { "value": 40, "source": "Startup Genome 2024", "note": "% of idea-stage founders who actually ship an MVP" },
+    "mvp_to_first_customer_pct": { "value": 60, "source": "Indie Hackers Survey 2024", "note": "% of MVPs that acquire at least 1 paying customer" },
+    "first_customer_to_1k_mrr_pct": { "value": 50, "source": "SaaSRanger Micro-SaaS Survey 2024", "note": "50% plateau below $1K MRR and abandon" },
+    "reach_1k_mrr_pct": { "value": 30, "source": "SaaSRanger 2024", "note": "Of all who launch, 30% ever reach $1K MRR" },
+    "reach_10k_mrr_pct": { "value": 15, "source": "SaaSRanger 2024", "note": "Scale to $10K-$100K MRR range" },
+    "reach_100k_arr_pct": { "value": 12, "source": "ChartMogul SaaS Growth Report 2025", "note": "Estimated from monetization-stage cohort data" },
+    "reach_1m_arr_pct": { "value": 4, "source": "ChartMogul SaaS Growth Report 2025", "note": "Only 4% of SaaS companies reach $1M ARR" },
+    "reach_10m_arr_pct": { "value": 1.6, "source": "ChartMogul SaaS Growth Report 2025", "note": "1 in 10 that reach $1M make it to $10M" },
+    "reach_25m_arr_pct": { "value": 0.8, "source": "ChartMogul SaaS Growth Report 2025", "note": "1 in 50 within 10 years" },
+    "overall_failure_rate_3yr_pct": { "value": 92, "source": "Failory/CB Insights 2024", "note": "92% of SaaS startups fail within 3 years" },
+    "valley_of_death_18_24mo_pct": { "value": 45, "source": "Failory 2024", "note": "45% fail in the 18-24 month valley of death" },
+    "micro_saas_fail_18mo_pct": { "value": 92, "source": "RockingWeb Micro-SaaS Analysis 2025", "note": "92% of micro-SaaS fail within 18 months" }
+  },
+
+  "time_to_milestones": {
+    "_description": "Average/median time to reach key SaaS milestones",
+    "idea_to_mvp_months": { "low": 3, "high": 6, "source": "Multiple SaaS dev agencies 2025", "note": "Production-quality MVP: 14-18 weeks typical" },
+    "mvp_to_first_customer_days": { "value": 30, "source": "Indie Hackers 2024", "note": "For founders targeting a warm community" },
+    "launch_to_1k_mrr_months_median": { "value": 9, "source": "Indie Hackers aggregated data 2024", "note": "Outliers hit it in 5 months" },
+    "launch_to_1k_mrr_months_range": { "low": 5, "high": 18, "source": "Indie Hackers / SoftwareSeni 2024" },
+    "launch_to_10k_mrr_months_median": { "value": 14, "source": "SoftwareSeni Solo Founder Analysis 2024" },
+    "launch_to_10k_mrr_months_range": { "low": 9, "high": 36, "source": "SoftwareSeni 2024", "note": "9-18 full-time, 24-36 part-time (10h/week)" },
+    "launch_to_1m_arr_years_median": { "low": 2, "high": 5, "source": "ChartMogul SaaS Growth Report 2025" },
+    "reach_1m_arr_under_1yr_pct": { "value": 3.3, "source": "ChartMogul 2025", "note": "Only 3.3% reach $1M ARR in under a year" },
+    "seed_round_close_days_median": { "value": 142, "source": "Carta 2025" },
+    "time_from_seed_to_series_a_months": { "low": 18, "high": 24, "source": "CB Insights 2024" }
+  },
+
+  "conversion_funnel": {
+    "_description": "SaaS conversion benchmarks at each funnel stage",
+    "website_visitor_to_signup_pct": { "low": 2, "high": 5, "source": "First Page Sage 2025", "note": "Only 2-5% of visitors convert to trial signups" },
+    "visitor_to_lead_avg_pct": { "value": 1.5, "source": "Pixelswithin B2B SaaS Benchmarks 2026", "note": "Average companies" },
+    "visitor_to_lead_top10_pct": { "low": 8, "high": 15, "source": "Pixelswithin 2026", "note": "Top 10% of B2B SaaS companies" },
+    "visitor_to_freemium_signup_pct": { "value": 13.3, "source": "First Page Sage SaaS Freemium Report 2026" },
+    "trial_signup_to_activation_pct": { "value": 37.5, "source": "PulseAhead 2025", "note": "Activation = meaningful usage of core feature" },
+    "trial_activation_with_video_onboarding_pct": { "value": 50, "source": "PulseAhead 2025", "note": "Video/animated onboarding boosts activation" },
+    "free_trial_to_paid_overall_pct": { "low": 14, "high": 25, "source": "Multiple sources 2024-2025" },
+    "trial_opt_in_cc_required_pct": { "low": 15, "high": 25, "source": "PulseAhead / Amra&Elma 2025" },
+    "trial_opt_out_no_cc_pct": { "low": 5, "high": 15, "source": "PulseAhead / Amra&Elma 2025" },
+    "trial_opt_out_with_cc_conversion_pct": { "value": 48.8, "source": "Lenny's Newsletter / 1Capture 2025", "note": "Opt-out trials (CC upfront, auto-charge) convert dramatically higher" },
+    "trial_opt_in_no_cc_conversion_pct": { "value": 18.2, "source": "Lenny's Newsletter / 1Capture 2025" },
+    "b2b_trial_to_paid_pct": { "low": 15, "high": 30, "source": "PulseAhead 2025" },
+    "b2c_trial_to_paid_pct": { "low": 10, "high": 20, "source": "PulseAhead 2025" },
+    "crm_trial_to_paid_pct": { "value": 29, "source": "First Page Sage 2025", "note": "CRM leads all categories" },
+    "hr_software_trial_to_paid_pct": { "value": 22.7, "source": "First Page Sage 2025" },
+    "adtech_trial_to_paid_pct": { "value": 24.3, "source": "First Page Sage 2025" },
+    "short_trial_7_14d_vs_30d_improvement_pct": { "value": 71, "source": "PulseAhead 2025", "note": "7-14 day trials with urgency outperform 30-day by 71%" },
+    "month1_retention_b2b_pct": { "value": 46.9, "source": "Userpilot B2B SaaS Benchmarks 2025" }
+  },
+
+  "freemium_vs_paid": {
+    "_description": "Freemium model conversion benchmarks",
+    "freemium_to_paid_median_pct": { "low": 2, "high": 5, "source": "OpenView SaaS Benchmarks 2024" },
+    "freemium_to_paid_top_performers_pct": { "low": 5, "high": 10, "source": "OpenView 2024" },
+    "freemium_self_serve_pct": { "low": 3, "high": 5, "source": "Lenny's Newsletter 2024", "note": "Exceptional performers reach 6-8%" },
+    "freemium_sales_assisted_avg_pct": { "low": 5, "high": 7, "source": "Lenny's Newsletter 2024" },
+    "freemium_sales_assisted_top_pct": { "low": 10, "high": 15, "source": "Lenny's Newsletter 2024" },
+    "freemium_good_conversion_pct": { "low": 8, "high": 12, "source": "Lenny's Newsletter 2024" },
+    "freemium_great_conversion_pct": { "low": 15, "high": 25, "source": "Lenny's Newsletter 2024" },
+    "visitor_to_freemium_pct": { "value": 13.3, "source": "First Page Sage 2026" },
+    "freemium_to_paid_final_pct": { "value": 2.6, "source": "First Page Sage 2026", "note": "End-to-end freemium funnel" }
+  },
+
+  "churn_rates": {
+    "_description": "SaaS churn benchmarks by segment, billing model, and company size",
+    "overall_avg_monthly_pct": { "value": 4.2, "source": "ProfitWell/Paddle 2024", "note": "Across 1000+ subscription businesses" },
+    "voluntary_churn_monthly_pct": { "value": 3.5, "source": "ProfitWell/Paddle 2024" },
+    "involuntary_churn_monthly_pct": { "value": 0.7, "source": "ProfitWell/Paddle 2024", "note": "Payment failures, expired cards" },
+    "month_to_month_billing_churn_pct": { "value": 6.8, "source": "UserMotion 2024" },
+    "annual_billing_churn_monthly_pct": { "value": 2.1, "source": "UserMotion 2024" },
+    "quarterly_billing_churn_monthly_pct": { "value": 4.3, "source": "UserMotion 2024" },
+    "multi_year_billing_churn_monthly_pct": { "value": 1.4, "source": "UserMotion 2024" },
+    "small_business_churn_monthly_pct": { "value": 7.5, "source": "Vitally 2025" },
+    "mid_market_churn_monthly_pct": { "value": 5.2, "source": "Vitally 2025" },
+    "large_enterprise_churn_monthly_pct": { "value": 3.8, "source": "Vitally 2025" },
+    "smb_churn_vs_enterprise_multiplier": { "value": 8.2, "source": "DollarPocket SaaS Churn Report 2024", "note": "SMB churn is 8.2x higher than enterprise" },
+    "healthy_annual_churn_smb_pct": { "low": 5, "high": 7, "source": "Vitally 2025" },
+    "healthy_annual_churn_midmarket_pct": { "value": 5, "source": "Vitally 2025", "note": "Under 5% for mid-market/enterprise" },
+    "healthy_monthly_churn_smb_pct": { "value": 2, "source": "Vitally 2025", "note": "Aim for under 2% monthly" },
+    "healthy_monthly_churn_enterprise_pct": { "value": 1, "source": "Vitally 2025", "note": "Aim for under 1% monthly" },
+    "low_arpu_25_50_churn_pct": { "value": 8.7, "source": "UserMotion 2024", "note": "Highest churn for $25-50 ARPU tier" },
+    "b2b_churn_peak_2023_pct": { "value": 4.4, "source": "ProfitWell 2024", "note": "Peaked in 2023, dropped to 4.2% in 2024" }
+  },
+
+  "net_revenue_retention": {
+    "_description": "NRR and GRR benchmarks by company size and ACV",
+    "median_nrr_2025_pct": { "value": 106, "source": "Benchmarkit 2025" },
+    "top_performers_nrr_pct": { "value": 120, "source": "Benchmarkit 2025", "note": "Top performers exceed 120%" },
+    "best_in_class_nrr_pct": { "value": 130, "source": "Multiple sources 2024-2025", "note": ">130% is best-in-class" },
+    "nrr_1m_10m_arr_pct": { "value": 98, "source": "SaaS Capital 2025" },
+    "grr_1m_10m_arr_pct": { "value": 85, "source": "SaaS Capital 2025" },
+    "nrr_100m_plus_arr_pct": { "value": 115, "source": "SaaS Capital 2025" },
+    "grr_100m_plus_arr_pct": { "value": 94, "source": "SaaS Capital 2025" },
+    "nrr_1m_3m_arr_top_quartile_pct": { "value": 94, "source": "SaaS Capital 2025" },
+    "nrr_3m_15m_arr_top_quartile_pct": { "value": 99, "source": "SaaS Capital 2025" },
+    "nrr_bootstrapped_3m_20m_median_pct": { "value": 104, "source": "SaaS Capital 2025" },
+    "nrr_bootstrapped_3m_20m_90th_pct": { "value": 118, "source": "SaaS Capital 2025" },
+    "nrr_acv_25k_50k_median_pct": { "value": 102, "source": "SaaS Capital 2025" },
+    "nrr_acv_25k_50k_top_quartile_pct": { "value": 111, "source": "SaaS Capital 2025" },
+    "enterprise_vs_smb_nrr_premium_pct": { "low": 8, "high": 10, "source": "KeyBanc 2024", "note": "Enterprise-focused achieves 8-10% higher NRR than SMB-focused" },
+    "kebanc_top_nrr_range_pct": { "low": 115, "high": 125, "source": "KeyBanc Capital Markets SaaS Survey 2024" }
+  },
+
+  "cac_ltv_economics": {
+    "_description": "Customer acquisition cost, lifetime value, and payback benchmarks",
+    "healthy_ltv_cac_ratio": { "low": 3, "high": 5, "source": "Multiple sources 2024-2025", "note": "3:1 minimum, 3:1 to 5:1 healthy range" },
+    "organic_ltv_cac_ratio_target": { "value": 4, "source": "First Page Sage 2025", "note": "Higher target for organic channels" },
+    "avg_b2b_saas_cac_2026": { "value": 1200, "unit": "USD", "source": "First Page Sage CAC by Channel 2026", "note": "14% increase since 2025" },
+    "avg_saas_cac_all_channels": { "value": 702, "unit": "USD", "source": "Userpilot 2024" },
+    "cac_organic_seo": { "value": 290, "unit": "USD", "source": "Phoenix Strategy Group 2025", "note": "Lowest but requires upfront effort" },
+    "cac_referral_b2b": { "value": 150, "unit": "USD", "source": "Phoenix Strategy Group 2025", "note": "Lowest CAC channel, leveraging trust" },
+    "cac_organic_seo_thought_leadership": { "value": 647, "unit": "USD", "source": "First Page Sage 2026" },
+    "cac_organic_seo_basic": { "value": 1786, "unit": "USD", "source": "First Page Sage 2026" },
+    "cac_paid_search_b2b": { "value": 802, "unit": "USD", "source": "First Page Sage 2026" },
+    "cac_outbound_sales_b2b": { "value": 1980, "unit": "USD", "source": "Phoenix Strategy Group 2025", "note": "Highest CAC but effective for large deals" },
+    "cac_payback_median_months_2024": { "value": 18, "source": "Benchmarkit 2025", "note": "Up from 14 months in 2023" },
+    "cac_payback_smb_months": { "low": 8, "high": 12, "source": "Optifai 2025" },
+    "cac_payback_midmarket_months": { "low": 14, "high": 18, "source": "Optifai 2025" },
+    "cac_payback_enterprise_months": { "low": 18, "high": 24, "source": "Optifai 2025" },
+    "cac_payback_best_in_class_months": { "value": 12, "source": "ScaleXP 2025", "note": "Best-in-class is under 12 months" },
+    "cac_payback_acv_over_100k_months": { "value": 24, "source": "Optifai 2025" },
+    "cac_payback_acv_under_5k_months": { "value": 9, "source": "Optifai 2025" },
+    "cac_payback_b2c_months": { "value": 4.2, "source": "Optifai 2025" },
+    "cac_payback_b2b_months": { "value": 8.6, "source": "Optifai 2025" },
+    "cac_payback_early_stage_months": { "value": 4.8, "source": "Optifai 2025", "note": "Early adopters are cheaper to acquire" },
+    "cac_payback_at_200k_mrr_months": { "value": 8.8, "source": "Optifai 2025" }
+  },
+
+  "pricing_arpu": {
+    "_description": "SaaS pricing, ARPU, and ACV benchmarks by segment",
+    "median_arpu_all_saas_monthly": { "value": 127, "unit": "USD", "source": "DollarPocket SaaS Pricing Report 2024" },
+    "arpu_productivity_tools_monthly": { "value": 12, "unit": "USD", "source": "DollarPocket 2024" },
+    "arpu_infrastructure_devops_monthly": { "value": 847, "unit": "USD", "source": "DollarPocket 2024" },
+    "arpu_midmarket_optimal_monthly": { "value": 324, "unit": "USD", "source": "DollarPocket 2024", "note": "Best balance of deal size and sales efficiency" },
+    "arpu_smb_monthly": { "value": 210, "unit": "USD", "source": "OpenView 2024" },
+    "arpu_enterprise_monthly": { "value": 1320, "unit": "USD", "source": "OpenView 2024" },
+    "acv_smb_annual": { "low": 5000, "high": 15000, "unit": "USD", "source": "RevTek Capital 2024" },
+    "acv_midmarket_annual": { "low": 15000, "high": 50000, "unit": "USD", "source": "RevTek Capital 2024" },
+    "acv_enterprise_annual": { "low": 50000, "high": 250000, "unit": "USD", "source": "RevTek Capital 2024" },
+    "median_acv_keybanc_2024": { "value": 62000, "unit": "USD", "source": "KeyBanc Capital Markets 2024" }
+  },
+
+  "sales_cycle": {
+    "_description": "SaaS sales cycle length by deal size and segment",
+    "smb_under_5k_days": { "low": 14, "high": 30, "source": "Optifai 2025" },
+    "smb_under_15k_median_days": { "value": 40, "source": "Optifai 2025" },
+    "midmarket_15k_100k_days": { "low": 60, "high": 120, "source": "Optifai / Digital Bloom 2025" },
+    "enterprise_over_100k_days": { "low": 90, "high": 180, "source": "Optifai 2025" },
+    "enterprise_1000plus_employees_days": { "low": 170, "high": 270, "source": "Martal 2026", "note": "6-9 month cycles for 1000+ employee companies" },
+    "overall_b2b_saas_median_days": { "value": 84, "source": "Optifai 2025" },
+    "cycle_length_increase_since_2022_pct": { "value": 22, "source": "Digital Bloom 2025", "note": "Due to budget scrutiny and committee buying" },
+    "negotiation_close_pct_of_total_cycle": { "low": 35, "high": 40, "source": "Optifai 2025", "note": "Legal redlines and procurement #1 cause of delays" }
+  },
+
+  "growth_rates": {
+    "_description": "SaaS revenue growth benchmarks by stage and type",
+    "median_annual_growth_2025_pct": { "value": 28, "source": "Lighter Capital 2025 B2B SaaS Benchmarks" },
+    "median_annual_growth_2024_pct": { "value": 47, "source": "Lighter Capital 2025", "note": "2025 is 40% lower than 2024" },
+    "early_stage_arr_growth_avg_pct": { "value": 144, "source": "Eleken SaaS Growth Guide 2024" },
+    "mature_stage_growth_pct": { "low": 15, "high": 45, "source": "Eleken 2024" },
+    "bootstrapped_median_annual_growth_pct": { "value": 23, "source": "ChartMogul Bootstrapped vs VC Report 2025" },
+    "vc_backed_median_annual_growth_pct": { "value": 25, "source": "ChartMogul 2025" },
+    "sub_50k_arr_growth_slowdown_yoy_pct": { "value": 50, "source": "Lighter Capital 2025", "note": "Biggest slowdown among early-stage" },
+    "1m_5m_arr_growth_slowdown_yoy_pct": { "value": 50, "source": "Lighter Capital 2025" },
+    "ai_core_product_growth_multiplier": { "value": 2, "source": "SaaSRanger 2025", "note": "AI-core products grew 2x faster than AI-as-feature" },
+    "rule_of_40_valuation_premium_pct": { "value": 121, "source": "GSQuaredCFO 2025", "note": "$124M vs $56M valuation on $10M ARR" }
+  },
+
+  "gross_margin": {
+    "_description": "SaaS gross margin and profitability benchmarks",
+    "median_software_subscription_gross_margin_pct": { "value": 79, "source": "Benchmarkit 2024" },
+    "top_quartile_gross_margin_pct": { "value": 85, "source": "Benchmarkit 2024" },
+    "total_gross_margin_incl_services_pct": { "low": 71, "high": 72, "source": "CloudZero 2025" },
+    "minimum_healthy_gross_margin_pct": { "value": 75, "source": "Industry consensus 2024", "note": "Below 70% = cost structure problem" },
+    "bootstrapped_breakeven_or_profitable_pct": { "value": 85, "source": "SaaS Capital 2025", "note": "85% of bootstrapped within 2% of breakeven or profitable" },
+    "vc_backed_breakeven_or_profitable_pct": { "value": 46, "source": "SaaS Capital 2025" },
+    "bootstrapped_operating_at_loss_pct": { "value": 15, "source": "SaaS Capital 2025" },
+    "vc_backed_operating_at_loss_pct": { "value": 55, "source": "SaaS Capital 2025" }
+  },
+
+  "funding": {
+    "_description": "SaaS funding benchmarks — round sizes, valuations, success rates",
+    "pre_seed_median_2025": { "value": 700000, "unit": "USD", "source": "Metal.so Pre-Seed Benchmarks 2025" },
+    "pre_seed_high_end_2025": { "value": 1700000, "unit": "USD", "source": "Metal.so 2025" },
+    "seed_median_2025": { "low": 2500000, "high": 3200000, "unit": "USD", "source": "Carta / Metal.so 2025" },
+    "seed_ai_startup_median_2025": { "value": 4600000, "unit": "USD", "source": "Metal.so 2025", "note": "AI startups command 1.3x market premium" },
+    "series_a_median_2024": { "value": 14200000, "unit": "USD", "source": "Development Corporate SaaS Fundraising 2025" },
+    "series_a_median_2025": { "value": 15000000, "unit": "USD", "source": "Development Corporate 2025" },
+    "series_a_average_2025": { "value": 16600000, "unit": "USD", "source": "Development Corporate 2025" },
+    "series_a_pre_money_valuation_median_2024": { "value": 39900000, "unit": "USD", "source": "Carta 2024", "note": "Highest in history, up 33% from 2023" },
+    "series_b_median_2024": { "value": 30000000, "unit": "USD", "source": "SaaSRise VC Report 2025" },
+    "series_c_median_2024": { "value": 35000000, "unit": "USD", "source": "SaaSRise VC Report 2025" },
+    "seed_to_series_a_success_rate_pct": { "value": 62, "source": "Carta 2024", "note": "62% of seed-funded raised Series A in 2024" },
+    "seed_to_series_a_failure_rate_pct": { "value": 85, "source": "ScaleUp Finance 2025", "note": "Series A crunch: 85% of seed-stage fail to raise Series A" },
+    "revenue_multiple_median_2024": { "value": 10.1, "source": "SaaSRise VC Report 2025", "note": "Down from 11.3x in 2023" },
+    "us_saas_vc_funding_2023_total": { "value": 35000000000, "unit": "USD", "source": "Precedence Research 2024" },
+    "europe_saas_funding_growth_multiplier": { "value": 3.2, "source": "SaaStock 2025", "note": "Europe private SaaS funding growing 3.2x faster annually" }
+  },
+
+  "founder_dynamics": {
+    "_description": "Solo founder vs co-founder outcomes and team dynamics",
+    "solo_founder_pct_of_bootstrapped": { "value": 38, "source": "Carta 2024" },
+    "solo_founder_pct_of_vc_backed": { "value": 17, "source": "Carta 2024" },
+    "solo_founder_pct_of_ipo": { "low": 10, "high": 12, "source": "Carta / SaaStr 2024" },
+    "solo_founder_less_likely_to_dissolve_vs_3person_pct": { "value": 54, "source": "MIT Sloan 2024", "note": "Solo founders 54% less likely to dissolve vs 3-person teams" },
+    "solo_founder_less_likely_to_dissolve_vs_2person_pct": { "value": 41, "source": "MIT Sloan 2024" },
+    "solo_founder_pct_of_successful_exits": { "value": 52.3, "source": "Equidam 2024", "note": "Of 6,191 successful exits, 52.3% were solo founders" },
+    "solo_founder_pct_of_independent_saas": { "value": 56.35, "source": "SoloFounders.com Report 2024", "note": "Of 534 independent SaaS companies surveyed" },
+    "solo_founder_pct_of_1m_plus_revenue": { "value": 42, "source": "SoloFounders.com 2024", "note": "Most common founder count at $1M+ ARR" },
+    "two_founder_pct_of_1m_plus_revenue": { "value": 33, "source": "SoloFounders.com 2024" },
+    "vc_preference_two_founders_pct": { "value": 37, "source": "Carta 2024", "note": "37% of VC-backed have 2 founders vs 20% solo" },
+    "vc_preference_solo_founder_pct": { "value": 20, "source": "Carta 2024" }
+  },
+
+  "failure_reasons": {
+    "_description": "Top reasons SaaS startups fail, by percentage",
+    "no_market_need_pct": { "value": 42, "source": "CB Insights 2024", "note": "#1 reason for SaaS failure" },
+    "ran_out_of_cash_pct": { "value": 29, "source": "CB Insights 2024" },
+    "team_challenges_pct": { "value": 23, "source": "CB Insights 2024" },
+    "outcompeted_pct": { "value": 19, "source": "CB Insights 2024" },
+    "poor_marketing_gtm_pct": { "value": 13, "source": "CB Insights 2024" },
+    "premature_scaling_pct": { "value": 74, "source": "Startup Genome 2024", "note": "74% of failed startups scaled prematurely" },
+    "premature_scaling_never_break_100k_monthly_pct": { "value": 93, "source": "Startup Genome 2024" },
+    "premature_scaling_never_pass_100k_users_pct": { "value": 100, "source": "Startup Genome 2024" },
+    "flawed_business_model_pct": { "value": 29, "source": "Startup Genome 2024" },
+    "fail_before_series_a_pct": { "value": 60, "source": "Failory 2024" }
+  },
+
+  "tech_benchmarks": {
+    "_description": "MVP build time, tech debt, and engineering benchmarks",
+    "mvp_build_time_weeks_typical": { "low": 14, "high": 18, "source": "Multiple SaaS agencies 2025" },
+    "mvp_build_time_discovery_weeks": { "value": 2, "source": "SaaS Fractional CPO Guide 2026" },
+    "mvp_build_time_ux_ui_weeks": { "value": 3, "source": "SaaS Fractional CPO Guide 2026" },
+    "mvp_build_time_dev_qa_weeks": { "low": 8, "high": 10, "source": "SaaS Fractional CPO Guide 2026" },
+    "mvp_cost_range": { "low": 30000, "high": 500000, "unit": "USD", "source": "Ptolemay SaaS Development Costs 2025" },
+    "tech_debt_kills_more_than_funding_lack": { "value": true, "source": "Talentica 2025", "note": "Tech debt kills startups more than lack of funding" },
+    "premature_scaling_growth_penalty_multiplier": { "value": 20, "source": "Startup Genome 2024", "note": "Properly scaled startups grow 20x faster" }
+  },
+
+  "yc_benchmarks": {
+    "_description": "Y Combinator acceptance, batch data, and outcomes",
+    "acceptance_rate_w24_pct": { "value": 0.96, "source": "YC W24 Data 2024", "note": "260 accepted from 27,000+ applications" },
+    "acceptance_rate_s25_pct": { "value": 0.6, "source": "YC S25 Data 2025", "note": "Lowest on record" },
+    "batch_size_w24": { "value": 260, "source": "YC 2024" },
+    "batch_size_s25_demo_day": { "value": 137, "source": "YC 2025" },
+    "companies_funded_2024": { "value": 593, "source": "YC 2024" },
+    "companies_funded_2025": { "value": 632, "source": "YC 2025" },
+    "batches_per_year_since_2024": { "value": 4, "source": "YC 2024", "note": "Increased from 2 to 4 batches per year" },
+    "yc_companies_become_unicorn_pct": { "value": 4.5, "source": "Ellenox YC Statistics 2026", "note": "vs 2.5% for other VC-backed seed" },
+    "yc_companies_raise_series_a_pct": { "value": 45, "source": "Ellenox 2026", "note": "vs 33% average for seed-stage" },
+    "yc_s25_companies_with_revenue_pct": { "value": 70, "source": "YC S25 Demo Day 2025" },
+    "yc_s25_avg_revenue_at_demo_day": { "value": 66000, "unit": "USD", "source": "YC S25 2025" },
+    "total_yc_companies_all_time": { "value": 5668, "source": "Ellenox YC Statistics 2026" }
+  },
+
+  "geographic": {
+    "_description": "SaaS market share and growth by region",
+    "north_america_market_share_2024_pct": { "value": 43.8, "source": "Precedence Research 2024" },
+    "europe_market_share_2024_pct": { "value": 27.3, "source": "Precedence Research 2024" },
+    "asia_pacific_cagr_pct": { "value": 20, "source": "Market Data Forecast 2024", "note": "Fastest-growing region" },
+    "asia_pacific_revenue_2030_projected": { "value": 176200000000, "unit": "USD", "source": "Market Data Forecast 2024" },
+    "europe_australia_5yr_growth_pct": { "value": 5, "source": "UserGuiding SaaS Statistics 2025", "note": "Mature, slower growth" },
+    "asia_africa_5yr_growth_pct": { "value": 10, "source": "UserGuiding 2025", "note": "Emerging regions, faster growth" },
+    "us_saas_vc_funding_2023": { "value": 35000000000, "unit": "USD", "source": "Precedence Research 2024" },
+    "europe_private_saas_funding_growth_multiplier": { "value": 3.2, "source": "SaaStock 2025" },
+    "india_saas_funding_2021": { "value": 4500000000, "unit": "USD", "source": "Fortune Business Insights 2024" },
+    "germany_saas_market_2025_projected": { "value": 18000000000, "unit": "USD", "source": "Precedence Research 2024" },
+    "global_saas_market_2024": { "value": 317000000000, "unit": "USD", "source": "Fortune Business Insights 2024" },
+    "global_saas_market_2035_projected": { "value": 1367680000000, "unit": "USD", "source": "Precedence Research 2024" },
+    "china_apac_saas_leader": { "value": true, "source": "Fortune Business Insights 2024", "note": "Highest APAC share, followed by Japan and India" }
+  },
+
+  "micro_saas_distribution": {
+    "_description": "Revenue distribution for micro-SaaS and indie founders",
+    "never_reach_1k_mrr_pct": { "value": 30, "source": "SaaSRanger 2024", "note": "Abandon projects" },
+    "plateau_1k_10k_mrr_pct": { "value": 50, "source": "SaaSRanger 2024", "note": "Lifestyle business range" },
+    "scale_10k_100k_mrr_pct": { "value": 15, "source": "SaaSRanger 2024" },
+    "exceed_100k_mrr_pct": { "value": 5, "source": "SaaSRanger 2024" }
+  },
+
+  "saas_market_overview": {
+    "_description": "Overall SaaS industry size and growth",
+    "global_market_size_2024": { "value": 317000000000, "unit": "USD", "source": "Fortune Business Insights 2024" },
+    "global_market_size_2035_projected": { "value": 1367680000000, "unit": "USD", "source": "Precedence Research 2024" },
+    "number_of_saas_companies_worldwide": { "value": 30000, "source": "SaaS Academy 2024", "note": "Approximate, growing rapidly" },
+    "avg_saas_apps_per_company": { "value": 130, "source": "Productiv / SaaS Statistics 2024" }
+  }
+}
