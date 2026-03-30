@@ -214,7 +214,7 @@ function templateToFlow(
 }
 
 // Simulation speed config — base values, scaled by speedMultiplier
-const SPD_BASE = { move: 1300, wait: 500, launch: 150, wavePause: 700, waves: 10, perWave: 10 };
+const SPD_BASE = { move: 2000, wait: 800, launch: 250, wavePause: 1200, waves: 10, perWave: 10 };
 // Speed levels: 0=1x, 1=1.5x, 2=2x, 3=3x, 4=5x, 5=8x
 const SPEED_LEVELS = [1, 1.5, 2, 3, 5, 8];
 const SPEED_LABELS = ['1x', '1.5x', '2x', '3x', '5x', '8x'];
@@ -716,7 +716,9 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
       // Deterministic proportional filter: prob 70% → exactly 70 out of 100 pass
       // No randomness. The observed reality IS the outcome.
-      const hasProb = typeof prob === 'number' && prob < 100;
+      // Outcome nodes never filter — they are terminal destinations
+      const isOutcome = nodeType === 'outcome-good' || nodeType === 'outcome-bad';
+      const hasProb = !isOutcome && typeof prob === 'number' && prob < 100;
       if (hasProb) {
         // Track how many have arrived and how many should pass at this node
         const arrivalKey = `arrivals-${nodeId}`;
@@ -731,15 +733,23 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
           ...n, data: { ...n.data, [arrivalKey]: arrivals, [passedKey]: pass ? passed + 1 : passed }
         } : n));
         if (!pass) {
-          // Particle dies HERE — scatters around the bottom edge of the node
-          const fallX = (Math.random() - 0.5) * 80;
-          const fallY = 30 + Math.random() * 25; // Just below the node
-          particle.status = 'failing';
-          updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: p.x + fallX, y: p.y + fallY, status: 'failing' } : p));
           // Track deaths per node for visual counter
           const deathKey = `deaths-${nodeId}`;
-          const prev = (node.data as Record<string, unknown>)[deathKey] as number || 0;
-          setNodes(ns => ns.map(n => n.id === nodeId ? { ...n, data: { ...n.data, [deathKey]: prev + 1 } } : n));
+          const prevDeaths = (node.data as Record<string, unknown>)[deathKey] as number || 0;
+          setNodes(ns => ns.map(n => n.id === nodeId ? { ...n, data: { ...n.data, [deathKey]: prevDeaths + 1 } } : n));
+          // Route failed particle to outcome-bad via fail/no edge if available
+          const failEdges = edgesRef.current.filter(e => e.source === nodeId);
+          const failE = failEdges.find(e => e.label === 'fail' || e.label === 'no');
+          if (failE) {
+            // Send to outcome-bad node (particle walks there, then dies)
+            moveTo(particle, failE.target, cb);
+            return;
+          }
+          // No fail edge — die in place
+          const fallX = (Math.random() - 0.5) * 80;
+          const fallY = 30 + Math.random() * 25;
+          particle.status = 'failing';
+          updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: p.x + fallX, y: p.y + fallY, status: 'failing' } : p));
           finishedCountRef.current++;
           cb('blocked');
           return;
