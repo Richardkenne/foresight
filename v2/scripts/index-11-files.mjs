@@ -37,9 +37,9 @@ if (!SUPABASE_URL || !SUPABASE_KEY || !OPENAI_API_KEY) {
   process.exit(1);
 }
 
-// Only process files that failed or were skipped in the first run
-// Already indexed: side-hustle-entrepreneurship, social-proof-mechanics, time-to-result-benchmarks
-const FILES = [
+// Accept file names from CLI args, or use default list
+const cliFiles = process.argv.slice(2);
+const FILES = cliFiles.length > 0 ? cliFiles : [
   'sacred-texts-patterns',
   'sales-outreach-data',
   'scaling-bottlenecks',
