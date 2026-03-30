@@ -16,23 +16,27 @@
 ## Fase 1: Data Foundation (+25% credibilita)
 - [x] ~~Upgrade Supabase a Pro ($25/mo)~~ → ottimizzato a 512 dim, free tier sufficiente ($0/mo)
 - [x] Schema: vector(1536) → vector(512), ivfflat → HNSW (m=16, ef=64)
-- [x] Re-indicizzare 113 JSON nel RAG → 49,557 rows, 87/113 file (26 timeout, da completare)
+- [x] Re-indicizzare 113 JSON nel RAG → 50,749 rows, 114+ file
+- [x] 247 Upwork data points (8 agenti di ricerca) → data/upwork-data.json → indicizzato in Supabase
+- [x] Auto-indexing pipeline: /api/index-data + Vercel Cron nightly (delta detection)
+- [x] Prompt hardened: no hallucination, RAG data priority, Upwork mechanics injected
+- [x] 3-tier AI cascade: Claude Haiku → OpenAI GPT-4o-mini → Groq Llama 3.3
+- [x] 10 test Upwork simulazioni: media 6.6→8.5/10 con Claude
 - [ ] Aggiungere API: Eurostat, BLS bulk, Numbeo, GEM, OECD
 - [ ] Pre-processing scenari foto: estrarre keyword business, rimuovere descrizioni visive
 - [ ] Test: top 100 scenari con 0 "Estimated"
+- [ ] Re-index 26 file mancanti (timeout prima sessione)
 
-## Fase 1B: Conditional Engine (+35% credibilita)
+## Fase 1B: Conditional Engine (+35% credibilita) — PARZIALMENTE FATTO
+- [x] Decision Pruning: 5-7 domande binarie YES/NO pre-simulazione, modifier applicato a tutti i bottleneck
+- [x] Domande dinamiche: Claude genera domande specifiche per scenario (non generiche)
+- [x] Upwork-specific mechanics nel prompt (Connects, JSS, rates, funnel)
 - [ ] P(nodo) = f(business_model, location, budget, timeline) — non costante
 - [ ] 3+ business-model engines separati (SaaS, Service, F&B, Marketplace, Content)
 - [ ] Ogni engine ha probabilita specifiche per industry/country
 - [ ] Range output: base/optimistic/adverse (es. 8-18%, non solo 14%)
 - [ ] Burn/time modeling: runway che scende, morte per cash/time mismatch
 - [ ] Dipendenza tra nodi: scelta a nodo 3 cambia probabilita nodo 7
-- [ ] Condizionali per tutti i 30 template (~150 nodi bottleneck, ~1,200 data points)
-  - Esempio: "Run out of money" → 52% bootstrapped, 25% VC funded, 47% solo founder
-  - Salvare in `data/conditionals/` (un file per template)
-  - Indicizzare su Supabase pgvector
-- [ ] UI pre-simulazione: 3-4 domande rapide che adattano le probabilita
 
 ## Fase 2: Recursive Simulation (+10% wow factor)
 - [ ] Click su nodo → genera sub-simulazione (chiamata API con contesto parent)
@@ -42,21 +46,20 @@
 - [ ] Back button per tornare al livello superiore
 - [ ] Test: drill-down 3 livelli di profondita
 
-## Fase 3: Profilo Utente (+15% personalizzazione)
-- [ ] Schema profilo: eta, paese, citta, capitale, skills, esperienza, network, lingua, visa, pattern
-- [ ] UI: form profilo nel sidebar (Settings)
-- [ ] Storage: localStorage (poi Supabase Auth)
-- [ ] Iniezione profilo nel prompt Claude come context personalizzato
-- [ ] Probabilita calibrate: stessa simulazione, risultati diversi per profili diversi
+## Fase 3: Profilo Utente (+15% personalizzazione) — FATTO
+- [x] Schema profilo: eta, paese, citta, capitale, skills, esperienza, network, lingua, visa, pattern
+- [x] UI: ProfilePanel in sidebar con 5 sezioni (Identity, Financial, Professional, Network, Upwork)
+- [x] Storage: localStorage con auto-save
+- [x] Iniezione profilo nel prompt Claude come context personalizzato
+- [x] Campi Upwork-specifici: JSS, lifetime earnings, badge tier, hourly rate
 - [ ] Warning personalizzati basati su pattern utente
 - [ ] Test: stesso scenario, 2 profili diversi, probabilita diverse
 
-## Fase 4: Data Pipeline Automatico (+15% freshness)
-- [ ] Script `scripts/update-pipeline.ts` — fetch da tutte le API
-- [ ] Chunking + embedding automatico dei nuovi dati
-- [ ] Upsert nel RAG (aggiorna rows esistenti, aggiunge nuove)
+## Fase 4: Data Pipeline Automatico (+15% freshness) — PARZIALMENTE FATTO
+- [x] Auto-indexing API: /api/index-data (delta detection, embed, upload)
+- [x] Vercel Cron nightly (vercel.json, 0 0 * * *)
+- [ ] Script `scripts/update-pipeline.ts` — fetch da tutte le API live
 - [ ] Aggiornamento `real-probabilities.json` con dati freschi
-- [ ] Cron job settimanale (GitHub Actions o Vercel Cron)
 - [ ] Email report con diff: cosa e cambiato questa settimana
 - [ ] Test: eseguire pipeline manualmente e verificare dati aggiornati
 

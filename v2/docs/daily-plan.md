@@ -37,10 +37,28 @@ Work schedule: 6-8 hours/day, 3-4 tasks/day, checkboxes for tracking.
 | 5B Community Feedback | 51-54 | 13 | 0/13 | +5% |
 | 6 Multi-Agent | 55-58 | 13 | 0/13 | +10% |
 | 7 Public API | 59-63 | 16 | 0/16 | +5% |
-| **TOTAL** | **63** | **209** | **0/209** | **150%** |
+| **TOTAL** | **63** | **209** | **~35/209** | **150%** |
 
-Current credibility: 60/100
+Current credibility: 70/100 (post Day 1-2 improvements)
 Target: 100+/100 (absolute prediction engine)
+
+### Effort & Code Estimate per Phase
+
+| Phase | Days | Hours Total | LOC Estimate | Status | Key Deliverable |
+|-------|------|-------------|-------------|--------|-----------------|
+| 1 Data Foundation | 1-8 | ~48h | ~2,000 | **90% done** | 50K RAG embeddings, 10 APIs, 0 "Estimated" |
+| 1B Conditional Engine | 9-22 | ~84h | ~4,500 | **30% done** | 7 business engines, burn model, node dependencies |
+| 2 Recursive Simulation | 23-28 | ~36h | ~1,500 | 0% | Click node → sub-simulation, 3-level drill-down |
+| 3 User Profile | 29-34 | ~36h | ~1,200 | **85% done** | Profile → personalized probabilities |
+| 4 Auto Pipeline | 35-40 | ~36h | ~800 | **40% done** | Weekly auto-fetch, diff report, email alerts |
+| 5 Backtesting | 41-50 | ~54h | ~2,000 | 0% | Predict vs reality score, calibration |
+| 5B Community Feedback | 51-54 | ~24h | ~1,000 | 0% | User outcomes → auto-adjust probabilities |
+| 6 Multi-Agent | 55-58 | ~24h | ~1,500 | 0% | 1000 agents, distribution histogram |
+| 7 Public API | 59-63 | ~30h | ~1,500 | 0% | /api/predict, JS/Python SDK, $29/mo pricing |
+| **TOTAL** | **63 days** | **~372h** | **~16,000** | **~17%** | From 60/100 to 100+/100 credibility |
+
+**Current codebase: 10,519 LOC. Target: ~26,500 LOC.**
+**Hours remaining: ~310h (~52 sessions of 6h).**
 
 ---
 
