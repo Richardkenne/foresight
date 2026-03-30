@@ -45,7 +45,8 @@ function chunkArchetypesFormat(data: Record<string, unknown>, fileName: string):
 
 function chunkListFormat(data: unknown[], fileName: string): DataChunk[] {
   const chunks: DataChunk[] = [];
-  const maxEntries = fileName.startsWith('worldbank-') || fileName.startsWith('bls-') ? 50
+  const maxEntries = fileName.startsWith('worldbank-') ? 200
+    : fileName.startsWith('bls-') ? 150
     : fileName.startsWith('sacred-batch-') ? 100 : 500;
   const subset = data.length > maxEntries ? data.slice(-maxEntries) : data;
   for (let i = 0; i < subset.length; i++) {
@@ -203,7 +204,7 @@ function chunkFile(filePath: string): DataChunk[] {
 // ============ EMBEDDING ============
 
 async function embedBatch(openai: OpenAI, texts: string[]): Promise<number[][]> {
-  const response = await openai.embeddings.create({ model: EMBEDDING_MODEL, input: texts });
+  const response = await openai.embeddings.create({ model: EMBEDDING_MODEL, input: texts, dimensions: 512 });
   return response.data.map(d => d.embedding);
 }
 

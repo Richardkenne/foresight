@@ -14,8 +14,9 @@
 ---
 
 ## Fase 1: Data Foundation (+25% credibilita)
-- [ ] Upgrade Supabase a Pro ($25/mo)
-- [ ] Re-indicizzare tutti i 116 JSON nel RAG (da 9.5K a 50K+ rows)
+- [x] ~~Upgrade Supabase a Pro ($25/mo)~~ → ottimizzato a 512 dim, free tier sufficiente ($0/mo)
+- [x] Schema: vector(1536) → vector(512), ivfflat → HNSW (m=16, ef=64)
+- [x] Re-indicizzare 113 JSON nel RAG → 49,557 rows, 87/113 file (26 timeout, da completare)
 - [ ] Aggiungere API: Eurostat, BLS bulk, Numbeo, GEM, OECD
 - [ ] Pre-processing scenari foto: estrarre keyword business, rimuovere descrizioni visive
 - [ ] Test: top 100 scenari con 0 "Estimated"
@@ -27,6 +28,11 @@
 - [ ] Range output: base/optimistic/adverse (es. 8-18%, non solo 14%)
 - [ ] Burn/time modeling: runway che scende, morte per cash/time mismatch
 - [ ] Dipendenza tra nodi: scelta a nodo 3 cambia probabilita nodo 7
+- [ ] Condizionali per tutti i 30 template (~150 nodi bottleneck, ~1,200 data points)
+  - Esempio: "Run out of money" → 52% bootstrapped, 25% VC funded, 47% solo founder
+  - Salvare in `data/conditionals/` (un file per template)
+  - Indicizzare su Supabase pgvector
+- [ ] UI pre-simulazione: 3-4 domande rapide che adattano le probabilita
 
 ## Fase 2: Recursive Simulation (+10% wow factor)
 - [ ] Click su nodo → genera sub-simulazione (chiamata API con contesto parent)

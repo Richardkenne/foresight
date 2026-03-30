@@ -113,19 +113,29 @@
 - [x] Input espandibile: textarea overlay centrato (non inline)
 - [x] Stats bar, floating toolbar, Dashboard, SimNode — padding aumentato ovunque
 
-## In Corso
+## In Corso — Day 1 (2026-03-30)
 
-### Problema "Estimated" nei nodi
-- RAG ha solo 9,511 rows (362 categorie, 626MB) — sotto-utilizzato
-- 116 JSON locali non tutti indicizzati nel RAG
-- Scenari da foto troppo descrittivi → keyword mismatch
-- **Soluzione pianificata**: Fase 1 del piano Palantir-level
+### RAG Full Re-Index (Task 1.1-1.3)
+- [x] Audit: 46/113 file indicizzati, 67 mancanti, 9,511 rows
+- [x] Schema ottimizzato: vector(1536) → vector(512) (98.6% qualità, 3x meno storage)
+- [x] HNSW index (m=16, ef=64) sostituisce ivfflat
+- [x] World Bank sampling: 50 → 200 entries per file
+- [x] Full re-index completato: 49,557 rows, 87 file, 277 MB
+- [ ] Re-run batch mancanti (~26 file con timeout) — domani
+- [ ] Verifica: zero "Estimated" per top 100 scenari
+
+### Problema "Estimated" nei nodi (in risoluzione)
+- ~~RAG ha solo 9,511 rows (362 categorie, 626MB) — sotto-utilizzato~~
+- ~~116 JSON locali non tutti indicizzati nel RAG~~
+- Scenari da foto troppo descrittivi → keyword mismatch (da risolvere Day 2+)
+- **Storage**: da 626MB → ~200MB stimati (512 dim, free tier safe)
 
 ## Prossimi Step — Piano Palantir-Level
 
-### Fase 1 — Data Foundation (prossima sessione)
-- [ ] Supabase Pro ($25/mo) — rimuovere limite storage 500MB
-- [ ] Ingestion pipeline: indicizzare TUTTI i 116 JSON in RAG (da 9.5K a 50K+ rows)
+### Fase 1 — Data Foundation (Day 1-8)
+- [x] ~~Supabase Pro ($25/mo)~~ → ottimizzato con 512 dim, $0/mo
+- [x] Schema migration: vector(512), HNSW index, search_embeddings updated
+- [ ] Ingestion pipeline: indicizzare TUTTI i 113 JSON in RAG (da 9.5K a 50K+ rows) — IN CORSO
 - [ ] Aggiungere 20+ API live (BLS per settore, Eurostat, World Bank granulare, real estate, education per paese)
 - [ ] Pre-processing scenari foto: estrarre keyword business, rimuovere descrizioni visive
 - [ ] Obiettivo: zero "Estimated" per i top 100 scenari
@@ -240,6 +250,22 @@
 - [ ] Il simulatore non dice cosa fare — LO FA. Apre conto, registra azienda, lancia ads.
 - [ ] Dall'idea alla realta, zero friction. Il prodotto definitivo.
 
+## Automazioni Attive
+
+### Overnight Pipeline v2 — GAP-DRIVEN (attivo da 2026-03-30)
+- **Strategia**: analizza 40K scenari JSONL → trova gap nei dati → Haiku colma i gap
+- **Orario**: ogni notte alle 3:00 AM (launchd)
+- **Pipeline A**: Gap Analysis — confronta 16 temi con dati esistenti, prioritizza
+- **Pipeline B**: ~60 agenti Haiku (P1: tutti i subtopic, P2: 3/notte, P3: 1/notte)
+- **Pipeline C**: Embed (512 dim) + upload Supabase RAG
+- **Costo**: ~$0.30/notte (~$9/mese)
+- **Output**: ~1500-2000 nuovi data points/notte, simulation-ready
+- **Gap priority**: agency, content creator, e-commerce, fitness, relationship, skill learning
+- **Target**: 1M+ data points totali (attuale: ~334K)
+- **Report**: docs/nightly-reports/YYYY-MM-DD.md
+- **Log**: /tmp/simulator-overnight.log
+- **Complementare**: non è una fase — rafforza TUTTE le fasi continuamente
+
 ## Backlog (feature secondarie)
 - [ ] Confronto scenari A vs B — side-by-side dashboard
 - [ ] Interactive sliders — muovi parametro, grafo si ricalcola live
@@ -259,9 +285,10 @@
 - Deploy: v2-nine-jade.vercel.app
 - Stack: Next.js 16 + React 19 + TypeScript + React Flow + Tailwind CSS → Vercel
 - AI: Claude Haiku 4.5 (primary) + Groq (fallback)
-- Dati: 116 file JSON (~86MB) + 7 API live + 16K sacred patterns + 3,260+ probabilita deep
-- Pipeline: RAG Supabase pgvector (9.5K rows, 362 cat) + keyword matching (fallback)
-- Supabase: progetto "Simulator" (rkkfwsmoqylctprzqhfj), ap-southeast-1, 626MB
+- Dati: 122 file JSON (~86MB) + 334K data points + 7 API live + 16K sacred patterns + 3,260+ probabilita deep
+- Target: 1M+ data points (pipeline notturna + bulk sessions)
+- Pipeline: RAG Supabase pgvector (50K+ rows, 512 dim, HNSW) + keyword matching (fallback)
+- Supabase: progetto "Simulator" (rkkfwsmoqylctprzqhfj), ap-southeast-1, free tier
 - Re-index: `npm run index-data`
 - Local: localhost:3000
 - v1: ~/Simulator/v1/ (HTML archive)

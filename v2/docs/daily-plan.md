@@ -4,6 +4,8 @@ From narrative decision map (60/100 credibility) to reality prediction engine (1
 
 Work schedule: 6-8 hours/day, 3-4 tasks/day, checkboxes for tracking.
 
+**REGOLA NON-NEGOZIABILE**: Ogni giorno termina con un blocco **End-of-Day Test & Fix**. Nessun giorno è "completato" finché i test non passano. Se qualcosa è rotto → fix immediato prima di passare al giorno dopo.
+
 ---
 
 ## Index
@@ -48,51 +50,44 @@ Goal: Zero "Estimated" labels for top 100 scenarios. RAG from 9.5K to 50K+ rows.
 
 ### Day 1 -- RAG Full Re-Index + Audit
 
-- [ ] **Task 1.1: Audit indexed vs unindexed JSON files** (1h)
-  - Files: `scripts/index-data.ts`, all 116 files in `data/`
-  - What: Write a script `scripts/audit-rag.ts` that queries Supabase for all distinct `file` values in the embeddings table, then compares against `ls data/*.json`. Output a report: indexed files, missing files, row count per file, total rows.
-  - Dependencies: none
-  - Test: Run `npx tsx scripts/audit-rag.ts` -- it prints a table showing 84 indexed, ~32 missing, total row count
-  - Time: 1h
+- [x] **Task 1.1: Audit indexed vs unindexed JSON files** (1h) — DONE 2026-03-30
+  - Result: 46/113 files indexed, 67 missing, 9,511 rows total
+  - Used Supabase MCP directly (no script needed)
+  - Audit: all 68 missing files have valid formats — chunking works, just never re-run
 
-- [ ] **Task 1.2: Fix index-data.ts chunking for skipped file formats** (1.5h)
-  - Files: `scripts/index-data.ts`
-  - What: The current script skips files that do not match known formats (archetypes, list, object-of-objects). Identify the 32 unindexed files, check their structure, and add chunking handlers for each format. Add a `chunkGenericObject` fallback that recursively extracts key-value pairs as text chunks.
-  - Dependencies: Task 1.1 (need the list of missing files)
-  - Test: Run `npx tsx scripts/index-data.ts --dry-run` (add dry-run flag) -- it should produce chunks for ALL 116 files with zero skips
-  - Time: 1.5h
+- [x] **Task 1.2: Fix index-data.ts chunking for skipped file formats** (1.5h) — NOT NEEDED
+  - All 113 eligible files produce chunks with existing handlers (0 zero-chunk files)
+  - Root cause: files added after last index run, not format issues
+  - Optimization: embedding dimensions 1536 → 512 (98.6% quality, 3x less storage, $0/mo vs $25/mo)
+  - Schema: ivfflat → HNSW (m=16, ef=64), World Bank sampling 50 → 200
 
-- [ ] **Task 1.3: Run full re-index** (1.5h)
-  - Files: `scripts/index-data.ts`
-  - What: Clear existing embeddings table (`TRUNCATE simulator_embeddings`), then run full index. Monitor progress (the script already logs batch progress). Verify final count is 40K+ rows.
-  - Dependencies: Task 1.2
-  - Test: Query Supabase: `SELECT COUNT(*) FROM simulator_embeddings` -- should be 40K+. Query `SELECT COUNT(DISTINCT file) FROM simulator_embeddings` -- should be 110+ files.
-  - Time: 1.5h (mostly waiting for OpenAI embedding API)
+- [ ] **Task 1.3: Run full re-index** (running)
+  - Supabase schema migrated: vector(512), HNSW index, search_embeddings function updated
+  - `rag.ts` and `index-data.ts` updated with dimensions: 512
+  - Full re-index launched on all 113 files (~50K chunks)
+  - Test: verify 40K+ rows, 110+ distinct files after completion
 
-- [ ] **Overnight: Let the index finish if not complete** -- the embedding API rate limit is ~3000 req/min, 116 files with ~500 chunks each = ~58K embeddings = ~20 min. But if batching is slow, let it run overnight.
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify Supabase: `SELECT COUNT(*), COUNT(DISTINCT file) FROM simulator_embeddings` → 40K+ rows, 110+ files
+  - [ ] Test RAG search: run a simulation "open a cafe in Bandung" → check RAG context has data from multiple new files
+  - [ ] Check no regression: existing simulations still generate correctly
 
 ### Day 2 -- New Live APIs (Batch 1: Economics)
 
-- [ ] **Task 2.1: Add Eurostat API client** (1.5h)
-  - Files: Create `src/lib/apis/eurostat.ts`
-  - What: Fetch 5 key indicators from Eurostat JSON API (ec.europa.eu/eurostat/api): GDP growth by EU country, unemployment rate by country, business creation rate by country, education spending by country, consumer confidence index. Return structured JSON. Cache responses for 24h using a simple file cache in `data/cache/`.
-  - Dependencies: none
-  - Test: Run `npx tsx -e "import {fetchEurostat} from './src/lib/apis/eurostat'; fetchEurostat('GDP').then(console.log)"` -- prints JSON with 27 EU countries
-  - Time: 1.5h
+- [x] **Task 2.1: Add Eurostat API client** — DONE (Day 1 sera)
+  - File: `src/lib/apis/eurostat.ts` — 5 datasets, 24h cache, MRL dimensions
 
-- [ ] **Task 2.2: Add FRED (Federal Reserve) API client** (1.5h)
-  - Files: Create `src/lib/apis/fred.ts`
-  - What: FRED API (api.stlouisfed.org) is free with API key. Fetch: CPI inflation rate (CPIAUCSL), unemployment rate (UNRATE), federal funds rate (FEDFUNDS), GDP growth (GDP), personal savings rate (PSAVERT), consumer sentiment (UMCSENT). Parse series observations into `{date, value}[]`. Cache 24h.
-  - Dependencies: Get FRED API key (free, instant: https://fred.stlouisfed.org/docs/api/api_key.html) -- add to `.env.local` as `FRED_API_KEY`
-  - Test: Run test script that fetches CPI -- prints last 12 months of inflation data
-  - Time: 1.5h
+- [x] **Task 2.2: Add FRED API client** — DONE (Day 1 sera)
+  - File: `src/lib/apis/fred.ts` — 6 series, 24h cache
+  - Note: manca FRED_API_KEY in .env.local (gratis, registra su fred.stlouisfed.org)
 
-- [ ] **Task 2.3: Add Numbeo Cost of Living API** (1h)
-  - Files: Create `src/lib/apis/numbeo.ts`
-  - What: Numbeo has a free tier API or scrape their public JSON endpoints. Fetch: cost of living index by city, rent index, restaurant price index, purchasing power index. Focus on top 50 cities relevant to business decisions (Bandung, Jakarta, Singapore, Bangkok, etc.). If API requires payment, use their public data pages and parse with a simple fetcher.
-  - Dependencies: none
-  - Test: `fetchNumbeo('Bandung')` returns `{costOfLiving: 28.5, rent: 5.2, ...}`
-  - Time: 1h
+- [x] **Task 2.3: Add Numbeo Cost of Living** — DONE (Day 1 sera)
+  - File: `src/lib/apis/numbeo.ts` — 50 citta, fuzzy match, static dataset 2024
+
+- [x] **Task 2.0: Bulk data download** — DONE (overnight Day 1)
+  - Script: `scripts/bulk-download.ts`
+  - Fonti: World Bank expanded (25 indicators), BLS detailed (20 series), Eurostat (8 datasets), UN SDG (10 indicators), REST Countries, OECD proxy (15 indicators)
+  - Target: ~500K new data points downloaded overnight
 
 - [ ] **Task 2.4: Wire new APIs into generate route** (1h)
   - Files: `src/app/api/generate/route.ts`
@@ -100,6 +95,12 @@ Goal: Zero "Estimated" labels for top 100 scenarios. RAG from 9.5K to 50K+ rows.
   - Dependencies: Tasks 2.1-2.3
   - Test: Generate "start a business in Germany" -- the response should contain Eurostat GDP data, not "Estimated"
   - Time: 1h
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Test each new API client independently (Eurostat, FRED, Numbeo)
+  - [ ] Generate "start a business in Germany" → verify Eurostat data appears, no "Estimated"
+  - [ ] Generate "open a cafe in Bandung" → verify Numbeo cost data appears
+  - [ ] Check API error handling: disconnect wifi, verify graceful fallback
 
 ### Day 3 -- New Live APIs (Batch 2: Business Intelligence)
 
@@ -131,6 +132,11 @@ Goal: Zero "Estimated" labels for top 100 scenarios. RAG from 9.5K to 50K+ rows.
   - Test: `SELECT COUNT(DISTINCT file) FROM simulator_embeddings` increased by 3
   - Time: 1h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Test GEM, Crunchbase proxy, and OECD API clients
+  - [ ] Generate a startup scenario → verify new data sources appear in output
+  - [ ] Verify caching works: second call should be instant (no API hit)
+
 ### Day 4 -- New Live APIs (Batch 3: Quality of Life + Photo Fix)
 
 - [ ] **Task 4.1: Add Teleport Quality of Life enhanced** (1h)
@@ -153,6 +159,11 @@ Goal: Zero "Estimated" labels for top 100 scenarios. RAG from 9.5K to 50K+ rows.
   - Dependencies: none
   - Test: Upload a photo of a cafe -- the generated seeds should match RAG data about cafe/F&B business, not generic "person in room" data
   - Time: 2h
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Test quality of life APIs (Teleport, Numbeo extended)
+  - [ ] Photo scenario test: upload 3 different photos → verify keywords are business-relevant, not visual descriptions
+  - [ ] Generate from each photo → check RAG matches are relevant
 
 ### Day 5 -- Eliminate "Estimated" Labels
 
@@ -177,6 +188,11 @@ Goal: Zero "Estimated" labels for top 100 scenarios. RAG from 9.5K to 50K+ rows.
   - Test: Re-run 10 scenarios from the audit -- "Estimated" count should drop by 60%+
   - Time: 1.5h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Run top 100 scenarios list, count "Estimated" labels → target: 0
+  - [ ] Compare before/after: document improvement percentage
+  - [ ] Spot-check 10 random simulations for data accuracy
+
 ### Day 6 -- Data Quality + Coverage Gaps
 
 - [ ] **Task 6.1: Create missing data for uncovered categories** (2h)
@@ -200,6 +216,11 @@ Goal: Zero "Estimated" labels for top 100 scenarios. RAG from 9.5K to 50K+ rows.
   - Test: "Estimated" rate dropped from ~40% to <10%
   - Time: 1h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Run coverage report: which categories still have gaps?
+  - [ ] Test edge cases: very niche scenarios (e.g. "start a llama farm in Peru")
+  - [ ] Verify data freshness: no data older than 2023 in top results
+
 ### Day 7 -- World Bank + BLS Bulk Enhancement
 
 - [ ] **Task 7.1: Download remaining World Bank indicators** (1.5h)
@@ -222,6 +243,11 @@ Goal: Zero "Estimated" labels for top 100 scenarios. RAG from 9.5K to 50K+ rows.
   - Dependencies: Tasks 7.1, 7.2
   - Test: `SELECT COUNT(*) FROM simulator_embeddings` increased by 5K+. New World Bank/BLS categories appear in RAG search.
   - Time: 1h
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify World Bank enhanced data appears in country-specific sims
+  - [ ] BLS bulk data test: career/salary scenarios use real BLS numbers
+  - [ ] Performance check: RAG search still <100ms with larger dataset
 
 ### Day 8 -- Phase 1 Finalization + Buffer
 
@@ -247,6 +273,12 @@ Goal: Zero "Estimated" labels for top 100 scenarios. RAG from 9.5K to 50K+ rows.
   - Time: 1h
 
 ---
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] **Full regression test**: run 20 diverse scenarios, verify all pass
+  - [ ] **Performance benchmark**: measure avg generation time (target: <5s)
+  - [ ] **Storage check**: Supabase size still under 500MB free tier
+  - [ ] **Phase 1 sign-off**: document credibility improvement with evidence
 
 ## Phase 1B: Conditional Engine -- Days 9-22
 
@@ -291,6 +323,11 @@ Goal: P(node) = f(business_model, location, budget, timeline), not constant. Thi
   - Test: `saasEngine.getNodeProbabilities('build SaaS', {budget: 5000, timeline: 6, experience: 'beginner', location: 'San Francisco'})` returns 30+ probabilities with ranges
   - Time: 2h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Type system compiles: `npx tsc --noEmit` passes
+  - [ ] Engine architecture renders correctly in React Flow
+  - [ ] Unit test: SaaS engine returns different probabilities than F&B engine
+
 ### Day 10 -- F&B Engine + Service Engine
 
 - [ ] **Task 10.1: Create the F&B engine** (2h)
@@ -306,6 +343,11 @@ Goal: P(node) = f(business_model, location, budget, timeline), not constant. Thi
   - Dependencies: Task 9.2
   - Test: Service engine returns higher probabilities for experienced consultants than for beginners, as expected
   - Time: 2h
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] F&B engine test: "open a cafe" uses F&B-specific probabilities
+  - [ ] Service engine test: "start a consulting firm" uses service probabilities
+  - [ ] Both engines produce ranges (base/optimistic/adverse), not single values
 
 ### Day 11 -- Marketplace + Content Engines
 
@@ -330,6 +372,11 @@ Goal: P(node) = f(business_model, location, budget, timeline), not constant. Thi
   - Test: `getEngine('learn piano')` returns GenericEngine. It still provides reasonable probabilities from existing data.
   - Time: 1h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Marketplace engine test: "build an Airbnb clone" → marketplace probabilities
+  - [ ] Content engine test: "start a YouTube channel" → content creator probabilities
+  - [ ] Verify engine auto-selection: correct engine chosen based on scenario keywords
+
 ### Day 12 -- Wire Engines into Generation Pipeline
 
 - [ ] **Task 12.1: Modify generate route to use conditional engine** (2h)
@@ -352,6 +399,11 @@ Goal: P(node) = f(business_model, location, budget, timeline), not constant. Thi
   - Dependencies: Task 12.1
   - Test: Dashboard shows factors section with correct modifiers for the current simulation
   - Time: 1h
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] End-to-end: generate 5 scenarios of different types, verify each uses correct engine
+  - [ ] Dashboard shows range (base/optimistic/adverse) instead of single probability
+  - [ ] No regression: old templates still work correctly
 
 ### Day 13 -- Burn/Runway Modeling
 
@@ -376,6 +428,11 @@ Goal: P(node) = f(business_model, location, budget, timeline), not constant. Thi
   - Test: Visually verify: the bar starts green and transitions to red/black for underfunded scenarios
   - Time: 1.5h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Burn model test: runway decreases over time in simulation
+  - [ ] Cash death scenario triggers correctly when burn > capital
+  - [ ] Visual: burn rate visible in Dashboard stats
+
 ### Day 14 -- Node Dependency System
 
 - [ ] **Task 14.1: Define node dependency graph** (2h)
@@ -398,6 +455,11 @@ Goal: P(node) = f(business_model, location, budget, timeline), not constant. Thi
   - Dependencies: Task 14.2
   - Test: Visually verify: when the simulation passes through a decision node, downstream nodes pulse and show delta indicators
   - Time: 1h
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Dependency test: choice at node 3 changes probability at node 7
+  - [ ] Visual: edges show dependency direction
+  - [ ] Generate 3 scenarios, verify node dependencies are logical
 
 ### Day 15 -- Country-Specific Modifiers
 
@@ -422,6 +484,11 @@ Goal: P(node) = f(business_model, location, budget, timeline), not constant. Thi
   - Test: Generate "start business in Indonesia" -- nodes reference Indonesian-specific funding (KUR), regulations (PT PMA), and challenges
   - Time: 1h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Same scenario, different countries → verify different probabilities
+  - [ ] Indonesia vs USA vs Germany comparison test
+  - [ ] Country modifier data is sourced (not "Estimated")
+
 ### Day 16 -- Timeline Compression and Expansion
 
 - [ ] **Task 16.1: Build time-aware probability curves** (2h)
@@ -444,6 +511,11 @@ Goal: P(node) = f(business_model, location, budget, timeline), not constant. Thi
   - Dependencies: Task 16.2
   - Test: Time labels appear on edges. Dashboard shows timeline comparison.
   - Time: 1h
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Timeline test: "6 months" vs "5 years" → different probabilities and node structure
+  - [ ] Verify timeline affects burn rate calculations
+  - [ ] Edge case: very short (1 week) and very long (20 years) timelines
 
 ### Day 17 -- Experience Level Deep Integration
 
@@ -468,6 +540,11 @@ Goal: P(node) = f(business_model, location, budget, timeline), not constant. Thi
   - Test: "Build SaaS app" with experience=none generates a warning node: "Critical skill gap: software development"
   - Time: 1h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Experience test: beginner vs expert → same scenario, different probabilities
+  - [ ] Verify experience affects which nodes appear (beginner gets more steps)
+  - [ ] Context tags properly route to experience-modified data
+
 ### Day 18 -- Engine Testing + Calibration
 
 - [ ] **Task 18.1: Create engine test suite** (2h)
@@ -490,6 +567,11 @@ Goal: P(node) = f(business_model, location, budget, timeline), not constant. Thi
   - Dependencies: Tasks 18.1, 18.2
   - Test: All edge cases produce valid output with appropriate warnings
   - Time: 1h
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] **Calibration**: run 50 scenarios, check probability ranges are reasonable
+  - [ ] **Cross-engine**: verify engines don't conflict when scenario is ambiguous
+  - [ ] **Edge cases**: empty budget, no location, all tags filled vs none
 
 ### Day 19 -- E-commerce + Hardware Engines
 
@@ -514,6 +596,11 @@ Goal: P(node) = f(business_model, location, budget, timeline), not constant. Thi
   - Test: 20 test scenarios all route to the correct engine
   - Time: 1h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] E-commerce engine test: "start a Shopify store" → e-commerce probabilities
+  - [ ] Hardware engine test: "launch a physical product" → hardware probabilities
+  - [ ] Both produce realistic burn rates and timelines
+
 ### Day 20 -- Conditional Engine Polish
 
 - [ ] **Task 20.1: Add "Why this probability?" explainer** (2h)
@@ -529,6 +616,11 @@ Goal: P(node) = f(business_model, location, budget, timeline), not constant. Thi
   - Dependencies: Conditional engine complete
   - Test: Compare "open cafe $5K beginner Bandung" vs "open cafe $50K expert Singapore" -- differences are dramatic and meaningful
   - Time: 2h
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] UI polish check: all new engine outputs display correctly
+  - [ ] Range display: base/optimistic/adverse clearly visible in all nodes
+  - [ ] Mobile responsive: check on 320px, 768px, 1024px
 
 ### Day 21 -- Integration Testing
 
@@ -553,6 +645,11 @@ Goal: P(node) = f(business_model, location, budget, timeline), not constant. Thi
   - Test: Deliberately break each engine's data file -> simulation still generates with fallback
   - Time: 1h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] **Full integration test**: 30 scenarios across all engine types
+  - [ ] **Performance**: generation time still <5s
+  - [ ] **Accuracy audit**: spot-check 10 probabilities against real data sources
+
 ### Day 22 -- Phase 1B Buffer + Documentation
 
 - [ ] **Task 22.1: Write engine documentation** (1h)
@@ -576,6 +673,11 @@ Goal: P(node) = f(business_model, location, budget, timeline), not constant. Thi
   - Time: remaining
 
 ---
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] All Phase 1B documentation complete
+  - [ ] **Phase 1B sign-off**: credibility score re-assessment
+  - [ ] Buffer: fix any remaining issues from Days 9-21
 
 ## Phase 2: Recursive Simulation -- Days 23-28
 
@@ -604,6 +706,11 @@ Goal: Click any node to open a sub-simulation. Infinite drill-down depth.
   - Test: Breadcrumb renders correctly at 3 levels. Clicking "Main" returns to root.
   - Time: 1h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
+
 ### Day 24 -- Sub-Simulation UI Integration
 
 - [ ] **Task 24.1: Add "Drill Down" interaction to SimNode** (2h)
@@ -626,6 +733,11 @@ Goal: Click any node to open a sub-simulation. Infinite drill-down depth.
   - Dependencies: Task 24.1
   - Test: Sub-simulation for "Find Location" in "Open cafe Bandung" generates Bandung-specific location nodes (Braga, Dago, etc.), not generic "find a location" steps
   - Time: 1h
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
 
 ### Day 25 -- Sub-Simulation Polish
 
@@ -650,6 +762,11 @@ Goal: Click any node to open a sub-simulation. Infinite drill-down depth.
   - Test: Drill into a node, complete sub-simulation, navigate back -> parent node shows updated probability
   - Time: 1.5h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
+
 ### Day 26 -- Sub-Simulation Testing
 
 - [ ] **Task 26.1: Test 3-level deep drill-down** (1.5h)
@@ -673,6 +790,11 @@ Goal: Click any node to open a sub-simulation. Infinite drill-down depth.
   - Test: Test on mobile viewport (Chrome DevTools) -- drill-down and back navigation work
   - Time: 1h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
+
 ### Day 27-28 -- Phase 2 Buffer + Edge Cases
 
 - [ ] **Task 27.1: Handle edge cases** (2h)
@@ -692,6 +814,11 @@ Goal: Click any node to open a sub-simulation. Infinite drill-down depth.
   - Time: 1h
 
 ---
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
 
 ## Phase 3: User Profile -- Days 29-34
 
@@ -720,6 +847,11 @@ Goal: Same simulation, different results for different profiles.
   - Test: Fill out profile form, navigate away, come back -- all values persisted
   - Time: 2h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
+
 ### Day 30 -- Profile Integration into Engine
 
 - [ ] **Task 30.1: Profile-to-factors mapper** (1.5h)
@@ -743,6 +875,11 @@ Goal: Same simulation, different results for different profiles.
   - Test: Profile with $1K capital generates warning about underfunding. Profile with no F&B experience generates skill gap warning.
   - Time: 1.5h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
+
 ### Day 31 -- Profile-Driven Personalization
 
 - [ ] **Task 31.1: Different simulation paths based on profile** (2h)
@@ -765,6 +902,11 @@ Goal: Same simulation, different results for different profiles.
   - Dependencies: Profile form (Day 29)
   - Test: New user (cleared localStorage) sees onboarding. Fills 3 fields. Profile is seeded. Subsequent visits skip onboarding.
   - Time: 1h
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
 
 ### Day 32-34 -- Profile Testing + Polish
 
@@ -798,6 +940,11 @@ Goal: Same simulation, different results for different profiles.
 
 ---
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
+
 ## Phase 4: Auto Data Pipeline -- Days 35-40
 
 Goal: System gets smarter every week automatically.
@@ -825,6 +972,11 @@ Goal: System gets smarter every week automatically.
   - Test: Pipeline updates a World Bank file -> old embeddings deleted -> new ones created -> RAG search returns fresh data
   - Time: 1.5h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
+
 ### Day 36 -- Scheduling + Monitoring
 
 - [ ] **Task 36.1: GitHub Actions weekly cron** (1.5h)
@@ -848,6 +1000,11 @@ Goal: System gets smarter every week automatically.
   - Test: GET `/api/pipeline-status` returns JSON with all source freshness dates
   - Time: 1.5h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
+
 ### Day 37 -- Email Report + Alerts
 
 - [ ] **Task 37.1: Email report with SendGrid/Resend** (2h)
@@ -870,6 +1027,11 @@ Goal: System gets smarter every week automatically.
   - Dependencies: Task 35.1
   - Test: Pipeline runs without hitting any rate limits
   - Time: 1h
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
 
 ### Day 38-40 -- Pipeline Polish + Buffer
 
@@ -901,6 +1063,11 @@ Goal: System gets smarter every week automatically.
 
 ---
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
+
 ## Phase 5: Backtesting -- Days 41-50
 
 Goal: Prove the simulator works by testing it against historical data.
@@ -927,6 +1094,11 @@ Goal: Prove the simulator works by testing it against historical data.
   - Dependencies: Tasks 41.1, 41.2
   - Test: All historical milestones map cleanly to taxonomy
   - Time: 1h
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
 
 ### Day 42-43 -- Backtesting Engine
 
@@ -958,6 +1130,11 @@ Goal: Prove the simulator works by testing it against historical data.
   - Test: Re-run backtest after adjustments -- calibration score improves
   - Time: 2h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
+
 ### Day 44-46 -- Backtest Iteration
 
 - [ ] **Task 44.1: Second backtest round** (2h)
@@ -985,6 +1162,11 @@ Goal: Prove the simulator works by testing it against historical data.
   - What: Display calibration score on the UI as a trust badge: "Calibration: 78/100 (tested against 150+ historical startups)". Subtle, in the Dashboard or footer. Links to a page showing the methodology.
   - Time: 1.5h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
+
 ### Day 47-50 -- Backtesting Infrastructure
 
 - [ ] **Task 47.1: Automated backtest in CI** (1.5h)
@@ -1006,6 +1188,11 @@ Goal: Prove the simulator works by testing it against historical data.
   - Time: variable
 
 ---
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
 
 ## Phase 5B: Community Feedback Loop -- Days 51-54
 
@@ -1031,6 +1218,11 @@ Goal: Users contribute real outcomes to improve the simulator.
   - Test: Set localStorage date to 7 months ago -> banner appears
   - Time: 1h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
+
 ### Day 52-53 -- Feedback Integration
 
 - [ ] **Task 52.1: Aggregate community outcomes** (2h)
@@ -1051,6 +1243,11 @@ Goal: Users contribute real outcomes to improve the simulator.
 - [ ] **Task 53.2: Buffer** (remaining)
   - Time: remaining
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
+
 ### Day 54 -- Documentation
 
 - [ ] **Task 54.1: Update all docs** (2h)
@@ -1058,6 +1255,11 @@ Goal: Users contribute real outcomes to improve the simulator.
   - Time: 2h
 
 ---
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
 
 ## Phase 6: Multi-Agent Simulation -- Days 55-58
 
@@ -1077,6 +1279,11 @@ Goal: Simulate 1000 agents for probability distributions, not single paths.
   - Test: Run 1000 agents on "start SaaS" -> get a distribution of outcomes
   - Time: 2h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
+
 ### Day 56 -- Interaction Effects
 
 - [ ] **Task 56.1: Competition modeling** (2h)
@@ -1090,6 +1297,11 @@ Goal: Simulate 1000 agents for probability distributions, not single paths.
   - What: Add timing effects: launching in December vs January, economic cycle (recession vs boom), seasonal demand. Agents that launch at optimal times have +10-20% probability boost.
   - Time: 1.5h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
+
 ### Day 57 -- Multi-Agent Visualization
 
 - [ ] **Task 57.1: Distribution histogram** (2h)
@@ -1102,6 +1314,11 @@ Goal: Simulate 1000 agents for probability distributions, not single paths.
   - Files: Create `src/components/HeatmapOverlay.tsx`
   - What: Overlay on the simulation canvas showing probability density. Nodes are colored by how many agents passed through them (green = most, red = least). Edges show flow volume. This replaces the single-path view with a many-paths view.
   - Time: 2h
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
 
 ### Day 58 -- Multi-Agent Polish
 
@@ -1117,6 +1334,11 @@ Goal: Simulate 1000 agents for probability distributions, not single paths.
   - Time: remaining
 
 ---
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
 
 ## Phase 7: Public API -- Days 59-63
 
@@ -1135,6 +1357,11 @@ Goal: POST /api/predict endpoint with freemium pricing.
   - Test: `curl -X POST /api/predict -d '{"scenario": "start SaaS", "budget": 50000}'` returns structured prediction
   - Time: 2h
 
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
+
 ### Day 60 -- Rate Limiting + Auth
 
 - [ ] **Task 60.1: API key system** (2h)
@@ -1146,6 +1373,11 @@ Goal: POST /api/predict endpoint with freemium pricing.
   - Files: Create `src/middleware.ts` (or extend existing)
   - What: Rate limit /api/predict based on tier. Use Vercel KV or Supabase for counters. Return 429 with retry-after header when limit exceeded.
   - Time: 1.5h
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
 
 ### Day 61 -- SDK + Documentation
 
@@ -1163,6 +1395,11 @@ Goal: POST /api/predict endpoint with freemium pricing.
   - Files: Create `src/app/api-docs/page.tsx`
   - What: Interactive API docs page with: endpoint reference, request/response examples, code samples in JS/Python/curl, rate limit info, pricing.
   - Time: 2h
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
 
 ### Day 62-63 -- Launch Prep
 
@@ -1184,6 +1421,11 @@ Goal: POST /api/predict endpoint with freemium pricing.
   - Time: 1h
 
 ---
+
+- [ ] **End-of-Day Test & Fix**
+  - [ ] Verify all new features work end-to-end
+  - [ ] Check no regressions from previous days
+  - [ ] Fix any issues found before moving to next day
 
 ## Overnight Agent Tasks
 

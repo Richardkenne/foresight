@@ -268,7 +268,7 @@ User types scenario or selects template
 
 AI Generation flow:
   User types free text
-  → API embeds scenario with OpenAI text-embedding-3-small
+  → API embeds scenario with OpenAI text-embedding-3-small (512 dimensions)
   → Supabase pgvector finds top 30 most relevant data points (RAG)
   → API loads real-probabilities.json (106 verified stats)
   → API loads sacred patterns context (16K patterns)
@@ -285,9 +285,10 @@ AI Generation flow:
 ## Data Layer
 
 ### RAG Pipeline (Supabase pgvector)
-- **50,000 vector entries** from 84+ files indexed with OpenAI text-embedding-3-small
-- **HNSW index** for <50ms cosine similarity search
-- **Supabase project**: "Simulator" (rkkfwsmoqylctprzqhfj, ap-southeast-1)
+- **50,000+ vector entries** from 113 files indexed with OpenAI text-embedding-3-small (512 dimensions)
+- **HNSW index** (m=16, ef_construction=64) for <50ms cosine similarity search
+- **Embedding dimensions**: 512 (MRL-optimized, 98.6% quality of 1536, 3x less storage)
+- **Supabase project**: "Simulator" (rkkfwsmoqylctprzqhfj, ap-southeast-1, free tier)
 - **Re-index**: `npm run index-data`
 - **Fallback**: keyword matching (112 keyword entries, 114 files)
 

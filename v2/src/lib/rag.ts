@@ -35,6 +35,7 @@ function embedQuery(text: string): Promise<number[]> {
   const body = JSON.stringify({
     model: 'text-embedding-3-small',
     input: text.substring(0, 1000),
+    dimensions: 512,
   });
 
   return new Promise((resolve, reject) => {
