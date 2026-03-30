@@ -294,7 +294,7 @@ AI Generation flow:
 ## Data Layer
 
 ### RAG Pipeline (Supabase pgvector)
-- **50,749+ vector entries** from 114+ files indexed with OpenAI text-embedding-3-small (512 dimensions)
+- **66,672 vector entries** from 141 files indexed with OpenAI text-embedding-3-small (512 dimensions)
 - **HNSW index** (m=16, ef_construction=64) for <50ms cosine similarity search
 - **Embedding dimensions**: 512 (MRL-optimized, 98.6% quality of 1536, 3x less storage)
 - **Supabase project**: "Simulator" (rkkfwsmoqylctprzqhfj, ap-southeast-1, free tier)
@@ -328,7 +328,7 @@ AI Generation flow:
   - crime-justice (213 dp), education (283 dp), fame-entertainment (187 dp)
   - life/health/relationships (312 dp), psychology-habits (247 dp), tech-AI (236 dp)
   - OpenLife repo (267 dp), Life-Simulator1 repo (412 dp)
-- `data/*.json` — 114 files total, ~86MB, covering all life/business categories
+- `data/*.json` — 179 files total, ~374K data points, covering all life/business categories
 - 7 live APIs: World Bank, REST Countries, Exchange Rates, BLS, Wikipedia, Teleport, CoinGecko
 
 ### Source Triangulation (Palantir-style)

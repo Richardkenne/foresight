@@ -20,7 +20,7 @@
 - [x] Stats reset quando si carica nuovo template
 
 ### Data & AI
-- [x] 56,000+ data points across 67 file (50+ a 1000+ dp)
+- [x] ~374,000 data points across 179 file, 67K embeddings in Supabase (141 indicizzati)
 - [x] 7 API live gratuite: World Bank, REST Countries, Exchange Rates, BLS, Wikipedia, Teleport, CoinGecko
 - [x] Prompt AI: "Estimated" se no fonte, copertura completa, fail obbligatori
 - [x] Keyword matching italiano

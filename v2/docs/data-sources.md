@@ -1,6 +1,6 @@
 # Data Sources — Simulator v2
 
-**169 file JSON | ~52K embeddings in Supabase | ~470K data points stimati**
+**179 file JSON | ~67K embeddings in Supabase (141 file indicizzati) | ~374K data points**
 
 ---
 
