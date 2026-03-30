@@ -59,11 +59,57 @@ const ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
+interface SourceEntry {
+  name: string;
+  value: number;   // probability from this source
+  tier: 1 | 2 | 3; // 1=media, 2=institutional, 3=government
+}
+
+// Source tier weights for weighted average
+const TIER_WEIGHTS: Record<number, number> = { 3: 3, 2: 2, 1: 1 };
+const TIER_LABELS: Record<number, string> = { 3: 'GOV', 2: 'INST', 1: 'MEDIA' };
+const TIER_COLORS: Record<number, string> = { 3: '#3b82f6', 2: '#8b5cf6', 1: '#94a3b8' };
+
+function parseSourcesFromString(source: string): SourceEntry[] | null {
+  // Parse format: "BLS 2024:70:3 | CB Insights 2024:65:2"
+  if (!source.includes(':')) return null;
+  const parts = source.split('|').map(s => s.trim());
+  const entries: SourceEntry[] = [];
+  for (const p of parts) {
+    const [name, val, tier] = p.split(':').map(s => s.trim());
+    if (name && val) {
+      entries.push({ name, value: Number(val), tier: (Number(tier) || 2) as 1 | 2 | 3 });
+    }
+  }
+  return entries.length > 0 ? entries : null;
+}
+
+function getConfidence(sources: SourceEntry[]): { level: string; dots: number } {
+  if (sources.length >= 3) return { level: 'High', dots: 4 };
+  if (sources.length === 2) {
+    const spread = Math.abs(sources[0].value - sources[1].value);
+    return spread <= 10 ? { level: 'High', dots: 4 } : { level: 'Medium', dots: 3 };
+  }
+  const tier = sources[0]?.tier || 1;
+  return tier === 3 ? { level: 'Medium', dots: 3 } : { level: 'Low', dots: 2 };
+}
+
+function weightedAverage(sources: SourceEntry[]): number {
+  let sum = 0, wSum = 0;
+  for (const s of sources) {
+    const w = TIER_WEIGHTS[s.tier] || 1;
+    sum += s.value * w;
+    wSum += w;
+  }
+  return Math.round(sum / wSum * 10) / 10;
+}
+
 interface SimNodeData {
   nodeType: string;
   label: string;
   desc?: string;
   source?: string;
+  sources?: SourceEntry[];
   prob?: number;
   probRange?: { optimistic: number; adverse: number };
   time?: string;
@@ -178,19 +224,85 @@ function SimNodeComponent({ data }: NodeProps) {
             {d.desc && (
               <div className="sim-node__desc">{d.desc}</div>
             )}
-            {(d.source || d.time) && (
-              <div className="sim-node__footer">
-                {d.source && <span className="sim-node__source">{d.source}</span>}
-                {d.time && (
-                  <span className="sim-node__time">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
-                    </svg>
-                    {d.time}
-                  </span>
-                )}
-              </div>
-            )}
+            {(() => {
+              // Multi-source triangulation (Palantir-style)
+              const sources: SourceEntry[] | null = d.sources as SourceEntry[] || (d.source ? parseSourcesFromString(String(d.source)) : null);
+
+              if (sources && sources.length > 0) {
+                const conf = getConfidence(sources);
+                const maxVal = Math.max(...sources.map(s => s.value), 1);
+                return (
+                  <div className="sim-node__footer" style={{ flexDirection: 'column', alignItems: 'stretch', gap: 6 }}>
+                    {/* Confidence indicator */}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <div style={{ display: 'flex', gap: 2 }}>
+                        {Array.from({ length: 4 }, (_, i) => (
+                          <div key={i} style={{
+                            width: 5, height: 5, borderRadius: '50%',
+                            background: i < conf.dots ? (conf.dots >= 4 ? '#10b981' : conf.dots >= 3 ? '#f59e0b' : '#ef4444') : 'var(--border)',
+                          }} />
+                        ))}
+                      </div>
+                      <span style={{ fontSize: 8, fontWeight: 600, color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)', letterSpacing: '0.05em' }}>
+                        {conf.level} conf.
+                      </span>
+                    </div>
+                    {/* Source rows with bars */}
+                    {sources.map((s, i) => (
+                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                        <span style={{
+                          fontSize: 7, fontWeight: 700, color: TIER_COLORS[s.tier],
+                          fontFamily: 'var(--font-geist-mono)', width: 28, flexShrink: 0, letterSpacing: '0.03em',
+                        }}>
+                          {TIER_LABELS[s.tier]}
+                        </span>
+                        <div style={{ flex: 1, height: 4, borderRadius: 2, background: 'var(--border)', overflow: 'hidden' }}>
+                          <div style={{
+                            width: `${(s.value / maxVal) * 100}%`, height: '100%', borderRadius: 2,
+                            background: TIER_COLORS[s.tier], opacity: 0.7,
+                          }} />
+                        </div>
+                        <span style={{ fontSize: 8, fontWeight: 600, color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)', width: 24, textAlign: 'right', flexShrink: 0 }}>
+                          {s.value}%
+                        </span>
+                      </div>
+                    ))}
+                    {/* Source names */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 1, marginTop: 2 }}>
+                      {sources.map((s, i) => (
+                        <span key={i} className="sim-node__source" style={{ fontSize: 8 }}>{s.name}</span>
+                      ))}
+                    </div>
+                    {d.time && (
+                      <span className="sim-node__time" style={{ marginTop: 2 }}>
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        {d.time}
+                      </span>
+                    )}
+                  </div>
+                );
+              }
+
+              // Fallback: single source (legacy format)
+              if (d.source || d.time) {
+                return (
+                  <div className="sim-node__footer">
+                    {d.source && <span className="sim-node__source">{String(d.source)}</span>}
+                    {d.time && (
+                      <span className="sim-node__time">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        {d.time}
+                      </span>
+                    )}
+                  </div>
+                );
+              }
+              return null;
+            })()}
           </>
         )}
       </div>

@@ -139,8 +139,13 @@ interface DecisionPruningProps {
 export default function DecisionPruning({
   onComplete,
   onSkip,
-  questions = DEFAULT_QUESTIONS,
+  questions,
 }: DecisionPruningProps) {
+  // No generic defaults — if Claude didn't generate scenario-specific questions, skip
+  if (!questions || questions.length === 0) {
+    onSkip();
+    return null;
+  }
   const [answers, setAnswers] = useState<Record<string, boolean>>({});
   const [currentIdx, setCurrentIdx] = useState(0);
 

@@ -331,9 +331,42 @@ AI Generation flow:
 - `data/*.json` — 114 files total, ~86MB, covering all life/business categories
 - 7 live APIs: World Bank, REST Countries, Exchange Rates, BLS, Wikipedia, Teleport, CoinGecko
 
+### Source Triangulation (Palantir-style)
+Every bottleneck/decision probability uses **weighted multi-source triangulation**:
+
+```
+Source Tiers:
+  Tier 3 (weight 3x) — Government: BLS, Census, WHO, CDC, Fed
+  Tier 2 (weight 2x) — Institutional: McKinsey, YC, PitchBook, CB Insights, World Bank
+  Tier 1 (weight 1x) — Media: TechCrunch, Forbes, Bloomberg, HBR
+
+Weighted Average:
+  prob = sum(value_i * weight_i) / sum(weight_i)
+  Example: BLS 70% (w3) + CB Insights 65% (w2) = (210+130)/5 = 68%
+
+Confidence:
+  3+ sources concordant → High (4 dots green)
+  2 sources within 10pp → High (4 dots green)
+  2 sources >10pp spread → Medium (3 dots amber)
+  1 source tier 3 → Medium (3 dots amber)
+  1 source tier 1-2 → Low (2 dots red)
+
+Format in source field:
+  "BLS 2024:70:3 | CB Insights 2024:65:2"
+  name:value:tier | name:value:tier
+```
+
+### Institutional Data Sources (169 file, ~470K dp)
+- **VC**: Y Combinator, Sequoia, a16z, Benchmark, Accel, Founders Fund, Lightspeed
+- **Consulting**: McKinsey, BCG, Bain, Deloitte, PwC
+- **Banks**: JPMorgan, Goldman Sachs, Morgan Stanley, UBS, HSBC, Citi, Deutsche Bank, Barclays, BofA, Credit Suisse
+- **Government**: World Bank (10 files), BLS (7 files), Eurostat, OECD, FRED
+- See `docs/data-sources.md` for complete catalog
+
 ### AI Generation
-- Claude Haiku 4.5 (primary)
-- Groq (fallback)
+- Claude Haiku 4.5 (primary, temperature 0)
+- OpenAI GPT-4o-mini (fallback, temperature 0)
+- Groq Llama 3.3 (fallback, temperature 0)
 
 ---
 

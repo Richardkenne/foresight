@@ -729,8 +729,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         }
       }
 
-      // For bottleneck/decision with branching edges, route to pass/fail paths
-      if ((nodeType === 'bottleneck' || nodeType === 'decision') && !hasProb) {
+      // Route passed particles through "pass"/"yes" edge if available
+      if (hasProb && (nodeType === 'bottleneck' || nodeType === 'decision')) {
         const out = edgesRef.current.filter(e => e.source === nodeId);
         const passE = out.find(e => e.label === 'pass' || e.label === 'yes');
         if (passE) {
@@ -1511,7 +1511,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         <DecisionPruning
           onComplete={handlePruningComplete}
           onSkip={handlePruningSkip}
-          questions={apiPruningQuestions.length >= 5 ? apiPruningQuestions : undefined}
+          questions={apiPruningQuestions.length > 0 ? apiPruningQuestions : undefined}
         />
       )}
 

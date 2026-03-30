@@ -67,8 +67,15 @@
 
 ## Livello 90-100: Credibilita Assoluta
 
+### Data Points da Integrare nel RAG (prossima sessione)
+- [ ] VC: vc-y-combinator, vc-sequoia, vc-a16z, vc-benchmark, vc-accel, vc-founders-fund, vc-lightspeed (7 file, ~1,460 dp)
+- [ ] Consulting: consulting-mckinsey, consulting-bcg, consulting-bain, consulting-deloitte, consulting-pwc (5 file, ~1,000 dp)
+- [ ] Banks: bank-jpmorgan, bank-goldman-sachs, bank-morgan-stanley, bank-ubs, bank-hsbc, bank-citibank, bank-deutsche-bank, bank-barclays, bank-bofa, bank-credit-suisse (10 file, ~2,000 dp)
+- [ ] Magazines/Research: Forbes, HBR, Economist, Bloomberg, Psychology Today, Scientific American
+- [ ] Universities: Stanford, MIT, Harvard, Wharton, Oxford/OWID
+
 ### Backtesting (+30% credibilita)
-- [ ] Dataset scenari passati (startup 2020-2024, CB Insights, Crunchbase)
+- [ ] Backtest completo 250 casi con formula geometrica media
 - [ ] Simula scenari storici, confronta predizione vs realta
 - [ ] Score calibrazione pubblicato: "predizione 14%, realta 15%"
 - [ ] Pagina pubblica con risultati backtesting

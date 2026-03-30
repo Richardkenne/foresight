@@ -384,9 +384,8 @@ body {
   color: var(--muted);
   font-weight: 400;
   letter-spacing: 0.01em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
   max-width: 120px;
 }
 
