@@ -262,8 +262,8 @@ body {
 
 /* Bottleneck: hexagon shape with red drop-shadow border */
 .sim-node--bottleneck {
-  width: 210px;
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  width: 260px;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
   border-radius: 0;
   outline: none !important;
   filter: drop-shadow(0 0 0 #dc2626) drop-shadow(2px 0 0 #dc2626) drop-shadow(-2px 0 0 #dc2626) drop-shadow(0 2px 0 #dc2626) drop-shadow(0 -2px 0 #dc2626);
@@ -276,7 +276,7 @@ body {
 }
 
 .sim-node--bottleneck .sim-node__body {
-  padding: 20px 28px;
+  padding: 20px 48px;
   text-align: center;
 }
 
