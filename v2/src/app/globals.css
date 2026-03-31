@@ -287,12 +287,41 @@ body {
   border-left: 3px solid rgba(217, 119, 6, 0.5);
 }
 
-/* State: current condition node — green background */
+/* State: oval pill — blue, "where you are now" */
 .sim-node--state {
-  width: 240px;
-  background: rgba(216, 234, 216, 0.5);
-  outline-color: rgba(95, 125, 99, 0.4);
-  border-left: 3px solid rgba(95, 125, 99, 0.6);
+  width: 220px;
+  border-radius: 80px !important;
+  background: #eff6ff !important;
+  outline-color: rgba(59, 130, 246, 0.5);
+}
+
+.sim-node--state .sim-node__type-label {
+  color: #3b82f6;
+}
+
+.sim-node--state .sim-node__body {
+  padding: 16px 28px;
+  text-align: center;
+}
+
+/* Decision: diamond (rhombus) — yellow/amber, "yes or no?" */
+.sim-node--decision {
+  width: 220px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  border-radius: 0 !important;
+  outline: none !important;
+  filter: drop-shadow(2px 0 0 #d97706) drop-shadow(-2px 0 0 #d97706) drop-shadow(0 2px 0 #d97706) drop-shadow(0 -2px 0 #d97706);
+  background: #fffbeb !important;
+}
+
+.sim-node--decision .sim-node__type-label {
+  color: #d97706;
+  font-weight: 700;
+}
+
+.sim-node--decision .sim-node__body {
+  padding: 48px 40px;
+  text-align: center;
 }
 
 /* Trajectory: path direction node — purple */
@@ -303,13 +332,20 @@ body {
   background: rgba(239, 226, 251, 0.4);
 }
 
-/* Outcome-bad */
+/* Outcome-bad: pill — red, "you failed" */
 .sim-node--fail {
-  outline-color: rgba(239, 68, 68, 0.35);
+  border-radius: 9999px !important;
+  outline-color: rgba(239, 68, 68, 0.5);
+  background: #fef2f2 !important;
 }
 
 .sim-node--fail .sim-node__label {
   color: #dc2626;
+}
+
+.sim-node--fail .sim-node__body {
+  padding: 16px 28px;
+  text-align: center;
 }
 
 /* Cut point: replay mode */
@@ -317,9 +353,16 @@ body {
   outline: 2px solid rgba(239, 68, 68, 0.6);
 }
 
-/* Outcome-good */
+/* Outcome-good: pill — green, "you made it" */
 .sim-node--success {
-  outline-color: rgba(16, 185, 129, 0.35);
+  border-radius: 9999px !important;
+  outline-color: rgba(16, 185, 129, 0.5);
+  background: #ecfdf5 !important;
+}
+
+.sim-node--success .sim-node__body {
+  padding: 16px 28px;
+  text-align: center;
 }
 
 .sim-node--card:hover {

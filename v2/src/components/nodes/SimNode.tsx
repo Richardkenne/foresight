@@ -209,7 +209,7 @@ function SimNodeComponent({ data }: NodeProps) {
 
   return (
     <div
-      className={`sim-node sim-node--card${nodeType === 'bottleneck' ? ' sim-node--bottleneck' : ''}${nodeType === 'gate' ? ' sim-node--gate' : ''}${nodeType === 'state' ? ' sim-node--state' : ''}${nodeType === 'trajectory' ? ' sim-node--trajectory' : ''}${nodeType === 'outcome-bad' ? ' sim-node--fail' : nodeType === 'outcome-good' ? ' sim-node--success' : ''}${d.isCutPoint ? ' sim-node--cut' : ''}`}
+      className={`sim-node sim-node--card${nodeType === 'bottleneck' ? ' sim-node--bottleneck' : ''}${nodeType === 'gate' ? ' sim-node--gate' : ''}${nodeType === 'state' ? ' sim-node--state' : ''}${nodeType === 'trajectory' ? ' sim-node--trajectory' : ''}${nodeType === 'decision' ? ' sim-node--decision' : ''}${nodeType === 'outcome-bad' ? ' sim-node--fail' : nodeType === 'outcome-good' ? ' sim-node--success' : ''}${d.isCutPoint ? ' sim-node--cut' : ''}`}
       style={difficultyBorder ? { outlineColor: difficultyBorder, outlineWidth: 2, outlineStyle: 'solid', '--node-accent': difficultyBorder } as React.CSSProperties : undefined}
     >
       <Handle type="target" position={Position.Left} className="sim-handle" />
