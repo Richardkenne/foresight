@@ -206,7 +206,7 @@ export default function TopBar({
         {/* Scenario Input — click to expand as overlay */}
         <div className="flex-1 relative min-w-0 max-w-[520px]">
           <div
-            className="w-full px-3 py-2 rounded-lg text-[13px] text-[var(--foreground)] bg-transparent border border-transparent hover:border-[var(--border)] hover:bg-[var(--surface-hover)] cursor-text transition-all truncate"
+            className="w-full px-3 py-2 rounded-lg text-[13px] text-[var(--foreground)] bg-transparent border border-transparent hover:border-[var(--border)] hover:bg-[var(--surface-hover)] cursor-text transition-all line-clamp-2"
             onClick={() => { if (!generating) setInputExpanded(true); }}
             title={scenario || 'Describe a scenario...'}
           >

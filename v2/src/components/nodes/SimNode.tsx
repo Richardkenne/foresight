@@ -286,9 +286,10 @@ function SimNodeComponent({ data }: NodeProps) {
                       <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
                         <span style={{
                           fontSize: 7, fontWeight: 700, color: TIER_COLORS[s.tier],
-                          fontFamily: 'var(--font-geist-mono)', width: 28, flexShrink: 0, letterSpacing: '0.03em',
+                          fontFamily: 'var(--font-geist-mono)', minWidth: 28, maxWidth: 80, flexShrink: 0, letterSpacing: '0.03em',
+                          overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
                         }}>
-                          {TIER_LABELS[s.tier]}
+                          {s.name}
                         </span>
                         <div style={{ flex: 1, height: 4, borderRadius: 2, background: 'var(--border)', overflow: 'hidden' }}>
                           <div style={{

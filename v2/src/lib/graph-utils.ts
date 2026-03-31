@@ -10,11 +10,17 @@ export function getLayoutedElements(
 ): { nodes: RFNode[]; edges: RFEdge[] } {
   const g = new dagre.graphlib.Graph();
   g.setDefaultEdgeLabel(() => ({}));
-  g.setGraph({ rankdir: direction, nodesep: 100, ranksep: 250, edgesep: 50 });
+  g.setGraph({ rankdir: direction, nodesep: 140, ranksep: 250, edgesep: 50 });
 
   nodes.forEach((node) => {
     const isContext = node.type === 'contextNode';
-    g.setNode(node.id, { width: isContext ? 220 : 190, height: isContext ? 180 : 100 });
+    const data = node.data as Record<string, unknown>;
+    // Estimate height based on content: sources add ~120px, desc adds ~40px
+    const hasSource = data.source && String(data.source).includes(':');
+    const hasDesc = !!data.desc;
+    const baseH = 100;
+    const h = isContext ? 180 : baseH + (hasDesc ? 40 : 0) + (hasSource ? 120 : 0);
+    g.setNode(node.id, { width: isContext ? 220 : 210, height: h });
   });
 
   edges.forEach((edge) => {
