@@ -17,6 +17,7 @@ interface IdleToolbarProps {
   onSimulateReverse: () => void;
   onToggleReplayMode: () => void;
   onToggleSacredMode: () => void;
+  onBacktest: () => void;
   onSave: () => void;
   onShare: () => void;
   onExportPNG: () => void;
@@ -26,7 +27,7 @@ interface IdleToolbarProps {
 export function IdleToolbar({
   replayMode, cutNodeId, hasStats, sacredMode, saving, shareUrl,
   onSimulate, onSimulateFromCut, onRestart, onEnterStepMode, onSimulateReverse,
-  onToggleReplayMode, onToggleSacredMode, onSave, onShare, onExportPNG, onClear,
+  onToggleReplayMode, onToggleSacredMode, onBacktest, onSave, onShare, onExportPNG, onClear,
 }: IdleToolbarProps) {
   return (
     <div className="fixed bottom-6 right-6 z-50 animate-slide-up">
@@ -98,6 +99,13 @@ export function IdleToolbar({
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" />
+          </svg>
+        </button>
+
+        {/* Backtest */}
+        <button onClick={onBacktest} className="toolbar-btn" title="Backtest (test accuracy)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M9 3h6v2H9z" /><path d="M10 5v4l-2 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-7l-2-2V5" /><path d="M10 15h4" />
           </svg>
         </button>
 

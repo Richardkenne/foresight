@@ -1609,6 +1609,12 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
             setSacredMode(newMode);
             setNodes(prev => prev.map(n => ({ ...n, data: { ...n.data, sacredMode: newMode } })));
           }}
+          onBacktest={() => {
+            fetch('/api/backtest', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sample_size: 20 }) })
+              .then(r => r.json())
+              .then(d => { if (d.message) alert(d.message + ' — check progress at /api/backtest'); })
+              .catch(() => alert('Backtest failed to start'));
+          }}
           onSave={handleSave}
           onShare={handleShare}
           onExportPNG={handleExportPNG}
