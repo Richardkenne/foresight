@@ -26,7 +26,12 @@
 - Claude Haiku for AI generation
 
 ## Architecture
-- `src/components/SimulatorCanvas.tsx` — core simulation engine + React Flow canvas
+- `src/components/SimulatorCanvas.tsx` — core simulation engine + React Flow canvas (~1,677 lines)
+- `src/lib/graph-utils.ts` — dagre layout + template-to-ReactFlow conversion (~154 lines)
+- `src/lib/simulation-types.ts` — speed config, PrecomputedFate, precomputeFates (~130 lines)
+- `src/components/SimOverlays.tsx` — CutLineIndicator + ParticleLayer viewport overlays (~78 lines)
+- `src/components/SimToolbar.tsx` — all floating toolbars: Idle, Running, Stats, Replay, StepMode, PathFilter, Results (~458 lines)
+- `src/components/usePathFilter.ts` — path filter hook (success/partial/fail highlighting) (~113 lines)
 - `src/components/nodes/SimNode.tsx` — node rendering (11 types)
 
 ## Node Types & Simulation Flow
@@ -39,7 +44,7 @@ The simulation follows this pattern:
 | `desire` | Gray | What you want | "What do you want?" |
 | `action` | Gray | What you do | "What are you doing?" |
 | `trajectory` | Purple bg | The path you're on | "Where are you heading?" |
-| `bottleneck` | Octagon, dynamic border | Binary gate (pass/fail) | "Do you pass?" |
+| `bottleneck` | Diamond (rhombus), dynamic border | Binary gate (pass/fail) | "Do you pass?" |
 | `gate` | Amber, left border | 3-way split (no/partial/yes) | "Which path?" |
 | `decision` | Gray | Yes/no choice | "Do you choose yes?" |
 | `outcome-good` | Green outline | Positive end | "You made it" |

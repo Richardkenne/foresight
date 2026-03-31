@@ -288,11 +288,18 @@
 - [ ] Backtest full run pendente (250 casi)
 - [ ] Import 62 data file di v1 nel RAG v2 (file presenti, serve verifica e indicizzazione)
 
+## Completato (sessione 2026-03-31)
+
+### Refactor SimulatorCanvas (-31%)
+- [x] Split SimulatorCanvas.tsx da 2,443 → 1,677 righe
+- [x] Estratti 5 moduli: graph-utils.ts, simulation-types.ts, SimOverlays.tsx, SimToolbar.tsx, usePathFilter.ts
+- [x] Bottleneck shape: esagono (6 lati) → rombo/diamond (4 lati) come nel codex
+
 ## Backlog (feature secondarie)
 - [ ] Confronto scenari A vs B — side-by-side dashboard
 - [ ] Interactive sliders — muovi parametro, grafo si ricalcola live
 - [ ] Fork tree counterfactual — "cosa sarebbe cambiato se..."
-- [ ] Code decomposition — SimulatorCanvas 1200+ righe → moduli separati
+- [x] ~~Code decomposition — SimulatorCanvas 1200+ righe → moduli separati~~ (fatto 2026-03-31)
 - [ ] Template editor visuale (drag & drop nodi)
 - [ ] Landing page con social proof, counter simulazioni, embed demo
 - [ ] Auth + DB utente (Supabase Auth)
@@ -318,4 +325,4 @@
 
 ---
 
-*Ultimo aggiornamento: 2026-03-30 (pomeriggio)*
+*Ultimo aggiornamento: 2026-03-31*

@@ -234,20 +234,28 @@ src/lib/dataflow-engine.ts
 
 | File | Ruolo | LOC |
 |------|-------|-----|
-| `src/lib/dataflow-engine.ts` | Sacred foundation + cascading computation engine | ~300 |
-| `src/components/SimulatorCanvas.tsx` | Core: React Flow canvas + simulation loop + particle system + replay mode + floating toolbar | ~1400 |
-| `src/components/nodes/SimNode.tsx` | Rendering nodi (8 tipi), flat enterprise design, type labels mono | ~210 |
-| `src/components/edges/AnimatedEdge.tsx` | Custom edge: dot animato su pass, tratteggio su fail | ~70 |
-| `src/components/Dashboard.tsx` | Pannello risultati laterale dx (400px), stats | ~200 |
-| `src/components/Particle.tsx` | Generatore SVG persone animate, status 'failing' con caduta | ~50 |
-| `src/components/TemplateSelector.tsx` | Picker template con categorie e ricerca | ~250 |
-| `src/components/TopBar.tsx` | Barra superiore minimal (48px): Logo + Input + Templates + Generate | ~100 |
-| `src/components/ui/Button.tsx` | Button component (6 varianti) | ~54 |
+| `src/lib/dataflow-engine.ts` | Sacred foundation + cascading computation engine | ~407 |
+| `src/components/SimulatorCanvas.tsx` | Core: React Flow canvas + simulation loop + particle system + replay mode (orchestrator) | ~1677 |
+| `src/lib/graph-utils.ts` | Dagre layout + template-to-ReactFlow conversion | ~154 |
+| `src/lib/simulation-types.ts` | Speed config, PrecomputedFate interface, precomputeFates pure function | ~130 |
+| `src/components/SimOverlays.tsx` | CutLineIndicator (scissors) + ParticleLayer (viewport-synced) | ~78 |
+| `src/components/SimToolbar.tsx` | All floating toolbars: IdleToolbar, RunningToolbar, StatsBar, ReplayBar, StepModeBar, PathFilterBar, ResultsTab | ~458 |
+| `src/components/usePathFilter.ts` | Path filter hook (success/partial/fail path highlighting) | ~113 |
+| `src/components/nodes/SimNode.tsx` | Rendering nodi (11 tipi), flat enterprise design, type labels mono, diamond bottleneck | ~374 |
+| `src/components/edges/AnimatedEdge.tsx` | Custom edge: dot animato su pass, tratteggio su fail | ~74 |
+| `src/components/Dashboard.tsx` | Pannello risultati laterale dx (400px), stats | ~226 |
+| `src/components/Particle.tsx` | Generatore SVG persone animate, status 'failing' con caduta | ~122 |
+| `src/components/TemplateSelector.tsx` | Picker template con categorie e ricerca | ~252 |
+| `src/components/TopBar.tsx` | Barra superiore minimal (56px): Logo + Input + Templates + Generate | ~581 |
+| `src/components/PhotoUpload.tsx` | Photo upload: drag/drop, HEIC, EXIF, Claude Vision seeds | ~464 |
+| `src/components/ProfilePanel.tsx` | User profile panel: identity, financial, professional, network | ~240 |
+| `src/components/DecisionPruning.tsx` | Modal pre-simulazione: 5-7 domande binarie YES/NO, modifier live, dynamic questions da API | ~318 |
+| `src/components/HistoryPanel.tsx` | History drawer: saved simulations, thumbnails, tags | ~172 |
+| `src/components/ui/Button.tsx` | Button component (6 varianti) | ~53 |
 | `src/components/ui/Spinner.tsx` | Animated SVG loader | ~9 |
-| `src/lib/templates.ts` | Definizioni 50+ template con nodi, edge, metadata | ~500 |
-| `src/components/DecisionPruning.tsx` | Modal pre-simulazione: 5-7 domande binarie YES/NO, modifier live, dynamic questions da API | ~270 |
-| `src/app/api/generate/route.ts` | Endpoint API: prompt + sacred data + real probs → Claude → JSON + pruning_questions | ~830 |
-| `src/app/api/index-data/route.ts` | Auto-indexing: delta detection + embed + upload to Supabase. Vercel Cron nightly. | ~200 |
+| `src/lib/templates.ts` | Definizioni 30 template con nodi, edge, metadata | ~762 |
+| `src/app/api/generate/route.ts` | Endpoint API: prompt + sacred data + real probs → Claude → JSON + pruning_questions | ~1303 |
+| `src/app/api/index-data/route.ts` | Auto-indexing: delta detection + embed + upload to Supabase. Vercel Cron nightly. | ~259 |
 
 ---
 
@@ -384,4 +392,4 @@ Format in source field:
 
 ---
 
-*Ultimo aggiornamento: 2026-03-30*
+*Ultimo aggiornamento: 2026-03-31*

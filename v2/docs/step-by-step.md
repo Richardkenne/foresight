@@ -191,7 +191,18 @@
 - [x] Global padding audit completato
 - [x] Canvas dots piu visibili
 - [x] Pass edges 3x piu spesse
+- [x] Bottleneck shape: esagono → rombo/diamond (4 lati, clip-path polygon)
+
+## Refactor (continuo)
+- [x] SimulatorCanvas split: 2,443 → 1,677 righe (-31%)
+  - [x] graph-utils.ts (dagre layout + templateToFlow) — 154 righe
+  - [x] simulation-types.ts (speed config + PrecomputedFate + precomputeFates) — 130 righe
+  - [x] SimOverlays.tsx (CutLineIndicator + ParticleLayer) — 78 righe
+  - [x] SimToolbar.tsx (7 toolbar components) — 458 righe
+  - [x] usePathFilter.ts (path filter hook) — 113 righe
+- [ ] generate/route.ts split (1,303 righe → service layers)
+- [ ] templates.ts split per categoria (762 righe → business, richard, ai)
 
 ---
 
-*Ultimo aggiornamento: 2026-03-30*
+*Ultimo aggiornamento: 2026-03-31*
