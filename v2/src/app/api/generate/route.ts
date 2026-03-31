@@ -966,6 +966,46 @@ async function getCityData(scenario: string): Promise<string | null> {
   return results.length > 0 ? results.join(' | ') : null;
 }
 
+// ============ JSON REPAIR ============
+// Fixes common LLM JSON issues: trailing commas, missing brackets, unescaped chars
+function repairJSON(raw: string): string {
+  let s = raw.trim();
+  // Strip markdown fences
+  s = s.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+  // Extract outermost JSON object if wrapped in text
+  const objMatch = s.match(/\{[\s\S]*\}/);
+  if (objMatch) s = objMatch[0];
+  // Fix trailing commas before } or ]
+  s = s.replace(/,\s*([\]}])/g, '$1');
+  // Fix missing commas between objects in arrays: }{ → },{
+  s = s.replace(/\}\s*\{/g, '},{');
+  // Fix single quotes to double quotes (but not inside strings)
+  // Only if there are no double quotes at all in a key position
+  if (!s.includes('"nodes"') && s.includes("'nodes'")) {
+    s = s.replace(/'/g, '"');
+  }
+  // Remove control characters that break JSON
+  s = s.replace(/[\x00-\x1f]/g, (c) => c === '\n' || c === '\r' || c === '\t' ? c : '');
+  // Fix truncated JSON — close open brackets/braces
+  let braces = 0, brackets = 0, inString = false, escape = false;
+  for (const c of s) {
+    if (escape) { escape = false; continue; }
+    if (c === '\\') { escape = true; continue; }
+    if (c === '"') { inString = !inString; continue; }
+    if (inString) continue;
+    if (c === '{') braces++;
+    if (c === '}') braces--;
+    if (c === '[') brackets++;
+    if (c === ']') brackets--;
+  }
+  // Remove trailing comma before closing
+  s = s.replace(/,\s*$/, '');
+  // Close unclosed structures
+  while (brackets > 0) { s += ']'; brackets--; }
+  while (braces > 0) { s += '}'; braces--; }
+  return s;
+}
+
 // ============ CLAUDE API (with prompt caching) ============
 function callClaude(staticPrompt: string, dynamicPrompt: string, userMsg: string): Promise<unknown> {
   const systemBlocks: Array<{ type: string; text: string; cache_control?: { type: string } }> = [
@@ -1006,13 +1046,15 @@ function callClaude(staticPrompt: string, dynamicPrompt: string, userMsg: string
           let content = j.content[0].text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
           // Try direct parse first
           try { resolve(JSON.parse(content)); return; } catch { /* continue */ }
+          // Try JSON repair before falling back
+          try { resolve(JSON.parse(repairJSON(content))); return; } catch { /* continue */ }
           // Extract JSON from surrounding text (Claude sometimes adds commentary)
           const jsonMatch = content.match(/\{[\s\S]*\}/);
           if (jsonMatch) {
-            resolve(JSON.parse(jsonMatch[0]));
-          } else {
-            reject(new Error('No valid JSON found in Claude response'));
+            try { resolve(JSON.parse(jsonMatch[0])); return; } catch { /* continue */ }
+            try { resolve(JSON.parse(repairJSON(jsonMatch[0]))); return; } catch { /* continue */ }
           }
+          reject(new Error('No valid JSON found in Claude response'));
         } catch (e) { reject(e); }
       });
     });
@@ -1047,7 +1089,13 @@ function callOpenAI(systemPrompt: string, userMsg: string): Promise<unknown> {
           const j = JSON.parse(d);
           if (j.error) return reject(new Error(j.error.message));
           resolve(JSON.parse(j.choices[0].message.content));
-        } catch (e) { reject(e); }
+        } catch {
+          // Try repair
+          try {
+            const j2 = JSON.parse(d);
+            resolve(JSON.parse(repairJSON(j2.choices[0].message.content)));
+          } catch (e) { reject(e); }
+        }
       });
     });
     req.on('error', reject);
@@ -1081,7 +1129,12 @@ function callGroq(systemPrompt: string, userMsg: string): Promise<unknown> {
           const j = JSON.parse(d);
           if (j.error) return reject(new Error(j.error.message));
           resolve(JSON.parse(j.choices[0].message.content));
-        } catch (e) { reject(e); }
+        } catch {
+          try {
+            const j2 = JSON.parse(d);
+            resolve(JSON.parse(repairJSON(j2.choices[0].message.content)));
+          } catch (e) { reject(e); }
+        }
       });
     });
     req.on('error', reject);
