@@ -552,7 +552,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
         const out = edgesRef.current.filter(e => e.source === nodeId);
         const noEdge = out.find(e => e.label === 'no' || e.label === 'fail');
-        const partialEdge = out.find(e => e.label === 'partial');
+        const partialEdge = out.find(e => ((e.label || '') as string).toLowerCase().startsWith('partial'));
         const yesEdge = out.find(e => e.label === 'yes' || e.label === 'pass');
 
         // prob = YES%, derive PARTIAL from edge data or default split
@@ -621,7 +621,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
           setNodes(ns => ns.map(n => n.id === nodeId ? { ...n, data: { ...n.data, [deathKey]: prevDeaths + 1 } } : n));
           // Route failed particle to outcome-bad via fail/no edge if available
           const failEdges = edgesRef.current.filter(e => e.source === nodeId);
-          const failE = failEdges.find(e => e.label === 'fail' || e.label === 'no');
+          const failE = failEdges.find(e => ((e.label || '') as string).toLowerCase().startsWith('fail') || ((e.label || '') as string).toLowerCase().startsWith('no'));
           if (failE) {
             // Send to outcome-bad node (particle walks there, then dies)
             moveTo(particle, failE.target, cb);
@@ -641,7 +641,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       // Route passed particles through "pass"/"yes" edge if available
       if (hasProb && (nodeType === 'bottleneck' || nodeType === 'decision')) {
         const out = edgesRef.current.filter(e => e.source === nodeId);
-        const passE = out.find(e => e.label === 'pass' || e.label === 'yes');
+        const passE = out.find(e => ((e.label || '') as string).toLowerCase().startsWith('pass') || ((e.label || '') as string).toLowerCase().startsWith('yes'));
         if (passE) {
           moveTo(particle, passE.target, cb);
           return;
@@ -934,7 +934,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       const reached = nodeReachRef.current[n.id]?.size || 0;
       if (reached === 0) continue;
       // Find pass edge target
-      const passEdge = edgesRef.current.find(e => e.source === n.id && (e.label === 'pass' || e.label === 'yes'));
+      const passEdge = edgesRef.current.find(e => e.source === n.id && (((e.label || '') as string).toLowerCase().startsWith('pass') || ((e.label || '') as string).toLowerCase().startsWith('yes')));
       const passed = passEdge ? (nodeReachRef.current[passEdge.target]?.size || 0) : 0;
       const killRate = 1 - (passed / reached); // 0 = nobody dies, 1 = everyone dies
       bottleneckKills.push({ id: n.id, killRate });

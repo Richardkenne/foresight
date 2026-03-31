@@ -110,9 +110,10 @@ export function templateToFlow(
   const adjustedEdges = rerouteEdges(templateEdges);
 
   const rfEdges: RFEdge[] = adjustedEdges.map((e, i) => {
-    const isPass = e.label === 'pass' || e.label === 'yes';
-    const isFail = e.label === 'fail' || e.label === 'no';
-    const isPartial = e.label === 'partial';
+    const lbl = (e.label || '').toLowerCase();
+    const isPass = lbl === 'pass' || lbl === 'yes' || lbl.startsWith('yes') || lbl.startsWith('pass');
+    const isFail = lbl === 'fail' || lbl === 'no' || lbl.startsWith('no') || lbl.startsWith('fail');
+    const isPartial = lbl === 'partial' || lbl.startsWith('partial');
     return {
       id: `e-${e.from}-${e.to}-${i}`,
       source: String(e.from),

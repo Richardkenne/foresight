@@ -58,7 +58,7 @@ export function precomputeFates(
         cnt.arrivals++;
         const out = edges.filter(e => e.source === currentNodeId);
         const noEdge = out.find(e => e.label === 'no' || e.label === 'fail');
-        const partialEdge = out.find(e => e.label === 'partial');
+        const partialEdge = out.find(e => ((e.label || '') as string).toLowerCase().startsWith('partial'));
         const yesEdge = out.find(e => e.label === 'yes' || e.label === 'pass');
 
         const partialPct = (partialEdge?.data as Record<string, unknown>)?.prob as number
@@ -94,7 +94,7 @@ export function precomputeFates(
         if (!pass) {
           deathNode = currentNodeId;
           // Route to fail edge destination
-          const failE = edges.find(e => e.source === currentNodeId && (e.label === 'fail' || e.label === 'no'));
+          const failE = edges.find(e => e.source === currentNodeId && (((e.label || '') as string).toLowerCase().startsWith('fail') || ((e.label || '') as string).toLowerCase().startsWith('no')));
           if (failE) path.push(failE.target);
           outcome = 'blocked';
           break;
@@ -102,7 +102,7 @@ export function precomputeFates(
 
         // Pass: follow pass edge
         if (nodeType === 'bottleneck' || nodeType === 'decision') {
-          const passE = edges.find(e => e.source === currentNodeId && (e.label === 'pass' || e.label === 'yes'));
+          const passE = edges.find(e => e.source === currentNodeId && (((e.label || '') as string).toLowerCase().startsWith('pass') || ((e.label || '') as string).toLowerCase().startsWith('yes')));
           if (passE) { currentNodeId = passE.target; continue; }
         }
       }
