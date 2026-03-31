@@ -10,12 +10,10 @@ import {
   useNodesState,
   useEdgesState,
   useReactFlow,
-  useViewport,
   ReactFlowProvider,
   type Node as RFNode,
   type Edge as RFEdge,
 } from '@xyflow/react';
-import dagre from 'dagre';
 
 import SimNodeComponent from './nodes/SimNode';
 import ContextNodeComponent from './nodes/ContextNode';
@@ -31,240 +29,14 @@ import { SimulatorDataflow } from '@/lib/dataflow-engine';
 import { applyRealProbabilities } from '@/lib/probability-matcher';
 import DecisionPruning, { type PruningResult } from './DecisionPruning';
 import { type UserProfile, loadProfile, getProfilePromptModifier } from '@/lib/user-profile';
+import { templateToFlow } from '@/lib/graph-utils';
+import { SPD_BASE, SPEED_LEVELS, SPEED_LABELS, precomputeFates } from '@/lib/simulation-types';
+import { CutLineIndicator, ParticleLayer } from './SimOverlays';
+import { IdleToolbar, RunningToolbar, StatsBar, ReplayBar, StepModeBar, PathFilterBar, ResultsTab } from './SimToolbar';
+import { usePathFilter } from './usePathFilter';
 
 const nodeTypes = { simNode: SimNodeComponent, contextNode: ContextNodeComponent };
 const edgeTypes = { animated: AnimatedEdgeComponent };
-
-// Cut line indicator — vertical dashed line with scissors icon
-function CutLineIndicator({ cutNodeId, nodes }: { cutNodeId: string | null; nodes: RFNode[] }) {
-  const { x, y, zoom } = useViewport();
-  if (!cutNodeId) return null;
-  const node = nodes.find(n => n.id === cutNodeId);
-  if (!node) return null;
-
-  const lineX = node.position.x + 170 + 16;
-  const nodeY = node.position.y + 50;
-
-  return (
-    <div
-      className="absolute inset-0 pointer-events-none z-[20]"
-      style={{ transform: `translate(${x}px, ${y}px) scale(${zoom})`, transformOrigin: '0 0' }}
-    >
-      <div
-        style={{
-          position: 'absolute',
-          left: lineX,
-          top: -3000,
-          width: 2,
-          height: 8000,
-          background: 'repeating-linear-gradient(to bottom, #ef4444 0, #ef4444 8px, transparent 8px, transparent 16px)',
-          opacity: 0.5,
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          left: lineX - 10,
-          top: nodeY - 10,
-        }}
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
-          <line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/>
-          <line x1="8.12" y1="8.12" x2="12" y2="12"/>
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-// Particle layer that moves WITH the React Flow viewport (zoom/pan aware)
-function ParticleLayer({ particles, moveDuration }: { particles: ParticleData[]; moveDuration: number }) {
-  const { x, y, zoom } = useViewport();
-  if (particles.length === 0) return null;
-
-  return (
-    <div
-      className="absolute inset-0 pointer-events-none z-[25]"
-      style={{ transform: `translate(${x}px, ${y}px) scale(${zoom})`, transformOrigin: '0 0' }}
-    >
-      {particles.map((p) => {
-        const dur = Math.round(moveDuration * (p.speedMult || 1));
-        const isActive = p.status === 'moving';
-        return (
-          <div
-            key={p.id}
-            className={`particle ${isActive ? 'particle-walking' : ''} ${p.status === 'blocked' ? 'particle-blocked' : p.status === 'failing' ? 'particle-failing' : p.status === 'success' ? 'particle-success' : ''}`}
-            style={{
-              position: 'absolute',
-              left: p.x,
-              top: p.y,
-              transition: `left ${dur}ms cubic-bezier(0.4, 0, 0.2, 1), top ${dur}ms cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease`,
-            }}
-            dangerouslySetInnerHTML={{ __html: p.svg }}
-          />
-        );
-      })}
-    </div>
-  );
-}
-
-// Dagre layout
-function getLayoutedElements(
-  nodes: RFNode[],
-  edges: RFEdge[],
-  direction: 'LR' | 'TB' = 'LR'
-): { nodes: RFNode[]; edges: RFEdge[] } {
-  const g = new dagre.graphlib.Graph();
-  g.setDefaultEdgeLabel(() => ({}));
-  g.setGraph({ rankdir: direction, nodesep: 100, ranksep: 250, edgesep: 50 });
-
-  nodes.forEach((node) => {
-    const isContext = node.type === 'contextNode';
-    g.setNode(node.id, { width: isContext ? 220 : 190, height: isContext ? 180 : 100 });
-  });
-
-  edges.forEach((edge) => {
-    g.setEdge(edge.source, edge.target);
-  });
-
-  dagre.layout(g);
-
-  const layoutedNodes = nodes.map((node) => {
-    const nodeWithPosition = g.node(node.id);
-    return {
-      ...node,
-      position: {
-        x: nodeWithPosition.x - 85,
-        y: nodeWithPosition.y - 50,
-      },
-    };
-  });
-
-  return { nodes: layoutedNodes, edges };
-}
-
-// Convert template data to React Flow format
-function templateToFlow(
-  templateNodes: TemplateNode[],
-  templateEdges: TemplateEdge[],
-  context?: { photoUrl?: string; scenario?: string }
-) {
-  // Merge adjacent desire → action pairs into a single node
-  const mergedNodeIds = new Set<number>();
-  const mergeMap = new Map<number, TemplateNode>(); // desire id → merged with action
-
-  for (const n of templateNodes) {
-    if (n.type !== 'desire') continue;
-    // Find outgoing edge from this desire
-    const outEdges = templateEdges.filter(e => e.from === n.id);
-    if (outEdges.length !== 1) continue;
-    const targetId = outEdges[0].to;
-    const targetNode = templateNodes.find(t => t.id === targetId);
-    if (!targetNode || targetNode.type !== 'action') continue;
-    // Check action has no other incoming edges
-    const incomingToAction = templateEdges.filter(e => e.to === targetId);
-    if (incomingToAction.length !== 1) continue;
-    // Merge: keep desire node, absorb action label
-    mergeMap.set(n.id, targetNode);
-    mergedNodeIds.add(targetId);
-  }
-
-  const rfNodes: RFNode[] = templateNodes
-    .filter(n => !mergedNodeIds.has(n.id))
-    .map((n) => {
-      const merged = mergeMap.get(n.id);
-      const label = merged ? `${n.label} → ${merged.label}` : n.label;
-      const desc = merged ? (merged.desc ? `${n.desc || ''} ${merged.desc}`.trim() : n.desc) : n.desc;
-      const source = merged ? (merged.source || n.source) : n.source;
-      return {
-        id: String(n.id),
-        type: 'simNode',
-        position: { x: n.x, y: n.y },
-        data: {
-          label,
-          nodeType: n.type,
-          desc,
-          source,
-          prob: n.prob,
-          probRange: (n as unknown as Record<string, unknown>).probRange as { optimistic: number; adverse: number } | undefined,
-          time: merged?.time || n.time,
-        },
-      };
-    });
-
-  // Reroute edges: skip merged action nodes
-  const rerouteEdges = (edges: TemplateEdge[]): TemplateEdge[] => {
-    return edges
-      .filter(e => !mergedNodeIds.has(e.from) || mergedNodeIds.has(e.to)) // remove desire→action edge
-      .filter(e => !(mergeMap.has(e.from) && mergedNodeIds.has(e.to))) // remove the merge edge itself
-      .map(e => {
-        // Reroute edges FROM merged action to come FROM desire instead
-        if (mergedNodeIds.has(e.from)) {
-          const desireId = [...mergeMap.entries()].find(([, v]) => v.id === e.from)?.[0];
-          return desireId != null ? { ...e, from: desireId } : e;
-        }
-        return e;
-      });
-  };
-
-  const adjustedEdges = rerouteEdges(templateEdges);
-
-  const rfEdges: RFEdge[] = adjustedEdges.map((e, i) => {
-    const isPass = e.label === 'pass' || e.label === 'yes';
-    const isFail = e.label === 'fail' || e.label === 'no';
-    const isPartial = e.label === 'partial';
-    return {
-      id: `e-${e.from}-${e.to}-${i}`,
-      source: String(e.from),
-      target: String(e.to),
-      label: e.label || '',
-      type: 'animated',
-      style: {
-        stroke: isFail ? '#fca5a5' : isPartial ? '#fbbf24' : isPass ? '#4ade80' : '#d4d4d8',
-        strokeWidth: isPass ? 4.5 : isPartial ? 3 : isFail ? 1.5 : 1.5,
-      },
-      labelStyle: {
-        fill: isFail ? '#ef4444' : isPartial ? '#d97706' : isPass ? '#10b981' : '#a1a1aa',
-      },
-      data: e.label === 'partial' ? { prob: (e as unknown as Record<string, unknown>).prob } : undefined,
-    };
-  });
-
-  // Add context node (photo + scenario) if provided
-  if (context?.photoUrl || context?.scenario) {
-    const contextId = 'ctx-0';
-    rfNodes.unshift({
-      id: contextId,
-      type: 'contextNode',
-      position: { x: 0, y: 0 },
-      data: {
-        photoUrl: context.photoUrl,
-        scenario: context.scenario || '',
-      },
-    });
-    // Connect context node to all start nodes (nodes with no incoming edges)
-    const hasIncoming = new Set(rfEdges.map(e => e.target));
-    const startIds = rfNodes.filter(n => n.id !== contextId && !hasIncoming.has(n.id)).map(n => n.id);
-    for (const sid of startIds) {
-      rfEdges.unshift({
-        id: `e-ctx-${sid}`,
-        source: contextId,
-        target: sid,
-        type: 'animated',
-        style: { stroke: '#d4d4d8', strokeWidth: 1.5 },
-      });
-    }
-  }
-
-  return getLayoutedElements(rfNodes, rfEdges);
-}
-
-// Simulation speed config — base values, scaled by speedMultiplier
-const SPD_BASE = { move: 2000, wait: 800, launch: 250, wavePause: 1200, waves: 10, perWave: 10 };
-// Speed levels: 0=1x, 1=1.5x, 2=2x, 3=3x, 4=5x, 5=8x
-const SPEED_LEVELS = [1, 1.5, 2, 3, 5, 8];
-const SPEED_LABELS = ['1x', '1.5x', '2x', '3x', '5x', '8x'];
 
 function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<string, unknown> | null }) {
   const [nodes, setNodes, onNodesChange] = useNodesState<RFNode>([]);
@@ -703,127 +475,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     }
   }, [scenario, loadTemplate, setNodes, setEdges, fitView]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // ─── Pre-computed fate system (deterministic) ───
-  // Every person's path is calculated BEFORE animation starts.
-  // The simulation is a replay of a reality already determined.
-  interface PrecomputedFate {
-    personId: number;
-    path: string[];              // node IDs to visit in order
-    outcome: 'success' | 'blocked';
-    speedMult: number;           // 0.7–1.3 individual variation
-    startDelay: number;          // 0–400ms stagger at launch
-    deathNode?: string;          // bottleneck that killed them (for death counter)
-  }
-
-  const precomputeFates = useCallback((totalPeople: number, startNodeId: string): PrecomputedFate[] => {
-    const nodes = nodesRef.current;
-    const edges = edgesRef.current;
-    const fates: PrecomputedFate[] = [];
-
-    // Deterministic counters — same logic as real-time, but computed ahead
-    const counters: Record<string, { arrivals: number; passed: number; routedNo: number; routedPartial: number; routedYes: number }> = {};
-
-    for (let i = 0; i < totalPeople; i++) {
-      const path: string[] = [];
-      let currentNodeId = startNodeId;
-      let outcome: 'success' | 'blocked' = 'blocked';
-      let deathNode: string | undefined;
-      let maxSteps = 50; // safety limit
-
-      while (maxSteps-- > 0) {
-        path.push(currentNodeId);
-        const node = nodes.find(n => n.id === currentNodeId);
-        if (!node) break;
-
-        const data = node.data as Record<string, unknown>;
-        const nodeType = data.nodeType as string;
-        const prob = data.prob as number;
-
-        // Terminal nodes
-        if (nodeType === 'outcome-good') { outcome = 'success'; break; }
-        if (nodeType === 'outcome-bad') { outcome = 'blocked'; break; }
-
-        // Init counter for this node
-        if (!counters[currentNodeId]) {
-          counters[currentNodeId] = { arrivals: 0, passed: 0, routedNo: 0, routedPartial: 0, routedYes: 0 };
-        }
-        const cnt = counters[currentNodeId];
-
-        // Gate node: 3-way deterministic split
-        if (nodeType === 'gate' && typeof prob === 'number') {
-          cnt.arrivals++;
-          const out = edges.filter(e => e.source === currentNodeId);
-          const noEdge = out.find(e => e.label === 'no' || e.label === 'fail');
-          const partialEdge = out.find(e => e.label === 'partial');
-          const yesEdge = out.find(e => e.label === 'yes' || e.label === 'pass');
-
-          const partialPct = (partialEdge?.data as Record<string, unknown>)?.prob as number
-            ?? Math.min(25, Math.floor((100 - prob) / 2));
-          const noPct = 100 - prob - partialPct;
-
-          const shouldNo = Math.floor(cnt.arrivals * noPct / 100);
-          const shouldPartial = Math.floor(cnt.arrivals * (noPct + partialPct) / 100);
-
-          let route: 'no' | 'partial' | 'yes';
-          if (cnt.routedNo < shouldNo) route = 'no';
-          else if (cnt.routedPartial < (shouldPartial - shouldNo)) route = 'partial';
-          else route = 'yes';
-
-          if (route === 'no') { cnt.routedNo++; deathNode = currentNodeId; currentNodeId = noEdge?.target || ''; }
-          else if (route === 'partial') { cnt.routedPartial++; currentNodeId = partialEdge?.target || ''; }
-          else { cnt.routedYes++; currentNodeId = yesEdge?.target || ''; }
-
-          if (!currentNodeId) break;
-          continue;
-        }
-
-        // Bottleneck/decision: binary pass/fail
-        const isOutcomeNode = nodeType === 'outcome-good' || nodeType === 'outcome-bad';
-        const hasProb = !isOutcomeNode && nodeType !== 'gate' && typeof prob === 'number' && prob < 100;
-
-        if (hasProb) {
-          cnt.arrivals++;
-          const shouldHavePassed = Math.floor(cnt.arrivals * prob / 100);
-          const pass = cnt.passed < shouldHavePassed;
-          if (pass) cnt.passed++;
-
-          if (!pass) {
-            deathNode = currentNodeId;
-            // Route to fail edge destination
-            const failE = edges.find(e => e.source === currentNodeId && (e.label === 'fail' || e.label === 'no'));
-            if (failE) path.push(failE.target);
-            outcome = 'blocked';
-            break;
-          }
-
-          // Pass: follow pass edge
-          if (nodeType === 'bottleneck' || nodeType === 'decision') {
-            const passE = edges.find(e => e.source === currentNodeId && (e.label === 'pass' || e.label === 'yes'));
-            if (passE) { currentNodeId = passE.target; continue; }
-          }
-        }
-
-        // Follow default edge (non-probabilistic nodes: state, action, desire, etc.)
-        const out = edges.filter(e => e.source === currentNodeId);
-        if (out.length === 0) {
-          outcome = nodeType === 'outcome-good' ? 'success' : 'blocked';
-          break;
-        }
-        currentNodeId = out[0].target;
-      }
-
-      fates.push({
-        personId: i + 1,
-        path,
-        outcome,
-        speedMult: 0.7 + Math.random() * 0.6,
-        startDelay: Math.random() * 400,
-        deathNode,
-      });
-    }
-
-    return fates;
-  }, []);
+  // precomputeFates is now imported from @/lib/simulation-types
 
   // Simulation engine
   const simTimeout = useCallback((fn: () => void, ms: number) => {
@@ -1223,7 +875,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     // ─── PRE-DETERMINED FATE SYSTEM ───
     // All paths computed BEFORE animation. The simulation is a replay.
     const totalPeople = SPD_BASE.waves * SPD_BASE.perWave; // 100
-    const fates = precomputeFates(totalPeople, startNodeIds[0]);
+    const fates = precomputeFates(totalPeople, startNodeIds[0], nodesRef.current, edgesRef.current);
     const spd = getSPD();
 
     // DEBUG: log pre-computed fates
@@ -1643,113 +1295,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100);
   }, [setNodes, setEdges, fitView]);
 
-  // ─── Path filter: show only success / partial / fail paths ───
-  const [pathFilter, setPathFilter] = useState<'all' | 'success' | 'partial' | 'fail'>('all');
-
-  const applyPathFilter = useCallback((filter: 'all' | 'success' | 'partial' | 'fail') => {
-    setPathFilter(filter);
-
-    if (filter === 'all') {
-      // Restore all nodes to full opacity
-      setNodes(prev => prev.map(n => ({
-        ...n,
-        style: { ...n.style, opacity: 1, filter: 'none', transition: 'opacity 0.4s ease, filter 0.4s ease' },
-      })));
-      setEdges(prev => prev.map(e => ({ ...e, hidden: false, style: { ...e.style, opacity: 1 } })));
-      return;
-    }
-
-    // Build path sets by tracing backward from outcome nodes
-    const pathNodes = new Set<string>();
-    const pathEdgeIds = new Set<string>();
-
-    // Helper: trace backward from a node to find all ancestors
-    const traceBackward = (nodeId: string, visited: Set<string>) => {
-      if (visited.has(nodeId)) return;
-      visited.add(nodeId);
-      pathNodes.add(nodeId);
-      const incoming = edgesRef.current.filter(e => e.target === nodeId);
-      for (const e of incoming) {
-        pathEdgeIds.add(e.id);
-        traceBackward(e.source, visited);
-      }
-    };
-
-    // Helper: trace forward from a node following specific edges
-    const traceForward = (nodeId: string, visited: Set<string>) => {
-      if (visited.has(nodeId)) return;
-      visited.add(nodeId);
-      pathNodes.add(nodeId);
-      const outgoing = edgesRef.current.filter(e => e.source === nodeId);
-      for (const e of outgoing) {
-        pathEdgeIds.add(e.id);
-        traceForward(e.target, visited);
-      }
-    };
-
-    if (filter === 'success') {
-      // Find outcome-good nodes, trace backward
-      const goodNodes = nodesRef.current.filter(n =>
-        (n.data as Record<string, unknown>).nodeType === 'outcome-good'
-      );
-      const visited = new Set<string>();
-      for (const n of goodNodes) traceBackward(n.id, visited);
-    } else if (filter === 'fail') {
-      // Find outcome-bad nodes, trace backward
-      const badNodes = nodesRef.current.filter(n =>
-        (n.data as Record<string, unknown>).nodeType === 'outcome-bad'
-      );
-      const visited = new Set<string>();
-      for (const n of badNodes) traceBackward(n.id, visited);
-    } else if (filter === 'partial') {
-      // Find edges labeled 'partial', then trace forward from their targets
-      const partialEdges = edgesRef.current.filter(e => e.label === 'partial');
-      const visited = new Set<string>();
-      for (const e of partialEdges) {
-        pathEdgeIds.add(e.id);
-        pathNodes.add(e.source);
-        traceForward(e.target, visited);
-      }
-      // Also include the common trunk (start → first gate)
-      if (partialEdges.length > 0) {
-        const gateId = partialEdges[0].source;
-        traceBackward(gateId, new Set());
-      }
-    }
-
-    // Apply opacity + color tint per path type
-    const tintColor = filter === 'success' ? 'rgba(16, 185, 129, 0.08)'
-      : filter === 'fail' ? 'rgba(239, 68, 68, 0.08)'
-      : filter === 'partial' ? 'rgba(120, 120, 120, 0.12)'
-      : 'transparent';
-    const borderColor = filter === 'success' ? 'rgba(16, 185, 129, 0.4)'
-      : filter === 'fail' ? 'rgba(239, 68, 68, 0.4)'
-      : filter === 'partial' ? 'rgba(120, 120, 120, 0.5)'
-      : undefined;
-
-    setNodes(prev => prev.map(n => {
-      const isInPath = pathNodes.has(n.id);
-      return {
-        ...n,
-        style: {
-          ...n.style,
-          opacity: isInPath ? 1 : 0.06,
-          filter: isInPath ? 'none' : 'grayscale(1) blur(1px)',
-          background: isInPath ? tintColor : undefined,
-          outline: isInPath && borderColor ? `2px solid ${borderColor}` : undefined,
-          transition: 'opacity 0.4s ease, filter 0.4s ease, background 0.4s ease',
-        },
-      };
-    }));
-    setEdges(prev => prev.map(e => ({
-      ...e,
-      style: {
-        ...e.style,
-        opacity: pathEdgeIds.has(e.id) ? 1 : 0.04,
-        stroke: pathEdgeIds.has(e.id) && filter === 'partial' ? '#888' : e.style?.stroke,
-      },
-    })));
-  }, [setNodes, setEdges]);
+  // Path filter extracted to usePathFilter hook
+  const { pathFilter, setPathFilter, applyPathFilter } = usePathFilter(setNodes, setEdges, nodesRef, edgesRef);
 
   // Save simulation to Supabase
   const handleSave = useCallback(async () => {
@@ -2042,391 +1589,78 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         />
       )}
 
-      {/* ========== FLOATING TOOLBAR (when nodes exist, sim not running) ========== */}
+      {/* ========== TOOLBARS (extracted components) ========== */}
       {hasNodes && !simRunning && (
-        <div className="fixed bottom-6 right-6 z-50 animate-slide-up">
-          <div
-            className="rounded-full px-3 py-2 flex items-center gap-2"
-            style={{
-              background: 'var(--surface)',
-              boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
-            }}
-          >
-            {/* Simulate */}
-            {replayMode && cutNodeId ? (
-              <button onClick={simulateFromCut} className="toolbar-btn toolbar-btn--primary" title="Replay from cut">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <polygon points="5 3 19 12 5 21 5 3" />
-                </svg>
-              </button>
-            ) : (
-              <button onClick={requestSimulate} disabled={replayMode} className="toolbar-btn toolbar-btn--primary" title="Simulate">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <polygon points="5 3 19 12 5 21 5 3" />
-                </svg>
-              </button>
-            )}
-
-            {/* Restart — re-run simulation */}
-            {statsRef.current.total > 0 && (
-              <button onClick={() => { stopSim(); setTimeout(() => requestSimulate(), 200); }} className="toolbar-btn" title="Restart simulation">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" /><path d="M21 3v5h-5" />
-                </svg>
-              </button>
-            )}
-
-            {/* Step mode — card by card */}
-            <button onClick={enterStepMode} className="toolbar-btn" title="Step-by-step (card by card)">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
-            </button>
-
-            {/* Reverse */}
-            <button onClick={simulateReverse} disabled={replayMode} className="toolbar-btn" title="Reverse">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M9 14L4 9l5-5" /><path d="M20 20v-7a4 4 0 0 0-4-4H4" />
-              </svg>
-            </button>
-
-            {/* Scissors / Replay mode */}
-            <button
-              onClick={() => replayMode ? exitReplayMode() : setReplayMode(true)}
-              className={`toolbar-btn ${replayMode ? 'toolbar-btn--active' : ''}`}
-              title={replayMode ? 'Exit replay mode' : 'Replay mode'}
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
-                <line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/>
-                <line x1="8.12" y1="8.12" x2="12" y2="12"/>
-              </svg>
-            </button>
-
-            <div className="w-px h-5 bg-[var(--border)] mx-0.5" />
-
-            {/* Sacred mode */}
-            <button
-              onClick={() => {
-                const newMode = !sacredMode;
-                setSacredMode(newMode);
-                setNodes(prev => prev.map(n => ({ ...n, data: { ...n.data, sacredMode: newMode } })));
-              }}
-              className={`toolbar-btn ${sacredMode ? 'toolbar-btn--active' : ''}`}
-              title={sacredMode ? 'Data view' : 'Sacred view'}
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" />
-              </svg>
-            </button>
-
-            {/* Save */}
-            <button onClick={handleSave} disabled={saving} className="toolbar-btn" title="Save">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" />
-                <polyline points="17 21 17 13 7 13 7 21" /><polyline points="7 3 7 8 15 8" />
-              </svg>
-            </button>
-
-            {/* Share */}
-            <button onClick={handleShare} className="toolbar-btn" title={shareUrl ? 'Copied!' : 'Share'}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={shareUrl ? 'var(--accent)' : 'currentColor'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" />
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-              </svg>
-            </button>
-
-            {/* Export */}
-            <button onClick={handleExportPNG} className="toolbar-btn" title="Export PNG">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-            </button>
-
-            <div className="w-px h-5 bg-[var(--border)] mx-0.5" />
-
-            {/* Clear */}
-            <button onClick={() => { stopSim(); setNodes([]); setEdges([]); setShowDashboard(false); setScenario(''); setErrorMsg(''); }} className="toolbar-btn" title="Clear">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 6L6 18M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-        </div>
+        <IdleToolbar
+          replayMode={replayMode}
+          cutNodeId={cutNodeId}
+          hasStats={statsRef.current.total > 0}
+          sacredMode={sacredMode}
+          saving={saving}
+          shareUrl={shareUrl}
+          onSimulate={requestSimulate}
+          onSimulateFromCut={simulateFromCut}
+          onRestart={() => { stopSim(); setTimeout(() => requestSimulate(), 200); }}
+          onEnterStepMode={enterStepMode}
+          onSimulateReverse={simulateReverse}
+          onToggleReplayMode={() => replayMode ? exitReplayMode() : setReplayMode(true)}
+          onToggleSacredMode={() => {
+            const newMode = !sacredMode;
+            setSacredMode(newMode);
+            setNodes(prev => prev.map(n => ({ ...n, data: { ...n.data, sacredMode: newMode } })));
+          }}
+          onSave={handleSave}
+          onShare={handleShare}
+          onExportPNG={handleExportPNG}
+          onClear={() => { stopSim(); setNodes([]); setEdges([]); setShowDashboard(false); setScenario(''); setErrorMsg(''); }}
+        />
       )}
 
-      {/* ========== FLOATING TOOLBAR (during simulation) ========== */}
       {simRunning && (
-        <div className="fixed bottom-6 right-6 z-50 animate-slide-up">
-          <div
-            className="rounded-full px-3 py-2 flex items-center gap-2"
-            style={{
-              background: 'var(--surface)',
-              boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
-            }}
-          >
-            <button onClick={togglePause} className="toolbar-btn toolbar-btn--primary" title={simPaused ? 'Resume' : 'Pause'}>
-              {simPaused ? (
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <polygon points="5 3 19 12 5 21 5 3" />
-                </svg>
-              ) : (
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="6" y="4" width="4" height="16" /><rect x="14" y="4" width="4" height="16" />
-                </svg>
-              )}
-            </button>
-            <button onClick={stopSim} className="toolbar-btn toolbar-btn--danger" title="Stop">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="6" y="6" width="12" height="12" rx="1" />
-              </svg>
-            </button>
-          </div>
-        </div>
+        <RunningToolbar
+          simPaused={simPaused}
+          onTogglePause={togglePause}
+          onStop={stopSim}
+        />
       )}
 
-      {/* ========== STATS BAR (during simulation) ========== */}
       {simRunning && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 animate-slide-up">
-          <div
-            className="rounded-2xl px-8 py-4 flex items-center gap-5"
-            style={{
-              background: 'var(--surface)',
-              boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
-            }}
-          >
-            {/* Speed control */}
-            <div className="flex items-center gap-3">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="5 3 19 12 5 21 5 3" />
-              </svg>
-              <input
-                type="range"
-                min={0}
-                max={SPEED_LEVELS.length - 1}
-                step={1}
-                value={speedLevel}
-                onChange={(e) => {
-                  const v = Number(e.target.value);
-                  setSpeedLevel(v);
-                  speedRef.current = v;
-                }}
-                className="w-20 h-1 appearance-none rounded-full cursor-pointer"
-                style={{ accentColor: 'var(--accent)', background: 'var(--border)' }}
-              />
-              <span className="text-[11px] font-semibold tabular-nums w-7 text-center" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>{SPEED_LABELS[speedLevel]}</span>
-            </div>
-
-            <div className="w-px h-5" style={{ background: 'var(--border)' }} />
-
-            {/* Wave progress */}
-            <div className="flex items-center gap-3">
-              <div className="flex gap-[3px]">
-                {Array.from({ length: replayOverrideRef.current?.waves ?? SPD_BASE.waves }, (_, i) => (
-                  <div
-                    key={i}
-                    className="w-[6px] h-[14px] rounded-[2px] transition-all duration-300"
-                    style={{
-                      background: i < currentWave ? 'var(--accent)' : 'var(--border)',
-                    }}
-                  />
-                ))}
-              </div>
-              <span className="text-[11px] font-medium tabular-nums" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>{currentWave}/{replayOverrideRef.current?.waves ?? SPD_BASE.waves}</span>
-            </div>
-
-            <div className="w-px h-5" style={{ background: 'var(--border)' }} />
-
-            {/* Metrics */}
-            <div className="flex items-center gap-5">
-              <div className="flex items-center gap-2">
-                <div className="w-[7px] h-[7px] rounded-full" style={{ background: 'var(--accent)' }} />
-                <span className="text-[13px] font-bold tabular-nums" style={{ color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>{simStats.total}</span>
-                <span className="text-[11px] font-medium" style={{ color: 'var(--muted)' }}>people</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-[7px] h-[7px] rounded-full bg-emerald-500" />
-                <span className="text-[13px] font-bold text-emerald-600 tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)' }}>{simStats.success}</span>
-                <span className="text-[11px] font-medium" style={{ color: 'var(--muted)' }}>made it</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-[7px] h-[7px] rounded-full bg-red-500" />
-                <span className="text-[13px] font-bold text-red-500 tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)' }}>{simStats.blocked}</span>
-                <span className="text-[11px] font-medium" style={{ color: 'var(--muted)' }}>stopped</span>
-              </div>
-            </div>
-
-            {/* Rate — clear label */}
-            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg" style={{ background: 'var(--surface-hover)' }}>
-              <span className="text-[14px] font-bold tabular-nums" style={{
-                color: successRate >= 50 ? '#059669' : successRate >= 25 ? '#d97706' : '#dc2626',
-                fontFamily: 'var(--font-geist-mono)',
-              }}>
-                {simStats.success}/{simStats.total}
-              </span>
-              <span className="text-[10px] font-medium" style={{ color: 'var(--muted)' }}>survive</span>
-              <span className="text-[11px] font-bold tabular-nums" style={{
-                color: successRate >= 50 ? '#059669' : successRate >= 25 ? '#d97706' : '#dc2626',
-                fontFamily: 'var(--font-geist-mono)',
-              }}>
-                ({successRate}%)
-              </span>
-            </div>
-
-            {/* Status */}
-            {simPaused ? (
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full" style={{ background: 'rgba(245, 158, 11, 0.1)' }}>
-                <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-                <span className="text-[10px] text-amber-600 font-semibold uppercase tracking-wider" style={{ fontFamily: 'var(--font-geist-mono)' }}>Paused</span>
-              </div>
-            ) : (
-              <kbd className="text-[10px] px-2.5 py-1 rounded-md" style={{ color: 'var(--muted)', background: 'var(--surface-hover)', fontFamily: 'var(--font-geist-mono)' }}>space</kbd>
-            )}
-          </div>
-        </div>
+        <StatsBar
+          speedLevel={speedLevel}
+          currentWave={currentWave}
+          totalWaves={replayOverrideRef.current?.waves ?? SPD_BASE.waves}
+          simStats={simStats}
+          successRate={successRate}
+          simPaused={simPaused}
+          onSpeedChange={(v) => { setSpeedLevel(v); speedRef.current = v; }}
+        />
       )}
 
-      {/* ========== REPLAY MODE BAR (when replay active, sim not running) ========== */}
       {replayMode && !simRunning && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 animate-slide-up">
-          <div
-            className="rounded-full px-6 py-2.5 flex items-center gap-3"
-            style={{
-              background: 'var(--surface)',
-              boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
-            }}
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
-              <line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/>
-              <line x1="8.12" y1="8.12" x2="12" y2="12"/>
-            </svg>
-
-            {cutNodeId ? (
-              <>
-                <span className="text-[11px] font-medium" style={{ color: 'var(--muted-foreground)' }}>
-                  Cut at <span className="font-semibold" style={{ color: 'var(--foreground)' }}>{nodesRef.current.find(n => n.id === cutNodeId)?.data?.label as string || 'node'}</span>
-                  {cutReachCountRef.current > 0 && (
-                    <span style={{ color: 'var(--accent)' }} className="ml-1">({cutReachCountRef.current} people)</span>
-                  )}
-                </span>
-                <div className="w-px h-4" style={{ background: 'var(--border)' }} />
-                <button
-                  onClick={simulateFromCut}
-                  className="flex items-center gap-1.5 px-3 py-1 rounded-full hover:opacity-80 transition-opacity cursor-pointer"
-                  style={{ background: 'var(--accent)', color: 'white' }}
-                >
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="5 3 19 12 5 21 5 3" />
-                  </svg>
-                  <span className="text-[10px] font-semibold">Replay</span>
-                </button>
-              </>
-            ) : (
-              <span className="text-[11px] font-medium" style={{ color: 'var(--muted)' }}>Click a node to set the cut point</span>
-            )}
-
-            <div className="w-px h-4" style={{ background: 'var(--border)' }} />
-
-            <button
-              onClick={exitReplayMode}
-              className="flex items-center justify-center w-6 h-6 rounded-full transition-colors cursor-pointer"
-              style={{ color: 'var(--muted)' }}
-            >
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 6L6 18M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-        </div>
+        <ReplayBar
+          cutNodeId={cutNodeId}
+          cutNodeLabel={nodesRef.current.find(n => n.id === cutNodeId)?.data?.label as string || 'node'}
+          cutReachCount={cutReachCountRef.current}
+          simRunning={simRunning}
+          onSimulateFromCut={simulateFromCut}
+          onExitReplayMode={exitReplayMode}
+        />
       )}
 
-      {/* ========== RESULTS TAB (right edge, shows when dashboard is closed) ========== */}
-      {/* Step mode controls */}
       {stepMode && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 animate-slide-up">
-          <div
-            className="rounded-full px-3 py-2 flex items-center gap-3"
-            style={{
-              background: 'var(--surface)',
-              boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
-            }}
-          >
-            <button onClick={stepBack} disabled={stepIndex === 0} className="toolbar-btn" title="Previous (Left arrow)">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="15 18 9 12 15 6" />
-              </svg>
-            </button>
-
-            <span className="text-[11px] font-semibold tabular-nums px-2" style={{ color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>
-              {stepIndex} / {stepOrderRef.current.length}
-            </span>
-
-            <button onClick={stepForward} disabled={stepIndex >= stepOrderRef.current.length} className="toolbar-btn toolbar-btn--primary" title="Next (Right arrow)">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
-            </button>
-
-            <div className="w-px h-5 bg-[var(--border)]" />
-
-            <button onClick={exitStepMode} className="toolbar-btn" title="Exit step mode (Esc)">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 6L6 18M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-        </div>
+        <StepModeBar
+          stepIndex={stepIndex}
+          totalSteps={stepOrderRef.current.length}
+          onStepBack={stepBack}
+          onStepForward={stepForward}
+          onExitStepMode={exitStepMode}
+        />
       )}
 
       {!simRunning && statsRef.current.total > 0 && !showDashboard && !stepMode && (
         <>
-          <button
-            onClick={() => { setShowDashboard(true); setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100); }}
-            className="fixed right-0 top-1/2 -translate-y-1/2 z-50 bg-white dark:bg-[#1a1a1a] border border-r-0 border-gray-200 dark:border-gray-700 rounded-l-lg px-2 py-4 shadow-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all cursor-pointer group"
-          >
-            <div className="flex flex-col items-center gap-1.5">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500 group-hover:text-blue-500 transition-colors">
-                <path d="M3 3v18h18" /><path d="M18 17V9" /><path d="M13 17V5" /><path d="M8 17v-3" />
-              </svg>
-              <span className="text-[9px] font-semibold text-gray-400 group-hover:text-blue-500 transition-colors" style={{ writingMode: 'vertical-lr' }}>
-                Results
-              </span>
-            </div>
-          </button>
-
-          {/* Path filter buttons */}
-          <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
-            <div
-              className="rounded-full px-1.5 py-1.5 flex items-center gap-1"
-              style={{
-                background: 'var(--surface)',
-                boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
-              }}
-            >
-              {([
-                { key: 'all', label: 'All', color: 'var(--foreground)' },
-                { key: 'success', label: 'Success', color: '#10b981' },
-                { key: 'partial', label: 'Partial', color: '#d97706' },
-                { key: 'fail', label: 'Fail', color: '#ef4444' },
-              ] as const).map(({ key, label, color }) => (
-                <button
-                  key={key}
-                  onClick={() => applyPathFilter(key)}
-                  className="px-3 py-1.5 rounded-full text-[10px] font-semibold transition-all cursor-pointer"
-                  style={{
-                    background: pathFilter === key ? color : 'transparent',
-                    color: pathFilter === key ? (key === 'all' ? 'var(--surface)' : '#fff') : 'var(--muted)',
-                    fontFamily: 'var(--font-geist-mono)',
-                    letterSpacing: '0.04em',
-                  }}
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
-          </div>
+          <ResultsTab onShowDashboard={() => { setShowDashboard(true); setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100); }} />
+          <PathFilterBar pathFilter={pathFilter} onFilterChange={applyPathFilter} />
         </>
       )}
 

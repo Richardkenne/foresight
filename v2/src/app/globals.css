@@ -260,16 +260,20 @@ body {
   position: relative;
 }
 
-/* Bottleneck: hexagon shape — 6 sides, more space than diamond */
+/* Bottleneck: diamond (rhombus) shape — 4 sides, classic decision point */
 .sim-node--bottleneck {
-  width: 210px;
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  width: 200px;
+  height: 200px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
   border-radius: 0;
   outline: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sim-node--bottleneck .sim-node__body {
-  padding: 20px 28px;
+  padding: 40px 32px;
   text-align: center;
 }
 
