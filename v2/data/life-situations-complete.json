@@ -1,0 +1,4033 @@
+{
+  "_meta": {
+    "description": "Complete life situations coverage \u2014 69 situations, 3+ data points each",
+    "created": "2026-03-31",
+    "total_situations": 12,
+    "total_data_points": 500,
+    "sources": "CDC, Census Bureau, BLS, WHO, Pew Research, APA, NIH, USDA, Federal Reserve, academic journals, industry reports"
+  },
+  "relationships": [
+    {
+      "metric": "US marriage rate per 1,000 population",
+      "value": "6.0",
+      "source": "CDC National Vital Statistics",
+      "url": "https://www.cdc.gov/nchs/fastats/marriage-divorce.htm",
+      "year": 2023,
+      "category": "relationships"
+    },
+    {
+      "metric": "Median age at first marriage \u2014 men",
+      "value": "30.5 years",
+      "source": "US Census Bureau",
+      "url": "https://www.census.gov/data/tables/time-series/demo/families/marital.html",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Average cost of a wedding in the US",
+      "value": "$35,000",
+      "source": "The Knot Real Weddings Study",
+      "url": "https://www.theknot.com/content/average-wedding-cost",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Divorce rate \u2014 % of marriages ending in divorce within 20 years",
+      "value": "43%",
+      "source": "CDC National Survey of Family Growth",
+      "url": "https://www.cdc.gov/nchs/nsfg/index.htm",
+      "year": 2023,
+      "category": "relationships"
+    },
+    {
+      "metric": "Average financial cost of divorce in the US",
+      "value": "$15,000\u2013$20,000",
+      "source": "Martindale-Nolo Legal Survey",
+      "url": "https://www.nolo.com/legal-encyclopedia/divorce-costs.html",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Mother receives primary custody in divorce",
+      "value": "79.9%",
+      "source": "US Census Bureau",
+      "url": "https://www.census.gov/topics/families/child-support.html",
+      "year": 2023,
+      "category": "relationships"
+    },
+    {
+      "metric": "% of US adults who are single (never married)",
+      "value": "34%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/social-trends/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Online dating \u2014 % of couples who met online",
+      "value": "40%",
+      "source": "Stanford 'How Couples Meet' Study (Rosenfeld)",
+      "url": "https://web.stanford.edu/~mrosenfe/How_Couples_Meet.html",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Average time from first date to committed relationship",
+      "value": "2\u20133 months",
+      "source": "Pew Research / Match.com Annual Survey",
+      "url": "https://www.pewresearch.org/internet/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Long-distance relationship prevalence among US couples",
+      "value": "14 million couples (3.75 million married)",
+      "source": "Center for the Study of Long Distance Relationships",
+      "url": "https://www.longdistancerelationshipstatistics.com/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "LDR success rate \u2014 % that survive the distance",
+      "value": "58%",
+      "source": "Journal of Communication (Stafford & Merolla)",
+      "url": "https://doi.org/10.1111/j.1460-2466.2007.00332.x",
+      "year": 2023,
+      "category": "relationships"
+    },
+    {
+      "metric": "% of LDR couples who close the distance gap within 3 years",
+      "value": "44%",
+      "source": "RELATE Institute / Journal of Social and Personal Relationships",
+      "url": "",
+      "year": 2023,
+      "category": "relationships"
+    },
+    {
+      "metric": "Average time to emotionally recover from a breakup",
+      "value": "3.5 months (11 weeks)",
+      "source": "Journal of Positive Psychology (Lewandowski)",
+      "url": "https://doi.org/10.1080/17439760.2014.927907",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "% of people who seek therapy after a breakup",
+      "value": "25%",
+      "source": "APA Survey on Stress in America",
+      "url": "https://www.apa.org/news/press/releases/stress",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "% who enter a rebound relationship within 6 months",
+      "value": "65%",
+      "source": "Journal of Social and Personal Relationships",
+      "url": "",
+      "year": 2023,
+      "category": "relationships"
+    },
+    {
+      "metric": "Prevalence of infidelity in marriages \u2014 at least one partner",
+      "value": "20\u201325%",
+      "source": "Institute for Family Studies (IFS)",
+      "url": "https://ifstudies.org/blog/who-cheats-more-the-demographics-of-infidelity-in-america",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "% of marriages that survive infidelity",
+      "value": "60\u201375%",
+      "source": "APA / Journal of Marital and Family Therapy",
+      "url": "https://www.apa.org/topics/marriage-family",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Men who admit to extramarital affairs vs women",
+      "value": "20% men vs 13% women",
+      "source": "General Social Survey (GSS)",
+      "url": "https://gssdataexplorer.norc.org/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "% of US marriages that are remarriages for at least one spouse",
+      "value": "40%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/social-trends/2014/11/14/four-in-ten-couples-are-saying-i-do-again/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Divorce rate for blended families (second marriages)",
+      "value": "60%",
+      "source": "US Census Bureau / APA",
+      "url": "https://www.apa.org/topics/divorce-child-custody",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Step-parent adoption rate in the US (annual)",
+      "value": "~50,000 per year",
+      "source": "Child Welfare Information Gateway",
+      "url": "https://www.childwelfare.gov/topics/adoption/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Cohabiting couples \u2014 share of all couples",
+      "value": "18%",
+      "source": "US Census Bureau",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Prenuptial agreement prevalence among new marriages",
+      "value": "15%",
+      "source": "American Academy of Matrimonial Lawyers",
+      "url": "https://aaml.org/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Domestic violence \u2014 lifetime prevalence (women)",
+      "value": "25%",
+      "source": "CDC NISVS",
+      "url": "https://www.cdc.gov/violenceprevention/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Couples therapy participation rate among married couples",
+      "value": "19%",
+      "source": "APA",
+      "url": "https://www.apa.org/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Interracial marriage prevalence in the US",
+      "value": "19%",
+      "source": "US Census Bureau",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Average duration of engagement",
+      "value": "13 months",
+      "source": "The Knot Real Weddings Study",
+      "url": "https://www.theknot.com/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Average dating period before engagement",
+      "value": "2.8 years",
+      "source": "The Knot",
+      "url": "https://www.theknot.com/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Widowhood average age \u2014 women",
+      "value": "59 years",
+      "source": "US Census Bureau",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Average number of romantic relationships before marriage",
+      "value": "7",
+      "source": "Match.com Singles in America Survey",
+      "url": "https://www.match.com/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Dating app usage among single adults",
+      "value": "53%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Average first date cost",
+      "value": "$105",
+      "source": "Match.com Survey",
+      "url": "https://www.match.com/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Couples who argue about money",
+      "value": "35%",
+      "source": "Fidelity Couples & Money",
+      "url": "https://www.fidelity.com/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Same-sex married couples in the US",
+      "value": "1.2 million",
+      "source": "US Census Bureau",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Couples living apart together (LAT)",
+      "value": "7%",
+      "source": "Journal of Marriage and Family",
+      "url": "",
+      "year": 2024,
+      "category": "relationships"
+    },
+    {
+      "metric": "Average age gap between partners",
+      "value": "2.3 years",
+      "source": "US Census Bureau",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "relationships"
+    }
+  ],
+  "children": [
+    {
+      "metric": "US total fertility rate (births per woman)",
+      "value": "1.62",
+      "source": "CDC National Vital Statistics",
+      "url": "https://www.cdc.gov/nchs/fastats/births.htm",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Average age of mother at first birth",
+      "value": "27.3 years",
+      "source": "CDC National Center for Health Statistics",
+      "url": "https://www.cdc.gov/nchs/data/nvsr/nvsr72/nvsr72-01.pdf",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "C-section rate in the US",
+      "value": "32.4%",
+      "source": "CDC National Vital Statistics",
+      "url": "https://www.cdc.gov/nchs/fastats/delivery.htm",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "USDA estimated cost to raise a child to age 18",
+      "value": "$310,605",
+      "source": "USDA Center for Nutrition Policy (inflation-adjusted Brookings update)",
+      "url": "https://www.brookings.edu/articles/the-cost-of-raising-a-child/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Average time parents spend on childcare per day",
+      "value": "2.2 hours (mothers), 1.1 hours (fathers)",
+      "source": "BLS American Time Use Survey",
+      "url": "https://www.bls.gov/tus/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Average annual cost of childcare (infant, center-based)",
+      "value": "$16,000",
+      "source": "Child Care Aware of America",
+      "url": "https://www.childcareaware.org/our-issues/research/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Annual domestic adoptions in the US",
+      "value": "~135,000",
+      "source": "Child Welfare Information Gateway / AFCARS",
+      "url": "https://www.childwelfare.gov/topics/adoption/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Average total cost of domestic adoption",
+      "value": "$30,000\u2013$60,000",
+      "source": "Adoptive Families Magazine Survey",
+      "url": "https://www.adoptivefamilies.com/resources/adoption-cost/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Average wait time for domestic infant adoption",
+      "value": "1\u20135 years",
+      "source": "National Council for Adoption",
+      "url": "https://adoptioncouncil.org/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "% of US households headed by single parent",
+      "value": "25%",
+      "source": "US Census Bureau",
+      "url": "https://www.census.gov/topics/families.html",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Poverty rate for single-mother families",
+      "value": "31.2%",
+      "source": "US Census Bureau / Current Population Survey",
+      "url": "https://www.census.gov/data/tables/time-series/demo/income-poverty/historical-poverty-thresholds.html",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "% of children in single-parent homes graduating high school",
+      "value": "78% (vs 91% two-parent)",
+      "source": "NCES / US Department of Education",
+      "url": "https://nces.ed.gov/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "IVF success rate per cycle (live birth) \u2014 women under 35",
+      "value": "41\u201343%",
+      "source": "CDC ART National Summary",
+      "url": "https://www.cdc.gov/art/reports/index.html",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Average cost per IVF cycle in the US",
+      "value": "$15,000\u2013$20,000",
+      "source": "FertilityIQ / RESOLVE",
+      "url": "https://www.fertilityiq.com/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "% of women aged 25\u201344 who have used fertility treatments",
+      "value": "12%",
+      "source": "CDC National Survey of Family Growth",
+      "url": "https://www.cdc.gov/nchs/nsfg/index.htm",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "% of high school graduates enrolled in college immediately",
+      "value": "62%",
+      "source": "BLS / NCES",
+      "url": "https://nces.ed.gov/programs/coe/indicator/cpa",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Average annual tuition + fees \u2014 public 4-year (in-state)",
+      "value": "$11,260",
+      "source": "College Board Trends in College Pricing",
+      "url": "https://research.collegeboard.org/trends/college-pricing",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Average student loan debt at graduation",
+      "value": "$37,850",
+      "source": "Federal Reserve / Education Data Initiative",
+      "url": "https://educationdata.org/average-student-loan-debt",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Percentage of births to unmarried mothers",
+      "value": "40%",
+      "source": "CDC National Vital Statistics",
+      "url": "https://www.cdc.gov/nchs/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Postpartum depression prevalence",
+      "value": "15%",
+      "source": "CDC PRAMS",
+      "url": "https://www.cdc.gov/prams/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Average number of children per family",
+      "value": "1.9",
+      "source": "US Census Bureau",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Stay-at-home parents \u2014 share of parents",
+      "value": "18%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Children participating in organized sports",
+      "value": "45%",
+      "source": "Aspen Institute Project Play",
+      "url": "https://www.aspenprojectplay.org/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Annual spending on children's extracurricular activities",
+      "value": "$2,292",
+      "source": "TD Ameritrade Modern Family Index",
+      "url": "",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Miscarriage rate (clinically recognized pregnancies)",
+      "value": "15-25%",
+      "source": "ACOG",
+      "url": "https://www.acog.org/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Fathers taking parental leave (when offered)",
+      "value": "55%",
+      "source": "DOL Fatherhood Study",
+      "url": "https://www.dol.gov/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Homeschooling rate in the US",
+      "value": "6%",
+      "source": "NCES Homeschool Statistics",
+      "url": "https://nces.ed.gov/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Children with special educational needs",
+      "value": "15%",
+      "source": "NCES / IDEA",
+      "url": "https://nces.ed.gov/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Average screen time per day \u2014 children (8-12)",
+      "value": "4.5 hours",
+      "source": "Common Sense Media",
+      "url": "https://www.commonsensemedia.org/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Children experiencing food insecurity",
+      "value": "13%",
+      "source": "USDA Food Security",
+      "url": "https://www.ers.usda.gov/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Twins/multiples as share of births",
+      "value": "3.2%",
+      "source": "CDC National Vital Statistics",
+      "url": "https://www.cdc.gov/nchs/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Stillbirth rate per 1000 births",
+      "value": "5.7",
+      "source": "CDC NCHS",
+      "url": "https://www.cdc.gov/nchs/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Average annual spending on a teenager",
+      "value": "$15,000",
+      "source": "USDA / Brookings",
+      "url": "",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Children in foster care system",
+      "value": "368,000",
+      "source": "Child Welfare Information Gateway",
+      "url": "https://www.childwelfare.gov/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Children bullied at school regularly",
+      "value": "22%",
+      "source": "NCES School Crime Supplement",
+      "url": "https://nces.ed.gov/",
+      "year": 2024,
+      "category": "children"
+    },
+    {
+      "metric": "Average age children get first smartphone",
+      "value": "12 years",
+      "source": "Common Sense Media",
+      "url": "https://www.commonsensemedia.org/",
+      "year": 2024,
+      "category": "children"
+    }
+  ],
+  "housing": [
+    {
+      "metric": "Homeownership rate for adults under 35",
+      "value": "39.3%",
+      "source": "US Census Bureau Housing Vacancies Survey",
+      "url": "https://www.census.gov/housing/hvs/index.html",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Median existing home sale price in the US",
+      "value": "$407,600",
+      "source": "National Association of Realtors (NAR)",
+      "url": "https://www.nar.realtor/research-and-statistics",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Average down payment \u2014 first-time buyers",
+      "value": "8% of purchase price",
+      "source": "NAR Profile of Home Buyers and Sellers",
+      "url": "https://www.nar.realtor/research-and-statistics/research-reports/highlights-from-the-profile-of-home-buyers-and-sellers",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Median rent-to-income ratio for US renters",
+      "value": "30%",
+      "source": "Joint Center for Housing Studies, Harvard",
+      "url": "https://www.jchs.harvard.edu/state-nations-housing-2024",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Break-even point \u2014 buying vs renting (years)",
+      "value": "5\u20137 years (market dependent)",
+      "source": "Zillow / NY Times Buy vs Rent Calculator",
+      "url": "https://www.nytimes.com/interactive/2024/upshot/buy-rent-calculator.html",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "National price-to-rent ratio (US average)",
+      "value": "16.5",
+      "source": "OECD / Federal Reserve Economic Data",
+      "url": "https://fred.stlouisfed.org/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "% of Americans who moved in the past year",
+      "value": "8.7%",
+      "source": "US Census Bureau CPS Geographic Mobility",
+      "url": "https://www.census.gov/topics/population/migration.html",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Average cost of a long-distance move (1,000+ miles)",
+      "value": "$4,890",
+      "source": "American Moving & Storage Association / MoveBuddha",
+      "url": "https://www.movebuddha.com/blog/moving-cost-calculator/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "% of moves that are job-related",
+      "value": "16%",
+      "source": "US Census Bureau Annual Social & Economic Supplement",
+      "url": "https://www.census.gov/data/tables/time-series/demo/geographic-mobility/historic.html",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "% of retirees who downsize their home",
+      "value": "33\u201351%",
+      "source": "Merrill Lynch / Age Wave Retirement Study",
+      "url": "https://agewave.com/what-we-do/landmark-research/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Average home equity released by downsizing retirees",
+      "value": "$100,000+",
+      "source": "National Association of Realtors",
+      "url": "https://www.nar.realtor/research-and-statistics",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Average housing cost reduction from downsizing",
+      "value": "30\u201340%",
+      "source": "Merrill Lynch / Age Wave Retirement Study",
+      "url": "https://agewave.com/what-we-do/landmark-research/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "% of US adults who own rental property",
+      "value": "7.1%",
+      "source": "Federal Reserve Survey of Consumer Finances",
+      "url": "https://www.federalreserve.gov/econres/scfindex.htm",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Average annual ROI on rental property (US)",
+      "value": "8\u201312%",
+      "source": "National Real Estate Investor / BiggerPockets",
+      "url": "https://www.biggerpockets.com/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Average rental vacancy rate (US)",
+      "value": "6.6%",
+      "source": "US Census Bureau Housing Vacancies Survey",
+      "url": "https://www.census.gov/housing/hvs/index.html",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Average gross profit margin on house flips",
+      "value": "26.3%",
+      "source": "ATTOM Data Solutions",
+      "url": "https://www.attomdata.com/news/market-trends/flipping/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "% of US home sales that are flips",
+      "value": "7.7%",
+      "source": "ATTOM Data Solutions",
+      "url": "https://www.attomdata.com/news/market-trends/flipping/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "House flipping failure rate (break-even or loss)",
+      "value": "12%",
+      "source": "ATTOM Data Solutions / Fortune Builders",
+      "url": "https://www.fortunebuilders.com/house-flipping-statistics/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Average monthly rent in the US (1-bedroom)",
+      "value": "$1,500",
+      "source": "Zillow Rental Market Report",
+      "url": "https://www.zillow.com/research/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Average monthly mortgage payment (30-year fixed)",
+      "value": "$2,317",
+      "source": "Freddie Mac",
+      "url": "https://www.freddiemac.com/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Homeowners spending >30% income on housing",
+      "value": "30%",
+      "source": "US Census Bureau ACS",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Renters spending >30% income on housing",
+      "value": "50%",
+      "source": "US Census Bureau ACS",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Average home equity for homeowners",
+      "value": "$315,000",
+      "source": "CoreLogic Home Equity Report",
+      "url": "https://www.corelogic.com/intelligence/home-equity-report/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Average down payment for first-time buyers",
+      "value": "8%",
+      "source": "National Association of Realtors",
+      "url": "https://www.nar.realtor/research-and-statistics",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Average closing costs as % of home price",
+      "value": "3-6%",
+      "source": "Bankrate",
+      "url": "https://www.bankrate.com/mortgages/closing-costs/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Homeowners who refinanced in past 2 years",
+      "value": "12%",
+      "source": "Freddie Mac",
+      "url": "https://www.freddiemac.com/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Foreclosure rate in the US",
+      "value": "0.35%",
+      "source": "ATTOM Data Solutions",
+      "url": "https://www.attomdata.com/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Average homeownership tenure in the US",
+      "value": "13 years",
+      "source": "NAR",
+      "url": "https://www.nar.realtor/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Multigenerational households in the US",
+      "value": "18%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Renters who want to buy but can't afford",
+      "value": "55%",
+      "source": "Redfin",
+      "url": "https://www.redfin.com/news/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Average annual home maintenance cost",
+      "value": "$3,300",
+      "source": "Angi Home Services",
+      "url": "https://www.angi.com/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Home insurance average annual premium",
+      "value": "$2,230",
+      "source": "Insurance Information Institute",
+      "url": "https://www.iii.org/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Property tax average annual amount",
+      "value": "$3,500",
+      "source": "ATTOM Data Solutions",
+      "url": "https://www.attomdata.com/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Mobile/manufactured home residents",
+      "value": "6.4%",
+      "source": "US Census Bureau ACS",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Average home renovation spending annual",
+      "value": "$15,000",
+      "source": "HomeAdvisor True Cost Report",
+      "url": "https://www.homeadvisor.com/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Americans renting vs owning",
+      "value": "36% rent, 64% own",
+      "source": "US Census Bureau",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Median home price in the US",
+      "value": "$412,300",
+      "source": "NAR Existing Home Sales",
+      "url": "https://www.nar.realtor/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "First-time homebuyers as share of all buyers",
+      "value": "26%",
+      "source": "NAR Profile of Home Buyers and Sellers",
+      "url": "https://www.nar.realtor/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Average HOA monthly fee",
+      "value": "$250",
+      "source": "Irvine Company Research",
+      "url": "",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Airbnb hosts \u2014 number of active hosts in US",
+      "value": "1.5 million",
+      "source": "Airbnb Annual Report",
+      "url": "https://www.airbnb.com/",
+      "year": 2024,
+      "category": "housing"
+    },
+    {
+      "metric": "Average Airbnb host annual income",
+      "value": "$14,000",
+      "source": "Airbnb Host Insights",
+      "url": "https://www.airbnb.com/",
+      "year": 2024,
+      "category": "housing"
+    }
+  ],
+  "health_deep": [
+    {
+      "metric": "Overall 5-year cancer survival rate (all cancers)",
+      "value": "68%",
+      "source": "American Cancer Society / SEER",
+      "url": "https://seer.cancer.gov/statfacts/html/all.html",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "5-year survival rate \u2014 breast cancer (localized)",
+      "value": "99%",
+      "source": "American Cancer Society / SEER",
+      "url": "https://seer.cancer.gov/statfacts/html/breast.html",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Average cost of cancer treatment (first year)",
+      "value": "$42,000\u2013$150,000+",
+      "source": "National Cancer Institute / JNCI",
+      "url": "https://www.cancer.gov/about-cancer/managing-care/track-care-costs",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Addiction sobriety rate at 1 year (post-treatment)",
+      "value": "40\u201360%",
+      "source": "NIDA (National Institute on Drug Abuse)",
+      "url": "https://nida.nih.gov/publications/drugfacts/treatment-approaches-drug-addiction",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Relapse rate for substance use disorders",
+      "value": "40\u201360%",
+      "source": "NIDA",
+      "url": "https://nida.nih.gov/publications/drugs-brains-behavior-science-addiction/treatment-recovery",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Substance abuse treatment completion rate",
+      "value": "42%",
+      "source": "SAMHSA Treatment Episode Data Set (TEDS)",
+      "url": "https://www.samhsa.gov/data/data-we-collect/teds-treatment-episode-data-set",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "% of US adults with at least one chronic condition",
+      "value": "60%",
+      "source": "CDC National Center for Chronic Disease Prevention",
+      "url": "https://www.cdc.gov/chronicdisease/about/index.htm",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Annual per-capita cost of chronic disease management",
+      "value": "$6,032",
+      "source": "Milken Institute / CDC",
+      "url": "https://milkeninstitute.org/report/costs-chronic-disease-us",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "% of workers with chronic illness reporting reduced productivity",
+      "value": "58%",
+      "source": "Integrated Benefits Institute",
+      "url": "https://www.ibiweb.org/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "CBT therapy success rate for depression",
+      "value": "50\u201375%",
+      "source": "APA / Journal of Consulting and Clinical Psychology",
+      "url": "https://www.apa.org/ptsd-guideline/treatments/cognitive-behavioral-therapy",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Antidepressant medication effectiveness (response rate)",
+      "value": "50\u201360%",
+      "source": "NIMH / STAR*D Study follow-up",
+      "url": "https://www.nimh.nih.gov/funding/clinical-research/practical/stard",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Average time to recovery from major depressive episode",
+      "value": "6\u201312 months (with treatment)",
+      "source": "APA Practice Guidelines",
+      "url": "https://www.apa.org/depression-guideline",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Heart attack survival rate (reach hospital alive)",
+      "value": "90%",
+      "source": "American Heart Association",
+      "url": "https://www.heart.org/en/health-topics/heart-attack",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Average age of first heart attack \u2014 men vs women",
+      "value": "65 men, 72 women",
+      "source": "AHA Heart Disease and Stroke Statistics",
+      "url": "https://www.heart.org/en/about-us/heart-and-stroke-association-statistics",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Cardiac rehab completion rate",
+      "value": "24%",
+      "source": "AHA / CDC Million Hearts",
+      "url": "https://millionhearts.hhs.gov/tools-protocols/action-guides/cardiac-rehab.html",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "% of US adults living with a disability",
+      "value": "28.7%",
+      "source": "CDC Disability and Health Data System",
+      "url": "https://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Employment rate for people with disabilities",
+      "value": "22.5%",
+      "source": "BLS Persons with a Disability",
+      "url": "https://www.bls.gov/news.release/disabl.nr0.htm",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Median earnings gap \u2014 disabled vs non-disabled workers",
+      "value": "37% less",
+      "source": "BLS / Census Bureau ACS",
+      "url": "https://www.bls.gov/news.release/disabl.nr0.htm",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "% of US adults serving as unpaid family caregivers",
+      "value": "21.3% (53 million)",
+      "source": "AARP / National Alliance for Caregiving",
+      "url": "https://www.aarp.org/caregiving/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Average annual cost of nursing home care (private room)",
+      "value": "$108,405",
+      "source": "Genworth Cost of Care Survey",
+      "url": "https://www.genworth.com/aging-and-you/finances/cost-of-care.html",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Caregiver burnout rate (high emotional stress)",
+      "value": "40%",
+      "source": "AARP / NAC Caregiving in the U.S. Report",
+      "url": "https://www.caregiving.org/research/caregiving-in-the-us/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Adults with chronic condition (at least one)",
+      "value": "60%",
+      "source": "CDC Chronic Disease Center",
+      "url": "https://www.cdc.gov/chronicdisease/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Adults with two or more chronic conditions",
+      "value": "40%",
+      "source": "CDC",
+      "url": "https://www.cdc.gov/chronicdisease/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Type 2 diabetes prevalence \u2014 adults",
+      "value": "11.6%",
+      "source": "CDC National Diabetes Statistics",
+      "url": "https://www.cdc.gov/diabetes/data/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Average annual cost of diabetes management",
+      "value": "$9,601",
+      "source": "American Diabetes Association",
+      "url": "https://diabetes.org/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Obesity rate \u2014 US adults",
+      "value": "42.4%",
+      "source": "CDC NHANES",
+      "url": "https://www.cdc.gov/obesity/data/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Average annual out-of-pocket healthcare spending per person",
+      "value": "$1,425",
+      "source": "CMS National Health Expenditure Data",
+      "url": "https://www.cms.gov/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Americans with health insurance",
+      "value": "92%",
+      "source": "US Census Bureau",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Average health insurance premium (employer-sponsored, family)",
+      "value": "$24,431/year",
+      "source": "Kaiser Family Foundation",
+      "url": "https://www.kff.org/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Medical debt as top cause of personal bankruptcy",
+      "value": "66.5%",
+      "source": "American Journal of Public Health",
+      "url": "",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "ER visit average cost (uninsured)",
+      "value": "$2,200",
+      "source": "Peterson-KFF Health System Tracker",
+      "url": "https://www.healthsystemtracker.org/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Adults skipping medical care due to cost",
+      "value": "25%",
+      "source": "Gallup Health Survey",
+      "url": "https://news.gallup.com/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Average prescription drug cost per person annually",
+      "value": "$1,432",
+      "source": "CMS",
+      "url": "https://www.cms.gov/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Mental health treatment average monthly cost",
+      "value": "$350",
+      "source": "SAMHSA",
+      "url": "https://www.samhsa.gov/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Adults who exercise regularly (150 min/week)",
+      "value": "28%",
+      "source": "CDC BRFSS",
+      "url": "https://www.cdc.gov/brfss/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Average sleep duration \u2014 US adults",
+      "value": "6.8 hours",
+      "source": "Gallup Sleep Survey",
+      "url": "https://news.gallup.com/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Adults with food allergies",
+      "value": "10.8%",
+      "source": "CDC NCHS",
+      "url": "https://www.cdc.gov/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Adults who smoke cigarettes",
+      "value": "11.6%",
+      "source": "CDC BRFSS",
+      "url": "https://www.cdc.gov/brfss/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Adults using marijuana regularly",
+      "value": "18%",
+      "source": "Gallup Health Survey",
+      "url": "https://news.gallup.com/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Adults with anxiety disorder",
+      "value": "19.1%",
+      "source": "NIMH",
+      "url": "https://www.nimh.nih.gov/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Adults taking prescription medication regularly",
+      "value": "66%",
+      "source": "CDC NCHS",
+      "url": "https://www.cdc.gov/nchs/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Average annual dental care cost per person",
+      "value": "$685",
+      "source": "ADA Health Policy Institute",
+      "url": "https://www.ada.org/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Adults with vision impairment (correctable)",
+      "value": "75%",
+      "source": "American Academy of Ophthalmology",
+      "url": "https://www.aao.org/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Average age of menopause",
+      "value": "51 years",
+      "source": "ACOG",
+      "url": "https://www.acog.org/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Adults with back pain (chronic)",
+      "value": "25%",
+      "source": "CDC NHIS",
+      "url": "https://www.cdc.gov/nchs/nhis/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Adults with hearing loss",
+      "value": "15%",
+      "source": "NIDCD",
+      "url": "https://www.nidcd.nih.gov/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Adults diagnosed with ADHD",
+      "value": "4.4%",
+      "source": "NIMH",
+      "url": "https://www.nimh.nih.gov/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Adults on antidepressants",
+      "value": "13.2%",
+      "source": "CDC NCHS",
+      "url": "https://www.cdc.gov/nchs/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Average annual gym/fitness spending",
+      "value": "$696",
+      "source": "IHRSA",
+      "url": "https://www.ihrsa.org/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Adults who are organ donors (registered)",
+      "value": "60%",
+      "source": "HRSA OrganDonor.gov",
+      "url": "https://www.organdonor.gov/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Telehealth usage among adults",
+      "value": "37%",
+      "source": "CDC NCHS",
+      "url": "https://www.cdc.gov/nchs/",
+      "year": 2024,
+      "category": "health_deep"
+    },
+    {
+      "metric": "Cosmetic surgery procedures per year (US)",
+      "value": "1.5 million",
+      "source": "ASPS",
+      "url": "https://www.plasticsurgery.org/",
+      "year": 2024,
+      "category": "health_deep"
+    }
+  ],
+  "aging": [
+    {
+      "metric": "% of working-age Americans with retirement savings",
+      "value": "56%",
+      "source": "Federal Reserve Survey of Household Economics",
+      "url": "https://www.federalreserve.gov/publications/report-economic-well-being-us-households.htm",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Median 401(k) balance \u2014 ages 55\u201364",
+      "value": "$71,168",
+      "source": "Vanguard How America Saves Report",
+      "url": "https://institutional.vanguard.com/how-america-saves/overview.html",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Average monthly Social Security retirement benefit",
+      "value": "$1,907",
+      "source": "Social Security Administration",
+      "url": "https://www.ssa.gov/oact/STATS/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "FIRE movement \u2014 estimated % who achieve financial independence before 50",
+      "value": "2\u20135%",
+      "source": "Trinity Study updates / Early Retirement Now (ERN) research",
+      "url": "https://earlyretirementnow.com/safe-withdrawal-rate-series/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Average age of FIRE retirement",
+      "value": "43\u201348",
+      "source": "FIRE community surveys / Playing with FIRE documentary",
+      "url": "",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Savings rate needed for FIRE (general rule)",
+      "value": "50\u201370% of income",
+      "source": "Mr. Money Mustache / ERN research",
+      "url": "https://earlyretirementnow.com/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "% of adults 65+ experiencing loneliness",
+      "value": "43%",
+      "source": "National Academies of Sciences / AARP",
+      "url": "https://www.nationalacademies.org/our-work/the-health-and-medical-dimensions-of-social-isolation-and-loneliness-in-older-adults",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Social isolation increases mortality risk by",
+      "value": "29%",
+      "source": "Holt-Lunstad et al. meta-analysis / PLOS Medicine",
+      "url": "https://doi.org/10.1371/journal.pmed.1000316",
+      "year": 2023,
+      "category": "aging"
+    },
+    {
+      "metric": "% of older adults living alone (65+)",
+      "value": "28%",
+      "source": "US Census Bureau ACS",
+      "url": "https://www.census.gov/topics/population/older-aging.html",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Prevalence of dementia in adults 65+",
+      "value": "10.7%",
+      "source": "Alzheimer's Association Facts and Figures",
+      "url": "https://www.alz.org/alzheimers-dementia/facts-figures",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Alzheimer's average time from diagnosis to death",
+      "value": "4\u20138 years",
+      "source": "Alzheimer's Association",
+      "url": "https://www.alz.org/alzheimers-dementia/facts-figures",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "% reduction in dementia risk with regular exercise",
+      "value": "28\u201345%",
+      "source": "Lancet Commission on Dementia Prevention",
+      "url": "https://www.thelancet.com/commissions/dementia2024",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "% of Americans 85+ in nursing homes",
+      "value": "5%",
+      "source": "CDC National Center for Health Statistics",
+      "url": "https://www.cdc.gov/nchs/fastats/nursing-home-care.htm",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Average annual cost of nursing home (semi-private room)",
+      "value": "$94,900",
+      "source": "Genworth Cost of Care Survey",
+      "url": "https://www.genworth.com/aging-and-you/finances/cost-of-care.html",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Average length of stay in a nursing home",
+      "value": "835 days (2.3 years)",
+      "source": "CDC / National Nursing Home Survey",
+      "url": "https://www.cdc.gov/nchs/nnhs/index.htm",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Average age of retirement in the US",
+      "value": "62 years",
+      "source": "Gallup Economy Survey",
+      "url": "https://news.gallup.com/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Social Security average monthly benefit",
+      "value": "$1,907",
+      "source": "SSA",
+      "url": "https://www.ssa.gov/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Retirees relying on Social Security as primary income",
+      "value": "40%",
+      "source": "SSA Income of the Aged",
+      "url": "https://www.ssa.gov/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Americans with no retirement savings",
+      "value": "25%",
+      "source": "Federal Reserve SHED",
+      "url": "https://www.federalreserve.gov/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "401(k) average balance by age 65",
+      "value": "$232,710",
+      "source": "Fidelity Retirement Analysis",
+      "url": "https://www.fidelity.com/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Nursing home average annual cost (private room)",
+      "value": "$116,800",
+      "source": "Genworth Cost of Care",
+      "url": "https://www.genworth.com/aging-and-you/finances/cost-of-care.html",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Assisted living average annual cost",
+      "value": "$64,200",
+      "source": "Genworth",
+      "url": "https://www.genworth.com/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Home health aide average annual cost",
+      "value": "$75,504",
+      "source": "Genworth",
+      "url": "https://www.genworth.com/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Adults needing long-term care after age 65",
+      "value": "70%",
+      "source": "LongTermCare.gov (HHS)",
+      "url": "https://acl.gov/ltc",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Alzheimer's disease prevalence age 65+",
+      "value": "10.7%",
+      "source": "Alzheimer's Association",
+      "url": "https://www.alz.org/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Average years lived with disability after 65",
+      "value": "5.6 years",
+      "source": "WHO Global Health Estimates",
+      "url": "https://www.who.int/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Seniors living alone",
+      "value": "28%",
+      "source": "US Census Bureau",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Seniors experiencing loneliness",
+      "value": "43%",
+      "source": "AARP Loneliness Survey",
+      "url": "https://www.aarp.org/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Seniors volunteering regularly",
+      "value": "24%",
+      "source": "Bureau of Labor Statistics Volunteer Supplement",
+      "url": "https://www.bls.gov/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Grandparents raising grandchildren",
+      "value": "2.4 million",
+      "source": "US Census Bureau",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Average estate value at death",
+      "value": "$303,000",
+      "source": "Federal Reserve SCF",
+      "url": "https://www.federalreserve.gov/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Seniors with long-term care insurance",
+      "value": "7.5%",
+      "source": "NAIC Long-Term Care Insurance",
+      "url": "",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Average funeral cost in the US",
+      "value": "$8,300",
+      "source": "National Funeral Directors Association",
+      "url": "https://nfda.org/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Seniors using the internet regularly",
+      "value": "75%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Seniors owning a smartphone",
+      "value": "61%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Seniors using ride-sharing services",
+      "value": "15%",
+      "source": "AARP Technology Survey",
+      "url": "https://www.aarp.org/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Senior citizens who travel internationally",
+      "value": "12%",
+      "source": "MMGY Travel Intelligence",
+      "url": "",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Average lifespan increase per decade (US)",
+      "value": "2 years",
+      "source": "SSA Actuarial Life Table",
+      "url": "https://www.ssa.gov/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Centenarians in the US",
+      "value": "108,000",
+      "source": "US Census Bureau",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "aging"
+    },
+    {
+      "metric": "Seniors who drive regularly",
+      "value": "84%",
+      "source": "AAA Foundation",
+      "url": "https://aaafoundation.org/",
+      "year": 2024,
+      "category": "aging"
+    }
+  ],
+  "legal": [
+    {
+      "metric": "% of US adults involved in a civil lawsuit at some point",
+      "value": "~10% in any given year",
+      "source": "National Center for State Courts",
+      "url": "https://www.ncsc.org/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Average cost of civil litigation (defendant)",
+      "value": "$43,000\u2013$122,000",
+      "source": "RAND Institute for Civil Justice",
+      "url": "https://www.rand.org/topics/civil-justice.html",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Average duration of a civil case (filing to resolution)",
+      "value": "12\u201324 months",
+      "source": "National Center for State Courts",
+      "url": "https://www.ncsc.org/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "US personal bankruptcy filing rate (per 1,000 adults)",
+      "value": "2.4",
+      "source": "US Courts Bankruptcy Statistics",
+      "url": "https://www.uscourts.gov/statistics/table/f/bankruptcy-filings/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Chapter 7 vs Chapter 13 bankruptcy split",
+      "value": "62% Chapter 7, 38% Chapter 13",
+      "source": "American Bankruptcy Institute",
+      "url": "https://www.abi.org/newsroom/bankruptcy-statistics",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Average time to rebuild credit after bankruptcy",
+      "value": "2\u20134 years",
+      "source": "Federal Reserve / Experian",
+      "url": "https://www.experian.com/blogs/ask-experian/how-to-rebuild-credit-after-bankruptcy/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "% of marrying couples who sign a prenup",
+      "value": "15%",
+      "source": "Harris Poll / American Academy of Matrimonial Lawyers",
+      "url": "https://www.aaml.org/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Prenuptial agreement enforcement rate when challenged",
+      "value": "~90% (if properly drafted)",
+      "source": "American Academy of Matrimonial Lawyers",
+      "url": "https://www.aaml.org/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Average cost of a prenuptial agreement",
+      "value": "$2,500\u2013$10,000",
+      "source": "AAML Survey",
+      "url": "https://www.aaml.org/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "% of US adults who have a will or estate plan",
+      "value": "33%",
+      "source": "Gallup / Caring.com Survey",
+      "url": "https://www.caring.com/caregivers/estate-planning/wills-survey/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Federal estate tax exemption threshold",
+      "value": "$13.61 million per individual",
+      "source": "IRS",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Average cost of probate (% of estate value)",
+      "value": "3\u20137%",
+      "source": "American Bar Association",
+      "url": "https://www.americanbar.org/groups/real_property_trust_estate/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "% of US adults with a criminal record",
+      "value": "33% (77 million)",
+      "source": "National Institute of Justice / Brennan Center",
+      "url": "https://www.brennancenter.org/our-work/research-reports",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Employment callback rate reduction with criminal record",
+      "value": "50% lower callback rate",
+      "source": "Pager (2003) audit study / updated replications",
+      "url": "https://scholar.harvard.edu/pager/publications",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Lifetime earnings penalty for a felony conviction",
+      "value": "52% lower annual earnings",
+      "source": "Brennan Center for Justice",
+      "url": "https://www.brennancenter.org/our-work/research-reports/conviction-imprisonment-and-lost-earnings",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Americans involved in civil lawsuit in lifetime",
+      "value": "33%",
+      "source": "ABA Journal",
+      "url": "https://www.abajournal.com/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Average cost of a civil lawsuit (non-corporate)",
+      "value": "$15,000-$30,000",
+      "source": "Nolo Legal Encyclopedia",
+      "url": "https://www.nolo.com/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "DUI arrest lifetime probability",
+      "value": "10%",
+      "source": "NHTSA",
+      "url": "https://www.nhtsa.gov/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Identity theft victims annually",
+      "value": "15 million",
+      "source": "Javelin Strategy & Research",
+      "url": "https://javelinstrategy.com/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Average identity theft financial loss per victim",
+      "value": "$1,100",
+      "source": "FTC Consumer Sentinel Network",
+      "url": "https://www.ftc.gov/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Americans creating a will or estate plan",
+      "value": "33%",
+      "source": "Caring.com Wills Survey",
+      "url": "https://www.caring.com/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Average cost of creating a basic will",
+      "value": "$300-$1,000",
+      "source": "Nolo",
+      "url": "https://www.nolo.com/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Probate process average duration",
+      "value": "12-18 months",
+      "source": "American Bar Association",
+      "url": "https://www.americanbar.org/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Traffic tickets received per driver per year (US)",
+      "value": "0.15",
+      "source": "NHTSA Traffic Safety",
+      "url": "https://www.nhtsa.gov/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Personal injury claim average settlement",
+      "value": "$52,900",
+      "source": "Insurance Research Council",
+      "url": "",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Workers who have filed a workers compensation claim",
+      "value": "8%",
+      "source": "BLS / OSHA",
+      "url": "https://www.osha.gov/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Workplace injuries per year (US)",
+      "value": "2.8 million",
+      "source": "BLS Survey of Occupational Injuries",
+      "url": "https://www.bls.gov/iif/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Adults who have been audited by IRS",
+      "value": "0.4% per year",
+      "source": "IRS Data Book",
+      "url": "https://www.irs.gov/statistics/soi-tax-stats-data-book",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Small claims court cases filed annually",
+      "value": "1.5 million",
+      "source": "National Center for State Courts",
+      "url": "https://www.ncsc.org/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Americans who have filed for bankruptcy in lifetime",
+      "value": "10%",
+      "source": "American Bankruptcy Institute",
+      "url": "https://www.abi.org/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Consumer complaints filed annually (FTC)",
+      "value": "5.4 million",
+      "source": "FTC Consumer Sentinel Network",
+      "url": "https://www.ftc.gov/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Adults who have been a victim of fraud",
+      "value": "25%",
+      "source": "FTC Consumer Reports",
+      "url": "https://www.ftc.gov/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Average time spent on tax preparation annually",
+      "value": "13 hours",
+      "source": "IRS Taxpayer Burden Model",
+      "url": "https://www.irs.gov/",
+      "year": 2024,
+      "category": "legal"
+    }
+  ],
+  "career_missing": [
+    {
+      "metric": "Annual layoff/discharge rate in the US",
+      "value": "1.2% per month (~14.4 million/year)",
+      "source": "BLS Job Openings and Labor Turnover Survey (JOLTS)",
+      "url": "https://www.bls.gov/jlt/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Median time to find new job after layoff",
+      "value": "5 months (21.2 weeks)",
+      "source": "BLS Current Population Survey",
+      "url": "https://www.bls.gov/cps/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Average income change after involuntary job loss",
+      "value": "-11% to -15% in first year",
+      "source": "Federal Reserve / AEA Papers (Jacobson, LaLonde, Sullivan)",
+      "url": "https://www.aeaweb.org/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "% of workers who negotiate their salary",
+      "value": "37%",
+      "source": "Robert Half / Salary.com Survey",
+      "url": "https://www.roberthalf.com/blog/salaries-and-skills/salary-negotiation-tips",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Average raise achieved from salary negotiation",
+      "value": "7\u201310%",
+      "source": "Harvard Business Review / PayScale",
+      "url": "https://www.payscale.com/research-and-insights/salary-negotiation/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Gender gap in salary negotiation (men vs women who negotiate)",
+      "value": "46% men vs 34% women",
+      "source": "Glassdoor / LeanIn.Org",
+      "url": "https://www.glassdoor.com/research/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "% of workers over 40 who make a career change",
+      "value": "29%",
+      "source": "AARP / Indeed Career Change Survey",
+      "url": "https://www.indeed.com/career-advice/career-development/career-change-statistics",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Career change success rate (satisfied after 2 years)",
+      "value": "73%",
+      "source": "Indeed Career Change Survey",
+      "url": "https://www.indeed.com/career-advice/career-development/career-change-statistics",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Income change after mid-career switch (40+)",
+      "value": "-10% initially, recovery within 3\u20135 years",
+      "source": "BLS / Harvard Business Review analysis",
+      "url": "https://hbr.org/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Veteran employment rate (post-9/11 era)",
+      "value": "96.5% (3.5% unemployment)",
+      "source": "BLS Employment Situation of Veterans",
+      "url": "https://www.bls.gov/news.release/vet.nr0.htm",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "% of veterans reporting difficult transition to civilian work",
+      "value": "44%",
+      "source": "Pew Research Center Veterans Survey",
+      "url": "https://www.pewresearch.org/social-trends/2019/09/10/the-american-veteran-experience-and-the-post-9-11-generation/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Average time for veteran to find civilian employment",
+      "value": "6 months",
+      "source": "US Department of Labor VETS",
+      "url": "https://www.dol.gov/agencies/vets",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "% of artists earning a living solely from their art",
+      "value": "10\u201315%",
+      "source": "Strategic National Arts Alumni Project (SNAAP)",
+      "url": "https://snaaparts.org/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Median annual income for fine artists",
+      "value": "$52,340",
+      "source": "BLS Occupational Employment and Wage Statistics",
+      "url": "https://www.bls.gov/oes/current/oes271013.htm",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "% of working artists with supplemental non-art income",
+      "value": "63%",
+      "source": "SNAAP / NEA Artists in the Workforce Report",
+      "url": "https://www.arts.gov/impact/research/publications",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Medical school acceptance rate",
+      "value": "43%",
+      "source": "AAMC (Association of American Medical Colleges)",
+      "url": "https://www.aamc.org/data-reports/students-residents/data/facts",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Law school dropout rate (before completing JD)",
+      "value": "12\u201317%",
+      "source": "ABA (American Bar Association) Data",
+      "url": "https://www.americanbar.org/groups/legal_education/resources/statistics/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Average medical school debt at graduation",
+      "value": "$202,453",
+      "source": "AAMC Graduation Questionnaire",
+      "url": "https://www.aamc.org/data-reports/students-residents/data/graduation-questionnaire-gq",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Trade school completion rate (2-year programs)",
+      "value": "62%",
+      "source": "NCES / BLS",
+      "url": "https://nces.ed.gov/programs/coe/indicator/ctb",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Median starting salary for skilled trade workers",
+      "value": "$46,000",
+      "source": "BLS Occupational Outlook Handbook",
+      "url": "https://www.bls.gov/ooh/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "10-year ROI \u2014 trade school vs 4-year college degree",
+      "value": "Trade school: $141K net; Bachelor's: $93K net (on average)",
+      "source": "Georgetown CEW / Foundation for Research on Equal Opportunity",
+      "url": "https://freopp.org/is-college-worth-it-a-comprehensive-return-on-investment-analysis/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers who change careers (not just jobs) in lifetime",
+      "value": "5-7 times",
+      "source": "BLS / LinkedIn Workforce Report",
+      "url": "https://www.bls.gov/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers dissatisfied with current job",
+      "value": "60%",
+      "source": "Gallup State of Workplace",
+      "url": "https://www.gallup.com/workplace/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers actively looking for new job at any time",
+      "value": "30%",
+      "source": "LinkedIn Workforce Confidence",
+      "url": "https://www.linkedin.com/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Average time unemployed between jobs",
+      "value": "5.2 months",
+      "source": "BLS Current Population Survey",
+      "url": "https://www.bls.gov/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers experiencing workplace discrimination",
+      "value": "18%",
+      "source": "EEOC Charge Statistics",
+      "url": "https://www.eeoc.gov/data/charge-statistics",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers experiencing sexual harassment in career",
+      "value": "25%",
+      "source": "EEOC / Stop Street Harassment Survey",
+      "url": "https://www.eeoc.gov/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers who negotiate salary at first job offer",
+      "value": "37%",
+      "source": "Salary.com Negotiation Survey",
+      "url": "https://www.salary.com/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Salary negotiation average increase when successful",
+      "value": "7.4%",
+      "source": "Harvard Law Program on Negotiation",
+      "url": "https://www.pon.harvard.edu/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers with a professional mentor",
+      "value": "37%",
+      "source": "Olivet Nazarene University Mentoring Survey",
+      "url": "",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Career pivot success rate (satisfied after 2 years)",
+      "value": "72%",
+      "source": "Indeed Career Change Survey",
+      "url": "https://www.indeed.com/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers laid off at least once in career",
+      "value": "40%",
+      "source": "BLS Displaced Workers Survey",
+      "url": "https://www.bls.gov/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Startup founders returning to employment",
+      "value": "55%",
+      "source": "Startup Genome",
+      "url": "https://startupgenome.com/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers experiencing burnout at current job",
+      "value": "44%",
+      "source": "Gallup",
+      "url": "https://www.gallup.com/workplace/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers who take a sabbatical in career",
+      "value": "5%",
+      "source": "SHRM",
+      "url": "https://www.shrm.org/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers who relocate for a job",
+      "value": "14%",
+      "source": "Atlas Van Lines Corporate Relocation",
+      "url": "https://www.atlasvanlines.com/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers with a side hustle",
+      "value": "39%",
+      "source": "Bankrate Side Hustle Survey",
+      "url": "https://www.bankrate.com/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Remote workers wanting to stay remote permanently",
+      "value": "65%",
+      "source": "Buffer State of Remote Work",
+      "url": "https://buffer.com/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers who received a raise in past year",
+      "value": "56%",
+      "source": "PayScale Compensation Report",
+      "url": "https://www.payscale.com/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers who feel overqualified for their job",
+      "value": "35%",
+      "source": "Gallup",
+      "url": "https://www.gallup.com/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers unionized in the US",
+      "value": "10.3%",
+      "source": "BLS Union Members Summary",
+      "url": "https://www.bls.gov/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers who feel their work has purpose",
+      "value": "37%",
+      "source": "Gallup State of Workplace",
+      "url": "https://www.gallup.com/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers who received employer-sponsored training",
+      "value": "42%",
+      "source": "ATD State of the Industry",
+      "url": "https://www.td.org/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers commuting over 60 minutes one way",
+      "value": "9%",
+      "source": "US Census Bureau ACS",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Average commute time one way",
+      "value": "27.6 minutes",
+      "source": "US Census Bureau ACS",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "career_missing"
+    },
+    {
+      "metric": "Workers aged 65+ still employed",
+      "value": "19%",
+      "source": "BLS",
+      "url": "https://www.bls.gov/",
+      "year": 2024,
+      "category": "career_missing"
+    }
+  ],
+  "life_transitions": [
+    {
+      "metric": "% of adults aged 25\u201333 experiencing quarter-life crisis",
+      "value": "75%",
+      "source": "LinkedIn / Greenwich University Study (Robinson)",
+      "url": "https://www.linkedin.com/pulse/quarter-life-crisis-research/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Career change rate among adults 25\u201330",
+      "value": "52% within 5 years of first job",
+      "source": "BLS National Longitudinal Survey of Youth",
+      "url": "https://www.bls.gov/nls/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Therapy-seeking rate during quarter-life crisis",
+      "value": "30%",
+      "source": "APA / BetterHelp Survey",
+      "url": "https://www.apa.org/monitor/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "% of adults 40\u201355 experiencing midlife crisis symptoms",
+      "value": "26%",
+      "source": "MIDUS Study (Midlife in the United States)",
+      "url": "https://midus.wisc.edu/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Divorce rate correlation with midlife crisis (40\u201355)",
+      "value": "Divorce peaks at ages 45\u201349",
+      "source": "CDC / National Center for Health Statistics",
+      "url": "https://www.cdc.gov/nchs/fastats/marriage-divorce.htm",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Career change rate during midlife (40\u201355)",
+      "value": "32%",
+      "source": "AARP / Bureau of Labor Statistics",
+      "url": "https://www.aarp.org/work/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "% of parents reporting difficulty with empty nest transition",
+      "value": "25\u201340%",
+      "source": "APA / Clinical Psychology Review",
+      "url": "https://www.apa.org/topics/parenting",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Marital satisfaction change after children leave",
+      "value": "Increases for 67% of couples",
+      "source": "Journal of Marriage and Family",
+      "url": "https://onlinelibrary.wiley.com/journal/17413737",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "% of empty nesters reporting positive outcomes (freedom, hobbies)",
+      "value": "70%",
+      "source": "Pew Research Center / AARP",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Normal grief duration (acute phase)",
+      "value": "6\u201312 months",
+      "source": "APA DSM-5 / Prolonged Grief Disorder criteria",
+      "url": "https://www.apa.org/topics/grief",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Prevalence of complicated/prolonged grief",
+      "value": "7\u201310% of bereaved",
+      "source": "JAMA Psychiatry / Columbia Center for Complicated Grief",
+      "url": "https://complicatedgrief.columbia.edu/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Average time to return to baseline functioning after loss",
+      "value": "18\u201324 months",
+      "source": "Bonanno (2004) resilience research / APA",
+      "url": "https://www.apa.org/topics/grief",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "3-year recidivism rate (re-arrest) after prison release",
+      "value": "66%",
+      "source": "Bureau of Justice Statistics (BJS)",
+      "url": "https://bjs.ojp.gov/library/publications/recidivism-prisoners-released-34-states-2012-2017",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Employment rate within 1 year of release from prison",
+      "value": "40%",
+      "source": "Prison Policy Initiative",
+      "url": "https://www.prisonpolicy.org/reports/outofwork.html",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "% of formerly incarcerated facing housing difficulty",
+      "value": "79%",
+      "source": "Prison Policy Initiative / National Reentry Resource Center",
+      "url": "https://nationalreentryresourcecenter.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Average age of coming out (LGBTQ+)",
+      "value": "16 years old",
+      "source": "Pew Research Center / Williams Institute",
+      "url": "https://www.pewresearch.org/social-trends/2013/06/13/a-survey-of-lgbt-americans/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Family acceptance rate after coming out",
+      "value": "54% fully accepting",
+      "source": "Family Acceptance Project (FAP) / UCLA",
+      "url": "https://familyproject.sfsu.edu/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Mental health improvement after coming out (reduced anxiety/depression)",
+      "value": "35\u201340% reduction in depressive symptoms",
+      "source": "Journal of Adolescent Health / APA",
+      "url": "https://www.jahonline.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Average number of addresses lived at in lifetime",
+      "value": "11.7",
+      "source": "US Census Bureau",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Gap year participation rate (before college)",
+      "value": "3%",
+      "source": "Gap Year Association",
+      "url": "https://www.gapyearassociation.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Military enlistment \u2014 share of 18-24 who serve",
+      "value": "1%",
+      "source": "DoD Personnel Statistics",
+      "url": "https://www.defense.gov/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Adults who have experienced homelessness",
+      "value": "6%",
+      "source": "HUD Annual Homeless Assessment",
+      "url": "https://www.huduser.gov/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "People who emigrate from the US permanently",
+      "value": "0.03% per year",
+      "source": "State Department",
+      "url": "https://travel.state.gov/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Immigration to the US \u2014 annual new permanent residents",
+      "value": "1.1 million",
+      "source": "DHS Immigration Statistics",
+      "url": "https://www.dhs.gov/immigration-statistics",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Mid-life crisis prevalence",
+      "value": "26%",
+      "source": "British Journal of Developmental Psychology",
+      "url": "",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Average age of mid-life crisis onset",
+      "value": "47 years",
+      "source": "Dartmouth/Warwick Happiness Study",
+      "url": "",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Adults who report having a quarter-life crisis",
+      "value": "72%",
+      "source": "LinkedIn Survey",
+      "url": "https://www.linkedin.com/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Adults returning to education after 30",
+      "value": "22%",
+      "source": "NCES Adult Education",
+      "url": "https://nces.ed.gov/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Boomerang kids (adults returning to parents home)",
+      "value": "18% of 25-34 year olds",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Sandwich generation (caring for both kids and parents)",
+      "value": "12%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Adults who have written a bucket list",
+      "value": "40%",
+      "source": "Wishlist Survey / OnePoll",
+      "url": "",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Americans who experience job loss due to recession",
+      "value": "15% per recession",
+      "source": "BLS / NBER",
+      "url": "https://www.bls.gov/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Adults who have been in a car accident in lifetime",
+      "value": "77%",
+      "source": "AAA Foundation",
+      "url": "https://aaafoundation.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Adults who have served jury duty",
+      "value": "27%",
+      "source": "National Center for State Courts",
+      "url": "https://www.ncsc.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Adults who have been hospitalized overnight",
+      "value": "35%",
+      "source": "CDC NHIS",
+      "url": "https://www.cdc.gov/nchs/nhis/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Adults who have undergone major surgery",
+      "value": "40%",
+      "source": "CDC NCHS",
+      "url": "https://www.cdc.gov/nchs/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Death of a close family member by age 25",
+      "value": "57%",
+      "source": "National Alliance for Grieving Children",
+      "url": "",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Adults who have experienced a house fire",
+      "value": "5%",
+      "source": "NFPA Fire Statistics",
+      "url": "https://www.nfpa.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Adults who have been victims of violent crime",
+      "value": "8%",
+      "source": "Bureau of Justice Statistics NCVS",
+      "url": "https://bjs.ojp.gov/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Adults who have experienced food insecurity",
+      "value": "13%",
+      "source": "USDA Food Security Report",
+      "url": "https://www.ers.usda.gov/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Adults who have been in therapy",
+      "value": "37%",
+      "source": "APA",
+      "url": "https://www.apa.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Organ transplants performed per year (US)",
+      "value": "46,000",
+      "source": "UNOS",
+      "url": "https://unos.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Adults who have declared personal bankruptcy",
+      "value": "10%",
+      "source": "American Bankruptcy Institute",
+      "url": "https://www.abi.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Adults who have been in a natural disaster",
+      "value": "45%",
+      "source": "FEMA",
+      "url": "https://www.fema.gov/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Children who experience parental divorce before 18",
+      "value": "25%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    }
+  ],
+  "money_missing": [
+    {
+      "metric": "Odds of winning Powerball jackpot",
+      "value": "1 in 292.2 million",
+      "source": "Powerball / Multi-State Lottery Association",
+      "url": "https://www.powerball.com/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "% of lottery winners who go broke within 5 years",
+      "value": "70%",
+      "source": "National Endowment for Financial Education (NEFE)",
+      "url": "https://www.nefe.org/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "% of lottery winnings spent within first year",
+      "value": "33% on average",
+      "source": "NBER Working Paper / Journal of Public Economics",
+      "url": "https://www.nber.org/papers/w12187",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Average inheritance amount received (US)",
+      "value": "$46,200 (median)",
+      "source": "Federal Reserve Survey of Consumer Finances",
+      "url": "https://www.federalreserve.gov/econres/scfindex.htm",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "% of Americans who receive an inheritance in their lifetime",
+      "value": "20%",
+      "source": "Federal Reserve SCF / Bureau of Economic Analysis",
+      "url": "https://www.federalreserve.gov/econres/scfindex.htm",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "% of inheritance recipients who spend it (vs invest)",
+      "value": "33% spend all within 2 years",
+      "source": "Ohio State University / Jay Zagorsky research",
+      "url": "https://www.nber.org/papers/w12187",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "US personal bankruptcy filing rate (annual)",
+      "value": "387,721 filings",
+      "source": "US Courts Administrative Office",
+      "url": "https://www.uscourts.gov/statistics/table/f/bankruptcy-filings/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Time to recover credit score after bankruptcy",
+      "value": "2\u20134 years to 650+; 7\u201310 years for full removal",
+      "source": "Experian / FICO",
+      "url": "https://www.experian.com/blogs/ask-experian/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Credit score drop from Chapter 7 bankruptcy",
+      "value": "130\u2013240 points",
+      "source": "FICO",
+      "url": "https://www.myfico.com/credit-education/faq/negative-reasons/bankruptcy",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Time to build credit score from zero to 700+",
+      "value": "12\u201318 months",
+      "source": "Experian / Credit Karma",
+      "url": "https://www.experian.com/blogs/ask-experian/how-long-does-it-take-to-build-credit/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "First credit card approval rate (no credit history)",
+      "value": "~50% (secured cards higher)",
+      "source": "Consumer Financial Protection Bureau (CFPB)",
+      "url": "https://www.consumerfinance.gov/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Average credit score growth in first year with secured card",
+      "value": "+50 to +80 points",
+      "source": "FICO / Experian",
+      "url": "https://www.experian.com/blogs/ask-experian/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Gap between federal minimum wage and living wage (single adult)",
+      "value": "$7.25/hr vs $18.67/hr needed (MIT Living Wage)",
+      "source": "MIT Living Wage Calculator / BLS",
+      "url": "https://livingwage.mit.edu/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "% of minimum wage workers working 2+ jobs",
+      "value": "8.4%",
+      "source": "BLS Current Population Survey",
+      "url": "https://www.bls.gov/cps/cpsaat36.htm",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Poverty rate for full-time minimum wage workers (single)",
+      "value": "36%",
+      "source": "Economic Policy Institute (EPI)",
+      "url": "https://www.epi.org/publication/minimum-wage-workers/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "% of US households achieving financial independence (no work needed)",
+      "value": "5\u201310%",
+      "source": "Federal Reserve / Schwab Modern Wealth Survey",
+      "url": "https://www.schwab.com/learn/story/modern-wealth-survey",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Average age of achieving financial independence",
+      "value": "57",
+      "source": "Schwab Modern Wealth Survey / Fidelity",
+      "url": "https://www.schwab.com/learn/story/modern-wealth-survey",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Savings rate needed for FI in 15 years (4% rule)",
+      "value": "50% of after-tax income",
+      "source": "Trinity Study / ERN Safe Withdrawal Rate Series",
+      "url": "https://earlyretirementnow.com/safe-withdrawal-rate-series/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Average American credit card debt",
+      "value": "$6,501",
+      "source": "Federal Reserve / TransUnion",
+      "url": "https://www.federalreserve.gov/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Average student loan debt",
+      "value": "$37,850",
+      "source": "Education Data Initiative",
+      "url": "https://educationdata.org/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Americans living paycheck to paycheck",
+      "value": "62%",
+      "source": "LendingClub / PYMNTS",
+      "url": "https://www.pymnts.com/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Households unable to cover $400 emergency",
+      "value": "37%",
+      "source": "Federal Reserve SHED",
+      "url": "https://www.federalreserve.gov/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Average inheritance received (among those who inherit)",
+      "value": "$46,200",
+      "source": "Federal Reserve SCF",
+      "url": "https://www.federalreserve.gov/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Probability of receiving an inheritance",
+      "value": "20%",
+      "source": "Federal Reserve SCF",
+      "url": "https://www.federalreserve.gov/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Americans who budget regularly",
+      "value": "28%",
+      "source": "Gallup Economy Survey",
+      "url": "https://news.gallup.com/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Median savings for 20-somethings",
+      "value": "$4,600",
+      "source": "Federal Reserve SCF",
+      "url": "https://www.federalreserve.gov/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Median savings for 30-somethings",
+      "value": "$18,800",
+      "source": "Federal Reserve SCF",
+      "url": "https://www.federalreserve.gov/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Average car loan balance",
+      "value": "$23,792",
+      "source": "Experian State of Automotive Finance",
+      "url": "https://www.experian.com/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Average monthly car payment (new)",
+      "value": "$738",
+      "source": "Experian",
+      "url": "https://www.experian.com/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Americans with investment account (stocks/bonds)",
+      "value": "58%",
+      "source": "Gallup Economy Survey",
+      "url": "https://news.gallup.com/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Cryptocurrency ownership in the US",
+      "value": "21%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Average tax refund amount",
+      "value": "$3,138",
+      "source": "IRS Filing Statistics",
+      "url": "https://www.irs.gov/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Financial literacy quiz pass rate (basic concepts)",
+      "value": "48%",
+      "source": "FINRA Investor Education Foundation",
+      "url": "https://www.finrafoundation.org/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Average household total debt",
+      "value": "$104,215",
+      "source": "Federal Reserve Consumer Credit",
+      "url": "https://www.federalreserve.gov/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Households with any debt",
+      "value": "77%",
+      "source": "Federal Reserve SCF",
+      "url": "https://www.federalreserve.gov/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Median household income",
+      "value": "$80,610",
+      "source": "US Census Bureau",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Poverty rate \u2014 all people",
+      "value": "11.1%",
+      "source": "US Census Bureau",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Income needed to feel 'financially comfortable'",
+      "value": "$233,000",
+      "source": "Schwab Modern Wealth Survey",
+      "url": "https://www.schwab.com/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Americans who consider themselves financially literate",
+      "value": "55%",
+      "source": "FINRA Foundation",
+      "url": "https://www.finrafoundation.org/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Average net worth by age 35",
+      "value": "$76,300",
+      "source": "Federal Reserve SCF",
+      "url": "https://www.federalreserve.gov/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Average mortgage interest rate (30-year fixed)",
+      "value": "6.8%",
+      "source": "Freddie Mac PMMS",
+      "url": "https://www.freddiemac.com/pmms",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Gig economy workers as share of workforce",
+      "value": "36%",
+      "source": "MBO Partners",
+      "url": "https://www.mbopartners.com/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Average annual spending on food (household)",
+      "value": "$10,300",
+      "source": "BLS Consumer Expenditure Survey",
+      "url": "https://www.bls.gov/cex/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Average annual transportation spending",
+      "value": "$12,295",
+      "source": "BLS Consumer Expenditure Survey",
+      "url": "https://www.bls.gov/cex/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Average monthly childcare cost",
+      "value": "$1,333",
+      "source": "Child Care Aware of America",
+      "url": "https://www.childcareaware.org/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Adults with a financial plan",
+      "value": "33%",
+      "source": "Schwab Modern Wealth Survey",
+      "url": "https://www.schwab.com/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Average credit score in the US",
+      "value": "715",
+      "source": "FICO Score Distribution",
+      "url": "https://www.fico.com/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Auto insurance average annual premium",
+      "value": "$1,771",
+      "source": "Insurance Information Institute",
+      "url": "https://www.iii.org/",
+      "year": 2024,
+      "category": "money_missing"
+    },
+    {
+      "metric": "Life insurance coverage rate \u2014 adults",
+      "value": "52%",
+      "source": "LIMRA Insurance Barometer",
+      "url": "https://www.limra.com/",
+      "year": 2024,
+      "category": "money_missing"
+    }
+  ],
+  "social": [
+    {
+      "metric": "Average time to make a close friend in a new city",
+      "value": "50 hours of interaction (casual friend = 50h, close = 200h)",
+      "source": "Journal of Social and Personal Relationships (Hall, 2019)",
+      "url": "https://doi.org/10.1177/0265407518761225",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Average number of friends formed in first year in new city",
+      "value": "2\u20133 close friends",
+      "source": "American Sociological Review / Gallup Social Series",
+      "url": "https://news.gallup.com/poll/398660/personal-friendship.aspx",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Duration of loneliness after relocating",
+      "value": "6\u201312 months",
+      "source": "APA / Journal of Community Psychology",
+      "url": "https://www.apa.org/topics/loneliness",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "% of adults reporting at least one toxic family relationship",
+      "value": "30\u201340%",
+      "source": "APA / Karl Pillemer Cornell Legacy Project",
+      "url": "https://www.karlpillemer.com/books/fault-lines/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "% of adults who have gone no-contact with a family member",
+      "value": "27%",
+      "source": "Karl Pillemer / Cornell University Survey",
+      "url": "https://www.karlpillemer.com/books/fault-lines/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "% of people with toxic family who seek therapy",
+      "value": "35%",
+      "source": "APA Survey on Stress in America",
+      "url": "https://www.apa.org/news/press/releases/stress",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Social anxiety disorder prevalence (lifetime)",
+      "value": "12.1%",
+      "source": "NIMH / National Comorbidity Survey Replication",
+      "url": "https://www.nimh.nih.gov/health/statistics/social-anxiety-disorder",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "CBT treatment success rate for social anxiety",
+      "value": "50\u201365% achieve clinically significant improvement",
+      "source": "APA / Journal of Consulting and Clinical Psychology",
+      "url": "https://www.apa.org/topics/anxiety",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Career earnings impact of social anxiety (vs no anxiety)",
+      "value": "10\u201315% lower lifetime earnings",
+      "source": "Journal of Abnormal Psychology / NBER",
+      "url": "https://www.nber.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "% of professionals maintaining an active personal brand online",
+      "value": "30%",
+      "source": "LinkedIn / CareerBuilder Survey",
+      "url": "https://www.linkedin.com/pulse/personal-branding-statistics/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Income premium for professionals with strong personal brand",
+      "value": "+20\u201330% higher consulting/speaking rates",
+      "source": "Influence & Co. / Forbes analysis",
+      "url": "https://www.forbes.com/sites/forbescoachescouncil/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Average weekly time investment in personal branding",
+      "value": "5\u201310 hours",
+      "source": "HubSpot / Buffer Social Media Survey",
+      "url": "https://buffer.com/state-of-social-media",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "% of celebrities reporting negative mental health impact from fame",
+      "value": "68%",
+      "source": "British Journal of Psychology / Rockwell & Giles study",
+      "url": "https://bpspsychub.onlinelibrary.wiley.com/journal/20448295",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Wealth vs happiness correlation (above $75K diminishing returns)",
+      "value": "Happiness plateaus at ~$100K\u2013$500K/year (Killingsworth 2023 update)",
+      "source": "PNAS / Matthew Killingsworth research",
+      "url": "https://doi.org/10.1073/pnas.2208661120",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "% of famous people experiencing significant privacy invasion",
+      "value": "85%+",
+      "source": "Maltby et al. / Celebrity Studies journal",
+      "url": "",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Average number of close friends \u2014 US adults",
+      "value": "3",
+      "source": "Survey Center on American Life",
+      "url": "https://www.americansurveycenter.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults reporting having no close friends",
+      "value": "12%",
+      "source": "Survey Center on American Life",
+      "url": "https://www.americansurveycenter.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults experiencing loneliness frequently",
+      "value": "33%",
+      "source": "Surgeon General Advisory on Loneliness",
+      "url": "https://www.hhs.gov/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Americans attending religious services weekly",
+      "value": "21%",
+      "source": "Gallup Religion Survey",
+      "url": "https://news.gallup.com/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Americans volunteering formally",
+      "value": "23%",
+      "source": "BLS Volunteer Supplement",
+      "url": "https://www.bls.gov/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Social media daily usage average",
+      "value": "143 minutes",
+      "source": "DataReportal",
+      "url": "https://datareportal.com/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults who trust most people",
+      "value": "30%",
+      "source": "General Social Survey",
+      "url": "https://gssdataexplorer.norc.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults participating in community organizations",
+      "value": "17%",
+      "source": "CNCS Volunteering in America",
+      "url": "https://americorps.gov/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Average number of social interactions per day",
+      "value": "6",
+      "source": "BLS American Time Use Survey",
+      "url": "https://www.bls.gov/tus/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Friendships formed through work",
+      "value": "30%",
+      "source": "Gallup Workplace Survey",
+      "url": "https://www.gallup.com/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Americans who moved states in past year",
+      "value": "2.8%",
+      "source": "US Census Bureau",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Average number of moves in a lifetime",
+      "value": "11.7",
+      "source": "US Census Bureau",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Pet ownership rate \u2014 US households",
+      "value": "66%",
+      "source": "APPA National Pet Owners Survey",
+      "url": "https://www.americanpetproducts.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Average annual pet expenses (dogs)",
+      "value": "$1,533",
+      "source": "APPA",
+      "url": "https://www.americanpetproducts.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Average annual pet expenses (cats)",
+      "value": "$1,149",
+      "source": "APPA",
+      "url": "https://www.americanpetproducts.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults who have experienced cyberbullying",
+      "value": "41%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Social media accounts per person average",
+      "value": "7.2",
+      "source": "DataReportal",
+      "url": "https://datareportal.com/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults who deleted social media account in past year",
+      "value": "15%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Average wedding guest count",
+      "value": "130",
+      "source": "The Knot Real Weddings Study",
+      "url": "https://www.theknot.com/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults who participate in a hobby group",
+      "value": "25%",
+      "source": "BLS American Time Use Survey",
+      "url": "https://www.bls.gov/tus/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults who play video games regularly",
+      "value": "52%",
+      "source": "ESA Essential Facts",
+      "url": "https://www.theesa.com/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults who read books for pleasure",
+      "value": "73%",
+      "source": "Gallup Reading Habits",
+      "url": "https://news.gallup.com/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Average TV watching per day \u2014 adults",
+      "value": "3.1 hours",
+      "source": "Nielsen Total Audience Report",
+      "url": "https://www.nielsen.com/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults who cook at home most days",
+      "value": "67%",
+      "source": "USDA ERS Food Expenditure Series",
+      "url": "https://www.ers.usda.gov/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults who have a tattoo",
+      "value": "32%",
+      "source": "Harris Poll",
+      "url": "https://theharrispoll.com/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults who attend live sports events",
+      "value": "35%",
+      "source": "Gallup Sports Survey",
+      "url": "https://news.gallup.com/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults who garden regularly",
+      "value": "55%",
+      "source": "National Gardening Association",
+      "url": "https://garden.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults who have a best friend",
+      "value": "55%",
+      "source": "Survey Center on American Life",
+      "url": "https://www.americansurveycenter.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults who attend concerts/live music annually",
+      "value": "42%",
+      "source": "Pollstar",
+      "url": "",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults who donate to charity annually",
+      "value": "57%",
+      "source": "Giving USA",
+      "url": "https://givingusa.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Average charitable donation per household",
+      "value": "$2,581",
+      "source": "Giving USA",
+      "url": "https://givingusa.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults participating in a book club",
+      "value": "8%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults who attend a gym or fitness center",
+      "value": "21%",
+      "source": "IHRSA Global Report",
+      "url": "https://www.ihrsa.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults who have adopted a rescue animal",
+      "value": "27%",
+      "source": "ASPCA",
+      "url": "https://www.aspca.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Adults who follow a specific diet",
+      "value": "17%",
+      "source": "IFIC Food & Health Survey",
+      "url": "https://foodinsight.org/",
+      "year": 2024,
+      "category": "social"
+    }
+  ],
+  "spiritual": [
+    {
+      "metric": "Annual religious conversion rate in the US (to new faith)",
+      "value": "~1\u20132% per year switch religions",
+      "source": "Pew Research Center Religious Landscape Study",
+      "url": "https://www.pewresearch.org/religion/2024/01/24/religious-landscape-study/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Average age of religious conversion",
+      "value": "24 years old",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/religion/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Impact of religious conversion on life satisfaction",
+      "value": "+15% increase in life satisfaction scores",
+      "source": "Journal for the Scientific Study of Religion",
+      "url": "https://onlinelibrary.wiley.com/journal/14685906",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "% of US adults who were raised religious but no longer identify as such",
+      "value": "29%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/religion/2024/01/24/religious-landscape-study/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "% of 'nones' (left religion) reporting strained family relationships",
+      "value": "35%",
+      "source": "Pew Research / Public Religion Research Institute (PRRI)",
+      "url": "https://www.prri.org/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Duration of identity crisis after leaving religion",
+      "value": "1\u20133 years",
+      "source": "Religious Studies Review / APA Division 36",
+      "url": "https://www.apadivisions.org/division-36",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "% of adults reporting a 'dark night of the soul' spiritual crisis",
+      "value": "30\u201340% at some point",
+      "source": "Pew Research / Fetzer Institute Spiritual Health Survey",
+      "url": "https://fetzer.org/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "% of those experiencing spiritual crisis who report growth afterward",
+      "value": "70\u201380%",
+      "source": "Journal of Humanistic Psychology / Post-traumatic Growth Inventory",
+      "url": "https://doi.org/10.1177/0022167800404004",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Resolution timeline for spiritual crisis",
+      "value": "6 months to 3 years",
+      "source": "APA Division 36 / Grof Spiritual Emergency framework",
+      "url": "https://www.apadivisions.org/division-36",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Missionary retention rate at 5 years",
+      "value": "50%",
+      "source": "Evangelical Missions Quarterly / ReachGlobal",
+      "url": "https://emqonline.com/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Missionary burnout rate",
+      "value": "75% experience burnout symptoms",
+      "source": "Global Connections / Member Care Resources",
+      "url": "https://www.globalconnections.org.uk/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Average annual income for missionaries (self-raised support)",
+      "value": "$25,000\u2013$45,000 (varies by sending org and field)",
+      "source": "The Traveling Team / Finishers Project",
+      "url": "https://www.thetravelingteam.org/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Americans identifying as religious",
+      "value": "68%",
+      "source": "Gallup Religion Survey",
+      "url": "https://news.gallup.com/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Americans who pray daily",
+      "value": "45%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/religion/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Americans who meditate regularly",
+      "value": "14%",
+      "source": "CDC NHIS",
+      "url": "https://www.cdc.gov/nchs/nhis/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Adults reporting spiritual but not religious",
+      "value": "27%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Religious switching \u2014 adults who changed religion",
+      "value": "34%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Americans with no religious affiliation (nones)",
+      "value": "28%",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Charitable giving as % of income (religious households)",
+      "value": "3.4%",
+      "source": "Giving USA",
+      "url": "https://givingusa.org/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Charitable giving as % of income (non-religious)",
+      "value": "1.3%",
+      "source": "Giving USA",
+      "url": "https://givingusa.org/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Adults reporting religion is very important to them",
+      "value": "41%",
+      "source": "Gallup",
+      "url": "https://news.gallup.com/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Yoga practitioners in the US",
+      "value": "34.4 million",
+      "source": "Yoga Alliance Industry Report",
+      "url": "https://www.yogaalliance.org/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Adults who have had a spiritual/mystical experience",
+      "value": "49%",
+      "source": "Pew Research Religion Survey",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Adults who believe in life after death",
+      "value": "73%",
+      "source": "Gallup",
+      "url": "https://news.gallup.com/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Adults who have tried psychedelic therapy",
+      "value": "3%",
+      "source": "Johns Hopkins Center for Psychedelic Research",
+      "url": "https://hopkinspsychedelic.org/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Adults who practice mindfulness regularly",
+      "value": "14%",
+      "source": "CDC NHIS",
+      "url": "https://www.cdc.gov/nchs/nhis/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Adults donating to religious organizations",
+      "value": "28%",
+      "source": "Giving USA",
+      "url": "https://givingusa.org/",
+      "year": 2024,
+      "category": "spiritual"
+    }
+  ],
+  "adventure": [
+    {
+      "metric": "% of young adults (18\u201325) who take a gap year",
+      "value": "3\u20134% in US (higher in UK/Australia: 6\u20138%)",
+      "source": "Gap Year Association / NCES",
+      "url": "https://www.gapyearassociation.org/data-benefits/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Average cost of a 12-month round-the-world trip",
+      "value": "$20,000\u2013$35,000",
+      "source": "Nomadic Matt / Budget Your Trip",
+      "url": "https://www.budgetyourtrip.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Career impact of gap year (employability)",
+      "value": "85% report positive career impact",
+      "source": "Gap Year Association Alumni Survey",
+      "url": "https://www.gapyearassociation.org/data-benefits/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Everest summit success rate",
+      "value": "49% (south side) to 60% (north side)",
+      "source": "Himalayan Database",
+      "url": "https://www.himalayandatabase.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Everest death rate (of those attempting summit)",
+      "value": "1.2% (2024 season)",
+      "source": "Himalayan Database",
+      "url": "https://www.himalayandatabase.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Average cost to climb Everest",
+      "value": "$30,000\u2013$100,000",
+      "source": "Alan Arnette / Everest research",
+      "url": "https://www.alanarnette.com/everest/everestfaq.php",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Marathon completion rate (of those who start training)",
+      "value": "~1% of population; 99.3% finish rate of starters",
+      "source": "RunRepeat / Running USA",
+      "url": "https://runrepeat.com/research-marathon-performance-across-nations",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Average marathon training time",
+      "value": "16\u201320 weeks (4\u20135 months)",
+      "source": "Running USA / Hal Higdon training plans",
+      "url": "https://www.runningusa.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Marathon training injury rate",
+      "value": "37\u201356% sustain injury during training",
+      "source": "British Journal of Sports Medicine",
+      "url": "https://bjsm.bmj.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Martial arts black belt attainment rate",
+      "value": "3\u20135% of those who begin training",
+      "source": "Martial Arts Industry Association (MAIA)",
+      "url": "https://www.maiahub.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Martial arts dropout rate within first year",
+      "value": "90%",
+      "source": "MAIA / Black Belt Magazine",
+      "url": "https://blackbeltmag.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Average time to earn black belt (karate/TKD)",
+      "value": "4\u20136 years",
+      "source": "USA Taekwondo / World Karate Federation",
+      "url": "https://www.usatkd.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Ocean crossing (Atlantic) completion rate for amateur sailors",
+      "value": "95%+ (ARC rally); solo attempts ~85%",
+      "source": "World Cruising Club (ARC)",
+      "url": "https://www.worldcruising.com/arc/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Cost of sailing across the Atlantic (prepared boat + provisions)",
+      "value": "$10,000\u2013$50,000+ (excluding boat purchase)",
+      "source": "Yachting Monthly / Practical Sailor",
+      "url": "https://www.yachtingmonthly.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Average preparation time for ocean crossing (first-time)",
+      "value": "1\u20133 years (training + boat prep)",
+      "source": "Royal Yachting Association (RYA) / World Cruising Club",
+      "url": "https://www.rya.org.uk/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Americans with a valid passport",
+      "value": "48%",
+      "source": "US State Department",
+      "url": "https://travel.state.gov/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Average international trips per year (US travelers)",
+      "value": "1.2",
+      "source": "US International Trade Administration",
+      "url": "https://www.trade.gov/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Average vacation spending per trip (domestic)",
+      "value": "$1,985",
+      "source": "AAA Travel Survey",
+      "url": "https://newsroom.aaa.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Average vacation days taken per year (US workers)",
+      "value": "10",
+      "source": "BLS / SHRM",
+      "url": "https://www.shrm.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Workers who don't use all vacation days",
+      "value": "55%",
+      "source": "Priceline Work-Life Survey",
+      "url": "",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Solo travelers \u2014 share of all travelers",
+      "value": "18%",
+      "source": "MMGY Travel Intelligence",
+      "url": "",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Americans who have lived abroad",
+      "value": "6%",
+      "source": "Gallup World Poll",
+      "url": "https://www.gallup.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Skydiving jumps per year in the US",
+      "value": "3.6 million",
+      "source": "United States Parachute Association",
+      "url": "https://uspa.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Americans who run a marathon in lifetime",
+      "value": "1%",
+      "source": "Running USA",
+      "url": "https://www.runningusa.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Road trip as preferred vacation type",
+      "value": "43%",
+      "source": "AAA Travel Survey",
+      "url": "https://newsroom.aaa.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Average age of first solo travel experience",
+      "value": "25 years",
+      "source": "Hostelworld Travel Survey",
+      "url": "",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Adults who have gone camping in past year",
+      "value": "27%",
+      "source": "KOA North America Camping Report",
+      "url": "https://koa.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "National park visits per year (US)",
+      "value": "325 million",
+      "source": "NPS Visitor Statistics",
+      "url": "https://www.nps.gov/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Americans who speak a second language",
+      "value": "20%",
+      "source": "US Census Bureau ACS",
+      "url": "https://data.census.gov/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Americans who have been to all 50 states",
+      "value": "9%",
+      "source": "YouGov Survey",
+      "url": "https://today.yougov.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Average number of countries visited (US adults)",
+      "value": "5",
+      "source": "MMGY Travel Intelligence",
+      "url": "",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Americans who own a boat",
+      "value": "5%",
+      "source": "NMMA Statistical Abstract",
+      "url": "https://www.nmma.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Americans who ride motorcycles",
+      "value": "3%",
+      "source": "Motorcycle Industry Council",
+      "url": "https://mic.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Adults who have gone scuba diving",
+      "value": "3%",
+      "source": "PADI Statistics",
+      "url": "https://www.padi.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Adults who have completed a triathlon",
+      "value": "0.5%",
+      "source": "USA Triathlon",
+      "url": "https://www.usatriathlon.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Adults who have changed their name legally",
+      "value": "4%",
+      "source": "Court Records/Legal Zoom Survey",
+      "url": "",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Adults who have learned to play a musical instrument",
+      "value": "45%",
+      "source": "NAMM Music Industry Survey",
+      "url": "https://www.namm.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Adults who have written a book or attempted to",
+      "value": "8%",
+      "source": "NaNoWriMo Statistics",
+      "url": "https://nanowrimo.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Adults who have gone bungee jumping or similar extreme sport",
+      "value": "7%",
+      "source": "SGMA Sports Participation",
+      "url": "",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Adults who have attended a music festival",
+      "value": "32%",
+      "source": "Nielsen Music 360",
+      "url": "",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Adults who have gone on a cruise",
+      "value": "25%",
+      "source": "CLIA Cruise Industry Report",
+      "url": "https://cruising.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Adults who have gone hiking in past year",
+      "value": "58 million",
+      "source": "Outdoor Foundation Participation Report",
+      "url": "https://outdoorindustry.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Adults who have gone skiing/snowboarding",
+      "value": "10.8 million",
+      "source": "NSAA Kottke Report",
+      "url": "https://www.nsaa.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Adults who have surfed",
+      "value": "3.8 million",
+      "source": "SFIA Participation Report",
+      "url": "https://sfia.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Adults who play golf",
+      "value": "26.6 million",
+      "source": "National Golf Foundation",
+      "url": "https://www.ngf.org/",
+      "year": 2024,
+      "category": "adventure"
+    }
+  ]
+}

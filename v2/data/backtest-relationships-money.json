@@ -1,27 +1,4030 @@
 [
-  {"case_name":"Long-distance relationships surviving","scenario":"Couple tries to maintain a long-distance relationship","category":"relationship","outcome":"success","success_rate_pct":58,"source":"Journal of Communication, 2013"},
-  {"case_name":"Online dating leading to relationship","scenario":"Person uses dating apps to find a serious relationship","category":"relationship","outcome":"success","success_rate_pct":12,"source":"Pew Research Center, 2023"},
-  {"case_name":"Couples therapy saving relationship","scenario":"Struggling couple attends couples therapy","category":"relationship","outcome":"success","success_rate_pct":70,"source":"AAMFT; Gottman Institute"},
-  {"case_name":"First marriages lasting 20+ years","scenario":"Couple marries for the first time","category":"marriage","outcome":"success","success_rate_pct":52,"source":"CDC/NCHS, 2023"},
-  {"case_name":"Second marriages lasting","scenario":"Divorced person remarries","category":"marriage","outcome":"failed","success_rate_pct":35,"source":"APA; Census Bureau"},
-  {"case_name":"Interfaith marriages lasting 10+ years","scenario":"Couple from different religions gets married","category":"marriage","outcome":"failed","success_rate_pct":42,"source":"Pew Research, 2024"},
-  {"case_name":"Building 6-month emergency fund","scenario":"Person tries to save 6 months of expenses","category":"personal_finance","outcome":"failed","success_rate_pct":27,"source":"Bankrate, 2024"},
-  {"case_name":"Sticking to monthly budget 1 year","scenario":"Person creates a monthly budget and tries to follow it","category":"personal_finance","outcome":"failed","success_rate_pct":32,"source":"Gallup, 2023"},
-  {"case_name":"Reaching $100K net worth by 30","scenario":"Young adult tries to build $100K net worth by 30","category":"personal_finance","outcome":"failed","success_rate_pct":25,"source":"Federal Reserve SCF, 2022"},
-  {"case_name":"Negotiating salary increase","scenario":"Employee tries to negotiate a higher salary","category":"personal_finance","outcome":"success","success_rate_pct":85,"source":"Fidelity, 2023"},
-  {"case_name":"FIRE before 50","scenario":"Person tries to achieve financial independence and retire before 50","category":"personal_finance","outcome":"failed","success_rate_pct":2,"source":"BLS; Trinity Study"},
-  {"case_name":"Paying off $50K+ debt in 5 years","scenario":"Person with $50K+ debt tries to become debt-free","category":"debt","outcome":"failed","success_rate_pct":33,"source":"Federal Reserve SCF, 2022"},
-  {"case_name":"Student loans paid in 10 years","scenario":"Graduate tries to pay off student loans in standard 10-year window","category":"debt","outcome":"failed","success_rate_pct":30,"source":"Federal Reserve; Dept of Education, 2024"},
-  {"case_name":"Debt snowball method","scenario":"Person uses debt snowball method to pay off debt","category":"debt","outcome":"success","success_rate_pct":65,"source":"HBR; Kellogg School"},
-  {"case_name":"Avoiding payday loan cycle","scenario":"Person takes payday loan and tries to pay off without re-borrowing","category":"debt","outcome":"failed","success_rate_pct":20,"source":"CFPB, 2023"},
-  {"case_name":"Index fund 15-year outperformance","scenario":"Person invests in S&P 500 index fund for 15 years","category":"investing","outcome":"success","success_rate_pct":92,"source":"S&P SPIVA, 2024"},
-  {"case_name":"Day traders profitable after 1 year","scenario":"Person starts day trading stocks","category":"investing","outcome":"failed","success_rate_pct":11,"source":"UC Davis; Brazilian Securities Commission"},
-  {"case_name":"Crypto investors profitable 3 years","scenario":"Person invests in cryptocurrency","category":"investing","outcome":"failed","success_rate_pct":30,"source":"BIS, 2023"},
-  {"case_name":"Options trading profitable 2 years","scenario":"Retail investor starts trading options","category":"investing","outcome":"failed","success_rate_pct":15,"source":"SEC; CBOE, 2023"},
-  {"case_name":"Bitcoin 4-year hold profitable","scenario":"Person buys Bitcoin and holds 4+ years","category":"investing","outcome":"success","success_rate_pct":97,"source":"Glassnode, 2024"},
-  {"case_name":"First-time homebuyer closing","scenario":"First-time buyer tries to close on a home","category":"real_estate","outcome":"success","success_rate_pct":73,"source":"NAR, 2024"},
-  {"case_name":"House flippers profiting","scenario":"Person buys distressed property to flip","category":"real_estate","outcome":"success","success_rate_pct":58,"source":"ATTOM Data, 2024"},
-  {"case_name":"Rental property cash flow year 1","scenario":"Person buys rental property for cash flow","category":"real_estate","outcome":"failed","success_rate_pct":40,"source":"BiggerPockets, 2024"},
-  {"case_name":"Airbnb profitability","scenario":"Person converts property to Airbnb","category":"real_estate","outcome":"success","success_rate_pct":55,"source":"AirDNA, 2024"},
-  {"case_name":"Home appreciation over 10 years","scenario":"Person buys home as investment","category":"real_estate","outcome":"success","success_rate_pct":82,"source":"FHFA HPI, 2024"}
+  {
+    "case_name": "Long-distance relationships surviving",
+    "scenario": "Couple tries to maintain a long-distance relationship",
+    "category": "relationship",
+    "outcome": "success",
+    "success_rate_pct": 58,
+    "source": "Journal of Communication, 2013"
+  },
+  {
+    "case_name": "Online dating leading to relationship",
+    "scenario": "Person uses dating apps to find a serious relationship",
+    "category": "relationship",
+    "outcome": "success",
+    "success_rate_pct": 12,
+    "source": "Pew Research Center, 2023",
+    "url": "https://www.pewresearch.org/"
+  },
+  {
+    "case_name": "Couples therapy saving relationship",
+    "scenario": "Struggling couple attends couples therapy",
+    "category": "relationship",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "AAMFT; Gottman Institute"
+  },
+  {
+    "case_name": "First marriages lasting 20+ years",
+    "scenario": "Couple marries for the first time",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 52,
+    "source": "CDC/NCHS, 2023",
+    "url": "https://www.cdc.gov/nchs/"
+  },
+  {
+    "case_name": "Second marriages lasting",
+    "scenario": "Divorced person remarries",
+    "category": "marriage",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "APA; Census Bureau",
+    "url": "https://data.census.gov/"
+  },
+  {
+    "case_name": "Interfaith marriages lasting 10+ years",
+    "scenario": "Couple from different religions gets married",
+    "category": "marriage",
+    "outcome": "failed",
+    "success_rate_pct": 42,
+    "source": "Pew Research, 2024",
+    "url": "https://www.pewresearch.org/"
+  },
+  {
+    "case_name": "Building 6-month emergency fund",
+    "scenario": "Person tries to save 6 months of expenses",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 27,
+    "source": "Bankrate, 2024"
+  },
+  {
+    "case_name": "Sticking to monthly budget 1 year",
+    "scenario": "Person creates a monthly budget and tries to follow it",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 32,
+    "source": "Gallup, 2023",
+    "url": "https://www.gallup.com/analytics/"
+  },
+  {
+    "case_name": "Reaching $100K net worth by 30",
+    "scenario": "Young adult tries to build $100K net worth by 30",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "Federal Reserve SCF, 2022"
+  },
+  {
+    "case_name": "Negotiating salary increase",
+    "scenario": "Employee tries to negotiate a higher salary",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 85,
+    "source": "Fidelity, 2023"
+  },
+  {
+    "case_name": "FIRE before 50",
+    "scenario": "Person tries to achieve financial independence and retire before 50",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 2,
+    "source": "BLS; Trinity Study"
+  },
+  {
+    "case_name": "Paying off $50K+ debt in 5 years",
+    "scenario": "Person with $50K+ debt tries to become debt-free",
+    "category": "debt",
+    "outcome": "failed",
+    "success_rate_pct": 33,
+    "source": "Federal Reserve SCF, 2022"
+  },
+  {
+    "case_name": "Student loans paid in 10 years",
+    "scenario": "Graduate tries to pay off student loans in standard 10-year window",
+    "category": "debt",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "Federal Reserve; Dept of Education, 2024"
+  },
+  {
+    "case_name": "Debt snowball method",
+    "scenario": "Person uses debt snowball method to pay off debt",
+    "category": "debt",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "HBR; Kellogg School",
+    "url": "https://hbr.org/"
+  },
+  {
+    "case_name": "Avoiding payday loan cycle",
+    "scenario": "Person takes payday loan and tries to pay off without re-borrowing",
+    "category": "debt",
+    "outcome": "failed",
+    "success_rate_pct": 20,
+    "source": "CFPB, 2023"
+  },
+  {
+    "case_name": "Index fund 15-year outperformance",
+    "scenario": "Person invests in S&P 500 index fund for 15 years",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 92,
+    "source": "S&P SPIVA, 2024"
+  },
+  {
+    "case_name": "Day traders profitable after 1 year",
+    "scenario": "Person starts day trading stocks",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 11,
+    "source": "UC Davis; Brazilian Securities Commission"
+  },
+  {
+    "case_name": "Crypto investors profitable 3 years",
+    "scenario": "Person invests in cryptocurrency",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "BIS, 2023"
+  },
+  {
+    "case_name": "Options trading profitable 2 years",
+    "scenario": "Retail investor starts trading options",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "SEC; CBOE, 2023"
+  },
+  {
+    "case_name": "Bitcoin 4-year hold profitable",
+    "scenario": "Person buys Bitcoin and holds 4+ years",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 97,
+    "source": "Glassnode, 2024"
+  },
+  {
+    "case_name": "First-time homebuyer closing",
+    "scenario": "First-time buyer tries to close on a home",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 73,
+    "source": "NAR, 2024"
+  },
+  {
+    "case_name": "House flippers profiting",
+    "scenario": "Person buys distressed property to flip",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 58,
+    "source": "ATTOM Data, 2024"
+  },
+  {
+    "case_name": "Rental property cash flow year 1",
+    "scenario": "Person buys rental property for cash flow",
+    "category": "real_estate",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "BiggerPockets, 2024"
+  },
+  {
+    "case_name": "Airbnb profitability",
+    "scenario": "Person converts property to Airbnb",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "AirDNA, 2024"
+  },
+  {
+    "case_name": "Home appreciation over 10 years",
+    "scenario": "Person buys home as investment",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 82,
+    "source": "FHFA HPI, 2024"
+  },
+  {
+    "case_name": "Cohabitation before marriage success",
+    "scenario": "Couple lives together before getting married",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 48,
+    "source": "Journal of Marriage and Family, 2023",
+    "url": "https://onlinelibrary.wiley.com/journal/17413737"
+  },
+  {
+    "case_name": "Marriage after 3+ years dating",
+    "scenario": "Couple dates 3+ years before marrying",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 61,
+    "source": "Emory University Study, 2023"
+  },
+  {
+    "case_name": "Marriage after less than 1 year dating",
+    "scenario": "Couple marries within first year of relationship",
+    "category": "marriage",
+    "outcome": "failed",
+    "success_rate_pct": 38,
+    "source": "Gottman Institute Research, 2024"
+  },
+  {
+    "case_name": "Third marriages lasting",
+    "scenario": "Twice-divorced person remarries a third time",
+    "category": "marriage",
+    "outcome": "failed",
+    "success_rate_pct": 27,
+    "source": "APA; Census Bureau, 2023"
+  },
+  {
+    "case_name": "Age-gap marriages lasting (10+ years gap)",
+    "scenario": "Couple with 10+ year age gap marries",
+    "category": "marriage",
+    "outcome": "failed",
+    "success_rate_pct": 39,
+    "source": "Journal of Population Economics, 2023"
+  },
+  {
+    "case_name": "Same-age couples lasting 20+ years",
+    "scenario": "Couple within 3 years age difference marries",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "Atlantic / Emory University, 2023"
+  },
+  {
+    "case_name": "College sweethearts staying married",
+    "scenario": "Couple who met in college gets married",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 58,
+    "source": "Facebook Data Science / Pew, 2023"
+  },
+  {
+    "case_name": "Military marriages lasting 10+ years",
+    "scenario": "Active-duty military member gets married",
+    "category": "marriage",
+    "outcome": "failed",
+    "success_rate_pct": 44,
+    "source": "DoD Demographics Report, 2024"
+  },
+  {
+    "case_name": "Intercultural marriages lasting",
+    "scenario": "Couple from different cultures/ethnicities marries",
+    "category": "marriage",
+    "outcome": "failed",
+    "success_rate_pct": 41,
+    "source": "Journal of Cross-Cultural Psychology, 2024"
+  },
+  {
+    "case_name": "Prenup reducing divorce likelihood",
+    "scenario": "Couple signs prenuptial agreement",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 50,
+    "source": "American Academy of Matrimonial Lawyers, 2024"
+  },
+  {
+    "case_name": "Speed dating leading to relationship",
+    "scenario": "Person attends speed dating events",
+    "category": "relationship",
+    "outcome": "failed",
+    "success_rate_pct": 6,
+    "source": "Journal of Personality and Social Psychology, 2023"
+  },
+  {
+    "case_name": "Workplace romance lasting 2+ years",
+    "scenario": "Coworkers start dating",
+    "category": "relationship",
+    "outcome": "failed",
+    "success_rate_pct": 31,
+    "source": "SHRM Workplace Romance Survey, 2024"
+  },
+  {
+    "case_name": "Friends-to-partners relationship lasting",
+    "scenario": "Close friends transition to romantic relationship",
+    "category": "relationship",
+    "outcome": "success",
+    "success_rate_pct": 67,
+    "source": "Social Psychological and Personality Science, 2023"
+  },
+  {
+    "case_name": "Rebound relationship lasting 1+ year",
+    "scenario": "Person enters relationship within 3 months of breakup",
+    "category": "relationship",
+    "outcome": "failed",
+    "success_rate_pct": 22,
+    "source": "Journal of Social and Personal Relationships, 2023"
+  },
+  {
+    "case_name": "Arranged marriages lasting 10+ years",
+    "scenario": "Couple enters arranged marriage",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 90,
+    "source": "Statistic Brain / UNICEF, 2024"
+  },
+  {
+    "case_name": "Love marriages lasting 10+ years",
+    "scenario": "Couple marries for love (self-selected)",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 53,
+    "source": "Statistic Brain / Census, 2024"
+  },
+  {
+    "case_name": "Relationship surviving infidelity",
+    "scenario": "One partner discovers other's affair",
+    "category": "relationship",
+    "outcome": "failed",
+    "success_rate_pct": 16,
+    "source": "AAMFT / Gottman Research, 2024"
+  },
+  {
+    "case_name": "Couples recovering from infidelity with therapy",
+    "scenario": "Couple enters therapy after affair discovery",
+    "category": "relationship",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "Gottman Institute, 2024"
+  },
+  {
+    "case_name": "Having $1M saved by 65",
+    "scenario": "Person tries to accumulate $1M by retirement",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 10,
+    "source": "Federal Reserve SCF, 2023"
+  },
+  {
+    "case_name": "Living paycheck to paycheck escaping within 1 year",
+    "scenario": "Person living paycheck to paycheck tries to build savings",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 23,
+    "source": "LendingClub, 2024",
+    "url": "https://www.lendingclub.com/"
+  },
+  {
+    "case_name": "Side hustle reaching $1K/month",
+    "scenario": "Employed person starts side hustle for extra income",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 18,
+    "source": "Bankrate Side Hustle Survey, 2024"
+  },
+  {
+    "case_name": "401K maxing out annually",
+    "scenario": "Employee tries to max annual 401K contribution ($23K)",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 14,
+    "source": "Vanguard How America Saves, 2024",
+    "url": "https://institutional.vanguard.com/"
+  },
+  {
+    "case_name": "No-spend month completing",
+    "scenario": "Person attempts a no-spend month challenge",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "NerdWallet Survey, 2024"
+  },
+  {
+    "case_name": "Credit score above 750 by age 30",
+    "scenario": "Young adult aims for excellent credit score",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 31,
+    "source": "Experian State of Credit, 2024",
+    "url": "https://www.experian.com/"
+  },
+  {
+    "case_name": "Paying off credit card balance monthly",
+    "scenario": "Person tries to pay full credit card balance each month",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 44,
+    "source": "Federal Reserve G.19, 2024"
+  },
+  {
+    "case_name": "Maintaining zero consumer debt",
+    "scenario": "Person tries to live completely debt-free (excluding mortgage)",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 23,
+    "source": "Federal Reserve SCF, 2023"
+  },
+  {
+    "case_name": "Financial literacy test passing",
+    "scenario": "Adult takes basic financial literacy test (5 questions)",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 34,
+    "source": "FINRA National Financial Capability Study, 2024",
+    "url": "https://www.usfinancialcapability.org/"
+  },
+  {
+    "case_name": "Automated savings sustaining 1 year",
+    "scenario": "Person sets up automatic savings transfers",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 73,
+    "source": "America Saves / AARP, 2024"
+  },
+  {
+    "case_name": "Spending tracker app usage after 3 months",
+    "scenario": "Person downloads budgeting app",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 28,
+    "source": "Apptopia / Insider Intelligence, 2024"
+  },
+  {
+    "case_name": "Earning more than parents by age 30",
+    "scenario": "Person tries to out-earn their parents at same age",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 50,
+    "source": "Raj Chetty / Opportunity Insights, 2024",
+    "url": "https://opportunityinsights.org/"
+  },
+  {
+    "case_name": "Medical debt paid within 2 years",
+    "scenario": "Person receives unexpected medical bill ($5K+)",
+    "category": "debt",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "KFF Health Care Debt Survey, 2024",
+    "url": "https://www.kff.org/"
+  },
+  {
+    "case_name": "Debt consolidation loan success",
+    "scenario": "Person takes consolidation loan to pay off multiple debts",
+    "category": "debt",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "National Foundation for Credit Counseling, 2024"
+  },
+  {
+    "case_name": "Bankruptcy recovery to good credit within 5 years",
+    "scenario": "Person files bankruptcy and tries to rebuild credit",
+    "category": "debt",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "Federal Reserve Bank of Philadelphia, 2024"
+  },
+  {
+    "case_name": "Credit card debt freedom within 3 years",
+    "scenario": "Person with $10K+ credit card debt tries to pay it off",
+    "category": "debt",
+    "outcome": "failed",
+    "success_rate_pct": 38,
+    "source": "Federal Reserve SCF, 2023"
+  },
+  {
+    "case_name": "Debt avalanche method completion",
+    "scenario": "Person uses highest-interest-first method",
+    "category": "debt",
+    "outcome": "success",
+    "success_rate_pct": 58,
+    "source": "Journal of Consumer Research, 2024"
+  },
+  {
+    "case_name": "BNPL avoiding debt spiral",
+    "scenario": "Person uses buy-now-pay-later without accumulating debt",
+    "category": "debt",
+    "outcome": "failed",
+    "success_rate_pct": 43,
+    "source": "CFPB BNPL Report, 2024",
+    "url": "https://www.consumerfinance.gov/"
+  },
+  {
+    "case_name": "Auto loan staying current for full term",
+    "scenario": "Person takes 60-month auto loan",
+    "category": "debt",
+    "outcome": "success",
+    "success_rate_pct": 88,
+    "source": "Experian State of Auto Finance, 2024"
+  },
+  {
+    "case_name": "Mortgage staying current for 5 years",
+    "scenario": "First-time buyer takes 30-year mortgage",
+    "category": "debt",
+    "outcome": "success",
+    "success_rate_pct": 95,
+    "source": "Mortgage Bankers Association, 2024"
+  },
+  {
+    "case_name": "Forex traders profitable after 1 year",
+    "scenario": "Retail trader starts forex trading",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "Autorit\u00e9 des March\u00e9s Financiers (AMF), 2024"
+  },
+  {
+    "case_name": "Angel investors seeing positive return",
+    "scenario": "Individual makes angel investments in startups",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 10,
+    "source": "Angel Capital Association, 2024"
+  },
+  {
+    "case_name": "Real estate crowdfunding profitable",
+    "scenario": "Person invests in real estate crowdfunding platform",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 62,
+    "source": "Fundrise / RealtyMogul Annual Report, 2024"
+  },
+  {
+    "case_name": "Robo-advisor beating S&P 500 over 5 years",
+    "scenario": "Person uses robo-advisor for investment management",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 22,
+    "source": "Backend Benchmarking, 2024",
+    "url": "https://www.backendbenchmarking.com/"
+  },
+  {
+    "case_name": "IPO investment profitable at 1 year",
+    "scenario": "Retail investor buys stock at IPO",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 38,
+    "source": "Jay Ritter University of Florida IPO Data, 2024"
+  },
+  {
+    "case_name": "Penny stock trading profitable over 1 year",
+    "scenario": "Person trades penny stocks (under $5)",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 5,
+    "source": "SEC / OTC Markets, 2024"
+  },
+  {
+    "case_name": "NFT investment recovering initial value",
+    "scenario": "Person buys NFTs as investment",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 5,
+    "source": "dappGambl NFT Market Report, 2024"
+  },
+  {
+    "case_name": "Gold investment beating inflation over 10 years",
+    "scenario": "Person buys gold as inflation hedge",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "World Gold Council, 2024",
+    "url": "https://www.gold.org/"
+  },
+  {
+    "case_name": "Bond fund positive return over 3 years",
+    "scenario": "Person invests in bond index fund",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 78,
+    "source": "Morningstar, 2024",
+    "url": "https://www.morningstar.com/"
+  },
+  {
+    "case_name": "Meme stock holding profitable after 6 months",
+    "scenario": "Person buys trending meme stock",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 12,
+    "source": "NBER Working Paper, 2024"
+  },
+  {
+    "case_name": "Copy trading profitable after 1 year",
+    "scenario": "Person uses social trading platform to copy trades",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 20,
+    "source": "eToro Annual Report, 2024"
+  },
+  {
+    "case_name": "Prediction market profitable over 100 bets",
+    "scenario": "Person trades on prediction markets like Polymarket",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "Polymarket / Kalshi aggregate data, 2025"
+  },
+  {
+    "case_name": "Sports betting profitable over 1 season",
+    "scenario": "Person bets on sports regularly",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 3,
+    "source": "American Gaming Association, 2024"
+  },
+  {
+    "case_name": "Dividend portfolio yielding 4%+ sustained",
+    "scenario": "Person builds dividend stock portfolio",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "Hartford Funds / Morningstar, 2024"
+  },
+  {
+    "case_name": "Venture capital fund returning 3x",
+    "scenario": "LP invests in venture capital fund",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "Cambridge Associates, 2024"
+  },
+  {
+    "case_name": "Private equity fund outperforming S&P 500",
+    "scenario": "Investor allocates to PE fund",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 52,
+    "source": "Preqin / Bain PE Report, 2024"
+  },
+  {
+    "case_name": "BRRRR strategy succeeding",
+    "scenario": "Investor buys, rehabs, rents, refinances, repeats",
+    "category": "real_estate",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "BiggerPockets Survey, 2024"
+  },
+  {
+    "case_name": "REITs outperforming direct ownership",
+    "scenario": "Person invests in REITs vs buying rental property",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "Nareit / NCREIF, 2024"
+  },
+  {
+    "case_name": "Commercial real estate positive ROI 5 years",
+    "scenario": "Investor buys small commercial property",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "CoStar / CBRE, 2024"
+  },
+  {
+    "case_name": "House hack covering mortgage",
+    "scenario": "Person buys multi-unit and rents extra units",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "BiggerPockets Survey, 2024"
+  },
+  {
+    "case_name": "Land investment doubling in 10 years",
+    "scenario": "Person buys raw land as investment",
+    "category": "real_estate",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "USDA / Lincoln Institute of Land Policy, 2024"
+  },
+  {
+    "case_name": "Vacation rental profitability year 1",
+    "scenario": "Person buys property in tourist area for short-term rental",
+    "category": "real_estate",
+    "outcome": "failed",
+    "success_rate_pct": 45,
+    "source": "AirDNA / Evolve, 2024"
+  },
+  {
+    "case_name": "Buying foreclosure for profit",
+    "scenario": "Investor buys property at foreclosure auction",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 52,
+    "source": "ATTOM Data Solutions, 2024"
+  },
+  {
+    "case_name": "Real estate syndication positive return",
+    "scenario": "Passive investor joins real estate syndication",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 72,
+    "source": "CrowdStreet / RealCrowd, 2024"
+  },
+  {
+    "case_name": "College degree leading to higher lifetime earnings",
+    "scenario": "Person completes bachelor's degree",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 84,
+    "source": "Georgetown CEW, 2024",
+    "url": "https://cew.georgetown.edu/"
+  },
+  {
+    "case_name": "MBA increasing salary 50%+ within 5 years",
+    "scenario": "Professional gets MBA",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 62,
+    "source": "GMAC Corporate Recruiters Survey, 2024"
+  },
+  {
+    "case_name": "Career change increasing salary",
+    "scenario": "Mid-career professional changes industry",
+    "category": "income",
+    "outcome": "failed",
+    "success_rate_pct": 41,
+    "source": "LinkedIn Workforce Report, 2024"
+  },
+  {
+    "case_name": "Job hop increasing salary 20%+",
+    "scenario": "Employee changes jobs for higher pay",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "ADP Pay Insights, 2024"
+  },
+  {
+    "case_name": "Coding bootcamp leading to tech job within 6 months",
+    "scenario": "Person attends coding bootcamp",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 56,
+    "source": "CIRR Outcomes Report, 2024"
+  },
+  {
+    "case_name": "Remote work maintaining productivity",
+    "scenario": "Employee transitions to full remote work",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 72,
+    "source": "Stanford / Nick Bloom WFH Research, 2024"
+  },
+  {
+    "case_name": "Freelancing matching full-time salary within 1 year",
+    "scenario": "Employee quits to freelance full-time",
+    "category": "income",
+    "outcome": "failed",
+    "success_rate_pct": 29,
+    "source": "MBO Partners State of Independence, 2024"
+  },
+  {
+    "case_name": "Starting business while employed succeeding",
+    "scenario": "Employee starts side business while keeping job",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 52,
+    "source": "Kauffman Foundation, 2024"
+  },
+  {
+    "case_name": "Promotion within 2 years at same company",
+    "scenario": "Employee seeks promotion through performance",
+    "category": "income",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "McKinsey / Gallup, 2024"
+  },
+  {
+    "case_name": "Gender pay gap closing in lifetime",
+    "scenario": "Woman negotiates for equal pay",
+    "category": "income",
+    "outcome": "failed",
+    "success_rate_pct": 20,
+    "source": "Pew Research Center, 2024"
+  },
+  {
+    "case_name": "First-generation wealth sustained to 2nd generation",
+    "scenario": "Wealthy person passes wealth to children",
+    "category": "wealth",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "Williams Group Wealth Consultancy, 2024"
+  },
+  {
+    "case_name": "Family wealth surviving 3rd generation",
+    "scenario": "Family tries to maintain wealth across 3 generations",
+    "category": "wealth",
+    "outcome": "failed",
+    "success_rate_pct": 10,
+    "source": "Williams Group / Merrill Lynch, 2024"
+  },
+  {
+    "case_name": "Self-made millionaire by 50",
+    "scenario": "Person without inheritance tries to reach $1M net worth",
+    "category": "wealth",
+    "outcome": "failed",
+    "success_rate_pct": 9,
+    "source": "Federal Reserve SCF, 2023"
+  },
+  {
+    "case_name": "Lottery winner financially stable after 5 years",
+    "scenario": "Person wins $1M+ lottery",
+    "category": "wealth",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "NEFE / Certified Financial Planner Board, 2024"
+  },
+  {
+    "case_name": "Trust fund child building own career",
+    "scenario": "Person from wealthy family builds independent career",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 62,
+    "source": "UBS Global Wealth Report, 2024"
+  },
+  {
+    "case_name": "Immigrant reaching median income within 10 years",
+    "scenario": "First-generation immigrant in US seeks economic mobility",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "National Academies of Sciences, 2024"
+  },
+  {
+    "case_name": "Financial advisor improving returns vs DIY",
+    "scenario": "Person hires financial advisor",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 53,
+    "source": "Vanguard Advisor Alpha, 2024"
+  },
+  {
+    "case_name": "Inherited home kept in family 10+ years",
+    "scenario": "Person inherits family home",
+    "category": "wealth",
+    "outcome": "failed",
+    "success_rate_pct": 42,
+    "source": "Federal Reserve Bank of Cleveland, 2024"
+  },
+  {
+    "case_name": "Marriages surviving financial stress",
+    "scenario": "Couple faces major financial hardship (job loss, debt crisis)",
+    "category": "money_relationship",
+    "outcome": "failed",
+    "success_rate_pct": 41,
+    "source": "Institute for Divorce Financial Analysts, 2024"
+  },
+  {
+    "case_name": "Joint finances improving relationship satisfaction",
+    "scenario": "Couple merges all finances (joint accounts)",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 68,
+    "source": "Journal of Financial Planning / Indiana University, 2024"
+  },
+  {
+    "case_name": "Income disparity causing breakup (woman earns more)",
+    "scenario": "Woman earns significantly more than male partner",
+    "category": "money_relationship",
+    "outcome": "failed",
+    "success_rate_pct": 33,
+    "source": "American Sociological Review, 2024"
+  },
+  {
+    "case_name": "Prenup discussion NOT causing breakup",
+    "scenario": "Couple discusses prenuptial agreement",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 85,
+    "source": "Harris Poll / AAML, 2024"
+  },
+  {
+    "case_name": "Couples arguing about money leading to divorce",
+    "scenario": "Couple frequently argues about finances",
+    "category": "money_relationship",
+    "outcome": "failed",
+    "success_rate_pct": 36,
+    "source": "Ramsey Solutions Financial Wellness Survey, 2024"
+  },
+  {
+    "case_name": "Financial transparency maintaining trust",
+    "scenario": "Both partners fully disclose finances before marriage",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 71,
+    "source": "National Endowment for Financial Education, 2024"
+  },
+  {
+    "case_name": "Secret spending discovery causing breakup",
+    "scenario": "Partner discovers other's hidden spending/debt",
+    "category": "money_relationship",
+    "outcome": "failed",
+    "success_rate_pct": 31,
+    "source": "CreditCards.com / Bankrate, 2024"
+  },
+  {
+    "case_name": "Couples financial counseling improving outcomes",
+    "scenario": "Couple attends financial counseling together",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 64,
+    "source": "AFCPE / Financial Therapy Association, 2024"
+  },
+  {
+    "case_name": "Trade school ROI positive within 5 years",
+    "scenario": "Person attends trade school instead of college",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 78,
+    "source": "Georgetown CEW / BLS, 2024"
+  },
+  {
+    "case_name": "PhD increasing lifetime earnings vs masters",
+    "scenario": "Person pursues PhD for higher earning potential",
+    "category": "income",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "Census Bureau / NBER, 2024"
+  },
+  {
+    "case_name": "Online certificate improving salary",
+    "scenario": "Person completes professional certificate (Google, AWS, etc)",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 52,
+    "source": "Coursera Global Skills Report, 2024"
+  },
+  {
+    "case_name": "Law school investment paying off within 10 years",
+    "scenario": "Person attends law school ($150K+ investment)",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "BLS / ABA Employment Report, 2024"
+  },
+  {
+    "case_name": "Medical school ROI positive within 15 years",
+    "scenario": "Person attends medical school ($250K+ investment)",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 85,
+    "source": "AAMC / Medscape Physician Compensation, 2024"
+  },
+  {
+    "case_name": "Solo founder reaching $100K ARR",
+    "scenario": "Solo founder bootstraps a business",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 8,
+    "source": "Indie Hackers / MicroConf, 2024"
+  },
+  {
+    "case_name": "VC-funded startup returning investor money",
+    "scenario": "Startup raises VC funding",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "Cambridge Associates / Correlation Ventures, 2024"
+  },
+  {
+    "case_name": "Franchise owner profitable within 2 years",
+    "scenario": "Person buys franchise (avg $250K investment)",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "FRANdata / IFA, 2024"
+  },
+  {
+    "case_name": "Kickstarter project delivering on time",
+    "scenario": "Creator launches Kickstarter campaign",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "Kickstarter Stats / UPenn Study, 2024"
+  },
+  {
+    "case_name": "Small business loan repaid in full",
+    "scenario": "Business owner takes SBA loan",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 79,
+    "source": "SBA Office of Advocacy, 2024"
+  },
+  {
+    "case_name": "Acquisition offer received within 5 years",
+    "scenario": "Startup aims for acquisition exit",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 6,
+    "source": "CB Insights / Crunchbase, 2024"
+  },
+  {
+    "case_name": "Reaching profitability within 18 months (bootstrapped)",
+    "scenario": "Bootstrapped founder tries to reach profitability",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "Kauffman Foundation, 2024"
+  },
+  {
+    "case_name": "Co-founder relationship surviving 3 years",
+    "scenario": "Two co-founders start a business together",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 38,
+    "source": "Noam Wasserman / Harvard Business School, 2024"
+  },
+  {
+    "case_name": "Pivot leading to product-market fit",
+    "scenario": "Startup pivots after initial failure",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 52,
+    "source": "Startup Genome Report, 2024"
+  },
+  {
+    "case_name": "Family business surviving founder retirement",
+    "scenario": "Family business founder retires, children take over",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "Family Business Alliance / PwC Family Business Survey, 2024"
+  },
+  {
+    "case_name": "Immigrant entrepreneur business surviving 5 years",
+    "scenario": "Immigrant starts business in new country",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 51,
+    "source": "New American Economy / Kauffman, 2024"
+  },
+  {
+    "case_name": "Remittance sender reaching financial stability",
+    "scenario": "Immigrant sends regular remittances while building savings",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 28,
+    "source": "World Bank Remittance Prices, 2024"
+  },
+  {
+    "case_name": "Dual-income couple reaching $200K household",
+    "scenario": "Both partners work full-time professional jobs",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 52,
+    "source": "Census Bureau ACS, 2024"
+  },
+  {
+    "case_name": "Retiring comfortably at 65",
+    "scenario": "Person follows standard retirement savings path",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 47,
+    "source": "EBRI Retirement Confidence Survey, 2024"
+  },
+  {
+    "case_name": "Social Security alone covering retirement expenses",
+    "scenario": "Retiree relies solely on Social Security",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "SSA / AARP, 2024"
+  },
+  {
+    "case_name": "Retirement savings lasting 30 years (4% rule)",
+    "scenario": "Retiree follows 4% withdrawal rule",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 95,
+    "source": "Trinity Study updated, 2024"
+  },
+  {
+    "case_name": "Pension fund remaining solvent 20+ years",
+    "scenario": "Person relies on employer pension",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 82,
+    "source": "PBGC Annual Report, 2024"
+  },
+  {
+    "case_name": "HSA maxed and used for retirement",
+    "scenario": "Person uses HSA as stealth retirement account",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 12,
+    "source": "EBRI HSA Database, 2024"
+  },
+  {
+    "case_name": "Medical bankruptcy avoided with insurance",
+    "scenario": "Insured person faces major medical event",
+    "category": "health_money",
+    "outcome": "success",
+    "success_rate_pct": 88,
+    "source": "KFF / AJM Study, 2024"
+  },
+  {
+    "case_name": "Medical bankruptcy (uninsured)",
+    "scenario": "Uninsured person faces major medical event",
+    "category": "health_money",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "AJPH / Commonwealth Fund, 2024"
+  },
+  {
+    "case_name": "Disability insurance claim approved",
+    "scenario": "Person files long-term disability insurance claim",
+    "category": "health_money",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "Council for Disability Awareness, 2024"
+  },
+  {
+    "case_name": "Life insurance payout received without dispute",
+    "scenario": "Beneficiary files life insurance claim",
+    "category": "health_money",
+    "outcome": "success",
+    "success_rate_pct": 97,
+    "source": "ACLI Life Insurance Fact Book, 2024"
+  },
+  {
+    "case_name": "Ethereum staking profitable after 1 year",
+    "scenario": "Person stakes ETH for yield",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 75,
+    "source": "Ethereum Foundation / Lido Analytics, 2024"
+  },
+  {
+    "case_name": "DeFi yield farming profitable after 6 months",
+    "scenario": "Person provides liquidity on DeFi protocols",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 20,
+    "source": "Chainalysis DeFi Report, 2024"
+  },
+  {
+    "case_name": "Crypto exchange hack losing user funds",
+    "scenario": "Person holds crypto on centralized exchange",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 92,
+    "source": "CipherTrace / Crystal Analytics, 2024"
+  },
+  {
+    "case_name": "ICO/token investment recovering cost",
+    "scenario": "Person invests in new crypto token launch",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 8,
+    "source": "Satis Group ICO Study updated, 2024"
+  },
+  {
+    "case_name": "Emergency fund preventing debt after job loss",
+    "scenario": "Person with 6-month emergency fund loses job",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 85,
+    "source": "JPMorgan Chase Institute, 2024"
+  },
+  {
+    "case_name": "Insurance claim fully paid (home)",
+    "scenario": "Homeowner files insurance claim after damage",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 72,
+    "source": "NAIC / Insurance Information Institute, 2024"
+  },
+  {
+    "case_name": "Renter's insurance claim paid",
+    "scenario": "Renter files insurance claim after theft/damage",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 80,
+    "source": "III / NAIC, 2024"
+  },
+  {
+    "case_name": "Tax refund saved not spent",
+    "scenario": "Person receives tax refund and tries to save it",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 27,
+    "source": "National Retail Federation / TurboTax Survey, 2024"
+  },
+  {
+    "case_name": "Small business tax audit survived",
+    "scenario": "Small business is audited by IRS",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 75,
+    "source": "IRS Data Book, 2024"
+  },
+  {
+    "case_name": "Tax-loss harvesting improving returns",
+    "scenario": "Investor uses tax-loss harvesting strategy",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "Wealthfront / Betterment Reports, 2024"
+  },
+  {
+    "case_name": "New Year financial resolution kept 1 year",
+    "scenario": "Person makes financial New Year resolution",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 9,
+    "source": "University of Scranton / Statistic Brain, 2024"
+  },
+  {
+    "case_name": "Lifestyle inflation avoided after raise",
+    "scenario": "Person receives 20%+ raise and tries to maintain spending",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "Schwab Modern Wealth Survey, 2024"
+  },
+  {
+    "case_name": "Impulse purchase regret rate",
+    "scenario": "Person makes unplanned purchase over $100",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "Slickdeals / OnePoll Survey, 2024"
+  },
+  {
+    "case_name": "Financial therapy reducing money anxiety",
+    "scenario": "Person attends financial therapy sessions",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 68,
+    "source": "Financial Therapy Association, 2024"
+  },
+  {
+    "case_name": "Generosity increasing life satisfaction",
+    "scenario": "Person donates 10%+ of income regularly",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 82,
+    "source": "Giving USA / Harvard Kennedy School, 2024"
+  },
+  {
+    "case_name": "Digital nomad maintaining income 2+ years",
+    "scenario": "Person becomes location-independent worker",
+    "category": "income",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "MBO Partners / Nomad List, 2024"
+  },
+  {
+    "case_name": "Geo-arbitrage saving 50%+ of income",
+    "scenario": "Person moves to low-cost country while earning high-country salary",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 72,
+    "source": "Nomad Capitalist / Numbeo, 2024"
+  },
+  {
+    "case_name": "Expat returning home within 3 years",
+    "scenario": "Person moves abroad for better financial opportunity",
+    "category": "income",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "InterNations Expat Insider, 2024"
+  },
+  {
+    "case_name": "Student loan forgiveness program completing",
+    "scenario": "Public servant applies for PSLF",
+    "category": "debt",
+    "outcome": "failed",
+    "success_rate_pct": 14,
+    "source": "Dept of Education PSLF Data, 2024"
+  },
+  {
+    "case_name": "Income-driven repayment reducing total paid",
+    "scenario": "Borrower enrolls in IDR plan",
+    "category": "debt",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "Federal Student Aid, 2024"
+  },
+  {
+    "case_name": "AI automation preserving job within 5 years",
+    "scenario": "Worker in automatable role tries to keep job",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "McKinsey Global Institute, 2024"
+  },
+  {
+    "case_name": "Upskilling preventing job displacement",
+    "scenario": "Worker retrains for AI-adjacent skills",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "World Economic Forum Future of Jobs, 2024"
+  },
+  {
+    "case_name": "App developer earning $100K+ revenue",
+    "scenario": "Indie developer publishes mobile app",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 2,
+    "source": "App Annie / Sensor Tower, 2024"
+  },
+  {
+    "case_name": "Casino gambler net positive over lifetime",
+    "scenario": "Person gambles at casinos regularly",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 5,
+    "source": "UNLV Center for Gaming Research, 2024"
+  },
+  {
+    "case_name": "Professional poker player sustaining income",
+    "scenario": "Person tries to become professional poker player",
+    "category": "income",
+    "outcome": "failed",
+    "success_rate_pct": 10,
+    "source": "World Series of Poker / CardPlayer, 2024"
+  },
+  {
+    "case_name": "Fantasy sports profitable over 1 season",
+    "scenario": "Person plays daily fantasy sports for profit",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "DraftKings / FSTA, 2024"
+  },
+  {
+    "case_name": "Saving enough for child's college ($100K+)",
+    "scenario": "Parent starts 529 plan at child's birth",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 20,
+    "source": "Sallie Mae How America Pays for College, 2024"
+  },
+  {
+    "case_name": "Financial stability maintained after having child",
+    "scenario": "Couple has first child (avg $20K+ first year cost)",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "USDA Cost of Raising a Child / Brookings, 2024"
+  },
+  {
+    "case_name": "Single parent achieving financial stability",
+    "scenario": "Single parent manages household finances alone",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 32,
+    "source": "Census Bureau / CBPP, 2024"
+  },
+  {
+    "case_name": "Renting cheaper than buying over 7 years",
+    "scenario": "Person in high-cost city decides to rent vs buy",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "NYT Rent vs Buy Calculator / Zillow, 2024"
+  },
+  {
+    "case_name": "Downsizing in retirement freeing up capital",
+    "scenario": "Retiree sells large home and downsizes",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 72,
+    "source": "NAR / AARP, 2024"
+  },
+  {
+    "case_name": "Mortgage refinance saving money over loan life",
+    "scenario": "Homeowner refinances when rates drop 1%+",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 82,
+    "source": "Freddie Mac Refinance Report, 2024"
+  },
+  {
+    "case_name": "Paying off mortgage early (15 vs 30 year)",
+    "scenario": "Homeowner aggressively pays down mortgage",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "Zillow / CFPB, 2024"
+  },
+  {
+    "case_name": "Restaurant break-even within 2 years",
+    "scenario": "Person opens restaurant ($300K+ investment)",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "National Restaurant Association, 2024"
+  },
+  {
+    "case_name": "Food truck profitable within 1 year",
+    "scenario": "Person starts food truck ($50-100K investment)",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "IBISWorld / FoodTruckr, 2024"
+  },
+  {
+    "case_name": "Dropshipping reaching $5K/month revenue",
+    "scenario": "Person starts dropshipping business",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 10,
+    "source": "Shopify / Oberlo Data, 2024"
+  },
+  {
+    "case_name": "Amazon FBA seller profitable year 1",
+    "scenario": "Person starts selling on Amazon FBA",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 31,
+    "source": "Jungle Scout State of the Seller, 2024"
+  },
+  {
+    "case_name": "Etsy shop reaching $1K/month",
+    "scenario": "Person opens Etsy shop for handmade goods",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "eRank / Marmalead Etsy Data, 2024"
+  },
+  {
+    "case_name": "SaaS reaching $10K MRR within 2 years",
+    "scenario": "Developer launches SaaS product",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 8,
+    "source": "Indie Hackers / Baremetrics, 2024"
+  },
+  {
+    "case_name": "Online course launch earning $10K+",
+    "scenario": "Creator launches first online course",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 12,
+    "source": "Kajabi / Teachable Creator Report, 2024"
+  },
+  {
+    "case_name": "Newsletter monetized at $1K+/month",
+    "scenario": "Writer starts paid newsletter",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 5,
+    "source": "Substack / beehiiv Data, 2024"
+  },
+  {
+    "case_name": "YouTube channel monetized within 1 year",
+    "scenario": "Creator starts YouTube channel aiming for Partner Program",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 3,
+    "source": "YouTube Creator Academy / TubeBuddy, 2024"
+  },
+  {
+    "case_name": "Consulting practice reaching $200K revenue",
+    "scenario": "Professional starts solo consulting practice",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 22,
+    "source": "MBO Partners / Consulting Success, 2024"
+  },
+  {
+    "case_name": "Investor staying invested during 30%+ crash",
+    "scenario": "Market drops 30%+ and investor tries not to sell",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "Dalbar QAIB Study, 2024"
+  },
+  {
+    "case_name": "Dollar-cost averaging outperforming lump sum",
+    "scenario": "Person DCA vs investing lump sum",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 33,
+    "source": "Vanguard DCA vs Lump Sum Study, 2024"
+  },
+  {
+    "case_name": "Market timing beating buy-and-hold over 20 years",
+    "scenario": "Active investor tries to time market entries/exits",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 5,
+    "source": "Dalbar QAIB / JP Morgan Guide to Markets, 2024"
+  },
+  {
+    "case_name": "Target-date fund reaching retirement goal",
+    "scenario": "Person invests in target-date retirement fund",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 73,
+    "source": "Morningstar / T. Rowe Price, 2024"
+  },
+  {
+    "case_name": "Dual-income no kids (DINK) reaching $500K net worth by 40",
+    "scenario": "Married couple with no children focuses on wealth building",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "Federal Reserve SCF / Census, 2023"
+  },
+  {
+    "case_name": "Divorce financial recovery within 5 years",
+    "scenario": "Person recovers financially after divorce",
+    "category": "money_relationship",
+    "outcome": "failed",
+    "success_rate_pct": 45,
+    "source": "Journal of Family and Economic Issues, 2024"
+  },
+  {
+    "case_name": "Widowed person maintaining financial stability",
+    "scenario": "Person loses spouse and manages finances alone",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 58,
+    "source": "Society of Actuaries / AARP, 2024"
+  },
+  {
+    "case_name": "Cohabiting couples splitting finances fairly",
+    "scenario": "Unmarried couple shares living expenses proportionally",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 62,
+    "source": "Bank of America Couples & Money Survey, 2024"
+  },
+  {
+    "case_name": "Spouse supporting entrepreneur through lean years",
+    "scenario": "One partner starts business while other provides stable income",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 59,
+    "source": "Kauffman Foundation / Babson Entrepreneurship, 2024"
+  },
+  {
+    "case_name": "Long-term care insurance covering nursing home",
+    "scenario": "Person with LTC insurance enters nursing home",
+    "category": "health_money",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "AALTCI / Genworth Cost of Care Survey, 2024"
+  },
+  {
+    "case_name": "Avoiding nursing home bankruptcy without LTC insurance",
+    "scenario": "Person without LTC insurance needs nursing home care",
+    "category": "health_money",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "Genworth / Medicaid.gov, 2024"
+  },
+  {
+    "case_name": "Sandwich generation maintaining savings",
+    "scenario": "Person supports both aging parents and children financially",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 28,
+    "source": "Pew Research / NAC-AARP Caregiving Report, 2024"
+  },
+  {
+    "case_name": "Moving for job increasing net worth",
+    "scenario": "Person relocates to higher-paying city",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "BLS / LinkedIn Economic Graph, 2024"
+  },
+  {
+    "case_name": "Passive income replacing job income within 5 years",
+    "scenario": "Person builds passive income streams while employed",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 5,
+    "source": "IRS Income Data / MBO Partners, 2024"
+  },
+  {
+    "case_name": "Crowdfunding campaign reaching goal",
+    "scenario": "Creator launches GoFundMe/Kickstarter campaign",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 22,
+    "source": "Kickstarter / GoFundMe Stats, 2024"
+  },
+  {
+    "case_name": "Subscription box business surviving 2 years",
+    "scenario": "Entrepreneur launches subscription box service",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 20,
+    "source": "SUBTA / Cratejoy Data, 2024"
+  },
+  {
+    "case_name": "Multilevel marketing (MLM) participant profiting",
+    "scenario": "Person joins MLM/network marketing company",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 1,
+    "source": "FTC / AARP MLM Study, 2024"
+  },
+  {
+    "case_name": "Pet business (grooming/sitting) profitable year 1",
+    "scenario": "Person starts pet services business",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "APPA / IBISWorld, 2024"
+  },
+  {
+    "case_name": "Cleaning business reaching $5K/month",
+    "scenario": "Person starts residential cleaning business",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "ISSA / BLS, 2024"
+  },
+  {
+    "case_name": "Tutoring/coaching business reaching $3K/month",
+    "scenario": "Person starts online tutoring or coaching",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "Wyzant / ICF Global Coaching Study, 2024"
+  },
+  {
+    "case_name": "Divorce rate for couples married after 30",
+    "scenario": "Both partners marry after age 30",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "Nicholas Wolfinger / IFS, 2024"
+  },
+  {
+    "case_name": "Divorce rate for teen marriages",
+    "scenario": "One or both partners marry before 20",
+    "category": "marriage",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "CDC / NCHS, 2024"
+  },
+  {
+    "case_name": "Marriage lasting when both college-educated",
+    "scenario": "Both partners have bachelor's degrees",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "BLS / American Community Survey, 2024"
+  },
+  {
+    "case_name": "Marriage lasting when household income >$125K",
+    "scenario": "Couple earning $125K+ combined",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 67,
+    "source": "NLSY / Bureau of Labor Statistics, 2024"
+  },
+  {
+    "case_name": "Marriage after meeting through friends lasting",
+    "scenario": "Couple introduced by mutual friends",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "Stanford Social Networks Research, 2024"
+  },
+  {
+    "case_name": "Credit counseling preventing bankruptcy",
+    "scenario": "Person in severe debt seeks nonprofit credit counseling",
+    "category": "debt",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "NFCC Impact Study, 2024"
+  },
+  {
+    "case_name": "Debt settlement paying less than owed",
+    "scenario": "Person uses debt settlement company",
+    "category": "debt",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "CFPB / FTC Debt Settlement Report, 2024"
+  },
+  {
+    "case_name": "Zero-interest balance transfer paying off in time",
+    "scenario": "Person transfers credit card balance to 0% APR card",
+    "category": "debt",
+    "outcome": "failed",
+    "success_rate_pct": 45,
+    "source": "CompareCards / LendingTree, 2024"
+  },
+  {
+    "case_name": "Income above $75K increasing daily happiness",
+    "scenario": "Person earning above $75K seeks more income for happiness",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "Killingsworth / PNAS 2023 (updated Kahneman)",
+    "url": "https://www.pnas.org/"
+  },
+  {
+    "case_name": "Experiences over things improving satisfaction",
+    "scenario": "Person spends on experiences vs material goods",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 78,
+    "source": "Cornell / Journal of Consumer Psychology, 2024"
+  },
+  {
+    "case_name": "Money reducing stress measurably",
+    "scenario": "Person doubles income from poverty to middle class",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 80,
+    "source": "WHO / Gallup World Poll, 2024"
+  },
+  {
+    "case_name": "Chapter 7 bankruptcy completing successfully",
+    "scenario": "Person files Chapter 7 bankruptcy",
+    "category": "debt",
+    "outcome": "success",
+    "success_rate_pct": 95,
+    "source": "American Bankruptcy Institute, 2024"
+  },
+  {
+    "case_name": "Chapter 13 bankruptcy plan completing",
+    "scenario": "Person files Chapter 13 (repayment plan)",
+    "category": "debt",
+    "outcome": "failed",
+    "success_rate_pct": 33,
+    "source": "American Bankruptcy Institute, 2024"
+  },
+  {
+    "case_name": "Post-bankruptcy homeownership within 5 years",
+    "scenario": "Person buys home after bankruptcy",
+    "category": "real_estate",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "Federal Reserve / Experian, 2024"
+  },
+  {
+    "case_name": "Commodities trading profitable over 3 years",
+    "scenario": "Retail investor trades commodities futures",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 12,
+    "source": "CFTC / NFA, 2024"
+  },
+  {
+    "case_name": "Farmland investment positive return 10 years",
+    "scenario": "Investor buys farmland directly or via fund",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 85,
+    "source": "USDA / NCREIF Farmland Index, 2024"
+  },
+  {
+    "case_name": "Art investment outperforming S&P 500 over 20 years",
+    "scenario": "Collector buys fine art as investment",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "Artnet / Mei Moses Art Index, 2024"
+  },
+  {
+    "case_name": "Wine investment profitable over 10 years",
+    "scenario": "Person invests in fine wine",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "Liv-ex Fine Wine Index, 2024"
+  },
+  {
+    "case_name": "Collectibles (cards/sneakers) profitable over 5 years",
+    "scenario": "Person invests in collectible items",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "StockX / PWCC Market Index, 2024"
+  },
+  {
+    "case_name": "Startup equity (employee) paying off",
+    "scenario": "Employee takes below-market salary for equity",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 10,
+    "source": "Carta Equity Report / Index Ventures, 2024"
+  },
+  {
+    "case_name": "SPAC investment profitable at 1 year",
+    "scenario": "Investor buys SPAC stock",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 18,
+    "source": "SPAC Research / University of Florida, 2024"
+  },
+  {
+    "case_name": "Car purchase staying affordable (under 15% of income)",
+    "scenario": "Person buys new car with financing",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "Edmunds / Experian Auto Finance, 2024"
+  },
+  {
+    "case_name": "Wedding cost not causing financial stress",
+    "scenario": "Couple plans and pays for wedding (avg $35K)",
+    "category": "money_relationship",
+    "outcome": "failed",
+    "success_rate_pct": 38,
+    "source": "The Knot / WeddingWire, 2024"
+  },
+  {
+    "case_name": "Pet ownership staying within budget",
+    "scenario": "Person adopts pet (avg $1-2K/year cost)",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "ASPCA / APPA Pet Owners Survey, 2024"
+  },
+  {
+    "case_name": "Moving abroad reducing cost of living 50%+",
+    "scenario": "Person relocates from high-cost to low-cost country",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 75,
+    "source": "Numbeo / ExpatFocus, 2024"
+  },
+  {
+    "case_name": "Identity theft financial recovery within 1 year",
+    "scenario": "Person becomes victim of identity theft",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 68,
+    "source": "FTC / Javelin Strategy Identity Fraud Report, 2024"
+  },
+  {
+    "case_name": "Natural disaster financial recovery within 2 years",
+    "scenario": "Homeowner faces major natural disaster",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "FEMA / National Flood Insurance Program, 2024"
+  },
+  {
+    "case_name": "Lawsuit settlement covering legal costs",
+    "scenario": "Person sues and settlement covers attorney fees",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "ABA Journal / NOLO, 2024"
+  },
+  {
+    "case_name": "Inheritance received and not spent within 5 years",
+    "scenario": "Person receives inheritance and tries to invest/save it",
+    "category": "wealth",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "Bureau of Economic Analysis / Ohio State, 2024"
+  },
+  {
+    "case_name": "Financial independence number reached (25x expenses)",
+    "scenario": "Person tries to save 25x annual expenses",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 7,
+    "source": "Federal Reserve SCF / Vanguard, 2024"
+  },
+  {
+    "case_name": "Barista FIRE achieving (semi-retirement with part-time)",
+    "scenario": "Person accumulates enough to semi-retire with part-time work",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 12,
+    "source": "ChooseFI / MadFientist Community Survey, 2024"
+  },
+  {
+    "case_name": "Coast FIRE reaching by 35",
+    "scenario": "Person saves enough by 35 that compound growth covers retirement",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "ChooseFI / Personal Capital Data, 2024"
+  },
+  {
+    "case_name": "Bottom quintile reaching top quintile in lifetime",
+    "scenario": "Person born in bottom 20% income reaches top 20%",
+    "category": "wealth",
+    "outcome": "failed",
+    "success_rate_pct": 7.5,
+    "source": "Raj Chetty / Opportunity Insights, 2024",
+    "url": "https://opportunityinsights.org/"
+  },
+  {
+    "case_name": "Middle class maintaining status across generation",
+    "scenario": "Middle-class family maintains economic status for children",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "Pew Research Economic Mobility Project, 2024"
+  },
+  {
+    "case_name": "College degree lifting out of poverty",
+    "scenario": "Person from poverty completes bachelor's degree",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 73,
+    "source": "Georgetown CEW / Census Bureau, 2024"
+  },
+  {
+    "case_name": "Entrepreneurship as path out of poverty",
+    "scenario": "Person in poverty starts business",
+    "category": "wealth",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "Kauffman Foundation / SBA, 2024"
+  },
+  {
+    "case_name": "New construction home completing on budget",
+    "scenario": "Person builds custom home",
+    "category": "real_estate",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "NAHB / HomeAdvisor, 2024"
+  },
+  {
+    "case_name": "Home renovation ROI exceeding cost",
+    "scenario": "Homeowner does major renovation ($50K+)",
+    "category": "real_estate",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "Remodeling Magazine Cost vs Value Report, 2024"
+  },
+  {
+    "case_name": "HELOC used productively (not consumed)",
+    "scenario": "Homeowner takes HELOC for investment/improvement",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "CoreLogic / Federal Reserve, 2024"
+  },
+  {
+    "case_name": "Reverse mortgage sustaining retirement",
+    "scenario": "Retiree takes reverse mortgage",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "HUD / HECM Program Data, 2024"
+  },
+  {
+    "case_name": "Storage unit investment profitable",
+    "scenario": "Investor buys self-storage facility",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 75,
+    "source": "Self Storage Association / Marcus & Millichap, 2024"
+  },
+  {
+    "case_name": "Tiny home as affordable housing solution",
+    "scenario": "Person builds/buys tiny home ($50-100K)",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "Tiny Home Industry Association, 2024"
+  },
+  {
+    "case_name": "ADU (granny flat) ROI within 5 years",
+    "scenario": "Homeowner builds accessory dwelling unit",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "Freddie Mac / Maxable, 2024"
+  },
+  {
+    "case_name": "Gap year not hurting career trajectory",
+    "scenario": "Young professional takes 1-year career break",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 62,
+    "source": "LinkedIn / Harvard Business Review, 2024"
+  },
+  {
+    "case_name": "Multiple income streams sustaining 2+ years",
+    "scenario": "Person maintains 3+ income streams simultaneously",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "IRS / BLS Multiple Jobholders Data, 2024"
+  },
+  {
+    "case_name": "Economic recession surviving without debt",
+    "scenario": "Person maintains financial stability through recession",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 45,
+    "source": "Federal Reserve / NBER, 2024"
+  },
+  {
+    "case_name": "Charity/tithing not reducing personal wealth",
+    "scenario": "Person gives 10%+ of income and still builds wealth",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "Barna Group / Generous Giving Research, 2024"
+  },
+  {
+    "case_name": "Micro-investing apps building $10K+ within 5 years",
+    "scenario": "Person uses round-up investing apps (Acorns, etc)",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "Acorns / Stash Annual Reports, 2024"
+  },
+  {
+    "case_name": "ESG investing matching market returns",
+    "scenario": "Person invests in ESG/sustainable funds",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "Morningstar ESG Report, 2024"
+  },
+  {
+    "case_name": "Thrift store reselling profitable",
+    "scenario": "Person buys items at thrift stores to resell online",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "eBay / Poshmark Seller Data, 2024"
+  },
+  {
+    "case_name": "Print-on-demand business reaching $1K/month",
+    "scenario": "Person starts POD store (Printful, Merch by Amazon)",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 8,
+    "source": "Printful / Merch Informer, 2024"
+  },
+  {
+    "case_name": "Affiliate marketing site reaching $2K/month",
+    "scenario": "Person builds niche affiliate website",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 10,
+    "source": "Ahrefs / Authority Hacker, 2024"
+  },
+  {
+    "case_name": "Vending machine business profitable year 1",
+    "scenario": "Person invests in vending machines ($5-10K each)",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "NAMA / IBISWorld, 2024"
+  },
+  {
+    "case_name": "Car wash investment profitable within 3 years",
+    "scenario": "Person invests in car wash business",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "ICA / IBISWorld, 2024"
+  },
+  {
+    "case_name": "Laundromat investment profitable within 2 years",
+    "scenario": "Person buys laundromat ($200-500K)",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "Coin Laundry Association, 2024"
+  },
+  {
+    "case_name": "Online-only relationship meeting in person",
+    "scenario": "Couple in purely online relationship finally meets",
+    "category": "relationship",
+    "outcome": "failed",
+    "success_rate_pct": 33,
+    "source": "Pew Research / Journal of Social Relationships, 2024"
+  },
+  {
+    "case_name": "Post-divorce friendship maintained",
+    "scenario": "Divorced couple tries to remain friends",
+    "category": "relationship",
+    "outcome": "failed",
+    "success_rate_pct": 20,
+    "source": "Journal of Social and Personal Relationships, 2024"
+  },
+  {
+    "case_name": "Relationship surviving relocation for one partner's job",
+    "scenario": "One partner relocates for career opportunity",
+    "category": "relationship",
+    "outcome": "success",
+    "success_rate_pct": 52,
+    "source": "Challenger Gray & Christmas, 2024"
+  },
+  {
+    "case_name": "Couples maintaining relationship after baby",
+    "scenario": "Couple has first child and tries to maintain relationship quality",
+    "category": "relationship",
+    "outcome": "failed",
+    "success_rate_pct": 33,
+    "source": "Gottman Institute / Journal of Family Psychology, 2024"
+  },
+  {
+    "case_name": "Retirement marriage surviving first 2 years",
+    "scenario": "Couple transitions to both being home full-time",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 75,
+    "source": "AARP / Bowling Green State University, 2024"
+  },
+  {
+    "case_name": "Gray divorce (after 50) recovery",
+    "scenario": "Person divorces after age 50",
+    "category": "marriage",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "National Center for Family & Marriage Research, 2024"
+  },
+  {
+    "case_name": "Blended family stability after 5 years",
+    "scenario": "Person with kids from previous marriage remarries",
+    "category": "marriage",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "Pew Research / APA, 2024"
+  },
+  {
+    "case_name": "Same-sex marriage lasting 10+ years",
+    "scenario": "Same-sex couple gets married",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "Williams Institute / UCLA, 2024"
+  },
+  {
+    "case_name": "Cash envelope system lasting 6 months",
+    "scenario": "Person switches to cash-only budgeting",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 20,
+    "source": "Dave Ramsey / Bankrate Survey, 2024"
+  },
+  {
+    "case_name": "50/30/20 budget rule followed for 1 year",
+    "scenario": "Person adopts 50/30/20 budgeting framework",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 22,
+    "source": "NerdWallet / Gallup, 2024"
+  },
+  {
+    "case_name": "First $10K saved from zero",
+    "scenario": "Person with no savings tries to save first $10K",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 38,
+    "source": "Federal Reserve SHED Report, 2024"
+  },
+  {
+    "case_name": "Subscription audit reducing spending 20%+",
+    "scenario": "Person audits and cuts unnecessary subscriptions",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "C+R Research / West Monroe, 2024"
+  },
+  {
+    "case_name": "Meal prepping reducing food spending 30%+",
+    "scenario": "Person meal preps instead of eating out",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "USDA / Forbes Health Survey, 2024"
+  },
+  {
+    "case_name": "Business partnership lasting 5+ years",
+    "scenario": "Two equal partners start a business",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "Noam Wasserman / Harvard Business School, 2024"
+  },
+  {
+    "case_name": "Husband-wife business surviving 5 years",
+    "scenario": "Married couple runs business together",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "SBA / National Federation of Independent Business, 2024"
+  },
+  {
+    "case_name": "Friends going into business together surviving",
+    "scenario": "Close friends become business partners",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "Gallup / Founder Institute, 2024"
+  },
+  {
+    "case_name": "529 plan covering full college cost",
+    "scenario": "Parent saves in 529 plan for 18 years",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 22,
+    "source": "Sallie Mae / College Board, 2024"
+  },
+  {
+    "case_name": "Roth IRA conversion saving taxes long-term",
+    "scenario": "Person converts Traditional IRA to Roth",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "Fidelity / Schwab Roth Analysis, 2024"
+  },
+  {
+    "case_name": "Employee stock purchase plan (ESPP) profitable",
+    "scenario": "Employee participates in ESPP",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 85,
+    "source": "Fidelity / Schwab ESPP Data, 2024"
+  },
+  {
+    "case_name": "Internship converting to full-time offer",
+    "scenario": "College student completes internship",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 56,
+    "source": "NACE Internship Survey, 2024"
+  },
+  {
+    "case_name": "Apprenticeship leading to stable career",
+    "scenario": "Person enters trade apprenticeship",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 87,
+    "source": "Department of Labor Apprenticeship Data, 2024"
+  },
+  {
+    "case_name": "PhD student completing program",
+    "scenario": "Student enrolls in PhD program",
+    "category": "income",
+    "outcome": "failed",
+    "success_rate_pct": 50,
+    "source": "Council of Graduate Schools, 2024"
+  },
+  {
+    "case_name": "Professional certification increasing salary 10%+",
+    "scenario": "Worker earns industry certification (PMP, CPA, etc)",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "PMI / AICPA Salary Surveys, 2024"
+  },
+  {
+    "case_name": "Sabbatical not hurting career long-term",
+    "scenario": "Professional takes 6-12 month sabbatical",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 58,
+    "source": "HBR / SHRM Sabbatical Research, 2024"
+  },
+  {
+    "case_name": "Union membership increasing lifetime earnings",
+    "scenario": "Worker joins labor union",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 72,
+    "source": "EPI / BLS Union Members Summary, 2024"
+  },
+  {
+    "case_name": "Government job providing lifetime financial stability",
+    "scenario": "Person takes government/civil service job",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 85,
+    "source": "BLS / OPM Federal Employment Data, 2024"
+  },
+  {
+    "case_name": "Military service providing financial stability post-service",
+    "scenario": "Person serves 4+ years in military then transitions to civilian",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 68,
+    "source": "VA / BLS Veterans Employment Data, 2024"
+  },
+  {
+    "case_name": "Teaching salary covering cost of living",
+    "scenario": "Person becomes public school teacher",
+    "category": "income",
+    "outcome": "failed",
+    "success_rate_pct": 45,
+    "source": "NEA / EPI Teacher Pay Penalty, 2024"
+  },
+  {
+    "case_name": "Gig economy worker earning median income",
+    "scenario": "Person relies on gig work (Uber, DoorDash, TaskRabbit)",
+    "category": "income",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "JPMorgan Chase Institute / BLS, 2024"
+  },
+  {
+    "case_name": "Real estate agent earning $50K+ first year",
+    "scenario": "Person gets real estate license and starts selling",
+    "category": "income",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "NAR Member Profile, 2024"
+  },
+  {
+    "case_name": "Insurance agent surviving past year 2",
+    "scenario": "Person starts career as insurance agent",
+    "category": "income",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "LIMRA / BLS, 2024"
+  },
+  {
+    "case_name": "Nurse salary exceeding $80K",
+    "scenario": "Person becomes registered nurse",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "BLS Occupational Employment, 2024"
+  },
+  {
+    "case_name": "Software engineer salary exceeding $120K",
+    "scenario": "Person becomes software engineer",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "BLS / Levels.fyi, 2024"
+  },
+  {
+    "case_name": "Dental practice profitable within 3 years",
+    "scenario": "Dentist opens private practice",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 72,
+    "source": "ADA Health Policy Institute, 2024"
+  },
+  {
+    "case_name": "Emergency fund lasting through 6-month unemployment",
+    "scenario": "Person with savings faces extended unemployment",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "JPMorgan Chase Institute, 2024"
+  },
+  {
+    "case_name": "Net worth doubling in 10 years (invested)",
+    "scenario": "Person invests consistently in diversified portfolio",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 82,
+    "source": "Vanguard / S&P Historical Returns, 2024"
+  },
+  {
+    "case_name": "Saving 20% of income consistently for 5 years",
+    "scenario": "Person commits to high savings rate",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "Bureau of Economic Analysis / Fed, 2024"
+  },
+  {
+    "case_name": "Reaching $1M investable assets by 55",
+    "scenario": "Consistent investor saves and invests over career",
+    "category": "wealth",
+    "outcome": "failed",
+    "success_rate_pct": 12,
+    "source": "Federal Reserve SCF, 2023"
+  },
+  {
+    "case_name": "Inheriting and growing family business",
+    "scenario": "Second generation takes over family business",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "Conway Center for Family Business, 2024"
+  },
+  {
+    "case_name": "Stock options at startup worth anything at exit",
+    "scenario": "Employee accepts stock options at early-stage startup",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 8,
+    "source": "Carta / Holloway Guide to Equity, 2024"
+  },
+  {
+    "case_name": "I-bond beating inflation over 5 years",
+    "scenario": "Person buys Series I Savings Bonds",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 90,
+    "source": "Treasury Direct / BLS CPI, 2024"
+  },
+  {
+    "case_name": "CD ladder providing stable income",
+    "scenario": "Person builds CD ladder for safe returns",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 95,
+    "source": "FDIC / Bankrate, 2024"
+  },
+  {
+    "case_name": "High-yield savings account beating inflation",
+    "scenario": "Person uses HYSA for emergency fund",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "Bankrate / BLS CPI Data, 2024"
+  },
+  {
+    "case_name": "Inflation eroding purchasing power over 20 years",
+    "scenario": "Person keeps cash savings without investing",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 0,
+    "source": "BLS CPI / Federal Reserve, 2024"
+  },
+  {
+    "case_name": "Home equity loan used wisely (ROI positive)",
+    "scenario": "Homeowner takes HEL for home improvement",
+    "category": "debt",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "NFCC / CoreLogic, 2024"
+  },
+  {
+    "case_name": "Business loan default avoided",
+    "scenario": "Small business takes bank loan ($50K+)",
+    "category": "debt",
+    "outcome": "success",
+    "success_rate_pct": 80,
+    "source": "Federal Reserve SBCS, 2024"
+  },
+  {
+    "case_name": "Personal loan paid on time",
+    "scenario": "Person takes unsecured personal loan",
+    "category": "debt",
+    "outcome": "success",
+    "success_rate_pct": 85,
+    "source": "TransUnion / Experian, 2024"
+  },
+  {
+    "case_name": "Margin loan not resulting in margin call",
+    "scenario": "Investor uses margin to invest",
+    "category": "debt",
+    "outcome": "success",
+    "success_rate_pct": 75,
+    "source": "FINRA Margin Statistics, 2024"
+  },
+  {
+    "case_name": "Medical debt negotiated down 50%+",
+    "scenario": "Patient negotiates hospital bill",
+    "category": "debt",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "NFCC / Dollar For, 2024"
+  },
+  {
+    "case_name": "Credit card minimum payment trap escaping within 5 years",
+    "scenario": "Person paying only minimum on $10K balance",
+    "category": "debt",
+    "outcome": "failed",
+    "success_rate_pct": 20,
+    "source": "CFPB / Federal Reserve, 2024"
+  },
+  {
+    "case_name": "Condo investment appreciating faster than maintenance fees",
+    "scenario": "Person buys condo as investment",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "NAR / Redfin, 2024"
+  },
+  {
+    "case_name": "Mobile home park investment profitable",
+    "scenario": "Investor buys mobile home park",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "MHI / Marcus & Millichap, 2024"
+  },
+  {
+    "case_name": "House sitting leading to savings ($10K+/year)",
+    "scenario": "Person house-sits to eliminate housing costs",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "TrustedHousesitters / Nomad List, 2024"
+  },
+  {
+    "case_name": "Co-living reducing housing costs 40%+",
+    "scenario": "Person chooses co-living arrangement in expensive city",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "Common / Bungalow Living Data, 2024"
+  },
+  {
+    "case_name": "Real estate wholesaling profitable first year",
+    "scenario": "Person starts real estate wholesaling",
+    "category": "real_estate",
+    "outcome": "failed",
+    "success_rate_pct": 20,
+    "source": "BiggerPockets / FortuneBuilders, 2024"
+  },
+  {
+    "case_name": "Property tax appeal reducing assessment",
+    "scenario": "Homeowner appeals property tax assessment",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "Lincoln Institute of Land Policy, 2024"
+  },
+  {
+    "case_name": "Prenup enforced in court",
+    "scenario": "Divorcing couple tests prenup validity in court",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 75,
+    "source": "AAML Survey, 2024"
+  },
+  {
+    "case_name": "Alimony payments completed without default",
+    "scenario": "Divorced person pays alimony as ordered",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "Census Bureau / Family Court Data, 2024"
+  },
+  {
+    "case_name": "Child support payments made consistently",
+    "scenario": "Non-custodial parent pays child support",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 62,
+    "source": "Census Bureau CPS, 2024"
+  },
+  {
+    "case_name": "Financially supporting aging parents without going broke",
+    "scenario": "Adult child helps support elderly parents",
+    "category": "money_relationship",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "AARP / Fidelity Caregiving Survey, 2024"
+  },
+  {
+    "case_name": "Sibling financial dispute resolved without litigation",
+    "scenario": "Siblings disagree over inheritance or shared assets",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "ACTEC / Merrill Lynch Family Wealth, 2024"
+  },
+  {
+    "case_name": "Lending money to friend/family and getting repaid",
+    "scenario": "Person lends $1K+ to friend or family member",
+    "category": "money_relationship",
+    "outcome": "failed",
+    "success_rate_pct": 45,
+    "source": "Bankrate / LendingTree Survey, 2024"
+  },
+  {
+    "case_name": "Co-signing loan without consequences",
+    "scenario": "Person co-signs loan for friend/family",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "CFPB / Experian, 2024"
+  },
+  {
+    "case_name": "Equal chore/finance split improving relationship",
+    "scenario": "Couple splits all responsibilities 50/50",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 58,
+    "source": "Pew Research / Council on Contemporary Families, 2024"
+  },
+  {
+    "case_name": "Small-cap fund outperforming large-cap over 10 years",
+    "scenario": "Investor allocates to small-cap index fund",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "CRSP / Dimensional Fund Advisors, 2024"
+  },
+  {
+    "case_name": "International diversification improving returns",
+    "scenario": "US investor adds international stocks",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "Vanguard / MSCI World Index, 2024"
+  },
+  {
+    "case_name": "Value investing outperforming growth over 20 years",
+    "scenario": "Investor follows value investing strategy",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "Fama-French / AQR Capital, 2024"
+  },
+  {
+    "case_name": "Hedge fund beating S&P 500 over 10 years",
+    "scenario": "Investor allocates to hedge fund",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "HFRI / Buffett Bet, 2024"
+  },
+  {
+    "case_name": "Factor investing (momentum) outperforming",
+    "scenario": "Investor uses momentum factor strategy",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 52,
+    "source": "AQR Capital / MSCI, 2024"
+  },
+  {
+    "case_name": "Structured notes providing positive return",
+    "scenario": "Investor buys bank-issued structured note",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "SEC / Bloomberg, 2024"
+  },
+  {
+    "case_name": "Timber investment outperforming bonds",
+    "scenario": "Investor allocates to timber/forestry fund",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "NCREIF Timberland Index, 2024"
+  },
+  {
+    "case_name": "Infrastructure fund providing stable returns",
+    "scenario": "Investor allocates to infrastructure fund",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 72,
+    "source": "Preqin / Global Infrastructure Hub, 2024"
+  },
+  {
+    "case_name": "Gym/fitness studio surviving 3 years",
+    "scenario": "Person opens gym or fitness studio",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "IHRSA / IBISWorld, 2024"
+  },
+  {
+    "case_name": "Beauty salon/barbershop profitable within 1 year",
+    "scenario": "Person opens beauty salon or barbershop",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "Professional Beauty Association / IBISWorld, 2024"
+  },
+  {
+    "case_name": "Daycare/childcare center profitable within 2 years",
+    "scenario": "Person opens childcare center",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "NAEYC / Child Care Aware, 2024"
+  },
+  {
+    "case_name": "Photography business reaching $50K/year",
+    "scenario": "Person starts professional photography business",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "PPA / Bureau of Labor Statistics, 2024"
+  },
+  {
+    "case_name": "Event planning business surviving 3 years",
+    "scenario": "Person starts event planning company",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "BLS / ILEA, 2024"
+  },
+  {
+    "case_name": "Property management company reaching 50+ units",
+    "scenario": "Person starts property management business",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "NARPM / IBISWorld, 2024"
+  },
+  {
+    "case_name": "Home inspection business profitable year 1",
+    "scenario": "Person becomes home inspector",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "ASHI / BLS, 2024"
+  },
+  {
+    "case_name": "Tax preparation business seasonal profitability",
+    "scenario": "Person starts tax prep business",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "IRS / NATP, 2024"
+  },
+  {
+    "case_name": "Bookkeeping business reaching $5K/month",
+    "scenario": "Person starts virtual bookkeeping business",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "AICPA / QuickBooks, 2024"
+  },
+  {
+    "case_name": "Pressure washing business profitable year 1",
+    "scenario": "Person starts pressure washing service",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "PWNA / IBISWorld, 2024"
+  },
+  {
+    "case_name": "Landscaping business reaching $100K revenue",
+    "scenario": "Person starts landscaping company",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "NALP / IBISWorld, 2024"
+  },
+  {
+    "case_name": "Junk removal business profitable within 6 months",
+    "scenario": "Person starts junk removal service",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "IBISWorld / Junk King Franchise Data, 2024"
+  },
+  {
+    "case_name": "Moving company surviving past year 3",
+    "scenario": "Person starts moving/hauling company",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 45,
+    "source": "AMSA / IBISWorld, 2024"
+  },
+  {
+    "case_name": "Notary loan signing business profitable",
+    "scenario": "Person becomes notary signing agent",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "NNA / Snapdocs, 2024"
+  },
+  {
+    "case_name": "Handyman business reaching $3K/month",
+    "scenario": "Person starts handyman service",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "HomeAdvisor / Angi, 2024"
+  },
+  {
+    "case_name": "Using sinking funds successfully for 1 year",
+    "scenario": "Person creates targeted savings funds for expected expenses",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 50,
+    "source": "YNAB / Mint User Data, 2024"
+  },
+  {
+    "case_name": "Financial planner fee justified by returns",
+    "scenario": "Person pays fee-only financial planner ($2-5K/year)",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "Vanguard Advisor Alpha / Morningstar, 2024"
+  },
+  {
+    "case_name": "Extreme couponing saving 50%+ on groceries",
+    "scenario": "Person commits to extreme couponing strategy",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 10,
+    "source": "Coupons.com / Consumer Reports, 2024"
+  },
+  {
+    "case_name": "Negotiating medical bills down 30%+",
+    "scenario": "Patient negotiates medical bills directly with hospital",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "Patient Advocate Foundation, 2024"
+  },
+  {
+    "case_name": "Used car purchase staying reliable 5+ years",
+    "scenario": "Person buys used car (3-5 years old)",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 75,
+    "source": "Consumer Reports / iSeeCars, 2024"
+  },
+  {
+    "case_name": "Electric vehicle ownership reducing total cost",
+    "scenario": "Person switches from gas to EV",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "DOE / Consumer Reports Total Cost of Ownership, 2024"
+  },
+  {
+    "case_name": "Solar panels ROI positive within 10 years",
+    "scenario": "Homeowner installs solar panels ($15-25K)",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "NREL / EnergySage, 2024"
+  },
+  {
+    "case_name": "Cord-cutting saving $1K+/year",
+    "scenario": "Person cancels cable and switches to streaming",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 75,
+    "source": "Leichtman Research / Nielsen, 2024"
+  },
+  {
+    "case_name": "Health insurance deductible met in a year",
+    "scenario": "Person on high-deductible health plan ($3K+ deductible)",
+    "category": "health_money",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "KFF Employer Health Benefits Survey, 2024"
+  },
+  {
+    "case_name": "Travel hacking saving $2K+/year",
+    "scenario": "Person uses credit card points/miles strategically",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 40,
+    "source": "The Points Guy / NerdWallet, 2024"
+  },
+  {
+    "case_name": "Open relationship lasting 3+ years",
+    "scenario": "Couple tries consensual non-monogamy",
+    "category": "relationship",
+    "outcome": "failed",
+    "success_rate_pct": 20,
+    "source": "Journal of Sex Research, 2024"
+  },
+  {
+    "case_name": "Relationship with significant political difference lasting",
+    "scenario": "Couple with opposing political views stays together",
+    "category": "relationship",
+    "outcome": "failed",
+    "success_rate_pct": 42,
+    "source": "Pew Research / ANES, 2024"
+  },
+  {
+    "case_name": "Pet together strengthening relationship",
+    "scenario": "Couple adopts pet together",
+    "category": "relationship",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "Human Animal Bond Research Institute, 2024"
+  },
+  {
+    "case_name": "Couples who pray together staying together",
+    "scenario": "Couple prays or worships together regularly",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 75,
+    "source": "ARDA / Barna Group, 2024"
+  },
+  {
+    "case_name": "Relationship surviving addiction recovery",
+    "scenario": "One partner enters addiction recovery",
+    "category": "relationship",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "SAMHSA / Journal of Substance Abuse, 2024"
+  },
+  {
+    "case_name": "Relationship surviving mental health crisis",
+    "scenario": "One partner experiences major mental health episode",
+    "category": "relationship",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "NAMI / Journal of Marriage and Family, 2024"
+  },
+  {
+    "case_name": "Marriage after cohabiting with 2+ previous partners",
+    "scenario": "Person who cohabited with multiple partners gets married",
+    "category": "marriage",
+    "outcome": "failed",
+    "success_rate_pct": 38,
+    "source": "IFS / National Survey of Family Growth, 2024"
+  },
+  {
+    "case_name": "Childhood sweethearts marriage lasting",
+    "scenario": "Couple who dated since high school marries",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 54,
+    "source": "Census Bureau / National Survey of Families, 2024"
+  },
+  {
+    "case_name": "Mail-order bride marriage lasting 5+ years",
+    "scenario": "Cross-border marriage via international agency",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 80,
+    "source": "USCIS / DHS Marriage Fraud Data, 2024"
+  },
+  {
+    "case_name": "Marriage after 6+ months of premarital counseling",
+    "scenario": "Couple completes extensive premarital counseling",
+    "category": "marriage",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "PREPARE/ENRICH / Gottman Institute, 2024"
+  },
+  {
+    "case_name": "Charitable remainder trust providing income",
+    "scenario": "Wealthy person sets up CRT",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 80,
+    "source": "National Philanthropic Trust, 2024"
+  },
+  {
+    "case_name": "Estate plan preventing family conflict",
+    "scenario": "Person creates comprehensive estate plan",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 68,
+    "source": "ACTEC / WealthCounsel, 2024"
+  },
+  {
+    "case_name": "Trust protecting assets from creditors",
+    "scenario": "Person places assets in irrevocable trust",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 82,
+    "source": "ABA / Estate Planning Journal, 2024"
+  },
+  {
+    "case_name": "Offshore account providing tax benefits legally",
+    "scenario": "Person opens offshore account for legal tax optimization",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "IRS FBAR / OECD, 2024"
+  },
+  {
+    "case_name": "LLC protecting personal assets",
+    "scenario": "Business owner uses LLC structure",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 85,
+    "source": "Nolo / ABA, 2024"
+  },
+  {
+    "case_name": "S-Corp election reducing self-employment tax",
+    "scenario": "Business owner elects S-Corp status",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 75,
+    "source": "IRS / AICPA, 2024"
+  },
+  {
+    "case_name": "Solo 401K maximizing retirement savings",
+    "scenario": "Self-employed person uses Solo 401K",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "IRS / Vanguard, 2024"
+  },
+  {
+    "case_name": "SEP IRA adequate for retirement",
+    "scenario": "Freelancer uses SEP IRA for retirement savings",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "IRS / Fidelity, 2024"
+  },
+  {
+    "case_name": "Backdoor Roth IRA successful execution",
+    "scenario": "High earner uses backdoor Roth strategy",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 88,
+    "source": "Fidelity / Schwab, 2024"
+  },
+  {
+    "case_name": "Municipal bonds providing tax-free income",
+    "scenario": "Investor buys municipal bonds for tax-free yield",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 92,
+    "source": "MSRB / Bloomberg, 2024"
+  },
+  {
+    "case_name": "Annuity providing guaranteed retirement income",
+    "scenario": "Retiree buys fixed annuity",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 95,
+    "source": "LIMRA / Insured Retirement Institute, 2024"
+  },
+  {
+    "case_name": "Variable annuity outperforming index fund",
+    "scenario": "Person buys variable annuity",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 20,
+    "source": "Morningstar / SEC, 2024"
+  },
+  {
+    "case_name": "Whole life insurance as investment returning well",
+    "scenario": "Person buys whole life insurance as investment vehicle",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "Consumer Reports / NerdWallet, 2024"
+  },
+  {
+    "case_name": "Term life insurance claim honored",
+    "scenario": "Family files term life insurance death claim",
+    "category": "health_money",
+    "outcome": "success",
+    "success_rate_pct": 99,
+    "source": "ACLI / NAIC, 2024"
+  },
+  {
+    "case_name": "Umbrella insurance preventing financial ruin",
+    "scenario": "Person with umbrella policy faces major liability claim",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 90,
+    "source": "III / NAIC, 2024"
+  },
+  {
+    "case_name": "Depression reducing earning capacity",
+    "scenario": "Person with clinical depression maintains career",
+    "category": "health_money",
+    "outcome": "failed",
+    "success_rate_pct": 45,
+    "source": "WHO / Lancet Psychiatry, 2024"
+  },
+  {
+    "case_name": "ADHD entrepreneur succeeding",
+    "scenario": "Person with ADHD starts business",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 51,
+    "source": "Journal of Attention Disorders / BMC Psychiatry, 2024"
+  },
+  {
+    "case_name": "Financial stress causing health problems",
+    "scenario": "Person under severe financial stress monitors health",
+    "category": "health_money",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "APA Stress in America, 2024"
+  },
+  {
+    "case_name": "Therapy ROI (career earnings improvement)",
+    "scenario": "Person invests in therapy ($150/session avg)",
+    "category": "health_money",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "Journal of Clinical Psychology / NBER, 2024"
+  },
+  {
+    "case_name": "Burnout recovery without career damage",
+    "scenario": "Professional experiences severe burnout",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 52,
+    "source": "Gallup State of the Workplace / WHO, 2024"
+  },
+  {
+    "case_name": "Gifting strategy reducing estate taxes",
+    "scenario": "Wealthy person uses annual gift exclusion ($18K)",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 85,
+    "source": "IRS / ACTEC, 2024"
+  },
+  {
+    "case_name": "Dynasty trust preserving wealth 3+ generations",
+    "scenario": "Ultra-wealthy family creates dynasty trust",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "Bessemer Trust / Northern Trust, 2024"
+  },
+  {
+    "case_name": "Family office improving investment returns",
+    "scenario": "HNW family establishes family office",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 62,
+    "source": "UBS / Campden Wealth Family Office Report, 2024"
+  },
+  {
+    "case_name": "Donor-advised fund providing tax benefit",
+    "scenario": "Philanthropist uses DAF for tax optimization",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 90,
+    "source": "National Philanthropic Trust DAF Report, 2024"
+  },
+  {
+    "case_name": "Qualified opportunity zone investment returning well",
+    "scenario": "Investor puts capital gains into QOZ fund",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "EIG / IRS QOZ Data, 2024"
+  },
+  {
+    "case_name": "1031 exchange deferring taxes successfully",
+    "scenario": "Real estate investor uses 1031 exchange",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 80,
+    "source": "FEA / IRS, 2024"
+  },
+  {
+    "case_name": "Cost segregation study providing tax benefit",
+    "scenario": "Commercial RE owner does cost segregation",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 85,
+    "source": "ASCSP / IRS Audit Technique Guide, 2024"
+  },
+  {
+    "case_name": "Freelancer on Fiverr reaching $5K/month",
+    "scenario": "Person starts selling services on Fiverr",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 5,
+    "source": "Fiverr Annual Report / Seller Survey, 2024"
+  },
+  {
+    "case_name": "Upwork freelancer reaching Top Rated",
+    "scenario": "Freelancer aims for Top Rated status on Upwork",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 12,
+    "source": "Upwork Annual Report, 2024"
+  },
+  {
+    "case_name": "Twitch streamer reaching Partner status",
+    "scenario": "Person starts streaming on Twitch",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 1,
+    "source": "TwitchTracker / StreamElements, 2024"
+  },
+  {
+    "case_name": "Podcast reaching 5K downloads per episode",
+    "scenario": "Person launches podcast",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 5,
+    "source": "Podcast Index / Libsyn, 2024"
+  },
+  {
+    "case_name": "Blog reaching $2K/month from ads/affiliates",
+    "scenario": "Person starts blog",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 5,
+    "source": "ProBlogger / Ahrefs, 2024"
+  },
+  {
+    "case_name": "Stock photography earning $1K+/year",
+    "scenario": "Photographer sells stock photos online",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 10,
+    "source": "Shutterstock / iStock Contributor Data, 2024"
+  },
+  {
+    "case_name": "Self-published book earning $10K+ lifetime",
+    "scenario": "Author self-publishes book on Amazon KDP",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 5,
+    "source": "Written Word Media / BookStat, 2024"
+  },
+  {
+    "case_name": "Music streaming generating living wage",
+    "scenario": "Musician tries to live off Spotify/Apple Music",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 2,
+    "source": "Spotify Loud & Clear / RIAA, 2024"
+  },
+  {
+    "case_name": "App monetization covering development costs",
+    "scenario": "Developer builds and monetizes mobile app",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "App Annie / Sensor Tower, 2024"
+  },
+  {
+    "case_name": "SaaS template/boilerplate sales profitable",
+    "scenario": "Developer sells code templates online",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "Gumroad / Lemon Squeezy Data, 2024"
+  },
+  {
+    "case_name": "Currency hedging protecting portfolio value",
+    "scenario": "International investor hedges currency exposure",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "BIS / Vanguard International, 2024"
+  },
+  {
+    "case_name": "Offshore company reducing tax burden legally",
+    "scenario": "Entrepreneur sets up offshore entity",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "OECD / Nomad Capitalist, 2024"
+  },
+  {
+    "case_name": "Flag theory lifestyle providing financial freedom",
+    "scenario": "Person distributes life across multiple countries for optimization",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 50,
+    "source": "Nomad Capitalist / Sovereign Man, 2024"
+  },
+  {
+    "case_name": "Emerging market stock fund outperforming developed",
+    "scenario": "Investor allocates to emerging market ETF",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "MSCI / Vanguard, 2024"
+  },
+  {
+    "case_name": "Frontier market investment profitable",
+    "scenario": "Investor buys frontier market stocks",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "MSCI Frontier Markets Index, 2024"
+  },
+  {
+    "case_name": "Dropshipping pivot to own brand succeeding",
+    "scenario": "Person transitions from dropship to private label",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 45,
+    "source": "Jungle Scout / Helium 10, 2024"
+  },
+  {
+    "case_name": "White-label SaaS reselling profitable",
+    "scenario": "Person resells white-label software",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "G2 / Agency Analytics, 2024"
+  },
+  {
+    "case_name": "Lead generation agency reaching $10K/month",
+    "scenario": "Person starts lead gen agency",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 20,
+    "source": "LeadGenApp / Clutch, 2024"
+  },
+  {
+    "case_name": "AI tool/wrapper profitable within 6 months",
+    "scenario": "Developer builds AI wrapper product",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 8,
+    "source": "Product Hunt / Indie Hackers, 2024"
+  },
+  {
+    "case_name": "Community/membership site reaching 100 paying members",
+    "scenario": "Creator launches paid community",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "Circle / Mighty Networks Data, 2024"
+  },
+  {
+    "case_name": "Sponsorship income replacing ad revenue for creator",
+    "scenario": "Creator transitions from ads to sponsors",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "CreatorIQ / Sponsorship Survey, 2024"
+  },
+  {
+    "case_name": "UGC creator earning $3K+/month",
+    "scenario": "Person creates UGC content for brands",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "Collabstr / Billo Data, 2024"
+  },
+  {
+    "case_name": "Virtual assistant business reaching $5K/month",
+    "scenario": "Person starts VA business",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "IVAA / Belay Solutions, 2024"
+  },
+  {
+    "case_name": "Social media management agency profitable year 1",
+    "scenario": "Person starts SMMA",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "HubSpot / Social Media Examiner, 2024"
+  },
+  {
+    "case_name": "SEO agency client retention past 12 months",
+    "scenario": "SEO agency retains clients beyond first contract",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "Moz / Ahrefs Agency Survey, 2024"
+  },
+  {
+    "case_name": "Web design agency reaching $100K revenue",
+    "scenario": "Person starts web design/dev agency",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "Clutch / DesignRush, 2024"
+  },
+  {
+    "case_name": "Amazon KDP author earning $1K/month",
+    "scenario": "Person publishes low-content books on Amazon",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 3,
+    "source": "Publisher Rocket / KDP Community, 2024"
+  },
+  {
+    "case_name": "NFT collection selling out mint",
+    "scenario": "Artist launches NFT collection",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 5,
+    "source": "OpenSea / Dune Analytics, 2024"
+  },
+  {
+    "case_name": "Token/crypto project reaching $1M market cap",
+    "scenario": "Team launches new cryptocurrency token",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 3,
+    "source": "CoinGecko / CoinMarketCap, 2024"
+  },
+  {
+    "case_name": "DAO generating revenue for members",
+    "scenario": "Person joins or creates a DAO",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 8,
+    "source": "DeepDAO / Messari, 2024"
+  },
+  {
+    "case_name": "Play-to-earn gaming providing income",
+    "scenario": "Person plays blockchain games for income",
+    "category": "income",
+    "outcome": "failed",
+    "success_rate_pct": 5,
+    "source": "DappRadar / Naavik, 2024"
+  },
+  {
+    "case_name": "Metaverse land investment profitable",
+    "scenario": "Person buys virtual land in metaverse",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 5,
+    "source": "DappRadar / WeMeta, 2024"
+  },
+  {
+    "case_name": "Cryptocurrency lending platform returning funds",
+    "scenario": "Person deposits crypto on lending platform",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 50,
+    "source": "Chainalysis / DeFi Llama, 2024"
+  },
+  {
+    "case_name": "Leveraged ETF profitable over 1 year",
+    "scenario": "Investor buys 2x/3x leveraged ETF and holds",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "Morningstar / ProShares, 2024"
+  },
+  {
+    "case_name": "Inverse ETF profitable during bear market",
+    "scenario": "Investor buys inverse ETF as hedge",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "Morningstar / SEC, 2024"
+  },
+  {
+    "case_name": "Covered call strategy beating buy-and-hold",
+    "scenario": "Investor writes covered calls on holdings",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "CBOE / Tastytrade, 2024"
+  },
+  {
+    "case_name": "Put selling strategy profitable over 2 years",
+    "scenario": "Investor sells cash-secured puts",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "CBOE / Tastytrade, 2024"
+  },
+  {
+    "case_name": "Wheel strategy (options) beating index",
+    "scenario": "Investor runs wheel strategy on blue chips",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "r/thetagang / Tastytrade Research, 2024"
+  },
+  {
+    "case_name": "DRIP (reinvested dividends) doubling portfolio in 15 years",
+    "scenario": "Investor uses dividend reinvestment plan",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 75,
+    "source": "Hartford Funds / Morningstar, 2024"
+  },
+  {
+    "case_name": "Treasury bills beating inflation short-term",
+    "scenario": "Person parks savings in T-bills",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "Treasury Direct / BLS CPI, 2024"
+  },
+  {
+    "case_name": "Actively managed fund beating index over 15 years",
+    "scenario": "Investor picks actively managed fund",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 8,
+    "source": "S&P SPIVA Scorecard, 2024"
+  },
+  {
+    "case_name": "Sector rotation strategy outperforming",
+    "scenario": "Investor rotates between market sectors",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "Fidelity / Morningstar, 2024"
+  },
+  {
+    "case_name": "Concentrated portfolio outperforming diversified",
+    "scenario": "Investor holds 5-10 stocks only",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "Morningstar / Vanguard, 2024"
+  },
+  {
+    "case_name": "Tax-advantaged account maximization (all accounts)",
+    "scenario": "Person maxes 401K + IRA + HSA annually",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 5,
+    "source": "Vanguard / Fidelity, 2024"
+  },
+  {
+    "case_name": "Financial coaching improving net worth",
+    "scenario": "Person hires financial coach ($200-500/session)",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "AFCPE / Financial Fitness Group, 2024"
+  },
+  {
+    "case_name": "Money date (weekly finance meeting) improving couple finances",
+    "scenario": "Couple has weekly money date",
+    "category": "money_relationship",
+    "outcome": "success",
+    "success_rate_pct": 72,
+    "source": "NEFE / Gottman Financial Communication, 2024"
+  },
+  {
+    "case_name": "Children's savings account teaching financial literacy",
+    "scenario": "Parent opens custodial savings account for child",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "FDIC / Jump$tart, 2024"
+  },
+  {
+    "case_name": "Financial independence abroad (lower cost country)",
+    "scenario": "Person achieves FI by moving to low-cost country",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "Nomad Capitalist / ChooseFI, 2024"
+  },
+  {
+    "case_name": "Passive real estate through syndication providing 8%+ returns",
+    "scenario": "Accredited investor joins RE syndication",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 62,
+    "source": "CrowdStreet / RealCrowd, 2024"
+  },
+  {
+    "case_name": "Index universal life insurance as investment",
+    "scenario": "Person buys IUL policy as investment vehicle",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 30,
+    "source": "NAIC / Consumer Reports, 2024"
+  },
+  {
+    "case_name": "Infinite banking concept working",
+    "scenario": "Person uses whole life policy for 'infinite banking'",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "NAIC / Investopedia Analysis, 2024"
+  },
+  {
+    "case_name": "Peer-to-peer lending profitable over 3 years",
+    "scenario": "Person invests in P2P lending (LendingClub, Prosper)",
+    "category": "investing",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "LendingClub / Prosper Annual Report, 2024"
+  },
+  {
+    "case_name": "Revenue-based financing repaid without stress",
+    "scenario": "Business uses revenue-based financing instead of VC",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "Clearco / Pipe Data, 2024"
+  },
+  {
+    "case_name": "Merchant cash advance not causing cash flow crisis",
+    "scenario": "Business takes merchant cash advance",
+    "category": "debt",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "Federal Reserve SBCS / CFPB, 2024"
+  },
+  {
+    "case_name": "Equipment financing ROI positive within 2 years",
+    "scenario": "Business finances equipment purchase",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "ELFA / CIT Group, 2024"
+  },
+  {
+    "case_name": "Invoice factoring improving cash flow without harm",
+    "scenario": "Business uses invoice factoring",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "International Factoring Association, 2024"
+  },
+  {
+    "case_name": "Crowdlending return beating savings account",
+    "scenario": "Investor uses crowdlending platforms",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "P2PMarketData / AltFi, 2024"
+  },
+  {
+    "case_name": "Micro-lending (Kiva) seeing repayment",
+    "scenario": "Person lends on Kiva microfinance platform",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 96,
+    "source": "Kiva Annual Report, 2024"
+  },
+  {
+    "case_name": "Islamic finance (sukuk) providing competitive returns",
+    "scenario": "Investor buys sharia-compliant bonds",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "IFSB / Bloomberg Sukuk Index, 2024"
+  },
+  {
+    "case_name": "Impact investing providing market-rate returns",
+    "scenario": "Investor allocates to impact fund",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "GIIN Annual Impact Survey, 2024"
+  },
+  {
+    "case_name": "Social enterprise reaching sustainability",
+    "scenario": "Person starts mission-driven social enterprise",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "Stanford Social Innovation Review, 2024"
+  },
+  {
+    "case_name": "B-Corp certification improving revenue",
+    "scenario": "Company pursues B-Corp certification",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 58,
+    "source": "B Lab / Yale Center for Business, 2024"
+  },
+  {
+    "case_name": "Cooperative business model surviving 5 years",
+    "scenario": "Group forms worker cooperative",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "USFWC / ICA, 2024"
+  },
+  {
+    "case_name": "Patent generating licensing revenue",
+    "scenario": "Inventor patents invention and seeks licensees",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 5,
+    "source": "USPTO / WIPO, 2024"
+  },
+  {
+    "case_name": "Trademark preventing brand theft",
+    "scenario": "Business registers trademark",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 85,
+    "source": "USPTO / INTA, 2024"
+  },
+  {
+    "case_name": "Non-compete clause enforced successfully",
+    "scenario": "Employer enforces non-compete against ex-employee",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 40,
+    "source": "Economic Policy Institute / FTC, 2024"
+  },
+  {
+    "case_name": "Wrongful termination suit succeeding",
+    "scenario": "Employee files wrongful termination lawsuit",
+    "category": "income",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "EEOC / NELA, 2024"
+  },
+  {
+    "case_name": "Workers comp claim fully covering lost wages",
+    "scenario": "Injured worker files workers compensation",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 72,
+    "source": "NCCI / BLS, 2024"
+  },
+  {
+    "case_name": "Unemployment benefits bridging to new job",
+    "scenario": "Laid-off worker collects unemployment while job searching",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "DOL / CBPP, 2024"
+  },
+  {
+    "case_name": "Disability benefits application approved first time",
+    "scenario": "Person applies for SSDI benefits",
+    "category": "income",
+    "outcome": "failed",
+    "success_rate_pct": 37,
+    "source": "SSA Disability Claims Data, 2024"
+  },
+  {
+    "case_name": "Veterans benefits fully utilized",
+    "scenario": "Veteran applies for all eligible VA benefits",
+    "category": "income",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "VA Benefits Report, 2024"
+  },
+  {
+    "case_name": "Scholarship covering full tuition",
+    "scenario": "Student applies for merit/need scholarships",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 7,
+    "source": "College Board / NASFAA, 2024"
+  },
+  {
+    "case_name": "Grant funding covering startup costs",
+    "scenario": "Entrepreneur applies for small business grants",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 10,
+    "source": "Grants.gov / SBA, 2024"
+  },
+  {
+    "case_name": "SBIR/STTR grant leading to viable business",
+    "scenario": "Tech startup applies for SBIR grant",
+    "category": "entrepreneurship",
+    "outcome": "failed",
+    "success_rate_pct": 20,
+    "source": "NSF / SBIR.gov, 2024"
+  },
+  {
+    "case_name": "Government contract (small business set-aside) profitable",
+    "scenario": "Small business wins government contract",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "SAM.gov / SBA, 2024"
+  },
+  {
+    "case_name": "Buying existing business more successful than starting new",
+    "scenario": "Person buys established business vs starting fresh",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "BizBuySell / Pepperdine, 2024"
+  },
+  {
+    "case_name": "ETA (Entrepreneurship Through Acquisition) succeeding",
+    "scenario": "MBA grad acquires small business via search fund",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "Stanford Search Fund Study, 2024"
+  },
+  {
+    "case_name": "Roll-up strategy creating value",
+    "scenario": "Investor acquires multiple businesses in same niche",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "McKinsey / Bain PE Reports, 2024"
+  },
+  {
+    "case_name": "Franchise resale profitable",
+    "scenario": "Person buys existing franchise location",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 75,
+    "source": "FRANdata / Franchise Business Review, 2024"
+  },
+  {
+    "case_name": "Retirement account early withdrawal recovered",
+    "scenario": "Person withdraws retirement funds early (with penalty)",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 15,
+    "source": "IRS / Fidelity, 2024"
+  },
+  {
+    "case_name": "FIRE couple both achieving financial independence",
+    "scenario": "Both partners in couple pursue FIRE",
+    "category": "money_relationship",
+    "outcome": "failed",
+    "success_rate_pct": 10,
+    "source": "ChooseFI / MadFientist, 2024"
+  },
+  {
+    "case_name": "Charitable giving deduction maximized",
+    "scenario": "Person donates appreciated assets for tax deduction",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 75,
+    "source": "IRS / Fidelity Charitable, 2024"
+  },
+  {
+    "case_name": "Art donation tax deduction validated by IRS",
+    "scenario": "Collector donates art for tax deduction",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 60,
+    "source": "IRS Art Advisory Panel, 2024"
+  },
+  {
+    "case_name": "Conservation easement tax benefit sustained",
+    "scenario": "Landowner uses conservation easement for tax benefits",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "Land Trust Alliance / IRS, 2024"
+  },
+  {
+    "case_name": "Historic tax credit project profitable",
+    "scenario": "Developer uses historic tax credits for renovation",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "National Trust / NPS, 2024"
+  },
+  {
+    "case_name": "Low-income housing tax credit (LIHTC) project completed",
+    "scenario": "Developer builds affordable housing with LIHTC",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 75,
+    "source": "NLIHC / NCSHA, 2024"
+  },
+  {
+    "case_name": "New market tax credit (NMTC) project succeeding",
+    "scenario": "Developer uses NMTC for community project",
+    "category": "real_estate",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "CDFI Fund / NMTC Coalition, 2024"
+  },
+  {
+    "case_name": "Renewable energy investment tax credit ROI",
+    "scenario": "Person/business uses ITC for solar/wind",
+    "category": "investing",
+    "outcome": "success",
+    "success_rate_pct": 80,
+    "source": "SEIA / AWEA, 2024"
+  },
+  {
+    "case_name": "Electric vehicle tax credit reducing total cost",
+    "scenario": "Person uses $7,500 EV tax credit",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 85,
+    "source": "IRS / DOE, 2024"
+  },
+  {
+    "case_name": "R&D tax credit reducing business tax burden",
+    "scenario": "Tech company claims R&D tax credit",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 80,
+    "source": "IRS / Alliant Group, 2024"
+  },
+  {
+    "case_name": "Work opportunity tax credit (WOTC) claimed successfully",
+    "scenario": "Employer hires from target groups for WOTC",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "DOL / IRS, 2024"
+  },
+  {
+    "case_name": "Employee retention credit (ERC) received without audit issues",
+    "scenario": "Business claims pandemic-era ERC",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 55,
+    "source": "IRS / TIGTA, 2024"
+  },
+  {
+    "case_name": "PPP loan forgiven in full",
+    "scenario": "Business received PPP loan during pandemic",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 92,
+    "source": "SBA PPP Forgiveness Data, 2024"
+  },
+  {
+    "case_name": "EIDL repaid without business failure",
+    "scenario": "Business took EIDL during pandemic",
+    "category": "entrepreneurship",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "SBA / GAO, 2024"
+  },
+  {
+    "case_name": "Crypto tax reporting done correctly",
+    "scenario": "Person reports crypto gains/losses on taxes",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 40,
+    "source": "CoinTracker / TaxBit, 2024"
+  },
+  {
+    "case_name": "Audit by IRS resulting in no change",
+    "scenario": "Individual taxpayer is audited by IRS",
+    "category": "personal_finance",
+    "outcome": "failed",
+    "success_rate_pct": 25,
+    "source": "IRS Data Book / TRAC, 2024"
+  },
+  {
+    "case_name": "Tax professional saving more than their fee",
+    "scenario": "Person hires CPA/EA for tax preparation",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 62,
+    "source": "AICPA / National Society of Accountants, 2024"
+  },
+  {
+    "case_name": "DIY tax filing done correctly",
+    "scenario": "Person files own taxes with TurboTax/FreeTaxUSA",
+    "category": "personal_finance",
+    "outcome": "success",
+    "success_rate_pct": 80,
+    "source": "IRS / TurboTax Error Rate Data, 2024"
+  },
+  {
+    "case_name": "Installment agreement with IRS completed",
+    "scenario": "Taxpayer sets up payment plan for back taxes",
+    "category": "debt",
+    "outcome": "success",
+    "success_rate_pct": 75,
+    "source": "IRS / TIGTA, 2024"
+  },
+  {
+    "case_name": "Offer in compromise accepted by IRS",
+    "scenario": "Taxpayer proposes settling tax debt for less",
+    "category": "debt",
+    "outcome": "failed",
+    "success_rate_pct": 33,
+    "source": "IRS Data Book, 2024"
+  },
+  {
+    "case_name": "Innocent spouse relief granted",
+    "scenario": "Spouse requests relief from joint tax liability",
+    "category": "money_relationship",
+    "outcome": "failed",
+    "success_rate_pct": 35,
+    "source": "IRS / TAS, 2024"
+  },
+  {
+    "case_name": "Estate tax return filed without audit",
+    "scenario": "Estate files Form 706 (estate > $13.6M)",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 65,
+    "source": "IRS SOI / ACTEC, 2024"
+  },
+  {
+    "case_name": "Family limited partnership reducing estate taxes",
+    "scenario": "Family uses FLP for estate planning",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 70,
+    "source": "ACTEC / Tax Court Cases, 2024"
+  },
+  {
+    "case_name": "Intentionally defective grantor trust (IDGT) working",
+    "scenario": "Wealthy person uses IDGT for estate planning",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 80,
+    "source": "ACTEC / Northern Trust, 2024"
+  },
+  {
+    "case_name": "Spousal lifetime access trust (SLAT) protecting assets",
+    "scenario": "Married couple uses SLAT before exemption sunset",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 82,
+    "source": "ACTEC / WealthCounsel, 2024"
+  },
+  {
+    "case_name": "Generation-skipping trust avoiding GST tax",
+    "scenario": "Grandparent sets up GST trust",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 85,
+    "source": "ACTEC / IRS, 2024"
+  },
+  {
+    "case_name": "Charitable lead trust providing income and deduction",
+    "scenario": "Philanthropist sets up CLT",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 75,
+    "source": "National Philanthropic Trust, 2024"
+  },
+  {
+    "case_name": "Private foundation operating within IRS rules",
+    "scenario": "Family establishes private foundation",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 80,
+    "source": "Foundation Center / IRS, 2024"
+  },
+  {
+    "case_name": "Irrevocable life insurance trust (ILIT) reducing estate",
+    "scenario": "Person transfers life insurance to ILIT",
+    "category": "wealth",
+    "outcome": "success",
+    "success_rate_pct": 85,
+    "source": "ACTEC / AALU, 2024"
+  }
 ]

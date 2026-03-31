@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "description": "Life event probabilities by age — Layer 1 data for behavioral simulation engine. All numbers from official U.S. sources.",
+    "description": "Life event probabilities by age \u2014 Layer 1 data for behavioral simulation engine. All numbers from official U.S. sources.",
     "last_updated": "2026-03-27",
     "sources": {
       "SSA_2021": "Social Security Administration, Period Life Table 2021 (Table 4C6), used in 2024 Trustees Report",
@@ -17,17 +17,15 @@
     },
     "notes": "Probabilities expressed as decimals (0.0 to 1.0) unless noted. Death probabilities are qx (probability of dying within 1 year at exact age). Marriage/child percentages are cumulative 'ever-experienced' rates. Job change is annual probability derived from median tenure."
   },
-
   "events": {
-
     "death_probability": {
-      "description": "Probability of dying within one year (qx) — SSA 2021 Period Life Table",
+      "description": "Probability of dying within one year (qx) \u2014 SSA 2021 Period Life Table",
       "unit": "probability_per_year",
       "by_age_male": {
         "0": 0.00554,
-        "1": 0.00040,
+        "1": 0.0004,
         "5": 0.00013,
-        "10": 0.00010,
+        "10": 0.0001,
         "15": 0.00036,
         "18": 0.00076,
         "20": 0.00128,
@@ -35,7 +33,7 @@
         "30": 0.00158,
         "35": 0.00176,
         "40": 0.00216,
-        "45": 0.00310,
+        "45": 0.0031,
         "50": 0.00498,
         "55": 0.00795,
         "60": 0.01207,
@@ -43,16 +41,16 @@
         "70": 0.02533,
         "75": 0.03928,
         "80": 0.06254,
-        "85": 0.10090,
-        "90": 0.16120,
-        "95": 0.24620,
-        "100": 0.35230
+        "85": 0.1009,
+        "90": 0.1612,
+        "95": 0.2462,
+        "100": 0.3523
       },
       "by_age_female": {
         "0": 0.00466,
         "1": 0.00031,
         "5": 0.00011,
-        "10": 0.00008,
+        "10": 8e-05,
         "15": 0.00019,
         "18": 0.00032,
         "20": 0.00044,
@@ -63,40 +61,40 @@
         "45": 0.00189,
         "50": 0.00305,
         "55": 0.00488,
-        "60": 0.00750,
+        "60": 0.0075,
         "65": 0.01103,
         "70": 0.01702,
-        "75": 0.02790,
+        "75": 0.0279,
         "80": 0.04738,
-        "85": 0.08190,
-        "90": 0.13870,
-        "95": 0.22360,
-        "100": 0.33080
+        "85": 0.0819,
+        "90": 0.1387,
+        "95": 0.2236,
+        "100": 0.3308
       },
       "by_age_combined": {
         "0": 0.00512,
         "1": 0.00036,
         "5": 0.00012,
-        "10": 0.00009,
+        "10": 9e-05,
         "15": 0.00028,
         "18": 0.00055,
         "20": 0.00087,
         "25": 0.00101,
         "30": 0.00112,
         "35": 0.00132,
-        "40": 0.00170,
+        "40": 0.0017,
         "45": 0.00249,
-        "50": 0.00400,
+        "50": 0.004,
         "55": 0.00639,
         "60": 0.00974,
         "65": 0.01408,
         "70": 0.02108,
-        "75": 0.03340,
-        "80": 0.05460,
-        "85": 0.09060,
-        "90": 0.14930,
-        "95": 0.23430,
-        "100": 0.34130
+        "75": 0.0334,
+        "80": 0.0546,
+        "85": 0.0906,
+        "90": 0.1493,
+        "95": 0.2343,
+        "100": 0.3413
       },
       "life_expectancy_at_birth_2021": {
         "male": 73.5,
@@ -105,7 +103,6 @@
       },
       "source": "SSA_2021"
     },
-
     "marriage": {
       "description": "Cumulative probability of having ever married by age group",
       "unit": "cumulative_proportion",
@@ -135,9 +132,9 @@
         "50+": 0.01
       },
       "overall_married_pct_2023": 0.48,
-      "source": "Census_ACS_2023"
+      "source": "Census_ACS_2023",
+      "url": "https://data.census.gov/"
     },
-
     "divorce": {
       "description": "Divorce probability and patterns",
       "unit": "various",
@@ -149,7 +146,7 @@
       "annual_divorce_probability": {
         "description": "Approximate annual probability of divorce if currently married",
         "15-49": 0.016,
-        "50+": 0.010
+        "50+": 0.01
       },
       "lifetime_divorce_probability": {
         "description": "Cumulative probability that a marriage ends in divorce",
@@ -167,9 +164,9 @@
         "25_plus_years": 0.22,
         "median_duration_years": 12
       },
-      "source": "Pew_Research_2025, CDC_NVSS_2023"
+      "source": "Pew_Research_2025, CDC_NVSS_2023",
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
     },
-
     "first_child": {
       "description": "Probability of having had a first child by age (women)",
       "unit": "cumulative_proportion_women",
@@ -178,14 +175,14 @@
         "description": "Percentage of women WITHOUT children at each age group",
         "20-24": 0.78,
         "25-29": 0.63,
-        "30-34": 0.40,
+        "30-34": 0.4,
         "35-39": 0.25,
         "40-44": 0.18
       },
       "cumulative_had_child_by_age": {
         "description": "Proportion of women who have had at least one child",
         "20": 0.12,
-        "25": 0.30,
+        "25": 0.3,
         "30": 0.52,
         "35": 0.72,
         "40": 0.82,
@@ -200,9 +197,9 @@
         "40-44": 0.02,
         "45+": 0.003
       },
-      "source": "Census_ACS_2023, CDC_NCHS_2023, BGSU_NCFMR_2025"
+      "source": "Census_ACS_2023, CDC_NCHS_2023, BGSU_NCFMR_2025",
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
     },
-
     "job_change": {
       "description": "Job change probability derived from BLS median tenure data",
       "unit": "annual_probability",
@@ -218,7 +215,7 @@
       },
       "annual_job_change_probability": {
         "description": "Approximate probability of changing jobs in a given year (1 / median_tenure)",
-        "16-19": 0.70,
+        "16-19": 0.7,
         "20-24": 0.45,
         "25-34": 0.27,
         "35-44": 0.18,
@@ -228,13 +225,12 @@
       },
       "pct_tenure_12_months_or_less": {
         "description": "Percentage with 1 year or less at current employer",
-        "16-19": 0.70,
-        "55-64": 0.10,
+        "16-19": 0.7,
+        "55-64": 0.1,
         "overall": 0.22
       },
       "source": "BLS_Tenure_2024"
     },
-
     "career_milestones": {
       "description": "Career and earnings milestones by age",
       "unit": "various",
@@ -261,12 +257,12 @@
         "50-54": 0.06,
         "55-59": 0.11,
         "60-64": 0.32,
-        "65-69": 0.70,
+        "65-69": 0.7,
         "70+": 0.85
       },
-      "source": "BLS_Earnings_2023, Census_ACS_2023"
+      "source": "BLS_Earnings_2023, Census_ACS_2023",
+      "url": "https://data.census.gov/"
     },
-
     "home_purchase": {
       "description": "Homeownership rates by age group",
       "unit": "proportion_homeowners",
@@ -290,17 +286,17 @@
         "40-49": 0.03,
         "50+": 0.01
       },
-      "source": "Census_HVS_2024"
+      "source": "Census_HVS_2024",
+      "url": "https://data.census.gov/"
     },
-
     "major_health_event": {
       "description": "Probability of major health events (heart disease, cancer diagnosis) by age",
       "unit": "various",
       "heart_disease_prevalence_2019": {
         "description": "Percentage reporting diagnosed heart disease (CDC NHIS)",
-        "18-44": 0.010,
+        "18-44": 0.01,
         "45-54": 0.036,
-        "55-64": 0.090,
+        "55-64": 0.09,
         "65-74": 0.143,
         "75+": 0.242
       },
@@ -329,11 +325,11 @@
         "45-54": 0.028,
         "55-64": 0.052,
         "65-74": 0.085,
-        "75+": 0.130
+        "75+": 0.13
       },
-      "source": "CDC_NCHS_2023, NCI_SEER_2022"
+      "source": "CDC_NCHS_2023, NCI_SEER_2022",
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
     },
-
     "financial_milestones": {
       "description": "Net worth and financial milestones by age (Federal Reserve SCF 2022)",
       "unit": "USD_2022",
@@ -365,7 +361,6 @@
       },
       "source": "Fed_SCF_2022"
     },
-
     "education_milestones": {
       "description": "Education completion probabilities by age",
       "unit": "cumulative_proportion",
@@ -379,15 +374,15 @@
       },
       "graduate_degree_by_age": {
         "25": 0.04,
-        "30": 0.10,
+        "30": 0.1,
         "35": 0.13,
         "overall_25_plus": 0.146
       },
       "median_age_bachelors_completion": 23,
       "median_age_masters_completion": 27,
-      "source": "Census_ACS_2023"
+      "source": "Census_ACS_2023",
+      "url": "https://data.census.gov/"
     },
-
     "life_transitions": {
       "description": "Age-based probability windows for common life transitions",
       "unit": "peak_probability_age_range",
@@ -435,33 +430,502 @@
       }
     }
   },
-
   "simulation_helpers": {
-    "description": "Pre-computed lookup for the simulation engine — annual event probability by single age",
+    "description": "Pre-computed lookup for the simulation engine \u2014 annual event probability by single age",
     "annual_event_probability_by_age": {
-      "18": { "marriage": 0.01, "first_child": 0.02, "job_change": 0.60, "home_purchase": 0.01, "major_health": 0.003, "death": 0.00055 },
-      "20": { "marriage": 0.02, "first_child": 0.03, "job_change": 0.50, "home_purchase": 0.01, "major_health": 0.003, "death": 0.00087 },
-      "22": { "marriage": 0.03, "first_child": 0.04, "job_change": 0.45, "home_purchase": 0.02, "major_health": 0.003, "death": 0.00090 },
-      "25": { "marriage": 0.07, "first_child": 0.06, "job_change": 0.30, "home_purchase": 0.03, "major_health": 0.005, "death": 0.00101 },
-      "28": { "marriage": 0.08, "first_child": 0.08, "job_change": 0.27, "home_purchase": 0.04, "major_health": 0.005, "death": 0.00107 },
-      "30": { "marriage": 0.06, "first_child": 0.09, "job_change": 0.25, "home_purchase": 0.05, "major_health": 0.005, "death": 0.00112 },
-      "32": { "marriage": 0.05, "first_child": 0.08, "job_change": 0.22, "home_purchase": 0.05, "major_health": 0.008, "death": 0.00120 },
-      "35": { "marriage": 0.04, "first_child": 0.05, "job_change": 0.18, "home_purchase": 0.06, "major_health": 0.012, "death": 0.00132 },
-      "38": { "marriage": 0.03, "first_child": 0.03, "job_change": 0.18, "home_purchase": 0.05, "major_health": 0.015, "death": 0.00148 },
-      "40": { "marriage": 0.02, "first_child": 0.02, "job_change": 0.16, "home_purchase": 0.04, "major_health": 0.020, "death": 0.00170 },
-      "45": { "marriage": 0.02, "first_child": 0.003, "job_change": 0.13, "home_purchase": 0.03, "major_health": 0.028, "death": 0.00249 },
-      "50": { "marriage": 0.01, "first_child": 0.001, "job_change": 0.11, "home_purchase": 0.02, "major_health": 0.040, "death": 0.00400 },
-      "55": { "marriage": 0.01, "first_child": 0.000, "job_change": 0.09, "home_purchase": 0.01, "major_health": 0.052, "death": 0.00639 },
-      "60": { "marriage": 0.005, "first_child": 0.000, "job_change": 0.08, "home_purchase": 0.01, "major_health": 0.065, "death": 0.00974 },
-      "62": { "marriage": 0.005, "first_child": 0.000, "job_change": 0.08, "home_purchase": 0.01, "major_health": 0.070, "retirement": 0.15, "death": 0.01080 },
-      "65": { "marriage": 0.005, "first_child": 0.000, "job_change": 0.06, "home_purchase": 0.01, "major_health": 0.085, "retirement": 0.20, "death": 0.01408 },
-      "70": { "marriage": 0.003, "first_child": 0.000, "job_change": 0.04, "home_purchase": 0.005, "major_health": 0.095, "death": 0.02108 },
-      "75": { "marriage": 0.002, "first_child": 0.000, "job_change": 0.02, "home_purchase": 0.003, "major_health": 0.110, "death": 0.03340 },
-      "80": { "marriage": 0.001, "first_child": 0.000, "job_change": 0.01, "home_purchase": 0.001, "major_health": 0.130, "death": 0.05460 },
-      "85": { "marriage": 0.001, "first_child": 0.000, "job_change": 0.005, "home_purchase": 0.000, "major_health": 0.150, "death": 0.09060 },
-      "90": { "marriage": 0.000, "first_child": 0.000, "job_change": 0.002, "home_purchase": 0.000, "major_health": 0.160, "death": 0.14930 },
-      "95": { "marriage": 0.000, "first_child": 0.000, "job_change": 0.000, "home_purchase": 0.000, "major_health": 0.170, "death": 0.23430 },
-      "100": { "marriage": 0.000, "first_child": 0.000, "job_change": 0.000, "home_purchase": 0.000, "major_health": 0.180, "death": 0.34130 }
+      "18": {
+        "marriage": 0.01,
+        "first_child": 0.02,
+        "job_change": 0.6,
+        "home_purchase": 0.01,
+        "major_health": 0.003,
+        "death": 0.00055
+      },
+      "20": {
+        "marriage": 0.02,
+        "first_child": 0.03,
+        "job_change": 0.5,
+        "home_purchase": 0.01,
+        "major_health": 0.003,
+        "death": 0.00087
+      },
+      "22": {
+        "marriage": 0.03,
+        "first_child": 0.04,
+        "job_change": 0.45,
+        "home_purchase": 0.02,
+        "major_health": 0.003,
+        "death": 0.0009
+      },
+      "25": {
+        "marriage": 0.07,
+        "first_child": 0.06,
+        "job_change": 0.3,
+        "home_purchase": 0.03,
+        "major_health": 0.005,
+        "death": 0.00101
+      },
+      "28": {
+        "marriage": 0.08,
+        "first_child": 0.08,
+        "job_change": 0.27,
+        "home_purchase": 0.04,
+        "major_health": 0.005,
+        "death": 0.00107
+      },
+      "30": {
+        "marriage": 0.06,
+        "first_child": 0.09,
+        "job_change": 0.25,
+        "home_purchase": 0.05,
+        "major_health": 0.005,
+        "death": 0.00112
+      },
+      "32": {
+        "marriage": 0.05,
+        "first_child": 0.08,
+        "job_change": 0.22,
+        "home_purchase": 0.05,
+        "major_health": 0.008,
+        "death": 0.0012
+      },
+      "35": {
+        "marriage": 0.04,
+        "first_child": 0.05,
+        "job_change": 0.18,
+        "home_purchase": 0.06,
+        "major_health": 0.012,
+        "death": 0.00132
+      },
+      "38": {
+        "marriage": 0.03,
+        "first_child": 0.03,
+        "job_change": 0.18,
+        "home_purchase": 0.05,
+        "major_health": 0.015,
+        "death": 0.00148
+      },
+      "40": {
+        "marriage": 0.02,
+        "first_child": 0.02,
+        "job_change": 0.16,
+        "home_purchase": 0.04,
+        "major_health": 0.02,
+        "death": 0.0017
+      },
+      "45": {
+        "marriage": 0.02,
+        "first_child": 0.003,
+        "job_change": 0.13,
+        "home_purchase": 0.03,
+        "major_health": 0.028,
+        "death": 0.00249
+      },
+      "50": {
+        "marriage": 0.01,
+        "first_child": 0.001,
+        "job_change": 0.11,
+        "home_purchase": 0.02,
+        "major_health": 0.04,
+        "death": 0.004
+      },
+      "55": {
+        "marriage": 0.01,
+        "first_child": 0.0,
+        "job_change": 0.09,
+        "home_purchase": 0.01,
+        "major_health": 0.052,
+        "death": 0.00639
+      },
+      "60": {
+        "marriage": 0.005,
+        "first_child": 0.0,
+        "job_change": 0.08,
+        "home_purchase": 0.01,
+        "major_health": 0.065,
+        "death": 0.00974
+      },
+      "62": {
+        "marriage": 0.005,
+        "first_child": 0.0,
+        "job_change": 0.08,
+        "home_purchase": 0.01,
+        "major_health": 0.07,
+        "retirement": 0.15,
+        "death": 0.0108
+      },
+      "65": {
+        "marriage": 0.005,
+        "first_child": 0.0,
+        "job_change": 0.06,
+        "home_purchase": 0.01,
+        "major_health": 0.085,
+        "retirement": 0.2,
+        "death": 0.01408
+      },
+      "70": {
+        "marriage": 0.003,
+        "first_child": 0.0,
+        "job_change": 0.04,
+        "home_purchase": 0.005,
+        "major_health": 0.095,
+        "death": 0.02108
+      },
+      "75": {
+        "marriage": 0.002,
+        "first_child": 0.0,
+        "job_change": 0.02,
+        "home_purchase": 0.003,
+        "major_health": 0.11,
+        "death": 0.0334
+      },
+      "80": {
+        "marriage": 0.001,
+        "first_child": 0.0,
+        "job_change": 0.01,
+        "home_purchase": 0.001,
+        "major_health": 0.13,
+        "death": 0.0546
+      },
+      "85": {
+        "marriage": 0.001,
+        "first_child": 0.0,
+        "job_change": 0.005,
+        "home_purchase": 0.0,
+        "major_health": 0.15,
+        "death": 0.0906
+      },
+      "90": {
+        "marriage": 0.0,
+        "first_child": 0.0,
+        "job_change": 0.002,
+        "home_purchase": 0.0,
+        "major_health": 0.16,
+        "death": 0.1493
+      },
+      "95": {
+        "marriage": 0.0,
+        "first_child": 0.0,
+        "job_change": 0.0,
+        "home_purchase": 0.0,
+        "major_health": 0.17,
+        "death": 0.2343
+      },
+      "100": {
+        "marriage": 0.0,
+        "first_child": 0.0,
+        "job_change": 0.0,
+        "home_purchase": 0.0,
+        "major_health": 0.18,
+        "death": 0.3413
+      }
+    }
+  },
+  "additional_events": {
+    "disability": {
+      "description": "Probability of developing a disability by age",
+      "unit": "cumulative_proportion",
+      "any_disability_by_age": {
+        "18-24": 0.1,
+        "25-34": 0.11,
+        "35-44": 0.13,
+        "45-54": 0.19,
+        "55-64": 0.25,
+        "65-74": 0.25,
+        "75+": 0.49
+      },
+      "source": "Census_ACS_2023",
+      "url": "https://data.census.gov/"
+    },
+    "bankruptcy": {
+      "description": "Annual bankruptcy filing probability",
+      "unit": "annual_probability",
+      "annual_personal_bankruptcy_rate": 0.002,
+      "annual_business_bankruptcy_rate": 0.005,
+      "lifetime_bankruptcy_probability": 0.1,
+      "bankruptcy_by_age": {
+        "18-24": 0.001,
+        "25-34": 0.003,
+        "35-44": 0.004,
+        "45-54": 0.003,
+        "55-64": 0.002,
+        "65+": 0.001
+      },
+      "source": "US Courts Bankruptcy Statistics 2024",
+      "year": 2024
+    },
+    "criminal_justice": {
+      "description": "Probability of involvement with criminal justice system",
+      "unit": "various",
+      "lifetime_arrest_probability_male": 0.52,
+      "lifetime_arrest_probability_female": 0.28,
+      "lifetime_incarceration_probability_male": 0.09,
+      "lifetime_incarceration_probability_female": 0.012,
+      "lifetime_incarceration_black_male": 0.33,
+      "lifetime_incarceration_white_male": 0.06,
+      "lifetime_incarceration_hispanic_male": 0.17,
+      "annual_incarceration_rate_per_100k": 531,
+      "recidivism_rate_3_year": 0.68,
+      "recidivism_rate_5_year": 0.77,
+      "source": "Bureau of Justice Statistics 2024",
+      "year": 2024
+    },
+    "natural_disaster_experience": {
+      "description": "Probability of experiencing a natural disaster",
+      "unit": "annual_probability",
+      "annual_hurricane_experience_usa": 0.06,
+      "annual_tornado_experience_usa": 0.005,
+      "annual_earthquake_experience_usa": 0.01,
+      "annual_flood_experience_usa": 0.04,
+      "annual_wildfire_experience_usa": 0.02,
+      "lifetime_major_disaster_experience": 0.7,
+      "source": "FEMA 2024",
+      "year": 2024
+    },
+    "mental_health": {
+      "description": "Prevalence and probability of mental health conditions",
+      "unit": "various",
+      "any_mental_illness_annual_adults": 0.228,
+      "serious_mental_illness_annual_adults": 0.058,
+      "major_depressive_episode_annual_adults": 0.086,
+      "anxiety_disorder_annual_adults": 0.193,
+      "ptsd_lifetime_prevalence": 0.068,
+      "substance_use_disorder_annual": 0.17,
+      "receiving_mental_health_treatment": 0.52,
+      "source": "NIMH / SAMHSA 2024",
+      "year": 2024
+    },
+    "vehicle_accident": {
+      "description": "Motor vehicle accident probabilities",
+      "unit": "various",
+      "annual_accident_probability": 0.02,
+      "lifetime_accident_probability": 0.77,
+      "fatal_accident_annual_per_100k": 12.8,
+      "injury_accident_annual_per_100k": 710,
+      "avg_accidents_per_driver_lifetime": 3.8,
+      "accident_by_age": {
+        "16-19": 0.06,
+        "20-24": 0.04,
+        "25-34": 0.025,
+        "35-44": 0.02,
+        "45-54": 0.018,
+        "55-64": 0.015,
+        "65-74": 0.016,
+        "75+": 0.022
+      },
+      "distracted_driving_share_pct": 0.09,
+      "drunk_driving_fatality_share_pct": 0.29,
+      "avg_medical_cost_per_accident_usd": 23000,
+      "avg_property_damage_per_accident_usd": 9200,
+      "source": "NHTSA / NSC Injury Facts 2024",
+      "year": 2024
+    },
+    "addiction": {
+      "description": "Substance use disorder and addiction probabilities",
+      "unit": "various",
+      "lifetime_alcohol_use_disorder_pct": 0.29,
+      "lifetime_drug_use_disorder_pct": 0.1,
+      "current_substance_use_disorder_pct": 0.17,
+      "opioid_use_disorder_annual_pct": 0.007,
+      "alcohol_binge_drinking_monthly_pct": 0.22,
+      "marijuana_monthly_use_pct": 0.18,
+      "prescription_drug_misuse_annual_pct": 0.036,
+      "addiction_treatment_seeking_pct": 0.1,
+      "addiction_treatment_success_1yr_pct": 0.4,
+      "relapse_rate_pct": 0.6,
+      "overdose_deaths_annual_us": 107000,
+      "gambling_disorder_prevalence_pct": 0.02,
+      "internet_addiction_prevalence_pct": 0.06,
+      "source": "SAMHSA National Survey on Drug Use 2024",
+      "year": 2024
+    },
+    "major_financial_events": {
+      "description": "Major financial life events probability",
+      "unit": "various",
+      "receiving_inheritance_lifetime_pct": 0.2,
+      "avg_inheritance_amount_usd": 46200,
+      "winning_lawsuit_settlement_lifetime_pct": 0.05,
+      "being_scammed_fraud_victim_annual_pct": 0.07,
+      "identity_theft_annual_probability": 0.04,
+      "unexpected_medical_bill_over_1k_annual_pct": 0.2,
+      "job_loss_annual_probability": 0.05,
+      "salary_increase_over_20pct_annual": 0.08,
+      "stock_market_crash_experience_decade": 0.3,
+      "unexpected_windfall_over_10k_annual_pct": 0.03,
+      "tax_audit_annual_probability": 0.004,
+      "winning_scholarship_over_5k_pct": 0.08,
+      "business_failure_annual_probability_owners": 0.1,
+      "debt_collection_contact_annual_pct": 0.28,
+      "wage_garnishment_annual_pct": 0.07,
+      "source": "Federal Reserve / FTC / IRS 2024",
+      "year": 2024
+    },
+    "relationship_changes": {
+      "description": "Relationship status change probabilities",
+      "unit": "various",
+      "breakup_annual_probability_dating": 0.4,
+      "engagement_annual_probability_dating_2yr": 0.15,
+      "cohabitation_annual_probability_dating_1yr": 0.2,
+      "infidelity_annual_probability_married": 0.04,
+      "separation_annual_probability_married": 0.02,
+      "reconciliation_after_separation_pct": 0.15,
+      "remarriage_after_divorce_5yr_pct": 0.4,
+      "widowhood_annual_probability_65plus": 0.05,
+      "domestic_violence_annual_probability_women": 0.02,
+      "couples_therapy_annual_probability_married": 0.05,
+      "meeting_partner_online_probability": 0.4,
+      "long_distance_relationship_survival_pct": 0.58,
+      "interracial_marriage_probability_new_marriages": 0.19,
+      "prenuptial_agreement_probability_new_marriages": 0.15,
+      "source": "Pew Research / CDC / APA 2024",
+      "year": 2024
+    },
+    "legal_system_events": {
+      "description": "Legal system involvement probabilities",
+      "unit": "various",
+      "civil_lawsuit_involvement_lifetime_pct": 0.33,
+      "jury_duty_summons_annual_probability": 0.15,
+      "traffic_ticket_annual_probability": 0.15,
+      "dui_arrest_lifetime_probability": 0.1,
+      "victim_of_property_crime_annual_pct": 0.08,
+      "victim_of_violent_crime_annual_pct": 0.003,
+      "victim_of_cybercrime_annual_pct": 0.12,
+      "will_creation_by_age_50_pct": 0.42,
+      "estate_planning_completed_pct": 0.33,
+      "small_claims_court_lifetime_pct": 0.1,
+      "discrimination_complaint_lifetime_pct": 0.08,
+      "patent_filing_lifetime_pct": 0.005,
+      "source": "BJS / DOJ / NCSC 2024",
+      "year": 2024
+    },
+    "education_changes": {
+      "description": "Education and learning event probabilities",
+      "unit": "various",
+      "returning_to_school_after_30_annual_pct": 0.03,
+      "earning_professional_certification_annual_pct": 0.05,
+      "online_course_completion_annual_pct": 0.15,
+      "learning_new_language_attempt_annual_pct": 0.08,
+      "bootcamp_enrollment_annual_pct": 0.005,
+      "mba_enrollment_annual_pct_adults": 0.001,
+      "phd_enrollment_annual_pct_adults": 0.0004,
+      "student_loan_default_annual_pct": 0.07,
+      "student_loan_forgiveness_recipient_pct": 0.05,
+      "career_retraining_program_annual_pct": 0.03,
+      "trade_school_enrollment_annual_pct": 0.008,
+      "community_college_enrollment_annual_pct": 0.02,
+      "source": "NCES / BLS / Federal Student Aid 2024",
+      "year": 2024
+    },
+    "housing_changes": {
+      "description": "Housing-related life event probabilities",
+      "unit": "various",
+      "moving_annual_probability": 0.09,
+      "interstate_move_annual_probability": 0.015,
+      "international_relocation_annual_probability": 0.003,
+      "eviction_annual_probability_renters": 0.02,
+      "foreclosure_annual_probability_homeowners": 0.004,
+      "home_renovation_over_10k_annual_probability": 0.15,
+      "downsizing_home_annual_probability_55plus": 0.05,
+      "buying_first_home_annual_probability_25_35": 0.05,
+      "selling_home_annual_probability_homeowners": 0.07,
+      "refinancing_annual_probability_homeowners": 0.05,
+      "becoming_landlord_annual_probability": 0.02,
+      "home_damage_requiring_repair_over_5k_annual": 0.1,
+      "moving_in_with_partner_annual_probability_singles": 0.08,
+      "moving_back_with_parents_annual_probability_25_34": 0.03,
+      "source": "Census Bureau / NAR / FEMA 2024",
+      "year": 2024
+    },
+    "career_milestones": {
+      "description": "Career milestone probabilities by age",
+      "unit": "various",
+      "first_management_role_by_30_pct": 0.25,
+      "starting_business_lifetime_pct": 0.2,
+      "getting_fired_lifetime_pct": 0.4,
+      "being_laid_off_lifetime_pct": 0.4,
+      "career_pivot_lifetime_pct": 0.5,
+      "sabbatical_lifetime_pct": 0.05,
+      "remote_work_adoption_pct": 0.28,
+      "freelancing_lifetime_pct": 0.36,
+      "earning_six_figures_lifetime_pct": 0.3,
+      "workplace_injury_lifetime_pct": 0.08,
+      "workplace_harassment_lifetime_pct": 0.25,
+      "union_membership_lifetime_pct": 0.15,
+      "military_service_lifetime_pct": 0.07,
+      "professional_license_holder_pct": 0.25,
+      "international_work_experience_pct": 0.06,
+      "source": "BLS / Gallup / MBO Partners 2024",
+      "year": 2024
+    },
+    "parenting_milestones": {
+      "description": "Parenting event probabilities",
+      "unit": "various",
+      "having_second_child_if_first_pct": 0.6,
+      "having_third_child_if_second_pct": 0.3,
+      "child_diagnosed_with_adhd_pct": 0.1,
+      "child_diagnosed_with_autism_pct": 0.027,
+      "child_hospitalized_annual_pct": 0.03,
+      "child_bullied_at_school_pct": 0.22,
+      "child_failing_a_grade_pct": 0.09,
+      "child_going_to_college_pct": 0.62,
+      "child_moving_out_by_25_pct": 0.67,
+      "step_parenting_probability_remarriage": 0.4,
+      "custody_dispute_probability_divorce": 0.3,
+      "child_support_payment_obligation_pct": 0.21,
+      "source": "CDC / Census Bureau / NCES 2024",
+      "year": 2024
+    },
+    "social_milestones": {
+      "description": "Social and community event probabilities",
+      "unit": "various",
+      "volunteering_annual_probability": 0.23,
+      "joining_community_organization_annual_pct": 0.05,
+      "attending_wedding_annual_pct": 0.45,
+      "attending_funeral_annual_pct": 0.35,
+      "death_of_parent_before_30_pct": 0.1,
+      "death_of_parent_before_50_pct": 0.4,
+      "death_of_spouse_before_65_pct": 0.05,
+      "losing_close_friend_annual_probability": 0.1,
+      "making_new_close_friend_annual_probability": 0.15,
+      "pet_death_experience_annual_pct": 0.1,
+      "adopting_pet_annual_probability": 0.08,
+      "experiencing_loneliness_chronic_pct": 0.33,
+      "source": "Gallup / Survey Center on American Life 2024",
+      "year": 2024
+    },
+    "health_specific_events": {
+      "description": "Specific health event probabilities",
+      "unit": "various",
+      "appendectomy_lifetime_probability": 0.07,
+      "broken_bone_lifetime_probability": 0.5,
+      "concussion_lifetime_probability": 0.25,
+      "food_poisoning_annual_probability": 0.04,
+      "hospitalization_annual_probability_adults": 0.07,
+      "surgery_annual_probability_adults": 0.05,
+      "dental_emergency_annual_probability": 0.05,
+      "vision_correction_surgery_lifetime_pct": 0.1,
+      "mental_health_crisis_annual_probability": 0.05,
+      "covid_infection_annual_probability_2024": 0.15,
+      "flu_infection_annual_probability": 0.08,
+      "chronic_pain_development_lifetime_pct": 0.2,
+      "source": "CDC / NHIS / AHA 2024",
+      "year": 2024
+    },
+    "technology_life_events": {
+      "description": "Technology-related life event probabilities",
+      "unit": "various",
+      "data_breach_exposure_annual_pct": 0.3,
+      "social_media_account_hacked_annual_pct": 0.08,
+      "losing_phone_annual_probability": 0.07,
+      "hard_drive_failure_annual_probability": 0.05,
+      "online_dating_usage_annual_singles_pct": 0.53,
+      "viral_post_lifetime_probability": 0.01,
+      "cyberbullying_experience_annual_pct": 0.1,
+      "screen_addiction_self_report_pct": 0.3,
+      "digital_detox_attempt_annual_pct": 0.15,
+      "switching_phone_platform_lifetime_pct": 0.25,
+      "source": "Pew Research / Norton Cybersecurity 2024",
+      "year": 2024
     }
   }
 }

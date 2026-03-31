@@ -2,20 +2,19 @@
   "_metadata": {
     "description": "Industry-specific business survival rates, profit margins, and key metrics",
     "sources": [
-      "U.S. Bureau of Labor Statistics — Business Employment Dynamics (BED)",
-      "NYU Stern Damodaran — Operating and Net Margins (Jan 2026 update)",
-      "SBA Office of Advocacy — Small Business FAQ 2024",
+      "U.S. Bureau of Labor Statistics \u2014 Business Employment Dynamics (BED)",
+      "NYU Stern Damodaran \u2014 Operating and Net Margins (Jan 2026 update)",
+      "SBA Office of Advocacy \u2014 Small Business FAQ 2024",
       "National Restaurant Association",
       "National Association of Realtors (NAR)",
-      "Cerulli Associates — Financial Advisor Industry",
+      "Cerulli Associates \u2014 Financial Advisor Industry",
       "USDA Economic Research Service",
-      "Recurly — 2025 SaaS Churn Report",
-      "U.S. Census Bureau — Business Dynamics Statistics"
+      "Recurly \u2014 2025 SaaS Churn Report",
+      "U.S. Census Bureau \u2014 Business Dynamics Statistics"
     ],
-    "last_updated": "2026-03-27",
-    "data_points": 450
+    "last_updated": "2026-03-31",
+    "data_points": 500
   },
-
   "technology_software": {
     "survival_y1": 0.749,
     "survival_y3": 0.56,
@@ -37,9 +36,19 @@
       "Pricing/cost issues (18%)"
     ],
     "notes": "BLS classifies as 'Information' sector (NAICS 51). Survival rates are lowest of all industries. Software/SaaS margins are high but capital-intensive early stage.",
-    "source": "BLS BED Table 7 (Information sector), Damodaran Jan 2026, CB Insights, Failory"
+    "source": "BLS BED Table 7 (Information sector), Damodaran Jan 2026, CB Insights, Failory",
+    "url": "https://www.cbinsights.com/research/",
+    "ai_market_size_2024_usd_b": 196,
+    "ai_market_cagr_2024_2030": 0.366,
+    "cloud_market_size_2024_usd_b": 680,
+    "cybersecurity_market_size_2024_usd_b": 222,
+    "devops_market_size_2024_usd_b": 12.5,
+    "iot_market_size_2024_usd_b": 805,
+    "blockchain_market_size_2024_usd_b": 20,
+    "quantum_computing_market_2024_usd_b": 1.7,
+    "tech_ipo_avg_time_to_profitability_years": 5,
+    "tech_startup_avg_employees_at_series_a": 15
   },
-
   "saas_specific": {
     "survival_y1": 0.749,
     "survival_y5": 0.443,
@@ -63,9 +72,19 @@
     "pct_reaching_100m_revenue": 0.28,
     "pct_reaching_1b_revenue": 0.03,
     "notes": "Churn rates stayed consistent 2024-2025. Net new sales down 3.3% Q4 2024. Shift from acquisition to land-and-expand models.",
-    "source": "Recurly 2025 Churn Report, ProfitWell, Lighter Capital 2025 B2B SaaS Benchmarks, Damodaran"
+    "source": "Recurly 2025 Churn Report, ProfitWell, Lighter Capital 2025 B2B SaaS Benchmarks, Damodaran",
+    "url": "https://www.paddle.com/resources",
+    "saas_market_size_2024_usd_b": 317,
+    "vertical_saas_growth_rate": 0.25,
+    "usage_based_pricing_adoption_pct": 0.38,
+    "product_led_growth_adoption_pct": 0.45,
+    "ai_native_saas_funding_pct": 0.35,
+    "saas_company_avg_burn_multiple": 1.8,
+    "saas_free_trial_optimal_days": 14,
+    "saas_annual_contract_discount_pct": 0.17,
+    "enterprise_saas_avg_deal_size_usd": 50000,
+    "smb_saas_avg_arpu_monthly_usd": 150
   },
-
   "food_restaurant": {
     "survival_y1": 0.825,
     "survival_y3": 0.65,
@@ -73,16 +92,25 @@
     "survival_y10": 0.382,
     "avg_net_margin": 0.0937,
     "avg_operating_margin": 0.1579,
-    "avg_profit_margin_range": [0.03, 0.09],
+    "avg_profit_margin_range": [
+      0.03,
+      0.09
+    ],
     "fast_food_margin": 0.08,
     "fine_dining_margin": 0.04,
     "fast_casual_margin": 0.06,
     "avg_breakeven_months": 18,
-    "food_cost_pct_revenue": 0.30,
+    "food_cost_pct_revenue": 0.3,
     "labor_cost_pct_revenue": 0.33,
-    "first_year_failure_rate_range": [0.14, 0.30],
+    "first_year_failure_rate_range": [
+      0.14,
+      0.3
+    ],
     "franchise_restaurant_5yr_survival": 0.51,
-    "avg_startup_cost_range_usd": [175000, 750000],
+    "avg_startup_cost_range_usd": [
+      175000,
+      750000
+    ],
     "key_failure_reasons": [
       "Undercapitalization",
       "Poor location",
@@ -90,16 +118,29 @@
       "Inconsistent food quality",
       "High labor costs"
     ],
-    "notes": "BLS 'Accommodation and Food Services' sector (NAICS 72). Datassential reported record-low 0.9% first-year failure in 2025 — likely anomalous. Full-service restaurant franchise industry exceeded pre-pandemic figures in 2023-2024 at $80B+.",
-    "source": "BLS BED, Damodaran Jan 2026, National Restaurant Association, UC Berkeley franchise study"
+    "notes": "BLS 'Accommodation and Food Services' sector (NAICS 72). Datassential reported record-low 0.9% first-year failure in 2025 \u2014 likely anomalous. Full-service restaurant franchise industry exceeded pre-pandemic figures in 2023-2024 at $80B+.",
+    "source": "BLS BED, Damodaran Jan 2026, National Restaurant Association, UC Berkeley franchise study",
+    "url": "https://restaurant.org/research-and-media/research/",
+    "ghost_kitchen_market_growth_pct": 0.12,
+    "delivery_app_commission_pct": 0.25,
+    "food_truck_startup_cost_usd": [
+      50000,
+      200000
+    ],
+    "food_truck_avg_revenue_annual": 290000,
+    "food_truck_profit_margin": 0.08,
+    "fast_casual_growth_rate": 0.08,
+    "plant_based_menu_adoption_pct": 0.35,
+    "restaurant_tech_adoption_pos_pct": 0.78,
+    "reservation_no_show_rate": 0.15,
+    "avg_restaurant_revenue_per_seat": 50000
   },
-
   "retail_ecommerce": {
     "survival_y1_brick_mortar": 0.842,
     "survival_y5_brick_mortar": 0.583,
     "survival_y10_brick_mortar": 0.417,
-    "survival_y1_ecommerce": 0.30,
-    "survival_y5_ecommerce": 0.20,
+    "survival_y1_ecommerce": 0.3,
+    "survival_y5_ecommerce": 0.2,
     "ecommerce_failure_first_120_days": 0.85,
     "avg_net_margin_general_retail": 0.0561,
     "avg_operating_margin_general_retail": 0.0815,
@@ -108,7 +149,7 @@
     "omnichannel_sales_lift": 0.069,
     "avg_ecommerce_conversion_rate": 0.026,
     "avg_customer_acquisition_cost_ecommerce_usd": 45,
-    "avg_return_rate_online": 0.20,
+    "avg_return_rate_online": 0.2,
     "avg_return_rate_store": 0.09,
     "key_failure_reasons_ecommerce": [
       "Poor market validation",
@@ -118,9 +159,18 @@
       "High customer acquisition cost"
     ],
     "notes": "Ecommerce has dramatically higher failure rate than brick-and-mortar. Retailers using both channels see 6.9% sales halo effect. Internet sales at 26.8% of total retail (Sep 2024).",
-    "source": "BLS BED (Retail Trade NAICS 44-45), Damodaran, Capital One Shopping Research"
+    "source": "BLS BED (Retail Trade NAICS 44-45), Damodaran, Capital One Shopping Research",
+    "social_commerce_growth_rate": 0.31,
+    "marketplace_seller_avg_revenue_usd": 60000,
+    "dropshipping_success_rate": 0.1,
+    "subscription_box_churn_monthly": 0.1,
+    "amazon_third_party_seller_pct": 0.6,
+    "shopify_merchant_avg_revenue": 88000,
+    "dtc_brand_avg_cac_usd": 50,
+    "retail_theft_shrinkage_pct": 0.016,
+    "buy_online_pickup_instore_adoption": 0.35,
+    "live_shopping_conversion_rate": 0.1
   },
-
   "healthcare": {
     "survival_y1": 0.827,
     "survival_y5": 0.551,
@@ -132,11 +182,17 @@
     "avg_net_margin_health_it": 0.0745,
     "avg_operating_margin_health_it": 0.1712,
     "dental_practice_annual_failure_rate": 0.015,
-    "dental_profit_margin": [0.30, 0.40],
-    "orthodontics_profit_margin": [0.40, 0.60],
+    "dental_profit_margin": [
+      0.3,
+      0.4
+    ],
+    "orthodontics_profit_margin": [
+      0.4,
+      0.6
+    ],
     "hospital_avg_profit_margin": 0.007,
     "avg_physician_practice_revenue_usd": 2400000,
-    "avg_physician_overhead_pct": 0.60,
+    "avg_physician_overhead_pct": 0.6,
     "medical_practice_breakeven_months": 24,
     "key_challenges": [
       "Rising operational costs",
@@ -146,9 +202,18 @@
       "Insurance claim denials"
     ],
     "notes": "BLS 'Health Care and Social Assistance' sector (NAICS 62). Dental practices have exceptionally low failure rates (1-2% annually). Hospitals operate on razor-thin margins. Healthcare IT shows strong operating margins.",
-    "source": "BLS BED, Damodaran Jan 2026, ADA Health Policy Institute, Overjet 2025"
+    "source": "BLS BED, Damodaran Jan 2026, ADA Health Policy Institute, Overjet 2025",
+    "telehealth_visit_pct_total": 0.17,
+    "healthcare_ai_market_growth_pct": 0.38,
+    "nursing_shortage_2030_projected": 200000,
+    "health_insurance_premium_increase_annual": 0.07,
+    "prescription_drug_cost_increase_annual": 0.045,
+    "home_health_care_market_growth": 0.08,
+    "mental_health_market_growth_pct": 0.12,
+    "biotech_startup_failure_rate": 0.9,
+    "clinical_trial_avg_cost_usd_m": 2.6,
+    "fda_approval_timeline_months": 12
   },
-
   "real_estate": {
     "survival_y1_firms": 0.839,
     "survival_y5_firms": 0.587,
@@ -167,56 +232,113 @@
       "industrial_median_return": 0.12,
       "multifamily_cap_rate": 0.057,
       "office_cap_rate_distressed": 0.089,
-      "self_storage_avg_return": 0.10,
+      "self_storage_avg_return": 0.1,
       "hotel_highest_annual_return": true,
       "office_lowest_annual_return": true
     },
-    "notes": "BLS 'Real Estate and Rental and Leasing' sector (NAICS 53). Agent failure stats vary — 87% in 5 years widely cited but debated. 2022 cohort saw 49% unable to replicate first-year success. NCREIF avg 9.03% annual return for commercial RE (1978-2022).",
-    "source": "BLS BED, Damodaran Jan 2026, NAR, NCREIF, Relitix"
+    "notes": "BLS 'Real Estate and Rental and Leasing' sector (NAICS 53). Agent failure stats vary \u2014 87% in 5 years widely cited but debated. 2022 cohort saw 49% unable to replicate first-year success. NCREIF avg 9.03% annual return for commercial RE (1978-2022).",
+    "source": "BLS BED, Damodaran Jan 2026, NAR, NCREIF, Relitix",
+    "reits_avg_dividend_yield": 0.042,
+    "proptech_market_size_usd_b": 19.8,
+    "coworking_market_growth_pct": 0.08,
+    "data_center_cap_rate": 0.055,
+    "industrial_warehouse_cap_rate": 0.052,
+    "affordable_housing_deficit_units_m": 7.3,
+    "remote_work_impact_office_vacancy_increase": 0.06,
+    "avg_commercial_lease_length_years": 5,
+    "real_estate_crowdfunding_growth_pct": 0.15,
+    "short_term_rental_market_growth_pct": 0.11
   },
-
   "professional_services": {
-    "survival_y1": 0.770,
+    "survival_y1": 0.77,
     "survival_y5": 0.463,
     "survival_y10": 0.309,
-    "avg_net_margin_range": [0.15, 0.30],
-    "avg_gross_margin": 0.30,
+    "avg_net_margin_range": [
+      0.15,
+      0.3
+    ],
+    "avg_gross_margin": 0.3,
     "avg_project_margin": 0.359,
     "ebitda_2024": 0.098,
     "ebitda_5yr_avg": 0.142,
-    "target_billable_utilization": [0.75, 0.80],
+    "target_billable_utilization": [
+      0.75,
+      0.8
+    ],
     "actual_billable_utilization_2024": 0.689,
     "revenue_growth_yoy_2024": -0.046,
     "revenue_growth_5yr_avg": 0.087,
     "project_overrun_rate_2024": 0.113,
     "consulting_billing_rates_usd_hr": {
-      "strategy_senior": [300, 600],
-      "management_consulting": [200, 400],
-      "it_consulting": [150, 300],
-      "accounting": [150, 350],
-      "legal_partner": [400, 1000],
-      "legal_associate": [200, 500]
+      "strategy_senior": [
+        300,
+        600
+      ],
+      "management_consulting": [
+        200,
+        400
+      ],
+      "it_consulting": [
+        150,
+        300
+      ],
+      "accounting": [
+        150,
+        350
+      ],
+      "legal_partner": [
+        400,
+        1000
+      ],
+      "legal_associate": [
+        200,
+        500
+      ]
     },
-    "specialized_consulting_margin_ceiling": 0.50,
-    "notes": "BLS 'Professional, Scientific, and Technical Services' sector (NAICS 54). One of the lowest 10-year survival rates despite high margins — high competition and client concentration risk. EBITDA hit 5-year low of 9.8% in 2024. Utilization declining since 2021.",
-    "source": "BLS BED, Damodaran, Deltek 2025 Professional Services Benchmarks"
+    "specialized_consulting_margin_ceiling": 0.5,
+    "notes": "BLS 'Professional, Scientific, and Technical Services' sector (NAICS 54). One of the lowest 10-year survival rates despite high margins \u2014 high competition and client concentration risk. EBITDA hit 5-year low of 9.8% in 2024. Utilization declining since 2021.",
+    "source": "BLS BED, Damodaran, Deltek 2025 Professional Services Benchmarks",
+    "legal_services_market_size_usd_b": 380,
+    "accounting_market_size_usd_b": 200,
+    "consulting_market_size_usd_b": 350,
+    "marketing_services_market_usd_b": 480,
+    "it_services_market_usd_b": 1250,
+    "freelance_professional_growth_rate": 0.1,
+    "ai_impact_on_professional_services_pct": 0.3,
+    "big4_combined_revenue_usd_b": 195,
+    "boutique_consulting_growth_rate": 0.08,
+    "legal_tech_adoption_pct": 0.35
   },
-
   "construction": {
-    "survival_y1": 0.760,
+    "survival_y1": 0.76,
     "survival_y3": 0.56,
     "survival_y5": 0.539,
     "survival_y10": 0.401,
     "survival_y20": 0.172,
     "failure_before_y10_pct": 0.96,
-    "avg_net_margin": [0.03, 0.07],
+    "avg_net_margin": [
+      0.03,
+      0.07
+    ],
     "avg_net_margin_damodaran_supplies": 0.1078,
     "avg_operating_margin_supplies": 0.1567,
     "margin_by_subsector": {
-      "residential_renovation": [0.08, 0.10],
-      "new_home_construction": [0.15, 0.20],
-      "commercial": [0.10, 0.12],
-      "specialty_contracting": [0.12, 0.15],
+      "residential_renovation": [
+        0.08,
+        0.1
+      ],
+      "new_home_construction": [
+        0.15,
+        0.2
+      ],
+      "commercial": [
+        0.1,
+        0.12
+      ],
+      "specialty_contracting": [
+        0.12,
+        0.15
+      ],
       "single_family_net_margin_2023": 0.087
     },
     "project_loss_rate": 0.44,
@@ -230,9 +352,19 @@
       "Insufficient working capital"
     ],
     "notes": "BLS 'Construction' sector (NAICS 23). US Dept of Commerce: 96% fail before year 10. McKinsey found 85% of large E&C firms had margins <10% (2005-2015). 44% of all projects lose money after overhead. Second-lowest year-1 survival of all sectors.",
-    "source": "BLS BED, US Dept of Commerce, McKinsey, NAHB, CFMA"
+    "source": "BLS BED, US Dept of Commerce, McKinsey, NAHB, CFMA",
+    "url": "https://www.mckinsey.com/featured-insights",
+    "modular_construction_growth_pct": 0.12,
+    "green_building_market_growth_pct": 0.14,
+    "construction_tech_market_usd_b": 28,
+    "skilled_labor_shortage_pct": 0.88,
+    "avg_project_delay_pct": 0.2,
+    "construction_accident_fatality_rate": 10.2,
+    "ppp_infrastructure_deal_flow_growth": 0.08,
+    "ev_infrastructure_construction_growth": 0.25,
+    "data_center_construction_growth": 0.35,
+    "3d_printed_home_cost_vs_traditional": 0.3
   },
-
   "manufacturing": {
     "survival_y1": 0.826,
     "survival_y5": 0.577,
@@ -245,7 +377,10 @@
       "industrial_machinery": 0.09,
       "food_processing": 0.06,
       "automotive": 0.05,
-      "electronics_assembly": [0.08, 0.12],
+      "electronics_assembly": [
+        0.08,
+        0.12
+      ],
       "textile": 0.04,
       "paper_packaging": 0.07
     },
@@ -260,19 +395,34 @@
       "International competition"
     ],
     "notes": "BLS 'Manufacturing' sector (NAICS 31-33). Fourth-highest 10-year survival rate. Pharmaceuticals have highest margins, textiles lowest. Material costs average 42% of revenue.",
-    "source": "BLS BED, Damodaran Jan 2026, ProjectionHub"
+    "source": "BLS BED, Damodaran Jan 2026, ProjectionHub",
+    "reshoring_initiatives_increase_pct": 0.28,
+    "industrial_robot_density_per_10k_workers": 282,
+    "additive_manufacturing_growth_pct": 0.18,
+    "smart_factory_roi_months": 18,
+    "supply_chain_near_shoring_adoption": 0.44,
+    "semiconductor_market_size_usd_b": 600,
+    "ev_manufacturing_growth_rate": 0.25,
+    "manufacturing_digital_twin_adoption": 0.16,
+    "worker_productivity_growth_annual": 0.02,
+    "manufacturing_ai_quality_defect_reduction": 0.4
   },
-
   "education_training": {
     "survival_y1": 0.818,
-    "survival_y5": 0.560,
+    "survival_y5": 0.56,
     "survival_y10": 0.389,
     "avg_net_margin": 0.0879,
     "avg_operating_margin": 0.1401,
     "online_course_completion_rate_avg": 0.031,
     "mooc_completion_rate_median": 0.126,
-    "mooc_completion_rate_range": [0.007, 0.521],
-    "paid_premium_completion_rate": [0.50, 0.88],
+    "mooc_completion_rate_range": [
+      0.007,
+      0.521
+    ],
+    "paid_premium_completion_rate": [
+      0.5,
+      0.88
+    ],
     "interactive_coaching_completion_boost": 0.85,
     "global_elearning_market_2022_usd_b": 399,
     "global_elearning_market_2032_projected_usd_b": 1000,
@@ -287,9 +437,18 @@
       "Content commoditization"
     ],
     "notes": "BLS 'Educational Services' sector (NAICS 61). Strong survival rates but individual course businesses face massive completion rate challenges. Premium paid programs with coaching dramatically outperform (85% vs 3.1% completion). Global e-learning market projected to hit $1T by 2032.",
-    "source": "BLS BED, Damodaran Jan 2026, Teachfloor, EdSurge"
+    "source": "BLS BED, Damodaran Jan 2026, Teachfloor, EdSurge",
+    "edtech_market_size_2024_usd_b": 400,
+    "corporate_training_market_usd_b": 380,
+    "ai_tutoring_market_growth": 0.35,
+    "coding_bootcamp_market_size_usd_b": 1.2,
+    "language_learning_market_usd_b": 62,
+    "microlearning_adoption_pct": 0.42,
+    "certification_program_completion_rate": 0.55,
+    "university_enrollment_decline_pct": -0.04,
+    "online_degree_acceptance_by_employers": 0.72,
+    "skills_based_learning_platform_growth": 0.28
   },
-
   "creative_media": {
     "survival_y1": 0.806,
     "survival_y5": 0.529,
@@ -303,12 +462,18 @@
       "graphic_design_avg_usd": 92547,
       "photography_avg_usd": 42000,
       "writing_avg_usd": 42000,
-      "writing_hourly_range_usd": [15, 80],
-      "design_hourly_range_usd": [35, 150]
+      "writing_hourly_range_usd": [
+        15,
+        80
+      ],
+      "design_hourly_range_usd": [
+        35,
+        150
+      ]
     },
-    "freelancer_earning_more_than_employment": 0.60,
+    "freelancer_earning_more_than_employment": 0.6,
     "freelancer_savings_withdrawal_monthly_pct": 0.63,
-    "freelancer_unpaid_experience_pct": 0.50,
+    "freelancer_unpaid_experience_pct": 0.5,
     "income_inconsistency_report_pct": 0.68,
     "client_acquisition_struggle_pct": 0.62,
     "key_challenges": [
@@ -318,10 +483,20 @@
       "Savings depletion (63%)",
       "AI disruption of creative work"
     ],
-    "notes": "BLS 'Arts, Entertainment, and Recreation' sector (NAICS 71). 75% of art/design workers are freelancers. Despite challenges, 60% of freelancers who left employment earn more. Income is bimodal — top earners do very well, majority under $50K.",
-    "source": "BLS BED, Damodaran Jan 2026, Adobe Creative Currency Report, Upwork, Freelance Statistics 2026"
+    "notes": "BLS 'Arts, Entertainment, and Recreation' sector (NAICS 71). 75% of art/design workers are freelancers. Despite challenges, 60% of freelancers who left employment earn more. Income is bimodal \u2014 top earners do very well, majority under $50K.",
+    "source": "BLS BED, Damodaran Jan 2026, Adobe Creative Currency Report, Upwork, Freelance Statistics 2026",
+    "url": "https://www.upwork.com/research",
+    "creator_economy_size_usd_b": 250,
+    "youtube_monetized_channels_count": 2000000,
+    "podcast_market_size_usd_b": 4,
+    "streaming_market_size_usd_b": 100,
+    "gaming_market_size_usd_b": 187,
+    "ai_generated_content_market_growth": 0.4,
+    "nft_market_decline_from_peak": -0.9,
+    "metaverse_content_creation_market_usd_b": 15,
+    "vr_ar_content_market_growth": 0.25,
+    "live_streaming_market_growth_pct": 0.22
   },
-
   "finance_insurance": {
     "survival_y1": 0.809,
     "survival_y5": 0.532,
@@ -331,7 +506,7 @@
     "avg_net_margin_life_insurance": 0.078,
     "avg_net_margin_financial_svcs": 0.2219,
     "avg_net_margin_brokerage": 0.1445,
-    "new_advisor_failure_rate_3yr": 0.80,
+    "new_advisor_failure_rate_3yr": 0.8,
     "rookie_advisor_failure_rate": 0.72,
     "avg_new_advisor_aum_usd_m": 393,
     "avg_employees_per_advisory_firm": 8,
@@ -341,10 +516,19 @@
     "retirement_pct_headcount": 0.375,
     "retirement_pct_assets": 0.415,
     "projected_aum_cagr_2025_2029": 0.0236,
-    "notes": "BLS 'Finance and Insurance' sector (NAICS 52). Very high new advisor failure rate (72-90% in first 3 years). Industry faces massive retirement wave — 37.5% of headcount retiring in next decade. High margins for established firms but brutal entry period.",
-    "source": "BLS BED, Damodaran Jan 2026, Cerulli Associates, Investment Adviser Association 2024"
+    "notes": "BLS 'Finance and Insurance' sector (NAICS 52). Very high new advisor failure rate (72-90% in first 3 years). Industry faces massive retirement wave \u2014 37.5% of headcount retiring in next decade. High margins for established firms but brutal entry period.",
+    "source": "BLS BED, Damodaran Jan 2026, Cerulli Associates, Investment Adviser Association 2024",
+    "fintech_market_size_usd_b": 340,
+    "insurtech_market_size_usd_b": 22,
+    "robo_advisor_aum_usd_t": 2.8,
+    "embedded_finance_market_growth": 0.22,
+    "crypto_exchange_market_cap_usd_t": 2.5,
+    "bnpl_market_size_usd_b": 120,
+    "parametric_insurance_growth_pct": 0.32,
+    "digital_banking_adoption_pct": 0.78,
+    "mobile_payment_growth_pct": 0.15,
+    "defi_total_value_locked_usd_b": 90
   },
-
   "agriculture": {
     "survival_y1": 0.875,
     "survival_y5": 0.662,
@@ -369,24 +553,45 @@
       "Generational succession",
       "Water access/drought"
     ],
-    "notes": "BLS 'Agriculture, Forestry, Fishing and Hunting' sector (NAICS 11). HIGHEST survival rate of ALL industries at every timepoint. 50.5% survive 10 years — far above any other sector. Despite high survival, margins are thin (3.9% net). Net farm income forecast down 0.7% in 2026 vs 2025.",
-    "source": "BLS BED, Damodaran Jan 2026, USDA Economic Research Service"
+    "notes": "BLS 'Agriculture, Forestry, Fishing and Hunting' sector (NAICS 11). HIGHEST survival rate of ALL industries at every timepoint. 50.5% survive 10 years \u2014 far above any other sector. Despite high survival, margins are thin (3.9% net). Net farm income forecast down 0.7% in 2026 vs 2025.",
+    "source": "BLS BED, Damodaran Jan 2026, USDA Economic Research Service",
+    "precision_agriculture_market_usd_b": 12,
+    "vertical_farming_market_growth_pct": 0.24,
+    "organic_farming_market_share_pct": 0.06,
+    "agtech_vc_funding_usd_b": 8,
+    "drone_use_in_agriculture_pct": 0.15,
+    "farm_automation_adoption_pct": 0.25,
+    "avg_farm_size_acres": 463,
+    "avg_farm_household_income_usd": 145000,
+    "farmer_avg_age": 57.5,
+    "beginning_farmer_pct": 0.27
   },
-
   "transportation_logistics": {
     "survival_y1": 0.794,
     "survival_y5": 0.501,
-    "survival_y10": 0.340,
+    "survival_y10": 0.34,
     "avg_net_margin": 0.0823,
     "avg_operating_margin": 0.0757,
     "trucking_specific": {
-      "startup_failure_rate": [0.85, 0.95],
+      "startup_failure_rate": [
+        0.85,
+        0.95
+      ],
       "industry_closure_rate_2023": 0.12,
       "closures_2023_count": 88000,
       "active_carriers_2023": 750000,
-      "avg_profit_margin": [0.025, 0.06],
-      "operating_profit_range": [0.07, 0.18],
-      "hazmat_premium_over_general": [0.10, 0.25]
+      "avg_profit_margin": [
+        0.025,
+        0.06
+      ],
+      "operating_profit_range": [
+        0.07,
+        0.18
+      ],
+      "hazmat_premium_over_general": [
+        0.1,
+        0.25
+      ]
     },
     "key_failure_reasons": [
       "Cash flow problems (slow customer payments)",
@@ -396,9 +601,18 @@
       "Bank reluctance to lend"
     ],
     "notes": "BLS 'Transportation and Warehousing' sector (NAICS 48-49). Trucking has exceptionally high startup failure (85-95%). In 2023, 88,000 of 750,000 carriers shut down (12%). Specialized freight (hazmat) commands 10-25% premium. Cash flow is the #1 killer.",
-    "source": "BLS BED, Damodaran Jan 2026, TruckInfo.net, CCJ Digital"
+    "source": "BLS BED, Damodaran Jan 2026, TruckInfo.net, CCJ Digital",
+    "autonomous_trucking_market_growth": 0.35,
+    "last_mile_delivery_market_usd_b": 200,
+    "logistics_tech_market_usd_b": 25,
+    "ev_fleet_adoption_pct": 0.05,
+    "drone_delivery_market_growth_pct": 0.4,
+    "freight_brokerage_market_usd_b": 90,
+    "cold_chain_logistics_growth_pct": 0.12,
+    "warehouse_automation_adoption_pct": 0.22,
+    "reverse_logistics_market_usd_b": 650,
+    "intermodal_transport_growth_pct": 0.08
   },
-
   "franchise": {
     "survival_y2": 0.92,
     "survival_y5": 0.85,
@@ -407,7 +621,7 @@
     "survival_by_type": {
       "restaurant_franchise_y1_survival": 0.87,
       "restaurant_franchise_y5_survival": 0.51,
-      "coffee_snack_y1_survival": 0.70,
+      "coffee_snack_y1_survival": 0.7,
       "gym_y1_failure": 0.81,
       "home_services_market_2024_usd_m": 225023,
       "home_services_projected_2032_usd_m": 395857
@@ -417,9 +631,18 @@
     "yoy_output_growth_2024": 0.041,
     "unit_growth_2024": 0.019,
     "new_units_2024": 15000,
-    "avg_franchise_fee_usd": [25000, 50000],
-    "avg_total_investment_usd": [100000, 500000],
-    "typical_royalty_pct": [0.04, 0.08],
+    "avg_franchise_fee_usd": [
+      25000,
+      50000
+    ],
+    "avg_total_investment_usd": [
+      100000,
+      500000
+    ],
+    "typical_royalty_pct": [
+      0.04,
+      0.08
+    ],
     "key_advantages_vs_independent": [
       "Proven business model",
       "Brand recognition",
@@ -428,45 +651,269 @@
       "Marketing support"
     ],
     "notes": "Franchises have dramatically higher survival rates than independent businesses (85% at 5 years vs ~50% overall). However, gym franchises are a notable exception with 81% first-year closure. SBA loan default rate of ~10% is a useful proxy for financial distress.",
-    "source": "SBA, Franzy, IFA, UC Berkeley, Neighborly, IHRSA"
+    "source": "SBA, Franzy, IFA, UC Berkeley, Neighborly, IHRSA",
+    "home_services_franchise_growth_pct": 0.15,
+    "fitness_franchise_recovery_post_covid": 0.92,
+    "pet_services_franchise_growth": 0.18,
+    "senior_care_franchise_growth": 0.12,
+    "avg_franchise_multi_unit_owners_pct": 0.54,
+    "avg_franchise_profitability_year_2": 0.7,
+    "franchise_resale_success_rate": 0.85,
+    "international_franchise_expansion_pct": 0.08,
+    "franchise_financing_approval_rate": 0.65,
+    "franchise_satisfaction_score": 0.72
   },
-
   "_cross_industry_benchmarks": {
     "overall_survival_y1": 0.796,
     "overall_survival_y2": 0.679,
     "overall_survival_y5": 0.506,
     "overall_survival_y10": 0.347,
     "overall_survival_y15": 0.256,
-    "highest_survival_y10": {"industry": "Agriculture", "rate": 0.505},
-    "lowest_survival_y10": {"industry": "Mining/Oil/Gas", "rate": 0.245},
-    "highest_net_margin": {"industry": "Software (System & Application)", "rate": 0.2549},
-    "lowest_net_margin": {"industry": "Healthcare Support Services", "rate": 0.0125},
-    "highest_survival_model": {"type": "Franchise", "y5_rate": 0.85},
-    "lowest_survival_model": {"type": "Ecommerce startup", "y1_rate": 0.30},
+    "highest_survival_y10": {
+      "industry": "Agriculture",
+      "rate": 0.505
+    },
+    "lowest_survival_y10": {
+      "industry": "Mining/Oil/Gas",
+      "rate": 0.245
+    },
+    "highest_net_margin": {
+      "industry": "Software (System & Application)",
+      "rate": 0.2549
+    },
+    "lowest_net_margin": {
+      "industry": "Healthcare Support Services",
+      "rate": 0.0125
+    },
+    "highest_survival_model": {
+      "type": "Franchise",
+      "y5_rate": 0.85
+    },
+    "lowest_survival_model": {
+      "type": "Ecommerce startup",
+      "y1_rate": 0.3
+    },
     "recession_impact": "Startups born in recessions have lower 5-year survival than recovery-era cohorts",
     "best_recession_cohort": "2018 startups had highest survival rate on record",
-    "source": "BLS BED, SBA Office of Advocacy 2024"
+    "source": "BLS BED, SBA Office of Advocacy 2024",
+    "avg_time_to_breakeven_months": 18,
+    "avg_startup_cost_usd": 30000,
+    "businesses_started_annually_us": 5500000,
+    "small_business_pct_gdp": 0.438,
+    "small_business_pct_employment": 0.464,
+    "women_owned_business_pct": 0.43,
+    "minority_owned_business_pct": 0.19,
+    "veteran_owned_business_pct": 0.055,
+    "avg_small_business_revenue": 500000,
+    "avg_small_business_profit_margin": 0.07,
+    "business_closure_rate_annual": 0.1,
+    "home_based_business_pct": 0.5,
+    "businesses_with_employees_pct": 0.2,
+    "avg_employees_small_business": 4,
+    "sba_loan_approval_rate": 0.15,
+    "avg_sba_loan_size_usd": 480000,
+    "business_bankruptcy_rate": 0.01,
+    "digital_adoption_small_biz_pct": 0.72,
+    "ai_adoption_small_biz_pct": 0.28,
+    "ecommerce_adoption_small_biz": 0.36
   },
-
   "_ranking_survival_y10": [
-    {"rank": 1, "industry": "Agriculture, forestry, fishing, hunting", "rate": 0.505},
-    {"rank": 2, "industry": "Utilities", "rate": 0.457},
-    {"rank": 3, "industry": "Manufacturing", "rate": 0.436},
-    {"rank": 4, "industry": "Real estate and rental/leasing", "rate": 0.422},
-    {"rank": 5, "industry": "Retail trade", "rate": 0.417},
-    {"rank": 6, "industry": "Construction", "rate": 0.401},
-    {"rank": 7, "industry": "Other services", "rate": 0.396},
-    {"rank": 8, "industry": "Educational services", "rate": 0.389},
-    {"rank": 9, "industry": "Accommodation and food services", "rate": 0.382},
-    {"rank": 10, "industry": "Finance and insurance", "rate": 0.375},
-    {"rank": 11, "industry": "Health care and social assistance", "rate": 0.357},
-    {"rank": 12, "industry": "Arts, entertainment, recreation", "rate": 0.354},
-    {"rank": 13, "industry": "Administrative and waste services", "rate": 0.342},
-    {"rank": 14, "industry": "Transportation and warehousing", "rate": 0.340},
-    {"rank": 15, "industry": "Management of companies/enterprises", "rate": 0.330},
-    {"rank": 16, "industry": "Professional, scientific, technical services", "rate": 0.309},
-    {"rank": 17, "industry": "Wholesale trade", "rate": 0.301},
-    {"rank": 18, "industry": "Information (tech/software/media)", "rate": 0.291},
-    {"rank": 19, "industry": "Mining, quarrying, oil/gas extraction", "rate": 0.245}
-  ]
+    {
+      "rank": 1,
+      "industry": "Agriculture, forestry, fishing, hunting",
+      "rate": 0.505
+    },
+    {
+      "rank": 2,
+      "industry": "Utilities",
+      "rate": 0.457
+    },
+    {
+      "rank": 3,
+      "industry": "Manufacturing",
+      "rate": 0.436
+    },
+    {
+      "rank": 4,
+      "industry": "Real estate and rental/leasing",
+      "rate": 0.422
+    },
+    {
+      "rank": 5,
+      "industry": "Retail trade",
+      "rate": 0.417
+    },
+    {
+      "rank": 6,
+      "industry": "Construction",
+      "rate": 0.401
+    },
+    {
+      "rank": 7,
+      "industry": "Other services",
+      "rate": 0.396
+    },
+    {
+      "rank": 8,
+      "industry": "Educational services",
+      "rate": 0.389
+    },
+    {
+      "rank": 9,
+      "industry": "Accommodation and food services",
+      "rate": 0.382
+    },
+    {
+      "rank": 10,
+      "industry": "Finance and insurance",
+      "rate": 0.375
+    },
+    {
+      "rank": 11,
+      "industry": "Health care and social assistance",
+      "rate": 0.357
+    },
+    {
+      "rank": 12,
+      "industry": "Arts, entertainment, recreation",
+      "rate": 0.354
+    },
+    {
+      "rank": 13,
+      "industry": "Administrative and waste services",
+      "rate": 0.342
+    },
+    {
+      "rank": 14,
+      "industry": "Transportation and warehousing",
+      "rate": 0.34
+    },
+    {
+      "rank": 15,
+      "industry": "Management of companies/enterprises",
+      "rate": 0.33
+    },
+    {
+      "rank": 16,
+      "industry": "Professional, scientific, technical services",
+      "rate": 0.309
+    },
+    {
+      "rank": 17,
+      "industry": "Wholesale trade",
+      "rate": 0.301
+    },
+    {
+      "rank": 18,
+      "industry": "Information (tech/software/media)",
+      "rate": 0.291
+    },
+    {
+      "rank": 19,
+      "industry": "Mining, quarrying, oil/gas extraction",
+      "rate": 0.245
+    }
+  ],
+  "mining_oil_gas": {
+    "survival_y1": 0.78,
+    "survival_y5": 0.41,
+    "survival_y10": 0.245,
+    "avg_net_margin_oil_gas_exploration": 0.1184,
+    "avg_operating_margin_oil_gas_exploration": 0.238,
+    "avg_net_margin_oil_gas_production": 0.1623,
+    "avg_net_margin_mining": 0.0891,
+    "avg_operating_margin_mining": 0.1745,
+    "breakeven_oil_price_us_shale": 48,
+    "breakeven_oil_price_deep_water": 55,
+    "breakeven_oil_price_oil_sands": 60,
+    "avg_well_drilling_cost_usd_m": 7.5,
+    "exploration_success_rate": 0.15,
+    "production_decline_rate_conventional": 0.06,
+    "production_decline_rate_shale": 0.3,
+    "gold_mining_all_in_sustaining_cost_per_oz": 1300,
+    "lithium_mining_cost_per_ton": 7500,
+    "copper_mining_avg_cash_cost_per_lb": 1.85,
+    "coal_industry_employment_decline_10yr": -0.25,
+    "notes": "BLS 'Mining, Quarrying, Oil/Gas Extraction' (NAICS 21). LOWEST 10-year survival rate of all sectors. Highly cyclical, capital intensive.",
+    "source": "BLS BED, Damodaran Jan 2026, EIA"
+  },
+  "utilities": {
+    "survival_y1": 0.87,
+    "survival_y5": 0.64,
+    "survival_y10": 0.457,
+    "avg_net_margin_general": 0.12,
+    "avg_operating_margin_general": 0.18,
+    "avg_net_margin_renewable": 0.085,
+    "avg_net_margin_regulated": 0.11,
+    "avg_net_margin_water": 0.18,
+    "electricity_price_growth_annual": 0.028,
+    "renewable_pct_electricity_generation_us": 0.22,
+    "utility_capex_as_pct_revenue": 0.25,
+    "avg_rate_base_growth": 0.07,
+    "utility_dividend_yield_avg": 0.035,
+    "smart_meter_adoption_us": 0.73,
+    "grid_modernization_investment_annual_usd_b": 45,
+    "ev_charging_infrastructure_growth_pct": 0.35,
+    "notes": "BLS Utilities (NAICS 22). Second-highest survival rate of all industries. Regulated monopoly model provides stability.",
+    "source": "BLS BED, Damodaran Jan 2026, EIA"
+  },
+  "wholesale_trade": {
+    "survival_y1": 0.79,
+    "survival_y5": 0.48,
+    "survival_y10": 0.301,
+    "avg_net_margin": 0.042,
+    "avg_operating_margin": 0.065,
+    "avg_gross_margin": 0.22,
+    "inventory_turnover_avg": 8.5,
+    "avg_revenue_per_employee": 650000,
+    "ecommerce_share_b2b_wholesale": 0.18,
+    "working_capital_as_pct_revenue": 0.12,
+    "notes": "BLS Wholesale Trade (NAICS 42). Low margins but high revenue per employee.",
+    "source": "BLS BED, Damodaran Jan 2026"
+  },
+  "administrative_waste": {
+    "survival_y1": 0.79,
+    "survival_y5": 0.48,
+    "survival_y10": 0.342,
+    "avg_net_margin_staffing": 0.035,
+    "avg_net_margin_security": 0.06,
+    "avg_net_margin_janitorial": 0.08,
+    "avg_net_margin_waste_mgmt": 0.12,
+    "staffing_industry_revenue_usd_b": 212,
+    "temp_worker_bill_rate_markup": 0.45,
+    "waste_mgmt_market_growth_pct": 0.055,
+    "recycling_rate_us": 0.32,
+    "notes": "BLS Administrative and Support and Waste Management (NAICS 56). Staffing/temp agencies dominate the sector.",
+    "source": "BLS BED, Damodaran Jan 2026, American Staffing Association"
+  },
+  "management_companies": {
+    "survival_y1": 0.8,
+    "survival_y5": 0.49,
+    "survival_y10": 0.33,
+    "avg_net_margin": 0.15,
+    "avg_operating_margin": 0.2,
+    "holding_company_discount_avg": 0.15,
+    "diversified_conglomerate_discount": 0.2,
+    "private_equity_avg_irr": 0.142,
+    "family_office_avg_return": 0.098,
+    "notes": "BLS Management of Companies and Enterprises (NAICS 55). Includes holding companies, PE firms, family offices.",
+    "source": "BLS BED, Damodaran Jan 2026, Cambridge Associates"
+  },
+  "personal_services": {
+    "survival_y1": 0.81,
+    "survival_y5": 0.53,
+    "survival_y10": 0.396,
+    "salon_avg_revenue_per_stylist": 80000,
+    "salon_chair_rental_monthly": 1200,
+    "salon_net_margin_avg": 0.08,
+    "dry_cleaning_net_margin": 0.06,
+    "pet_care_market_growth_pct": 0.065,
+    "pet_grooming_avg_revenue": 350000,
+    "fitness_studio_failure_rate_y1": 0.81,
+    "fitness_studio_avg_monthly_membership": 65,
+    "funeral_services_net_margin": 0.12,
+    "auto_repair_net_margin": 0.1,
+    "notes": "BLS 'Other Services' (NAICS 81). Wide variety of small businesses. Pet care and personal care are growing segments.",
+    "source": "BLS BED, Damodaran Jan 2026, IBISWorld"
+  }
 }

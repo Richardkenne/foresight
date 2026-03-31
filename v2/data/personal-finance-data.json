@@ -1,87 +1,3617 @@
 {
   "sections": {
     "emergency_fund": [
-      {"metric": "Americans with no emergency fund", "value": 22, "unit": "%", "source": "Bankrate", "year": 2024},
-      {"metric": "Americans who could cover 3+ months expenses", "value": 44, "unit": "%", "source": "Bankrate", "year": 2024},
-      {"metric": "Median emergency savings (US)", "value": 8000, "unit": "USD", "source": "Federal Reserve", "year": 2023},
-      {"metric": "Americans who cannot cover $400 emergency", "value": 37, "unit": "%", "source": "Federal Reserve SHED Survey", "year": 2023},
-      {"metric": "Recommended emergency fund duration", "value": 6, "unit": "months", "source": "CFPB", "year": 2024},
-      {"metric": "Average time to build 3-month fund (US median income)", "value": 14, "unit": "months", "source": "NerdWallet analysis", "year": 2024},
-      {"metric": "Indonesians with emergency savings", "value": 21, "unit": "%", "source": "OJK Financial Literacy Survey", "year": 2022}
+      {
+        "metric": "Americans with no emergency fund",
+        "value": 22,
+        "unit": "%",
+        "source": "Bankrate",
+        "year": 2024,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Americans who could cover 3+ months expenses",
+        "value": 44,
+        "unit": "%",
+        "source": "Bankrate",
+        "year": 2024,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Median emergency savings (US)",
+        "value": 8000,
+        "unit": "USD",
+        "source": "Federal Reserve",
+        "year": 2023
+      },
+      {
+        "metric": "Americans who cannot cover $400 emergency",
+        "value": 37,
+        "unit": "%",
+        "source": "Federal Reserve SHED Survey",
+        "year": 2023
+      },
+      {
+        "metric": "Recommended emergency fund duration",
+        "value": 6,
+        "unit": "months",
+        "source": "CFPB",
+        "year": 2024
+      },
+      {
+        "metric": "Average time to build 3-month fund (US median income)",
+        "value": 14,
+        "unit": "months",
+        "source": "NerdWallet analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Indonesians with emergency savings",
+        "value": 21,
+        "unit": "%",
+        "source": "OJK Financial Literacy Survey",
+        "year": 2022
+      }
     ],
     "savings_rate": [
-      {"metric": "Personal savings rate (US)", "value": 4.6, "unit": "% of disposable income", "source": "BEA / FRED", "year": 2024},
-      {"metric": "Household savings rate (Indonesia)", "value": 33.5, "unit": "% of GDP (gross)", "source": "World Bank", "year": 2023},
-      {"metric": "Household savings rate (Australia)", "value": 3.2, "unit": "% of disposable income", "source": "ABS", "year": 2024},
-      {"metric": "Household savings rate (UK)", "value": 10.3, "unit": "% of disposable income", "source": "ONS", "year": 2024},
-      {"metric": "Household savings rate (Italy)", "value": 8.4, "unit": "% of disposable income", "source": "ISTAT / OECD", "year": 2023},
-      {"metric": "Household savings rate (Germany)", "value": 11.4, "unit": "% of disposable income", "source": "Destatis / OECD", "year": 2023},
-      {"metric": "OECD average household savings rate", "value": 7.9, "unit": "% of disposable income", "source": "OECD", "year": 2023}
+      {
+        "metric": "Personal savings rate (US)",
+        "value": 4.6,
+        "unit": "% of disposable income",
+        "source": "BEA / FRED",
+        "year": 2024
+      },
+      {
+        "metric": "Household savings rate (Indonesia)",
+        "value": 33.5,
+        "unit": "% of GDP (gross)",
+        "source": "World Bank",
+        "year": 2023
+      },
+      {
+        "metric": "Household savings rate (Australia)",
+        "value": 3.2,
+        "unit": "% of disposable income",
+        "source": "ABS",
+        "year": 2024
+      },
+      {
+        "metric": "Household savings rate (UK)",
+        "value": 10.3,
+        "unit": "% of disposable income",
+        "source": "ONS",
+        "year": 2024
+      },
+      {
+        "metric": "Household savings rate (Italy)",
+        "value": 8.4,
+        "unit": "% of disposable income",
+        "source": "ISTAT / OECD",
+        "year": 2023,
+        "url": "https://www.oecd.org/en/publications/oecd-employment-outlook-2024_ac8b3538-en.html"
+      },
+      {
+        "metric": "Household savings rate (Germany)",
+        "value": 11.4,
+        "unit": "% of disposable income",
+        "source": "Destatis / OECD",
+        "year": 2023,
+        "url": "https://www.oecd.org/en/publications/oecd-employment-outlook-2024_ac8b3538-en.html"
+      },
+      {
+        "metric": "OECD average household savings rate",
+        "value": 7.9,
+        "unit": "% of disposable income",
+        "source": "OECD",
+        "year": 2023,
+        "url": "https://www.oecd.org/en/publications/oecd-employment-outlook-2024_ac8b3538-en.html"
+      }
     ],
     "debt": [
-      {"metric": "Average US household debt", "value": 104215, "unit": "USD", "source": "Federal Reserve / NerdWallet", "year": 2024},
-      {"metric": "US total household debt", "value": 17.94, "unit": "trillion USD", "source": "Federal Reserve Bank of New York", "year": 2024},
-      {"metric": "Average US student loan balance", "value": 37850, "unit": "USD", "source": "Federal Reserve", "year": 2024},
-      {"metric": "US total student loan debt", "value": 1.77, "unit": "trillion USD", "source": "Federal Reserve", "year": 2024},
-      {"metric": "Average US credit card balance", "value": 6580, "unit": "USD", "source": "TransUnion", "year": 2024},
-      {"metric": "US credit card delinquency rate (90+ days)", "value": 11.1, "unit": "%", "source": "Federal Reserve Bank of New York", "year": 2024},
-      {"metric": "Average Australian household debt-to-income ratio", "value": 185, "unit": "% of annual income", "source": "RBA", "year": 2024},
-      {"metric": "Average UK household debt", "value": 65900, "unit": "GBP", "source": "ONS / The Money Charity", "year": 2024},
-      {"metric": "Average Italian household debt", "value": 22800, "unit": "EUR", "source": "Bank of Italy", "year": 2023},
-      {"metric": "Indonesian household debt-to-GDP ratio", "value": 17.2, "unit": "% of GDP", "source": "Bank Indonesia", "year": 2023},
-      {"metric": "Household debt-to-GDP ratio (global average)", "value": 60.6, "unit": "% of GDP", "source": "IIF Global Debt Monitor", "year": 2024}
+      {
+        "metric": "Average US household debt",
+        "value": 104215,
+        "unit": "USD",
+        "source": "Federal Reserve / NerdWallet",
+        "year": 2024
+      },
+      {
+        "metric": "US total household debt",
+        "value": 17.94,
+        "unit": "trillion USD",
+        "source": "Federal Reserve Bank of New York",
+        "year": 2024
+      },
+      {
+        "metric": "Average US student loan balance",
+        "value": 37850,
+        "unit": "USD",
+        "source": "Federal Reserve",
+        "year": 2024
+      },
+      {
+        "metric": "US total student loan debt",
+        "value": 1.77,
+        "unit": "trillion USD",
+        "source": "Federal Reserve",
+        "year": 2024
+      },
+      {
+        "metric": "Average US credit card balance",
+        "value": 6580,
+        "unit": "USD",
+        "source": "TransUnion",
+        "year": 2024
+      },
+      {
+        "metric": "US credit card delinquency rate (90+ days)",
+        "value": 11.1,
+        "unit": "%",
+        "source": "Federal Reserve Bank of New York",
+        "year": 2024
+      },
+      {
+        "metric": "Average Australian household debt-to-income ratio",
+        "value": 185,
+        "unit": "% of annual income",
+        "source": "RBA",
+        "year": 2024
+      },
+      {
+        "metric": "Average UK household debt",
+        "value": 65900,
+        "unit": "GBP",
+        "source": "ONS / The Money Charity",
+        "year": 2024
+      },
+      {
+        "metric": "Average Italian household debt",
+        "value": 22800,
+        "unit": "EUR",
+        "source": "Bank of Italy",
+        "year": 2023
+      },
+      {
+        "metric": "Indonesian household debt-to-GDP ratio",
+        "value": 17.2,
+        "unit": "% of GDP",
+        "source": "Bank Indonesia",
+        "year": 2023
+      },
+      {
+        "metric": "Household debt-to-GDP ratio (global average)",
+        "value": 60.6,
+        "unit": "% of GDP",
+        "source": "IIF Global Debt Monitor",
+        "year": 2024
+      }
     ],
     "budgeting": [
-      {"metric": "Americans who keep a budget", "value": 74, "unit": "%", "source": "NerdWallet / Harris Poll", "year": 2024},
-      {"metric": "Americans who strictly follow their budget", "value": 36, "unit": "%", "source": "NerdWallet / Harris Poll", "year": 2024},
-      {"metric": "People using budgeting apps", "value": 28, "unit": "%", "source": "Bankrate", "year": 2024},
-      {"metric": "People using spreadsheet for budgeting", "value": 22, "unit": "%", "source": "Bankrate", "year": 2024},
-      {"metric": "People using pen-and-paper budgeting", "value": 18, "unit": "%", "source": "Bankrate", "year": 2024},
-      {"metric": "Budget adherence improvement with automation", "value": 65, "unit": "% more consistent", "source": "Fidelity Investments", "year": 2023}
+      {
+        "metric": "Americans who keep a budget",
+        "value": 74,
+        "unit": "%",
+        "source": "NerdWallet / Harris Poll",
+        "year": 2024
+      },
+      {
+        "metric": "Americans who strictly follow their budget",
+        "value": 36,
+        "unit": "%",
+        "source": "NerdWallet / Harris Poll",
+        "year": 2024
+      },
+      {
+        "metric": "People using budgeting apps",
+        "value": 28,
+        "unit": "%",
+        "source": "Bankrate",
+        "year": 2024,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "People using spreadsheet for budgeting",
+        "value": 22,
+        "unit": "%",
+        "source": "Bankrate",
+        "year": 2024,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "People using pen-and-paper budgeting",
+        "value": 18,
+        "unit": "%",
+        "source": "Bankrate",
+        "year": 2024,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Budget adherence improvement with automation",
+        "value": 65,
+        "unit": "% more consistent",
+        "source": "Fidelity Investments",
+        "year": 2023
+      }
     ],
     "income_distribution": [
-      {"metric": "Median household income (US)", "value": 80610, "unit": "USD/year", "source": "US Census Bureau", "year": 2023},
-      {"metric": "Median household income (Indonesia)", "value": 4920, "unit": "USD/year PPP-adjusted estimate", "source": "BPS / World Bank", "year": 2023},
-      {"metric": "Median household income (Australia)", "value": 65400, "unit": "AUD/year", "source": "ABS", "year": 2023},
-      {"metric": "Median household income (UK)", "value": 34500, "unit": "GBP/year", "source": "ONS", "year": 2023},
-      {"metric": "Median household income (Italy)", "value": 29400, "unit": "EUR/year", "source": "ISTAT", "year": 2023},
-      {"metric": "Gini coefficient (US)", "value": 0.39, "unit": "index (0=equal, 1=unequal)", "source": "World Bank", "year": 2023},
-      {"metric": "Gini coefficient (Indonesia)", "value": 0.381, "unit": "index", "source": "World Bank / BPS", "year": 2023},
-      {"metric": "Gini coefficient (Australia)", "value": 0.343, "unit": "index", "source": "World Bank", "year": 2022},
-      {"metric": "Gini coefficient (Italy)", "value": 0.352, "unit": "index", "source": "World Bank / ISTAT", "year": 2022},
-      {"metric": "Gini coefficient (UK)", "value": 0.351, "unit": "index", "source": "World Bank", "year": 2022},
-      {"metric": "Global top 1% owns share of wealth", "value": 45.8, "unit": "% of global wealth", "source": "Credit Suisse Global Wealth Report", "year": 2023}
+      {
+        "metric": "Median household income (US)",
+        "value": 80610,
+        "unit": "USD/year",
+        "source": "US Census Bureau",
+        "year": 2023,
+        "url": "https://www.census.gov/programs-surveys/abs.html"
+      },
+      {
+        "metric": "Median household income (Indonesia)",
+        "value": 4920,
+        "unit": "USD/year PPP-adjusted estimate",
+        "source": "BPS / World Bank",
+        "year": 2023
+      },
+      {
+        "metric": "Median household income (Australia)",
+        "value": 65400,
+        "unit": "AUD/year",
+        "source": "ABS",
+        "year": 2023
+      },
+      {
+        "metric": "Median household income (UK)",
+        "value": 34500,
+        "unit": "GBP/year",
+        "source": "ONS",
+        "year": 2023
+      },
+      {
+        "metric": "Median household income (Italy)",
+        "value": 29400,
+        "unit": "EUR/year",
+        "source": "ISTAT",
+        "year": 2023
+      },
+      {
+        "metric": "Gini coefficient (US)",
+        "value": 0.39,
+        "unit": "index (0=equal, 1=unequal)",
+        "source": "World Bank",
+        "year": 2023
+      },
+      {
+        "metric": "Gini coefficient (Indonesia)",
+        "value": 0.381,
+        "unit": "index",
+        "source": "World Bank / BPS",
+        "year": 2023
+      },
+      {
+        "metric": "Gini coefficient (Australia)",
+        "value": 0.343,
+        "unit": "index",
+        "source": "World Bank",
+        "year": 2022
+      },
+      {
+        "metric": "Gini coefficient (Italy)",
+        "value": 0.352,
+        "unit": "index",
+        "source": "World Bank / ISTAT",
+        "year": 2022
+      },
+      {
+        "metric": "Gini coefficient (UK)",
+        "value": 0.351,
+        "unit": "index",
+        "source": "World Bank",
+        "year": 2022
+      },
+      {
+        "metric": "Global top 1% owns share of wealth",
+        "value": 45.8,
+        "unit": "% of global wealth",
+        "source": "Credit Suisse Global Wealth Report",
+        "year": 2023
+      }
     ],
     "lending_to_friends": [
-      {"metric": "Americans who have lent money to friends/family", "value": 60, "unit": "%", "source": "Bankrate", "year": 2023},
-      {"metric": "Loans to friends/family that are fully repaid", "value": 43, "unit": "%", "source": "Bankrate", "year": 2023},
-      {"metric": "People who say lending damaged the relationship", "value": 46, "unit": "%", "source": "Bankrate", "year": 2023},
-      {"metric": "Average amount lent to friends/family (US)", "value": 1570, "unit": "USD", "source": "LendingTree", "year": 2023},
-      {"metric": "People who would not lend to friends/family again", "value": 37, "unit": "%", "source": "Bankrate", "year": 2023}
+      {
+        "metric": "Americans who have lent money to friends/family",
+        "value": 60,
+        "unit": "%",
+        "source": "Bankrate",
+        "year": 2023,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Loans to friends/family that are fully repaid",
+        "value": 43,
+        "unit": "%",
+        "source": "Bankrate",
+        "year": 2023,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "People who say lending damaged the relationship",
+        "value": 46,
+        "unit": "%",
+        "source": "Bankrate",
+        "year": 2023,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Average amount lent to friends/family (US)",
+        "value": 1570,
+        "unit": "USD",
+        "source": "LendingTree",
+        "year": 2023
+      },
+      {
+        "metric": "People who would not lend to friends/family again",
+        "value": 37,
+        "unit": "%",
+        "source": "Bankrate",
+        "year": 2023,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      }
     ],
     "financial_literacy": [
-      {"metric": "Financial literacy rate (US)", "value": 57, "unit": "%", "source": "S&P Global FinLit Survey / World Bank", "year": 2023},
-      {"metric": "Financial literacy rate (Indonesia)", "value": 49.7, "unit": "%", "source": "OJK National Survey", "year": 2022},
-      {"metric": "Financial literacy rate (Australia)", "value": 64, "unit": "%", "source": "S&P Global FinLit Survey", "year": 2023},
-      {"metric": "Financial literacy rate (UK)", "value": 67, "unit": "%", "source": "S&P Global FinLit Survey", "year": 2023},
-      {"metric": "Financial literacy rate (Italy)", "value": 37, "unit": "%", "source": "S&P Global FinLit Survey / Bank of Italy", "year": 2023},
-      {"metric": "Financial literacy rate (Germany)", "value": 66, "unit": "%", "source": "S&P Global FinLit Survey", "year": 2023},
-      {"metric": "Financial literacy rate (Japan)", "value": 43, "unit": "%", "source": "S&P Global FinLit Survey", "year": 2023},
-      {"metric": "Global average financial literacy", "value": 33, "unit": "%", "source": "S&P Global FinLit Survey", "year": 2023}
+      {
+        "metric": "Financial literacy rate (US)",
+        "value": 57,
+        "unit": "%",
+        "source": "S&P Global FinLit Survey / World Bank",
+        "year": 2023
+      },
+      {
+        "metric": "Financial literacy rate (Indonesia)",
+        "value": 49.7,
+        "unit": "%",
+        "source": "OJK National Survey",
+        "year": 2022
+      },
+      {
+        "metric": "Financial literacy rate (Australia)",
+        "value": 64,
+        "unit": "%",
+        "source": "S&P Global FinLit Survey",
+        "year": 2023
+      },
+      {
+        "metric": "Financial literacy rate (UK)",
+        "value": 67,
+        "unit": "%",
+        "source": "S&P Global FinLit Survey",
+        "year": 2023
+      },
+      {
+        "metric": "Financial literacy rate (Italy)",
+        "value": 37,
+        "unit": "%",
+        "source": "S&P Global FinLit Survey / Bank of Italy",
+        "year": 2023
+      },
+      {
+        "metric": "Financial literacy rate (Germany)",
+        "value": 66,
+        "unit": "%",
+        "source": "S&P Global FinLit Survey",
+        "year": 2023
+      },
+      {
+        "metric": "Financial literacy rate (Japan)",
+        "value": 43,
+        "unit": "%",
+        "source": "S&P Global FinLit Survey",
+        "year": 2023
+      },
+      {
+        "metric": "Global average financial literacy",
+        "value": 33,
+        "unit": "%",
+        "source": "S&P Global FinLit Survey",
+        "year": 2023
+      }
     ],
     "cost_of_living": [
-      {"metric": "Cost of living index — Bandung", "value": 31.2, "unit": "index (NYC=100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Average monthly rent 1BR city center — Bandung", "value": 180, "unit": "USD", "source": "Numbeo", "year": 2024},
-      {"metric": "Cost of living index — Jakarta", "value": 38.5, "unit": "index (NYC=100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Average monthly rent 1BR city center — Jakarta", "value": 450, "unit": "USD", "source": "Numbeo", "year": 2024},
-      {"metric": "Cost of living index — Sydney", "value": 73.4, "unit": "index (NYC=100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Average monthly rent 1BR city center — Sydney", "value": 2350, "unit": "USD", "source": "Numbeo", "year": 2024},
-      {"metric": "Cost of living index — London", "value": 74.6, "unit": "index (NYC=100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Average monthly rent 1BR city center — London", "value": 2200, "unit": "USD", "source": "Numbeo", "year": 2024},
-      {"metric": "Cost of living index — Dubai", "value": 62.1, "unit": "index (NYC=100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Average monthly rent 1BR city center — Dubai", "value": 1650, "unit": "USD", "source": "Numbeo", "year": 2024},
-      {"metric": "Cost of living index — New York City", "value": 100, "unit": "index (NYC=100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Average monthly rent 1BR city center — NYC", "value": 3800, "unit": "USD", "source": "Numbeo", "year": 2024}
+      {
+        "metric": "Cost of living index \u2014 Bandung",
+        "value": 31.2,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Average monthly rent 1BR city center \u2014 Bandung",
+        "value": 180,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Cost of living index \u2014 Jakarta",
+        "value": 38.5,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Average monthly rent 1BR city center \u2014 Jakarta",
+        "value": 450,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Cost of living index \u2014 Sydney",
+        "value": 73.4,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Average monthly rent 1BR city center \u2014 Sydney",
+        "value": 2350,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Cost of living index \u2014 London",
+        "value": 74.6,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Average monthly rent 1BR city center \u2014 London",
+        "value": 2200,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Cost of living index \u2014 Dubai",
+        "value": 62.1,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Average monthly rent 1BR city center \u2014 Dubai",
+        "value": 1650,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Cost of living index \u2014 New York City",
+        "value": 100,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Average monthly rent 1BR city center \u2014 NYC",
+        "value": 3800,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      }
+    ],
+    "net_worth_by_age": [
+      {
+        "metric": "Median net worth under 35 (US)",
+        "value": 39000,
+        "unit": "USD",
+        "source": "Federal Reserve SCF",
+        "year": 2023
+      },
+      {
+        "metric": "Median net worth 35-44 (US)",
+        "value": 135600,
+        "unit": "USD",
+        "source": "Federal Reserve SCF",
+        "year": 2023
+      },
+      {
+        "metric": "Median net worth 45-54 (US)",
+        "value": 247200,
+        "unit": "USD",
+        "source": "Federal Reserve SCF",
+        "year": 2023
+      },
+      {
+        "metric": "Median net worth 55-64 (US)",
+        "value": 364270,
+        "unit": "USD",
+        "source": "Federal Reserve SCF",
+        "year": 2023
+      },
+      {
+        "metric": "Median net worth 65-74 (US)",
+        "value": 409900,
+        "unit": "USD",
+        "source": "Federal Reserve SCF",
+        "year": 2023
+      },
+      {
+        "metric": "Median net worth 75+ (US)",
+        "value": 335600,
+        "unit": "USD",
+        "source": "Federal Reserve SCF",
+        "year": 2023
+      },
+      {
+        "metric": "Mean net worth under 35 (US)",
+        "value": 183500,
+        "unit": "USD",
+        "source": "Federal Reserve SCF",
+        "year": 2023
+      },
+      {
+        "metric": "Mean net worth 55-64 (US)",
+        "value": 1553700,
+        "unit": "USD",
+        "source": "Federal Reserve SCF",
+        "year": 2023
+      },
+      {
+        "metric": "Top 10% net worth threshold (US)",
+        "value": 1900000,
+        "unit": "USD",
+        "source": "Federal Reserve SCF",
+        "year": 2023
+      },
+      {
+        "metric": "Top 1% net worth threshold (US)",
+        "value": 11100000,
+        "unit": "USD",
+        "source": "Federal Reserve SCF",
+        "year": 2023
+      },
+      {
+        "metric": "Bottom 50% share of total wealth (US)",
+        "value": 2.6,
+        "unit": "%",
+        "source": "Federal Reserve DFA",
+        "year": 2024
+      },
+      {
+        "metric": "Top 1% share of total wealth (US)",
+        "value": 30.4,
+        "unit": "%",
+        "source": "Federal Reserve DFA",
+        "year": 2024
+      },
+      {
+        "metric": "Median net worth (White households US)",
+        "value": 285000,
+        "unit": "USD",
+        "source": "Federal Reserve SCF",
+        "year": 2023
+      },
+      {
+        "metric": "Median net worth (Black households US)",
+        "value": 44900,
+        "unit": "USD",
+        "source": "Federal Reserve SCF",
+        "year": 2023
+      },
+      {
+        "metric": "Median net worth (Hispanic households US)",
+        "value": 61600,
+        "unit": "USD",
+        "source": "Federal Reserve SCF",
+        "year": 2023
+      },
+      {
+        "metric": "Net worth millionaires in US",
+        "value": 22,
+        "unit": "million people",
+        "source": "Credit Suisse Global Wealth Report",
+        "year": 2024
+      },
+      {
+        "metric": "Global number of billionaires",
+        "value": 2781,
+        "unit": "people",
+        "source": "Forbes Billionaires List",
+        "year": 2024
+      },
+      {
+        "metric": "Negative net worth (US households)",
+        "value": 14,
+        "unit": "% of households",
+        "source": "Federal Reserve SCF",
+        "year": 2023
+      }
+    ],
+    "investment_returns": [
+      {
+        "metric": "S&P 500 average annual return (nominal, 1928-2024)",
+        "value": 11.7,
+        "unit": "% per year",
+        "source": "NYU Stern / Aswath Damodaran",
+        "year": 2024,
+        "url": "https://pages.stern.nyu.edu/~adamodar/"
+      },
+      {
+        "metric": "S&P 500 average annual return (real, inflation-adjusted)",
+        "value": 8.5,
+        "unit": "% per year",
+        "source": "NYU Stern / Damodaran",
+        "year": 2024
+      },
+      {
+        "metric": "Bond average annual return (US 10Y Treasury)",
+        "value": 5.1,
+        "unit": "% per year (1928-2024)",
+        "source": "NYU Stern / Damodaran",
+        "year": 2024
+      },
+      {
+        "metric": "Gold average annual return (real)",
+        "value": 1.1,
+        "unit": "% per year (1972-2024)",
+        "source": "World Gold Council",
+        "year": 2024
+      },
+      {
+        "metric": "Real estate average annual return (US)",
+        "value": 4.2,
+        "unit": "% per year (price appreciation, ex-rental income)",
+        "source": "Case-Shiller Index / FRED",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto (Bitcoin) average annual return (2014-2024)",
+        "value": 75,
+        "unit": "% per year (with extreme volatility)",
+        "source": "CoinGecko / CoinMarketCap",
+        "year": 2024
+      },
+      {
+        "metric": "Savings account average APY (US)",
+        "value": 0.46,
+        "unit": "% (standard) to 5.0% (HYSA)",
+        "source": "FDIC / Bankrate",
+        "year": 2024
+      },
+      {
+        "metric": "CD average APY (1-year, US)",
+        "value": 4.85,
+        "unit": "%",
+        "source": "FDIC / Bankrate",
+        "year": 2024
+      },
+      {
+        "metric": "Active fund managers who beat S&P 500 (15-year)",
+        "value": 12,
+        "unit": "%",
+        "source": "SPIVA Scorecard",
+        "year": 2024,
+        "url": "https://www.spglobal.com/spdji/en/spiva/"
+      },
+      {
+        "metric": "Average expense ratio (index fund)",
+        "value": 0.03,
+        "unit": "% per year",
+        "source": "ICI Fact Book",
+        "year": 2024
+      },
+      {
+        "metric": "Average expense ratio (active fund)",
+        "value": 0.66,
+        "unit": "% per year",
+        "source": "ICI Fact Book",
+        "year": 2024
+      },
+      {
+        "metric": "401K average balance (all ages, US)",
+        "value": 112572,
+        "unit": "USD",
+        "source": "Fidelity Q4 2024",
+        "year": 2024
+      },
+      {
+        "metric": "401K average balance (age 60-69)",
+        "value": 244750,
+        "unit": "USD",
+        "source": "Fidelity Q4 2024",
+        "year": 2024
+      },
+      {
+        "metric": "IRA average balance (US)",
+        "value": 113800,
+        "unit": "USD",
+        "source": "Fidelity Q4 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Employer 401K match (average)",
+        "value": 4.7,
+        "unit": "% of salary",
+        "source": "BLS / Fidelity",
+        "year": 2024
+      },
+      {
+        "metric": "Americans investing in stock market",
+        "value": 58,
+        "unit": "%",
+        "source": "Gallup Economy & Personal Finance",
+        "year": 2024
+      },
+      {
+        "metric": "Index fund vs active: cumulative 20-year difference",
+        "value": 40,
+        "unit": "% more wealth in index fund ($10K invested)",
+        "source": "Vanguard / SPIVA data",
+        "year": 2024
+      },
+      {
+        "metric": "Dollar-cost averaging vs lump sum (historical)",
+        "value": 33,
+        "unit": "% of the time DCA beats lump sum (lump sum usually better)",
+        "source": "Vanguard Research",
+        "year": 2024
+      }
+    ],
+    "retirement_planning": [
+      {
+        "metric": "Americans on track for retirement",
+        "value": 25,
+        "unit": "%",
+        "source": "National Institute on Retirement Security",
+        "year": 2024
+      },
+      {
+        "metric": "Median retirement savings (all working adults)",
+        "value": 87000,
+        "unit": "USD",
+        "source": "Federal Reserve SCF",
+        "year": 2023
+      },
+      {
+        "metric": "Recommended retirement savings multiple at 67",
+        "value": 10,
+        "unit": "x annual salary",
+        "source": "Fidelity Retirement Guidelines",
+        "year": 2024
+      },
+      {
+        "metric": "Average Social Security benefit (US, monthly)",
+        "value": 1907,
+        "unit": "USD",
+        "source": "SSA",
+        "year": 2024
+      },
+      {
+        "metric": "Social Security replacement rate (average earner)",
+        "value": 40,
+        "unit": "% of pre-retirement income",
+        "source": "SSA",
+        "year": 2024
+      },
+      {
+        "metric": "Retirees who rely on Social Security for 50%+ of income",
+        "value": 50,
+        "unit": "%",
+        "source": "SSA",
+        "year": 2024
+      },
+      {
+        "metric": "4% withdrawal rule safe withdrawal rate",
+        "value": 4,
+        "unit": "% per year (30-year horizon)",
+        "source": "Bengen 1994 / Trinity Study updated",
+        "year": 2024
+      },
+      {
+        "metric": "Average retirement age (US)",
+        "value": 62,
+        "unit": "years (actual, vs 66 planned)",
+        "source": "Gallup Economy & Personal Finance",
+        "year": 2024
+      },
+      {
+        "metric": "Healthcare cost in retirement (couple, 65+)",
+        "value": 315000,
+        "unit": "USD lifetime estimate",
+        "source": "Fidelity Retiree Health Care Cost Estimate",
+        "year": 2024
+      },
+      {
+        "metric": "Pension coverage (private sector US)",
+        "value": 15,
+        "unit": "% have defined benefit pension",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Gig workers with retirement savings",
+        "value": 28,
+        "unit": "%",
+        "source": "Betterment / MBO Partners",
+        "year": 2024
+      },
+      {
+        "metric": "Average age to start saving for retirement",
+        "value": 27,
+        "unit": "years",
+        "source": "TIAA / Schwab",
+        "year": 2024
+      },
+      {
+        "metric": "Compound interest: $200/mo from 25 to 65 at 8%",
+        "value": 698000,
+        "unit": "USD final value",
+        "source": "Compound interest calculator / SEC.gov",
+        "year": 2024
+      },
+      {
+        "metric": "Compound interest: $200/mo from 35 to 65 at 8%",
+        "value": 300000,
+        "unit": "USD final value",
+        "source": "Compound interest calculator / SEC.gov",
+        "year": 2024
+      },
+      {
+        "metric": "Retirement confidence index (US)",
+        "value": 68,
+        "unit": "% somewhat or very confident",
+        "source": "EBRI Retirement Confidence Survey",
+        "year": 2024
+      }
+    ],
+    "credit_scores": [
+      {
+        "metric": "Average FICO score (US)",
+        "value": 717,
+        "unit": "score",
+        "source": "Experian State of Credit",
+        "year": 2024
+      },
+      {
+        "metric": "Excellent credit (750+) population share",
+        "value": 38,
+        "unit": "%",
+        "source": "Experian",
+        "year": 2024
+      },
+      {
+        "metric": "Poor credit (below 580) population share",
+        "value": 16,
+        "unit": "%",
+        "source": "Experian",
+        "year": 2024
+      },
+      {
+        "metric": "Credit score impact on mortgage rate (780 vs 620)",
+        "value": 1.5,
+        "unit": "percentage point higher rate for 620 score",
+        "source": "myFICO.com",
+        "year": 2024
+      },
+      {
+        "metric": "Average US mortgage rate (30-year fixed)",
+        "value": 6.62,
+        "unit": "%",
+        "source": "Freddie Mac PMMS",
+        "year": 2024
+      },
+      {
+        "metric": "Credit utilization ratio (recommended max)",
+        "value": 30,
+        "unit": "% of available credit",
+        "source": "FICO / Experian",
+        "year": 2024
+      },
+      {
+        "metric": "Americans with a credit card",
+        "value": 82,
+        "unit": "%",
+        "source": "Federal Reserve / Experian",
+        "year": 2024
+      },
+      {
+        "metric": "Average number of credit cards per person (US)",
+        "value": 3.9,
+        "unit": "cards",
+        "source": "Experian",
+        "year": 2024
+      },
+      {
+        "metric": "Total US credit card debt",
+        "value": 1.14,
+        "unit": "trillion USD",
+        "source": "Federal Reserve Bank of New York",
+        "year": 2024
+      },
+      {
+        "metric": "Average credit card interest rate (US)",
+        "value": 20.72,
+        "unit": "%",
+        "source": "Federal Reserve G.19",
+        "year": 2024
+      }
+    ],
+    "housing_affordability": [
+      {
+        "metric": "Median home price (US)",
+        "value": 420400,
+        "unit": "USD",
+        "source": "NAR / Census Bureau",
+        "year": 2024
+      },
+      {
+        "metric": "Home price-to-income ratio (US)",
+        "value": 5.2,
+        "unit": "ratio (historically 3-4)",
+        "source": "FRED / Zillow",
+        "year": 2024
+      },
+      {
+        "metric": "Homeownership rate (US)",
+        "value": 65.6,
+        "unit": "%",
+        "source": "US Census Bureau",
+        "year": 2024
+      },
+      {
+        "metric": "Homeownership rate (Italy)",
+        "value": 72,
+        "unit": "%",
+        "source": "ISTAT / Eurostat",
+        "year": 2024
+      },
+      {
+        "metric": "Homeownership rate (Indonesia)",
+        "value": 80,
+        "unit": "%",
+        "source": "BPS",
+        "year": 2024
+      },
+      {
+        "metric": "Homeownership rate (Australia)",
+        "value": 67,
+        "unit": "%",
+        "source": "ABS",
+        "year": 2024
+      },
+      {
+        "metric": "Homeownership rate (Germany)",
+        "value": 50,
+        "unit": "%",
+        "source": "Destatis",
+        "year": 2024
+      },
+      {
+        "metric": "Average down payment (US first-time buyer)",
+        "value": 8,
+        "unit": "% of purchase price",
+        "source": "NAR Profile of Home Buyers and Sellers",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly mortgage payment (US)",
+        "value": 2300,
+        "unit": "USD",
+        "source": "MBA / Zillow",
+        "year": 2024
+      },
+      {
+        "metric": "Rent-burdened households (paying 30%+ income on rent, US)",
+        "value": 49,
+        "unit": "% of renters",
+        "source": "Harvard JCHS State of the Nation's Housing",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR (US national)",
+        "value": 1500,
+        "unit": "USD/month",
+        "source": "Zillow / Apartment List",
+        "year": 2024
+      },
+      {
+        "metric": "Years of income to buy a home (US median)",
+        "value": 6.5,
+        "unit": "years",
+        "source": "Numbeo / FRED calculation",
+        "year": 2024
+      },
+      {
+        "metric": "Years of income to buy a home (Sydney)",
+        "value": 13.5,
+        "unit": "years",
+        "source": "Demographia International Housing",
+        "year": 2024
+      },
+      {
+        "metric": "Years of income to buy a home (Hong Kong)",
+        "value": 18.8,
+        "unit": "years",
+        "source": "Demographia International Housing",
+        "year": 2024
+      },
+      {
+        "metric": "Years of income to buy a home (London)",
+        "value": 12.5,
+        "unit": "years",
+        "source": "Demographia International Housing",
+        "year": 2024
+      },
+      {
+        "metric": "First-time homebuyer average age (US)",
+        "value": 36,
+        "unit": "years (up from 29 in 1981)",
+        "source": "NAR Profile",
+        "year": 2024
+      }
+    ],
+    "taxes_by_country": [
+      {
+        "metric": "Top marginal income tax rate (US)",
+        "value": 37,
+        "unit": "%",
+        "source": "IRS",
+        "year": 2024
+      },
+      {
+        "metric": "Top marginal income tax rate (Italy)",
+        "value": 43,
+        "unit": "%",
+        "source": "Agenzia delle Entrate",
+        "year": 2024
+      },
+      {
+        "metric": "Top marginal income tax rate (Australia)",
+        "value": 45,
+        "unit": "%",
+        "source": "ATO",
+        "year": 2024
+      },
+      {
+        "metric": "Top marginal income tax rate (UK)",
+        "value": 45,
+        "unit": "%",
+        "source": "HMRC",
+        "year": 2024
+      },
+      {
+        "metric": "Top marginal income tax rate (Germany)",
+        "value": 45,
+        "unit": "%",
+        "source": "Bundesfinanzministerium",
+        "year": 2024
+      },
+      {
+        "metric": "Top marginal income tax rate (Sweden)",
+        "value": 52,
+        "unit": "%",
+        "source": "Skatteverket",
+        "year": 2024
+      },
+      {
+        "metric": "Top marginal income tax rate (Japan)",
+        "value": 45,
+        "unit": "%",
+        "source": "NTA Japan",
+        "year": 2024
+      },
+      {
+        "metric": "Income tax rate (Indonesia, max)",
+        "value": 35,
+        "unit": "%",
+        "source": "DJP Indonesia",
+        "year": 2024
+      },
+      {
+        "metric": "No income tax countries",
+        "value": 9,
+        "unit": "countries (UAE, Bahamas, etc.)",
+        "source": "Tax Foundation",
+        "year": 2024
+      },
+      {
+        "metric": "Capital gains tax (US long-term max)",
+        "value": 20,
+        "unit": "%",
+        "source": "IRS",
+        "year": 2024
+      },
+      {
+        "metric": "VAT/GST average rate (OECD)",
+        "value": 19.2,
+        "unit": "%",
+        "source": "OECD",
+        "year": 2024
+      },
+      {
+        "metric": "Tax-to-GDP ratio (US)",
+        "value": 27.7,
+        "unit": "% of GDP",
+        "source": "OECD Revenue Statistics",
+        "year": 2024
+      },
+      {
+        "metric": "Tax-to-GDP ratio (Denmark, highest OECD)",
+        "value": 46.9,
+        "unit": "% of GDP",
+        "source": "OECD Revenue Statistics",
+        "year": 2024
+      },
+      {
+        "metric": "Tax-to-GDP ratio (Indonesia)",
+        "value": 10.1,
+        "unit": "% of GDP",
+        "source": "World Bank / OECD",
+        "year": 2024
+      }
+    ],
+    "insurance_costs": [
+      {
+        "metric": "Average annual health insurance premium (US, family)",
+        "value": 24000,
+        "unit": "USD",
+        "source": "KFF Employer Health Benefits Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Average annual health insurance premium (US, individual)",
+        "value": 8500,
+        "unit": "USD",
+        "source": "KFF",
+        "year": 2024
+      },
+      {
+        "metric": "Average annual auto insurance premium (US)",
+        "value": 2014,
+        "unit": "USD",
+        "source": "III / NerdWallet",
+        "year": 2024
+      },
+      {
+        "metric": "Average annual homeowner insurance (US)",
+        "value": 2377,
+        "unit": "USD",
+        "source": "III / Bankrate",
+        "year": 2024
+      },
+      {
+        "metric": "Average annual renter insurance (US)",
+        "value": 173,
+        "unit": "USD",
+        "source": "III",
+        "year": 2024
+      },
+      {
+        "metric": "Average annual life insurance cost (term, 30yo male)",
+        "value": 360,
+        "unit": "USD for $500K coverage",
+        "source": "Policygenius",
+        "year": 2024
+      },
+      {
+        "metric": "Out-of-pocket healthcare spending (US household average)",
+        "value": 6000,
+        "unit": "USD/year",
+        "source": "BLS Consumer Expenditure Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Medical debt holders (US)",
+        "value": 100,
+        "unit": "million people",
+        "source": "KFF / Urban Institute",
+        "year": 2024
+      },
+      {
+        "metric": "Medical bankruptcy share of all bankruptcies (US)",
+        "value": 62,
+        "unit": "%",
+        "source": "AJPH / NerdWallet",
+        "year": 2024
+      },
+      {
+        "metric": "Uninsured rate (US)",
+        "value": 8,
+        "unit": "% of population",
+        "source": "US Census Bureau CPS",
+        "year": 2024
+      }
+    ],
+    "consumer_spending": [
+      {
+        "metric": "Average household spending (US, annual)",
+        "value": 72967,
+        "unit": "USD",
+        "source": "BLS Consumer Expenditure Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Housing share of spending",
+        "value": 33,
+        "unit": "%",
+        "source": "BLS CES",
+        "year": 2024
+      },
+      {
+        "metric": "Transportation share of spending",
+        "value": 16,
+        "unit": "%",
+        "source": "BLS CES",
+        "year": 2024
+      },
+      {
+        "metric": "Food share of spending",
+        "value": 13,
+        "unit": "%",
+        "source": "BLS CES",
+        "year": 2024
+      },
+      {
+        "metric": "Healthcare share of spending",
+        "value": 8,
+        "unit": "%",
+        "source": "BLS CES",
+        "year": 2024
+      },
+      {
+        "metric": "Entertainment share of spending",
+        "value": 5,
+        "unit": "%",
+        "source": "BLS CES",
+        "year": 2024
+      },
+      {
+        "metric": "Average food spending at home (US monthly)",
+        "value": 500,
+        "unit": "USD",
+        "source": "BLS CES",
+        "year": 2024
+      },
+      {
+        "metric": "Average food spending dining out (US monthly)",
+        "value": 320,
+        "unit": "USD",
+        "source": "BLS CES",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly streaming subscriptions (US household)",
+        "value": 55,
+        "unit": "USD",
+        "source": "JD Power / Deloitte",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly cell phone bill (US)",
+        "value": 144,
+        "unit": "USD (family plan)",
+        "source": "BLS / JD Power",
+        "year": 2024
+      },
+      {
+        "metric": "Average annual clothing spending (US)",
+        "value": 1945,
+        "unit": "USD per person",
+        "source": "BLS CES",
+        "year": 2024
+      },
+      {
+        "metric": "Impulse spending per month (US average)",
+        "value": 314,
+        "unit": "USD",
+        "source": "Slickdeals survey",
+        "year": 2024
+      }
+    ],
+    "wealth_building": [
+      {
+        "metric": "Millionaire households in US",
+        "value": 22,
+        "unit": "million",
+        "source": "Credit Suisse Global Wealth Report / Spectrem Group",
+        "year": 2024
+      },
+      {
+        "metric": "Average years to become millionaire (savings-based)",
+        "value": 28,
+        "unit": "years ($500/mo at 10% return)",
+        "source": "Compound calculation",
+        "year": 2024
+      },
+      {
+        "metric": "Self-made millionaires (US)",
+        "value": 80,
+        "unit": "% of millionaires are first-generation",
+        "source": "Ramsey Solutions / Thomas Stanley",
+        "year": 2024
+      },
+      {
+        "metric": "Inheritance share of wealth (US)",
+        "value": 20,
+        "unit": "% of wealth comes from inheritance",
+        "source": "Federal Reserve SCF / Saez & Zucman",
+        "year": 2024
+      },
+      {
+        "metric": "Real estate as share of millionaire wealth",
+        "value": 32,
+        "unit": "%",
+        "source": "Federal Reserve SCF",
+        "year": 2024
+      },
+      {
+        "metric": "Stocks as share of millionaire wealth",
+        "value": 35,
+        "unit": "%",
+        "source": "Federal Reserve SCF",
+        "year": 2024
+      },
+      {
+        "metric": "Side hustle participation rate (US)",
+        "value": 39,
+        "unit": "% of working adults",
+        "source": "Bankrate Side Hustle Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Average side hustle monthly income",
+        "value": 891,
+        "unit": "USD",
+        "source": "Bankrate",
+        "year": 2024
+      },
+      {
+        "metric": "Passive income earners (US)",
+        "value": 20,
+        "unit": "% of Americans earn some passive income",
+        "source": "IRS / various surveys",
+        "year": 2024
+      },
+      {
+        "metric": "Generational wealth transfer upcoming (Great Wealth Transfer)",
+        "value": 84,
+        "unit": "trillion USD over next 20 years",
+        "source": "Cerulli Associates",
+        "year": 2024
+      },
+      {
+        "metric": "Financial advisor usage (US households)",
+        "value": 35,
+        "unit": "%",
+        "source": "Gallup / Cerulli",
+        "year": 2024
+      },
+      {
+        "metric": "Robo-advisor AUM growth rate",
+        "value": 25,
+        "unit": "% per year",
+        "source": "Statista / Betterment data",
+        "year": 2024
+      }
+    ],
+    "inflation_purchasing_power": [
+      {
+        "metric": "Average annual inflation rate (US, 2000-2024)",
+        "value": 2.8,
+        "unit": "%",
+        "source": "BLS CPI",
+        "year": 2024
+      },
+      {
+        "metric": "Purchasing power of $1 in 2000 vs 2024",
+        "value": 0.55,
+        "unit": "USD (lost 45% of value)",
+        "source": "BLS CPI Calculator",
+        "year": 2024
+      },
+      {
+        "metric": "Grocery inflation (US, 2020-2024)",
+        "value": 25,
+        "unit": "% cumulative increase",
+        "source": "BLS CPI Food",
+        "year": 2024
+      },
+      {
+        "metric": "Wage growth vs inflation (US, 2020-2024)",
+        "value": -2,
+        "unit": "percentage points behind inflation (real wage decline)",
+        "source": "BLS / Atlanta Fed Wage Tracker",
+        "year": 2024
+      },
+      {
+        "metric": "Countries with hyperinflation (>50% monthly)",
+        "value": 3,
+        "unit": "countries (Venezuela, Zimbabwe, Argentina)",
+        "source": "IMF World Economic Outlook",
+        "year": 2024
+      },
+      {
+        "metric": "Inflation perception gap (felt vs measured)",
+        "value": 4,
+        "unit": "percentage points higher than CPI (consumers feel it more)",
+        "source": "University of Michigan Consumer Sentiment",
+        "year": 2024
+      },
+      {
+        "metric": "TIPS real yield (10-year US)",
+        "value": 2.1,
+        "unit": "%",
+        "source": "US Treasury",
+        "year": 2024
+      },
+      {
+        "metric": "Gold as inflation hedge (correlation with CPI)",
+        "value": 0.16,
+        "unit": "correlation (weak hedge despite perception)",
+        "source": "World Gold Council / Erb & Harvey 2013",
+        "year": 2024
+      }
+    ],
+    "cryptocurrency_personal_finance": [
+      {
+        "metric": "Americans who own cryptocurrency",
+        "value": 21,
+        "unit": "%",
+        "source": "Pew Research Center",
+        "year": 2024
+      },
+      {
+        "metric": "Average crypto portfolio (US retail)",
+        "value": 1000,
+        "unit": "USD median",
+        "source": "Gemini State of US Crypto",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto investors who have lost money overall",
+        "value": 53,
+        "unit": "%",
+        "source": "Bankrate / Pew Research",
+        "year": 2024
+      },
+      {
+        "metric": "Bitcoin max drawdown (worst peak-to-trough)",
+        "value": -83,
+        "unit": "% (Nov 2021 to Nov 2022)",
+        "source": "CoinGecko",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto scam losses (US, annual)",
+        "value": 5.6,
+        "unit": "billion USD",
+        "source": "FTC",
+        "year": 2024
+      },
+      {
+        "metric": "DeFi total value locked (global)",
+        "value": 90,
+        "unit": "billion USD",
+        "source": "DeFi Llama",
+        "year": 2024
+      },
+      {
+        "metric": "Stablecoin market cap",
+        "value": 170,
+        "unit": "billion USD",
+        "source": "CoinGecko",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto tax compliance rate (US)",
+        "value": 50,
+        "unit": "% (estimated)",
+        "source": "CoinTracker / TaxBit estimates",
+        "year": 2024
+      }
+    ],
+    "freelancing_gig_economy": [
+      {
+        "metric": "Freelancers in US workforce",
+        "value": 64,
+        "unit": "million (38% of workforce)",
+        "source": "Upwork Freelance Forward",
+        "year": 2024
+      },
+      {
+        "metric": "Freelancers earning $100K+",
+        "value": 12,
+        "unit": "%",
+        "source": "Upwork",
+        "year": 2024
+      },
+      {
+        "metric": "Average freelance hourly rate (US)",
+        "value": 33,
+        "unit": "USD",
+        "source": "Upwork / Payoneer",
+        "year": 2024
+      },
+      {
+        "metric": "Freelance income tax burden (self-employment tax)",
+        "value": 15.3,
+        "unit": "% on top of income tax",
+        "source": "IRS",
+        "year": 2024
+      },
+      {
+        "metric": "Freelancers with retirement plan",
+        "value": 22,
+        "unit": "%",
+        "source": "Betterment / MBO Partners",
+        "year": 2024
+      },
+      {
+        "metric": "Freelancers with health insurance",
+        "value": 55,
+        "unit": "% (many through spouse or marketplace)",
+        "source": "Upwork / Kaiser",
+        "year": 2024
+      },
+      {
+        "metric": "Gig economy growth rate",
+        "value": 15,
+        "unit": "% per year",
+        "source": "MBO Partners / McKinsey",
+        "year": 2024
+      },
+      {
+        "metric": "Average Uber driver net hourly earnings",
+        "value": 13.5,
+        "unit": "USD (after expenses)",
+        "source": "MIT CEEPR / Uber data",
+        "year": 2024
+      },
+      {
+        "metric": "Upwork average freelancer hourly rate (global)",
+        "value": 21,
+        "unit": "USD",
+        "source": "Upwork / Payoneer Global Freelancer Report",
+        "year": 2024
+      },
+      {
+        "metric": "Fiverr average order value",
+        "value": 200,
+        "unit": "USD",
+        "source": "Fiverr earnings report",
+        "year": 2024
+      }
+    ],
+    "financial_psychology": [
+      {
+        "metric": "People who avoid checking bank balance",
+        "value": 36,
+        "unit": "%",
+        "source": "Capital One Mind Over Money",
+        "year": 2024
+      },
+      {
+        "metric": "Financial stress affecting work productivity",
+        "value": 72,
+        "unit": "% of workers say finances cause stress",
+        "source": "PwC Employee Financial Wellness Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Lifestyle inflation: spending increase per $10K raise",
+        "value": 8000,
+        "unit": "USD additional spending",
+        "source": "BLS / behavioral finance research",
+        "year": 2024
+      },
+      {
+        "metric": "Keeping up with Joneses: social comparison spending",
+        "value": 35,
+        "unit": "% of spending influenced by peers",
+        "source": "APA / NBER research",
+        "year": 2024
+      },
+      {
+        "metric": "Buy now pay later (BNPL) users in US",
+        "value": 38,
+        "unit": "% of adults have used BNPL",
+        "source": "Federal Reserve / CFPB",
+        "year": 2024
+      },
+      {
+        "metric": "BNPL delinquency rate",
+        "value": 17,
+        "unit": "% miss at least one payment",
+        "source": "CFPB",
+        "year": 2024
+      },
+      {
+        "metric": "Financial arguments and divorce correlation",
+        "value": 2.5,
+        "unit": "x more likely to divorce if argue about money weekly",
+        "source": "Ramsey Solutions / Kansas State University",
+        "year": 2024
+      },
+      {
+        "metric": "Money scripts: avoidance prevalence",
+        "value": 20,
+        "unit": "% of adults have money avoidance tendency",
+        "source": "Klontz et al., Financial Psychology Institute",
+        "year": 2024
+      },
+      {
+        "metric": "Subscription trap: forgotten subscriptions monthly cost",
+        "value": 133,
+        "unit": "USD average wasted on unused subscriptions",
+        "source": "C+R Research / West Monroe",
+        "year": 2024
+      },
+      {
+        "metric": "Retail therapy prevalence",
+        "value": 62,
+        "unit": "% of adults admit to emotional spending",
+        "source": "Credit Karma / CNBC survey",
+        "year": 2024
+      }
+    ],
+    "student_loans": [
+      {
+        "metric": "Total US student loan debt",
+        "value": 1.77,
+        "unit": "trillion USD",
+        "source": "Federal Reserve",
+        "year": 2024
+      },
+      {
+        "metric": "Average student loan balance at graduation",
+        "value": 37850,
+        "unit": "USD",
+        "source": "Federal Reserve / College Board",
+        "year": 2024
+      },
+      {
+        "metric": "Median monthly student loan payment",
+        "value": 250,
+        "unit": "USD",
+        "source": "Federal Reserve / BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Average years to repay student loans",
+        "value": 20,
+        "unit": "years",
+        "source": "Education Data Initiative",
+        "year": 2024
+      },
+      {
+        "metric": "Student loan borrowers in US",
+        "value": 43.6,
+        "unit": "million",
+        "source": "Federal Student Aid",
+        "year": 2024
+      },
+      {
+        "metric": "Student loan default rate (3-year)",
+        "value": 13,
+        "unit": "%",
+        "source": "Department of Education",
+        "year": 2024
+      },
+      {
+        "metric": "Graduate degree average debt",
+        "value": 71000,
+        "unit": "USD",
+        "source": "NCES",
+        "year": 2024
+      },
+      {
+        "metric": "Parent PLUS loan average balance",
+        "value": 29200,
+        "unit": "USD",
+        "source": "Federal Student Aid",
+        "year": 2024
+      },
+      {
+        "metric": "Student loan interest rate (federal undergraduate)",
+        "value": 5.5,
+        "unit": "%",
+        "source": "Federal Student Aid",
+        "year": 2024
+      },
+      {
+        "metric": "College degree lifetime earnings premium",
+        "value": 1200000,
+        "unit": "USD more than high school over lifetime",
+        "source": "Georgetown CEW",
+        "year": 2024
+      },
+      {
+        "metric": "ROI of college degree (10-year payback)",
+        "value": 65,
+        "unit": "% of degrees have positive 10-year ROI",
+        "source": "Georgetown CEW / Third Way",
+        "year": 2024
+      },
+      {
+        "metric": "Student loan forgiveness applications pending",
+        "value": 4,
+        "unit": "million",
+        "source": "Department of Education",
+        "year": 2024
+      }
+    ],
+    "auto_finance": [
+      {
+        "metric": "Average new car price (US)",
+        "value": 48500,
+        "unit": "USD",
+        "source": "Kelley Blue Book",
+        "year": 2024
+      },
+      {
+        "metric": "Average used car price (US)",
+        "value": 27200,
+        "unit": "USD",
+        "source": "Kelley Blue Book",
+        "year": 2024
+      },
+      {
+        "metric": "Average auto loan balance (US)",
+        "value": 23800,
+        "unit": "USD",
+        "source": "Experian",
+        "year": 2024
+      },
+      {
+        "metric": "Average auto loan payment (new car)",
+        "value": 734,
+        "unit": "USD/month",
+        "source": "Experian",
+        "year": 2024
+      },
+      {
+        "metric": "Average auto loan payment (used car)",
+        "value": 525,
+        "unit": "USD/month",
+        "source": "Experian",
+        "year": 2024
+      },
+      {
+        "metric": "Average auto loan term (new car)",
+        "value": 68,
+        "unit": "months",
+        "source": "Experian",
+        "year": 2024
+      },
+      {
+        "metric": "Auto loan delinquency rate (60+ days)",
+        "value": 6.1,
+        "unit": "%",
+        "source": "Federal Reserve Bank of New York",
+        "year": 2024
+      },
+      {
+        "metric": "Annual cost of car ownership (US average)",
+        "value": 12182,
+        "unit": "USD",
+        "source": "AAA Your Driving Costs",
+        "year": 2024
+      },
+      {
+        "metric": "Car depreciation in first year",
+        "value": 20,
+        "unit": "% of value lost",
+        "source": "Edmunds / iSeeCars",
+        "year": 2024
+      },
+      {
+        "metric": "Car depreciation in 5 years",
+        "value": 49,
+        "unit": "% of original value lost",
+        "source": "Edmunds / iSeeCars",
+        "year": 2024
+      },
+      {
+        "metric": "Americans who are car-free",
+        "value": 9,
+        "unit": "%",
+        "source": "Census Bureau ACS",
+        "year": 2024
+      },
+      {
+        "metric": "Electric vehicle share of new sales (US)",
+        "value": 9,
+        "unit": "%",
+        "source": "IEA / Cox Automotive",
+        "year": 2024
+      }
+    ],
+    "small_business_finance": [
+      {
+        "metric": "Average startup cost (US small business)",
+        "value": 40000,
+        "unit": "USD",
+        "source": "SBA / Kauffman Foundation",
+        "year": 2024
+      },
+      {
+        "metric": "Median startup cost",
+        "value": 15000,
+        "unit": "USD",
+        "source": "SBA",
+        "year": 2024
+      },
+      {
+        "metric": "Small businesses that survive 5 years",
+        "value": 50,
+        "unit": "%",
+        "source": "BLS Business Dynamics",
+        "year": 2024
+      },
+      {
+        "metric": "Small businesses funded by personal savings",
+        "value": 77,
+        "unit": "%",
+        "source": "Federal Reserve SSBF",
+        "year": 2024
+      },
+      {
+        "metric": "SBA loan approval rate",
+        "value": 15,
+        "unit": "% of applications",
+        "source": "SBA / Biz2Credit",
+        "year": 2024
+      },
+      {
+        "metric": "Average small business revenue (under 20 employees)",
+        "value": 600000,
+        "unit": "USD/year",
+        "source": "Census Bureau SUSB",
+        "year": 2024
+      },
+      {
+        "metric": "Small business owner average salary",
+        "value": 73000,
+        "unit": "USD/year",
+        "source": "Payscale / SBA",
+        "year": 2024
+      },
+      {
+        "metric": "Small businesses with no employees (solopreneur)",
+        "value": 81,
+        "unit": "% of all businesses",
+        "source": "Census Bureau Nonemployer Statistics",
+        "year": 2024
+      },
+      {
+        "metric": "Venture capital funded businesses (share of all startups)",
+        "value": 0.05,
+        "unit": "%",
+        "source": "Kauffman Foundation / NVCA",
+        "year": 2024
+      },
+      {
+        "metric": "Average VC seed round (US)",
+        "value": 3,
+        "unit": "million USD",
+        "source": "Crunchbase / PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "VC-backed startup that achieves exit (IPO or acquisition)",
+        "value": 25,
+        "unit": "%",
+        "source": "CB Insights",
+        "year": 2024
+      },
+      {
+        "metric": "Bootstrapped businesses that reach $1M revenue",
+        "value": 15,
+        "unit": "%",
+        "source": "Indie Hackers / MicroConf data",
+        "year": 2024
+      }
+    ],
+    "global_wealth_inequality": [
+      {
+        "metric": "Global median wealth per adult",
+        "value": 9300,
+        "unit": "USD",
+        "source": "Credit Suisse Global Wealth Report",
+        "year": 2024
+      },
+      {
+        "metric": "Global mean wealth per adult",
+        "value": 87490,
+        "unit": "USD",
+        "source": "Credit Suisse Global Wealth Report",
+        "year": 2024
+      },
+      {
+        "metric": "Top 1% global wealth share",
+        "value": 45.8,
+        "unit": "%",
+        "source": "Credit Suisse Global Wealth Report",
+        "year": 2024
+      },
+      {
+        "metric": "Bottom 50% global wealth share",
+        "value": 1.2,
+        "unit": "%",
+        "source": "Credit Suisse / Oxfam",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth needed to be in global top 1%",
+        "value": 1080000,
+        "unit": "USD",
+        "source": "Credit Suisse",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth needed to be in global top 10%",
+        "value": 138000,
+        "unit": "USD",
+        "source": "Credit Suisse",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth needed to be in global top 50%",
+        "value": 9300,
+        "unit": "USD",
+        "source": "Credit Suisse",
+        "year": 2024
+      },
+      {
+        "metric": "Number of people in extreme poverty (<$2.15/day)",
+        "value": 700,
+        "unit": "million",
+        "source": "World Bank",
+        "year": 2024
+      },
+      {
+        "metric": "Global extreme poverty rate",
+        "value": 8.5,
+        "unit": "%",
+        "source": "World Bank",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth of 8 richest people equals bottom 50%",
+        "value": 3.6,
+        "unit": "trillion USD (estimated combined)",
+        "source": "Oxfam / Forbes",
+        "year": 2024
+      },
+      {
+        "metric": "Social mobility index (top: Denmark)",
+        "value": 85.2,
+        "unit": "index score",
+        "source": "World Economic Forum Global Social Mobility Report",
+        "year": 2024
+      },
+      {
+        "metric": "Social mobility index (US)",
+        "value": 70.4,
+        "unit": "index score (ranked 27th)",
+        "source": "World Economic Forum",
+        "year": 2024
+      },
+      {
+        "metric": "Intergenerational earnings elasticity (US)",
+        "value": 0.47,
+        "unit": "correlation (higher = less mobile)",
+        "source": "Chetty et al. 2014 / Opportunity Insights",
+        "year": 2024
+      },
+      {
+        "metric": "Intergenerational earnings elasticity (Denmark)",
+        "value": 0.15,
+        "unit": "correlation (most mobile)",
+        "source": "Corak 2013, JEP",
+        "year": 2024
+      }
+    ],
+    "personal_finance_milestones": [
+      {
+        "metric": "Average age to become debt-free (US)",
+        "value": 53,
+        "unit": "years",
+        "source": "Northwestern Mutual / various surveys",
+        "year": 2024
+      },
+      {
+        "metric": "Average age of first home purchase (US)",
+        "value": 36,
+        "unit": "years",
+        "source": "NAR",
+        "year": 2024
+      },
+      {
+        "metric": "Average age of financial independence",
+        "value": 52,
+        "unit": "years (for those who achieve it)",
+        "source": "FIRE community surveys / Fidelity",
+        "year": 2024
+      },
+      {
+        "metric": "FIRE movement: savings rate needed for 10-year retirement",
+        "value": 65,
+        "unit": "% of income",
+        "source": "Mr. Money Mustache / Mad Fientist calculations",
+        "year": 2024
+      },
+      {
+        "metric": "Average inheritance amount (US)",
+        "value": 46200,
+        "unit": "USD (median; mean much higher)",
+        "source": "Federal Reserve SCF",
+        "year": 2024
+      },
+      {
+        "metric": "Americans who receive an inheritance",
+        "value": 20,
+        "unit": "% at some point",
+        "source": "Federal Reserve SCF",
+        "year": 2024
+      },
+      {
+        "metric": "Estate tax threshold (US)",
+        "value": 13610000,
+        "unit": "USD (2024)",
+        "source": "IRS",
+        "year": 2024
+      },
+      {
+        "metric": "Estates that pay federal estate tax (US)",
+        "value": 0.1,
+        "unit": "%",
+        "source": "Tax Policy Center",
+        "year": 2024
+      },
+      {
+        "metric": "Financial planning engagement by age: 25-34",
+        "value": 25,
+        "unit": "% have a financial plan",
+        "source": "CFP Board / Schwab",
+        "year": 2024
+      },
+      {
+        "metric": "Financial planning engagement by age: 55-64",
+        "value": 55,
+        "unit": "% have a financial plan",
+        "source": "CFP Board / Schwab",
+        "year": 2024
+      },
+      {
+        "metric": "Emergency fund coverage: recommended 3-6 months",
+        "value": 3,
+        "unit": "months minimum recommended",
+        "source": "CFPB / Suze Orman recommends 8-12 months",
+        "year": 2024
+      },
+      {
+        "metric": "People living paycheck to paycheck (US)",
+        "value": 60,
+        "unit": "%",
+        "source": "LendingClub / PYMNTS",
+        "year": 2024
+      },
+      {
+        "metric": "People living paycheck to paycheck earning $100K+",
+        "value": 33,
+        "unit": "%",
+        "source": "LendingClub / PYMNTS",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of raising a child to 18 (US)",
+        "value": 310605,
+        "unit": "USD (2023 dollars)",
+        "source": "Brookings / USDA updated",
+        "year": 2024
+      },
+      {
+        "metric": "College savings (529 plan) average balance",
+        "value": 30700,
+        "unit": "USD",
+        "source": "College Savings Plans Network",
+        "year": 2024
+      },
+      {
+        "metric": "Americans with a will or estate plan",
+        "value": 34,
+        "unit": "%",
+        "source": "Caring.com survey",
+        "year": 2024
+      }
+    ],
+    "digital_banking_fintech": [
+      {
+        "metric": "Mobile banking users (US)",
+        "value": 78,
+        "unit": "% of banked adults",
+        "source": "Federal Reserve / ABA",
+        "year": 2024
+      },
+      {
+        "metric": "Neobank users (US)",
+        "value": 40,
+        "unit": "million",
+        "source": "Insider Intelligence",
+        "year": 2024
+      },
+      {
+        "metric": "P2P payment users (Venmo, Zelle, etc.)",
+        "value": 82,
+        "unit": "% of US adults use at least one",
+        "source": "Federal Reserve Payments Study",
+        "year": 2024
+      },
+      {
+        "metric": "Contactless payment adoption (US)",
+        "value": 59,
+        "unit": "% of in-person transactions",
+        "source": "Mastercard",
+        "year": 2024
+      },
+      {
+        "metric": "Cash usage decline (share of transactions)",
+        "value": 16,
+        "unit": "% of all transactions (down from 40% in 2012)",
+        "source": "Federal Reserve Payments Study",
+        "year": 2024
+      },
+      {
+        "metric": "Average checking account fees (US)",
+        "value": 5.67,
+        "unit": "USD/month",
+        "source": "Bankrate / MoneyRates",
+        "year": 2024
+      },
+      {
+        "metric": "Overdraft fee revenue (US banks, annual)",
+        "value": 6.1,
+        "unit": "billion USD (declining from $12B peak)",
+        "source": "CFPB",
+        "year": 2024
+      },
+      {
+        "metric": "Unbanked rate (US)",
+        "value": 4.5,
+        "unit": "% of households",
+        "source": "FDIC",
+        "year": 2024
+      },
+      {
+        "metric": "Unbanked rate (Indonesia)",
+        "value": 34,
+        "unit": "% of adults",
+        "source": "World Bank Global Findex",
+        "year": 2024
+      },
+      {
+        "metric": "Financial inclusion rate (global)",
+        "value": 76,
+        "unit": "% of adults have bank account",
+        "source": "World Bank Global Findex",
+        "year": 2024
+      }
+    ],
+    "wage_income_data": [
+      {
+        "metric": "Median hourly wage (US)",
+        "value": 23.11,
+        "unit": "USD",
+        "source": "BLS OES",
+        "year": 2024
+      },
+      {
+        "metric": "Mean hourly wage (US)",
+        "value": 31.0,
+        "unit": "USD",
+        "source": "BLS OES",
+        "year": 2024
+      },
+      {
+        "metric": "Software developer median salary (US)",
+        "value": 127260,
+        "unit": "USD/year",
+        "source": "BLS OES",
+        "year": 2024
+      },
+      {
+        "metric": "Nurse median salary (US)",
+        "value": 81220,
+        "unit": "USD/year",
+        "source": "BLS OES",
+        "year": 2024
+      },
+      {
+        "metric": "Teacher median salary (US)",
+        "value": 61690,
+        "unit": "USD/year",
+        "source": "BLS OES",
+        "year": 2024
+      },
+      {
+        "metric": "Fast food worker median wage (US)",
+        "value": 13.5,
+        "unit": "USD/hour",
+        "source": "BLS OES",
+        "year": 2024
+      },
+      {
+        "metric": "Federal minimum wage (US)",
+        "value": 7.25,
+        "unit": "USD/hour (since 2009)",
+        "source": "DOL",
+        "year": 2024
+      },
+      {
+        "metric": "Gender pay gap (US, median earnings)",
+        "value": 16,
+        "unit": "% less for women (84 cents per dollar)",
+        "source": "BLS / Census Bureau",
+        "year": 2024
+      },
+      {
+        "metric": "Gender pay gap (UK)",
+        "value": 14.3,
+        "unit": "%",
+        "source": "ONS",
+        "year": 2024
+      },
+      {
+        "metric": "Gender pay gap (Italy)",
+        "value": 5,
+        "unit": "% (lower unadjusted but high part-time gap)",
+        "source": "ISTAT / Eurostat",
+        "year": 2024
+      },
+      {
+        "metric": "CEO-to-worker pay ratio (S&P 500)",
+        "value": 268,
+        "unit": "times",
+        "source": "AFL-CIO / EPI",
+        "year": 2024
+      },
+      {
+        "metric": "Real wage growth (US, 2024)",
+        "value": 1.2,
+        "unit": "% (above inflation)",
+        "source": "BLS / Atlanta Fed Wage Tracker",
+        "year": 2024
+      },
+      {
+        "metric": "Average raise (US annual)",
+        "value": 4.5,
+        "unit": "%",
+        "source": "Mercer / WTW survey",
+        "year": 2024
+      },
+      {
+        "metric": "Job-hopping salary increase average",
+        "value": 14.8,
+        "unit": "% increase when changing jobs",
+        "source": "ADP Research / Federal Reserve",
+        "year": 2024
+      },
+      {
+        "metric": "Union wage premium (US)",
+        "value": 18,
+        "unit": "% higher than non-union",
+        "source": "EPI / BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Remote work salary adjustment (cost-of-living)",
+        "value": -5,
+        "unit": "% to -15% for moving to lower-cost area",
+        "source": "Glassdoor / Levels.fyi",
+        "year": 2024
+      }
+    ],
+    "financial_scams_fraud": [
+      {
+        "metric": "Total fraud losses (US, annual)",
+        "value": 10,
+        "unit": "billion USD",
+        "source": "FTC",
+        "year": 2024
+      },
+      {
+        "metric": "Investment scam losses (US)",
+        "value": 4.6,
+        "unit": "billion USD",
+        "source": "FTC",
+        "year": 2024
+      },
+      {
+        "metric": "Romance scam losses (US)",
+        "value": 1.14,
+        "unit": "billion USD",
+        "source": "FTC",
+        "year": 2024
+      },
+      {
+        "metric": "Identity theft victims (US, annual)",
+        "value": 33,
+        "unit": "million",
+        "source": "ITRC / Javelin Strategy",
+        "year": 2024
+      },
+      {
+        "metric": "Median loss per fraud victim (US)",
+        "value": 500,
+        "unit": "USD",
+        "source": "FTC",
+        "year": 2024
+      },
+      {
+        "metric": "Phone scam call volume (US, daily)",
+        "value": 2,
+        "unit": "billion robocalls",
+        "source": "YouMail Robocall Index",
+        "year": 2024
+      },
+      {
+        "metric": "Phishing attacks (global, daily)",
+        "value": 3.4,
+        "unit": "billion emails",
+        "source": "Valimail / Proofpoint",
+        "year": 2024
+      },
+      {
+        "metric": "Data breach cost (average per incident)",
+        "value": 4.45,
+        "unit": "million USD",
+        "source": "IBM Cost of a Data Breach Report",
+        "year": 2024
+      },
+      {
+        "metric": "Ponzi scheme average duration before collapse",
+        "value": 7,
+        "unit": "years",
+        "source": "SEC / Marquet International",
+        "year": 2024
+      },
+      {
+        "metric": "Credit card fraud rate (US)",
+        "value": 0.07,
+        "unit": "% of transactions",
+        "source": "Nilson Report",
+        "year": 2024
+      },
+      {
+        "metric": "Cryptocurrency scam losses (US)",
+        "value": 5.6,
+        "unit": "billion USD",
+        "source": "FTC / IC3",
+        "year": 2024
+      },
+      {
+        "metric": "Elder financial fraud losses (US, 60+)",
+        "value": 3.4,
+        "unit": "billion USD",
+        "source": "FBI IC3",
+        "year": 2024
+      }
+    ],
+    "economic_indicators_personal_impact": [
+      {
+        "metric": "Unemployment rate (US)",
+        "value": 4.1,
+        "unit": "%",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Unemployment rate (Italy)",
+        "value": 7.7,
+        "unit": "%",
+        "source": "ISTAT",
+        "year": 2024
+      },
+      {
+        "metric": "Unemployment rate (Indonesia)",
+        "value": 5.3,
+        "unit": "%",
+        "source": "BPS",
+        "year": 2024
+      },
+      {
+        "metric": "Unemployment rate (Australia)",
+        "value": 4.1,
+        "unit": "%",
+        "source": "ABS",
+        "year": 2024
+      },
+      {
+        "metric": "Youth unemployment (US, 16-24)",
+        "value": 9.1,
+        "unit": "%",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Youth unemployment (Italy, 15-24)",
+        "value": 22.3,
+        "unit": "%",
+        "source": "ISTAT",
+        "year": 2024
+      },
+      {
+        "metric": "Youth unemployment (Indonesia, 15-24)",
+        "value": 14,
+        "unit": "%",
+        "source": "BPS",
+        "year": 2024
+      },
+      {
+        "metric": "Underemployment rate (US)",
+        "value": 7.7,
+        "unit": "% (U-6 measure)",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Average duration of unemployment (US)",
+        "value": 22,
+        "unit": "weeks",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Unemployment income replacement (US average)",
+        "value": 45,
+        "unit": "% of prior wages",
+        "source": "DOL / CBPP",
+        "year": 2024
+      },
+      {
+        "metric": "Labor force participation rate (US)",
+        "value": 62.6,
+        "unit": "%",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "NEET rate (not in employment, education or training, Italy 15-29)",
+        "value": 19,
+        "unit": "%",
+        "source": "ISTAT / Eurostat",
+        "year": 2024
+      }
+    ],
+    "cost_of_education": [
+      {
+        "metric": "Average tuition (US public university, in-state)",
+        "value": 11260,
+        "unit": "USD/year",
+        "source": "College Board Trends in College Pricing",
+        "year": 2024
+      },
+      {
+        "metric": "Average tuition (US private university)",
+        "value": 41540,
+        "unit": "USD/year",
+        "source": "College Board",
+        "year": 2024
+      },
+      {
+        "metric": "Average tuition (UK, domestic)",
+        "value": 9250,
+        "unit": "GBP/year (capped)",
+        "source": "UCAS / OfS",
+        "year": 2024
+      },
+      {
+        "metric": "Average tuition (Australia, domestic)",
+        "value": 9000,
+        "unit": "AUD/year (HECS-HELP)",
+        "source": "Australian Government",
+        "year": 2024
+      },
+      {
+        "metric": "Average tuition (Italy, public)",
+        "value": 1500,
+        "unit": "EUR/year",
+        "source": "MIUR / CRUI",
+        "year": 2024
+      },
+      {
+        "metric": "Average tuition (Indonesia, public)",
+        "value": 8,
+        "unit": "million IDR/year (~$500)",
+        "source": "Ministry of Education",
+        "year": 2024
+      },
+      {
+        "metric": "College tuition inflation (US, since 2000)",
+        "value": 180,
+        "unit": "% increase (vs 75% general inflation)",
+        "source": "College Board / BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Room and board (US public university)",
+        "value": 12770,
+        "unit": "USD/year",
+        "source": "College Board",
+        "year": 2024
+      },
+      {
+        "metric": "Total cost of 4-year degree (US public, in-state)",
+        "value": 104000,
+        "unit": "USD",
+        "source": "College Board / Education Data Initiative",
+        "year": 2024
+      },
+      {
+        "metric": "MBA average cost (top 20 US programs)",
+        "value": 220000,
+        "unit": "USD total (2 years)",
+        "source": "US News / Poets&Quants",
+        "year": 2024
+      },
+      {
+        "metric": "Coding bootcamp average cost",
+        "value": 14000,
+        "unit": "USD",
+        "source": "Course Report",
+        "year": 2024
+      },
+      {
+        "metric": "Coding bootcamp job placement rate",
+        "value": 73,
+        "unit": "% within 6 months",
+        "source": "Course Report",
+        "year": 2024
+      },
+      {
+        "metric": "Online degree average cost (accredited)",
+        "value": 38000,
+        "unit": "USD total",
+        "source": "NCES / U.S. News",
+        "year": 2024
+      },
+      {
+        "metric": "Trade school average cost (US)",
+        "value": 17000,
+        "unit": "USD total (1-2 years)",
+        "source": "NCES / Trade School Guide",
+        "year": 2024
+      }
+    ],
+    "cost_major_life_events": [
+      {
+        "metric": "Average wedding cost (US)",
+        "value": 35000,
+        "unit": "USD",
+        "source": "The Knot",
+        "year": 2024
+      },
+      {
+        "metric": "Average cost of having a baby (US, with insurance)",
+        "value": 18865,
+        "unit": "USD",
+        "source": "Peterson-KFF Health System Tracker",
+        "year": 2024
+      },
+      {
+        "metric": "Average funeral cost (US)",
+        "value": 7848,
+        "unit": "USD (burial) or 6970 (cremation)",
+        "source": "NFDA",
+        "year": 2024
+      },
+      {
+        "metric": "Average cost of moving (US, long-distance)",
+        "value": 4890,
+        "unit": "USD",
+        "source": "American Moving & Storage Association",
+        "year": 2024
+      },
+      {
+        "metric": "Average cost of divorce (US)",
+        "value": 15000,
+        "unit": "USD",
+        "source": "Martindale-Nolo Research",
+        "year": 2024
+      },
+      {
+        "metric": "Average pet lifetime cost (dog)",
+        "value": 23410,
+        "unit": "USD",
+        "source": "ASPCA / Rover",
+        "year": 2024
+      },
+      {
+        "metric": "Average pet lifetime cost (cat)",
+        "value": 15055,
+        "unit": "USD",
+        "source": "ASPCA / Rover",
+        "year": 2024
+      },
+      {
+        "metric": "Average cost of elder care (nursing home, US annual)",
+        "value": 108405,
+        "unit": "USD/year (private room)",
+        "source": "Genworth Cost of Care Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Average cost of elder care (home aide, US)",
+        "value": 61776,
+        "unit": "USD/year (44 hrs/week)",
+        "source": "Genworth",
+        "year": 2024
+      },
+      {
+        "metric": "Average kitchen renovation cost (US)",
+        "value": 26000,
+        "unit": "USD",
+        "source": "HomeAdvisor / Houzz",
+        "year": 2024
+      },
+      {
+        "metric": "Average bathroom renovation cost (US)",
+        "value": 12000,
+        "unit": "USD",
+        "source": "HomeAdvisor / Houzz",
+        "year": 2024
+      },
+      {
+        "metric": "Natural disaster average out-of-pocket cost (US homeowner)",
+        "value": 5000,
+        "unit": "USD per event",
+        "source": "FEMA / III",
+        "year": 2024
+      }
+    ],
+    "tipping_generosity": [
+      {
+        "metric": "Average restaurant tip (US)",
+        "value": 20,
+        "unit": "% of bill",
+        "source": "Toast / Square POS data",
+        "year": 2024
+      },
+      {
+        "metric": "Average tip at coffee shop",
+        "value": 18,
+        "unit": "% (prompted by screen)",
+        "source": "Square data",
+        "year": 2024
+      },
+      {
+        "metric": "Tip inflation: average tip increase since 2019",
+        "value": 5,
+        "unit": "percentage points higher",
+        "source": "Square / Lightspeed data",
+        "year": 2024
+      },
+      {
+        "metric": "Americans frustrated by tipping culture",
+        "value": 66,
+        "unit": "%",
+        "source": "Pew Research Center",
+        "year": 2024
+      },
+      {
+        "metric": "No-tip restaurants success rate",
+        "value": 15,
+        "unit": "% reverted to tipping after trying no-tip model",
+        "source": "Restaurant industry surveys / NRA",
+        "year": 2024
+      },
+      {
+        "metric": "Charitable giving (US, total annual)",
+        "value": 557,
+        "unit": "billion USD",
+        "source": "Giving USA 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average charitable donation per household (US)",
+        "value": 2765,
+        "unit": "USD/year (among donors)",
+        "source": "Giving USA / Philanthropy Roundtable",
+        "year": 2024
+      },
+      {
+        "metric": "Americans who donated to charity in past year",
+        "value": 53,
+        "unit": "%",
+        "source": "Gallup",
+        "year": 2024
+      }
+    ],
+    "subscription_economy": [
+      {
+        "metric": "Average household subscriptions (US)",
+        "value": 12,
+        "unit": "active subscriptions",
+        "source": "C+R Research / West Monroe",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly subscription spending",
+        "value": 219,
+        "unit": "USD/month",
+        "source": "C+R Research",
+        "year": 2024
+      },
+      {
+        "metric": "Netflix monthly cost (standard)",
+        "value": 15.49,
+        "unit": "USD",
+        "source": "Netflix pricing",
+        "year": 2024
+      },
+      {
+        "metric": "Spotify monthly cost (individual)",
+        "value": 11.99,
+        "unit": "USD",
+        "source": "Spotify pricing",
+        "year": 2024
+      },
+      {
+        "metric": "Amazon Prime annual cost",
+        "value": 139,
+        "unit": "USD",
+        "source": "Amazon pricing",
+        "year": 2024
+      },
+      {
+        "metric": "Gym membership average monthly (US)",
+        "value": 53,
+        "unit": "USD",
+        "source": "IHRSA / RunRepeat",
+        "year": 2024
+      },
+      {
+        "metric": "Meal kit subscription average monthly",
+        "value": 120,
+        "unit": "USD",
+        "source": "Blue Apron / HelloFresh pricing",
+        "year": 2024
+      },
+      {
+        "metric": "People who underestimate their subscription spend",
+        "value": 40,
+        "unit": "% underestimate by 2x or more",
+        "source": "West Monroe survey",
+        "year": 2024
+      },
+      {
+        "metric": "Subscription fatigue: percentage canceling at least one recently",
+        "value": 55,
+        "unit": "%",
+        "source": "Deloitte Digital Media Trends",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS subscription spending per employee (business)",
+        "value": 2623,
+        "unit": "USD/year",
+        "source": "Productiv / Zylo",
+        "year": 2024
+      }
+    ],
+    "real_estate_investing": [
+      {
+        "metric": "Average rental yield (US, single family)",
+        "value": 5.5,
+        "unit": "%",
+        "source": "Zillow / RealtyTrac",
+        "year": 2024
+      },
+      {
+        "metric": "Average rental yield (NYC)",
+        "value": 3.2,
+        "unit": "%",
+        "source": "Zillow",
+        "year": 2024
+      },
+      {
+        "metric": "Average rental yield (Midwest US)",
+        "value": 8.5,
+        "unit": "%",
+        "source": "RealtyTrac",
+        "year": 2024
+      },
+      {
+        "metric": "REIT average annual return (20-year)",
+        "value": 9.5,
+        "unit": "%",
+        "source": "NAREIT",
+        "year": 2024
+      },
+      {
+        "metric": "House flipping average profit margin",
+        "value": 26,
+        "unit": "% gross ROI",
+        "source": "ATTOM Data Solutions",
+        "year": 2024
+      },
+      {
+        "metric": "House flipping share of sales (US)",
+        "value": 7.5,
+        "unit": "% of all sales",
+        "source": "ATTOM Data Solutions",
+        "year": 2024
+      },
+      {
+        "metric": "Real estate crowdfunding average return",
+        "value": 8,
+        "unit": "% annually",
+        "source": "Fundrise / RealtyMogul data",
+        "year": 2024
+      },
+      {
+        "metric": "Rental property vacancy rate (US average)",
+        "value": 6.6,
+        "unit": "%",
+        "source": "Census Bureau HVS",
+        "year": 2024
+      },
+      {
+        "metric": "Landlord average annual expenses as % of rent",
+        "value": 40,
+        "unit": "% (maintenance, taxes, insurance, management)",
+        "source": "BiggerPockets / NARPM",
+        "year": 2024
+      },
+      {
+        "metric": "1031 exchange usage (tax-deferred property swap)",
+        "value": 500000,
+        "unit": "transactions/year",
+        "source": "Federation of Exchange Accommodators",
+        "year": 2024
+      }
+    ],
+    "insurance_and_protection": [
+      {
+        "metric": "Disability probability before age 65 (90 days+)",
+        "value": 25,
+        "unit": "% of workers will experience",
+        "source": "SSA / Council for Disability Awareness",
+        "year": 2024
+      },
+      {
+        "metric": "Long-term disability insurance ownership (working adults)",
+        "value": 33,
+        "unit": "%",
+        "source": "LIMRA",
+        "year": 2024
+      },
+      {
+        "metric": "Umbrella insurance ownership (US)",
+        "value": 15,
+        "unit": "%",
+        "source": "III",
+        "year": 2024
+      },
+      {
+        "metric": "Long-term care insurance cost (55yo couple)",
+        "value": 3000,
+        "unit": "USD/year (average)",
+        "source": "AALTCI",
+        "year": 2024
+      },
+      {
+        "metric": "Probability of needing long-term care after 65",
+        "value": 70,
+        "unit": "%",
+        "source": "Department of HHS / LongTermCare.gov",
+        "year": 2024
+      },
+      {
+        "metric": "Average long-term care stay (nursing home)",
+        "value": 2.2,
+        "unit": "years",
+        "source": "Genworth",
+        "year": 2024
+      },
+      {
+        "metric": "Flood insurance: properties in flood zone without insurance",
+        "value": 77,
+        "unit": "% of at-risk properties uninsured",
+        "source": "FEMA NFIP",
+        "year": 2024
+      },
+      {
+        "metric": "Cyber insurance for individuals adoption",
+        "value": 3,
+        "unit": "%",
+        "source": "III / Munich Re",
+        "year": 2024
+      },
+      {
+        "metric": "Pet insurance adoption (US pet owners)",
+        "value": 6,
+        "unit": "%",
+        "source": "NAPHIA",
+        "year": 2024
+      },
+      {
+        "metric": "Travel insurance purchase rate",
+        "value": 38,
+        "unit": "% of travelers",
+        "source": "US Travel Insurance Association",
+        "year": 2024
+      }
+    ],
+    "alternative_investments": [
+      {
+        "metric": "Collectibles market size (global)",
+        "value": 400,
+        "unit": "billion USD",
+        "source": "Deloitte Art & Finance",
+        "year": 2024
+      },
+      {
+        "metric": "Wine investment average annual return",
+        "value": 8.5,
+        "unit": "% (Liv-ex Fine Wine 100)",
+        "source": "Liv-ex",
+        "year": 2024
+      },
+      {
+        "metric": "Art investment average return (Artprice Global Index)",
+        "value": 7.2,
+        "unit": "% annual (long-term)",
+        "source": "Artprice / Deloitte",
+        "year": 2024
+      },
+      {
+        "metric": "Sneaker resale market size",
+        "value": 10,
+        "unit": "billion USD",
+        "source": "Cowen / StockX",
+        "year": 2024
+      },
+      {
+        "metric": "Vintage car investment return (HAGI Top Index)",
+        "value": 6.8,
+        "unit": "% annually",
+        "source": "HAGI (Historic Automobile Group International)",
+        "year": 2024
+      },
+      {
+        "metric": "Farmland investment return (US)",
+        "value": 10.2,
+        "unit": "% annually (including appreciation + rental income)",
+        "source": "USDA / NCREIF Farmland Index",
+        "year": 2024
+      },
+      {
+        "metric": "Commodity ETF average expense ratio",
+        "value": 0.4,
+        "unit": "%",
+        "source": "ETFdb.com",
+        "year": 2024
+      },
+      {
+        "metric": "Private equity average net return (10-year)",
+        "value": 14,
+        "unit": "% annually",
+        "source": "Cambridge Associates / PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Hedge fund average return (10-year)",
+        "value": 6.8,
+        "unit": "% annually (often underperform S&P)",
+        "source": "Preqin / Hedge Fund Research",
+        "year": 2024
+      },
+      {
+        "metric": "Angel investing average return",
+        "value": 22,
+        "unit": "% annually (but highly skewed \u2014 most lose)",
+        "source": "Angel Capital Association",
+        "year": 2024
+      }
+    ],
+    "money_and_relationships": [
+      {
+        "metric": "Couples who fight about money",
+        "value": 41,
+        "unit": "%",
+        "source": "Ramsey Solutions Money & Marriage Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Money as top source of marital stress",
+        "value": 35,
+        "unit": "% rank money #1 stressor",
+        "source": "Ramsey Solutions",
+        "year": 2024
+      },
+      {
+        "metric": "Secret spending (financial infidelity)",
+        "value": 42,
+        "unit": "% have hidden purchases from partner",
+        "source": "National Endowment for Financial Education",
+        "year": 2024
+      },
+      {
+        "metric": "Couples with different risk tolerances",
+        "value": 54,
+        "unit": "%",
+        "source": "Fidelity Couples Study",
+        "year": 2024
+      },
+      {
+        "metric": "Financial compatibility test before marriage",
+        "value": 22,
+        "unit": "% of couples do formal financial planning together",
+        "source": "NEFE",
+        "year": 2024
+      },
+      {
+        "metric": "Income gap between partners causing conflict",
+        "value": 33,
+        "unit": "% of couples where one earns 2x+ the other report conflict",
+        "source": "TD Bank Love and Money Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Prenup rate (US)",
+        "value": 15,
+        "unit": "% of married couples",
+        "source": "AAML",
+        "year": 2024
+      },
+      {
+        "metric": "Financial abuse in relationships",
+        "value": 12,
+        "unit": "% of adults have experienced economic coercion",
+        "source": "NEFE / CDC",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of dating (US average monthly)",
+        "value": 200,
+        "unit": "USD",
+        "source": "Match Group / various surveys",
+        "year": 2024
+      },
+      {
+        "metric": "Gift spending per person per year (US)",
+        "value": 1054,
+        "unit": "USD",
+        "source": "NRF / BLS CES",
+        "year": 2024
+      }
+    ],
+    "economic_mobility_data": [
+      {
+        "metric": "Rags to riches: bottom 20% to top 20% probability (US)",
+        "value": 7.5,
+        "unit": "%",
+        "source": "Chetty et al. 2014 / Opportunity Insights",
+        "year": 2024
+      },
+      {
+        "metric": "Probability of staying in bottom 20% (US)",
+        "value": 33,
+        "unit": "%",
+        "source": "Chetty et al. 2014",
+        "year": 2024
+      },
+      {
+        "metric": "Probability of staying in top 20% (US)",
+        "value": 37,
+        "unit": "%",
+        "source": "Chetty et al. 2014",
+        "year": 2024
+      },
+      {
+        "metric": "Zip code effect on lifetime earnings",
+        "value": 12,
+        "unit": "% difference from best to worst neighborhoods",
+        "source": "Chetty & Hendren 2018, QJE",
+        "year": 2024
+      },
+      {
+        "metric": "Race and mobility: Black children from wealthy families falling to bottom",
+        "value": 39,
+        "unit": "% chance of falling to bottom quintile (vs 10% White)",
+        "source": "Chetty et al. 2020, QJE",
+        "year": 2024
+      },
+      {
+        "metric": "College attendance by family income (top quintile)",
+        "value": 77,
+        "unit": "% attend college",
+        "source": "Chetty et al. / NCES",
+        "year": 2024
+      },
+      {
+        "metric": "College attendance by family income (bottom quintile)",
+        "value": 31,
+        "unit": "% attend college",
+        "source": "Chetty et al. / NCES",
+        "year": 2024
+      },
+      {
+        "metric": "First-generation college students graduation rate",
+        "value": 42,
+        "unit": "% (vs 56% for non-first-gen)",
+        "source": "NCES / Pell Institute",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth mobility correlation across generations",
+        "value": 0.5,
+        "unit": "correlation (moderate)",
+        "source": "Chetty et al. / Federal Reserve SCF",
+        "year": 2024
+      },
+      {
+        "metric": "Best cities for upward mobility (US)",
+        "value": 14.3,
+        "unit": "% chance bottom-to-top in San Jose",
+        "source": "Opportunity Insights",
+        "year": 2024
+      },
+      {
+        "metric": "Worst cities for upward mobility (US)",
+        "value": 3.2,
+        "unit": "% chance bottom-to-top in Charlotte",
+        "source": "Opportunity Insights",
+        "year": 2024
+      },
+      {
+        "metric": "Self-employment as path to top 10%",
+        "value": 23,
+        "unit": "% of top 10% are self-employed",
+        "source": "SCF / IRS SOI",
+        "year": 2024
+      }
+    ],
+    "cost_of_living_global": [
+      {
+        "metric": "Cost of living index \u2014 Singapore",
+        "value": 82.5,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly rent 1BR city center \u2014 Singapore",
+        "value": 2800,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Tokyo",
+        "value": 76.3,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly rent 1BR city center \u2014 Tokyo",
+        "value": 1200,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Berlin",
+        "value": 62.5,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly rent 1BR city center \u2014 Berlin",
+        "value": 1100,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Mexico City",
+        "value": 35.5,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly rent 1BR city center \u2014 Mexico City",
+        "value": 600,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Lisbon",
+        "value": 52.5,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly rent 1BR city center \u2014 Lisbon",
+        "value": 1100,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Bangkok",
+        "value": 40.3,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly rent 1BR city center \u2014 Bangkok",
+        "value": 550,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Milan",
+        "value": 68.5,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly rent 1BR city center \u2014 Milan",
+        "value": 1300,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Buenos Aires",
+        "value": 28.5,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly rent 1BR city center \u2014 Buenos Aires",
+        "value": 350,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Accra (Ghana)",
+        "value": 32.5,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly rent 1BR city center \u2014 Accra",
+        "value": 450,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Perth",
+        "value": 70.5,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly rent 1BR city center \u2014 Perth",
+        "value": 1800,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      }
+    ],
+    "financial_independence_fire": [
+      {
+        "metric": "FIRE movement awareness (US adults)",
+        "value": 12,
+        "unit": "% aware of concept",
+        "source": "Investopedia / Morning Consult survey",
+        "year": 2024
+      },
+      {
+        "metric": "FIRE target net worth (25x annual expenses rule)",
+        "value": 25,
+        "unit": "x annual expenses",
+        "source": "Trinity Study / Mr. Money Mustache",
+        "year": 2024
+      },
+      {
+        "metric": "Savings rate needed: retire in 30 years",
+        "value": 25,
+        "unit": "% of income",
+        "source": "Networthify calculator / simple math",
+        "year": 2024
+      },
+      {
+        "metric": "Savings rate needed: retire in 20 years",
+        "value": 43,
+        "unit": "% of income",
+        "source": "Networthify",
+        "year": 2024
+      },
+      {
+        "metric": "Savings rate needed: retire in 15 years",
+        "value": 50,
+        "unit": "% of income",
+        "source": "Networthify",
+        "year": 2024
+      },
+      {
+        "metric": "Savings rate needed: retire in 10 years",
+        "value": 65,
+        "unit": "% of income",
+        "source": "Networthify",
+        "year": 2024
+      },
+      {
+        "metric": "LeanFIRE annual spending target",
+        "value": 40000,
+        "unit": "USD or less",
+        "source": "r/leanfire community",
+        "year": 2024
+      },
+      {
+        "metric": "FatFIRE annual spending target",
+        "value": 100000,
+        "unit": "USD+",
+        "source": "r/fatFIRE community",
+        "year": 2024
+      },
+      {
+        "metric": "CoastFIRE: front-load savings then coast",
+        "value": 250000,
+        "unit": "USD by age 30 (then let compound)",
+        "source": "Financial Independence community calculations",
+        "year": 2024
+      },
+      {
+        "metric": "Sequence of returns risk: worst 30-year periods",
+        "value": 6,
+        "unit": "% real annual return (still positive)",
+        "source": "Shiller CAPE data / Portfolio Visualizer",
+        "year": 2024
+      },
+      {
+        "metric": "Trinity Study: 4% rule success over 30 years",
+        "value": 95,
+        "unit": "% of historical periods succeeded",
+        "source": "Cooley, Hubbard & Walz 1998 (updated to 2024)",
+        "year": 2024
+      },
+      {
+        "metric": "Variable withdrawal strategy success rate",
+        "value": 98,
+        "unit": "% (adjusting spending based on portfolio)",
+        "source": "Guyton & Klinger 2006 / updated analyses",
+        "year": 2024
+      },
+      {
+        "metric": "Average early retiree age (FIRE community)",
+        "value": 43,
+        "unit": "years",
+        "source": "FIRE community surveys / Reddit r/financialindependence",
+        "year": 2024
+      },
+      {
+        "metric": "Healthcare cost as #1 FIRE concern",
+        "value": 68,
+        "unit": "% cite healthcare as top worry",
+        "source": "FIRE community surveys",
+        "year": 2024
+      },
+      {
+        "metric": "Early retirees who return to work (at least part-time)",
+        "value": 40,
+        "unit": "%",
+        "source": "RAND / T. Rowe Price surveys",
+        "year": 2024
+      }
+    ],
+    "financial_apps_tools": [
+      {
+        "metric": "Budgeting app users (US)",
+        "value": 28,
+        "unit": "% of adults",
+        "source": "Bankrate",
+        "year": 2024
+      },
+      {
+        "metric": "Robo-advisor users (US)",
+        "value": 18,
+        "unit": "million",
+        "source": "Insider Intelligence / Backend Benchmarking",
+        "year": 2024
+      },
+      {
+        "metric": "Commission-free trading app users (US)",
+        "value": 35,
+        "unit": "million (Robinhood alone: 23M)",
+        "source": "Company reports / Statista",
+        "year": 2024
+      },
+      {
+        "metric": "Credit monitoring service users",
+        "value": 55,
+        "unit": "% of adults use some form",
+        "source": "Credit Karma / NerdWallet",
+        "year": 2024
+      },
+      {
+        "metric": "Micro-investing app users (Acorns, Stash)",
+        "value": 12,
+        "unit": "million",
+        "source": "Acorns / company reports",
+        "year": 2024
+      },
+      {
+        "metric": "Tax software usage (vs accountant)",
+        "value": 56,
+        "unit": "% use software (TurboTax, H&R Block)",
+        "source": "IRS / ProPublica",
+        "year": 2024
+      },
+      {
+        "metric": "Average cost of tax preparation (CPA)",
+        "value": 220,
+        "unit": "USD (itemized return)",
+        "source": "National Society of Accountants",
+        "year": 2024
+      },
+      {
+        "metric": "Financial planning app accuracy (budgeting)",
+        "value": 85,
+        "unit": "% of transactions correctly categorized",
+        "source": "Mint / YNAB user data",
+        "year": 2024
+      }
+    ],
+    "global_remittances_transfers": [
+      {
+        "metric": "Global remittance flows (annual)",
+        "value": 656,
+        "unit": "billion USD",
+        "source": "World Bank KNOMAD",
+        "year": 2024
+      },
+      {
+        "metric": "Remittance average cost (global)",
+        "value": 6.2,
+        "unit": "% of amount sent",
+        "source": "World Bank Remittance Prices Worldwide",
+        "year": 2024
+      },
+      {
+        "metric": "Remittance to Indonesia (annual)",
+        "value": 9.7,
+        "unit": "billion USD",
+        "source": "World Bank / Bank Indonesia",
+        "year": 2024
+      },
+      {
+        "metric": "Remittance to Ghana (annual)",
+        "value": 4.6,
+        "unit": "billion USD",
+        "source": "World Bank",
+        "year": 2024
+      },
+      {
+        "metric": "Remittance to Italy (from abroad)",
+        "value": 12.5,
+        "unit": "billion USD",
+        "source": "World Bank",
+        "year": 2024
+      },
+      {
+        "metric": "Wire transfer average fee (US to SE Asia)",
+        "value": 25,
+        "unit": "USD",
+        "source": "Wise / World Bank",
+        "year": 2024
+      },
+      {
+        "metric": "Wise (TransferWise) average fee",
+        "value": 0.6,
+        "unit": "% of amount sent",
+        "source": "Wise pricing",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto remittance share of total",
+        "value": 2,
+        "unit": "%",
+        "source": "Chainalysis / World Bank",
+        "year": 2024
+      },
+      {
+        "metric": "PayPal international transfer fee",
+        "value": 5,
+        "unit": "% (including exchange rate markup)",
+        "source": "PayPal pricing",
+        "year": 2024
+      },
+      {
+        "metric": "Mobile money users (global)",
+        "value": 1.75,
+        "unit": "billion accounts",
+        "source": "GSMA State of the Industry 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Mobile money transactions (global daily)",
+        "value": 1.7,
+        "unit": "billion USD per day",
+        "source": "GSMA",
+        "year": 2024
+      },
+      {
+        "metric": "GoPay users (Indonesia)",
+        "value": 55,
+        "unit": "million",
+        "source": "GoTo Group reports",
+        "year": 2024
+      },
+      {
+        "metric": "OVO users (Indonesia)",
+        "value": 120,
+        "unit": "million",
+        "source": "OVO / Grab reports",
+        "year": 2024
+      },
+      {
+        "metric": "DANA users (Indonesia)",
+        "value": 135,
+        "unit": "million",
+        "source": "DANA reports",
+        "year": 2024
+      },
+      {
+        "metric": "Foreign exchange market daily volume",
+        "value": 7.5,
+        "unit": "trillion USD",
+        "source": "BIS Triennial Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Average currency exchange markup (airport)",
+        "value": 12,
+        "unit": "% above mid-market rate",
+        "source": "Consumer Reports / FairFX",
+        "year": 2024
+      },
+      {
+        "metric": "Average currency exchange markup (bank)",
+        "value": 3,
+        "unit": "% above mid-market rate",
+        "source": "Various bank pricing",
+        "year": 2024
+      }
     ]
   }
 }

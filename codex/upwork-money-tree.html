@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upwork Funnel Tree — Data Driven</title>
+  <style>
+    :root {
+      --bg: #f6f1e8;
+      --ink: #1a2027;
+      --muted: #66727c;
+      --border: rgba(26, 32, 39, 0.08);
+      --shadow: 0 20px 50px rgba(43, 35, 23, 0.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(216, 231, 247, 0.55), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(216, 234, 216, 0.50), transparent 25%),
+        var(--bg);
+    }
+
+    .page { padding: 28px; }
+
+    .header {
+      max-width: 1200px;
+      margin: 0 auto 20px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      appearance: none;
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font: inherit;
+      font-weight: 700;
+      color: #fffaf2;
+      background: #1a2027;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(26, 32, 39, 0.16);
+    }
+
+    button.secondary {
+      background: #d8e7f7;
+      color: #1a2027;
+    }
+
+    .status {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .eyebrow {
+      margin-bottom: 10px;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.45;
+      max-width: 1000px;
+    }
+
+    .board {
+      max-width: 1700px;
+      margin: 0 auto;
+      background: rgba(255, 250, 242, 0.82);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 16px;
+      overflow: auto;
+    }
+
+    .mermaid {
+      min-width: 1700px;
+    }
+
+    .is-dimmed {
+      opacity: 0.14;
+      transition: opacity 220ms ease;
+    }
+
+    .is-visible {
+      opacity: 1;
+      transition: opacity 320ms ease;
+    }
+
+    .is-active {
+      filter: drop-shadow(0 0 14px rgba(255, 183, 77, 0.45));
+    }
+
+    .path-label {
+      max-width: 1700px;
+      margin: 14px auto 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <div class="eyebrow">Upwork Tree</div>
+      <h1>From Upwork Signup to First Hire and Repeatable Income</h1>
+      <p>Percorso basato sui dati in <code>v2/data/upwork-data.json</code>: funnel per 1.000 signup, conversioni proposal → interview → hire, retention e income distribution.</p>
+      <div class="toolbar">
+        <button id="play-sequence" type="button">Play sequence</button>
+        <button id="next-step" class="secondary" type="button">Next step</button>
+        <button id="reset-sequence" class="secondary" type="button">Reset</button>
+        <button id="show-all-paths" class="secondary" type="button">Tutti</button>
+        <button id="dim-success-path" class="secondary" type="button">Oscura success</button>
+        <button id="only-success-path" class="secondary" type="button">Solo success</button>
+        <div id="sequence-status" class="status">Ready</div>
+      </div>
+    </div>
+
+    <div class="board">
+      <pre class="mermaid">
+flowchart LR
+    A["STATE<br/>1000 people want to make money on Upwork"]
+    B["EVENT<br/>Create account"]
+    C["STATE<br/>650 complete profile"]
+    D["EVENT<br/>350 profile approved<br/>245 send first proposal"]
+    E{"BOTTLENECK<br/>Gets first interview response?"}
+
+    A --> B --> C --> D --> E
+
+    N0(["NO<br/>80% of proposers"])
+    P0(["PARTIAL<br/>10% of proposers"])
+    Y0(["YES<br/>10% of proposers"])
+
+    E --> N0
+    E --> P0
+    E --> Y0
+
+    N0 --> N1["STATE<br/>No interview response<br/>After first proposal wave"]
+    N1 --> N2["TRAJECTORY<br/>High-friction new freelancer path"]
+    N2 --> N3["EVENT<br/>Keep sending generic proposals"]
+    N3 --> N4["OUTCOME<br/>50-70% never earn on platform"]
+    N2 --> N5["EVENT<br/>Stop early / burn connects"]
+    N5 --> N6["OUTCOME<br/>60-70% quit in year 1"]
+
+    P0 --> P1["STATE<br/>Gets interview<br/>But no hire yet"]
+    P1 --> P2["TRAJECTORY<br/>Early traction, no conversion"]
+    P2 --> P3["EVENT<br/>Compete on price / generic profile"]
+    P3 --> P4["OUTCOME<br/>Stays in low-trust pipeline"]
+    P2 --> P5["EVENT<br/>Improve niche, portfolio, speed"]
+    P5 --> P6{"BOTTLENECK<br/>Converts interview to hire?"}
+    P6 -->|"NO"| P7["OUTCOME<br/>Stuck at interview stage"]
+    P6 -->|"YES"| P8["OUTCOME<br/>Moves into first-hire path"]
+
+    Y0 --> Y1["STATE<br/>25 get first hire<br/>2.5% of 1000 signups"]
+    Y1 --> Y2["TRAJECTORY<br/>Validated Upwork path"]
+    Y2 --> Y3["EVENT<br/>Deliver well, get review, refine proposals"]
+    Y3 --> Y4["OUTCOME<br/>18 earn $100 in 90 days<br/>72% of first hires"]
+    Y2 --> Y5["EVENT<br/>Stay active for 1 year"]
+    Y5 --> Y6["OUTCOME<br/>8 remain active after year 1<br/>0.8% of 1000 signups"]
+    Y2 --> Y7["EVENT<br/>Specialize and raise conversion"]
+    Y7 --> Y8["OUTCOME<br/>Specialists convert 10-20% vs 2-5% generalists"]
+    Y2 --> Y9["EVENT<br/>Build repeat clients"]
+    Y9 --> Y10["OUTCOME<br/>60% client repeat hire rate"]
+    Y10 --> Y11["EVENT<br/>Sustain path into year 2"]
+    Y11 --> Y12{"BOTTLENECK<br/>Reaches $10k/year by year 2?"}
+    Y12 -->|"YES"| Y13["OUTCOME<br/>3 of 1000 signups<br/>0.3% reach $10k/year by year 2"]
+    Y12 -->|"NO"| Y14["OUTCOME<br/>Median active income only $2k-$5k/year"]
+    Y4 --> S1["SUCCESS<br/>First real traction on Upwork"]
+    Y6 --> S1
+    Y8 --> S1
+    Y10 --> S1
+    Y13 --> S1
+
+    classDef state fill:#d8ead8,stroke:#5f7d63,stroke-width:1.5px,color:#1a2027;
+    classDef event fill:#d8e7f7,stroke:#56718f,stroke-width:1.5px,color:#1a2027;
+    classDef bottleneck fill:#fde1b8,stroke:#9b7a3d,stroke-width:1.5px,color:#1a2027;
+    classDef outcome fill:#f7d4cc,stroke:#9e6257,stroke-width:1.5px,color:#1a2027;
+    classDef gate fill:#fff4de,stroke:#9b7a3d,stroke-width:2px,color:#1a2027;
+    classDef trajectory fill:#efe2fb,stroke:#7f5aa6,stroke-width:1.5px,color:#1a2027;
+    classDef success fill:#d7f7e3,stroke:#1f7a45,stroke-width:2px,color:#1a2027;
+
+    class A,C,N1,P1,Y1 state;
+    class B,D,N3,N5,P3,P5,Y3,Y5,Y6,Y8,Y9,Y11 event;
+    class E,P6,Y12 bottleneck;
+    class N4,N6,P4,P7,P8,Y4,Y7,Y10,Y13,Y14 outcome;
+    class N0,P0,Y0 gate;
+    class N2,P2,Y2 trajectory;
+    class S1 success;
+
+    linkStyle 4 stroke:#a12f2f,stroke-width:6px,opacity:0.85;
+    linkStyle 5 stroke:#9b6a00,stroke-width:4px,opacity:0.80;
+    linkStyle 6 stroke:#1f7a45,stroke-width:2px,opacity:0.80;
+      </pre>
+    </div>
+
+    <div class="path-label">
+      Path: <code>/Users/richardbotsiokennedy/Simulator/codex/upwork-money-tree.html</code>
+    </div>
+  </div>
+
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: "base",
+      securityLevel: "loose",
+      flowchart: {
+        htmlLabels: true,
+        curve: "basis",
+        useMaxWidth: false,
+        nodeSpacing: 42,
+        rankSpacing: 82
+      },
+      themeVariables: {
+        background: "#fffaf2",
+        primaryTextColor: "#1a2027",
+        lineColor: "#9d8d79",
+        fontFamily: "Avenir Next, Segoe UI, sans-serif",
+        clusterBkg: "#fffaf2",
+        clusterBorder: "#d7c6ae"
+      }
+    });
+
+    const sequence = [
+      { key: "A", label: "STATE 1000 want to make money on Upwork" },
+      { key: "B", label: "EVENT Create account" },
+      { key: "C", label: "STATE 650 complete profile" },
+      { key: "D", label: "EVENT 350 approved 245 send first proposal" },
+      { key: "E", label: "BOTTLENECK Gets first interview response?" },
+      { key: "N0", label: "NO 80% of proposers" },
+      { key: "N1", label: "STATE No interview response" },
+      { key: "N2", label: "TRAJECTORY High-friction new freelancer path" },
+      { key: "N3", label: "EVENT Keep sending generic proposals" },
+      { key: "N4", label: "OUTCOME 50-70% never earn on platform" },
+      { key: "N5", label: "EVENT Stop early / burn connects" },
+      { key: "N6", label: "OUTCOME 60-70% quit in year 1" },
+      { key: "P0", label: "PARTIAL 10% of proposers" },
+      { key: "P1", label: "STATE Gets interview but no hire yet" },
+      { key: "P2", label: "TRAJECTORY Early traction no conversion" },
+      { key: "P3", label: "EVENT Compete on price / generic profile" },
+      { key: "P4", label: "OUTCOME Stays in low-trust pipeline" },
+      { key: "P5", label: "EVENT Improve niche portfolio speed" },
+      { key: "P6", label: "BOTTLENECK Converts interview to hire?" },
+      { key: "P7", label: "OUTCOME Stuck at interview stage" },
+      { key: "P8", label: "OUTCOME Moves into first-hire path" },
+      { key: "Y0", label: "YES 10% of proposers" },
+      { key: "Y1", label: "STATE 25 get first hire" },
+      { key: "Y2", label: "TRAJECTORY Validated Upwork path" },
+      { key: "Y3", label: "EVENT Deliver well get review refine proposals" },
+      { key: "Y4", label: "OUTCOME 18 earn $100 in 90 days" },
+      { key: "Y5", label: "EVENT Stay active for 1 year" },
+      { key: "Y6", label: "OUTCOME 8 remain active after year 1" },
+      { key: "Y7", label: "EVENT Specialize and raise conversion" },
+      { key: "Y8", label: "OUTCOME Specialists convert 10-20% vs 2-5%" },
+      { key: "Y9", label: "EVENT Build repeat clients" },
+      { key: "Y10", label: "OUTCOME 60% client repeat hire rate" },
+      { key: "Y11", label: "EVENT Sustain path into year 2" },
+      { key: "Y12", label: "BOTTLENECK Reaches $10k/year by year 2?" },
+      { key: "Y13", label: "OUTCOME 3 of 1000 reach $10k/year by year 2" },
+      { key: "Y14", label: "OUTCOME Median active income only $2k-$5k/year" },
+      { key: "S1", label: "SUCCESS First real traction on Upwork" }
+    ];
+
+    const statusEl = document.getElementById("sequence-status");
+    const playButton = document.getElementById("play-sequence");
+    const nextButton = document.getElementById("next-step");
+    const resetButton = document.getElementById("reset-sequence");
+    const showAllButton = document.getElementById("show-all-paths");
+    const dimSuccessButton = document.getElementById("dim-success-path");
+    const onlySuccessButton = document.getElementById("only-success-path");
+
+    let steps = [];
+    let stepIndex = 0;
+    let isPlaying = false;
+    let successPathMode = "all";
+
+    const successKeys = new Set([
+      "A", "B", "C", "D", "E",
+      "Y0", "Y1", "Y2", "Y3", "Y4", "Y5", "Y6", "Y7", "Y8", "Y9", "Y10", "Y11", "Y12", "Y13", "S1"
+    ]);
+
+    function findNodeByKey(svg, key) {
+      const nodes = [...svg.querySelectorAll("g.node")];
+      return nodes.find((node) => {
+        const id = node.id || "";
+        return id === key || id.startsWith(`${key}-`) || id.includes(`-${key}-`) || id.endsWith(`-${key}`);
+      });
+    }
+
+    function getRenderedSvg() {
+      return document.querySelector(".board svg") || document.querySelector(".mermaid svg");
+    }
+
+    function getNodeIdMap(svg) {
+      const map = new Map();
+      for (const item of sequence) {
+        const node = findNodeByKey(svg, item.key);
+        if (node?.id) map.set(item.key, node.id);
+      }
+      return map;
+    }
+
+    function applySuccessPathMask() {
+      const svg = getRenderedSvg();
+      if (!svg) return;
+
+      const nodeIdMap = getNodeIdMap(svg);
+      const nodes = [...svg.querySelectorAll("g.node")];
+      const edges = [...svg.querySelectorAll("g.edgePath")];
+      const labels = [...svg.querySelectorAll("g.edgeLabel")];
+
+      const successNodeIds = new Set(
+        [...successKeys]
+          .map((key) => nodeIdMap.get(key))
+          .filter(Boolean)
+      );
+
+      nodes.forEach((node) => {
+        const isSuccess = successNodeIds.has(node.id);
+        if (successPathMode === "dim" && isSuccess) node.style.opacity = "0.12";
+        else if (successPathMode === "only" && !isSuccess) node.style.opacity = "0.10";
+        else node.style.opacity = "";
+      });
+
+      edges.forEach((edge) => {
+        const edgeId = edge.id || "";
+        const touchesSuccess = [...successNodeIds].some((id) => edgeId.includes(id));
+        if (successPathMode === "dim" && touchesSuccess) edge.style.opacity = "0.12";
+        else if (successPathMode === "only" && !touchesSuccess) edge.style.opacity = "0.08";
+        else edge.style.opacity = "";
+      });
+
+      labels.forEach((label) => {
+        const text = (label.textContent || "").toLowerCase();
+        const isSuccessLabel =
+          text.includes("yes") ||
+          text.includes("5-10") ||
+          text.includes("pass");
+
+        if (successPathMode === "only" && !isSuccessLabel) label.style.opacity = "0.14";
+        else if (successPathMode === "dim" && isSuccessLabel) label.style.opacity = "0.12";
+        else label.style.opacity = "";
+      });
+    }
+
+    function dimTargets(svg) {
+      const targets = [
+        ...svg.querySelectorAll("g.node"),
+        ...svg.querySelectorAll("g.edgePath"),
+        ...svg.querySelectorAll("g.edgeLabel")
+      ];
+
+      targets.forEach((el) => {
+        el.classList.add("is-dimmed");
+        el.classList.remove("is-visible", "is-active");
+      });
+    }
+
+    function buildSteps() {
+      const svg = getRenderedSvg();
+      if (!svg) return [];
+
+      const foundNodes = sequence
+        .map((item) => findNodeByKey(svg, item.key))
+        .filter(Boolean);
+
+      dimTargets(svg);
+      return foundNodes;
+    }
+
+    async function waitForSvg(maxAttempts = 20) {
+      for (let attempt = 0; attempt < maxAttempts; attempt += 1) {
+        const svg = getRenderedSvg();
+        if (svg) return svg;
+        await new Promise((resolve) => window.setTimeout(resolve, 120));
+      }
+      return null;
+    }
+
+    function setStatus() {
+      if (!steps.length) {
+        statusEl.textContent = "Unable to map Mermaid nodes";
+        return;
+      }
+      if (stepIndex === 0) {
+        statusEl.textContent = "Ready";
+        return;
+      }
+      if (stepIndex >= steps.length) {
+        statusEl.textContent = "Sequence complete";
+        return;
+      }
+      statusEl.textContent = `Step ${stepIndex} / ${steps.length} - ${sequence[stepIndex - 1].label}`;
+    }
+
+    async function resetSequence() {
+      await waitForSvg();
+      steps = buildSteps();
+      stepIndex = 0;
+      isPlaying = false;
+      playButton.disabled = false;
+      setStatus();
+      applySuccessPathMask();
+    }
+
+    function revealCurrentStep() {
+      if (!steps.length || stepIndex >= steps.length) {
+        setStatus();
+        return false;
+      }
+
+      const el = steps[stepIndex];
+      el.classList.remove("is-dimmed");
+      el.classList.add("is-visible", "is-active");
+      window.setTimeout(() => el.classList.remove("is-active"), 320);
+      stepIndex += 1;
+      setStatus();
+      return true;
+    }
+
+    async function playSequence() {
+      if (isPlaying || !steps.length) return;
+      isPlaying = true;
+      playButton.disabled = true;
+
+      while (stepIndex < steps.length && isPlaying) {
+        const advanced = revealCurrentStep();
+        if (!advanced) break;
+        await new Promise((resolve) => window.setTimeout(resolve, 520));
+      }
+
+      isPlaying = false;
+      playButton.disabled = false;
+      setStatus();
+    }
+
+    await mermaid.run({ querySelector: ".mermaid" });
+    await resetSequence();
+
+    playButton.addEventListener("click", playSequence);
+    nextButton.addEventListener("click", () => {
+      if (isPlaying) return;
+      revealCurrentStep();
+    });
+    resetButton.addEventListener("click", async () => {
+      if (isPlaying) return;
+      await resetSequence();
+    });
+    showAllButton.addEventListener("click", () => {
+      successPathMode = "all";
+      applySuccessPathMask();
+    });
+    dimSuccessButton.addEventListener("click", () => {
+      successPathMode = "dim";
+      applySuccessPathMask();
+    });
+    onlySuccessButton.addEventListener("click", () => {
+      successPathMode = "only";
+      applySuccessPathMask();
+    });
+  </script>
+</body>
+</html>

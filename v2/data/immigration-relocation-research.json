@@ -1,98 +1,3587 @@
 {
   "sections": {
     "visa_approval_rates": [
-      {"metric": "US H-1B visa approval rate", "value": 72.3, "unit": "%", "source": "USCIS", "year": 2024},
-      {"metric": "US H-1B applications received", "value": 780884, "unit": "applications", "source": "USCIS", "year": 2024},
-      {"metric": "US F-1 student visa approval rate", "value": 76, "unit": "%", "source": "US State Department", "year": 2023},
-      {"metric": "UK Skilled Worker visa approval rate", "value": 89, "unit": "%", "source": "UK Home Office", "year": 2024},
-      {"metric": "UK Student visa approval rate", "value": 93, "unit": "%", "source": "UK Home Office", "year": 2024},
-      {"metric": "Australia Skilled visa (subclass 189) approval rate", "value": 85, "unit": "%", "source": "Australian DHA", "year": 2024},
-      {"metric": "Australia Student visa (subclass 500) approval rate", "value": 82, "unit": "%", "source": "Australian DHA", "year": 2024},
-      {"metric": "Canada Express Entry approval rate", "value": 88, "unit": "%", "source": "IRCC", "year": 2024},
-      {"metric": "Germany work visa approval rate", "value": 91, "unit": "%", "source": "Federal Foreign Office Germany", "year": 2023},
-      {"metric": "Japan work visa approval rate", "value": 94, "unit": "%", "source": "Immigration Services Agency Japan", "year": 2023},
-      {"metric": "UAE work visa approval rate", "value": 96, "unit": "%", "source": "MOHRE UAE", "year": 2024},
-      {"metric": "Average processing time US H-1B", "value": 8.5, "unit": "months", "source": "USCIS", "year": 2024},
-      {"metric": "Average processing time Canada Express Entry", "value": 6, "unit": "months", "source": "IRCC", "year": 2024}
+      {
+        "metric": "US H-1B visa approval rate",
+        "value": 72.3,
+        "unit": "%",
+        "source": "USCIS",
+        "year": 2024
+      },
+      {
+        "metric": "US H-1B applications received",
+        "value": 780884,
+        "unit": "applications",
+        "source": "USCIS",
+        "year": 2024
+      },
+      {
+        "metric": "US F-1 student visa approval rate",
+        "value": 76,
+        "unit": "%",
+        "source": "US State Department",
+        "year": 2023
+      },
+      {
+        "metric": "UK Skilled Worker visa approval rate",
+        "value": 89,
+        "unit": "%",
+        "source": "UK Home Office",
+        "year": 2024
+      },
+      {
+        "metric": "UK Student visa approval rate",
+        "value": 93,
+        "unit": "%",
+        "source": "UK Home Office",
+        "year": 2024
+      },
+      {
+        "metric": "Australia Skilled visa (subclass 189) approval rate",
+        "value": 85,
+        "unit": "%",
+        "source": "Australian DHA",
+        "year": 2024
+      },
+      {
+        "metric": "Australia Student visa (subclass 500) approval rate",
+        "value": 82,
+        "unit": "%",
+        "source": "Australian DHA",
+        "year": 2024
+      },
+      {
+        "metric": "Canada Express Entry approval rate",
+        "value": 88,
+        "unit": "%",
+        "source": "IRCC",
+        "year": 2024
+      },
+      {
+        "metric": "Germany work visa approval rate",
+        "value": 91,
+        "unit": "%",
+        "source": "Federal Foreign Office Germany",
+        "year": 2023
+      },
+      {
+        "metric": "Japan work visa approval rate",
+        "value": 94,
+        "unit": "%",
+        "source": "Immigration Services Agency Japan",
+        "year": 2023,
+        "url": "https://www.apa.org/pubs/reports/stress-in-america/2024"
+      },
+      {
+        "metric": "UAE work visa approval rate",
+        "value": 96,
+        "unit": "%",
+        "source": "MOHRE UAE",
+        "year": 2024
+      },
+      {
+        "metric": "Average processing time US H-1B",
+        "value": 8.5,
+        "unit": "months",
+        "source": "USCIS",
+        "year": 2024
+      },
+      {
+        "metric": "Average processing time Canada Express Entry",
+        "value": 6,
+        "unit": "months",
+        "source": "IRCC",
+        "year": 2024
+      },
+      {
+        "metric": "Singapore S Pass approval rate",
+        "value": 70,
+        "unit": "%",
+        "source": "MOM Singapore",
+        "year": 2024
+      },
+      {
+        "metric": "New Zealand Skilled Migrant approval rate",
+        "value": 75,
+        "unit": "%",
+        "source": "Immigration NZ",
+        "year": 2024
+      },
+      {
+        "metric": "South Korea E-7 visa approval rate",
+        "value": 82,
+        "unit": "%",
+        "source": "Korean Immigration Service",
+        "year": 2024
+      },
+      {
+        "metric": "Ireland Critical Skills approval rate",
+        "value": 90,
+        "unit": "%",
+        "source": "DBEI Ireland",
+        "year": 2024
+      },
+      {
+        "metric": "Switzerland work permit approval rate",
+        "value": 85,
+        "unit": "%",
+        "source": "SEM Switzerland",
+        "year": 2024
+      },
+      {
+        "metric": "Netherlands KM visa approval rate",
+        "value": 95,
+        "unit": "%",
+        "source": "IND Netherlands",
+        "year": 2024
+      },
+      {
+        "metric": "US B1/B2 tourist visa approval rate",
+        "value": 73,
+        "unit": "%",
+        "source": "State Department",
+        "year": 2024
+      },
+      {
+        "metric": "Average Schengen visa processing time",
+        "value": 15,
+        "unit": "days",
+        "source": "European Commission",
+        "year": 2024
+      }
     ],
     "cost_of_relocation": [
-      {"metric": "Average cost to relocate internationally (single person)", "value": 7500, "unit": "USD", "source": "InterNations Expat Insider", "year": 2024},
-      {"metric": "Average cost to relocate internationally (family of 4)", "value": 18000, "unit": "USD", "source": "InterNations Expat Insider", "year": 2024},
-      {"metric": "Average relocation cost — US (to)", "value": 12500, "unit": "USD", "source": "ECA International", "year": 2024},
-      {"metric": "Average relocation cost — UK (to)", "value": 10800, "unit": "USD", "source": "ECA International", "year": 2024},
-      {"metric": "Average relocation cost — Australia (to)", "value": 11200, "unit": "USD", "source": "ECA International", "year": 2024},
-      {"metric": "Average relocation cost — Singapore (to)", "value": 9800, "unit": "USD", "source": "ECA International", "year": 2024},
-      {"metric": "Average relocation cost — Indonesia (to)", "value": 4500, "unit": "USD", "source": "ECA International", "year": 2024},
-      {"metric": "Average relocation cost — Dubai/UAE (to)", "value": 8500, "unit": "USD", "source": "ECA International", "year": 2024},
-      {"metric": "Visa and legal fees (average across countries)", "value": 2200, "unit": "USD", "source": "Fragomen Global Immigration", "year": 2024}
+      {
+        "metric": "Average cost to relocate internationally (single person)",
+        "value": 7500,
+        "unit": "USD",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Average cost to relocate internationally (family of 4)",
+        "value": 18000,
+        "unit": "USD",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Average relocation cost \u2014 US (to)",
+        "value": 12500,
+        "unit": "USD",
+        "source": "ECA International",
+        "year": 2024
+      },
+      {
+        "metric": "Average relocation cost \u2014 UK (to)",
+        "value": 10800,
+        "unit": "USD",
+        "source": "ECA International",
+        "year": 2024
+      },
+      {
+        "metric": "Average relocation cost \u2014 Australia (to)",
+        "value": 11200,
+        "unit": "USD",
+        "source": "ECA International",
+        "year": 2024
+      },
+      {
+        "metric": "Average relocation cost \u2014 Singapore (to)",
+        "value": 9800,
+        "unit": "USD",
+        "source": "ECA International",
+        "year": 2024
+      },
+      {
+        "metric": "Average relocation cost \u2014 Indonesia (to)",
+        "value": 4500,
+        "unit": "USD",
+        "source": "ECA International",
+        "year": 2024
+      },
+      {
+        "metric": "Average relocation cost \u2014 Dubai/UAE (to)",
+        "value": 8500,
+        "unit": "USD",
+        "source": "ECA International",
+        "year": 2024
+      },
+      {
+        "metric": "Visa and legal fees (average across countries)",
+        "value": 2200,
+        "unit": "USD",
+        "source": "Fragomen Global Immigration",
+        "year": 2024
+      },
+      {
+        "metric": "Average relocation cost \u2014 Canada (to)",
+        "value": 9500,
+        "unit": "USD",
+        "source": "ECA International",
+        "year": 2024
+      },
+      {
+        "metric": "Average relocation cost \u2014 Japan (to)",
+        "value": 10500,
+        "unit": "USD",
+        "source": "ECA International",
+        "year": 2024
+      },
+      {
+        "metric": "Average relocation cost \u2014 Germany (to)",
+        "value": 9200,
+        "unit": "USD",
+        "source": "ECA International",
+        "year": 2024
+      },
+      {
+        "metric": "Average relocation cost \u2014 South Korea (to)",
+        "value": 8900,
+        "unit": "USD",
+        "source": "ECA International",
+        "year": 2024
+      },
+      {
+        "metric": "Average relocation cost \u2014 Thailand (to)",
+        "value": 5200,
+        "unit": "USD",
+        "source": "ECA International",
+        "year": 2024
+      },
+      {
+        "metric": "Average relocation cost \u2014 Mexico (to)",
+        "value": 5800,
+        "unit": "USD",
+        "source": "ECA International",
+        "year": 2024
+      },
+      {
+        "metric": "Average relocation cost \u2014 Ghana (to)",
+        "value": 4800,
+        "unit": "USD",
+        "source": "ECA International",
+        "year": 2024
+      },
+      {
+        "metric": "Average relocation cost \u2014 Nigeria (to)",
+        "value": 5100,
+        "unit": "USD",
+        "source": "ECA International",
+        "year": 2024
+      }
     ],
     "culture_shock": [
-      {"metric": "Expats who experience culture shock", "value": 73, "unit": "%", "source": "InterNations Expat Insider", "year": 2024},
-      {"metric": "Average duration of culture shock", "value": 9, "unit": "months", "source": "Journal of Cross-Cultural Psychology", "year": 2022},
-      {"metric": "Expats who return home within first year due to adjustment failure", "value": 25, "unit": "%", "source": "SHRM / Brookfield Global Relocation", "year": 2023},
-      {"metric": "Expats who rate local friendliness as easy (Indonesia)", "value": 82, "unit": "%", "source": "InterNations Expat Insider", "year": 2024},
-      {"metric": "Expats who rate local friendliness as easy (Australia)", "value": 67, "unit": "%", "source": "InterNations Expat Insider", "year": 2024},
-      {"metric": "Expats who rate settling in as difficult (Japan)", "value": 54, "unit": "%", "source": "InterNations Expat Insider", "year": 2024},
-      {"metric": "Expats who rate settling in as difficult (Germany)", "value": 47, "unit": "%", "source": "InterNations Expat Insider", "year": 2024}
+      {
+        "metric": "Expats who experience culture shock",
+        "value": 73,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Average duration of culture shock",
+        "value": 9,
+        "unit": "months",
+        "source": "Journal of Cross-Cultural Psychology",
+        "year": 2022,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Expats who return home within first year due to adjustment failure",
+        "value": 25,
+        "unit": "%",
+        "source": "SHRM / Brookfield Global Relocation",
+        "year": 2023
+      },
+      {
+        "metric": "Expats who rate local friendliness as easy (Indonesia)",
+        "value": 82,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who rate local friendliness as easy (Australia)",
+        "value": 67,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who rate settling in as difficult (Japan)",
+        "value": 54,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who rate settling in as difficult (Germany)",
+        "value": 47,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who rate settling in as difficult (South Korea)",
+        "value": 52,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who rate settling in as difficult (China)",
+        "value": 58,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who rate settling in as easy (Mexico)",
+        "value": 78,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who rate settling in as easy (Portugal)",
+        "value": 72,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who rate local friendliness as easy (Philippines)",
+        "value": 88,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who rate local friendliness as easy (Thailand)",
+        "value": 80,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Cultural adjustment U-curve duration",
+        "value": 18,
+        "unit": "months",
+        "source": "Journal of Cross-Cultural Psychology",
+        "year": 2023
+      },
+      {
+        "metric": "Expats who received cultural training before move",
+        "value": 21,
+        "unit": "%",
+        "source": "BGRS Survey",
+        "year": 2024
+      }
     ],
     "expat_success_rate": [
-      {"metric": "Expats who stay abroad 5+ years", "value": 45, "unit": "%", "source": "InterNations Expat Insider", "year": 2024},
-      {"metric": "Expats who plan to stay permanently in host country", "value": 29, "unit": "%", "source": "InterNations Expat Insider", "year": 2024},
-      {"metric": "Expats who return to home country within 3 years", "value": 38, "unit": "%", "source": "Brookfield Global Relocation Trends", "year": 2023},
-      {"metric": "Assignment failure rate (corporate expats)", "value": 12, "unit": "%", "source": "Mercer Global Mobility", "year": 2023},
-      {"metric": "Expats satisfied with life abroad overall", "value": 72, "unit": "%", "source": "HSBC Expat Explorer", "year": 2024},
-      {"metric": "Expats who say they earn more abroad than at home", "value": 55, "unit": "%", "source": "HSBC Expat Explorer", "year": 2024}
+      {
+        "metric": "Expats who stay abroad 5+ years",
+        "value": 45,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who plan to stay permanently in host country",
+        "value": 29,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who return to home country within 3 years",
+        "value": 38,
+        "unit": "%",
+        "source": "Brookfield Global Relocation Trends",
+        "year": 2023
+      },
+      {
+        "metric": "Assignment failure rate (corporate expats)",
+        "value": 12,
+        "unit": "%",
+        "source": "Mercer Global Mobility",
+        "year": 2023
+      },
+      {
+        "metric": "Expats satisfied with life abroad overall",
+        "value": 72,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who say they earn more abroad than at home",
+        "value": 55,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who achieved financial goals abroad",
+        "value": 48,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who achieved career goals abroad",
+        "value": 52,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who recommend moving abroad",
+        "value": 79,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who would do it again",
+        "value": 84,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Average number of countries expats have lived in",
+        "value": 3.2,
+        "unit": "countries",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Serial expats (5+ countries)",
+        "value": 14,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who became permanent residents",
+        "value": 35,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who obtained citizenship in host country",
+        "value": 12,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      }
     ],
     "job_market_for_immigrants": [
-      {"metric": "Immigrant employment rate (US)", "value": 66.3, "unit": "%", "source": "BLS", "year": 2024},
-      {"metric": "Native-born employment rate (US)", "value": 59.8, "unit": "%", "source": "BLS", "year": 2024},
-      {"metric": "Immigrant wage gap vs natives (US, first 5 years)", "value": -22, "unit": "% lower", "source": "National Academies of Sciences", "year": 2023},
-      {"metric": "Immigrant wage gap closure after 20 years (US)", "value": 90, "unit": "% of native wages", "source": "National Academies of Sciences", "year": 2023},
-      {"metric": "Immigrant employment rate (Australia)", "value": 63.7, "unit": "%", "source": "ABS", "year": 2024},
-      {"metric": "Immigrant employment rate (UK)", "value": 62.1, "unit": "%", "source": "ONS", "year": 2024},
-      {"metric": "Overqualification rate among immigrants (OECD average)", "value": 34, "unit": "%", "source": "OECD", "year": 2023},
-      {"metric": "Immigrant self-employment rate (US)", "value": 12.3, "unit": "%", "source": "Kauffman Foundation", "year": 2024}
+      {
+        "metric": "Immigrant employment rate (US)",
+        "value": 66.3,
+        "unit": "%",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Native-born employment rate (US)",
+        "value": 59.8,
+        "unit": "%",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Immigrant wage gap vs natives (US, first 5 years)",
+        "value": -22,
+        "unit": "% lower",
+        "source": "National Academies of Sciences",
+        "year": 2023
+      },
+      {
+        "metric": "Immigrant wage gap closure after 20 years (US)",
+        "value": 90,
+        "unit": "% of native wages",
+        "source": "National Academies of Sciences",
+        "year": 2023
+      },
+      {
+        "metric": "Immigrant employment rate (Australia)",
+        "value": 63.7,
+        "unit": "%",
+        "source": "ABS",
+        "year": 2024
+      },
+      {
+        "metric": "Immigrant employment rate (UK)",
+        "value": 62.1,
+        "unit": "%",
+        "source": "ONS",
+        "year": 2024
+      },
+      {
+        "metric": "Overqualification rate among immigrants (OECD average)",
+        "value": 34,
+        "unit": "%",
+        "source": "OECD",
+        "year": 2023,
+        "url": "https://www.oecd.org/en/publications/oecd-employment-outlook-2024_ac8b3538-en.html"
+      },
+      {
+        "metric": "Immigrant self-employment rate (US)",
+        "value": 12.3,
+        "unit": "%",
+        "source": "Kauffman Foundation",
+        "year": 2024
+      },
+      {
+        "metric": "Immigrant employment rate (Canada)",
+        "value": 65.2,
+        "unit": "%",
+        "source": "Statistics Canada",
+        "year": 2024
+      },
+      {
+        "metric": "Immigrant employment rate (Germany)",
+        "value": 59.4,
+        "unit": "%",
+        "source": "Federal Statistical Office Germany",
+        "year": 2024
+      },
+      {
+        "metric": "Immigrant employment rate (Singapore)",
+        "value": 78.3,
+        "unit": "%",
+        "source": "MOM Singapore",
+        "year": 2024
+      },
+      {
+        "metric": "Immigrant employment rate (Japan)",
+        "value": 72.1,
+        "unit": "%",
+        "source": "MHLW Japan",
+        "year": 2024
+      },
+      {
+        "metric": "Skills mismatch rate among immigrants (OECD)",
+        "value": 28,
+        "unit": "%",
+        "source": "OECD",
+        "year": 2024
+      },
+      {
+        "metric": "Time to first job for skilled immigrants (OECD avg)",
+        "value": 5.2,
+        "unit": "months",
+        "source": "OECD",
+        "year": 2024
+      },
+      {
+        "metric": "Immigrant unemployment rate vs native (OECD gap)",
+        "value": 3.2,
+        "unit": "% higher",
+        "source": "OECD",
+        "year": 2024
+      },
+      {
+        "metric": "Remote work availability for immigrants",
+        "value": 35,
+        "unit": "%",
+        "source": "LinkedIn Economic Graph",
+        "year": 2024
+      }
     ],
     "language_barrier": [
-      {"metric": "Immigrants with poor host-country language and employed", "value": 48, "unit": "%", "source": "OECD Integration Indicators", "year": 2023},
-      {"metric": "Immigrants with fluent host-country language and employed", "value": 73, "unit": "%", "source": "OECD Integration Indicators", "year": 2023},
-      {"metric": "Wage premium for fluency in host-country language", "value": 20, "unit": "% higher wages", "source": "OECD / IZA", "year": 2023},
-      {"metric": "Average time to basic conversational fluency", "value": 12, "unit": "months", "source": "FSI (US Foreign Service Institute)", "year": 2024},
-      {"metric": "Average time to professional working fluency", "value": 30, "unit": "months", "source": "FSI", "year": 2024},
-      {"metric": "Immigrants who cite language as biggest barrier", "value": 41, "unit": "%", "source": "InterNations Expat Insider", "year": 2024}
+      {
+        "metric": "Immigrants with poor host-country language and employed",
+        "value": 48,
+        "unit": "%",
+        "source": "OECD Integration Indicators",
+        "year": 2023,
+        "url": "https://www.oecd.org/en/publications/oecd-employment-outlook-2024_ac8b3538-en.html"
+      },
+      {
+        "metric": "Immigrants with fluent host-country language and employed",
+        "value": 73,
+        "unit": "%",
+        "source": "OECD Integration Indicators",
+        "year": 2023,
+        "url": "https://www.oecd.org/en/publications/oecd-employment-outlook-2024_ac8b3538-en.html"
+      },
+      {
+        "metric": "Wage premium for fluency in host-country language",
+        "value": 20,
+        "unit": "% higher wages",
+        "source": "OECD / IZA",
+        "year": 2023,
+        "url": "https://www.oecd.org/en/publications/oecd-employment-outlook-2024_ac8b3538-en.html"
+      },
+      {
+        "metric": "Average time to basic conversational fluency",
+        "value": 12,
+        "unit": "months",
+        "source": "FSI (US Foreign Service Institute)",
+        "year": 2024
+      },
+      {
+        "metric": "Average time to professional working fluency",
+        "value": 30,
+        "unit": "months",
+        "source": "FSI",
+        "year": 2024
+      },
+      {
+        "metric": "Immigrants who cite language as biggest barrier",
+        "value": 41,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Language difficulty Category I (23-24 weeks) \u2014 Spanish, French, Italian",
+        "value": 600,
+        "unit": "class hours",
+        "source": "FSI",
+        "year": 2024
+      },
+      {
+        "metric": "Language difficulty Category II (36 weeks) \u2014 German, Indonesian",
+        "value": 900,
+        "unit": "class hours",
+        "source": "FSI",
+        "year": 2024
+      },
+      {
+        "metric": "Language difficulty Category III (44 weeks) \u2014 Russian, Hindi",
+        "value": 1100,
+        "unit": "class hours",
+        "source": "FSI",
+        "year": 2024
+      },
+      {
+        "metric": "Language difficulty Category IV (88 weeks) \u2014 Japanese, Chinese, Korean, Arabic",
+        "value": 2200,
+        "unit": "class hours",
+        "source": "FSI",
+        "year": 2024
+      },
+      {
+        "metric": "Duolingo users worldwide",
+        "value": 97,
+        "unit": "million monthly active",
+        "source": "Duolingo",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of language classes abroad \u2014 average",
+        "value": 300,
+        "unit": "USD/month",
+        "source": "GoAbroad",
+        "year": 2024
+      },
+      {
+        "metric": "Immigrants who achieve C1 fluency within 5 years",
+        "value": 35,
+        "unit": "%",
+        "source": "OECD Integration",
+        "year": 2024
+      },
+      {
+        "metric": "English proficiency index \u2014 Netherlands (top non-native)",
+        "value": 1,
+        "unit": "ranking",
+        "source": "EF EPI",
+        "year": 2024
+      }
     ],
     "remittance": [
-      {"metric": "Global remittance flows to LMICs", "value": 669, "unit": "billion USD", "source": "World Bank KNOMAD", "year": 2024},
-      {"metric": "Top recipient country — India", "value": 125, "unit": "billion USD", "source": "World Bank KNOMAD", "year": 2024},
-      {"metric": "Top recipient country — Mexico", "value": 67, "unit": "billion USD", "source": "World Bank KNOMAD", "year": 2024},
-      {"metric": "Remittances to Indonesia", "value": 12.4, "unit": "billion USD", "source": "World Bank KNOMAD", "year": 2024},
-      {"metric": "Remittances to Philippines", "value": 40, "unit": "billion USD", "source": "World Bank KNOMAD", "year": 2024},
-      {"metric": "Remittances to Italy (inbound)", "value": 11.2, "unit": "billion USD", "source": "World Bank KNOMAD", "year": 2023},
-      {"metric": "Average remittance as % of sender income", "value": 15, "unit": "% of income", "source": "IFAD / World Bank", "year": 2023},
-      {"metric": "Average cost of sending $200 remittance", "value": 6.2, "unit": "% of amount", "source": "World Bank Remittance Prices", "year": 2024},
-      {"metric": "SDG target for remittance cost", "value": 3, "unit": "% of amount", "source": "UN SDG 10.c", "year": 2030},
-      {"metric": "Cheapest corridor cost (GCC to South Asia)", "value": 3.4, "unit": "%", "source": "World Bank Remittance Prices", "year": 2024},
-      {"metric": "Most expensive corridor cost (Sub-Saharan Africa)", "value": 7.9, "unit": "%", "source": "World Bank Remittance Prices", "year": 2024}
+      {
+        "metric": "Global remittance flows to LMICs",
+        "value": 669,
+        "unit": "billion USD",
+        "source": "World Bank KNOMAD",
+        "year": 2024
+      },
+      {
+        "metric": "Top recipient country \u2014 India",
+        "value": 125,
+        "unit": "billion USD",
+        "source": "World Bank KNOMAD",
+        "year": 2024
+      },
+      {
+        "metric": "Top recipient country \u2014 Mexico",
+        "value": 67,
+        "unit": "billion USD",
+        "source": "World Bank KNOMAD",
+        "year": 2024
+      },
+      {
+        "metric": "Remittances to Indonesia",
+        "value": 12.4,
+        "unit": "billion USD",
+        "source": "World Bank KNOMAD",
+        "year": 2024
+      },
+      {
+        "metric": "Remittances to Philippines",
+        "value": 40,
+        "unit": "billion USD",
+        "source": "World Bank KNOMAD",
+        "year": 2024
+      },
+      {
+        "metric": "Remittances to Italy (inbound)",
+        "value": 11.2,
+        "unit": "billion USD",
+        "source": "World Bank KNOMAD",
+        "year": 2023
+      },
+      {
+        "metric": "Average remittance as % of sender income",
+        "value": 15,
+        "unit": "% of income",
+        "source": "IFAD / World Bank",
+        "year": 2023
+      },
+      {
+        "metric": "Average cost of sending $200 remittance",
+        "value": 6.2,
+        "unit": "% of amount",
+        "source": "World Bank Remittance Prices",
+        "year": 2024
+      },
+      {
+        "metric": "SDG target for remittance cost",
+        "value": 3,
+        "unit": "% of amount",
+        "source": "UN SDG 10.c",
+        "year": 2030
+      },
+      {
+        "metric": "Cheapest corridor cost (GCC to South Asia)",
+        "value": 3.4,
+        "unit": "%",
+        "source": "World Bank Remittance Prices",
+        "year": 2024
+      },
+      {
+        "metric": "Most expensive corridor cost (Sub-Saharan Africa)",
+        "value": 7.9,
+        "unit": "%",
+        "source": "World Bank Remittance Prices",
+        "year": 2024
+      },
+      {
+        "metric": "Remittances to China",
+        "value": 51,
+        "unit": "billion USD",
+        "source": "World Bank KNOMAD",
+        "year": 2024
+      },
+      {
+        "metric": "Remittances to Egypt",
+        "value": 24,
+        "unit": "billion USD",
+        "source": "World Bank KNOMAD",
+        "year": 2024
+      },
+      {
+        "metric": "Remittances to Pakistan",
+        "value": 28,
+        "unit": "billion USD",
+        "source": "World Bank KNOMAD",
+        "year": 2024
+      },
+      {
+        "metric": "Remittances to Bangladesh",
+        "value": 23,
+        "unit": "billion USD",
+        "source": "World Bank KNOMAD",
+        "year": 2024
+      },
+      {
+        "metric": "Remittances to Nigeria",
+        "value": 20,
+        "unit": "billion USD",
+        "source": "World Bank KNOMAD",
+        "year": 2024
+      },
+      {
+        "metric": "Remittances to Ghana",
+        "value": 4.6,
+        "unit": "billion USD",
+        "source": "World Bank KNOMAD",
+        "year": 2024
+      },
+      {
+        "metric": "Remittances as % GDP \u2014 Tonga",
+        "value": 46,
+        "unit": "%",
+        "source": "World Bank",
+        "year": 2024
+      },
+      {
+        "metric": "Remittances as % GDP \u2014 Lebanon",
+        "value": 38,
+        "unit": "%",
+        "source": "World Bank",
+        "year": 2024
+      },
+      {
+        "metric": "Remittances as % GDP \u2014 Nepal",
+        "value": 24,
+        "unit": "%",
+        "source": "World Bank",
+        "year": 2024
+      },
+      {
+        "metric": "Remittances as % GDP \u2014 Philippines",
+        "value": 9.3,
+        "unit": "%",
+        "source": "World Bank",
+        "year": 2024
+      },
+      {
+        "metric": "Digital remittance share",
+        "value": 45,
+        "unit": "%",
+        "source": "World Bank",
+        "year": 2024
+      },
+      {
+        "metric": "Cryptocurrency remittance adoption",
+        "value": 3,
+        "unit": "%",
+        "source": "Chainalysis",
+        "year": 2024
+      }
     ],
     "country_comparison": [
-      {"metric": "Cost of living index — Singapore", "value": 81.1, "unit": "index (NYC=100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Cost of living index — Sydney", "value": 73.4, "unit": "index (NYC=100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Cost of living index — London", "value": 74.6, "unit": "index (NYC=100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Cost of living index — Dubai", "value": 62.1, "unit": "index (NYC=100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Cost of living index — Berlin", "value": 56.3, "unit": "index (NYC=100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Cost of living index — Bangkok", "value": 36.8, "unit": "index (NYC=100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Cost of living index — Jakarta", "value": 38.5, "unit": "index (NYC=100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Safety index — Singapore", "value": 77.8, "unit": "index (0-100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Safety index — Tokyo", "value": 76.5, "unit": "index (0-100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Safety index — Sydney", "value": 63.2, "unit": "index (0-100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Safety index — Dubai", "value": 84.5, "unit": "index (0-100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Safety index — London", "value": 46.1, "unit": "index (0-100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Healthcare index — Australia", "value": 73.2, "unit": "index (0-100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Healthcare index — Japan", "value": 80.5, "unit": "index (0-100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Healthcare index — Singapore", "value": 72.1, "unit": "index (0-100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Healthcare index — UK", "value": 65.4, "unit": "index (0-100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Healthcare index — Indonesia", "value": 58.7, "unit": "index (0-100)", "source": "Numbeo", "year": 2024},
-      {"metric": "Healthcare index — UAE", "value": 69.3, "unit": "index (0-100)", "source": "Numbeo", "year": 2024}
+      {
+        "metric": "Cost of living index \u2014 Singapore",
+        "value": 81.1,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Cost of living index \u2014 Sydney",
+        "value": 73.4,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Cost of living index \u2014 London",
+        "value": 74.6,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Cost of living index \u2014 Dubai",
+        "value": 62.1,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Cost of living index \u2014 Berlin",
+        "value": 56.3,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Cost of living index \u2014 Bangkok",
+        "value": 36.8,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Cost of living index \u2014 Jakarta",
+        "value": 38.5,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Safety index \u2014 Singapore",
+        "value": 77.8,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Safety index \u2014 Tokyo",
+        "value": 76.5,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Safety index \u2014 Sydney",
+        "value": 63.2,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Safety index \u2014 Dubai",
+        "value": 84.5,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Safety index \u2014 London",
+        "value": 46.1,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Healthcare index \u2014 Australia",
+        "value": 73.2,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Healthcare index \u2014 Japan",
+        "value": 80.5,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Healthcare index \u2014 Singapore",
+        "value": 72.1,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Healthcare index \u2014 UK",
+        "value": 65.4,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Healthcare index \u2014 Indonesia",
+        "value": 58.7,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Healthcare index \u2014 UAE",
+        "value": 69.3,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024,
+        "url": "https://www.numbeo.com/cost-of-living/rankings.jsp?title=2024"
+      },
+      {
+        "metric": "Cost of living index \u2014 Tokyo",
+        "value": 65.2,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Seoul",
+        "value": 61.8,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Mexico City",
+        "value": 32.4,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Mumbai",
+        "value": 23.1,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Accra",
+        "value": 28.5,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Lagos",
+        "value": 30.2,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Safety index \u2014 Jakarta",
+        "value": 48.3,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Safety index \u2014 Bangkok",
+        "value": 52.1,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Safety index \u2014 Seoul",
+        "value": 72.4,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Safety index \u2014 Mexico City",
+        "value": 31.2,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024
+      }
+    ],
+    "digital_nomad_hubs": [
+      {
+        "metric": "Digital nomad population \u2014 Bali",
+        "value": 12000,
+        "unit": "nomads",
+        "source": "Nomad List",
+        "year": 2024
+      },
+      {
+        "metric": "Digital nomad population \u2014 Lisbon",
+        "value": 8500,
+        "unit": "nomads",
+        "source": "Nomad List",
+        "year": 2024
+      },
+      {
+        "metric": "Digital nomad population \u2014 Bangkok",
+        "value": 15000,
+        "unit": "nomads",
+        "source": "Nomad List",
+        "year": 2024
+      },
+      {
+        "metric": "Digital nomad population \u2014 Medellin",
+        "value": 7000,
+        "unit": "nomads",
+        "source": "Nomad List",
+        "year": 2024
+      },
+      {
+        "metric": "Digital nomad population \u2014 Chiang Mai",
+        "value": 5000,
+        "unit": "nomads",
+        "source": "Nomad List",
+        "year": 2024
+      },
+      {
+        "metric": "Digital nomad population \u2014 Mexico City",
+        "value": 10000,
+        "unit": "nomads",
+        "source": "Nomad List",
+        "year": 2024
+      },
+      {
+        "metric": "Digital nomad population \u2014 Tbilisi",
+        "value": 4000,
+        "unit": "nomads",
+        "source": "Nomad List",
+        "year": 2024
+      },
+      {
+        "metric": "Digital nomad population \u2014 Dubai",
+        "value": 6000,
+        "unit": "nomads",
+        "source": "Nomad List",
+        "year": 2024
+      },
+      {
+        "metric": "Coworking space monthly cost \u2014 Bali",
+        "value": 150,
+        "unit": "USD/month",
+        "source": "Coworker.com",
+        "year": 2024
+      },
+      {
+        "metric": "Coworking space monthly cost \u2014 Lisbon",
+        "value": 250,
+        "unit": "USD/month",
+        "source": "Coworker.com",
+        "year": 2024
+      },
+      {
+        "metric": "Coworking space monthly cost \u2014 Bangkok",
+        "value": 120,
+        "unit": "USD/month",
+        "source": "Coworker.com",
+        "year": 2024
+      },
+      {
+        "metric": "Coworking space monthly cost \u2014 London",
+        "value": 500,
+        "unit": "USD/month",
+        "source": "Coworker.com",
+        "year": 2024
+      },
+      {
+        "metric": "Coworking space monthly cost \u2014 NYC",
+        "value": 600,
+        "unit": "USD/month",
+        "source": "Coworker.com",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly budget \u2014 Bali digital nomad",
+        "value": 1500,
+        "unit": "USD/month",
+        "source": "Nomad List",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly budget \u2014 Lisbon digital nomad",
+        "value": 2200,
+        "unit": "USD/month",
+        "source": "Nomad List",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly budget \u2014 Bangkok digital nomad",
+        "value": 1200,
+        "unit": "USD/month",
+        "source": "Nomad List",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly budget \u2014 Berlin digital nomad",
+        "value": 2500,
+        "unit": "USD/month",
+        "source": "Nomad List",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly budget \u2014 Mexico City digital nomad",
+        "value": 1400,
+        "unit": "USD/month",
+        "source": "Nomad List",
+        "year": 2024
+      },
+      {
+        "metric": "Internet speed average \u2014 Singapore",
+        "value": 262,
+        "unit": "Mbps",
+        "source": "Speedtest Global Index",
+        "year": 2024
+      },
+      {
+        "metric": "Internet speed average \u2014 UAE",
+        "value": 235,
+        "unit": "Mbps",
+        "source": "Speedtest Global Index",
+        "year": 2024
+      },
+      {
+        "metric": "Internet speed average \u2014 South Korea",
+        "value": 212,
+        "unit": "Mbps",
+        "source": "Speedtest Global Index",
+        "year": 2024
+      },
+      {
+        "metric": "Internet speed average \u2014 Indonesia",
+        "value": 28,
+        "unit": "Mbps",
+        "source": "Speedtest Global Index",
+        "year": 2024
+      },
+      {
+        "metric": "Internet speed average \u2014 India",
+        "value": 52,
+        "unit": "Mbps",
+        "source": "Speedtest Global Index",
+        "year": 2024
+      },
+      {
+        "metric": "Internet speed average \u2014 USA",
+        "value": 203,
+        "unit": "Mbps",
+        "source": "Speedtest Global Index",
+        "year": 2024
+      },
+      {
+        "metric": "Digital nomad median income",
+        "value": 85000,
+        "unit": "USD/year",
+        "source": "MBO Partners",
+        "year": 2024
+      },
+      {
+        "metric": "Digital nomads satisfied with lifestyle",
+        "value": 82,
+        "unit": "%",
+        "source": "FlexJobs Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Digital nomads returning to traditional work within 3 years",
+        "value": 35,
+        "unit": "%",
+        "source": "MBO Partners",
+        "year": 2024
+      },
+      {
+        "metric": "Digital nomad tax compliance rate",
+        "value": 45,
+        "unit": "%",
+        "source": "Taxfyle Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Digital nomad health insurance coverage",
+        "value": 64,
+        "unit": "%",
+        "source": "SafetyWing Survey",
+        "year": 2024
+      }
+    ],
+    "housing_abroad": [
+      {
+        "metric": "Average rent 1BR city center \u2014 Singapore",
+        "value": 2800,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 Sydney",
+        "value": 2100,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 London",
+        "value": 2400,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 NYC",
+        "value": 3500,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 Dubai",
+        "value": 1800,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 Berlin",
+        "value": 1200,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 Bangkok",
+        "value": 550,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 Jakarta",
+        "value": 500,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 Bandung",
+        "value": 250,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 Tokyo",
+        "value": 1400,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 Toronto",
+        "value": 1900,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 Melbourne",
+        "value": 1700,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 Amsterdam",
+        "value": 1900,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 Lisbon",
+        "value": 1300,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 Accra",
+        "value": 600,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 Lagos",
+        "value": 700,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 Mexico City",
+        "value": 800,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 Seoul",
+        "value": 900,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average rent 1BR city center \u2014 San Francisco",
+        "value": 3200,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Deposit required months \u2014 Germany",
+        "value": 3,
+        "unit": "months rent",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Deposit required months \u2014 Japan",
+        "value": 4,
+        "unit": "months rent",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Deposit required months \u2014 Australia",
+        "value": 1,
+        "unit": "months rent",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Deposit required months \u2014 Indonesia",
+        "value": 3,
+        "unit": "months rent",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Foreigners who can buy property \u2014 Singapore",
+        "value": 0,
+        "unit": "% restriction (landed)",
+        "source": "URA Singapore",
+        "year": 2024
+      },
+      {
+        "metric": "Foreigner property tax surcharge \u2014 Singapore",
+        "value": 60,
+        "unit": "% ABSD",
+        "source": "IRAS Singapore",
+        "year": 2024
+      },
+      {
+        "metric": "Foreigner property tax surcharge \u2014 Australia",
+        "value": 7,
+        "unit": "% surcharge",
+        "source": "FIRB Australia",
+        "year": 2024
+      },
+      {
+        "metric": "Foreigner property tax surcharge \u2014 Canada BC",
+        "value": 20,
+        "unit": "% surcharge",
+        "source": "BC Government",
+        "year": 2024
+      },
+      {
+        "metric": "Housing purchase restriction \u2014 Thailand foreigners",
+        "value": 49,
+        "unit": "% max foreign ownership condo",
+        "source": "Thai Land Department",
+        "year": 2024
+      },
+      {
+        "metric": "Housing purchase restriction \u2014 Indonesia foreigners",
+        "value": 80,
+        "unit": "year leasehold max",
+        "source": "BPN Indonesia",
+        "year": 2024
+      },
+      {
+        "metric": "Time to find housing abroad average",
+        "value": 45,
+        "unit": "days",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      }
+    ],
+    "healthcare_abroad": [
+      {
+        "metric": "Health insurance cost expat \u2014 Thailand",
+        "value": 1200,
+        "unit": "USD/year",
+        "source": "Pacific Prime",
+        "year": 2024
+      },
+      {
+        "metric": "Health insurance cost expat \u2014 Singapore",
+        "value": 4500,
+        "unit": "USD/year",
+        "source": "Pacific Prime",
+        "year": 2024
+      },
+      {
+        "metric": "Health insurance cost expat \u2014 UAE",
+        "value": 2800,
+        "unit": "USD/year",
+        "source": "Pacific Prime",
+        "year": 2024
+      },
+      {
+        "metric": "Health insurance cost expat \u2014 UK (NHS available)",
+        "value": 0,
+        "unit": "USD/year (IHS paid)",
+        "source": "NHS",
+        "year": 2024
+      },
+      {
+        "metric": "Health insurance cost expat \u2014 Indonesia",
+        "value": 800,
+        "unit": "USD/year",
+        "source": "Pacific Prime",
+        "year": 2024
+      },
+      {
+        "metric": "Health insurance cost expat \u2014 USA",
+        "value": 8400,
+        "unit": "USD/year",
+        "source": "KFF",
+        "year": 2024
+      },
+      {
+        "metric": "Health insurance cost expat \u2014 Germany",
+        "value": 3600,
+        "unit": "USD/year",
+        "source": "Pacific Prime",
+        "year": 2024
+      },
+      {
+        "metric": "Health insurance cost expat \u2014 Australia",
+        "value": 3200,
+        "unit": "USD/year",
+        "source": "Pacific Prime",
+        "year": 2024
+      },
+      {
+        "metric": "Medical tourism savings \u2014 dental (Thailand vs USA)",
+        "value": 70,
+        "unit": "% cheaper",
+        "source": "Patients Beyond Borders",
+        "year": 2024
+      },
+      {
+        "metric": "Medical tourism savings \u2014 heart surgery (India vs USA)",
+        "value": 85,
+        "unit": "% cheaper",
+        "source": "Patients Beyond Borders",
+        "year": 2024
+      },
+      {
+        "metric": "Expats satisfied with healthcare \u2014 Thailand",
+        "value": 78,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Expats satisfied with healthcare \u2014 Singapore",
+        "value": 85,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Expats satisfied with healthcare \u2014 Japan",
+        "value": 82,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Expats satisfied with healthcare \u2014 USA",
+        "value": 52,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Expats satisfied with healthcare \u2014 Indonesia",
+        "value": 55,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Expats satisfied with healthcare \u2014 UK",
+        "value": 48,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      }
+    ],
+    "education_abroad": [
+      {
+        "metric": "International school annual cost \u2014 Singapore",
+        "value": 35000,
+        "unit": "USD/year",
+        "source": "ISC Research",
+        "year": 2024
+      },
+      {
+        "metric": "International school annual cost \u2014 London",
+        "value": 40000,
+        "unit": "USD/year",
+        "source": "ISC Research",
+        "year": 2024
+      },
+      {
+        "metric": "International school annual cost \u2014 Dubai",
+        "value": 18000,
+        "unit": "USD/year",
+        "source": "ISC Research",
+        "year": 2024
+      },
+      {
+        "metric": "International school annual cost \u2014 Bangkok",
+        "value": 15000,
+        "unit": "USD/year",
+        "source": "ISC Research",
+        "year": 2024
+      },
+      {
+        "metric": "International school annual cost \u2014 Jakarta",
+        "value": 20000,
+        "unit": "USD/year",
+        "source": "ISC Research",
+        "year": 2024
+      },
+      {
+        "metric": "International school annual cost \u2014 Hong Kong",
+        "value": 30000,
+        "unit": "USD/year",
+        "source": "ISC Research",
+        "year": 2024
+      },
+      {
+        "metric": "International school annual cost \u2014 Tokyo",
+        "value": 25000,
+        "unit": "USD/year",
+        "source": "ISC Research",
+        "year": 2024
+      },
+      {
+        "metric": "International school annual cost \u2014 Sydney",
+        "value": 22000,
+        "unit": "USD/year",
+        "source": "ISC Research",
+        "year": 2024
+      },
+      {
+        "metric": "International school annual cost \u2014 Berlin",
+        "value": 16000,
+        "unit": "USD/year",
+        "source": "ISC Research",
+        "year": 2024
+      },
+      {
+        "metric": "International school annual cost \u2014 Accra",
+        "value": 12000,
+        "unit": "USD/year",
+        "source": "ISC Research",
+        "year": 2024
+      },
+      {
+        "metric": "International schools worldwide",
+        "value": 13000,
+        "unit": "schools",
+        "source": "ISC Research",
+        "year": 2024
+      },
+      {
+        "metric": "International school enrollment worldwide",
+        "value": 6500000,
+        "unit": "students",
+        "source": "ISC Research",
+        "year": 2024
+      },
+      {
+        "metric": "Expat children bilingual rate",
+        "value": 67,
+        "unit": "%",
+        "source": "InterNations Family Survey",
+        "year": 2024
+      }
+    ],
+    "taxes_abroad": [
+      {
+        "metric": "Income tax rate \u2014 UAE",
+        "value": 0,
+        "unit": "%",
+        "source": "UAE Federal Tax Authority",
+        "year": 2024
+      },
+      {
+        "metric": "Income tax rate \u2014 Singapore (max)",
+        "value": 22,
+        "unit": "%",
+        "source": "IRAS Singapore",
+        "year": 2024
+      },
+      {
+        "metric": "Income tax rate \u2014 Hong Kong (max)",
+        "value": 15,
+        "unit": "%",
+        "source": "IRD Hong Kong",
+        "year": 2024
+      },
+      {
+        "metric": "Income tax rate \u2014 USA (max federal)",
+        "value": 37,
+        "unit": "%",
+        "source": "IRS",
+        "year": 2024
+      },
+      {
+        "metric": "Income tax rate \u2014 UK (max)",
+        "value": 45,
+        "unit": "%",
+        "source": "HMRC",
+        "year": 2024
+      },
+      {
+        "metric": "Income tax rate \u2014 Germany (max)",
+        "value": 45,
+        "unit": "%",
+        "source": "Federal Tax Office Germany",
+        "year": 2024
+      },
+      {
+        "metric": "Income tax rate \u2014 France (max)",
+        "value": 45,
+        "unit": "%",
+        "source": "DGFiP France",
+        "year": 2024
+      },
+      {
+        "metric": "Income tax rate \u2014 Japan (max)",
+        "value": 45,
+        "unit": "%",
+        "source": "NTA Japan",
+        "year": 2024
+      },
+      {
+        "metric": "Income tax rate \u2014 Australia (max)",
+        "value": 45,
+        "unit": "%",
+        "source": "ATO",
+        "year": 2024
+      },
+      {
+        "metric": "Income tax rate \u2014 Indonesia (max)",
+        "value": 35,
+        "unit": "%",
+        "source": "DJP Indonesia",
+        "year": 2024
+      },
+      {
+        "metric": "Income tax rate \u2014 Thailand (max)",
+        "value": 35,
+        "unit": "%",
+        "source": "RD Thailand",
+        "year": 2024
+      },
+      {
+        "metric": "Income tax rate \u2014 Malaysia (max)",
+        "value": 30,
+        "unit": "%",
+        "source": "LHDN Malaysia",
+        "year": 2024
+      },
+      {
+        "metric": "Income tax rate \u2014 Portugal NHR tax rate",
+        "value": 20,
+        "unit": "% flat",
+        "source": "Portuguese Tax Authority",
+        "year": 2024
+      },
+      {
+        "metric": "Income tax rate \u2014 Paraguay",
+        "value": 10,
+        "unit": "%",
+        "source": "SET Paraguay",
+        "year": 2024
+      },
+      {
+        "metric": "Income tax rate \u2014 Georgia",
+        "value": 20,
+        "unit": "% flat",
+        "source": "GRS Georgia",
+        "year": 2024
+      },
+      {
+        "metric": "Countries with territorial tax system",
+        "value": 45,
+        "unit": "countries",
+        "source": "Tax Foundation",
+        "year": 2024
+      },
+      {
+        "metric": "Countries taxing worldwide income",
+        "value": 130,
+        "unit": "countries",
+        "source": "Tax Foundation",
+        "year": 2024
+      },
+      {
+        "metric": "US citizens abroad required to file",
+        "value": 100,
+        "unit": "%",
+        "source": "IRS",
+        "year": 2024
+      },
+      {
+        "metric": "FEIE exclusion amount 2024",
+        "value": 126500,
+        "unit": "USD",
+        "source": "IRS",
+        "year": 2024
+      },
+      {
+        "metric": "Expats paying double taxation",
+        "value": 12,
+        "unit": "%",
+        "source": "ACA International",
+        "year": 2024
+      },
+      {
+        "metric": "Tax treaties \u2014 USA bilateral",
+        "value": 66,
+        "unit": "treaties",
+        "source": "IRS",
+        "year": 2024
+      },
+      {
+        "metric": "VAT/GST rate \u2014 Singapore",
+        "value": 9,
+        "unit": "%",
+        "source": "IRAS Singapore",
+        "year": 2024
+      },
+      {
+        "metric": "VAT rate \u2014 UK",
+        "value": 20,
+        "unit": "%",
+        "source": "HMRC",
+        "year": 2024
+      },
+      {
+        "metric": "VAT rate \u2014 Germany",
+        "value": 19,
+        "unit": "%",
+        "source": "Federal Tax Office Germany",
+        "year": 2024
+      },
+      {
+        "metric": "VAT rate \u2014 Indonesia",
+        "value": 11,
+        "unit": "%",
+        "source": "DJP Indonesia",
+        "year": 2024
+      },
+      {
+        "metric": "VAT rate \u2014 Japan",
+        "value": 10,
+        "unit": "%",
+        "source": "NTA Japan",
+        "year": 2024
+      },
+      {
+        "metric": "Sales tax rate \u2014 USA (average state)",
+        "value": 7.12,
+        "unit": "%",
+        "source": "Tax Foundation",
+        "year": 2024
+      },
+      {
+        "metric": "Social security contribution \u2014 Germany (employee)",
+        "value": 20,
+        "unit": "%",
+        "source": "DRV Germany",
+        "year": 2024
+      },
+      {
+        "metric": "Social security contribution \u2014 France (employee)",
+        "value": 22,
+        "unit": "%",
+        "source": "URSSAF France",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate tax rate \u2014 Ireland",
+        "value": 12.5,
+        "unit": "%",
+        "source": "Irish Revenue",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate tax rate \u2014 UAE",
+        "value": 9,
+        "unit": "%",
+        "source": "UAE FTA",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate tax rate \u2014 Singapore",
+        "value": 17,
+        "unit": "%",
+        "source": "IRAS Singapore",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate tax rate \u2014 USA (federal)",
+        "value": 21,
+        "unit": "%",
+        "source": "IRS",
+        "year": 2024
+      },
+      {
+        "metric": "Tax-free countries (no income tax)",
+        "value": 14,
+        "unit": "countries",
+        "source": "Tax Foundation",
+        "year": 2024
+      }
+    ],
+    "relocation_logistics": [
+      {
+        "metric": "International shipping container 20ft cost",
+        "value": 3500,
+        "unit": "USD",
+        "source": "International Van Lines",
+        "year": 2024
+      },
+      {
+        "metric": "International shipping container 40ft cost",
+        "value": 6000,
+        "unit": "USD",
+        "source": "International Van Lines",
+        "year": 2024
+      },
+      {
+        "metric": "Air freight cost per kg international",
+        "value": 8,
+        "unit": "USD/kg",
+        "source": "IATA",
+        "year": 2024
+      },
+      {
+        "metric": "Average customs clearance time",
+        "value": 5,
+        "unit": "days",
+        "source": "World Bank Doing Business",
+        "year": 2024
+      },
+      {
+        "metric": "Import duties on personal effects \u2014 most countries",
+        "value": 0,
+        "unit": "% (usually exempt)",
+        "source": "WCO",
+        "year": 2024
+      },
+      {
+        "metric": "Pet quarantine duration \u2014 Australia",
+        "value": 10,
+        "unit": "days minimum",
+        "source": "Department of Agriculture Australia",
+        "year": 2024
+      },
+      {
+        "metric": "Pet quarantine duration \u2014 UK",
+        "value": 0,
+        "unit": "days (pet passport)",
+        "source": "DEFRA UK",
+        "year": 2024
+      },
+      {
+        "metric": "Pet quarantine duration \u2014 Japan",
+        "value": 0,
+        "unit": "days (with prep)",
+        "source": "MAFF Japan",
+        "year": 2024
+      },
+      {
+        "metric": "Pet quarantine duration \u2014 Singapore",
+        "value": 30,
+        "unit": "days",
+        "source": "AVA Singapore",
+        "year": 2024
+      },
+      {
+        "metric": "Average time to set up bank account abroad",
+        "value": 14,
+        "unit": "days",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Average time to get local phone number",
+        "value": 1,
+        "unit": "days",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Average time to get local driver license",
+        "value": 45,
+        "unit": "days",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "International school enrollment wait \u2014 Singapore",
+        "value": 6,
+        "unit": "months",
+        "source": "ISC Research",
+        "year": 2024
+      },
+      {
+        "metric": "International school enrollment wait \u2014 London",
+        "value": 12,
+        "unit": "months",
+        "source": "ISC Research",
+        "year": 2024
+      },
+      {
+        "metric": "Countries requiring driving license conversion",
+        "value": 65,
+        "unit": "%",
+        "source": "IAF",
+        "year": 2024
+      },
+      {
+        "metric": "Countries accepting international driving permit",
+        "value": 150,
+        "unit": "countries",
+        "source": "AAA/FIA",
+        "year": 2024
+      },
+      {
+        "metric": "Average flights taken during relocation",
+        "value": 3,
+        "unit": "flights",
+        "source": "AIRINC",
+        "year": 2024
+      },
+      {
+        "metric": "Expats shipping household goods",
+        "value": 42,
+        "unit": "%",
+        "source": "FIDI Alliance",
+        "year": 2024
+      },
+      {
+        "metric": "Expats putting belongings in storage",
+        "value": 38,
+        "unit": "%",
+        "source": "FIDI Alliance",
+        "year": 2024
+      },
+      {
+        "metric": "Expats selling everything before moving",
+        "value": 20,
+        "unit": "%",
+        "source": "FIDI Alliance",
+        "year": 2024
+      },
+      {
+        "metric": "International school waitlist acceptance rate",
+        "value": 65,
+        "unit": "%",
+        "source": "ISC Research",
+        "year": 2024
+      },
+      {
+        "metric": "Expats using relocation services",
+        "value": 34,
+        "unit": "%",
+        "source": "FIDI Alliance",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate relocation assistance companies global",
+        "value": 1200,
+        "unit": "companies",
+        "source": "FIDI Alliance",
+        "year": 2024
+      },
+      {
+        "metric": "Average relocation timeline (planning to move)",
+        "value": 4,
+        "unit": "months",
+        "source": "AIRINC",
+        "year": 2024
+      },
+      {
+        "metric": "Documents needed for international move avg",
+        "value": 15,
+        "unit": "documents",
+        "source": "FIDI Alliance",
+        "year": 2024
+      },
+      {
+        "metric": "Utility setup time abroad average",
+        "value": 7,
+        "unit": "days",
+        "source": "InterNations",
+        "year": 2024
+      }
+    ],
+    "quality_of_life_abroad": [
+      {
+        "metric": "Quality of life index \u2014 Vienna",
+        "value": 1,
+        "unit": "ranking",
+        "source": "Mercer Quality of Living",
+        "year": 2024
+      },
+      {
+        "metric": "Quality of life index \u2014 Zurich",
+        "value": 2,
+        "unit": "ranking",
+        "source": "Mercer Quality of Living",
+        "year": 2024
+      },
+      {
+        "metric": "Quality of life index \u2014 Auckland",
+        "value": 3,
+        "unit": "ranking",
+        "source": "Mercer Quality of Living",
+        "year": 2024
+      },
+      {
+        "metric": "Quality of life index \u2014 Copenhagen",
+        "value": 4,
+        "unit": "ranking",
+        "source": "Mercer Quality of Living",
+        "year": 2024
+      },
+      {
+        "metric": "Quality of life index \u2014 Singapore",
+        "value": 25,
+        "unit": "ranking",
+        "source": "Mercer Quality of Living",
+        "year": 2024
+      },
+      {
+        "metric": "Quality of life index \u2014 Dubai",
+        "value": 74,
+        "unit": "ranking",
+        "source": "Mercer Quality of Living",
+        "year": 2024
+      },
+      {
+        "metric": "Quality of life index \u2014 Jakarta",
+        "value": 142,
+        "unit": "ranking",
+        "source": "Mercer Quality of Living",
+        "year": 2024
+      },
+      {
+        "metric": "Quality of life index \u2014 Bangkok",
+        "value": 133,
+        "unit": "ranking",
+        "source": "Mercer Quality of Living",
+        "year": 2024
+      },
+      {
+        "metric": "Quality of life index \u2014 Lagos",
+        "value": 213,
+        "unit": "ranking",
+        "source": "Mercer Quality of Living",
+        "year": 2024
+      },
+      {
+        "metric": "Expat satisfaction overall \u2014 Mexico",
+        "value": 1,
+        "unit": "ranking",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expat satisfaction overall \u2014 Panama",
+        "value": 2,
+        "unit": "ranking",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expat satisfaction overall \u2014 Indonesia",
+        "value": 3,
+        "unit": "ranking",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expat satisfaction overall \u2014 Spain",
+        "value": 5,
+        "unit": "ranking",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expat satisfaction overall \u2014 UAE",
+        "value": 8,
+        "unit": "ranking",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expat satisfaction worst \u2014 Kuwait",
+        "value": 53,
+        "unit": "ranking (last)",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expat income increase after moving \u2014 average",
+        "value": 28,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who improved work-life balance abroad",
+        "value": 58,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who improved career prospects abroad",
+        "value": 45,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who feel safer abroad than home",
+        "value": 32,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who feel less safe abroad than home",
+        "value": 21,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Purchasing power index \u2014 Zurich",
+        "value": 118,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Purchasing power index \u2014 Singapore",
+        "value": 96,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Purchasing power index \u2014 Dubai",
+        "value": 88,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Purchasing power index \u2014 Bangkok",
+        "value": 52,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Purchasing power index \u2014 Jakarta",
+        "value": 42,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Purchasing power index \u2014 Lagos",
+        "value": 28,
+        "unit": "index (NYC=100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Pollution index \u2014 Delhi",
+        "value": 91,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Pollution index \u2014 Jakarta",
+        "value": 72,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Pollution index \u2014 Tokyo",
+        "value": 28,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Pollution index \u2014 Zurich",
+        "value": 18,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Pollution index \u2014 Sydney",
+        "value": 23,
+        "unit": "index (0-100)",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Work-life balance index \u2014 Denmark",
+        "value": 1,
+        "unit": "ranking",
+        "source": "OECD Better Life Index",
+        "year": 2024
+      },
+      {
+        "metric": "Work-life balance index \u2014 France",
+        "value": 5,
+        "unit": "ranking",
+        "source": "OECD Better Life Index",
+        "year": 2024
+      },
+      {
+        "metric": "Work-life balance index \u2014 Japan",
+        "value": 35,
+        "unit": "ranking",
+        "source": "OECD Better Life Index",
+        "year": 2024
+      },
+      {
+        "metric": "Work-life balance index \u2014 USA",
+        "value": 29,
+        "unit": "ranking",
+        "source": "OECD Better Life Index",
+        "year": 2024
+      },
+      {
+        "metric": "Average annual leave days \u2014 EU",
+        "value": 25,
+        "unit": "days",
+        "source": "EU Working Time Directive",
+        "year": 2024
+      },
+      {
+        "metric": "Average annual leave days \u2014 USA",
+        "value": 10,
+        "unit": "days",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Average annual leave days \u2014 Japan",
+        "value": 10,
+        "unit": "days taken (20 entitled)",
+        "source": "MHLW Japan",
+        "year": 2024
+      },
+      {
+        "metric": "Average annual leave days \u2014 UAE",
+        "value": 30,
+        "unit": "days",
+        "source": "MOHRE UAE",
+        "year": 2024
+      }
+    ],
+    "social_integration": [
+      {
+        "metric": "Time to make first local friend abroad",
+        "value": 6,
+        "unit": "months",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expats with mostly expat friends",
+        "value": 62,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who learned local language",
+        "value": 45,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who joined local community groups",
+        "value": 31,
+        "unit": "%",
+        "source": "InterNations Expat Insider",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who feel at home after 1 year",
+        "value": 38,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who feel at home after 3 years",
+        "value": 62,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who feel at home after 5 years",
+        "value": 78,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Intercultural marriages rate \u2014 expats",
+        "value": 34,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Expat loneliness prevalence",
+        "value": 50,
+        "unit": "%",
+        "source": "Cigna International Health",
+        "year": 2024
+      },
+      {
+        "metric": "Expats using social apps to meet people",
+        "value": 67,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Reverse culture shock upon return",
+        "value": 68,
+        "unit": "%",
+        "source": "Journal of Cross-Cultural Psychology",
+        "year": 2023
+      },
+      {
+        "metric": "Expat children with third culture identity",
+        "value": 85,
+        "unit": "%",
+        "source": "David Pollock TCK Research",
+        "year": 2024
+      },
+      {
+        "metric": "Expats maintaining home country friendships",
+        "value": 71,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Expats volunteering in host community",
+        "value": 22,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Expats attending local religious services",
+        "value": 28,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Expat meetup group attendance",
+        "value": 45,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who dated locals",
+        "value": 41,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who married locals",
+        "value": 28,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      },
+      {
+        "metric": "Expat children adaptation time",
+        "value": 6,
+        "unit": "months",
+        "source": "InterNations Family Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Expats maintaining home country traditions",
+        "value": 78,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Expats celebrating local holidays",
+        "value": 62,
+        "unit": "%",
+        "source": "InterNations",
+        "year": 2024
+      }
+    ],
+    "financial_planning_abroad": [
+      {
+        "metric": "Expats with retirement savings plan",
+        "value": 52,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Expats with emergency fund (6 months)",
+        "value": 38,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Expats with life insurance abroad",
+        "value": 44,
+        "unit": "%",
+        "source": "Pacific Prime",
+        "year": 2024
+      },
+      {
+        "metric": "Expats with wills covering foreign assets",
+        "value": 18,
+        "unit": "%",
+        "source": "International Bar Association",
+        "year": 2024
+      },
+      {
+        "metric": "Average savings rate \u2014 expats globally",
+        "value": 24,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Expats using international banking",
+        "value": 67,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Expats investing in host country",
+        "value": 31,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Expats buying property in host country",
+        "value": 27,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Average expat net worth increase after 5 years",
+        "value": 45,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Expats who send remittances home",
+        "value": 36,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "Currency exchange loss average \u2014 expats",
+        "value": 3,
+        "unit": "% of income",
+        "source": "Wise/TransferWise",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of international money transfer \u2014 bank",
+        "value": 5.2,
+        "unit": "%",
+        "source": "World Bank",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of international money transfer \u2014 fintech",
+        "value": 1.5,
+        "unit": "%",
+        "source": "Wise",
+        "year": 2024
+      },
+      {
+        "metric": "Expats with multiple bank accounts (countries)",
+        "value": 72,
+        "unit": "%",
+        "source": "HSBC Expat Explorer",
+        "year": 2024
+      },
+      {
+        "metric": "FATCA reporting compliance \u2014 US expats",
+        "value": 68,
+        "unit": "%",
+        "source": "IRS",
+        "year": 2024
+      },
+      {
+        "metric": "Expats using crypto for cross-border payments",
+        "value": 12,
+        "unit": "%",
+        "source": "Chainalysis",
+        "year": 2024
+      },
+      {
+        "metric": "Expats with dual tax filing obligation",
+        "value": 28,
+        "unit": "%",
+        "source": "EY Global Mobility",
+        "year": 2024
+      },
+      {
+        "metric": "Average cost of international tax preparation",
+        "value": 1500,
+        "unit": "USD",
+        "source": "H&R Block",
+        "year": 2024
+      },
+      {
+        "metric": "Expats using Wise (TransferWise)",
+        "value": 42,
+        "unit": "%",
+        "source": "Wise Annual Report",
+        "year": 2024
+      },
+      {
+        "metric": "Expats using PayPal for international transfers",
+        "value": 55,
+        "unit": "%",
+        "source": "PayPal",
+        "year": 2024
+      }
+    ],
+    "cost_of_living_monthly": [
+      {
+        "metric": "Monthly living cost single \u2014 NYC",
+        "value": 4200,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 London",
+        "value": 3100,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Singapore",
+        "value": 3300,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Sydney",
+        "value": 2800,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Tokyo",
+        "value": 2400,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Berlin",
+        "value": 2100,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Dubai",
+        "value": 2600,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Bangkok",
+        "value": 1200,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Jakarta",
+        "value": 900,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Bandung",
+        "value": 600,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Lisbon",
+        "value": 1800,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Mexico City",
+        "value": 1100,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Accra",
+        "value": 1000,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Lagos",
+        "value": 1200,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Kuala Lumpur",
+        "value": 900,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Seoul",
+        "value": 1800,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Toronto",
+        "value": 2700,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Amsterdam",
+        "value": 2800,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Zurich",
+        "value": 4500,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Mumbai",
+        "value": 700,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Ho Chi Minh City",
+        "value": 800,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Tbilisi",
+        "value": 700,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Buenos Aires",
+        "value": 800,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Cape Town",
+        "value": 1100,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost single \u2014 Prague",
+        "value": 1600,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost family of 4 \u2014 NYC",
+        "value": 10500,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost family of 4 \u2014 London",
+        "value": 7800,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost family of 4 \u2014 Singapore",
+        "value": 8200,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost family of 4 \u2014 Bangkok",
+        "value": 3200,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly living cost family of 4 \u2014 Jakarta",
+        "value": 2400,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      }
+    ],
+    "salary_comparison": [
+      {
+        "metric": "Average salary software engineer \u2014 USA",
+        "value": 140000,
+        "unit": "USD/year",
+        "source": "Glassdoor",
+        "year": 2024,
+        "url": "https://www.glassdoor.com/research"
+      },
+      {
+        "metric": "Average salary software engineer \u2014 UK",
+        "value": 75000,
+        "unit": "GBP/year",
+        "source": "Glassdoor",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary software engineer \u2014 Germany",
+        "value": 72000,
+        "unit": "EUR/year",
+        "source": "Glassdoor",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary software engineer \u2014 Singapore",
+        "value": 96000,
+        "unit": "SGD/year",
+        "source": "Glassdoor",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary software engineer \u2014 Australia",
+        "value": 120000,
+        "unit": "AUD/year",
+        "source": "Glassdoor",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary software engineer \u2014 India",
+        "value": 1500000,
+        "unit": "INR/year",
+        "source": "Glassdoor",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary software engineer \u2014 Indonesia",
+        "value": 180000000,
+        "unit": "IDR/year",
+        "source": "Glassdoor",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary software engineer \u2014 Japan",
+        "value": 8000000,
+        "unit": "JPY/year",
+        "source": "Glassdoor",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary software engineer \u2014 UAE",
+        "value": 280000,
+        "unit": "AED/year",
+        "source": "Glassdoor",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary software engineer \u2014 Canada",
+        "value": 110000,
+        "unit": "CAD/year",
+        "source": "Glassdoor",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary nurse \u2014 USA",
+        "value": 85000,
+        "unit": "USD/year",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary nurse \u2014 UK",
+        "value": 35000,
+        "unit": "GBP/year",
+        "source": "NHS",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary nurse \u2014 Australia",
+        "value": 82000,
+        "unit": "AUD/year",
+        "source": "PayScale",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary nurse \u2014 Singapore",
+        "value": 48000,
+        "unit": "SGD/year",
+        "source": "MOM Singapore",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary nurse \u2014 Philippines",
+        "value": 240000,
+        "unit": "PHP/year",
+        "source": "PSA Philippines",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary teacher \u2014 USA",
+        "value": 68000,
+        "unit": "USD/year",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary teacher \u2014 UK",
+        "value": 38000,
+        "unit": "GBP/year",
+        "source": "DfE UK",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary teacher \u2014 UAE (international)",
+        "value": 200000,
+        "unit": "AED/year",
+        "source": "ISC Research",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary teacher \u2014 Japan (ALT)",
+        "value": 3500000,
+        "unit": "JPY/year",
+        "source": "JET Programme",
+        "year": 2024
+      },
+      {
+        "metric": "Average salary teacher \u2014 Indonesia (international)",
+        "value": 35000,
+        "unit": "USD/year",
+        "source": "ISC Research",
+        "year": 2024
+      },
+      {
+        "metric": "Minimum wage \u2014 USA (federal)",
+        "value": 7.25,
+        "unit": "USD/hour",
+        "source": "DOL",
+        "year": 2024
+      },
+      {
+        "metric": "Minimum wage \u2014 UK",
+        "value": 11.44,
+        "unit": "GBP/hour",
+        "source": "UK Government",
+        "year": 2024
+      },
+      {
+        "metric": "Minimum wage \u2014 Australia",
+        "value": 23.23,
+        "unit": "AUD/hour",
+        "source": "Fair Work Australia",
+        "year": 2024
+      },
+      {
+        "metric": "Minimum wage \u2014 Germany",
+        "value": 12.41,
+        "unit": "EUR/hour",
+        "source": "German Government",
+        "year": 2024
+      },
+      {
+        "metric": "Minimum wage \u2014 Japan",
+        "value": 1004,
+        "unit": "JPY/hour",
+        "source": "MHLW Japan",
+        "year": 2024
+      },
+      {
+        "metric": "Minimum wage \u2014 Indonesia (Jakarta)",
+        "value": 5067000,
+        "unit": "IDR/month",
+        "source": "Governor Decree Jakarta",
+        "year": 2024
+      },
+      {
+        "metric": "Minimum wage \u2014 Singapore",
+        "value": 0,
+        "unit": "SGD (no minimum)",
+        "source": "MOM Singapore",
+        "year": 2024
+      },
+      {
+        "metric": "Gender pay gap \u2014 global average",
+        "value": 20,
+        "unit": "%",
+        "source": "ILO",
+        "year": 2024
+      },
+      {
+        "metric": "Gender pay gap \u2014 Iceland (lowest)",
+        "value": 9,
+        "unit": "%",
+        "source": "WEF",
+        "year": 2024
+      },
+      {
+        "metric": "Gender pay gap \u2014 South Korea (highest OECD)",
+        "value": 31,
+        "unit": "%",
+        "source": "OECD",
+        "year": 2024
+      }
+    ],
+    "safety_security": [
+      {
+        "metric": "Global Peace Index \u2014 Iceland",
+        "value": 1,
+        "unit": "ranking (most peaceful)",
+        "source": "IEP",
+        "year": 2024
+      },
+      {
+        "metric": "Global Peace Index \u2014 Denmark",
+        "value": 2,
+        "unit": "ranking",
+        "source": "IEP",
+        "year": 2024
+      },
+      {
+        "metric": "Global Peace Index \u2014 Ireland",
+        "value": 3,
+        "unit": "ranking",
+        "source": "IEP",
+        "year": 2024
+      },
+      {
+        "metric": "Global Peace Index \u2014 Singapore",
+        "value": 7,
+        "unit": "ranking",
+        "source": "IEP",
+        "year": 2024
+      },
+      {
+        "metric": "Global Peace Index \u2014 Japan",
+        "value": 9,
+        "unit": "ranking",
+        "source": "IEP",
+        "year": 2024
+      },
+      {
+        "metric": "Global Peace Index \u2014 Australia",
+        "value": 22,
+        "unit": "ranking",
+        "source": "IEP",
+        "year": 2024
+      },
+      {
+        "metric": "Global Peace Index \u2014 Indonesia",
+        "value": 48,
+        "unit": "ranking",
+        "source": "IEP",
+        "year": 2024
+      },
+      {
+        "metric": "Global Peace Index \u2014 USA",
+        "value": 132,
+        "unit": "ranking",
+        "source": "IEP",
+        "year": 2024
+      },
+      {
+        "metric": "Homicide rate \u2014 Japan",
+        "value": 0.2,
+        "unit": "per 100K",
+        "source": "UNODC",
+        "year": 2024
+      },
+      {
+        "metric": "Homicide rate \u2014 Singapore",
+        "value": 0.2,
+        "unit": "per 100K",
+        "source": "UNODC",
+        "year": 2024
+      },
+      {
+        "metric": "Homicide rate \u2014 Indonesia",
+        "value": 0.4,
+        "unit": "per 100K",
+        "source": "UNODC",
+        "year": 2024
+      },
+      {
+        "metric": "Homicide rate \u2014 Australia",
+        "value": 0.9,
+        "unit": "per 100K",
+        "source": "UNODC",
+        "year": 2024
+      },
+      {
+        "metric": "Homicide rate \u2014 UK",
+        "value": 1.2,
+        "unit": "per 100K",
+        "source": "UNODC",
+        "year": 2024
+      },
+      {
+        "metric": "Homicide rate \u2014 USA",
+        "value": 6.4,
+        "unit": "per 100K",
+        "source": "UNODC",
+        "year": 2024
+      },
+      {
+        "metric": "Homicide rate \u2014 Brazil",
+        "value": 22,
+        "unit": "per 100K",
+        "source": "UNODC",
+        "year": 2024
+      },
+      {
+        "metric": "Homicide rate \u2014 South Africa",
+        "value": 42,
+        "unit": "per 100K",
+        "source": "UNODC",
+        "year": 2024
+      },
+      {
+        "metric": "Corruption perception index \u2014 Denmark",
+        "value": 90,
+        "unit": "score (0-100)",
+        "source": "Transparency International",
+        "year": 2024
+      },
+      {
+        "metric": "Corruption perception index \u2014 Singapore",
+        "value": 83,
+        "unit": "score (0-100)",
+        "source": "Transparency International",
+        "year": 2024
+      },
+      {
+        "metric": "Corruption perception index \u2014 USA",
+        "value": 69,
+        "unit": "score (0-100)",
+        "source": "Transparency International",
+        "year": 2024
+      },
+      {
+        "metric": "Corruption perception index \u2014 Indonesia",
+        "value": 34,
+        "unit": "score (0-100)",
+        "source": "Transparency International",
+        "year": 2024
+      },
+      {
+        "metric": "Corruption perception index \u2014 Nigeria",
+        "value": 25,
+        "unit": "score (0-100)",
+        "source": "Transparency International",
+        "year": 2024
+      },
+      {
+        "metric": "Natural disaster risk \u2014 Japan (high seismic)",
+        "value": 85,
+        "unit": "risk score (0-100)",
+        "source": "WRI",
+        "year": 2024
+      },
+      {
+        "metric": "Natural disaster risk \u2014 Indonesia (high seismic/volcanic)",
+        "value": 82,
+        "unit": "risk score (0-100)",
+        "source": "WRI",
+        "year": 2024
+      },
+      {
+        "metric": "Natural disaster risk \u2014 Singapore (very low)",
+        "value": 5,
+        "unit": "risk score (0-100)",
+        "source": "WRI",
+        "year": 2024
+      },
+      {
+        "metric": "Natural disaster risk \u2014 UK (low)",
+        "value": 12,
+        "unit": "risk score (0-100)",
+        "source": "WRI",
+        "year": 2024
+      },
+      {
+        "metric": "Natural disaster risk \u2014 Australia (moderate)",
+        "value": 45,
+        "unit": "risk score (0-100)",
+        "source": "WRI",
+        "year": 2024
+      }
+    ],
+    "transportation_abroad": [
+      {
+        "metric": "Monthly public transport pass \u2014 London",
+        "value": 190,
+        "unit": "USD",
+        "source": "TfL",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly public transport pass \u2014 NYC",
+        "value": 132,
+        "unit": "USD",
+        "source": "MTA",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly public transport pass \u2014 Tokyo",
+        "value": 120,
+        "unit": "USD",
+        "source": "JR East",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly public transport pass \u2014 Singapore",
+        "value": 85,
+        "unit": "USD",
+        "source": "LTA Singapore",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly public transport pass \u2014 Berlin",
+        "value": 49,
+        "unit": "EUR",
+        "source": "BVG Berlin",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly public transport pass \u2014 Bangkok",
+        "value": 45,
+        "unit": "USD",
+        "source": "BTS/MRT",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly public transport pass \u2014 Jakarta",
+        "value": 15,
+        "unit": "USD",
+        "source": "TransJakarta",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly public transport pass \u2014 Lisbon",
+        "value": 40,
+        "unit": "EUR",
+        "source": "Navegante",
+        "year": 2024
+      },
+      {
+        "metric": "Average commute time \u2014 Tokyo",
+        "value": 48,
+        "unit": "minutes",
+        "source": "Ministry of Land Japan",
+        "year": 2024
+      },
+      {
+        "metric": "Average commute time \u2014 London",
+        "value": 42,
+        "unit": "minutes",
+        "source": "ONS UK",
+        "year": 2024
+      },
+      {
+        "metric": "Average commute time \u2014 NYC",
+        "value": 41,
+        "unit": "minutes",
+        "source": "Census Bureau",
+        "year": 2024
+      },
+      {
+        "metric": "Average commute time \u2014 Jakarta",
+        "value": 55,
+        "unit": "minutes",
+        "source": "BPS Indonesia",
+        "year": 2024
+      },
+      {
+        "metric": "Average commute time \u2014 Dubai",
+        "value": 30,
+        "unit": "minutes",
+        "source": "RTA Dubai",
+        "year": 2024
+      },
+      {
+        "metric": "Average commute time \u2014 Singapore",
+        "value": 35,
+        "unit": "minutes",
+        "source": "LTA Singapore",
+        "year": 2024
+      },
+      {
+        "metric": "Gasoline price per liter \u2014 USA",
+        "value": 0.95,
+        "unit": "USD/liter",
+        "source": "EIA",
+        "year": 2024
+      },
+      {
+        "metric": "Gasoline price per liter \u2014 UK",
+        "value": 1.85,
+        "unit": "USD/liter",
+        "source": "RAC UK",
+        "year": 2024
+      },
+      {
+        "metric": "Gasoline price per liter \u2014 Singapore",
+        "value": 2.1,
+        "unit": "USD/liter",
+        "source": "EMA Singapore",
+        "year": 2024
+      },
+      {
+        "metric": "Gasoline price per liter \u2014 Indonesia",
+        "value": 0.75,
+        "unit": "USD/liter",
+        "source": "Pertamina",
+        "year": 2024
+      },
+      {
+        "metric": "Gasoline price per liter \u2014 UAE",
+        "value": 0.72,
+        "unit": "USD/liter",
+        "source": "ADNOC",
+        "year": 2024
+      },
+      {
+        "metric": "Gasoline price per liter \u2014 Japan",
+        "value": 1.35,
+        "unit": "USD/liter",
+        "source": "METI Japan",
+        "year": 2024
+      }
+    ],
+    "food_dining_abroad": [
+      {
+        "metric": "Average meal at restaurant \u2014 NYC",
+        "value": 25,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average meal at restaurant \u2014 London",
+        "value": 18,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average meal at restaurant \u2014 Tokyo",
+        "value": 10,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average meal at restaurant \u2014 Bangkok",
+        "value": 3,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average meal at restaurant \u2014 Jakarta",
+        "value": 2.5,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average meal at restaurant \u2014 Bandung",
+        "value": 2,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average meal at restaurant \u2014 Dubai",
+        "value": 12,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average meal at restaurant \u2014 Singapore",
+        "value": 8,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average meal at restaurant \u2014 Mexico City",
+        "value": 5,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average meal at restaurant \u2014 Accra",
+        "value": 4,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average grocery basket (monthly) \u2014 NYC",
+        "value": 600,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average grocery basket (monthly) \u2014 London",
+        "value": 450,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average grocery basket (monthly) \u2014 Bangkok",
+        "value": 200,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average grocery basket (monthly) \u2014 Jakarta",
+        "value": 150,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Average grocery basket (monthly) \u2014 Dubai",
+        "value": 400,
+        "unit": "USD/month",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Coffee (cappuccino) price \u2014 NYC",
+        "value": 5.5,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Coffee (cappuccino) price \u2014 London",
+        "value": 4.2,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Coffee (cappuccino) price \u2014 Bangkok",
+        "value": 2.8,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Coffee (cappuccino) price \u2014 Jakarta",
+        "value": 2.5,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      },
+      {
+        "metric": "Coffee (cappuccino) price \u2014 Zurich",
+        "value": 5.8,
+        "unit": "USD",
+        "source": "Numbeo",
+        "year": 2024
+      }
     ]
   }
 }

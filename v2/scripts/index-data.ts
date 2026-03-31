@@ -291,9 +291,9 @@ async function main() {
       const embeddings = await embedBatch(openai, texts);
       const rows = batch.map((c, j) => ({ ...c, embedding: embeddings[j] }));
 
-      // Upload to Supabase in small sub-batches (20 rows to avoid timeout)
-      for (let s = 0; s < rows.length; s += 20) {
-        await uploadToSupabase(rows.slice(s, s + 20));
+      // Upload to Supabase in small sub-batches (5 rows to avoid timeout)
+      for (let s = 0; s < rows.length; s += 5) {
+        await uploadToSupabase(rows.slice(s, s + 5));
       }
 
       uploaded += batch.length;

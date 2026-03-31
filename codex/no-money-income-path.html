@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>No Money Income Path</title>
+  <style>
+    :root {
+      --bg: #f6f1e8;
+      --ink: #1a2027;
+      --muted: #66727c;
+      --border: rgba(26, 32, 39, 0.08);
+      --shadow: 0 20px 50px rgba(43, 35, 23, 0.10);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(216, 231, 247, 0.55), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(216, 234, 216, 0.50), transparent 25%),
+        var(--bg);
+    }
+    .page { padding: 28px; }
+    .header { max-width: 1200px; margin: 0 auto 20px; }
+    .eyebrow {
+      margin-bottom: 10px;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+    }
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.45;
+      max-width: 1000px;
+    }
+    .board {
+      max-width: 1700px;
+      margin: 0 auto;
+      background: rgba(255, 250, 242, 0.82);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 16px;
+      overflow: auto;
+    }
+    .mermaid { min-width: 1600px; }
+    .human-path, .path-label {
+      max-width: 1700px;
+      margin: 14px auto 0;
+    }
+    .human-path {
+      background: rgba(255, 250, 242, 0.82);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 18px 20px;
+      margin-top: 20px;
+    }
+    .human-path h2 {
+      margin: 0 0 14px;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+    .human-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(160px, 1fr));
+      gap: 12px;
+    }
+    .human-card {
+      background: rgba(255,255,255,0.42);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .human-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .human-card div {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    .path-label {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.95em;
+    }
+    @media (max-width: 900px) {
+      .human-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <div class="eyebrow">System-Based Scenario</div>
+      <h1>A man with no money tries to make some money</h1>
+      <p>Refactored as a system flow: real state, real action, friction gates, state transitions, and final outcomes.</p>
+    </div>
+
+    <div class="board">
+      <pre class="mermaid">
+flowchart LR
+    A["STATE<br/>Man with $0 liquid margin<br/>Urgent income need"]
+    B["ACTION<br/>Starts a no-upfront-cost income path"]
+    C{"BOTTLENECK<br/>Sticks long enough to earn first $100?"}
+    D["STATE<br/>First $100 earned<br/>Early proof"]
+    E{"GATE<br/>Reaches $500/month?"}
+    F["STATE<br/>Stuck at $200-$400/month"]
+    G["STATE<br/>$500+/month achieved<br/>Bills partly covered"]
+    H{"BOTTLENECK<br/>Scales to $1,000+/month?"}
+
+    O1["OUTCOME<br/>Quit, no income"]
+    O2["OUTCOME<br/>Stuck in low-income trap"]
+    O3["OUTCOME<br/>Burnout after repeated attempts"]
+    O4["OUTCOME<br/>Sustainable income<br/>$1K+/month"]
+
+    A --> B --> C
+    C -->|"FAIL"| O1
+    C -->|"PASS"| D
+    D --> E
+    E -->|"PARTIAL"| F
+    E -->|"YES"| G
+    F --> O2
+    F --> O3
+    G --> H
+    H -->|"PARTIAL"| O2
+    H -->|"FAIL"| O3
+    H -->|"PASS"| O4
+
+    classDef state fill:#d8ead8,stroke:#5f7d63,stroke-width:1.5px,color:#1a2027;
+    classDef action fill:#d8e7f7,stroke:#56718f,stroke-width:1.5px,color:#1a2027;
+    classDef bottleneck fill:#fde1b8,stroke:#9b7a3d,stroke-width:1.5px,color:#1a2027;
+    classDef outcome fill:#f7d4cc,stroke:#9e6257,stroke-width:1.5px,color:#1a2027;
+    classDef good fill:#d7f7e3,stroke:#1f7a45,stroke-width:2px,color:#1a2027;
+
+    class A,D,F,G state;
+    class B action;
+    class C,E,H bottleneck;
+    class O1,O2,O3 outcome;
+    class O4 good;
+      </pre>
+    </div>
+
+    <div class="human-path">
+      <h2>Human Path</h2>
+      <div class="human-grid">
+        <div class="human-card">
+          <strong>Pressure</strong>
+          <div>No cash buffer. The person is not exploring for fun, but trying to breathe.</div>
+        </div>
+        <div class="human-card">
+          <strong>Attempt</strong>
+          <div>Chooses something cheap to start: services, gig work, simple offers, content.</div>
+        </div>
+        <div class="human-card">
+          <strong>Silence</strong>
+          <div>The worst phase is no feedback: no money, no proof, rising doubt.</div>
+        </div>
+        <div class="human-card">
+          <strong>Proof</strong>
+          <div>The first $100 does not solve life, but it breaks the feeling of impossibility.</div>
+        </div>
+        <div class="human-card">
+          <strong>Separation</strong>
+          <div>After that, the path splits: trap, burnout, or a system that finally supports life.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="path-label">
+      Path: <code>/Users/richardbotsiokennedy/Simulator/codex/no-money-income-path.html</code>
+    </div>
+  </div>
+
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      securityLevel: "loose",
+      flowchart: {
+        htmlLabels: true,
+        curve: "basis",
+        useMaxWidth: false,
+        nodeSpacing: 42,
+        rankSpacing: 82
+      },
+      themeVariables: {
+        background: "#fffaf2",
+        primaryTextColor: "#1a2027",
+        lineColor: "#9d8d79",
+        fontFamily: "Avenir Next, Segoe UI, sans-serif"
+      }
+    });
+  </script>
+</body>
+</html>

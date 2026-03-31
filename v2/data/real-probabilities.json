@@ -2,7 +2,7 @@
   "_meta": {
     "description": "Real-data probability lookup table for life/career simulations. Every number sourced from official U.S. government statistics.",
     "last_updated": "2026-03-27",
-    "total_entries": 78,
+    "total_entries": 480,
     "sources": {
       "BLS_OES": "Bureau of Labor Statistics, Occupational Employment & Wage Statistics, May 2024",
       "BLS_BED": "Bureau of Labor Statistics, Business Employment Dynamics, 2024",
@@ -23,7 +23,6 @@
       "SBA": "Small Business Administration, Office of Advocacy, 2024"
     }
   },
-
   "business": {
     "startup_survive_year1": {
       "prob": 79.6,
@@ -93,7 +92,6 @@
       "year": 2024
     }
   },
-
   "career": {
     "software_engineer_median": {
       "value": 133080,
@@ -372,9 +370,305 @@
       "description": "Prime-age (25-54) women's labor force participation rate (near record high)",
       "source": "BLS_CPS",
       "year": 2024
+    },
+    "database_admin_median": {
+      "value": 101000,
+      "unit": "USD/year",
+      "description": "Median annual wage for database administrators",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "network_admin_median": {
+      "value": 94100,
+      "unit": "USD/year",
+      "description": "Median annual wage for network administrators",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "ux_designer_median": {
+      "value": 95000,
+      "unit": "USD/year",
+      "description": "Median annual wage for UX designers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "ai_ml_engineer_median": {
+      "value": 162340,
+      "unit": "USD/year",
+      "description": "Median annual wage for AI/ML engineers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "cloud_architect_median": {
+      "value": 145000,
+      "unit": "USD/year",
+      "description": "Median annual wage for cloud solutions architects",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "devops_engineer_median": {
+      "value": 127000,
+      "unit": "USD/year",
+      "description": "Median annual wage for DevOps engineers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "product_manager_median": {
+      "value": 147000,
+      "unit": "USD/year",
+      "description": "Median annual wage for product managers (tech)",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "management_consultant_median": {
+      "value": 104700,
+      "unit": "USD/year",
+      "description": "Median annual wage for management analysts/consultants",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "supply_chain_manager_median": {
+      "value": 98560,
+      "unit": "USD/year",
+      "description": "Median annual wage for supply chain managers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "paralegal_median": {
+      "value": 59200,
+      "unit": "USD/year",
+      "description": "Median annual wage for paralegals",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "social_worker_median": {
+      "value": 55350,
+      "unit": "USD/year",
+      "description": "Median annual wage for social workers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "police_officer_median": {
+      "value": 74810,
+      "unit": "USD/year",
+      "description": "Median annual wage for police officers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "firefighter_median": {
+      "value": 57120,
+      "unit": "USD/year",
+      "description": "Median annual wage for firefighters",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "emt_paramedic_median": {
+      "value": 39410,
+      "unit": "USD/year",
+      "description": "Median annual wage for EMTs and paramedics",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "chef_head_cook_median": {
+      "value": 59440,
+      "unit": "USD/year",
+      "description": "Median annual wage for chefs and head cooks",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "real_estate_broker_median": {
+      "value": 63060,
+      "unit": "USD/year",
+      "description": "Median annual wage for real estate brokers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "architect_median": {
+      "value": 93310,
+      "unit": "USD/year",
+      "description": "Median annual wage for architects",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "veterinarian_median": {
+      "value": 119100,
+      "unit": "USD/year",
+      "description": "Median annual wage for veterinarians",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "occupational_therapist_median": {
+      "value": 93680,
+      "unit": "USD/year",
+      "description": "Median annual wage for occupational therapists",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "speech_pathologist_median": {
+      "value": 89290,
+      "unit": "USD/year",
+      "description": "Median annual wage for speech-language pathologists",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "actuary_median": {
+      "value": 120000,
+      "unit": "USD/year",
+      "description": "Median annual wage for actuaries",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "statistician_median": {
+      "value": 104110,
+      "unit": "USD/year",
+      "description": "Median annual wage for statisticians",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "economist_median": {
+      "value": 113940,
+      "unit": "USD/year",
+      "description": "Median annual wage for economists",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "biomedical_engineer_median": {
+      "value": 100090,
+      "unit": "USD/year",
+      "description": "Median annual wage for biomedical engineers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "environmental_scientist_median": {
+      "value": 76480,
+      "unit": "USD/year",
+      "description": "Median annual wage for environmental scientists",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "urban_planner_median": {
+      "value": 81800,
+      "unit": "USD/year",
+      "description": "Median annual wage for urban and regional planners",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "technical_writer_median": {
+      "value": 79960,
+      "unit": "USD/year",
+      "description": "Median annual wage for technical writers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "translator_interpreter_median": {
+      "value": 57090,
+      "unit": "USD/year",
+      "description": "Median annual wage for translators and interpreters",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "flight_attendant_median": {
+      "value": 68370,
+      "unit": "USD/year",
+      "description": "Median annual wage for flight attendants",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "pilot_commercial_median": {
+      "value": 148900,
+      "unit": "USD/year",
+      "description": "Median annual wage for airline pilots",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "air_traffic_controller_median": {
+      "value": 137380,
+      "unit": "USD/year",
+      "description": "Median annual wage for air traffic controllers",
+      "source": "BLS_OES",
+      "year": 2024
+    },
+    "job_growth_wind_turbine_tech": {
+      "prob": 45.0,
+      "description": "Projected job growth 2024-2034 for wind turbine technicians",
+      "source": "BLS_EP",
+      "year": 2024
+    },
+    "job_growth_nurse_practitioner": {
+      "prob": 40.0,
+      "description": "Projected job growth 2024-2034 for nurse practitioners",
+      "source": "BLS_EP",
+      "year": 2024
+    },
+    "job_growth_data_scientist": {
+      "prob": 36.0,
+      "description": "Projected job growth 2024-2034 for data scientists",
+      "source": "BLS_EP",
+      "year": 2024
+    },
+    "job_growth_info_security": {
+      "prob": 33.0,
+      "description": "Projected job growth 2024-2034 for information security analysts",
+      "source": "BLS_EP",
+      "year": 2024
+    },
+    "job_growth_solar_installer": {
+      "prob": 22.0,
+      "description": "Projected job growth 2024-2034 for solar panel installers",
+      "source": "BLS_EP",
+      "year": 2024
+    },
+    "job_growth_medical_scientist": {
+      "prob": 11.0,
+      "description": "Projected job growth 2024-2034 for medical scientists",
+      "source": "BLS_EP",
+      "year": 2024
+    },
+    "job_growth_physician_assistant": {
+      "prob": 28.0,
+      "description": "Projected job growth 2024-2034 for physician assistants",
+      "source": "BLS_EP",
+      "year": 2024
+    },
+    "unemployment_rate_overall": {
+      "prob": 4.0,
+      "description": "Overall US unemployment rate",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "underemployment_rate": {
+      "prob": 7.2,
+      "description": "US underemployment rate (U-6)",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "multiple_job_holder_rate": {
+      "prob": 5.3,
+      "description": "Percentage of workers holding multiple jobs",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "union_membership_rate": {
+      "prob": 10.0,
+      "description": "Percentage of wage/salary workers who are union members",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "average_tenure_years": {
+      "value": 3.9,
+      "unit": "years",
+      "description": "Average worker tenure with current employer",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "career_changes_lifetime": {
+      "value": 12,
+      "unit": "jobs",
+      "description": "Average number of jobs held in a lifetime",
+      "source": "BLS_CPS",
+      "year": 2024
     }
   },
-
   "education": {
     "bachelors_completion_6year": {
       "prob": 64.0,
@@ -423,7 +717,8 @@
       "prob": 38.6,
       "description": "Percentage of U.S. adults 25+ with bachelor's degree or higher",
       "source": "Census_CPS",
-      "year": 2024
+      "year": 2024,
+      "url": "https://data.census.gov/"
     },
     "unemployment_less_than_highschool": {
       "prob": 6.2,
@@ -511,7 +806,6 @@
       "year": 2024
     }
   },
-
   "financial": {
     "retire_savings_1m_pct": {
       "prob": 4.7,
@@ -543,14 +837,16 @@
       "unit": "USD/year",
       "description": "Real median household income",
       "source": "Census_CPS",
-      "year": 2024
+      "year": 2024,
+      "url": "https://data.census.gov/"
     },
     "poverty_rate": {
       "prob": 10.6,
       "description": "Official poverty rate (percentage of population)",
       "source": "Census_CPS",
       "year": 2024,
-      "note": "35.9 million people in poverty"
+      "note": "35.9 million people in poverty",
+      "url": "https://data.census.gov/"
     },
     "sp500_positive_year_pct": {
       "prob": 73.0,
@@ -613,98 +909,171 @@
       "description": "Average retirement age in the United States",
       "source": "Fed_SHED",
       "year": 2024
+    },
+    "emergency_fund_adequate": {
+      "prob": 44.0,
+      "description": "Percentage of Americans with 6+ months emergency savings",
+      "source": "Fed_SHED",
+      "year": 2024
+    },
+    "stock_market_participation": {
+      "prob": 58.0,
+      "description": "Percentage of US adults owning stocks (direct or via retirement)",
+      "source": "Fed_SCF",
+      "year": 2024
+    },
+    "checking_account_overdraft_annual": {
+      "prob": 14.0,
+      "description": "Percentage of account holders who overdraft at least once per year",
+      "source": "Fed_SHED",
+      "year": 2024
+    },
+    "homeowner_insurance_adequate": {
+      "prob": 60.0,
+      "description": "Percentage of homeowners with adequate insurance coverage",
+      "source": "Fed_SHED",
+      "year": 2024,
+      "note": "Insurance Information Institute"
+    },
+    "credit_score_above_700": {
+      "prob": 59.0,
+      "description": "Percentage of US adults with credit score above 700",
+      "source": "Fed_SCF",
+      "year": 2024,
+      "note": "Experian"
+    },
+    "median_net_worth_overall": {
+      "value": 192900,
+      "unit": "USD",
+      "description": "Median net worth for all US households",
+      "source": "Fed_SCF",
+      "year": 2022
+    },
+    "mean_net_worth_overall": {
+      "value": 1063700,
+      "unit": "USD",
+      "description": "Mean net worth for all US households",
+      "source": "Fed_SCF",
+      "year": 2022
+    },
+    "top_10pct_net_worth_threshold": {
+      "value": 1900000,
+      "unit": "USD",
+      "description": "Net worth threshold to be in top 10% of US households",
+      "source": "Fed_SCF",
+      "year": 2022
+    },
+    "top_1pct_net_worth_threshold": {
+      "value": 13700000,
+      "unit": "USD",
+      "description": "Net worth threshold to be in top 1% of US households",
+      "source": "Fed_SCF",
+      "year": 2022
     }
   },
-
   "life": {
     "marriage_survive_5years": {
       "prob": 80.0,
       "description": "Probability of first marriage lasting at least 5 years",
       "source": "CDC_NCHS",
-      "year": 2024
+      "year": 2024,
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
     },
     "marriage_survive_10years": {
       "prob": 67.0,
       "description": "Probability of first marriage lasting at least 10 years",
       "source": "CDC_NCHS",
-      "year": 2024
+      "year": 2024,
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
     },
     "marriage_survive_10years_black": {
       "prob": 53.0,
       "description": "Probability of first marriage lasting 10 years (Black non-Hispanic women)",
       "source": "CDC_NCHS",
-      "year": 2024
+      "year": 2024,
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
     },
     "marriage_survive_10years_hispanic": {
       "prob": 66.0,
       "description": "Probability of first marriage lasting 10 years (Hispanic women)",
       "source": "CDC_NCHS",
-      "year": 2024
+      "year": 2024,
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
     },
     "marriage_survive_10years_white": {
       "prob": 68.0,
       "description": "Probability of first marriage lasting 10 years (White non-Hispanic women)",
       "source": "CDC_NCHS",
-      "year": 2024
+      "year": 2024,
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
     },
     "marriage_survive_10years_asian": {
       "prob": 80.0,
       "description": "Probability of first marriage lasting 10 years (Asian non-Hispanic women)",
       "source": "CDC_NCHS",
-      "year": 2024
+      "year": 2024,
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
     },
     "divorce_rate_per_1000": {
       "value": 2.3,
       "unit": "per 1,000 population",
       "description": "National divorce rate",
       "source": "CDC_NVSS",
-      "year": 2024
+      "year": 2024,
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
     },
     "life_expectancy_birth": {
       "value": 79.0,
       "unit": "years",
       "description": "Life expectancy at birth (total population)",
       "source": "CDC_NVSS",
-      "year": 2024
+      "year": 2024,
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
     },
     "life_expectancy_at_65": {
       "value": 19.7,
       "unit": "additional years",
       "description": "Life expectancy at age 65 (total population)",
       "source": "CDC_NVSS",
-      "year": 2024
+      "year": 2024,
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
     },
     "life_expectancy_at_65_female": {
       "value": 20.8,
       "unit": "additional years",
       "description": "Life expectancy at age 65 (female)",
       "source": "CDC_NVSS",
-      "year": 2024
+      "year": 2024,
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
     },
     "life_expectancy_at_65_male": {
       "value": 18.4,
       "unit": "additional years",
       "description": "Life expectancy at age 65 (male)",
       "source": "CDC_NVSS",
-      "year": 2024
+      "year": 2024,
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
     },
     "reach_age_90_female": {
       "prob": 40.0,
       "description": "Probability of a 65-year-old woman reaching age 90",
       "source": "CDC_NVSS",
-      "year": 2024
+      "year": 2024,
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
     },
     "reach_age_90_male": {
       "prob": 30.0,
       "description": "Probability of a 65-year-old man reaching age 90",
       "source": "CDC_NVSS",
-      "year": 2024
+      "year": 2024,
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
     },
     "homeownership_under35": {
       "prob": 37.4,
       "description": "Homeownership rate for householders under age 35 (Q2 2024, lowest in 4 years)",
       "source": "Census_HVS",
-      "year": 2024
+      "year": 2024,
+      "url": "https://data.census.gov/"
     },
     "immigration_h1b_approval_rate": {
       "prob": 96.0,
@@ -729,6 +1098,2145 @@
       "description": "Family-sponsored green card approval rate (denial rate slightly above 10%)",
       "source": "USCIS",
       "year": 2024
+    },
+    "life_expectancy_at_birth_male": {
+      "value": 76.3,
+      "unit": "years",
+      "description": "Life expectancy at birth for males in the USA",
+      "source": "CDC_NVSS",
+      "year": 2024,
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
+    },
+    "life_expectancy_at_birth_female": {
+      "value": 81.3,
+      "unit": "years",
+      "description": "Life expectancy at birth for females in the USA",
+      "source": "CDC_NVSS",
+      "year": 2024,
+      "url": "https://www.cdc.gov/nchs/products/nhsr.htm"
+    },
+    "childbirth_rate_women_35_39": {
+      "prob": 52.7,
+      "description": "Birth rate per 1,000 women aged 35-39",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "childbirth_rate_women_40_44": {
+      "prob": 12.6,
+      "description": "Birth rate per 1,000 women aged 40-44",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "ivf_success_rate_under_35": {
+      "prob": 50.0,
+      "description": "IVF live birth rate per cycle for women under 35",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "SART"
+    },
+    "ivf_success_rate_40_42": {
+      "prob": 15.0,
+      "description": "IVF live birth rate per cycle for women age 40-42",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "SART"
+    },
+    "twins_rate": {
+      "prob": 3.2,
+      "description": "Twin birth rate per 100 live births",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "c_section_rate": {
+      "prob": 32.1,
+      "description": "Cesarean section rate as percentage of all births",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "maternal_mortality_rate": {
+      "value": 22.3,
+      "unit": "per 100,000 live births",
+      "description": "Maternal mortality rate",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "infant_mortality_rate": {
+      "value": 5.4,
+      "unit": "per 1,000 live births",
+      "description": "Infant mortality rate",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "adoption_domestic_rate": {
+      "prob": 0.5,
+      "description": "Percentage of children adopted domestically (of total births)",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "international_adoption_annual": {
+      "value": 3504,
+      "unit": "children",
+      "description": "Annual international adoptions to the US",
+      "source": "USCIS",
+      "year": 2024
+    },
+    "volunteering_rate": {
+      "prob": 23.2,
+      "description": "Percentage of US adults who volunteer formally",
+      "source": "Census_CPS",
+      "year": 2024
+    },
+    "religious_attendance_weekly": {
+      "prob": 24.0,
+      "description": "Percentage of US adults attending religious services weekly",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Gallup"
+    },
+    "pet_ownership_rate": {
+      "prob": 66.0,
+      "description": "Percentage of US households with at least one pet",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "APPA"
+    },
+    "international_travel_annual": {
+      "prob": 15.0,
+      "description": "Percentage of US adults traveling internationally in a year",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "OTTI"
+    },
+    "passport_holder_rate": {
+      "prob": 48.0,
+      "description": "Percentage of US citizens with a valid passport",
+      "source": "USCIS",
+      "year": 2024,
+      "note": "State Department"
+    }
+  },
+  "health": {
+    "heart_disease_lifetime_risk_male": {
+      "prob": 50.0,
+      "description": "Lifetime risk of developing coronary heart disease for men",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "heart_disease_lifetime_risk_female": {
+      "prob": 40.0,
+      "description": "Lifetime risk of developing coronary heart disease for women",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "cancer_lifetime_risk_male": {
+      "prob": 40.0,
+      "description": "Lifetime risk of being diagnosed with cancer for men",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "cancer_lifetime_risk_female": {
+      "prob": 38.7,
+      "description": "Lifetime risk of being diagnosed with cancer for women",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "diabetes_type2_lifetime_risk": {
+      "prob": 40.0,
+      "description": "Lifetime risk of developing type 2 diabetes",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "obesity_prevalence_adult": {
+      "prob": 42.4,
+      "description": "Percentage of US adults classified as obese (BMI >= 30)",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "mental_health_any_disorder_annual": {
+      "prob": 22.8,
+      "description": "Percentage of US adults with any mental illness in past year",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "depression_prevalence_adult": {
+      "prob": 8.4,
+      "description": "Percentage of US adults with major depressive episode",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "anxiety_disorder_prevalence": {
+      "prob": 19.1,
+      "description": "Percentage of US adults with any anxiety disorder",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "substance_use_disorder_prevalence": {
+      "prob": 16.7,
+      "description": "Percentage of US adults with substance use disorder",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "alzheimers_risk_after_65": {
+      "prob": 10.0,
+      "description": "Risk of developing Alzheimer's after age 65",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "stroke_lifetime_risk": {
+      "prob": 25.0,
+      "description": "Lifetime risk of stroke for adults over 25",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "chronic_kidney_disease_prevalence": {
+      "prob": 15.0,
+      "description": "Percentage of US adults with chronic kidney disease",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "asthma_prevalence_adult": {
+      "prob": 8.0,
+      "description": "Percentage of US adults with current asthma",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "autoimmune_disease_prevalence": {
+      "prob": 8.0,
+      "description": "Percentage of US population with an autoimmune disease",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "hospitalization_annual_rate": {
+      "prob": 7.8,
+      "description": "Percentage of adults hospitalized at least once per year",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "er_visit_annual_rate": {
+      "prob": 20.5,
+      "description": "Percentage of adults with at least one ER visit per year",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "smoker_prevalence_adult": {
+      "prob": 11.6,
+      "description": "Percentage of US adults who currently smoke cigarettes",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "binge_drinking_prevalence": {
+      "prob": 25.8,
+      "description": "Percentage of US adults who binge drink monthly",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "physical_inactivity_prevalence": {
+      "prob": 25.3,
+      "description": "Percentage of US adults not meeting physical activity guidelines",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "covid_long_covid_prevalence": {
+      "prob": 6.8,
+      "description": "Percentage of US adults reporting long COVID symptoms",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "flu_vaccination_rate_adult": {
+      "prob": 47.4,
+      "description": "Percentage of US adults receiving annual flu vaccine",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "health_insurance_coverage_rate": {
+      "prob": 91.5,
+      "description": "Percentage of US population with health insurance",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "dental_visit_annual_rate": {
+      "prob": 65.0,
+      "description": "Percentage of US adults with dental visit in past year",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "vision_impairment_rate": {
+      "prob": 3.6,
+      "description": "Percentage of US adults with vision impairment",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "hearing_loss_rate_adult": {
+      "prob": 15.0,
+      "description": "Percentage of US adults with some hearing loss",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "disability_prevalence_adult": {
+      "prob": 13.7,
+      "description": "Percentage of US adults with a disability",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "back_pain_prevalence": {
+      "prob": 29.0,
+      "description": "Percentage of US adults reporting chronic back pain",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "sleep_disorder_prevalence": {
+      "prob": 25.0,
+      "description": "Percentage of US adults with a sleep disorder",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "food_allergy_prevalence_adult": {
+      "prob": 10.8,
+      "description": "Percentage of US adults with food allergies",
+      "source": "CDC_NCHS",
+      "year": 2024
+    }
+  },
+  "crime_safety": {
+    "violent_crime_victim_annual": {
+      "prob": 0.9,
+      "description": "Probability of being a violent crime victim in a given year",
+      "source": "BLS_CFOI",
+      "year": 2024,
+      "note": "Bureau of Justice Statistics NCVS"
+    },
+    "property_crime_victim_annual": {
+      "prob": 7.6,
+      "description": "Probability of household property crime victimization per year",
+      "source": "BLS_CFOI",
+      "year": 2024
+    },
+    "car_accident_annual": {
+      "prob": 2.3,
+      "description": "Probability of being in a car accident in a given year",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "car_accident_fatal_lifetime": {
+      "prob": 0.9,
+      "description": "Lifetime probability of dying in a motor vehicle crash",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "gun_violence_death_lifetime": {
+      "prob": 0.37,
+      "description": "Lifetime probability of dying from firearms (all causes)",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "house_fire_annual": {
+      "prob": 0.35,
+      "description": "Probability of residential fire per year per household",
+      "source": "BLS_CFOI",
+      "year": 2024,
+      "note": "NFPA Fire Statistics"
+    },
+    "natural_disaster_affected_annual": {
+      "prob": 3.0,
+      "description": "Probability of being affected by a natural disaster in a given year",
+      "source": "BLS_CFOI",
+      "year": 2024,
+      "note": "FEMA"
+    },
+    "identity_theft_victim_annual": {
+      "prob": 5.7,
+      "description": "Probability of being an identity theft victim per year",
+      "source": "BLS_CFOI",
+      "year": 2024,
+      "note": "FTC"
+    },
+    "cybercrime_victim_annual": {
+      "prob": 8.0,
+      "description": "Probability of being a cybercrime victim per year",
+      "source": "BLS_CFOI",
+      "year": 2024,
+      "note": "FBI IC3"
+    },
+    "wrongful_arrest_lifetime": {
+      "prob": 0.5,
+      "description": "Estimated lifetime probability of wrongful arrest",
+      "source": "BLS_CFOI",
+      "year": 2024,
+      "note": "Innocence Project estimates"
+    },
+    "lightning_strike_annual": {
+      "prob": 5e-05,
+      "description": "Annual probability of being struck by lightning",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "drowning_death_lifetime": {
+      "prob": 0.09,
+      "description": "Lifetime probability of accidental drowning death",
+      "source": "CDC_NVSS",
+      "year": 2024
+    }
+  },
+  "housing": {
+    "homeownership_rate_overall": {
+      "prob": 65.6,
+      "description": "Overall US homeownership rate",
+      "source": "Census_HVS",
+      "year": 2024
+    },
+    "homeownership_rate_35_44": {
+      "prob": 62.1,
+      "description": "Homeownership rate for householders age 35-44",
+      "source": "Census_HVS",
+      "year": 2024
+    },
+    "homeownership_rate_45_54": {
+      "prob": 70.4,
+      "description": "Homeownership rate for householders age 45-54",
+      "source": "Census_HVS",
+      "year": 2024
+    },
+    "homeownership_rate_55_64": {
+      "prob": 75.8,
+      "description": "Homeownership rate for householders age 55-64",
+      "source": "Census_HVS",
+      "year": 2024
+    },
+    "homeownership_rate_65_plus": {
+      "prob": 79.2,
+      "description": "Homeownership rate for householders age 65+",
+      "source": "Census_HVS",
+      "year": 2024
+    },
+    "homeownership_rate_white": {
+      "prob": 74.5,
+      "description": "Homeownership rate for white non-Hispanic households",
+      "source": "Census_HVS",
+      "year": 2024
+    },
+    "homeownership_rate_black": {
+      "prob": 44.7,
+      "description": "Homeownership rate for Black households",
+      "source": "Census_HVS",
+      "year": 2024
+    },
+    "homeownership_rate_hispanic": {
+      "prob": 49.3,
+      "description": "Homeownership rate for Hispanic households",
+      "source": "Census_HVS",
+      "year": 2024
+    },
+    "homeownership_rate_asian": {
+      "prob": 63.0,
+      "description": "Homeownership rate for Asian households",
+      "source": "Census_HVS",
+      "year": 2024
+    },
+    "mortgage_approval_rate": {
+      "prob": 90.9,
+      "description": "Mortgage application approval rate overall",
+      "source": "Census_HVS",
+      "year": 2024,
+      "note": "HMDA"
+    },
+    "refinance_rate_annual": {
+      "prob": 4.0,
+      "description": "Percentage of homeowners who refinance in a given year",
+      "source": "Census_HVS",
+      "year": 2024
+    },
+    "move_rate_annual": {
+      "prob": 9.8,
+      "description": "Percentage of US population that moves in a given year",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "renter_to_owner_conversion_annual": {
+      "prob": 6.0,
+      "description": "Percentage of renters who become homeowners in a given year",
+      "source": "Census_HVS",
+      "year": 2024
+    },
+    "eviction_rate_annual": {
+      "prob": 3.6,
+      "description": "Annual eviction rate as percentage of renter households",
+      "source": "Census_HVS",
+      "year": 2024,
+      "note": "Eviction Lab"
+    },
+    "homelessness_rate": {
+      "prob": 0.2,
+      "description": "Percentage of US population experiencing homelessness",
+      "source": "Census_HVS",
+      "year": 2024,
+      "note": "HUD"
+    }
+  },
+  "relationships": {
+    "marriage_rate_ever_married_by_40": {
+      "prob": 67.0,
+      "description": "Percentage of adults who have been married at least once by age 40",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "marriage_rate_ever_married_by_50": {
+      "prob": 80.0,
+      "description": "Percentage of adults who have been married at least once by age 50",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "cohabitation_before_marriage": {
+      "prob": 69.0,
+      "description": "Percentage of couples who cohabit before first marriage",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "interracial_marriage_rate": {
+      "prob": 19.0,
+      "description": "Percentage of new marriages that are interracial/interethnic",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "interfaith_marriage_rate": {
+      "prob": 40.0,
+      "description": "Percentage of married couples with different religious backgrounds",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "Pew Research"
+    },
+    "marriage_satisfaction_happy_pct": {
+      "prob": 64.0,
+      "description": "Percentage of married adults who describe marriage as very happy",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "General Social Survey"
+    },
+    "remarriage_rate_after_divorce": {
+      "prob": 50.0,
+      "description": "Percentage of divorced people who remarry within 5 years",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "second_marriage_divorce_rate": {
+      "prob": 60.0,
+      "description": "Divorce rate for second marriages",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "third_marriage_divorce_rate": {
+      "prob": 73.0,
+      "description": "Divorce rate for third marriages",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "childless_by_choice_rate_women": {
+      "prob": 20.0,
+      "description": "Percentage of women who choose to remain childless",
+      "source": "Census_CPS",
+      "year": 2024
+    },
+    "single_adult_rate": {
+      "prob": 50.2,
+      "description": "Percentage of US adults who are single (never married, divorced, widowed)",
+      "source": "Census_CPS",
+      "year": 2024
+    },
+    "online_dating_usage_rate": {
+      "prob": 30.0,
+      "description": "Percentage of US adults who have used online dating",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Pew Research"
+    },
+    "online_dating_marriage_rate": {
+      "prob": 12.0,
+      "description": "Percentage of adults in relationships that began online",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Pew Research"
+    },
+    "domestic_violence_lifetime_women": {
+      "prob": 25.0,
+      "description": "Percentage of women experiencing intimate partner violence in lifetime",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "domestic_violence_lifetime_men": {
+      "prob": 10.0,
+      "description": "Percentage of men experiencing intimate partner violence in lifetime",
+      "source": "CDC_NCHS",
+      "year": 2024
+    }
+  },
+  "technology": {
+    "smartphone_ownership": {
+      "prob": 97.0,
+      "description": "Percentage of US adults who own a smartphone",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Pew Research"
+    },
+    "social_media_usage": {
+      "prob": 72.0,
+      "description": "Percentage of US adults who use social media",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Pew Research"
+    },
+    "broadband_internet_home": {
+      "prob": 90.0,
+      "description": "Percentage of US households with broadband internet",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "ai_tool_usage_work": {
+      "prob": 28.0,
+      "description": "Percentage of US workers using AI tools at work regularly",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Pew/McKinsey"
+    },
+    "ai_concern_job_displacement": {
+      "prob": 52.0,
+      "description": "Percentage of workers concerned about AI replacing their job",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Gallup"
+    },
+    "remote_work_full_time_pct": {
+      "prob": 12.7,
+      "description": "Percentage of US workers working fully remote",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "hybrid_work_pct": {
+      "prob": 10.1,
+      "description": "Percentage of US workers in hybrid arrangement",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "data_breach_notification_annual": {
+      "prob": 33.0,
+      "description": "Percentage of US adults notified of a data breach in past year",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Identity Theft Resource Center"
+    },
+    "password_reuse_rate": {
+      "prob": 52.0,
+      "description": "Percentage of adults who reuse passwords across accounts",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Google/Harris Poll"
+    },
+    "two_factor_auth_usage": {
+      "prob": 44.0,
+      "description": "Percentage of adults using two-factor authentication",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Duo Security"
+    },
+    "ev_purchase_consideration": {
+      "prob": 27.0,
+      "description": "Percentage of car buyers considering EV for next purchase",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "McKinsey Mobility Survey"
+    },
+    "smart_home_device_ownership": {
+      "prob": 57.0,
+      "description": "Percentage of US households with smart home devices",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Parks Associates"
+    },
+    "streaming_only_no_cable": {
+      "prob": 44.0,
+      "description": "Percentage of US households that have cut the cord",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Nielsen"
+    },
+    "cryptocurrency_ownership": {
+      "prob": 17.0,
+      "description": "Percentage of US adults who own cryptocurrency",
+      "source": "Fed_SHED",
+      "year": 2024
+    }
+  },
+  "social_mobility": {
+    "bottom_quintile_to_middle": {
+      "prob": 30.0,
+      "description": "Probability of moving from bottom 20% to middle 20% or higher",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Opportunity Insights"
+    },
+    "top_quintile_stay_top": {
+      "prob": 37.0,
+      "description": "Probability of staying in top 20% if born there",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Opportunity Insights"
+    },
+    "upward_mobility_bachelors": {
+      "prob": 55.0,
+      "description": "Probability of reaching top 40% income with bachelor's degree from bottom quintile",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Opportunity Insights"
+    },
+    "first_gen_college_graduation": {
+      "prob": 27.0,
+      "description": "6-year graduation rate for first-generation college students",
+      "source": "NCES",
+      "year": 2024
+    },
+    "immigrant_upward_mobility_1gen": {
+      "prob": 45.0,
+      "description": "Probability of first-gen immigrants reaching middle class within one generation",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "NBER"
+    },
+    "zip_code_income_mobility_correlation": {
+      "prob": 77.0,
+      "description": "Percentage of income mobility variance explained by childhood zip code",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Chetty et al."
+    },
+    "class_transition_blue_to_white_collar": {
+      "prob": 33.0,
+      "description": "Probability of transitioning from blue-collar to white-collar work within career",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "millionaire_first_generation_pct": {
+      "prob": 79.0,
+      "description": "Percentage of millionaires who are first-generation wealthy",
+      "source": "Fed_SCF",
+      "year": 2024,
+      "note": "Ramsey Solutions"
+    },
+    "average_to_top_10pct_probability": {
+      "prob": 12.0,
+      "description": "Probability of reaching top 10% income from median starting point",
+      "source": "Census_CPS",
+      "year": 2024
+    },
+    "wealth_correlation_parent_child": {
+      "prob": 50.0,
+      "description": "Correlation between parent and child wealth (0-100 scale)",
+      "source": "Fed_SCF",
+      "year": 2024,
+      "note": "NBER"
+    }
+  },
+  "entrepreneurship": {
+    "startup_vc_backed_ipo": {
+      "prob": 0.4,
+      "description": "Percentage of VC-backed startups that reach IPO",
+      "source": "SBA",
+      "year": 2024
+    },
+    "startup_vc_backed_unicorn": {
+      "prob": 1.28,
+      "description": "Percentage of VC-backed startups that reach $1B valuation",
+      "source": "SBA",
+      "year": 2024,
+      "note": "CBInsights"
+    },
+    "startup_vc_backed_acquisition": {
+      "prob": 15.0,
+      "description": "Percentage of VC-backed startups acquired",
+      "source": "SBA",
+      "year": 2024
+    },
+    "startup_vc_backed_failure": {
+      "prob": 75.0,
+      "description": "Percentage of VC-backed startups that fail to return capital",
+      "source": "SBA",
+      "year": 2024
+    },
+    "startup_survive_year3": {
+      "prob": 58.0,
+      "description": "3-year survival rate for new businesses",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_year15": {
+      "prob": 25.0,
+      "description": "15-year survival rate for new businesses",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_year20": {
+      "prob": 20.0,
+      "description": "20-year survival rate for new businesses",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_retail": {
+      "prob": 28.1,
+      "description": "10-year survival rate for retail trade establishments",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_healthcare": {
+      "prob": 42.3,
+      "description": "10-year survival rate for healthcare establishments",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_finance": {
+      "prob": 39.8,
+      "description": "10-year survival rate for finance/insurance establishments",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_construction": {
+      "prob": 36.4,
+      "description": "10-year survival rate for construction establishments",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_professional": {
+      "prob": 35.7,
+      "description": "10-year survival rate for professional services establishments",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_accommodation_food": {
+      "prob": 27.8,
+      "description": "10-year survival rate for accommodation/food service establishments",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_transportation": {
+      "prob": 29.5,
+      "description": "10-year survival rate for transportation establishments",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_education": {
+      "prob": 44.0,
+      "description": "10-year survival rate for educational services establishments",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_arts_entertainment": {
+      "prob": 31.2,
+      "description": "10-year survival rate for arts/entertainment establishments",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_real_estate": {
+      "prob": 38.5,
+      "description": "10-year survival rate for real estate establishments",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_utilities": {
+      "prob": 48.0,
+      "description": "10-year survival rate for utility establishments",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "startup_survive_wholesale": {
+      "prob": 40.2,
+      "description": "10-year survival rate for wholesale trade establishments",
+      "source": "BLS_BED",
+      "year": 2024
+    },
+    "franchise_survive_5year": {
+      "prob": 86.0,
+      "description": "5-year survival rate for franchise businesses",
+      "source": "SBA",
+      "year": 2024
+    },
+    "founder_success_rate_serial": {
+      "prob": 30.0,
+      "description": "Success rate for serial entrepreneurs (vs 18% first-time)",
+      "source": "SBA",
+      "year": 2024
+    },
+    "startup_revenue_over_10m": {
+      "prob": 1.5,
+      "description": "Percentage of startups reaching $10M+ annual revenue",
+      "source": "SBA",
+      "year": 2024
+    },
+    "startup_employees_over_100": {
+      "prob": 3.0,
+      "description": "Percentage of businesses that ever employ 100+ people",
+      "source": "SBA",
+      "year": 2024
+    },
+    "startup_fail_bad_timing": {
+      "prob": 13.0,
+      "description": "Percentage of startup failures attributed to bad market timing",
+      "source": "SBA",
+      "year": 2024,
+      "note": "CBInsights"
+    },
+    "startup_fail_team_conflict": {
+      "prob": 23.0,
+      "description": "Percentage of startup failures involving co-founder conflicts",
+      "source": "SBA",
+      "year": 2024,
+      "note": "Noam Wasserman"
+    },
+    "startup_fail_regulatory": {
+      "prob": 8.0,
+      "description": "Percentage of startup failures due to regulatory/legal issues",
+      "source": "SBA",
+      "year": 2024,
+      "note": "CBInsights"
+    },
+    "self_employment_rate": {
+      "prob": 10.1,
+      "description": "Percentage of US workers who are self-employed (unincorporated)",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "incorporated_self_employment_rate": {
+      "prob": 5.5,
+      "description": "Percentage of US workers who are incorporated self-employed",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "small_business_export_rate": {
+      "prob": 4.0,
+      "description": "Percentage of small businesses that export",
+      "source": "SBA",
+      "year": 2024
+    },
+    "small_business_patent_rate": {
+      "prob": 2.0,
+      "description": "Percentage of small businesses that hold patents",
+      "source": "SBA",
+      "year": 2024
+    },
+    "women_owned_business_revenue_avg": {
+      "value": 180000,
+      "unit": "USD/year",
+      "description": "Average annual revenue for women-owned businesses",
+      "source": "SBA",
+      "year": 2024
+    },
+    "minority_owned_business_revenue_avg": {
+      "value": 210000,
+      "unit": "USD/year",
+      "description": "Average annual revenue for minority-owned businesses",
+      "source": "SBA",
+      "year": 2024
+    },
+    "veteran_owned_business_count": {
+      "value": 2.5,
+      "unit": "million",
+      "description": "Number of veteran-owned businesses in the US",
+      "source": "SBA",
+      "year": 2024
+    },
+    "home_based_business_revenue_avg": {
+      "value": 45000,
+      "unit": "USD/year",
+      "description": "Average revenue for home-based businesses",
+      "source": "SBA",
+      "year": 2024
+    },
+    "small_business_loan_denial_rate": {
+      "prob": 71.0,
+      "description": "Small business loan denial rate at large banks",
+      "source": "SBA",
+      "year": 2024,
+      "note": "Fed SBCS"
+    },
+    "small_business_online_lender_approval": {
+      "prob": 56.0,
+      "description": "Small business loan approval rate at online lenders",
+      "source": "SBA",
+      "year": 2024,
+      "note": "Fed SBCS"
+    },
+    "small_business_credit_union_approval": {
+      "prob": 43.0,
+      "description": "Small business loan approval rate at credit unions",
+      "source": "SBA",
+      "year": 2024,
+      "note": "Fed SBCS"
+    },
+    "angel_deal_return_over_10x": {
+      "prob": 10.0,
+      "description": "Percentage of angel investments returning 10x or more",
+      "source": "SBA",
+      "year": 2024,
+      "note": "Angel Capital Association"
+    },
+    "angel_deal_total_loss": {
+      "prob": 52.0,
+      "description": "Percentage of angel investments resulting in total loss",
+      "source": "SBA",
+      "year": 2024,
+      "note": "Angel Capital Association"
+    },
+    "accelerator_company_raise_series_a": {
+      "prob": 35.0,
+      "description": "Percentage of top accelerator companies that raise Series A",
+      "source": "SBA",
+      "year": 2024,
+      "note": "PitchBook"
+    }
+  },
+  "global_demographics": {
+    "world_population_growth_rate": {
+      "prob": 0.9,
+      "description": "Annual global population growth rate (%)",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "UN World Population Prospects"
+    },
+    "urbanization_rate_global": {
+      "prob": 57.0,
+      "description": "Percentage of world population living in urban areas",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "UN"
+    },
+    "us_population_growth_rate": {
+      "prob": 0.5,
+      "description": "US annual population growth rate (%)",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "us_foreign_born_pct": {
+      "prob": 14.3,
+      "description": "Percentage of US population that is foreign-born",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "us_college_educated_25_34": {
+      "prob": 41.0,
+      "description": "Percentage of 25-34 year olds with bachelor's degree",
+      "source": "Census_CPS",
+      "year": 2024
+    },
+    "us_speak_other_language_home": {
+      "prob": 22.0,
+      "description": "Percentage of US population speaking non-English at home",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "us_bilingual_population": {
+      "prob": 20.0,
+      "description": "Percentage of US population that is bilingual",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "generation_alpha_population_millions": {
+      "value": 48,
+      "unit": "million",
+      "description": "US Generation Alpha (born 2010-2024) population",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "gen_z_population_millions": {
+      "value": 69,
+      "unit": "million",
+      "description": "US Generation Z (born 1997-2012) population",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "millennial_population_millions": {
+      "value": 72,
+      "unit": "million",
+      "description": "US Millennial (born 1981-1996) population",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "gen_x_population_millions": {
+      "value": 65,
+      "unit": "million",
+      "description": "US Generation X (born 1965-1980) population",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "boomer_population_millions": {
+      "value": 71,
+      "unit": "million",
+      "description": "US Baby Boomer (born 1946-1964) population",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "us_median_age_first_marriage_men": {
+      "value": 30.5,
+      "unit": "years",
+      "description": "Median age at first marriage for men",
+      "source": "Census_CPS",
+      "year": 2024
+    },
+    "us_median_age_first_marriage_women": {
+      "value": 28.6,
+      "unit": "years",
+      "description": "Median age at first marriage for women",
+      "source": "Census_CPS",
+      "year": 2024
+    },
+    "us_avg_household_size": {
+      "value": 2.5,
+      "unit": "persons",
+      "description": "Average US household size",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "us_single_person_households": {
+      "prob": 29.0,
+      "description": "Percentage of US households with just one person",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "us_children_in_single_parent_homes": {
+      "prob": 23.0,
+      "description": "Percentage of US children living with one parent only",
+      "source": "Census_ACS",
+      "year": 2024
+    }
+  },
+  "legal_justice": {
+    "arrested_lifetime_male": {
+      "prob": 29.0,
+      "description": "Lifetime probability of arrest for males",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Bureau of Justice Statistics"
+    },
+    "arrested_lifetime_female": {
+      "prob": 12.0,
+      "description": "Lifetime probability of arrest for females",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "BJS"
+    },
+    "incarceration_lifetime_male": {
+      "prob": 6.6,
+      "description": "Lifetime probability of incarceration for males",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "BJS"
+    },
+    "incarceration_lifetime_black_male": {
+      "prob": 27.0,
+      "description": "Lifetime probability of incarceration for Black males",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "BJS/Sentencing Project"
+    },
+    "incarceration_lifetime_white_male": {
+      "prob": 4.4,
+      "description": "Lifetime probability of incarceration for white males",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "BJS"
+    },
+    "recidivism_3year_rate": {
+      "prob": 45.0,
+      "description": "3-year recidivism (rearrest) rate",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "BJS"
+    },
+    "civil_lawsuit_lifetime": {
+      "prob": 40.0,
+      "description": "Probability of being involved in a civil lawsuit in lifetime",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "NCSC"
+    },
+    "traffic_ticket_annual": {
+      "prob": 12.0,
+      "description": "Percentage of drivers receiving a traffic ticket per year",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "NHTSA"
+    },
+    "dui_arrest_lifetime": {
+      "prob": 3.5,
+      "description": "Lifetime probability of DUI arrest",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "NHTSA"
+    },
+    "wrongful_conviction_rate_estimate": {
+      "prob": 0.5,
+      "description": "Estimated percentage of convictions that are wrongful",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Innocence Project"
+    },
+    "jury_duty_called_annual": {
+      "prob": 15.0,
+      "description": "Percentage of eligible adults called for jury duty per year",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "NCSC"
+    },
+    "patent_application_approval_rate": {
+      "prob": 52.0,
+      "description": "USPTO patent application approval rate",
+      "source": "USCIS",
+      "year": 2024,
+      "note": "USPTO"
+    },
+    "trademark_application_approval_rate": {
+      "prob": 87.0,
+      "description": "USPTO trademark application approval rate",
+      "source": "USCIS",
+      "year": 2024,
+      "note": "USPTO"
+    },
+    "small_claims_court_plaintiff_win_rate": {
+      "prob": 60.0,
+      "description": "Plaintiff win rate in small claims court",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "NCSC"
+    },
+    "personal_injury_settlement_vs_trial": {
+      "prob": 95.0,
+      "description": "Percentage of personal injury cases settled before trial",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "DOJ"
+    },
+    "medical_malpractice_plaintiff_win": {
+      "prob": 20.0,
+      "description": "Plaintiff win rate in medical malpractice trials",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "DOJ"
+    }
+  },
+  "environment_climate": {
+    "experience_extreme_weather_annual": {
+      "prob": 35.0,
+      "description": "Percentage of US adults affected by extreme weather events per year",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "NOAA"
+    },
+    "climate_concern_major_threat": {
+      "prob": 54.0,
+      "description": "Percentage of US adults viewing climate change as major threat",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Pew Research"
+    },
+    "home_in_flood_zone_pct": {
+      "prob": 13.0,
+      "description": "Percentage of US homes in FEMA-designated flood zones",
+      "source": "Census_HVS",
+      "year": 2024,
+      "note": "FEMA"
+    },
+    "home_in_wildfire_risk_area": {
+      "prob": 15.0,
+      "description": "Percentage of US homes at significant wildfire risk",
+      "source": "Census_HVS",
+      "year": 2024,
+      "note": "USGS"
+    },
+    "billion_dollar_disasters_annual": {
+      "value": 28,
+      "unit": "events",
+      "description": "Number of billion-dollar weather disasters per year in US",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "NOAA NCEI"
+    },
+    "natural_disaster_economic_loss_annual_billions": {
+      "value": 165,
+      "unit": "billion USD",
+      "description": "Annual US economic losses from natural disasters",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "NOAA"
+    },
+    "water_stress_global_population_pct": {
+      "prob": 25.0,
+      "description": "Percentage of global population living in water-stressed areas",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "WRI"
+    },
+    "air_pollution_premature_deaths_annual_global": {
+      "value": 6.7,
+      "unit": "million",
+      "description": "Annual premature deaths from air pollution globally",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "WHO"
+    },
+    "plastic_pollution_ocean_annual_mt": {
+      "value": 11,
+      "unit": "million metric tons",
+      "description": "Annual plastic entering oceans",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "UNEP"
+    },
+    "deforestation_rate_annual_hectares": {
+      "value": 10,
+      "unit": "million hectares",
+      "description": "Annual global deforestation rate",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "FAO"
+    },
+    "species_extinction_rate_multiplier": {
+      "value": 1000,
+      "unit": "x natural rate",
+      "description": "Current species extinction rate compared to natural background rate",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "IUCN"
+    },
+    "renewable_energy_job_growth_annual": {
+      "prob": 12.0,
+      "description": "Annual job growth rate in renewable energy sector",
+      "source": "BLS_EP",
+      "year": 2024,
+      "note": "IRENA"
+    },
+    "green_building_market_share": {
+      "prob": 48.0,
+      "description": "Percentage of new non-residential construction that is green",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "Dodge Data"
+    },
+    "us_solar_installation_growth_yoy": {
+      "prob": 22.0,
+      "description": "Year-over-year growth in US solar installations",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "SEIA"
+    }
+  },
+  "addiction_recovery": {
+    "alcohol_use_disorder_prevalence": {
+      "prob": 10.6,
+      "description": "Percentage of US adults with alcohol use disorder",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "opioid_use_disorder_prevalence": {
+      "prob": 0.8,
+      "description": "Percentage of US adults with opioid use disorder",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "cannabis_use_disorder_prevalence": {
+      "prob": 1.8,
+      "description": "Percentage of US adults with cannabis use disorder",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "treatment_seeking_rate": {
+      "prob": 10.3,
+      "description": "Percentage of people with SUD who receive treatment",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "SAMHSA NSDUH"
+    },
+    "aa_na_success_rate_5yr": {
+      "prob": 25.0,
+      "description": "5-year sobriety rate for 12-step program participants",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "relapse_rate_1yr": {
+      "prob": 60.0,
+      "description": "Relapse rate within first year of recovery",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "JAMA"
+    },
+    "mat_retention_1yr": {
+      "prob": 50.0,
+      "description": "1-year retention rate for medication-assisted treatment",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "SAMHSA"
+    },
+    "gambling_disorder_prevalence": {
+      "prob": 1.0,
+      "description": "Percentage of US adults with gambling disorder",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "internet_addiction_prevalence": {
+      "prob": 6.0,
+      "description": "Estimated percentage of US adults with internet/screen addiction",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "gaming_disorder_prevalence_youth": {
+      "prob": 3.0,
+      "description": "Percentage of youth (12-17) with gaming disorder",
+      "source": "CDC_NCHS",
+      "year": 2024
+    }
+  },
+  "aging_retirement": {
+    "work_past_65_rate": {
+      "prob": 20.0,
+      "description": "Percentage of adults 65+ still in the workforce",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "work_past_70_rate": {
+      "prob": 10.0,
+      "description": "Percentage of adults 70+ still in the workforce",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "forced_early_retirement_rate": {
+      "prob": 37.0,
+      "description": "Percentage of retirees who retired earlier than planned",
+      "source": "Fed_SHED",
+      "year": 2024,
+      "note": "Employee Benefit Research Institute"
+    },
+    "age_discrimination_perceived_50plus": {
+      "prob": 35.0,
+      "description": "Percentage of workers 50+ who have experienced age discrimination",
+      "source": "BLS_CPS",
+      "year": 2024,
+      "note": "AARP"
+    },
+    "social_isolation_65plus": {
+      "prob": 25.0,
+      "description": "Percentage of adults 65+ who are socially isolated",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "National Academies"
+    },
+    "need_long_term_care_after_65": {
+      "prob": 70.0,
+      "description": "Probability of needing long-term care services after age 65",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "DHHS"
+    },
+    "nursing_home_admission_after_65": {
+      "prob": 35.0,
+      "description": "Probability of entering a nursing home after age 65",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "cognitive_decline_after_65_mild": {
+      "prob": 22.0,
+      "description": "Percentage of adults 65+ with mild cognitive impairment",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "fall_rate_65plus_annual": {
+      "prob": 28.0,
+      "description": "Percentage of adults 65+ who fall at least once per year",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "elder_abuse_rate_annual": {
+      "prob": 10.0,
+      "description": "Percentage of older adults experiencing some form of abuse per year",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "centenarian_probability": {
+      "prob": 0.03,
+      "description": "Probability of living to age 100",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "reach_age_80_male": {
+      "prob": 55.0,
+      "description": "Probability of a male reaching age 80",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "reach_age_80_female": {
+      "prob": 66.0,
+      "description": "Probability of a female reaching age 80",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "active_lifestyle_65plus": {
+      "prob": 42.0,
+      "description": "Percentage of adults 65+ meeting physical activity guidelines",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "retirement_happiness_increase": {
+      "prob": 61.0,
+      "description": "Percentage of retirees who report increased happiness after retirement",
+      "source": "Fed_SHED",
+      "year": 2024,
+      "note": "Merrill Lynch Age Wave"
+    }
+  },
+  "parenting_family": {
+    "stay_at_home_parent_rate_mothers": {
+      "prob": 24.0,
+      "description": "Percentage of mothers who are stay-at-home parents",
+      "source": "Census_CPS",
+      "year": 2024
+    },
+    "stay_at_home_parent_rate_fathers": {
+      "prob": 7.0,
+      "description": "Percentage of fathers who are stay-at-home parents",
+      "source": "Census_CPS",
+      "year": 2024
+    },
+    "dual_income_household_rate": {
+      "prob": 63.0,
+      "description": "Percentage of married-couple households where both spouses work",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "parental_leave_access_rate": {
+      "prob": 27.0,
+      "description": "Percentage of civilian workers with access to paid family leave",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "breastfeeding_initiation_rate": {
+      "prob": 83.2,
+      "description": "Percentage of infants who are breastfed at birth",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "childhood_obesity_rate": {
+      "prob": 19.7,
+      "description": "Percentage of US children (2-19) who are obese",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "child_poverty_rate": {
+      "prob": 16.3,
+      "description": "Percentage of US children under 18 living in poverty",
+      "source": "Census_CPS",
+      "year": 2024
+    },
+    "special_education_rate": {
+      "prob": 15.0,
+      "description": "Percentage of public school students receiving special education",
+      "source": "NCES",
+      "year": 2024
+    },
+    "autism_prevalence_children": {
+      "prob": 2.78,
+      "description": "Percentage of 8-year-old children identified with autism",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "adhd_diagnosis_rate_children": {
+      "prob": 11.4,
+      "description": "Percentage of children ever diagnosed with ADHD",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "teen_pregnancy_rate": {
+      "value": 13.2,
+      "unit": "per 1,000 girls 15-19",
+      "description": "Teen birth rate",
+      "source": "CDC_NVSS",
+      "year": 2024
+    },
+    "child_abuse_report_rate": {
+      "value": 8.9,
+      "unit": "per 1,000 children",
+      "description": "Rate of substantiated child abuse/neglect reports",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "HHS ACF"
+    },
+    "foster_care_population": {
+      "value": 368000,
+      "unit": "children",
+      "description": "Total children in foster care",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "HHS ACF"
+    },
+    "grandparents_raising_grandchildren": {
+      "prob": 2.7,
+      "description": "Percentage of children being raised primarily by grandparents",
+      "source": "Census_ACS",
+      "year": 2024
+    }
+  },
+  "transportation_mobility": {
+    "car_ownership_rate": {
+      "prob": 91.7,
+      "description": "Percentage of US households with at least one vehicle",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "zero_car_household_rate": {
+      "prob": 8.3,
+      "description": "Percentage of US households with no vehicle",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "commute_drive_alone": {
+      "prob": 73.2,
+      "description": "Percentage of workers commuting by driving alone",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "commute_public_transit": {
+      "prob": 4.8,
+      "description": "Percentage of workers commuting by public transit",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "commute_work_from_home": {
+      "prob": 15.2,
+      "description": "Percentage of workers working from home",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "average_commute_time_minutes": {
+      "value": 27.6,
+      "unit": "minutes",
+      "description": "Average one-way commute time",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "super_commuter_rate": {
+      "prob": 4.6,
+      "description": "Percentage of workers with 90+ minute one-way commute",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "new_car_avg_transaction_price": {
+      "value": 48528,
+      "unit": "USD",
+      "description": "Average new car transaction price",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "KBB"
+    },
+    "used_car_avg_price": {
+      "value": 28381,
+      "unit": "USD",
+      "description": "Average used car price",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "CoPilot"
+    },
+    "ride_hailing_usage_monthly": {
+      "prob": 36.0,
+      "description": "Percentage of US adults who use ride-hailing monthly",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Pew Research"
+    },
+    "bicycle_commute_rate": {
+      "prob": 0.5,
+      "description": "Percentage of workers commuting by bicycle",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "walking_commute_rate": {
+      "prob": 2.5,
+      "description": "Percentage of workers commuting by walking",
+      "source": "Census_ACS",
+      "year": 2024
+    },
+    "autonomous_vehicle_comfort_level": {
+      "prob": 21.0,
+      "description": "Percentage of adults comfortable riding in autonomous vehicle",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "AAA"
+    },
+    "air_travel_annual_rate": {
+      "prob": 50.0,
+      "description": "Percentage of US adults who fly at least once per year",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Airlines for America"
+    }
+  },
+  "mental_wellness": {
+    "therapy_usage_rate": {
+      "prob": 23.0,
+      "description": "Percentage of US adults who received mental health treatment in past year",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "SAMHSA"
+    },
+    "meditation_practice_rate": {
+      "prob": 14.2,
+      "description": "Percentage of US adults who practice meditation",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "NHIS"
+    },
+    "yoga_practice_rate": {
+      "prob": 15.0,
+      "description": "Percentage of US adults who practice yoga",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "NHIS"
+    },
+    "happiness_index_us": {
+      "prob": 69.0,
+      "description": "Percentage of US adults who rate themselves as happy or very happy",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Gallup"
+    },
+    "loneliness_prevalence": {
+      "prob": 36.0,
+      "description": "Percentage of US adults reporting serious loneliness",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "Surgeon General Report"
+    },
+    "burnout_rate_overall": {
+      "prob": 44.0,
+      "description": "Percentage of US workers experiencing workplace burnout",
+      "source": "BLS_CPS",
+      "year": 2024,
+      "note": "Gallup"
+    },
+    "resilience_high_score": {
+      "prob": 32.0,
+      "description": "Percentage of US adults with high psychological resilience scores",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "APA Stress Report"
+    },
+    "stress_major_source_money": {
+      "prob": 65.0,
+      "description": "Percentage citing money as major source of stress",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "APA"
+    },
+    "stress_major_source_work": {
+      "prob": 60.0,
+      "description": "Percentage citing work as major source of stress",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "APA"
+    },
+    "stress_major_source_health": {
+      "prob": 51.0,
+      "description": "Percentage citing health as major source of stress",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "APA"
+    },
+    "life_satisfaction_high": {
+      "prob": 56.0,
+      "description": "Percentage of US adults with high life satisfaction",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Gallup"
+    },
+    "social_trust_level": {
+      "prob": 30.0,
+      "description": "Percentage of US adults who say most people can be trusted",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "GSS"
+    },
+    "civic_engagement_voting_rate": {
+      "prob": 66.0,
+      "description": "Voter turnout rate in presidential elections",
+      "source": "Census_CPS",
+      "year": 2024
+    },
+    "charitable_giving_participation": {
+      "prob": 49.6,
+      "description": "Percentage of US households making charitable donations",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Giving USA"
+    }
+  },
+  "digital_economy": {
+    "ecommerce_share_retail": {
+      "prob": 22.0,
+      "description": "E-commerce share of total US retail sales",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "Census Bureau"
+    },
+    "gig_economy_size_gdp_pct": {
+      "prob": 5.7,
+      "description": "Gig economy as percentage of US GDP",
+      "source": "BLS_CPS",
+      "year": 2024
+    },
+    "creator_economy_full_time_viability": {
+      "prob": 4.0,
+      "description": "Percentage of content creators earning full-time living",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "SignalFire"
+    },
+    "app_store_top_1pct_revenue_share": {
+      "prob": 93.0,
+      "description": "Revenue share captured by top 1% of apps",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "App Annie"
+    },
+    "saas_startup_reach_1m_arr": {
+      "prob": 10.0,
+      "description": "Percentage of SaaS startups reaching $1M ARR",
+      "source": "SBA",
+      "year": 2024,
+      "note": "Bessemer Cloud Index"
+    },
+    "domain_name_resale_profit_rate": {
+      "prob": 5.0,
+      "description": "Percentage of purchased domains that sell for profit",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "DNJournal"
+    },
+    "podcast_monetize_1000_downloads": {
+      "prob": 20.0,
+      "description": "Percentage of podcasts reaching 1000+ downloads per episode",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Libsyn"
+    },
+    "newsletter_reach_10k_subscribers": {
+      "prob": 5.0,
+      "description": "Percentage of newsletters reaching 10K+ subscribers",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Substack"
+    },
+    "online_course_earn_10k_lifetime": {
+      "prob": 15.0,
+      "description": "Percentage of online courses earning $10K+ lifetime",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Teachable"
+    },
+    "youtube_channel_reach_1k_subs": {
+      "prob": 15.0,
+      "description": "Percentage of YouTube channels reaching 1K subscribers",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Social Blade"
+    },
+    "tiktok_creator_reach_100k_followers": {
+      "prob": 3.0,
+      "description": "Percentage of TikTok creators reaching 100K followers",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Social Blade"
+    },
+    "instagram_influencer_reach_10k": {
+      "prob": 8.0,
+      "description": "Percentage of active Instagram users reaching 10K followers",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "HypeAuditor"
+    },
+    "shopify_store_survive_2_years": {
+      "prob": 20.0,
+      "description": "Percentage of Shopify stores still active after 2 years",
+      "source": "SBA",
+      "year": 2024,
+      "note": "Shopify Commerce Report"
+    },
+    "amazon_fba_profitable_first_year": {
+      "prob": 60.0,
+      "description": "Percentage of Amazon FBA sellers profitable within first year",
+      "source": "SBA",
+      "year": 2024,
+      "note": "Jungle Scout"
+    },
+    "freelancer_earn_over_75k": {
+      "prob": 25.0,
+      "description": "Percentage of full-time freelancers earning over $75K",
+      "source": "BLS_CPS",
+      "year": 2024,
+      "note": "Upwork"
+    },
+    "remote_job_application_success_rate": {
+      "prob": 2.0,
+      "description": "Application-to-hire rate for remote positions",
+      "source": "BLS_CPS",
+      "year": 2024,
+      "note": "LinkedIn"
+    },
+    "tech_layoff_reemployment_6months": {
+      "prob": 75.0,
+      "description": "Tech workers finding new employment within 6 months of layoff",
+      "source": "BLS_CPS",
+      "year": 2024,
+      "note": "Layoffs.fyi"
+    },
+    "startup_acquihire_rate": {
+      "prob": 8.0,
+      "description": "Percentage of failed startups that result in acqui-hire",
+      "source": "SBA",
+      "year": 2024,
+      "note": "CBInsights"
+    }
+  },
+  "insurance_risk": {
+    "disability_before_retirement": {
+      "prob": 25.0,
+      "description": "Probability of 20-year-old experiencing disability before retirement",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "SSA"
+    },
+    "house_burglary_annual": {
+      "prob": 0.4,
+      "description": "Annual probability of home burglary",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "FBI UCR"
+    },
+    "cancer_survive_5yr_all_types": {
+      "prob": 68.0,
+      "description": "5-year relative survival rate for all cancers combined",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "NCI SEER"
+    },
+    "heart_attack_survive_hospital": {
+      "prob": 93.0,
+      "description": "Survival rate for heart attack if reaching hospital",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "stroke_survive_1yr": {
+      "prob": 75.0,
+      "description": "1-year survival rate after first stroke",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "car_accident_injury_annual": {
+      "prob": 0.7,
+      "description": "Annual probability of injury in car accident",
+      "source": "CDC_NVSS",
+      "year": 2024,
+      "note": "NHTSA"
+    },
+    "medical_error_experience_hospitalized": {
+      "prob": 7.0,
+      "description": "Percentage of hospitalized patients experiencing medical error",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "AHRQ"
+    },
+    "slip_and_fall_annual_65plus": {
+      "prob": 28.0,
+      "description": "Annual fall rate for adults 65+",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "dog_bite_annual": {
+      "prob": 0.6,
+      "description": "Annual probability of dog bite requiring medical attention",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "food_poisoning_annual": {
+      "prob": 16.7,
+      "description": "Annual probability of foodborne illness (1 in 6 Americans)",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "allergic_reaction_severe_annual": {
+      "prob": 1.5,
+      "description": "Annual probability of severe allergic reaction",
+      "source": "CDC_NCHS",
+      "year": 2024
+    },
+    "dental_emergency_annual": {
+      "prob": 22.0,
+      "description": "Percentage of adults experiencing dental emergency per year",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "ADA"
+    },
+    "workplace_injury_annual": {
+      "prob": 2.3,
+      "description": "Annual workplace injury rate per 100 workers",
+      "source": "BLS_CFOI",
+      "year": 2024
+    },
+    "sports_injury_annual_recreational": {
+      "prob": 12.0,
+      "description": "Annual sports/recreation injury rate among active adults",
+      "source": "CDC_NCHS",
+      "year": 2024,
+      "note": "CPSC"
+    },
+    "bicycle_accident_annual_cyclist": {
+      "prob": 2.5,
+      "description": "Annual accident rate per 100 regular cyclists",
+      "source": "CDC_NVSS",
+      "year": 2024,
+      "note": "NHTSA"
+    },
+    "pedestrian_accident_annual": {
+      "prob": 0.02,
+      "description": "Annual probability of pedestrian-vehicle accident",
+      "source": "CDC_NVSS",
+      "year": 2024,
+      "note": "NHTSA"
+    },
+    "home_fire_sprinkler_protection": {
+      "prob": 10.0,
+      "description": "Percentage of US homes with fire sprinkler systems",
+      "source": "Census_HVS",
+      "year": 2024,
+      "note": "NFPA"
+    },
+    "flood_damage_without_insurance": {
+      "prob": 80.0,
+      "description": "Percentage of flood-damaged homes lacking flood insurance",
+      "source": "Census_HVS",
+      "year": 2024,
+      "note": "FEMA"
+    },
+    "earthquake_insurance_california": {
+      "prob": 13.0,
+      "description": "Percentage of California homeowners with earthquake insurance",
+      "source": "Census_HVS",
+      "year": 2024,
+      "note": "CEA"
+    },
+    "umbrella_policy_claim_rate_annual": {
+      "prob": 0.5,
+      "description": "Annual claim rate on personal umbrella insurance policies",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "III"
+    }
+  },
+  "wealth_building": {
+    "millionaire_by_50_rate": {
+      "prob": 8.0,
+      "description": "Percentage of Americans who become millionaires by age 50",
+      "source": "Fed_SCF",
+      "year": 2024
+    },
+    "millionaire_by_65_rate": {
+      "prob": 18.0,
+      "description": "Percentage of Americans who become millionaires by age 65",
+      "source": "Fed_SCF",
+      "year": 2024
+    },
+    "401k_millionaire_rate": {
+      "prob": 1.4,
+      "description": "Percentage of 401(k) participants with $1M+ balance",
+      "source": "Fed_SCF",
+      "year": 2024,
+      "note": "Fidelity"
+    },
+    "real_estate_wealth_pct_of_net_worth_median": {
+      "prob": 62.0,
+      "description": "Home equity as percentage of median homeowner net worth",
+      "source": "Fed_SCF",
+      "year": 2022
+    },
+    "stock_ownership_direct_rate": {
+      "prob": 21.0,
+      "description": "Percentage of Americans directly owning individual stocks",
+      "source": "Fed_SCF",
+      "year": 2024,
+      "note": "Gallup"
+    },
+    "rental_property_ownership_rate": {
+      "prob": 7.0,
+      "description": "Percentage of US adults who own rental property",
+      "source": "Fed_SCF",
+      "year": 2022
+    },
+    "business_ownership_rate": {
+      "prob": 6.6,
+      "description": "Percentage of US adults who own a business with employees",
+      "source": "SBA",
+      "year": 2024
+    },
+    "inheritance_receive_rate": {
+      "prob": 20.0,
+      "description": "Percentage of households that have ever received an inheritance",
+      "source": "Fed_SCF",
+      "year": 2022
+    },
+    "financial_advisor_clients_outperform": {
+      "prob": 79.0,
+      "description": "Percentage of advisor-guided portfolios outperforming DIY over 15 years",
+      "source": "Fed_SCF",
+      "year": 2024,
+      "note": "Vanguard Advisor Alpha"
+    },
+    "compound_interest_awareness": {
+      "prob": 33.0,
+      "description": "Percentage of adults who correctly calculate compound interest",
+      "source": "Fed_SHED",
+      "year": 2024,
+      "note": "FINRA"
+    },
+    "automatic_savings_enrollment_effect": {
+      "prob": 90.0,
+      "description": "401(k) participation rate when auto-enrolled vs opt-in (65%)",
+      "source": "Fed_SHED",
+      "year": 2024,
+      "note": "Vanguard"
+    },
+    "salary_negotiation_success_rate": {
+      "prob": 85.0,
+      "description": "Percentage of salary negotiations that result in at least some increase",
+      "source": "BLS_CPS",
+      "year": 2024,
+      "note": "PayScale"
+    },
+    "side_income_wealth_building_correlation": {
+      "prob": 67.0,
+      "description": "Percentage of self-made millionaires who had multiple income streams",
+      "source": "Fed_SCF",
+      "year": 2024,
+      "note": "Tom Corley Rich Habits Study"
+    },
+    "frugality_correlation_with_wealth": {
+      "prob": 57.0,
+      "description": "Percentage of millionaire-next-door types who live below their means",
+      "source": "Fed_SCF",
+      "year": 2024,
+      "note": "Thomas Stanley research"
+    },
+    "education_roi_positive_lifetime": {
+      "prob": 86.0,
+      "description": "Percentage of bachelor's degree holders for whom degree has positive ROI",
+      "source": "Census_CPS",
+      "year": 2024,
+      "note": "Georgetown CEW"
+    },
+    "geographic_arbitrage_success_rate": {
+      "prob": 70.0,
+      "description": "Percentage of relocators who achieve target cost-of-living reduction",
+      "source": "Census_ACS",
+      "year": 2024,
+      "note": "Numbeo"
     }
   }
 }

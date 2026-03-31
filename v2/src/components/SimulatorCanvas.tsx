@@ -150,24 +150,70 @@ function templateToFlow(
   templateEdges: TemplateEdge[],
   context?: { photoUrl?: string; scenario?: string }
 ) {
-  const rfNodes: RFNode[] = templateNodes.map((n) => ({
-    id: String(n.id),
-    type: 'simNode',
-    position: { x: n.x, y: n.y },
-    data: {
-      label: n.label,
-      nodeType: n.type,
-      desc: n.desc,
-      source: n.source,
-      prob: n.prob,
-      probRange: (n as unknown as Record<string, unknown>).probRange as { optimistic: number; adverse: number } | undefined,
-      time: n.time,
-    },
-  }));
+  // Merge adjacent desire → action pairs into a single node
+  const mergedNodeIds = new Set<number>();
+  const mergeMap = new Map<number, TemplateNode>(); // desire id → merged with action
 
-  const rfEdges: RFEdge[] = templateEdges.map((e, i) => {
+  for (const n of templateNodes) {
+    if (n.type !== 'desire') continue;
+    // Find outgoing edge from this desire
+    const outEdges = templateEdges.filter(e => e.from === n.id);
+    if (outEdges.length !== 1) continue;
+    const targetId = outEdges[0].to;
+    const targetNode = templateNodes.find(t => t.id === targetId);
+    if (!targetNode || targetNode.type !== 'action') continue;
+    // Check action has no other incoming edges
+    const incomingToAction = templateEdges.filter(e => e.to === targetId);
+    if (incomingToAction.length !== 1) continue;
+    // Merge: keep desire node, absorb action label
+    mergeMap.set(n.id, targetNode);
+    mergedNodeIds.add(targetId);
+  }
+
+  const rfNodes: RFNode[] = templateNodes
+    .filter(n => !mergedNodeIds.has(n.id))
+    .map((n) => {
+      const merged = mergeMap.get(n.id);
+      const label = merged ? `${n.label} → ${merged.label}` : n.label;
+      const desc = merged ? (merged.desc ? `${n.desc || ''} ${merged.desc}`.trim() : n.desc) : n.desc;
+      const source = merged ? (merged.source || n.source) : n.source;
+      return {
+        id: String(n.id),
+        type: 'simNode',
+        position: { x: n.x, y: n.y },
+        data: {
+          label,
+          nodeType: n.type,
+          desc,
+          source,
+          prob: n.prob,
+          probRange: (n as unknown as Record<string, unknown>).probRange as { optimistic: number; adverse: number } | undefined,
+          time: merged?.time || n.time,
+        },
+      };
+    });
+
+  // Reroute edges: skip merged action nodes
+  const rerouteEdges = (edges: TemplateEdge[]): TemplateEdge[] => {
+    return edges
+      .filter(e => !mergedNodeIds.has(e.from) || mergedNodeIds.has(e.to)) // remove desire→action edge
+      .filter(e => !(mergeMap.has(e.from) && mergedNodeIds.has(e.to))) // remove the merge edge itself
+      .map(e => {
+        // Reroute edges FROM merged action to come FROM desire instead
+        if (mergedNodeIds.has(e.from)) {
+          const desireId = [...mergeMap.entries()].find(([, v]) => v.id === e.from)?.[0];
+          return desireId != null ? { ...e, from: desireId } : e;
+        }
+        return e;
+      });
+  };
+
+  const adjustedEdges = rerouteEdges(templateEdges);
+
+  const rfEdges: RFEdge[] = adjustedEdges.map((e, i) => {
     const isPass = e.label === 'pass' || e.label === 'yes';
     const isFail = e.label === 'fail' || e.label === 'no';
+    const isPartial = e.label === 'partial';
     return {
       id: `e-${e.from}-${e.to}-${i}`,
       source: String(e.from),
@@ -175,12 +221,13 @@ function templateToFlow(
       label: e.label || '',
       type: 'animated',
       style: {
-        stroke: isFail ? '#fca5a5' : isPass ? '#4ade80' : '#d4d4d8',
-        strokeWidth: isPass ? 4.5 : isFail ? 1.5 : 1.5,
+        stroke: isFail ? '#fca5a5' : isPartial ? '#fbbf24' : isPass ? '#4ade80' : '#d4d4d8',
+        strokeWidth: isPass ? 4.5 : isPartial ? 3 : isFail ? 1.5 : 1.5,
       },
       labelStyle: {
-        fill: isFail ? '#ef4444' : isPass ? '#10b981' : '#a1a1aa',
+        fill: isFail ? '#ef4444' : isPartial ? '#d97706' : isPass ? '#10b981' : '#a1a1aa',
       },
+      data: e.label === 'partial' ? { prob: (e as unknown as Record<string, unknown>).prob } : undefined,
     };
   });
 
@@ -508,7 +555,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       // Update nodes with computed values + slider handlers
       setNodes(prev => prev.map(n => {
         const nt = (n.data as Record<string, unknown>).nodeType as string;
-        const isInteractive = nt === 'start' || nt === 'bottleneck' || nt === 'decision';
+        const isInteractive = nt === 'start' || nt === 'bottleneck' || nt === 'decision' || nt === 'gate';
         return {
           ...n,
           data: {
@@ -610,12 +657,14 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         if (e.label) return e; // already labeled
         const srcType = nodeTypeMap[e.from];
         const tgtType = nodeTypeMap[e.to];
-        if (srcType === 'bottleneck' || srcType === 'decision') {
+        if (srcType === 'bottleneck' || srcType === 'decision' || srcType === 'gate') {
           if (tgtType === 'outcome-bad') return { ...e, label: srcType === 'decision' ? 'no' : 'fail' };
           // Check if sibling edge goes to outcome-bad
           const siblings = (flow.edges as TemplateEdge[]).filter(s => s.from === e.from && s !== e);
           const siblingGoesToBad = siblings.some(s => nodeTypeMap[s.to] === 'outcome-bad');
           if (siblingGoesToBad) return { ...e, label: srcType === 'decision' ? 'yes' : 'pass' };
+          // Gate: if target is state node, it's the partial path
+          if (srcType === 'gate' && tgtType === 'state') return { ...e, label: 'partial' };
         }
         return e;
       });
@@ -653,6 +702,128 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       setGenerating(false);
     }
   }, [scenario, loadTemplate, setNodes, setEdges, fitView]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // ─── Pre-computed fate system (deterministic) ───
+  // Every person's path is calculated BEFORE animation starts.
+  // The simulation is a replay of a reality already determined.
+  interface PrecomputedFate {
+    personId: number;
+    path: string[];              // node IDs to visit in order
+    outcome: 'success' | 'blocked';
+    speedMult: number;           // 0.7–1.3 individual variation
+    startDelay: number;          // 0–400ms stagger at launch
+    deathNode?: string;          // bottleneck that killed them (for death counter)
+  }
+
+  const precomputeFates = useCallback((totalPeople: number, startNodeId: string): PrecomputedFate[] => {
+    const nodes = nodesRef.current;
+    const edges = edgesRef.current;
+    const fates: PrecomputedFate[] = [];
+
+    // Deterministic counters — same logic as real-time, but computed ahead
+    const counters: Record<string, { arrivals: number; passed: number; routedNo: number; routedPartial: number; routedYes: number }> = {};
+
+    for (let i = 0; i < totalPeople; i++) {
+      const path: string[] = [];
+      let currentNodeId = startNodeId;
+      let outcome: 'success' | 'blocked' = 'blocked';
+      let deathNode: string | undefined;
+      let maxSteps = 50; // safety limit
+
+      while (maxSteps-- > 0) {
+        path.push(currentNodeId);
+        const node = nodes.find(n => n.id === currentNodeId);
+        if (!node) break;
+
+        const data = node.data as Record<string, unknown>;
+        const nodeType = data.nodeType as string;
+        const prob = data.prob as number;
+
+        // Terminal nodes
+        if (nodeType === 'outcome-good') { outcome = 'success'; break; }
+        if (nodeType === 'outcome-bad') { outcome = 'blocked'; break; }
+
+        // Init counter for this node
+        if (!counters[currentNodeId]) {
+          counters[currentNodeId] = { arrivals: 0, passed: 0, routedNo: 0, routedPartial: 0, routedYes: 0 };
+        }
+        const cnt = counters[currentNodeId];
+
+        // Gate node: 3-way deterministic split
+        if (nodeType === 'gate' && typeof prob === 'number') {
+          cnt.arrivals++;
+          const out = edges.filter(e => e.source === currentNodeId);
+          const noEdge = out.find(e => e.label === 'no' || e.label === 'fail');
+          const partialEdge = out.find(e => e.label === 'partial');
+          const yesEdge = out.find(e => e.label === 'yes' || e.label === 'pass');
+
+          const partialPct = (partialEdge?.data as Record<string, unknown>)?.prob as number
+            ?? Math.min(25, Math.floor((100 - prob) / 2));
+          const noPct = 100 - prob - partialPct;
+
+          const shouldNo = Math.floor(cnt.arrivals * noPct / 100);
+          const shouldPartial = Math.floor(cnt.arrivals * (noPct + partialPct) / 100);
+
+          let route: 'no' | 'partial' | 'yes';
+          if (cnt.routedNo < shouldNo) route = 'no';
+          else if (cnt.routedPartial < (shouldPartial - shouldNo)) route = 'partial';
+          else route = 'yes';
+
+          if (route === 'no') { cnt.routedNo++; deathNode = currentNodeId; currentNodeId = noEdge?.target || ''; }
+          else if (route === 'partial') { cnt.routedPartial++; currentNodeId = partialEdge?.target || ''; }
+          else { cnt.routedYes++; currentNodeId = yesEdge?.target || ''; }
+
+          if (!currentNodeId) break;
+          continue;
+        }
+
+        // Bottleneck/decision: binary pass/fail
+        const isOutcomeNode = nodeType === 'outcome-good' || nodeType === 'outcome-bad';
+        const hasProb = !isOutcomeNode && nodeType !== 'gate' && typeof prob === 'number' && prob < 100;
+
+        if (hasProb) {
+          cnt.arrivals++;
+          const shouldHavePassed = Math.floor(cnt.arrivals * prob / 100);
+          const pass = cnt.passed < shouldHavePassed;
+          if (pass) cnt.passed++;
+
+          if (!pass) {
+            deathNode = currentNodeId;
+            // Route to fail edge destination
+            const failE = edges.find(e => e.source === currentNodeId && (e.label === 'fail' || e.label === 'no'));
+            if (failE) path.push(failE.target);
+            outcome = 'blocked';
+            break;
+          }
+
+          // Pass: follow pass edge
+          if (nodeType === 'bottleneck' || nodeType === 'decision') {
+            const passE = edges.find(e => e.source === currentNodeId && (e.label === 'pass' || e.label === 'yes'));
+            if (passE) { currentNodeId = passE.target; continue; }
+          }
+        }
+
+        // Follow default edge (non-probabilistic nodes: state, action, desire, etc.)
+        const out = edges.filter(e => e.source === currentNodeId);
+        if (out.length === 0) {
+          outcome = nodeType === 'outcome-good' ? 'success' : 'blocked';
+          break;
+        }
+        currentNodeId = out[0].target;
+      }
+
+      fates.push({
+        personId: i + 1,
+        path,
+        outcome,
+        speedMult: 0.7 + Math.random() * 0.6,
+        startDelay: Math.random() * 400,
+        deathNode,
+      });
+    }
+
+    return fates;
+  }, []);
 
   // Simulation engine
   const simTimeout = useCallback((fn: () => void, ms: number) => {
@@ -718,7 +889,66 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       // No randomness. The observed reality IS the outcome.
       // Outcome nodes never filter — they are terminal destinations
       const isOutcome = nodeType === 'outcome-good' || nodeType === 'outcome-bad';
-      const hasProb = !isOutcome && typeof prob === 'number' && prob < 100;
+
+      // Gate node: 3-way split (NO / PARTIAL / YES) based on edge labels
+      if (nodeType === 'gate' && typeof prob === 'number') {
+        const arrivalKey = `arrivals-${nodeId}`;
+        const arrivals = ((node.data as Record<string, unknown>)[arrivalKey] as number || 0) + 1;
+        setNodes(ns => ns.map(n => n.id === nodeId ? {
+          ...n, data: { ...n.data, [arrivalKey]: arrivals }
+        } : n));
+
+        const out = edgesRef.current.filter(e => e.source === nodeId);
+        const noEdge = out.find(e => e.label === 'no' || e.label === 'fail');
+        const partialEdge = out.find(e => e.label === 'partial');
+        const yesEdge = out.find(e => e.label === 'yes' || e.label === 'pass');
+
+        // prob = YES%, derive PARTIAL from edge data or default split
+        // NO% = 100 - prob - partial%. Default partial = middle ground
+        const partialPct = (partialEdge?.data as Record<string, unknown>)?.prob as number
+          ?? Math.min(25, Math.floor((100 - prob) / 2));
+        const noPct = 100 - prob - partialPct;
+
+        // Deterministic: which bucket does this arrival fall into?
+        const shouldNo = Math.floor(arrivals * noPct / 100);
+        const shouldPartial = Math.floor(arrivals * (noPct + partialPct) / 100);
+        const prevNo = (node.data as Record<string, unknown>)[`routed-no-${nodeId}`] as number || 0;
+        const prevPartial = (node.data as Record<string, unknown>)[`routed-partial-${nodeId}`] as number || 0;
+
+        let route: 'no' | 'partial' | 'yes';
+        if (prevNo < shouldNo) {
+          route = 'no';
+        } else if (prevPartial < (shouldPartial - shouldNo)) {
+          route = 'partial';
+        } else {
+          route = 'yes';
+        }
+
+        // Update counters
+        const counterKey = `routed-${route}-${nodeId}`;
+        const prevCount = (node.data as Record<string, unknown>)[counterKey] as number || 0;
+        setNodes(ns => ns.map(n => n.id === nodeId ? {
+          ...n, data: { ...n.data, [counterKey]: prevCount + 1 }
+        } : n));
+
+        if (route === 'no' && noEdge) {
+          const deathKey = `deaths-${nodeId}`;
+          const prevDeaths = (node.data as Record<string, unknown>)[deathKey] as number || 0;
+          setNodes(ns => ns.map(n => n.id === nodeId ? { ...n, data: { ...n.data, [deathKey]: prevDeaths + 1 } } : n));
+          moveTo(particle, noEdge.target, cb);
+          return;
+        } else if (route === 'partial' && partialEdge) {
+          moveTo(particle, partialEdge.target, cb);
+          return;
+        } else if (route === 'yes' && yesEdge) {
+          moveTo(particle, yesEdge.target, cb);
+          return;
+        }
+        // Fallback: follow first available edge
+        if (out.length > 0) { moveTo(particle, out[0].target, cb); return; }
+      }
+
+      const hasProb = !isOutcome && nodeType !== 'gate' && typeof prob === 'number' && prob < 100;
       if (hasProb) {
         // Track how many have arrived and how many should pass at this node
         const arrivalKey = `arrivals-${nodeId}`;
@@ -901,7 +1131,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     setNodes(prev => prev.map(n => {
       const data = n.data as Record<string, unknown>;
       const nodeType = data.nodeType as string;
-      if (nodeType === 'bottleneck' || nodeType === 'decision') {
+      if (nodeType === 'bottleneck' || nodeType === 'decision' || nodeType === 'gate') {
         const origProb = data.prob as number;
         // Apply modifier, clamp to 1-99 range
         const newProb = Math.round(Math.max(1, Math.min(99, origProb * modifier)));
@@ -955,6 +1185,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     setParticles([]);
     setShowDashboard(false);
     setErrorMsg('');
+    setPathFilter('all');
 
     // Reset node signal values
     nodeValuesRef.current = {};
@@ -965,7 +1196,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     setNodes(prev => prev.map(n => {
       const cleaned = { ...n.data };
       Object.keys(cleaned).forEach(k => {
-        if (k.startsWith('arrivals-') || k.startsWith('passed-') || k.startsWith('deaths-')) {
+        if (k.startsWith('arrivals-') || k.startsWith('passed-') || k.startsWith('deaths-') || k.startsWith('routed-')) {
           delete cleaned[k];
         }
       });
@@ -989,6 +1220,28 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     const startNodeIds = nodesRef.current.filter(n => !hasIncoming.has(n.id)).map(n => n.id);
     if (startNodeIds.length === 0) { stopSim(); return; }
 
+    // ─── PRE-DETERMINED FATE SYSTEM ───
+    // All paths computed BEFORE animation. The simulation is a replay.
+    const totalPeople = SPD_BASE.waves * SPD_BASE.perWave; // 100
+    const fates = precomputeFates(totalPeople, startNodeIds[0]);
+    const spd = getSPD();
+
+    // DEBUG: log pre-computed fates
+    console.log('[SIM] Fates computed:', fates.length, 'Start:', startNodeIds[0]);
+    console.log('[SIM] Sample paths:', fates.slice(0, 3).map(f => f.path.join('→')));
+    console.log('[SIM] Successes:', fates.filter(f => f.outcome === 'success').length);
+    console.log('[SIM] Avg path length:', (fates.reduce((s, f) => s + f.path.length, 0) / fates.length).toFixed(1));
+    console.log('[SIM] Speed:', spd);
+
+    // Pre-calculate death counts per node and apply them
+    const deathCounts: Record<string, number> = {};
+    for (const fate of fates) {
+      if (fate.deathNode) {
+        deathCounts[fate.deathNode] = (deathCounts[fate.deathNode] || 0) + 1;
+      }
+    }
+
+    // Use the proven wave-based system with real-time routing (moveTo)
     launchWave(0, startNodeIds);
   }, [launchWave, setNodes, setEdges]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -1025,7 +1278,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     for (const n of nodesRef.current) {
       const data = n.data as Record<string, unknown>;
       const nodeType = data.nodeType as string;
-      if (nodeType !== 'bottleneck' && nodeType !== 'decision') continue;
+      if (nodeType !== 'bottleneck' && nodeType !== 'decision' && nodeType !== 'gate') continue;
       const reached = nodeReachRef.current[n.id]?.size || 0;
       if (reached === 0) continue;
       // Find pass edge target
@@ -1234,6 +1487,39 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         return;
       }
 
+      // Escape = stop simulation or exit step mode
+      if (e.key === 'Escape') {
+        if (stepMode) {
+          e.preventDefault();
+          exitStepMode();
+          return;
+        }
+        if (simRunningRef.current) {
+          e.preventDefault();
+          stopSim();
+          return;
+        }
+        if (showDashboard) {
+          e.preventDefault();
+          setShowDashboard(false);
+          return;
+        }
+      }
+
+      // Arrow keys for step mode
+      if (stepMode && !isInput) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          stepForward();
+          return;
+        }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          stepBack();
+          return;
+        }
+      }
+
       // Space = start sim, or pause/resume if already running
       if (e.key === ' ' && !isInput) {
         e.preventDefault();
@@ -1251,6 +1537,219 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
   const hasNodes = nodes.length > 0;
   const successRate = simStats.total > 0 ? Math.round(simStats.success / simStats.total * 100) : 0;
+
+  // ─── Step-by-step mode (TradingView style: one card at a time) ───
+  const [stepMode, setStepMode] = useState(false);
+  const stepIndexRef = useRef(0);
+  const [stepIndex, setStepIndex] = useState(0);
+  const stepOrderRef = useRef<string[]>([]);
+
+  const enterStepMode = useCallback(() => {
+    if (nodesRef.current.length === 0) return;
+
+    // Build left-to-right order of nodes
+    const ordered = [...nodesRef.current]
+      .filter(n => n.type !== 'contextNode')
+      .sort((a, b) => (a.position.x || 0) - (b.position.x || 0));
+    stepOrderRef.current = ordered.map(n => n.id);
+    stepIndexRef.current = 0;
+    setStepIndex(0);
+    setStepMode(true);
+    setShowDashboard(false);
+    setPathFilter('all');
+
+    // Hide all nodes
+    setNodes(prev => prev.map(n => ({
+      ...n,
+      style: {
+        ...n.style,
+        opacity: n.type === 'contextNode' ? 1 : 0,
+        transition: 'opacity 0.5s ease',
+      },
+    })));
+    setEdges(prev => prev.map(e => ({ ...e, hidden: true })));
+  }, [setNodes, setEdges]);
+
+  const stepForward = useCallback(() => {
+    const order = stepOrderRef.current;
+    if (stepIndexRef.current >= order.length) return;
+
+    const nodeId = order[stepIndexRef.current];
+    stepIndexRef.current++;
+    setStepIndex(stepIndexRef.current);
+
+    // Reveal this node
+    setNodes(prev => prev.map(n =>
+      n.id === nodeId
+        ? { ...n, style: { ...n.style, opacity: 1, transition: 'opacity 0.5s ease' } }
+        : n
+    ));
+
+    // Reveal edges where both source and target are now visible
+    const revealedSoFar = new Set(order.slice(0, stepIndexRef.current));
+    setEdges(prev => prev.map(e => {
+      if (revealedSoFar.has(e.source) && revealedSoFar.has(e.target)) {
+        return { ...e, hidden: false };
+      }
+      return e;
+    }));
+
+    // Auto-zoom to the revealed node
+    const node = nodesRef.current.find(n => n.id === nodeId);
+    if (node) {
+      fitView({ nodes: [node], padding: 1.5, duration: 600, maxZoom: 1.2 });
+    }
+  }, [setNodes, setEdges, fitView]);
+
+  const stepBack = useCallback(() => {
+    if (stepIndexRef.current <= 0) return;
+
+    stepIndexRef.current--;
+    setStepIndex(stepIndexRef.current);
+
+    const order = stepOrderRef.current;
+    const nodeId = order[stepIndexRef.current];
+
+    // Hide this node
+    setNodes(prev => prev.map(n =>
+      n.id === nodeId
+        ? { ...n, style: { ...n.style, opacity: 0, transition: 'opacity 0.3s ease' } }
+        : n
+    ));
+
+    // Hide edges connected to this node
+    setEdges(prev => prev.map(e => {
+      if (e.source === nodeId || e.target === nodeId) {
+        return { ...e, hidden: true };
+      }
+      return e;
+    }));
+
+    // Zoom to previous node
+    if (stepIndexRef.current > 0) {
+      const prevNode = nodesRef.current.find(n => n.id === order[stepIndexRef.current - 1]);
+      if (prevNode) fitView({ nodes: [prevNode], padding: 1.5, duration: 600, maxZoom: 1.2 });
+    }
+  }, [setNodes, setEdges, fitView]);
+
+  const exitStepMode = useCallback(() => {
+    setStepMode(false);
+    // Reveal all nodes
+    setNodes(prev => prev.map(n => ({
+      ...n,
+      style: { ...n.style, opacity: 1, transition: 'opacity 0.5s ease' },
+    })));
+    setEdges(prev => prev.map(e => ({ ...e, hidden: false })));
+    setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100);
+  }, [setNodes, setEdges, fitView]);
+
+  // ─── Path filter: show only success / partial / fail paths ───
+  const [pathFilter, setPathFilter] = useState<'all' | 'success' | 'partial' | 'fail'>('all');
+
+  const applyPathFilter = useCallback((filter: 'all' | 'success' | 'partial' | 'fail') => {
+    setPathFilter(filter);
+
+    if (filter === 'all') {
+      // Restore all nodes to full opacity
+      setNodes(prev => prev.map(n => ({
+        ...n,
+        style: { ...n.style, opacity: 1, filter: 'none', transition: 'opacity 0.4s ease, filter 0.4s ease' },
+      })));
+      setEdges(prev => prev.map(e => ({ ...e, hidden: false, style: { ...e.style, opacity: 1 } })));
+      return;
+    }
+
+    // Build path sets by tracing backward from outcome nodes
+    const pathNodes = new Set<string>();
+    const pathEdgeIds = new Set<string>();
+
+    // Helper: trace backward from a node to find all ancestors
+    const traceBackward = (nodeId: string, visited: Set<string>) => {
+      if (visited.has(nodeId)) return;
+      visited.add(nodeId);
+      pathNodes.add(nodeId);
+      const incoming = edgesRef.current.filter(e => e.target === nodeId);
+      for (const e of incoming) {
+        pathEdgeIds.add(e.id);
+        traceBackward(e.source, visited);
+      }
+    };
+
+    // Helper: trace forward from a node following specific edges
+    const traceForward = (nodeId: string, visited: Set<string>) => {
+      if (visited.has(nodeId)) return;
+      visited.add(nodeId);
+      pathNodes.add(nodeId);
+      const outgoing = edgesRef.current.filter(e => e.source === nodeId);
+      for (const e of outgoing) {
+        pathEdgeIds.add(e.id);
+        traceForward(e.target, visited);
+      }
+    };
+
+    if (filter === 'success') {
+      // Find outcome-good nodes, trace backward
+      const goodNodes = nodesRef.current.filter(n =>
+        (n.data as Record<string, unknown>).nodeType === 'outcome-good'
+      );
+      const visited = new Set<string>();
+      for (const n of goodNodes) traceBackward(n.id, visited);
+    } else if (filter === 'fail') {
+      // Find outcome-bad nodes, trace backward
+      const badNodes = nodesRef.current.filter(n =>
+        (n.data as Record<string, unknown>).nodeType === 'outcome-bad'
+      );
+      const visited = new Set<string>();
+      for (const n of badNodes) traceBackward(n.id, visited);
+    } else if (filter === 'partial') {
+      // Find edges labeled 'partial', then trace forward from their targets
+      const partialEdges = edgesRef.current.filter(e => e.label === 'partial');
+      const visited = new Set<string>();
+      for (const e of partialEdges) {
+        pathEdgeIds.add(e.id);
+        pathNodes.add(e.source);
+        traceForward(e.target, visited);
+      }
+      // Also include the common trunk (start → first gate)
+      if (partialEdges.length > 0) {
+        const gateId = partialEdges[0].source;
+        traceBackward(gateId, new Set());
+      }
+    }
+
+    // Apply opacity + color tint per path type
+    const tintColor = filter === 'success' ? 'rgba(16, 185, 129, 0.08)'
+      : filter === 'fail' ? 'rgba(239, 68, 68, 0.08)'
+      : filter === 'partial' ? 'rgba(120, 120, 120, 0.12)'
+      : 'transparent';
+    const borderColor = filter === 'success' ? 'rgba(16, 185, 129, 0.4)'
+      : filter === 'fail' ? 'rgba(239, 68, 68, 0.4)'
+      : filter === 'partial' ? 'rgba(120, 120, 120, 0.5)'
+      : undefined;
+
+    setNodes(prev => prev.map(n => {
+      const isInPath = pathNodes.has(n.id);
+      return {
+        ...n,
+        style: {
+          ...n.style,
+          opacity: isInPath ? 1 : 0.06,
+          filter: isInPath ? 'none' : 'grayscale(1) blur(1px)',
+          background: isInPath ? tintColor : undefined,
+          outline: isInPath && borderColor ? `2px solid ${borderColor}` : undefined,
+          transition: 'opacity 0.4s ease, filter 0.4s ease, background 0.4s ease',
+        },
+      };
+    }));
+    setEdges(prev => prev.map(e => ({
+      ...e,
+      style: {
+        ...e.style,
+        opacity: pathEdgeIds.has(e.id) ? 1 : 0.04,
+        stroke: pathEdgeIds.has(e.id) && filter === 'partial' ? '#888' : e.style?.stroke,
+      },
+    })));
+  }, [setNodes, setEdges]);
 
   // Save simulation to Supabase
   const handleSave = useCallback(async () => {
@@ -1329,6 +1828,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     const flow = entry.flowData;
     if (!flow?.nodes || !flow?.edges) return;
 
+    // ontology scenario cleared
     setScenario(entry.scenario || '');
     setPhotoPreview(entry.photoThumbnail || null);
     setLastFlowData(flow as Record<string, unknown>);
@@ -1567,6 +2067,22 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
               </button>
             )}
 
+            {/* Restart — re-run simulation */}
+            {statsRef.current.total > 0 && (
+              <button onClick={() => { stopSim(); setTimeout(() => requestSimulate(), 200); }} className="toolbar-btn" title="Restart simulation">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" /><path d="M21 3v5h-5" />
+                </svg>
+              </button>
+            )}
+
+            {/* Step mode — card by card */}
+            <button onClick={enterStepMode} className="toolbar-btn" title="Step-by-step (card by card)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+
             {/* Reverse */}
             <button onClick={simulateReverse} disabled={replayMode} className="toolbar-btn" title="Reverse">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -1741,14 +2257,22 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
               </div>
             </div>
 
-            {/* Rate */}
-            <span className="text-[14px] font-bold tabular-nums" style={{
-              color: successRate >= 50 ? '#059669' : successRate >= 25 ? '#d97706' : '#dc2626',
-              fontFamily: 'var(--font-geist-mono)',
-            }}>
-              {successRate}%
-            </span>
-            <span className="text-[11px] font-medium" style={{ color: 'var(--muted)' }}>success rate</span>
+            {/* Rate — clear label */}
+            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg" style={{ background: 'var(--surface-hover)' }}>
+              <span className="text-[14px] font-bold tabular-nums" style={{
+                color: successRate >= 50 ? '#059669' : successRate >= 25 ? '#d97706' : '#dc2626',
+                fontFamily: 'var(--font-geist-mono)',
+              }}>
+                {simStats.success}/{simStats.total}
+              </span>
+              <span className="text-[10px] font-medium" style={{ color: 'var(--muted)' }}>survive</span>
+              <span className="text-[11px] font-bold tabular-nums" style={{
+                color: successRate >= 50 ? '#059669' : successRate >= 25 ? '#d97706' : '#dc2626',
+                fontFamily: 'var(--font-geist-mono)',
+              }}>
+                ({successRate}%)
+              </span>
+            </div>
 
             {/* Status */}
             {simPaused ? (
@@ -1819,20 +2343,91 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       )}
 
       {/* ========== RESULTS TAB (right edge, shows when dashboard is closed) ========== */}
-      {!simRunning && statsRef.current.total > 0 && !showDashboard && (
-        <button
-          onClick={() => { setShowDashboard(true); setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100); }}
-          className="fixed right-0 top-1/2 -translate-y-1/2 z-50 bg-white dark:bg-[#1a1a1a] border border-r-0 border-gray-200 dark:border-gray-700 rounded-l-lg px-2 py-4 shadow-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all cursor-pointer group"
-        >
-          <div className="flex flex-col items-center gap-1.5">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500 group-hover:text-blue-500 transition-colors">
-              <path d="M3 3v18h18" /><path d="M18 17V9" /><path d="M13 17V5" /><path d="M8 17v-3" />
-            </svg>
-            <span className="text-[9px] font-semibold text-gray-400 group-hover:text-blue-500 transition-colors" style={{ writingMode: 'vertical-lr' }}>
-              Results
+      {/* Step mode controls */}
+      {stepMode && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 animate-slide-up">
+          <div
+            className="rounded-full px-3 py-2 flex items-center gap-3"
+            style={{
+              background: 'var(--surface)',
+              boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
+            }}
+          >
+            <button onClick={stepBack} disabled={stepIndex === 0} className="toolbar-btn" title="Previous (Left arrow)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+
+            <span className="text-[11px] font-semibold tabular-nums px-2" style={{ color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>
+              {stepIndex} / {stepOrderRef.current.length}
             </span>
+
+            <button onClick={stepForward} disabled={stepIndex >= stepOrderRef.current.length} className="toolbar-btn toolbar-btn--primary" title="Next (Right arrow)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+
+            <div className="w-px h-5 bg-[var(--border)]" />
+
+            <button onClick={exitStepMode} className="toolbar-btn" title="Exit step mode (Esc)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
           </div>
-        </button>
+        </div>
+      )}
+
+      {!simRunning && statsRef.current.total > 0 && !showDashboard && !stepMode && (
+        <>
+          <button
+            onClick={() => { setShowDashboard(true); setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100); }}
+            className="fixed right-0 top-1/2 -translate-y-1/2 z-50 bg-white dark:bg-[#1a1a1a] border border-r-0 border-gray-200 dark:border-gray-700 rounded-l-lg px-2 py-4 shadow-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all cursor-pointer group"
+          >
+            <div className="flex flex-col items-center gap-1.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500 group-hover:text-blue-500 transition-colors">
+                <path d="M3 3v18h18" /><path d="M18 17V9" /><path d="M13 17V5" /><path d="M8 17v-3" />
+              </svg>
+              <span className="text-[9px] font-semibold text-gray-400 group-hover:text-blue-500 transition-colors" style={{ writingMode: 'vertical-lr' }}>
+                Results
+              </span>
+            </div>
+          </button>
+
+          {/* Path filter buttons */}
+          <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+            <div
+              className="rounded-full px-1.5 py-1.5 flex items-center gap-1"
+              style={{
+                background: 'var(--surface)',
+                boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
+              }}
+            >
+              {([
+                { key: 'all', label: 'All', color: 'var(--foreground)' },
+                { key: 'success', label: 'Success', color: '#10b981' },
+                { key: 'partial', label: 'Partial', color: '#d97706' },
+                { key: 'fail', label: 'Fail', color: '#ef4444' },
+              ] as const).map(({ key, label, color }) => (
+                <button
+                  key={key}
+                  onClick={() => applyPathFilter(key)}
+                  className="px-3 py-1.5 rounded-full text-[10px] font-semibold transition-all cursor-pointer"
+                  style={{
+                    background: pathFilter === key ? color : 'transparent',
+                    color: pathFilter === key ? (key === 'all' ? 'var(--surface)' : '#fff') : 'var(--muted)',
+                    fontFamily: 'var(--font-geist-mono)',
+                    letterSpacing: '0.04em',
+                  }}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </>
       )}
 
     </div>

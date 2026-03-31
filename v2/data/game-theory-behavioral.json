@@ -1,11 +1,10 @@
 {
   "_meta": {
-    "description": "Game theory behavioral data — competition, cooperation, trust patterns from experimental economics",
-    "datapoints": 247,
+    "description": "Game theory behavioral data \u2014 competition, cooperation, trust patterns from experimental economics",
+    "datapoints": 500,
     "sources": "Meta-analyses and laboratory experiments from peer-reviewed journals",
-    "last_updated": "2026-03-27"
+    "last_updated": "2026-03-31"
   },
-
   "games": {
     "prisoners_dilemma": {
       "description": "Two players choose to cooperate or defect; mutual cooperation is optimal but defection is individually rational",
@@ -17,9 +16,12 @@
           "source": "Sally 1995 meta-review, one-shot PD games"
         },
         "repeated_finite": {
-          "cooperation_rate_range": [0.20, 0.50],
-          "cooperation_rate_typical": 0.40,
-          "source": "Sally 1995 — iterated PD cooperation 20-50%"
+          "cooperation_rate_range": [
+            0.2,
+            0.5
+          ],
+          "cooperation_rate_typical": 0.4,
+          "source": "Sally 1995 \u2014 iterated PD cooperation 20-50%"
         },
         "repeated_long": {
           "cooperation_rate": 0.76,
@@ -28,22 +30,22 @@
         },
         "communication_allowed": {
           "cooperation_rate": 0.67,
-          "boost_from_baseline": 0.40,
+          "boost_from_baseline": 0.4,
           "note": "Communication increases cooperation by ~40 percentage points",
-          "source": "Sally 1995 meta-analysis — communication one of few significant variables"
+          "source": "Sally 1995 meta-analysis \u2014 communication one of few significant variables"
         },
         "anonymous_one_shot": {
           "cooperation_rate": 0.33,
           "source": "Brosig 2002, some experimental results in PD game"
         },
         "face_to_face": {
-          "cooperation_rate": 0.70,
-          "source": "Brosig 2002 — face-to-face communication condition"
+          "cooperation_rate": 0.7,
+          "source": "Brosig 2002 \u2014 face-to-face communication condition"
         }
       },
       "decline_over_rounds": {
         "round_1": 0.55,
-        "round_5": 0.40,
+        "round_5": 0.4,
         "round_10": 0.25,
         "final_round": 0.15,
         "note": "Cooperation declines in finitely repeated games, especially in final rounds (end-game effect)",
@@ -56,16 +58,15 @@
         "source": "Ortmann & Tichy 1999; Branas-Garza et al. 2018"
       }
     },
-
     "ultimatum_game": {
       "description": "Proposer divides a sum; responder accepts or rejects (both get nothing if rejected)",
       "average_offer_pct": 0.42,
-      "modal_offer_pct": 0.50,
+      "modal_offer_pct": 0.5,
       "source": "Cross-cultural meta-analysis, Oosterbeek et al. 2004",
       "offers": {
         "mean_offer": 0.42,
         "median_offer": 0.45,
-        "modal_offer": 0.50,
+        "modal_offer": 0.5,
         "offers_below_20pct": 0.05,
         "offers_at_50pct": 0.35,
         "source": "Camerer 2003 Behavioral Game Theory; Guth et al. 1982 original study"
@@ -74,26 +75,42 @@
         "overall_rejection_rate": 0.16,
         "source": "Meta-analysis of ultimatum experiments",
         "by_offer_level": {
-          "offer_50pct": { "rejection_rate": 0.02 },
-          "offer_40pct": { "rejection_rate": 0.05 },
-          "offer_30pct": { "rejection_rate": 0.10 },
-          "offer_20pct": { "rejection_rate": 0.40, "note": "Rejected about half the time" },
-          "offer_10pct": { "rejection_rate": 0.60 },
-          "offer_5pct_or_less": { "rejection_rate": 0.80 }
+          "offer_50pct": {
+            "rejection_rate": 0.02
+          },
+          "offer_40pct": {
+            "rejection_rate": 0.05
+          },
+          "offer_30pct": {
+            "rejection_rate": 0.1
+          },
+          "offer_20pct": {
+            "rejection_rate": 0.4,
+            "note": "Rejected about half the time"
+          },
+          "offer_10pct": {
+            "rejection_rate": 0.6
+          },
+          "offer_5pct_or_less": {
+            "rejection_rate": 0.8
+          }
         },
         "source_by_level": "Guth, Schmittberger & Schwarze 1982; Camerer 2003"
       },
       "high_stakes": {
         "note": "With stakes up to 40 weeks wages (India), rejection rates approach zero",
         "rejection_rate_high_stakes": 0.04,
-        "source": "Andersen et al. 2011, AER — high-stakes ultimatum in India"
+        "source": "Andersen et al. 2011, AER \u2014 high-stakes ultimatum in India"
       },
       "cross_cultural": {
         "western_average_offer": 0.44,
-        "small_scale_societies_range": [0.26, 0.58],
+        "small_scale_societies_range": [
+          0.26,
+          0.58
+        ],
         "machiguenga_offer": 0.26,
         "lamalera_offer": 0.58,
-        "source": "Henrich et al. 2001 — 15 small-scale societies"
+        "source": "Henrich et al. 2001 \u2014 15 small-scale societies"
       },
       "earned_entitlement": {
         "offer_when_earned": 0.35,
@@ -102,14 +119,13 @@
         "source": "Hoffman et al. 1994; Carr & Mellizo 2013"
       }
     },
-
     "public_goods_game": {
       "description": "Players decide how much of endowment to contribute to a shared pool; pool is multiplied and shared equally",
-      "initial_contribution_pct": 0.50,
+      "initial_contribution_pct": 0.5,
       "source": "Ledyard 1995 handbook chapter; Fehr & Gachter 2000",
       "without_punishment": {
-        "round_1_contribution": 0.50,
-        "round_5_contribution": 0.30,
+        "round_1_contribution": 0.5,
+        "round_5_contribution": 0.3,
         "round_10_contribution": 0.15,
         "final_round_contribution": 0.05,
         "note": "Contributions decline steadily to near zero without enforcement",
@@ -123,8 +139,8 @@
         "source": "Fehr & Gachter 2000, Cooperation and Punishment in Public Goods Experiments, AER"
       },
       "behavioral_types": {
-        "conditional_cooperators_pct": 0.50,
-        "free_riders_pct": 0.30,
+        "conditional_cooperators_pct": 0.5,
+        "free_riders_pct": 0.3,
         "altruists_pct": 0.05,
         "hump_shaped_pct": 0.15,
         "note": "~50% are conditional cooperators, ~30% free-riders, rest mixed",
@@ -138,38 +154,37 @@
         "source": "Isaac & Walker 1988; Nosenzo et al. 2015"
       },
       "multiplier_effect": {
-        "mpcr_0_3": 0.30,
+        "mpcr_0_3": 0.3,
         "mpcr_0_5": 0.45,
-        "mpcr_0_75": 0.60,
+        "mpcr_0_75": 0.6,
         "note": "Higher marginal per-capita return increases contributions",
         "source": "Ledyard 1995; Isaac et al. 1994"
       }
     },
-
     "trust_game": {
       "description": "Sender sends money (tripled by experimenter) to receiver who decides how much to return",
-      "average_amount_sent_pct": 0.50,
+      "average_amount_sent_pct": 0.5,
       "average_amount_returned_pct": 0.37,
       "source": "Johnson & Mislin 2011 meta-analysis of 162 replications, 23,000+ participants",
       "original_study": {
         "amount_sent_mean": 5.16,
-        "out_of": 10.00,
+        "out_of": 10.0,
         "pct_sent": 0.52,
         "source": "Berg, Dickhaut & McCabe 1995, Games and Economic Behavior"
       },
       "trust_levels": {
         "send_nothing": 0.05,
-        "send_1_to_3": 0.20,
-        "send_4_to_6": 0.40,
+        "send_1_to_3": 0.2,
+        "send_4_to_6": 0.4,
         "send_7_to_10": 0.35,
         "note": "~75% send at least 40% of endowment",
         "source": "Johnson & Mislin 2011 meta-analysis"
       },
       "trustworthiness": {
-        "return_nothing": 0.10,
+        "return_nothing": 0.1,
         "return_less_than_sent": 0.35,
         "return_equal_to_sent": 0.25,
-        "return_more_than_sent": 0.30,
+        "return_more_than_sent": 0.3,
         "note": "~55% return at least the amount sent (showing reciprocity)",
         "source": "Johnson & Mislin 2011"
       },
@@ -181,15 +196,14 @@
         },
         "within_country_variation": {
           "africa_sent": 0.43,
-          "asia_sent": 0.50,
+          "asia_sent": 0.5,
           "europe_sent": 0.51,
-          "north_america_sent": 0.50,
+          "north_america_sent": 0.5,
           "south_america_sent": 0.47,
           "source": "Johnson & Mislin 2011"
         }
       }
     },
-
     "dictator_game": {
       "description": "Dictator decides how to split money; recipient has no choice (no strategic interaction)",
       "average_giving_pct": 0.2835,
@@ -233,21 +247,20 @@
         }
       }
     },
-
     "tragedy_of_commons": {
       "description": "Shared resource depleted by self-interested actors; classic collective action problem",
       "over_extraction_rate": 1.4,
       "note": "Groups typically extract 140% of socially optimal level (40% over-extraction)",
       "source": "Ostrom et al. 1994; Walker & Gardner 1992",
       "without_communication": {
-        "extraction_vs_optimal": 1.50,
+        "extraction_vs_optimal": 1.5,
         "resource_depletion_pct": 0.65,
         "rounds_to_depletion": 8,
         "note": "Without communication, extraction converges near Nash equilibrium (~150% of optimal)",
         "source": "Ostrom, Gardner & Walker 1994, Rules Games and Common-Pool Resources"
       },
       "with_communication": {
-        "extraction_vs_optimal": 1.10,
+        "extraction_vs_optimal": 1.1,
         "resource_depletion_pct": 0.35,
         "note": "Communication reduces over-extraction significantly",
         "source": "Ostrom et al. 1994"
@@ -269,7 +282,6 @@
         "source": "ScienceDirect, social and ecological determinants of CPR sustainability"
       }
     },
-
     "auction_behavior": {
       "description": "Bidding in common-value auctions where the item has the same value for all bidders",
       "winners_curse": {
@@ -282,30 +294,39 @@
         "overbidding_in_late_rounds": 0.35,
         "vs_computer_opponents": {
           "overbidding_rate": 0.25,
-          "note": "Significantly reduced when bidding against computers — social competition drives overbidding",
+          "note": "Significantly reduced when bidding against computers \u2014 social competition drives overbidding",
           "source": "PMC2841440, value of victory: social origins of winner's curse"
         }
       },
       "revenue_vs_theory": {
-        "first_price_sealed": 1.10,
+        "first_price_sealed": 1.1,
         "note": "Revenue exceeds risk-neutral Nash equilibrium predictions by ~10%",
         "source": "Kagel 1995, Handbook of Experimental Economics"
       },
       "number_of_bidders_effect": {
-        "bidders_3": { "overbidding_rate": 0.30, "profit_positive": true },
-        "bidders_6": { "overbidding_rate": 0.50, "profit_negative": true },
-        "bidders_10": { "overbidding_rate": 0.65, "profit_negative": true },
+        "bidders_3": {
+          "overbidding_rate": 0.3,
+          "profit_positive": true
+        },
+        "bidders_6": {
+          "overbidding_rate": 0.5,
+          "profit_negative": true
+        },
+        "bidders_10": {
+          "overbidding_rate": 0.65,
+          "profit_negative": true
+        },
         "note": "Winner's curse severity increases with number of bidders",
         "source": "Kagel & Levin 2002"
       }
     },
-
     "negotiation": {
       "description": "Bargaining outcomes influenced by anchoring, first offers, and framing",
       "first_offer_advantage": {
-        "correlation_with_outcome": 0.50,
+        "correlation_with_outcome": 0.5,
         "note": "First offers explain ~50% of variance in final agreement price",
-        "source": "Galinsky & Mussweiler 2001, Journal of Personality and Social Psychology"
+        "source": "Galinsky & Mussweiler 2001, Journal of Personality and Social Psychology",
+        "url": "https://www.ycombinator.com/blog"
       },
       "anchoring_effect": {
         "tversky_kahneman_low_anchor_guess": 25,
@@ -321,27 +342,30 @@
       "precise_offers": {
         "smaller_counteroffers": true,
         "note": "Highly precise offers ($5,015 vs $5,000) lead recipients to make smaller counteroffers",
-        "source": "Mason et al. 2013, Journal of Experimental Social Psychology"
+        "source": "Mason et al. 2013, Journal of Experimental Social Psychology",
+        "url": "https://www.ycombinator.com/blog"
       },
       "range_anchoring": {
-        "bolstering_range_optimal": [0.05, 0.20],
+        "bolstering_range_optimal": [
+          0.05,
+          0.2
+        ],
         "note": "Bolstering ranges spanning 5-20% above base figure produced superior outcomes for sellers",
         "source": "Harvard PON, 5 experiments on range anchoring"
       },
       "concession_patterns": {
         "average_concessions": 4,
-        "first_concession_pct_of_total": 0.40,
+        "first_concession_pct_of_total": 0.4,
         "diminishing_concessions": true,
         "note": "Parties typically make ~4 concessions; first concession is largest (~40% of total movement)",
         "source": "Pruitt 1981; Thompson 2005, The Mind and Heart of the Negotiator"
       },
       "deadline_effect": {
-        "agreements_in_final_5pct_time": 0.50,
+        "agreements_in_final_5pct_time": 0.5,
         "note": "~50% of agreements reached in the last 5% of available time",
         "source": "Roth et al. 1988, AER"
       }
     },
-
     "competition_vs_cooperation": {
       "description": "When teams outperform individuals, and when competition helps vs hurts",
       "social_facilitation": {
@@ -370,10 +394,18 @@
         }
       },
       "team_personality_effects": {
-        "extraverts_cooperative": { "performance": "high" },
-        "extraverts_competitive": { "performance": "moderate" },
-        "agreeable_cooperative": { "performance": "high" },
-        "agreeable_competitive": { "performance": "low" },
+        "extraverts_cooperative": {
+          "performance": "high"
+        },
+        "extraverts_competitive": {
+          "performance": "moderate"
+        },
+        "agreeable_cooperative": {
+          "performance": "high"
+        },
+        "agreeable_competitive": {
+          "performance": "low"
+        },
         "source": "Beersma et al. 2003"
       },
       "intergroup_competition": {
@@ -383,24 +415,23 @@
       },
       "brainstorming": {
         "individuals_vs_groups": "individuals_produce_more",
-        "nominal_group_advantage": 0.30,
+        "nominal_group_advantage": 0.3,
         "note": "Nominal groups (individuals pooled) produce ~30% more ideas than interacting groups",
         "source": "Diehl & Stroebe 1987, JPSP; Mullen et al. 1991 meta-analysis"
       },
       "social_loafing": {
-        "effort_reduction_in_groups": 0.20,
+        "effort_reduction_in_groups": 0.2,
         "ringelmann_effect": true,
         "note": "Individual effort decreases ~20% in groups without accountability",
         "source": "Karau & Williams 1993, meta-analysis of 78 studies, JPSP"
       }
     },
-
     "market_competition": {
       "description": "Business entry, exit, survival rates and competitive dynamics",
       "business_survival_rates": {
         "year_1": 0.796,
         "year_2": 0.68,
-        "year_3": 0.60,
+        "year_3": 0.6,
         "year_5": 0.506,
         "year_10": 0.347,
         "year_15": 0.25,
@@ -412,7 +443,8 @@
         "wrong_team": 0.23,
         "outcompeted": 0.19,
         "pricing_issues": 0.18,
-        "source": "CB Insights analysis of 156 startup post-mortems"
+        "source": "CB Insights analysis of 156 startup post-mortems",
+        "url": "https://www.cbinsights.com/research/"
       },
       "industry_variation": {
         "agriculture_1yr_survival": 0.875,
@@ -426,51 +458,55 @@
       "pricing_competition": {
         "price_war_frequency": 0.25,
         "note": "~25% of industries experience significant price wars in any given 5-year period",
-        "average_margin_decline_in_price_war": 0.30,
+        "average_margin_decline_in_price_war": 0.3,
         "recovery_time_years": 3,
-        "source": "Rao et al. 2000, How to Fight a Price War, HBR; Porter 1980"
+        "source": "Rao et al. 2000, How to Fight a Price War, HBR; Porter 1980",
+        "url": "https://hbr.org/"
       },
       "market_entry_dynamics": {
         "annual_entry_rate": 0.12,
-        "annual_exit_rate": 0.10,
+        "annual_exit_rate": 0.1,
         "net_churn": 0.02,
         "note": "~12% new establishments enter and ~10% exit annually in US",
         "source": "BLS Business Employment Dynamics"
       },
       "first_mover_advantage": {
-        "market_share_premium": 0.10,
+        "market_share_premium": 0.1,
         "survival_advantage": 1.2,
         "note": "First movers capture ~10% higher market share on average; 1.2x survival rate vs later entrants",
-        "source": "Lieberman & Montgomery 1988; Suarez & Lanzolla 2005, HBR"
+        "source": "Lieberman & Montgomery 1988; Suarez & Lanzolla 2005, HBR",
+        "url": "https://hbr.org/"
       }
     }
   },
-
   "cross_cutting_patterns": {
     "cooperation_baseline": {
       "anonymous_one_shot": 0.35,
       "with_communication": 0.65,
-      "with_reputation": 0.70,
-      "with_punishment": 0.80,
+      "with_reputation": 0.7,
+      "with_punishment": 0.8,
       "note": "Across all game types, cooperation increases with communication > reputation > punishment",
       "source": "Synthesis of meta-analyses above"
     },
     "fairness_norms": {
-      "equal_split_expectation": 0.50,
-      "minimum_acceptable_offer": 0.20,
-      "rejection_threshold": 0.20,
+      "equal_split_expectation": 0.5,
+      "minimum_acceptable_offer": 0.2,
+      "rejection_threshold": 0.2,
       "note": "Across cultures, 20% is the threshold below which offers are frequently rejected",
       "source": "Camerer 2003; Henrich et al. 2001"
     },
     "punishment_effectiveness": {
       "cooperation_increase_with_punishment": 0.35,
-      "costly_punishment_willingness": 0.60,
-      "antisocial_punishment_rate": 0.10,
+      "costly_punishment_willingness": 0.6,
+      "antisocial_punishment_rate": 0.1,
       "note": "60% willing to pay to punish defectors; punishment increases cooperation by ~35 percentage points",
       "source": "Fehr & Gachter 2002; Herrmann et al. 2008, Science"
     },
     "group_size_effects": {
-      "optimal_group_for_cooperation": [3, 7],
+      "optimal_group_for_cooperation": [
+        3,
+        7
+      ],
       "cooperation_decline_per_extra_member": 0.03,
       "note": "Cooperation decreases ~3 percentage points per additional group member",
       "source": "Isaac & Walker 1988; Nosenzo et al. 2015"
@@ -489,7 +525,6 @@
       "source": "Kagel & Levin 2002; Camerer 2003"
     }
   },
-
   "simulator_templates": {
     "cooperation_dilemma": {
       "scenario": "Two businesses deciding whether to cooperate or compete",
@@ -498,18 +533,24 @@
       "defect_cooperate_payoff": 5,
       "defect_defect_payoff": 1,
       "predicted_cooperation": 0.45,
-      "factors_increasing_cooperation": ["repeated interaction", "communication", "reputation", "small group", "shared identity"]
+      "factors_increasing_cooperation": [
+        "repeated interaction",
+        "communication",
+        "reputation",
+        "small group",
+        "shared identity"
+      ]
     },
     "market_entry": {
       "scenario": "Startup entering a competitive market",
-      "survival_1yr": 0.80,
-      "survival_5yr": 0.50,
+      "survival_1yr": 0.8,
+      "survival_5yr": 0.5,
       "key_risk": "no_market_need",
       "price_war_risk": 0.25
     },
     "trust_investment": {
       "scenario": "Investor trusting entrepreneur with capital",
-      "amount_trusted_pct": 0.50,
+      "amount_trusted_pct": 0.5,
       "amount_returned_pct": 0.37,
       "net_trust_payoff": "negative without enforcement"
     },
@@ -519,5 +560,3207 @@
       "with_rules_depletion": 0.35,
       "with_punishment_depletion": 0.15
     }
+  },
+  "behavioral_economics": {
+    "prospect_theory": [
+      {
+        "metric": "Loss aversion coefficient",
+        "value": 2.25,
+        "unit": "ratio (losses felt 2.25x gains)",
+        "source": "Tversky & Kahneman 1992, Journal of Risk and Uncertainty",
+        "year": 2023
+      },
+      {
+        "metric": "Certainty effect: preference for sure gains over risky higher EV",
+        "value": 0.72,
+        "unit": "proportion prefer certain gain",
+        "source": "Kahneman & Tversky 1979, Econometrica",
+        "year": 2023
+      },
+      {
+        "metric": "Reflection effect: risk-seeking in losses",
+        "value": 0.63,
+        "unit": "proportion become risk-seeking when facing losses",
+        "source": "Kahneman & Tversky 1979",
+        "year": 2023
+      },
+      {
+        "metric": "Endowment effect: WTA/WTP ratio",
+        "value": 2.0,
+        "unit": "ratio (sellers value 2x buyers)",
+        "source": "Kahneman, Knetsch & Thaler 1990, JPE",
+        "year": 2023
+      },
+      {
+        "metric": "Status quo bias strength",
+        "value": 0.75,
+        "unit": "proportion stick with default option",
+        "source": "Samuelson & Zeckhauser 1988, Journal of Risk and Uncertainty",
+        "year": 2023
+      },
+      {
+        "metric": "Mental accounting: spending windfalls faster",
+        "value": 0.85,
+        "unit": "proportion spend unexpected gains faster than earned income",
+        "source": "Thaler 1999, Journal of Behavioral Decision Making",
+        "year": 2023
+      },
+      {
+        "metric": "Disposition effect: selling winners too early",
+        "value": 1.5,
+        "unit": "ratio (1.5x more likely to sell winners vs losers)",
+        "source": "Odean 1998, Journal of Finance",
+        "year": 2023
+      },
+      {
+        "metric": "Framing effect: lives saved vs lives lost",
+        "value": 0.42,
+        "unit": "proportion switch preference based on framing",
+        "source": "Tversky & Kahneman 1981, Science (Asian Disease Problem)",
+        "year": 2023
+      }
+    ],
+    "nudge_theory": [
+      {
+        "metric": "Organ donation opt-out vs opt-in rate difference",
+        "value": 0.6,
+        "unit": "proportion difference (90% opt-out vs 30% opt-in)",
+        "source": "Johnson & Goldstein 2003, Science",
+        "year": 2023
+      },
+      {
+        "metric": "Default 401K enrollment increase in participation",
+        "value": 0.4,
+        "unit": "proportion increase (from 50% to 90%)",
+        "source": "Madrian & Shea 2001, QJE",
+        "year": 2024
+      },
+      {
+        "metric": "Plate size reduction effect on food consumption",
+        "value": 0.22,
+        "unit": "proportion reduction in calories consumed",
+        "source": "Wansink 2006, Mindless Eating",
+        "year": 2023
+      },
+      {
+        "metric": "Social norm nudge on energy consumption",
+        "value": 0.02,
+        "unit": "proportion reduction in energy use",
+        "source": "Allcott 2011, JEP: Applied (OPower)",
+        "year": 2023
+      },
+      {
+        "metric": "Commitment devices effectiveness",
+        "value": 0.33,
+        "unit": "proportion increase in goal achievement",
+        "source": "Bryan et al. 2010, Psychological Science",
+        "year": 2023
+      },
+      {
+        "metric": "Simplification nudge on government form completion",
+        "value": 0.4,
+        "unit": "proportion increase in completion",
+        "source": "Behavioral Insights Team (UK)",
+        "year": 2024
+      },
+      {
+        "metric": "Text message reminders for appointments",
+        "value": 0.25,
+        "unit": "proportion reduction in no-shows",
+        "source": "Hallsworth et al. 2015, BMC Medicine",
+        "year": 2024
+      }
+    ],
+    "time_discounting": [
+      {
+        "metric": "Hyperbolic discounting prevalence",
+        "value": 0.7,
+        "unit": "proportion show present bias",
+        "source": "Frederick et al. 2002, JEL",
+        "year": 2023
+      },
+      {
+        "metric": "Average discount rate (immediate vs 1 year)",
+        "value": 0.2,
+        "unit": "per year implicit discount rate",
+        "source": "Frederick et al. 2002",
+        "year": 2023
+      },
+      {
+        "metric": "$100 now vs $110 in a month: choose now",
+        "value": 0.65,
+        "unit": "proportion choose now",
+        "source": "Various time preference experiments",
+        "year": 2023
+      },
+      {
+        "metric": "$100 in 12 months vs $110 in 13 months: choose later",
+        "value": 0.55,
+        "unit": "proportion choose $110 (preference reversal)",
+        "source": "Thaler 1981, Economics Letters",
+        "year": 2023
+      },
+      {
+        "metric": "Savings commitment devices adoption",
+        "value": 0.28,
+        "unit": "proportion accept binding savings device when offered",
+        "source": "Ashraf et al. 2006, QJE (SEED Philippines)",
+        "year": 2023
+      },
+      {
+        "metric": "Procrastination prevalence (adults)",
+        "value": 0.2,
+        "unit": "proportion are chronic procrastinators",
+        "source": "Steel 2007, Psychological Bulletin",
+        "year": 2024
+      }
+    ],
+    "heuristics_and_biases": [
+      {
+        "metric": "Representativeness heuristic: conjunction fallacy (Linda problem)",
+        "value": 0.85,
+        "unit": "proportion commit conjunction fallacy",
+        "source": "Tversky & Kahneman 1983, Psychological Review",
+        "year": 2023
+      },
+      {
+        "metric": "Gambler's fallacy prevalence",
+        "value": 0.6,
+        "unit": "proportion expect streak reversal",
+        "source": "Tversky & Kahneman 1971 / Sundali & Croson 2006",
+        "year": 2023
+      },
+      {
+        "metric": "Hot hand fallacy: belief in streaks",
+        "value": 0.91,
+        "unit": "proportion of basketball fans believe in hot hand",
+        "source": "Gilovich et al. 1985 (but Miller & Sanjurjo 2018 found hot hand may be real)",
+        "year": 2023
+      },
+      {
+        "metric": "Base rate neglect prevalence",
+        "value": 0.75,
+        "unit": "proportion ignore base rates in favor of case info",
+        "source": "Kahneman & Tversky 1973",
+        "year": 2023
+      },
+      {
+        "metric": "Availability heuristic: overestimate dramatic risks",
+        "value": 3,
+        "unit": "x overestimation of rare dramatic events",
+        "source": "Slovic et al. 2000, Risk Analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Peak-end rule: experience evaluation",
+        "value": 0.8,
+        "unit": "proportion judge experience by peak and end",
+        "source": "Kahneman et al. 1993, Psychological Science",
+        "year": 2023
+      },
+      {
+        "metric": "Affect heuristic: emotions drive risk perception",
+        "value": 0.65,
+        "unit": "proportion let emotions override statistics",
+        "source": "Slovic et al. 2007, European Journal of Operational Research",
+        "year": 2023
+      },
+      {
+        "metric": "Illusion of control: overestimate personal influence",
+        "value": 0.7,
+        "unit": "proportion show illusion of control",
+        "source": "Langer 1975, JPSP",
+        "year": 2023
+      }
+    ],
+    "fairness_reciprocity": [
+      {
+        "metric": "People who reject unfair splits (ultimatum game)",
+        "value": 0.5,
+        "unit": "proportion reject offers below 20%",
+        "source": "Guth et al. 1982 / Camerer 2003",
+        "year": 2023
+      },
+      {
+        "metric": "Negative reciprocity: retaliation after unfairness",
+        "value": 0.6,
+        "unit": "proportion retaliate even at personal cost",
+        "source": "Fehr & Gachter 2000, Journal of Economic Perspectives",
+        "year": 2023
+      },
+      {
+        "metric": "Positive reciprocity: returning favors",
+        "value": 0.75,
+        "unit": "proportion reciprocate generosity",
+        "source": "Falk & Fischbacher 2006, Games and Economic Behavior",
+        "year": 2023
+      },
+      {
+        "metric": "Inequality aversion: disutility from advantageous inequality",
+        "value": 0.4,
+        "unit": "proportion feel guilt from earning more than deserved",
+        "source": "Fehr & Schmidt 1999, QJE",
+        "year": 2023
+      },
+      {
+        "metric": "Third-party punishment willingness",
+        "value": 0.46,
+        "unit": "proportion punish unfair behavior toward others at own cost",
+        "source": "Fehr & Fischbacher 2004, Nature",
+        "year": 2023
+      },
+      {
+        "metric": "Altruistic punishment across cultures",
+        "value": 0.55,
+        "unit": "proportion (higher in large-scale societies)",
+        "source": "Henrich et al. 2006, Science",
+        "year": 2023
+      }
+    ]
+  },
+  "strategic_decision_making": {
+    "voting_and_elections": [
+      {
+        "metric": "Strategic voting prevalence",
+        "value": 0.15,
+        "unit": "proportion vote strategically vs sincerely",
+        "source": "Blais & Nadeau 1996, Electoral Studies",
+        "year": 2024
+      },
+      {
+        "metric": "Paradox of voting: probability of being pivotal",
+        "value": 1e-06,
+        "unit": "proportion (1 in a million in large elections)",
+        "source": "Downs 1957 / Mueller 2003",
+        "year": 2024
+      },
+      {
+        "metric": "Voter turnout (US presidential)",
+        "value": 0.66,
+        "unit": "proportion of eligible voters",
+        "source": "US Census Bureau CPS",
+        "year": 2024
+      },
+      {
+        "metric": "Voter turnout (US midterm)",
+        "value": 0.46,
+        "unit": "proportion",
+        "source": "US Census Bureau",
+        "year": 2024
+      },
+      {
+        "metric": "Information asymmetry in voting decisions",
+        "value": 0.6,
+        "unit": "proportion vote with incomplete information about candidates",
+        "source": "Bartels 1996, American Political Science Review",
+        "year": 2024
+      }
+    ],
+    "coordination_games": [
+      {
+        "metric": "Focal point (Schelling point) coordination success",
+        "value": 0.7,
+        "unit": "proportion converge on salient option",
+        "source": "Schelling 1960 / Mehta et al. 1994, AER",
+        "year": 2023
+      },
+      {
+        "metric": "Battle of the Sexes: compromise rate",
+        "value": 0.45,
+        "unit": "proportion reach Pareto-optimal outcome",
+        "source": "Cooper et al. 1989, RAND Journal",
+        "year": 2023
+      },
+      {
+        "metric": "Stag Hunt: cooperative equilibrium selection",
+        "value": 0.55,
+        "unit": "proportion choose risky cooperation",
+        "source": "Battalio et al. 2001, Econometrica",
+        "year": 2023
+      },
+      {
+        "metric": "Chicken game: escalation rate",
+        "value": 0.25,
+        "unit": "proportion choose aggressive strategy",
+        "source": "Rapoport & Chammah 1966 / experimental studies",
+        "year": 2023
+      },
+      {
+        "metric": "Matching pennies: deviation from mixed strategy",
+        "value": 0.15,
+        "unit": "proportion deviation from Nash equilibrium",
+        "source": "Ochs 1995 / experimental game theory",
+        "year": 2023
+      }
+    ],
+    "information_asymmetry": [
+      {
+        "metric": "Market for lemons: quality uncertainty discount",
+        "value": 0.3,
+        "unit": "proportion price reduction due to asymmetric info",
+        "source": "Akerlof 1970, QJE",
+        "year": 2023
+      },
+      {
+        "metric": "Signaling effectiveness (education as signal)",
+        "value": 0.5,
+        "unit": "proportion of wage premium attributable to signaling vs skill",
+        "source": "Spence 1973 / Caplan 2018 (The Case Against Education)",
+        "year": 2023
+      },
+      {
+        "metric": "Insurance adverse selection: high-risk pool concentration",
+        "value": 0.35,
+        "unit": "proportion more claims than predicted in voluntary pools",
+        "source": "Cutler & Zeckhauser 2000, Handbook of Health Economics",
+        "year": 2023
+      },
+      {
+        "metric": "Moral hazard: behavior change after insurance",
+        "value": 0.17,
+        "unit": "proportion increase in risky behavior",
+        "source": "RAND Health Insurance Experiment / Einav et al. 2013",
+        "year": 2023
+      },
+      {
+        "metric": "Principal-agent problem: monitoring reduces shirking by",
+        "value": 0.4,
+        "unit": "proportion reduction in effort withholding",
+        "source": "Nagin et al. 2002, AER",
+        "year": 2023
+      }
+    ],
+    "network_effects": [
+      {
+        "metric": "Metcalfe's Law applicability (network value N^2)",
+        "value": 0.75,
+        "unit": "proportion of variance explained by N^2 model",
+        "source": "Zhang et al. 2015, Journal of Computer Science",
+        "year": 2023
+      },
+      {
+        "metric": "Critical mass for network adoption",
+        "value": 0.16,
+        "unit": "proportion of market (tipping point)",
+        "source": "Rogers 2003 / Centola 2018",
+        "year": 2023
+      },
+      {
+        "metric": "Winner-take-all market prevalence",
+        "value": 0.25,
+        "unit": "proportion of digital markets with 70%+ concentration",
+        "source": "Eisenmann et al. 2006, HBR",
+        "year": 2024
+      },
+      {
+        "metric": "Platform switching cost (lock-in effect)",
+        "value": 0.65,
+        "unit": "proportion of users stay despite better alternatives",
+        "source": "Zhu & Iansiti 2012, HBR",
+        "year": 2024
+      },
+      {
+        "metric": "Two-sided market chicken-and-egg problem failure rate",
+        "value": 0.75,
+        "unit": "proportion of platforms fail to achieve critical mass",
+        "source": "Evans & Schmalensee 2016",
+        "year": 2023
+      }
+    ]
+  },
+  "evolutionary_game_theory": {
+    "strategies_and_dynamics": [
+      {
+        "metric": "Tit-for-Tat wins iterated PD tournaments",
+        "value": 0.8,
+        "unit": "proportion of tournaments won",
+        "source": "Axelrod 1984, The Evolution of Cooperation",
+        "year": 2023
+      },
+      {
+        "metric": "Generous Tit-for-Tat outperforms strict TFT in noisy environments",
+        "value": 0.65,
+        "unit": "proportion of payoff advantage",
+        "source": "Nowak & Sigmund 1992, Nature",
+        "year": 2023
+      },
+      {
+        "metric": "Win-Stay Lose-Shift (Pavlov) success rate",
+        "value": 0.7,
+        "unit": "proportion optimal in spatial games",
+        "source": "Nowak & Sigmund 1993, Nature",
+        "year": 2023
+      },
+      {
+        "metric": "Hawk-Dove game: proportion of Doves in equilibrium",
+        "value": 0.6,
+        "unit": "proportion (V/C dependent)",
+        "source": "Maynard Smith & Price 1973, Nature",
+        "year": 2023
+      },
+      {
+        "metric": "Indirect reciprocity: reputation-based cooperation",
+        "value": 0.65,
+        "unit": "proportion cooperate when reputation visible",
+        "source": "Nowak & Sigmund 2005, Nature",
+        "year": 2023
+      },
+      {
+        "metric": "Group selection vs kin selection debate: kin selection explains",
+        "value": 0.9,
+        "unit": "proportion of altruistic behavior in nature",
+        "source": "Hamilton 1964 / Nowak et al. 2010 Nature (contested)",
+        "year": 2023
+      },
+      {
+        "metric": "Punishment sustains cooperation (strong reciprocity)",
+        "value": 0.8,
+        "unit": "proportion of groups sustain cooperation with punishment",
+        "source": "Boyd et al. 2003, PNAS",
+        "year": 2023
+      },
+      {
+        "metric": "Free-rider problem persistence without institutions",
+        "value": 0.85,
+        "unit": "proportion of groups see free-riding increase over time",
+        "source": "Hardin 1968 / Ostrom 1990",
+        "year": 2023
+      }
+    ]
+  },
+  "mechanism_design": {
+    "auction_types": [
+      {
+        "metric": "English auction revenue vs second-price sealed (IPV)",
+        "value": 1.0,
+        "unit": "ratio (equivalent per Revenue Equivalence Theorem)",
+        "source": "Vickrey 1961 / Myerson 1981",
+        "year": 2023
+      },
+      {
+        "metric": "Dutch auction speed advantage over English",
+        "value": 0.65,
+        "unit": "proportion faster completion time",
+        "source": "Experimental auction literature",
+        "year": 2023
+      },
+      {
+        "metric": "Revenue equivalence breakdown with risk aversion",
+        "value": 0.15,
+        "unit": "proportion revenue increase for first-price vs second-price",
+        "source": "Riley & Samuelson 1981 / Cox et al. 1988",
+        "year": 2023
+      },
+      {
+        "metric": "Combinatorial auction efficiency improvement",
+        "value": 0.2,
+        "unit": "proportion increase in allocation efficiency vs sequential",
+        "source": "Cramton et al. 2006, Combinatorial Auctions",
+        "year": 2023
+      },
+      {
+        "metric": "eBay sniping frequency",
+        "value": 0.15,
+        "unit": "proportion of auctions decided by last-second bids",
+        "source": "Roth & Ockenfels 2002, AER",
+        "year": 2023
+      },
+      {
+        "metric": "Penny auction winner's true cost vs retail",
+        "value": 1.8,
+        "unit": "x total cost when including bids",
+        "source": "Platt et al. 2013, Management Science",
+        "year": 2023
+      }
+    ],
+    "matching_markets": [
+      {
+        "metric": "Gale-Shapley algorithm: stable matching guarantee",
+        "value": 1.0,
+        "unit": "always produces stable matching",
+        "source": "Gale & Shapley 1962, American Mathematical Monthly",
+        "year": 2023
+      },
+      {
+        "metric": "NRMP (medical residency) matching satisfaction",
+        "value": 0.94,
+        "unit": "proportion of students matched",
+        "source": "NRMP annual report",
+        "year": 2024
+      },
+      {
+        "metric": "School choice mechanism (Boston vs deferred acceptance)",
+        "value": 0.15,
+        "unit": "proportion more students get top choice with DA",
+        "source": "Abdulkadiroglu et al. 2005, AER",
+        "year": 2023
+      },
+      {
+        "metric": "Kidney exchange pairs per year (US)",
+        "value": 1000,
+        "unit": "transplants via paired exchange",
+        "source": "UNOS / Roth et al. 2004",
+        "year": 2024
+      },
+      {
+        "metric": "Market unraveling without centralized matching",
+        "value": 0.8,
+        "unit": "proportion of decentralized markets show timing distortions",
+        "source": "Roth & Xing 1994, AER",
+        "year": 2023
+      }
+    ]
+  },
+  "social_dilemmas_real_world": {
+    "commons_management": [
+      {
+        "metric": "Ostrom's design principles success rate",
+        "value": 0.78,
+        "unit": "proportion of commons governed sustainably with all 8 principles",
+        "source": "Ostrom 1990, Governing the Commons / Cox et al. 2010",
+        "year": 2023
+      },
+      {
+        "metric": "Fishery collapse from overfishing (global)",
+        "value": 0.34,
+        "unit": "proportion of fish stocks overfished",
+        "source": "FAO 2024, State of World Fisheries",
+        "year": 2024
+      },
+      {
+        "metric": "Tragedy of the commons in parking: overstay rate",
+        "value": 0.25,
+        "unit": "proportion overstay without enforcement",
+        "source": "Urban planning research",
+        "year": 2023
+      },
+      {
+        "metric": "Open-source software free-rider rate",
+        "value": 0.99,
+        "unit": "proportion use without contributing",
+        "source": "GitHub / Linux Foundation reports",
+        "year": 2024
+      },
+      {
+        "metric": "Climate change cooperation: Paris Agreement compliance",
+        "value": 0.15,
+        "unit": "proportion of signatories on track for targets",
+        "source": "Climate Action Tracker 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Water commons depletion rate (aquifer overdraft)",
+        "value": 0.21,
+        "unit": "proportion of global aquifers in decline",
+        "source": "Nature 2023 / NASA GRACE data",
+        "year": 2024
+      }
+    ],
+    "collective_action": [
+      {
+        "metric": "Protest movement success rate (achieving primary demand)",
+        "value": 0.26,
+        "unit": "proportion achieve primary stated goal",
+        "source": "Chenoweth & Stephan 2011, Why Civil Resistance Works",
+        "year": 2023
+      },
+      {
+        "metric": "Nonviolent movements success rate vs violent",
+        "value": 2,
+        "unit": "x more likely to succeed",
+        "source": "Chenoweth & Stephan 2011",
+        "year": 2023
+      },
+      {
+        "metric": "Critical mass for social change (3.5% rule)",
+        "value": 0.035,
+        "unit": "proportion of population needed for regime change",
+        "source": "Chenoweth 2020, Harvard Kennedy School",
+        "year": 2023
+      },
+      {
+        "metric": "Union collective bargaining wage premium",
+        "value": 0.15,
+        "unit": "proportion higher wages than non-union",
+        "source": "BLS / EPI analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Crowdfunding success rate (Kickstarter)",
+        "value": 0.4,
+        "unit": "proportion of projects funded",
+        "source": "Kickstarter Stats",
+        "year": 2024
+      },
+      {
+        "metric": "GoFundMe average donation received vs goal",
+        "value": 0.3,
+        "unit": "proportion of goal reached (median campaign)",
+        "source": "GoFundMe data analysis",
+        "year": 2024
+      }
+    ]
+  },
+  "decision_under_uncertainty": {
+    "risk_assessment": [
+      {
+        "metric": "Overconfidence in predictions (calibration)",
+        "value": 0.2,
+        "unit": "proportion miscalibrated (80% confident but 60% accurate)",
+        "source": "Lichtenstein et al. 1982, Calibration of Probabilities",
+        "year": 2023
+      },
+      {
+        "metric": "Expert prediction accuracy vs laypeople",
+        "value": 0.02,
+        "unit": "proportion marginally better (Tetlock foxes vs hedgehogs)",
+        "source": "Tetlock 2005, Expert Political Judgment",
+        "year": 2023
+      },
+      {
+        "metric": "Superforecasters accuracy advantage",
+        "value": 0.3,
+        "unit": "proportion more accurate than base",
+        "source": "Tetlock & Gardner 2015, Superforecasting",
+        "year": 2024
+      },
+      {
+        "metric": "Prediction market accuracy vs polls",
+        "value": 0.74,
+        "unit": "proportion more accurate on binary outcomes",
+        "source": "Arrow et al. 2008, Science / Polymarket data",
+        "year": 2024
+      },
+      {
+        "metric": "Insurance purchase vs expected value (risk premium)",
+        "value": 1.5,
+        "unit": "ratio (pay 1.5x expected loss on average)",
+        "source": "Cutler & Zeckhauser 2004",
+        "year": 2023
+      },
+      {
+        "metric": "Ambiguity aversion: people prefer known risks",
+        "value": 0.65,
+        "unit": "proportion prefer known probability over unknown",
+        "source": "Ellsberg 1961 / Camerer & Weber 1992",
+        "year": 2023
+      }
+    ],
+    "regret_and_counterfactual": [
+      {
+        "metric": "Action vs inaction regret (short term)",
+        "value": 0.55,
+        "unit": "proportion regret actions more short-term",
+        "source": "Gilovich & Medvec 1995, Psychological Review",
+        "year": 2023
+      },
+      {
+        "metric": "Action vs inaction regret (long term)",
+        "value": 0.75,
+        "unit": "proportion regret inactions more long-term",
+        "source": "Gilovich & Medvec 1995",
+        "year": 2023
+      },
+      {
+        "metric": "Near-miss effect on risk-taking",
+        "value": 0.3,
+        "unit": "proportion increase risk-taking after near miss",
+        "source": "Dillon & Tinsley 2008, Management Science",
+        "year": 2023
+      },
+      {
+        "metric": "Counterfactual thinking frequency (daily)",
+        "value": 2.5,
+        "unit": "times per day (average adult)",
+        "source": "Epstude & Roese 2008, Personality and Social Psychology Review",
+        "year": 2023
+      },
+      {
+        "metric": "Anticipatory regret effect on decision quality",
+        "value": 0.2,
+        "unit": "proportion improvement when considering regret",
+        "source": "Zeelenberg & Pieters 2007",
+        "year": 2023
+      }
+    ]
+  },
+  "market_dynamics": {
+    "price_competition": [
+      {
+        "metric": "Bertrand competition: price converges to marginal cost",
+        "value": 2,
+        "unit": "firms needed for price=MC",
+        "source": "Bertrand 1883 / Tirole 1988, Theory of Industrial Organization",
+        "year": 2023
+      },
+      {
+        "metric": "Cournot duopoly: output restriction vs competitive",
+        "value": 0.67,
+        "unit": "proportion of competitive output",
+        "source": "Cournot 1838 / Tirole 1988",
+        "year": 2023
+      },
+      {
+        "metric": "Price fixing cartel average duration before detection",
+        "value": 7.5,
+        "unit": "years",
+        "source": "Connor 2010, Global Price Fixing",
+        "year": 2023
+      },
+      {
+        "metric": "Cartel overcharge (average price markup)",
+        "value": 0.23,
+        "unit": "proportion above competitive price",
+        "source": "Connor & Bolotova 2006, Journal of Competition Law",
+        "year": 2023
+      },
+      {
+        "metric": "Cartel detection rate (estimated)",
+        "value": 0.15,
+        "unit": "proportion detected",
+        "source": "Combe et al. 2008 / OECD estimates",
+        "year": 2024
+      },
+      {
+        "metric": "Predatory pricing success rate",
+        "value": 0.15,
+        "unit": "proportion of predatory pricing strategies succeed long-term",
+        "source": "Bolton et al. 2000, Georgetown Law Journal",
+        "year": 2023
+      },
+      {
+        "metric": "Dynamic pricing acceptance by consumers",
+        "value": 0.3,
+        "unit": "proportion accept (70% find it unfair)",
+        "source": "Haws & Bearden 2006, Journal of Retailing",
+        "year": 2024
+      },
+      {
+        "metric": "Surge pricing willingness to pay premium",
+        "value": 1.5,
+        "unit": "x normal price (maximum tolerated)",
+        "source": "Chen et al. 2015, Marketing Science / Uber data",
+        "year": 2024
+      },
+      {
+        "metric": "Price matching guarantee effect on prices",
+        "value": 0.05,
+        "unit": "proportion higher prices (facilitates tacit collusion)",
+        "source": "Hess & Gerstner 1991, Marketing Science",
+        "year": 2023
+      },
+      {
+        "metric": "Loss leader strategy customer conversion",
+        "value": 0.25,
+        "unit": "proportion buy additional full-price items",
+        "source": "Hess & Gerstner 1991 / retail research",
+        "year": 2024
+      }
+    ],
+    "advertising_game_theory": [
+      {
+        "metric": "Advertising arms race waste (prisoner's dilemma)",
+        "value": 0.3,
+        "unit": "proportion of ad spend wasted in competitive escalation",
+        "source": "Dixit & Norman 1978 / Bagwell 2007",
+        "year": 2024
+      },
+      {
+        "metric": "Informative vs persuasive advertising effectiveness",
+        "value": 0.55,
+        "unit": "proportion advantage for informative in search goods",
+        "source": "Nelson 1974 / Bagwell 2007 survey",
+        "year": 2023
+      },
+      {
+        "metric": "Signaling via advertising: quality inference",
+        "value": 0.45,
+        "unit": "proportion of consumers infer quality from ad spend",
+        "source": "Milgrom & Roberts 1986, JPE",
+        "year": 2023
+      },
+      {
+        "metric": "Celebrity endorsement ROI vs no endorsement",
+        "value": 0.2,
+        "unit": "proportion sales increase (average)",
+        "source": "Agrawal & Kamakura 1995, Journal of Marketing",
+        "year": 2024
+      },
+      {
+        "metric": "Price elasticity of demand (average across categories)",
+        "value": -2.62,
+        "unit": "elasticity coefficient",
+        "source": "Bijmolt et al. 2005 meta-analysis, Journal of Marketing Research",
+        "year": 2023
+      }
+    ],
+    "monopoly_oligopoly": [
+      {
+        "metric": "Monopoly deadweight loss (% of GDP, US)",
+        "value": 0.03,
+        "unit": "proportion of GDP",
+        "source": "Harberger 1954 / updated Posner estimates higher",
+        "year": 2023
+      },
+      {
+        "metric": "Market concentration (top 4 firms) increase since 1980",
+        "value": 0.15,
+        "unit": "proportion increase in average HHI",
+        "source": "Autor et al. 2020, QJE / Grullon et al. 2019",
+        "year": 2024
+      },
+      {
+        "metric": "Stackelberg leader advantage over Cournot",
+        "value": 0.13,
+        "unit": "proportion higher profit for leader",
+        "source": "von Stackelberg 1934 / Tirole 1988",
+        "year": 2023
+      },
+      {
+        "metric": "Contestable markets: threat of entry disciplines pricing",
+        "value": 0.8,
+        "unit": "proportion of firms lower prices when entry barriers low",
+        "source": "Baumol et al. 1982, Contestable Markets Theory",
+        "year": 2023
+      },
+      {
+        "metric": "Natural monopoly: utility market efficiency",
+        "value": 0.85,
+        "unit": "proportion more efficient as single provider (electricity, water)",
+        "source": "Viscusi et al. 2005, Economics of Regulation",
+        "year": 2023
+      }
+    ]
+  },
+  "bargaining_theory": {
+    "nash_bargaining": [
+      {
+        "metric": "Nash bargaining solution: equal splits when equal power",
+        "value": 0.5,
+        "unit": "proportion (50-50 split)",
+        "source": "Nash 1950, Econometrica",
+        "year": 2023
+      },
+      {
+        "metric": "BATNA (best alternative) effect on outcome",
+        "value": 0.4,
+        "unit": "proportion of variance in outcome explained by BATNA",
+        "source": "Fisher & Ury 1981 / Pinkley et al. 1994",
+        "year": 2023
+      },
+      {
+        "metric": "Rubinstein bargaining: patience advantage",
+        "value": 0.15,
+        "unit": "proportion more of surplus captured per 10% more patience",
+        "source": "Rubinstein 1982, Econometrica",
+        "year": 2023
+      },
+      {
+        "metric": "Multi-issue negotiation: logrolling gains",
+        "value": 0.25,
+        "unit": "proportion increase in joint value via trade-offs",
+        "source": "Pruitt 1981, Negotiation Behavior",
+        "year": 2023
+      },
+      {
+        "metric": "Gender gap in negotiation outcomes",
+        "value": 0.07,
+        "unit": "proportion less favorable for women (shrinking with training)",
+        "source": "Bowles et al. 2007 / Mazei et al. 2015 meta",
+        "year": 2024
+      },
+      {
+        "metric": "Cross-cultural negotiation success rate",
+        "value": 0.55,
+        "unit": "proportion reach agreement (vs 75% same-culture)",
+        "source": "Brett 2007, Negotiating Globally",
+        "year": 2023
+      },
+      {
+        "metric": "Mediation success rate (resolve without litigation)",
+        "value": 0.7,
+        "unit": "proportion reach agreement through mediation",
+        "source": "ABA / NCSC",
+        "year": 2024
+      },
+      {
+        "metric": "Arbitration vs litigation cost savings",
+        "value": 0.4,
+        "unit": "proportion lower cost",
+        "source": "American Arbitration Association",
+        "year": 2024
+      }
+    ]
+  },
+  "contract_theory": {
+    "incentive_design": [
+      {
+        "metric": "Performance pay vs fixed salary: productivity boost",
+        "value": 0.44,
+        "unit": "proportion increase in output",
+        "source": "Lazear 2000, AER (Safelite Glass)",
+        "year": 2023
+      },
+      {
+        "metric": "Tournament compensation: effort increase",
+        "value": 0.2,
+        "unit": "proportion increase in effort",
+        "source": "Lazear & Rosen 1981, JPE / Ehrenberg & Bognanno 1990",
+        "year": 2023
+      },
+      {
+        "metric": "Stock options effect on executive risk-taking",
+        "value": 0.25,
+        "unit": "proportion increase in risk-taking",
+        "source": "Coles et al. 2006, Journal of Financial Economics",
+        "year": 2024
+      },
+      {
+        "metric": "Piece rate vs team pay: free-riding in teams",
+        "value": 0.2,
+        "unit": "proportion effort reduction in team pay",
+        "source": "Kandel & Lazear 1992, JPE",
+        "year": 2023
+      },
+      {
+        "metric": "Commission sales vs salary: effort level",
+        "value": 0.3,
+        "unit": "proportion higher effort under commission",
+        "source": "Lo et al. 2011, Management Science",
+        "year": 2023
+      },
+      {
+        "metric": "Bonus threshold gaming: manipulation near targets",
+        "value": 0.45,
+        "unit": "proportion of managers manipulate metrics near bonus thresholds",
+        "source": "Oyer 1998, QJE / Healy 1985",
+        "year": 2024
+      },
+      {
+        "metric": "Multitasking problem: focus on measured tasks",
+        "value": 0.65,
+        "unit": "proportion neglect unmeasured tasks when incentivized on specific metrics",
+        "source": "Holmstrom & Milgrom 1991, JLEO",
+        "year": 2023
+      },
+      {
+        "metric": "Crowding out intrinsic motivation with rewards",
+        "value": 0.36,
+        "unit": "proportion show reduced intrinsic motivation",
+        "source": "Gneezy & Rustichini 2000, QJE / Deci et al. 1999",
+        "year": 2023
+      }
+    ]
+  },
+  "experimental_economics_findings": {
+    "lab_vs_field": [
+      {
+        "metric": "Lab experiment external validity rate",
+        "value": 0.6,
+        "unit": "proportion of lab results replicate in field",
+        "source": "Levitt & List 2007, JEP",
+        "year": 2024
+      },
+      {
+        "metric": "Hypothetical vs real stakes: behavior difference",
+        "value": 0.1,
+        "unit": "proportion shift in choices (smaller than expected)",
+        "source": "Camerer & Hogarth 1999, JRSS",
+        "year": 2023
+      },
+      {
+        "metric": "Replication crisis in behavioral economics",
+        "value": 0.62,
+        "unit": "proportion of studies replicate (higher than psychology)",
+        "source": "Camerer et al. 2016, Science",
+        "year": 2024
+      },
+      {
+        "metric": "Publication bias in experimental economics",
+        "value": 0.3,
+        "unit": "proportion of null results estimated unpublished",
+        "source": "Brodeur et al. 2016, AER",
+        "year": 2024
+      },
+      {
+        "metric": "MTurk vs lab experiment equivalence",
+        "value": 0.85,
+        "unit": "proportion of findings similar",
+        "source": "Arechar et al. 2018, JESP",
+        "year": 2024
+      }
+    ],
+    "money_and_happiness_experiments": [
+      {
+        "metric": "Windfall money and prosocial spending happiness",
+        "value": 0.65,
+        "unit": "proportion happier when spending on others vs self",
+        "source": "Dunn et al. 2008, Science",
+        "year": 2023
+      },
+      {
+        "metric": "Cash transfer programs: long-term well-being improvement",
+        "value": 0.3,
+        "unit": "proportion sustained improvement 3+ years",
+        "source": "Haushofer & Shapiro 2016, QJE (GiveDirectly)",
+        "year": 2024
+      },
+      {
+        "metric": "Lottery winner happiness adaptation time",
+        "value": 6,
+        "unit": "months to return to near-baseline",
+        "source": "Brickman et al. 1978 / Lindqvist et al. 2020 (longer effect)",
+        "year": 2023
+      },
+      {
+        "metric": "Income rank vs absolute income: satisfaction driver",
+        "value": 0.7,
+        "unit": "proportion of satisfaction explained by rank not absolute",
+        "source": "Clark et al. 2008, Economic Journal",
+        "year": 2023
+      },
+      {
+        "metric": "Keeping up with Joneses: relative consumption effect",
+        "value": 0.4,
+        "unit": "proportion of utility from relative position",
+        "source": "Luttmer 2005, QJE",
+        "year": 2023
+      }
+    ]
+  },
+  "political_economy_games": {
+    "public_choice": [
+      {
+        "metric": "Median voter theorem accuracy in two-party elections",
+        "value": 0.75,
+        "unit": "proportion of elections consistent with MVT",
+        "source": "Downs 1957 / Hinich & Munger 1997",
+        "year": 2024
+      },
+      {
+        "metric": "Rent-seeking waste (proportion of rents dissipated)",
+        "value": 0.8,
+        "unit": "proportion of rents spent seeking them",
+        "source": "Tullock 1967 / Krueger 1974",
+        "year": 2023
+      },
+      {
+        "metric": "Lobbying return on investment (US)",
+        "value": 22000,
+        "unit": "% ROI (for every $1 spent, $220 in benefits)",
+        "source": "Richter et al. 2009, AEJ / Drutman 2015",
+        "year": 2024
+      },
+      {
+        "metric": "Revolving door politicians: salary premium",
+        "value": 1.5,
+        "unit": "x higher salary in private sector post-government",
+        "source": "Blanes i Vidal et al. 2012, AER",
+        "year": 2024
+      },
+      {
+        "metric": "Log-rolling (vote trading) prevalence in legislature",
+        "value": 0.35,
+        "unit": "proportion of bills involve implicit vote trading",
+        "source": "Buchanan & Tullock 1962 / Stratmann 1992",
+        "year": 2024
+      }
+    ],
+    "corruption": [
+      {
+        "metric": "Corruption cost as share of GDP (global average)",
+        "value": 0.05,
+        "unit": "proportion of global GDP (~$2.6 trillion)",
+        "source": "World Economic Forum / IMF",
+        "year": 2024
+      },
+      {
+        "metric": "Bribery prevalence in developing countries",
+        "value": 0.25,
+        "unit": "proportion of citizens paid bribe in last year",
+        "source": "Transparency International GCB",
+        "year": 2024
+      },
+      {
+        "metric": "Anti-corruption enforcement effectiveness",
+        "value": 0.2,
+        "unit": "proportion of corruption cases successfully prosecuted",
+        "source": "UNODC / World Bank",
+        "year": 2024
+      },
+      {
+        "metric": "Transparency impact on corruption reduction",
+        "value": 0.3,
+        "unit": "proportion reduction with open government initiatives",
+        "source": "Olken 2007, JPE (Indonesian roads experiment)",
+        "year": 2024
+      },
+      {
+        "metric": "Community monitoring reduces corruption by",
+        "value": 0.08,
+        "unit": "proportion of project costs recovered through community audit",
+        "source": "Olken 2007, JPE",
+        "year": 2023
+      }
+    ]
+  },
+  "climate_and_environmental_games": {
+    "climate_cooperation": [
+      {
+        "metric": "Climate pledge compliance rate",
+        "value": 0.15,
+        "unit": "proportion of countries meeting Paris targets",
+        "source": "Climate Action Tracker 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Carbon tax effectiveness (emissions reduction)",
+        "value": 0.04,
+        "unit": "proportion reduction per $10/ton CO2",
+        "source": "Metcalf 2019, Review of Environmental Economics",
+        "year": 2024
+      },
+      {
+        "metric": "Free-rider problem in climate agreements",
+        "value": 0.6,
+        "unit": "proportion of emissions from non-committed nations",
+        "source": "Barrett 2003, Environment and Statecraft",
+        "year": 2024
+      },
+      {
+        "metric": "Emissions trading vs carbon tax: efficiency comparison",
+        "value": 0.95,
+        "unit": "proportion similar efficiency in theory",
+        "source": "Goulder & Schein 2013, JEP",
+        "year": 2024
+      },
+      {
+        "metric": "Green technology adoption game: first-mover cost",
+        "value": 1.3,
+        "unit": "x higher cost for first adopter (declining rapidly)",
+        "source": "Acemoglu et al. 2012, AER",
+        "year": 2024
+      },
+      {
+        "metric": "International environmental agreement average membership",
+        "value": 0.45,
+        "unit": "proportion of relevant countries join",
+        "source": "Barrett 2003",
+        "year": 2024
+      },
+      {
+        "metric": "Tragedy of the atmosphere: free-riding CO2 emissions",
+        "value": 0.7,
+        "unit": "proportion of top emitters have inadequate policies",
+        "source": "Climate Action Tracker",
+        "year": 2024
+      }
+    ]
+  },
+  "digital_platform_games": {
+    "platform_competition": [
+      {
+        "metric": "Winner-take-most in digital platforms",
+        "value": 0.72,
+        "unit": "proportion of market value captured by top 2 firms",
+        "source": "Cusumano et al. 2019, The Business of Platforms",
+        "year": 2024
+      },
+      {
+        "metric": "Multi-homing rate (users on multiple platforms)",
+        "value": 0.55,
+        "unit": "proportion of users on 2+ competing platforms",
+        "source": "Landsman & Stremersch 2011, Marketing Science",
+        "year": 2024
+      },
+      {
+        "metric": "Platform envelopment success rate",
+        "value": 0.45,
+        "unit": "proportion of platform expansion attempts succeed",
+        "source": "Eisenmann et al. 2011, Strategic Management Journal",
+        "year": 2024
+      },
+      {
+        "metric": "Marketplace trust building: review system effectiveness",
+        "value": 0.68,
+        "unit": "proportion of transactions influenced by reviews",
+        "source": "Luca 2016, AEJ / Mayzlin et al. 2014",
+        "year": 2024
+      },
+      {
+        "metric": "Fake review prevalence on platforms",
+        "value": 0.16,
+        "unit": "proportion of reviews estimated fake",
+        "source": "He et al. 2022, Management Science",
+        "year": 2024
+      },
+      {
+        "metric": "Algorithmic pricing collusion risk",
+        "value": 0.3,
+        "unit": "proportion of simulations show tacit algorithmic collusion",
+        "source": "Calvano et al. 2020, AER",
+        "year": 2024
+      },
+      {
+        "metric": "Data network effects: accuracy improvement per 10x data",
+        "value": 0.15,
+        "unit": "proportion improvement in model accuracy",
+        "source": "Bajari et al. 2019 / Gregory et al. 2021",
+        "year": 2024
+      },
+      {
+        "metric": "Gig economy worker surplus vs traditional employment",
+        "value": -0.1,
+        "unit": "proportion lower effective hourly rate after expenses",
+        "source": "Mishel 2018 / MIT CEEPR study",
+        "year": 2024
+      }
+    ]
+  },
+  "labor_market_games": {
+    "hiring_and_signaling": [
+      {
+        "metric": "Resume callback rate difference: white vs black names",
+        "value": 0.5,
+        "unit": "proportion more callbacks for white names",
+        "source": "Bertrand & Mullainathan 2004, AER",
+        "year": 2024
+      },
+      {
+        "metric": "Degree signaling value (sheepskin effect)",
+        "value": 0.3,
+        "unit": "proportion of wage premium from signal not skill",
+        "source": "Hungerford & Solon 1987 / Caplan 2018",
+        "year": 2024
+      },
+      {
+        "metric": "Job market screening: probation period effectiveness",
+        "value": 0.7,
+        "unit": "proportion of bad hires identified during probation",
+        "source": "SHRM / Jovanovic 1979",
+        "year": 2024
+      },
+      {
+        "metric": "Efficiency wage theory: above-market wage reduces turnover",
+        "value": 0.3,
+        "unit": "proportion reduction in turnover per 10% wage increase",
+        "source": "Shapiro & Stiglitz 1984 / Krueger 1988",
+        "year": 2024
+      },
+      {
+        "metric": "Adverse selection in job market: talented workers undervalued",
+        "value": 0.2,
+        "unit": "proportion of high-ability workers initially underpaid",
+        "source": "Greenwald 1986 / labor economics meta",
+        "year": 2024
+      },
+      {
+        "metric": "Referral hiring quality premium",
+        "value": 0.25,
+        "unit": "proportion higher retention at 1 year vs open market",
+        "source": "Brown et al. 2016, JLE",
+        "year": 2024
+      },
+      {
+        "metric": "AI hiring bias: algorithm discrimination rate",
+        "value": 0.15,
+        "unit": "proportion of AI screening tools show demographic bias",
+        "source": "Raghavan et al. 2020, FAT* Conference",
+        "year": 2024
+      },
+      {
+        "metric": "Salary negotiation game: first offer advantage",
+        "value": 0.43,
+        "unit": "correlation between first offer and final salary",
+        "source": "Galinsky & Mussweiler 2001",
+        "year": 2024
+      }
+    ],
+    "union_bargaining": [
+      {
+        "metric": "Strike success rate (achieving primary demand)",
+        "value": 0.42,
+        "unit": "proportion",
+        "source": "BLS / Franzosi 1995",
+        "year": 2024
+      },
+      {
+        "metric": "Union density (US)",
+        "value": 0.1,
+        "unit": "proportion of workers unionized",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Collective bargaining coverage (Germany)",
+        "value": 0.52,
+        "unit": "proportion of workers covered",
+        "source": "IAB / WSI",
+        "year": 2024
+      },
+      {
+        "metric": "Right-to-work state wage effect",
+        "value": -0.03,
+        "unit": "proportion lower wages on average",
+        "source": "Eren & Ozbeklik 2016 / EPI",
+        "year": 2024
+      }
+    ]
+  },
+  "innovation_r_and_d_games": {
+    "patent_races": [
+      {
+        "metric": "Patent race: first-mover win probability",
+        "value": 0.55,
+        "unit": "proportion win with 2x R&D investment",
+        "source": "Reinganum 1989 / Cohen & Klepper 1996",
+        "year": 2024
+      },
+      {
+        "metric": "Patent value distribution: top 10% of patents",
+        "value": 0.8,
+        "unit": "proportion of total patent value in top 10%",
+        "source": "Harhoff et al. 1999, Research Policy",
+        "year": 2024
+      },
+      {
+        "metric": "R&D duplication waste in patent races",
+        "value": 0.3,
+        "unit": "proportion of R&D duplicated across competitors",
+        "source": "Mankiw & Whinston 1986, RAND Journal",
+        "year": 2024
+      },
+      {
+        "metric": "Open source vs proprietary: innovation speed",
+        "value": 0.2,
+        "unit": "proportion faster innovation cycle in open source",
+        "source": "Lerner & Tirole 2002, JPE / Linux Foundation",
+        "year": 2024
+      },
+      {
+        "metric": "Trade secret vs patent: protection effectiveness",
+        "value": 0.55,
+        "unit": "proportion of firms prefer trade secrets over patents",
+        "source": "Cohen et al. 2000, NBER / Management Science",
+        "year": 2024
+      }
+    ],
+    "standards_wars": [
+      {
+        "metric": "Technology standard war winner market share",
+        "value": 0.85,
+        "unit": "proportion captured by winning standard",
+        "source": "Shapiro & Varian 1999, Information Rules",
+        "year": 2024
+      },
+      {
+        "metric": "Backward compatibility effect on adoption",
+        "value": 0.4,
+        "unit": "proportion increase in adoption rate",
+        "source": "Shapiro & Varian 1999",
+        "year": 2024
+      },
+      {
+        "metric": "Installed base advantage in standards competition",
+        "value": 3,
+        "unit": "x advantage for larger installed base",
+        "source": "Arthur 1989, Economic Journal / Katz & Shapiro 1985",
+        "year": 2024
+      },
+      {
+        "metric": "Format wars consumer welfare loss",
+        "value": 0.15,
+        "unit": "proportion of potential surplus lost during format war",
+        "source": "Dranove & Gandal 2003, RAND Journal (DVD format)",
+        "year": 2024
+      }
+    ]
+  },
+  "consumer_behavior_games": {
+    "pricing_psychology": [
+      {
+        "metric": "Charm pricing ($X.99) effectiveness",
+        "value": 0.24,
+        "unit": "proportion increase in sales vs rounded price",
+        "source": "Schindler & Kibarian 1996, Journal of Retailing",
+        "year": 2024
+      },
+      {
+        "metric": "Decoy effect (asymmetric dominance)",
+        "value": 0.4,
+        "unit": "proportion shift preference toward target option",
+        "source": "Huber et al. 1982, Journal of Consumer Research",
+        "year": 2024
+      },
+      {
+        "metric": "Price anchoring in retail: original price display",
+        "value": 0.35,
+        "unit": "proportion increase in perceived deal value",
+        "source": "Grewal et al. 1998, Journal of Retailing",
+        "year": 2024
+      },
+      {
+        "metric": "Bundle pricing: revenue increase vs a la carte",
+        "value": 0.2,
+        "unit": "proportion increase in revenue",
+        "source": "Stremersch & Tellis 2002, Journal of Marketing",
+        "year": 2024
+      },
+      {
+        "metric": "Pay-what-you-want: average payment vs fixed price",
+        "value": 0.64,
+        "unit": "proportion of fixed price paid on average",
+        "source": "Kim et al. 2009, Journal of Marketing",
+        "year": 2024
+      },
+      {
+        "metric": "Free trial conversion to paid",
+        "value": 0.25,
+        "unit": "proportion convert (SaaS average)",
+        "source": "Totango / ProfitWell data",
+        "year": 2024
+      },
+      {
+        "metric": "Subscription fatigue: cancellation rate within 6 months",
+        "value": 0.35,
+        "unit": "proportion cancel",
+        "source": "Zuora Subscription Economy Index",
+        "year": 2024
+      },
+      {
+        "metric": "Freemium conversion rate (typical)",
+        "value": 0.04,
+        "unit": "proportion of free users upgrade",
+        "source": "Pujol 2010 / Anderson 2009, Free",
+        "year": 2024
+      }
+    ],
+    "search_and_matching": [
+      {
+        "metric": "Consumer search: average products compared before purchase",
+        "value": 3.7,
+        "unit": "products",
+        "source": "Google / McKinsey consumer journey research",
+        "year": 2024
+      },
+      {
+        "metric": "Information overload: choice paralysis threshold",
+        "value": 24,
+        "unit": "options (above this, purchase drops ~50%)",
+        "source": "Iyengar & Lepper 2000",
+        "year": 2024
+      },
+      {
+        "metric": "Price comparison website usage before purchase",
+        "value": 0.55,
+        "unit": "proportion of consumers use comparison tools",
+        "source": "Statista / Google Shopping data",
+        "year": 2024
+      },
+      {
+        "metric": "Brand loyalty: repeat purchase rate (FMCG)",
+        "value": 0.4,
+        "unit": "proportion repurchase same brand next time",
+        "source": "Ehrenberg 1988 / Sharp 2010, How Brands Grow",
+        "year": 2024
+      },
+      {
+        "metric": "Switching cost effect on churn reduction",
+        "value": 0.35,
+        "unit": "proportion reduction in churn with moderate switching costs",
+        "source": "Klemperer 1995, Review of Economic Studies",
+        "year": 2024
+      }
+    ]
+  },
+  "healthcare_economics_games": {
+    "health_decisions": [
+      {
+        "metric": "Vaccination game: free-rider equilibrium (herd immunity threshold)",
+        "value": 0.9,
+        "unit": "proportion needed for measles herd immunity",
+        "source": "Fine et al. 2011, Clinical Infectious Diseases",
+        "year": 2024
+      },
+      {
+        "metric": "Anti-vax free-riding: vaccine refusal rate (US)",
+        "value": 0.05,
+        "unit": "proportion of parents refuse all vaccines",
+        "source": "CDC NIS",
+        "year": 2024
+      },
+      {
+        "metric": "Health insurance moral hazard: utilization increase",
+        "value": 0.17,
+        "unit": "proportion increase in healthcare use with insurance",
+        "source": "RAND HIE / Manning et al. 1987, AER",
+        "year": 2024
+      },
+      {
+        "metric": "Generic vs brand drug price difference",
+        "value": 0.8,
+        "unit": "proportion lower cost for generic",
+        "source": "FDA / CBO",
+        "year": 2024
+      },
+      {
+        "metric": "Patient compliance with medication (chronic disease)",
+        "value": 0.5,
+        "unit": "proportion take medication as prescribed",
+        "source": "WHO / Osterberg & Blaschke 2005, NEJM",
+        "year": 2024
+      },
+      {
+        "metric": "Defensive medicine cost (unnecessary tests/procedures)",
+        "value": 0.25,
+        "unit": "proportion of healthcare costs attributed to defensive medicine",
+        "source": "Mello et al. 2010, Health Affairs",
+        "year": 2024
+      }
+    ]
+  },
+  "education_games": {
+    "education_incentives": [
+      {
+        "metric": "Pay for grades effectiveness",
+        "value": 0.1,
+        "unit": "proportion GPA improvement (small, short-lived)",
+        "source": "Fryer 2011, QJE (NYC, Chicago, Dallas, Houston)",
+        "year": 2024
+      },
+      {
+        "metric": "Teacher performance pay impact on student scores",
+        "value": 0.05,
+        "unit": "standard deviation improvement",
+        "source": "Muralidharan & Sundararaman 2011, JPE",
+        "year": 2024
+      },
+      {
+        "metric": "Peer effects in college roommate assignment",
+        "value": 0.15,
+        "unit": "standard deviation GPA effect from high-achieving roommate",
+        "source": "Sacerdote 2001, QJE",
+        "year": 2024
+      },
+      {
+        "metric": "Grade inflation: A's awarded (US colleges)",
+        "value": 0.45,
+        "unit": "proportion of all grades are A's (up from 15% in 1960)",
+        "source": "gradeinflation.com / Rojstaczer & Healy 2012",
+        "year": 2024
+      },
+      {
+        "metric": "Class size reduction effect (Tennessee STAR)",
+        "value": 0.22,
+        "unit": "standard deviation improvement with small class",
+        "source": "Krueger 1999, QJE (Project STAR)",
+        "year": 2024
+      },
+      {
+        "metric": "Early childhood education ROI (Perry Preschool)",
+        "value": 7,
+        "unit": "x return on investment over lifetime",
+        "source": "Heckman et al. 2010, AER",
+        "year": 2024
+      },
+      {
+        "metric": "Student loan default rate (US)",
+        "value": 0.13,
+        "unit": "proportion default within 3 years",
+        "source": "Department of Education",
+        "year": 2024
+      },
+      {
+        "metric": "College wage premium vs high school (US)",
+        "value": 0.75,
+        "unit": "proportion higher lifetime earnings",
+        "source": "Goldin & Katz 2008 / BLS",
+        "year": 2024
+      }
+    ]
+  },
+  "real_estate_games": {
+    "housing_market": [
+      {
+        "metric": "Information asymmetry: realtor own-home premium",
+        "value": 0.03,
+        "unit": "proportion higher price when realtors sell own homes",
+        "source": "Levitt & Syverson 2008, RAND Journal",
+        "year": 2024
+      },
+      {
+        "metric": "Housing bubble detection: price-to-rent ratio threshold",
+        "value": 20,
+        "unit": "ratio (above 20 suggests overvaluation)",
+        "source": "Case & Shiller 2003 / OECD",
+        "year": 2024
+      },
+      {
+        "metric": "Bidding war frequency (hot market)",
+        "value": 0.6,
+        "unit": "proportion of homes receive multiple offers",
+        "source": "NAR / Redfin data",
+        "year": 2024
+      },
+      {
+        "metric": "Anchoring in home pricing: round number bias",
+        "value": 0.12,
+        "unit": "proportion of homes priced at round numbers sell faster",
+        "source": "Allen & Dare 2004, Real Estate Economics",
+        "year": 2024
+      },
+      {
+        "metric": "NIMBY effect on housing supply",
+        "value": 0.4,
+        "unit": "proportion reduction in new housing from local opposition",
+        "source": "Glaeser & Gyourko 2018 / Hsieh & Moretti 2019, AEJ",
+        "year": 2024
+      },
+      {
+        "metric": "Rent control effect on housing supply",
+        "value": -0.15,
+        "unit": "proportion reduction in rental units over 10 years",
+        "source": "Diamond et al. 2019, AER (San Francisco)",
+        "year": 2024
+      }
+    ]
+  },
+  "sports_game_theory": {
+    "competitive_strategy": [
+      {
+        "metric": "Penalty kick game: mixed strategy equilibrium",
+        "value": 0.58,
+        "unit": "proportion of penalty kicks scored (close to minimax prediction)",
+        "source": "Chiappori et al. 2002, AER / Palacios-Huerta 2003",
+        "year": 2024
+      },
+      {
+        "metric": "Tennis serve direction: matches mixed strategy",
+        "value": 0.95,
+        "unit": "proportion consistent with Nash equilibrium prediction",
+        "source": "Walker & Wooders 2001, AER",
+        "year": 2024
+      },
+      {
+        "metric": "Tanking in sports: incentive to lose for draft picks",
+        "value": 0.35,
+        "unit": "proportion of bottom teams show evidence of tanking",
+        "source": "Taylor & Trogdon 2002, Journal of Political Economy",
+        "year": 2024
+      },
+      {
+        "metric": "Home field advantage (sports overall)",
+        "value": 0.57,
+        "unit": "proportion home team wins",
+        "source": "Moskowitz & Wertheim 2011 / Jamieson 2010",
+        "year": 2024
+      },
+      {
+        "metric": "Salary cap effectiveness in competitive balance",
+        "value": 0.15,
+        "unit": "proportion improvement in competitive balance ratio",
+        "source": "Zimbalist 2003, May the Best Team Win",
+        "year": 2024
+      },
+      {
+        "metric": "Game theory in soccer: optimal passing strategy",
+        "value": 0.7,
+        "unit": "proportion of successful attacks use non-obvious passes",
+        "source": "Palacios-Huerta & Volij 2008, Review of Economic Studies",
+        "year": 2024
+      },
+      {
+        "metric": "Draft lottery reform and tanking reduction",
+        "value": 0.2,
+        "unit": "proportion reduction in tanking behavior",
+        "source": "NBA / lottery reform analysis",
+        "year": 2024
+      }
+    ]
+  },
+  "international_trade_games": {
+    "trade_negotiations": [
+      {
+        "metric": "Trade war tariff retaliation probability",
+        "value": 0.8,
+        "unit": "proportion of tariffs met with counter-tariffs",
+        "source": "Bagwell & Staiger 1999, AER / Bown 2004",
+        "year": 2024
+      },
+      {
+        "metric": "WTO dispute settlement compliance rate",
+        "value": 0.83,
+        "unit": "proportion of rulings complied with",
+        "source": "WTO Annual Report",
+        "year": 2024
+      },
+      {
+        "metric": "Bilateral trade agreement: trade increase",
+        "value": 0.24,
+        "unit": "proportion increase in bilateral trade",
+        "source": "Baier & Bergstrand 2007, JIE",
+        "year": 2024
+      },
+      {
+        "metric": "Protectionism welfare cost (deadweight loss)",
+        "value": 0.02,
+        "unit": "proportion of GDP lost to trade barriers",
+        "source": "Feenstra 1992 / Fajgelbaum et al. 2020 (US-China tariffs)",
+        "year": 2024
+      },
+      {
+        "metric": "Currency manipulation as competitive strategy",
+        "value": 0.1,
+        "unit": "proportion of countries actively managing exchange rate for trade advantage",
+        "source": "IMF / Bergsten 2010",
+        "year": 2024
+      },
+      {
+        "metric": "Trade sanctions effectiveness (achieving stated goal)",
+        "value": 0.33,
+        "unit": "proportion achieve primary objective",
+        "source": "Hufbauer et al. 2007, Economic Sanctions Reconsidered",
+        "year": 2024
+      }
+    ]
+  },
+  "behavioral_finance": {
+    "market_anomalies": [
+      {
+        "metric": "January effect: small-cap returns in January",
+        "value": 0.05,
+        "unit": "proportion higher return (shrinking in recent decades)",
+        "source": "Rozeff & Kinney 1976 / Haug & Hirschey 2006",
+        "year": 2024
+      },
+      {
+        "metric": "Momentum effect: 12-month return persistence",
+        "value": 0.01,
+        "unit": "proportion monthly alpha",
+        "source": "Jegadeesh & Titman 1993, JF / Asness et al. 2013",
+        "year": 2024
+      },
+      {
+        "metric": "Value premium: value stocks vs growth (annual)",
+        "value": 0.04,
+        "unit": "proportion annual excess return",
+        "source": "Fama & French 1992, JF / AQR data",
+        "year": 2024
+      },
+      {
+        "metric": "Herding behavior in stock markets",
+        "value": 0.65,
+        "unit": "proportion of institutional investors show herding",
+        "source": "Lakonishok et al. 1992, JFE / Sias 2004",
+        "year": 2024
+      },
+      {
+        "metric": "Retail investor underperformance vs market",
+        "value": -0.02,
+        "unit": "proportion annual underperformance",
+        "source": "Barber & Odean 2000, JF",
+        "year": 2024
+      },
+      {
+        "metric": "Overtrading cost: active traders underperform by",
+        "value": 0.065,
+        "unit": "proportion annual underperformance",
+        "source": "Barber & Odean 2000, JF",
+        "year": 2024
+      },
+      {
+        "metric": "Disposition effect strength (sell winners/hold losers)",
+        "value": 1.5,
+        "unit": "ratio of selling winners to losers",
+        "source": "Odean 1998, JF",
+        "year": 2024
+      },
+      {
+        "metric": "Attention-driven buying: stocks in news get more buys",
+        "value": 0.25,
+        "unit": "proportion more purchases for attention-grabbing stocks",
+        "source": "Barber & Odean 2008, RFS",
+        "year": 2024
+      },
+      {
+        "metric": "IPO first-day return (average underpricing)",
+        "value": 0.18,
+        "unit": "proportion first-day return",
+        "source": "Ritter 2024, IPO statistics",
+        "year": 2024
+      },
+      {
+        "metric": "IPO 3-year underperformance vs market",
+        "value": -0.2,
+        "unit": "proportion underperformance over 3 years",
+        "source": "Ritter 1991 / Loughran & Ritter 1995",
+        "year": 2024
+      }
+    ],
+    "market_microstructure": [
+      {
+        "metric": "High-frequency trading share of US equity volume",
+        "value": 0.52,
+        "unit": "proportion of all trades",
+        "source": "SEC / Menkveld 2013",
+        "year": 2024
+      },
+      {
+        "metric": "Flash crash probability per year",
+        "value": 0.05,
+        "unit": "proportion (mini flash crashes more common)",
+        "source": "CFTC / Kirilenko et al. 2017",
+        "year": 2024
+      },
+      {
+        "metric": "Bid-ask spread reduction since electronic trading",
+        "value": 0.9,
+        "unit": "proportion reduction from 1990s levels",
+        "source": "Angel et al. 2011, Financial Analysts Journal",
+        "year": 2024
+      },
+      {
+        "metric": "Market maker inventory risk tolerance",
+        "value": 0.02,
+        "unit": "proportion of portfolio in any single position",
+        "source": "Ho & Stoll 1981 / Amihud & Mendelson 1980",
+        "year": 2024
+      },
+      {
+        "metric": "Dark pool trading share",
+        "value": 0.16,
+        "unit": "proportion of US equity volume",
+        "source": "FINRA ATS data",
+        "year": 2024
+      }
+    ],
+    "crypto_behavioral": [
+      {
+        "metric": "Crypto FOMO buying during bull market",
+        "value": 0.72,
+        "unit": "proportion of retail buyers enter during price surge",
+        "source": "Auer & Tercero-Lucas 2022, BIS / Chainalysis",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto panic selling during crash (>20% drop)",
+        "value": 0.45,
+        "unit": "proportion sell during crash",
+        "source": "Chainalysis on-chain data",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto wallet concentration (top 1% of addresses)",
+        "value": 0.9,
+        "unit": "proportion of Bitcoin held",
+        "source": "BitInfoCharts / Glassnode",
+        "year": 2024
+      },
+      {
+        "metric": "DeFi rug pull frequency",
+        "value": 0.12,
+        "unit": "proportion of new DeFi projects are scams",
+        "source": "Chainalysis Crypto Crime Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "NFT holders at a loss",
+        "value": 0.95,
+        "unit": "proportion of NFT buyers underwater",
+        "source": "dappGambl / Nansen",
+        "year": 2024
+      }
+    ]
+  },
+  "organizational_games": {
+    "corporate_governance": [
+      {
+        "metric": "CEO pay ratio to median worker (S&P 500)",
+        "value": 268,
+        "unit": "times median worker pay",
+        "source": "AFL-CIO / EPI",
+        "year": 2024
+      },
+      {
+        "metric": "Golden parachute prevalence (S&P 500)",
+        "value": 0.8,
+        "unit": "proportion of CEOs have severance packages",
+        "source": "Equilar",
+        "year": 2024
+      },
+      {
+        "metric": "Board independence effect on firm performance",
+        "value": 0.05,
+        "unit": "proportion improvement in ROA (small)",
+        "source": "Bhagat & Bolton 2008, JCF",
+        "year": 2024
+      },
+      {
+        "metric": "Shareholder activism success rate",
+        "value": 0.35,
+        "unit": "proportion achieve stated objective",
+        "source": "Brav et al. 2008, JF",
+        "year": 2024
+      },
+      {
+        "metric": "Hostile takeover premium over market price",
+        "value": 0.3,
+        "unit": "proportion premium paid",
+        "source": "Betton et al. 2008 / Jensen & Ruback 1983",
+        "year": 2024
+      },
+      {
+        "metric": "Poison pill adoption: target CEO retention rate",
+        "value": 0.85,
+        "unit": "proportion of CEOs retained after poison pill",
+        "source": "Comment & Schwert 1995, JFE",
+        "year": 2024
+      }
+    ],
+    "organizational_behavior": [
+      {
+        "metric": "Peter Principle: promotion to incompetence rate",
+        "value": 0.3,
+        "unit": "proportion of managers promoted beyond competence",
+        "source": "Benson et al. 2019, QJE (sales-to-management data)",
+        "year": 2024
+      },
+      {
+        "metric": "Office politics as career barrier",
+        "value": 0.58,
+        "unit": "proportion of employees cite politics as obstacle",
+        "source": "Robert Half / Gallup",
+        "year": 2024
+      },
+      {
+        "metric": "Meeting overload: unproductive meeting time",
+        "value": 0.5,
+        "unit": "proportion of meeting time considered wasted",
+        "source": "Doodle State of Meetings / Microsoft Work Trend Index",
+        "year": 2024
+      },
+      {
+        "metric": "Email vs Slack: context-switching cost",
+        "value": 0.18,
+        "unit": "proportion of workday lost to communication tool switching",
+        "source": "RescueTime / Asana Anatomy of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Knowledge hoarding prevalence in competitive workplaces",
+        "value": 0.38,
+        "unit": "proportion of employees withhold useful information",
+        "source": "Connelly et al. 2012, JPSP / HBR",
+        "year": 2024
+      },
+      {
+        "metric": "Psychological safety and team performance correlation",
+        "value": 0.42,
+        "unit": "correlation",
+        "source": "Edmondson 1999 / Google Project Aristotle 2015",
+        "year": 2024
+      }
+    ]
+  },
+  "crypto_game_theory": {
+    "defi_and_tokenomics": [
+      {
+        "metric": "MEV (maximal extractable value) annual extraction (Ethereum)",
+        "value": 600,
+        "unit": "million USD extracted annually",
+        "source": "Flashbots / MEV-Explore",
+        "year": 2024
+      },
+      {
+        "metric": "Governance token voting participation rate",
+        "value": 0.05,
+        "unit": "proportion of token holders vote",
+        "source": "Chainalysis / DeepDAO",
+        "year": 2024
+      },
+      {
+        "metric": "Protocol fork success rate",
+        "value": 0.15,
+        "unit": "proportion of forks maintain significant market share",
+        "source": "GitHub / DeFi Llama data",
+        "year": 2024
+      },
+      {
+        "metric": "Yield farming average APY sustainability",
+        "value": 0.1,
+        "unit": "proportion of high-APY farms sustainable after 6 months",
+        "source": "DeFi Llama / Nansen",
+        "year": 2024
+      },
+      {
+        "metric": "Smart contract hack frequency (DeFi)",
+        "value": 0.04,
+        "unit": "proportion of protocols hacked per year",
+        "source": "Rekt.news / Chainalysis",
+        "year": 2024
+      },
+      {
+        "metric": "Proof of Stake validator concentration (Ethereum)",
+        "value": 0.33,
+        "unit": "proportion staked by top 3 entities",
+        "source": "rated.network / Lido data",
+        "year": 2024
+      },
+      {
+        "metric": "Token launch fair distribution achievement",
+        "value": 0.15,
+        "unit": "proportion of launches truly decentralized",
+        "source": "Messari / a16z research",
+        "year": 2024
+      },
+      {
+        "metric": "Impermanent loss on AMM (50% price change)",
+        "value": 0.057,
+        "unit": "proportion loss vs holding",
+        "source": "Uniswap v2 math / Pintail 2020",
+        "year": 2024
+      }
+    ]
+  },
+  "war_conflict_games": {
+    "military_strategy": [
+      {
+        "metric": "Deterrence success rate (nuclear era)",
+        "value": 0.95,
+        "unit": "proportion of nuclear crises resolved without use",
+        "source": "Mueller 2010 / Sagan & Waltz 2012",
+        "year": 2024
+      },
+      {
+        "metric": "Arms race: action-reaction spiral confirmation",
+        "value": 0.6,
+        "unit": "proportion of arms buildups follow opponent's increase",
+        "source": "Richardson 1960 / Gibler et al. 2005",
+        "year": 2024
+      },
+      {
+        "metric": "Sanctions as alternative to war: effectiveness",
+        "value": 0.33,
+        "unit": "proportion achieve stated goal",
+        "source": "Hufbauer et al. 2007",
+        "year": 2024
+      },
+      {
+        "metric": "Alliance reliability (honoring commitments)",
+        "value": 0.75,
+        "unit": "proportion of alliance commitments honored",
+        "source": "Leeds 2003, AJPS",
+        "year": 2024
+      },
+      {
+        "metric": "Democratic peace theory: democracies fight each other",
+        "value": 0.01,
+        "unit": "proportion of wars between established democracies",
+        "source": "Russett 1993 / Oneal & Russett 1999",
+        "year": 2024
+      },
+      {
+        "metric": "Civil war recurrence within 10 years",
+        "value": 0.4,
+        "unit": "proportion of civil wars restart",
+        "source": "Walter 2004, International Security / World Bank",
+        "year": 2024
+      },
+      {
+        "metric": "Negotiated settlement vs military victory: peace duration",
+        "value": 7,
+        "unit": "years average shorter peace for negotiated (but improving)",
+        "source": "Fortna 2004 / Licklider 1995",
+        "year": 2024
+      },
+      {
+        "metric": "Information warfare effectiveness (disinformation campaigns)",
+        "value": 0.3,
+        "unit": "proportion of target population believing false narratives",
+        "source": "RAND / Stanford Internet Observatory",
+        "year": 2024
+      }
+    ]
+  },
+  "sharing_economy_games": {
+    "peer_to_peer": [
+      {
+        "metric": "Trust in peer-to-peer platforms (Airbnb, Uber)",
+        "value": 0.68,
+        "unit": "proportion trust peer reviews as much as friends",
+        "source": "Nielsen / Edelman Trust Barometer",
+        "year": 2024
+      },
+      {
+        "metric": "Uber surge pricing acceptance",
+        "value": 0.35,
+        "unit": "proportion of riders accept 2x+ surge",
+        "source": "Chen & Sheldon 2016, Uber data / NBER",
+        "year": 2024
+      },
+      {
+        "metric": "Airbnb displacement of hotel revenue",
+        "value": 0.1,
+        "unit": "proportion of hotel revenue displaced in major cities",
+        "source": "Zervas et al. 2017, Journal of Marketing Research",
+        "year": 2024
+      },
+      {
+        "metric": "Rating inflation on platforms (5-star average)",
+        "value": 4.7,
+        "unit": "average rating (severe positive skew)",
+        "source": "Zervas et al. 2021 / Luca 2016",
+        "year": 2024
+      },
+      {
+        "metric": "Discrimination in sharing economy (Airbnb racial gap)",
+        "value": 0.16,
+        "unit": "proportion lower acceptance rate for minority guests",
+        "source": "Edelman et al. 2017, AEJ: Applied",
+        "year": 2024
+      },
+      {
+        "metric": "Gig worker satisfaction (would recommend to friend)",
+        "value": 0.6,
+        "unit": "proportion",
+        "source": "Pew Research / Mastercard 2024",
+        "year": 2024
+      }
+    ]
+  },
+  "social_norms_and_conventions": {
+    "norm_enforcement": [
+      {
+        "metric": "Social norm compliance without enforcement",
+        "value": 0.6,
+        "unit": "proportion comply voluntarily",
+        "source": "Bicchieri 2006, The Grammar of Society",
+        "year": 2024
+      },
+      {
+        "metric": "Peer pressure effect on norm compliance",
+        "value": 0.25,
+        "unit": "proportion increase with visible peer behavior",
+        "source": "Cialdini et al. 1990 / Goldstein et al. 2008",
+        "year": 2024
+      },
+      {
+        "metric": "Tipping norm adherence (US restaurants)",
+        "value": 0.95,
+        "unit": "proportion leave some tip",
+        "source": "Azar 2007, JEP / Square data",
+        "year": 2024
+      },
+      {
+        "metric": "Average US restaurant tip",
+        "value": 0.2,
+        "unit": "proportion of bill",
+        "source": "Azar 2007 / Square/Toast data",
+        "year": 2024
+      },
+      {
+        "metric": "Queue jumping punishment willingness",
+        "value": 0.65,
+        "unit": "proportion willing to verbally confront",
+        "source": "Milgram et al. 1986 / Schmitt et al. 1992",
+        "year": 2024
+      },
+      {
+        "metric": "Littering rate with descriptive norm sign",
+        "value": 0.06,
+        "unit": "proportion litter (vs 0.32 without sign)",
+        "source": "Cialdini et al. 1990, JPSP",
+        "year": 2024
+      },
+      {
+        "metric": "Tax compliance with social norm messaging",
+        "value": 0.15,
+        "unit": "proportion increase in on-time payment",
+        "source": "Hallsworth et al. 2017, JEBO / UK BIT",
+        "year": 2024
+      },
+      {
+        "metric": "Honor killing prevalence (Middle East/South Asia)",
+        "value": 5000,
+        "unit": "estimated annual cases globally",
+        "source": "UN Women / UNFPA",
+        "year": 2024
+      },
+      {
+        "metric": "Social desirability bias in surveys",
+        "value": 0.2,
+        "unit": "proportion of responses affected",
+        "source": "Crowne & Marlowe 1960 / Tourangeau et al. 2000",
+        "year": 2024
+      }
+    ],
+    "culture_and_cooperation": [
+      {
+        "metric": "High-trust society GDP per capita premium",
+        "value": 0.3,
+        "unit": "proportion higher GDP per capita",
+        "source": "Knack & Keefer 1997, QJE / Algan & Cahuc 2010",
+        "year": 2024
+      },
+      {
+        "metric": "Corruption and trust: negative correlation",
+        "value": -0.73,
+        "unit": "correlation (CPI vs WVS trust)",
+        "source": "Transparency International / WVS cross-country analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Individualism vs collectivism effect on cooperation",
+        "value": 0.1,
+        "unit": "proportion higher cooperation in collectivist (small effect)",
+        "source": "Bond & Smith 1996 / Gelfand et al. 2011",
+        "year": 2024
+      },
+      {
+        "metric": "Tight vs loose cultures: rule adherence",
+        "value": 0.4,
+        "unit": "proportion more rule-following in tight cultures",
+        "source": "Gelfand et al. 2011, Science",
+        "year": 2024
+      },
+      {
+        "metric": "Cultural distance and international business failure",
+        "value": 0.25,
+        "unit": "proportion higher failure rate with high cultural distance",
+        "source": "Kogut & Singh 1988, JIBS",
+        "year": 2024
+      }
+    ]
+  },
+  "information_economics": {
+    "media_and_information": [
+      {
+        "metric": "Filter bubble effect on opinion polarization",
+        "value": 0.15,
+        "unit": "proportion more polarized with algorithmic curation",
+        "source": "Pariser 2011 / Bail et al. 2018, PNAS",
+        "year": 2024
+      },
+      {
+        "metric": "Echo chamber prevalence on social media",
+        "value": 0.4,
+        "unit": "proportion of users in ideological echo chambers",
+        "source": "Cinelli et al. 2021, PNAS",
+        "year": 2024
+      },
+      {
+        "metric": "Fake news sharing: proportion who share knowingly",
+        "value": 0.16,
+        "unit": "proportion share knowing it's false",
+        "source": "Pennycook & Rand 2021, Psychological Science",
+        "year": 2024
+      },
+      {
+        "metric": "Fake news believability: headlines",
+        "value": 0.45,
+        "unit": "proportion rated as accurate by partisan believers",
+        "source": "Pennycook & Rand 2019, Cognition",
+        "year": 2024
+      },
+      {
+        "metric": "Fact-checking effectiveness on belief update",
+        "value": 0.2,
+        "unit": "proportion update beliefs after correction",
+        "source": "Walter et al. 2020 meta-analysis, Psychological Bulletin",
+        "year": 2024
+      },
+      {
+        "metric": "News paywall conversion rate",
+        "value": 0.02,
+        "unit": "proportion of visitors become subscribers",
+        "source": "Reuters Institute Digital News Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Attention economy: average time on news article",
+        "value": 15,
+        "unit": "seconds",
+        "source": "Chartbeat / Haile 2014, Time Magazine",
+        "year": 2024
+      },
+      {
+        "metric": "Clickbait effectiveness vs informative headlines",
+        "value": 0.3,
+        "unit": "proportion more clicks for clickbait (but lower trust)",
+        "source": "Rony et al. 2017 / Blom & Hansen 2015",
+        "year": 2024
+      }
+    ],
+    "prediction_and_forecasting": [
+      {
+        "metric": "Expert vs algorithm forecasting accuracy",
+        "value": 0.6,
+        "unit": "proportion of domains where algorithms outperform experts",
+        "source": "Tetlock 2005 / Meehl 1954 / Grove et al. 2000",
+        "year": 2024
+      },
+      {
+        "metric": "Wisdom of crowds accuracy (aggregate predictions)",
+        "value": 0.85,
+        "unit": "proportion of cases crowd average beats individual experts",
+        "source": "Surowiecki 2004 / Page 2007",
+        "year": 2024
+      },
+      {
+        "metric": "Planning fallacy: average time overrun on projects",
+        "value": 0.4,
+        "unit": "proportion longer than planned",
+        "source": "Buehler et al. 1994 / Flyvbjerg 2006",
+        "year": 2024
+      },
+      {
+        "metric": "Black swan events: tail risk underestimation",
+        "value": 5,
+        "unit": "x more frequent than normal distribution predicts",
+        "source": "Taleb 2007, The Black Swan / Mandelbrot 2004",
+        "year": 2024
+      },
+      {
+        "metric": "Scenario planning adoption by Fortune 500",
+        "value": 0.35,
+        "unit": "proportion use formal scenario planning",
+        "source": "Bain & Company Management Tools survey",
+        "year": 2024
+      },
+      {
+        "metric": "Bayesian reasoning: intuitive accuracy",
+        "value": 0.04,
+        "unit": "proportion solve Bayesian problems correctly without training",
+        "source": "Gigerenzer & Hoffrage 1995 / Kahneman & Tversky",
+        "year": 2024
+      }
+    ]
+  },
+  "environmental_economics_games": {
+    "resource_management": [
+      {
+        "metric": "Fishery quota compliance rate",
+        "value": 0.7,
+        "unit": "proportion comply with catch limits",
+        "source": "FAO / OECD Fisheries Review",
+        "year": 2024
+      },
+      {
+        "metric": "Deforestation game: slash-and-burn short-term gain vs long-term loss",
+        "value": 3,
+        "unit": "x short-term income but 10x long-term loss",
+        "source": "FAO / World Bank analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Water market pricing efficiency",
+        "value": 0.6,
+        "unit": "proportion more efficient allocation vs administered",
+        "source": "Grafton et al. 2011, WRR / Australian water markets",
+        "year": 2024
+      },
+      {
+        "metric": "REDD+ (forest conservation) additionality rate",
+        "value": 0.4,
+        "unit": "proportion of credited reductions are additional",
+        "source": "West et al. 2023, Science",
+        "year": 2024
+      },
+      {
+        "metric": "Circular economy adoption rate (manufacturing)",
+        "value": 0.09,
+        "unit": "proportion of global economy is circular",
+        "source": "Circle Economy Circularity Gap Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "E-waste proper recycling rate (global)",
+        "value": 0.22,
+        "unit": "proportion properly recycled",
+        "source": "UN Global E-waste Monitor 2024",
+        "year": 2024
+      }
+    ],
+    "pollution_games": [
+      {
+        "metric": "Cap-and-trade SO2 reduction (US Acid Rain Program)",
+        "value": 0.5,
+        "unit": "proportion reduction from 1990 levels at half the cost predicted",
+        "source": "Stavins 1998, JEP",
+        "year": 2024
+      },
+      {
+        "metric": "Carbon offset additionality rate",
+        "value": 0.4,
+        "unit": "proportion of offsets represent real reductions",
+        "source": "Badgley et al. 2022, Frontiers / Guardian investigation",
+        "year": 2024
+      },
+      {
+        "metric": "Coase theorem: private negotiation solves externalities",
+        "value": 0.3,
+        "unit": "proportion of cases where private bargaining works (transaction costs limit)",
+        "source": "Coase 1960 / empirical evidence",
+        "year": 2024
+      },
+      {
+        "metric": "Pigouvian tax accuracy: correct tax level set",
+        "value": 0.25,
+        "unit": "proportion of environmental taxes set at social marginal cost",
+        "source": "Baumol 1972 / Nordhaus 2019",
+        "year": 2024
+      },
+      {
+        "metric": "Environmental regulation compliance cost overestimate",
+        "value": 2,
+        "unit": "x actual cost vs industry predicted cost",
+        "source": "Harrington et al. 2000, Resources for the Future",
+        "year": 2024
+      }
+    ]
+  },
+  "charity_and_philanthropy_games": {
+    "giving_behavior": [
+      {
+        "metric": "Charitable giving as share of GDP (US)",
+        "value": 0.023,
+        "unit": "proportion of GDP",
+        "source": "Giving USA 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Warm glow giving (give for self-satisfaction)",
+        "value": 0.6,
+        "unit": "proportion of donors motivated primarily by warm glow",
+        "source": "Andreoni 1990, Economic Journal",
+        "year": 2024
+      },
+      {
+        "metric": "Matching grant effect on donations",
+        "value": 0.19,
+        "unit": "proportion increase in response rate with 1:1 match",
+        "source": "Karlan & List 2007, AER",
+        "year": 2024
+      },
+      {
+        "metric": "Seed money effect (lead donation)",
+        "value": 0.25,
+        "unit": "proportion increase in total fundraising with 33% seed",
+        "source": "List & Lucking-Reiley 2002, JPE",
+        "year": 2024
+      },
+      {
+        "metric": "Identifiable victim effect on donations",
+        "value": 2,
+        "unit": "x more donated to identified individual vs statistics",
+        "source": "Small et al. 2007, Organizational Behavior",
+        "year": 2024
+      },
+      {
+        "metric": "Donor fatigue: decline in giving after repeated asks",
+        "value": 0.3,
+        "unit": "proportion decline after 3+ asks in same period",
+        "source": "Andreoni & Rao 2011, Journal of Political Economy",
+        "year": 2024
+      },
+      {
+        "metric": "Effective altruism movement: cost per DALY prevented",
+        "value": 50,
+        "unit": "USD per DALY prevented (GiveWell top charities)",
+        "source": "GiveWell 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate philanthropy as marketing: ROI",
+        "value": 0.2,
+        "unit": "proportion increase in consumer preference",
+        "source": "Lichtenstein et al. 2004, Journal of Marketing",
+        "year": 2024
+      },
+      {
+        "metric": "Pledge (Giving What We Can) adherence rate",
+        "value": 0.83,
+        "unit": "proportion still donating 10% after 5 years",
+        "source": "Giving What We Can internal data",
+        "year": 2024
+      },
+      {
+        "metric": "Religious giving vs secular: annual amount",
+        "value": 2.5,
+        "unit": "x more from religiously affiliated donors",
+        "source": "Giving USA / Philanthropy Roundtable",
+        "year": 2024
+      }
+    ]
+  },
+  "insurance_risk_games": {
+    "risk_pooling": [
+      {
+        "metric": "Insurance market adverse selection severity",
+        "value": 0.2,
+        "unit": "proportion higher claims than actuarial prediction",
+        "source": "Cutler & Zeckhauser 2000, Handbook",
+        "year": 2024
+      },
+      {
+        "metric": "Moral hazard: increased risk-taking with insurance",
+        "value": 0.17,
+        "unit": "proportion more risky behavior",
+        "source": "RAND HIE / Einav et al. 2013, Annual Review",
+        "year": 2024
+      },
+      {
+        "metric": "Insurance fraud share of claims",
+        "value": 0.1,
+        "unit": "proportion of claims are fraudulent",
+        "source": "Coalition Against Insurance Fraud / FBI",
+        "year": 2024
+      },
+      {
+        "metric": "Crop insurance moral hazard (farming)",
+        "value": 0.15,
+        "unit": "proportion increase in risky planting decisions",
+        "source": "Babcock & Hennessy 1996, AJAE",
+        "year": 2024
+      },
+      {
+        "metric": "Unemployment insurance: job search reduction",
+        "value": 0.1,
+        "unit": "proportion longer unemployment duration per 10 weeks of UI",
+        "source": "Card & Levine 2000, JE / Marinescu 2017",
+        "year": 2024
+      },
+      {
+        "metric": "Life insurance ownership (US adults)",
+        "value": 0.52,
+        "unit": "proportion",
+        "source": "LIMRA 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Health insurance uninsured rate (US)",
+        "value": 0.08,
+        "unit": "proportion",
+        "source": "US Census Bureau CPS",
+        "year": 2024
+      },
+      {
+        "metric": "Microinsurance adoption (developing countries)",
+        "value": 0.05,
+        "unit": "proportion of target population",
+        "source": "ILO / Munich Re Foundation",
+        "year": 2024
+      }
+    ]
+  },
+  "reputation_and_trust_systems": {
+    "online_reputation": [
+      {
+        "metric": "One-star increase on Yelp: revenue impact",
+        "value": 0.09,
+        "unit": "proportion revenue increase per star",
+        "source": "Luca 2016, AEJ: Applied",
+        "year": 2024
+      },
+      {
+        "metric": "Fake review detection accuracy (algorithmic)",
+        "value": 0.68,
+        "unit": "proportion detected by Yelp/Amazon filters",
+        "source": "Luca & Zervas 2016, Management Science",
+        "year": 2024
+      },
+      {
+        "metric": "Review reciprocity: receiving review increases leaving one",
+        "value": 0.3,
+        "unit": "proportion more likely to review after being reviewed",
+        "source": "Dellarocas et al. 2006, MISQ",
+        "year": 2024
+      },
+      {
+        "metric": "eBay reputation premium: power seller price premium",
+        "value": 0.08,
+        "unit": "proportion higher price for high-reputation sellers",
+        "source": "Resnick et al. 2006, Experimental Economics",
+        "year": 2024
+      },
+      {
+        "metric": "Reputation damage recovery time (corporate scandal)",
+        "value": 3,
+        "unit": "years average for stock price recovery",
+        "source": "Karpoff et al. 2008, JFE",
+        "year": 2024
+      },
+      {
+        "metric": "Trust seals (BBB, Norton) conversion lift",
+        "value": 0.1,
+        "unit": "proportion increase in purchase rate",
+        "source": "Baymard Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Employer review sites (Glassdoor) impact on hiring",
+        "value": 0.25,
+        "unit": "proportion of job seekers reject company due to bad reviews",
+        "source": "Glassdoor / SHRM",
+        "year": 2024
+      },
+      {
+        "metric": "Influencer trust vs brand advertising",
+        "value": 0.61,
+        "unit": "proportion trust influencer recommendations vs 38% brand ads",
+        "source": "Edelman Trust Barometer 2024",
+        "year": 2024
+      }
+    ],
+    "institutional_trust": [
+      {
+        "metric": "Central bank credibility effect on inflation expectations",
+        "value": 0.5,
+        "unit": "proportion of inflation variance explained by expectations anchoring",
+        "source": "Blinder et al. 2008, JEL",
+        "year": 2024
+      },
+      {
+        "metric": "Contract enforcement and economic growth",
+        "value": 0.4,
+        "unit": "proportion of GDP per capita difference explained by institutions",
+        "source": "Acemoglu et al. 2001, AER",
+        "year": 2024
+      },
+      {
+        "metric": "Rule of law index and FDI attraction",
+        "value": 0.55,
+        "unit": "correlation between rule of law and FDI inflows",
+        "source": "World Bank / Globerman & Shapiro 2002",
+        "year": 2024
+      },
+      {
+        "metric": "Blockchain trust: smart contract vs traditional contract cost",
+        "value": 0.6,
+        "unit": "proportion lower transaction cost (for suitable use cases)",
+        "source": "Catalini & Gans 2020, NBER",
+        "year": 2024
+      }
+    ]
+  },
+  "supply_chain_games": {
+    "supply_chain_coordination": [
+      {
+        "metric": "Bullwhip effect: demand signal amplification",
+        "value": 2,
+        "unit": "x amplification from retail to manufacturer",
+        "source": "Lee et al. 1997, Management Science",
+        "year": 2024
+      },
+      {
+        "metric": "Beer game: inventory oscillation (beginner)",
+        "value": 10,
+        "unit": "x over-ordering vs actual demand change",
+        "source": "Sterman 1989, Management Science",
+        "year": 2024
+      },
+      {
+        "metric": "Supply chain information sharing: inventory reduction",
+        "value": 0.25,
+        "unit": "proportion reduction with full visibility",
+        "source": "Lee et al. 2000, Management Science",
+        "year": 2024
+      },
+      {
+        "metric": "Vendor-managed inventory (VMI) cost reduction",
+        "value": 0.2,
+        "unit": "proportion supply chain cost reduction",
+        "source": "Waller et al. 1999, Journal of Business Logistics",
+        "year": 2024
+      },
+      {
+        "metric": "Just-in-time vs safety stock: disruption vulnerability",
+        "value": 3,
+        "unit": "x more vulnerable to disruption with JIT",
+        "source": "Sheffi 2005 / COVID supply chain research",
+        "year": 2024
+      },
+      {
+        "metric": "Dual sourcing: cost premium vs resilience",
+        "value": 0.15,
+        "unit": "proportion cost premium for risk reduction",
+        "source": "Tomlin 2006, Manufacturing & Service Operations Management",
+        "year": 2024
+      },
+      {
+        "metric": "Supply chain collaboration success rate",
+        "value": 0.45,
+        "unit": "proportion of partnerships achieve stated goals",
+        "source": "Lambert et al. 2004 / SCM World surveys",
+        "year": 2024
+      },
+      {
+        "metric": "Counterfeit goods share of global trade",
+        "value": 0.025,
+        "unit": "proportion of world trade ($509B)",
+        "source": "OECD / EUIPO 2024",
+        "year": 2024
+      }
+    ]
+  },
+  "energy_market_games": {
+    "electricity_markets": [
+      {
+        "metric": "Electricity market gaming (strategic capacity withholding)",
+        "value": 0.1,
+        "unit": "proportion of capacity strategically withheld during peak",
+        "source": "Borenstein et al. 2002, AER (California energy crisis)",
+        "year": 2024
+      },
+      {
+        "metric": "Renewable energy auction price decline per doubling of capacity",
+        "value": 0.28,
+        "unit": "proportion cost decline (learning curve)",
+        "source": "IRENA 2024 / Way et al. 2022, Joule",
+        "year": 2024
+      },
+      {
+        "metric": "OPEC cartel compliance rate",
+        "value": 0.65,
+        "unit": "proportion of members comply with production cuts",
+        "source": "Colgan 2014, International Organization",
+        "year": 2024
+      },
+      {
+        "metric": "Solar panel defection from grid: utility death spiral risk",
+        "value": 0.05,
+        "unit": "proportion of residential customers fully off-grid",
+        "source": "Rocky Mountain Institute / EIA",
+        "year": 2024
+      },
+      {
+        "metric": "Battery storage game: optimal charge/discharge timing",
+        "value": 0.85,
+        "unit": "proportion revenue capture with optimal strategy",
+        "source": "Sioshansi et al. 2009, Energy Economics",
+        "year": 2024
+      },
+      {
+        "metric": "Green premium: willingness to pay for renewable energy",
+        "value": 0.1,
+        "unit": "proportion premium consumers willing to pay",
+        "source": "Borchers et al. 2007, Energy Economics / EIA surveys",
+        "year": 2024
+      }
+    ]
+  },
+  "AI_game_theory": {
+    "ai_and_strategic_interaction": [
+      {
+        "metric": "AI vs human in strategic games: poker win rate",
+        "value": 0.95,
+        "unit": "proportion of times AI beats top humans (no-limit hold'em)",
+        "source": "Brown & Sandholm 2019, Science (Pluribus)",
+        "year": 2024
+      },
+      {
+        "metric": "AI vs human in Go: win rate",
+        "value": 0.99,
+        "unit": "proportion (AlphaGo/AlphaZero)",
+        "source": "Silver et al. 2017, Nature",
+        "year": 2024
+      },
+      {
+        "metric": "AI negotiation: surplus capture vs humans",
+        "value": 0.6,
+        "unit": "proportion more surplus captured by AI",
+        "source": "Lewis et al. 2017, FAIR / Meta AI",
+        "year": 2024
+      },
+      {
+        "metric": "Algorithmic collusion detection difficulty",
+        "value": 0.15,
+        "unit": "proportion of cases regulators can prove algorithmic collusion",
+        "source": "Calvano et al. 2020, AER / OECD 2023",
+        "year": 2024
+      },
+      {
+        "metric": "AI hiring tool bias prevalence",
+        "value": 0.3,
+        "unit": "proportion of AI hiring tools show some bias",
+        "source": "Raghavan et al. 2020 / AI Now Institute",
+        "year": 2024
+      },
+      {
+        "metric": "AI arms race: global AI military spending",
+        "value": 18,
+        "unit": "billion USD (2024, growing 25%/year)",
+        "source": "SIPRI / CSIS",
+        "year": 2024
+      },
+      {
+        "metric": "AI safety: alignment tax (performance cost of safety)",
+        "value": 0.05,
+        "unit": "proportion performance reduction with safety constraints",
+        "source": "Anthropic / OpenAI safety research",
+        "year": 2024
+      },
+      {
+        "metric": "Cooperative AI: multi-agent coordination success",
+        "value": 0.55,
+        "unit": "proportion of tasks where cooperative AI outperforms competitive",
+        "source": "Dafoe et al. 2020, Nature Machine Intelligence",
+        "year": 2024
+      },
+      {
+        "metric": "AI recommendation system manipulation prevalence",
+        "value": 0.15,
+        "unit": "proportion of recommendations influenced by strategic actors",
+        "source": "Milli et al. 2019, AIES",
+        "year": 2024
+      },
+      {
+        "metric": "Deepfake detection accuracy (human)",
+        "value": 0.55,
+        "unit": "proportion (barely above chance)",
+        "source": "Groh et al. 2022, PNAS",
+        "year": 2024
+      },
+      {
+        "metric": "Deepfake detection accuracy (AI)",
+        "value": 0.85,
+        "unit": "proportion detected",
+        "source": "Tolosana et al. 2020, Information Fusion",
+        "year": 2024
+      }
+    ]
+  },
+  "taxation_games": {
+    "tax_compliance": [
+      {
+        "metric": "Tax gap (US): unpaid taxes as share of total owed",
+        "value": 0.15,
+        "unit": "proportion (~$688B unpaid)",
+        "source": "IRS Tax Gap estimate 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Tax audit probability (US individual)",
+        "value": 0.004,
+        "unit": "proportion (0.4%)",
+        "source": "IRS Data Book 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Tax audit probability (US income $1M+)",
+        "value": 0.016,
+        "unit": "proportion (1.6%)",
+        "source": "IRS Data Book 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Tax haven usage by MNCs (profit shifting)",
+        "value": 0.4,
+        "unit": "proportion of MNC profits booked in tax havens",
+        "source": "Torslov et al. 2022, Review of Economic Studies",
+        "year": 2024
+      },
+      {
+        "metric": "Tax morale: intrinsic motivation to pay taxes",
+        "value": 0.62,
+        "unit": "proportion believe paying taxes is civic duty",
+        "source": "IRS Taxpayer Attitude Survey / WVS",
+        "year": 2024
+      },
+      {
+        "metric": "Third-party reporting compliance effect",
+        "value": 0.95,
+        "unit": "proportion compliance when income reported by third party (vs 0.55 self-reported)",
+        "source": "Kleven et al. 2011, Econometrica",
+        "year": 2024
+      },
+      {
+        "metric": "Tax amnesty recovery rate",
+        "value": 0.2,
+        "unit": "proportion of evaded taxes recovered through amnesty programs",
+        "source": "Alm et al. 2009, National Tax Journal",
+        "year": 2024
+      },
+      {
+        "metric": "Laffer curve peak (estimated optimal tax rate)",
+        "value": 0.7,
+        "unit": "proportion marginal rate (for top earners, varies by estimate)",
+        "source": "Saez et al. 2012, JEL / Diamond & Saez 2011",
+        "year": 2024
+      }
+    ]
+  },
+  "migration_games": {
+    "brain_drain_gain": [
+      {
+        "metric": "Brain drain: emigration rate of tertiary-educated (developing countries)",
+        "value": 0.1,
+        "unit": "proportion average",
+        "source": "Docquier & Rapoport 2012, JEL",
+        "year": 2024
+      },
+      {
+        "metric": "Brain gain: higher education enrollment due to emigration prospect",
+        "value": 0.05,
+        "unit": "proportion increase in enrollment",
+        "source": "Beine et al. 2001, Economics Letters",
+        "year": 2024
+      },
+      {
+        "metric": "Remittances as share of GDP (top recipients)",
+        "value": 0.25,
+        "unit": "proportion of GDP (Tonga, Lebanon, Haiti)",
+        "source": "World Bank KNOMAD 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Remittance flows to developing countries (annual)",
+        "value": 656,
+        "unit": "billion USD",
+        "source": "World Bank 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Immigration fiscal impact (net positive after 10 years)",
+        "value": 0.7,
+        "unit": "proportion of fiscal studies show net positive",
+        "source": "NAS 2017, The Economic and Fiscal Consequences of Immigration",
+        "year": 2024
+      },
+      {
+        "metric": "Labor market integration: immigrant-native wage gap closure",
+        "value": 15,
+        "unit": "years average to close gap by 50%",
+        "source": "Borjas 2015, Immigration Economics / Chiswick 1978",
+        "year": 2024
+      },
+      {
+        "metric": "Refugee economic contribution (Germany)",
+        "value": 0.55,
+        "unit": "proportion employed after 5 years",
+        "source": "IAB / BAMF 2024",
+        "year": 2024
+      }
+    ]
+  },
+  "network_science_games": {
+    "social_networks": [
+      {
+        "metric": "Six degrees of separation (average path length)",
+        "value": 3.57,
+        "unit": "degrees on Facebook (Backstrom et al. 2012)",
+        "source": "Backstrom et al. 2012, Facebook data / Milgram 1967",
+        "year": 2024
+      },
+      {
+        "metric": "Power law in social network degree distribution",
+        "value": 2.3,
+        "unit": "exponent (scale-free network)",
+        "source": "Barabasi & Albert 1999, Science",
+        "year": 2024
+      },
+      {
+        "metric": "Dunbar's number: cognitive limit on social connections",
+        "value": 150,
+        "unit": "people (stable relationships)",
+        "source": "Dunbar 1992, Journal of Human Evolution",
+        "year": 2024
+      },
+      {
+        "metric": "Weak ties: proportion of jobs found through weak ties",
+        "value": 0.28,
+        "unit": "proportion",
+        "source": "Granovetter 1973, AJS / LinkedIn data updated",
+        "year": 2024
+      },
+      {
+        "metric": "Network contagion: obesity spread through social ties",
+        "value": 0.57,
+        "unit": "proportion higher obesity risk with obese friend",
+        "source": "Christakis & Fowler 2007, NEJM",
+        "year": 2024
+      },
+      {
+        "metric": "Influencer vs mass reach: marketing cost-effectiveness",
+        "value": 0.4,
+        "unit": "proportion more cost-effective per engagement (micro-influencers)",
+        "source": "Bakshy et al. 2011, WSDM / HubSpot data",
+        "year": 2024
+      },
+      {
+        "metric": "Viral threshold: minimum sharing rate for virality",
+        "value": 1.0,
+        "unit": "basic reproduction number (R0 > 1 = viral)",
+        "source": "Leskovec et al. 2007, KDD / epidemiological analogy",
+        "year": 2024
+      },
+      {
+        "metric": "Information cascade fragility",
+        "value": 0.3,
+        "unit": "proportion of cascades collapse after contradicting signal",
+        "source": "Bikhchandani et al. 1992, JPE",
+        "year": 2024
+      }
+    ]
+  },
+  "experimental_market_design": {
+    "market_failures": [
+      {
+        "metric": "Externality correction: Pigouvian tax vs regulation cost comparison",
+        "value": 0.3,
+        "unit": "proportion lower cost for Pigouvian approach",
+        "source": "Goulder & Parry 2008, Review of Environmental Economics",
+        "year": 2024
+      },
+      {
+        "metric": "Public goods voluntary provision (lab): percentage of optimal",
+        "value": 0.5,
+        "unit": "proportion of optimal provision",
+        "source": "Ledyard 1995, Handbook of Experimental Economics",
+        "year": 2024
+      },
+      {
+        "metric": "Common resource depletion game: tragedy rate without rules",
+        "value": 0.65,
+        "unit": "proportion deplete before sustainable",
+        "source": "Ostrom et al. 1994",
+        "year": 2024
+      },
+      {
+        "metric": "Assurance game cooperation with communication",
+        "value": 0.8,
+        "unit": "proportion cooperate with pre-play communication",
+        "source": "Cooper et al. 1989, RAND Journal",
+        "year": 2024
+      },
+      {
+        "metric": "Volunteer's dilemma: diffusion of responsibility rate",
+        "value": 0.6,
+        "unit": "proportion show diffusion as group grows",
+        "source": "Diekmann 1985, Journal of Conflict Resolution",
+        "year": 2024
+      },
+      {
+        "metric": "Asymmetric information market collapse (Akerlof)",
+        "value": 0.3,
+        "unit": "proportion of markets with severe adverse selection",
+        "source": "Akerlof 1970 / empirical evidence on used car markets",
+        "year": 2024
+      },
+      {
+        "metric": "Price discrimination welfare effect",
+        "value": 0.55,
+        "unit": "proportion of cases where discrimination increases total welfare",
+        "source": "Varian 1985, AER / Aguirre et al. 2010",
+        "year": 2024
+      },
+      {
+        "metric": "Minimum wage employment effect (modest increase)",
+        "value": -0.01,
+        "unit": "proportion change in employment (near zero for moderate increases)",
+        "source": "Card & Krueger 1994 / Dube et al. 2010, REStat",
+        "year": 2024
+      },
+      {
+        "metric": "Universal basic income work reduction effect",
+        "value": -0.05,
+        "unit": "proportion reduction in work hours (small)",
+        "source": "Marinescu 2018 / Finland UBI experiment / GiveDirectly",
+        "year": 2024
+      },
+      {
+        "metric": "Price ceiling (rent control) surplus loss",
+        "value": 0.2,
+        "unit": "proportion of consumer surplus lost to misallocation",
+        "source": "Glaeser & Luttmer 2003, AER / Diamond et al. 2019",
+        "year": 2024
+      },
+      {
+        "metric": "Congestion pricing: traffic reduction in implementation cities",
+        "value": 0.15,
+        "unit": "proportion reduction in peak traffic",
+        "source": "Small & Verhoef 2007 / Stockholm experiment",
+        "year": 2024
+      },
+      {
+        "metric": "Kidney exchange market clearing rate improvement",
+        "value": 0.3,
+        "unit": "proportion more transplants vs bilateral swap only",
+        "source": "Roth et al. 2004 / UNOS data",
+        "year": 2024
+      }
+    ],
+    "behavioral_policy": [
+      {
+        "metric": "Nudge unit ROI (UK Behavioural Insights Team)",
+        "value": 10,
+        "unit": "x return on investment",
+        "source": "UK Cabinet Office BIT reports",
+        "year": 2024
+      },
+      {
+        "metric": "Calorie labeling effect on food choices",
+        "value": -0.08,
+        "unit": "proportion fewer calories ordered",
+        "source": "Bollinger et al. 2011, AEJ: Economic Policy",
+        "year": 2024
+      },
+      {
+        "metric": "Graphic cigarette warning effectiveness",
+        "value": 0.1,
+        "unit": "proportion additional quit attempts",
+        "source": "Noar et al. 2016, BMC Public Health meta-analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Cooling-off period for major purchases: return rate",
+        "value": 0.25,
+        "unit": "proportion of impulsive purchases returned",
+        "source": "FTC / consumer protection data",
+        "year": 2024
+      },
+      {
+        "metric": "Financial literacy education impact on behavior",
+        "value": 0.1,
+        "unit": "proportion improvement in financial decisions",
+        "source": "Kaiser et al. 2022, JFE meta-analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Green energy default: opt-out rate",
+        "value": 0.1,
+        "unit": "proportion switch away from green default",
+        "source": "Ebeling & Lotz 2015, Energy Policy",
+        "year": 2024
+      },
+      {
+        "metric": "Commitment savings product (developing country) adoption",
+        "value": 0.28,
+        "unit": "proportion adopt when offered",
+        "source": "Ashraf et al. 2006, QJE",
+        "year": 2024
+      },
+      {
+        "metric": "Social comparison on utility bills: energy savings",
+        "value": 0.02,
+        "unit": "proportion energy reduction",
+        "source": "Allcott 2011, JEP: Applied (OPower)",
+        "year": 2024
+      },
+      {
+        "metric": "Sludge (bad nudges): paperwork burden cost (US federal)",
+        "value": 11.5,
+        "unit": "billion hours/year spent on federal paperwork",
+        "source": "OIRA / Sunstein 2020, Sludge",
+        "year": 2024
+      },
+      {
+        "metric": "Automatic enrollment in pension: participation increase",
+        "value": 0.5,
+        "unit": "proportion increase (from 40% to 90%)",
+        "source": "Madrian & Shea 2001, QJE / Choi et al. 2004",
+        "year": 2024
+      }
+    ]
   }
 }

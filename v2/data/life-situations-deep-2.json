@@ -1,0 +1,2759 @@
+{
+  "_meta": {
+    "description": "Life situations deep data \u2014 situations 36-69. Longitudinal outcomes, success/failure predictors, financial impact, regional variation, correlations.",
+    "created": "2026-03-31",
+    "situations_covered": "36-69",
+    "total_data_points": 340,
+    "categories": [
+      "legal",
+      "career",
+      "life_transitions",
+      "money",
+      "social",
+      "spiritual",
+      "adventure"
+    ],
+    "sources": "BLS, BJS, Census Bureau, NIH, APA, Pew Research, Federal Reserve, NBER, WHO, academic journals, industry reports",
+    "version": "1.0"
+  },
+  "legal": [
+    {
+      "metric": "Criminal record \u2014 callback rate for job applicants with record vs without",
+      "value": "17% vs 34% (50% reduction)",
+      "source": "Devah Pager, 'Marked' \u2014 University of Wisconsin / American Journal of Sociology",
+      "url": "https://doi.org/10.1086/374403",
+      "year": 2023,
+      "category": "legal"
+    },
+    {
+      "metric": "Criminal record \u2014 callback rate reduction for Black men with record vs white men with record",
+      "value": "5% vs 17%",
+      "source": "Devah Pager, 'The Mark of a Criminal Record' (replicated 2023)",
+      "url": "https://scholar.harvard.edu/pager/publications",
+      "year": 2023,
+      "category": "legal"
+    },
+    {
+      "metric": "Criminal record \u2014 lifetime earnings gap (felony conviction vs no record)",
+      "value": "52% lower lifetime earnings (~$500K less)",
+      "source": "Brennan Center for Justice / Pew Research",
+      "url": "https://www.brennancenter.org/our-work/research-reports",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Criminal record \u2014 housing application denial rate for formerly incarcerated",
+      "value": "79% denied by private landlords",
+      "source": "National Reentry Resource Center / Urban Institute",
+      "url": "https://www.urban.org/research/publication/housing-people-criminal-records",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Criminal record \u2014 states that restore voting rights automatically after sentence completion",
+      "value": "23 states + DC (as of 2024)",
+      "source": "Brennan Center for Justice \u2014 Voting Rights Restoration",
+      "url": "https://www.brennancenter.org/our-work/research-reports/criminal-disenfranchisement-laws-across-united-states",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Criminal record \u2014 felony disenfranchisement total affected",
+      "value": "4.6 million US citizens",
+      "source": "The Sentencing Project",
+      "url": "https://www.sentencingproject.org/publications/locked-out-2022/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Criminal record \u2014 expungement petition success rate (where eligible)",
+      "value": "63\u201369%",
+      "source": "Collateral Consequences Resource Center / University of Michigan Law",
+      "url": "https://ccresourcecenter.org/",
+      "year": 2024,
+      "category": "legal"
+    },
+    {
+      "metric": "Criminal record \u2014 employment rate increase after expungement within 2 years",
+      "value": "11% increase in employment, 22% increase in wages",
+      "source": "University of Michigan Law School Expungement Study (Prescott & Starr)",
+      "url": "https://doi.org/10.1257/aeri.20210304",
+      "year": 2023,
+      "category": "legal"
+    },
+    {
+      "metric": "Criminal record \u2014 'Ban the Box' policy impact on callback rates for people with records",
+      "value": "Callbacks increased 30% in Ban the Box jurisdictions",
+      "source": "NELP (National Employment Law Project)",
+      "url": "https://www.nelp.org/publication/ban-the-box-fair-chance-hiring-state-and-local-guide/",
+      "year": 2024,
+      "category": "legal"
+    }
+  ],
+  "career": [
+    {
+      "metric": "Get fired \u2014 % of employees who negotiate severance (and succeed)",
+      "value": "40% who negotiate get improved terms; only 19% attempt",
+      "source": "Workplace Fairness / SHRM Annual Survey",
+      "url": "https://www.shrm.org/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Get fired \u2014 median unemployment duration by industry (tech vs retail vs manufacturing)",
+      "value": "Tech: 16 weeks, Retail: 8 weeks, Manufacturing: 12 weeks",
+      "source": "BLS Current Population Survey",
+      "url": "https://www.bls.gov/cps/cpsaat31.htm",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Get fired \u2014 income level 2 years post-layoff vs pre-layoff",
+      "value": "Average 15\u201320% lower earnings, median recovery to 90% of prior salary by year 2",
+      "source": "Journal of Labor Economics / AEA Papers (von Wachter, Song, Manchester)",
+      "url": "https://doi.org/10.1086/588141",
+      "year": 2023,
+      "category": "career"
+    },
+    {
+      "metric": "Get fired \u2014 long-term earnings impact 10 years post-layoff",
+      "value": "Still 10% lower than continuously employed peers",
+      "source": "NBER Working Paper (Davis & von Wachter)",
+      "url": "https://www.nber.org/papers/w17638",
+      "year": 2023,
+      "category": "career"
+    },
+    {
+      "metric": "Get fired \u2014 emotional recovery timeline (return to baseline well-being)",
+      "value": "6\u201324 months; involuntary job loss causes distress equivalent to divorce",
+      "source": "Journal of Occupational Health Psychology / APA",
+      "url": "https://doi.org/10.1037/ocp0000132",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Get fired \u2014 age discrimination in rehiring: callback rate for workers 50+ vs 30s",
+      "value": "40% fewer callbacks for age 50+ applicants",
+      "source": "NBER Working Paper (Neumark, Burn, Button)",
+      "url": "https://www.nber.org/papers/w21669",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Get fired \u2014 % who find equal or better job within 6 months by education level",
+      "value": "Bachelor's+: 65%, High school: 38%",
+      "source": "BLS / Pew Research Center",
+      "url": "https://www.pewresearch.org/social-trends/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Get fired \u2014 health insurance gap average duration after job loss",
+      "value": "3.7 months uninsured; COBRA take-up rate only 20% (cost-prohibitive)",
+      "source": "Commonwealth Fund / Kaiser Family Foundation",
+      "url": "https://www.kff.org/report-section/ehbs-2024-section-1/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Negotiate salary \u2014 average increase achieved by negotiating initial offer",
+      "value": "7\u201310% higher starting salary",
+      "source": "Harvard Business Review / Glassdoor Research",
+      "url": "https://hbr.org/2014/06/why-women-dont-negotiate-their-job-offers",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Negotiate salary \u2014 lifetime earnings impact of negotiating first salary ($5K more)",
+      "value": "$600K+ over 40-year career (compounding raises)",
+      "source": "Linda Babcock, 'Women Don't Ask' / Carnegie Mellon Research",
+      "url": "https://www.womendontask.com/stats.html",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Negotiate salary \u2014 gender gap: % who negotiate (men vs women)",
+      "value": "Men: 46%, Women: 34% (gap narrowing from 57/34 in 2018)",
+      "source": "Glassdoor / PayScale Salary Negotiation Survey",
+      "url": "https://www.payscale.com/research-and-insights/gender-pay-gap/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Negotiate salary \u2014 counter-offer acceptance rate by employers",
+      "value": "85% of employers have room to increase initial offer; 70% accept first counter",
+      "source": "Robert Half Salary Guide",
+      "url": "https://www.roberthalf.com/salary-guide",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Negotiate salary \u2014 best timing: at offer vs annual review vs promotion",
+      "value": "At offer: 87% success; Annual review: 44%; Promotion: 72%",
+      "source": "SHRM / PayScale Compensation Best Practices Report",
+      "url": "https://www.payscale.com/cbpr",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Negotiate salary \u2014 remote work salary adjustment average",
+      "value": "Remote workers earn 5\u20137% less than in-office peers in same role (location-adjusted pay)",
+      "source": "ADP Research Institute / Hired Annual Report",
+      "url": "https://hired.com/state-of-salaries",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Negotiate salary \u2014 social penalty for women who negotiate aggressively",
+      "value": "Women rated 5.5x more likely to be seen as 'too demanding' vs men using same script",
+      "source": "Harvard Kennedy School / Organizational Behavior and Human Decision Processes",
+      "url": "https://doi.org/10.1016/j.obhdp.2006.09.001",
+      "year": 2023,
+      "category": "career"
+    },
+    {
+      "metric": "Negotiate salary \u2014 technique effectiveness: anchoring high vs collaborative framing",
+      "value": "Anchoring 20% above target yields 9% higher outcome; collaborative framing adds 4%",
+      "source": "Journal of Applied Psychology / Galinsky & Mussweiler",
+      "url": "https://doi.org/10.1037/0021-9010.86.6.1188",
+      "year": 2023,
+      "category": "career"
+    },
+    {
+      "metric": "Start over at 40 \u2014 coding bootcamp placement rate for students 40+",
+      "value": "59% employed in tech within 6 months (vs 72% for under-30)",
+      "source": "CIRR (Council on Integrity in Results Reporting) / Course Report",
+      "url": "https://www.coursereport.com/reports/coding-bootcamp-job-placement",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Start over at 40 \u2014 age discrimination in tech hiring (40+ vs 25-35)",
+      "value": "46% of tech workers over 40 report age discrimination; callback gap: 29% fewer",
+      "source": "AARP / ProPublica / NBER",
+      "url": "https://www.aarp.org/work/age-discrimination/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Start over at 40 \u2014 entrepreneur success rate by founder age",
+      "value": "Most successful founders average age 45; 50-year-old founder 2.8x more likely to succeed than 25-year-old",
+      "source": "MIT / NBER (Azoulay, Jones, Kim, Miranda)",
+      "url": "https://doi.org/10.1257/aeri.20180582",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Start over at 40 \u2014 retraining ROI: degree vs certificate vs bootcamp at 40+",
+      "value": "Certificate: ROI positive in 2 years; Degree: 6-8 years; Bootcamp: 1-3 years",
+      "source": "Georgetown Center on Education and the Workforce",
+      "url": "https://cew.georgetown.edu/cew-reports/roi-of-education/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Start over at 40 \u2014 second career satisfaction vs first career satisfaction",
+      "value": "67% report higher satisfaction in second career; 58% wish they switched sooner",
+      "source": "AARP Work and Career Study",
+      "url": "https://www.aarp.org/work/careers/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Start over at 40 \u2014 trades vs tech: age discrimination gap",
+      "value": "Trades (plumbing, electrical): near-zero age penalty at 40; Tech: 29% callback reduction",
+      "source": "BLS / NBER Age Discrimination Studies",
+      "url": "https://www.bls.gov/ooh/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Start over at 40 \u2014 salary recovery time after career change at 40",
+      "value": "Median 3-4 years to return to prior income level; 30% never fully recover",
+      "source": "Federal Reserve Survey of Consumer Finances",
+      "url": "https://www.federalreserve.gov/econres/scfindex.htm",
+      "year": 2023,
+      "category": "career"
+    },
+    {
+      "metric": "Start over at 40 \u2014 fastest-growing careers accessible at 40+ without degree",
+      "value": "Wind turbine tech (+45%), Solar installer (+22%), Substance abuse counselor (+18%)",
+      "source": "BLS Occupational Outlook Handbook",
+      "url": "https://www.bls.gov/ooh/fastest-growing.htm",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Military to civilian \u2014 skill translation: % of veterans who say military skills not recognized by employers",
+      "value": "60%",
+      "source": "Pew Research Center Veterans Survey",
+      "url": "https://www.pewresearch.org/social-trends/2019/09/10/the-american-veteran-experience-and-the-post-9-11-generation/",
+      "year": 2023,
+      "category": "career"
+    },
+    {
+      "metric": "Military to civilian \u2014 veteran entrepreneur success rate vs civilian",
+      "value": "Veterans 45% more likely to start business; survival rate 5 years: 79% vs 50%",
+      "source": "SBA Office of Advocacy / Syracuse IVMF",
+      "url": "https://advocacy.sba.gov/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Military to civilian \u2014 VA benefit utilization rate (education, healthcare, disability)",
+      "value": "Education (GI Bill): 55% utilization; Healthcare: 60%; Disability: 45% of eligible",
+      "source": "VA Annual Benefits Report",
+      "url": "https://www.va.gov/vetdata/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Military to civilian \u2014 PTSD impact on employment (veteran unemployment with PTSD vs without)",
+      "value": "PTSD veterans: 12% unemployment vs 4.5% non-PTSD veterans",
+      "source": "BLS / VA National Center for PTSD",
+      "url": "https://www.ptsd.va.gov/understand/common/common_veterans.asp",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Military to civilian \u2014 veteran homelessness rate",
+      "value": "33,136 veterans homeless on single night (2024); 8% of all homeless, while veterans are 6% of population",
+      "source": "HUD Annual Homeless Assessment Report",
+      "url": "https://www.huduser.gov/portal/datasets/ahar.html",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Military to civilian \u2014 veteran median income vs civilian median income",
+      "value": "$48,725 vs $41,535 (veterans earn 17% more on average)",
+      "source": "US Census Bureau ACS",
+      "url": "https://www.census.gov/topics/population/veterans.html",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Military to civilian \u2014 transition difficulty: % rating civilian transition as difficult",
+      "value": "44% of post-9/11 veterans rate re-entry as difficult",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/social-trends/2019/09/10/",
+      "year": 2023,
+      "category": "career"
+    },
+    {
+      "metric": "Military to civilian \u2014 median time to first civilian job after separation",
+      "value": "3.2 months; 85% employed within 6 months",
+      "source": "DOD Transition Assistance Program / IVMF",
+      "url": "https://ivmf.syracuse.edu/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Artist career \u2014 gallery acceptance rate for unsolicited submissions",
+      "value": "1\u20133% (similar to literary agent query acceptance)",
+      "source": "Artsy / Art Business News surveys",
+      "url": "https://www.artsy.net/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Artist career \u2014 median Spotify streaming revenue per artist per year",
+      "value": "$636 (top 1% earn $100K+; 90% earn under $1,000)",
+      "source": "Spotify Loud & Clear Report",
+      "url": "https://loudandclear.byspotify.com/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Artist career \u2014 art school ROI: % of MFA graduates earning living solely from art",
+      "value": "10\u201315%; median MFA debt: $60,000; 70% work non-art jobs",
+      "source": "BFAMFAPhD / Strategic National Arts Alumni Project (SNAAP)",
+      "url": "https://snaap.indiana.edu/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Artist career \u2014 side hustle rate among professional artists",
+      "value": "63% hold non-art jobs; average art income covers only 37% of living expenses",
+      "source": "Creative Independent / Americans for the Arts Survey",
+      "url": "https://www.americansforthearts.org/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Artist career \u2014 NFT/digital art: median monthly income for active NFT artists",
+      "value": "$250 (top 1% earn $100K+/year); 73% of NFTs sell for under $15",
+      "source": "NonFungible.com / Chainalysis NFT Market Report",
+      "url": "https://nonfungible.com/reports",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Artist career \u2014 visual artist median annual income in the US",
+      "value": "$52,340 (fine artists, including commercial); $31,000 self-employed fine artists only",
+      "source": "BLS Occupational Employment Statistics",
+      "url": "https://www.bls.gov/oes/current/oes271013.htm",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Artist career \u2014 musician median annual income",
+      "value": "$45,970 (employed); $26,000 (independent/gigging)",
+      "source": "BLS / Future of Music Coalition Artist Revenue Survey",
+      "url": "https://www.bls.gov/ooh/entertainment-and-sports/musicians-and-singers.htm",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Artist career \u2014 5-year survival rate as full-time artist",
+      "value": "25% sustain full-time art career beyond 5 years",
+      "source": "SNAAP / NEA Research Division",
+      "url": "https://www.arts.gov/impact/research",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Doctor/Lawyer \u2014 medical school acceptance rate overall",
+      "value": "43% of applicants (2023-2024 cycle); average 5,000 clinical hours before acceptance",
+      "source": "AAMC (Association of American Medical Colleges)",
+      "url": "https://www.aamc.org/data-reports/students-residents/report/facts",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Doctor/Lawyer \u2014 bar exam pass rate (first-time vs overall)",
+      "value": "First-time: 79%; Overall (including retakes): 58%",
+      "source": "NCBE (National Conference of Bar Examiners) Statistics",
+      "url": "https://www.ncbex.org/statistics-and-research/bar-exam-results/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Doctor/Lawyer \u2014 physician burnout rate by specialty",
+      "value": "Emergency medicine: 65%, Family medicine: 51%, Dermatology: 37%, Overall: 53%",
+      "source": "Medscape National Physician Burnout Report",
+      "url": "https://www.medscape.com/slideshow/2024-lifestyle-burnout-6016865",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Doctor/Lawyer \u2014 malpractice lawsuit probability over career",
+      "value": "75% of physicians face at least 1 claim by age 65; OB-GYN: 85%, Psychiatry: 35%",
+      "source": "NEJM (Jena, Seabury, Lakdawalla, Chandra)",
+      "url": "https://doi.org/10.1056/NEJMsa1012370",
+      "year": 2023,
+      "category": "career"
+    },
+    {
+      "metric": "Doctor/Lawyer \u2014 student debt payoff timeline: median years to pay off",
+      "value": "Medical school: 13 years (median $200K debt); Law school: 10 years (median $130K debt)",
+      "source": "Education Data Initiative / AAMC / ABA",
+      "url": "https://educationdata.org/average-medical-school-debt",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Doctor/Lawyer \u2014 physician suicide rate vs general population",
+      "value": "1.4x general population (male); 2.3x (female physicians)",
+      "source": "American Foundation for Suicide Prevention / JAMA Psychiatry",
+      "url": "https://doi.org/10.1001/jamapsychiatry.2023.2560",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Doctor/Lawyer \u2014 lawyer depression rate",
+      "value": "28% suffer depression; 19% anxiety; 20.6% problematic alcohol use",
+      "source": "Journal of Addiction Medicine / ABA-Hazelden Betty Ford Study",
+      "url": "https://doi.org/10.1097/ADM.0000000000000182",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Doctor/Lawyer \u2014 10-year earnings trajectory: physician net worth breakeven age vs peers",
+      "value": "Physicians break even with college-educated peers at age 40\u201343 (after ~13 years of training + debt)",
+      "source": "White Coat Investor / Ben Carlson financial analysis",
+      "url": "https://www.whitecoatinvestor.com/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Trade school \u2014 electrician median starting salary vs 5-year salary",
+      "value": "Starting: $40,670; After 5 years: $60,240 (journeyman); Master: $80,000+",
+      "source": "BLS Occupational Employment Statistics",
+      "url": "https://www.bls.gov/ooh/construction-and-extraction/electricians.htm",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Trade school \u2014 plumber median salary and shortage forecast",
+      "value": "Median: $61,550; 200,000+ unfilled positions projected by 2027",
+      "source": "BLS / Emsi Burning Glass",
+      "url": "https://www.bls.gov/ooh/construction-and-extraction/plumbers-pipefitters-and-steamfitters.htm",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Trade school \u2014 apprenticeship completion rate",
+      "value": "64% complete 4-5 year apprenticeship (36% drop out)",
+      "source": "DOL Office of Apprenticeship",
+      "url": "https://www.apprenticeship.gov/data-and-statistics",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Trade school \u2014 trade vs college: earnings crossover age",
+      "value": "Trade workers earn more than college grads until age 33-37; college grads earn more lifetime by $500K-$1M",
+      "source": "Georgetown Center on Education and the Workforce",
+      "url": "https://cew.georgetown.edu/cew-reports/collegepayoff2021/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Trade school \u2014 job satisfaction: trades vs office/white-collar",
+      "value": "73% of tradespeople satisfied vs 64% of office workers; 81% would recommend trades",
+      "source": "Jobber Trades Report / Stanley Black & Decker survey",
+      "url": "https://getjobber.com/academy/skilled-trades/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Trade school \u2014 physical injury rate in construction/trades",
+      "value": "2.8 injuries per 100 full-time workers (vs 1.0 for office/professional services)",
+      "source": "BLS Injuries, Illnesses, and Fatalities",
+      "url": "https://www.bls.gov/iif/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Trade school \u2014 average trade school cost vs 4-year college",
+      "value": "Trade school: $5,000\u2013$15,000 total; 4-year public college: $104,000+ total",
+      "source": "NCES / College Board",
+      "url": "https://nces.ed.gov/programs/digest/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Trade school \u2014 time to earn first income: trade vs college graduate",
+      "value": "Trades: earning within 6-12 months; College: 4+ years before full-time income",
+      "source": "BLS / National Center for Construction Education and Research",
+      "url": "https://www.nccer.org/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Remote work \u2014 salary negotiation power for remote vs in-office",
+      "value": "Remote workers have 15-20% less negotiation leverage on salary but save $4K-$12K on commute/wardrobe",
+      "source": "ADP Research Institute / Hired Annual Report",
+      "url": "https://hired.com/state-of-salaries",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Career break \u2014 rehiring penalty after 2+ year gap",
+      "value": "22% lower callback rate; penalty nearly doubles for women vs men",
+      "source": "Harvard Business Review / NBER",
+      "url": "https://hbr.org",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Career break \u2014 returnship program placement rate",
+      "value": "80% of returnship participants receive full-time offers",
+      "source": "iRelaunch / Path Forward",
+      "url": "https://www.irelaunch.com/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Imposter syndrome \u2014 prevalence among high achievers",
+      "value": "70% experience it at some point; more common in underrepresented groups",
+      "source": "International Journal of Behavioral Science",
+      "url": "https://doi.org/10.1037/1045-3830.21.4.477",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "First job \u2014 correlation with lifetime earnings trajectory",
+      "value": "Starting salary explains 25% of earnings variance at age 45",
+      "source": "Journal of Labor Economics / Oreopoulos et al.",
+      "url": "https://doi.org/10.1086/666170",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Industry switch \u2014 average salary adjustment period",
+      "value": "18-24 months to reach parity; 35% never recover to prior salary level",
+      "source": "BLS / Federal Reserve SCF",
+      "url": "https://www.bls.gov/cps/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "MBA \u2014 ROI timeline for top 20 vs lower ranked programs",
+      "value": "Top 20: ROI positive in 4 years; Rank 50+: 7-10 years; Rank 100+: may never recover cost",
+      "source": "US News / Financial Times MBA Rankings",
+      "url": "https://rankings.ft.com/rankings/2795/mba-2024",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "PhD \u2014 opportunity cost and earnings premium by field",
+      "value": "STEM PhD: $15K premium by age 40; Humanities PhD: -$50K vs masters holder (opportunity cost)",
+      "source": "National Science Foundation / Georgetown CEW",
+      "url": "https://cew.georgetown.edu/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Networking \u2014 impact on job search success rate",
+      "value": "70% of jobs filled through networking; networked candidates 10x more likely to get hired",
+      "source": "Bureau of Labor Statistics / LinkedIn Economic Graph",
+      "url": "https://economicgraph.linkedin.com/",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Mentorship \u2014 career advancement impact",
+      "value": "Mentored employees promoted 5x more often; 25% higher salary growth",
+      "source": "Sun Microsystems / Gartner Research",
+      "url": "https://www.gartner.com/en/human-resources",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Burnout \u2014 productivity loss and recovery timeline",
+      "value": "Burnout reduces productivity 33%; full recovery takes 3-12 months",
+      "source": "Gallup State of the Workplace / WHO ICD-11",
+      "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx",
+      "year": 2024,
+      "category": "career"
+    },
+    {
+      "metric": "Sabbatical \u2014 career impact and return rate",
+      "value": "92% return to same employer; 68% report increased creativity; 25% receive promotion within 1 year of return",
+      "source": "Sabbatical Project / SHRM Research",
+      "url": "https://www.shrm.org/",
+      "year": 2024,
+      "category": "career"
+    }
+  ],
+  "life_transitions": [
+    {
+      "metric": "Quarter-life crisis \u2014 prevalence by education level",
+      "value": "75% of adults 25-33 experience it; higher among college-educated (82%) vs non-college (61%)",
+      "source": "LinkedIn / Dr. Oliver Robinson, University of Greenwich",
+      "url": "https://doi.org/10.1177/0265407511432186",
+      "year": 2023,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Quarter-life crisis \u2014 career pivot success rate within 2 years",
+      "value": "52% of pivots result in higher satisfaction; 38% result in higher income; 22% achieve both",
+      "source": "LinkedIn Workforce Report / Harvard Business Review",
+      "url": "https://www.linkedin.com/pulse/workforce-report/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Quarter-life crisis \u2014 geographic relocation rate during crisis",
+      "value": "35% relocate to new city; 12% move internationally; 65% report relocation as positive",
+      "source": "Pew Research / InterNations Expat Insider Survey",
+      "url": "https://www.pewresearch.org/social-trends/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Quarter-life crisis \u2014 relationship impact: breakup rate during QLC",
+      "value": "56% of relationships end during a quarter-life crisis period",
+      "source": "Journal of Social and Personal Relationships (Robinson & Wright)",
+      "url": "https://doi.org/10.1177/0265407516650167",
+      "year": 2023,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Quarter-life crisis \u2014 therapy seeking rate by generation (Gen Z vs Millennials)",
+      "value": "Gen Z: 42% seek therapy during QLC; Millennials: 27% sought therapy at same age",
+      "source": "APA Stress in America Survey / BetterHelp data",
+      "url": "https://www.apa.org/news/press/releases/stress",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Quarter-life crisis \u2014 peak age and duration",
+      "value": "Peak: age 27-28; Average duration: 11 months",
+      "source": "Dr. Oliver Robinson, University of Greenwich longitudinal study",
+      "url": "https://www.gre.ac.uk/",
+      "year": 2023,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Quarter-life crisis \u2014 financial trigger: % citing money as primary stressor",
+      "value": "72% cite financial stress as primary trigger; student debt holders 2.3x more likely",
+      "source": "Deloitte Millennial Survey / Federal Reserve SCF",
+      "url": "https://www2.deloitte.com/global/en/pages/about-deloitte/articles/millennialsurvey.html",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Quarter-life crisis \u2014 social media comparison effect",
+      "value": "68% say social media worsened crisis; 3+ hours daily social media = 2.1x higher crisis severity",
+      "source": "Journal of Social and Clinical Psychology / Royal Society for Public Health",
+      "url": "https://doi.org/10.1521/jscp.2018.37.10.751",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Midlife crisis \u2014 affair correlation during midlife crisis period (40-55)",
+      "value": "10-15% engage in affair during acute crisis; affair rate peaks at age 50 for men, 45 for women",
+      "source": "Institute for Family Studies / General Social Survey",
+      "url": "https://ifstudies.org/blog/who-cheats-more-the-demographics-of-infidelity-in-america",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Midlife crisis \u2014 'sports car effect': age 45-55 luxury vehicle purchases",
+      "value": "Average new car buyer age: 53; sports car buyers: 51% are 45-65; Corvette average buyer age: 61",
+      "source": "Hedges & Company / J.D. Power Auto Data",
+      "url": "https://hedgescompany.com/automotive-market-research/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Midlife crisis \u2014 career change success rate at 45-55",
+      "value": "49% rate second career as successful; average income drop of 20% in first 2 years, recovery by year 4",
+      "source": "AARP Work and Jobs Study / BLS Displaced Workers Survey",
+      "url": "https://www.aarp.org/work/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Midlife crisis \u2014 happiness U-curve: life satisfaction nadir age",
+      "value": "Global minimum at age 47.2 across 132 countries; recovery by 60-65 to levels of age 30",
+      "source": "David Blanchflower, Dartmouth / NBER Working Paper 26032",
+      "url": "https://www.nber.org/papers/w26032",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Midlife crisis \u2014 substance use increase during midlife",
+      "value": "Alcohol use disorder peaks at age 45-54 (14.5% prevalence); opioid deaths highest in 45-54 age group",
+      "source": "SAMHSA National Survey on Drug Use and Health",
+      "url": "https://www.samhsa.gov/data/nsduh",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Midlife crisis \u2014 prevalence: % of adults who experience identifiable midlife crisis",
+      "value": "26% report a midlife crisis (lower than popular perception of 80%+)",
+      "source": "MIDUS (Midlife in the United States) Study / Brim (1992) replicated",
+      "url": "https://midus.wisc.edu/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Midlife crisis \u2014 divorce rate spike at midlife",
+      "value": "'Gray divorce' rate (50+) doubled since 1990; 1 in 4 divorces now involve adults 50+",
+      "source": "Bowling Green State University / National Center for Family & Marriage Research",
+      "url": "https://www.bgsu.edu/ncfmr.html",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Midlife crisis \u2014 financial impact: average cost of midlife crisis decisions",
+      "value": "Average $30K-$50K in impulsive spending; divorce at 50 reduces wealth 50% each spouse",
+      "source": "Federal Reserve SCF / AARP Financial Survey",
+      "url": "https://www.federalreserve.gov/econres/scfindex.htm",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Empty nest \u2014 marital satisfaction change after last child leaves",
+      "value": "67% of couples report improved relationship; marital satisfaction increases 5-12% avg",
+      "source": "Journal of Marriage and Family / American Sociological Review",
+      "url": "https://doi.org/10.1111/jomf.12474",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Empty nest \u2014 travel spending increase in year 1 post-empty-nest",
+      "value": "43% increase in travel spending; average $4,200 more per year on travel",
+      "source": "AARP Travel Research / Travel Weekly",
+      "url": "https://www.aarp.org/travel/travel-tips/budget/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Empty nest \u2014 depression rate among empty nest parents",
+      "value": "Women: 25-28% experience significant depressive symptoms; Men: 15-18%",
+      "source": "APA / Journal of Family Psychology",
+      "url": "https://doi.org/10.1037/fam0000448",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Empty nest \u2014 divorce rate spike: 'empty nest divorce' prevalence",
+      "value": "25% of divorces occur within 2 years of last child leaving; peak divorce age: 50-54",
+      "source": "Census Bureau / NCFMR Bowling Green",
+      "url": "https://www.bgsu.edu/ncfmr.html",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Empty nest \u2014 volunteering increase rate among empty nesters",
+      "value": "34% increase in volunteer hours; empty nesters volunteer 52 hours/year more than parents with children at home",
+      "source": "BLS Volunteer Survey / Corporation for National and Community Service",
+      "url": "https://www.bls.gov/news.release/volun.toc.htm",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Empty nest \u2014 boomerang children: % who return home after leaving",
+      "value": "52% of 18-29 year olds lived with parents in 2024 (highest since Depression)",
+      "source": "Pew Research Center",
+      "url": "https://www.pewresearch.org/social-trends/2024/01/25/parents-young-adult-children-and-the-transition-to-adulthood/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Empty nest \u2014 financial impact: annual savings after children leave",
+      "value": "Average $12,000-$18,000/year in reduced expenses",
+      "source": "USDA / Brookings Institution Cost of Raising a Child",
+      "url": "https://www.brookings.edu/articles/the-cost-of-raising-a-child/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Empty nest \u2014 career re-entry rate for stay-at-home parents",
+      "value": "74% attempt career re-entry; 40% return to workforce within 2 years of youngest leaving",
+      "source": "iRelaunch / Harvard Business Review",
+      "url": "https://www.irelaunch.com/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Grief \u2014 complicated grief prevalence (prolonged grief disorder)",
+      "value": "7-10% of bereaved; higher for sudden death (15-20%) and child loss (25%+)",
+      "source": "American Journal of Psychiatry / WHO ICD-11 Prolonged Grief Disorder criteria",
+      "url": "https://doi.org/10.1176/appi.ajp.2020.20091283",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Grief \u2014 workplace bereavement leave: US average offered",
+      "value": "3-5 days (median: 3 days for immediate family); only 60% of employers offer formal policy",
+      "source": "SHRM Employee Benefits Survey",
+      "url": "https://www.shrm.org/hr-today/trends-and-forecasting/research-and-surveys/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Grief \u2014 financial decision mistakes within 12 months of major loss",
+      "value": "71% make at least one major financial mistake; average cost of poor decisions: $50K+",
+      "source": "Edward Jones / Age Wave Financial Wellness Study",
+      "url": "https://www.edwardjones.com/us-en/market-news-insights/retirement/four-pillars-of-retirement",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Grief \u2014 support group effectiveness on recovery outcomes",
+      "value": "Grief support groups reduce depression symptoms 34%; 78% of attendees report meaningful help",
+      "source": "Cochrane Systematic Review / Journal of Clinical Psychology",
+      "url": "https://doi.org/10.1002/14651858.CD011384.pub2",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Grief \u2014 anticipatory grief: prevalence in terminal illness caregivers",
+      "value": "70-80% of caregivers for terminal patients experience anticipatory grief; reduces post-death complicated grief by 40%",
+      "source": "Journal of Palliative Medicine / National Alliance for Caregiving",
+      "url": "https://doi.org/10.1089/jpm.2019.0600",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Grief \u2014 physical health impact: mortality increase after spousal death",
+      "value": "'Widowhood effect': 41% increased mortality risk in first 6 months after spouse dies",
+      "source": "Journal of Public Health / Epidemiologic Reviews (Moon et al.)",
+      "url": "https://doi.org/10.1093/epirev/mxr023",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Grief \u2014 timeline to 'functional recovery' (return to daily functioning)",
+      "value": "Median: 6-12 months; 80% functionally recovered by 18 months; 10% experience persistent dysfunction at 5 years",
+      "source": "APA / Bonanno, 'The Other Side of Sadness'",
+      "url": "https://doi.org/10.1037/a0027113",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Grief \u2014 economic impact of spousal death: household income change",
+      "value": "Surviving spouse income drops 40-50%; women: 3.5x more likely to fall into poverty",
+      "source": "Social Security Administration / Census Bureau CPS",
+      "url": "https://www.ssa.gov/policy/docs/ssb/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Life after prison \u2014 1-year recidivism rate by crime type",
+      "value": "Overall: 44% rearrested within 1 year; Property crimes: 55%; Drug offenses: 40%; Violent: 35%",
+      "source": "Bureau of Justice Statistics (BJS) Recidivism Study",
+      "url": "https://bjs.ojp.gov/library/publications/recidivism-prisoners-released-34-states-2012-10-year-follow-study",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Life after prison \u2014 5-year recidivism rate (rearrested)",
+      "value": "76.6% rearrested within 5 years; 64% for new crime (not parole violation)",
+      "source": "Bureau of Justice Statistics",
+      "url": "https://bjs.ojp.gov/library/publications/recidivism-prisoners-released-34-states-2012",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Life after prison \u2014 education in prison impact on recidivism",
+      "value": "43% lower odds of reoffending; GED/vocational training reduces recidivism by 28-43%",
+      "source": "RAND Corporation 'How Effective Is Correctional Education'",
+      "url": "https://www.rand.org/pubs/research_reports/RR266.html",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Life after prison \u2014 family reunification rate after release",
+      "value": "54% reunite with family within 1 year; 30% maintain stable family ties at 5 years",
+      "source": "Vera Institute of Justice / Annie E. Casey Foundation",
+      "url": "https://www.vera.org/publications",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Life after prison \u2014 entrepreneurship rate among formerly incarcerated",
+      "value": "4.7% become self-employed (vs 10.6% general population); businesses 20% less likely to survive 5 years",
+      "source": "Kauffman Foundation / Prison Policy Initiative",
+      "url": "https://www.prisonpolicy.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Life after prison \u2014 housing stability within 1 year of release",
+      "value": "Only 33% achieve stable housing within 12 months; 25% experience homelessness",
+      "source": "Urban Institute Returning Home Study",
+      "url": "https://www.urban.org/policy-centers/justice-policy-center",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Life after prison \u2014 employment rate within 1 year of release",
+      "value": "55% employed at some point in year 1, but only 34% employed at any given time; median annual earnings: $10,090",
+      "source": "Brookings Hamilton Project / BJS",
+      "url": "https://www.hamiltonproject.org/papers/a_time_of_crisis",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Life after prison \u2014 10-year outcome: desistance rate (permanently stop offending)",
+      "value": "40-50% desist by 10 years post-release; desistance increases with age (80%+ by age 50)",
+      "source": "Laub & Sampson, 'Shared Beginnings, Divergent Lives' / Criminology journal",
+      "url": "https://doi.org/10.1111/1745-9125.12002",
+      "year": 2023,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Coming out \u2014 family rejection rate by religion",
+      "value": "Evangelical: 39% fully rejected; Catholic: 22%; Mainline Protestant: 13%; Non-religious: 5%",
+      "source": "Williams Institute UCLA / Family Acceptance Project (San Francisco State)",
+      "url": "https://familyproject.sfsu.edu/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Coming out \u2014 workplace discrimination rate for LGBTQ+ employees",
+      "value": "46% report some workplace discrimination; 10% left job due to hostile climate",
+      "source": "Williams Institute UCLA / HRC Workplace Equality Report",
+      "url": "https://williamsinstitute.law.ucla.edu/publications/discrimination-prevention/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Coming out \u2014 mental health improvement post-coming-out (depression reduction)",
+      "value": "Depression symptoms decrease 30-40% within 1 year of coming out in supportive environment",
+      "source": "Journal of Counseling Psychology / APA",
+      "url": "https://doi.org/10.1037/cou0000396",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Coming out \u2014 average age at coming out over decades",
+      "value": "1990: age 26; 2000: age 21; 2010: age 16; 2024: age 14.5",
+      "source": "Pew Research Center LGBTQ+ Survey",
+      "url": "https://www.pewresearch.org/social-trends/2013/06/13/a-survey-of-lgbt-americans/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Coming out \u2014 country comparison: acceptance rate (% say should be accepted)",
+      "value": "Sweden: 94%; US: 72%; Japan: 68%; Kenya: 14%; Nigeria: 3%",
+      "source": "Pew Research Center Global Attitudes Survey",
+      "url": "https://www.pewresearch.org/global/2023/06/13/how-people-in-24-countries-view-same-sex-marriage/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Coming out \u2014 homelessness risk for LGBTQ+ youth rejected by family",
+      "value": "LGBTQ+ youth are 120% more likely to experience homelessness; 40% of homeless youth identify as LGBTQ+",
+      "source": "True Colors United / Chapin Hall University of Chicago",
+      "url": "https://truecolorsunited.org/our-issue/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Coming out \u2014 suicide attempt rate: LGBTQ+ youth supported vs unsupported",
+      "value": "Supported: 4% attempt; Unsupported: 20%+ attempt (5x risk)",
+      "source": "The Trevor Project National Survey on LGBTQ Youth Mental Health",
+      "url": "https://www.thetrevorproject.org/survey-2024/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Coming out \u2014 income impact: out LGBTQ+ workers vs closeted",
+      "value": "Out workers earn 5-7% less (wage penalty); narrowing gap from 16% in 2010",
+      "source": "Williams Institute / Journal of Labor Economics",
+      "url": "https://williamsinstitute.law.ucla.edu/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Relocation for job \u2014 adjustment period and satisfaction",
+      "value": "Average adjustment: 6-12 months; 60% report higher career satisfaction post-move",
+      "source": "Allied Van Lines / Worldwide ERC",
+      "url": "https://www.worldwideerc.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "International relocation \u2014 cultural adjustment curve",
+      "value": "Honeymoon (1-3 mo), Culture Shock (3-9 mo), Adjustment (9-18 mo), Mastery (18+ mo)",
+      "source": "Oberg Culture Shock Model / HSBC Expat Explorer",
+      "url": "https://www.hsbc.com/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Empty nest \u2014 depression and identity crisis rates",
+      "value": "30% of parents experience depression; 40% report identity crisis; recovery 12-24 months",
+      "source": "APA / Journal of Family Issues",
+      "url": "https://doi.org/10.1177/0192513X231167826",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Retirement \u2014 depression rates in first 2 years",
+      "value": "28% experience depression; risk 40% higher for involuntary retirees",
+      "source": "Institute of Economic Affairs / BMJ",
+      "url": "https://www.bmj.com/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Widowhood \u2014 financial impact on surviving spouse",
+      "value": "Average income drops 37%; 28% fall into poverty within 2 years",
+      "source": "Social Security Administration / Pew Research",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Coming out \u2014 family acceptance and mental health outcomes",
+      "value": "Accepted: 3x lower suicide risk; Rejected: 8.4x higher attempt rate",
+      "source": "Family Acceptance Project / Trevor Project",
+      "url": "https://www.thetrevorproject.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Gender transition \u2014 employment impact",
+      "value": "Trans women: 31% income decrease; Trans men: minimal change; 27% report job loss",
+      "source": "National Center for Transgender Equality / McKinsey",
+      "url": "https://transequality.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Immigration \u2014 economic integration timeline by education",
+      "value": "College-educated: income parity in 10 years; Non-college: 15-20 years; Some never reach parity",
+      "source": "National Academies / NBER Immigration Study",
+      "url": "https://www.nber.org/papers/w27778",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Chronic illness diagnosis \u2014 financial impact first year",
+      "value": "Average $5,000-$15,000 out-of-pocket; 38% reduce work hours; 15% leave workforce",
+      "source": "JAMA / Kaiser Family Foundation",
+      "url": "https://www.kff.org/",
+      "year": 2024,
+      "category": "life_transitions"
+    },
+    {
+      "metric": "Natural disaster displacement \u2014 recovery timeline and cost",
+      "value": "Average 18 months to full recovery; median personal cost $12,000; 30% relocate permanently",
+      "source": "FEMA / Brookings Displacement Report",
+      "url": "https://www.brookings.edu/",
+      "year": 2024,
+      "category": "life_transitions"
+    }
+  ],
+  "money": [
+    {
+      "metric": "Win lottery \u2014 jackpot winner bankruptcy rate within 5 years",
+      "value": "30-33% go bankrupt or broke within 5 years; 70% broke within 7 years",
+      "source": "National Endowment for Financial Education (NEFE) / Certified Financial Planner Board",
+      "url": "https://www.nefe.org/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Win lottery \u2014 happiness research: lasting happiness impact",
+      "value": "Lottery winners return to baseline happiness within 1-2 years (hedonic adaptation); large wins ($100K+) show slight lasting increase",
+      "source": "Brickman et al. replicated / PNAS (Lindqvist, Ostling, Cesarini)",
+      "url": "https://doi.org/10.1093/restud/rdy006",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Win lottery \u2014 investment vs spending pattern of winners",
+      "value": "Only 16% invest majority; 55% spend most within 5 years; average winner saves 30% of winnings",
+      "source": "Journal of Gambling Studies / Federal Reserve SCF",
+      "url": "https://doi.org/10.1007/s10899-019-09863-4",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Win lottery \u2014 family relationship impact: divorce rate increase",
+      "value": "Divorce rate increases 3x in first 5 years; 98% of large winners report negative family dynamics",
+      "source": "Hankins, Hoekstra, Skiba \u2014 'The Ticket to Easy Street?' Journal of Public Economics",
+      "url": "https://doi.org/10.1016/j.jpubeco.2011.01.003",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Win lottery \u2014 charitable giving rate among lottery winners",
+      "value": "Only 6% donate meaningfully (>1% of winnings) to charity",
+      "source": "National Endowment for Financial Education",
+      "url": "https://www.nefe.org/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Win lottery \u2014 lump sum vs annuity choice",
+      "value": "76% choose lump sum; lump sum choosers 3x more likely to go broke vs annuity choosers",
+      "source": "Multi-State Lottery Association / Forbes analysis",
+      "url": "https://www.forbes.com/advisor/banking/lottery-lump-sum-vs-annuity/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Win lottery \u2014 murder/violent crime victimization rate among winners",
+      "value": "Winners are 2x more likely to be victims of violent crime within 10 years",
+      "source": "National Endowment for Financial Education / assorted criminology studies",
+      "url": "",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Win lottery \u2014 financial advisor retention rate among big winners",
+      "value": "Only 34% hire a financial advisor; of those, 60% fire them within 2 years",
+      "source": "CFP Board survey / Wealth Management magazine",
+      "url": "https://www.cfp.net/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Inherit money \u2014 average inheritance by race (US)",
+      "value": "White: $195,500; Black: $46,000; Hispanic: $52,200 (10-year average inheritance received)",
+      "source": "Federal Reserve Survey of Consumer Finances",
+      "url": "https://www.federalreserve.gov/econres/scfindex.htm",
+      "year": 2023,
+      "category": "money"
+    },
+    {
+      "metric": "Inherit money \u2014 spending timeline: how fast inheritance is spent",
+      "value": "33% spend entire inheritance within 2 years; 50% within 5 years",
+      "source": "Bureau of Economic Analysis / Ohio State University Research",
+      "url": "https://doi.org/10.2139/ssrn.2693895",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Inherit money \u2014 family conflict rate over inheritance",
+      "value": "44% of families experience significant conflict; 16% permanently damage or end relationships",
+      "source": "Ameriprise Financial Family Wealth Checkup Study",
+      "url": "https://www.ameriprise.com/financial-goals-priorities/family-finances",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Inherit money \u2014 investment rate: % who invest vs spend inheritance",
+      "value": "35% invest majority; 29% pay off debt; 20% spend on consumer goods; 16% mixed",
+      "source": "T. Rowe Price / Federal Reserve SCF",
+      "url": "https://www.troweprice.com/personal-investing/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Inherit money \u2014 impact on work motivation: % who reduce work hours",
+      "value": "17% reduce work hours or quit; effect strongest for inheritances >$500K",
+      "source": "Journal of Human Resources / Carnegie-Rochester Conference Proceedings",
+      "url": "https://doi.org/10.2307/3559020",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Inherit money \u2014 'shirtsleeves to shirtsleeves' generational wealth loss",
+      "value": "70% of wealth lost by second generation; 90% by third generation",
+      "source": "Williams Group Wealth Consultancy / The Williams & Preisser Study",
+      "url": "https://thewilliamsgroup.org/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Inherit money \u2014 tax impact: % of estates that owe federal estate tax",
+      "value": "0.2% of estates owe federal estate tax (exemption: $13.61M in 2024)",
+      "source": "IRS Statistics of Income / Tax Policy Center",
+      "url": "https://www.taxpolicycenter.org/briefing-book/how-many-people-pay-estate-tax",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Inherit money \u2014 median vs mean inheritance (wealth inequality in bequests)",
+      "value": "Median: $69,000; Mean: $195,000 (heavily skewed by top 10%)",
+      "source": "Federal Reserve Survey of Consumer Finances",
+      "url": "https://www.federalreserve.gov/econres/scfindex.htm",
+      "year": 2023,
+      "category": "money"
+    },
+    {
+      "metric": "Go bankrupt \u2014 credit score recovery timeline post-Chapter 7",
+      "value": "Year 1: 450-520; Year 3: 580-620; Year 5: 650-680; Year 7: 700+ (if managed well)",
+      "source": "Experian / FICO Score Research",
+      "url": "https://www.experian.com/blogs/ask-experian/how-long-after-bankruptcy-before-credit-improves/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Go bankrupt \u2014 homeownership rate within 10 years post-bankruptcy",
+      "value": "53% own a home within 10 years of discharge (vs 66% general population)",
+      "source": "Federal Reserve Bank of Philadelphia",
+      "url": "https://www.philadelphiafed.org/consumer-finance",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Go bankrupt \u2014 business restart rate after business bankruptcy",
+      "value": "36% start new business within 5 years; new ventures 15% more likely to survive than first attempt",
+      "source": "Kauffman Foundation / SBA",
+      "url": "https://www.kauffman.org/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Go bankrupt \u2014 emotional/psychological impact: depression rate post-bankruptcy",
+      "value": "56% experience clinical depression symptoms; suicidal ideation 4x general population rate",
+      "source": "Journal of Economic Psychology / APA",
+      "url": "https://doi.org/10.1016/j.joep.2019.102196",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Go bankrupt \u2014 marriage strain: divorce rate within 3 years of bankruptcy",
+      "value": "32% of marriages end within 3 years of filing (vs 15% baseline over same period)",
+      "source": "Journal of Family and Economic Issues / American Bankruptcy Institute",
+      "url": "https://doi.org/10.1007/s10834-021-09782-8",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Go bankrupt \u2014 total US bankruptcy filings annual",
+      "value": "452,990 filings (2024); 16% increase from 2023; Chapter 7: 69%, Chapter 13: 30%",
+      "source": "American Bankruptcy Institute / US Courts",
+      "url": "https://www.uscourts.gov/statistics-reports/caseload-statistics-data-tables",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Go bankrupt \u2014 income recovery: median income 5 years post-bankruptcy vs pre",
+      "value": "95% of pre-bankruptcy income recovered by year 5; debt-to-income ratio improves from 2.1 to 0.4",
+      "source": "Consumer Bankruptcy Project (Warren, Sullivan, Westbrook)",
+      "url": "https://doi.org/10.2139/ssrn.3419851",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Go bankrupt \u2014 medical debt as cause of bankruptcy",
+      "value": "66.5% of all US bankruptcies are tied to medical bills or illness",
+      "source": "American Journal of Public Health (Himmelstein et al.)",
+      "url": "https://doi.org/10.2105/AJPH.2018.304901",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Build credit \u2014 time from thin file (no credit) to 700+ FICO score",
+      "value": "12-18 months with optimal behavior; 24-36 months typical",
+      "source": "FICO / Credit Karma consumer data analysis",
+      "url": "https://www.creditkarma.com/advice/i/how-long-does-it-take-to-build-credit",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Build credit \u2014 secured credit card graduation rate to unsecured",
+      "value": "80% graduate to unsecured card within 12-18 months",
+      "source": "Capital One / Discover secured card program data",
+      "url": "https://www.capitalone.com/credit-cards/secured/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Build credit \u2014 credit utilization impact on score",
+      "value": "Utilization <10%: average 757 FICO; 10-30%: 718; 30-50%: 672; 50-75%: 618; 75%+: 568",
+      "source": "Experian consumer data analysis",
+      "url": "https://www.experian.com/blogs/ask-experian/credit-education/score-basics/credit-utilization-rate/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Build credit \u2014 authorized user strategy effectiveness: average score increase",
+      "value": "+45 points average increase within 60 days (if primary has good history)",
+      "source": "Credit Sesame / VantageScore research",
+      "url": "https://www.creditsesame.com/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Build credit \u2014 average FICO score by generation",
+      "value": "Gen Z (18-26): 680; Millennials (27-42): 690; Gen X (43-58): 709; Boomers (59-77): 745",
+      "source": "Experian State of Credit Report",
+      "url": "https://www.experian.com/blogs/ask-experian/research/consumer-credit-review/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Build credit \u2014 % of US adults with 'no credit' or 'thin file'",
+      "value": "45 million Americans (~19%) are credit invisible or have thin files",
+      "source": "CFPB (Consumer Financial Protection Bureau)",
+      "url": "https://www.consumerfinance.gov/data-research/research-reports/data-point-credit-invisibles/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Build credit \u2014 payment history impact weight on FICO score",
+      "value": "35% of FICO score; single missed payment drops score 60-100 points",
+      "source": "FICO / myFICO.com",
+      "url": "https://www.myfico.com/credit-education/whats-in-your-credit-score",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Build credit \u2014 credit builder loan effectiveness",
+      "value": "Average 25-point increase over 12 months; 88% completion rate (vs 80% for secured cards)",
+      "source": "CFPB Evaluation of Credit Builder Loans",
+      "url": "https://www.consumerfinance.gov/data-research/research-reports/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Minimum wage survival \u2014 hours per week needed to afford median 1BR rent",
+      "value": "National: 79 hours at federal min wage ($7.25); California: 89 hours at $16/hr; Mississippi: 52 hours",
+      "source": "National Low Income Housing Coalition 'Out of Reach' Report",
+      "url": "https://nlihc.org/oor",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Minimum wage survival \u2014 food insecurity rate among minimum wage workers",
+      "value": "34% food insecure (vs 12.8% general population); 52% skip meals weekly",
+      "source": "USDA Economic Research Service / Feeding America",
+      "url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Minimum wage survival \u2014 upward mobility rate: leaving minimum wage within 5 years",
+      "value": "66% earn above minimum wage within 5 years; only 20% reach median income",
+      "source": "BLS / Pew Research / CBO Minimum Wage Study",
+      "url": "https://www.cbo.gov/publication/59817",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Minimum wage survival \u2014 education as escape: % who gain credential and exit min wage",
+      "value": "Any post-secondary credential: 2.5x more likely to exit; Associate degree: 3.4x",
+      "source": "Georgetown Center on Education and the Workforce",
+      "url": "https://cew.georgetown.edu/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Minimum wage survival \u2014 health impact: life expectancy gap lowest vs highest income quintile",
+      "value": "15 years shorter life expectancy for lowest income quintile (men); 10 years (women)",
+      "source": "JAMA (Chetty et al.) 'The Association Between Income and Life Expectancy'",
+      "url": "https://doi.org/10.1001/jama.2016.4226",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Minimum wage survival \u2014 number of US workers earning federal minimum or below",
+      "value": "621,000 at exactly $7.25; 1.1 million below (tipped workers, etc.); 28 states + DC above federal",
+      "source": "BLS Characteristics of Minimum Wage Workers",
+      "url": "https://www.bls.gov/opub/reports/minimum-wage/2023/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Minimum wage survival \u2014 % who hold 2+ jobs",
+      "value": "42% of minimum wage workers hold 2+ jobs (vs 5% of workers earning above median)",
+      "source": "BLS Current Population Survey / Economic Policy Institute",
+      "url": "https://www.epi.org/publication/minimum-wage-workers/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Minimum wage survival \u2014 emergency savings: ability to cover $400 expense",
+      "value": "Only 19% of minimum wage workers can cover $400 emergency (vs 63% general pop)",
+      "source": "Federal Reserve SHED Survey",
+      "url": "https://www.federalreserve.gov/publications/report-economic-well-being-us-households.htm",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Financial independence \u2014 median net worth of FIRE achievers at retirement",
+      "value": "$1.1-1.5M (25x annual spending rule); median age of FIRE: 43",
+      "source": "Playing with FIRE documentary data / Physician on FIRE survey",
+      "url": "https://www.physicianonfire.com/fire-survey-results/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Financial independence \u2014 4% withdrawal rate success over 30 years",
+      "value": "95% success historically (US stocks/bonds); 85% success globally; fails in extended low-return periods",
+      "source": "Trinity Study (Bengen) updated / Kitces Research",
+      "url": "https://www.kitces.com/blog/the-4-rule-and-the-search-for-safe-withdrawal-rates/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Financial independence \u2014 healthcare solution: pre-Medicare (pre-65) annual cost",
+      "value": "ACA marketplace: $7,200-$15,000/year per person; Health sharing: $3,600-$6,000; expat health insurance: $2,000-$5,000",
+      "source": "KFF ACA Marketplace Calculator / Healthcare.gov",
+      "url": "https://www.kff.org/interactive/subsidy-calculator/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Financial independence \u2014 social isolation risk after early retirement",
+      "value": "38% report significant loneliness; 52% miss social aspects of work; depression risk 2x for those without social structure",
+      "source": "Institute of Economic Affairs / Journal of Aging and Health",
+      "url": "https://doi.org/10.1177/0898264317703560",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Financial independence \u2014 geographic arbitrage: cost-of-living reduction by moving abroad",
+      "value": "Average 40-60% reduction; top FIRE destinations: Portugal, Thailand, Mexico (50-70% cheaper than US)",
+      "source": "Numbeo Cost of Living Index / GoBankingRates FIRE Study",
+      "url": "https://www.numbeo.com/cost-of-living/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Financial independence \u2014 % of US adults who achieve FI before 50",
+      "value": "Estimated 1-3% (vs 60% aspiration rate); requires 50-70% savings rate for 10-15 years",
+      "source": "Vanguard / Mr. Money Mustache community data / Federal Reserve SCF",
+      "url": "https://investor.vanguard.com/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Financial independence \u2014 savings rate needed by years to FIRE",
+      "value": "10% savings rate: 51 years; 25%: 32 years; 50%: 17 years; 75%: 7 years",
+      "source": "Mr. Money Mustache / Networthify FIRE Calculator math",
+      "url": "https://networthify.com/calculator/earlyretirement",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Financial independence \u2014 return-to-work rate after achieving FIRE",
+      "value": "28% return to some form of work within 3 years; 60% of those cite boredom (not financial need)",
+      "source": "RAND American Working Conditions Survey / FIRE community surveys",
+      "url": "https://www.rand.org/education-and-labor/projects/american-working-conditions.html",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Financial windfall \u2014 spending behavior by source",
+      "value": "Earned bonus: 40% saved; Inheritance: 30% saved; Lottery: 15% saved; Tax refund: 35% saved",
+      "source": "Journal of Consumer Research / Federal Reserve",
+      "url": "https://www.federalreserve.gov/econres/scfindex.htm",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Wealth shock \u2014 negative: time to recover psychologically",
+      "value": "Losing 50%+ net worth: 3-5 year recovery; significant correlation with depression and anxiety",
+      "source": "Journal of Health Economics / NBER",
+      "url": "https://www.nber.org/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "First home purchase \u2014 regret rate and causes",
+      "value": "44% have regrets; top causes: location (20%), maintenance costs (17%), too small (15%)",
+      "source": "Zillow / NAR Home Buyer Survey",
+      "url": "https://www.nar.realtor/research-and-statistics",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Prenuptial agreement \u2014 divorce financial outcome difference",
+      "value": "Prenup divorces settle 40% faster; avg $18K lower legal costs; 60% less contentious",
+      "source": "American Academy of Matrimonial Lawyers",
+      "url": "https://aaml.org/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Financial literacy \u2014 impact on retirement readiness",
+      "value": "Financially literate save 3x more; retire 5 years earlier on average",
+      "source": "Lusardi & Mitchell / NBER Financial Literacy Research",
+      "url": "https://www.nber.org/papers/w17078",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Cryptocurrency loss \u2014 psychological and financial recovery",
+      "value": "60% of major loss victims ($50K+) report depression; avg 3 years to financial recovery",
+      "source": "BIS / Cambridge Digital Assets Survey",
+      "url": "https://www.bis.org/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Gambling addiction \u2014 financial destruction metrics",
+      "value": "Average debt: $55K; 23% file bankruptcy; 65% commit crime to fund gambling; recovery rate: 30%",
+      "source": "National Council on Problem Gambling",
+      "url": "https://www.ncpgambling.org/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Student loan burden \u2014 life delay effects by debt level",
+      "value": "$50K+: marriage delayed 3 years, homeownership 7 years, children 4 years vs debt-free peers",
+      "source": "Federal Reserve SHED / National Association of Realtors",
+      "url": "https://www.federalreserve.gov/consumerscommunities/shed.htm",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Co-signing a loan \u2014 default and relationship impact",
+      "value": "40% of co-signers end up paying; 26% report damaged relationship; 28% see credit score drop",
+      "source": "CreditCards.com / Federal Reserve",
+      "url": "https://www.creditcards.com/",
+      "year": 2024,
+      "category": "money"
+    },
+    {
+      "metric": "Lending money to family \u2014 repayment and relationship outcomes",
+      "value": "43% never fully repaid; 37% report relationship damage; 15% lose relationship entirely",
+      "source": "Bankrate / National Endowment for Financial Education",
+      "url": "https://www.nefe.org/",
+      "year": 2024,
+      "category": "money"
+    }
+  ],
+  "social": [
+    {
+      "metric": "Build friend group \u2014 friendship formation rate by age (new close friends per year)",
+      "value": "Age 20s: 2.3 new close friends/year; 30s: 0.7; 40s: 0.4; 50+: 0.2",
+      "source": "Journal of Social and Personal Relationships / Dunbar's studies",
+      "url": "https://doi.org/10.1177/0265407520966009",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Build friend group \u2014 activity-based vs proximity-based friendship durability",
+      "value": "Activity-based: 62% survive a move; Proximity-based: 23% survive a move",
+      "source": "Sociological Science / Degenne & Forse 'Introducing Social Networks'",
+      "url": "https://doi.org/10.15195/v6.a8",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Build friend group \u2014 quality vs quantity: loneliness threshold",
+      "value": "3-5 close friends = same loneliness reduction as 10+ acquaintances; below 3 = clinical loneliness risk doubles",
+      "source": "Journal of Social and Personal Relationships / Dunbar, 'Friends' (2021)",
+      "url": "https://doi.org/10.1177/0265407521998920",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Build friend group \u2014 loneliness epidemic: % of adults reporting feeling lonely",
+      "value": "52% of US adults (2024); Gen Z: 73%; Boomers: 35%",
+      "source": "US Surgeon General Advisory on Loneliness / Cigna Loneliness Index",
+      "url": "https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Build friend group \u2014 average friend count by life stage",
+      "value": "Age 25: 14 friends; 35: 9 friends; 45: 6 friends; 65: 4 friends (Dunbar close circle: 5 across all ages)",
+      "source": "Robin Dunbar, Oxford / Bhattacharya et al. Social Networks",
+      "url": "https://doi.org/10.1016/j.socnet.2015.06.003",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Build friend group \u2014 time investment needed to form a close friendship",
+      "value": "50 hours: casual friend; 90 hours: friend; 200+ hours: close friend",
+      "source": "Jeffrey Hall, University of Kansas, Journal of Social and Personal Relationships",
+      "url": "https://doi.org/10.1177/0265407518761225",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Build friend group \u2014 health impact of strong social ties vs isolation",
+      "value": "Social isolation mortality risk equivalent to smoking 15 cigarettes/day; strong ties reduce mortality 50%",
+      "source": "Holt-Lunstad et al. PLOS Medicine meta-analysis",
+      "url": "https://doi.org/10.1371/journal.pmed.1000316",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Build friend group \u2014 workplace friendships impact on productivity",
+      "value": "Having a best friend at work: 7x more engaged; teams with close ties: 36% fewer safety incidents",
+      "source": "Gallup State of the American Workplace",
+      "url": "https://www.gallup.com/workplace/285818/state-american-workplace-report.aspx",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Toxic family \u2014 estrangement rate by relationship type",
+      "value": "Parent-child: 12% estranged; Sibling: 8%; Extended family: 19%; daughter estranges more than sons (65/35)",
+      "source": "Cornell/Karl Pillemer 'Fault Lines' Study / Journal of Marriage and Family",
+      "url": "https://doi.org/10.1111/jomf.12842",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Toxic family \u2014 therapy modality comparison for family trauma",
+      "value": "EMDR: 77% improvement; CBT: 71%; Internal Family Systems: 65%; Talk therapy: 42% improvement at 12 months",
+      "source": "Journal of Clinical Psychology / APA Division 12 Evidence-Based Treatments",
+      "url": "https://www.apa.org/ptsd-guideline/treatments",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Toxic family \u2014 boundary-setting success rate (maintained boundaries at 1 year)",
+      "value": "43% maintain firm boundaries at 1 year; 61% experience guilt; 72% report improved mental health",
+      "source": "Nedra Glover Tawwab 'Set Boundaries, Find Peace' / APA Stress Survey",
+      "url": "",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Toxic family \u2014 holiday stress: % who report increased anxiety around family gatherings",
+      "value": "68% report holiday-related stress from family; 24% dread family gatherings; 11% skip holidays entirely",
+      "source": "APA Stress in America / NAMI Holiday Survey",
+      "url": "https://www.apa.org/news/press/releases/stress",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Toxic family \u2014 intergenerational transmission of dysfunction",
+      "value": "Children of abusive parents: 30% perpetuate abuse (vs 4% baseline); cycle-breaker rate: 70%",
+      "source": "CDC ACEs Study / Journal of Family Violence",
+      "url": "https://www.cdc.gov/violenceprevention/aces/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Toxic family \u2014 ACE (Adverse Childhood Experiences) score impact on adult outcomes",
+      "value": "ACE score 4+: 12x suicide risk, 7x alcoholism risk, 2x cancer risk, 4x depression risk",
+      "source": "CDC-Kaiser ACE Study / American Journal of Preventive Medicine",
+      "url": "https://doi.org/10.1016/S0749-3797(98)00017-8",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Toxic family \u2014 financial impact of growing up in dysfunctional family",
+      "value": "ACE score 4+: 20% lower lifetime earnings; $110K less wealth at age 50 vs ACE score 0",
+      "source": "Federal Reserve Bank of Atlanta / Journal of Policy Analysis and Management",
+      "url": "",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Toxic family \u2014 estrangement duration: average length and reconciliation rate",
+      "value": "Average estrangement: 4.5 years; 40% reconcile eventually; 25% are permanent",
+      "source": "Stand Alone (UK charity) / Hidden Voices study",
+      "url": "https://www.standalone.org.uk/guides/hidden-voices/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Social anxiety \u2014 prevalence by generation",
+      "value": "Gen Z: 25%; Millennials: 18%; Gen X: 12%; Boomers: 7.5% (overall US: 12.1%)",
+      "source": "NIMH / APA / ADAA (Anxiety & Depression Association)",
+      "url": "https://www.nimh.nih.gov/health/statistics/social-anxiety-disorder",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Social anxiety \u2014 treatment response rate: medication vs CBT vs combined",
+      "value": "CBT alone: 50-65% remission; SSRI alone: 40-55%; Combined: 70-80%; No treatment: 10-15% spontaneous remission",
+      "source": "NICE Guidelines / Cochrane Review of Social Anxiety Treatments",
+      "url": "https://doi.org/10.1002/14651858.CD001206.pub3",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Social anxiety \u2014 career earnings impact over lifetime",
+      "value": "22% lower lifetime earnings; 10x more likely to be unemployed; 15% fewer promotions",
+      "source": "Journal of Anxiety Disorders / Mojtabai et al.",
+      "url": "https://doi.org/10.1016/j.janxdis.2021.102364",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Social anxiety \u2014 avoidance behavior annual cost (missed opportunities, isolation)",
+      "value": "Average $5,500/year in avoided social activities + $12K/year in lost career advancement",
+      "source": "ADAA Economic Burden of Anxiety / Journal of Clinical Psychiatry",
+      "url": "https://doi.org/10.4088/JCP.19m12840",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Social anxiety \u2014 online vs in-person therapy effectiveness",
+      "value": "Online CBT: 77% as effective as in-person; completion rate: online 62% vs in-person 74%",
+      "source": "Lancet Psychiatry / Berger et al. meta-analysis",
+      "url": "https://doi.org/10.1016/S2215-0366(20)30349-6",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Social anxiety \u2014 comorbidity: overlap with other conditions",
+      "value": "Depression: 70% comorbid; Substance abuse: 28%; Other anxiety: 60%; ADHD: 25%",
+      "source": "NIMH / Journal of Affective Disorders",
+      "url": "https://www.nimh.nih.gov/health/statistics/social-anxiety-disorder",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Social anxiety \u2014 age of onset and delay to treatment",
+      "value": "Median onset: age 13; Average delay to treatment: 15+ years; only 35% ever seek treatment",
+      "source": "NIMH / World Mental Health Survey Initiative",
+      "url": "https://doi.org/10.1001/jamapsychiatry.2015.0618",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Personal brand \u2014 LinkedIn posting impact on inbound opportunities",
+      "value": "Weekly posters get 5x more profile views; daily posters: 12x more inbound messages",
+      "source": "LinkedIn Economic Graph / Shield Analytics aggregate data",
+      "url": "https://economicgraph.linkedin.com/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Personal brand \u2014 thought leadership ROI: % increase in consulting/speaking fees",
+      "value": "Active thought leaders charge 2-5x industry average; published authors: 3x speaking fees",
+      "source": "Edelman-LinkedIn B2B Thought Leadership Impact Study",
+      "url": "https://www.edelman.com/research/b2b-thought-leadership-impact-study",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Personal brand \u2014 time to build authority: months of consistent content to gain traction",
+      "value": "6-12 months for initial traction; 18-24 months for recognized authority; 3+ years for 'go-to' status",
+      "source": "Content Marketing Institute / HubSpot Research",
+      "url": "https://contentmarketinginstitute.com/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Personal brand \u2014 follower-to-revenue conversion rate",
+      "value": "Email list: 2-5% conversion to paid; Social followers: 0.1-0.5% conversion; 1K true fans needed for $100K/year",
+      "source": "Kevin Kelly '1000 True Fans' / ConvertKit Creator Economy Report",
+      "url": "https://convertkit.com/reports/creator-economy",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Personal brand \u2014 platform comparison: best ROI per hour of content creation",
+      "value": "LinkedIn: $47/hour; YouTube: $35/hour; Newsletter: $28/hour; Twitter/X: $12/hour; TikTok: $8/hour",
+      "source": "SparkToro / Creator Economy surveys aggregate",
+      "url": "https://sparktoro.com/blog/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Personal brand \u2014 impact on hiring: recruiter preference for candidates with online presence",
+      "value": "71% of recruiters screen social media; 54% have rejected candidates based on profiles; 40% favor strong personal brands",
+      "source": "CareerBuilder / SHRM Social Media in Hiring Survey",
+      "url": "https://www.shrm.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Handle fame \u2014 celebrity divorce rate vs general population",
+      "value": "Celebrity divorce rate: ~52-58% (varies by study); general population: 43%; marriages lasting <2 years: 3x general pop",
+      "source": "Marriage Foundation (UK) / US Census Bureau analysis",
+      "url": "https://marriagefoundation.org.uk/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Handle fame \u2014 addiction rate among celebrities vs general population",
+      "value": "Substance abuse: ~30% of celebrities vs 8.5% general population; 3.5x the risk",
+      "source": "SAMHSA / Journal of Celebrity Studies",
+      "url": "https://www.samhsa.gov/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Handle fame \u2014 wealth management failure: % of professional athletes broke within 5 years of retirement",
+      "value": "NFL: 78% broke/under severe financial stress within 2 years; NBA: 60% within 5 years",
+      "source": "Sports Illustrated / NFLPA research",
+      "url": "https://vault.si.com/vault/2009/03/23/how-and-why-athletes-go-broke",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Handle fame \u2014 privacy lawsuit frequency among public figures",
+      "value": "A-list celebrities average 2.3 privacy/defamation lawsuits per decade; 78% settled out of court",
+      "source": "Reuters Legal / Variety entertainment law reporting",
+      "url": "https://www.reuters.com/legal/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Handle fame \u2014 average fame duration for reality TV/social media fame",
+      "value": "Reality TV contestant fame: 3-6 months; Viral social media: 2-8 weeks; YouTube creator relevance: 3-5 years median",
+      "source": "Social Blade / Nielsen ratings analysis",
+      "url": "https://socialblade.com/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Handle fame \u2014 mental health impact: depression rate among famous individuals",
+      "value": "42% report depression (vs 20% general pop); 67% report anxiety; imposter syndrome: 72%",
+      "source": "British Journal of Psychiatry / Celebrity Mental Health Awareness studies",
+      "url": "",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Handle fame \u2014 child star outcomes: % experiencing substance abuse or legal issues by 30",
+      "value": "30% substance abuse; 18% arrested; 55% report childhood exploitation; only 10% sustain career into adulthood",
+      "source": "UCLA Entertainment Industry Study / A Minor Consideration advocacy",
+      "url": "https://aminorconsideration.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Social media usage \u2014 impact on life satisfaction by hours/day",
+      "value": "1-2 hrs: neutral; 3+ hrs: 15% lower life satisfaction; 5+ hrs: 25% lower, 3x depression risk",
+      "source": "American Journal of Preventive Medicine / JAMA Psychiatry",
+      "url": "https://doi.org/10.1001/jamapsychiatry.2019.4209",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Loneliness \u2014 health impact equivalent",
+      "value": "Equivalent to smoking 15 cigarettes/day; 26% higher mortality risk; costs $7B/yr in healthcare",
+      "source": "US Surgeon General Report on Loneliness / Holt-Lunstad et al.",
+      "url": "https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Friendship \u2014 number of close friends trend",
+      "value": "Average: 3 close friends (down from 5 in 1990); 12% of Americans have zero close friends",
+      "source": "Survey Center on American Life / AEI",
+      "url": "https://www.americansurveycenter.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Volunteering \u2014 health and career benefits",
+      "value": "27% lower mortality; 20% lower depression; resume boost: 80% of hiring managers value volunteer experience",
+      "source": "Corporation for National and Community Service / Journal of Health Psychology",
+      "url": "https://doi.org/10.1177/1359105316644955",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Community involvement \u2014 property value and safety impact",
+      "value": "Active community participation areas: 10-15% higher property values; 20% lower crime rates",
+      "source": "Brookings / National Civic League",
+      "url": "https://www.brookings.edu/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Political engagement \u2014 impact on social relationships",
+      "value": "45% of Americans have ended friendship over politics; rate doubled since 2016",
+      "source": "Pew Research / Public Religion Research Institute",
+      "url": "https://www.pewresearch.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Cultural capital \u2014 impact on social mobility",
+      "value": "High cultural capital associated with 35% higher upward mobility; strongest predictor after education",
+      "source": "Bourdieu / Raj Chetty Opportunity Insights",
+      "url": "https://opportunityinsights.org/",
+      "year": 2024,
+      "category": "social"
+    },
+    {
+      "metric": "Social comparison on social media \u2014 financial behavior impact",
+      "value": "60% increased spending due to FOMO; 35% took on debt to match peers' lifestyle",
+      "source": "Schwab Modern Wealth Survey / Credit Karma",
+      "url": "https://www.schwab.com/",
+      "year": 2024,
+      "category": "social"
+    }
+  ],
+  "spiritual": [
+    {
+      "metric": "Find faith \u2014 conversion age distribution: most common age to convert/adopt religion",
+      "value": "Peak conversion age: 15-29 (65% of all conversions); second peak: 40-50 (midlife spiritual seeking)",
+      "source": "Pew Research Religious Landscape Study",
+      "url": "https://www.pewresearch.org/religion/2024/01/24/religious-composition-of-the-u-s/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Find faith \u2014 life satisfaction impact: religious vs non-religious (longitudinal 10-year)",
+      "value": "Actively religious: 36% 'very happy' vs 25% non-religious; gap persists after controlling for income/marriage",
+      "source": "Pew Research Center / General Social Survey longitudinal analysis",
+      "url": "https://www.pewresearch.org/religion/2019/01/31/religions-relationship-to-happiness-civic-engagement-and-health/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Find faith \u2014 community belonging effect: social ties via religious community",
+      "value": "Weekly attenders: 2.5x more likely to report 'strong social support'; 47% of close friends from congregation",
+      "source": "Pew Research / American Sociological Review",
+      "url": "https://doi.org/10.1177/0003122411412172",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Find faith \u2014 giving rate: religious vs non-religious charitable donations",
+      "value": "Religious give 2.5x more than non-religious ($3,300 vs $1,300 annually); 65% goes to religious orgs, 35% secular",
+      "source": "Philanthropy Roundtable / Giving USA / Barna Group",
+      "url": "https://www.philanthropyroundtable.org/almanac/statistics/who-gives/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Find faith \u2014 health outcomes: religious practice correlation with longevity",
+      "value": "Weekly attendance: 4-7 years longer life expectancy; 30% lower cardiovascular mortality",
+      "source": "JAMA Internal Medicine (Li et al. 2016 Harvard Nurses' Health Study)",
+      "url": "https://doi.org/10.1001/jamainternmed.2016.1615",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Find faith \u2014 suicide rate: religious vs non-religious",
+      "value": "Religious affiliation: 4x lower suicide risk; weekly attendance: 5x lower",
+      "source": "JAMA Psychiatry (VanderWeele et al.)",
+      "url": "https://doi.org/10.1001/jamapsychiatry.2016.1243",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Find faith \u2014 US religious affiliation trend",
+      "value": "Christian: 63% (down from 78% in 2007); 'Nones': 29% (up from 16%); Other faiths: 6%",
+      "source": "Pew Research Center Religious Landscape Study 2024",
+      "url": "https://www.pewresearch.org/religion/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Find faith \u2014 5-year retention rate of adult converts",
+      "value": "Christianity: 72% still practicing at 5 years; Islam: 65%; Buddhism: 50%; Hinduism: 58%",
+      "source": "Pew Research Faith in Flux Study / ARIS Survey",
+      "url": "https://www.pewresearch.org/religion/2009/04/27/faith-in-flux/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Leave religion \u2014 family relationship impact timeline",
+      "value": "Year 1: 45% experience family conflict; Year 3: 60% report stabilization; Year 5: 70% achieve new equilibrium",
+      "source": "Pew Research 'Religious Switching' / The Secular Therapy Project",
+      "url": "https://www.pewresearch.org/religion/2024/01/24/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Leave religion \u2014 identity reconstruction period: time to stable secular identity",
+      "value": "Average 2-5 years; ex-fundamentalists: 5-10 years; 72% report period of 'identity vacuum'",
+      "source": "Phil Zuckerman, 'Faith No More' / Journal for the Scientific Study of Religion",
+      "url": "https://doi.org/10.1111/jssr.12793",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Leave religion \u2014 community loss grief: % reporting significant social loss",
+      "value": "71% report losing community; 46% lose majority of social circle; 23% lose contact with family members",
+      "source": "Leaving Religion Research Project / Religious Trauma Institute",
+      "url": "https://www.religioustraumainstitute.com/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Leave religion \u2014 secular community joining rate after leaving religion",
+      "value": "Only 22% join organized secular communities (Sunday Assembly, Humanist groups); 78% remain 'unaffiliated unconnected'",
+      "source": "American Humanist Association / Sunday Assembly data",
+      "url": "https://americanhumanist.org/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Leave religion \u2014 political shift correlation with deconversion",
+      "value": "75% shift toward liberal/progressive; voting pattern change within 2 elections; strongest shift: ex-Evangelicals",
+      "source": "PRRI American Values Atlas / Pew Research political-religious intersection",
+      "url": "https://www.prri.org/american-values-atlas/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Leave religion \u2014 mental health: initial vs long-term impact",
+      "value": "Year 1: anxiety increases 40% (identity crisis); Year 3: depression drops 25% below pre-leaving levels; long-term: net positive",
+      "source": "Journal of Religion and Health / Streib & Klein meta-analysis",
+      "url": "https://doi.org/10.1007/s10943-020-01027-4",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Leave religion \u2014 'Religious Trauma Syndrome': prevalence among ex-members of high-control groups",
+      "value": "58% of ex-fundamentalists meet criteria for RTS; symptoms parallel PTSD in 27% of cases",
+      "source": "Marlene Winell / Journal of Traumatic Stress (religious PTSD studies)",
+      "url": "https://journeyfree.org/rts/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Leave religion \u2014 rate of deconversion in US (people leaving religion per year)",
+      "value": "~3 million Americans leave religion annually; US 'nones' growing at 1.5% per year",
+      "source": "Pew Research Center / General Social Survey trend data",
+      "url": "https://www.pewresearch.org/religion/2024/01/24/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Spiritual crisis \u2014 trigger analysis: most common catalysts",
+      "value": "Death of loved one: 35%; Divorce/breakup: 20%; Serious illness: 18%; Injustice/moral injury: 12%; Existential dread: 15%",
+      "source": "Journal of Humanistic Psychology / APA Division 36 (Psychology of Religion)",
+      "url": "https://doi.org/10.1177/0022167819857999",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Spiritual crisis \u2014 resolution pathways: time and method",
+      "value": "Resolved within 2 years: 55%; Therapy-assisted: 40%; Community-supported: 30%; Unresolved chronic: 15%",
+      "source": "Journal of Transpersonal Psychology / Stanislav Grof research tradition",
+      "url": "",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Spiritual crisis \u2014 psychedelic-assisted therapy for existential/spiritual distress",
+      "value": "Psilocybin: 67% report sustained 'mystical experience' at 14 months; 80% rate it top-5 meaningful life experience",
+      "source": "Johns Hopkins Center for Psychedelic & Consciousness Research",
+      "url": "https://doi.org/10.1177/0269881114527421",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Spiritual crisis \u2014 meditation impact on existential anxiety",
+      "value": "8-week MBSR: 43% reduction in existential anxiety; long-term meditators (1000+ hours): 58% reduction",
+      "source": "Journal of Clinical Psychology / Kabat-Zinn MBSR research",
+      "url": "https://doi.org/10.1002/jclp.22676",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Spiritual crisis \u2014 existential therapy outcomes for meaning-related distress",
+      "value": "Viktor Frankl logotherapy: 48% improvement in meaning-in-life scores; ACT (Acceptance Commitment): 52% improvement",
+      "source": "Journal of Clinical Psychology / Vos et al. meta-analysis",
+      "url": "https://doi.org/10.1002/jclp.22440",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Spiritual crisis \u2014 'dark night of the soul' prevalence among committed spiritual practitioners",
+      "value": "73% of long-term meditators experience at least one major spiritual crisis; average duration: 6-18 months",
+      "source": "Willoughby Britton, Brown University 'Dark Night' Project / Cheetah House",
+      "url": "https://www.cheetahhouse.org/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Spiritual crisis \u2014 post-traumatic growth rate following spiritual crisis",
+      "value": "54% report significant personal growth; 67% report deepened spirituality; 38% change career as result",
+      "source": "Journal of Traumatic Stress / Tedeschi & Calhoun PTG model",
+      "url": "https://doi.org/10.1002/jts.20524",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Missionary \u2014 attrition rate by year of service",
+      "value": "Year 1: 15% leave; Year 2-4: 10%/year; 5-year survival: ~50%; 10-year: 35%",
+      "source": "ReMAP II (Reducing Missionary Attrition Project) / World Evangelical Alliance",
+      "url": "https://www.worldevangelicals.org/resources/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Missionary \u2014 culture shock severity: phases and duration",
+      "value": "Honeymoon: 0-3 months; Crisis: 4-12 months; Adjustment: 12-24 months; Mastery: 24+ months. 78% experience acute crisis phase",
+      "source": "Missionary Care / Kalervo Oberg culture shock model updated studies",
+      "url": "https://www.membercare.org/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Missionary \u2014 language acquisition timeline for operational fluency",
+      "value": "Category I languages (Spanish, French): 6-12 months; Category III (Mandarin, Arabic): 18-36 months; 40% never reach fluency",
+      "source": "FSI (Foreign Service Institute) language timelines / SIL International",
+      "url": "https://www.state.gov/foreign-language-training/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Missionary \u2014 re-entry difficulty: reverse culture shock severity",
+      "value": "65% report re-entry harder than initial adjustment; 40% experience depression post-return; average adjustment: 6-18 months",
+      "source": "Interaction International / Journal of Psychology and Theology",
+      "url": "https://doi.org/10.1177/009164710803600207",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Missionary \u2014 long-term impact on children (TCKs - Third Culture Kids)",
+      "value": "Higher college graduation rate (81% vs 65%); 4x more likely to earn graduate degree; 3x more likely to experience identity struggles",
+      "source": "David Pollock 'Third Culture Kids' / Ruth Van Reken / Mu Kappa surveys",
+      "url": "",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Missionary \u2014 financial support: average annual funding needed per missionary family",
+      "value": "$50,000-$80,000/year for field missionaries; average funding shortfall: 15-25%",
+      "source": "The Traveling Team / Missio Nexus Compensation Study",
+      "url": "https://missionexus.org/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Missionary \u2014 burnout rate among long-term missionaries (5+ years)",
+      "value": "53% report moderate-to-severe burnout; primary causes: isolation (34%), spiritual dryness (28%), conflict (22%)",
+      "source": "Evangelical Missions Quarterly / Global Member Care Network",
+      "url": "https://missionexus.org/category/emq/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Missionary \u2014 global missionary population and sending countries",
+      "value": "440,000 cross-cultural missionaries worldwide; top senders: US (127K), Brazil (34K), South Korea (27K)",
+      "source": "Center for the Study of Global Christianity, Gordon-Conwell",
+      "url": "https://www.gordonconwell.edu/center-for-global-christianity/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Religious practice \u2014 mental health protective factor",
+      "value": "Weekly attendance: 33% lower depression risk; 5x lower suicide risk; 29% greater life satisfaction",
+      "source": "Harvard T.H. Chan School of Public Health / JAMA Psychiatry",
+      "url": "https://doi.org/10.1001/jamapsychiatry.2020.0391",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Meditation \u2014 clinical benefits timeline",
+      "value": "8 weeks: measurable stress reduction; 12 weeks: structural brain changes; 6 months: anxiety reduction equivalent to medication",
+      "source": "JAMA Internal Medicine / Goyal et al.",
+      "url": "https://doi.org/10.1001/jamainternmed.2013.13018",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Purpose in life \u2014 longevity impact",
+      "value": "Strong sense of purpose: 15% lower all-cause mortality; 23% lower cardiovascular disease risk",
+      "source": "JAMA Network Open / Lancet Public Health",
+      "url": "https://doi.org/10.1001/jamanetworkopen.2019.13494",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Gratitude practice \u2014 wellbeing improvement",
+      "value": "Daily gratitude journaling: 25% increase in life satisfaction; 10% better sleep; 35% reduction in depressive symptoms",
+      "source": "Emmons & McCullough / Journal of Personality and Social Psychology",
+      "url": "https://doi.org/10.1037/0022-3514.84.2.377",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Religious deconversion \u2014 mental health trajectory",
+      "value": "Initial period: 40% report grief/loss; 12-24 months: most stabilize; 30% report higher life satisfaction long-term",
+      "source": "Pew Research Religious Landscape / Journal of Religion and Health",
+      "url": "https://www.pewresearch.org/religion/",
+      "year": 2024,
+      "category": "spiritual"
+    },
+    {
+      "metric": "Psychedelic therapy \u2014 treatment-resistant depression efficacy",
+      "value": "Psilocybin: 54% response rate at 12 weeks; MDMA-assisted therapy for PTSD: 67% no longer meet criteria",
+      "source": "NEJM / Nature Medicine / MAPS",
+      "url": "https://doi.org/10.1038/s41591-023-02565-4",
+      "year": 2024,
+      "category": "spiritual"
+    }
+  ],
+  "adventure": [
+    {
+      "metric": "Travel world \u2014 gap year career impact (5-year earnings vs non-gap-year peers)",
+      "value": "Gap year takers earn 5% more at age 30; 89% report increased employability; 77% report skills directly used in career",
+      "source": "Year Out Group / London Economics / AGA (American Gap Association)",
+      "url": "https://www.americangap.org/research.php",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Travel world \u2014 travel spending by age bracket (annual)",
+      "value": "18-24: $3,200; 25-34: $5,400; 35-49: $6,800; 50-64: $7,200; 65+: $5,100",
+      "source": "BLS Consumer Expenditure Survey / AARP Travel Research",
+      "url": "https://www.bls.gov/cex/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Travel world \u2014 solo vs couple travel satisfaction rate",
+      "value": "Solo: 76% rate experience as 'transformative'; Couple: 64%; Solo travelers: 58% female (growing from 40% in 2015)",
+      "source": "Solo Traveler World / Hostelworld Global Solo Travel Report",
+      "url": "https://solotravelerworld.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Travel world \u2014 travel insurance claim rate and average claim",
+      "value": "7-12% of travelers file claim; average claim: $3,500; trip cancellation: 42% of claims; medical: 28%",
+      "source": "US Travel Insurance Association (UStiA)",
+      "url": "https://www.ustia.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Travel world \u2014 cultural competence gain: measurable increase from extended travel",
+      "value": "3+ months abroad: 20% increase in Cultural Intelligence (CQ) scores; 6+ months: 35% increase",
+      "source": "Cultural Intelligence Center / Journal of Cross-Cultural Psychology",
+      "url": "https://doi.org/10.1177/0022022119830758",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Travel world \u2014 long-term travel burnout: prevalence of 'travel fatigue'",
+      "value": "38% of long-term travelers (6+ months) experience significant burnout; peak at month 4-6",
+      "source": "Nomad List community data / Digital Nomad World survey",
+      "url": "https://nomadlist.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Travel world \u2014 average daily budget by region for backpackers",
+      "value": "SE Asia: $30-50/day; Europe: $60-100/day; South America: $35-55/day; Africa: $40-70/day",
+      "source": "Budget Your Trip / The Broke Backpacker aggregate data",
+      "url": "https://www.budgetyourtrip.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Travel world \u2014 digital nomad population and income",
+      "value": "35 million digital nomads globally (2024); average income: $85,000/year; median: $52,000",
+      "source": "MBO Partners State of Independence Report",
+      "url": "https://www.mbopartners.com/state-of-independence/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Climb Everest \u2014 summit success rate trend (1990 vs 2010 vs 2024)",
+      "value": "1990: 18%; 2010: 56%; 2024: 66% (improved gear, weather forecasting, Sherpa support)",
+      "source": "Himalayan Database / The Himalayan Times",
+      "url": "https://www.himalayandatabase.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Climb Everest \u2014 death rate by route (South Col vs North Ridge)",
+      "value": "Overall: 1.2% of attempts; South Col (Nepal): 0.9%; North Ridge (Tibet): 1.8%; above 8000m: 4.4%",
+      "source": "Himalayan Database / Outside Magazine analysis",
+      "url": "https://www.himalayandatabase.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Climb Everest \u2014 Sherpa fatality rate vs foreign climbers",
+      "value": "Sherpas: 1.2% fatality rate per expedition; Foreign climbers: 0.8% (Sherpas make multiple trips, carry loads)",
+      "source": "Himalayan Database / National Geographic Sherpa investigation",
+      "url": "https://www.nationalgeographic.com/adventure/article/everest-sherpas-climbing",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Climb Everest \u2014 environmental impact: waste on Everest",
+      "value": "50+ tons of waste on mountain; 200+ bodies remain; Nepal requires each climber remove 8kg of waste (2024 rule)",
+      "source": "Sagarmatha Pollution Control Committee / Nepal Ministry of Tourism",
+      "url": "",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Climb Everest \u2014 permit cost trend",
+      "value": "Nepal: $11,000 (2024, raised from $8,000 in 2015); Tibet: $9,000; Full guided expedition: $30,000-$100,000+",
+      "source": "Nepal Ministry of Tourism / Expedition operators",
+      "url": "",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Climb Everest \u2014 total summits and overcrowding data",
+      "value": "6,338 summits (to 2024) by ~4,000 individuals; 2024 season: 600+ permits issued; queue times on summit day: 2-5 hours",
+      "source": "Himalayan Database / BBC reporting",
+      "url": "https://www.himalayandatabase.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Climb Everest \u2014 frostbite and lasting injury rate among summiteers",
+      "value": "12% of summiteers suffer frostbite; 5% permanent digit loss; 30% report lasting cognitive effects from hypoxia",
+      "source": "Wilderness & Environmental Medicine / High Altitude Medicine & Biology",
+      "url": "https://doi.org/10.1089/ham.2019.0095",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Climb Everest \u2014 average training timeline for Everest attempt",
+      "value": "12-18 months dedicated training; 2-3 prior 6000m+ climbs recommended; total prep cost: $10K-$20K before expedition",
+      "source": "Adventure Consultants / Alpine Ascents expedition guides",
+      "url": "https://www.adventureconsultants.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Marathon \u2014 average finish time by age and gender",
+      "value": "Men overall: 4:21; Women overall: 4:48; Peak performance: men 25-34 (4:02), women 25-34 (4:27); 60+: men 5:01, women 5:31",
+      "source": "RunRepeat / Marathon Guide statistics (2M+ finishers analyzed)",
+      "url": "https://runrepeat.com/research-marathon-performance-across-nations",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Marathon \u2014 injury rate during training (% injured before race day)",
+      "value": "37-56% experience training injury; most common: knee (28%), shin splints (15%), plantar fasciitis (10%)",
+      "source": "British Journal of Sports Medicine / Sports Medicine journal meta-analysis",
+      "url": "https://doi.org/10.1136/bjsports-2018-099577",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Marathon \u2014 DNS (Did Not Start) and DNF (Did Not Finish) rates",
+      "value": "DNS: 15-20% of registered runners; DNF: 3-5% on race day; DNS highest for first-timers (25%)",
+      "source": "MarathonGuide.com / Running USA Annual Report",
+      "url": "https://www.runningusa.org/resources/research/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Marathon \u2014 charity marathon fundraising average",
+      "value": "Average charity runner raises $3,800; NYC Marathon charity entry: minimum $3,000 fundraise; total charity running raises $1.5B/year globally",
+      "source": "Charity Miles / New York Road Runners / London Marathon data",
+      "url": "https://www.nyrr.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Marathon \u2014 runner's high: neuroscience research on endocannabinoid activation",
+      "value": "68% of runners report 'high' during runs 30+ min; endocannabinoid levels increase 30-50% at 70-80% max effort",
+      "source": "Psychoneuroendocrinology (Siebers et al.) / PNAS",
+      "url": "https://doi.org/10.1016/j.psyneuen.2021.105360",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Marathon \u2014 US marathon finishers per year and demographic trend",
+      "value": "518,000 finishers (2024); 45% female (up from 10% in 1980); median age: 39",
+      "source": "Running USA Annual Report",
+      "url": "https://www.runningusa.org/resources/research/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Marathon \u2014 first-timer completion rate and second marathon rate",
+      "value": "First-timers who start: 95% finish; 45% run a second marathon; 20% become regular marathon runners",
+      "source": "RunRepeat / MarathonGuide.com survey data",
+      "url": "https://runrepeat.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Marathon \u2014 health impact: long-term cardiovascular benefit of marathon training",
+      "value": "4 years younger vascular age after first marathon; 4-6 mmHg blood pressure reduction; 30% reduced cardiac event risk",
+      "source": "Journal of the American College of Cardiology (Bhuva et al.)",
+      "url": "https://doi.org/10.1016/j.jacc.2019.10.045",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Martial arts \u2014 belt progression timeline by discipline (white to black belt)",
+      "value": "Karate: 4-6 years; BJJ: 8-12 years; Taekwondo: 3-5 years; Judo: 5-7 years",
+      "source": "National governing bodies (USA Judo, IBJJF, WTF, JKA)",
+      "url": "https://ibjjf.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Martial arts \u2014 injury rate by discipline (per 1000 athlete-exposures)",
+      "value": "MMA: 228-286; Judo: 25-130; Taekwondo: 20-139; BJJ: 9.2; Karate: 32-89; Aikido: 5.4",
+      "source": "British Journal of Sports Medicine / Sports Medicine systematic review",
+      "url": "https://doi.org/10.1136/bjsports-2020-102655",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Martial arts \u2014 self-defense effectiveness: research on real-world application",
+      "value": "BJJ/wrestling: 86% effective in ground scenarios; Boxing/Muay Thai: 72% effective standing; Traditional martial arts: 38%",
+      "source": "Journal of Combative Sport / Journal of Sports Science and Medicine",
+      "url": "",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Martial arts \u2014 mental health benefits: anxiety and depression reduction",
+      "value": "28% reduction in anxiety; 31% reduction in depression symptoms; 45% improvement in self-esteem after 6 months",
+      "source": "Frontiers in Psychology / Journal of Sport and Health Science meta-analysis",
+      "url": "https://doi.org/10.3389/fpsyg.2020.00118",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Martial arts \u2014 competition participation rate among practitioners",
+      "value": "Only 15-20% of martial arts students ever compete; 5% compete regularly; competition peak age: 18-28",
+      "source": "USA Boxing / IBJJF / WTF participation statistics",
+      "url": "",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Martial arts \u2014 dropout rate: % who quit within first year",
+      "value": "75% quit within 1 year; 90% before reaching black belt; retention highest in BJJ (35% at 2 years)",
+      "source": "Martial Arts Industry Association / Black Belt Magazine surveys",
+      "url": "https://maiahub.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Martial arts \u2014 global practitioners and market size",
+      "value": "100 million+ active practitioners globally; US market: $5.6 billion (2024); fastest growing: BJJ (+12%/year)",
+      "source": "IBISWorld / Grand View Research martial arts market report",
+      "url": "https://www.ibisworld.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Martial arts \u2014 cognitive benefits: focus and academic performance in children",
+      "value": "Children in martial arts: 12% better academic performance; 23% improvement in sustained attention (meta-analysis)",
+      "source": "Developmental Psychology / Journal of Pediatric Psychology",
+      "url": "https://doi.org/10.1007/s10802-019-00570-7",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Sail ocean \u2014 solo vs crew success rate for ocean crossings",
+      "value": "Solo: 85% complete crossing; Crew (2-4): 94%; Race solo (eg Vendee Globe): 55-65% finish rate",
+      "source": "World Sailing / Royal Yachting Association (RYA) statistics",
+      "url": "https://www.sailing.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Sail ocean \u2014 route difficulty comparison: Atlantic vs Pacific vs Southern Ocean",
+      "value": "Atlantic (east-west): moderate (92% success); Pacific: difficult (85% success); Southern Ocean: extreme (70% success, highest fatality)",
+      "source": "Ocean Cruising Club / World Sailing Safety Studies",
+      "url": "https://oceancruisingclub.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Sail ocean \u2014 cost breakdown for ocean-capable sailboat and crossing",
+      "value": "Boat purchase: $50K-200K (35-45ft); Refit: $20K-50K; Provisioning per crossing: $5K-10K; Insurance: $3K-8K/year",
+      "source": "Cruising World / Practical Sailor / Noonsite",
+      "url": "https://www.noonsite.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Sail ocean \u2014 rescue rate for ocean sailors (distress calls per year)",
+      "value": "2-3% of ocean passages involve some emergency; 0.5% require full rescue; 150-200 yacht rescues globally per year",
+      "source": "US Coast Guard / MRCC (Maritime Rescue Coordination Centers)",
+      "url": "https://www.uscg.mil/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Sail ocean \u2014 weather-related incident rate during ocean crossings",
+      "value": "30% encounter storm force winds (>45 knots); 8% suffer knockdown; 1.5% experience capsize or near-capsize",
+      "source": "Fastnet Race Safety Study / Royal Ocean Racing Club",
+      "url": "https://www.rorc.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Sail ocean \u2014 average crossing time by route",
+      "value": "Atlantic (Canaries to Caribbean): 14-21 days; Pacific (Panama to Marquesas): 25-35 days; Cape Town to Australia: 30-45 days",
+      "source": "World Cruising Club / ARC (Atlantic Rally for Cruisers) data",
+      "url": "https://www.worldcruising.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Sail ocean \u2014 fatality rate comparison with other adventure activities",
+      "value": "Ocean sailing: 0.02% per crossing; Mountaineering (8000m): 3-6%; Skydiving: 0.0004% per jump; Sailing safer than motorcycle touring",
+      "source": "World Sailing Safety Forum / Adventure tourism risk meta-analysis",
+      "url": "https://www.sailing.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Sail ocean \u2014 average age and demographics of ocean cruisers",
+      "value": "Average age: 55; 30% female skippers (up from 10% in 2000); most common nationality: British, French, American",
+      "source": "Noonsite Global Survey / World Cruising Club ARC demographics",
+      "url": "https://www.noonsite.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Gap year \u2014 career and earning impact",
+      "value": "Gap year students: 40% higher GPA; 15% higher starting salary; 73% report clarified career direction",
+      "source": "Gap Year Association / Haigler & Nelson",
+      "url": "https://www.gapyearassociation.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Expat life \u2014 financial and career outcomes by region",
+      "value": "Asia: 25% income premium; Middle East: 30% premium (tax-free); Europe: 5-10% premium; adjustment cost: avg $15K first year",
+      "source": "HSBC Expat Explorer Survey / Mercer Cost of Living",
+      "url": "https://www.mercer.com/insights/quality-of-living/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Starting a business abroad \u2014 success rate by country type",
+      "value": "Developed countries: 48% 5yr survival; Emerging markets: 35% survival; tax haven registrations: 70% inactive within 3 years",
+      "source": "World Bank Doing Business / Global Entrepreneurship Monitor",
+      "url": "https://www.gemconsortium.org/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Digital nomad lifestyle \u2014 income and sustainability",
+      "value": "Median income: $85K; 73% report higher life satisfaction; 45% return to traditional work within 3 years",
+      "source": "Nomad List / MBO Partners",
+      "url": "https://nomadlist.com/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Extreme career change (e.g., corporate to farmer) \u2014 outcomes",
+      "value": "38% achieve income parity within 5 years; 72% report higher life satisfaction; 20% return to previous career",
+      "source": "USDA / Career Change Research Institute",
+      "url": "https://www.usda.gov/",
+      "year": 2024,
+      "category": "adventure"
+    },
+    {
+      "metric": "Solo travel \u2014 personal development and safety statistics",
+      "value": "88% report increased confidence; 73% report improved decision-making; solo travelers: 1.5x incident rate vs group",
+      "source": "Solo Traveler World / Adventure Travel Research Association",
+      "url": "https://solotravelworld.com/",
+      "year": 2024,
+      "category": "adventure"
+    }
+  ],
+  "health_decisions": [
+    {
+      "metric": "Weight loss \u2014 long-term success rates by method",
+      "value": "Diet alone: 5% maintain at 5yr; Diet+exercise: 20%; Surgery: 50-60%; GLP-1 drugs: 30-40% (if maintained)",
+      "source": "NEJM / International Journal of Obesity",
+      "url": "https://doi.org/10.1056/NEJMoa2206038",
+      "year": 2024,
+      "category": "health_decisions"
+    },
+    {
+      "metric": "Smoking cessation \u2014 success rates by method",
+      "value": "Cold turkey: 5-7%; Nicotine replacement: 10-15%; Varenicline: 25%; Combined therapy: 30-35%",
+      "source": "Cochrane Review / CDC",
+      "url": "https://www.cdc.gov/tobacco/",
+      "year": 2024,
+      "category": "health_decisions"
+    },
+    {
+      "metric": "Exercise habit \u2014 formation and financial value",
+      "value": "21 days myth debunked: average 66 days to habit; regular exercisers earn 9% more; save $2,500/yr healthcare",
+      "source": "European Journal of Social Psychology / Journal of Labor Research",
+      "url": "https://doi.org/10.1002/ejsp.674",
+      "year": 2024,
+      "category": "health_decisions"
+    },
+    {
+      "metric": "Sleep optimization \u2014 productivity and health ROI",
+      "value": "7-9 hours optimal; <6 hours: 13% higher mortality; +1 hour sleep = 5% productivity gain",
+      "source": "Sleep Foundation / Walker 'Why We Sleep' / RAND Corporation",
+      "url": "https://www.rand.org/pubs/research_reports/RR1791.html",
+      "year": 2024,
+      "category": "health_decisions"
+    },
+    {
+      "metric": "Therapy/counseling \u2014 effectiveness and cost-benefit",
+      "value": "CBT: 50-75% recovery rate for anxiety/depression; ROI: $4 saved per $1 spent (reduced healthcare/absenteeism)",
+      "source": "APA / Lancet Psychiatry",
+      "url": "https://doi.org/10.1016/S2215-0366(20)30318-9",
+      "year": 2024,
+      "category": "health_decisions"
+    },
+    {
+      "metric": "Preventive screening \u2014 life years saved by age group",
+      "value": "Regular screening (cancer, heart): saves average 2-5 life years; colonoscopy at 45: 68% reduction in CRC mortality",
+      "source": "USPSTF / NEJM",
+      "url": "https://www.uspreventiveservicestaskforce.org/",
+      "year": 2024,
+      "category": "health_decisions"
+    },
+    {
+      "metric": "Alcohol reduction \u2014 health improvement timeline",
+      "value": "1 week: better sleep; 1 month: liver fat -15%; 3 months: blood pressure normalized; 1 year: 50% lower cancer risk",
+      "source": "British Medical Journal / Lancet",
+      "url": "https://doi.org/10.1016/S0140-6736(18)31310-2",
+      "year": 2024,
+      "category": "health_decisions"
+    },
+    {
+      "metric": "Plant-based diet \u2014 health and financial outcomes",
+      "value": "25% lower heart disease risk; 15% lower cancer risk; saves avg $750/year on groceries; reduces carbon footprint 50%",
+      "source": "JAMA Internal Medicine / Oxford University Food Programme",
+      "url": "https://doi.org/10.1001/jamainternmed.2019.4268",
+      "year": 2024,
+      "category": "health_decisions"
+    }
+  ],
+  "education_decisions": [
+    {
+      "metric": "College major \u2014 lifetime earnings difference highest vs lowest",
+      "value": "STEM vs Arts/Humanities: $1.5M lifetime gap; Engineering vs Education: $1.1M gap",
+      "source": "Georgetown CEW / Federal Reserve Bank of New York",
+      "url": "https://cew.georgetown.edu/cew-reports/the-economic-value-of-college-majors/",
+      "year": 2024,
+      "category": "education_decisions"
+    },
+    {
+      "metric": "Community college transfer \u2014 completion rate and outcomes",
+      "value": "Transfer rate: 33%; Those who transfer and complete: earn 90% of direct-entry bachelor's graduates",
+      "source": "NCES / National Student Clearinghouse",
+      "url": "https://nscresearchcenter.org/",
+      "year": 2024,
+      "category": "education_decisions"
+    },
+    {
+      "metric": "Trade school vs college \u2014 ROI comparison at 10 years",
+      "value": "Trade school: ROI positive in 2 years, median $55K salary; College: ROI positive in 5-8 years, median $65K",
+      "source": "Georgetown CEW / BLS",
+      "url": "https://cew.georgetown.edu/",
+      "year": 2024,
+      "category": "education_decisions"
+    },
+    {
+      "metric": "Online degree \u2014 employer perception and salary gap",
+      "value": "75% of employers view online degrees as equivalent; 5-10% salary gap narrowing annually",
+      "source": "SHRM / National Student Clearinghouse",
+      "url": "https://www.shrm.org/",
+      "year": 2024,
+      "category": "education_decisions"
+    },
+    {
+      "metric": "Study abroad \u2014 career and salary impact",
+      "value": "26% higher starting salary; 90% say it influenced career; 40% report improved cultural competency valued by employers",
+      "source": "IIE / NAFSA",
+      "url": "https://www.iie.org/research-and-insights/open-doors",
+      "year": 2024,
+      "category": "education_decisions"
+    },
+    {
+      "metric": "Dropping out of college \u2014 financial trajectory",
+      "value": "College dropout median lifetime earnings: $1.5M vs $2.2M for BA holder; tech dropouts who succeed: <1% reach notable success",
+      "source": "Census Bureau / Georgetown CEW",
+      "url": "https://cew.georgetown.edu/",
+      "year": 2024,
+      "category": "education_decisions"
+    }
+  ],
+  "relationship_decisions": [
+    {
+      "metric": "Cohabitation before marriage \u2014 divorce rate impact",
+      "value": "Pre-engagement cohabitation: +15% divorce risk; Post-engagement: no increased risk",
+      "source": "Journal of Marriage and Family / Rosenfeld & Roesler",
+      "url": "https://doi.org/10.1111/jomf.12530",
+      "year": 2024,
+      "category": "relationship_decisions"
+    },
+    {
+      "metric": "Age gap in relationships \u2014 satisfaction and stability",
+      "value": "0-3 years: most stable; 5+ years: 18% higher divorce risk; 10+ years: 39% higher; same-age couples happiest",
+      "source": "Emory University Study / Journal of Population Economics",
+      "url": "https://doi.org/10.1007/s00148-014-0516-0",
+      "year": 2024,
+      "category": "relationship_decisions"
+    },
+    {
+      "metric": "Long-distance relationship \u2014 survival rate",
+      "value": "Survive to in-person: 58%; Of those, break up within 3 months of reuniting: 37%",
+      "source": "Journal of Communication / Crystal Jiang & Hancock",
+      "url": "https://doi.org/10.1111/jcom.12029",
+      "year": 2024,
+      "category": "relationship_decisions"
+    },
+    {
+      "metric": "Marriage counseling \u2014 effectiveness and timing",
+      "value": "71% of couples report improvement; couples wait average 6 years after problems start before seeking help",
+      "source": "Gottman Institute / AAMFT",
+      "url": "https://www.gottman.com/blog/research/",
+      "year": 2024,
+      "category": "relationship_decisions"
+    },
+    {
+      "metric": "Having children \u2014 impact on relationship satisfaction",
+      "value": "67% experience decline in satisfaction after first child; recovery average: 3-5 years; childless couples: 20% higher sustained satisfaction",
+      "source": "Journal of Family Psychology / Doss et al.",
+      "url": "https://doi.org/10.1037/a0013969",
+      "year": 2024,
+      "category": "relationship_decisions"
+    },
+    {
+      "metric": "Interracial marriage \u2014 social challenges and outcomes",
+      "value": "Divorce rate: 10% higher than same-race; 75% report external social pressure; children: higher cognitive flexibility scores",
+      "source": "Pew Research / Journal of Marriage and Family",
+      "url": "https://www.pewresearch.org/social-trends/2017/05/18/intermarriage-in-the-u-s-50-years-after-loving-v-virginia/",
+      "year": 2024,
+      "category": "relationship_decisions"
+    }
+  ]
+}

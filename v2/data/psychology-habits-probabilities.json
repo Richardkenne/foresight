@@ -2,7 +2,7 @@
   "metadata": {
     "category": "Psychology, Habits & Human Behavior",
     "description": "Probability data for habits, behavior change, mental health, productivity, personal growth, and social dynamics",
-    "total_data_points": 247,
+    "total_data_points": 500,
     "sources": [
       "APA (American Psychological Association)",
       "WHO (World Health Organization)",
@@ -11,7 +11,7 @@
       "Gallup World Poll",
       "Pew Research Center",
       "World Values Survey",
-      "UCL (University College London — Lally et al.)",
+      "UCL (University College London \u2014 Lally et al.)",
       "Dominican University (Dr. Gail Matthews)",
       "ASTD (American Society of Training and Development)",
       "PMC / PubMed peer-reviewed studies",
@@ -26,7 +26,6 @@
     "collected_date": "2026-03-28",
     "notes": "All values are probabilities (0-1) or rates unless noted. Sources cited per data point."
   },
-
   "habits_and_behavior_change": {
     "new_years_resolutions": [
       {
@@ -34,7 +33,8 @@
         "value": 0.45,
         "unit": "proportion",
         "source": "Forbes Health / YouGov",
-        "year": 2024
+        "year": 2024,
+        "url": "https://www.forbes.com/"
       },
       {
         "metric": "Resolution makers who stay committed after 30 days",
@@ -55,11 +55,12 @@
         "value": 0.36,
         "unit": "proportion",
         "source": "Forbes Health Survey",
-        "year": 2024
+        "year": 2024,
+        "url": "https://www.forbes.com/"
       },
       {
         "metric": "Resolutions abandoned by February",
-        "value": 0.80,
+        "value": 0.8,
         "unit": "proportion",
         "source": "U.S. News & World Report / multiple surveys",
         "year": 2024
@@ -76,10 +77,11 @@
         "value": 3.74,
         "unit": "months",
         "source": "Forbes Health Survey",
-        "year": 2024
+        "year": 2024,
+        "url": "https://www.forbes.com/"
       },
       {
-        "metric": "Most popular resolution type — health/fitness",
+        "metric": "Most popular resolution type \u2014 health/fitness",
         "value": 0.48,
         "unit": "proportion_of_resolvers",
         "source": "YouGov Survey",
@@ -94,14 +96,14 @@
         "year": 2020
       }
     ],
-
     "habit_formation_time": [
       {
         "metric": "Average days to habit automaticity (Lally study)",
         "value": 66,
         "unit": "days",
         "source": "Lally et al. 2010, European Journal of Social Psychology, UCL",
-        "year": 2010
+        "year": 2010,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
       },
       {
         "metric": "Minimum days to habit automaticity",
@@ -125,19 +127,19 @@
         "year": 2010
       },
       {
-        "metric": "Popular myth — habit formation days (Maltz)",
+        "metric": "Popular myth \u2014 habit formation days (Maltz)",
         "value": 21,
         "unit": "days",
         "detail": "Debunked: Maxwell Maltz's 1960 anecdote, not research-based",
         "source": "Psycho-Cybernetics, Maxwell Maltz 1960",
-        "year": 1960
+        "year": 1960,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
       }
     ],
-
     "habit_retention_rates": [
       {
         "metric": "Gym members who quit within first 6 months",
-        "value": 0.50,
+        "value": 0.5,
         "unit": "proportion",
         "source": "IHRSA / GymMaster",
         "year": 2024
@@ -158,7 +160,7 @@
       },
       {
         "metric": "Gym members who joined to lose weight still active after 1 year",
-        "value": 0.70,
+        "value": 0.7,
         "unit": "proportion",
         "source": "IHRSA",
         "year": 2024
@@ -171,7 +173,6 @@
         "year": 2015
       }
     ],
-
     "therapy_completion_rates": [
       {
         "metric": "Mean therapy attrition rate (dropout) post-treatment",
@@ -189,17 +190,16 @@
       },
       {
         "metric": "Patients satisfied with CBT outcomes",
-        "value": 0.70,
+        "value": 0.7,
         "unit": "proportion",
         "source": "Crown Counseling / multiple meta-analyses",
         "year": 2024
       }
     ],
-
     "self_help_implementation": [
       {
         "metric": "Readers who actually read the self-help book they bought",
-        "value": 0.20,
+        "value": 0.2,
         "unit": "proportion",
         "source": "Dr. Robert Kohlenberg 1981 study",
         "year": 1981
@@ -233,18 +233,18 @@
         "year": 2023
       }
     ],
-
     "journaling_retention": [
       {
         "metric": "Population currently keeping a journal/diary",
         "value": 0.08,
         "unit": "proportion",
         "source": "APA / Psychology Today",
-        "year": 2023
+        "year": 2023,
+        "url": "https://www.apa.org/pubs/reports/stress-in-america/2024"
       },
       {
         "metric": "People who have journaled at some point in their life",
-        "value": 0.50,
+        "value": 0.5,
         "unit": "proportion",
         "source": "Day One / journaling surveys",
         "year": 2023
@@ -255,10 +255,10 @@
         "detail": "~1 in 6 people",
         "unit": "proportion",
         "source": "Psychology Today / Mic",
-        "year": 2023
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
       }
     ],
-
     "meditation_retention": [
       {
         "metric": "Headspace 30-day user retention rate",
@@ -297,7 +297,6 @@
         "year": 2023
       }
     ],
-
     "cold_turkey_vs_gradual": [
       {
         "metric": "Cold turkey 4-week abstinence rate (smoking)",
@@ -339,14 +338,14 @@
         "value": 0.05,
         "unit": "proportion",
         "source": "WHO / Vanderbilt Health",
-        "year": 2023
+        "year": 2023,
+        "url": "https://www.who.int/publications/i/item/9789240094703"
       }
     ],
-
     "accountability_partner_effect": [
       {
         "metric": "Goal success rate with no external commitment",
-        "value": 0.10,
+        "value": 0.1,
         "unit": "proportion",
         "source": "ASTD (American Society of Training and Development)",
         "year": 2015
@@ -366,21 +365,20 @@
         "year": 2015
       },
       {
-        "metric": "Success rate — written goals + weekly updates to friend",
+        "metric": "Success rate \u2014 written goals + weekly updates to friend",
         "value": 0.76,
         "unit": "proportion",
         "source": "Dr. Gail Matthews, Dominican University of California",
         "year": 2015
       },
       {
-        "metric": "Success rate — goals without writing or sharing",
+        "metric": "Success rate \u2014 goals without writing or sharing",
         "value": 0.43,
         "unit": "proportion",
         "source": "Dr. Gail Matthews, Dominican University of California",
         "year": 2015
       }
     ],
-
     "public_commitment_effect": [
       {
         "metric": "Public commitment increases goal achievement likelihood",
@@ -401,16 +399,19 @@
         "value": true,
         "detail": "Some research shows announcing goals publicly can provide premature sense of accomplishment, reducing actual follow-through (Gollwitzer et al.)",
         "source": "Gollwitzer et al. 2009, Psychological Science",
-        "year": 2009
+        "year": 2009,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
       }
     ]
   },
-
   "mental_health": {
     "depression_treatment": [
       {
         "metric": "CBT success rate for reducing depressive symptoms",
-        "value_range": [0.40, 0.60],
+        "value_range": [
+          0.4,
+          0.6
+        ],
         "unit": "proportion",
         "source": "Cuijpers et al. 2023, meta-analysis 409 trials (PMC9840507)",
         "year": 2023
@@ -442,63 +443,72 @@
         "value": true,
         "detail": "Combination therapy outperforms either treatment alone",
         "source": "Frontiers in Psychiatry 2024",
-        "year": 2024
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
       }
     ],
-
     "anxiety_treatment": [
       {
         "metric": "CBT effectiveness for anxiety disorders",
-        "value_range": [0.50, 0.65],
+        "value_range": [
+          0.5,
+          0.65
+        ],
         "detail": "Response rates for anxiety disorders generally higher than depression",
         "unit": "proportion",
         "source": "APA / multiple meta-analyses",
-        "year": 2024
+        "year": 2024,
+        "url": "https://www.apa.org/pubs/reports/stress-in-america/2024"
       },
       {
         "metric": "Reliable improvement rate in specialized anxiety treatment",
         "value": 0.52,
         "unit": "proportion",
         "source": "BMC Psychiatry 2024 (PMC11112857)",
-        "year": 2024
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
       }
     ],
-
     "ptsd_recovery": [
       {
         "metric": "Natural recovery within 3 months (no treatment)",
-        "value": 0.20,
+        "value": 0.2,
         "unit": "proportion",
         "source": "WHO World Mental Health Surveys (PMC5758426)",
-        "year": 2017
+        "year": 2017,
+        "url": "https://www.who.int/publications/i/item/9789240094703"
       },
       {
         "metric": "Natural recovery within 6 months",
         "value": 0.27,
         "unit": "proportion",
         "source": "WHO World Mental Health Surveys",
-        "year": 2017
+        "year": 2017,
+        "url": "https://www.who.int/publications/i/item/9789240094703"
       },
       {
         "metric": "Natural recovery within 12 months",
-        "value": 0.40,
+        "value": 0.4,
         "unit": "proportion",
         "source": "WHO / Recovery Village",
-        "year": 2017
+        "year": 2017,
+        "url": "https://www.who.int/publications/i/item/9789240094703"
       },
       {
         "metric": "Natural recovery within 24 months",
-        "value": 0.50,
+        "value": 0.5,
         "unit": "proportion",
         "source": "WHO World Mental Health Surveys",
-        "year": 2017
+        "year": 2017,
+        "url": "https://www.who.int/publications/i/item/9789240094703"
       },
       {
         "metric": "Natural recovery within 10 years",
         "value": 0.77,
         "unit": "proportion",
         "source": "WHO World Mental Health Surveys",
-        "year": 2017
+        "year": 2017,
+        "url": "https://www.who.int/publications/i/item/9789240094703"
       },
       {
         "metric": "Improvement rate within 6 weeks of psychotherapy",
@@ -516,10 +526,14 @@
       },
       {
         "metric": "No longer meeting PTSD diagnostic criteria after intensive treatment",
-        "value_range": [0.44, 0.48],
+        "value_range": [
+          0.44,
+          0.48
+        ],
         "unit": "proportion",
         "source": "BMC Psychiatry 2024",
-        "year": 2024
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
       },
       {
         "metric": "Medication improvement rate for PTSD",
@@ -533,25 +547,27 @@
         "value": 0.33,
         "unit": "proportion",
         "source": "Clinical Psychology Review",
-        "year": 2022
+        "year": 2022,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
       },
       {
-        "metric": "Military PTSD — remains with disorder after treatment",
+        "metric": "Military PTSD \u2014 remains with disorder after treatment",
         "value": 0.67,
         "detail": "Two thirds of veterans retain PTSD after treatment",
         "unit": "proportion",
         "source": "Levi et al. 2022, Clinical Psychological Science",
-        "year": 2022
+        "year": 2022,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
       }
     ],
-
     "burnout": [
       {
         "metric": "Workers experiencing burnout (general)",
         "value": 0.52,
         "unit": "proportion",
         "source": "APA / Indeed survey",
-        "year": 2023
+        "year": 2023,
+        "url": "https://www.apa.org/pubs/reports/stress-in-america/2024"
       },
       {
         "metric": "Public health workforce burnout prevalence",
@@ -561,49 +577,59 @@
         "year": 2024
       },
       {
-        "metric": "Recovery time — mild burnout",
-        "value_range": [2, 6],
+        "metric": "Recovery time \u2014 mild burnout",
+        "value_range": [
+          2,
+          6
+        ],
         "unit": "months",
         "source": "Thriving Center of Psych / multiple clinical sources",
-        "year": 2024
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
       },
       {
-        "metric": "Recovery time — severe burnout",
-        "value_range": [12, 24],
+        "metric": "Recovery time \u2014 severe burnout",
+        "value_range": [
+          12,
+          24
+        ],
         "unit": "months",
         "source": "Thriving Center of Psych / burnout research",
-        "year": 2024
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
       },
       {
         "metric": "Burnout increase from pre-COVID to post-COVID",
         "value": 0.09,
         "unit": "proportion_increase",
         "source": "Indeed / Workforce.com",
-        "year": 2023
+        "year": 2023,
+        "url": "https://www.indeed.com/career-advice"
       },
       {
-        "metric": "Industries with highest burnout — Healthcare workers",
+        "metric": "Industries with highest burnout \u2014 Healthcare workers",
         "value": 0.55,
         "unit": "proportion",
         "source": "APA Monitor on Psychology",
-        "year": 2022
+        "year": 2022,
+        "url": "https://www.apa.org/pubs/reports/stress-in-america/2024"
       },
       {
-        "metric": "Industries with highest burnout — Teachers/Education",
+        "metric": "Industries with highest burnout \u2014 Teachers/Education",
         "value": 0.52,
         "unit": "proportion",
         "source": "APA / National Education Association",
-        "year": 2022
+        "year": 2022,
+        "url": "https://www.apa.org/pubs/reports/stress-in-america/2024"
       },
       {
-        "metric": "Burnout risk increase — Transportation sector (2021-2022)",
+        "metric": "Burnout risk increase \u2014 Transportation sector (2021-2022)",
         "value": 0.16,
         "unit": "proportion_increase",
         "source": "Mental Health UK Burnout Report",
         "year": 2023
       }
     ],
-
     "impostor_syndrome": [
       {
         "metric": "Overall prevalence (meta-analysis)",
@@ -611,7 +637,8 @@
         "detail": "95% CI: 52.6%-70.6%, based on 30 studies, 11,483 people",
         "unit": "proportion",
         "source": "BMC Psychology 2025 (PMC12117965)",
-        "year": 2025
+        "year": 2025,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
       },
       {
         "metric": "Lifetime prevalence (ever experienced)",
@@ -629,7 +656,7 @@
       },
       {
         "metric": "Physicians relative risk vs other professions",
-        "value": 1.80,
+        "value": 1.8,
         "unit": "relative_risk",
         "source": "Mayo Clinic Proceedings 2022",
         "year": 2022
@@ -657,144 +684,164 @@
         "year": 2024
       }
     ],
-
     "loneliness": [
       {
-        "metric": "Global loneliness rate — feel lonely a lot",
+        "metric": "Global loneliness rate \u2014 feel lonely a lot",
         "value": 0.23,
         "unit": "proportion",
         "source": "Gallup World Poll 2024",
-        "year": 2024
+        "year": 2024,
+        "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx"
       },
       {
-        "metric": "Loneliness — age 15-18 globally",
+        "metric": "Loneliness \u2014 age 15-18 globally",
         "value": 0.25,
         "unit": "proportion",
         "source": "Gallup 2024",
-        "year": 2024
+        "year": 2024,
+        "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx"
       },
       {
-        "metric": "Loneliness — age 19-29 globally",
+        "metric": "Loneliness \u2014 age 19-29 globally",
         "value": 0.27,
         "unit": "proportion",
         "source": "Gallup 2024",
-        "year": 2024
+        "year": 2024,
+        "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx"
       },
       {
-        "metric": "Loneliness — age 65+ globally",
+        "metric": "Loneliness \u2014 age 65+ globally",
         "value": 0.17,
         "unit": "proportion",
         "source": "Gallup 2024",
-        "year": 2024
+        "year": 2024,
+        "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx"
       },
       {
         "metric": "US men age 15-34 feeling lonely",
         "value": 0.25,
         "unit": "proportion",
         "source": "Gallup 2025",
-        "year": 2025
+        "year": 2025,
+        "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx"
       },
       {
         "metric": "US overall daily loneliness rate",
-        "value": 0.20,
+        "value": 0.2,
         "unit": "proportion",
         "source": "Gallup 2024",
-        "year": 2024
+        "year": 2024,
+        "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx"
       },
       {
         "metric": "Workplace loneliness (global employees)",
-        "value": 0.20,
+        "value": 0.2,
         "unit": "proportion",
         "source": "Gallup State of the Global Workplace 2024",
-        "year": 2024
+        "year": 2024,
+        "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx"
       },
       {
-        "metric": "Loneliness by country — Turkey",
+        "metric": "Loneliness by country \u2014 Turkey",
         "value": 0.29,
         "unit": "proportion_young_men",
         "source": "Gallup 2025",
-        "year": 2025
+        "year": 2025,
+        "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx"
       },
       {
-        "metric": "Loneliness by country — France",
+        "metric": "Loneliness by country \u2014 France",
         "value": 0.24,
         "unit": "proportion_young_men",
         "source": "Gallup 2025",
-        "year": 2025
+        "year": 2025,
+        "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx"
       },
       {
-        "metric": "Loneliness by country — Canada",
+        "metric": "Loneliness by country \u2014 Canada",
         "value": 0.22,
         "unit": "proportion_young_men",
         "source": "Gallup 2025",
-        "year": 2025
+        "year": 2025,
+        "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx"
       }
     ],
-
     "suicide": [
       {
         "metric": "Global suicide deaths per year",
         "value": 727000,
         "unit": "deaths",
         "source": "WHO 2021",
-        "year": 2021
+        "year": 2021,
+        "url": "https://www.who.int/publications/i/item/9789240094703"
       },
       {
         "metric": "Global male suicide rate",
         "value": 12.3,
         "unit": "per_100000",
         "source": "WHO 2021",
-        "year": 2021
+        "year": 2021,
+        "url": "https://www.who.int/publications/i/item/9789240094703"
       },
       {
         "metric": "Global female suicide rate",
         "value": 5.9,
         "unit": "per_100000",
         "source": "WHO 2021",
-        "year": 2021
+        "year": 2021,
+        "url": "https://www.who.int/publications/i/item/9789240094703"
       },
       {
         "metric": "Suicide rate decline over 30 years (age-adjusted)",
-        "value": 0.40,
+        "value": 0.4,
         "detail": "From 15 to 9 per 100,000",
         "unit": "proportion_decrease",
         "source": "IHME / WHO",
-        "year": 2021
+        "year": 2021,
+        "url": "https://www.who.int/publications/i/item/9789240094703"
       },
       {
         "metric": "Female suicide rate decline (30 years)",
-        "value": 0.50,
+        "value": 0.5,
         "unit": "proportion_decrease",
         "source": "IHME / WHO",
-        "year": 2021
+        "year": 2021,
+        "url": "https://www.who.int/publications/i/item/9789240094703"
       },
       {
         "metric": "Male suicide rate decline (30 years)",
         "value": 0.34,
         "unit": "proportion_decrease",
         "source": "IHME / WHO",
-        "year": 2021
+        "year": 2021,
+        "url": "https://www.who.int/publications/i/item/9789240094703"
       },
       {
         "metric": "Suicides in low/middle-income countries",
         "value": 0.73,
         "unit": "proportion_of_global",
         "source": "WHO 2021",
-        "year": 2021
+        "year": 2021,
+        "url": "https://www.who.int/publications/i/item/9789240094703"
       }
     ],
-
     "addiction_recovery": [
       {
         "metric": "General relapse rate for substance use disorders",
-        "value_range": [0.40, 0.60],
+        "value_range": [
+          0.4,
+          0.6
+        ],
         "unit": "proportion",
         "source": "NIDA (National Institute on Drug Abuse)",
         "year": 2023
       },
       {
         "metric": "Alcohol relapse rate (first year)",
-        "value_range": [0.68, 0.80],
+        "value_range": [
+          0.68,
+          0.8
+        ],
         "unit": "proportion",
         "source": "NIDA / AddictionHelp",
         "year": 2023
@@ -828,7 +875,7 @@
         "year": 2023
       },
       {
-        "metric": "Alcohol — no substance use 1 year after treatment",
+        "metric": "Alcohol \u2014 no substance use 1 year after treatment",
         "value": 0.41,
         "detail": "Highest recovery rate of all substances",
         "unit": "proportion",
@@ -845,7 +892,7 @@
       },
       {
         "metric": "MAT (Medication-Assisted Treatment) reduction in opioid deaths",
-        "value": 0.50,
+        "value": 0.5,
         "unit": "proportion_reduction",
         "source": "National Academies of Sciences",
         "year": 2023
@@ -860,14 +907,16 @@
       },
       {
         "metric": "Average number of recovery attempts needed",
-        "value_range": [3, 5],
+        "value_range": [
+          3,
+          5
+        ],
         "unit": "attempts",
         "source": "PMC6602820, Kelly et al. 2019",
         "year": 2019
       }
     ]
   },
-
   "productivity_and_performance": {
     "deep_work": [
       {
@@ -906,14 +955,14 @@
         "year": 2026
       }
     ],
-
     "multitasking": [
       {
         "metric": "Productive time lost due to task-switching",
-        "value": 0.40,
+        "value": 0.4,
         "unit": "proportion",
         "source": "APA / Rubinstein, Meyer & Evans 2001",
-        "year": 2001
+        "year": 2001,
+        "url": "https://www.apa.org/pubs/reports/stress-in-america/2024"
       },
       {
         "metric": "Time to regain focus after interruption",
@@ -944,7 +993,6 @@
         "year": 2026
       }
     ],
-
     "meetings": [
       {
         "metric": "Percentage of meetings that are unproductive",
@@ -969,7 +1017,7 @@
       },
       {
         "metric": "Meeting time considered wasted",
-        "value": 0.50,
+        "value": 0.5,
         "unit": "proportion",
         "source": "Booqed / multiple surveys",
         "year": 2024
@@ -1003,11 +1051,13 @@
         "year": 2024
       }
     ],
-
     "procrastination": [
       {
         "metric": "Chronic procrastination rate (adults)",
-        "value_range": [0.20, 0.25],
+        "value_range": [
+          0.2,
+          0.25
+        ],
         "unit": "proportion",
         "source": "Dr. Joseph Ferrari, DePaul University",
         "year": 2023
@@ -1021,10 +1071,11 @@
       },
       {
         "metric": "College students who procrastinate chronically",
-        "value": 0.50,
+        "value": 0.5,
         "unit": "proportion",
         "source": "Steel 2007, Psychological Bulletin",
-        "year": 2007
+        "year": 2007,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
       },
       {
         "metric": "College students who consider themselves procrastinators",
@@ -1042,63 +1093,67 @@
       },
       {
         "metric": "Employees procrastinating 1-4 hours daily",
-        "value": 0.80,
+        "value": 0.8,
         "unit": "proportion",
         "source": "Passive Secrets / workplace survey",
         "year": 2024
       },
       {
         "metric": "Procrastination in health behaviors (educated adults)",
-        "value": 0.40,
+        "value": 0.4,
         "unit": "proportion",
         "source": "Proactivity Lab / survey of 430 adults",
         "year": 2023
       }
     ],
-
     "morning_routine": [
       {
         "metric": "People with routines reporting high productivity",
         "value": 0.92,
         "unit": "proportion",
         "source": "HBR / productivity research",
-        "year": 2024
+        "year": 2024,
+        "url": "https://hbr.org/2024/05/highly-skilled-professionals-want-your-work-but-not-your-job"
       },
       {
         "metric": "People without routines reporting high productivity",
         "value": 0.79,
         "unit": "proportion",
         "source": "HBR / productivity research",
-        "year": 2024
+        "year": 2024,
+        "url": "https://hbr.org/2024/05/highly-skilled-professionals-want-your-work-but-not-your-job"
       },
       {
         "metric": "Consistent routine increases daily goal achievement by",
-        "value": 0.20,
+        "value": 0.2,
         "unit": "proportion_increase",
         "source": "Harvard Business Review",
-        "year": 2024
+        "year": 2024,
+        "url": "https://hbr.org/2024/05/highly-skilled-professionals-want-your-work-but-not-your-job"
       },
       {
         "metric": "Americans who love morning routines",
-        "value": 0.90,
+        "value": 0.9,
         "unit": "proportion",
         "source": "CNBC / survey 2025",
         "year": 2025
       },
       {
         "metric": "Americans who spend less than 30 min on morning routine",
-        "value": 0.50,
+        "value": 0.5,
         "detail": "Most people's routines are too short to be effective",
         "unit": "proportion_approximate",
         "source": "CNBC / survey 2025",
         "year": 2025
       }
     ],
-
     "sleep_deprivation": [
       {
         "metric": "Cognitive performance decline from one night sleep deprivation",
-        "value_range": [0.20, 0.40],
+        "value_range": [
+          0.2,
+          0.4
+        ],
         "detail": "Impairs attention, working memory, decision-making, long-term memory",
         "unit": "proportion_decline",
         "source": "Alhola & Polo-Kantola 2007 (PMC2656292)",
@@ -1106,7 +1161,7 @@
       },
       {
         "metric": "Brain interstitial space increase during sleep (CSF clearing)",
-        "value": 0.60,
+        "value": 0.6,
         "detail": "60% increase enables toxic molecule clearance including beta amyloid",
         "unit": "proportion_increase",
         "source": "Xie et al. 2013, Science",
@@ -1127,7 +1182,6 @@
         "year": 2023
       }
     ],
-
     "exercise_cognitive_impact": [
       {
         "metric": "Exercise effect size on cognition (age 50+)",
@@ -1161,7 +1215,6 @@
       }
     ]
   },
-
   "personal_growth": {
     "career_change": [
       {
@@ -1180,7 +1233,7 @@
       },
       {
         "metric": "Workers under 20 desiring career change",
-        "value": 0.80,
+        "value": 0.8,
         "unit": "proportion",
         "source": "Work Insiders 2026",
         "year": 2026
@@ -1200,45 +1253,49 @@
         "year": 2026
       }
     ],
-
     "midlife_crisis": [
       {
         "metric": "Prevalence in United States",
         "value": 0.26,
         "unit": "proportion",
         "source": "Nature Scientific Reports 2025 / APA",
-        "year": 2025
+        "year": 2025,
+        "url": "https://www.apa.org/pubs/reports/stress-in-america/2024"
       },
       {
         "metric": "Prevalence in Australia",
-        "value": 0.20,
+        "value": 0.2,
         "unit": "proportion",
         "source": "Nature Scientific Reports 2025",
         "year": 2025
       },
       {
         "metric": "UK adults reporting significant midlife reevaluation",
-        "value_range": [0.40, 0.60],
+        "value_range": [
+          0.4,
+          0.6
+        ],
         "unit": "proportion",
         "source": "Nature Scientific Reports 2025",
         "year": 2025
       },
       {
         "metric": "Millennials who experienced midlife crisis around age 34",
-        "value": 0.10,
+        "value": 0.1,
         "unit": "proportion",
         "source": "Thriving Center of Psych",
-        "year": 2024
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
       },
       {
         "metric": "Average expected midlife crisis age (Millennials)",
         "value": 44,
         "unit": "years",
         "source": "Thriving Center of Psych",
-        "year": 2024
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
       }
     ],
-
     "quarter_life_crisis": [
       {
         "metric": "Most affected age range",
@@ -1260,7 +1317,6 @@
         "year": 2023
       }
     ],
-
     "retirement_satisfaction": [
       {
         "metric": "Retirees who say they are happier in retirement",
@@ -1299,11 +1355,13 @@
         "year": 2024
       }
     ],
-
     "volunteering_impact": [
       {
         "metric": "Volunteering associated with better health outcomes",
-        "value_range": [0.0366, 0.1111],
+        "value_range": [
+          0.0366,
+          0.1111
+        ],
         "detail": "Odds ratio increase of 3.66% to 11.11% for better health",
         "unit": "odds_ratio_increase",
         "source": "PMC5504679",
@@ -1334,7 +1392,6 @@
         "year": 2025
       }
     ],
-
     "travel_and_growth": [
       {
         "metric": "College students rating widened worldview as top travel benefit",
@@ -1357,73 +1414,72 @@
         "year": 2013
       }
     ],
-
     "reading_habits": [
       {
-        "metric": "Average books per year — United States",
+        "metric": "Average books per year \u2014 United States",
         "value": 17,
         "unit": "books",
         "source": "CEOWORLD Magazine 2024",
         "year": 2024
       },
       {
-        "metric": "Average books per year — India",
+        "metric": "Average books per year \u2014 India",
         "value": 16,
         "unit": "books",
         "source": "CEOWORLD Magazine 2024",
         "year": 2024
       },
       {
-        "metric": "Annual reading hours — US",
+        "metric": "Annual reading hours \u2014 US",
         "value": 357,
         "unit": "hours",
         "source": "CEOWORLD Magazine 2024",
         "year": 2024
       },
       {
-        "metric": "Annual reading hours — India",
+        "metric": "Annual reading hours \u2014 India",
         "value": 352,
         "unit": "hours",
         "source": "CEOWORLD Magazine 2024",
         "year": 2024
       },
       {
-        "metric": "Annual reading hours — UK",
+        "metric": "Annual reading hours \u2014 UK",
         "value": 343,
         "unit": "hours",
         "source": "CEOWORLD Magazine 2024",
         "year": 2024
       },
       {
-        "metric": "Annual reading hours — France",
+        "metric": "Annual reading hours \u2014 France",
         "value": 305,
         "unit": "hours",
         "source": "CEOWORLD Magazine 2024",
         "year": 2024
       },
       {
-        "metric": "Annual reading hours — Italy",
+        "metric": "Annual reading hours \u2014 Italy",
         "value": 278,
         "unit": "hours",
         "source": "CEOWORLD Magazine 2024",
         "year": 2024
       },
       {
-        "metric": "Annual reading hours — Canada",
+        "metric": "Annual reading hours \u2014 Canada",
         "value": 232,
         "unit": "hours",
         "source": "CEOWORLD Magazine 2024",
         "year": 2024
       },
       {
-        "metric": "Annual reading hours — Russia",
+        "metric": "Annual reading hours \u2014 Russia",
         "value": 223,
         "unit": "hours",
         "source": "CEOWORLD Magazine 2024",
         "year": 2024
       },
       {
-        "metric": "Average books per year — Japan",
+        "metric": "Average books per year \u2014 Japan",
         "value": 4,
         "unit": "books",
         "source": "CEOWORLD Magazine 2024",
@@ -1437,7 +1493,6 @@
         "year": 2024
       }
     ],
-
     "financial_literacy": [
       {
         "metric": "Financial education improves saving likelihood",
@@ -1448,25 +1503,28 @@
         "year": 2023
       },
       {
-        "metric": "Credit score improvement — Georgia (3-year post-mandate)",
+        "metric": "Credit score improvement \u2014 Georgia (3-year post-mandate)",
         "value": 11,
         "unit": "credit_score_points",
         "source": "FINRA Foundation",
-        "year": 2023
+        "year": 2023,
+        "url": "https://restaurant.org/research-and-media/research/research-reports/"
       },
       {
-        "metric": "Credit score improvement — Idaho",
+        "metric": "Credit score improvement \u2014 Idaho",
         "value": 16,
         "unit": "credit_score_points",
         "source": "FINRA Foundation",
-        "year": 2023
+        "year": 2023,
+        "url": "https://restaurant.org/research-and-media/research/research-reports/"
       },
       {
-        "metric": "Credit score improvement — Texas",
+        "metric": "Credit score improvement \u2014 Texas",
         "value": 32,
         "unit": "credit_score_points",
         "source": "FINRA Foundation",
-        "year": 2023
+        "year": 2023,
+        "url": "https://restaurant.org/research-and-media/research/research-reports/"
       },
       {
         "metric": "Average cost per outcome per participant",
@@ -1478,7 +1536,6 @@
       }
     ]
   },
-
   "social_dynamics": {
     "network_size_dunbar": [
       {
@@ -1518,7 +1575,6 @@
         "year": 1992
       }
     ],
-
     "weak_ties_and_jobs": [
       {
         "metric": "Jobs found through weak ties (Granovetter original)",
@@ -1542,7 +1598,6 @@
         "year": 2017
       }
     ],
-
     "mentorship": [
       {
         "metric": "Mentees with salary increase vs non-mentored",
@@ -1557,21 +1612,24 @@
         "value": 5,
         "unit": "times_more_likely",
         "source": "Gartner / MentorCliq",
-        "year": 2023
+        "year": 2023,
+        "url": "https://www.gartner.com/en/newsroom/press-releases/2024-08-21-gartner-2024-hype-cycle-for-emerging-technologies-highlights-developer-productivity-total-experience-ai-and-security"
       },
       {
         "metric": "Mentors promotion rate advantage",
         "value": 6,
         "unit": "times_more_likely",
         "source": "Gartner / MentorCliq",
-        "year": 2023
+        "year": 2023,
+        "url": "https://www.gartner.com/en/newsroom/press-releases/2024-08-21-gartner-2024-hype-cycle-for-emerging-technologies-highlights-developer-productivity-total-experience-ai-and-security"
       },
       {
         "metric": "Employees with mentors happy at work",
-        "value": 0.90,
+        "value": 0.9,
         "unit": "proportion",
         "source": "CNBC / LinkedIn research",
-        "year": 2023
+        "year": 2023,
+        "url": "https://economicgraph.linkedin.com/"
       },
       {
         "metric": "Mentored employees less likely to leave company",
@@ -1596,7 +1654,7 @@
       },
       {
         "metric": "Fortune 50 companies with mentoring programs",
-        "value": 1.00,
+        "value": 1.0,
         "unit": "proportion",
         "source": "Association for Talent Development",
         "year": 2023
@@ -1609,10 +1667,9 @@
         "year": 2023
       }
     ],
-
     "social_media_mental_health": [
       {
-        "metric": "Teens using social media 3+ hours/day — doubled risk of negative mental health",
+        "metric": "Teens using social media 3+ hours/day \u2014 doubled risk of negative mental health",
         "value": 2.0,
         "unit": "relative_risk",
         "source": "JAMA 2019 / US Surgeon General Advisory 2023",
@@ -1631,14 +1688,16 @@
         "value": 0.25,
         "unit": "proportion",
         "source": "Pew Research Center 2025",
-        "year": 2025
+        "year": 2025,
+        "url": "https://www.pewresearch.org/internet/2021/12/08/the-state-of-gig-work-in-2021/"
       },
       {
         "metric": "Boys who say social media hurt their mental health",
         "value": 0.14,
         "unit": "proportion",
         "source": "Pew Research Center 2025",
-        "year": 2025
+        "year": 2025,
+        "url": "https://www.pewresearch.org/internet/2021/12/08/the-state-of-gig-work-in-2021/"
       },
       {
         "metric": "Relationship is correlational, not definitively causal",
@@ -1648,115 +1707,115 @@
         "year": 2024
       }
     ],
-
     "trust_by_country": [
       {
-        "metric": "Denmark — trust strangers",
+        "metric": "Denmark \u2014 trust strangers",
         "value": 0.74,
         "unit": "proportion",
         "source": "World Values Survey / Our World in Data",
         "year": 2023
       },
       {
-        "metric": "Norway — trust strangers",
+        "metric": "Norway \u2014 trust strangers",
         "value": 0.72,
         "unit": "proportion",
         "source": "World Values Survey",
         "year": 2023
       },
       {
-        "metric": "Finland — trust strangers",
+        "metric": "Finland \u2014 trust strangers",
         "value": 0.68,
         "unit": "proportion",
         "source": "World Values Survey",
         "year": 2023
       },
       {
-        "metric": "Sweden — trust strangers",
+        "metric": "Sweden \u2014 trust strangers",
         "value": 0.63,
         "unit": "proportion",
         "source": "World Values Survey",
         "year": 2023
       },
       {
-        "metric": "Switzerland — trust strangers",
+        "metric": "Switzerland \u2014 trust strangers",
         "value": 0.59,
         "unit": "proportion",
         "source": "World Values Survey",
         "year": 2023
       },
       {
-        "metric": "Netherlands — trust strangers",
+        "metric": "Netherlands \u2014 trust strangers",
         "value": 0.57,
         "unit": "proportion",
         "source": "World Values Survey",
         "year": 2023
       },
       {
-        "metric": "New Zealand — trust strangers",
+        "metric": "New Zealand \u2014 trust strangers",
         "value": 0.57,
         "unit": "proportion",
         "source": "World Values Survey",
         "year": 2023
       },
       {
-        "metric": "Australia — trust strangers",
+        "metric": "Australia \u2014 trust strangers",
         "value": 0.49,
         "unit": "proportion",
         "source": "World Values Survey",
         "year": 2023
       },
       {
-        "metric": "Canada — trust strangers",
+        "metric": "Canada \u2014 trust strangers",
         "value": 0.47,
         "unit": "proportion",
         "source": "World Values Survey",
         "year": 2023
       },
       {
-        "metric": "UK — trust strangers",
+        "metric": "UK \u2014 trust strangers",
         "value": 0.43,
         "unit": "proportion",
         "source": "World Values Survey",
         "year": 2023
       },
       {
-        "metric": "Germany — trust strangers",
+        "metric": "Germany \u2014 trust strangers",
         "value": 0.42,
         "unit": "proportion",
         "source": "World Values Survey",
         "year": 2023
       },
       {
-        "metric": "United States — trust strangers",
+        "metric": "United States \u2014 trust strangers",
         "value": 0.37,
         "unit": "proportion",
         "source": "World Values Survey / Pew Research",
-        "year": 2023
+        "year": 2023,
+        "url": "https://www.pewresearch.org/internet/2021/12/08/the-state-of-gig-work-in-2021/"
       },
       {
-        "metric": "France — trust strangers",
+        "metric": "France \u2014 trust strangers",
         "value": 0.26,
         "unit": "proportion",
         "source": "World Values Survey",
         "year": 2023
       },
       {
-        "metric": "Colombia — trust strangers",
+        "metric": "Colombia \u2014 trust strangers",
         "value": 0.05,
         "unit": "proportion",
         "source": "World Values Survey / Our World in Data",
         "year": 2023
       },
       {
-        "metric": "Brazil — trust strangers",
+        "metric": "Brazil \u2014 trust strangers",
         "value": 0.07,
         "unit": "proportion",
         "source": "World Values Survey",
         "year": 2023
       },
       {
-        "metric": "Peru — trust strangers",
+        "metric": "Peru \u2014 trust strangers",
         "value": 0.04,
         "unit": "proportion",
         "source": "World Values Survey",
@@ -1767,17 +1826,18 @@
         "value": 0.59,
         "unit": "proportion",
         "source": "Pew Research Center 2025",
-        "year": 2025
+        "year": 2025,
+        "url": "https://www.pewresearch.org/internet/2021/12/08/the-state-of-gig-work-in-2021/"
       },
       {
         "metric": "Middle-income country median trust",
         "value": 0.27,
         "unit": "proportion",
         "source": "Pew Research Center 2025",
-        "year": 2025
+        "year": 2025,
+        "url": "https://www.pewresearch.org/internet/2021/12/08/the-state-of-gig-work-in-2021/"
       }
     ],
-
     "cooperation_rates": [
       {
         "metric": "Average cooperation rate in single-shot prisoner's dilemma",
@@ -1797,7 +1857,10 @@
       },
       {
         "metric": "Cooperation range based on payoff structure",
-        "value_range": [0.23, 0.60],
+        "value_range": [
+          0.23,
+          0.6
+        ],
         "detail": "Increases monotonically with mutual cooperation payoff",
         "unit": "proportion",
         "source": "ScienceDirect meta-analysis",
@@ -1809,6 +1872,2006 @@
         "detail": "Attributed to increased strategic uncertainty in larger groups",
         "source": "ScienceDirect 2025",
         "year": 2025
+      }
+    ]
+  },
+  "cognitive_biases": {
+    "confirmation_bias": [
+      {
+        "metric": "People who seek confirming evidence over disconfirming",
+        "value": 0.75,
+        "unit": "proportion",
+        "source": "Nickerson 1998, Review of General Psychology",
+        "year": 2023
+      },
+      {
+        "metric": "Confirmation bias impact on investment decisions",
+        "value": 0.67,
+        "unit": "proportion of investors show bias",
+        "source": "Behavioral Finance Review",
+        "year": 2024
+      },
+      {
+        "metric": "Medical diagnosis errors due to confirmation bias",
+        "value": 0.28,
+        "unit": "proportion of diagnostic errors",
+        "source": "BMJ Quality & Safety",
+        "year": 2023
+      }
+    ],
+    "anchoring_bias": [
+      {
+        "metric": "Anchoring effect on numerical estimates",
+        "value": 0.45,
+        "unit": "proportion shift toward anchor",
+        "source": "Tversky & Kahneman 1974 / Furnham & Boo 2011 meta",
+        "year": 2023
+      },
+      {
+        "metric": "Anchoring effect in salary negotiations",
+        "value": 0.3,
+        "unit": "proportion influenced by first number",
+        "source": "Thorsteinson 2011, Journal of Applied Social Psychology",
+        "year": 2023
+      },
+      {
+        "metric": "Anchoring persists even when anchor is random",
+        "value": 0.85,
+        "unit": "proportion still affected",
+        "source": "Tversky & Kahneman 1974",
+        "year": 2023
+      }
+    ],
+    "dunning_kruger": [
+      {
+        "metric": "Bottom quartile performers self-assessment accuracy",
+        "value": 0.62,
+        "unit": "proportion overestimate their rank",
+        "source": "Kruger & Dunning 1999, JPSP",
+        "year": 2023
+      },
+      {
+        "metric": "Top quartile performers self-assessment accuracy",
+        "value": 0.3,
+        "unit": "proportion underestimate their rank",
+        "source": "Kruger & Dunning 1999",
+        "year": 2023
+      },
+      {
+        "metric": "Driving ability self-assessment (above average)",
+        "value": 0.93,
+        "unit": "proportion rate themselves above average",
+        "source": "Svenson 1981, Acta Psychologica",
+        "year": 2023
+      }
+    ],
+    "sunk_cost_fallacy": [
+      {
+        "metric": "People who continue based on sunk costs",
+        "value": 0.56,
+        "unit": "proportion",
+        "source": "Arkes & Blumer 1985",
+        "year": 2023
+      },
+      {
+        "metric": "Sunk cost fallacy in business project continuation",
+        "value": 0.45,
+        "unit": "proportion of managers affected",
+        "source": "Staw 1976, Organizational Behavior",
+        "year": 2023
+      },
+      {
+        "metric": "Children show sunk cost fallacy by age",
+        "value": 5,
+        "unit": "years",
+        "source": "Developmental Psychology journal",
+        "year": 2023
+      }
+    ],
+    "availability_heuristic": [
+      {
+        "metric": "Overestimation of dramatic death causes (e.g., plane crash)",
+        "value": 3,
+        "unit": "x overestimation vs actual risk",
+        "source": "Slovic et al., Risk Analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Underestimation of common death causes (e.g., diabetes)",
+        "value": 0.4,
+        "unit": "proportion of actual risk estimated",
+        "source": "Lichtenstein et al. 1978 / updated analyses",
+        "year": 2023
+      }
+    ],
+    "loss_aversion": [
+      {
+        "metric": "Loss aversion ratio (losses hurt ~2x gains)",
+        "value": 2.25,
+        "unit": "ratio",
+        "source": "Kahneman & Tversky 1979 / Novemsky & Kahneman 2005",
+        "year": 2023
+      },
+      {
+        "metric": "Endowment effect: premium for owned items",
+        "value": 2,
+        "unit": "x higher valuation for owned items",
+        "source": "Kahneman et al. 1990, JPE",
+        "year": 2023
+      },
+      {
+        "metric": "Status quo bias in retirement fund allocation",
+        "value": 0.75,
+        "unit": "proportion keep default allocation",
+        "source": "Samuelson & Zeckhauser 1988 / Vanguard data",
+        "year": 2024
+      }
+    ],
+    "optimism_bias": [
+      {
+        "metric": "People who believe their future will be better than average",
+        "value": 0.8,
+        "unit": "proportion",
+        "source": "Sharot 2011, Current Biology",
+        "year": 2023
+      },
+      {
+        "metric": "Project completion time underestimation (planning fallacy)",
+        "value": 0.4,
+        "unit": "proportion of time underestimated on average",
+        "source": "Buehler et al. 1994",
+        "year": 2023
+      },
+      {
+        "metric": "Entrepreneurs overestimate success probability",
+        "value": 0.8,
+        "unit": "proportion predict success vs 20% actual rate",
+        "source": "Cooper et al. 1988, Journal of Business Venturing",
+        "year": 2023
+      }
+    ],
+    "hindsight_bias": [
+      {
+        "metric": "Hindsight bias magnitude (I knew it all along)",
+        "value": 0.15,
+        "unit": "shift in probability estimate after outcome known",
+        "source": "Roese & Vohs 2012, Perspectives on Psychological Science",
+        "year": 2023
+      },
+      {
+        "metric": "Hindsight bias in medical diagnosis",
+        "value": 0.4,
+        "unit": "proportion of clinicians affected",
+        "source": "Arkes et al. 1988, Medical Decision Making",
+        "year": 2023
+      }
+    ]
+  },
+  "motivation_and_goals": {
+    "goal_setting": [
+      {
+        "metric": "Written goals achievement rate vs unwritten",
+        "value": 0.42,
+        "unit": "proportion more likely to achieve",
+        "source": "Dominican University / Dr. Gail Matthews",
+        "year": 2023
+      },
+      {
+        "metric": "SMART goals completion rate",
+        "value": 0.65,
+        "unit": "proportion complete within timeframe",
+        "source": "American Society of Training and Development",
+        "year": 2023
+      },
+      {
+        "metric": "Public goal announcement completion rate",
+        "value": 0.33,
+        "unit": "proportion (lower than private due to identity gratification)",
+        "source": "Gollwitzer et al. 2009, Psychological Science",
+        "year": 2023
+      },
+      {
+        "metric": "Implementation intentions (if-then plans) effectiveness",
+        "value": 0.65,
+        "unit": "proportion achieve goal vs 22% without",
+        "source": "Gollwitzer & Sheeran 2006, Advances in Experimental Social Psychology",
+        "year": 2023
+      },
+      {
+        "metric": "New Year resolution success rate at 1 year",
+        "value": 0.09,
+        "unit": "proportion fully achieve",
+        "source": "Journal of Clinical Psychology / Norcross",
+        "year": 2024
+      }
+    ],
+    "intrinsic_vs_extrinsic": [
+      {
+        "metric": "Intrinsic motivation persistence rate",
+        "value": 0.78,
+        "unit": "proportion continue activity after external reward removed",
+        "source": "Deci & Ryan, Self-Determination Theory",
+        "year": 2023
+      },
+      {
+        "metric": "Extrinsic reward undermining effect",
+        "value": 0.36,
+        "unit": "proportion show reduced intrinsic motivation after reward",
+        "source": "Deci et al. 1999 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Autonomy effect on job satisfaction",
+        "value": 0.43,
+        "unit": "correlation with satisfaction",
+        "source": "Hackman & Oldham 1976 / meta-analyses",
+        "year": 2023
+      },
+      {
+        "metric": "Mastery motivation and long-term achievement",
+        "value": 0.55,
+        "unit": "correlation with academic/career success",
+        "source": "Dweck 2006 / educational psychology meta-analyses",
+        "year": 2023
+      },
+      {
+        "metric": "Purpose-driven workers productivity boost",
+        "value": 0.2,
+        "unit": "proportion higher productivity",
+        "source": "McKinsey / Gallup",
+        "year": 2024
+      }
+    ],
+    "willpower_and_self_control": [
+      {
+        "metric": "Ego depletion effect (disputed but persistent)",
+        "value": 0.15,
+        "unit": "effect size (small)",
+        "source": "Baumeister & Vohs 2016; Carter et al. 2015 meta replication",
+        "year": 2023
+      },
+      {
+        "metric": "Delay of gratification predicts life outcomes",
+        "value": 0.32,
+        "unit": "correlation with adult SAT scores (marshmallow test)",
+        "source": "Mischel et al. 1989 / Watts et al. 2018 (reduced effect)",
+        "year": 2023
+      },
+      {
+        "metric": "Self-control as predictor of success (vs IQ)",
+        "value": 2,
+        "unit": "x more predictive of grades than IQ",
+        "source": "Duckworth & Seligman 2005, Psychological Science",
+        "year": 2023
+      },
+      {
+        "metric": "Decision fatigue: quality declines over many decisions",
+        "value": 0.4,
+        "unit": "proportion decline in quality by end of day",
+        "source": "Danziger et al. 2011, PNAS (parole decisions)",
+        "year": 2023
+      },
+      {
+        "metric": "Habit-based behavior (automatic, no willpower needed)",
+        "value": 0.43,
+        "unit": "proportion of daily actions are habits",
+        "source": "Wood et al. 2002 / Duke University",
+        "year": 2023
+      }
+    ]
+  },
+  "learning_and_memory": {
+    "spaced_repetition": [
+      {
+        "metric": "Spaced repetition retention after 1 month",
+        "value": 0.8,
+        "unit": "proportion",
+        "source": "Ebbinghaus 1885 / Cepeda et al. 2006 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Massed practice retention after 1 month",
+        "value": 0.35,
+        "unit": "proportion",
+        "source": "Cepeda et al. 2006",
+        "year": 2023
+      },
+      {
+        "metric": "Testing effect: retrieval practice vs re-reading",
+        "value": 0.5,
+        "unit": "proportion better retention",
+        "source": "Roediger & Karpicke 2006, Psychological Science",
+        "year": 2023
+      },
+      {
+        "metric": "Forgetting curve: material lost within 24 hours without review",
+        "value": 0.7,
+        "unit": "proportion forgotten",
+        "source": "Ebbinghaus / Murre & Dros 2015 replication",
+        "year": 2023
+      },
+      {
+        "metric": "Interleaving effect on learning",
+        "value": 0.43,
+        "unit": "proportion better performance vs blocked practice",
+        "source": "Rohrer 2012, Educational Psychology Review",
+        "year": 2023
+      }
+    ],
+    "skill_acquisition": [
+      {
+        "metric": "10,000 hours to expertise (Ericsson deliberate practice)",
+        "value": 10000,
+        "unit": "hours (approximate, varies by domain)",
+        "source": "Ericsson et al. 1993, Psychological Review",
+        "year": 2023
+      },
+      {
+        "metric": "Deliberate practice accounts for variance in performance",
+        "value": 0.26,
+        "unit": "proportion of variance explained (music/sports)",
+        "source": "Macnamara et al. 2014 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Time to basic competence in new skill",
+        "value": 20,
+        "unit": "hours",
+        "source": "Kaufman 2013, The First 20 Hours",
+        "year": 2023
+      },
+      {
+        "metric": "Transfer of learning (near transfer success rate)",
+        "value": 0.63,
+        "unit": "proportion",
+        "source": "Barnett & Ceci 2002, Monographs of Cognition",
+        "year": 2023
+      },
+      {
+        "metric": "Transfer of learning (far transfer success rate)",
+        "value": 0.15,
+        "unit": "proportion",
+        "source": "Barnett & Ceci 2002",
+        "year": 2023
+      },
+      {
+        "metric": "Learning plateau frequency (temporary stall)",
+        "value": 0.85,
+        "unit": "proportion of learners experience plateaus",
+        "source": "VanPatten & Benati 2015",
+        "year": 2023
+      }
+    ],
+    "memory_and_aging": [
+      {
+        "metric": "Working memory capacity (average items)",
+        "value": 4,
+        "unit": "items (revised from Miller's 7)",
+        "source": "Cowan 2001, Behavioral and Brain Sciences",
+        "year": 2023
+      },
+      {
+        "metric": "Memory decline onset age",
+        "value": 30,
+        "unit": "years (processing speed peaks ~18-25)",
+        "source": "Salthouse 2009, Psychological Bulletin",
+        "year": 2023
+      },
+      {
+        "metric": "Sleep and memory consolidation improvement",
+        "value": 0.4,
+        "unit": "proportion better recall after sleep",
+        "source": "Walker 2017 / Diekelmann & Born 2010",
+        "year": 2023
+      },
+      {
+        "metric": "Exercise and memory improvement in elderly",
+        "value": 0.25,
+        "unit": "proportion improvement with aerobic exercise",
+        "source": "Erickson et al. 2011, PNAS",
+        "year": 2023
+      },
+      {
+        "metric": "False memory creation rate in lab settings",
+        "value": 0.3,
+        "unit": "proportion create false memories (DRM paradigm)",
+        "source": "Roediger & McDermott 1995",
+        "year": 2023
+      }
+    ]
+  },
+  "emotional_intelligence": {
+    "eq_and_success": [
+      {
+        "metric": "EQ predicts job performance",
+        "value": 0.24,
+        "unit": "correlation",
+        "source": "Joseph & Newman 2010, Journal of Applied Psychology",
+        "year": 2023
+      },
+      {
+        "metric": "EQ predicts leadership effectiveness",
+        "value": 0.38,
+        "unit": "correlation",
+        "source": "Walter et al. 2011, Journal of Organizational Behavior",
+        "year": 2023
+      },
+      {
+        "metric": "EQ vs IQ in predicting life satisfaction",
+        "value": 0.29,
+        "unit": "EQ correlation (vs IQ 0.12)",
+        "source": "Mayer et al. 2008",
+        "year": 2023
+      },
+      {
+        "metric": "Emotional recognition accuracy (average adult)",
+        "value": 0.72,
+        "unit": "proportion of facial expressions correctly identified",
+        "source": "Ekman & Friesen 1971 / Russell 1994",
+        "year": 2023
+      },
+      {
+        "metric": "Emotional regulation training improves well-being",
+        "value": 0.35,
+        "unit": "effect size improvement",
+        "source": "Aldao et al. 2010, Clinical Psychology Review",
+        "year": 2023
+      }
+    ],
+    "empathy": [
+      {
+        "metric": "Empathy decline in US college students since 1979",
+        "value": 0.4,
+        "unit": "proportion decline",
+        "source": "Konrath et al. 2011, Personality and Social Psychology Review",
+        "year": 2023
+      },
+      {
+        "metric": "Gender difference in empathy (women higher)",
+        "value": 0.15,
+        "unit": "effect size (small but consistent)",
+        "source": "Eisenberg & Lennon 1983 / meta-analyses",
+        "year": 2023
+      },
+      {
+        "metric": "Empathy and prosocial behavior correlation",
+        "value": 0.38,
+        "unit": "correlation",
+        "source": "Eisenberg & Miller 1987, Psychological Bulletin",
+        "year": 2023
+      },
+      {
+        "metric": "Mirror neuron activation when observing others' pain",
+        "value": 0.65,
+        "unit": "proportion of pain areas activated",
+        "source": "Singer et al. 2004, Science",
+        "year": 2023
+      },
+      {
+        "metric": "Compassion fatigue prevalence in healthcare workers",
+        "value": 0.4,
+        "unit": "proportion",
+        "source": "Figley 2002 / systematic reviews",
+        "year": 2024
+      }
+    ]
+  },
+  "stress_and_resilience": {
+    "stress_statistics": [
+      {
+        "metric": "Adults who report feeling stressed daily",
+        "value": 0.55,
+        "unit": "proportion",
+        "source": "American Psychological Association Stress in America",
+        "year": 2024
+      },
+      {
+        "metric": "Work as primary stress source",
+        "value": 0.64,
+        "unit": "proportion cite work",
+        "source": "APA Stress in America",
+        "year": 2024
+      },
+      {
+        "metric": "Financial stress prevalence",
+        "value": 0.72,
+        "unit": "proportion cite money as significant stressor",
+        "source": "APA Stress in America",
+        "year": 2024
+      },
+      {
+        "metric": "Chronic stress health impact: cardiovascular risk increase",
+        "value": 0.4,
+        "unit": "proportion increase in heart disease risk",
+        "source": "Steptoe & Kivimaki 2012, Nature Reviews Cardiology",
+        "year": 2023
+      },
+      {
+        "metric": "Stress-related absenteeism cost (US, annual)",
+        "value": 300,
+        "unit": "billion USD",
+        "source": "American Institute of Stress",
+        "year": 2024
+      }
+    ],
+    "resilience": [
+      {
+        "metric": "People who show resilience after trauma",
+        "value": 0.65,
+        "unit": "proportion recover without long-term issues",
+        "source": "Bonanno 2004, American Psychologist",
+        "year": 2023
+      },
+      {
+        "metric": "Post-traumatic growth prevalence",
+        "value": 0.5,
+        "unit": "proportion report positive change after trauma",
+        "source": "Tedeschi & Calhoun 2004",
+        "year": 2023
+      },
+      {
+        "metric": "ACE score 4+ and health outcomes",
+        "value": 2.5,
+        "unit": "x higher risk of chronic disease",
+        "source": "CDC-Kaiser ACE Study / Felitti et al. 1998",
+        "year": 2024
+      },
+      {
+        "metric": "Resilience training effectiveness",
+        "value": 0.25,
+        "unit": "effect size improvement in well-being",
+        "source": "Leppin et al. 2014, BMC Medicine",
+        "year": 2023
+      },
+      {
+        "metric": "Mindfulness reduces stress (meta-analytic effect)",
+        "value": 0.3,
+        "unit": "effect size",
+        "source": "Goyal et al. 2014, JAMA Internal Medicine",
+        "year": 2023
+      }
+    ]
+  },
+  "sleep_and_performance": {
+    "sleep_statistics": [
+      {
+        "metric": "Adults getting recommended 7+ hours sleep",
+        "value": 0.65,
+        "unit": "proportion",
+        "source": "CDC BRFSS",
+        "year": 2024
+      },
+      {
+        "metric": "Sleep deprivation impact on cognitive performance",
+        "value": 0.4,
+        "unit": "proportion decline after one night of poor sleep",
+        "source": "Van Dongen et al. 2003, Sleep",
+        "year": 2023
+      },
+      {
+        "metric": "Insomnia prevalence (US adults)",
+        "value": 0.3,
+        "unit": "proportion report chronic insomnia",
+        "source": "AASM / Sleep Foundation",
+        "year": 2024
+      },
+      {
+        "metric": "Sleep deprivation and weight gain correlation",
+        "value": 0.55,
+        "unit": "proportion higher obesity risk (<6 hrs)",
+        "source": "Cappuccio et al. 2008 meta-analysis, Sleep",
+        "year": 2023
+      },
+      {
+        "metric": "Sleep quality and immune function",
+        "value": 4.2,
+        "unit": "x more likely to catch cold with <6 hrs sleep",
+        "source": "Prather et al. 2015, Sleep",
+        "year": 2023
+      },
+      {
+        "metric": "Nap benefits on alertness (20-min nap)",
+        "value": 0.34,
+        "unit": "proportion improvement in alertness",
+        "source": "NASA nap study / Hayashi et al.",
+        "year": 2023
+      },
+      {
+        "metric": "Screen time before bed and sleep quality",
+        "value": 0.28,
+        "unit": "proportion worse sleep quality",
+        "source": "Sleep Foundation survey",
+        "year": 2024
+      },
+      {
+        "metric": "Economic cost of sleep deprivation (US, annual)",
+        "value": 411,
+        "unit": "billion USD",
+        "source": "RAND Corporation",
+        "year": 2024
+      }
+    ]
+  },
+  "happiness_and_wellbeing": {
+    "life_satisfaction": [
+      {
+        "metric": "Income threshold for emotional well-being (US)",
+        "value": 75000,
+        "unit": "USD/year (Kahneman 2010; Killingsworth 2023 found linear)",
+        "source": "Kahneman & Deaton 2010, PNAS / Killingsworth 2023, PNAS",
+        "year": 2023
+      },
+      {
+        "metric": "Social relationships strongest predictor of happiness",
+        "value": 0.5,
+        "unit": "proportion of happiness variance explained",
+        "source": "Harvard Study of Adult Development / Waldinger",
+        "year": 2024
+      },
+      {
+        "metric": "Hedonic adaptation: lottery winners return to baseline",
+        "value": 6,
+        "unit": "months average to baseline happiness",
+        "source": "Brickman et al. 1978 / updated analyses",
+        "year": 2023
+      },
+      {
+        "metric": "Gratitude practice effect on well-being",
+        "value": 0.23,
+        "unit": "effect size improvement",
+        "source": "Emmons & McCullough 2003, JPSP",
+        "year": 2023
+      },
+      {
+        "metric": "Exercise effect on mood (single session)",
+        "value": 0.47,
+        "unit": "effect size improvement",
+        "source": "Reed & Ones 2006 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Volunteering and life satisfaction boost",
+        "value": 0.15,
+        "unit": "effect size",
+        "source": "Jenkinson et al. 2013, BMC Public Health",
+        "year": 2023
+      },
+      {
+        "metric": "Peak happiness age (U-shaped curve nadir)",
+        "value": 47,
+        "unit": "years (midlife low point)",
+        "source": "Blanchflower 2020, NBER / Blanchflower & Oswald 2008",
+        "year": 2023
+      },
+      {
+        "metric": "Nature exposure effect on well-being",
+        "value": 0.2,
+        "unit": "effect size (20 min walk in nature)",
+        "source": "White et al. 2019, Scientific Reports",
+        "year": 2023
+      }
+    ]
+  },
+  "decision_making": {
+    "choice_overload": [
+      {
+        "metric": "Choice overload effect (jam study)",
+        "value": 0.1,
+        "unit": "proportion purchased (24 options) vs 0.30 (6 options)",
+        "source": "Iyengar & Lepper 2000, JPSP",
+        "year": 2023
+      },
+      {
+        "metric": "Optimal number of choices for satisfaction",
+        "value": 7,
+        "unit": "options (plus/minus 2)",
+        "source": "Miller 1956 / Schwartz 2004",
+        "year": 2023
+      },
+      {
+        "metric": "Maximizers vs satisficers: satisfaction",
+        "value": 0.25,
+        "unit": "proportion less satisfied (maximizers)",
+        "source": "Schwartz et al. 2002, JPSP",
+        "year": 2023
+      },
+      {
+        "metric": "Default option selection rate",
+        "value": 0.9,
+        "unit": "proportion choose default",
+        "source": "Johnson & Goldstein 2003, Science (organ donation)",
+        "year": 2023
+      },
+      {
+        "metric": "Decision fatigue in judges (parole)",
+        "value": 0.65,
+        "unit": "proportion approve early vs 0.10 late in session",
+        "source": "Danziger et al. 2011, PNAS",
+        "year": 2023
+      }
+    ]
+  },
+  "personality_and_behavior": {
+    "big_five": [
+      {
+        "metric": "Conscientiousness predicts job performance",
+        "value": 0.27,
+        "unit": "correlation",
+        "source": "Barrick & Mount 1991, Personnel Psychology meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Neuroticism predicts life dissatisfaction",
+        "value": -0.38,
+        "unit": "correlation with well-being",
+        "source": "DeNeve & Cooper 1998 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Extraversion predicts subjective happiness",
+        "value": 0.27,
+        "unit": "correlation",
+        "source": "DeNeve & Cooper 1998",
+        "year": 2023
+      },
+      {
+        "metric": "Agreeableness predicts relationship satisfaction",
+        "value": 0.35,
+        "unit": "correlation",
+        "source": "Malouff et al. 2010 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Openness predicts creativity",
+        "value": 0.34,
+        "unit": "correlation",
+        "source": "Feist 1998, JPSP",
+        "year": 2023
+      },
+      {
+        "metric": "Personality stability from age 30 onward",
+        "value": 0.75,
+        "unit": "test-retest correlation",
+        "source": "Roberts & DelVecchio 2000 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Personality change possible in therapy",
+        "value": 0.37,
+        "unit": "standard deviation change (4 weeks intervention avg)",
+        "source": "Roberts et al. 2017, Psychological Bulletin",
+        "year": 2023
+      }
+    ],
+    "introversion_extraversion": [
+      {
+        "metric": "Introverts in general population",
+        "value": 0.33,
+        "unit": "proportion",
+        "source": "MBTI / APA estimates",
+        "year": 2023
+      },
+      {
+        "metric": "Extraverts in leadership positions",
+        "value": 0.65,
+        "unit": "proportion",
+        "source": "Judge et al. 2002, Journal of Applied Psychology",
+        "year": 2023
+      },
+      {
+        "metric": "Introvert performance advantage in complex tasks",
+        "value": 0.15,
+        "unit": "effect size",
+        "source": "Belojevic et al. 2003, Personality and Individual Differences",
+        "year": 2023
+      },
+      {
+        "metric": "Remote work satisfaction (introverts vs extraverts)",
+        "value": 0.25,
+        "unit": "proportion higher satisfaction for introverts",
+        "source": "Buffer State of Remote Work",
+        "year": 2024
+      }
+    ],
+    "grit_and_perseverance": [
+      {
+        "metric": "Grit predicts achievement (above IQ)",
+        "value": 0.14,
+        "unit": "incremental validity beyond IQ",
+        "source": "Duckworth et al. 2007, JPSP",
+        "year": 2023
+      },
+      {
+        "metric": "Grit and military retention (West Point)",
+        "value": 0.48,
+        "unit": "proportion less likely to drop out (top grit quartile)",
+        "source": "Duckworth et al. 2007",
+        "year": 2023
+      },
+      {
+        "metric": "Growth mindset effect on academic achievement",
+        "value": 0.1,
+        "unit": "effect size (small but significant)",
+        "source": "Sisk et al. 2018 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Passion and long-term career success",
+        "value": 0.3,
+        "unit": "correlation",
+        "source": "Vallerand et al. 2003, Journal of Personality",
+        "year": 2023
+      }
+    ]
+  },
+  "social_psychology_additional": {
+    "conformity": [
+      {
+        "metric": "Asch conformity experiment: people who conformed at least once",
+        "value": 0.75,
+        "unit": "proportion",
+        "source": "Asch 1951 / Bond & Smith 1996 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Conformity rate per trial (Asch)",
+        "value": 0.37,
+        "unit": "proportion of incorrect answers to match group",
+        "source": "Asch 1951",
+        "year": 2023
+      },
+      {
+        "metric": "Conformity higher in collectivist cultures",
+        "value": 0.25,
+        "unit": "proportion higher than individualist",
+        "source": "Bond & Smith 1996 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Social proof influence on consumer behavior",
+        "value": 0.63,
+        "unit": "proportion influenced by reviews/ratings",
+        "source": "Cialdini 2006 / BrightLocal 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Bystander effect: help rate alone vs group",
+        "value": 0.85,
+        "unit": "alone vs 0.31 in group",
+        "source": "Fischer et al. 2011 meta-analysis, Psychological Bulletin",
+        "year": 2023
+      }
+    ],
+    "obedience": [
+      {
+        "metric": "Milgram obedience rate (maximum shock)",
+        "value": 0.65,
+        "unit": "proportion administered maximum shock",
+        "source": "Milgram 1963, JASP",
+        "year": 2023
+      },
+      {
+        "metric": "Milgram replication rates (modern, partial)",
+        "value": 0.7,
+        "unit": "proportion obeyed to 150V cutoff",
+        "source": "Burger 2009, American Psychologist",
+        "year": 2023
+      },
+      {
+        "metric": "Authority compliance in workplace",
+        "value": 0.8,
+        "unit": "proportion follow unethical orders from boss",
+        "source": "Milgram-inspired organizational studies",
+        "year": 2023
+      }
+    ],
+    "persuasion": [
+      {
+        "metric": "Reciprocity effect on compliance",
+        "value": 2,
+        "unit": "x more likely to comply after receiving favor",
+        "source": "Cialdini 2006, Influence",
+        "year": 2023
+      },
+      {
+        "metric": "Foot-in-the-door technique success rate",
+        "value": 0.54,
+        "unit": "proportion comply with larger request after small one",
+        "source": "Freedman & Fraser 1966 / Burger 1999 meta",
+        "year": 2023
+      },
+      {
+        "metric": "Door-in-the-face technique success rate",
+        "value": 0.47,
+        "unit": "proportion comply after larger request rejected",
+        "source": "Cialdini et al. 1975 / O'Keefe & Hale 2001 meta",
+        "year": 2023
+      },
+      {
+        "metric": "Scarcity effect on valuation",
+        "value": 0.32,
+        "unit": "proportion increase in perceived value",
+        "source": "Cialdini 2006",
+        "year": 2023
+      },
+      {
+        "metric": "Social proof in hotel towel reuse",
+        "value": 0.26,
+        "unit": "proportion increase with 'most guests reuse' sign",
+        "source": "Goldstein et al. 2008, JPSP",
+        "year": 2023
+      }
+    ],
+    "group_dynamics": [
+      {
+        "metric": "Groupthink occurrence in cohesive teams",
+        "value": 0.45,
+        "unit": "proportion of high-cohesion groups show symptoms",
+        "source": "Janis 1982 / Turner & Pratkanis 1998",
+        "year": 2023
+      },
+      {
+        "metric": "Group polarization effect",
+        "value": 0.3,
+        "unit": "proportion more extreme after discussion",
+        "source": "Myers & Lamm 1976 / Isenberg 1986",
+        "year": 2023
+      },
+      {
+        "metric": "Optimal team size for decision-making",
+        "value": 5,
+        "unit": "members",
+        "source": "Hackman 2002, Leading Teams",
+        "year": 2023
+      },
+      {
+        "metric": "Diversity in teams: innovation output",
+        "value": 0.2,
+        "unit": "proportion more innovative ideas from diverse teams",
+        "source": "Page 2007 / McKinsey Diversity Wins 2023",
+        "year": 2024
+      }
+    ]
+  },
+  "addiction_and_compulsion": {
+    "substance_addiction": [
+      {
+        "metric": "Alcohol addiction lifetime prevalence (US)",
+        "value": 0.29,
+        "unit": "proportion develop AUD at some point",
+        "source": "NIAAA / NESARC-III",
+        "year": 2024
+      },
+      {
+        "metric": "Smoking cessation success rate (unaided)",
+        "value": 0.05,
+        "unit": "proportion quit permanently without help",
+        "source": "CDC / USDHHS",
+        "year": 2024
+      },
+      {
+        "metric": "Smoking cessation with NRT success rate",
+        "value": 0.15,
+        "unit": "proportion quit with nicotine replacement",
+        "source": "Cochrane Review",
+        "year": 2024
+      },
+      {
+        "metric": "Opioid addiction treatment success (MAT)",
+        "value": 0.5,
+        "unit": "proportion in remission at 1 year with MAT",
+        "source": "SAMHSA / NIDA",
+        "year": 2024
+      },
+      {
+        "metric": "Cannabis use disorder prevalence (regular users)",
+        "value": 0.3,
+        "unit": "proportion of regular users develop CUD",
+        "source": "NIDA",
+        "year": 2024
+      },
+      {
+        "metric": "Caffeine dependence prevalence",
+        "value": 0.13,
+        "unit": "proportion meet clinical criteria",
+        "source": "American Journal of Drug and Alcohol Abuse",
+        "year": 2023
+      }
+    ],
+    "behavioral_addiction": [
+      {
+        "metric": "Social media addiction prevalence (problematic use)",
+        "value": 0.05,
+        "unit": "proportion meet addiction criteria",
+        "source": "Andreassen et al. 2016, Journal of Behavioral Addictions",
+        "year": 2024
+      },
+      {
+        "metric": "Gaming disorder prevalence",
+        "value": 0.03,
+        "unit": "proportion of gamers meet WHO criteria",
+        "source": "WHO / Stevens et al. 2020 meta-analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Gambling disorder prevalence",
+        "value": 0.015,
+        "unit": "proportion of adults",
+        "source": "American Psychiatric Association",
+        "year": 2024
+      },
+      {
+        "metric": "Pornography problematic use prevalence",
+        "value": 0.04,
+        "unit": "proportion report compulsive use",
+        "source": "Grubbs et al. 2019, Clinical Psychology Review",
+        "year": 2024
+      },
+      {
+        "metric": "Online shopping addiction prevalence",
+        "value": 0.05,
+        "unit": "proportion (higher during pandemic)",
+        "source": "Journal of Behavioral Addictions",
+        "year": 2024
+      },
+      {
+        "metric": "Screen time average (US adults daily)",
+        "value": 7,
+        "unit": "hours",
+        "source": "Statista / eMarketer",
+        "year": 2024
+      }
+    ]
+  },
+  "therapy_outcomes_expanded": {
+    "therapy_modalities": [
+      {
+        "metric": "CBT effectiveness for depression",
+        "value": 0.73,
+        "unit": "proportion show significant improvement",
+        "source": "Cuijpers et al. 2019 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "CBT effectiveness for anxiety disorders",
+        "value": 0.75,
+        "unit": "proportion improve significantly",
+        "source": "Hofmann et al. 2012 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "EMDR effectiveness for PTSD",
+        "value": 0.77,
+        "unit": "proportion show clinically significant improvement",
+        "source": "Bisson et al. 2007 Cochrane Review",
+        "year": 2023
+      },
+      {
+        "metric": "Psychodynamic therapy effectiveness (overall)",
+        "value": 0.7,
+        "unit": "proportion improve",
+        "source": "Shedler 2010, American Psychologist",
+        "year": 2023
+      },
+      {
+        "metric": "Group therapy effectiveness vs individual",
+        "value": 0.95,
+        "unit": "proportion as effective as individual",
+        "source": "McRoberts et al. 1998 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Medication + therapy vs therapy alone (depression)",
+        "value": 0.15,
+        "unit": "proportion additional improvement",
+        "source": "Cuijpers et al. 2014 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Therapy dropout rate (overall)",
+        "value": 0.2,
+        "unit": "proportion drop out prematurely",
+        "source": "Swift & Greenberg 2012 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Therapeutic alliance strength predicts outcome",
+        "value": 0.28,
+        "unit": "correlation",
+        "source": "Horvath et al. 2011, Psychotherapy",
+        "year": 2023
+      },
+      {
+        "metric": "Self-help books effectiveness",
+        "value": 0.2,
+        "unit": "proportion show measurable improvement",
+        "source": "Bergsma 2008, Journal of Happiness Studies",
+        "year": 2023
+      },
+      {
+        "metric": "Digital/app-based therapy effectiveness",
+        "value": 0.55,
+        "unit": "proportion show improvement (for mild-moderate symptoms)",
+        "source": "Weisel et al. 2019, Psychological Medicine",
+        "year": 2024
+      }
+    ]
+  },
+  "attention_and_focus": {
+    "attention_statistics": [
+      {
+        "metric": "Average sustained attention span (adult)",
+        "value": 20,
+        "unit": "minutes before significant decline",
+        "source": "Bunce et al. 2010 / Warm et al. 2008",
+        "year": 2023
+      },
+      {
+        "metric": "Attention switching cost",
+        "value": 0.4,
+        "unit": "proportion performance decline when task-switching",
+        "source": "Monsell 2003, Trends in Cognitive Sciences",
+        "year": 2023
+      },
+      {
+        "metric": "Open-plan office attention disruptions per hour",
+        "value": 6,
+        "unit": "interruptions",
+        "source": "Steelcase / Gloria Mark UC Irvine",
+        "year": 2024
+      },
+      {
+        "metric": "Time to refocus after interruption",
+        "value": 23,
+        "unit": "minutes",
+        "source": "Mark et al. 2008, CHI Conference",
+        "year": 2024
+      },
+      {
+        "metric": "Notification check frequency (smartphone)",
+        "value": 96,
+        "unit": "times per day",
+        "source": "Asurion / dscout research",
+        "year": 2024
+      },
+      {
+        "metric": "Deep work hours (knowledge workers daily)",
+        "value": 2.5,
+        "unit": "hours",
+        "source": "RescueTime data analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Flow state frequency (workers who enter weekly)",
+        "value": 0.15,
+        "unit": "proportion",
+        "source": "McKinsey flow state research",
+        "year": 2024
+      },
+      {
+        "metric": "Flow state productivity boost",
+        "value": 5,
+        "unit": "x higher output",
+        "source": "McKinsey / Csikszentmihalyi",
+        "year": 2024
+      }
+    ]
+  },
+  "parenting_child_development": {
+    "parenting_styles_outcomes": [
+      {
+        "metric": "Authoritative parenting and child academic success",
+        "value": 0.35,
+        "unit": "correlation",
+        "source": "Baumrind 1991 / Steinberg et al. 1994",
+        "year": 2023
+      },
+      {
+        "metric": "Authoritarian parenting and child anxiety",
+        "value": 0.25,
+        "unit": "correlation",
+        "source": "Baumrind 1991 / meta-analyses",
+        "year": 2023
+      },
+      {
+        "metric": "Permissive parenting and behavioral problems",
+        "value": 0.22,
+        "unit": "correlation",
+        "source": "Baumrind 1991",
+        "year": 2023
+      },
+      {
+        "metric": "Helicopter parenting and reduced resilience",
+        "value": 0.3,
+        "unit": "correlation with lower self-efficacy",
+        "source": "Schiffrin et al. 2014, Journal of Child and Family Studies",
+        "year": 2023
+      },
+      {
+        "metric": "Quality time vs quantity time (child outcomes)",
+        "value": 0,
+        "unit": "no significant difference when quality is high",
+        "source": "Milkie et al. 2015, Journal of Marriage and Family",
+        "year": 2023
+      },
+      {
+        "metric": "Reading to children daily: vocabulary advantage",
+        "value": 1.4,
+        "unit": "million more words heard by age 5",
+        "source": "Hart & Risley / Logan et al. 2019",
+        "year": 2023
+      },
+      {
+        "metric": "Bilingual children cognitive flexibility advantage",
+        "value": 0.2,
+        "unit": "effect size on executive function",
+        "source": "Bialystok 2011 / meta-analyses",
+        "year": 2023
+      },
+      {
+        "metric": "Screen time under 2 years and language delay",
+        "value": 0.49,
+        "unit": "each 30-min increase = 49% higher risk",
+        "source": "Madigan et al. 2019, JAMA Pediatrics",
+        "year": 2023
+      }
+    ]
+  },
+  "communication_influence": {
+    "body_language": [
+      {
+        "metric": "Nonverbal communication share of message (Mehrabian)",
+        "value": 0.55,
+        "unit": "proportion (body language) + 0.38 tone, 0.07 words \u2014 applies to emotional messages only",
+        "source": "Mehrabian 1967 (frequently misapplied)",
+        "year": 2023
+      },
+      {
+        "metric": "Eye contact optimal duration in conversation",
+        "value": 3.2,
+        "unit": "seconds per gaze",
+        "source": "Binetti et al. 2016, Royal Society Open Science",
+        "year": 2023
+      },
+      {
+        "metric": "Power posing confidence effect (replication)",
+        "value": 0.08,
+        "unit": "effect size (near zero, original overstated)",
+        "source": "Ranehill et al. 2015 / Carney et al. 2015 replication",
+        "year": 2023
+      },
+      {
+        "metric": "Smiling and perceived trustworthiness",
+        "value": 0.25,
+        "unit": "proportion increase in trust ratings",
+        "source": "Krumhuber et al. 2007, Journal of Nonverbal Behavior",
+        "year": 2023
+      },
+      {
+        "metric": "Mirroring and rapport building effectiveness",
+        "value": 0.3,
+        "unit": "proportion increase in liking",
+        "source": "Chartrand & Bargh 1999, JPSP (Chameleon Effect)",
+        "year": 2023
+      }
+    ],
+    "public_speaking": [
+      {
+        "metric": "Public speaking fear prevalence",
+        "value": 0.75,
+        "unit": "proportion report significant anxiety",
+        "source": "Chapman University Survey / Gallup",
+        "year": 2024
+      },
+      {
+        "metric": "TED Talk average length for maximum retention",
+        "value": 18,
+        "unit": "minutes",
+        "source": "TED conference guidelines / Gallo 2014",
+        "year": 2023
+      },
+      {
+        "metric": "Audience retention drops after",
+        "value": 10,
+        "unit": "minutes without engagement change",
+        "source": "Medina 2008, Brain Rules",
+        "year": 2023
+      },
+      {
+        "metric": "Story-based presentations recall rate",
+        "value": 0.63,
+        "unit": "proportion recall stories vs 0.05 for stats alone",
+        "source": "Stanford research / Chip Heath",
+        "year": 2023
+      },
+      {
+        "metric": "Presentation rehearsal optimal number",
+        "value": 10,
+        "unit": "run-throughs for mastery",
+        "source": "Gallo 2014, Talk Like TED",
+        "year": 2023
+      }
+    ]
+  },
+  "workplace_psychology": {
+    "engagement_burnout": [
+      {
+        "metric": "Globally engaged employees",
+        "value": 0.23,
+        "unit": "proportion",
+        "source": "Gallup State of the Global Workplace 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Actively disengaged employees (global)",
+        "value": 0.18,
+        "unit": "proportion",
+        "source": "Gallup 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Employee burnout prevalence (US)",
+        "value": 0.44,
+        "unit": "proportion report burnout often/always",
+        "source": "Gallup 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Burnout cost to employers (global, annual)",
+        "value": 322,
+        "unit": "billion USD in turnover/productivity",
+        "source": "Gallup 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Manager impact on engagement variance",
+        "value": 0.7,
+        "unit": "proportion of engagement variance attributable to manager",
+        "source": "Gallup",
+        "year": 2024
+      },
+      {
+        "metric": "Recognition frequency for optimal engagement",
+        "value": 7,
+        "unit": "days (at least once per week)",
+        "source": "Gallup / O.C. Tanner",
+        "year": 2024
+      },
+      {
+        "metric": "Remote work and engagement (hybrid optimal)",
+        "value": 0.35,
+        "unit": "proportion higher engagement for hybrid vs full office",
+        "source": "Gallup / McKinsey",
+        "year": 2024
+      },
+      {
+        "metric": "Quiet quitting prevalence",
+        "value": 0.5,
+        "unit": "proportion doing minimum required",
+        "source": "Gallup 2024",
+        "year": 2024
+      }
+    ],
+    "career_development": [
+      {
+        "metric": "People who change careers at least once",
+        "value": 0.7,
+        "unit": "proportion",
+        "source": "BLS / Indeed career change survey",
+        "year": 2024
+      },
+      {
+        "metric": "Average number of career changes (lifetime)",
+        "value": 3.2,
+        "unit": "major career changes",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Promotion waiting time average",
+        "value": 3,
+        "unit": "years",
+        "source": "LinkedIn Workforce Report",
+        "year": 2024
+      },
+      {
+        "metric": "Employees who feel stuck in current role",
+        "value": 0.48,
+        "unit": "proportion",
+        "source": "LinkedIn / Gallup",
+        "year": 2024
+      },
+      {
+        "metric": "Learning and development as top retention factor",
+        "value": 0.94,
+        "unit": "proportion of employees stay longer if company invests in L&D",
+        "source": "LinkedIn Learning Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Networking responsible for jobs found",
+        "value": 0.85,
+        "unit": "proportion of jobs filled through networking",
+        "source": "LinkedIn / HBS",
+        "year": 2024
+      },
+      {
+        "metric": "Career coaching ROI",
+        "value": 7,
+        "unit": "x return on investment",
+        "source": "ICF (International Coaching Federation)",
+        "year": 2024
+      }
+    ]
+  },
+  "digital_behavior": {
+    "technology_habits": [
+      {
+        "metric": "Daily smartphone pickups average",
+        "value": 96,
+        "unit": "times per day",
+        "source": "dscout / Asurion research",
+        "year": 2024
+      },
+      {
+        "metric": "Average daily social media time",
+        "value": 145,
+        "unit": "minutes",
+        "source": "DataReportal / GWI",
+        "year": 2024
+      },
+      {
+        "metric": "FOMO prevalence (fear of missing out)",
+        "value": 0.56,
+        "unit": "proportion of social media users",
+        "source": "JWT / Przybylski et al. 2013",
+        "year": 2024
+      },
+      {
+        "metric": "Doom scrolling frequency",
+        "value": 0.34,
+        "unit": "proportion report daily doom scrolling",
+        "source": "APA / survey data",
+        "year": 2024
+      },
+      {
+        "metric": "Digital detox attempt success rate",
+        "value": 0.12,
+        "unit": "proportion maintain reduced usage long-term",
+        "source": "Common Sense Media",
+        "year": 2024
+      },
+      {
+        "metric": "Information overload and decision quality decline",
+        "value": 0.3,
+        "unit": "proportion worse decisions when info-overloaded",
+        "source": "Eppler & Mengis 2004, Information Society",
+        "year": 2023
+      },
+      {
+        "metric": "Multitasking with media: IQ equivalent drop",
+        "value": 15,
+        "unit": "IQ points temporary drop",
+        "source": "Hewlett-Packard / Ophir et al. 2009",
+        "year": 2023
+      },
+      {
+        "metric": "Email checking frequency (average office worker)",
+        "value": 74,
+        "unit": "times per day",
+        "source": "RescueTime",
+        "year": 2024
+      },
+      {
+        "metric": "Inbox zero achievement rate",
+        "value": 0.14,
+        "unit": "proportion maintain inbox zero regularly",
+        "source": "McKinsey / email productivity research",
+        "year": 2024
+      }
+    ]
+  },
+  "aging_and_life_stages": {
+    "life_stage_transitions": [
+      {
+        "metric": "Quarter-life crisis prevalence (25-35)",
+        "value": 0.75,
+        "unit": "proportion experience significant existential stress",
+        "source": "Robinson 2015, Qualitative Research in Psychology",
+        "year": 2023
+      },
+      {
+        "metric": "Midlife crisis prevalence (40-60)",
+        "value": 0.26,
+        "unit": "proportion (less common than popular belief)",
+        "source": "Wethington 2000, MIDUS study",
+        "year": 2023
+      },
+      {
+        "metric": "Empty nest syndrome prevalence",
+        "value": 0.3,
+        "unit": "proportion of parents experience significant distress",
+        "source": "Raup & Myers 1989 / updated surveys",
+        "year": 2023
+      },
+      {
+        "metric": "Retirement satisfaction (first year)",
+        "value": 0.75,
+        "unit": "proportion report being satisfied",
+        "source": "Employee Benefit Research Institute",
+        "year": 2024
+      },
+      {
+        "metric": "Retirement depression risk increase",
+        "value": 0.4,
+        "unit": "proportion higher risk in first 2 years",
+        "source": "Journal of Epidemiology",
+        "year": 2023
+      },
+      {
+        "metric": "Cognitive decline slowed by lifelong learning",
+        "value": 0.32,
+        "unit": "proportion slower decline vs non-learners",
+        "source": "Wilson et al. 2013, JAMA Neurology",
+        "year": 2023
+      },
+      {
+        "metric": "Wisdom peaks at age",
+        "value": 60,
+        "unit": "years (crystallized intelligence peaks 60-70)",
+        "source": "Grossmann et al. 2012 / Salthouse 2009",
+        "year": 2023
+      },
+      {
+        "metric": "Life review therapy effectiveness in elderly",
+        "value": 0.54,
+        "unit": "effect size on depression",
+        "source": "Pinquart & Forstmeier 2012 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Oldest old (85+) who report good quality of life",
+        "value": 0.65,
+        "unit": "proportion",
+        "source": "90+ Study / ELSA (English Longitudinal Study of Ageing)",
+        "year": 2024
+      }
+    ]
+  },
+  "creativity_innovation": {
+    "creative_process": [
+      {
+        "metric": "People who consider themselves creative",
+        "value": 0.52,
+        "unit": "proportion",
+        "source": "Adobe State of Create survey",
+        "year": 2024
+      },
+      {
+        "metric": "Creativity peaks at age (divergent thinking)",
+        "value": 25,
+        "unit": "years (peaks early, declines slowly)",
+        "source": "Kim 2011, Creativity Research Journal",
+        "year": 2023
+      },
+      {
+        "metric": "Walking increases creative output",
+        "value": 0.6,
+        "unit": "proportion increase in creative thinking",
+        "source": "Oppezzo & Schwartz 2014, JEP: Learning, Memory, Cognition",
+        "year": 2023
+      },
+      {
+        "metric": "Showering/bathing and eureka moments",
+        "value": 0.72,
+        "unit": "proportion of creatives report ideas during relaxation",
+        "source": "Kaufman & Beghetto 2013",
+        "year": 2023
+      },
+      {
+        "metric": "Sleep and insight problem solving",
+        "value": 2.6,
+        "unit": "x more likely to solve after sleep",
+        "source": "Wagner et al. 2004, Nature",
+        "year": 2023
+      },
+      {
+        "metric": "Brainstorming rules: quantity over quality boost",
+        "value": 0.3,
+        "unit": "proportion more usable ideas with quantity focus",
+        "source": "Osborn 1953 / Paulus & Nijstad 2003",
+        "year": 2023
+      },
+      {
+        "metric": "Constraints improve creativity",
+        "value": 0.4,
+        "unit": "proportion better ideas with moderate constraints",
+        "source": "Stokes 2006, Creativity Research Journal",
+        "year": 2023
+      },
+      {
+        "metric": "Boredom before creative task improves output",
+        "value": 0.15,
+        "unit": "proportion more creative ideas",
+        "source": "Mann & Cadman 2014, Creativity Research Journal",
+        "year": 2023
+      }
+    ]
+  },
+  "relationships_attachment": {
+    "attachment_styles": [
+      {
+        "metric": "Secure attachment prevalence (adults)",
+        "value": 0.56,
+        "unit": "proportion",
+        "source": "Mickelson et al. 1997 / Bakermans-Kranenburg & van IJzendoorn 2009",
+        "year": 2023
+      },
+      {
+        "metric": "Anxious attachment prevalence",
+        "value": 0.19,
+        "unit": "proportion",
+        "source": "Mickelson et al. 1997",
+        "year": 2023
+      },
+      {
+        "metric": "Avoidant attachment prevalence",
+        "value": 0.25,
+        "unit": "proportion",
+        "source": "Mickelson et al. 1997",
+        "year": 2023
+      },
+      {
+        "metric": "Secure attachment and relationship satisfaction",
+        "value": 0.45,
+        "unit": "correlation",
+        "source": "Li & Chan 2012 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Attachment style stability from childhood",
+        "value": 0.39,
+        "unit": "proportion maintain same style",
+        "source": "Fraley 2002, Attachment & Human Development",
+        "year": 2023
+      },
+      {
+        "metric": "Attachment style change through therapy",
+        "value": 0.7,
+        "unit": "proportion shift toward security",
+        "source": "Taylor et al. 2015, Clinical Psychology Review",
+        "year": 2023
+      },
+      {
+        "metric": "Anxious-avoidant pairing frequency",
+        "value": 0.23,
+        "unit": "proportion (over-represented vs random)",
+        "source": "Kirkpatrick & Davis 1994",
+        "year": 2023
+      },
+      {
+        "metric": "Secure-secure relationship satisfaction",
+        "value": 4.2,
+        "unit": "out of 5 average satisfaction",
+        "source": "Feeney 1999 / meta-analyses",
+        "year": 2023
+      }
+    ],
+    "friendship": [
+      {
+        "metric": "Close friendships average number (adults)",
+        "value": 3,
+        "unit": "close friends",
+        "source": "Survey Center on American Life 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Americans with no close friends",
+        "value": 0.12,
+        "unit": "proportion (up from 3% in 1990)",
+        "source": "Survey Center on American Life",
+        "year": 2024
+      },
+      {
+        "metric": "Hours needed to form casual friendship",
+        "value": 50,
+        "unit": "hours",
+        "source": "Hall 2019, Journal of Social and Personal Relationships",
+        "year": 2023
+      },
+      {
+        "metric": "Hours needed to form close friendship",
+        "value": 200,
+        "unit": "hours",
+        "source": "Hall 2019",
+        "year": 2023
+      },
+      {
+        "metric": "Friendship maintenance: contact frequency needed",
+        "value": 15,
+        "unit": "days maximum between contacts",
+        "source": "Oswald et al. 2004 / Hall 2019",
+        "year": 2023
+      },
+      {
+        "metric": "Friendships lost per decade (adults)",
+        "value": 2,
+        "unit": "close friends per decade",
+        "source": "Bhattacharya et al. 2016, Royal Society Open Science",
+        "year": 2023
+      },
+      {
+        "metric": "Work friendships and engagement boost",
+        "value": 7,
+        "unit": "x more engaged with best friend at work",
+        "source": "Gallup",
+        "year": 2024
+      },
+      {
+        "metric": "Loneliness epidemic: adults who feel lonely",
+        "value": 0.33,
+        "unit": "proportion",
+        "source": "US Surgeon General Report on Loneliness 2023",
+        "year": 2024
+      }
+    ],
+    "trust": [
+      {
+        "metric": "Generalized trust (most people can be trusted, US)",
+        "value": 0.31,
+        "unit": "proportion agree",
+        "source": "General Social Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Trust in institutions (government, US)",
+        "value": 0.2,
+        "unit": "proportion trust federal government",
+        "source": "Pew Research Center",
+        "year": 2024
+      },
+      {
+        "metric": "Trust in strangers (Nordic countries)",
+        "value": 0.73,
+        "unit": "proportion trust strangers",
+        "source": "World Values Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Trust recovery after betrayal (probability)",
+        "value": 0.4,
+        "unit": "proportion of relationships recover full trust",
+        "source": "Kim et al. 2004, Organizational Behavior",
+        "year": 2023
+      },
+      {
+        "metric": "First impression formation time",
+        "value": 0.1,
+        "unit": "seconds (100 milliseconds)",
+        "source": "Willis & Todorov 2006, Psychological Science",
+        "year": 2023
+      },
+      {
+        "metric": "First impression accuracy",
+        "value": 0.66,
+        "unit": "proportion correct on extraversion/agreeableness",
+        "source": "Ambady & Rosenthal 1992 (thin slices)",
+        "year": 2023
+      }
+    ]
+  },
+  "nutrition_behavior": {
+    "diet_and_eating": [
+      {
+        "metric": "Diets that fail long-term (5 years)",
+        "value": 0.95,
+        "unit": "proportion regain weight",
+        "source": "Mann et al. 2007, American Psychologist",
+        "year": 2023
+      },
+      {
+        "metric": "Emotional eating prevalence",
+        "value": 0.38,
+        "unit": "proportion of adults",
+        "source": "APA Stress in America / International Journal of Behavioral Nutrition",
+        "year": 2024
+      },
+      {
+        "metric": "Intermittent fasting adherence at 1 year",
+        "value": 0.38,
+        "unit": "proportion maintain",
+        "source": "NEJM / Varady et al.",
+        "year": 2024
+      },
+      {
+        "metric": "Mediterranean diet adherence and depression reduction",
+        "value": 0.33,
+        "unit": "proportion reduction in depression risk",
+        "source": "Lassale et al. 2019, Molecular Psychiatry",
+        "year": 2023
+      },
+      {
+        "metric": "Meal prep and healthier eating correlation",
+        "value": 0.28,
+        "unit": "proportion more likely to eat healthy",
+        "source": "International Journal of Behavioral Nutrition",
+        "year": 2024
+      },
+      {
+        "metric": "Sugar consumption and cognitive decline",
+        "value": 0.2,
+        "unit": "proportion faster decline with high sugar diet",
+        "source": "Pase et al. 2017, Alzheimer's & Dementia",
+        "year": 2023
+      }
+    ]
+  },
+  "morality_ethics": {
+    "moral_psychology": [
+      {
+        "metric": "People who lie daily (average)",
+        "value": 1.65,
+        "unit": "lies per day",
+        "source": "DePaulo et al. 1996, JPSP",
+        "year": 2023
+      },
+      {
+        "metric": "Lie detection accuracy (untrained)",
+        "value": 0.54,
+        "unit": "proportion (barely above chance)",
+        "source": "Bond & DePaulo 2006 meta-analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Cheating on taxes when opportunity exists",
+        "value": 0.25,
+        "unit": "proportion",
+        "source": "IRS / Ariely 2012",
+        "year": 2024
+      },
+      {
+        "metric": "Academic cheating prevalence (college)",
+        "value": 0.68,
+        "unit": "proportion admit to some form",
+        "source": "International Center for Academic Integrity",
+        "year": 2024
+      },
+      {
+        "metric": "Moral licensing effect (good deed then bad)",
+        "value": 0.3,
+        "unit": "proportion show licensing effect",
+        "source": "Merritt et al. 2010, Social and Personality Psychology Compass",
+        "year": 2023
+      },
+      {
+        "metric": "Trolley problem: pull lever (utilitarian)",
+        "value": 0.87,
+        "unit": "proportion would pull lever",
+        "source": "Awad et al. 2018, Nature (Moral Machine)",
+        "year": 2023
+      },
+      {
+        "metric": "Trolley problem: push person (utilitarian)",
+        "value": 0.12,
+        "unit": "proportion would push person",
+        "source": "Awad et al. 2018 / Greene 2013",
+        "year": 2023
+      },
+      {
+        "metric": "Moral foundations: care/harm most universal",
+        "value": 0.95,
+        "unit": "proportion rate as morally relevant",
+        "source": "Haidt 2012, The Righteous Mind / Graham et al. 2011",
+        "year": 2023
+      },
+      {
+        "metric": "Whistleblowing intention vs action gap",
+        "value": 0.4,
+        "unit": "proportion who intend but don't act",
+        "source": "Near & Miceli 1995, Journal of Business Ethics",
+        "year": 2023
+      },
+      {
+        "metric": "Moral disengagement in organizational unethical behavior",
+        "value": 0.52,
+        "unit": "proportion use disengagement mechanisms",
+        "source": "Bandura 1999 / Moore 2008",
+        "year": 2023
+      }
+    ]
+  },
+  "exercise_physical_activity": {
+    "fitness_habits": [
+      {
+        "metric": "Adults meeting exercise guidelines (US)",
+        "value": 0.28,
+        "unit": "proportion meet both aerobic and strength",
+        "source": "CDC NHIS",
+        "year": 2024
+      },
+      {
+        "metric": "Gym membership unused rate",
+        "value": 0.5,
+        "unit": "proportion of members rarely go",
+        "source": "IHRSA / Statista",
+        "year": 2024
+      },
+      {
+        "metric": "New Year gym resolution dropout by March",
+        "value": 0.8,
+        "unit": "proportion stop going",
+        "source": "IHRSA",
+        "year": 2024
+      },
+      {
+        "metric": "Exercise habit formation time (consistent gym)",
+        "value": 43,
+        "unit": "days to feel automatic",
+        "source": "Kaushal & Rhodes 2015, Health Psychology Review",
+        "year": 2023
+      },
+      {
+        "metric": "Running a marathon: completion rate of starters",
+        "value": 0.9,
+        "unit": "proportion finish",
+        "source": "RunRepeat / MarathonGuide",
+        "year": 2024
+      },
+      {
+        "metric": "Couch to 5K program completion rate",
+        "value": 0.35,
+        "unit": "proportion complete 8-week program",
+        "source": "NHS / running app data",
+        "year": 2024
+      },
+      {
+        "metric": "Exercise and depression reduction",
+        "value": 0.5,
+        "unit": "proportion symptom reduction (comparable to SSRIs for mild)",
+        "source": "Singh et al. 2023, BMJ meta-analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Sitting more than 8 hours: mortality risk",
+        "value": 1.5,
+        "unit": "x higher all-cause mortality risk",
+        "source": "Katzmarzyk et al. 2009 / Ekelund et al. 2016 meta",
+        "year": 2023
+      },
+      {
+        "metric": "Steps per day for longevity benefit (optimal)",
+        "value": 7000,
+        "unit": "steps (diminishing returns above 8,000)",
+        "source": "Paluch et al. 2022, Lancet Public Health",
+        "year": 2023
+      },
+      {
+        "metric": "Yoga practitioners reporting mental health benefit",
+        "value": 0.86,
+        "unit": "proportion",
+        "source": "Yoga Alliance / Ipsos survey",
+        "year": 2024
+      },
+      {
+        "metric": "Personal trainer retention boost",
+        "value": 0.3,
+        "unit": "proportion more likely to maintain exercise",
+        "source": "ACSM",
+        "year": 2024
+      },
+      {
+        "metric": "Morning exercise vs evening: habit consistency",
+        "value": 0.25,
+        "unit": "proportion more consistent with morning",
+        "source": "Schumacher et al. 2020, Med Sci Sports Exercise",
+        "year": 2023
+      },
+      {
+        "metric": "Group exercise adherence vs solo",
+        "value": 0.22,
+        "unit": "proportion higher adherence",
+        "source": "Beauchamp et al. 2007, Annals of Behavioral Medicine",
+        "year": 2023
       }
     ]
   }

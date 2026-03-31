@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>First Service Sale Decision Tree</title>
+  <style>
+    :root {
+      --bg: #f6f1e8;
+      --panel: #fffaf2;
+      --ink: #1a2027;
+      --muted: #66727c;
+      --border: rgba(26, 32, 39, 0.08);
+      --shadow: 0 20px 50px rgba(43, 35, 23, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(216, 231, 247, 0.55), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(216, 234, 216, 0.5), transparent 25%),
+        var(--bg);
+    }
+
+    .page {
+      padding: 28px;
+    }
+
+    .header {
+      max-width: 1200px;
+      margin: 0 auto 20px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 18px;
+    }
+
+    button {
+      appearance: none;
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font: inherit;
+      font-weight: 700;
+      color: #fffaf2;
+      background: #1a2027;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(26, 32, 39, 0.16);
+    }
+
+    button.secondary {
+      background: #d8e7f7;
+      color: #1a2027;
+    }
+
+    .status {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .eyebrow {
+      margin-bottom: 10px;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .board {
+      max-width: 1600px;
+      margin: 0 auto;
+      background: rgba(255, 250, 242, 0.8);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 16px;
+      overflow: auto;
+    }
+
+    .mermaid {
+      min-width: 1450px;
+    }
+
+    .is-dimmed {
+      opacity: 0.14;
+      transition: opacity 220ms ease;
+    }
+
+    .is-visible {
+      opacity: 1;
+      transition: opacity 320ms ease;
+    }
+
+    .is-active {
+      filter: drop-shadow(0 0 14px rgba(255, 183, 77, 0.45));
+    }
+
+    .path-label {
+      max-width: 1600px;
+      margin: 14px auto 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <div class="eyebrow">First Sale Tree</div>
+      <h1>From First Service Sale to Repeatable Income</h1>
+      <p>Un albero decisionale sul passaggio dal primo segnale di validazione a stagnazione, trap low-income o percorso scalabile.</p>
+      <div class="toolbar">
+        <button id="play-sequence" type="button">Play sequence</button>
+        <button id="reset-sequence" class="secondary" type="button">Reset</button>
+        <button id="show-all-paths" class="secondary" type="button">Tutti</button>
+        <button id="dim-success-path" class="secondary" type="button">Oscura success</button>
+        <button id="only-success-path" class="secondary" type="button">Solo success</button>
+        <div id="sequence-status" class="status">Ready</div>
+      </div>
+    </div>
+
+    <div class="board">
+      <pre class="mermaid">
+flowchart LR
+    A["STATE<br/>$5000 to $6000"]
+    B["EVENT<br/>First client win"]
+    C["STATE<br/>First proof achieved<br/>Confidence up"]
+    D["EVENT<br/>Continue selling service"]
+    E{"BOTTLENECK<br/>Can they repeat it?"}
+
+    A --> B --> C --> D --> E
+
+    N0(["NO<br/>60-80%"])
+    P0(["PARTIAL<br/>15-30%"])
+    Y0(["YES<br/>5-10%"])
+
+    E --> N0
+    E --> P0
+    E --> Y0
+
+    N0 --> N1["STATE<br/>Inconsistent income<br/>Random clients"]
+    N1 --> N2["TRAJECTORY<br/>Unstable freelance path"]
+    N2 --> N3["EVENT<br/>Keep trying same way"]
+    N3 --> N4["OUTCOME<br/>Stagnation<br/>$0-$2k per month unstable"]
+    N2 --> N5["EVENT<br/>Quit or burnout"]
+    N5 --> N6["OUTCOME<br/>Exit freelance"]
+
+    P0 --> P1["STATE<br/>Some repeat clients<br/>Low pricing"]
+    P1 --> P2["TRAJECTORY<br/>Low-income trap"]
+    P2 --> P3["EVENT<br/>Accept low rates"]
+    P3 --> P4["OUTCOME<br/>Overworked, low income"]
+    P2 --> P5["EVENT<br/>Try to increase price"]
+    P5 --> P6{"BOTTLENECK<br/>Lose clients?"}
+    P6 -->|"YES"| P7["OUTCOME<br/>Back to low income"]
+    P6 -->|"NO"| P8["OUTCOME<br/>Move upmarket"]
+
+    Y0 --> Y1["STATE<br/>Repeatable acquisition<br/>Clear offer"]
+    Y1 --> Y2["TRAJECTORY<br/>Scalable path"]
+    Y2 --> Y3["EVENT<br/>Systemize<br/>Process, offer"]
+    Y3 --> Y4["OUTCOME<br/>Stable $3k-$10k per month"]
+    Y2 --> Y5["EVENT<br/>Niche down"]
+    Y5 --> Y6["OUTCOME<br/>Higher rates"]
+    Y2 --> Y7["EVENT<br/>Scale<br/>Team or productize"]
+    Y7 --> Y8{"BOTTLENECK<br/>Operations complexity"}
+    Y8 -->|"FAIL"| Y9["OUTCOME<br/>Collapse or chaos"]
+    Y8 -->|"PASS"| Y10["OUTCOME<br/>Agency or scalable business"]
+    Y4 --> S1["SUCCESS<br/>Sustainable income path"]
+    Y6 --> S1
+    Y10 --> S1
+
+    classDef state fill:#d8ead8,stroke:#5f7d63,stroke-width:1.5px,color:#1a2027;
+    classDef event fill:#d8e7f7,stroke:#56718f,stroke-width:1.5px,color:#1a2027;
+    classDef bottleneck fill:#fde1b8,stroke:#9b7a3d,stroke-width:1.5px,color:#1a2027;
+    classDef outcome fill:#f7d4cc,stroke:#9e6257,stroke-width:1.5px,color:#1a2027;
+    classDef gate fill:#fff4de,stroke:#9b7a3d,stroke-width:2px,color:#1a2027;
+    classDef trajectory fill:#efe2fb,stroke:#7f5aa6,stroke-width:1.5px,color:#1a2027;
+    classDef success fill:#d7f7e3,stroke:#1f7a45,stroke-width:2px,color:#1a2027;
+
+    class A,C,N1,P1,Y1 state;
+    class B,D,N3,N5,P3,P5,Y3,Y5,Y7 event;
+    class E,P6,Y8 bottleneck;
+    class N4,N6,P4,P7,P8,Y4,Y6,Y9,Y10 outcome;
+    class N0,P0,Y0 gate;
+    class N2,P2,Y2 trajectory;
+    class S1 success;
+
+    linkStyle 4 stroke:#a12f2f,stroke-width:6px,opacity:0.85;
+    linkStyle 5 stroke:#9b6a00,stroke-width:4px,opacity:0.8;
+    linkStyle 6 stroke:#1f7a45,stroke-width:2px,opacity:0.8;
+      </pre>
+    </div>
+
+    <div class="path-label">
+      Path: <code>/Users/richardbotsiokennedy/Simulator/codex/freelance-path-horizontal.html</code>
+    </div>
+  </div>
+
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: "base",
+      securityLevel: "loose",
+      flowchart: {
+        htmlLabels: true,
+        curve: "basis",
+        useMaxWidth: false,
+        nodeSpacing: 36,
+        rankSpacing: 70
+      },
+      themeVariables: {
+        background: "#fffaf2",
+        primaryTextColor: "#1a2027",
+        lineColor: "#9d8d79",
+        fontFamily: "Avenir Next, Segoe UI, sans-serif",
+        clusterBkg: "#fffaf2",
+        clusterBorder: "#d7c6ae"
+      }
+    });
+
+    const sequence = [
+      { key: "A", label: "STATE $5000 to $6000" },
+      { key: "B", label: "EVENT First client win" },
+      { key: "C", label: "STATE First proof achieved" },
+      { key: "D", label: "EVENT Continue selling service" },
+      { key: "E", label: "BOTTLENECK Can they repeat it?" },
+      { key: "N0", label: "NO 60-80%" },
+      { key: "N1", label: "STATE Inconsistent income" },
+      { key: "N2", label: "TRAJECTORY Unstable freelance path" },
+      { key: "N3", label: "EVENT Keep trying same way" },
+      { key: "N4", label: "OUTCOME Stagnation" },
+      { key: "N5", label: "EVENT Quit or burnout" },
+      { key: "N6", label: "OUTCOME Exit freelance" },
+      { key: "P0", label: "PARTIAL 15-30%" },
+      { key: "P1", label: "STATE Some repeat clients" },
+      { key: "P2", label: "TRAJECTORY Low-income trap" },
+      { key: "P3", label: "EVENT Accept low rates" },
+      { key: "P4", label: "OUTCOME Overworked low income" },
+      { key: "P5", label: "EVENT Try to increase price" },
+      { key: "P6", label: "BOTTLENECK Lose clients?" },
+      { key: "P7", label: "OUTCOME Back to low income" },
+      { key: "P8", label: "OUTCOME Move upmarket" },
+      { key: "Y0", label: "YES 5-10%" },
+      { key: "Y1", label: "STATE Repeatable acquisition" },
+      { key: "Y2", label: "TRAJECTORY Scalable path" },
+      { key: "Y3", label: "EVENT Systemize" },
+      { key: "Y4", label: "OUTCOME Stable $3k-$10k per month" },
+      { key: "Y5", label: "EVENT Niche down" },
+      { key: "Y6", label: "OUTCOME Higher rates" },
+      { key: "Y7", label: "EVENT Scale" },
+      { key: "Y8", label: "BOTTLENECK Operations complexity" },
+      { key: "Y9", label: "OUTCOME Collapse or chaos" },
+      { key: "Y10", label: "OUTCOME Agency or scalable business" },
+      { key: "S1", label: "SUCCESS Sustainable income path" }
+    ];
+
+    const statusEl = document.getElementById("sequence-status");
+    const playButton = document.getElementById("play-sequence");
+    const resetButton = document.getElementById("reset-sequence");
+    const showAllButton = document.getElementById("show-all-paths");
+    const dimSuccessButton = document.getElementById("dim-success-path");
+    const onlySuccessButton = document.getElementById("only-success-path");
+
+    let steps = [];
+    let isPlaying = false;
+    let successPathMode = "all";
+
+    const successKeys = new Set([
+      "A", "B", "C", "D", "E",
+      "Y0", "Y1", "Y2", "Y3", "Y4", "Y5", "Y6", "Y7", "Y8", "Y10", "S1"
+    ]);
+
+    function findNodeByKey(svg, key) {
+      const nodes = [...svg.querySelectorAll("g.node")];
+      return nodes.find((node) => {
+        const id = node.id || "";
+        return id === key || id.startsWith(`${key}-`) || id.includes(`-${key}-`) || id.endsWith(`-${key}`);
+      });
+    }
+
+    function dimTargets(svg) {
+      const targets = [
+        ...svg.querySelectorAll("g.node"),
+        ...svg.querySelectorAll("g.edgePath"),
+        ...svg.querySelectorAll("g.edgeLabel")
+      ];
+
+      targets.forEach((el) => {
+        el.classList.add("is-dimmed");
+        el.classList.remove("is-visible", "is-active");
+      });
+    }
+
+    function getRenderedSvg() {
+      return document.querySelector(".board svg") || document.querySelector(".mermaid svg");
+    }
+
+    function getNodeIdMap(svg) {
+      const map = new Map();
+      for (const item of sequence) {
+        const node = findNodeByKey(svg, item.key);
+        if (node?.id) map.set(item.key, node.id);
+      }
+      return map;
+    }
+
+    function applySuccessPathMask() {
+      const svg = getRenderedSvg();
+      if (!svg) return;
+
+      const nodeIdMap = getNodeIdMap(svg);
+      const nodes = [...svg.querySelectorAll("g.node")];
+      const edges = [...svg.querySelectorAll("g.edgePath")];
+      const labels = [...svg.querySelectorAll("g.edgeLabel")];
+
+      const successNodeIds = new Set(
+        [...successKeys]
+          .map((key) => nodeIdMap.get(key))
+          .filter(Boolean)
+      );
+
+      nodes.forEach((node) => {
+        const isSuccess = successNodeIds.has(node.id);
+        if (successPathMode === "dim" && isSuccess) node.style.opacity = "0.12";
+        else if (successPathMode === "only" && !isSuccess) node.style.opacity = "0.10";
+        else node.style.opacity = "";
+      });
+
+      edges.forEach((edge) => {
+        const edgeId = edge.id || "";
+        const touchesSuccess = [...successNodeIds].some((id) => edgeId.includes(id));
+        if (successPathMode === "dim" && touchesSuccess) edge.style.opacity = "0.12";
+        else if (successPathMode === "only" && !touchesSuccess) edge.style.opacity = "0.08";
+        else edge.style.opacity = "";
+      });
+
+      labels.forEach((label) => {
+        const text = (label.textContent || "").toLowerCase();
+        const isSuccessLabel =
+          text.includes("yes") ||
+          text.includes("5-10") ||
+          text.includes("pass");
+
+        if (successPathMode === "only" && !isSuccessLabel) label.style.opacity = "0.14";
+        else if (successPathMode === "dim" && isSuccessLabel) label.style.opacity = "0.12";
+        else label.style.opacity = "";
+      });
+    }
+
+    function buildSteps() {
+      const svg = getRenderedSvg();
+      if (!svg) return [];
+
+      const foundNodes = sequence
+        .map((item) => findNodeByKey(svg, item.key))
+        .filter(Boolean);
+
+      dimTargets(svg);
+
+      return foundNodes;
+    }
+
+    async function waitForSvg(maxAttempts = 20) {
+      for (let attempt = 0; attempt < maxAttempts; attempt += 1) {
+        const svg = getRenderedSvg();
+        if (svg) return svg;
+        await new Promise((resolve) => window.setTimeout(resolve, 120));
+      }
+      return null;
+    }
+
+    async function resetSequence() {
+      await waitForSvg();
+      steps = buildSteps();
+      statusEl.textContent = steps.length ? "Ready" : "Unable to map Mermaid nodes";
+      applySuccessPathMask();
+    }
+
+    async function playSequence() {
+      if (isPlaying || !steps.length) return;
+      isPlaying = true;
+      playButton.disabled = true;
+      statusEl.textContent = "Playing";
+
+      for (let index = 0; index < steps.length; index += 1) {
+        const el = steps[index];
+        el.classList.remove("is-dimmed");
+        el.classList.add("is-visible", "is-active");
+        statusEl.textContent = `Step ${index + 1} / ${steps.length} - ${sequence[index].label}`;
+        await new Promise((resolve) => window.setTimeout(resolve, 520));
+        el.classList.remove("is-active");
+      }
+
+      statusEl.textContent = "Sequence complete";
+      playButton.disabled = false;
+      isPlaying = false;
+    }
+
+    await mermaid.run({ querySelector: ".mermaid" });
+    await resetSequence();
+
+    playButton.addEventListener("click", playSequence);
+    resetButton.addEventListener("click", async () => {
+      if (isPlaying) return;
+      await resetSequence();
+    });
+    showAllButton.addEventListener("click", () => {
+      successPathMode = "all";
+      applySuccessPathMask();
+    });
+    dimSuccessButton.addEventListener("click", () => {
+      successPathMode = "dim";
+      applySuccessPathMask();
+    });
+    onlySuccessButton.addEventListener("click", () => {
+      successPathMode = "only";
+      applySuccessPathMask();
+    });
+  </script>
+</body>
+</html>

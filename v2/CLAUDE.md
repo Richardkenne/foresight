@@ -27,7 +27,26 @@
 
 ## Architecture
 - `src/components/SimulatorCanvas.tsx` — core simulation engine + React Flow canvas
-- `src/components/nodes/SimNode.tsx` — node rendering (8 types)
+- `src/components/nodes/SimNode.tsx` — node rendering (11 types)
+
+## Node Types & Simulation Flow
+The simulation follows this pattern:
+`state → desire/action → new state → bottleneck/gate → trajectory → state → outcome`
+
+| Type | Color | Purpose | Answers |
+|------|-------|---------|---------|
+| `state` | Green bg | Current condition of the person | "Who are you NOW?" |
+| `desire` | Gray | What you want | "What do you want?" |
+| `action` | Gray | What you do | "What are you doing?" |
+| `trajectory` | Purple bg | The path you're on | "Where are you heading?" |
+| `bottleneck` | Octagon, dynamic border | Binary gate (pass/fail) | "Do you pass?" |
+| `gate` | Amber, left border | 3-way split (no/partial/yes) | "Which path?" |
+| `decision` | Gray | Yes/no choice | "Do you choose yes?" |
+| `outcome-good` | Green outline | Positive end | "You made it" |
+| `outcome-bad` | Red outline | Negative end | "You didn't make it" |
+
+Entry points: state (initial condition) → desire (goal) → action (first step)
+Key rule: ALWAYS include state nodes after bottlenecks to show transformation.
 - `src/components/Dashboard.tsx` — results modal
 - `src/components/Particle.tsx` — SVG person generator
 - `src/components/TemplateSelector.tsx` — template picker

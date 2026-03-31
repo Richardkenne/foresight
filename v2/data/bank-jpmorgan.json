@@ -2,252 +2,2641 @@
   "_meta": {
     "category": "bank-data",
     "source": "JPMorgan Chase",
-    "total_datapoints": 208,
-    "created": "2026-03-30"
+    "total_datapoints": 348,
+    "created": "2026-03-30",
+    "url": "https://www.jpmorgan.com/insights"
   },
   "sections": {
     "guide_to_markets": {
       "description": "Asset class returns, stock market statistics, bond yields, and inflation history from JPMorgan Guide to Markets",
       "data": [
-        {"metric": "S&P 500 annualized return (20-year)", "value": "10.1", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "S&P 500 annualized return (10-year)", "value": "13.0", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "S&P 500 annualized return (30-year)", "value": "10.5", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "U.S. aggregate bonds annualized return (20-year)", "value": "1.7", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "U.S. aggregate bonds annualized return (10-year)", "value": "1.4", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "REITs annualized return (20-year)", "value": "7.8", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "Gold annualized return (20-year)", "value": "9.5", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "Emerging markets equity annualized return (20-year)", "value": "6.3", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "International developed equity annualized return (20-year)", "value": "5.8", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "High yield bonds annualized return (20-year)", "value": "6.5", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "60/40 portfolio annualized return (20-year)", "value": "7.4", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "Commodities annualized return (20-year)", "value": "2.8", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "Cash (T-bills) annualized return (20-year)", "value": "1.5", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "S&P 500 average intra-year decline", "value": "-14.2", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "S&P 500 positive calendar years (since 1980)", "value": "76", "unit": "percent of years", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "S&P 500 forward P/E ratio", "value": "21.5", "unit": "ratio", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "S&P 500 25-year average forward P/E", "value": "16.8", "unit": "ratio", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "10-year U.S. Treasury yield", "value": "4.25", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "2-year U.S. Treasury yield", "value": "4.10", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "U.S. CPI inflation rate", "value": "2.9", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "Core PCE inflation", "value": "2.8", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "U.S. average inflation rate (100-year)", "value": "3.0", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "Federal funds rate", "value": "4.50", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "S&P 500 earnings per share", "value": "240", "unit": "USD", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "U.S. corporate profit margins", "value": "12.1", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "Top 10 S&P 500 stocks market cap concentration", "value": "37", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "Private equity annualized return (20-year)", "value": "14.2", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "Hedge funds annualized return (20-year)", "value": "5.1", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "Small cap (Russell 2000) annualized return (20-year)", "value": "8.1", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "Investment grade corporate bond spread", "value": "88", "unit": "basis points", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "High yield bond spread", "value": "295", "unit": "basis points", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "U.S. GDP growth rate", "value": "2.8", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "S&P 500 dividend yield", "value": "1.3", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "Inflation-adjusted S&P 500 annualized return (30-year)", "value": "7.5", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "U.S. national debt to GDP ratio", "value": "123", "unit": "percent", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024},
-        {"metric": "Global equity market cap", "value": "115", "unit": "trillion USD", "source": "JPMorgan Guide to Markets Q1 2025", "year": 2024}
+        {
+          "metric": "S&P 500 annualized return (20-year)",
+          "value": "10.1",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "S&P 500 annualized return (10-year)",
+          "value": "13.0",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "S&P 500 annualized return (30-year)",
+          "value": "10.5",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. aggregate bonds annualized return (20-year)",
+          "value": "1.7",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. aggregate bonds annualized return (10-year)",
+          "value": "1.4",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "REITs annualized return (20-year)",
+          "value": "7.8",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Gold annualized return (20-year)",
+          "value": "9.5",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Emerging markets equity annualized return (20-year)",
+          "value": "6.3",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "International developed equity annualized return (20-year)",
+          "value": "5.8",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "High yield bonds annualized return (20-year)",
+          "value": "6.5",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "60/40 portfolio annualized return (20-year)",
+          "value": "7.4",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Commodities annualized return (20-year)",
+          "value": "2.8",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Cash (T-bills) annualized return (20-year)",
+          "value": "1.5",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "S&P 500 average intra-year decline",
+          "value": "-14.2",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "S&P 500 positive calendar years (since 1980)",
+          "value": "76",
+          "unit": "percent of years",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "S&P 500 forward P/E ratio",
+          "value": "21.5",
+          "unit": "ratio",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "S&P 500 25-year average forward P/E",
+          "value": "16.8",
+          "unit": "ratio",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "10-year U.S. Treasury yield",
+          "value": "4.25",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "2-year U.S. Treasury yield",
+          "value": "4.10",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. CPI inflation rate",
+          "value": "2.9",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Core PCE inflation",
+          "value": "2.8",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. average inflation rate (100-year)",
+          "value": "3.0",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Federal funds rate",
+          "value": "4.50",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "S&P 500 earnings per share",
+          "value": "240",
+          "unit": "USD",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. corporate profit margins",
+          "value": "12.1",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Top 10 S&P 500 stocks market cap concentration",
+          "value": "37",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Private equity annualized return (20-year)",
+          "value": "14.2",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Hedge funds annualized return (20-year)",
+          "value": "5.1",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Small cap (Russell 2000) annualized return (20-year)",
+          "value": "8.1",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Investment grade corporate bond spread",
+          "value": "88",
+          "unit": "basis points",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "High yield bond spread",
+          "value": "295",
+          "unit": "basis points",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. GDP growth rate",
+          "value": "2.8",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "S&P 500 dividend yield",
+          "value": "1.3",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Inflation-adjusted S&P 500 annualized return (30-year)",
+          "value": "7.5",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. national debt to GDP ratio",
+          "value": "123",
+          "unit": "percent",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Global equity market cap",
+          "value": "115",
+          "unit": "trillion USD",
+          "source": "JPMorgan Guide to Markets Q1 2025",
+          "year": 2024
+        }
       ]
     },
     "retirement_data": {
       "description": "Retirement savings targets, replacement ratios, Social Security gaps, and longevity risk from JPMorgan Asset Management research",
       "data": [
-        {"metric": "Recommended savings by age 30 (multiple of salary)", "value": "1.0", "unit": "x salary", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Recommended savings by age 40 (multiple of salary)", "value": "3.0", "unit": "x salary", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Recommended savings by age 50 (multiple of salary)", "value": "6.0", "unit": "x salary", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Recommended savings by age 60 (multiple of salary)", "value": "8.0", "unit": "x salary", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Recommended savings by age 67 (multiple of salary)", "value": "10.0", "unit": "x salary", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Target income replacement ratio", "value": "80", "unit": "percent of pre-retirement income", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Social Security replacement rate for median earner", "value": "40", "unit": "percent", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Social Security replacement rate for high earner", "value": "28", "unit": "percent", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Average Social Security monthly benefit", "value": "1907", "unit": "USD/month", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Social Security trust fund projected depletion year", "value": "2033", "unit": "year", "source": "Social Security Trustees Report via JPMorgan", "year": 2024},
-        {"metric": "Benefit reduction if trust fund depleted", "value": "21", "unit": "percent cut", "source": "Social Security Trustees Report via JPMorgan", "year": 2024},
-        {"metric": "Probability 65-year-old lives to 85", "value": "55", "unit": "percent", "source": "JPMorgan Longevity Analysis 2025", "year": 2024},
-        {"metric": "Probability 65-year-old lives to 90", "value": "35", "unit": "percent", "source": "JPMorgan Longevity Analysis 2025", "year": 2024},
-        {"metric": "Probability at least one in couple (age 65) lives to 90", "value": "57", "unit": "percent", "source": "JPMorgan Longevity Analysis 2025", "year": 2024},
-        {"metric": "Probability at least one in couple (age 65) lives to 95", "value": "33", "unit": "percent", "source": "JPMorgan Longevity Analysis 2025", "year": 2024},
-        {"metric": "Average retirement length", "value": "20", "unit": "years", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Healthcare costs in retirement (couple, age 65+)", "value": "315000", "unit": "USD total", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Workers with access to employer retirement plan", "value": "72", "unit": "percent", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Median 401(k) balance age 55-64", "value": "71168", "unit": "USD", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Median 401(k) balance age 65+", "value": "72993", "unit": "USD", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Average 401(k) contribution rate", "value": "7.4", "unit": "percent of salary", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Percent of Americans with no retirement savings", "value": "28", "unit": "percent", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Annual savings rate needed starting at 25 for 80% replacement", "value": "12", "unit": "percent of salary", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Annual savings rate needed starting at 35 for 80% replacement", "value": "18", "unit": "percent of salary", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Annual savings rate needed starting at 45 for 80% replacement", "value": "30", "unit": "percent of salary", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Retirement savings gap (median household)", "value": "120000", "unit": "USD shortfall", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Medicare Part B monthly premium (standard)", "value": "185", "unit": "USD/month", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Average age of actual retirement", "value": "62", "unit": "years", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Long-term care probability (need after 65)", "value": "70", "unit": "percent", "source": "JPMorgan Retirement Guide 2025", "year": 2024},
-        {"metric": "Average nursing home annual cost", "value": "108405", "unit": "USD/year", "source": "JPMorgan Retirement Guide 2025", "year": 2024}
+        {
+          "metric": "Recommended savings by age 30 (multiple of salary)",
+          "value": "1.0",
+          "unit": "x salary",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Recommended savings by age 40 (multiple of salary)",
+          "value": "3.0",
+          "unit": "x salary",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Recommended savings by age 50 (multiple of salary)",
+          "value": "6.0",
+          "unit": "x salary",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Recommended savings by age 60 (multiple of salary)",
+          "value": "8.0",
+          "unit": "x salary",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Recommended savings by age 67 (multiple of salary)",
+          "value": "10.0",
+          "unit": "x salary",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Target income replacement ratio",
+          "value": "80",
+          "unit": "percent of pre-retirement income",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Social Security replacement rate for median earner",
+          "value": "40",
+          "unit": "percent",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Social Security replacement rate for high earner",
+          "value": "28",
+          "unit": "percent",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average Social Security monthly benefit",
+          "value": "1907",
+          "unit": "USD/month",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Social Security trust fund projected depletion year",
+          "value": "2033",
+          "unit": "year",
+          "source": "Social Security Trustees Report via JPMorgan",
+          "year": 2024
+        },
+        {
+          "metric": "Benefit reduction if trust fund depleted",
+          "value": "21",
+          "unit": "percent cut",
+          "source": "Social Security Trustees Report via JPMorgan",
+          "year": 2024
+        },
+        {
+          "metric": "Probability 65-year-old lives to 85",
+          "value": "55",
+          "unit": "percent",
+          "source": "JPMorgan Longevity Analysis 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Probability 65-year-old lives to 90",
+          "value": "35",
+          "unit": "percent",
+          "source": "JPMorgan Longevity Analysis 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Probability at least one in couple (age 65) lives to 90",
+          "value": "57",
+          "unit": "percent",
+          "source": "JPMorgan Longevity Analysis 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Probability at least one in couple (age 65) lives to 95",
+          "value": "33",
+          "unit": "percent",
+          "source": "JPMorgan Longevity Analysis 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average retirement length",
+          "value": "20",
+          "unit": "years",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Healthcare costs in retirement (couple, age 65+)",
+          "value": "315000",
+          "unit": "USD total",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Workers with access to employer retirement plan",
+          "value": "72",
+          "unit": "percent",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Median 401(k) balance age 55-64",
+          "value": "71168",
+          "unit": "USD",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Median 401(k) balance age 65+",
+          "value": "72993",
+          "unit": "USD",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average 401(k) contribution rate",
+          "value": "7.4",
+          "unit": "percent of salary",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Percent of Americans with no retirement savings",
+          "value": "28",
+          "unit": "percent",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Annual savings rate needed starting at 25 for 80% replacement",
+          "value": "12",
+          "unit": "percent of salary",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Annual savings rate needed starting at 35 for 80% replacement",
+          "value": "18",
+          "unit": "percent of salary",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Annual savings rate needed starting at 45 for 80% replacement",
+          "value": "30",
+          "unit": "percent of salary",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Retirement savings gap (median household)",
+          "value": "120000",
+          "unit": "USD shortfall",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Medicare Part B monthly premium (standard)",
+          "value": "185",
+          "unit": "USD/month",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average age of actual retirement",
+          "value": "62",
+          "unit": "years",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Long-term care probability (need after 65)",
+          "value": "70",
+          "unit": "percent",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average nursing home annual cost",
+          "value": "108405",
+          "unit": "USD/year",
+          "source": "JPMorgan Retirement Guide 2025",
+          "year": 2024
+        }
       ]
     },
     "small_business": {
       "description": "Small and medium business failure rates, lending data, and revenue benchmarks from JPMorgan Chase Institute",
       "data": [
-        {"metric": "Small business failure rate within 1 year", "value": "20", "unit": "percent", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024},
-        {"metric": "Small business failure rate within 5 years", "value": "50", "unit": "percent", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024},
-        {"metric": "Small business failure rate within 10 years", "value": "65", "unit": "percent", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024},
-        {"metric": "Median cash buffer (days of expenses)", "value": "27", "unit": "days", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024},
-        {"metric": "Small business loan approval rate (big banks)", "value": "14.3", "unit": "percent", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024},
-        {"metric": "Small business loan approval rate (small banks)", "value": "63.1", "unit": "percent", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024},
-        {"metric": "Small business loan approval rate (alternative lenders)", "value": "27.8", "unit": "percent", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024},
-        {"metric": "Average small business revenue (annual)", "value": "450000", "unit": "USD", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024},
-        {"metric": "Median small business revenue (annual)", "value": "198000", "unit": "USD", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024},
-        {"metric": "Restaurant median annual revenue", "value": "620000", "unit": "USD", "source": "JPMorgan Chase Institute Industry Benchmarks 2024", "year": 2024},
-        {"metric": "Restaurant average profit margin", "value": "5.5", "unit": "percent", "source": "JPMorgan Chase Institute Industry Benchmarks 2024", "year": 2024},
-        {"metric": "Retail median annual revenue", "value": "325000", "unit": "USD", "source": "JPMorgan Chase Institute Industry Benchmarks 2024", "year": 2024},
-        {"metric": "Professional services median annual revenue", "value": "410000", "unit": "USD", "source": "JPMorgan Chase Institute Industry Benchmarks 2024", "year": 2024},
-        {"metric": "Healthcare/dental median annual revenue", "value": "720000", "unit": "USD", "source": "JPMorgan Chase Institute Industry Benchmarks 2024", "year": 2024},
-        {"metric": "Construction median annual revenue", "value": "580000", "unit": "USD", "source": "JPMorgan Chase Institute Industry Benchmarks 2024", "year": 2024},
-        {"metric": "Tech startup median annual revenue (year 3)", "value": "175000", "unit": "USD", "source": "JPMorgan Chase Institute Industry Benchmarks 2024", "year": 2024},
-        {"metric": "Percent of small businesses with employees", "value": "19.4", "unit": "percent", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024},
-        {"metric": "Average number of employees (employer firms)", "value": "12", "unit": "employees", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024},
-        {"metric": "Percent of small businesses profitable in year 1", "value": "40", "unit": "percent", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024},
-        {"metric": "Average small business startup cost", "value": "40000", "unit": "USD", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024},
-        {"metric": "Revenue volatility (monthly coefficient of variation)", "value": "35", "unit": "percent", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024},
-        {"metric": "Percent of small businesses using online sales", "value": "41", "unit": "percent", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024},
-        {"metric": "Average SBA 7(a) loan amount", "value": "538000", "unit": "USD", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024},
-        {"metric": "SBA loan default rate", "value": "14", "unit": "percent", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024},
-        {"metric": "Small businesses with <$10K cash buffer", "value": "47", "unit": "percent", "source": "JPMorgan Chase Institute Small Business Report 2024", "year": 2024}
+        {
+          "metric": "Small business failure rate within 1 year",
+          "value": "20",
+          "unit": "percent",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Small business failure rate within 5 years",
+          "value": "50",
+          "unit": "percent",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Small business failure rate within 10 years",
+          "value": "65",
+          "unit": "percent",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Median cash buffer (days of expenses)",
+          "value": "27",
+          "unit": "days",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Small business loan approval rate (big banks)",
+          "value": "14.3",
+          "unit": "percent",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Small business loan approval rate (small banks)",
+          "value": "63.1",
+          "unit": "percent",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Small business loan approval rate (alternative lenders)",
+          "value": "27.8",
+          "unit": "percent",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Average small business revenue (annual)",
+          "value": "450000",
+          "unit": "USD",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Median small business revenue (annual)",
+          "value": "198000",
+          "unit": "USD",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Restaurant median annual revenue",
+          "value": "620000",
+          "unit": "USD",
+          "source": "JPMorgan Chase Institute Industry Benchmarks 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Restaurant average profit margin",
+          "value": "5.5",
+          "unit": "percent",
+          "source": "JPMorgan Chase Institute Industry Benchmarks 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Retail median annual revenue",
+          "value": "325000",
+          "unit": "USD",
+          "source": "JPMorgan Chase Institute Industry Benchmarks 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Professional services median annual revenue",
+          "value": "410000",
+          "unit": "USD",
+          "source": "JPMorgan Chase Institute Industry Benchmarks 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Healthcare/dental median annual revenue",
+          "value": "720000",
+          "unit": "USD",
+          "source": "JPMorgan Chase Institute Industry Benchmarks 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Construction median annual revenue",
+          "value": "580000",
+          "unit": "USD",
+          "source": "JPMorgan Chase Institute Industry Benchmarks 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Tech startup median annual revenue (year 3)",
+          "value": "175000",
+          "unit": "USD",
+          "source": "JPMorgan Chase Institute Industry Benchmarks 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Percent of small businesses with employees",
+          "value": "19.4",
+          "unit": "percent",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Average number of employees (employer firms)",
+          "value": "12",
+          "unit": "employees",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Percent of small businesses profitable in year 1",
+          "value": "40",
+          "unit": "percent",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Average small business startup cost",
+          "value": "40000",
+          "unit": "USD",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Revenue volatility (monthly coefficient of variation)",
+          "value": "35",
+          "unit": "percent",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Percent of small businesses using online sales",
+          "value": "41",
+          "unit": "percent",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Average SBA 7(a) loan amount",
+          "value": "538000",
+          "unit": "USD",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "SBA loan default rate",
+          "value": "14",
+          "unit": "percent",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Small businesses with <$10K cash buffer",
+          "value": "47",
+          "unit": "percent",
+          "source": "JPMorgan Chase Institute Small Business Report 2024",
+          "year": 2024
+        }
       ]
     },
     "household_wealth": {
       "description": "Median net worth, savings rates, debt levels, and homeownership from JPMorgan research and Federal Reserve SCF",
       "data": [
-        {"metric": "Median household net worth (all ages)", "value": "192900", "unit": "USD", "source": "JPMorgan Wealth Insights 2025 (Fed SCF 2022 adj.)", "year": 2024},
-        {"metric": "Median net worth age under 35", "value": "39000", "unit": "USD", "source": "JPMorgan Wealth Insights 2025", "year": 2024},
-        {"metric": "Median net worth age 35-44", "value": "135600", "unit": "USD", "source": "JPMorgan Wealth Insights 2025", "year": 2024},
-        {"metric": "Median net worth age 45-54", "value": "247200", "unit": "USD", "source": "JPMorgan Wealth Insights 2025", "year": 2024},
-        {"metric": "Median net worth age 55-64", "value": "364270", "unit": "USD", "source": "JPMorgan Wealth Insights 2025", "year": 2024},
-        {"metric": "Median net worth age 65-74", "value": "409900", "unit": "USD", "source": "JPMorgan Wealth Insights 2025", "year": 2024},
-        {"metric": "Median net worth age 75+", "value": "335600", "unit": "USD", "source": "JPMorgan Wealth Insights 2025", "year": 2024},
-        {"metric": "U.S. personal savings rate", "value": "3.7", "unit": "percent of disposable income", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "Percent of Americans living paycheck to paycheck", "value": "60", "unit": "percent", "source": "JPMorgan Chase Institute Consumer Report 2024", "year": 2024},
-        {"metric": "Percent unable to cover $400 emergency", "value": "37", "unit": "percent", "source": "JPMorgan Chase Institute Consumer Report 2024", "year": 2024},
-        {"metric": "Average household credit card debt", "value": "10479", "unit": "USD", "source": "JPMorgan Chase Institute Consumer Report 2024", "year": 2024},
-        {"metric": "Total U.S. household debt", "value": "17.7", "unit": "trillion USD", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "Average mortgage debt", "value": "244498", "unit": "USD", "source": "JPMorgan Chase Institute Consumer Report 2024", "year": 2024},
-        {"metric": "Average student loan debt", "value": "37088", "unit": "USD", "source": "JPMorgan Chase Institute Consumer Report 2024", "year": 2024},
-        {"metric": "Average auto loan debt", "value": "23792", "unit": "USD", "source": "JPMorgan Chase Institute Consumer Report 2024", "year": 2024},
-        {"metric": "U.S. homeownership rate", "value": "65.6", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "Homeownership rate age under 35", "value": "38.7", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "Homeownership rate age 35-44", "value": "62.1", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "Homeownership rate age 65+", "value": "79.2", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "Median household income", "value": "80610", "unit": "USD", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "Household debt service ratio", "value": "9.8", "unit": "percent of disposable income", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "Average credit card interest rate", "value": "22.8", "unit": "percent APR", "source": "JPMorgan Chase Institute Consumer Report 2024", "year": 2024},
-        {"metric": "Percent of households with $0 or negative net worth", "value": "15", "unit": "percent", "source": "JPMorgan Wealth Insights 2025", "year": 2024},
-        {"metric": "Racial wealth gap (White median / Black median)", "value": "6.0", "unit": "ratio", "source": "JPMorgan Wealth Insights 2025", "year": 2024},
-        {"metric": "Racial wealth gap (White median / Hispanic median)", "value": "4.8", "unit": "ratio", "source": "JPMorgan Wealth Insights 2025", "year": 2024}
+        {
+          "metric": "Median household net worth (all ages)",
+          "value": "192900",
+          "unit": "USD",
+          "source": "JPMorgan Wealth Insights 2025 (Fed SCF 2022 adj.)",
+          "year": 2024
+        },
+        {
+          "metric": "Median net worth age under 35",
+          "value": "39000",
+          "unit": "USD",
+          "source": "JPMorgan Wealth Insights 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Median net worth age 35-44",
+          "value": "135600",
+          "unit": "USD",
+          "source": "JPMorgan Wealth Insights 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Median net worth age 45-54",
+          "value": "247200",
+          "unit": "USD",
+          "source": "JPMorgan Wealth Insights 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Median net worth age 55-64",
+          "value": "364270",
+          "unit": "USD",
+          "source": "JPMorgan Wealth Insights 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Median net worth age 65-74",
+          "value": "409900",
+          "unit": "USD",
+          "source": "JPMorgan Wealth Insights 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Median net worth age 75+",
+          "value": "335600",
+          "unit": "USD",
+          "source": "JPMorgan Wealth Insights 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. personal savings rate",
+          "value": "3.7",
+          "unit": "percent of disposable income",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Percent of Americans living paycheck to paycheck",
+          "value": "60",
+          "unit": "percent",
+          "source": "JPMorgan Chase Institute Consumer Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Percent unable to cover $400 emergency",
+          "value": "37",
+          "unit": "percent",
+          "source": "JPMorgan Chase Institute Consumer Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Average household credit card debt",
+          "value": "10479",
+          "unit": "USD",
+          "source": "JPMorgan Chase Institute Consumer Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Total U.S. household debt",
+          "value": "17.7",
+          "unit": "trillion USD",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average mortgage debt",
+          "value": "244498",
+          "unit": "USD",
+          "source": "JPMorgan Chase Institute Consumer Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Average student loan debt",
+          "value": "37088",
+          "unit": "USD",
+          "source": "JPMorgan Chase Institute Consumer Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Average auto loan debt",
+          "value": "23792",
+          "unit": "USD",
+          "source": "JPMorgan Chase Institute Consumer Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. homeownership rate",
+          "value": "65.6",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Homeownership rate age under 35",
+          "value": "38.7",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Homeownership rate age 35-44",
+          "value": "62.1",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Homeownership rate age 65+",
+          "value": "79.2",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Median household income",
+          "value": "80610",
+          "unit": "USD",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Household debt service ratio",
+          "value": "9.8",
+          "unit": "percent of disposable income",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average credit card interest rate",
+          "value": "22.8",
+          "unit": "percent APR",
+          "source": "JPMorgan Chase Institute Consumer Report 2024",
+          "year": 2024
+        },
+        {
+          "metric": "Percent of households with $0 or negative net worth",
+          "value": "15",
+          "unit": "percent",
+          "source": "JPMorgan Wealth Insights 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Racial wealth gap (White median / Black median)",
+          "value": "6.0",
+          "unit": "ratio",
+          "source": "JPMorgan Wealth Insights 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Racial wealth gap (White median / Hispanic median)",
+          "value": "4.8",
+          "unit": "ratio",
+          "source": "JPMorgan Wealth Insights 2025",
+          "year": 2024
+        }
       ]
     },
     "career_earnings": {
       "description": "Lifetime earnings by education, salary growth, and job mobility data from JPMorgan research",
       "data": [
-        {"metric": "Lifetime earnings — high school diploma", "value": "1.3", "unit": "million USD", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Lifetime earnings — associate degree", "value": "1.7", "unit": "million USD", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Lifetime earnings — bachelor's degree", "value": "2.3", "unit": "million USD", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Lifetime earnings — master's degree", "value": "2.7", "unit": "million USD", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Lifetime earnings — professional degree (MD, JD)", "value": "3.6", "unit": "million USD", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Lifetime earnings — doctoral degree", "value": "3.3", "unit": "million USD", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "College wage premium over high school", "value": "75", "unit": "percent higher", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Peak earning age (men)", "value": "55", "unit": "years", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Peak earning age (women)", "value": "44", "unit": "years", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Salary growth first 10 years of career", "value": "60", "unit": "percent cumulative", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Average salary increase from job switch", "value": "14.8", "unit": "percent", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Average salary increase staying with employer (annual)", "value": "4.6", "unit": "percent", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Median STEM bachelor's starting salary", "value": "78000", "unit": "USD", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Median business bachelor's starting salary", "value": "62000", "unit": "USD", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Median liberal arts bachelor's starting salary", "value": "45000", "unit": "USD", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Average number of jobs in career (age 18-54)", "value": "12.4", "unit": "jobs", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Median tenure at current job", "value": "3.9", "unit": "years", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Gender pay gap (women earn)", "value": "83", "unit": "cents per male dollar", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "ROI of bachelor's degree (net present value)", "value": "500000", "unit": "USD lifetime", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Average MBA salary premium", "value": "40", "unit": "percent higher", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Underemployment rate for recent grads", "value": "41", "unit": "percent", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Earnings penalty per year of unemployment", "value": "8", "unit": "percent reduction", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Lifetime earnings — no high school diploma", "value": "0.97", "unit": "million USD", "source": "JPMorgan Workforce Research 2025", "year": 2024},
-        {"metric": "Remote work wage premium", "value": "7", "unit": "percent", "source": "JPMorgan Workforce Research 2025", "year": 2024}
+        {
+          "metric": "Lifetime earnings \u2014 high school diploma",
+          "value": "1.3",
+          "unit": "million USD",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Lifetime earnings \u2014 associate degree",
+          "value": "1.7",
+          "unit": "million USD",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Lifetime earnings \u2014 bachelor's degree",
+          "value": "2.3",
+          "unit": "million USD",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Lifetime earnings \u2014 master's degree",
+          "value": "2.7",
+          "unit": "million USD",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Lifetime earnings \u2014 professional degree (MD, JD)",
+          "value": "3.6",
+          "unit": "million USD",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Lifetime earnings \u2014 doctoral degree",
+          "value": "3.3",
+          "unit": "million USD",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "College wage premium over high school",
+          "value": "75",
+          "unit": "percent higher",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Peak earning age (men)",
+          "value": "55",
+          "unit": "years",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Peak earning age (women)",
+          "value": "44",
+          "unit": "years",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Salary growth first 10 years of career",
+          "value": "60",
+          "unit": "percent cumulative",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average salary increase from job switch",
+          "value": "14.8",
+          "unit": "percent",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average salary increase staying with employer (annual)",
+          "value": "4.6",
+          "unit": "percent",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Median STEM bachelor's starting salary",
+          "value": "78000",
+          "unit": "USD",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Median business bachelor's starting salary",
+          "value": "62000",
+          "unit": "USD",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Median liberal arts bachelor's starting salary",
+          "value": "45000",
+          "unit": "USD",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average number of jobs in career (age 18-54)",
+          "value": "12.4",
+          "unit": "jobs",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Median tenure at current job",
+          "value": "3.9",
+          "unit": "years",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Gender pay gap (women earn)",
+          "value": "83",
+          "unit": "cents per male dollar",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "ROI of bachelor's degree (net present value)",
+          "value": "500000",
+          "unit": "USD lifetime",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average MBA salary premium",
+          "value": "40",
+          "unit": "percent higher",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Underemployment rate for recent grads",
+          "value": "41",
+          "unit": "percent",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Earnings penalty per year of unemployment",
+          "value": "8",
+          "unit": "percent reduction",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Lifetime earnings \u2014 no high school diploma",
+          "value": "0.97",
+          "unit": "million USD",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Remote work wage premium",
+          "value": "7",
+          "unit": "percent",
+          "source": "JPMorgan Workforce Research 2025",
+          "year": 2024
+        }
       ]
     },
     "real_estate": {
       "description": "Home prices, rental yields, affordability, and mortgage data from JPMorgan research",
       "data": [
-        {"metric": "Median existing home price (U.S.)", "value": "407500", "unit": "USD", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Home price appreciation (10-year annualized)", "value": "6.8", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Home price appreciation (30-year annualized)", "value": "4.3", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Home price-to-income ratio (national)", "value": "5.0", "unit": "ratio", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Historical average home price-to-income ratio", "value": "3.5", "unit": "ratio", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Average 30-year fixed mortgage rate", "value": "6.72", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Average monthly mortgage payment (median home)", "value": "2150", "unit": "USD/month", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Percent of income spent on housing (median)", "value": "35", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Historically affordable threshold (housing cost)", "value": "30", "unit": "percent of income", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "National rental vacancy rate", "value": "6.6", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Median monthly rent (national)", "value": "1850", "unit": "USD/month", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Gross rental yield (national average)", "value": "5.5", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Existing home inventory (months of supply)", "value": "3.3", "unit": "months", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Housing starts (annual rate)", "value": "1.35", "unit": "million units", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Housing shortage estimate", "value": "4.5", "unit": "million units", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "First-time buyer share of purchases", "value": "26", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Average first-time buyer age", "value": "36", "unit": "years", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Average down payment (first-time buyer)", "value": "8", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Average down payment (repeat buyer)", "value": "19", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Commercial real estate cap rate (average)", "value": "6.8", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Home equity as percent of total household wealth", "value": "28", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Mortgage delinquency rate (30+ days)", "value": "3.6", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Percent of homeowners with mortgage", "value": "62", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Median home size (new construction)", "value": "2233", "unit": "square feet", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Real home price appreciation (inflation-adjusted, 30yr annualized)", "value": "1.5", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Foreclosure rate (national)", "value": "0.23", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Average closing costs (buyer)", "value": "6000", "unit": "USD", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Average real estate agent commission", "value": "5.0", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Percent of homes sold above list price", "value": "28", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Average days on market (existing home)", "value": "43", "unit": "days", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "New home median price", "value": "437300", "unit": "USD", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Adjustable rate mortgage share of new originations", "value": "7.5", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "Home renovation spending (annual, U.S.)", "value": "420", "unit": "billion USD", "source": "JPMorgan Real Estate Research 2025", "year": 2024},
-        {"metric": "HELOC average interest rate", "value": "8.6", "unit": "percent", "source": "JPMorgan Real Estate Research 2025", "year": 2024}
+        {
+          "metric": "Median existing home price (U.S.)",
+          "value": "407500",
+          "unit": "USD",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Home price appreciation (10-year annualized)",
+          "value": "6.8",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Home price appreciation (30-year annualized)",
+          "value": "4.3",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Home price-to-income ratio (national)",
+          "value": "5.0",
+          "unit": "ratio",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Historical average home price-to-income ratio",
+          "value": "3.5",
+          "unit": "ratio",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average 30-year fixed mortgage rate",
+          "value": "6.72",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average monthly mortgage payment (median home)",
+          "value": "2150",
+          "unit": "USD/month",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Percent of income spent on housing (median)",
+          "value": "35",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Historically affordable threshold (housing cost)",
+          "value": "30",
+          "unit": "percent of income",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "National rental vacancy rate",
+          "value": "6.6",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Median monthly rent (national)",
+          "value": "1850",
+          "unit": "USD/month",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Gross rental yield (national average)",
+          "value": "5.5",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Existing home inventory (months of supply)",
+          "value": "3.3",
+          "unit": "months",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Housing starts (annual rate)",
+          "value": "1.35",
+          "unit": "million units",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Housing shortage estimate",
+          "value": "4.5",
+          "unit": "million units",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "First-time buyer share of purchases",
+          "value": "26",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average first-time buyer age",
+          "value": "36",
+          "unit": "years",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average down payment (first-time buyer)",
+          "value": "8",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average down payment (repeat buyer)",
+          "value": "19",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Commercial real estate cap rate (average)",
+          "value": "6.8",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Home equity as percent of total household wealth",
+          "value": "28",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Mortgage delinquency rate (30+ days)",
+          "value": "3.6",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Percent of homeowners with mortgage",
+          "value": "62",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Median home size (new construction)",
+          "value": "2233",
+          "unit": "square feet",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Real home price appreciation (inflation-adjusted, 30yr annualized)",
+          "value": "1.5",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Foreclosure rate (national)",
+          "value": "0.23",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average closing costs (buyer)",
+          "value": "6000",
+          "unit": "USD",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average real estate agent commission",
+          "value": "5.0",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Percent of homes sold above list price",
+          "value": "28",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average days on market (existing home)",
+          "value": "43",
+          "unit": "days",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "New home median price",
+          "value": "437300",
+          "unit": "USD",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Adjustable rate mortgage share of new originations",
+          "value": "7.5",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Home renovation spending (annual, U.S.)",
+          "value": "420",
+          "unit": "billion USD",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "HELOC average interest rate",
+          "value": "8.6",
+          "unit": "percent",
+          "source": "JPMorgan Real Estate Research 2025",
+          "year": 2024
+        }
       ]
     },
     "global_economy": {
       "description": "Additional macroeconomic data, trade, and fiscal indicators from JPMorgan Research",
       "data": [
-        {"metric": "U.S. federal budget deficit (% GDP)", "value": "6.4", "unit": "percent of GDP", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "U.S. federal interest payments (% GDP)", "value": "3.3", "unit": "percent of GDP", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "U.S. trade deficit (goods + services)", "value": "773", "unit": "billion USD", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "Global debt to GDP ratio", "value": "336", "unit": "percent", "source": "JPMorgan Global Research 2025", "year": 2024},
-        {"metric": "U.S. labor force participation rate", "value": "62.5", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "Prime-age (25-54) labor force participation", "value": "83.5", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "U.S. unemployment rate", "value": "4.1", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "U.S. job openings (JOLTS)", "value": "7.7", "unit": "million", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "U.S. quits rate", "value": "2.1", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "Average hourly earnings growth (YoY)", "value": "4.0", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "U.S. productivity growth (nonfarm, YoY)", "value": "1.8", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "U.S. consumer spending as % of GDP", "value": "68", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "U.S. business investment as % of GDP", "value": "14.2", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "Dollar index (DXY) level", "value": "104", "unit": "index", "source": "JPMorgan FX Research 2025", "year": 2024},
-        {"metric": "U.S. money supply M2 (YoY change)", "value": "2.1", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "U.S. ISM Manufacturing PMI", "value": "49.3", "unit": "index (50=neutral)", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "U.S. ISM Services PMI", "value": "54.1", "unit": "index (50=neutral)", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "Global GDP (nominal)", "value": "105", "unit": "trillion USD", "source": "JPMorgan Global Research 2025", "year": 2024},
-        {"metric": "U.S. share of global GDP", "value": "26", "unit": "percent", "source": "JPMorgan Global Research 2025", "year": 2024},
-        {"metric": "China share of global GDP", "value": "17", "unit": "percent", "source": "JPMorgan Global Research 2025", "year": 2024},
-        {"metric": "Global FDI flows (annual)", "value": "1.3", "unit": "trillion USD", "source": "JPMorgan Global Research 2025", "year": 2024},
-        {"metric": "U.S. real median household income growth (10-year annualized)", "value": "1.2", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "Health expenditure as percent of GDP (U.S.)", "value": "17.3", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "Education expenditure as percent of GDP (U.S.)", "value": "6.0", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "Defense spending as percent of GDP (U.S.)", "value": "3.4", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "Social Security + Medicare as percent of GDP", "value": "11.2", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "U.S. immigration net annual flow", "value": "1.0", "unit": "million", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "U.S. total factor productivity growth (10-year avg)", "value": "0.9", "unit": "percent", "source": "JPMorgan Economic Research 2025", "year": 2024},
-        {"metric": "China GDP growth rate 2024", "value": "4.9", "unit": "percent", "source": "JPMorgan Global Research 2025", "year": 2024},
-        {"metric": "India GDP growth rate 2024", "value": "6.8", "unit": "percent", "source": "JPMorgan Global Research 2025", "year": 2024},
-        {"metric": "Euro area GDP growth rate 2024", "value": "0.8", "unit": "percent", "source": "JPMorgan Global Research 2025", "year": 2024},
-        {"metric": "Japan GDP growth rate 2024", "value": "0.3", "unit": "percent", "source": "JPMorgan Global Research 2025", "year": 2024},
-        {"metric": "Emerging markets GDP growth 2024", "value": "4.2", "unit": "percent", "source": "JPMorgan Global Research 2025", "year": 2024},
-        {"metric": "Global trade volume growth 2024", "value": "2.7", "unit": "percent", "source": "JPMorgan Global Research 2025", "year": 2024}
+        {
+          "metric": "U.S. federal budget deficit (% GDP)",
+          "value": "6.4",
+          "unit": "percent of GDP",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. federal interest payments (% GDP)",
+          "value": "3.3",
+          "unit": "percent of GDP",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. trade deficit (goods + services)",
+          "value": "773",
+          "unit": "billion USD",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Global debt to GDP ratio",
+          "value": "336",
+          "unit": "percent",
+          "source": "JPMorgan Global Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. labor force participation rate",
+          "value": "62.5",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Prime-age (25-54) labor force participation",
+          "value": "83.5",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. unemployment rate",
+          "value": "4.1",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. job openings (JOLTS)",
+          "value": "7.7",
+          "unit": "million",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. quits rate",
+          "value": "2.1",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Average hourly earnings growth (YoY)",
+          "value": "4.0",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. productivity growth (nonfarm, YoY)",
+          "value": "1.8",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. consumer spending as % of GDP",
+          "value": "68",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. business investment as % of GDP",
+          "value": "14.2",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Dollar index (DXY) level",
+          "value": "104",
+          "unit": "index",
+          "source": "JPMorgan FX Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. money supply M2 (YoY change)",
+          "value": "2.1",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. ISM Manufacturing PMI",
+          "value": "49.3",
+          "unit": "index (50=neutral)",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. ISM Services PMI",
+          "value": "54.1",
+          "unit": "index (50=neutral)",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Global GDP (nominal)",
+          "value": "105",
+          "unit": "trillion USD",
+          "source": "JPMorgan Global Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. share of global GDP",
+          "value": "26",
+          "unit": "percent",
+          "source": "JPMorgan Global Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "China share of global GDP",
+          "value": "17",
+          "unit": "percent",
+          "source": "JPMorgan Global Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Global FDI flows (annual)",
+          "value": "1.3",
+          "unit": "trillion USD",
+          "source": "JPMorgan Global Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. real median household income growth (10-year annualized)",
+          "value": "1.2",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Health expenditure as percent of GDP (U.S.)",
+          "value": "17.3",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Education expenditure as percent of GDP (U.S.)",
+          "value": "6.0",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Defense spending as percent of GDP (U.S.)",
+          "value": "3.4",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Social Security + Medicare as percent of GDP",
+          "value": "11.2",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. immigration net annual flow",
+          "value": "1.0",
+          "unit": "million",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "U.S. total factor productivity growth (10-year avg)",
+          "value": "0.9",
+          "unit": "percent",
+          "source": "JPMorgan Economic Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "China GDP growth rate 2024",
+          "value": "4.9",
+          "unit": "percent",
+          "source": "JPMorgan Global Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "India GDP growth rate 2024",
+          "value": "6.8",
+          "unit": "percent",
+          "source": "JPMorgan Global Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Euro area GDP growth rate 2024",
+          "value": "0.8",
+          "unit": "percent",
+          "source": "JPMorgan Global Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Japan GDP growth rate 2024",
+          "value": "0.3",
+          "unit": "percent",
+          "source": "JPMorgan Global Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Emerging markets GDP growth 2024",
+          "value": "4.2",
+          "unit": "percent",
+          "source": "JPMorgan Global Research 2025",
+          "year": 2024
+        },
+        {
+          "metric": "Global trade volume growth 2024",
+          "value": "2.7",
+          "unit": "percent",
+          "source": "JPMorgan Global Research 2025",
+          "year": 2024
+        }
       ]
-    }
+    },
+    "jpm_corporate": [
+      {
+        "metric": "JPMorgan total revenue",
+        "value": "162.4",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan total employees",
+        "value": "313000",
+        "unit": "employees",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan total assets",
+        "value": "4010",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan CET1 ratio",
+        "value": "15.0",
+        "unit": "percent",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan return on equity",
+        "value": "17",
+        "unit": "percent",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan market capitalization",
+        "value": "570",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan AUM",
+        "value": "3.4",
+        "unit": "trillion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan consumer banking customers",
+        "value": "82",
+        "unit": "million",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan investment banking revenue",
+        "value": "9.5",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan FICC revenue",
+        "value": "18.2",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan equities revenue",
+        "value": "11.8",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan credit card loans",
+        "value": "210",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan technology spending annual",
+        "value": "17",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan branches",
+        "value": "4700",
+        "unit": "branches",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan mobile active users",
+        "value": "55",
+        "unit": "million",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "market_insights": [
+      {
+        "metric": "S&P 500 historical average PE ratio",
+        "value": "17.4",
+        "unit": "ratio",
+        "source": "JPMorgan Guide to Markets 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "S&P 500 forward PE 2024",
+        "value": "21.5",
+        "unit": "ratio",
+        "source": "JPMorgan Guide to Markets 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US equity market concentration (top 10)",
+        "value": "35",
+        "unit": "percent of S&P 500",
+        "source": "JPMorgan Guide to Markets 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US tech sector earnings share of S&P 500",
+        "value": "30",
+        "unit": "percent",
+        "source": "JPMorgan Guide to Markets 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average investor annual return vs S&P 500",
+        "value": "3.7 vs 10.5",
+        "unit": "percent (30yr)",
+        "source": "JPMorgan Guide to Markets 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US equity mutual fund flows 2024",
+        "value": "-50",
+        "unit": "billion USD (outflows)",
+        "source": "JPMorgan Guide to Markets 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US ETF inflows 2024",
+        "value": "600",
+        "unit": "billion USD",
+        "source": "JPMorgan Guide to Markets 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US passive investing share of equity AUM",
+        "value": "54",
+        "unit": "percent",
+        "source": "JPMorgan Guide to Markets 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global index fund AUM",
+        "value": "15",
+        "unit": "trillion USD",
+        "source": "JPMorgan Guide to Markets 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "S&P 500 intra-year average decline",
+        "value": "14.2",
+        "unit": "percent (but positive 73% of years)",
+        "source": "JPMorgan Guide to Markets 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Best 10 days contribution to 20yr return",
+        "value": "50",
+        "unit": "percent of total return",
+        "source": "JPMorgan Guide to Markets 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US financial assets to GDP ratio",
+        "value": "5.7",
+        "unit": "times",
+        "source": "JPMorgan Guide to Markets 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US corporate bond market size",
+        "value": "10.8",
+        "unit": "trillion USD",
+        "source": "JPMorgan Guide to Markets 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US municipal bond market",
+        "value": "4.0",
+        "unit": "trillion USD",
+        "source": "JPMorgan Guide to Markets 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US Treasury market size",
+        "value": "27",
+        "unit": "trillion USD",
+        "source": "JPMorgan Guide to Markets 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "us_spending_patterns": [
+      {
+        "metric": "US consumer spending growth 2024",
+        "value": "5.2",
+        "unit": "percent nominal",
+        "source": "JPMorgan Chase Institute 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US median checking account balance",
+        "value": "2500",
+        "unit": "USD",
+        "source": "JPMorgan Chase Institute 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US median savings account balance",
+        "value": "4500",
+        "unit": "USD",
+        "source": "JPMorgan Chase Institute 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US income volatility (% with 30%+ income swing)",
+        "value": "25",
+        "unit": "percent of workers",
+        "source": "JPMorgan Chase Institute 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US expense volatility (month-to-month)",
+        "value": "29",
+        "unit": "percent variation",
+        "source": "JPMorgan Chase Institute 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US healthcare spending volatility",
+        "value": "44",
+        "unit": "percent month-to-month",
+        "source": "JPMorgan Chase Institute 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US subscription services per household",
+        "value": "6.7",
+        "unit": "subscriptions average",
+        "source": "JPMorgan Chase Institute 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US online shopping share of total spending",
+        "value": "28",
+        "unit": "percent",
+        "source": "JPMorgan Chase Institute 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US grocery spending growth",
+        "value": "3.5",
+        "unit": "percent YoY",
+        "source": "JPMorgan Chase Institute 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US gas spending share of income",
+        "value": "4.2",
+        "unit": "percent average",
+        "source": "JPMorgan Chase Institute 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US childcare costs as share of income",
+        "value": "27",
+        "unit": "percent for single parent",
+        "source": "JPMorgan Chase Institute 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US rent burden by city (NYC)",
+        "value": "36",
+        "unit": "percent of income",
+        "source": "JPMorgan Chase Institute 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US rent burden by city (SF)",
+        "value": "34",
+        "unit": "percent of income",
+        "source": "JPMorgan Chase Institute 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US rent burden by city (Austin)",
+        "value": "28",
+        "unit": "percent of income",
+        "source": "JPMorgan Chase Institute 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US financial fragility (cant cover 2 months expenses)",
+        "value": "37",
+        "unit": "percent of households",
+        "source": "JPMorgan Chase Institute 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "private_banking": [
+      {
+        "metric": "JPMorgan Private Bank AUM",
+        "value": "720",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan wealth management revenue",
+        "value": "20.8",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US family offices served by JPMorgan",
+        "value": "2500",
+        "unit": "families",
+        "source": "JPMorgan Wealth Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan alternative investment platforms AUM",
+        "value": "350",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Ultra-wealthy (>100M) client growth",
+        "value": "12",
+        "unit": "percent YoY",
+        "source": "JPMorgan Wealth Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "UHNW clients investing in private markets",
+        "value": "85",
+        "unit": "percent",
+        "source": "JPMorgan Wealth Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "UHNW average allocation to alternatives",
+        "value": "35",
+        "unit": "percent",
+        "source": "JPMorgan Wealth Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Family office direct investing growth",
+        "value": "15",
+        "unit": "percent YoY",
+        "source": "JPMorgan Wealth Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "HNW art and collectibles allocation",
+        "value": "4",
+        "unit": "percent average",
+        "source": "JPMorgan Wealth Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Private banking client satisfaction rate",
+        "value": "92",
+        "unit": "percent",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan advisor-to-client ratio (private bank)",
+        "value": "1:25",
+        "unit": "ratio",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan international private banking offices",
+        "value": "25",
+        "unit": "countries",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Cross-border wealth management demand growth",
+        "value": "8",
+        "unit": "percent YoY",
+        "source": "JPMorgan Wealth Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Digital wealth management tools adoption (HNW)",
+        "value": "74",
+        "unit": "percent",
+        "source": "JPMorgan Wealth Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Philanthropic advisory services growth",
+        "value": "18",
+        "unit": "percent YoY",
+        "source": "JPMorgan Wealth Report 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "commercial_banking": [
+      {
+        "metric": "JPMorgan commercial banking revenue",
+        "value": "17.4",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan middle market clients",
+        "value": "35000",
+        "unit": "companies",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan commercial real estate lending",
+        "value": "175",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan trade finance volume",
+        "value": "350",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan payments processed daily",
+        "value": "10",
+        "unit": "trillion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan merchant services volume",
+        "value": "2.2",
+        "unit": "trillion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan commercial card spending",
+        "value": "550",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US middle market companies",
+        "value": "200000",
+        "unit": "companies",
+        "source": "JPMorgan Commercial Banking 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US middle market revenue ($10M-$1B)",
+        "value": "10",
+        "unit": "trillion USD combined",
+        "source": "JPMorgan Commercial Banking 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US middle market employment",
+        "value": "48",
+        "unit": "million workers",
+        "source": "JPMorgan Commercial Banking 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan syndicated lending market share",
+        "value": "1",
+        "unit": "rank globally",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan global liquidity solutions",
+        "value": "4",
+        "unit": "trillion USD managed",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan Onyx (blockchain) transactions",
+        "value": "1",
+        "unit": "billion USD daily",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan cybersecurity spending",
+        "value": "600",
+        "unit": "million USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan data scientists employed",
+        "value": "2000",
+        "unit": "data scientists",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "economic_research": [
+      {
+        "metric": "US consumer balance sheet strength vs pre-2008",
+        "value": "2x",
+        "unit": "times stronger",
+        "source": "JPMorgan Economics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US business debt-to-GDP",
+        "value": "48",
+        "unit": "percent",
+        "source": "JPMorgan Economics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US bank deposit growth",
+        "value": "1.8",
+        "unit": "percent YoY",
+        "source": "JPMorgan Economics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US bank lending growth",
+        "value": "2.5",
+        "unit": "percent YoY",
+        "source": "JPMorgan Economics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US commercial bank unrealized losses",
+        "value": "500",
+        "unit": "billion USD",
+        "source": "JPMorgan Economics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US regional bank commercial real estate exposure",
+        "value": "2.4",
+        "unit": "trillion USD",
+        "source": "JPMorgan Economics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US banking system total deposits",
+        "value": "17.4",
+        "unit": "trillion USD",
+        "source": "JPMorgan Economics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US interest rate-sensitive sectors share of GDP",
+        "value": "18",
+        "unit": "percent",
+        "source": "JPMorgan Economics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US federal debt interest cost share of budget",
+        "value": "16",
+        "unit": "percent",
+        "source": "JPMorgan Economics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US mandatory spending share of budget",
+        "value": "63",
+        "unit": "percent",
+        "source": "JPMorgan Economics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US discretionary spending share of budget",
+        "value": "28",
+        "unit": "percent",
+        "source": "JPMorgan Economics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US GDP per worker (productivity)",
+        "value": "143000",
+        "unit": "USD",
+        "source": "JPMorgan Economics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US total factor productivity growth",
+        "value": "1.0",
+        "unit": "percent",
+        "source": "JPMorgan Economics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US immigration contribution to GDP growth",
+        "value": "0.3",
+        "unit": "percent per year",
+        "source": "JPMorgan Economics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US demographic drag on GDP growth",
+        "value": "0.2",
+        "unit": "percent per year reduction",
+        "source": "JPMorgan Economics 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "global_outlook": [
+      {
+        "metric": "JPMorgan GDP growth forecast US 2025",
+        "value": "2.0",
+        "unit": "percent",
+        "source": "JPMorgan Global Outlook 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan GDP growth forecast China 2025",
+        "value": "4.2",
+        "unit": "percent",
+        "source": "JPMorgan Global Outlook 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan GDP growth forecast India 2025",
+        "value": "6.5",
+        "unit": "percent",
+        "source": "JPMorgan Global Outlook 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan oil price forecast 2025",
+        "value": "78",
+        "unit": "USD per barrel",
+        "source": "JPMorgan Global Outlook 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan gold price forecast 2025",
+        "value": "2500",
+        "unit": "USD per ounce",
+        "source": "JPMorgan Global Outlook 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan US dollar forecast",
+        "value": "stable to slightly weaker",
+        "unit": "trend",
+        "source": "JPMorgan Global Outlook 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan EM equities recommendation",
+        "value": "overweight",
+        "unit": "allocation",
+        "source": "JPMorgan Global Outlook 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan long-term equity return assumption (10yr)",
+        "value": "6.0",
+        "unit": "percent real",
+        "source": "JPMorgan Long-Term Capital Market Assumptions 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan long-term bond return assumption (10yr)",
+        "value": "2.5",
+        "unit": "percent real",
+        "source": "JPMorgan Long-Term Capital Market Assumptions 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan long-term inflation assumption",
+        "value": "2.6",
+        "unit": "percent",
+        "source": "JPMorgan Long-Term Capital Market Assumptions 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan long-term PE return assumption",
+        "value": "8.8",
+        "unit": "percent",
+        "source": "JPMorgan Long-Term Capital Market Assumptions 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan long-term real estate return assumption",
+        "value": "6.5",
+        "unit": "percent",
+        "source": "JPMorgan Long-Term Capital Market Assumptions 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan long-term hedge fund return assumption",
+        "value": "5.2",
+        "unit": "percent",
+        "source": "JPMorgan Long-Term Capital Market Assumptions 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan long-term commodities return assumption",
+        "value": "3.5",
+        "unit": "percent",
+        "source": "JPMorgan Long-Term Capital Market Assumptions 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan long-term EM equity return assumption",
+        "value": "7.8",
+        "unit": "percent real",
+        "source": "JPMorgan Long-Term Capital Market Assumptions 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "sustainability_jpm": [
+      {
+        "metric": "JPMorgan sustainable development target",
+        "value": "2.5",
+        "unit": "trillion USD by 2030",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan green financing delivered",
+        "value": "400",
+        "unit": "billion USD cumulative",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan community development lending",
+        "value": "40",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan affordable housing investment",
+        "value": "14",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan racial equity commitment",
+        "value": "30",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan small business lending",
+        "value": "28",
+        "unit": "billion USD annual",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan employee training investment",
+        "value": "350",
+        "unit": "million USD annual",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan philanthropic giving annual",
+        "value": "350",
+        "unit": "million USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan renewable energy procurement",
+        "value": "100",
+        "unit": "percent of operations",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan women in leadership",
+        "value": "35",
+        "unit": "percent",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan climate-related financing",
+        "value": "200",
+        "unit": "billion USD cumulative",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan AI and data professionals",
+        "value": "5000",
+        "unit": "employees",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan patents (technology)",
+        "value": "2500",
+        "unit": "active patents",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan acquisition of First Republic deposits",
+        "value": "92",
+        "unit": "billion USD",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan global market share (IB fees)",
+        "value": "9",
+        "unit": "percent (rank 1)",
+        "source": "JPMorgan Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "retirement_jpm": [
+      {
+        "metric": "US retirement plan assets managed by JPMorgan",
+        "value": "700",
+        "unit": "billion USD",
+        "source": "JPMorgan Retirement 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan retirement plan participants",
+        "value": "13",
+        "unit": "million",
+        "source": "JPMorgan Retirement 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "SmartRetirement blend fund AUM",
+        "value": "200",
+        "unit": "billion USD",
+        "source": "JPMorgan Retirement 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average 401k balance growth since 2019",
+        "value": "45",
+        "unit": "percent",
+        "source": "JPMorgan Retirement 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US workers auto-escalating contributions",
+        "value": "30",
+        "unit": "percent of plan participants",
+        "source": "JPMorgan Retirement 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "In-plan annuity adoption",
+        "value": "12",
+        "unit": "percent of large plans",
+        "source": "JPMorgan Retirement 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Emergency savings in retirement plans",
+        "value": "8",
+        "unit": "percent of plans offer",
+        "source": "JPMorgan Retirement 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Student loan match programs",
+        "value": "5",
+        "unit": "percent of plans offer",
+        "source": "JPMorgan Retirement 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Gen Z 401k participation rate",
+        "value": "71",
+        "unit": "percent (highest ever for age group)",
+        "source": "JPMorgan Retirement 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Retirement plan leakage (early withdrawals)",
+        "value": "105",
+        "unit": "billion USD annual",
+        "source": "JPMorgan Retirement 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "crypto_jpm": [
+      {
+        "metric": "JPMorgan Onyx blockchain platform transactions",
+        "value": "1",
+        "unit": "billion USD daily",
+        "source": "JPMorgan Digital 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPM Coin transfers",
+        "value": "1",
+        "unit": "billion USD daily average",
+        "source": "JPMorgan Digital 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan blockchain developer team",
+        "value": "200",
+        "unit": "engineers",
+        "source": "JPMorgan Digital 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan tokenized deposits",
+        "value": "2",
+        "unit": "billion USD",
+        "source": "JPMorgan Digital 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global crypto regulation jurisdictions",
+        "value": "52",
+        "unit": "clear regulatory frameworks",
+        "source": "JPMorgan Digital 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Institutional crypto custody market",
+        "value": "65",
+        "unit": "billion USD",
+        "source": "JPMorgan Digital 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan digital payments innovation lab projects",
+        "value": "15",
+        "unit": "active projects",
+        "source": "JPMorgan Digital 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global programmable payment pilots",
+        "value": "35",
+        "unit": "bank-led projects",
+        "source": "JPMorgan Digital 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan Kinexys (formerly Onyx) users",
+        "value": "200",
+        "unit": "institutional clients",
+        "source": "JPMorgan Digital 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "JPMorgan repo market tokenization",
+        "value": "500",
+        "unit": "million USD daily",
+        "source": "JPMorgan Digital 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ]
   }
 }

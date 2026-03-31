@@ -8,7 +8,10 @@ const NODE_COLORS: Record<string, { accent: string; bg: string; bgDark: string; 
   start:          { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
   desire:         { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
   action:         { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
+  state:          { accent: '#5f7d63', bg: '#d8ead8', bgDark: '#1a3a1e', text: '#3d5e41' },
   bottleneck:     { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
+  trajectory:     { accent: '#7f5aa6', bg: '#efe2fb', bgDark: '#2d1a4e', text: '#6b3fa0' },
+  gate:           { accent: '#d97706', bg: '#fffbeb', bgDark: '#451a03', text: '#b45309' },
   decision:       { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
   'outcome-good': { accent: '#10b981', bg: '#f0fdf4', bgDark: '#022c22', text: '#059669' },
   'outcome-bad':  { accent: '#ef4444', bg: '#fef2f2', bgDark: '#450a0a', text: '#dc2626' },
@@ -35,6 +38,21 @@ const ICONS: Record<string, React.ReactNode> = {
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
       <line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" />
+    </svg>
+  ),
+  state: (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+    </svg>
+  ),
+  trajectory: (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 2L11 13" /><path d="M22 2l-7 20-4-9-9-4 20-7z" />
+    </svg>
+  ),
+  gate: (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 4h16v4l-6 4 6 4v4H4v-4l6-4-6-4V4z" />
     </svg>
   ),
   decision: (
@@ -127,7 +145,10 @@ const SACRED_VERSES: Record<string, { bible: string; bRef: string; quran: string
   start:          { bible: 'Commit to the Lord whatever you do, and he will establish your plans.', bRef: 'Proverbs 16:3', quran: 'And whoever puts their trust in Allah, He will be enough for them.', qRef: 'Quran 65:3', law: 'Faith & Trust' },
   desire:         { bible: 'Delight yourself in the Lord, and he will give you the desires of your heart.', bRef: 'Psalm 37:4', quran: 'And for those who fear Allah, He will make a way out.', qRef: 'Quran 65:2', law: 'Desire & Purpose' },
   action:         { bible: 'Faith by itself, if it does not have works, is dead.', bRef: 'James 2:17', quran: 'Indeed, Allah will not change the condition of a people until they change what is in themselves.', qRef: 'Quran 13:11', law: 'Action & Works' },
+  state:          { bible: 'Search me, O God, and know my heart; test me and know my anxious thoughts.', bRef: 'Psalm 139:23', quran: 'Indeed, Allah knows what is in every heart.', qRef: 'Quran 67:13', law: 'Awareness & Truth' },
   bottleneck:     { bible: 'Enter through the narrow gate. For wide is the gate that leads to destruction.', bRef: 'Matthew 7:13-14', quran: 'Indeed, with hardship comes ease.', qRef: 'Quran 94:5-6', law: 'Testing & Trials' },
+  trajectory:     { bible: 'Broad is the road that leads to destruction, and narrow the road that leads to life.', bRef: 'Matthew 7:13-14', quran: 'And that this is My path, which is straight, so follow it.', qRef: 'Quran 6:153', law: 'Direction & Path' },
+  gate:           { bible: 'There is a way that appears to be right, but in the end it leads to death.', bRef: 'Proverbs 14:12', quran: 'We have shown him the two paths.', qRef: 'Quran 90:10', law: 'Divergence & Fate' },
   decision:       { bible: 'Plans fail for lack of counsel, but with many advisers they succeed.', bRef: 'Proverbs 15:22', quran: 'And whose affair is determined by consultation among themselves.', qRef: 'Quran 42:38', law: 'Counsel & Wisdom' },
   'outcome-good': { bible: 'Let us not become weary in doing good, for at the proper time we will reap a harvest.', bRef: 'Galatians 6:9', quran: 'So whoever does an atom\'s weight of good will see it.', qRef: 'Quran 99:7', law: 'Harvest & Reward' },
   'outcome-bad':  { bible: 'Do not be deceived: God cannot be mocked. A man reaps what he sows.', bRef: 'Galatians 6:7', quran: 'And whoever does an atom\'s weight of evil will see it.', qRef: 'Quran 99:8', law: 'Consequence & Justice' },
@@ -139,9 +160,20 @@ function SimNodeComponent({ data }: NodeProps) {
   const nodeType = d.nodeType || 'action';
   const colors = NODE_COLORS[nodeType] || NODE_COLORS.action;
   const icon = ICONS[nodeType];
-  const hasProb = nodeType === 'bottleneck' || nodeType === 'decision';
+  const hasProb = nodeType === 'bottleneck' || nodeType === 'decision' || nodeType === 'gate';
   const isStart = nodeType === 'start';
   const isSacred = d.sacredMode === true;
+
+  // Dynamic border color for bottleneck/gate based on probability severity
+  const getDifficultyBorder = (): string | undefined => {
+    if ((nodeType !== 'bottleneck' && nodeType !== 'gate') || d.prob == null) return undefined;
+    const p = d.prob;
+    if (p >= 60) return 'rgba(16, 185, 129, 0.6)';   // green — easy
+    if (p >= 30) return 'rgba(245, 158, 11, 0.6)';    // orange — medium
+    if (p >= 10) return 'rgba(239, 68, 68, 0.7)';     // red — hard
+    return 'rgba(127, 29, 29, 0.85)';                  // dark red — killer
+  };
+  const difficultyBorder = getDifficultyBorder();
   const sacredVerse = SACRED_VERSES[nodeType] || SACRED_VERSES.action;
   const computedValue = d.computedValue;
   // Only show value bar if value is meaningful (> 0)
@@ -156,6 +188,7 @@ function SimNodeComponent({ data }: NodeProps) {
   // Node type label (shown above node, monospace like Tersa)
   const NODE_TYPE_LABELS: Record<string, string> = {
     start: 'START', desire: 'DESIRE', action: 'ACTION',
+    state: 'STATE', trajectory: 'TRAJECTORY', gate: 'GATE',
     bottleneck: 'BOTTLENECK', decision: 'DECISION',
     'outcome-good': 'OUTCOME', 'outcome-bad': 'OUTCOME',
     loop: 'LOOP',
@@ -176,7 +209,8 @@ function SimNodeComponent({ data }: NodeProps) {
 
   return (
     <div
-      className={`sim-node sim-node--card${nodeType === 'bottleneck' ? ' sim-node--bottleneck' : ''}${nodeType === 'outcome-bad' ? ' sim-node--fail' : nodeType === 'outcome-good' ? ' sim-node--success' : ''}${d.isCutPoint ? ' sim-node--cut' : ''}`}
+      className={`sim-node sim-node--card${nodeType === 'bottleneck' ? ' sim-node--bottleneck' : ''}${nodeType === 'gate' ? ' sim-node--gate' : ''}${nodeType === 'state' ? ' sim-node--state' : ''}${nodeType === 'trajectory' ? ' sim-node--trajectory' : ''}${nodeType === 'outcome-bad' ? ' sim-node--fail' : nodeType === 'outcome-good' ? ' sim-node--success' : ''}${d.isCutPoint ? ' sim-node--cut' : ''}`}
+      style={difficultyBorder ? { outlineColor: difficultyBorder, outlineWidth: 2, outlineStyle: 'solid', '--node-accent': difficultyBorder } as React.CSSProperties : undefined}
     >
       <Handle type="target" position={Position.Left} className="sim-handle" />
 

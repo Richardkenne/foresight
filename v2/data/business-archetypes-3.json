@@ -2,7 +2,7 @@
   "_meta": {
     "category": "Business Archetypes — Batch 3",
     "created": "2026-03-27",
-    "total_archetypes": 5,
+    "total_archetypes": 31,
     "description": "High-resolution micro-step funnels for business scenarios"
   },
   "investment_context": {
@@ -210,7 +210,8 @@
           "label": "Experience first vacancy (avg 6.6% rate)",
           "prob": 75,
           "time": "6-18 months",
-          "source": "Census Bureau Q3 2024"
+          "source": "Census Bureau Q3 2024",
+          "url": "https://data.census.gov/"
         },
         {
           "id": "survive_year1",
@@ -447,14 +448,16 @@
           "label": "Start cold outreach (LinkedIn, email, content)",
           "prob": 50,
           "time": "ongoing",
-          "source": "LinkedIn 2024 B2B Report"
+          "source": "LinkedIn 2024 B2B Report",
+          "url": "https://economicgraph.linkedin.com/"
         },
         {
           "id": "discovery_calls",
           "label": "Book discovery calls (avg 2-5% response rate on cold)",
           "prob": 40,
           "time": "2-8 weeks",
-          "source": "LinkedIn 2024 B2B Report"
+          "source": "LinkedIn 2024 B2B Report",
+          "url": "https://economicgraph.linkedin.com/"
         },
         {
           "id": "first_paid_client",
@@ -963,7 +966,8 @@
           "label": "Add integrated payment processing",
           "prob": 65,
           "time": "2-4 weeks",
-          "source": "Stripe 2024 Marketplace Guide"
+          "source": "Stripe 2024 Marketplace Guide",
+          "url": "https://stripe.com/guides"
         },
         {
           "id": "thousand_users",
@@ -1276,6 +1280,3563 @@
         "World Bank 2024 Doing Business Report",
         "Amazon 2024 Small Business Empowerment Report"
       ]
+    },
+    "venture_capital_path": {
+      "name": "Raise VC -> Build Startup -> Exit",
+      "description": "Founder raises venture capital to build a high-growth startup targeting a large market. The Silicon Valley path — high reward, brutal odds.",
+      "entry_point": "Decides to build a VC-backed startup",
+      "stages": [
+        {
+          "id": "have_idea",
+          "label": "Have startup idea",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "build_team",
+          "label": "Find co-founder(s)",
+          "prob": 40,
+          "time": "1-6 months",
+          "source": "Startup Genome 2024 — 60% start solo",
+          "url": "https://startupgenome.com/"
+        },
+        {
+          "id": "build_mvp",
+          "label": "Build MVP",
+          "prob": 50,
+          "time": "2-6 months",
+          "source": "Startup Genome 2024"
+        },
+        {
+          "id": "join_accelerator",
+          "label": "Apply and get into accelerator (YC, Techstars)",
+          "prob": 3,
+          "time": "3-12 months",
+          "source": "YC 2024 — 1.5% acceptance rate"
+        },
+        {
+          "id": "raise_pre_seed",
+          "label": "Raise pre-seed round ($100-500K)",
+          "prob": 10,
+          "time": "2-6 months",
+          "source": "Crunchbase 2024 — 90% rejection rate"
+        },
+        {
+          "id": "find_pmf",
+          "label": "Find product-market fit",
+          "prob": 40,
+          "time": "6-24 months",
+          "source": "Startup Genome 2024 — 60% never find PMF"
+        },
+        {
+          "id": "raise_seed",
+          "label": "Raise seed round ($1-3M)",
+          "prob": 30,
+          "time": "3-6 months",
+          "source": "Crunchbase 2024"
+        },
+        {
+          "id": "reach_100k_arr",
+          "label": "Reach $100K ARR",
+          "prob": 40,
+          "time": "12-24 months",
+          "source": "ChartMogul 2025"
+        },
+        {
+          "id": "raise_series_a",
+          "label": "Raise Series A ($5-15M)",
+          "prob": 20,
+          "time": "3-9 months",
+          "source": "Crunchbase 2024 — only 20% of seed companies raise A"
+        },
+        {
+          "id": "reach_1m_arr",
+          "label": "Reach $1M ARR",
+          "prob": 30,
+          "time": "6-24 months",
+          "source": "ChartMogul 2025"
+        },
+        {
+          "id": "raise_series_b",
+          "label": "Raise Series B ($15-50M)",
+          "prob": 30,
+          "time": "12-24 months",
+          "source": "Crunchbase 2024"
+        },
+        {
+          "id": "reach_10m_arr",
+          "label": "Reach $10M ARR",
+          "prob": 25,
+          "time": "12-36 months",
+          "source": "ChartMogul 2025"
+        },
+        {
+          "id": "reach_100_employees",
+          "label": "Scale to 100+ employees",
+          "prob": 30,
+          "time": "12-36 months",
+          "source": "Startup Genome 2024"
+        },
+        {
+          "id": "raise_series_c",
+          "label": "Raise Series C+ ($50M+)",
+          "prob": 25,
+          "time": "12-24 months",
+          "source": "Crunchbase 2024"
+        },
+        {
+          "id": "reach_50m_arr",
+          "label": "Reach $50M ARR",
+          "prob": 15,
+          "time": "24-60 months",
+          "source": "ChartMogul 2025"
+        },
+        {
+          "id": "ipo_or_acquisition",
+          "label": "Exit via IPO or acquisition",
+          "prob": 20,
+          "time": "24-72 months",
+          "source": "CB Insights 2024 — only 1% of VC-backed startups IPO"
+        },
+        {
+          "id": "unicorn_status",
+          "label": "Reach $1B+ valuation (unicorn)",
+          "prob": 1,
+          "time": "48-120 months",
+          "source": "CB Insights 2024 — 0.00006% of startups become unicorns"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "idea_to_seed": "1.5%",
+        "idea_to_series_a": "0.3%",
+        "idea_to_10m_arr": "0.005%",
+        "idea_to_unicorn": "0.00003%"
+      },
+      "bottlenecks": [
+        "raise_pre_seed",
+        "find_pmf",
+        "raise_series_a",
+        "reach_10m_arr",
+        "ipo_or_acquisition"
+      ],
+      "reality_check": "75% of VC-backed startups fail. 95% don't return investor capital. Only 1% achieve a successful exit (IPO or acquisition above invested capital). Median time to exit is 7 years.",
+      "sources": [
+        "Crunchbase 2024",
+        "CB Insights 2024",
+        "Startup Genome 2024",
+        "ChartMogul 2025"
+      ],
+      "industry_data": {
+        "vc_deployed_2024_usd_billions": 170,
+        "startups_funded_annually": 15000,
+        "unicorns_globally_total": 1400,
+        "median_time_to_exit_years": 7,
+        "vc_backed_failure_rate_pct": 75
+      },
+      "buyer_psychology": {
+        "investor_pattern_match_pct": 80,
+        "investor_team_over_idea_pct": 65,
+        "investor_market_size_threshold_usd_billions": 1
+      }
+    },
+    "angel_investing": {
+      "name": "Angel Investor -> Portfolio -> Returns",
+      "description": "High-net-worth individual invests in early-stage startups as an angel investor. High risk, potentially massive returns.",
+      "entry_point": "Decides to become an angel investor",
+      "stages": [
+        {
+          "id": "accredited_status",
+          "label": "Qualify as accredited investor ($1M+ net worth or $200K+ income)",
+          "prob": 100,
+          "time": "already qualified",
+          "source": "SEC 2024"
+        },
+        {
+          "id": "join_network",
+          "label": "Join angel group or syndicate",
+          "prob": 60,
+          "time": "1-3 months",
+          "source": "Angel Capital Association 2024",
+          "url": "https://www.angelcapitalassociation.org/"
+        },
+        {
+          "id": "first_deal_flow",
+          "label": "Start seeing deal flow",
+          "prob": 70,
+          "time": "1-3 months",
+          "source": "ACA 2024"
+        },
+        {
+          "id": "first_investment",
+          "label": "Make first angel investment ($5-50K)",
+          "prob": 50,
+          "time": "3-12 months",
+          "source": "ACA 2024 -- avg angel check $25-50K"
+        },
+        {
+          "id": "build_portfolio_5",
+          "label": "Build portfolio of 5 investments",
+          "prob": 40,
+          "time": "12-36 months",
+          "source": "ACA 2024 -- diversification is key"
+        },
+        {
+          "id": "build_portfolio_10",
+          "label": "Build portfolio of 10 investments",
+          "prob": 25,
+          "time": "24-60 months",
+          "source": "ACA 2024 -- need 20+ for statistical returns"
+        },
+        {
+          "id": "first_follow_on",
+          "label": "Make first follow-on investment",
+          "prob": 30,
+          "time": "12-36 months",
+          "source": "ACA 2024"
+        },
+        {
+          "id": "first_writeoff",
+          "label": "Experience first complete write-off",
+          "prob": 80,
+          "time": "12-48 months",
+          "source": "ACA 2024 -- 50-70% of angel investments go to zero"
+        },
+        {
+          "id": "first_markup",
+          "label": "See first portfolio company raise at higher valuation",
+          "prob": 40,
+          "time": "12-48 months",
+          "source": "ACA 2024"
+        },
+        {
+          "id": "first_exit",
+          "label": "Experience first exit (acquisition of portfolio company)",
+          "prob": 15,
+          "time": "36-84 months",
+          "source": "ACA 2024 -- avg time to exit 7-10 years"
+        },
+        {
+          "id": "return_capital",
+          "label": "Return initial invested capital from exits",
+          "prob": 20,
+          "time": "48-120 months",
+          "source": "ACA 2024 -- 20% of angels return their capital"
+        },
+        {
+          "id": "achieve_3x_return",
+          "label": "Achieve 3x+ return on total portfolio",
+          "prob": 10,
+          "time": "60-120 months",
+          "source": "ACA 2024"
+        },
+        {
+          "id": "hit_home_run",
+          "label": "Hit 10x+ return on a single investment",
+          "prob": 5,
+          "time": "48-120 months",
+          "source": "ACA 2024 -- 5% of investments return 10x+"
+        },
+        {
+          "id": "build_portfolio_20",
+          "label": "Build portfolio of 20+ investments",
+          "prob": 10,
+          "time": "48-120 months",
+          "source": "ACA 2024"
+        },
+        {
+          "id": "professional_angel",
+          "label": "Become professional/super angel",
+          "prob": 3,
+          "time": "60-120 months",
+          "source": "ACA 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_investment": "21.0%",
+        "start_to_first_exit": "1.6%",
+        "start_to_3x_return": "0.5%"
+      },
+      "bottlenecks": [
+        "first_investment",
+        "build_portfolio_10",
+        "first_exit",
+        "return_capital"
+      ],
+      "reality_check": "50-70% of angel investments go to zero. Average time to exit is 7-10 years. You need 20+ investments for diversification to work statistically. The median angel returns 1x (break even). Only 10% achieve 3x+.",
+      "sources": [
+        "Angel Capital Association 2024"
+      ],
+      "industry_data": {
+        "angel_investors_us_total": 300000,
+        "angel_total_invested_annual_usd_billions": 25,
+        "avg_angel_check_usd": 40000,
+        "angel_deals_funded_annually": 70000,
+        "angel_roi_median": 1.0,
+        "angel_roi_mean": 2.5,
+        "angel_writeoff_rate_pct": 60
+      },
+      "buyer_psychology": {
+        "angel_invest_for_returns_pct": 50,
+        "angel_invest_for_excitement_pct": 30,
+        "angel_invest_to_give_back_pct": 20
+      }
+    },
+    "instagram_business": {
+      "name": "Instagram Business -> Followers -> Revenue",
+      "description": "Person builds an Instagram following and monetizes through brand deals, affiliate marketing, and product sales. Visual-first platform.",
+      "entry_point": "Creates Instagram business account",
+      "stages": [
+        {
+          "id": "create_account",
+          "label": "Create Instagram business account",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "define_niche",
+          "label": "Define content niche and visual style",
+          "prob": 70,
+          "time": "1-2 weeks",
+          "source": "Later 2024",
+          "url": "https://later.com/blog/instagram-statistics/"
+        },
+        {
+          "id": "post_30_posts",
+          "label": "Post 30 high-quality posts",
+          "prob": 35,
+          "time": "1-3 months",
+          "source": "Later 2024 -- 65% quit before 30 posts"
+        },
+        {
+          "id": "reach_500_followers",
+          "label": "Reach 500 followers",
+          "prob": 40,
+          "time": "1-6 months",
+          "source": "Later 2024"
+        },
+        {
+          "id": "reach_1k_followers",
+          "label": "Reach 1,000 followers",
+          "prob": 25,
+          "time": "3-12 months",
+          "source": "Later 2024"
+        },
+        {
+          "id": "use_reels_strategy",
+          "label": "Consistently use Reels for growth",
+          "prob": 30,
+          "time": "1-6 months",
+          "source": "Later 2024 -- Reels get 2x reach vs posts"
+        },
+        {
+          "id": "reach_5k_followers",
+          "label": "Reach 5,000 followers",
+          "prob": 12,
+          "time": "6-24 months",
+          "source": "Later 2024"
+        },
+        {
+          "id": "reach_10k_followers",
+          "label": "Reach 10,000 followers",
+          "prob": 7,
+          "time": "12-36 months",
+          "source": "Later 2024 -- top 7% of active accounts"
+        },
+        {
+          "id": "first_brand_deal",
+          "label": "Get first brand deal/collaboration",
+          "prob": 20,
+          "time": "6-24 months",
+          "source": "Influencer Marketing Hub 2024"
+        },
+        {
+          "id": "earn_500_month",
+          "label": "Earn $500/month from Instagram",
+          "prob": 10,
+          "time": "12-36 months",
+          "source": "Influencer Marketing Hub 2024"
+        },
+        {
+          "id": "reach_50k_followers",
+          "label": "Reach 50,000 followers",
+          "prob": 3,
+          "time": "24-60 months",
+          "source": "Later 2024"
+        },
+        {
+          "id": "earn_2k_month",
+          "label": "Earn $2,000/month from Instagram",
+          "prob": 5,
+          "time": "18-48 months",
+          "source": "Influencer Marketing Hub 2024"
+        },
+        {
+          "id": "reach_100k_followers",
+          "label": "Reach 100,000 followers",
+          "prob": 1.5,
+          "time": "36-72 months",
+          "source": "Later 2024"
+        },
+        {
+          "id": "earn_5k_month",
+          "label": "Earn $5,000+/month from Instagram",
+          "prob": 2,
+          "time": "24-72 months",
+          "source": "Influencer Marketing Hub 2024"
+        },
+        {
+          "id": "full_time_influencer",
+          "label": "Full-time income from Instagram",
+          "prob": 1,
+          "time": "24-72 months",
+          "source": "Influencer Marketing Hub 2024 -- ~1% of creators earn full-time"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_10k_followers": "0.9%",
+        "start_to_first_brand_deal": "0.5%",
+        "start_to_full_time": "0.01%"
+      },
+      "bottlenecks": [
+        "post_30_posts",
+        "reach_5k_followers",
+        "first_brand_deal",
+        "earn_2k_month"
+      ],
+      "reality_check": "Instagram has 2B+ monthly users. Organic reach has declined 50% since 2020. Average engagement rate is 1.6%. Micro-influencers (10-50K) earn $100-500 per sponsored post. Only top 1% earn full-time income.",
+      "sources": [
+        "Later 2024",
+        "Influencer Marketing Hub 2024"
+      ],
+      "industry_data": {
+        "instagram_monthly_users_billions": 2,
+        "instagram_business_accounts_millions": 200,
+        "instagram_ad_revenue_2024_usd_billions": 50,
+        "avg_engagement_rate_pct": 1.6,
+        "micro_influencer_rate_per_post_usd": 250,
+        "macro_influencer_rate_per_post_usd": 5000
+      },
+      "buyer_psychology": {
+        "follower_engage_with_stories_pct": 30,
+        "follower_purchase_from_ad_pct": 30,
+        "follower_trust_recommendations_pct": 60
+      }
+    },
+    "tax_preparation": {
+      "name": "Tax Preparation Business -> Clients -> Seasonal Income",
+      "description": "Person starts a tax preparation business. Seasonal but highly profitable during tax season. Can add year-round services.",
+      "entry_point": "Decides to become a tax preparer",
+      "stages": [
+        {
+          "id": "get_ptin",
+          "label": "Get PTIN from IRS",
+          "prob": 100,
+          "time": "1-2 weeks",
+          "source": "IRS 2024",
+          "url": "https://www.irs.gov/"
+        },
+        {
+          "id": "get_certified",
+          "label": "Get tax preparation certification (EA, CPA, or AFSP)",
+          "prob": 60,
+          "time": "2-12 months",
+          "source": "IRS 2024"
+        },
+        {
+          "id": "buy_software",
+          "label": "Buy tax preparation software",
+          "prob": 90,
+          "time": "1-2 weeks",
+          "source": "IRS 2024 -- Drake, ProConnect, UltraTax"
+        },
+        {
+          "id": "get_efin",
+          "label": "Get EFIN for e-filing",
+          "prob": 80,
+          "time": "2-6 weeks",
+          "source": "IRS 2024"
+        },
+        {
+          "id": "market_services",
+          "label": "Market tax prep services locally",
+          "prob": 55,
+          "time": "1-4 weeks",
+          "source": "NATP 2024"
+        },
+        {
+          "id": "first_client",
+          "label": "Prepare first client return",
+          "prob": 50,
+          "time": "1-4 weeks",
+          "source": "NATP 2024",
+          "url": "https://www.natptax.com/"
+        },
+        {
+          "id": "complete_25_returns",
+          "label": "Complete 25 returns in first season",
+          "prob": 40,
+          "time": "3-4 months (tax season)",
+          "source": "NATP 2024"
+        },
+        {
+          "id": "earn_5k_season",
+          "label": "Earn $5,000 in first tax season",
+          "prob": 35,
+          "time": "3-4 months",
+          "source": "NATP 2024 -- avg $100-400 per return"
+        },
+        {
+          "id": "complete_100_returns",
+          "label": "Complete 100 returns per season",
+          "prob": 20,
+          "time": "year 2-3",
+          "source": "NATP 2024"
+        },
+        {
+          "id": "earn_20k_season",
+          "label": "Earn $20,000 per season",
+          "prob": 15,
+          "time": "year 2-3",
+          "source": "NATP 2024"
+        },
+        {
+          "id": "add_yearround_services",
+          "label": "Add year-round services (bookkeeping, payroll)",
+          "prob": 20,
+          "time": "year 2-4",
+          "source": "NATP 2024"
+        },
+        {
+          "id": "complete_300_returns",
+          "label": "Complete 300+ returns per season",
+          "prob": 8,
+          "time": "year 3-5",
+          "source": "NATP 2024"
+        },
+        {
+          "id": "earn_50k_season",
+          "label": "Earn $50,000+ per season",
+          "prob": 8,
+          "time": "year 3-5",
+          "source": "NATP 2024"
+        },
+        {
+          "id": "hire_preparers",
+          "label": "Hire additional tax preparers",
+          "prob": 10,
+          "time": "year 3-5",
+          "source": "NATP 2024"
+        },
+        {
+          "id": "earn_100k_season",
+          "label": "Earn $100,000+ per season",
+          "prob": 3,
+          "time": "year 5-10",
+          "source": "NATP 2024 -- with team of preparers"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_client": "15.8%",
+        "start_to_100_returns": "3.2%",
+        "start_to_100k_season": "0.05%"
+      },
+      "bottlenecks": [
+        "first_client",
+        "complete_100_returns",
+        "add_yearround_services",
+        "hire_preparers"
+      ],
+      "reality_check": "Tax season is 4 months. You need 300+ returns at $200+ each to make real money. H&R Block charges $150-300 per return. Competition from TurboTax and free filing options is growing. But small business and complex returns pay $500-2000+.",
+      "sources": [
+        "IRS 2024",
+        "NATP 2024"
+      ],
+      "industry_data": {
+        "tax_prep_market_us_usd_billions": 14,
+        "tax_preparers_us_total": 300000,
+        "tax_returns_filed_annually_millions": 160,
+        "avg_return_fee_usd": 220,
+        "paid_preparer_share_pct": 54,
+        "diy_filing_share_pct": 46
+      },
+      "buyer_psychology": {
+        "client_choose_based_on_trust_pct": 75,
+        "client_choose_based_on_price_pct": 40,
+        "client_return_same_preparer_pct": 80,
+        "client_referral_source_pct": 50
+      }
+    },
+    "staffing_agency": {
+      "name": "Staffing Agency -> Placements -> Revenue",
+      "description": "Person starts a staffing/recruiting agency placing temporary or permanent employees. High revenue, relationship-driven, scalable.",
+      "entry_point": "Decides to start a staffing agency",
+      "stages": [
+        {
+          "id": "choose_niche",
+          "label": "Choose staffing niche (IT, healthcare, light industrial, etc.)",
+          "prob": 100,
+          "time": "1-4 weeks",
+          "source": "baseline"
+        },
+        {
+          "id": "register_business",
+          "label": "Register business and get workers comp insurance",
+          "prob": 70,
+          "time": "2-6 weeks",
+          "source": "ASA 2024 -- insurance is critical",
+          "url": "https://americanstaffing.net/"
+        },
+        {
+          "id": "set_up_payroll",
+          "label": "Set up payroll processing for temps",
+          "prob": 80,
+          "time": "2-4 weeks",
+          "source": "ASA 2024"
+        },
+        {
+          "id": "build_candidate_pipeline",
+          "label": "Build pipeline of 50+ candidates",
+          "prob": 50,
+          "time": "2-8 weeks",
+          "source": "ASA 2024"
+        },
+        {
+          "id": "first_client_outreach",
+          "label": "Start outreach to companies needing staff",
+          "prob": 55,
+          "time": "1-4 weeks",
+          "source": "ASA 2024"
+        },
+        {
+          "id": "first_client",
+          "label": "Sign first client agreement",
+          "prob": 30,
+          "time": "1-6 months",
+          "source": "ASA 2024 -- enterprise sales cycle is long"
+        },
+        {
+          "id": "first_placement",
+          "label": "Make first successful placement",
+          "prob": 70,
+          "time": "1-4 weeks after client",
+          "source": "ASA 2024"
+        },
+        {
+          "id": "reach_10_placements",
+          "label": "Reach 10 active placements",
+          "prob": 40,
+          "time": "3-12 months",
+          "source": "ASA 2024"
+        },
+        {
+          "id": "reach_5k_weekly_billing",
+          "label": "Reach $5,000/week in billings",
+          "prob": 30,
+          "time": "6-18 months",
+          "source": "ASA 2024"
+        },
+        {
+          "id": "reach_10k_weekly_billing",
+          "label": "Reach $10,000/week in billings",
+          "prob": 20,
+          "time": "12-36 months",
+          "source": "ASA 2024"
+        },
+        {
+          "id": "hire_recruiter",
+          "label": "Hire first internal recruiter",
+          "prob": 15,
+          "time": "12-36 months",
+          "source": "ASA 2024"
+        },
+        {
+          "id": "reach_50k_weekly_billing",
+          "label": "Reach $50,000/week in billings",
+          "prob": 8,
+          "time": "24-60 months",
+          "source": "ASA 2024"
+        },
+        {
+          "id": "reach_1m_annual_revenue",
+          "label": "Reach $1M annual revenue",
+          "prob": 10,
+          "time": "24-60 months",
+          "source": "ASA 2024"
+        },
+        {
+          "id": "reach_5m_annual_revenue",
+          "label": "Reach $5M+ annual revenue",
+          "prob": 3,
+          "time": "48-120 months",
+          "source": "ASA 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_placement": "5.8%",
+        "start_to_10k_weekly": "0.6%",
+        "start_to_1m_annual": "0.1%"
+      },
+      "bottlenecks": [
+        "first_client",
+        "build_candidate_pipeline",
+        "reach_10k_weekly_billing",
+        "hire_recruiter"
+      ],
+      "reality_check": "Staffing is a $200B industry but margins are thin (20-30% markup on bill rates). You're essentially running a payroll company. Cash flow is challenging — you pay workers weekly but clients pay in 30-60 days. Workers comp insurance is expensive.",
+      "sources": [
+        "ASA 2024"
+      ],
+      "industry_data": {
+        "staffing_market_us_usd_billions": 200,
+        "staffing_agencies_us_total": 25000,
+        "temp_workers_us_millions": 3,
+        "avg_markup_pct": 25,
+        "avg_gross_margin_pct": 25,
+        "avg_bill_rate_usd": 22,
+        "staffing_agency_avg_revenue_usd": 5000000
+      },
+      "buyer_psychology": {
+        "client_choose_based_on_speed_pct": 60,
+        "client_choose_based_on_quality_pct": 50,
+        "client_avg_contract_months": 12,
+        "client_retention_pct": 70
+      }
+    },
+    "daycare_business": {
+      "name": "Home Daycare -> Licensing -> Growth",
+      "description": "Person starts a home-based daycare/childcare business. High demand, recession-proof, but heavily regulated. Can grow to center.",
+      "entry_point": "Decides to start a home daycare",
+      "stages": [
+        {
+          "id": "research_requirements",
+          "label": "Research local licensing requirements",
+          "prob": 100,
+          "time": "1-4 weeks",
+          "source": "baseline"
+        },
+        {
+          "id": "get_licensed",
+          "label": "Get daycare license/registration",
+          "prob": 50,
+          "time": "2-6 months",
+          "source": "NACCRRA 2024 -- licensing varies by state, complex process",
+          "url": "https://www.childcareaware.org/"
+        },
+        {
+          "id": "prepare_space",
+          "label": "Prepare home for childcare (safety, equipment)",
+          "prob": 80,
+          "time": "2-6 weeks",
+          "source": "NACCRRA 2024"
+        },
+        {
+          "id": "get_cpr_certified",
+          "label": "Get CPR and first aid certification",
+          "prob": 90,
+          "time": "1-2 weeks",
+          "source": "NACCRRA 2024"
+        },
+        {
+          "id": "pass_inspection",
+          "label": "Pass health and safety inspection",
+          "prob": 75,
+          "time": "1-4 weeks",
+          "source": "NACCRRA 2024 -- 75% pass on first try"
+        },
+        {
+          "id": "open_enrollment",
+          "label": "Open for enrollment",
+          "prob": 90,
+          "time": "1-4 weeks",
+          "source": "NACCRRA 2024"
+        },
+        {
+          "id": "first_child_enrolled",
+          "label": "Enroll first child",
+          "prob": 70,
+          "time": "1-4 weeks",
+          "source": "NACCRRA 2024 -- high demand in most areas"
+        },
+        {
+          "id": "reach_4_children",
+          "label": "Reach 4 enrolled children",
+          "prob": 60,
+          "time": "1-6 months",
+          "source": "NACCRRA 2024"
+        },
+        {
+          "id": "reach_capacity",
+          "label": "Reach licensed capacity (6-12 kids typical)",
+          "prob": 40,
+          "time": "3-12 months",
+          "source": "NACCRRA 2024"
+        },
+        {
+          "id": "earn_3k_month",
+          "label": "Earn $3,000/month",
+          "prob": 35,
+          "time": "3-12 months",
+          "source": "NACCRRA 2024 -- avg rate $200-300/week per child"
+        },
+        {
+          "id": "earn_5k_month",
+          "label": "Earn $5,000/month",
+          "prob": 25,
+          "time": "6-18 months",
+          "source": "NACCRRA 2024"
+        },
+        {
+          "id": "hire_assistant",
+          "label": "Hire assistant to increase capacity",
+          "prob": 20,
+          "time": "6-24 months",
+          "source": "NACCRRA 2024"
+        },
+        {
+          "id": "earn_8k_month",
+          "label": "Earn $8,000/month",
+          "prob": 15,
+          "time": "12-36 months",
+          "source": "NACCRRA 2024"
+        },
+        {
+          "id": "transition_to_center",
+          "label": "Open standalone daycare center",
+          "prob": 5,
+          "time": "36-72 months",
+          "source": "NACCRRA 2024 -- requires significant capital and licensing"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_child": "18.9%",
+        "start_to_capacity": "7.6%",
+        "start_to_center": "0.1%"
+      },
+      "bottlenecks": [
+        "get_licensed",
+        "pass_inspection",
+        "reach_capacity",
+        "transition_to_center"
+      ],
+      "reality_check": "Home daycare is one of the most recession-proof businesses — parents always need childcare. But it's emotionally and physically demanding. Ratios are strictly regulated (4-6 kids per adult). Average home daycare earns $25-40K/year.",
+      "sources": [
+        "NACCRRA 2024",
+        "Child Care Aware 2024"
+      ],
+      "industry_data": {
+        "childcare_market_us_usd_billions": 60,
+        "home_daycares_us_total": 800000,
+        "center_based_daycares_us_total": 100000,
+        "avg_weekly_rate_infant_usd": 250,
+        "avg_weekly_rate_toddler_usd": 200,
+        "childcare_worker_avg_salary_usd": 30000
+      },
+      "buyer_psychology": {
+        "parent_choose_based_on_trust_pct": 90,
+        "parent_choose_based_on_proximity_pct": 70,
+        "parent_choose_based_on_cost_pct": 50,
+        "parent_avg_retention_months": 24
+      }
+    },
+    "trucking_business": {
+      "name": "Owner-Operator Trucking -> Routes -> Fleet",
+      "description": "Person buys a truck and becomes an owner-operator in trucking. High earning potential but brutal lifestyle. Can scale to fleet.",
+      "entry_point": "Gets CDL and decides to go owner-operator",
+      "stages": [
+        {
+          "id": "get_cdl",
+          "label": "Get Commercial Drivers License (CDL)",
+          "prob": 100,
+          "time": "1-3 months",
+          "source": "baseline"
+        },
+        {
+          "id": "gain_experience",
+          "label": "Drive for a company to gain experience",
+          "prob": 70,
+          "time": "6-24 months",
+          "source": "ATRI 2024 -- most start as company drivers",
+          "url": "https://truckingresearch.org/"
+        },
+        {
+          "id": "save_for_truck",
+          "label": "Save for truck down payment ($10-30K)",
+          "prob": 50,
+          "time": "6-24 months",
+          "source": "ATRI 2024"
+        },
+        {
+          "id": "buy_truck",
+          "label": "Buy or lease first truck ($50-150K)",
+          "prob": 60,
+          "time": "1-3 months",
+          "source": "ATRI 2024"
+        },
+        {
+          "id": "get_authority",
+          "label": "Get MC number and operating authority",
+          "prob": 90,
+          "time": "2-4 weeks",
+          "source": "FMCSA 2024"
+        },
+        {
+          "id": "get_insurance",
+          "label": "Get commercial trucking insurance ($8-15K/year)",
+          "prob": 85,
+          "time": "2-4 weeks",
+          "source": "ATRI 2024 -- insurance is expensive for new operators"
+        },
+        {
+          "id": "first_load",
+          "label": "Book and deliver first load",
+          "prob": 80,
+          "time": "1-2 weeks",
+          "source": "ATRI 2024"
+        },
+        {
+          "id": "earn_10k_month_gross",
+          "label": "Earn $10,000/month gross revenue",
+          "prob": 50,
+          "time": "1-6 months",
+          "source": "ATRI 2024 -- avg OO grosses $150-300K/year"
+        },
+        {
+          "id": "survive_first_breakdown",
+          "label": "Handle first major truck breakdown",
+          "prob": 70,
+          "time": "3-12 months",
+          "source": "ATRI 2024 -- maintenance is brutal"
+        },
+        {
+          "id": "net_positive_after_costs",
+          "label": "Net positive after all costs (fuel, maintenance, insurance)",
+          "prob": 55,
+          "time": "3-12 months",
+          "source": "ATRI 2024 -- costs eat 60-70% of gross"
+        },
+        {
+          "id": "earn_5k_month_net",
+          "label": "Net $5,000/month after all expenses",
+          "prob": 40,
+          "time": "6-18 months",
+          "source": "ATRI 2024"
+        },
+        {
+          "id": "earn_8k_month_net",
+          "label": "Net $8,000/month",
+          "prob": 25,
+          "time": "12-36 months",
+          "source": "ATRI 2024"
+        },
+        {
+          "id": "buy_second_truck",
+          "label": "Buy second truck and hire driver",
+          "prob": 10,
+          "time": "24-60 months",
+          "source": "ATRI 2024"
+        },
+        {
+          "id": "build_fleet_5",
+          "label": "Build fleet of 5+ trucks",
+          "prob": 5,
+          "time": "48-120 months",
+          "source": "ATRI 2024"
+        },
+        {
+          "id": "reach_1m_annual",
+          "label": "Reach $1M annual revenue (fleet)",
+          "prob": 5,
+          "time": "48-120 months",
+          "source": "ATRI 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_load": "15.1%",
+        "start_to_5k_net": "4.2%",
+        "start_to_fleet": "0.1%"
+      },
+      "bottlenecks": [
+        "save_for_truck",
+        "net_positive_after_costs",
+        "buy_second_truck",
+        "build_fleet_5"
+      ],
+      "reality_check": "Average OO grosses $200K but nets only $50-80K after fuel (30%), maintenance (15%), insurance (8%), and truck payments (15%). Lifestyle is brutal — away from home 200+ days/year. 70% of new OOs fail within first 2 years.",
+      "sources": [
+        "ATRI 2024",
+        "FMCSA 2024"
+      ],
+      "industry_data": {
+        "trucking_market_us_usd_billions": 875,
+        "owner_operators_us_total": 350000,
+        "avg_oo_gross_revenue_usd": 200000,
+        "avg_oo_net_income_usd": 65000,
+        "fuel_cost_pct_gross": 30,
+        "truck_price_new_usd": 150000,
+        "truck_price_used_usd": 50000
+      },
+      "buyer_psychology": {
+        "shipper_choose_based_on_reliability_pct": 70,
+        "shipper_choose_based_on_price_pct": 55,
+        "avg_load_rate_per_mile_usd": 2.5
+      }
+    },
+    "saas_marketplace_app": {
+      "name": "Shopify/WordPress App -> Installs -> Revenue",
+      "description": "Developer builds an app/plugin for a platform marketplace (Shopify App Store, WordPress plugins, Chrome extensions). Platform provides built-in distribution.",
+      "entry_point": "Decides to build an app for a platform marketplace",
+      "stages": [
+        {
+          "id": "identify_gap",
+          "label": "Identify gap in marketplace",
+          "prob": 100,
+          "time": "1-4 weeks",
+          "source": "baseline"
+        },
+        {
+          "id": "validate_demand",
+          "label": "Validate demand (search volume, competitor analysis)",
+          "prob": 40,
+          "time": "1-2 weeks",
+          "source": "Shopify 2024"
+        },
+        {
+          "id": "build_app",
+          "label": "Build minimum viable app",
+          "prob": 45,
+          "time": "2-8 weeks",
+          "source": "Shopify 2024 -- 55% never finish building"
+        },
+        {
+          "id": "submit_to_store",
+          "label": "Submit to app store for review",
+          "prob": 85,
+          "time": "1-2 weeks",
+          "source": "Shopify 2024"
+        },
+        {
+          "id": "get_approved",
+          "label": "Get approved and listed",
+          "prob": 70,
+          "time": "1-4 weeks",
+          "source": "Shopify 2024 -- 30% rejection rate"
+        },
+        {
+          "id": "first_install",
+          "label": "Get first install",
+          "prob": 70,
+          "time": "1-2 weeks",
+          "source": "Shopify 2024 -- marketplace provides some visibility"
+        },
+        {
+          "id": "reach_50_installs",
+          "label": "Reach 50 installs",
+          "prob": 40,
+          "time": "1-3 months",
+          "source": "Shopify 2024"
+        },
+        {
+          "id": "first_review",
+          "label": "Get first positive review",
+          "prob": 30,
+          "time": "1-3 months",
+          "source": "Shopify 2024"
+        },
+        {
+          "id": "reach_100_installs",
+          "label": "Reach 100 installs",
+          "prob": 25,
+          "time": "2-6 months",
+          "source": "Shopify 2024"
+        },
+        {
+          "id": "first_paying_user",
+          "label": "Get first paying subscriber (if freemium)",
+          "prob": 30,
+          "time": "1-6 months",
+          "source": "Shopify 2024 -- avg conversion 3-5%"
+        },
+        {
+          "id": "reach_500_installs",
+          "label": "Reach 500 installs",
+          "prob": 12,
+          "time": "6-18 months",
+          "source": "Shopify 2024"
+        },
+        {
+          "id": "reach_1k_mrr",
+          "label": "Reach $1,000 MRR",
+          "prob": 8,
+          "time": "6-24 months",
+          "source": "Shopify 2024"
+        },
+        {
+          "id": "reach_1000_installs",
+          "label": "Reach 1,000 installs",
+          "prob": 6,
+          "time": "12-36 months",
+          "source": "Shopify 2024"
+        },
+        {
+          "id": "reach_5k_mrr",
+          "label": "Reach $5,000 MRR",
+          "prob": 3,
+          "time": "18-48 months",
+          "source": "Shopify 2024"
+        },
+        {
+          "id": "reach_10k_mrr",
+          "label": "Reach $10,000 MRR",
+          "prob": 1,
+          "time": "24-60 months",
+          "source": "Shopify 2024 -- top 1% of apps"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_approved": "10.7%",
+        "start_to_1k_mrr": "0.3%",
+        "start_to_10k_mrr": "0.01%"
+      },
+      "bottlenecks": [
+        "build_app",
+        "get_approved",
+        "first_paying_user",
+        "reach_1k_mrr"
+      ],
+      "reality_check": "Shopify has 10,000+ apps. Most get fewer than 100 installs. Platform takes 15-30% commission. But platform distribution means zero CAC if you rank well. The best strategy: solve a specific, painful problem for a niche merchant type.",
+      "sources": [
+        "Shopify 2024"
+      ],
+      "industry_data": {
+        "shopify_apps_total": 10000,
+        "wordpress_plugins_total": 60000,
+        "chrome_extensions_total": 200000,
+        "shopify_app_commission_pct": 15,
+        "wordpress_plugin_avg_price_monthly_usd": 10,
+        "avg_app_revenue_monthly_usd": 500
+      },
+      "buyer_psychology": {
+        "merchant_install_based_on_reviews_pct": 80,
+        "merchant_trial_before_paying_pct": 90,
+        "merchant_avg_subscription_months": 8,
+        "merchant_churn_monthly_pct": 8
+      }
+    },
+    "wedding_photography": {
+      "name": "Wedding Photography -> Bookings -> Premium",
+      "description": "Person specializes in wedding photography, builds portfolio, grows to premium pricing.",
+      "entry_point": "Decides to specialize in weddings",
+      "stages": [
+        {
+          "id": "invest_gear",
+          "label": "Invest in wedding-grade gear ($5-15K)",
+          "prob": 100,
+          "time": "1-4 weeks",
+          "source": "WeddingWire 2024"
+        },
+        {
+          "id": "second_shoot",
+          "label": "Second shoot for established photographers",
+          "prob": 60,
+          "time": "1-6 months",
+          "source": "WeddingWire 2024",
+          "url": "https://www.weddingwire.com/"
+        },
+        {
+          "id": "shoot_first_wedding",
+          "label": "Shoot first wedding (discounted/free)",
+          "prob": 50,
+          "time": "1-6 months",
+          "source": "WeddingWire 2024"
+        },
+        {
+          "id": "build_portfolio",
+          "label": "Build portfolio of 5+ weddings",
+          "prob": 40,
+          "time": "6-18 months",
+          "source": "WeddingWire 2024"
+        },
+        {
+          "id": "list_on_platforms",
+          "label": "List on WeddingWire/The Knot",
+          "prob": 70,
+          "time": "1-2 weeks",
+          "source": "WeddingWire 2024"
+        },
+        {
+          "id": "book_5_weddings",
+          "label": "Book 5 paid weddings",
+          "prob": 35,
+          "time": "6-18 months",
+          "source": "WeddingWire 2024"
+        },
+        {
+          "id": "earn_15k_season",
+          "label": "Earn $15,000 in wedding season",
+          "prob": 30,
+          "time": "12-24 months",
+          "source": "WeddingWire 2024"
+        },
+        {
+          "id": "book_15_weddings",
+          "label": "Book 15 weddings per year",
+          "prob": 20,
+          "time": "18-36 months",
+          "source": "WeddingWire 2024"
+        },
+        {
+          "id": "raise_to_3k",
+          "label": "Raise package price to $3,000+",
+          "prob": 25,
+          "time": "18-48 months",
+          "source": "WeddingWire 2024"
+        },
+        {
+          "id": "earn_50k_annual",
+          "label": "Earn $50,000 annual from weddings",
+          "prob": 15,
+          "time": "24-48 months",
+          "source": "WeddingWire 2024"
+        },
+        {
+          "id": "book_25_weddings",
+          "label": "Book 25+ weddings per year",
+          "prob": 10,
+          "time": "24-60 months",
+          "source": "WeddingWire 2024"
+        },
+        {
+          "id": "raise_to_5k",
+          "label": "Raise package price to $5,000+",
+          "prob": 8,
+          "time": "36-72 months",
+          "source": "WeddingWire 2024"
+        },
+        {
+          "id": "earn_100k_annual",
+          "label": "Earn $100,000+ annual from weddings",
+          "prob": 5,
+          "time": "36-72 months",
+          "source": "WeddingWire 2024"
+        },
+        {
+          "id": "published_vendor",
+          "label": "Get published in wedding magazines/blogs",
+          "prob": 10,
+          "time": "24-60 months",
+          "source": "WeddingWire 2024"
+        },
+        {
+          "id": "premium_tier",
+          "label": "Reach premium tier ($8K+ per wedding)",
+          "prob": 3,
+          "time": "48-96 months",
+          "source": "WeddingWire 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_5_weddings": "7.0%",
+        "start_to_50k_annual": "1.1%",
+        "start_to_premium": "0.03%"
+      },
+      "bottlenecks": [
+        "shoot_first_wedding",
+        "book_5_weddings",
+        "raise_to_3k"
+      ],
+      "reality_check": "Average wedding photographer earns $44K/year. Competition is fierce. You're booked months in advance or not at all. Editing time is 30-50 hours per wedding.",
+      "sources": [
+        "WeddingWire 2024"
+      ],
+      "industry_data": {
+        "wedding_photography_market_usd_billions": 10,
+        "avg_wedding_photo_package_usd": 2500,
+        "wedding_photographers_us_total": 100000
+      },
+      "buyer_psychology": {
+        "couple_choose_based_on_style_pct": 75,
+        "couple_avg_budget_photography_usd": 2500
+      }
+    },
+    "pressure_washing": {
+      "name": "Pressure Washing Business -> Jobs -> Scale",
+      "description": "Person starts a pressure washing business for driveways, decks, and commercial properties. Low startup cost, high demand.",
+      "entry_point": "Buys pressure washer and starts business",
+      "stages": [
+        {
+          "id": "buy_equipment",
+          "label": "Buy commercial pressure washer ($500-3000)",
+          "prob": 100,
+          "time": "1-2 weeks",
+          "source": "baseline"
+        },
+        {
+          "id": "learn_techniques",
+          "label": "Learn soft wash and surface cleaning",
+          "prob": 70,
+          "time": "1-4 weeks",
+          "source": "PWNA 2024",
+          "url": "https://www.pwna.org/"
+        },
+        {
+          "id": "register_insure",
+          "label": "Register business and get insurance",
+          "prob": 55,
+          "time": "1-3 weeks",
+          "source": "PWNA 2024"
+        },
+        {
+          "id": "market_locally",
+          "label": "Market with door hangers and Facebook",
+          "prob": 60,
+          "time": "1-2 weeks",
+          "source": "PWNA 2024"
+        },
+        {
+          "id": "first_job",
+          "label": "Complete first paid pressure washing job",
+          "prob": 60,
+          "time": "1-4 weeks",
+          "source": "PWNA 2024"
+        },
+        {
+          "id": "reach_10_jobs",
+          "label": "Complete 10 jobs",
+          "prob": 50,
+          "time": "1-3 months",
+          "source": "PWNA 2024"
+        },
+        {
+          "id": "earn_2k_month",
+          "label": "Earn $2,000/month",
+          "prob": 40,
+          "time": "2-6 months",
+          "source": "PWNA 2024 -- avg job $200-500"
+        },
+        {
+          "id": "earn_5k_month",
+          "label": "Earn $5,000/month",
+          "prob": 25,
+          "time": "6-18 months",
+          "source": "PWNA 2024"
+        },
+        {
+          "id": "add_commercial",
+          "label": "Add commercial/fleet washing contracts",
+          "prob": 15,
+          "time": "6-24 months",
+          "source": "PWNA 2024"
+        },
+        {
+          "id": "earn_10k_month",
+          "label": "Earn $10,000/month",
+          "prob": 12,
+          "time": "12-36 months",
+          "source": "PWNA 2024"
+        },
+        {
+          "id": "hire_crew",
+          "label": "Hire crew and run multiple trucks",
+          "prob": 8,
+          "time": "18-48 months",
+          "source": "PWNA 2024"
+        },
+        {
+          "id": "earn_20k_month",
+          "label": "Earn $20,000+/month",
+          "prob": 5,
+          "time": "24-60 months",
+          "source": "PWNA 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_job": "18.5%",
+        "start_to_5k_month": "3.1%",
+        "start_to_20k_month": "0.1%"
+      },
+      "bottlenecks": [
+        "first_job",
+        "add_commercial",
+        "hire_crew"
+      ],
+      "reality_check": "Pressure washing is seasonal in northern climates. Equipment maintenance is constant. Chemical handling requires training. But margins are 60-70% and repeat business is strong.",
+      "sources": [
+        "PWNA 2024"
+      ],
+      "industry_data": {
+        "pressure_washing_market_usd_billions": 2,
+        "avg_job_residential_usd": 300,
+        "avg_job_commercial_usd": 1500
+      },
+      "buyer_psychology": {
+        "customer_choose_based_on_price_pct": 50,
+        "customer_repeat_annually_pct": 40
+      }
+    },
+    "real_estate_agent_path": {
+      "name": "Real Estate Agent -> Sales -> Top Producer",
+      "description": "Person gets real estate license and builds a career as a real estate agent. Commission-based, high earning potential.",
+      "entry_point": "Decides to become a real estate agent",
+      "stages": [
+        {
+          "id": "take_course",
+          "label": "Complete pre-licensing course (60-200 hours)",
+          "prob": 100,
+          "time": "1-6 months",
+          "source": "NAR 2024",
+          "url": "https://www.nar.realtor/"
+        },
+        {
+          "id": "pass_exam",
+          "label": "Pass state licensing exam",
+          "prob": 65,
+          "time": "1-3 months",
+          "source": "NAR 2024 -- 35% fail rate"
+        },
+        {
+          "id": "join_brokerage",
+          "label": "Join a brokerage (Keller Williams, RE/MAX, etc.)",
+          "prob": 90,
+          "time": "1-4 weeks",
+          "source": "NAR 2024"
+        },
+        {
+          "id": "complete_training",
+          "label": "Complete brokerage training program",
+          "prob": 80,
+          "time": "1-3 months",
+          "source": "NAR 2024"
+        },
+        {
+          "id": "first_listing_or_buyer",
+          "label": "Get first listing or buyer client",
+          "prob": 40,
+          "time": "1-6 months",
+          "source": "NAR 2024 -- many new agents struggle to find clients"
+        },
+        {
+          "id": "first_closing",
+          "label": "Close first real estate transaction",
+          "prob": 50,
+          "time": "3-12 months from start",
+          "source": "NAR 2024 -- avg time to first close 6 months"
+        },
+        {
+          "id": "close_3_deals",
+          "label": "Close 3 transactions in first year",
+          "prob": 30,
+          "time": "12 months",
+          "source": "NAR 2024"
+        },
+        {
+          "id": "survive_year_1",
+          "label": "Stay in real estate after year 1",
+          "prob": 50,
+          "time": "12 months",
+          "source": "NAR 2024 -- 50% leave within first year"
+        },
+        {
+          "id": "close_10_deals_year",
+          "label": "Close 10 deals per year",
+          "prob": 30,
+          "time": "year 2-3",
+          "source": "NAR 2024 -- avg agent does 12 deals/year"
+        },
+        {
+          "id": "earn_50k_annual",
+          "label": "Earn $50,000 annual (median income)",
+          "prob": 25,
+          "time": "year 2-3",
+          "source": "NAR 2024 -- median agent income $54K"
+        },
+        {
+          "id": "build_referral_base",
+          "label": "Build strong referral network",
+          "prob": 30,
+          "time": "year 2-4",
+          "source": "NAR 2024"
+        },
+        {
+          "id": "close_20_deals_year",
+          "label": "Close 20+ deals per year",
+          "prob": 15,
+          "time": "year 3-5",
+          "source": "NAR 2024"
+        },
+        {
+          "id": "earn_100k_annual",
+          "label": "Earn $100,000+ annual",
+          "prob": 12,
+          "time": "year 3-5",
+          "source": "NAR 2024 -- top 20% of agents"
+        },
+        {
+          "id": "build_team",
+          "label": "Build real estate team",
+          "prob": 8,
+          "time": "year 3-7",
+          "source": "NAR 2024"
+        },
+        {
+          "id": "earn_250k_annual",
+          "label": "Earn $250,000+ annual",
+          "prob": 5,
+          "time": "year 5-10",
+          "source": "NAR 2024 -- top 5% of agents"
+        },
+        {
+          "id": "top_producer",
+          "label": "Become top 1% producer in market",
+          "prob": 1,
+          "time": "year 7-15",
+          "source": "NAR 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_close": "11.7%",
+        "start_to_100k": "1.2%",
+        "start_to_250k": "0.2%"
+      },
+      "bottlenecks": [
+        "pass_exam",
+        "first_listing_or_buyer",
+        "survive_year_1",
+        "close_20_deals_year"
+      ],
+      "reality_check": "87% of new agents fail within 5 years. Median agent income is $54K, but mean is much higher due to top earners. You're 100% commission with zero benefits. Marketing costs $500-2000/month. Average agent works 40-60 hours/week.",
+      "sources": [
+        "NAR 2024"
+      ],
+      "industry_data": {
+        "real_estate_agents_us_total": 1500000,
+        "median_agent_income_usd": 54000,
+        "avg_commission_pct": 5.5,
+        "avg_home_price_us_usd": 400000,
+        "avg_commission_per_deal_usd": 11000,
+        "new_agent_failure_rate_5yr_pct": 87
+      },
+      "buyer_psychology": {
+        "client_choose_agent_based_on_referral_pct": 63,
+        "client_choose_agent_based_on_trust_pct": 75,
+        "client_interview_agents_avg": 2
+      }
+    },
+    "crypto_trading": {
+      "name": "Crypto Trading -> Strategy -> Wealth",
+      "description": "Person starts trading cryptocurrency. Extremely volatile, 24/7 markets, high leverage available. Most retail traders lose.",
+      "entry_point": "Opens crypto exchange account",
+      "stages": [
+        {
+          "id": "open_account",
+          "label": "Open exchange account (Binance, Coinbase)",
+          "prob": 100,
+          "time": "1-3 days",
+          "source": "baseline"
+        },
+        {
+          "id": "deposit_funds",
+          "label": "Deposit first funds ($100-10000)",
+          "prob": 85,
+          "time": "1-7 days",
+          "source": "Chainalysis 2024"
+        },
+        {
+          "id": "first_buy",
+          "label": "Buy first crypto (usually BTC or ETH)",
+          "prob": 90,
+          "time": "1-3 days",
+          "source": "Chainalysis 2024",
+          "url": "https://www.chainalysis.com/"
+        },
+        {
+          "id": "first_alt_coin",
+          "label": "Buy first altcoin",
+          "prob": 60,
+          "time": "1-4 weeks",
+          "source": "Chainalysis 2024"
+        },
+        {
+          "id": "first_profit",
+          "label": "Experience first profitable trade",
+          "prob": 70,
+          "time": "1-4 weeks",
+          "source": "Statistical -- markets move"
+        },
+        {
+          "id": "try_leveraged_trading",
+          "label": "Try leveraged/futures trading",
+          "prob": 40,
+          "time": "1-6 months",
+          "source": "Chainalysis 2024"
+        },
+        {
+          "id": "first_major_loss",
+          "label": "Experience first major loss (20%+ portfolio)",
+          "prob": 65,
+          "time": "1-12 months",
+          "source": "Chainalysis 2024"
+        },
+        {
+          "id": "survive_bear_market",
+          "label": "Hold through first bear market/crash",
+          "prob": 30,
+          "time": "6-24 months",
+          "source": "Chainalysis 2024 -- most sell at losses during crashes"
+        },
+        {
+          "id": "develop_strategy",
+          "label": "Develop consistent trading/investing strategy",
+          "prob": 20,
+          "time": "6-24 months",
+          "source": "Chainalysis 2024"
+        },
+        {
+          "id": "profitable_year_1",
+          "label": "Be net profitable after 1 year",
+          "prob": 20,
+          "time": "12 months",
+          "source": "Chainalysis 2024 -- 80% lose in first year"
+        },
+        {
+          "id": "profitable_year_3",
+          "label": "Be net profitable after 3 years (vs just holding BTC)",
+          "prob": 5,
+          "time": "36 months",
+          "source": "Chainalysis 2024 -- very few beat buy-and-hold"
+        },
+        {
+          "id": "replace_salary_trading",
+          "label": "Generate salary-replacement income from trading",
+          "prob": 1,
+          "time": "36-120 months",
+          "source": "Chainalysis 2024"
+        },
+        {
+          "id": "reach_6_figures_portfolio",
+          "label": "Grow portfolio to 6 figures from trading profits",
+          "prob": 3,
+          "time": "24-84 months",
+          "source": "Chainalysis 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_profitable_yr1": "10.7%",
+        "start_to_profitable_yr3": "1.1%",
+        "start_to_salary_replacement": "0.02%"
+      },
+      "bottlenecks": [
+        "first_major_loss",
+        "survive_bear_market",
+        "develop_strategy",
+        "profitable_year_3"
+      ],
+      "reality_check": "Crypto is a 24/7 market with extreme volatility. Most retail crypto traders underperform simply holding BTC. Leverage on crypto exchanges can be 100x+. Studies show 80% of crypto traders lose money.",
+      "sources": [
+        "Chainalysis 2024"
+      ],
+      "industry_data": {
+        "crypto_market_cap_usd_trillions": 2.5,
+        "crypto_traders_globally_millions": 500,
+        "bitcoin_avg_annual_volatility_pct": 60,
+        "crypto_exchange_daily_volume_usd_billions": 100
+      },
+      "buyer_psychology": {
+        "trader_fomo_driven_pct": 70,
+        "trader_hold_through_50pct_drop_pct": 20,
+        "trader_panic_sell_pct": 60
+      }
+    },
+    "restaurant_startup": {
+      "name": "Restaurant -> Operations -> Growth",
+      "description": "Person opens a restaurant. One of the highest failure-rate businesses. High capital, thin margins, brutal hours.",
+      "entry_point": "Decides to open a restaurant",
+      "stages": [
+        {
+          "id": "develop_concept",
+          "label": "Develop restaurant concept and menu",
+          "prob": 100,
+          "time": "1-3 months",
+          "source": "baseline"
+        },
+        {
+          "id": "write_business_plan",
+          "label": "Write business plan",
+          "prob": 60,
+          "time": "1-3 months",
+          "source": "NRA 2024",
+          "url": "https://restaurant.org/"
+        },
+        {
+          "id": "secure_financing",
+          "label": "Secure financing ($100K-1M+)",
+          "prob": 35,
+          "time": "2-12 months",
+          "source": "NRA 2024 -- restaurant loans are hard to get"
+        },
+        {
+          "id": "find_location",
+          "label": "Find and lease location",
+          "prob": 50,
+          "time": "2-6 months",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "build_out_space",
+          "label": "Build out and equip kitchen/dining",
+          "prob": 85,
+          "time": "2-6 months",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "get_permits",
+          "label": "Get all permits and licenses",
+          "prob": 80,
+          "time": "1-4 months",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "hire_staff",
+          "label": "Hire kitchen and front-of-house staff",
+          "prob": 85,
+          "time": "1-3 months",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "soft_opening",
+          "label": "Soft opening / friends and family",
+          "prob": 90,
+          "time": "1-2 weeks",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "grand_opening",
+          "label": "Grand opening",
+          "prob": 95,
+          "time": "1-2 weeks after soft",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "survive_month_1",
+          "label": "Survive first month (cash flow)",
+          "prob": 80,
+          "time": "1 month",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "break_even_monthly",
+          "label": "Break even on monthly operations",
+          "prob": 50,
+          "time": "3-12 months",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "positive_reviews",
+          "label": "Build 4+ star rating on Google/Yelp",
+          "prob": 60,
+          "time": "3-12 months",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "survive_year_1",
+          "label": "Survive year 1",
+          "prob": 60,
+          "time": "12 months",
+          "source": "NRA 2024 -- 60% survive year 1"
+        },
+        {
+          "id": "reach_profitability",
+          "label": "Reach consistent profitability",
+          "prob": 40,
+          "time": "12-36 months",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "survive_year_3",
+          "label": "Survive to year 3",
+          "prob": 40,
+          "time": "36 months",
+          "source": "NRA 2024 -- 60% fail within 3 years"
+        },
+        {
+          "id": "reach_500k_annual",
+          "label": "Reach $500,000 annual revenue",
+          "prob": 30,
+          "time": "12-36 months",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "reach_1m_annual",
+          "label": "Reach $1M annual revenue",
+          "prob": 15,
+          "time": "24-60 months",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "open_second_location",
+          "label": "Open second location",
+          "prob": 5,
+          "time": "36-84 months",
+          "source": "NRA 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_open": "7.1%",
+        "start_to_profitable": "2.9%",
+        "start_to_second_location": "0.03%"
+      },
+      "bottlenecks": [
+        "secure_financing",
+        "find_location",
+        "break_even_monthly",
+        "survive_year_3"
+      ],
+      "reality_check": "60% of restaurants fail in year 1, 80% in 5 years. Average restaurant profit margin is 3-5%. Food cost is 28-35% of revenue. Labor is 25-35%. Owner works 80+ hours/week.",
+      "sources": [
+        "NRA 2024"
+      ],
+      "industry_data": {
+        "restaurant_market_us_usd_billions": 1000,
+        "restaurants_us_total": 1000000,
+        "avg_restaurant_revenue_annual_usd": 1000000,
+        "avg_profit_margin_pct": 5,
+        "food_cost_pct": 30,
+        "labor_cost_pct": 30,
+        "restaurant_failure_rate_1yr_pct": 60
+      },
+      "buyer_psychology": {
+        "customer_choose_based_on_reviews_pct": 75,
+        "customer_choose_based_on_location_pct": 60,
+        "customer_avg_check_usd": 25,
+        "customer_return_rate_pct": 30
+      }
+    },
+    "life_insurance_agent": {
+      "name": "Life Insurance Agent -> Sales -> Agency",
+      "description": "Person becomes a licensed life insurance agent. Commission-heavy, relationship-based, high earning potential if persistent.",
+      "entry_point": "Gets insurance license",
+      "stages": [
+        {
+          "id": "get_licensed",
+          "label": "Get state insurance license",
+          "prob": 100,
+          "time": "1-3 months",
+          "source": "LIMRA 2024",
+          "url": "https://www.limra.com/"
+        },
+        {
+          "id": "join_agency",
+          "label": "Join insurance agency/IMO",
+          "prob": 85,
+          "time": "1-4 weeks",
+          "source": "LIMRA 2024"
+        },
+        {
+          "id": "complete_training",
+          "label": "Complete product and sales training",
+          "prob": 80,
+          "time": "1-3 months",
+          "source": "LIMRA 2024"
+        },
+        {
+          "id": "start_prospecting",
+          "label": "Start prospecting (warm market, cold calling)",
+          "prob": 60,
+          "time": "1-4 weeks",
+          "source": "LIMRA 2024"
+        },
+        {
+          "id": "first_appointment",
+          "label": "Set first client appointment",
+          "prob": 50,
+          "time": "1-4 weeks",
+          "source": "LIMRA 2024"
+        },
+        {
+          "id": "first_sale",
+          "label": "Close first policy",
+          "prob": 30,
+          "time": "1-3 months",
+          "source": "LIMRA 2024 -- avg close rate 20-30% on appointments"
+        },
+        {
+          "id": "reach_10_policies",
+          "label": "Sell 10 policies",
+          "prob": 40,
+          "time": "3-12 months",
+          "source": "LIMRA 2024"
+        },
+        {
+          "id": "survive_year_1",
+          "label": "Stay in insurance after year 1",
+          "prob": 30,
+          "time": "12 months",
+          "source": "LIMRA 2024 -- 70% leave within first year"
+        },
+        {
+          "id": "earn_50k_annual",
+          "label": "Earn $50,000 in year 2-3",
+          "prob": 25,
+          "time": "year 2-3",
+          "source": "LIMRA 2024"
+        },
+        {
+          "id": "build_renewal_book",
+          "label": "Build renewal income book",
+          "prob": 30,
+          "time": "year 2-5",
+          "source": "LIMRA 2024 -- renewals compound over time"
+        },
+        {
+          "id": "earn_100k_annual",
+          "label": "Earn $100,000 annual",
+          "prob": 15,
+          "time": "year 3-5",
+          "source": "LIMRA 2024"
+        },
+        {
+          "id": "earn_200k_annual",
+          "label": "Earn $200,000+ annual",
+          "prob": 8,
+          "time": "year 5-10",
+          "source": "LIMRA 2024"
+        },
+        {
+          "id": "build_own_agency",
+          "label": "Build own agency with agents under you",
+          "prob": 5,
+          "time": "year 5-15",
+          "source": "LIMRA 2024"
+        },
+        {
+          "id": "earn_500k_annual",
+          "label": "Earn $500,000+ annual (top producer)",
+          "prob": 2,
+          "time": "year 10-20",
+          "source": "LIMRA 2024 -- MDRT top of table level"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_sale": "12.2%",
+        "start_to_100k": "1.1%",
+        "start_to_500k": "0.02%"
+      },
+      "bottlenecks": [
+        "first_sale",
+        "survive_year_1",
+        "earn_100k_annual",
+        "build_own_agency"
+      ],
+      "reality_check": "70% of new insurance agents quit within year 1. Average first-year agent earns $30K. But top agents earn $200K-500K+. Renewals create passive income over time. The first 3 years are brutal.",
+      "sources": [
+        "LIMRA 2024"
+      ],
+      "industry_data": {
+        "life_insurance_market_us_usd_billions": 800,
+        "insurance_agents_us_total": 1200000,
+        "avg_first_year_commission_pct": 70,
+        "avg_renewal_commission_pct": 5,
+        "agent_retention_rate_yr1_pct": 30
+      },
+      "buyer_psychology": {
+        "client_buy_based_on_trust_pct": 80,
+        "client_buy_based_on_need_pct": 60,
+        "client_avg_premium_annual_usd": 1500
+      }
+    },
+    "consulting_mgmt": {
+      "name": "Management Consulting -> Partners -> Scale",
+      "description": "Person builds a management consulting practice serving mid-market and enterprise clients. Higher ticket than solo consulting.",
+      "entry_point": "Ex-Big 4/strategy professional starts consulting firm",
+      "stages": [
+        {
+          "id": "define_practice",
+          "label": "Define practice area and ICP",
+          "prob": 100,
+          "time": "1-4 weeks",
+          "source": "baseline"
+        },
+        {
+          "id": "leverage_network",
+          "label": "Leverage corporate network for first engagement",
+          "prob": 70,
+          "time": "1-3 months",
+          "source": "Source Global Research 2024",
+          "url": "https://www.sourceglobalresearch.com/"
+        },
+        {
+          "id": "first_engagement",
+          "label": "Win first consulting engagement ($50K+)",
+          "prob": 40,
+          "time": "1-6 months",
+          "source": "Source Global Research 2024"
+        },
+        {
+          "id": "deliver_first_project",
+          "label": "Deliver first project with measurable impact",
+          "prob": 85,
+          "time": "2-6 months",
+          "source": "Source Global Research 2024"
+        },
+        {
+          "id": "second_engagement",
+          "label": "Win second engagement (from referral or repeat)",
+          "prob": 50,
+          "time": "2-6 months",
+          "source": "Source Global Research 2024"
+        },
+        {
+          "id": "reach_250k_revenue",
+          "label": "Reach $250K annual revenue",
+          "prob": 40,
+          "time": "12-24 months",
+          "source": "Source Global Research 2024"
+        },
+        {
+          "id": "hire_first_consultant",
+          "label": "Hire first consultant",
+          "prob": 30,
+          "time": "12-36 months",
+          "source": "Source Global Research 2024"
+        },
+        {
+          "id": "reach_500k_revenue",
+          "label": "Reach $500K annual revenue",
+          "prob": 20,
+          "time": "18-36 months",
+          "source": "Source Global Research 2024"
+        },
+        {
+          "id": "reach_1m_revenue",
+          "label": "Reach $1M annual revenue",
+          "prob": 12,
+          "time": "24-60 months",
+          "source": "Source Global Research 2024"
+        },
+        {
+          "id": "build_team_5",
+          "label": "Build team of 5+ consultants",
+          "prob": 8,
+          "time": "36-72 months",
+          "source": "Source Global Research 2024"
+        },
+        {
+          "id": "reach_5m_revenue",
+          "label": "Reach $5M annual revenue",
+          "prob": 3,
+          "time": "48-96 months",
+          "source": "Source Global Research 2024"
+        },
+        {
+          "id": "reach_10m_revenue",
+          "label": "Reach $10M+ annual revenue",
+          "prob": 1,
+          "time": "60-120 months",
+          "source": "Source Global Research 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_engagement": "28.0%",
+        "start_to_1m": "1.8%",
+        "start_to_10m": "0.06%"
+      },
+      "bottlenecks": [
+        "first_engagement",
+        "hire_first_consultant",
+        "reach_1m_revenue"
+      ],
+      "reality_check": "Management consulting is one of the highest-margin businesses (30-50% operating margin) but requires deep expertise and corporate credibility. Average boutique firm takes 3-5 years to reach $1M revenue.",
+      "sources": [
+        "Source Global Research 2024"
+      ],
+      "industry_data": {
+        "management_consulting_global_usd_billions": 330,
+        "boutique_consulting_firms_us": 50000,
+        "avg_consultant_day_rate_usd": 2500,
+        "avg_engagement_size_usd": 150000
+      },
+      "buyer_psychology": {
+        "client_choose_based_on_expertise_pct": 80,
+        "client_choose_based_on_referral_pct": 65,
+        "client_avg_engagement_months": 4
+      }
+    },
+    "saas_ai_tool": {
+      "name": "AI SaaS Tool -> Launch -> Growth",
+      "description": "Developer builds an AI-powered SaaS tool leveraging LLMs, computer vision, or machine learning. The 2024-2025 gold rush.",
+      "entry_point": "Decides to build an AI-powered SaaS product",
+      "stages": [
+        {
+          "id": "identify_problem",
+          "label": "Identify problem solvable with AI",
+          "prob": 100,
+          "time": "1-4 weeks",
+          "source": "baseline"
+        },
+        {
+          "id": "prototype_with_api",
+          "label": "Build prototype using AI APIs (OpenAI, Claude)",
+          "prob": 50,
+          "time": "1-4 weeks",
+          "source": "a16z 2024",
+          "url": "https://a16z.com/"
+        },
+        {
+          "id": "validate_with_users",
+          "label": "Validate with 10+ potential users",
+          "prob": 30,
+          "time": "1-4 weeks",
+          "source": "a16z 2024"
+        },
+        {
+          "id": "build_mvp",
+          "label": "Build MVP with core AI feature",
+          "prob": 40,
+          "time": "2-8 weeks",
+          "source": "a16z 2024"
+        },
+        {
+          "id": "launch_beta",
+          "label": "Launch beta on Product Hunt / Twitter",
+          "prob": 60,
+          "time": "1-2 weeks",
+          "source": "a16z 2024"
+        },
+        {
+          "id": "first_100_users",
+          "label": "Get first 100 users",
+          "prob": 50,
+          "time": "1-4 weeks",
+          "source": "a16z 2024"
+        },
+        {
+          "id": "first_paying_user",
+          "label": "Get first paying user",
+          "prob": 20,
+          "time": "1-3 months",
+          "source": "a16z 2024 -- AI tool conversion is challenging"
+        },
+        {
+          "id": "reach_1k_mrr",
+          "label": "Reach $1,000 MRR",
+          "prob": 15,
+          "time": "3-12 months",
+          "source": "a16z 2024"
+        },
+        {
+          "id": "handle_ai_costs",
+          "label": "Manage AI API costs vs revenue (unit economics)",
+          "prob": 40,
+          "time": "ongoing",
+          "source": "a16z 2024 -- AI costs can eat margins"
+        },
+        {
+          "id": "reach_1000_users",
+          "label": "Reach 1,000 active users",
+          "prob": 15,
+          "time": "3-12 months",
+          "source": "a16z 2024"
+        },
+        {
+          "id": "reach_5k_mrr",
+          "label": "Reach $5,000 MRR",
+          "prob": 8,
+          "time": "6-24 months",
+          "source": "a16z 2024"
+        },
+        {
+          "id": "reach_10k_mrr",
+          "label": "Reach $10,000 MRR",
+          "prob": 4,
+          "time": "12-36 months",
+          "source": "a16z 2024"
+        },
+        {
+          "id": "compete_with_incumbents",
+          "label": "Survive competition from OpenAI/Google features",
+          "prob": 30,
+          "time": "ongoing",
+          "source": "a16z 2024 -- platform risk is highest concern"
+        },
+        {
+          "id": "reach_100k_mrr",
+          "label": "Reach $100,000 MRR ($1.2M ARR)",
+          "prob": 1,
+          "time": "24-60 months",
+          "source": "a16z 2024"
+        },
+        {
+          "id": "raise_funding",
+          "label": "Raise venture funding",
+          "prob": 5,
+          "time": "12-36 months",
+          "source": "a16z 2024"
+        },
+        {
+          "id": "exit_or_scale",
+          "label": "Exit or scale to $10M+ ARR",
+          "prob": 0.5,
+          "time": "36-84 months",
+          "source": "a16z 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_paying": "2.4%",
+        "start_to_10k_mrr": "0.1%",
+        "start_to_100k_mrr": "0.003%"
+      },
+      "bottlenecks": [
+        "build_mvp",
+        "first_paying_user",
+        "handle_ai_costs",
+        "compete_with_incumbents"
+      ],
+      "reality_check": "AI SaaS is the hottest space but also the most volatile. OpenAI or Google can ship your feature as a free update. AI API costs mean margins are 50-60%, not 80%+ like traditional SaaS. Most AI tools are 'thin wrappers' that lack defensibility.",
+      "sources": [
+        "a16z 2024"
+      ],
+      "industry_data": {
+        "ai_saas_market_usd_billions": 50,
+        "ai_startups_funded_2024": 5000,
+        "avg_ai_api_cost_per_user_monthly_usd": 5,
+        "ai_tool_avg_price_monthly_usd": 20,
+        "ai_wrapper_avg_lifespan_months": 12
+      },
+      "buyer_psychology": {
+        "user_try_free_tier_pct": 90,
+        "user_pay_for_ai_tool_pct": 5,
+        "user_switch_tools_frequently_pct": 40,
+        "user_concerned_about_data_privacy_pct": 55
+      }
+    },
+    "vlog_travel": {
+      "name": "Travel Vlogger -> Audience -> Revenue",
+      "description": "Person starts travel vlogging, documenting experiences across platforms. Monetizes through sponsorships, affiliates, and content licensing.",
+      "entry_point": "Starts creating travel content",
+      "stages": [
+        {
+          "id": "start_filming",
+          "label": "Start filming travel content",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "upload_10_videos",
+          "label": "Upload 10 travel videos",
+          "prob": 40,
+          "time": "1-6 months",
+          "source": "vidIQ 2024"
+        },
+        {
+          "id": "reach_500_followers",
+          "label": "Reach 500 followers across platforms",
+          "prob": 35,
+          "time": "2-6 months",
+          "source": "vidIQ 2024"
+        },
+        {
+          "id": "upload_30_videos",
+          "label": "Upload 30 travel videos",
+          "prob": 20,
+          "time": "6-18 months",
+          "source": "vidIQ 2024"
+        },
+        {
+          "id": "reach_1k_followers",
+          "label": "Reach 1,000 followers on primary platform",
+          "prob": 25,
+          "time": "3-12 months",
+          "source": "vidIQ 2024"
+        },
+        {
+          "id": "first_viral_video",
+          "label": "Get first video over 100K views",
+          "prob": 15,
+          "time": "3-24 months",
+          "source": "vidIQ 2024"
+        },
+        {
+          "id": "reach_10k_followers",
+          "label": "Reach 10,000 followers",
+          "prob": 10,
+          "time": "12-36 months",
+          "source": "vidIQ 2024"
+        },
+        {
+          "id": "first_brand_partnership",
+          "label": "Get first travel brand partnership",
+          "prob": 10,
+          "time": "6-24 months",
+          "source": "Influencer Marketing Hub 2024"
+        },
+        {
+          "id": "first_free_trip",
+          "label": "Get first sponsored/comped trip",
+          "prob": 8,
+          "time": "12-36 months",
+          "source": "Influencer Marketing Hub 2024"
+        },
+        {
+          "id": "earn_1k_month",
+          "label": "Earn $1,000/month from travel content",
+          "prob": 5,
+          "time": "18-48 months",
+          "source": "Influencer Marketing Hub 2024"
+        },
+        {
+          "id": "reach_100k_followers",
+          "label": "Reach 100,000 followers",
+          "prob": 2,
+          "time": "24-72 months",
+          "source": "vidIQ 2024"
+        },
+        {
+          "id": "earn_5k_month",
+          "label": "Earn $5,000+/month as travel creator",
+          "prob": 1,
+          "time": "36-84 months",
+          "source": "Influencer Marketing Hub 2024"
+        },
+        {
+          "id": "full_time_travel_creator",
+          "label": "Full-time income from travel content",
+          "prob": 1,
+          "time": "24-72 months",
+          "source": "Influencer Marketing Hub 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_10k_followers": "1.4%",
+        "start_to_1k_month": "0.1%",
+        "start_to_full_time": "0.01%"
+      },
+      "bottlenecks": [
+        "upload_30_videos",
+        "reach_10k_followers",
+        "first_brand_partnership",
+        "earn_1k_month"
+      ],
+      "reality_check": "Travel content creation requires constant travel spending. Most travel vloggers lose money for years. Only the top 1% earn enough to fund their travel through content. Competition is extreme in every popular destination.",
+      "sources": [
+        "vidIQ 2024",
+        "Influencer Marketing Hub 2024"
+      ],
+      "industry_data": {
+        "travel_content_creators_estimate_millions": 5,
+        "travel_influencer_market_usd_billions": 3,
+        "avg_travel_brand_deal_usd": 500,
+        "travel_blog_avg_monthly_income_usd": 200
+      },
+      "buyer_psychology": {
+        "viewer_engage_with_travel_content_pct": 40,
+        "viewer_book_based_on_recommendation_pct": 25
+      }
+    },
+    "window_cleaning": {
+      "name": "Window Cleaning Business -> Clients -> Growth",
+      "description": "Person starts a window cleaning business. Low startup, high margins, recurring revenue from commercial contracts.",
+      "entry_point": "Starts window cleaning business",
+      "stages": [
+        {
+          "id": "buy_equipment",
+          "label": "Buy window cleaning equipment ($300-1000)",
+          "prob": 100,
+          "time": "1-2 weeks",
+          "source": "baseline"
+        },
+        {
+          "id": "learn_technique",
+          "label": "Learn professional technique and safety",
+          "prob": 80,
+          "time": "1-4 weeks",
+          "source": "IWCA 2024",
+          "url": "https://www.iwca.org/"
+        },
+        {
+          "id": "get_insured",
+          "label": "Get liability insurance",
+          "prob": 55,
+          "time": "1-2 weeks",
+          "source": "IWCA 2024"
+        },
+        {
+          "id": "first_residential_job",
+          "label": "Complete first residential window cleaning job",
+          "prob": 65,
+          "time": "1-4 weeks",
+          "source": "IWCA 2024"
+        },
+        {
+          "id": "reach_10_jobs",
+          "label": "Complete 10 jobs",
+          "prob": 50,
+          "time": "1-3 months",
+          "source": "IWCA 2024"
+        },
+        {
+          "id": "earn_2k_month",
+          "label": "Earn $2,000/month",
+          "prob": 40,
+          "time": "2-6 months",
+          "source": "IWCA 2024 -- avg residential job $150-300"
+        },
+        {
+          "id": "add_commercial",
+          "label": "Add commercial window cleaning contracts",
+          "prob": 20,
+          "time": "3-12 months",
+          "source": "IWCA 2024"
+        },
+        {
+          "id": "earn_5k_month",
+          "label": "Earn $5,000/month",
+          "prob": 20,
+          "time": "6-18 months",
+          "source": "IWCA 2024"
+        },
+        {
+          "id": "earn_10k_month",
+          "label": "Earn $10,000/month",
+          "prob": 10,
+          "time": "12-36 months",
+          "source": "IWCA 2024"
+        },
+        {
+          "id": "hire_crew",
+          "label": "Hire cleaning crew",
+          "prob": 8,
+          "time": "12-36 months",
+          "source": "IWCA 2024"
+        },
+        {
+          "id": "earn_20k_month",
+          "label": "Earn $20,000+/month with team",
+          "prob": 5,
+          "time": "24-60 months",
+          "source": "IWCA 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_job": "28.6%",
+        "start_to_5k_month": "3.5%",
+        "start_to_20k_month": "0.1%"
+      },
+      "bottlenecks": [
+        "first_residential_job",
+        "add_commercial",
+        "hire_crew"
+      ],
+      "reality_check": "Window cleaning has 70%+ margins but is seasonal and weather-dependent. Commercial contracts provide steady recurring revenue. Height work carries real risk. But it's one of the simplest businesses to start.",
+      "sources": [
+        "IWCA 2024"
+      ],
+      "industry_data": {
+        "window_cleaning_market_usd_billions": 1.5,
+        "avg_residential_job_usd": 200,
+        "avg_commercial_contract_monthly_usd": 1000
+      },
+      "buyer_psychology": {
+        "customer_choose_on_trust_pct": 75,
+        "customer_recurring_pct": 40
+      }
+    },
+    "wholesale_distribution": {
+      "name": "Wholesale Distribution -> Accounts -> Scale",
+      "description": "Person starts a wholesale distribution business buying products at bulk prices and selling to retailers, restaurants, or businesses.",
+      "entry_point": "Decides to enter wholesale distribution",
+      "stages": [
+        {
+          "id": "choose_products",
+          "label": "Choose product category to distribute",
+          "prob": 100,
+          "time": "1-4 weeks",
+          "source": "baseline"
+        },
+        {
+          "id": "find_suppliers",
+          "label": "Find manufacturers/suppliers for bulk purchasing",
+          "prob": 70,
+          "time": "2-8 weeks",
+          "source": "NAW 2024",
+          "url": "https://www.naw.org/"
+        },
+        {
+          "id": "secure_warehouse",
+          "label": "Secure warehouse/storage space",
+          "prob": 50,
+          "time": "1-3 months",
+          "source": "NAW 2024"
+        },
+        {
+          "id": "make_first_purchase",
+          "label": "Make first bulk purchase ($5-50K)",
+          "prob": 60,
+          "time": "1-4 weeks",
+          "source": "NAW 2024"
+        },
+        {
+          "id": "find_first_retail_account",
+          "label": "Find first retail/business account",
+          "prob": 40,
+          "time": "2-8 weeks",
+          "source": "NAW 2024"
+        },
+        {
+          "id": "first_delivery",
+          "label": "Make first wholesale delivery",
+          "prob": 85,
+          "time": "1-2 weeks",
+          "source": "NAW 2024"
+        },
+        {
+          "id": "reach_10_accounts",
+          "label": "Build 10 regular accounts",
+          "prob": 30,
+          "time": "6-18 months",
+          "source": "NAW 2024"
+        },
+        {
+          "id": "reach_50k_month_revenue",
+          "label": "Reach $50,000/month revenue",
+          "prob": 20,
+          "time": "12-36 months",
+          "source": "NAW 2024"
+        },
+        {
+          "id": "reach_100k_month_revenue",
+          "label": "Reach $100,000/month revenue",
+          "prob": 10,
+          "time": "18-48 months",
+          "source": "NAW 2024"
+        },
+        {
+          "id": "hire_sales_team",
+          "label": "Hire sales team",
+          "prob": 10,
+          "time": "18-48 months",
+          "source": "NAW 2024"
+        },
+        {
+          "id": "reach_1m_annual",
+          "label": "Reach $1M annual revenue",
+          "prob": 8,
+          "time": "24-60 months",
+          "source": "NAW 2024"
+        },
+        {
+          "id": "reach_5m_annual",
+          "label": "Reach $5M+ annual revenue",
+          "prob": 3,
+          "time": "48-120 months",
+          "source": "NAW 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_10_accounts": "4.2%",
+        "start_to_1m_annual": "0.3%",
+        "start_to_5m_annual": "0.02%"
+      },
+      "bottlenecks": [
+        "find_first_retail_account",
+        "reach_10_accounts",
+        "reach_100k_month_revenue"
+      ],
+      "reality_check": "Wholesale margins are thin (15-25%) but volume makes up for it. Cash flow management is critical -- you buy before you sell. Inventory management and logistics are complex. Competition from direct-to-retailer models is growing.",
+      "sources": [
+        "NAW 2024"
+      ],
+      "industry_data": {
+        "wholesale_distribution_market_us_usd_trillions": 6,
+        "wholesalers_us_total": 400000,
+        "avg_wholesale_margin_pct": 20,
+        "avg_wholesaler_revenue_usd": 3000000
+      },
+      "buyer_psychology": {
+        "retailer_choose_based_on_price_pct": 70,
+        "retailer_choose_based_on_reliability_pct": 60,
+        "retailer_avg_order_frequency_weekly": 1
+      }
+    },
+    "dental_practice": {
+      "name": "Dental Practice -> Patients -> Growth",
+      "description": "Dentist opens own practice. High revenue, high overhead, equipment-intensive.",
+      "entry_point": "Licensed dentist opens practice",
+      "stages": [
+        {
+          "id": "plan_practice",
+          "label": "Create business plan for dental practice",
+          "prob": 100,
+          "time": "1-3 months",
+          "source": "ADA 2024",
+          "url": "https://www.ada.org/"
+        },
+        {
+          "id": "secure_financing",
+          "label": "Secure financing ($300K-700K)",
+          "prob": 50,
+          "time": "2-6 months",
+          "source": "ADA 2024"
+        },
+        {
+          "id": "find_location",
+          "label": "Find and lease office space",
+          "prob": 60,
+          "time": "2-6 months",
+          "source": "ADA 2024"
+        },
+        {
+          "id": "buy_equipment",
+          "label": "Purchase dental equipment and chairs",
+          "prob": 90,
+          "time": "2-4 months",
+          "source": "ADA 2024 -- dental chair costs $20-50K each"
+        },
+        {
+          "id": "hire_staff",
+          "label": "Hire hygienists, assistants, front desk",
+          "prob": 85,
+          "time": "1-3 months",
+          "source": "ADA 2024"
+        },
+        {
+          "id": "get_credentialed",
+          "label": "Get credentialed with dental insurance",
+          "prob": 75,
+          "time": "3-6 months",
+          "source": "ADA 2024"
+        },
+        {
+          "id": "open_practice",
+          "label": "Open doors for patients",
+          "prob": 90,
+          "time": "1 month",
+          "source": "ADA 2024"
+        },
+        {
+          "id": "reach_100_patients",
+          "label": "Build active patient list of 100",
+          "prob": 60,
+          "time": "3-12 months",
+          "source": "ADA 2024"
+        },
+        {
+          "id": "break_even",
+          "label": "Break even on monthly operations",
+          "prob": 50,
+          "time": "6-18 months",
+          "source": "ADA 2024"
+        },
+        {
+          "id": "reach_500_patients",
+          "label": "Reach 500 active patients",
+          "prob": 40,
+          "time": "12-36 months",
+          "source": "ADA 2024"
+        },
+        {
+          "id": "reach_500k_revenue",
+          "label": "Reach $500K annual revenue",
+          "prob": 40,
+          "time": "12-36 months",
+          "source": "ADA 2024"
+        },
+        {
+          "id": "reach_1m_revenue",
+          "label": "Reach $1M annual revenue",
+          "prob": 25,
+          "time": "24-60 months",
+          "source": "ADA 2024"
+        },
+        {
+          "id": "add_associate",
+          "label": "Hire associate dentist",
+          "prob": 15,
+          "time": "24-60 months",
+          "source": "ADA 2024"
+        },
+        {
+          "id": "reach_2m_revenue",
+          "label": "Reach $2M annual revenue",
+          "prob": 10,
+          "time": "36-84 months",
+          "source": "ADA 2024"
+        },
+        {
+          "id": "add_specialty",
+          "label": "Add specialty services (implants, ortho, cosmetic)",
+          "prob": 20,
+          "time": "24-60 months",
+          "source": "ADA 2024"
+        },
+        {
+          "id": "open_second_location",
+          "label": "Open second location",
+          "prob": 5,
+          "time": "48-120 months",
+          "source": "ADA 2024"
+        },
+        {
+          "id": "reach_5m_revenue",
+          "label": "Reach $5M+ annual revenue (multi-location)",
+          "prob": 3,
+          "time": "60-120 months",
+          "source": "ADA 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_open": "17.2%",
+        "start_to_1m": "3.1%",
+        "start_to_5m": "0.04%"
+      },
+      "bottlenecks": [
+        "secure_financing",
+        "reach_500_patients",
+        "reach_1m_revenue"
+      ],
+      "reality_check": "Average solo dental practice owner earns $200-400K but carries $200K+ in student debt and $300-700K in practice debt. Overhead is 65-70%. Insurance reimbursements are declining.",
+      "sources": [
+        "ADA 2024"
+      ],
+      "industry_data": {
+        "dental_market_us_usd_billions": 160,
+        "dental_practices_us_total": 200000,
+        "avg_practice_revenue_usd": 800000,
+        "avg_overhead_pct": 65,
+        "avg_dental_student_debt_usd": 300000
+      },
+      "buyer_psychology": {
+        "patient_choose_based_on_insurance_pct": 60,
+        "patient_choose_based_on_proximity_pct": 50,
+        "patient_avg_retention_years": 5
+      }
+    },
+    "saas_vertical": {
+      "name": "Vertical SaaS -> Industry -> Dominance",
+      "description": "Builder creates SaaS specifically for one industry (dental, real estate, construction, etc.). Less competition, higher retention than horizontal SaaS.",
+      "entry_point": "Identifies underserved industry vertical",
+      "stages": [
+        {
+          "id": "identify_vertical",
+          "label": "Identify underserved industry vertical",
+          "prob": 100,
+          "time": "1-4 weeks",
+          "source": "baseline"
+        },
+        {
+          "id": "deep_research",
+          "label": "Deep research into industry pain points",
+          "prob": 60,
+          "time": "2-8 weeks",
+          "source": "Bessemer 2024",
+          "url": "https://www.bvp.com/"
+        },
+        {
+          "id": "interview_prospects",
+          "label": "Interview 20+ industry professionals",
+          "prob": 30,
+          "time": "2-8 weeks",
+          "source": "Bessemer 2024"
+        },
+        {
+          "id": "build_mvp",
+          "label": "Build industry-specific MVP",
+          "prob": 40,
+          "time": "2-6 months",
+          "source": "Bessemer 2024"
+        },
+        {
+          "id": "first_pilot_customer",
+          "label": "Get first pilot customer",
+          "prob": 50,
+          "time": "1-3 months",
+          "source": "Bessemer 2024"
+        },
+        {
+          "id": "reach_10_customers",
+          "label": "Reach 10 paying customers",
+          "prob": 40,
+          "time": "6-18 months",
+          "source": "Bessemer 2024"
+        },
+        {
+          "id": "reach_10k_mrr",
+          "label": "Reach $10,000 MRR",
+          "prob": 25,
+          "time": "6-24 months",
+          "source": "Bessemer 2024"
+        },
+        {
+          "id": "achieve_low_churn",
+          "label": "Achieve <3% monthly churn",
+          "prob": 40,
+          "time": "6-18 months",
+          "source": "Bessemer 2024 -- vertical SaaS has 2x better retention"
+        },
+        {
+          "id": "reach_50k_mrr",
+          "label": "Reach $50,000 MRR",
+          "prob": 10,
+          "time": "18-48 months",
+          "source": "Bessemer 2024"
+        },
+        {
+          "id": "reach_100_customers",
+          "label": "Reach 100 customers",
+          "prob": 12,
+          "time": "18-48 months",
+          "source": "Bessemer 2024"
+        },
+        {
+          "id": "reach_100k_mrr",
+          "label": "Reach $100,000 MRR ($1.2M ARR)",
+          "prob": 5,
+          "time": "24-60 months",
+          "source": "Bessemer 2024"
+        },
+        {
+          "id": "become_industry_standard",
+          "label": "Become industry standard in niche",
+          "prob": 3,
+          "time": "36-84 months",
+          "source": "Bessemer 2024"
+        },
+        {
+          "id": "reach_1m_mrr",
+          "label": "Reach $1M MRR ($12M ARR)",
+          "prob": 1,
+          "time": "48-96 months",
+          "source": "Bessemer 2024"
+        },
+        {
+          "id": "raise_growth_funding",
+          "label": "Raise growth equity funding",
+          "prob": 5,
+          "time": "24-60 months",
+          "source": "Bessemer 2024"
+        },
+        {
+          "id": "expand_product_suite",
+          "label": "Expand to full industry platform",
+          "prob": 8,
+          "time": "36-84 months",
+          "source": "Bessemer 2024"
+        },
+        {
+          "id": "exit_or_ipo",
+          "label": "Exit via acquisition or IPO",
+          "prob": 3,
+          "time": "48-120 months",
+          "source": "Bessemer 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_10k_mrr": "1.8%",
+        "start_to_100k_mrr": "0.1%",
+        "start_to_1m_mrr": "0.003%"
+      },
+      "bottlenecks": [
+        "interview_prospects",
+        "build_mvp",
+        "reach_10k_mrr",
+        "become_industry_standard"
+      ],
+      "reality_check": "Vertical SaaS has lower TAM but higher win rates, lower churn, and higher ARPU. Average vertical SaaS commands 2-3x higher multiples than horizontal. But finding the right vertical takes deep industry knowledge.",
+      "sources": [
+        "Bessemer Venture Partners 2024"
+      ],
+      "industry_data": {
+        "vertical_saas_market_usd_billions": 100,
+        "vertical_saas_avg_arpu_usd": 500,
+        "vertical_saas_avg_churn_monthly_pct": 2,
+        "vertical_saas_avg_valuation_multiple_arr": 12
+      },
+      "buyer_psychology": {
+        "buyer_prefer_industry_specific_pct": 70,
+        "buyer_avg_contract_months": 24,
+        "buyer_switch_cost_months": 6
+      }
+    },
+    "private_label_supplements": {
+      "name": "Supplement Brand -> Launch -> DTC Scale",
+      "description": "Person starts a private label supplement brand. High margins, strong repeat purchase. Regulatory requirements.",
+      "entry_point": "Decides to launch a supplement brand",
+      "stages": [
+        {
+          "id": "research_market",
+          "label": "Research supplement market and regulations",
+          "prob": 100,
+          "time": "2-6 weeks",
+          "source": "baseline"
+        },
+        {
+          "id": "choose_product",
+          "label": "Choose supplement product (protein, vitamins, etc.)",
+          "prob": 80,
+          "time": "1-4 weeks",
+          "source": "Nutrition Business Journal 2024"
+        },
+        {
+          "id": "find_manufacturer",
+          "label": "Find GMP-certified manufacturer",
+          "prob": 60,
+          "time": "2-8 weeks",
+          "source": "NBJ 2024 -- must be FDA-compliant GMP"
+        },
+        {
+          "id": "develop_formula",
+          "label": "Develop formula and get lab tested",
+          "prob": 70,
+          "time": "2-6 months",
+          "source": "NBJ 2024"
+        },
+        {
+          "id": "design_branding",
+          "label": "Design branding, labels, packaging",
+          "prob": 75,
+          "time": "2-6 weeks",
+          "source": "NBJ 2024"
+        },
+        {
+          "id": "place_first_order",
+          "label": "Place first manufacturing order ($5-20K MOQ)",
+          "prob": 60,
+          "time": "1-4 weeks",
+          "source": "NBJ 2024"
+        },
+        {
+          "id": "build_ecommerce",
+          "label": "Build Shopify store",
+          "prob": 80,
+          "time": "1-3 weeks",
+          "source": "NBJ 2024"
+        },
+        {
+          "id": "launch_product",
+          "label": "Launch product for sale",
+          "prob": 85,
+          "time": "1-2 weeks",
+          "source": "NBJ 2024"
+        },
+        {
+          "id": "first_sale",
+          "label": "Make first sale",
+          "prob": 50,
+          "time": "1-4 weeks",
+          "source": "NBJ 2024"
+        },
+        {
+          "id": "reach_100_sales",
+          "label": "Reach 100 units sold",
+          "prob": 35,
+          "time": "2-6 months",
+          "source": "NBJ 2024"
+        },
+        {
+          "id": "launch_amazon",
+          "label": "Launch on Amazon marketplace",
+          "prob": 40,
+          "time": "1-6 months",
+          "source": "NBJ 2024"
+        },
+        {
+          "id": "reach_5k_month_revenue",
+          "label": "Reach $5,000/month revenue",
+          "prob": 20,
+          "time": "6-18 months",
+          "source": "NBJ 2024"
+        },
+        {
+          "id": "build_subscription_model",
+          "label": "Launch subscription/auto-ship model",
+          "prob": 30,
+          "time": "3-12 months",
+          "source": "NBJ 2024 -- subscriptions are key for supplements"
+        },
+        {
+          "id": "reach_20k_month",
+          "label": "Reach $20,000/month revenue",
+          "prob": 10,
+          "time": "12-36 months",
+          "source": "NBJ 2024"
+        },
+        {
+          "id": "reach_100k_month",
+          "label": "Reach $100,000/month revenue",
+          "prob": 3,
+          "time": "24-60 months",
+          "source": "NBJ 2024"
+        },
+        {
+          "id": "exit_or_scale",
+          "label": "Scale to 7-figure brand or exit",
+          "prob": 2,
+          "time": "36-84 months",
+          "source": "NBJ 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_sale": "10.2%",
+        "start_to_20k_month": "0.5%",
+        "start_to_100k_month": "0.03%"
+      },
+      "bottlenecks": [
+        "find_manufacturer",
+        "first_sale",
+        "reach_5k_month_revenue",
+        "reach_100k_month"
+      ],
+      "reality_check": "Supplement industry has 60-80% margins but marketing costs eat most of it. FDA regulations require compliant labeling. Amazon takes 15% + FBA fees. Customer acquisition costs are $30-100 per customer.",
+      "sources": [
+        "Nutrition Business Journal 2024"
+      ],
+      "industry_data": {
+        "supplement_market_us_usd_billions": 55,
+        "supplement_brands_us_total": 30000,
+        "avg_supplement_margin_pct": 70,
+        "supplement_subscription_retention_monthly_pct": 85,
+        "avg_supplement_cac_usd": 50
+      },
+      "buyer_psychology": {
+        "customer_buy_based_on_reviews_pct": 80,
+        "customer_subscribe_pct": 25,
+        "customer_avg_monthly_spend_usd": 40
+      }
+    },
+    "notary_signing_agent": {
+      "name": "Notary Signing Agent -> Signings -> Income",
+      "description": "Person becomes a notary public and loan signing agent. Side hustle that can become full-time. Works with mortgage closings.",
+      "entry_point": "Decides to become a notary signing agent",
+      "stages": [
+        {
+          "id": "get_notary_commission",
+          "label": "Get notary public commission ($40-100 fee)",
+          "prob": 100,
+          "time": "2-8 weeks",
+          "source": "NNA 2024",
+          "url": "https://www.nationalnotary.org/"
+        },
+        {
+          "id": "complete_training",
+          "label": "Complete loan signing agent training",
+          "prob": 75,
+          "time": "1-4 weeks",
+          "source": "NNA 2024"
+        },
+        {
+          "id": "get_nsa_certification",
+          "label": "Get NNA or LSS certification",
+          "prob": 50,
+          "time": "1-2 weeks",
+          "source": "NNA 2024"
+        },
+        {
+          "id": "buy_supplies",
+          "label": "Buy notary supplies (stamp, journal, printer)",
+          "prob": 90,
+          "time": "1-2 weeks",
+          "source": "NNA 2024 -- $200-500 startup cost"
+        },
+        {
+          "id": "join_signing_services",
+          "label": "Register with 10+ signing services",
+          "prob": 60,
+          "time": "1-4 weeks",
+          "source": "NNA 2024"
+        },
+        {
+          "id": "first_signing",
+          "label": "Complete first loan signing ($75-150)",
+          "prob": 50,
+          "time": "2-8 weeks",
+          "source": "NNA 2024"
+        },
+        {
+          "id": "reach_10_signings",
+          "label": "Complete 10 signings",
+          "prob": 40,
+          "time": "1-3 months",
+          "source": "NNA 2024"
+        },
+        {
+          "id": "earn_1k_month",
+          "label": "Earn $1,000/month from signings",
+          "prob": 25,
+          "time": "3-12 months",
+          "source": "NNA 2024 -- avg 8-10 signings/month needed"
+        },
+        {
+          "id": "build_direct_relationships",
+          "label": "Build direct relationships with title companies",
+          "prob": 20,
+          "time": "6-18 months",
+          "source": "NNA 2024 -- direct pays more than signing services"
+        },
+        {
+          "id": "earn_3k_month",
+          "label": "Earn $3,000/month from signings",
+          "prob": 10,
+          "time": "6-24 months",
+          "source": "NNA 2024"
+        },
+        {
+          "id": "earn_5k_month",
+          "label": "Earn $5,000/month from signings",
+          "prob": 5,
+          "time": "12-36 months",
+          "source": "NNA 2024 -- near full-time capacity"
+        },
+        {
+          "id": "add_general_notary_work",
+          "label": "Add general notary work and RON",
+          "prob": 15,
+          "time": "6-24 months",
+          "source": "NNA 2024 -- RON = remote online notarization"
+        },
+        {
+          "id": "earn_8k_month",
+          "label": "Earn $8,000+/month (full-time NSA)",
+          "prob": 3,
+          "time": "18-48 months",
+          "source": "NNA 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_signing": "16.9%",
+        "start_to_3k_month": "1.0%",
+        "start_to_8k_month": "0.04%"
+      },
+      "bottlenecks": [
+        "first_signing",
+        "build_direct_relationships",
+        "earn_3k_month"
+      ],
+      "reality_check": "Signing agent income is tied to mortgage volume. When interest rates rise, refinance signings drop 80%. Average signing pays $75-150. You need 3-5 signings per day for full-time income. Late evening and weekend signings are common.",
+      "sources": [
+        "NNA 2024"
+      ],
+      "industry_data": {
+        "notary_signing_agents_us_total": 100000,
+        "loan_signings_annual_us_millions": 20,
+        "avg_signing_fee_usd": 125,
+        "refi_volume_decline_since_2021_pct": 70
+      },
+      "buyer_psychology": {
+        "borrower_care_about_signing_experience_pct": 40,
+        "title_company_choose_based_on_reliability_pct": 90
+      }
+    },
+    "etsy_digital_products": {
+      "name": "Etsy Digital Products -> Passive Sales -> Scale",
+      "description": "Person sells digital products on Etsy (templates, planners, SVGs, printables). Zero inventory, zero shipping, high margins.",
+      "entry_point": "Decides to sell digital products on Etsy",
+      "stages": [
+        {
+          "id": "choose_digital_niche",
+          "label": "Choose digital product niche (planners, SVGs, templates)",
+          "prob": 100,
+          "time": "1-2 weeks",
+          "source": "baseline"
+        },
+        {
+          "id": "learn_design",
+          "label": "Learn design tools (Canva, Illustrator)",
+          "prob": 70,
+          "time": "1-4 weeks",
+          "source": "Etsy 2024"
+        },
+        {
+          "id": "create_first_product",
+          "label": "Create first digital product",
+          "prob": 65,
+          "time": "1-2 weeks",
+          "source": "Etsy 2024"
+        },
+        {
+          "id": "list_10_products",
+          "label": "List 10 digital products on Etsy",
+          "prob": 45,
+          "time": "2-6 weeks",
+          "source": "Etsy 2024"
+        },
+        {
+          "id": "optimize_seo_tags",
+          "label": "Optimize SEO, tags, and descriptions",
+          "prob": 35,
+          "time": "1-4 weeks",
+          "source": "Etsy 2024 -- SEO is critical for Etsy digital"
+        },
+        {
+          "id": "first_sale",
+          "label": "Make first digital product sale",
+          "prob": 30,
+          "time": "1-3 months",
+          "source": "Etsy 2024 -- digital products have high competition"
+        },
+        {
+          "id": "reach_50_sales",
+          "label": "Reach 50 total sales",
+          "prob": 35,
+          "time": "2-6 months after first",
+          "source": "Etsy 2024"
+        },
+        {
+          "id": "list_50_products",
+          "label": "List 50+ digital products",
+          "prob": 20,
+          "time": "3-12 months",
+          "source": "Etsy 2024 -- volume drives visibility"
+        },
+        {
+          "id": "earn_500_month",
+          "label": "Earn $500/month from digital products",
+          "prob": 12,
+          "time": "6-18 months",
+          "source": "Etsy 2024"
+        },
+        {
+          "id": "earn_1k_month",
+          "label": "Earn $1,000/month",
+          "prob": 8,
+          "time": "12-36 months",
+          "source": "Etsy 2024"
+        },
+        {
+          "id": "list_100_products",
+          "label": "List 100+ products",
+          "prob": 10,
+          "time": "6-24 months",
+          "source": "Etsy 2024"
+        },
+        {
+          "id": "earn_3k_month",
+          "label": "Earn $3,000/month",
+          "prob": 4,
+          "time": "18-48 months",
+          "source": "Etsy 2024"
+        },
+        {
+          "id": "expand_to_creative_market",
+          "label": "Expand to Creative Market/Gumroad",
+          "prob": 10,
+          "time": "6-24 months",
+          "source": "Etsy 2024"
+        },
+        {
+          "id": "earn_5k_month",
+          "label": "Earn $5,000+/month from digital products",
+          "prob": 2,
+          "time": "24-60 months",
+          "source": "Etsy 2024"
+        },
+        {
+          "id": "build_passive_income",
+          "label": "Build truly passive $3K+/month (no new products needed)",
+          "prob": 3,
+          "time": "24-60 months",
+          "source": "Etsy 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_sale": "4.6%",
+        "start_to_1k_month": "0.2%",
+        "start_to_5k_month": "0.009%"
+      },
+      "bottlenecks": [
+        "list_10_products",
+        "first_sale",
+        "earn_500_month",
+        "list_100_products"
+      ],
+      "reality_check": "Digital products on Etsy are the closest thing to passive income. Zero COGS, zero shipping. But competition is extreme. You need 100+ listings to get consistent traffic. Etsy takes 6.5% transaction fee + 3% payment processing.",
+      "sources": [
+        "Etsy 2024"
+      ],
+      "industry_data": {
+        "etsy_digital_product_sellers_estimate": 500000,
+        "avg_digital_product_price_usd": 5,
+        "etsy_digital_product_margin_pct": 90,
+        "canva_templates_market_usd_millions": 500
+      },
+      "buyer_psychology": {
+        "buyer_instant_download_expectation_pct": 100,
+        "buyer_avg_spend_usd": 8,
+        "buyer_leave_review_pct": 30
+      }
+    },
+    "hvac_business": {
+      "name": "HVAC Business -> Service Calls -> Scale",
+      "description": "Technician starts own HVAC (heating, ventilation, air conditioning) business. High demand, high ticket, recurring service contracts.",
+      "entry_point": "Licensed HVAC tech starts own company",
+      "stages": [
+        {
+          "id": "get_license",
+          "label": "Get HVAC contractor license",
+          "prob": 100,
+          "time": "already licensed",
+          "source": "baseline"
+        },
+        {
+          "id": "register_business",
+          "label": "Register business, get insurance and bonds",
+          "prob": 75,
+          "time": "2-6 weeks",
+          "source": "ACCA 2024",
+          "url": "https://www.acca.org/"
+        },
+        {
+          "id": "buy_van_tools",
+          "label": "Buy service van and tools ($20-50K)",
+          "prob": 60,
+          "time": "1-3 months",
+          "source": "ACCA 2024"
+        },
+        {
+          "id": "market_locally",
+          "label": "Start local marketing (Google, Angi, referrals)",
+          "prob": 65,
+          "time": "1-4 weeks",
+          "source": "ACCA 2024"
+        },
+        {
+          "id": "first_service_call",
+          "label": "Complete first service call",
+          "prob": 70,
+          "time": "1-4 weeks",
+          "source": "ACCA 2024"
+        },
+        {
+          "id": "reach_20_service_calls",
+          "label": "Complete 20 service calls",
+          "prob": 50,
+          "time": "1-3 months",
+          "source": "ACCA 2024"
+        },
+        {
+          "id": "earn_5k_month",
+          "label": "Earn $5,000/month",
+          "prob": 40,
+          "time": "2-6 months",
+          "source": "ACCA 2024 -- avg service call $150-500"
+        },
+        {
+          "id": "sell_first_install",
+          "label": "Sell first full HVAC installation ($5-15K)",
+          "prob": 50,
+          "time": "1-6 months",
+          "source": "ACCA 2024"
+        },
+        {
+          "id": "earn_10k_month",
+          "label": "Earn $10,000/month",
+          "prob": 30,
+          "time": "3-12 months",
+          "source": "ACCA 2024"
+        },
+        {
+          "id": "build_maintenance_contracts",
+          "label": "Build 50+ maintenance contract clients",
+          "prob": 25,
+          "time": "6-24 months",
+          "source": "ACCA 2024 -- recurring revenue key"
+        },
+        {
+          "id": "earn_20k_month",
+          "label": "Earn $20,000/month",
+          "prob": 20,
+          "time": "6-24 months",
+          "source": "ACCA 2024"
+        },
+        {
+          "id": "hire_first_tech",
+          "label": "Hire first HVAC technician",
+          "prob": 15,
+          "time": "6-24 months",
+          "source": "ACCA 2024"
+        },
+        {
+          "id": "earn_50k_month",
+          "label": "Earn $50,000/month",
+          "prob": 10,
+          "time": "18-48 months",
+          "source": "ACCA 2024"
+        },
+        {
+          "id": "build_team_5",
+          "label": "Build team of 5+ technicians",
+          "prob": 8,
+          "time": "24-60 months",
+          "source": "ACCA 2024"
+        },
+        {
+          "id": "reach_1m_annual",
+          "label": "Reach $1M annual revenue",
+          "prob": 10,
+          "time": "24-60 months",
+          "source": "ACCA 2024"
+        },
+        {
+          "id": "reach_5m_annual",
+          "label": "Reach $5M annual revenue",
+          "prob": 3,
+          "time": "48-120 months",
+          "source": "ACCA 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_call": "20.5%",
+        "start_to_10k_month": "3.2%",
+        "start_to_1m_annual": "0.7%"
+      },
+      "bottlenecks": [
+        "buy_van_tools",
+        "sell_first_install",
+        "hire_first_tech",
+        "build_team_5"
+      ],
+      "reality_check": "HVAC is one of the best trade businesses -- avg install is $5-15K, service calls $150-500. Seasonal peaks (summer AC, winter heating). Finding good technicians is the #1 growth constraint. Profit margins 20-30%.",
+      "sources": [
+        "ACCA 2024"
+      ],
+      "industry_data": {
+        "hvac_market_us_usd_billions": 25,
+        "hvac_companies_us_total": 120000,
+        "avg_hvac_install_price_usd": 8000,
+        "avg_service_call_price_usd": 300,
+        "hvac_tech_shortage_unfilled_jobs": 100000
+      },
+      "buyer_psychology": {
+        "homeowner_emergency_call_pct": 40,
+        "homeowner_choose_based_on_reviews_pct": 75,
+        "homeowner_get_3_quotes_pct": 50,
+        "homeowner_avg_hvac_spend_annual_usd": 500
+      }
+    },
+    "mobile_car_mechanic": {
+      "name": "Mobile Mechanic -> Clients -> Shop",
+      "description": "Certified mechanic starts mobile mechanic service, going to customers for repairs. Lower overhead than shop, convenience-focused.",
+      "entry_point": "Certified mechanic starts mobile service",
+      "stages": [
+        {
+          "id": "buy_tools_van",
+          "label": "Buy tools and service van ($5-20K)",
+          "prob": 100,
+          "time": "1-4 weeks",
+          "source": "baseline"
+        },
+        {
+          "id": "get_insured",
+          "label": "Get business insurance",
+          "prob": 55,
+          "time": "1-2 weeks",
+          "source": "ASE 2024",
+          "url": "https://www.ase.com/"
+        },
+        {
+          "id": "list_on_platforms",
+          "label": "List on YourMechanic, Wrench, etc.",
+          "prob": 60,
+          "time": "1-2 weeks",
+          "source": "ASE 2024"
+        },
+        {
+          "id": "first_job",
+          "label": "Complete first mobile repair job",
+          "prob": 65,
+          "time": "1-4 weeks",
+          "source": "ASE 2024"
+        },
+        {
+          "id": "reach_10_jobs",
+          "label": "Complete 10 jobs",
+          "prob": 50,
+          "time": "1-3 months",
+          "source": "ASE 2024"
+        },
+        {
+          "id": "earn_3k_month",
+          "label": "Earn $3,000/month",
+          "prob": 35,
+          "time": "2-6 months",
+          "source": "ASE 2024 -- avg mobile job $200-500"
+        },
+        {
+          "id": "build_repeat_clients",
+          "label": "Build base of 30+ repeat clients",
+          "prob": 25,
+          "time": "6-18 months",
+          "source": "ASE 2024"
+        },
+        {
+          "id": "earn_5k_month",
+          "label": "Earn $5,000/month",
+          "prob": 25,
+          "time": "3-12 months",
+          "source": "ASE 2024"
+        },
+        {
+          "id": "go_off_platform",
+          "label": "Transition clients off-platform (100% revenue)",
+          "prob": 35,
+          "time": "3-12 months",
+          "source": "ASE 2024"
+        },
+        {
+          "id": "earn_8k_month",
+          "label": "Earn $8,000/month",
+          "prob": 15,
+          "time": "6-24 months",
+          "source": "ASE 2024"
+        },
+        {
+          "id": "earn_10k_month",
+          "label": "Earn $10,000/month",
+          "prob": 10,
+          "time": "12-36 months",
+          "source": "ASE 2024"
+        },
+        {
+          "id": "open_shop",
+          "label": "Open own repair shop",
+          "prob": 5,
+          "time": "24-60 months",
+          "source": "ASE 2024"
+        },
+        {
+          "id": "earn_20k_month",
+          "label": "Earn $20,000+/month (with shop)",
+          "prob": 5,
+          "time": "36-72 months",
+          "source": "ASE 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_job": "19.7%",
+        "start_to_5k_month": "3.0%",
+        "start_to_shop": "0.2%"
+      },
+      "bottlenecks": [
+        "first_job",
+        "build_repeat_clients",
+        "earn_8k_month",
+        "open_shop"
+      ],
+      "reality_check": "Mobile mechanics save on shop rent but can't do all repairs (no lift, limited tools). Weather affects work. Average mobile mechanic job is $200-500. Platform takes 20-30% commission. Going direct saves huge on commissions.",
+      "sources": [
+        "ASE 2024"
+      ],
+      "industry_data": {
+        "auto_repair_market_us_usd_billions": 70,
+        "mobile_mechanics_us_estimate": 50000,
+        "avg_repair_job_usd": 350,
+        "platform_commission_pct": 25
+      },
+      "buyer_psychology": {
+        "customer_choose_mobile_for_convenience_pct": 80,
+        "customer_avg_spend_usd": 300,
+        "customer_return_rate_pct": 50
+      }
     }
   }
 }

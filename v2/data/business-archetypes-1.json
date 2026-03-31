@@ -2,7 +2,7 @@
   "_meta": {
     "category": "Business Archetypes — Batch 1",
     "created": "2026-03-27",
-    "total_archetypes": 5,
+    "total_archetypes": 26,
     "description": "High-resolution micro-step funnels for business scenarios with real-world probabilities. Shows the brutal reality of each path from first impression to sustained income."
   },
   "global_context": {
@@ -114,21 +114,24 @@
           "label": "See video in feed/recommendations",
           "prob": 100,
           "time": "instant",
-          "source": "baseline — YouTube serves 500M+ hours/day"
+          "source": "baseline — YouTube serves 500M+ hours/day",
+          "url": "https://www.youtube.com/"
         },
         {
           "id": "click_video",
           "label": "Click to watch",
           "prob": 4.5,
           "time": "instant",
-          "source": "YouTube avg CTR 2-10%, median 4-5% — Creator Academy 2024"
+          "source": "YouTube avg CTR 2-10%, median 4-5% — Creator Academy 2024",
+          "url": "https://www.youtube.com/"
         },
         {
           "id": "watch_30s",
           "label": "Watch past 30 seconds",
           "prob": 65,
           "time": "30s",
-          "source": "Retention Rabbit 2025 — 35% drop in first 30s"
+          "source": "Retention Rabbit 2025 — 35% drop in first 30s",
+          "url": "https://www.irs.gov/statistics"
         },
         {
           "id": "watch_1min",
@@ -149,7 +152,8 @@
           "label": "Click link in description",
           "prob": 3.5,
           "time": "instant",
-          "source": "YouTube description link CTR 2-5% of viewers — Tubefilter 2024"
+          "source": "YouTube description link CTR 2-5% of viewers — Tubefilter 2024",
+          "url": "https://www.youtube.com/"
         },
         {
           "id": "land_on_page",
@@ -184,7 +188,8 @@
           "label": "Complete purchase ($997-2997)",
           "prob": 45,
           "time": "5-15min",
-          "source": "Checkout completion rate 45% after starting — Stripe 2024"
+          "source": "Checkout completion rate 45% after starting — Stripe 2024",
+          "url": "https://stripe.com/guides"
         },
         {
           "id": "open_course_day1",
@@ -198,7 +203,8 @@
           "label": "Complete Module 1",
           "prob": 30,
           "time": "1-2 weeks",
-          "source": "Teachfloor 2025 — 70% drop after first module"
+          "source": "Teachfloor 2025 — 70% drop after first module",
+          "url": "https://www.irs.gov/statistics"
         },
         {
           "id": "complete_50pct",
@@ -226,7 +232,8 @@
           "label": "Do first real outreach/action",
           "prob": 60,
           "time": "1-4 weeks",
-          "source": "Of those who attempt, 60% do at least one outreach — Skool community data"
+          "source": "Of those who attempt, 60% do at least one outreach — Skool community data",
+          "url": "https://www.who.int/data"
         },
         {
           "id": "first_result",
@@ -240,7 +247,8 @@
           "label": "Sustain results for 3+ months",
           "prob": 30,
           "time": "3-6 months",
-          "source": "70% of first-time freelancers/agency owners quit within 90 days — Upwork 2024"
+          "source": "70% of first-time freelancers/agency owners quit within 90 days — Upwork 2024",
+          "url": "https://www.irs.gov/statistics"
         },
         {
           "id": "reach_10k_month",
@@ -346,7 +354,8 @@
           "label": "Decide to freelance",
           "prob": 100,
           "time": "instant",
-          "source": "baseline — 64M US freelancers (Upwork 2024)"
+          "source": "baseline — 64M US freelancers (Upwork 2024)",
+          "url": "https://www.upwork.com/research"
         },
         {
           "id": "pick_skill",
@@ -367,42 +376,48 @@
           "label": "Study consistently for 30 days",
           "prob": 25,
           "time": "30 days",
-          "source": "75% abandon new skill within first month — Duolingo/Coursera retention data"
+          "source": "75% abandon new skill within first month — Duolingo/Coursera retention data",
+          "url": "https://www.irs.gov/statistics"
         },
         {
           "id": "reach_basic_competence",
           "label": "Reach basic competence (can do real work)",
           "prob": 40,
           "time": "30-90 days",
-          "source": "Of those who persist 30 days, ~40% reach usable skill level — estimated"
+          "source": "Of those who persist 30 days, ~40% reach usable skill level — estimated",
+          "url": "https://www.who.int/data"
         },
         {
           "id": "create_portfolio",
           "label": "Create portfolio with 3+ samples",
           "prob": 50,
           "time": "1-3 weeks",
-          "source": "50% skip portfolio and go straight to bidding — Upwork forum data"
+          "source": "50% skip portfolio and go straight to bidding — Upwork forum data",
+          "url": "https://www.upwork.com/research"
         },
         {
           "id": "signup_platform",
           "label": "Sign up on Upwork/Fiverr",
           "prob": 90,
           "time": "1 day",
-          "source": "Low barrier — 90% who intend to freelance create at least one profile"
+          "source": "Low barrier — 90% who intend to freelance create at least one profile",
+          "url": "https://www.who.int/data"
         },
         {
           "id": "complete_profile",
           "label": "Complete profile properly (photo, bio, skills)",
           "prob": 60,
           "time": "1-3 days",
-          "source": "40% leave incomplete profiles — Upwork Best Practices 2024"
+          "source": "40% leave incomplete profiles — Upwork Best Practices 2024",
+          "url": "https://www.upwork.com/research"
         },
         {
           "id": "submit_first_proposal",
           "label": "Submit first proposal/gig",
           "prob": 70,
           "time": "1-7 days",
-          "source": "30% create profile but never submit — Upwork 2024"
+          "source": "30% create profile but never submit — Upwork 2024",
+          "url": "https://www.upwork.com/research"
         },
         {
           "id": "submit_10_proposals",
@@ -416,7 +431,8 @@
           "label": "Get first positive response",
           "prob": 18,
           "time": "2-8 weeks",
-          "source": "Upwork avg response rate 2-5% for new freelancers, need ~20 proposals — Upwork 2024"
+          "source": "Upwork avg response rate 2-5% for new freelancers, need ~20 proposals — Upwork 2024",
+          "url": "https://www.upwork.com/research"
         },
         {
           "id": "get_first_interview",
@@ -430,28 +446,32 @@
           "label": "Land first paid job",
           "prob": 40,
           "time": "1-3 months total",
-          "source": "Interview-to-hire ~40% for freelancers — Upwork data"
+          "source": "Interview-to-hire ~40% for freelancers — Upwork data",
+          "url": "https://www.upwork.com/research"
         },
         {
           "id": "complete_first_job",
           "label": "Complete first job successfully",
           "prob": 85,
           "time": "1-4 weeks",
-          "source": "85% completion rate on first jobs — Upwork Trust & Safety 2024"
+          "source": "85% completion rate on first jobs — Upwork Trust & Safety 2024",
+          "url": "https://www.irs.gov/statistics"
         },
         {
           "id": "get_5star_review",
           "label": "Get 5-star review",
           "prob": 70,
           "time": "within days",
-          "source": "70% of completed Upwork jobs get 5 stars — Upwork 2024"
+          "source": "70% of completed Upwork jobs get 5 stars — Upwork 2024",
+          "url": "https://www.upwork.com/research"
         },
         {
           "id": "reach_500_month",
           "label": "Reach $500/month consistently",
           "prob": 30,
           "time": "3-6 months",
-          "source": "Median Upwork freelancer earns $17/hr, need 30hrs/month — Upwork earnings report"
+          "source": "Median Upwork freelancer earns $17/hr, need 30hrs/month — Upwork earnings report",
+          "url": "https://www.upwork.com/research"
         },
         {
           "id": "reach_2k_month",
@@ -606,7 +626,8 @@
           "label": "Watch 5+ videos about AI agencies",
           "prob": 35,
           "time": "1-2 weeks",
-          "source": "35% of viewers go down the rabbit hole — estimated from YouTube watch patterns"
+          "source": "35% of viewers go down the rabbit hole — estimated from YouTube watch patterns",
+          "url": "https://www.youtube.com/"
         },
         {
           "id": "join_free_community",
@@ -697,7 +718,8 @@
           "label": "Deliver first project successfully",
           "prob": 60,
           "time": "2-8 weeks",
-          "source": "40% fail to deliver — scope creep, skill gaps, client expectations. Gartner: 95% AI pilots fail"
+          "source": "40% fail to deliver — scope creep, skill gaps, client expectations. Gartner: 95% AI pilots fail",
+          "url": "https://www.gartner.com/en/insights"
         },
         {
           "id": "get_testimonial",
@@ -849,7 +871,8 @@
           "label": "Pick a specific niche and product",
           "prob": 50,
           "time": "1-2 weeks",
-          "source": "50% of researchers commit to a niche — estimated from Shopify onboarding data"
+          "source": "50% of researchers commit to a niche — estimated from Shopify onboarding data",
+          "url": "https://www.shopify.com/research"
         },
         {
           "id": "find_supplier",
@@ -863,21 +886,24 @@
           "label": "Build Shopify store",
           "prob": 70,
           "time": "1-7 days",
-          "source": "Shopify makes it easy — 70% of those who start complete a basic store"
+          "source": "Shopify makes it easy — 70% of those who start complete a basic store",
+          "url": "https://www.who.int/data"
         },
         {
           "id": "setup_payment",
           "label": "Set up payment processing",
           "prob": 90,
           "time": "1-3 days",
-          "source": "Stripe/Shopify Payments auto-setup for most countries"
+          "source": "Stripe/Shopify Payments auto-setup for most countries",
+          "url": "https://stripe.com/guides"
         },
         {
           "id": "store_looks_legit",
           "label": "Store looks professional enough to convert",
           "prob": 30,
           "time": "1-2 weeks",
-          "source": "70% of dropship stores look obviously amateur — Shopify design review data"
+          "source": "70% of dropship stores look obviously amateur — Shopify design review data",
+          "url": "https://www.shopify.com/research"
         },
         {
           "id": "create_first_ads",
@@ -912,7 +938,8 @@
           "label": "Get first sale",
           "prob": 30,
           "time": "1-4 weeks",
-          "source": "Avg dropship conversion rate 0.5-2%. Need 50-200 visitors for first sale — Shopify 2024"
+          "source": "Avg dropship conversion rate 0.5-2%. Need 50-200 visitors for first sale — Shopify 2024",
+          "url": "https://www.irs.gov/statistics"
         },
         {
           "id": "calculate_margin_positive",
@@ -940,14 +967,16 @@
           "label": "Reach $1K profit/month",
           "prob": 25,
           "time": "2-6 months",
-          "source": "Of breakeven stores, ~25% scale to $1K profit — Shopify merchant data"
+          "source": "Of breakeven stores, ~25% scale to $1K profit — Shopify merchant data",
+          "url": "https://www.shopify.com/research"
         },
         {
           "id": "handle_returns_complaints",
           "label": "Handle first return/chargeback/complaint",
           "prob": 90,
           "time": "within 30 days of first sales",
-          "source": "Chargebacks and returns are near-universal in dropshipping — Shopify Trust & Safety"
+          "source": "Chargebacks and returns are near-universal in dropshipping — Shopify Trust & Safety",
+          "url": "https://www.shopify.com/research"
         },
         {
           "id": "survive_90_days",
@@ -961,7 +990,8 @@
           "label": "Reach $5K profit/month",
           "prob": 10,
           "time": "6-18 months",
-          "source": "~10% of surviving stores scale to $5K/month — estimated from Shopify top merchant data"
+          "source": "~10% of surviving stores scale to $5K/month — estimated from Shopify top merchant data",
+          "url": "https://www.shopify.com/research"
         }
       ],
       "cumulative_end_to_end": {
@@ -1049,7 +1079,8 @@
           "label": "Decide to start creating content",
           "prob": 100,
           "time": "instant",
-          "source": "baseline — 50M+ people globally identify as content creators (SignalFire 2024)"
+          "source": "baseline — 50M+ people globally identify as content creators (SignalFire 2024)",
+          "url": "https://signalfire.com/blog"
         },
         {
           "id": "pick_platform",
@@ -1070,7 +1101,8 @@
           "label": "Actually create and finish first piece",
           "prob": 50,
           "time": "1-7 days",
-          "source": "50% of planners never finish their first piece — ConvertKit Creator Report 2024"
+          "source": "50% of planners never finish their first piece — ConvertKit Creator Report 2024",
+          "url": "https://www.irs.gov/statistics"
         },
         {
           "id": "publish_first",
@@ -1084,7 +1116,8 @@
           "label": "Get 0-50 views on first content",
           "prob": 95,
           "time": "1-7 days",
-          "source": "Almost everyone gets some views, but very few — YouTube/TikTok algorithms"
+          "source": "Almost everyone gets some views, but very few — YouTube/TikTok algorithms",
+          "url": "https://www.youtube.com/"
         },
         {
           "id": "publish_10_pieces",
@@ -1105,7 +1138,8 @@
           "label": "Reach 100 followers/subscribers",
           "prob": 50,
           "time": "1-3 months",
-          "source": "First 100 is hardest — 50% of consistent creators reach it in 3 months"
+          "source": "First 100 is hardest — 50% of consistent creators reach it in 3 months",
+          "url": "https://www.irs.gov/statistics"
         },
         {
           "id": "reach_1k_followers",
@@ -1119,21 +1153,24 @@
           "label": "Reach 10,000 followers/subscribers",
           "prob": 10,
           "time": "6-24 months",
-          "source": "Only ~10% of 1K channels reach 10K — Social Blade data"
+          "source": "Only ~10% of 1K channels reach 10K — Social Blade data",
+          "url": "https://socialblade.com/"
         },
         {
           "id": "apply_monetization",
           "label": "Apply for platform monetization (YPP, etc.)",
           "prob": 80,
           "time": "within days of eligibility",
-          "source": "Most eligible creators apply — YouTube 2024"
+          "source": "Most eligible creators apply — YouTube 2024",
+          "url": "https://www.youtube.com/"
         },
         {
           "id": "get_accepted",
           "label": "Get accepted into monetization program",
           "prob": 70,
           "time": "1-4 weeks",
-          "source": "YouTube accepts ~70% of YPP applications — YouTube Creator Academy"
+          "source": "YouTube accepts ~70% of YPP applications — YouTube Creator Academy",
+          "url": "https://www.youtube.com/"
         },
         {
           "id": "first_ad_revenue",
@@ -1175,7 +1212,8 @@
           "label": "Full-time creator at $100K+/year",
           "prob": 2,
           "time": "3-7+ years",
-          "source": "Only 2% of creators earn $100K+ — SignalFire/Goldman Sachs 2024. Top 1% earns 90% of total creator revenue."
+          "source": "Only 2% of creators earn $100K+ — SignalFire/Goldman Sachs 2024. Top 1% earns 90% of total creator revenue.",
+          "url": "https://signalfire.com/blog"
         }
       ],
       "cumulative_end_to_end": {
@@ -1315,6 +1353,3864 @@
           "spotify_per_stream_usd": 0.004,
           "apple_music_per_stream_usd": 0.008
         }
+      }
+    },
+    "podcast_monetization": {
+      "name": "Podcast Launch → Monetization → Revenue",
+      "description": "Person starts a podcast, grows audience, monetizes through sponsorships, courses, and community. One of the slowest but most loyal audience-building methods.",
+      "entry_point": "Decides to start a podcast on a topic they know",
+      "stages": [
+        {
+          "id": "decide_topic",
+          "label": "Choose podcast topic and niche",
+          "prob": 100,
+          "time": "1-7 days",
+          "source": "baseline"
+        },
+        {
+          "id": "research_competition",
+          "label": "Research existing podcasts in niche",
+          "prob": 75,
+          "time": "1-3 days",
+          "source": "Buzzsprout 2024 — 25% skip competitive research"
+        },
+        {
+          "id": "buy_equipment",
+          "label": "Purchase recording equipment ($100-500)",
+          "prob": 80,
+          "time": "1-7 days",
+          "source": "Buzzsprout 2024 — 80% buy at least a USB mic",
+          "url": "https://www.buzzsprout.com/blog/podcast-statistics"
+        },
+        {
+          "id": "record_episode_1",
+          "label": "Record first episode",
+          "prob": 70,
+          "time": "1-14 days",
+          "source": "Podcast Insights 2024 — 30% never record after buying gear",
+          "url": "https://www.podcastinsights.com/podcast-statistics/"
+        },
+        {
+          "id": "edit_episode_1",
+          "label": "Edit and produce first episode",
+          "prob": 85,
+          "time": "2-8 hours",
+          "source": "Most who record do edit — Riverside 2024"
+        },
+        {
+          "id": "choose_host",
+          "label": "Choose hosting platform (Buzzsprout, Anchor, etc.)",
+          "prob": 95,
+          "time": "1-2 days",
+          "source": "Buzzsprout 2024"
+        },
+        {
+          "id": "publish_episode_1",
+          "label": "Publish first episode",
+          "prob": 90,
+          "time": "1-3 days",
+          "source": "Buzzsprout 2024 — 10% abandon before publishing"
+        },
+        {
+          "id": "submit_directories",
+          "label": "Submit to Apple Podcasts, Spotify, etc.",
+          "prob": 92,
+          "time": "1-7 days",
+          "source": "Buzzsprout 2024 — most hosts auto-distribute"
+        },
+        {
+          "id": "publish_5_episodes",
+          "label": "Publish 5 episodes",
+          "prob": 50,
+          "time": "1-5 weeks",
+          "source": "Amplifi Media 2024 — 50% of podcasts have fewer than 8 episodes ever"
+        },
+        {
+          "id": "publish_10_episodes",
+          "label": "Publish 10 episodes",
+          "prob": 35,
+          "time": "2-10 weeks",
+          "source": "Pacific Content 2024 — 65% quit before episode 10"
+        },
+        {
+          "id": "reach_100_downloads",
+          "label": "Reach 100 downloads per episode",
+          "prob": 50,
+          "time": "2-6 months",
+          "source": "Buzzsprout 2024 — 50th percentile is ~100 downloads/ep",
+          "url": "https://www.buzzsprout.com/blog/podcast-statistics"
+        },
+        {
+          "id": "publish_25_episodes",
+          "label": "Publish 25 episodes consistently",
+          "prob": 40,
+          "time": "6-12 months",
+          "source": "Amplifi Media 2024 — 60% quit within 25 episodes"
+        },
+        {
+          "id": "reach_500_downloads",
+          "label": "Reach 500 downloads per episode",
+          "prob": 25,
+          "time": "6-18 months",
+          "source": "Buzzsprout 2024 — top 25% get 500+ per episode"
+        },
+        {
+          "id": "get_first_review",
+          "label": "Get first listener review on Apple Podcasts",
+          "prob": 30,
+          "time": "1-6 months",
+          "source": "Podcast Insights 2024 — only 1-2% of listeners leave reviews"
+        },
+        {
+          "id": "build_email_list",
+          "label": "Build email list of 100+ subscribers",
+          "prob": 20,
+          "time": "3-12 months",
+          "source": "ConvertKit 2024 — most podcasters don't build email lists"
+        },
+        {
+          "id": "reach_1000_downloads",
+          "label": "Reach 1,000 downloads per episode",
+          "prob": 15,
+          "time": "12-24 months",
+          "source": "Buzzsprout 2024 — top 15% of podcasts",
+          "url": "https://www.buzzsprout.com/blog/podcast-statistics"
+        },
+        {
+          "id": "publish_50_episodes",
+          "label": "Publish 50 episodes",
+          "prob": 25,
+          "time": "12-24 months",
+          "source": "Pacific Content 2024 — only 25% reach 50 episodes"
+        },
+        {
+          "id": "first_sponsorship_inquiry",
+          "label": "Receive first sponsorship inquiry",
+          "prob": 20,
+          "time": "12-24 months",
+          "source": "AdvertiseCast 2024 — sponsors want 1000+ downloads minimum",
+          "url": "https://www.advertisecast.com/podcast-advertising-rates"
+        },
+        {
+          "id": "first_sponsorship_deal",
+          "label": "Close first sponsorship deal",
+          "prob": 60,
+          "time": "1-3 months after inquiry",
+          "source": "AdvertiseCast 2024 — 60% close rate on qualified leads"
+        },
+        {
+          "id": "reach_5000_downloads",
+          "label": "Reach 5,000 downloads per episode",
+          "prob": 8,
+          "time": "18-36 months",
+          "source": "Buzzsprout 2024 — top 8% of all podcasts"
+        },
+        {
+          "id": "consistent_sponsor_revenue",
+          "label": "Earn $500+/month from sponsors",
+          "prob": 30,
+          "time": "6-12 months after first deal",
+          "source": "AdvertiseCast 2024 — $18-25 CPM average"
+        },
+        {
+          "id": "launch_premium_content",
+          "label": "Launch Patreon/premium subscriber tier",
+          "prob": 25,
+          "time": "12-36 months",
+          "source": "Patreon 2024 — 25% of eligible podcasters launch premium"
+        },
+        {
+          "id": "reach_10k_downloads",
+          "label": "Reach 10,000 downloads per episode",
+          "prob": 4,
+          "time": "24-48 months",
+          "source": "Buzzsprout 2024 — top 4%"
+        },
+        {
+          "id": "earn_2k_month",
+          "label": "Earn $2,000+/month from podcast",
+          "prob": 15,
+          "time": "24-48 months",
+          "source": "The Podcast Host 2024 — 15% of monetized podcasts reach this"
+        },
+        {
+          "id": "earn_5k_month",
+          "label": "Earn $5,000+/month from podcast",
+          "prob": 5,
+          "time": "36-60 months",
+          "source": "Edison Research 2024 — top 5% of monetized shows"
+        },
+        {
+          "id": "reach_50k_downloads",
+          "label": "Reach 50,000+ downloads per episode",
+          "prob": 1,
+          "time": "48-72 months",
+          "source": "Buzzsprout 2024 — top 1% of all podcasts"
+        },
+        {
+          "id": "full_time_income",
+          "label": "Replace full-time income from podcast",
+          "prob": 3,
+          "time": "36-72 months",
+          "source": "Podcast Business Journal 2024 — ~3% of serious podcasters achieve this"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_100_downloads": "17.5%",
+        "start_to_1000_downloads": "2.6%",
+        "start_to_first_sponsor": "1.0%",
+        "start_to_full_time_income": "0.03%"
+      },
+      "bottlenecks": [
+        "publish_10_episodes",
+        "reach_1000_downloads",
+        "first_sponsorship_deal",
+        "earn_2k_month"
+      ],
+      "reality_check": "90% of podcasts quit before episode 20. The average podcast has 141 listens per episode. Only 1% of podcasts get 50K+ downloads.",
+      "sources": [
+        "Buzzsprout 2024",
+        "Pacific Content 2024",
+        "Amplifi Media 2024",
+        "AdvertiseCast 2024",
+        "Edison Research 2024"
+      ],
+      "industry_data": {
+        "total_podcasts_globally": 4200000,
+        "active_podcasts_pct": 27,
+        "podcast_listeners_us_millions": 100,
+        "podcast_ad_revenue_2024_usd_billions": 2.3,
+        "avg_cpm_podcast_ad_usd": 25,
+        "mid_roll_ad_cpm_usd": 30,
+        "pre_roll_ad_cpm_usd": 18,
+        "podcast_hosting_avg_monthly_usd": 15,
+        "podcast_editing_cost_per_episode_usd": 100,
+        "podcast_listeners_weekly_us_pct": 34,
+        "avg_podcasts_listened_per_week": 8,
+        "podcast_listener_avg_income_usd": 75000,
+        "podcast_listener_college_degree_pct": 57
+      },
+      "buyer_psychology": {
+        "listener_loyalty_subscribe_rate_pct": 80,
+        "listener_skip_ads_pct": 25,
+        "listener_purchase_from_ad_pct": 54,
+        "listener_trust_host_recommendations_pct": 71,
+        "listener_premium_subscription_willingness_pct": 15
+      }
+    },
+    "youtube_channel": {
+      "name": "YouTube Channel → Monetization → Full-Time Creator",
+      "description": "Person starts a YouTube channel, grows audience through consistent uploads, monetizes via AdSense, sponsorships, and products. The creator economy pipeline.",
+      "entry_point": "Creates a YouTube channel",
+      "stages": [
+        {
+          "id": "create_channel",
+          "label": "Create YouTube channel",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "upload_first_video",
+          "label": "Upload first video",
+          "prob": 70,
+          "time": "1-30 days",
+          "source": "Think Media 2024 — 30% create channel but never upload"
+        },
+        {
+          "id": "upload_5_videos",
+          "label": "Upload 5 videos",
+          "prob": 50,
+          "time": "1-3 months",
+          "source": "vidIQ 2024 — 50% quit before 5 videos",
+          "url": "https://vidiq.com/blog/post/youtube-statistics/"
+        },
+        {
+          "id": "upload_10_videos",
+          "label": "Upload 10 videos",
+          "prob": 35,
+          "time": "2-6 months",
+          "source": "vidIQ 2024 — 65% quit before 10 videos"
+        },
+        {
+          "id": "first_100_views_video",
+          "label": "Get a video with 100+ views",
+          "prob": 60,
+          "time": "1-6 months",
+          "source": "Pex 2024 — 88% of videos get under 1000 views"
+        },
+        {
+          "id": "reach_100_subscribers",
+          "label": "Reach 100 subscribers",
+          "prob": 40,
+          "time": "2-12 months",
+          "source": "Social Blade 2024 — avg time to 100 subs is 3-6 months"
+        },
+        {
+          "id": "upload_30_videos",
+          "label": "Upload 30 videos",
+          "prob": 20,
+          "time": "6-18 months",
+          "source": "vidIQ 2024 — only 20% reach 30 videos"
+        },
+        {
+          "id": "first_1000_views_video",
+          "label": "Get a video with 1,000+ views",
+          "prob": 45,
+          "time": "3-12 months",
+          "source": "Pex 2024 — 55% of channels never hit 1K on any video"
+        },
+        {
+          "id": "reach_500_subscribers",
+          "label": "Reach 500 subscribers",
+          "prob": 25,
+          "time": "6-18 months",
+          "source": "Social Blade 2024"
+        },
+        {
+          "id": "reach_1000_subscribers",
+          "label": "Reach 1,000 subscribers",
+          "prob": 15,
+          "time": "12-24 months",
+          "source": "YouTube Creator Academy 2024 — top 15% of active channels",
+          "url": "https://www.youtube.com/"
+        },
+        {
+          "id": "reach_4000_watch_hours",
+          "label": "Reach 4,000 watch hours (YPP requirement)",
+          "prob": 12,
+          "time": "12-30 months",
+          "source": "YouTube 2024 — YPP threshold"
+        },
+        {
+          "id": "apply_ypp",
+          "label": "Apply to YouTube Partner Program",
+          "prob": 90,
+          "time": "1-7 days",
+          "source": "YouTube 2024 — most eligible channels apply"
+        },
+        {
+          "id": "get_accepted_ypp",
+          "label": "Get accepted to YPP",
+          "prob": 85,
+          "time": "1-30 days",
+          "source": "YouTube 2024 — 85% acceptance rate for eligible channels"
+        },
+        {
+          "id": "first_adsense_payment",
+          "label": "Receive first AdSense payment ($100+)",
+          "prob": 80,
+          "time": "1-6 months after YPP",
+          "source": "YouTube 2024 — $100 minimum payout threshold"
+        },
+        {
+          "id": "reach_10k_subscribers",
+          "label": "Reach 10,000 subscribers",
+          "prob": 20,
+          "time": "18-48 months",
+          "source": "Social Blade 2024 — top 5% of all channels"
+        },
+        {
+          "id": "earn_500_month_adsense",
+          "label": "Earn $500/month from AdSense",
+          "prob": 25,
+          "time": "6-24 months after YPP",
+          "source": "Influencer Marketing Hub 2024 — avg RPM $3-5"
+        },
+        {
+          "id": "first_brand_deal",
+          "label": "Get first brand sponsorship deal",
+          "prob": 15,
+          "time": "12-36 months",
+          "source": "Influencer Marketing Hub 2024 — brands want 10K+ subs typically"
+        },
+        {
+          "id": "reach_50k_subscribers",
+          "label": "Reach 50,000 subscribers",
+          "prob": 8,
+          "time": "24-60 months",
+          "source": "Social Blade 2024"
+        },
+        {
+          "id": "reach_100k_subscribers",
+          "label": "Reach 100,000 subscribers (Silver Play Button)",
+          "prob": 4,
+          "time": "36-72 months",
+          "source": "Social Blade 2024 — top 1% of active channels",
+          "url": "https://socialblade.com/"
+        },
+        {
+          "id": "earn_3k_month",
+          "label": "Earn $3,000+/month total YouTube revenue",
+          "prob": 10,
+          "time": "24-60 months",
+          "source": "Influencer Marketing Hub 2024"
+        },
+        {
+          "id": "launch_own_product",
+          "label": "Launch own product/course/merch",
+          "prob": 20,
+          "time": "12-48 months",
+          "source": "Creator Economy Report 2024 — 20% of monetized creators launch products"
+        },
+        {
+          "id": "earn_5k_month",
+          "label": "Earn $5,000+/month as creator",
+          "prob": 5,
+          "time": "36-72 months",
+          "source": "Influencer Marketing Hub 2024 — top 5% of monetized channels"
+        },
+        {
+          "id": "full_time_creator",
+          "label": "Quit job to be full-time YouTuber",
+          "prob": 3,
+          "time": "36-84 months",
+          "source": "YouTube Creator Survey 2024 — ~3% of YPP members go full-time"
+        },
+        {
+          "id": "reach_1m_subscribers",
+          "label": "Reach 1,000,000 subscribers",
+          "prob": 0.2,
+          "time": "48-120 months",
+          "source": "Social Blade 2024 — 0.2% of all channels"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "channel_to_ypp": "7.1%",
+        "channel_to_10k_subs": "1.4%",
+        "channel_to_100k_subs": "0.14%",
+        "channel_to_full_time": "0.07%",
+        "channel_to_1m_subs": "0.003%"
+      },
+      "bottlenecks": [
+        "upload_10_videos",
+        "reach_1000_subscribers",
+        "reach_4000_watch_hours",
+        "earn_500_month_adsense",
+        "full_time_creator"
+      ],
+      "reality_check": "500 hours of video are uploaded to YouTube every minute. 88% of videos never reach 1000 views. The median YouTuber earns $0/year.",
+      "sources": [
+        "vidIQ 2024",
+        "Social Blade 2024",
+        "Pex 2024",
+        "Influencer Marketing Hub 2024",
+        "YouTube Creator Academy 2024"
+      ],
+      "industry_data": {
+        "youtube_monthly_active_users_billions": 2.7,
+        "youtube_channels_total_millions": 113,
+        "youtube_channels_over_1k_subs_millions": 11,
+        "youtube_channels_over_100k_subs": 370000,
+        "youtube_channels_over_1m_subs": 38000,
+        "youtube_ad_revenue_2024_usd_billions": 36,
+        "avg_rpm_usd": 4,
+        "gaming_rpm_usd": 2.5,
+        "finance_rpm_usd": 12,
+        "tech_rpm_usd": 8,
+        "education_rpm_usd": 6,
+        "youtube_shorts_rpm_usd": 0.05,
+        "youtube_premium_revenue_share_pct": 55
+      },
+      "buyer_psychology": {
+        "subscriber_daily_visit_pct": 30,
+        "subscriber_click_notification_pct": 12,
+        "viewer_subscribe_rate_pct": 2,
+        "viewer_like_rate_pct": 4,
+        "viewer_comment_rate_pct": 0.5,
+        "viewer_share_rate_pct": 1
+      }
+    },
+    "saas_micro": {
+      "name": "Micro-SaaS → Bootstrap → Profitable Exit",
+      "description": "Solo developer builds a small SaaS tool solving a specific pain point, bootstraps to profitability, potentially sells on Acquire.com or similar.",
+      "entry_point": "Identifies a problem they can solve with software",
+      "stages": [
+        {
+          "id": "identify_problem",
+          "label": "Identify a specific problem to solve",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "validate_idea",
+          "label": "Validate idea (talk to 10+ potential users)",
+          "prob": 30,
+          "time": "1-4 weeks",
+          "source": "Indie Hackers 2024 — 70% skip validation",
+          "url": "https://www.indiehackers.com/"
+        },
+        {
+          "id": "check_competitors",
+          "label": "Research existing solutions",
+          "prob": 60,
+          "time": "1-7 days",
+          "source": "Indie Hackers 2024"
+        },
+        {
+          "id": "build_mvp",
+          "label": "Build MVP (core feature only)",
+          "prob": 40,
+          "time": "2-12 weeks",
+          "source": "Indie Hackers 2024 — 60% never finish building"
+        },
+        {
+          "id": "launch_mvp",
+          "label": "Launch MVP publicly",
+          "prob": 70,
+          "time": "1-4 weeks after build",
+          "source": "Indie Hackers 2024 — 30% build but never launch"
+        },
+        {
+          "id": "post_product_hunt",
+          "label": "Post on Product Hunt / Hacker News",
+          "prob": 50,
+          "time": "1-7 days",
+          "source": "Product Hunt 2024 — half of makers post"
+        },
+        {
+          "id": "get_first_signup",
+          "label": "Get first user signup",
+          "prob": 80,
+          "time": "1-7 days",
+          "source": "Product Hunt 2024 — most launched products get some signups"
+        },
+        {
+          "id": "get_10_users",
+          "label": "Get 10 active users",
+          "prob": 50,
+          "time": "1-4 weeks",
+          "source": "Baremetrics 2024 — 50% drop between launch and 10 users"
+        },
+        {
+          "id": "get_first_feedback",
+          "label": "Get actionable user feedback",
+          "prob": 40,
+          "time": "1-4 weeks",
+          "source": "Indie Hackers 2024"
+        },
+        {
+          "id": "iterate_on_feedback",
+          "label": "Ship improvements based on feedback",
+          "prob": 60,
+          "time": "2-8 weeks",
+          "source": "Indie Hackers 2024"
+        },
+        {
+          "id": "first_paying_customer",
+          "label": "Get first paying customer",
+          "prob": 30,
+          "time": "1-6 months",
+          "source": "Baremetrics 2024 — converting free to paid is the hardest step",
+          "url": "https://baremetrics.com/blog"
+        },
+        {
+          "id": "reach_10_paying",
+          "label": "Reach 10 paying customers",
+          "prob": 40,
+          "time": "2-6 months after first",
+          "source": "Baremetrics 2024"
+        },
+        {
+          "id": "reach_1k_mrr",
+          "label": "Reach $1,000 MRR",
+          "prob": 30,
+          "time": "6-18 months",
+          "source": "Indie Hackers 2024 — most micro-SaaS stall under $1K MRR"
+        },
+        {
+          "id": "reduce_churn_under_5pct",
+          "label": "Get monthly churn under 5%",
+          "prob": 50,
+          "time": "3-12 months",
+          "source": "ProfitWell 2024 — median SaaS churn is 5%",
+          "url": "https://www.profitwell.com/"
+        },
+        {
+          "id": "reach_5k_mrr",
+          "label": "Reach $5,000 MRR",
+          "prob": 20,
+          "time": "12-36 months",
+          "source": "Indie Hackers 2024"
+        },
+        {
+          "id": "reach_10k_mrr",
+          "label": "Reach $10,000 MRR",
+          "prob": 12,
+          "time": "18-48 months",
+          "source": "Indie Hackers 2024 — top ~10% of bootstrapped SaaS"
+        },
+        {
+          "id": "hire_first_help",
+          "label": "Hire first contractor/employee",
+          "prob": 30,
+          "time": "12-36 months",
+          "source": "Indie Hackers 2024"
+        },
+        {
+          "id": "reach_50k_mrr",
+          "label": "Reach $50,000 MRR",
+          "prob": 5,
+          "time": "36-72 months",
+          "source": "Baremetrics 2024"
+        },
+        {
+          "id": "reach_100k_mrr",
+          "label": "Reach $100,000 MRR ($1.2M ARR)",
+          "prob": 3,
+          "time": "48-96 months",
+          "source": "ChartMogul 2025 — top 3% of SaaS companies",
+          "url": "https://chartmogul.com/reports/"
+        },
+        {
+          "id": "profitable_exit",
+          "label": "Sell business for 3-5x ARR",
+          "prob": 20,
+          "time": "24-84 months",
+          "source": "Acquire.com 2024 — 20% of listed micro-SaaS sell",
+          "url": "https://acquire.com/"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "idea_to_launch": "28%",
+        "idea_to_first_paying": "4.7%",
+        "idea_to_10k_mrr": "0.3%",
+        "idea_to_100k_mrr": "0.02%",
+        "idea_to_exit": "0.005%"
+      },
+      "bottlenecks": [
+        "build_mvp",
+        "first_paying_customer",
+        "reach_1k_mrr",
+        "reach_10k_mrr",
+        "reach_100k_mrr"
+      ],
+      "reality_check": "Most micro-SaaS products never reach $1K MRR. The median bootstrapped SaaS takes 18 months to reach profitability. 94% never reach $10K MRR.",
+      "sources": [
+        "Indie Hackers 2024",
+        "Baremetrics 2024",
+        "ProfitWell 2024",
+        "ChartMogul 2025",
+        "Acquire.com 2024"
+      ],
+      "industry_data": {
+        "micro_saas_products_worldwide_estimate": 100000,
+        "micro_saas_avg_mrr_usd": 2000,
+        "micro_saas_median_mrr_usd": 500,
+        "micro_saas_avg_price_per_month_usd": 29,
+        "micro_saas_avg_churn_monthly_pct": 7,
+        "micro_saas_avg_ltv_usd": 414,
+        "micro_saas_avg_cac_usd": 50,
+        "acquire_com_avg_sale_multiple_arr": 3.5,
+        "acquire_com_listings_total": 5000,
+        "acquire_com_avg_sale_price_usd": 250000,
+        "indie_hackers_members": 150000,
+        "bootstrapped_saas_over_1m_arr_count": 5000
+      },
+      "buyer_psychology": {
+        "free_trial_conversion_pct": 15,
+        "freemium_conversion_pct": 4,
+        "annual_plan_discount_adoption_pct": 30,
+        "churn_reason_no_value_pct": 40,
+        "churn_reason_price_pct": 25,
+        "churn_reason_competitor_pct": 15,
+        "churn_reason_outgrew_pct": 10,
+        "nps_score_avg_saas": 30
+      }
+    },
+    "tiktok_creator": {
+      "name": "TikTok Creator → Viral Growth → Revenue",
+      "description": "Person starts creating TikTok content, aims for viral growth, monetizes through Creator Fund, brand deals, and product sales.",
+      "entry_point": "Creates a TikTok account and starts posting",
+      "stages": [
+        {
+          "id": "create_account",
+          "label": "Create TikTok account",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "post_first_video",
+          "label": "Post first TikTok video",
+          "prob": 80,
+          "time": "1-7 days",
+          "source": "TikTok Creator Portal 2024 — 20% create account but never post"
+        },
+        {
+          "id": "post_10_videos",
+          "label": "Post 10 videos",
+          "prob": 45,
+          "time": "1-4 weeks",
+          "source": "Later 2024 — 55% quit before 10 posts",
+          "url": "https://later.com/blog/tiktok-statistics/"
+        },
+        {
+          "id": "first_video_over_1k_views",
+          "label": "Get a video over 1,000 views",
+          "prob": 60,
+          "time": "1-8 weeks",
+          "source": "TikTok algorithm gives new accounts reach — TikTok 2024"
+        },
+        {
+          "id": "post_30_videos",
+          "label": "Post 30 videos consistently",
+          "prob": 25,
+          "time": "1-3 months",
+          "source": "Later 2024 — 75% quit before 30 posts"
+        },
+        {
+          "id": "reach_1k_followers",
+          "label": "Reach 1,000 followers",
+          "prob": 40,
+          "time": "1-6 months",
+          "source": "Social Media Examiner 2024"
+        },
+        {
+          "id": "first_viral_video",
+          "label": "Get first viral video (100K+ views)",
+          "prob": 20,
+          "time": "1-12 months",
+          "source": "Hootsuite 2024 — avg video gets 500-1000 views, viral is rare"
+        },
+        {
+          "id": "reach_10k_followers",
+          "label": "Reach 10,000 followers",
+          "prob": 15,
+          "time": "3-12 months",
+          "source": "Social Media Examiner 2024 — top 15% of active creators",
+          "url": "https://www.socialmediaexaminer.com/"
+        },
+        {
+          "id": "join_creator_fund",
+          "label": "Join TikTok Creator Fund (10K+ followers required)",
+          "prob": 70,
+          "time": "1-4 weeks after eligible",
+          "source": "TikTok 2024 — most eligible creators apply"
+        },
+        {
+          "id": "earn_first_dollar",
+          "label": "Earn first dollar from Creator Fund",
+          "prob": 90,
+          "time": "1-30 days after joining",
+          "source": "TikTok 2024"
+        },
+        {
+          "id": "reach_50k_followers",
+          "label": "Reach 50,000 followers",
+          "prob": 25,
+          "time": "6-24 months",
+          "source": "Social Blade 2024"
+        },
+        {
+          "id": "first_brand_deal",
+          "label": "Get first brand deal",
+          "prob": 20,
+          "time": "3-18 months",
+          "source": "Influencer Marketing Hub 2024 — brands want 10K+ engagement"
+        },
+        {
+          "id": "earn_100_month_creator_fund",
+          "label": "Earn $100/month from Creator Fund",
+          "prob": 30,
+          "time": "3-12 months",
+          "source": "TikTok 2024 — Creator Fund pays $0.02-0.04 per 1K views"
+        },
+        {
+          "id": "reach_100k_followers",
+          "label": "Reach 100,000 followers",
+          "prob": 8,
+          "time": "12-36 months",
+          "source": "Social Blade 2024 — top 5% of active TikTok creators"
+        },
+        {
+          "id": "earn_1k_month_brands",
+          "label": "Earn $1,000/month from brand deals",
+          "prob": 10,
+          "time": "12-36 months",
+          "source": "Influencer Marketing Hub 2024"
+        },
+        {
+          "id": "launch_own_product",
+          "label": "Launch own product/merch via TikTok Shop",
+          "prob": 15,
+          "time": "6-24 months",
+          "source": "TikTok Shop 2024"
+        },
+        {
+          "id": "reach_500k_followers",
+          "label": "Reach 500,000 followers",
+          "prob": 3,
+          "time": "18-48 months",
+          "source": "Social Blade 2024"
+        },
+        {
+          "id": "earn_5k_month",
+          "label": "Earn $5,000+/month total from TikTok",
+          "prob": 4,
+          "time": "24-48 months",
+          "source": "Influencer Marketing Hub 2024"
+        },
+        {
+          "id": "reach_1m_followers",
+          "label": "Reach 1,000,000 followers",
+          "prob": 1,
+          "time": "24-72 months",
+          "source": "Social Blade 2024 — 0.1% of accounts reach 1M"
+        },
+        {
+          "id": "full_time_income",
+          "label": "Replace full-time income from TikTok",
+          "prob": 2,
+          "time": "18-60 months",
+          "source": "Creator Economy Survey 2024 — only 2% of creators earn enough to go full-time"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_10k_followers": "5.4%",
+        "start_to_creator_fund": "3.8%",
+        "start_to_100k_followers": "0.4%",
+        "start_to_full_time": "0.04%"
+      },
+      "bottlenecks": [
+        "post_30_videos",
+        "reach_10k_followers",
+        "first_brand_deal",
+        "earn_1k_month_brands"
+      ],
+      "reality_check": "TikTok Creator Fund pays ~$0.02-0.04 per 1K views. A video with 1M views earns $20-40. Most creators earn less than minimum wage.",
+      "sources": [
+        "TikTok Creator Portal 2024",
+        "Later 2024",
+        "Social Media Examiner 2024",
+        "Influencer Marketing Hub 2024"
+      ],
+      "industry_data": {
+        "tiktok_monthly_active_users_billions": 1.6,
+        "tiktok_daily_active_users_billions": 1.04,
+        "tiktok_creators_total_millions": 200,
+        "tiktok_creator_fund_total_usd_billions": 2,
+        "tiktok_shop_gmv_2024_usd_billions": 20,
+        "tiktok_avg_engagement_rate_pct": 5.96,
+        "tiktok_ad_revenue_2024_usd_billions": 23,
+        "avg_brand_deal_per_post_10k_followers_usd": 100,
+        "avg_brand_deal_per_post_100k_followers_usd": 1000,
+        "avg_brand_deal_per_post_1m_followers_usd": 5000
+      },
+      "buyer_psychology": {
+        "viewer_follow_rate_pct": 3,
+        "viewer_like_rate_pct": 8,
+        "viewer_share_rate_pct": 2,
+        "viewer_comment_rate_pct": 1.5,
+        "viewer_trust_creator_recommendation_pct": 49,
+        "viewer_purchase_after_tiktok_pct": 37
+      }
+    },
+    "consulting_solo": {
+      "name": "Solo Consultant → Clients → Scale",
+      "description": "Professional leaves corporate job to become an independent consultant, leveraging industry expertise. Common in management, strategy, IT, and HR consulting.",
+      "entry_point": "Decides to leave corporate and consult independently",
+      "stages": [
+        {
+          "id": "decide_to_consult",
+          "label": "Decide to become a consultant",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "define_niche",
+          "label": "Define consulting niche and expertise area",
+          "prob": 85,
+          "time": "1-4 weeks",
+          "source": "MBO Partners 2024 — 15% never define a clear niche"
+        },
+        {
+          "id": "quit_job",
+          "label": "Actually quit corporate job",
+          "prob": 50,
+          "time": "1-6 months",
+          "source": "MBO Partners 2024 — 50% never leave due to golden handcuffs",
+          "url": "https://www.mbopartners.com/state-of-independence/"
+        },
+        {
+          "id": "set_up_legal",
+          "label": "Set up legal entity (LLC/sole prop)",
+          "prob": 90,
+          "time": "1-4 weeks",
+          "source": "SBA 2024 — most consultants formalize early"
+        },
+        {
+          "id": "build_website",
+          "label": "Build professional website",
+          "prob": 70,
+          "time": "1-4 weeks",
+          "source": "HubSpot 2024 — 30% of consultants start without a website"
+        },
+        {
+          "id": "create_linkedin_presence",
+          "label": "Optimize LinkedIn for consulting",
+          "prob": 80,
+          "time": "1-2 weeks",
+          "source": "LinkedIn 2024 — primary channel for B2B consultants"
+        },
+        {
+          "id": "reach_out_to_network",
+          "label": "Reach out to existing professional network",
+          "prob": 75,
+          "time": "1-4 weeks",
+          "source": "MBO Partners 2024 — 75% start by contacting former colleagues"
+        },
+        {
+          "id": "first_meeting",
+          "label": "Get first client meeting/call",
+          "prob": 60,
+          "time": "2-8 weeks",
+          "source": "MBO Partners 2024 — warm network converts ~60%"
+        },
+        {
+          "id": "first_proposal",
+          "label": "Send first consulting proposal",
+          "prob": 80,
+          "time": "1-2 weeks after meeting",
+          "source": "MBO Partners 2024"
+        },
+        {
+          "id": "first_client",
+          "label": "Win first paying client",
+          "prob": 40,
+          "time": "1-6 months",
+          "source": "MBO Partners 2024 — 40% conversion on first proposals from warm leads"
+        },
+        {
+          "id": "deliver_first_project",
+          "label": "Deliver first consulting project",
+          "prob": 90,
+          "time": "1-6 months",
+          "source": "Most first projects get completed — ICF 2024"
+        },
+        {
+          "id": "get_testimonial",
+          "label": "Get testimonial/case study from first client",
+          "prob": 50,
+          "time": "1-4 weeks after delivery",
+          "source": "ICF 2024 — only 50% ask for testimonials"
+        },
+        {
+          "id": "get_referral",
+          "label": "Get referral from first client",
+          "prob": 35,
+          "time": "1-3 months",
+          "source": "ICF 2024 — 35% of clients refer without being asked"
+        },
+        {
+          "id": "reach_5_clients",
+          "label": "Reach 5 clients total",
+          "prob": 50,
+          "time": "6-18 months",
+          "source": "MBO Partners 2024"
+        },
+        {
+          "id": "reach_100k_annual",
+          "label": "Reach $100K annual consulting revenue",
+          "prob": 40,
+          "time": "12-24 months",
+          "source": "MBO Partners 2024 — 40% of solo consultants exceed $100K"
+        },
+        {
+          "id": "raise_rates",
+          "label": "Raise rates above initial pricing",
+          "prob": 60,
+          "time": "6-18 months",
+          "source": "MBO Partners 2024 — most undercharge initially"
+        },
+        {
+          "id": "develop_methodology",
+          "label": "Develop proprietary methodology/framework",
+          "prob": 30,
+          "time": "12-36 months",
+          "source": "ICF 2024 — differentiation through methodology"
+        },
+        {
+          "id": "reach_200k_annual",
+          "label": "Reach $200K annual revenue",
+          "prob": 20,
+          "time": "24-48 months",
+          "source": "MBO Partners 2024"
+        },
+        {
+          "id": "build_team",
+          "label": "Hire subcontractors or junior consultants",
+          "prob": 15,
+          "time": "18-48 months",
+          "source": "MBO Partners 2024 — most stay solo"
+        },
+        {
+          "id": "reach_500k_annual",
+          "label": "Reach $500K annual revenue",
+          "prob": 8,
+          "time": "36-72 months",
+          "source": "MBO Partners 2024 — top 8% of independent consultants"
+        },
+        {
+          "id": "become_boutique_firm",
+          "label": "Grow into boutique consulting firm",
+          "prob": 5,
+          "time": "48-96 months",
+          "source": "Source Global Research 2024 — rare transition from solo to firm"
+        },
+        {
+          "id": "reach_1m_annual",
+          "label": "Reach $1M+ annual revenue",
+          "prob": 3,
+          "time": "60-120 months",
+          "source": "Source Global Research 2024 — top 3% of consulting businesses"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "decide_to_first_client": "15.3%",
+        "decide_to_100k_annual": "6.1%",
+        "decide_to_500k_annual": "0.4%",
+        "decide_to_1m_annual": "0.1%"
+      },
+      "bottlenecks": [
+        "quit_job",
+        "first_client",
+        "reach_5_clients",
+        "reach_200k_annual",
+        "become_boutique_firm"
+      ],
+      "reality_check": "50% of would-be consultants never leave their corporate job. Of those who do, the median solo consultant earns $75K — less than their former salary.",
+      "sources": [
+        "MBO Partners 2024",
+        "ICF 2024",
+        "Source Global Research 2024",
+        "SBA 2024"
+      ],
+      "industry_data": {
+        "management_consulting_market_usd_billions": 330,
+        "solo_consultants_us_millions": 6.7,
+        "solo_consultant_avg_rate_per_hour_usd": 150,
+        "solo_consultant_median_rate_per_hour_usd": 100,
+        "big_4_consultant_avg_rate_per_hour_usd": 350,
+        "boutique_firm_avg_rate_per_hour_usd": 250,
+        "consultant_billable_utilization_pct": 60,
+        "consultant_avg_project_length_months": 3,
+        "consultant_repeat_client_rate_pct": 70,
+        "consulting_proposal_win_rate_pct": 25,
+        "consulting_referral_source_pct": 50,
+        "consulting_linkedin_source_pct": 20,
+        "consulting_cold_outreach_source_pct": 5
+      },
+      "buyer_psychology": {
+        "client_trust_referral_pct": 85,
+        "client_check_linkedin_pct": 90,
+        "client_want_case_studies_pct": 70,
+        "client_price_sensitivity_pct": 40,
+        "client_prefer_specialized_vs_generalist_pct": 75,
+        "client_decision_timeline_weeks": 4
+      }
+    },
+    "amazon_fba": {
+      "name": "Amazon FBA → Product Launch → Scale",
+      "description": "Person sources a private label product, ships to Amazon FBA, tries to rank and sell on Amazon marketplace. The 'physical product e-commerce' path.",
+      "entry_point": "Decides to sell on Amazon",
+      "stages": [
+        {
+          "id": "decide_to_sell",
+          "label": "Decide to sell on Amazon FBA",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "research_products",
+          "label": "Research product ideas (Jungle Scout, Helium 10)",
+          "prob": 80,
+          "time": "1-8 weeks",
+          "source": "Jungle Scout 2024 — 20% start without product research",
+          "url": "https://www.junglescout.com/amazon-seller-report/"
+        },
+        {
+          "id": "find_product",
+          "label": "Select a product to sell",
+          "prob": 60,
+          "time": "2-12 weeks",
+          "source": "Jungle Scout 2024 — 40% give up during research phase"
+        },
+        {
+          "id": "find_supplier",
+          "label": "Find supplier on Alibaba/1688",
+          "prob": 75,
+          "time": "2-6 weeks",
+          "source": "Jungle Scout 2024 — 25% can't find reliable supplier"
+        },
+        {
+          "id": "order_samples",
+          "label": "Order product samples",
+          "prob": 80,
+          "time": "2-4 weeks",
+          "source": "Jungle Scout 2024"
+        },
+        {
+          "id": "approve_sample",
+          "label": "Approve sample quality",
+          "prob": 70,
+          "time": "1-3 rounds",
+          "source": "Jungle Scout 2024 — 30% reject all samples or give up"
+        },
+        {
+          "id": "place_first_order",
+          "label": "Place first inventory order ($2-10K)",
+          "prob": 75,
+          "time": "1-4 weeks",
+          "source": "Jungle Scout 2024 — avg first order $2-5K"
+        },
+        {
+          "id": "create_listing",
+          "label": "Create Amazon product listing",
+          "prob": 95,
+          "time": "1-2 weeks",
+          "source": "Amazon Seller Central 2024"
+        },
+        {
+          "id": "ship_to_fba",
+          "label": "Ship inventory to FBA warehouse",
+          "prob": 90,
+          "time": "2-6 weeks for sea freight",
+          "source": "Amazon 2024"
+        },
+        {
+          "id": "listing_live",
+          "label": "Product listing goes live",
+          "prob": 95,
+          "time": "1-7 days",
+          "source": "Amazon 2024"
+        },
+        {
+          "id": "first_sale",
+          "label": "Get first sale (organic or PPC)",
+          "prob": 80,
+          "time": "1-14 days",
+          "source": "Jungle Scout 2024 — most get at least 1 sale with PPC"
+        },
+        {
+          "id": "launch_ppc",
+          "label": "Launch Amazon PPC campaign",
+          "prob": 85,
+          "time": "1-7 days",
+          "source": "Jungle Scout 2024 — most serious sellers run PPC"
+        },
+        {
+          "id": "first_review",
+          "label": "Get first product review",
+          "prob": 60,
+          "time": "2-8 weeks",
+          "source": "Jungle Scout 2024 — review rate is 1-3% of purchases"
+        },
+        {
+          "id": "reach_10_reviews",
+          "label": "Reach 10 product reviews",
+          "prob": 40,
+          "time": "2-6 months",
+          "source": "Jungle Scout 2024 — critical mass for social proof"
+        },
+        {
+          "id": "break_even",
+          "label": "Break even on initial investment",
+          "prob": 55,
+          "time": "3-12 months",
+          "source": "Jungle Scout 2024 — 55% break even within first year",
+          "url": "https://www.junglescout.com/amazon-seller-report/"
+        },
+        {
+          "id": "reach_1k_month_revenue",
+          "label": "Reach $1,000/month revenue",
+          "prob": 60,
+          "time": "2-6 months",
+          "source": "Jungle Scout 2024"
+        },
+        {
+          "id": "reach_5k_month_revenue",
+          "label": "Reach $5,000/month revenue",
+          "prob": 30,
+          "time": "6-18 months",
+          "source": "Jungle Scout 2024"
+        },
+        {
+          "id": "reach_10k_month_revenue",
+          "label": "Reach $10,000/month revenue",
+          "prob": 20,
+          "time": "12-24 months",
+          "source": "Jungle Scout 2024 — 20% of active sellers"
+        },
+        {
+          "id": "profitable_after_all_costs",
+          "label": "Net profitable after all costs (PPC, FBA fees, COGS)",
+          "prob": 50,
+          "time": "6-18 months",
+          "source": "Jungle Scout 2024 — half of sellers are profitable"
+        },
+        {
+          "id": "expand_product_line",
+          "label": "Launch 2nd product",
+          "prob": 35,
+          "time": "6-18 months",
+          "source": "Jungle Scout 2024"
+        },
+        {
+          "id": "reach_50k_month",
+          "label": "Reach $50,000/month revenue",
+          "prob": 8,
+          "time": "18-48 months",
+          "source": "Jungle Scout 2024"
+        },
+        {
+          "id": "reach_100k_month",
+          "label": "Reach $100,000/month revenue",
+          "prob": 3,
+          "time": "24-60 months",
+          "source": "Jungle Scout 2024 — top 3% of FBA sellers"
+        },
+        {
+          "id": "build_brand",
+          "label": "Build recognizable brand beyond Amazon",
+          "prob": 10,
+          "time": "24-60 months",
+          "source": "Jungle Scout 2024"
+        },
+        {
+          "id": "exit_acquisition",
+          "label": "Sell FBA business (Thrasio, aggregator)",
+          "prob": 5,
+          "time": "24-72 months",
+          "source": "Marketplace Pulse 2024 — FBA aggregator deals slowed",
+          "url": "https://www.marketplacepulse.com/"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "decide_to_first_sale": "16.4%",
+        "decide_to_break_even": "9.0%",
+        "decide_to_10k_month": "3.3%",
+        "decide_to_100k_month": "0.1%",
+        "decide_to_exit": "0.05%"
+      },
+      "bottlenecks": [
+        "find_product",
+        "approve_sample",
+        "reach_10_reviews",
+        "break_even",
+        "reach_10k_month_revenue"
+      ],
+      "reality_check": "The average new Amazon seller invests $3,836 to get started. 50% of sellers are profitable, but median profit margin is only 10-15% after all fees. FBA fees have increased 30% since 2020.",
+      "sources": [
+        "Jungle Scout State of the Amazon Seller 2024",
+        "Amazon Seller Central 2024",
+        "Marketplace Pulse 2024"
+      ],
+      "industry_data": {
+        "amazon_total_sellers_millions": 9.7,
+        "amazon_active_sellers_millions": 2,
+        "amazon_us_marketplace_share_pct": 38,
+        "amazon_fba_seller_pct": 82,
+        "amazon_third_party_seller_share_pct": 60,
+        "amazon_avg_referral_fee_pct": 15,
+        "amazon_fba_avg_fee_per_unit_usd": 5,
+        "amazon_ppc_avg_cpc_usd": 1.2,
+        "amazon_ppc_avg_acos_pct": 30,
+        "amazon_fba_aggregator_market_funding_usd_billions": 16,
+        "amazon_fba_avg_exit_multiple_sde": 3.5,
+        "amazon_new_sellers_per_day": 3700
+      },
+      "buyer_psychology": {
+        "buyer_check_reviews_pct": 95,
+        "buyer_min_reviews_to_trust": 10,
+        "buyer_click_top_3_results_pct": 70,
+        "buyer_prime_member_purchase_more_pct": 85,
+        "buyer_compare_3_products_avg": true,
+        "buyer_price_as_top_factor_pct": 35,
+        "buyer_reviews_as_top_factor_pct": 45
+      }
+    },
+    "newsletter_business": {
+      "name": "Newsletter → Audience → Revenue",
+      "description": "Person starts an email newsletter, grows subscriber base, monetizes through sponsorships, paid subscriptions, and product sales. The Substack/Beehiiv path.",
+      "entry_point": "Decides to start a newsletter",
+      "stages": [
+        {
+          "id": "choose_topic",
+          "label": "Choose newsletter topic and niche",
+          "prob": 100,
+          "time": "1-7 days",
+          "source": "baseline"
+        },
+        {
+          "id": "choose_platform",
+          "label": "Choose platform (Substack, Beehiiv, ConvertKit)",
+          "prob": 90,
+          "time": "1-3 days",
+          "source": "Substack 2024 — most start on free platforms"
+        },
+        {
+          "id": "write_first_issue",
+          "label": "Write and send first newsletter issue",
+          "prob": 65,
+          "time": "1-14 days",
+          "source": "Substack 2024 — 35% never send a first issue",
+          "url": "https://substack.com/"
+        },
+        {
+          "id": "send_5_issues",
+          "label": "Send 5 newsletter issues",
+          "prob": 50,
+          "time": "2-5 weeks",
+          "source": "Beehiiv 2024 — 50% quit before 5 issues"
+        },
+        {
+          "id": "reach_100_subscribers",
+          "label": "Reach 100 subscribers",
+          "prob": 40,
+          "time": "1-3 months",
+          "source": "Substack 2024 — most start from personal network"
+        },
+        {
+          "id": "send_20_issues",
+          "label": "Send 20 issues consistently",
+          "prob": 30,
+          "time": "2-5 months",
+          "source": "Beehiiv 2024 — 70% quit within 20 issues"
+        },
+        {
+          "id": "reach_500_subscribers",
+          "label": "Reach 500 subscribers",
+          "prob": 25,
+          "time": "3-12 months",
+          "source": "Beehiiv 2024"
+        },
+        {
+          "id": "reach_1000_subscribers",
+          "label": "Reach 1,000 subscribers",
+          "prob": 15,
+          "time": "6-18 months",
+          "source": "Substack 2024 — top 15% of newsletters",
+          "url": "https://substack.com/"
+        },
+        {
+          "id": "maintain_40pct_open_rate",
+          "label": "Maintain 40%+ open rate",
+          "prob": 50,
+          "time": "ongoing",
+          "source": "Mailchimp 2024 — avg newsletter open rate 37%, good is 40%+"
+        },
+        {
+          "id": "reach_2500_subscribers",
+          "label": "Reach 2,500 subscribers",
+          "prob": 10,
+          "time": "12-24 months",
+          "source": "Beehiiv 2024"
+        },
+        {
+          "id": "first_sponsor",
+          "label": "Get first newsletter sponsor",
+          "prob": 20,
+          "time": "6-18 months",
+          "source": "Swapstack 2024 — sponsors want 1K+ subscribers typically"
+        },
+        {
+          "id": "reach_5000_subscribers",
+          "label": "Reach 5,000 subscribers",
+          "prob": 7,
+          "time": "12-36 months",
+          "source": "Beehiiv 2024"
+        },
+        {
+          "id": "earn_500_month",
+          "label": "Earn $500/month from newsletter",
+          "prob": 15,
+          "time": "12-30 months",
+          "source": "Substack 2024 — top 15% of monetized newsletters"
+        },
+        {
+          "id": "launch_paid_tier",
+          "label": "Launch paid subscription tier",
+          "prob": 20,
+          "time": "6-24 months",
+          "source": "Substack 2024 — 20% of active newsletters have paid tier"
+        },
+        {
+          "id": "reach_10k_subscribers",
+          "label": "Reach 10,000 subscribers",
+          "prob": 4,
+          "time": "18-48 months",
+          "source": "Beehiiv 2024 — top 4%"
+        },
+        {
+          "id": "earn_2k_month",
+          "label": "Earn $2,000/month from newsletter",
+          "prob": 8,
+          "time": "18-48 months",
+          "source": "Substack 2024"
+        },
+        {
+          "id": "reach_50k_subscribers",
+          "label": "Reach 50,000 subscribers",
+          "prob": 1.5,
+          "time": "36-72 months",
+          "source": "Beehiiv 2024"
+        },
+        {
+          "id": "earn_5k_month",
+          "label": "Earn $5,000/month from newsletter",
+          "prob": 3,
+          "time": "24-60 months",
+          "source": "Substack 2024"
+        },
+        {
+          "id": "reach_100k_subscribers",
+          "label": "Reach 100,000 subscribers",
+          "prob": 0.5,
+          "time": "48-96 months",
+          "source": "Beehiiv 2024 — top 0.5%"
+        },
+        {
+          "id": "full_time_income",
+          "label": "Replace full-time income from newsletter alone",
+          "prob": 2,
+          "time": "24-72 months",
+          "source": "Substack 2024 — ~2% of Substack writers earn full-time income"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_1k_subs": "6.3%",
+        "start_to_10k_subs": "0.5%",
+        "start_to_earn_2k_month": "0.3%",
+        "start_to_full_time": "0.06%"
+      },
+      "bottlenecks": [
+        "send_5_issues",
+        "reach_1000_subscribers",
+        "first_sponsor",
+        "earn_2k_month"
+      ],
+      "reality_check": "There are 500K+ newsletters on Substack alone. The median newsletter has 50 subscribers. Only the top 1% of Substack writers earn over $1,000/month.",
+      "sources": [
+        "Substack 2024",
+        "Beehiiv 2024",
+        "Mailchimp 2024",
+        "Swapstack 2024"
+      ],
+      "industry_data": {
+        "newsletter_market_size_usd_billions": 3,
+        "substack_total_publications": 500000,
+        "substack_paid_subscribers_millions": 4,
+        "substack_writers_earning_over_1k_month": 5000,
+        "beehiiv_newsletters_total": 100000,
+        "avg_newsletter_open_rate_pct": 37,
+        "avg_newsletter_click_rate_pct": 3,
+        "newsletter_sponsor_avg_cpm_usd": 40,
+        "newsletter_subscriber_acquisition_cost_usd": 2,
+        "newsletter_paid_conversion_rate_pct": 5,
+        "newsletter_avg_monthly_price_usd": 8,
+        "newsletter_annual_churn_pct": 20
+      },
+      "buyer_psychology": {
+        "subscriber_open_because_subject_line_pct": 47,
+        "subscriber_open_because_sender_trust_pct": 64,
+        "subscriber_click_link_pct": 3,
+        "subscriber_share_newsletter_pct": 5,
+        "subscriber_pay_for_content_willingness_pct": 12,
+        "subscriber_unsubscribe_because_frequency_pct": 45
+      }
+    },
+    "online_community": {
+      "name": "Online Community → Membership → Revenue",
+      "description": "Person builds a paid online community (Discord, Skool, Circle) around a specific interest or expertise. The community-led business model.",
+      "entry_point": "Decides to create a paid community",
+      "stages": [
+        {
+          "id": "choose_platform",
+          "label": "Choose community platform (Skool, Discord, Circle)",
+          "prob": 100,
+          "time": "1-7 days",
+          "source": "baseline"
+        },
+        {
+          "id": "define_value_prop",
+          "label": "Define community value proposition",
+          "prob": 80,
+          "time": "1-2 weeks",
+          "source": "CMX 2024 — 20% launch without clear value prop"
+        },
+        {
+          "id": "create_initial_content",
+          "label": "Create initial content/resources",
+          "prob": 70,
+          "time": "1-4 weeks",
+          "source": "CMX 2024"
+        },
+        {
+          "id": "invite_founding_members",
+          "label": "Invite 10-20 founding members (free)",
+          "prob": 65,
+          "time": "1-4 weeks",
+          "source": "CMX 2024 — most start with free beta members"
+        },
+        {
+          "id": "first_engagement",
+          "label": "Get first member-to-member engagement",
+          "prob": 40,
+          "time": "1-4 weeks",
+          "source": "CMX 2024 — 60% of communities never see peer engagement"
+        },
+        {
+          "id": "reach_50_members",
+          "label": "Reach 50 members",
+          "prob": 50,
+          "time": "1-3 months",
+          "source": "CMX 2024"
+        },
+        {
+          "id": "start_charging",
+          "label": "Turn on paid membership ($19-99/mo)",
+          "prob": 60,
+          "time": "1-6 months",
+          "source": "Skool 2024"
+        },
+        {
+          "id": "retain_20pct_as_paid",
+          "label": "Convert 20%+ of free members to paid",
+          "prob": 30,
+          "time": "1-3 months after charging",
+          "source": "CMX 2024 — avg free-to-paid conversion 10-20%"
+        },
+        {
+          "id": "reach_100_paid_members",
+          "label": "Reach 100 paid members",
+          "prob": 15,
+          "time": "3-12 months",
+          "source": "Skool 2024 — top 15% of communities",
+          "url": "https://www.skool.com/"
+        },
+        {
+          "id": "monthly_retention_above_90pct",
+          "label": "Achieve 90%+ monthly retention",
+          "prob": 40,
+          "time": "3-12 months",
+          "source": "CMX 2024 — avg community retention is 85%"
+        },
+        {
+          "id": "reach_1k_mrr",
+          "label": "Reach $1,000 MRR from memberships",
+          "prob": 20,
+          "time": "3-12 months",
+          "source": "Skool 2024"
+        },
+        {
+          "id": "host_regular_events",
+          "label": "Host weekly/monthly live events",
+          "prob": 30,
+          "time": "1-6 months",
+          "source": "CMX 2024 — events drive retention"
+        },
+        {
+          "id": "reach_5k_mrr",
+          "label": "Reach $5,000 MRR",
+          "prob": 8,
+          "time": "6-24 months",
+          "source": "Skool 2024"
+        },
+        {
+          "id": "reach_250_paid_members",
+          "label": "Reach 250 paid members",
+          "prob": 6,
+          "time": "12-36 months",
+          "source": "Skool 2024"
+        },
+        {
+          "id": "reach_10k_mrr",
+          "label": "Reach $10,000 MRR",
+          "prob": 4,
+          "time": "12-36 months",
+          "source": "Skool 2024 — top 1% of Skool communities"
+        },
+        {
+          "id": "hire_community_manager",
+          "label": "Hire community manager",
+          "prob": 20,
+          "time": "6-24 months",
+          "source": "CMX 2024"
+        },
+        {
+          "id": "reach_500_paid_members",
+          "label": "Reach 500 paid members",
+          "prob": 2,
+          "time": "18-48 months",
+          "source": "Skool 2024"
+        },
+        {
+          "id": "reach_50k_mrr",
+          "label": "Reach $50,000 MRR",
+          "prob": 0.5,
+          "time": "24-60 months",
+          "source": "Skool 2024 — top 0.1% of communities"
+        },
+        {
+          "id": "full_time_community_business",
+          "label": "Full-time income from community alone",
+          "prob": 3,
+          "time": "12-48 months",
+          "source": "CMX 2024 — ~3% of community builders achieve this"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_100_paid": "3.3%",
+        "start_to_5k_mrr": "0.5%",
+        "start_to_10k_mrr": "0.16%",
+        "start_to_50k_mrr": "0.01%"
+      },
+      "bottlenecks": [
+        "first_engagement",
+        "retain_20pct_as_paid",
+        "reach_100_paid_members",
+        "monthly_retention_above_90pct"
+      ],
+      "reality_check": "60% of online communities die within 6 months due to lack of engagement. The average community has fewer than 50 active members. Retention is the killer — most communities see 15-30% monthly churn.",
+      "sources": [
+        "CMX Community Industry Report 2024",
+        "Skool 2024",
+        "Circle 2024"
+      ],
+      "industry_data": {
+        "online_community_market_usd_billions": 1.4,
+        "skool_communities_total": 50000,
+        "skool_avg_monthly_price_usd": 49,
+        "circle_communities_total": 10000,
+        "discord_servers_with_paid_membership": 50000,
+        "community_avg_monthly_churn_pct": 15,
+        "community_member_engagement_rate_pct": 10,
+        "community_roi_per_member_usd_annual": 200,
+        "community_manager_avg_salary_usd": 55000
+      },
+      "buyer_psychology": {
+        "member_join_for_networking_pct": 40,
+        "member_join_for_content_pct": 35,
+        "member_join_for_accountability_pct": 25,
+        "member_stay_for_relationships_pct": 55,
+        "member_cancel_because_no_time_pct": 35,
+        "member_cancel_because_no_value_pct": 40
+      }
+    },
+    "agency_model": {
+      "name": "Start Agency → Get Clients → Scale Team",
+      "description": "Person starts a service agency (marketing, design, development, social media). Hires team, builds processes, scales revenue through client retainers.",
+      "entry_point": "Decides to start an agency",
+      "stages": [
+        {
+          "id": "decide_agency",
+          "label": "Decide to start an agency",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "choose_service",
+          "label": "Choose agency service type",
+          "prob": 90,
+          "time": "1-2 weeks",
+          "source": "HubSpot 2024"
+        },
+        {
+          "id": "register_business",
+          "label": "Register LLC and set up operations",
+          "prob": 75,
+          "time": "1-4 weeks",
+          "source": "SBA 2024"
+        },
+        {
+          "id": "build_portfolio_site",
+          "label": "Build agency website/portfolio",
+          "prob": 70,
+          "time": "1-4 weeks",
+          "source": "HubSpot 2024 — 30% start without a site"
+        },
+        {
+          "id": "first_outreach",
+          "label": "Start client outreach (cold/warm)",
+          "prob": 65,
+          "time": "1-4 weeks",
+          "source": "HubSpot 2024"
+        },
+        {
+          "id": "first_client_call",
+          "label": "Get first discovery call",
+          "prob": 50,
+          "time": "2-8 weeks",
+          "source": "HubSpot 2024 — 50% conversion from outreach to call"
+        },
+        {
+          "id": "first_client",
+          "label": "Close first client",
+          "prob": 35,
+          "time": "1-3 months",
+          "source": "HubSpot 2024 — avg close rate 30-40% on warm leads"
+        },
+        {
+          "id": "deliver_first_project",
+          "label": "Successfully deliver first project",
+          "prob": 85,
+          "time": "1-3 months",
+          "source": "HubSpot 2024"
+        },
+        {
+          "id": "get_case_study",
+          "label": "Create case study from first client",
+          "prob": 50,
+          "time": "1-4 weeks post-delivery",
+          "source": "HubSpot 2024"
+        },
+        {
+          "id": "reach_5_clients",
+          "label": "Reach 5 active clients",
+          "prob": 40,
+          "time": "3-12 months",
+          "source": "Promethean Research 2024 — avg agency has 5-10 clients",
+          "url": "https://www.prometheanresearch.com/"
+        },
+        {
+          "id": "reach_10k_mrr",
+          "label": "Reach $10,000 MRR",
+          "prob": 30,
+          "time": "6-18 months",
+          "source": "Promethean Research 2024"
+        },
+        {
+          "id": "hire_first_employee",
+          "label": "Hire first employee/contractor",
+          "prob": 25,
+          "time": "6-18 months",
+          "source": "Promethean Research 2024 — 75% stay solo for first year+"
+        },
+        {
+          "id": "build_processes",
+          "label": "Build repeatable delivery processes",
+          "prob": 40,
+          "time": "6-24 months",
+          "source": "Promethean Research 2024"
+        },
+        {
+          "id": "reach_20k_mrr",
+          "label": "Reach $20,000 MRR",
+          "prob": 20,
+          "time": "12-24 months",
+          "source": "Promethean Research 2024"
+        },
+        {
+          "id": "reach_10_clients",
+          "label": "Reach 10 active clients",
+          "prob": 25,
+          "time": "12-24 months",
+          "source": "Promethean Research 2024"
+        },
+        {
+          "id": "reach_50k_mrr",
+          "label": "Reach $50,000 MRR ($600K ARR)",
+          "prob": 10,
+          "time": "18-48 months",
+          "source": "Promethean Research 2024 — top 10% of agencies"
+        },
+        {
+          "id": "build_team_5",
+          "label": "Build team of 5+ people",
+          "prob": 15,
+          "time": "18-48 months",
+          "source": "Promethean Research 2024"
+        },
+        {
+          "id": "reach_100k_mrr",
+          "label": "Reach $100,000 MRR ($1.2M ARR)",
+          "prob": 5,
+          "time": "24-60 months",
+          "source": "Promethean Research 2024 — top 5% of agencies"
+        },
+        {
+          "id": "productize_service",
+          "label": "Productize agency service",
+          "prob": 10,
+          "time": "18-48 months",
+          "source": "Promethean Research 2024"
+        },
+        {
+          "id": "reach_1m_arr",
+          "label": "Reach $1M+ ARR",
+          "prob": 5,
+          "time": "24-60 months",
+          "source": "Promethean Research 2024"
+        },
+        {
+          "id": "exit_or_scale",
+          "label": "Exit (acquisition) or scale to $5M+ ARR",
+          "prob": 3,
+          "time": "48-120 months",
+          "source": "Promethean Research 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_client": "9.6%",
+        "start_to_10k_mrr": "2.9%",
+        "start_to_50k_mrr": "0.3%",
+        "start_to_1m_arr": "0.05%"
+      },
+      "bottlenecks": [
+        "first_client",
+        "reach_5_clients",
+        "hire_first_employee",
+        "reach_50k_mrr",
+        "reach_1m_arr"
+      ],
+      "reality_check": "The average agency takes 2+ years to reach $500K revenue. 50% of agencies never break $100K ARR. Client churn is the biggest killer — avg agency loses 20% of clients annually.",
+      "sources": [
+        "HubSpot Agency Report 2024",
+        "Promethean Research 2024",
+        "SBA 2024"
+      ],
+      "industry_data": {
+        "digital_agency_market_usd_billions": 65,
+        "agencies_us_total": 120000,
+        "agency_avg_revenue_usd": 500000,
+        "agency_median_revenue_usd": 200000,
+        "agency_avg_profit_margin_pct": 20,
+        "agency_avg_client_retainer_usd": 3000,
+        "agency_client_churn_annual_pct": 20,
+        "agency_avg_team_size": 8,
+        "agency_revenue_per_employee_usd": 100000,
+        "agency_owner_avg_salary_usd": 120000,
+        "agency_acquisition_multiple_revenue": 1.5
+      },
+      "buyer_psychology": {
+        "client_choose_based_on_portfolio_pct": 60,
+        "client_choose_based_on_referral_pct": 70,
+        "client_avg_contract_length_months": 6,
+        "client_churn_reason_results_pct": 45,
+        "client_churn_reason_communication_pct": 30,
+        "client_churn_reason_price_pct": 25
+      }
+    },
+    "stock_trading_retail": {
+      "name": "Retail Stock Trading → Consistency → Wealth",
+      "description": "Individual starts trading stocks/options with personal capital, trying to generate consistent returns. The retail trader path — one of the most brutal.",
+      "entry_point": "Opens a brokerage account and starts trading",
+      "stages": [
+        {
+          "id": "open_account",
+          "label": "Open brokerage account",
+          "prob": 100,
+          "time": "1-3 days",
+          "source": "baseline"
+        },
+        {
+          "id": "deposit_funds",
+          "label": "Deposit first funds ($500-5000 typical)",
+          "prob": 90,
+          "time": "1-7 days",
+          "source": "Robinhood 2024 — avg first deposit ~$240",
+          "url": "https://robinhood.com/"
+        },
+        {
+          "id": "first_trade",
+          "label": "Execute first trade",
+          "prob": 85,
+          "time": "1-7 days",
+          "source": "Schwab 2024 — 85% trade within first week"
+        },
+        {
+          "id": "first_profitable_trade",
+          "label": "Have first profitable trade",
+          "prob": 80,
+          "time": "1-14 days",
+          "source": "Statistical — most early trades have ~50/50 chance"
+        },
+        {
+          "id": "feel_confident",
+          "label": "Feel confident after early wins",
+          "prob": 60,
+          "time": "1-4 weeks",
+          "source": "DALBAR 2024 — overconfidence bias in early traders"
+        },
+        {
+          "id": "increase_position_size",
+          "label": "Increase position size after early success",
+          "prob": 55,
+          "time": "2-8 weeks",
+          "source": "DALBAR 2024 — classic overconfidence pattern"
+        },
+        {
+          "id": "first_significant_loss",
+          "label": "Experience first significant loss (10%+ of portfolio)",
+          "prob": 75,
+          "time": "1-6 months",
+          "source": "DALBAR 2024"
+        },
+        {
+          "id": "revenge_trade",
+          "label": "Revenge trade to recover losses",
+          "prob": 60,
+          "time": "1-7 days after loss",
+          "source": "Journal of Finance 2024 — 60% of retail traders revenge trade"
+        },
+        {
+          "id": "try_options",
+          "label": "Start trading options for bigger returns",
+          "prob": 40,
+          "time": "1-6 months",
+          "source": "CBOE 2024 — 40% of retail traders try options"
+        },
+        {
+          "id": "study_technical_analysis",
+          "label": "Study technical analysis / charts",
+          "prob": 50,
+          "time": "1-6 months",
+          "source": "TradingView 2024"
+        },
+        {
+          "id": "develop_strategy",
+          "label": "Develop a consistent trading strategy",
+          "prob": 30,
+          "time": "6-24 months",
+          "source": "Journal of Finance 2024 — 70% never develop a consistent strategy"
+        },
+        {
+          "id": "journal_trades",
+          "label": "Start journaling all trades",
+          "prob": 15,
+          "time": "3-12 months",
+          "source": "TradesViz 2024 — only 15% of traders keep journals"
+        },
+        {
+          "id": "manage_risk_properly",
+          "label": "Implement proper risk management (1-2% per trade)",
+          "prob": 20,
+          "time": "6-24 months",
+          "source": "Journal of Finance 2024"
+        },
+        {
+          "id": "profitable_after_1_year",
+          "label": "Be net profitable after 1 year",
+          "prob": 27,
+          "time": "12 months",
+          "source": "University of California study — 73% of day traders lose money year 1"
+        },
+        {
+          "id": "profitable_after_3_years",
+          "label": "Be net profitable after 3 years",
+          "prob": 7,
+          "time": "36 months",
+          "source": "Barber & Odean 2024 — 93% lose money over 3 years",
+          "url": "https://faculty.haas.berkeley.edu/odean/"
+        },
+        {
+          "id": "beat_sp500_1yr",
+          "label": "Beat S&P 500 in a calendar year",
+          "prob": 15,
+          "time": "any year",
+          "source": "SPIVA 2024 — 85% of active managers underperform, retail worse"
+        },
+        {
+          "id": "beat_sp500_5yr",
+          "label": "Beat S&P 500 over 5 years",
+          "prob": 5,
+          "time": "5 years",
+          "source": "SPIVA 2024 — 95% underperform over 5 years",
+          "url": "https://www.spglobal.com/spdji/en/spiva/"
+        },
+        {
+          "id": "consistent_monthly_income",
+          "label": "Generate consistent monthly trading income",
+          "prob": 4,
+          "time": "24-60 months",
+          "source": "Journal of Finance 2024 — ~4% of active traders achieve consistency"
+        },
+        {
+          "id": "replace_salary",
+          "label": "Replace full-time salary from trading",
+          "prob": 1,
+          "time": "36-120 months",
+          "source": "Multiple studies — ~1% of retail traders can live from trading"
+        },
+        {
+          "id": "compound_to_7_figures",
+          "label": "Grow account to 7 figures from trading alone",
+          "prob": 0.1,
+          "time": "60-240 months",
+          "source": "Extremely rare — survivorship bias in publicized cases"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_profitable_1yr": "20.7%",
+        "start_to_profitable_3yr": "5.4%",
+        "start_to_beat_sp500_5yr": "0.7%",
+        "start_to_replace_salary": "0.14%",
+        "start_to_7_figures": "0.006%"
+      },
+      "bottlenecks": [
+        "first_significant_loss",
+        "develop_strategy",
+        "manage_risk_properly",
+        "profitable_after_3_years",
+        "consistent_monthly_income"
+      ],
+      "reality_check": "Multiple academic studies show 73-93% of retail day traders lose money. The average retail trader underperforms a simple index fund by 6.5% per year. Most 'profitable traders' on social media are selling courses, not trading.",
+      "sources": [
+        "Barber & Odean UC Davis",
+        "DALBAR 2024",
+        "SPIVA Scorecard 2024",
+        "Journal of Finance 2024"
+      ],
+      "industry_data": {
+        "retail_traders_us_millions": 55,
+        "retail_trading_share_us_volume_pct": 25,
+        "robinhood_funded_accounts_millions": 23,
+        "schwab_brokerage_accounts_millions": 35,
+        "etrade_accounts_millions": 6.5,
+        "avg_retail_portfolio_usd": 35000,
+        "median_retail_portfolio_usd": 5000,
+        "options_volume_daily_contracts_millions": 48,
+        "retail_options_share_pct": 30,
+        "day_trading_accounts_us_estimate": 5000000,
+        "meme_stock_participation_pct": 15,
+        "fintwit_followers_trading_advice_millions": 20
+      },
+      "buyer_psychology": {
+        "overconfidence_bias_pct": 75,
+        "loss_aversion_ratio": 2.5,
+        "disposition_effect_sell_winners_early_pct": 65,
+        "herd_mentality_follow_trends_pct": 55,
+        "recency_bias_pct": 70,
+        "gambler_fallacy_pct": 40,
+        "confirmation_bias_seek_supporting_info_pct": 80
+      }
+    },
+    "etsy_handmade": {
+      "name": "Etsy Handmade Shop → Sales → Full-Time",
+      "description": "Person starts selling handmade goods on Etsy, grows from hobby to business. Crafts, jewelry, art prints, personalized items.",
+      "entry_point": "Opens an Etsy shop with handmade products",
+      "stages": [
+        {
+          "id": "open_shop",
+          "label": "Open Etsy shop",
+          "prob": 100,
+          "time": "1-3 days",
+          "source": "baseline"
+        },
+        {
+          "id": "list_first_product",
+          "label": "List first product",
+          "prob": 85,
+          "time": "1-7 days",
+          "source": "Etsy 2024 — 15% open shop but never list"
+        },
+        {
+          "id": "list_10_products",
+          "label": "List 10 products",
+          "prob": 55,
+          "time": "1-4 weeks",
+          "source": "eRank 2024 — 45% quit before 10 listings",
+          "url": "https://erank.com/blog"
+        },
+        {
+          "id": "optimize_seo",
+          "label": "Optimize listings for Etsy SEO",
+          "prob": 40,
+          "time": "1-4 weeks",
+          "source": "eRank 2024 — most sellers skip SEO"
+        },
+        {
+          "id": "first_view",
+          "label": "Get first listing view",
+          "prob": 90,
+          "time": "1-14 days",
+          "source": "Etsy 2024 — algorithm gives some initial visibility"
+        },
+        {
+          "id": "first_favorite",
+          "label": "Get first product favorited",
+          "prob": 70,
+          "time": "1-4 weeks",
+          "source": "Etsy 2024"
+        },
+        {
+          "id": "first_sale",
+          "label": "Make first sale",
+          "prob": 35,
+          "time": "1-6 months",
+          "source": "Etsy 2024 — avg time to first sale is 3-6 months for handmade",
+          "url": "https://www.etsy.com/seller-handbook"
+        },
+        {
+          "id": "reach_5_sales",
+          "label": "Reach 5 total sales",
+          "prob": 60,
+          "time": "1-6 months after first",
+          "source": "Etsy 2024"
+        },
+        {
+          "id": "first_5_star_review",
+          "label": "Get first 5-star review",
+          "prob": 50,
+          "time": "1-3 months after first sale",
+          "source": "Etsy 2024 — review rate ~50% on Etsy"
+        },
+        {
+          "id": "list_50_products",
+          "label": "List 50+ products",
+          "prob": 25,
+          "time": "3-12 months",
+          "source": "eRank 2024 — more listings = more visibility"
+        },
+        {
+          "id": "reach_100_sales",
+          "label": "Reach 100 total sales",
+          "prob": 20,
+          "time": "6-24 months",
+          "source": "Etsy 2024 — milestone for Star Seller"
+        },
+        {
+          "id": "earn_star_seller",
+          "label": "Earn Etsy Star Seller badge",
+          "prob": 15,
+          "time": "6-24 months",
+          "source": "Etsy 2024 — requires 95%+ on-time shipping, 5-star rating"
+        },
+        {
+          "id": "reach_500_month_revenue",
+          "label": "Reach $500/month revenue",
+          "prob": 15,
+          "time": "6-24 months",
+          "source": "Etsy 2024 — median Etsy seller earns <$200/month"
+        },
+        {
+          "id": "reach_1k_month_revenue",
+          "label": "Reach $1,000/month revenue",
+          "prob": 10,
+          "time": "12-36 months",
+          "source": "Etsy 2024 — top 10% of active sellers"
+        },
+        {
+          "id": "reach_1000_sales",
+          "label": "Reach 1,000 total sales",
+          "prob": 8,
+          "time": "18-48 months",
+          "source": "Etsy 2024"
+        },
+        {
+          "id": "reach_3k_month_revenue",
+          "label": "Reach $3,000/month revenue",
+          "prob": 5,
+          "time": "24-48 months",
+          "source": "Etsy 2024 — top 5%"
+        },
+        {
+          "id": "hire_help",
+          "label": "Hire production help",
+          "prob": 10,
+          "time": "12-36 months",
+          "source": "Etsy 2024"
+        },
+        {
+          "id": "full_time_income",
+          "label": "Replace full-time income from Etsy",
+          "prob": 3,
+          "time": "24-60 months",
+          "source": "Etsy 2024 — ~3% of active sellers earn full-time income"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "shop_to_first_sale": "16.8%",
+        "shop_to_100_sales": "3.4%",
+        "shop_to_1k_month": "0.6%",
+        "shop_to_full_time": "0.05%"
+      },
+      "bottlenecks": [
+        "first_sale",
+        "list_50_products",
+        "reach_100_sales",
+        "reach_1k_month_revenue"
+      ],
+      "reality_check": "Etsy has 9M active sellers. The median seller earns less than $200/month. Only 17% of sellers are full-time. Etsy takes 6.5% transaction fee + 3% + $0.25 payment processing + $0.20 listing fee.",
+      "sources": [
+        "Etsy 2024",
+        "eRank 2024"
+      ],
+      "industry_data": {
+        "etsy_active_sellers_millions": 9,
+        "etsy_active_buyers_millions": 95,
+        "etsy_gmv_2024_usd_billions": 13,
+        "etsy_seller_avg_revenue_annual_usd": 2000,
+        "etsy_transaction_fee_pct": 6.5,
+        "etsy_payment_processing_fee_pct": 3,
+        "etsy_listing_fee_usd": 0.2,
+        "etsy_offsite_ads_fee_pct": 15,
+        "handmade_market_size_usd_billions": 40
+      },
+      "buyer_psychology": {
+        "buyer_value_handmade_premium_pct": 35,
+        "buyer_read_reviews_pct": 85,
+        "buyer_want_customization_pct": 40,
+        "buyer_purchase_for_gifts_pct": 55,
+        "buyer_return_rate_pct": 3
+      }
+    },
+    "mobile_app": {
+      "name": "Mobile App → Launch → Revenue",
+      "description": "Developer builds a mobile app (iOS/Android), launches on app stores, tries to grow users and monetize through subscriptions, ads, or in-app purchases.",
+      "entry_point": "Has an idea for a mobile app",
+      "stages": [
+        {
+          "id": "app_idea",
+          "label": "Have app idea",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "validate_idea",
+          "label": "Research market and validate need",
+          "prob": 40,
+          "time": "1-4 weeks",
+          "source": "Sensor Tower 2024 — 60% skip validation"
+        },
+        {
+          "id": "design_mockup",
+          "label": "Create wireframes/mockups",
+          "prob": 50,
+          "time": "1-4 weeks",
+          "source": "Statista 2024"
+        },
+        {
+          "id": "build_mvp",
+          "label": "Build minimum viable app",
+          "prob": 35,
+          "time": "2-6 months",
+          "source": "BuildFire 2024 — 65% never finish building",
+          "url": "https://buildfire.com/app-statistics/"
+        },
+        {
+          "id": "beta_test",
+          "label": "Beta test with 10+ users",
+          "prob": 60,
+          "time": "2-4 weeks",
+          "source": "BuildFire 2024"
+        },
+        {
+          "id": "submit_app_store",
+          "label": "Submit to App Store / Google Play",
+          "prob": 85,
+          "time": "1-2 weeks",
+          "source": "Apple 2024 — 85% of submitted apps get accepted"
+        },
+        {
+          "id": "app_approved",
+          "label": "App approved and live",
+          "prob": 80,
+          "time": "1-14 days",
+          "source": "Apple 2024 — 20% rejection rate on first submission"
+        },
+        {
+          "id": "first_100_downloads",
+          "label": "Reach 100 downloads",
+          "prob": 50,
+          "time": "1-4 weeks",
+          "source": "Sensor Tower 2024 — median new app gets <100 downloads"
+        },
+        {
+          "id": "first_1000_downloads",
+          "label": "Reach 1,000 downloads",
+          "prob": 25,
+          "time": "1-6 months",
+          "source": "Sensor Tower 2024"
+        },
+        {
+          "id": "first_revenue",
+          "label": "Generate first dollar of revenue",
+          "prob": 20,
+          "time": "1-6 months",
+          "source": "Sensor Tower 2024 — 80% of apps generate $0"
+        },
+        {
+          "id": "reach_10k_downloads",
+          "label": "Reach 10,000 downloads",
+          "prob": 10,
+          "time": "3-18 months",
+          "source": "Sensor Tower 2024"
+        },
+        {
+          "id": "maintain_dau_1000",
+          "label": "Maintain 1,000+ daily active users",
+          "prob": 8,
+          "time": "6-24 months",
+          "source": "Sensor Tower 2024 — retention is brutal"
+        },
+        {
+          "id": "reach_1k_mrr",
+          "label": "Reach $1,000 MRR",
+          "prob": 5,
+          "time": "6-24 months",
+          "source": "RevenueCat 2024 — top 5% of monetized apps",
+          "url": "https://www.revenuecat.com/state-of-subscription-apps"
+        },
+        {
+          "id": "reach_100k_downloads",
+          "label": "Reach 100,000 downloads",
+          "prob": 3,
+          "time": "12-36 months",
+          "source": "Sensor Tower 2024"
+        },
+        {
+          "id": "reach_10k_mrr",
+          "label": "Reach $10,000 MRR",
+          "prob": 1,
+          "time": "18-48 months",
+          "source": "RevenueCat 2024 — top 1%"
+        },
+        {
+          "id": "reach_1m_downloads",
+          "label": "Reach 1,000,000 downloads",
+          "prob": 0.5,
+          "time": "24-60 months",
+          "source": "Sensor Tower 2024"
+        },
+        {
+          "id": "full_time_income",
+          "label": "Full-time income from app alone",
+          "prob": 2,
+          "time": "12-48 months",
+          "source": "RevenueCat 2024"
+        },
+        {
+          "id": "acquisition_offer",
+          "label": "Receive acquisition offer",
+          "prob": 0.5,
+          "time": "24-72 months",
+          "source": "Sensor Tower 2024 — extremely rare for indie apps"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "idea_to_launch": "11.9%",
+        "idea_to_1k_downloads": "3.0%",
+        "idea_to_1k_mrr": "0.3%",
+        "idea_to_10k_mrr": "0.01%"
+      },
+      "bottlenecks": [
+        "build_mvp",
+        "first_100_downloads",
+        "first_revenue",
+        "maintain_dau_1000",
+        "reach_1k_mrr"
+      ],
+      "reality_check": "5.7M apps exist across iOS and Android. The median app has fewer than 500 lifetime downloads. 80% of apps generate zero revenue. Apple takes 30% of all revenue.",
+      "sources": [
+        "Sensor Tower 2024",
+        "RevenueCat 2024",
+        "BuildFire 2024",
+        "Apple 2024"
+      ],
+      "industry_data": {
+        "apps_on_apple_app_store_millions": 1.8,
+        "apps_on_google_play_millions": 3.9,
+        "app_downloads_annual_billions": 257,
+        "app_revenue_2024_usd_billions": 171,
+        "apple_commission_pct": 30,
+        "google_commission_pct": 15,
+        "avg_app_development_cost_usd": 50000,
+        "indie_app_development_cost_usd": 5000,
+        "day_1_retention_avg_pct": 25,
+        "day_7_retention_avg_pct": 13,
+        "day_30_retention_avg_pct": 6,
+        "subscription_app_trial_to_paid_pct": 30,
+        "app_store_search_discovery_pct": 65
+      },
+      "buyer_psychology": {
+        "user_try_free_before_paying_pct": 95,
+        "user_uninstall_within_24h_pct": 25,
+        "user_read_reviews_before_download_pct": 80,
+        "user_max_willing_subscription_monthly_usd": 10,
+        "user_prefer_one_time_purchase_pct": 60
+      }
+    },
+    "dropservicing": {
+      "name": "Drop Servicing → Client Arbitrage → Scale",
+      "description": "Person sells services to clients at premium prices and outsources the work to cheaper freelancers on Fiverr/Upwork. Service arbitrage model.",
+      "entry_point": "Discovers drop servicing as a business model",
+      "stages": [
+        {
+          "id": "discover_model",
+          "label": "Learn about drop servicing model",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "choose_service",
+          "label": "Choose service to drop service (logo, web dev, SEO, etc.)",
+          "prob": 85,
+          "time": "1-2 weeks",
+          "source": "HubSpot 2024"
+        },
+        {
+          "id": "find_fulfillment_team",
+          "label": "Find reliable freelancers to fulfill work",
+          "prob": 70,
+          "time": "1-4 weeks",
+          "source": "Fiverr 2024 — finding reliable freelancers takes trial/error"
+        },
+        {
+          "id": "build_landing_page",
+          "label": "Build professional landing page/website",
+          "prob": 60,
+          "time": "1-2 weeks",
+          "source": "HubSpot 2024"
+        },
+        {
+          "id": "set_pricing",
+          "label": "Set pricing (2-5x freelancer cost)",
+          "prob": 90,
+          "time": "1-3 days",
+          "source": "HubSpot 2024"
+        },
+        {
+          "id": "first_outreach",
+          "label": "Start cold outreach/ads",
+          "prob": 55,
+          "time": "1-4 weeks",
+          "source": "HubSpot 2024 — 45% never start outreach"
+        },
+        {
+          "id": "first_lead",
+          "label": "Get first qualified lead",
+          "prob": 40,
+          "time": "2-8 weeks",
+          "source": "HubSpot 2024"
+        },
+        {
+          "id": "first_client",
+          "label": "Close first client",
+          "prob": 30,
+          "time": "1-3 months",
+          "source": "HubSpot 2024 — 30% close rate on qualified leads"
+        },
+        {
+          "id": "outsource_first_project",
+          "label": "Successfully outsource first project",
+          "prob": 70,
+          "time": "1-4 weeks",
+          "source": "Fiverr 2024 — 30% freelancer quality issues"
+        },
+        {
+          "id": "deliver_to_client",
+          "label": "Deliver to client successfully",
+          "prob": 80,
+          "time": "1-4 weeks",
+          "source": "HubSpot 2024"
+        },
+        {
+          "id": "first_profit",
+          "label": "Make first profit after all costs",
+          "prob": 85,
+          "time": "1-4 weeks after delivery",
+          "source": "margin model — 50-70% margins typical"
+        },
+        {
+          "id": "reach_5_clients",
+          "label": "Reach 5 clients",
+          "prob": 40,
+          "time": "3-12 months",
+          "source": "HubSpot 2024"
+        },
+        {
+          "id": "systemize_fulfillment",
+          "label": "Build SOPs for fulfillment process",
+          "prob": 30,
+          "time": "3-12 months",
+          "source": "HubSpot 2024"
+        },
+        {
+          "id": "reach_5k_month",
+          "label": "Reach $5,000/month revenue",
+          "prob": 15,
+          "time": "6-18 months",
+          "source": "HubSpot 2024"
+        },
+        {
+          "id": "reach_10k_month",
+          "label": "Reach $10,000/month revenue",
+          "prob": 8,
+          "time": "12-36 months",
+          "source": "HubSpot 2024"
+        },
+        {
+          "id": "reach_20k_month",
+          "label": "Reach $20,000/month revenue",
+          "prob": 4,
+          "time": "18-48 months",
+          "source": "HubSpot 2024 — top 5% of drop servicers"
+        },
+        {
+          "id": "full_time_income",
+          "label": "Full-time income from drop servicing",
+          "prob": 5,
+          "time": "12-36 months",
+          "source": "HubSpot 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_client": "6.5%",
+        "start_to_5k_month": "0.6%",
+        "start_to_10k_month": "0.1%",
+        "start_to_full_time": "0.07%"
+      },
+      "bottlenecks": [
+        "find_fulfillment_team",
+        "first_client",
+        "outsource_first_project",
+        "systemize_fulfillment"
+      ],
+      "reality_check": "Drop servicing has lower barriers than agency, but quality control is the main issue. Client expectations vs. Fiverr quality creates constant friction. Margins look great on paper but refunds and revisions eat into profit.",
+      "sources": [
+        "HubSpot 2024",
+        "Fiverr 2024"
+      ],
+      "industry_data": {
+        "drop_servicing_market_estimate_usd_millions": 500,
+        "avg_markup_pct": 200,
+        "avg_profit_margin_pct": 60,
+        "common_services": [
+          "logo design",
+          "web development",
+          "SEO",
+          "social media management",
+          "copywriting"
+        ],
+        "fiverr_freelancers_total_millions": 3.4,
+        "avg_freelancer_cost_logo_usd": 50,
+        "avg_client_price_logo_usd": 300,
+        "client_satisfaction_rate_pct": 70,
+        "refund_request_rate_pct": 15
+      },
+      "buyer_psychology": {
+        "client_prefer_agency_over_freelancer_pct": 60,
+        "client_willing_to_pay_premium_for_reliability_pct": 75,
+        "client_check_portfolio_pct": 80,
+        "client_expect_revisions_avg": 2
+      }
+    },
+    "blog_seo": {
+      "name": "Blog → SEO Traffic → Monetization",
+      "description": "Person starts a blog, creates content optimized for SEO, grows organic traffic, monetizes through display ads (Mediavine, AdThrive) and affiliate marketing.",
+      "entry_point": "Decides to start a blog",
+      "stages": [
+        {
+          "id": "choose_niche",
+          "label": "Choose blog niche",
+          "prob": 100,
+          "time": "1-7 days",
+          "source": "baseline"
+        },
+        {
+          "id": "buy_domain",
+          "label": "Buy domain and hosting",
+          "prob": 80,
+          "time": "1-3 days",
+          "source": "Ahrefs 2024 — 20% use free platforms only",
+          "url": "https://ahrefs.com/blog/"
+        },
+        {
+          "id": "set_up_wordpress",
+          "label": "Set up WordPress site",
+          "prob": 85,
+          "time": "1-7 days",
+          "source": "W3Techs 2024 — 43% of web runs on WordPress"
+        },
+        {
+          "id": "publish_first_post",
+          "label": "Publish first blog post",
+          "prob": 70,
+          "time": "1-14 days",
+          "source": "Ahrefs 2024 — 30% set up but never publish"
+        },
+        {
+          "id": "publish_10_posts",
+          "label": "Publish 10 blog posts",
+          "prob": 35,
+          "time": "1-6 months",
+          "source": "Ahrefs 2024 — 65% quit before 10 posts"
+        },
+        {
+          "id": "learn_keyword_research",
+          "label": "Learn and apply keyword research",
+          "prob": 30,
+          "time": "1-3 months",
+          "source": "Ahrefs 2024 — most bloggers skip this"
+        },
+        {
+          "id": "first_google_ranking",
+          "label": "Get first page 1 Google ranking",
+          "prob": 20,
+          "time": "3-12 months",
+          "source": "Ahrefs 2024 — avg time to rank page 1 is 6-12 months"
+        },
+        {
+          "id": "publish_30_posts",
+          "label": "Publish 30 posts",
+          "prob": 20,
+          "time": "3-12 months",
+          "source": "Ahrefs 2024"
+        },
+        {
+          "id": "reach_1k_monthly_sessions",
+          "label": "Reach 1,000 monthly sessions",
+          "prob": 15,
+          "time": "6-18 months",
+          "source": "Ahrefs 2024 — 90.63% of pages get zero Google traffic"
+        },
+        {
+          "id": "apply_adsense",
+          "label": "Apply for Google AdSense",
+          "prob": 60,
+          "time": "3-12 months",
+          "source": "Google 2024"
+        },
+        {
+          "id": "first_affiliate_link",
+          "label": "Add first affiliate link",
+          "prob": 40,
+          "time": "1-6 months",
+          "source": "Ahrefs 2024"
+        },
+        {
+          "id": "first_dollar_ads",
+          "label": "Earn first dollar from ads",
+          "prob": 70,
+          "time": "1-6 months after AdSense",
+          "source": "Google 2024"
+        },
+        {
+          "id": "reach_10k_monthly_sessions",
+          "label": "Reach 10,000 monthly sessions",
+          "prob": 8,
+          "time": "12-36 months",
+          "source": "Ahrefs 2024"
+        },
+        {
+          "id": "reach_50k_sessions",
+          "label": "Reach 50,000 monthly sessions (Mediavine eligible)",
+          "prob": 4,
+          "time": "18-48 months",
+          "source": "Mediavine 2024 — requires 50K sessions for acceptance",
+          "url": "https://www.mediavine.com/"
+        },
+        {
+          "id": "join_premium_ad_network",
+          "label": "Join Mediavine or AdThrive",
+          "prob": 70,
+          "time": "1-3 months after eligible",
+          "source": "Mediavine 2024 — 70% acceptance rate"
+        },
+        {
+          "id": "earn_1k_month",
+          "label": "Earn $1,000/month from blog",
+          "prob": 20,
+          "time": "18-48 months",
+          "source": "Ahrefs 2024 — top 20% of monetized blogs"
+        },
+        {
+          "id": "reach_100k_sessions",
+          "label": "Reach 100,000 monthly sessions",
+          "prob": 2,
+          "time": "24-60 months",
+          "source": "Ahrefs 2024"
+        },
+        {
+          "id": "earn_5k_month",
+          "label": "Earn $5,000/month from blog",
+          "prob": 5,
+          "time": "24-72 months",
+          "source": "Income School 2024 — top 5% of bloggers"
+        },
+        {
+          "id": "earn_10k_month",
+          "label": "Earn $10,000/month from blog",
+          "prob": 2,
+          "time": "36-84 months",
+          "source": "Income School 2024"
+        },
+        {
+          "id": "sell_blog",
+          "label": "Sell blog for 30-40x monthly revenue",
+          "prob": 5,
+          "time": "36-96 months",
+          "source": "Empire Flippers 2024 — blogs sell at 30-40x monthly profit",
+          "url": "https://empireflippers.com/"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_1k_sessions": "1.9%",
+        "start_to_1k_month": "0.2%",
+        "start_to_5k_month": "0.02%",
+        "start_to_10k_month": "0.004%"
+      },
+      "bottlenecks": [
+        "publish_10_posts",
+        "learn_keyword_research",
+        "first_google_ranking",
+        "reach_10k_monthly_sessions",
+        "reach_50k_sessions"
+      ],
+      "reality_check": "96.55% of all web pages get zero organic traffic from Google. The average blog takes 12-24 months to get meaningful traffic. Google algorithm updates can wipe out traffic overnight. AI content is flooding every niche.",
+      "sources": [
+        "Ahrefs 2024",
+        "Mediavine 2024",
+        "Income School 2024",
+        "Empire Flippers 2024"
+      ],
+      "industry_data": {
+        "blogs_on_internet_millions": 600,
+        "blog_posts_published_daily_millions": 7,
+        "pages_with_zero_google_traffic_pct": 96.55,
+        "mediavine_publishers_total": 10000,
+        "mediavine_avg_rpm_usd": 25,
+        "adthrive_avg_rpm_usd": 30,
+        "adsense_avg_rpm_usd": 5,
+        "affiliate_marketing_industry_usd_billions": 17,
+        "avg_time_to_rank_page_1_months": 8,
+        "blog_avg_word_count_top_10_google": 1890
+      },
+      "buyer_psychology": {
+        "reader_find_via_google_pct": 68,
+        "reader_click_affiliate_link_pct": 3,
+        "reader_trust_blog_recommendations_pct": 61,
+        "reader_ad_blindness_pct": 40,
+        "reader_return_visit_pct": 15
+      }
+    },
+    "web3_nft_creator": {
+      "name": "Web3/NFT Creator → Mint → Community",
+      "description": "Artist or creator launches an NFT collection, tries to build community and generate sales in the Web3 space. Extremely volatile market.",
+      "entry_point": "Decides to create and sell NFTs",
+      "stages": [
+        {
+          "id": "learn_web3",
+          "label": "Learn about Web3, wallets, and NFTs",
+          "prob": 100,
+          "time": "1-4 weeks",
+          "source": "baseline"
+        },
+        {
+          "id": "set_up_wallet",
+          "label": "Set up crypto wallet (MetaMask)",
+          "prob": 80,
+          "time": "1-3 days",
+          "source": "MetaMask 2024 — 80% of interested people set up wallet"
+        },
+        {
+          "id": "create_art",
+          "label": "Create NFT artwork/collection",
+          "prob": 65,
+          "time": "1-8 weeks",
+          "source": "OpenSea 2024 — 35% lose interest during creation"
+        },
+        {
+          "id": "choose_blockchain",
+          "label": "Choose blockchain (Ethereum, Solana, etc.)",
+          "prob": 90,
+          "time": "1-3 days",
+          "source": "OpenSea 2024"
+        },
+        {
+          "id": "mint_collection",
+          "label": "Mint NFT collection",
+          "prob": 70,
+          "time": "1-7 days",
+          "source": "OpenSea 2024 — 30% stop at gas fees/complexity"
+        },
+        {
+          "id": "list_for_sale",
+          "label": "List NFTs for sale on marketplace",
+          "prob": 90,
+          "time": "1-3 days",
+          "source": "OpenSea 2024"
+        },
+        {
+          "id": "build_twitter_presence",
+          "label": "Build X/Twitter presence for NFT",
+          "prob": 50,
+          "time": "2-8 weeks",
+          "source": "OpenSea 2024 — marketing essential for NFT sales"
+        },
+        {
+          "id": "first_sale",
+          "label": "Make first NFT sale",
+          "prob": 10,
+          "time": "1-6 months",
+          "source": "OpenSea 2024 — 90% of NFTs never sell",
+          "url": "https://opensea.io/"
+        },
+        {
+          "id": "reach_10_sales",
+          "label": "Sell 10 NFTs",
+          "prob": 30,
+          "time": "1-12 months after first sale",
+          "source": "DappRadar 2024"
+        },
+        {
+          "id": "build_community",
+          "label": "Build Discord community of 100+ holders",
+          "prob": 15,
+          "time": "3-12 months",
+          "source": "DappRadar 2024"
+        },
+        {
+          "id": "earn_1_eth",
+          "label": "Earn 1 ETH total from NFT sales",
+          "prob": 15,
+          "time": "1-18 months",
+          "source": "DappRadar 2024"
+        },
+        {
+          "id": "secondary_sales",
+          "label": "Earn royalties from secondary sales",
+          "prob": 10,
+          "time": "6-24 months",
+          "source": "OpenSea 2024 — royalties being phased out on many platforms"
+        },
+        {
+          "id": "reach_10_eth",
+          "label": "Earn 10 ETH total from NFTs",
+          "prob": 3,
+          "time": "6-36 months",
+          "source": "DappRadar 2024"
+        },
+        {
+          "id": "sustain_as_income",
+          "label": "Sustain NFTs as regular income source",
+          "prob": 1,
+          "time": "12-48 months",
+          "source": "DappRadar 2024 — market crashed 97% from peak"
+        },
+        {
+          "id": "blue_chip_status",
+          "label": "Achieve 'blue chip' NFT collection status",
+          "prob": 0.01,
+          "time": "12-48 months",
+          "source": "DappRadar 2024 — fewer than 100 blue chip collections exist"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_sale": "3.6%",
+        "start_to_1_eth": "0.5%",
+        "start_to_10_eth": "0.04%",
+        "start_to_sustain": "0.003%"
+      },
+      "bottlenecks": [
+        "create_art",
+        "first_sale",
+        "build_community",
+        "secondary_sales"
+      ],
+      "reality_check": "NFT market volume dropped 97% from 2022 peak. 95% of NFT collections have a market cap of zero. Only 10% of NFT creators ever make a single sale.",
+      "sources": [
+        "OpenSea 2024",
+        "DappRadar 2024",
+        "CoinGecko 2024"
+      ],
+      "industry_data": {
+        "nft_market_volume_2024_usd_billions": 3,
+        "nft_market_volume_2022_peak_usd_billions": 100,
+        "nft_collections_total": 2000000,
+        "nft_collections_with_zero_sales_pct": 73,
+        "nft_creator_avg_earnings_usd": 100,
+        "opensea_marketplace_share_pct": 40
+      },
+      "buyer_psychology": {
+        "buyer_speculative_motive_pct": 70,
+        "buyer_art_appreciation_motive_pct": 20,
+        "buyer_community_motive_pct": 10,
+        "buyer_regret_purchase_pct": 60
+      }
+    },
+    "vending_machine": {
+      "name": "Vending Machine Business → Locations → Passive Income",
+      "description": "Person buys vending machines, secures locations, and builds a semi-passive income stream. Popular side hustle on social media.",
+      "entry_point": "Decides to start a vending machine business",
+      "stages": [
+        {
+          "id": "research_business",
+          "label": "Research vending machine business model",
+          "prob": 100,
+          "time": "1-4 weeks",
+          "source": "baseline"
+        },
+        {
+          "id": "save_capital",
+          "label": "Save $3,000-8,000 for first machine",
+          "prob": 60,
+          "time": "1-6 months",
+          "source": "NAMA 2024 — avg new machine costs $3-8K",
+          "url": "https://www.namanow.org/"
+        },
+        {
+          "id": "buy_first_machine",
+          "label": "Buy first vending machine",
+          "prob": 70,
+          "time": "1-4 weeks",
+          "source": "NAMA 2024"
+        },
+        {
+          "id": "prospect_locations",
+          "label": "Contact businesses for location placement",
+          "prob": 80,
+          "time": "1-8 weeks",
+          "source": "NAMA 2024 — cold calling locations is the hardest part"
+        },
+        {
+          "id": "secure_first_location",
+          "label": "Secure first location agreement",
+          "prob": 30,
+          "time": "2-12 weeks",
+          "source": "NAMA 2024 — 70% rejection rate from locations"
+        },
+        {
+          "id": "install_machine",
+          "label": "Install and stock first machine",
+          "prob": 95,
+          "time": "1-3 days",
+          "source": "NAMA 2024"
+        },
+        {
+          "id": "first_revenue",
+          "label": "Generate first revenue",
+          "prob": 95,
+          "time": "1-7 days",
+          "source": "NAMA 2024 — nearly all placed machines generate some revenue"
+        },
+        {
+          "id": "first_month_profit",
+          "label": "First month profitable after costs",
+          "prob": 60,
+          "time": "1 month",
+          "source": "NAMA 2024 — avg machine does $300-500/month revenue"
+        },
+        {
+          "id": "survive_vandalism",
+          "label": "Handle first vandalism/theft incident",
+          "prob": 40,
+          "time": "1-12 months",
+          "source": "NAMA 2024 — 40% experience vandalism within first year"
+        },
+        {
+          "id": "reach_3_machines",
+          "label": "Scale to 3 machines",
+          "prob": 50,
+          "time": "6-18 months",
+          "source": "NAMA 2024"
+        },
+        {
+          "id": "reach_500_month_profit",
+          "label": "Reach $500/month net profit",
+          "prob": 40,
+          "time": "6-18 months",
+          "source": "NAMA 2024 — avg machine nets $100-200/month"
+        },
+        {
+          "id": "reach_10_machines",
+          "label": "Scale to 10 machines",
+          "prob": 20,
+          "time": "12-36 months",
+          "source": "NAMA 2024"
+        },
+        {
+          "id": "reach_2k_month_profit",
+          "label": "Reach $2,000/month net profit",
+          "prob": 15,
+          "time": "12-36 months",
+          "source": "NAMA 2024"
+        },
+        {
+          "id": "reach_20_machines",
+          "label": "Scale to 20+ machines",
+          "prob": 8,
+          "time": "24-60 months",
+          "source": "NAMA 2024"
+        },
+        {
+          "id": "reach_5k_month_profit",
+          "label": "Reach $5,000/month net profit",
+          "prob": 5,
+          "time": "24-60 months",
+          "source": "NAMA 2024"
+        },
+        {
+          "id": "full_time_vending",
+          "label": "Go full-time on vending (50+ machines)",
+          "prob": 2,
+          "time": "36-84 months",
+          "source": "NAMA 2024 — very few reach this scale solo"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_location": "10.1%",
+        "start_to_10_machines": "2.0%",
+        "start_to_5k_month": "0.3%",
+        "start_to_full_time": "0.04%"
+      },
+      "bottlenecks": [
+        "save_capital",
+        "secure_first_location",
+        "reach_10_machines",
+        "reach_20_machines"
+      ],
+      "reality_check": "Social media makes vending look easy. Reality: avg machine nets $100-200/month profit. You need 30-50 machines for a full-time income. Securing good locations is extremely competitive. Restocking and maintenance take real time.",
+      "sources": [
+        "NAMA 2024",
+        "Vending Market Watch 2024"
+      ],
+      "industry_data": {
+        "vending_industry_us_revenue_usd_billions": 27,
+        "vending_machines_us_total_millions": 5,
+        "avg_machine_cost_new_usd": 5000,
+        "avg_machine_cost_used_usd": 2000,
+        "avg_monthly_revenue_per_machine_usd": 400,
+        "avg_monthly_profit_per_machine_usd": 150,
+        "location_commission_pct": "10-25",
+        "vending_operators_us_total": 18000,
+        "cashless_payment_adoption_pct": 60
+      },
+      "buyer_psychology": {
+        "buyer_impulse_purchase_pct": 90,
+        "buyer_avg_transaction_usd": 1.75,
+        "buyer_prefer_cashless_pct": 60,
+        "buyer_choose_based_on_location_pct": 100
+      }
+    },
+    "coaching_online": {
+      "name": "Online Coaching → Clients → Scale",
+      "description": "Person starts offering 1-on-1 coaching services online (life, fitness, business, career). Grows through content and referrals.",
+      "entry_point": "Decides to become an online coach",
+      "stages": [
+        {
+          "id": "decide_coaching",
+          "label": "Decide to become an online coach",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "choose_coaching_niche",
+          "label": "Choose coaching niche and target market",
+          "prob": 80,
+          "time": "1-4 weeks",
+          "source": "ICF 2024 — 20% start without clear niche",
+          "url": "https://coachingfederation.org/research/global-coaching-study"
+        },
+        {
+          "id": "get_certified",
+          "label": "Get coaching certification (optional but recommended)",
+          "prob": 40,
+          "time": "3-12 months",
+          "source": "ICF 2024 — 40% of coaches are certified"
+        },
+        {
+          "id": "create_offer",
+          "label": "Create coaching offer and pricing",
+          "prob": 75,
+          "time": "1-4 weeks",
+          "source": "ICF 2024"
+        },
+        {
+          "id": "build_online_presence",
+          "label": "Build online presence (website, social)",
+          "prob": 60,
+          "time": "2-8 weeks",
+          "source": "ICF 2024"
+        },
+        {
+          "id": "first_discovery_call",
+          "label": "Get first discovery call",
+          "prob": 40,
+          "time": "2-12 weeks",
+          "source": "ICF 2024 — getting calls is the hardest part for new coaches"
+        },
+        {
+          "id": "first_paid_client",
+          "label": "Get first paid coaching client",
+          "prob": 30,
+          "time": "1-6 months",
+          "source": "ICF 2024 — 70% of new coaches don't get a paying client in 6 months"
+        },
+        {
+          "id": "deliver_first_engagement",
+          "label": "Complete first coaching engagement",
+          "prob": 85,
+          "time": "1-3 months",
+          "source": "ICF 2024"
+        },
+        {
+          "id": "get_testimonial",
+          "label": "Get testimonial from first client",
+          "prob": 50,
+          "time": "1-4 weeks after engagement",
+          "source": "ICF 2024"
+        },
+        {
+          "id": "reach_5_clients",
+          "label": "Reach 5 coaching clients",
+          "prob": 40,
+          "time": "6-18 months",
+          "source": "ICF 2024"
+        },
+        {
+          "id": "earn_3k_month",
+          "label": "Earn $3,000/month from coaching",
+          "prob": 20,
+          "time": "12-36 months",
+          "source": "ICF 2024 — median coach earns $47K/year"
+        },
+        {
+          "id": "raise_rates",
+          "label": "Raise rates above initial pricing",
+          "prob": 50,
+          "time": "6-18 months",
+          "source": "ICF 2024 — most undercharge initially"
+        },
+        {
+          "id": "reach_10_clients",
+          "label": "Reach 10 active clients",
+          "prob": 20,
+          "time": "12-36 months",
+          "source": "ICF 2024"
+        },
+        {
+          "id": "earn_5k_month",
+          "label": "Earn $5,000/month from coaching",
+          "prob": 12,
+          "time": "18-48 months",
+          "source": "ICF 2024"
+        },
+        {
+          "id": "launch_group_coaching",
+          "label": "Launch group coaching program",
+          "prob": 15,
+          "time": "12-36 months",
+          "source": "ICF 2024 — leverage model"
+        },
+        {
+          "id": "earn_10k_month",
+          "label": "Earn $10,000/month from coaching",
+          "prob": 7,
+          "time": "24-60 months",
+          "source": "ICF 2024 — top 10% of coaches"
+        },
+        {
+          "id": "create_signature_program",
+          "label": "Create signature coaching program",
+          "prob": 10,
+          "time": "18-48 months",
+          "source": "ICF 2024"
+        },
+        {
+          "id": "earn_20k_month",
+          "label": "Earn $20,000+/month from coaching business",
+          "prob": 3,
+          "time": "36-72 months",
+          "source": "ICF 2024 — top 3% of all coaches"
+        },
+        {
+          "id": "build_coaching_team",
+          "label": "Build team of coaches under your brand",
+          "prob": 5,
+          "time": "36-84 months",
+          "source": "ICF 2024 — rare transition"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_client": "7.2%",
+        "start_to_5k_month": "0.4%",
+        "start_to_10k_month": "0.07%",
+        "start_to_20k_month": "0.006%"
+      },
+      "bottlenecks": [
+        "first_discovery_call",
+        "first_paid_client",
+        "earn_3k_month",
+        "launch_group_coaching",
+        "earn_10k_month"
+      ],
+      "reality_check": "82% of coaches earn less than $50K/year. The coaching market is saturated with low-quality entrants. Certification helps but doesn't guarantee clients. Most coaches spend 80% of time on marketing, 20% on coaching.",
+      "sources": [
+        "ICF Global Coaching Study 2024"
+      ],
+      "industry_data": {
+        "coaching_industry_global_usd_billions": 4.5,
+        "coaches_worldwide": 109000,
+        "coach_avg_annual_income_usd": 67800,
+        "coach_median_annual_income_usd": 47000,
+        "life_coach_avg_rate_per_hour_usd": 150,
+        "executive_coach_avg_rate_per_hour_usd": 350,
+        "business_coach_avg_rate_per_hour_usd": 250,
+        "coaching_roi_for_companies_pct": 700
+      },
+      "buyer_psychology": {
+        "client_choose_based_on_chemistry_pct": 65,
+        "client_find_coach_via_referral_pct": 60,
+        "client_avg_engagement_months": 6,
+        "client_see_results_pct": 70,
+        "client_willing_to_pay_monthly_usd_avg": 500
+      }
+    },
+    "car_wash_business": {
+      "name": "Car Wash Business → Location → Scale",
+      "description": "Person opens or buys a car wash business. High capital requirement but strong cash flow model. Increasingly popular as passive investment.",
+      "entry_point": "Decides to enter car wash business",
+      "stages": [
+        {
+          "id": "research_market",
+          "label": "Research local car wash market",
+          "prob": 100,
+          "time": "1-4 weeks",
+          "source": "baseline"
+        },
+        {
+          "id": "secure_financing",
+          "label": "Secure financing ($200K-2M)",
+          "prob": 30,
+          "time": "2-6 months",
+          "source": "IBIS World 2024 — high capital barrier",
+          "url": "https://www.ibisworld.com/"
+        },
+        {
+          "id": "find_location",
+          "label": "Find suitable location",
+          "prob": 50,
+          "time": "2-12 months",
+          "source": "International Carwash Association 2024"
+        },
+        {
+          "id": "build_or_buy",
+          "label": "Build new or buy existing car wash",
+          "prob": 80,
+          "time": "3-18 months",
+          "source": "ICA 2024"
+        },
+        {
+          "id": "open_doors",
+          "label": "Open for business",
+          "prob": 90,
+          "time": "1-3 months after build",
+          "source": "ICA 2024"
+        },
+        {
+          "id": "first_month_revenue",
+          "label": "Generate first month revenue",
+          "prob": 95,
+          "time": "1 month",
+          "source": "ICA 2024 — nearly all car washes get customers"
+        },
+        {
+          "id": "break_even_monthly",
+          "label": "Break even on monthly operating costs",
+          "prob": 70,
+          "time": "3-12 months",
+          "source": "ICA 2024"
+        },
+        {
+          "id": "reach_15k_month_revenue",
+          "label": "Reach $15,000/month revenue",
+          "prob": 50,
+          "time": "6-24 months",
+          "source": "ICA 2024 — avg car wash does $150-200K/year"
+        },
+        {
+          "id": "launch_membership",
+          "label": "Launch unlimited wash membership program",
+          "prob": 60,
+          "time": "3-12 months",
+          "source": "ICA 2024 — memberships drive 50%+ revenue"
+        },
+        {
+          "id": "reach_200_members",
+          "label": "Reach 200 membership subscribers",
+          "prob": 40,
+          "time": "6-24 months",
+          "source": "ICA 2024"
+        },
+        {
+          "id": "reach_30k_month_revenue",
+          "label": "Reach $30,000/month revenue",
+          "prob": 25,
+          "time": "12-36 months",
+          "source": "ICA 2024"
+        },
+        {
+          "id": "roi_positive",
+          "label": "ROI positive on initial investment",
+          "prob": 40,
+          "time": "24-60 months",
+          "source": "ICA 2024 — avg ROI 3-5 years"
+        },
+        {
+          "id": "open_second_location",
+          "label": "Open or buy second location",
+          "prob": 15,
+          "time": "24-60 months",
+          "source": "ICA 2024"
+        },
+        {
+          "id": "reach_1m_annual",
+          "label": "Reach $1M annual revenue",
+          "prob": 10,
+          "time": "36-72 months",
+          "source": "ICA 2024 — top 10% of car washes"
+        },
+        {
+          "id": "build_chain",
+          "label": "Build chain of 3+ locations",
+          "prob": 5,
+          "time": "48-120 months",
+          "source": "ICA 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_open": "10.8%",
+        "start_to_break_even": "7.6%",
+        "start_to_1m_annual": "1.1%",
+        "start_to_chain": "0.05%"
+      },
+      "bottlenecks": [
+        "secure_financing",
+        "find_location",
+        "break_even_monthly",
+        "reach_200_members"
+      ],
+      "reality_check": "Car washes require $200K-2M initial investment. Average profit margin is 35-40% for express washes. Location is everything — a bad location means guaranteed failure. Membership model is key to predictable revenue.",
+      "sources": [
+        "International Carwash Association 2024",
+        "IBIS World 2024"
+      ],
+      "industry_data": {
+        "car_wash_industry_us_revenue_usd_billions": 15,
+        "car_washes_us_total": 62000,
+        "express_car_wash_avg_revenue_annual_usd": 600000,
+        "full_service_car_wash_avg_revenue_annual_usd": 800000,
+        "car_wash_profit_margin_pct": 37,
+        "membership_revenue_share_pct": 55,
+        "avg_membership_price_monthly_usd": 30,
+        "car_wash_build_cost_usd": 2500000,
+        "existing_car_wash_sale_multiple_ebitda": 6
+      },
+      "buyer_psychology": {
+        "customer_wash_frequency_monthly_avg": 2.5,
+        "customer_prefer_express_pct": 65,
+        "customer_choose_membership_pct": 15,
+        "customer_loyalty_rate_pct": 50
+      }
+    },
+    "cleaning_business": {
+      "name": "Cleaning Business → Clients → Scale Team",
+      "description": "Person starts a residential or commercial cleaning business. Low startup cost, high demand, scalable with employees. Classic service business model.",
+      "entry_point": "Decides to start a cleaning business",
+      "stages": [
+        {
+          "id": "decide_cleaning",
+          "label": "Decide to start cleaning business",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "choose_residential_commercial",
+          "label": "Choose residential or commercial cleaning",
+          "prob": 90,
+          "time": "1-2 weeks",
+          "source": "SBA 2024"
+        },
+        {
+          "id": "get_supplies",
+          "label": "Buy cleaning supplies and equipment ($200-500)",
+          "prob": 85,
+          "time": "1-7 days",
+          "source": "SBA 2024 — low startup cost"
+        },
+        {
+          "id": "register_business",
+          "label": "Register business and get insurance",
+          "prob": 65,
+          "time": "1-4 weeks",
+          "source": "SBA 2024"
+        },
+        {
+          "id": "create_pricing",
+          "label": "Create pricing structure",
+          "prob": 80,
+          "time": "1-2 weeks",
+          "source": "SBA 2024"
+        },
+        {
+          "id": "first_outreach",
+          "label": "Start marketing (flyers, Facebook, Nextdoor)",
+          "prob": 60,
+          "time": "1-4 weeks",
+          "source": "SBA 2024"
+        },
+        {
+          "id": "first_client",
+          "label": "Get first paying client",
+          "prob": 50,
+          "time": "1-4 weeks",
+          "source": "ISSA 2024 — word of mouth is primary channel",
+          "url": "https://www.issa.com/"
+        },
+        {
+          "id": "first_recurring_client",
+          "label": "Convert to recurring weekly/biweekly client",
+          "prob": 60,
+          "time": "1-4 weeks after first clean",
+          "source": "ISSA 2024"
+        },
+        {
+          "id": "reach_5_clients",
+          "label": "Reach 5 recurring clients",
+          "prob": 50,
+          "time": "2-6 months",
+          "source": "ISSA 2024"
+        },
+        {
+          "id": "reach_2k_month",
+          "label": "Reach $2,000/month revenue",
+          "prob": 40,
+          "time": "3-12 months",
+          "source": "ISSA 2024 — avg residential clean $100-150"
+        },
+        {
+          "id": "reach_10_clients",
+          "label": "Reach 10 recurring clients",
+          "prob": 30,
+          "time": "6-18 months",
+          "source": "ISSA 2024"
+        },
+        {
+          "id": "hire_first_cleaner",
+          "label": "Hire first employee/cleaner",
+          "prob": 25,
+          "time": "6-18 months",
+          "source": "ISSA 2024"
+        },
+        {
+          "id": "reach_5k_month",
+          "label": "Reach $5,000/month revenue",
+          "prob": 20,
+          "time": "6-24 months",
+          "source": "ISSA 2024"
+        },
+        {
+          "id": "reach_10k_month",
+          "label": "Reach $10,000/month revenue",
+          "prob": 12,
+          "time": "12-36 months",
+          "source": "ISSA 2024 — need 5-10 employees at this level"
+        },
+        {
+          "id": "build_team_5",
+          "label": "Build team of 5+ cleaners",
+          "prob": 8,
+          "time": "18-48 months",
+          "source": "ISSA 2024"
+        },
+        {
+          "id": "reach_20k_month",
+          "label": "Reach $20,000/month revenue",
+          "prob": 5,
+          "time": "24-60 months",
+          "source": "ISSA 2024"
+        },
+        {
+          "id": "add_commercial",
+          "label": "Add commercial contracts",
+          "prob": 10,
+          "time": "12-36 months",
+          "source": "ISSA 2024 — commercial is more lucrative but harder to get"
+        },
+        {
+          "id": "reach_50k_month",
+          "label": "Reach $50,000/month revenue",
+          "prob": 3,
+          "time": "36-72 months",
+          "source": "ISSA 2024 — top 5% of cleaning businesses"
+        },
+        {
+          "id": "systemize_operations",
+          "label": "Fully systemize (owner no longer cleans)",
+          "prob": 5,
+          "time": "24-60 months",
+          "source": "ISSA 2024"
+        },
+        {
+          "id": "reach_1m_annual",
+          "label": "Reach $1M annual revenue",
+          "prob": 2,
+          "time": "48-96 months",
+          "source": "ISSA 2024 — top 2% of cleaning companies"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_client": "15.3%",
+        "start_to_5k_month": "2.0%",
+        "start_to_10k_month": "0.4%",
+        "start_to_1m_annual": "0.01%"
+      },
+      "bottlenecks": [
+        "first_client",
+        "hire_first_cleaner",
+        "build_team_5",
+        "systemize_operations"
+      ],
+      "reality_check": "Cleaning businesses have the lowest barrier to entry. This means extreme competition. Employee turnover is 200-400% annually. Most cleaning business owners are still doing the cleaning themselves after 3+ years.",
+      "sources": [
+        "ISSA 2024",
+        "SBA 2024"
+      ],
+      "industry_data": {
+        "cleaning_industry_us_revenue_usd_billions": 90,
+        "cleaning_companies_us_total": 1100000,
+        "residential_cleaning_market_usd_billions": 20,
+        "commercial_cleaning_market_usd_billions": 70,
+        "cleaning_employee_turnover_annual_pct": 300,
+        "avg_residential_clean_price_usd": 130,
+        "avg_commercial_contract_monthly_usd": 2000,
+        "cleaning_business_failure_rate_5yr_pct": 50,
+        "cleaning_startup_cost_avg_usd": 2000
+      },
+      "buyer_psychology": {
+        "homeowner_use_cleaning_service_pct": 10,
+        "customer_choose_based_on_trust_pct": 80,
+        "customer_choose_based_on_price_pct": 50,
+        "customer_referral_source_pct": 60,
+        "customer_avg_retention_months": 18
+      }
+    },
+    "food_truck": {
+      "name": "Food Truck → Locations → Revenue",
+      "description": "Person starts a food truck business. Lower cost than restaurant, mobile flexibility. Popular entry point to food industry.",
+      "entry_point": "Decides to start a food truck",
+      "stages": [
+        {
+          "id": "develop_concept",
+          "label": "Develop food concept and menu",
+          "prob": 100,
+          "time": "1-4 weeks",
+          "source": "baseline"
+        },
+        {
+          "id": "get_permits",
+          "label": "Get food service permits and licenses",
+          "prob": 70,
+          "time": "2-6 months",
+          "source": "NRA 2024 — permit process varies by city, many give up",
+          "url": "https://restaurant.org/"
+        },
+        {
+          "id": "buy_truck",
+          "label": "Buy/build food truck ($30K-150K)",
+          "prob": 60,
+          "time": "1-6 months",
+          "source": "IBISWorld 2024 — avg cost $75K"
+        },
+        {
+          "id": "equip_truck",
+          "label": "Equip truck with kitchen equipment",
+          "prob": 90,
+          "time": "2-8 weeks",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "pass_health_inspection",
+          "label": "Pass health department inspection",
+          "prob": 80,
+          "time": "1-4 weeks",
+          "source": "NRA 2024 — 80% pass on first or second try"
+        },
+        {
+          "id": "first_day_open",
+          "label": "First day of business",
+          "prob": 90,
+          "time": "1-4 weeks after inspection",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "find_locations",
+          "label": "Find profitable locations/routes",
+          "prob": 60,
+          "time": "1-3 months",
+          "source": "NRA 2024 — location is everything for food trucks"
+        },
+        {
+          "id": "build_social_following",
+          "label": "Build social media following (Instagram/TikTok)",
+          "prob": 50,
+          "time": "1-6 months",
+          "source": "NRA 2024 — social is how customers find trucks"
+        },
+        {
+          "id": "reach_1k_daily_revenue",
+          "label": "Average $1,000/day revenue",
+          "prob": 40,
+          "time": "3-12 months",
+          "source": "NRA 2024 — avg food truck does $500-2000/day"
+        },
+        {
+          "id": "break_even_monthly",
+          "label": "Break even on monthly operating costs",
+          "prob": 55,
+          "time": "3-12 months",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "get_catering_gigs",
+          "label": "Book first catering event",
+          "prob": 35,
+          "time": "3-12 months",
+          "source": "NRA 2024 — catering is higher margin"
+        },
+        {
+          "id": "reach_10k_month_profit",
+          "label": "Reach $10,000/month profit",
+          "prob": 20,
+          "time": "6-24 months",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "pay_off_truck",
+          "label": "Pay off truck investment",
+          "prob": 30,
+          "time": "12-36 months",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "add_second_truck",
+          "label": "Add second food truck",
+          "prob": 10,
+          "time": "18-48 months",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "reach_20k_month_profit",
+          "label": "Reach $20,000/month profit",
+          "prob": 8,
+          "time": "24-60 months",
+          "source": "NRA 2024"
+        },
+        {
+          "id": "transition_to_restaurant",
+          "label": "Open brick-and-mortar restaurant",
+          "prob": 5,
+          "time": "24-72 months",
+          "source": "NRA 2024 — some food trucks evolve into restaurants"
+        },
+        {
+          "id": "build_fleet",
+          "label": "Build fleet of 3+ trucks",
+          "prob": 3,
+          "time": "36-84 months",
+          "source": "NRA 2024"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_day": "27.2%",
+        "start_to_break_even": "15.0%",
+        "start_to_10k_profit": "5.4%",
+        "start_to_fleet": "0.2%"
+      },
+      "bottlenecks": [
+        "get_permits",
+        "buy_truck",
+        "find_locations",
+        "reach_10k_month_profit"
+      ],
+      "reality_check": "Food truck failure rate is 60% in first 3 years. Average food truck owner works 14-hour days, 6 days a week. Weather dependency means income is unpredictable. Health code violations can shut you down instantly.",
+      "sources": [
+        "NRA 2024",
+        "IBISWorld 2024"
+      ],
+      "industry_data": {
+        "food_truck_industry_us_revenue_usd_billions": 3.3,
+        "food_trucks_us_total": 36000,
+        "avg_food_truck_revenue_annual_usd": 290000,
+        "avg_food_truck_profit_margin_pct": 15,
+        "food_truck_startup_cost_avg_usd": 75000,
+        "food_truck_failure_rate_3yr_pct": 60,
+        "food_cost_percentage_pct": 30,
+        "labor_cost_percentage_pct": 25,
+        "food_truck_catering_revenue_share_pct": 30
+      },
+      "buyer_psychology": {
+        "customer_choose_based_on_food_quality_pct": 60,
+        "customer_choose_based_on_convenience_pct": 35,
+        "customer_avg_spend_usd": 12,
+        "customer_return_rate_pct": 40,
+        "customer_find_via_social_media_pct": 55
+      }
+    },
+    "airbnb_host": {
+      "name": "Airbnb Host -> Scale -> Portfolio",
+      "description": "Person lists property on Airbnb, optimizes listing, scales to multiple properties through arbitrage or ownership.",
+      "entry_point": "Decides to become an Airbnb host",
+      "stages": [
+        {
+          "id": "decide_hosting",
+          "label": "Decide to become an Airbnb host",
+          "prob": 100,
+          "time": "instant",
+          "source": "baseline"
+        },
+        {
+          "id": "prepare_space",
+          "label": "Prepare space (furnish, photograph)",
+          "prob": 75,
+          "time": "1-4 weeks",
+          "source": "AirDNA 2024 -- 25% never finish preparation",
+          "url": "https://www.airdna.co/"
+        },
+        {
+          "id": "create_listing",
+          "label": "Create Airbnb listing",
+          "prob": 85,
+          "time": "1-7 days",
+          "source": "Airbnb 2024"
+        },
+        {
+          "id": "get_first_booking",
+          "label": "Get first booking",
+          "prob": 70,
+          "time": "1-4 weeks",
+          "source": "AirDNA 2024 -- new listings get algorithm boost"
+        },
+        {
+          "id": "first_review",
+          "label": "Get first guest review",
+          "prob": 80,
+          "time": "1-2 weeks after stay",
+          "source": "Airbnb 2024 -- 72% of guests leave reviews"
+        },
+        {
+          "id": "reach_5_reviews",
+          "label": "Reach 5 reviews (Superhost eligible)",
+          "prob": 60,
+          "time": "2-6 months",
+          "source": "Airbnb 2024"
+        },
+        {
+          "id": "optimize_pricing",
+          "label": "Optimize pricing with dynamic tools",
+          "prob": 40,
+          "time": "1-6 months",
+          "source": "AirDNA 2024"
+        },
+        {
+          "id": "reach_60pct_occupancy",
+          "label": "Reach 60% occupancy rate",
+          "prob": 50,
+          "time": "3-12 months",
+          "source": "AirDNA 2024 -- avg occupancy is 56%"
+        },
+        {
+          "id": "earn_superhost",
+          "label": "Earn Superhost status",
+          "prob": 25,
+          "time": "6-18 months",
+          "source": "Airbnb 2024 -- 25% of hosts are Superhosts"
+        },
+        {
+          "id": "cover_mortgage",
+          "label": "Cover mortgage/rent from Airbnb income",
+          "prob": 40,
+          "time": "3-12 months",
+          "source": "AirDNA 2024 -- depends heavily on market"
+        },
+        {
+          "id": "reach_3k_month",
+          "label": "Reach ,000/month revenue",
+          "prob": 30,
+          "time": "3-18 months",
+          "source": "AirDNA 2024 -- median Airbnb listing earns ,500/month"
+        },
+        {
+          "id": "add_second_property",
+          "label": "Add second Airbnb listing (arbitrage or ownership)",
+          "prob": 15,
+          "time": "6-24 months",
+          "source": "AirDNA 2024"
+        },
+        {
+          "id": "reach_10k_month",
+          "label": "Reach ,000/month total Airbnb revenue",
+          "prob": 8,
+          "time": "12-36 months",
+          "source": "AirDNA 2024"
+        },
+        {
+          "id": "build_portfolio_5",
+          "label": "Build portfolio of 5+ listings",
+          "prob": 3,
+          "time": "24-60 months",
+          "source": "AirDNA 2024"
+        },
+        {
+          "id": "reach_30k_month",
+          "label": "Reach ,000/month revenue",
+          "prob": 2,
+          "time": "24-72 months",
+          "source": "AirDNA 2024 -- top 2% of hosts"
+        },
+        {
+          "id": "full_time_hosting",
+          "label": "Full-time Airbnb hosting business",
+          "prob": 5,
+          "time": "12-48 months",
+          "source": "Airbnb 2024 -- 5% of hosts consider it full-time business"
+        }
+      ],
+      "cumulative_end_to_end": {
+        "start_to_first_booking": "44.6%",
+        "start_to_cover_mortgage": "17.9%",
+        "start_to_10k_month": "1.4%",
+        "start_to_30k_month": "0.11%"
+      },
+      "bottlenecks": [
+        "prepare_space",
+        "reach_60pct_occupancy",
+        "add_second_property",
+        "build_portfolio_5"
+      ],
+      "reality_check": "Average Airbnb listing earns $2,500/month revenue but after expenses (cleaning, supplies, management, wear) profit is $500-1,000. Regulations are tightening in most cities. Occupancy rates have dropped 10% since 2022.",
+      "sources": [
+        "AirDNA 2024",
+        "Airbnb 2024"
+      ],
+      "industry_data": {
+        "airbnb_total_listings_millions": 7.7,
+        "airbnb_active_hosts_millions": 5,
+        "airbnb_revenue_2024_usd_billions": 10.5,
+        "avg_daily_rate_global_usd": 150,
+        "avg_occupancy_rate_pct": 56,
+        "airbnb_host_commission_pct": 3,
+        "airbnb_guest_commission_pct": 14,
+        "superhost_pct_of_hosts": 25,
+        "avg_airbnb_annual_revenue_per_listing_usd": 30000
+      },
+      "buyer_psychology": {
+        "guest_choose_based_on_reviews_pct": 85,
+        "guest_choose_based_on_price_pct": 60,
+        "guest_choose_based_on_location_pct": 75,
+        "guest_leave_review_pct": 72,
+        "guest_prefer_superhost_pct": 40
       }
     }
   }

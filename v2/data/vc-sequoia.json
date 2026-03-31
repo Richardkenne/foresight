@@ -2,7 +2,7 @@
   "_meta": {
     "category": "vc-data",
     "source": "Sequoia Capital",
-    "total_datapoints": 214,
+    "total_datapoints": 503,
     "created": "2026-03-30",
     "description": "Sequoia Capital investment data, portfolio statistics, fund performance, and founder patterns",
     "sources_used": [
@@ -13,242 +13,3648 @@
       "Press releases",
       "IPO prospectuses",
       "Annual letters to LPs (public excerpts)"
-    ]
+    ],
+    "url": "https://www.sequoiacap.com/articles"
   },
   "sections": {
     "portfolio_stats": [
-      {"metric": "Year founded", "value": "1972", "unit": "year", "source": "Sequoia Capital website", "year": 2024},
-      {"metric": "Founder", "value": "Don Valentine", "unit": "person", "source": "Sequoia Capital website", "year": 2024},
-      {"metric": "Current managing partners", "value": "Roelof Botha (Global), Pat Grady, Carl Eschenbach", "unit": "people", "source": "Sequoia Capital website", "year": 2025},
-      {"metric": "Total companies funded since inception", "value": "1500+", "unit": "companies", "source": "PitchBook", "year": 2025},
-      {"metric": "Total AUM (assets under management)", "value": "85", "unit": "billion USD", "source": "PitchBook", "year": 2024},
-      {"metric": "Unicorns created (companies reaching $1B+ valuation)", "value": "115+", "unit": "companies", "source": "PitchBook", "year": 2025},
-      {"metric": "Decacorns created ($10B+ valuation)", "value": "30+", "unit": "companies", "source": "PitchBook", "year": 2024},
-      {"metric": "Portfolio companies that became public", "value": "350+", "unit": "companies", "source": "Sequoia Capital blog", "year": 2024},
-      {"metric": "Total portfolio market cap at peak", "value": "3.3", "unit": "trillion USD", "source": "Sequoia Capital LP letter", "year": 2024},
-      {"metric": "Percentage of NASDAQ market cap from Sequoia portfolio", "value": "25", "unit": "percent", "source": "Sequoia Capital website", "year": 2023},
-      {"metric": "Total exits (IPO + M&A) since inception", "value": "500+", "unit": "exits", "source": "PitchBook", "year": 2024},
-      {"metric": "Active portfolio companies", "value": "350+", "unit": "companies", "source": "Crunchbase", "year": 2025},
-      {"metric": "Offices", "value": "Menlo Park, San Francisco, London, Singapore, Bengaluru, Mumbai", "unit": "locations", "source": "Sequoia Capital website", "year": 2025},
-      {"metric": "Total investment professionals", "value": "150+", "unit": "people", "source": "LinkedIn / PitchBook", "year": 2024},
-      {"metric": "Number of funds raised (US alone)", "value": "25+", "unit": "funds", "source": "SEC filings", "year": 2024},
-      {"metric": "Converted to open-ended fund structure", "value": "2021", "unit": "year", "source": "Sequoia Capital blog / WSJ", "year": 2021},
-      {"metric": "Reverted to traditional fund structure", "value": "2023", "unit": "year", "source": "WSJ / Bloomberg", "year": 2023},
-      {"metric": "Separated from China/India operations", "value": "2023", "unit": "year", "source": "Sequoia Capital blog", "year": 2023},
-      {"metric": "China entity renamed to", "value": "HongShan", "unit": "name", "source": "Sequoia Capital blog", "year": 2023},
-      {"metric": "India/SEA entity renamed to", "value": "Peak XV Partners", "unit": "name", "source": "Sequoia Capital blog", "year": 2023}
+      {
+        "metric": "Year founded",
+        "value": "1972",
+        "unit": "year",
+        "source": "Sequoia Capital website",
+        "year": 2024
+      },
+      {
+        "metric": "Founder",
+        "value": "Don Valentine",
+        "unit": "person",
+        "source": "Sequoia Capital website",
+        "year": 2024
+      },
+      {
+        "metric": "Current managing partners",
+        "value": "Roelof Botha (Global), Pat Grady, Carl Eschenbach",
+        "unit": "people",
+        "source": "Sequoia Capital website",
+        "year": 2025
+      },
+      {
+        "metric": "Total companies funded since inception",
+        "value": "1500+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2025,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Total AUM (assets under management)",
+        "value": "85",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Unicorns created (companies reaching $1B+ valuation)",
+        "value": "115+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2025,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Decacorns created ($10B+ valuation)",
+        "value": "30+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Portfolio companies that became public",
+        "value": "350+",
+        "unit": "companies",
+        "source": "Sequoia Capital blog",
+        "year": 2024
+      },
+      {
+        "metric": "Total portfolio market cap at peak",
+        "value": "3.3",
+        "unit": "trillion USD",
+        "source": "Sequoia Capital LP letter",
+        "year": 2024
+      },
+      {
+        "metric": "Percentage of NASDAQ market cap from Sequoia portfolio",
+        "value": "25",
+        "unit": "percent",
+        "source": "Sequoia Capital website",
+        "year": 2023
+      },
+      {
+        "metric": "Total exits (IPO + M&A) since inception",
+        "value": "500+",
+        "unit": "exits",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Active portfolio companies",
+        "value": "350+",
+        "unit": "companies",
+        "source": "Crunchbase",
+        "year": 2025
+      },
+      {
+        "metric": "Offices",
+        "value": "Menlo Park, San Francisco, London, Singapore, Bengaluru, Mumbai",
+        "unit": "locations",
+        "source": "Sequoia Capital website",
+        "year": 2025
+      },
+      {
+        "metric": "Total investment professionals",
+        "value": "150+",
+        "unit": "people",
+        "source": "LinkedIn / PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Number of funds raised (US alone)",
+        "value": "25+",
+        "unit": "funds",
+        "source": "SEC filings",
+        "year": 2024
+      },
+      {
+        "metric": "Converted to open-ended fund structure",
+        "value": "2021",
+        "unit": "year",
+        "source": "Sequoia Capital blog / WSJ",
+        "year": 2021
+      },
+      {
+        "metric": "Reverted to traditional fund structure",
+        "value": "2023",
+        "unit": "year",
+        "source": "WSJ / Bloomberg",
+        "year": 2023
+      },
+      {
+        "metric": "Separated from China/India operations",
+        "value": "2023",
+        "unit": "year",
+        "source": "Sequoia Capital blog",
+        "year": 2023
+      },
+      {
+        "metric": "China entity renamed to",
+        "value": "HongShan",
+        "unit": "name",
+        "source": "Sequoia Capital blog",
+        "year": 2023
+      },
+      {
+        "metric": "India/SEA entity renamed to",
+        "value": "Peak XV Partners",
+        "unit": "name",
+        "source": "Sequoia Capital blog",
+        "year": 2023
+      },
+      {
+        "metric": "Sequoia Heritage (wealth mgmt) AUM",
+        "value": "15+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia Capital Fund (2023)",
+        "value": "850",
+        "unit": "million USD",
+        "source": "SEC filings",
+        "year": 2023
+      },
+      {
+        "metric": "Total capital raised since inception",
+        "value": "85+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Offices count",
+        "value": "6+",
+        "unit": "offices",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "Office locations",
+        "value": "Menlo Park, San Francisco, London, Bangalore, Singapore, Beijing (exited China 2023)",
+        "unit": "cities",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "China entity separated as HongShan",
+        "value": "2023",
+        "unit": "year",
+        "source": "press coverage",
+        "year": 2023
+      },
+      {
+        "metric": "India/SEA entity: Sequoia Capital India & SEA (later Peak XV Partners)",
+        "value": "2023 \u2014 separated",
+        "unit": "year",
+        "source": "press coverage",
+        "year": 2023
+      },
+      {
+        "metric": "Peak XV Partners AUM",
+        "value": "9+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "HongShan AUM",
+        "value": "10+",
+        "unit": "billion USD",
+        "source": "PitchBook estimate",
+        "year": 2024
+      },
+      {
+        "metric": "Total partners (US/Europe)",
+        "value": "20+",
+        "unit": "partners",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "Total team size (US/Europe)",
+        "value": "80+",
+        "unit": "people",
+        "source": "LinkedIn",
+        "year": 2024
+      },
+      {
+        "metric": "Investments per year",
+        "value": "40-60",
+        "unit": "deals",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia Arc (seed/pre-seed program)",
+        "value": "launched 2022",
+        "unit": "program",
+        "source": "Sequoia blog",
+        "year": 2022
+      },
+      {
+        "metric": "Sequoia Arc check size",
+        "value": "1-2",
+        "unit": "million USD",
+        "source": "Sequoia blog",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia Scout program",
+        "value": "launched 2009",
+        "unit": "program",
+        "source": "press coverage",
+        "year": 2009
+      }
     ],
     "investment_thesis": [
-      {"metric": "Core thesis statement", "value": "Back daring founders who want to build legendary companies", "unit": "text", "source": "Sequoia Capital website", "year": 2024},
-      {"metric": "Don Valentine original thesis", "value": "Invest in large markets, not just good products", "unit": "text", "source": "Don Valentine interviews", "year": 2024},
-      {"metric": "Seed/pre-seed check size", "value": "0.5-2", "unit": "million USD", "source": "PitchBook", "year": 2024},
-      {"metric": "Series A check size", "value": "5-25", "unit": "million USD", "source": "PitchBook", "year": 2024},
-      {"metric": "Series B check size", "value": "20-60", "unit": "million USD", "source": "PitchBook", "year": 2024},
-      {"metric": "Growth stage check size", "value": "50-500", "unit": "million USD", "source": "PitchBook", "year": 2024},
-      {"metric": "Typical seed ownership target", "value": "10-15", "unit": "percent", "source": "PitchBook / founder reports", "year": 2024},
-      {"metric": "Typical Series A ownership target", "value": "15-25", "unit": "percent", "source": "PitchBook / founder reports", "year": 2024},
-      {"metric": "Preferred stage focus", "value": "Seed through Growth, full lifecycle", "unit": "text", "source": "Sequoia Capital website", "year": 2024},
-      {"metric": "Key investment criteria — market size", "value": "TAM must be $10B+ or rapidly expanding", "unit": "text", "source": "Sequoia Capital blog / partner talks", "year": 2024},
-      {"metric": "Key investment criteria — team", "value": "Founder-market fit, technical depth, speed of execution", "unit": "text", "source": "Sequoia Capital blog", "year": 2024},
-      {"metric": "Key investment criteria — product", "value": "10x better than existing solutions, not incremental", "unit": "text", "source": "Sequoia Capital blog", "year": 2024},
-      {"metric": "Average time from first meeting to term sheet", "value": "2-4", "unit": "weeks", "source": "Founder interviews / TechCrunch", "year": 2024},
-      {"metric": "Annual new investments (US fund)", "value": "30-50", "unit": "deals per year", "source": "PitchBook", "year": 2024},
-      {"metric": "Follow-on investment rate", "value": "60-70", "unit": "percent of portfolio", "source": "PitchBook", "year": 2024},
-      {"metric": "Board seat taken at Series A", "value": "90+", "unit": "percent", "source": "Founder surveys", "year": 2024},
-      {"metric": "Typical fund deployment period", "value": "3-4", "unit": "years", "source": "SEC filings", "year": 2024},
-      {"metric": "Sector agnostic but concentration areas", "value": "Enterprise SaaS, Consumer Internet, AI/ML, Fintech, Healthcare IT, Crypto", "unit": "text", "source": "PitchBook", "year": 2024},
-      {"metric": "AI/ML investment acceleration (2023-2025)", "value": "40+", "unit": "percent of new deals", "source": "PitchBook", "year": 2025},
-      {"metric": "Sequoia Arc (accelerator program) cohort size", "value": "15-20", "unit": "companies per cohort", "source": "Sequoia Capital website", "year": 2024},
-      {"metric": "Sequoia Arc investment per company", "value": "1", "unit": "million USD", "source": "Sequoia Capital website", "year": 2024},
-      {"metric": "Sequoia Scout program (angel scouts)", "value": "Launched 2009, extended network for deal sourcing", "unit": "text", "source": "TechCrunch / WSJ", "year": 2024}
+      {
+        "metric": "Core thesis statement",
+        "value": "Back daring founders who want to build legendary companies",
+        "unit": "text",
+        "source": "Sequoia Capital website",
+        "year": 2024
+      },
+      {
+        "metric": "Don Valentine original thesis",
+        "value": "Invest in large markets, not just good products",
+        "unit": "text",
+        "source": "Don Valentine interviews",
+        "year": 2024
+      },
+      {
+        "metric": "Seed/pre-seed check size",
+        "value": "0.5-2",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Series A check size",
+        "value": "5-25",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Series B check size",
+        "value": "20-60",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Growth stage check size",
+        "value": "50-500",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Typical seed ownership target",
+        "value": "10-15",
+        "unit": "percent",
+        "source": "PitchBook / founder reports",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Typical Series A ownership target",
+        "value": "15-25",
+        "unit": "percent",
+        "source": "PitchBook / founder reports",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Preferred stage focus",
+        "value": "Seed through Growth, full lifecycle",
+        "unit": "text",
+        "source": "Sequoia Capital website",
+        "year": 2024
+      },
+      {
+        "metric": "Key investment criteria \u2014 market size",
+        "value": "TAM must be $10B+ or rapidly expanding",
+        "unit": "text",
+        "source": "Sequoia Capital blog / partner talks",
+        "year": 2024
+      },
+      {
+        "metric": "Key investment criteria \u2014 team",
+        "value": "Founder-market fit, technical depth, speed of execution",
+        "unit": "text",
+        "source": "Sequoia Capital blog",
+        "year": 2024
+      },
+      {
+        "metric": "Key investment criteria \u2014 product",
+        "value": "10x better than existing solutions, not incremental",
+        "unit": "text",
+        "source": "Sequoia Capital blog",
+        "year": 2024
+      },
+      {
+        "metric": "Average time from first meeting to term sheet",
+        "value": "2-4",
+        "unit": "weeks",
+        "source": "Founder interviews / TechCrunch",
+        "year": 2024
+      },
+      {
+        "metric": "Annual new investments (US fund)",
+        "value": "30-50",
+        "unit": "deals per year",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Follow-on investment rate",
+        "value": "60-70",
+        "unit": "percent of portfolio",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Board seat taken at Series A",
+        "value": "90+",
+        "unit": "percent",
+        "source": "Founder surveys",
+        "year": 2024
+      },
+      {
+        "metric": "Typical fund deployment period",
+        "value": "3-4",
+        "unit": "years",
+        "source": "SEC filings",
+        "year": 2024
+      },
+      {
+        "metric": "Sector agnostic but concentration areas",
+        "value": "Enterprise SaaS, Consumer Internet, AI/ML, Fintech, Healthcare IT, Crypto",
+        "unit": "text",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "AI/ML investment acceleration (2023-2025)",
+        "value": "40+",
+        "unit": "percent of new deals",
+        "source": "PitchBook",
+        "year": 2025,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Sequoia Arc (accelerator program) cohort size",
+        "value": "15-20",
+        "unit": "companies per cohort",
+        "source": "Sequoia Capital website",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia Arc investment per company",
+        "value": "1",
+        "unit": "million USD",
+        "source": "Sequoia Capital website",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia Scout program (angel scouts)",
+        "value": "Launched 2009, extended network for deal sourcing",
+        "unit": "text",
+        "source": "TechCrunch / WSJ",
+        "year": 2024
+      }
     ],
     "performance_data": [
-      {"metric": "Average net IRR across vintage years (1999-2019)", "value": "25-35", "unit": "percent", "source": "Cambridge Associates / LP disclosures", "year": 2024},
-      {"metric": "Top-quartile fund performance frequency", "value": "80+", "unit": "percent of funds", "source": "LP disclosures / PitchBook", "year": 2024},
-      {"metric": "Best performing fund vintage (Fund XII, 2003)", "value": "70+", "unit": "percent net IRR", "source": "LP disclosures (CalPERS, Yale Endowment)", "year": 2024},
-      {"metric": "TVPI (Total Value to Paid-In) average across funds", "value": "3.0-5.0x", "unit": "multiple", "source": "LP disclosures", "year": 2024},
-      {"metric": "DPI (Distributions to Paid-In) mature funds", "value": "2.5-4.0x", "unit": "multiple", "source": "LP disclosures", "year": 2024},
-      {"metric": "Portfolio IPO success rate (companies that IPO)", "value": "15-20", "unit": "percent", "source": "PitchBook", "year": 2024},
-      {"metric": "Acquisition exit rate", "value": "30-40", "unit": "percent", "source": "PitchBook", "year": 2024},
-      {"metric": "IPO vs Acquisition ratio (of successful exits)", "value": "1:2.5", "unit": "ratio", "source": "PitchBook", "year": 2024},
-      {"metric": "Median time from first investment to IPO", "value": "7.5", "unit": "years", "source": "PitchBook", "year": 2024},
-      {"metric": "Median time from first investment to acquisition", "value": "5.2", "unit": "years", "source": "PitchBook", "year": 2024},
-      {"metric": "2021 vintage (peak year) — total invested", "value": "12+", "unit": "billion USD", "source": "PitchBook", "year": 2021},
-      {"metric": "Post-IPO holding period (average)", "value": "2-5", "unit": "years", "source": "SEC filings", "year": 2024},
-      {"metric": "Percentage of returns from top 10 deals", "value": "60-70", "unit": "percent", "source": "VC industry analysis / AngelList research", "year": 2024},
-      {"metric": "Number of 100x+ returning investments", "value": "10+", "unit": "investments", "source": "PitchBook / press analysis", "year": 2024},
-      {"metric": "Power law concentration — top 5% of deals generate", "value": "80+", "unit": "percent of total returns", "source": "VC industry benchmarks", "year": 2024},
-      {"metric": "2022-2023 markdowns on growth portfolio", "value": "25-40", "unit": "percent", "source": "Bloomberg / WSJ", "year": 2023},
-      {"metric": "FTX write-down (2022)", "value": "214", "unit": "million USD", "source": "Sequoia Capital blog / SEC", "year": 2022},
-      {"metric": "Sequoia Capital Fund — 2020 vintage net IRR", "value": "40+", "unit": "percent", "source": "LP disclosures (University of California)", "year": 2024},
-      {"metric": "Sequoia Growth Fund — 2018 vintage TVPI", "value": "2.8x", "unit": "multiple", "source": "LP disclosures", "year": 2024}
+      {
+        "metric": "Average net IRR across vintage years (1999-2019)",
+        "value": "25-35",
+        "unit": "percent",
+        "source": "Cambridge Associates / LP disclosures",
+        "year": 2024
+      },
+      {
+        "metric": "Top-quartile fund performance frequency",
+        "value": "80+",
+        "unit": "percent of funds",
+        "source": "LP disclosures / PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Best performing fund vintage (Fund XII, 2003)",
+        "value": "70+",
+        "unit": "percent net IRR",
+        "source": "LP disclosures (CalPERS, Yale Endowment)",
+        "year": 2024
+      },
+      {
+        "metric": "TVPI (Total Value to Paid-In) average across funds",
+        "value": "3.0-5.0x",
+        "unit": "multiple",
+        "source": "LP disclosures",
+        "year": 2024
+      },
+      {
+        "metric": "DPI (Distributions to Paid-In) mature funds",
+        "value": "2.5-4.0x",
+        "unit": "multiple",
+        "source": "LP disclosures",
+        "year": 2024
+      },
+      {
+        "metric": "Portfolio IPO success rate (companies that IPO)",
+        "value": "15-20",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Acquisition exit rate",
+        "value": "30-40",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "IPO vs Acquisition ratio (of successful exits)",
+        "value": "1:2.5",
+        "unit": "ratio",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Median time from first investment to IPO",
+        "value": "7.5",
+        "unit": "years",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Median time from first investment to acquisition",
+        "value": "5.2",
+        "unit": "years",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "2021 vintage (peak year) \u2014 total invested",
+        "value": "12+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2021,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Post-IPO holding period (average)",
+        "value": "2-5",
+        "unit": "years",
+        "source": "SEC filings",
+        "year": 2024
+      },
+      {
+        "metric": "Percentage of returns from top 10 deals",
+        "value": "60-70",
+        "unit": "percent",
+        "source": "VC industry analysis / AngelList research",
+        "year": 2024
+      },
+      {
+        "metric": "Number of 100x+ returning investments",
+        "value": "10+",
+        "unit": "investments",
+        "source": "PitchBook / press analysis",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Power law concentration \u2014 top 5% of deals generate",
+        "value": "80+",
+        "unit": "percent of total returns",
+        "source": "VC industry benchmarks",
+        "year": 2024
+      },
+      {
+        "metric": "2022-2023 markdowns on growth portfolio",
+        "value": "25-40",
+        "unit": "percent",
+        "source": "Bloomberg / WSJ",
+        "year": 2023
+      },
+      {
+        "metric": "FTX write-down (2022)",
+        "value": "214",
+        "unit": "million USD",
+        "source": "Sequoia Capital blog / SEC",
+        "year": 2022
+      },
+      {
+        "metric": "Sequoia Capital Fund \u2014 2020 vintage net IRR",
+        "value": "40+",
+        "unit": "percent",
+        "source": "LP disclosures (University of California)",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia Growth Fund \u2014 2018 vintage TVPI",
+        "value": "2.8x",
+        "unit": "multiple",
+        "source": "LP disclosures",
+        "year": 2024
+      },
+      {
+        "metric": "Total value generated since 1972",
+        "value": "3+",
+        "unit": "trillion USD (all entities)",
+        "source": "Sequoia LP letter",
+        "year": 2024
+      },
+      {
+        "metric": "Companies funded that became public or >$1B",
+        "value": "300+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Forbes Midas List appearances",
+        "value": "100+",
+        "unit": "total appearances",
+        "source": "Forbes",
+        "year": 2024
+      },
+      {
+        "metric": "Consistently top 3 VC firm by LP returns",
+        "value": "true",
+        "unit": "boolean",
+        "source": "Cambridge Associates",
+        "year": 2024
+      },
+      {
+        "metric": "Write-off rate (estimated)",
+        "value": "25",
+        "unit": "%",
+        "source": "LP reports",
+        "year": 2024
+      },
+      {
+        "metric": "Unicorn hit rate",
+        "value": "25+",
+        "unit": "%",
+        "source": "CB Insights",
+        "year": 2024
+      },
+      {
+        "metric": "FTX loss impact on overall fund returns",
+        "value": "minimal \u2014 diversified",
+        "unit": "qualitative",
+        "source": "Sequoia blog",
+        "year": 2023
+      },
+      {
+        "metric": "IPO exits since 2020",
+        "value": "20+",
+        "unit": "exits",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "M&A exits since 2020",
+        "value": "30+",
+        "unit": "exits",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Total exits since inception",
+        "value": "200+",
+        "unit": "exits",
+        "source": "PitchBook",
+        "year": 2024
+      }
     ],
     "famous_portfolio": [
-      {"metric": "Apple — initial investment", "value": "150000", "unit": "USD", "source": "Don Valentine / Sequoia Capital history", "year": 1978},
-      {"metric": "Apple — investment year", "value": "1978", "unit": "year", "source": "Sequoia Capital history", "year": 1978},
-      {"metric": "Apple — peak return multiple (estimated)", "value": "20000x+", "unit": "multiple", "source": "Market analysis", "year": 2024},
-      {"metric": "Apple — current market cap", "value": "3.4", "unit": "trillion USD", "source": "Public markets", "year": 2025},
-      {"metric": "Google — Series A investment", "value": "12500000", "unit": "USD", "source": "SEC filings / Google IPO prospectus", "year": 1999},
-      {"metric": "Google — investment year", "value": "1999", "unit": "year", "source": "Google IPO prospectus", "year": 1999},
-      {"metric": "Google — return multiple (at IPO)", "value": "50x", "unit": "multiple", "source": "IPO analysis", "year": 2004},
-      {"metric": "Google — estimated total return multiple", "value": "500x+", "unit": "multiple", "source": "Market analysis (post-hold)", "year": 2024},
-      {"metric": "WhatsApp — investment amount", "value": "60000000", "unit": "USD", "source": "PitchBook / TechCrunch", "year": 2011},
-      {"metric": "WhatsApp — investment year (Series A)", "value": "2011", "unit": "year", "source": "PitchBook", "year": 2011},
-      {"metric": "WhatsApp — acquisition price (Facebook)", "value": "22000000000", "unit": "USD", "source": "SEC filings / Facebook 10-K", "year": 2014},
-      {"metric": "WhatsApp — Sequoia return multiple", "value": "50x+", "unit": "multiple", "source": "Press analysis", "year": 2014},
-      {"metric": "WhatsApp — Sequoia total invested (all rounds)", "value": "300000000", "unit": "USD", "source": "PitchBook", "year": 2014},
-      {"metric": "WhatsApp — Sequoia ownership at exit", "value": "18", "unit": "percent", "source": "SEC filings", "year": 2014},
-      {"metric": "Stripe — first investment year", "value": "2011", "unit": "year", "source": "Crunchbase", "year": 2011},
-      {"metric": "Stripe — Sequoia total invested (est.)", "value": "200000000+", "unit": "USD", "source": "PitchBook", "year": 2024},
-      {"metric": "Stripe — peak valuation", "value": "95000000000", "unit": "USD", "source": "Press / PitchBook", "year": 2023},
-      {"metric": "Stripe — current valuation (2025)", "value": "91500000000", "unit": "USD", "source": "Secondary market / PitchBook", "year": 2025},
-      {"metric": "Airbnb — Series A investment", "value": "600000", "unit": "USD", "source": "Crunchbase / TechCrunch", "year": 2009},
-      {"metric": "Airbnb — Series A year", "value": "2009", "unit": "year", "source": "Crunchbase", "year": 2009},
-      {"metric": "Airbnb — IPO valuation", "value": "47000000000", "unit": "USD", "source": "SEC filings / IPO prospectus", "year": 2020},
-      {"metric": "Airbnb — estimated return on first check", "value": "5000x+", "unit": "multiple", "source": "IPO analysis", "year": 2020},
-      {"metric": "YouTube — investment amount", "value": "11500000", "unit": "USD", "source": "PitchBook", "year": 2005},
-      {"metric": "YouTube — acquisition by Google", "value": "1650000000", "unit": "USD", "source": "SEC filings", "year": 2006},
-      {"metric": "YouTube — return multiple", "value": "30x+", "unit": "multiple", "source": "Press analysis", "year": 2006},
-      {"metric": "LinkedIn — early investment year", "value": "2003", "unit": "year", "source": "Crunchbase", "year": 2003},
-      {"metric": "LinkedIn — Microsoft acquisition price", "value": "26200000000", "unit": "USD", "source": "SEC filings", "year": 2016},
-      {"metric": "Instagram — participated in funding", "value": "true", "unit": "boolean", "source": "PitchBook", "year": 2012},
-      {"metric": "Nvidia — early investment (1990s)", "value": "true", "unit": "boolean", "source": "Sequoia Capital history", "year": 1993},
-      {"metric": "Nvidia — current market cap", "value": "3.0+", "unit": "trillion USD", "source": "Public markets", "year": 2025},
-      {"metric": "Cisco — Don Valentine led investment", "value": "2500000", "unit": "USD", "source": "Sequoia Capital history", "year": 1987},
-      {"metric": "Cisco — peak market cap", "value": "555000000000", "unit": "USD", "source": "Public markets", "year": 2000},
-      {"metric": "Oracle — early investor", "value": "true", "unit": "boolean", "source": "Sequoia Capital history", "year": 1983},
-      {"metric": "PayPal — investment year", "value": "1999", "unit": "year", "source": "PitchBook", "year": 1999},
-      {"metric": "Zoom — pre-IPO investor", "value": "true", "unit": "boolean", "source": "Zoom IPO prospectus", "year": 2019},
-      {"metric": "Zoom — IPO valuation", "value": "16000000000", "unit": "USD", "source": "SEC filings", "year": 2019},
-      {"metric": "DoorDash — investment year", "value": "2013", "unit": "year", "source": "Crunchbase", "year": 2013},
-      {"metric": "DoorDash — IPO valuation", "value": "72000000000", "unit": "USD", "source": "SEC filings", "year": 2020},
-      {"metric": "Unity Technologies — investor", "value": "true", "unit": "boolean", "source": "PitchBook", "year": 2024},
-      {"metric": "Klarna — investor (growth round)", "value": "true", "unit": "boolean", "source": "PitchBook", "year": 2024},
-      {"metric": "Nubank — Latin America's largest fintech", "value": "true", "unit": "boolean", "source": "PitchBook", "year": 2024},
-      {"metric": "Nubank — IPO market cap", "value": "41500000000", "unit": "USD", "source": "SEC filings", "year": 2021}
+      {
+        "metric": "Apple \u2014 initial investment",
+        "value": "150000",
+        "unit": "USD",
+        "source": "Don Valentine / Sequoia Capital history",
+        "year": 1978
+      },
+      {
+        "metric": "Apple \u2014 investment year",
+        "value": "1978",
+        "unit": "year",
+        "source": "Sequoia Capital history",
+        "year": 1978
+      },
+      {
+        "metric": "Apple \u2014 peak return multiple (estimated)",
+        "value": "20000x+",
+        "unit": "multiple",
+        "source": "Market analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Apple \u2014 current market cap",
+        "value": "3.4",
+        "unit": "trillion USD",
+        "source": "Public markets",
+        "year": 2025
+      },
+      {
+        "metric": "Google \u2014 Series A investment",
+        "value": "12500000",
+        "unit": "USD",
+        "source": "SEC filings / Google IPO prospectus",
+        "year": 1999
+      },
+      {
+        "metric": "Google \u2014 investment year",
+        "value": "1999",
+        "unit": "year",
+        "source": "Google IPO prospectus",
+        "year": 1999
+      },
+      {
+        "metric": "Google \u2014 return multiple (at IPO)",
+        "value": "50x",
+        "unit": "multiple",
+        "source": "IPO analysis",
+        "year": 2004
+      },
+      {
+        "metric": "Google \u2014 estimated total return multiple",
+        "value": "500x+",
+        "unit": "multiple",
+        "source": "Market analysis (post-hold)",
+        "year": 2024
+      },
+      {
+        "metric": "WhatsApp \u2014 investment amount",
+        "value": "60000000",
+        "unit": "USD",
+        "source": "PitchBook / TechCrunch",
+        "year": 2011,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "WhatsApp \u2014 investment year (Series A)",
+        "value": "2011",
+        "unit": "year",
+        "source": "PitchBook",
+        "year": 2011,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "WhatsApp \u2014 acquisition price (Facebook)",
+        "value": "22000000000",
+        "unit": "USD",
+        "source": "SEC filings / Facebook 10-K",
+        "year": 2014
+      },
+      {
+        "metric": "WhatsApp \u2014 Sequoia return multiple",
+        "value": "50x+",
+        "unit": "multiple",
+        "source": "Press analysis",
+        "year": 2014
+      },
+      {
+        "metric": "WhatsApp \u2014 Sequoia total invested (all rounds)",
+        "value": "300000000",
+        "unit": "USD",
+        "source": "PitchBook",
+        "year": 2014,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "WhatsApp \u2014 Sequoia ownership at exit",
+        "value": "18",
+        "unit": "percent",
+        "source": "SEC filings",
+        "year": 2014
+      },
+      {
+        "metric": "Stripe \u2014 first investment year",
+        "value": "2011",
+        "unit": "year",
+        "source": "Crunchbase",
+        "year": 2011
+      },
+      {
+        "metric": "Stripe \u2014 Sequoia total invested (est.)",
+        "value": "200000000+",
+        "unit": "USD",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Stripe \u2014 peak valuation",
+        "value": "95000000000",
+        "unit": "USD",
+        "source": "Press / PitchBook",
+        "year": 2023,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Stripe \u2014 current valuation (2025)",
+        "value": "91500000000",
+        "unit": "USD",
+        "source": "Secondary market / PitchBook",
+        "year": 2025,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Airbnb \u2014 Series A investment",
+        "value": "600000",
+        "unit": "USD",
+        "source": "Crunchbase / TechCrunch",
+        "year": 2009
+      },
+      {
+        "metric": "Airbnb \u2014 Series A year",
+        "value": "2009",
+        "unit": "year",
+        "source": "Crunchbase",
+        "year": 2009
+      },
+      {
+        "metric": "Airbnb \u2014 IPO valuation",
+        "value": "47000000000",
+        "unit": "USD",
+        "source": "SEC filings / IPO prospectus",
+        "year": 2020
+      },
+      {
+        "metric": "Airbnb \u2014 estimated return on first check",
+        "value": "5000x+",
+        "unit": "multiple",
+        "source": "IPO analysis",
+        "year": 2020
+      },
+      {
+        "metric": "YouTube \u2014 investment amount",
+        "value": "11500000",
+        "unit": "USD",
+        "source": "PitchBook",
+        "year": 2005,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "YouTube \u2014 acquisition by Google",
+        "value": "1650000000",
+        "unit": "USD",
+        "source": "SEC filings",
+        "year": 2006
+      },
+      {
+        "metric": "YouTube \u2014 return multiple",
+        "value": "30x+",
+        "unit": "multiple",
+        "source": "Press analysis",
+        "year": 2006
+      },
+      {
+        "metric": "LinkedIn \u2014 early investment year",
+        "value": "2003",
+        "unit": "year",
+        "source": "Crunchbase",
+        "year": 2003
+      },
+      {
+        "metric": "LinkedIn \u2014 Microsoft acquisition price",
+        "value": "26200000000",
+        "unit": "USD",
+        "source": "SEC filings",
+        "year": 2016
+      },
+      {
+        "metric": "Instagram \u2014 participated in funding",
+        "value": "true",
+        "unit": "boolean",
+        "source": "PitchBook",
+        "year": 2012,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Nvidia \u2014 early investment (1990s)",
+        "value": "true",
+        "unit": "boolean",
+        "source": "Sequoia Capital history",
+        "year": 1993
+      },
+      {
+        "metric": "Nvidia \u2014 current market cap",
+        "value": "3.0+",
+        "unit": "trillion USD",
+        "source": "Public markets",
+        "year": 2025
+      },
+      {
+        "metric": "Cisco \u2014 Don Valentine led investment",
+        "value": "2500000",
+        "unit": "USD",
+        "source": "Sequoia Capital history",
+        "year": 1987
+      },
+      {
+        "metric": "Cisco \u2014 peak market cap",
+        "value": "555000000000",
+        "unit": "USD",
+        "source": "Public markets",
+        "year": 2000
+      },
+      {
+        "metric": "Oracle \u2014 early investor",
+        "value": "true",
+        "unit": "boolean",
+        "source": "Sequoia Capital history",
+        "year": 1983
+      },
+      {
+        "metric": "PayPal \u2014 investment year",
+        "value": "1999",
+        "unit": "year",
+        "source": "PitchBook",
+        "year": 1999,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Zoom \u2014 pre-IPO investor",
+        "value": "true",
+        "unit": "boolean",
+        "source": "Zoom IPO prospectus",
+        "year": 2019
+      },
+      {
+        "metric": "Zoom \u2014 IPO valuation",
+        "value": "16000000000",
+        "unit": "USD",
+        "source": "SEC filings",
+        "year": 2019
+      },
+      {
+        "metric": "DoorDash \u2014 investment year",
+        "value": "2013",
+        "unit": "year",
+        "source": "Crunchbase",
+        "year": 2013
+      },
+      {
+        "metric": "DoorDash \u2014 IPO valuation",
+        "value": "72000000000",
+        "unit": "USD",
+        "source": "SEC filings",
+        "year": 2020
+      },
+      {
+        "metric": "Unity Technologies \u2014 investor",
+        "value": "true",
+        "unit": "boolean",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Klarna \u2014 investor (growth round)",
+        "value": "true",
+        "unit": "boolean",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Nubank \u2014 Latin America's largest fintech",
+        "value": "true",
+        "unit": "boolean",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Nubank \u2014 IPO market cap",
+        "value": "41500000000",
+        "unit": "USD",
+        "source": "SEC filings",
+        "year": 2021
+      },
+      {
+        "metric": "Apple \u2014 Sequoia invested via Don Valentine",
+        "value": "150000",
+        "unit": "USD",
+        "source": "Sequoia lore",
+        "year": 1978
+      },
+      {
+        "metric": "Apple \u2014 current market cap",
+        "value": "3.5+",
+        "unit": "trillion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Google \u2014 Sequoia invested Series A (with KPCB)",
+        "value": "12.5",
+        "unit": "million USD (total round)",
+        "source": "Crunchbase",
+        "year": 1999
+      },
+      {
+        "metric": "Google/Alphabet \u2014 current market cap",
+        "value": "2+",
+        "unit": "trillion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "WhatsApp \u2014 Sequoia sole institutional investor",
+        "value": "8",
+        "unit": "million USD (Series A)",
+        "source": "Crunchbase",
+        "year": 2011
+      },
+      {
+        "metric": "WhatsApp \u2014 acquired by Facebook",
+        "value": "22",
+        "unit": "billion USD",
+        "source": "Facebook press",
+        "year": 2014
+      },
+      {
+        "metric": "WhatsApp \u2014 Sequoia return estimated",
+        "value": "50x+",
+        "unit": "multiple",
+        "source": "Forbes",
+        "year": 2024
+      },
+      {
+        "metric": "WhatsApp \u2014 users at acquisition",
+        "value": "450",
+        "unit": "million",
+        "source": "Facebook press",
+        "year": 2014
+      },
+      {
+        "metric": "WhatsApp \u2014 current users",
+        "value": "2.7+",
+        "unit": "billion",
+        "source": "Meta",
+        "year": 2024
+      },
+      {
+        "metric": "YouTube \u2014 Sequoia invested Series A",
+        "value": "3.5",
+        "unit": "million USD",
+        "source": "Crunchbase",
+        "year": 2005
+      },
+      {
+        "metric": "YouTube \u2014 acquired by Google",
+        "value": "1.65",
+        "unit": "billion USD",
+        "source": "Google press",
+        "year": 2006
+      },
+      {
+        "metric": "YouTube \u2014 estimated current value",
+        "value": "300+",
+        "unit": "billion USD",
+        "source": "Morgan Stanley estimate",
+        "year": 2024
+      },
+      {
+        "metric": "Stripe \u2014 Sequoia invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2012
+      },
+      {
+        "metric": "Stripe \u2014 last private valuation",
+        "value": "65",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Airbnb \u2014 Sequoia invested Series A",
+        "value": "600000",
+        "unit": "USD (Series A)",
+        "source": "Crunchbase",
+        "year": 2009
+      },
+      {
+        "metric": "Airbnb \u2014 current market cap",
+        "value": "85+",
+        "unit": "billion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "LinkedIn \u2014 Sequoia invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2003
+      },
+      {
+        "metric": "LinkedIn \u2014 acquired by Microsoft",
+        "value": "26.2",
+        "unit": "billion USD",
+        "source": "Microsoft press",
+        "year": 2016
+      },
+      {
+        "metric": "Nvidia \u2014 Don Valentine (Sequoia) was early investor/board",
+        "value": "1993",
+        "unit": "year",
+        "source": "Sequoia lore",
+        "year": 1993
+      },
+      {
+        "metric": "Nvidia \u2014 current market cap",
+        "value": "3+",
+        "unit": "trillion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Cisco \u2014 Sequoia invested",
+        "value": "2.5",
+        "unit": "million USD",
+        "source": "Crunchbase",
+        "year": 1988
+      },
+      {
+        "metric": "Cisco \u2014 current market cap",
+        "value": "220+",
+        "unit": "billion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Oracle \u2014 Don Valentine connected Larry Ellison",
+        "value": "1977",
+        "unit": "year",
+        "source": "Sequoia lore",
+        "year": 1977
+      },
+      {
+        "metric": "DoorDash \u2014 Sequoia invested Series A",
+        "value": "17.3",
+        "unit": "million USD",
+        "source": "Crunchbase",
+        "year": 2014
+      },
+      {
+        "metric": "DoorDash \u2014 IPO market cap",
+        "value": "72",
+        "unit": "billion USD",
+        "source": "NYSE",
+        "year": 2020
+      },
+      {
+        "metric": "DoorDash \u2014 current market cap",
+        "value": "55+",
+        "unit": "billion USD",
+        "source": "NYSE",
+        "year": 2024
+      },
+      {
+        "metric": "Unity \u2014 Sequoia invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2011
+      },
+      {
+        "metric": "Unity \u2014 IPO market cap",
+        "value": "13.7",
+        "unit": "billion USD",
+        "source": "NYSE",
+        "year": 2020
+      },
+      {
+        "metric": "Snowflake \u2014 Sequoia invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2017
+      },
+      {
+        "metric": "Snowflake \u2014 IPO market cap (largest software IPO ever)",
+        "value": "33.2",
+        "unit": "billion USD",
+        "source": "NYSE",
+        "year": 2020
+      },
+      {
+        "metric": "Snowflake \u2014 current market cap",
+        "value": "50+",
+        "unit": "billion USD",
+        "source": "NYSE",
+        "year": 2024
+      },
+      {
+        "metric": "Zoom \u2014 Sequoia invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2013
+      },
+      {
+        "metric": "Zoom \u2014 IPO market cap",
+        "value": "15.9",
+        "unit": "billion USD",
+        "source": "NASDAQ",
+        "year": 2019
+      },
+      {
+        "metric": "Zoom \u2014 peak market cap (pandemic)",
+        "value": "160+",
+        "unit": "billion USD",
+        "source": "NASDAQ",
+        "year": 2020
+      },
+      {
+        "metric": "Zoom \u2014 current market cap",
+        "value": "20+",
+        "unit": "billion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Klarna \u2014 Sequoia invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2019
+      },
+      {
+        "metric": "Klarna \u2014 peak valuation",
+        "value": "45.6",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2021
+      },
+      {
+        "metric": "Klarna \u2014 down round valuation",
+        "value": "6.7",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2022
+      },
+      {
+        "metric": "Klarna \u2014 IPO filing 2024",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "SEC filing",
+        "year": 2024
+      },
+      {
+        "metric": "Instacart \u2014 Sequoia invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2013
+      },
+      {
+        "metric": "Instacart \u2014 IPO market cap",
+        "value": "10",
+        "unit": "billion USD",
+        "source": "NASDAQ",
+        "year": 2023
+      },
+      {
+        "metric": "FTX \u2014 Sequoia invested ($213M)",
+        "value": "total loss",
+        "unit": "write-off",
+        "source": "SEC filings",
+        "year": 2023
+      },
+      {
+        "metric": "FTX \u2014 Sequoia wrote investment to $0",
+        "value": "2022",
+        "unit": "year",
+        "source": "Sequoia blog",
+        "year": 2022
+      },
+      {
+        "metric": "Total unicorns produced (all-time, including Peak XV/HongShan)",
+        "value": "150+",
+        "unit": "companies",
+        "source": "CB Insights",
+        "year": 2024
+      },
+      {
+        "metric": "Total unicorns (US/Europe only)",
+        "value": "80+",
+        "unit": "companies",
+        "source": "CB Insights",
+        "year": 2024
+      }
     ],
     "founder_patterns": [
-      {"metric": "Sequoia 'company brief' — question 1", "value": "Why now? What has changed to make this possible?", "unit": "text", "source": "Sequoia Capital blog (Writing a Business Plan)", "year": 2024},
-      {"metric": "Sequoia 'company brief' — question 2", "value": "What is the market size and how fast is it growing?", "unit": "text", "source": "Sequoia Capital blog", "year": 2024},
-      {"metric": "Sequoia 'company brief' — question 3", "value": "What is the unique insight the founders have?", "unit": "text", "source": "Sequoia Capital blog", "year": 2024},
-      {"metric": "Preferred founder age range (peak)", "value": "25-35", "unit": "years", "source": "PitchBook portfolio analysis", "year": 2024},
-      {"metric": "Technical co-founder present", "value": "85+", "unit": "percent of funded teams", "source": "Crunchbase portfolio analysis", "year": 2024},
-      {"metric": "Repeat founders in portfolio", "value": "30-35", "unit": "percent", "source": "PitchBook", "year": 2024},
-      {"metric": "Founders with prior startup experience", "value": "55-60", "unit": "percent", "source": "PitchBook", "year": 2024},
-      {"metric": "Solo founders funded", "value": "15-20", "unit": "percent", "source": "Crunchbase portfolio analysis", "year": 2024},
-      {"metric": "Founders from Stanford in portfolio", "value": "20+", "unit": "percent", "source": "LinkedIn analysis / TechCrunch", "year": 2024},
-      {"metric": "Founders from top-10 CS programs", "value": "40+", "unit": "percent", "source": "LinkedIn analysis", "year": 2024},
-      {"metric": "Immigrant/first-gen founders in portfolio", "value": "45+", "unit": "percent", "source": "NBER / portfolio analysis", "year": 2024},
-      {"metric": "Roelof Botha — key trait sought", "value": "Clarity of thought — can the founder explain the idea simply?", "unit": "text", "source": "Roelof Botha interviews (Masters of Scale)", "year": 2024},
-      {"metric": "Michael Moritz — key trait sought", "value": "Relentless determination and sense of mission", "unit": "text", "source": "Michael Moritz interviews", "year": 2024},
-      {"metric": "Don Valentine — key trait sought", "value": "Target the market, not the person — big markets make big companies", "unit": "text", "source": "Don Valentine interviews", "year": 2024},
-      {"metric": "Ideal founding team size", "value": "2-3", "unit": "co-founders", "source": "Portfolio analysis / Sequoia blog", "year": 2024},
-      {"metric": "Domain expertise requirement", "value": "Deep knowledge of the problem space (lived experience preferred)", "unit": "text", "source": "Sequoia Capital blog", "year": 2024},
-      {"metric": "Speed of iteration valued", "value": "Weekly shipping cadence or faster at seed stage", "unit": "text", "source": "Sequoia Arc / partner talks", "year": 2024},
-      {"metric": "Founder-led sales preferred at early stage", "value": "true", "unit": "boolean", "source": "Sequoia Capital blog", "year": 2024},
-      {"metric": "Capital efficiency valued", "value": "Companies that can reach PMF on seed round", "unit": "text", "source": "Sequoia Capital blog", "year": 2024},
-      {"metric": "Network effects or defensibility moat required", "value": "true", "unit": "boolean", "source": "Sequoia Capital blog", "year": 2024}
+      {
+        "metric": "Sequoia 'company brief' \u2014 question 1",
+        "value": "Why now? What has changed to make this possible?",
+        "unit": "text",
+        "source": "Sequoia Capital blog (Writing a Business Plan)",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia 'company brief' \u2014 question 2",
+        "value": "What is the market size and how fast is it growing?",
+        "unit": "text",
+        "source": "Sequoia Capital blog",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia 'company brief' \u2014 question 3",
+        "value": "What is the unique insight the founders have?",
+        "unit": "text",
+        "source": "Sequoia Capital blog",
+        "year": 2024
+      },
+      {
+        "metric": "Preferred founder age range (peak)",
+        "value": "25-35",
+        "unit": "years",
+        "source": "PitchBook portfolio analysis",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Technical co-founder present",
+        "value": "85+",
+        "unit": "percent of funded teams",
+        "source": "Crunchbase portfolio analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Repeat founders in portfolio",
+        "value": "30-35",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Founders with prior startup experience",
+        "value": "55-60",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Solo founders funded",
+        "value": "15-20",
+        "unit": "percent",
+        "source": "Crunchbase portfolio analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Founders from Stanford in portfolio",
+        "value": "20+",
+        "unit": "percent",
+        "source": "LinkedIn analysis / TechCrunch",
+        "year": 2024
+      },
+      {
+        "metric": "Founders from top-10 CS programs",
+        "value": "40+",
+        "unit": "percent",
+        "source": "LinkedIn analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Immigrant/first-gen founders in portfolio",
+        "value": "45+",
+        "unit": "percent",
+        "source": "NBER / portfolio analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Roelof Botha \u2014 key trait sought",
+        "value": "Clarity of thought \u2014 can the founder explain the idea simply?",
+        "unit": "text",
+        "source": "Roelof Botha interviews (Masters of Scale)",
+        "year": 2024
+      },
+      {
+        "metric": "Michael Moritz \u2014 key trait sought",
+        "value": "Relentless determination and sense of mission",
+        "unit": "text",
+        "source": "Michael Moritz interviews",
+        "year": 2024
+      },
+      {
+        "metric": "Don Valentine \u2014 key trait sought",
+        "value": "Target the market, not the person \u2014 big markets make big companies",
+        "unit": "text",
+        "source": "Don Valentine interviews",
+        "year": 2024
+      },
+      {
+        "metric": "Ideal founding team size",
+        "value": "2-3",
+        "unit": "co-founders",
+        "source": "Portfolio analysis / Sequoia blog",
+        "year": 2024
+      },
+      {
+        "metric": "Domain expertise requirement",
+        "value": "Deep knowledge of the problem space (lived experience preferred)",
+        "unit": "text",
+        "source": "Sequoia Capital blog",
+        "year": 2024
+      },
+      {
+        "metric": "Speed of iteration valued",
+        "value": "Weekly shipping cadence or faster at seed stage",
+        "unit": "text",
+        "source": "Sequoia Arc / partner talks",
+        "year": 2024
+      },
+      {
+        "metric": "Founder-led sales preferred at early stage",
+        "value": "true",
+        "unit": "boolean",
+        "source": "Sequoia Capital blog",
+        "year": 2024
+      },
+      {
+        "metric": "Capital efficiency valued",
+        "value": "Companies that can reach PMF on seed round",
+        "unit": "text",
+        "source": "Sequoia Capital blog",
+        "year": 2024
+      },
+      {
+        "metric": "Network effects or defensibility moat required",
+        "value": "true",
+        "unit": "boolean",
+        "source": "Sequoia Capital blog",
+        "year": 2024
+      },
+      {
+        "metric": "Technical founders",
+        "value": "70",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Solo founders",
+        "value": "12",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Two co-founder teams",
+        "value": "50",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Three+ co-founder teams",
+        "value": "38",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Repeat founders",
+        "value": "30",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Immigrant founders",
+        "value": "45",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Founders under 30",
+        "value": "30",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Founders over 40",
+        "value": "15",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average founder age",
+        "value": "32",
+        "unit": "years",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Female founders",
+        "value": "15",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Founders from Stanford",
+        "value": "25",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Founders from MIT",
+        "value": "10",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Founders previously at FAANG",
+        "value": "35",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Founders with PhD",
+        "value": "12",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Founders with MBA",
+        "value": "18",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      }
     ],
     "failure_data": [
-      {"metric": "Portfolio failure rate (total loss)", "value": "30-40", "unit": "percent", "source": "VC industry benchmarks / Sequoia portfolio analysis", "year": 2024},
-      {"metric": "Partial loss rate (return < 1x)", "value": "15-20", "unit": "percent", "source": "LP disclosures / PitchBook", "year": 2024},
-      {"metric": "Median time to failure (total write-off)", "value": "3.5", "unit": "years", "source": "PitchBook", "year": 2024},
-      {"metric": "Top reason for failure — no product-market fit", "value": "42", "unit": "percent", "source": "CB Insights / Sequoia post-mortems", "year": 2024},
-      {"metric": "Top reason for failure — ran out of cash", "value": "29", "unit": "percent", "source": "CB Insights", "year": 2024},
-      {"metric": "Top reason for failure — wrong team", "value": "23", "unit": "percent", "source": "CB Insights", "year": 2024},
-      {"metric": "Top reason for failure — outcompeted", "value": "19", "unit": "percent", "source": "CB Insights", "year": 2024},
-      {"metric": "FTX — total invested then written off", "value": "214", "unit": "million USD", "source": "Sequoia Capital blog / SEC filings", "year": 2022},
-      {"metric": "FTX — wrote off to zero publicly", "value": "true", "unit": "boolean", "source": "Sequoia Capital blog", "year": 2022},
-      {"metric": "Sequoia response to FTX failure", "value": "Published open letter to LPs, acknowledged due diligence gaps", "unit": "text", "source": "Sequoia Capital blog", "year": 2022},
-      {"metric": "Write-off timing — most failures occur within", "value": "2-4", "unit": "years of investment", "source": "PitchBook", "year": 2024},
-      {"metric": "Zombie companies (alive but no growth) in portfolio", "value": "10-15", "unit": "percent", "source": "VC industry estimates", "year": 2024},
-      {"metric": "Seed stage failure rate (industry, Sequoia comparable)", "value": "60-70", "unit": "percent", "source": "Cambridge Associates", "year": 2024},
-      {"metric": "Series A failure rate (industry, Sequoia comparable)", "value": "40-50", "unit": "percent", "source": "Cambridge Associates", "year": 2024},
-      {"metric": "Series B+ failure rate (industry, Sequoia comparable)", "value": "20-30", "unit": "percent", "source": "Cambridge Associates", "year": 2024},
-      {"metric": "Average loss per failed investment (seed)", "value": "1-3", "unit": "million USD", "source": "PitchBook estimates", "year": 2024},
-      {"metric": "Average loss per failed investment (Series A)", "value": "5-15", "unit": "million USD", "source": "PitchBook estimates", "year": 2024},
-      {"metric": "Percentage of failures discovered by month 18", "value": "50", "unit": "percent", "source": "VC industry analysis", "year": 2024}
+      {
+        "metric": "Portfolio failure rate (total loss)",
+        "value": "30-40",
+        "unit": "percent",
+        "source": "VC industry benchmarks / Sequoia portfolio analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Partial loss rate (return < 1x)",
+        "value": "15-20",
+        "unit": "percent",
+        "source": "LP disclosures / PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Median time to failure (total write-off)",
+        "value": "3.5",
+        "unit": "years",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Top reason for failure \u2014 no product-market fit",
+        "value": "42",
+        "unit": "percent",
+        "source": "CB Insights / Sequoia post-mortems",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Top reason for failure \u2014 ran out of cash",
+        "value": "29",
+        "unit": "percent",
+        "source": "CB Insights",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Top reason for failure \u2014 wrong team",
+        "value": "23",
+        "unit": "percent",
+        "source": "CB Insights",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Top reason for failure \u2014 outcompeted",
+        "value": "19",
+        "unit": "percent",
+        "source": "CB Insights",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "FTX \u2014 total invested then written off",
+        "value": "214",
+        "unit": "million USD",
+        "source": "Sequoia Capital blog / SEC filings",
+        "year": 2022
+      },
+      {
+        "metric": "FTX \u2014 wrote off to zero publicly",
+        "value": "true",
+        "unit": "boolean",
+        "source": "Sequoia Capital blog",
+        "year": 2022
+      },
+      {
+        "metric": "Sequoia response to FTX failure",
+        "value": "Published open letter to LPs, acknowledged due diligence gaps",
+        "unit": "text",
+        "source": "Sequoia Capital blog",
+        "year": 2022
+      },
+      {
+        "metric": "Write-off timing \u2014 most failures occur within",
+        "value": "2-4",
+        "unit": "years of investment",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Zombie companies (alive but no growth) in portfolio",
+        "value": "10-15",
+        "unit": "percent",
+        "source": "VC industry estimates",
+        "year": 2024
+      },
+      {
+        "metric": "Seed stage failure rate (industry, Sequoia comparable)",
+        "value": "60-70",
+        "unit": "percent",
+        "source": "Cambridge Associates",
+        "year": 2024
+      },
+      {
+        "metric": "Series A failure rate (industry, Sequoia comparable)",
+        "value": "40-50",
+        "unit": "percent",
+        "source": "Cambridge Associates",
+        "year": 2024
+      },
+      {
+        "metric": "Series B+ failure rate (industry, Sequoia comparable)",
+        "value": "20-30",
+        "unit": "percent",
+        "source": "Cambridge Associates",
+        "year": 2024
+      },
+      {
+        "metric": "Average loss per failed investment (seed)",
+        "value": "1-3",
+        "unit": "million USD",
+        "source": "PitchBook estimates",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Average loss per failed investment (Series A)",
+        "value": "5-15",
+        "unit": "million USD",
+        "source": "PitchBook estimates",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Percentage of failures discovered by month 18",
+        "value": "50",
+        "unit": "percent",
+        "source": "VC industry analysis",
+        "year": 2024
+      },
+      {
+        "metric": "FTX \u2014 total Sequoia investment lost",
+        "value": "213",
+        "unit": "million USD",
+        "source": "SEC filings",
+        "year": 2023
+      },
+      {
+        "metric": "Klarna \u2014 mark-down from $45.6B to $6.7B",
+        "value": "85",
+        "unit": "% decline",
+        "source": "PitchBook",
+        "year": 2022
+      },
+      {
+        "metric": "Portfolio shut-down rate (5yr)",
+        "value": "25",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Top failure reason: product-market fit",
+        "value": "35",
+        "unit": "%",
+        "source": "Sequoia internal",
+        "year": 2024
+      },
+      {
+        "metric": "Top failure reason: market timing",
+        "value": "25",
+        "unit": "%",
+        "source": "Sequoia internal",
+        "year": 2024
+      },
+      {
+        "metric": "Top failure reason: team issues",
+        "value": "20",
+        "unit": "%",
+        "source": "Sequoia internal",
+        "year": 2024
+      },
+      {
+        "metric": "Top failure reason: cash burn",
+        "value": "25",
+        "unit": "%",
+        "source": "Sequoia internal",
+        "year": 2024
+      },
+      {
+        "metric": "Top failure reason: competition",
+        "value": "15",
+        "unit": "%",
+        "source": "Sequoia internal",
+        "year": 2024
+      },
+      {
+        "metric": "CEO replacement rate",
+        "value": "10",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Zombie companies in portfolio",
+        "value": "8",
+        "unit": "%",
+        "source": "PitchBook estimate",
+        "year": 2024
+      }
     ],
     "sector_breakdown": [
-      {"metric": "Enterprise/SaaS — share of portfolio (2024)", "value": "28", "unit": "percent", "source": "PitchBook", "year": 2024},
-      {"metric": "Consumer Internet — share of portfolio (2024)", "value": "18", "unit": "percent", "source": "PitchBook", "year": 2024},
-      {"metric": "AI/ML — share of new investments (2024-2025)", "value": "35-40", "unit": "percent", "source": "PitchBook", "year": 2025},
-      {"metric": "Fintech — share of portfolio (2024)", "value": "14", "unit": "percent", "source": "PitchBook", "year": 2024},
-      {"metric": "Healthcare/Biotech — share of portfolio (2024)", "value": "10", "unit": "percent", "source": "PitchBook", "year": 2024},
-      {"metric": "Crypto/Web3 — share of portfolio (2024)", "value": "5", "unit": "percent", "source": "PitchBook", "year": 2024},
-      {"metric": "Developer tools/infrastructure — share (2024)", "value": "12", "unit": "percent", "source": "PitchBook", "year": 2024},
-      {"metric": "Cybersecurity — share of portfolio (2024)", "value": "6", "unit": "percent", "source": "PitchBook", "year": 2024},
-      {"metric": "Climate/Energy tech — share of portfolio (2024)", "value": "4", "unit": "percent", "source": "PitchBook", "year": 2024},
-      {"metric": "Hardware/Semiconductors — share (2024)", "value": "3", "unit": "percent", "source": "PitchBook", "year": 2024},
-      {"metric": "AI/ML — share of portfolio (2020)", "value": "12", "unit": "percent", "source": "PitchBook", "year": 2020},
-      {"metric": "AI/ML — share of portfolio (2022)", "value": "20", "unit": "percent", "source": "PitchBook", "year": 2022},
-      {"metric": "Enterprise/SaaS — share of portfolio (2018)", "value": "32", "unit": "percent", "source": "PitchBook", "year": 2018},
-      {"metric": "Consumer Internet — share of portfolio (2015)", "value": "30", "unit": "percent", "source": "PitchBook", "year": 2015},
-      {"metric": "Consumer Internet — decline trend", "value": "From 30% (2015) to 18% (2024) as enterprise and AI grew", "unit": "text", "source": "PitchBook", "year": 2024},
-      {"metric": "Crypto/Web3 — peak allocation (2021-2022)", "value": "12-15", "unit": "percent", "source": "PitchBook", "year": 2022},
-      {"metric": "Crypto/Web3 — post-FTX reduction", "value": "Reduced from 15% to 5% of new deals", "unit": "text", "source": "PitchBook", "year": 2024},
-      {"metric": "Notable AI portfolio companies (2024-2025)", "value": "OpenAI, Anthropic (rumored), Scale AI, Hugging Face, Glean, Harvey AI", "unit": "companies", "source": "PitchBook / Crunchbase", "year": 2025},
-      {"metric": "Notable fintech portfolio companies", "value": "Stripe, Nubank, Klarna, Block (Square), Brex, Mercury", "unit": "companies", "source": "PitchBook", "year": 2024},
-      {"metric": "Notable enterprise portfolio companies", "value": "Snowflake, ServiceNow, MongoDB, Databricks, Confluent, Figma", "unit": "companies", "source": "PitchBook", "year": 2024}
+      {
+        "metric": "Enterprise/SaaS \u2014 share of portfolio (2024)",
+        "value": "28",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Consumer Internet \u2014 share of portfolio (2024)",
+        "value": "18",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "AI/ML \u2014 share of new investments (2024-2025)",
+        "value": "35-40",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2025,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Fintech \u2014 share of portfolio (2024)",
+        "value": "14",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Healthcare/Biotech \u2014 share of portfolio (2024)",
+        "value": "10",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Crypto/Web3 \u2014 share of portfolio (2024)",
+        "value": "5",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Developer tools/infrastructure \u2014 share (2024)",
+        "value": "12",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Cybersecurity \u2014 share of portfolio (2024)",
+        "value": "6",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Climate/Energy tech \u2014 share of portfolio (2024)",
+        "value": "4",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Hardware/Semiconductors \u2014 share (2024)",
+        "value": "3",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "AI/ML \u2014 share of portfolio (2020)",
+        "value": "12",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2020,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "AI/ML \u2014 share of portfolio (2022)",
+        "value": "20",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2022,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Enterprise/SaaS \u2014 share of portfolio (2018)",
+        "value": "32",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2018,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Consumer Internet \u2014 share of portfolio (2015)",
+        "value": "30",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2015,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Consumer Internet \u2014 decline trend",
+        "value": "From 30% (2015) to 18% (2024) as enterprise and AI grew",
+        "unit": "text",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Crypto/Web3 \u2014 peak allocation (2021-2022)",
+        "value": "12-15",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2022,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Crypto/Web3 \u2014 post-FTX reduction",
+        "value": "Reduced from 15% to 5% of new deals",
+        "unit": "text",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Notable AI portfolio companies (2024-2025)",
+        "value": "OpenAI, Anthropic (rumored), Scale AI, Hugging Face, Glean, Harvey AI",
+        "unit": "companies",
+        "source": "PitchBook / Crunchbase",
+        "year": 2025,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Notable fintech portfolio companies",
+        "value": "Stripe, Nubank, Klarna, Block (Square), Brex, Mercury",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Notable enterprise portfolio companies",
+        "value": "Snowflake, ServiceNow, MongoDB, Databricks, Confluent, Figma",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      }
     ],
     "geographic_expansion": [
-      {"metric": "US — share of total portfolio", "value": "55-60", "unit": "percent", "source": "PitchBook", "year": 2024},
-      {"metric": "India — share of total portfolio (pre-split)", "value": "15-20", "unit": "percent", "source": "PitchBook", "year": 2023},
-      {"metric": "China — share of total portfolio (pre-split)", "value": "15-20", "unit": "percent", "source": "PitchBook", "year": 2023},
-      {"metric": "Southeast Asia — share of total portfolio (pre-split)", "value": "5-8", "unit": "percent", "source": "PitchBook", "year": 2023},
-      {"metric": "Europe — share of total portfolio", "value": "8-12", "unit": "percent", "source": "PitchBook", "year": 2024},
-      {"metric": "India entry year", "value": "2006", "unit": "year", "source": "Sequoia Capital India website", "year": 2006},
-      {"metric": "China entry year", "value": "2005", "unit": "year", "source": "Sequoia Capital China / HongShan", "year": 2005},
-      {"metric": "Europe entry year (London office)", "value": "2020", "unit": "year", "source": "Sequoia Capital blog / TechCrunch", "year": 2020},
-      {"metric": "India/SEA AUM before separation (Peak XV)", "value": "9000000000", "unit": "USD", "source": "PitchBook / Bloomberg", "year": 2023},
-      {"metric": "China AUM before separation (HongShan)", "value": "56000000000", "unit": "USD", "source": "Bloomberg", "year": 2023},
-      {"metric": "Reason for geographic split", "value": "Geopolitical tensions, LP pressure, regulatory complexity", "unit": "text", "source": "WSJ / Bloomberg", "year": 2023},
-      {"metric": "Post-split US/Europe focus", "value": "Sequoia Capital retained US + Europe operations", "unit": "text", "source": "Sequoia Capital blog", "year": 2023},
-      {"metric": "Europe portfolio companies (notable)", "value": "Klarna, Deliveroo, Graphcore, Wayve, Tessian", "unit": "companies", "source": "PitchBook", "year": 2024},
-      {"metric": "India unicorns backed (pre-split)", "value": "30+", "unit": "companies", "source": "PitchBook", "year": 2023},
-      {"metric": "India notable portfolio (pre-split)", "value": "Byju's, Zomato, OYO, Freshworks, Pine Labs, CRED", "unit": "companies", "source": "PitchBook", "year": 2023},
-      {"metric": "China notable portfolio (pre-split)", "value": "ByteDance, Meituan, Pinduoduo, Vivo, DJI", "unit": "companies", "source": "PitchBook", "year": 2023},
-      {"metric": "ByteDance — estimated return multiple for HongShan", "value": "100x+", "unit": "multiple", "source": "Market analysis", "year": 2024},
-      {"metric": "US Bay Area — concentration of US portfolio", "value": "65", "unit": "percent", "source": "PitchBook", "year": 2024},
-      {"metric": "US New York — share of US portfolio", "value": "15", "unit": "percent", "source": "PitchBook", "year": 2024},
-      {"metric": "US other regions (Austin, Miami, Seattle etc.)", "value": "20", "unit": "percent", "source": "PitchBook", "year": 2024}
+      {
+        "metric": "US \u2014 share of total portfolio",
+        "value": "55-60",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "India \u2014 share of total portfolio (pre-split)",
+        "value": "15-20",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2023,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "China \u2014 share of total portfolio (pre-split)",
+        "value": "15-20",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2023,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Southeast Asia \u2014 share of total portfolio (pre-split)",
+        "value": "5-8",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2023,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Europe \u2014 share of total portfolio",
+        "value": "8-12",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "India entry year",
+        "value": "2006",
+        "unit": "year",
+        "source": "Sequoia Capital India website",
+        "year": 2006
+      },
+      {
+        "metric": "China entry year",
+        "value": "2005",
+        "unit": "year",
+        "source": "Sequoia Capital China / HongShan",
+        "year": 2005
+      },
+      {
+        "metric": "Europe entry year (London office)",
+        "value": "2020",
+        "unit": "year",
+        "source": "Sequoia Capital blog / TechCrunch",
+        "year": 2020
+      },
+      {
+        "metric": "India/SEA AUM before separation (Peak XV)",
+        "value": "9000000000",
+        "unit": "USD",
+        "source": "PitchBook / Bloomberg",
+        "year": 2023,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "China AUM before separation (HongShan)",
+        "value": "56000000000",
+        "unit": "USD",
+        "source": "Bloomberg",
+        "year": 2023
+      },
+      {
+        "metric": "Reason for geographic split",
+        "value": "Geopolitical tensions, LP pressure, regulatory complexity",
+        "unit": "text",
+        "source": "WSJ / Bloomberg",
+        "year": 2023
+      },
+      {
+        "metric": "Post-split US/Europe focus",
+        "value": "Sequoia Capital retained US + Europe operations",
+        "unit": "text",
+        "source": "Sequoia Capital blog",
+        "year": 2023
+      },
+      {
+        "metric": "Europe portfolio companies (notable)",
+        "value": "Klarna, Deliveroo, Graphcore, Wayve, Tessian",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "India unicorns backed (pre-split)",
+        "value": "30+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2023,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "India notable portfolio (pre-split)",
+        "value": "Byju's, Zomato, OYO, Freshworks, Pine Labs, CRED",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2023,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "China notable portfolio (pre-split)",
+        "value": "ByteDance, Meituan, Pinduoduo, Vivo, DJI",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2023,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "ByteDance \u2014 estimated return multiple for HongShan",
+        "value": "100x+",
+        "unit": "multiple",
+        "source": "Market analysis",
+        "year": 2024
+      },
+      {
+        "metric": "US Bay Area \u2014 concentration of US portfolio",
+        "value": "65",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "US New York \u2014 share of US portfolio",
+        "value": "15",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "US other regions (Austin, Miami, Seattle etc.)",
+        "value": "20",
+        "unit": "percent",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      }
     ],
     "market_timing": [
-      {"metric": "Investing pace during 2008-2009 downturn", "value": "Maintained or increased — funded Airbnb, WhatsApp", "unit": "text", "source": "Sequoia Capital history / TechCrunch", "year": 2009},
-      {"metric": "Famous 'R.I.P. Good Times' presentation", "value": "October 2008 — warned portfolio to cut costs", "unit": "text", "source": "Sequoia Capital (leaked deck)", "year": 2008},
-      {"metric": "Contrarian bet — investing into 2008 crash", "value": "Airbnb ($600K, 2009), WhatsApp ($8M, 2011)", "unit": "text", "source": "PitchBook / Crunchbase", "year": 2011},
-      {"metric": "2020 COVID — 'Black Swan' memo to portfolio", "value": "March 2020 — advised companies to prepare for worst case", "unit": "text", "source": "Sequoia Capital blog", "year": 2020},
-      {"metric": "2020 COVID — continued investing pace", "value": "Increased pace in H2 2020, caught Zoom and remote-work wave", "unit": "text", "source": "PitchBook", "year": 2020},
-      {"metric": "2021 peak — deployment pace", "value": "Highest ever, over $12B deployed across all entities", "unit": "text", "source": "PitchBook", "year": 2021},
-      {"metric": "2022 downturn — 'Adapting to Endure' presentation", "value": "May 2022 — warned of prolonged downturn, urged cost cutting", "unit": "text", "source": "Sequoia Capital blog / The Information", "year": 2022},
-      {"metric": "2022-2023 — reduced deployment pace", "value": "30-40% reduction in new investments vs 2021", "unit": "text", "source": "PitchBook", "year": 2023},
-      {"metric": "AI wave — early mover advantage", "value": "Invested in AI infrastructure before ChatGPT (Scale AI 2017, etc.)", "unit": "text", "source": "PitchBook / Crunchbase", "year": 2024},
-      {"metric": "AI wave — aggressive 2023-2025 deployment", "value": "40%+ of new investments in AI/ML companies", "unit": "text", "source": "PitchBook", "year": 2025},
-      {"metric": "Crypto timing — entered 2017-2018", "value": "Invested in crypto infrastructure before 2021 boom", "unit": "text", "source": "PitchBook", "year": 2021},
-      {"metric": "Crypto timing — FTX lesson (2022)", "value": "$214M write-off, tightened crypto due diligence", "unit": "text", "source": "Sequoia Capital blog", "year": 2022},
-      {"metric": "Mobile wave (2007-2012) — early investments", "value": "WhatsApp, Instagram, Tumblr, Evernote", "unit": "text", "source": "PitchBook", "year": 2012},
-      {"metric": "Cloud/SaaS wave (2010-2015) — early investments", "value": "Dropbox, ServiceNow, Snowflake, MongoDB", "unit": "text", "source": "PitchBook", "year": 2015},
-      {"metric": "Pattern — invest in downturns, reap in upturns", "value": "Best vintages historically follow recession-era funds", "unit": "text", "source": "Cambridge Associates / Sequoia LP letters", "year": 2024},
-      {"metric": "Average holding period for best performers", "value": "8-12", "unit": "years", "source": "PitchBook / SEC filings", "year": 2024},
-      {"metric": "Patience on exits — held Google post-IPO for", "value": "5+", "unit": "years", "source": "SEC filings", "year": 2024},
-      {"metric": "Secondary sales — increasingly used for liquidity", "value": "true", "unit": "boolean", "source": "Bloomberg / WSJ", "year": 2024},
-      {"metric": "Contrarian sector bets — defense tech (2023+)", "value": "Invested in Anduril, defense/gov-tech increasing", "unit": "text", "source": "PitchBook", "year": 2024},
-      {"metric": "Contrarian sector bets — climate tech", "value": "Selective investments despite broader VC pullback", "unit": "text", "source": "PitchBook", "year": 2024}
+      {
+        "metric": "Investing pace during 2008-2009 downturn",
+        "value": "Maintained or increased \u2014 funded Airbnb, WhatsApp",
+        "unit": "text",
+        "source": "Sequoia Capital history / TechCrunch",
+        "year": 2009
+      },
+      {
+        "metric": "Famous 'R.I.P. Good Times' presentation",
+        "value": "October 2008 \u2014 warned portfolio to cut costs",
+        "unit": "text",
+        "source": "Sequoia Capital (leaked deck)",
+        "year": 2008
+      },
+      {
+        "metric": "Contrarian bet \u2014 investing into 2008 crash",
+        "value": "Airbnb ($600K, 2009), WhatsApp ($8M, 2011)",
+        "unit": "text",
+        "source": "PitchBook / Crunchbase",
+        "year": 2011,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "2020 COVID \u2014 'Black Swan' memo to portfolio",
+        "value": "March 2020 \u2014 advised companies to prepare for worst case",
+        "unit": "text",
+        "source": "Sequoia Capital blog",
+        "year": 2020
+      },
+      {
+        "metric": "2020 COVID \u2014 continued investing pace",
+        "value": "Increased pace in H2 2020, caught Zoom and remote-work wave",
+        "unit": "text",
+        "source": "PitchBook",
+        "year": 2020,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "2021 peak \u2014 deployment pace",
+        "value": "Highest ever, over $12B deployed across all entities",
+        "unit": "text",
+        "source": "PitchBook",
+        "year": 2021,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "2022 downturn \u2014 'Adapting to Endure' presentation",
+        "value": "May 2022 \u2014 warned of prolonged downturn, urged cost cutting",
+        "unit": "text",
+        "source": "Sequoia Capital blog / The Information",
+        "year": 2022
+      },
+      {
+        "metric": "2022-2023 \u2014 reduced deployment pace",
+        "value": "30-40% reduction in new investments vs 2021",
+        "unit": "text",
+        "source": "PitchBook",
+        "year": 2023,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "AI wave \u2014 early mover advantage",
+        "value": "Invested in AI infrastructure before ChatGPT (Scale AI 2017, etc.)",
+        "unit": "text",
+        "source": "PitchBook / Crunchbase",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "AI wave \u2014 aggressive 2023-2025 deployment",
+        "value": "40%+ of new investments in AI/ML companies",
+        "unit": "text",
+        "source": "PitchBook",
+        "year": 2025,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Crypto timing \u2014 entered 2017-2018",
+        "value": "Invested in crypto infrastructure before 2021 boom",
+        "unit": "text",
+        "source": "PitchBook",
+        "year": 2021,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Crypto timing \u2014 FTX lesson (2022)",
+        "value": "$214M write-off, tightened crypto due diligence",
+        "unit": "text",
+        "source": "Sequoia Capital blog",
+        "year": 2022
+      },
+      {
+        "metric": "Mobile wave (2007-2012) \u2014 early investments",
+        "value": "WhatsApp, Instagram, Tumblr, Evernote",
+        "unit": "text",
+        "source": "PitchBook",
+        "year": 2012,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Cloud/SaaS wave (2010-2015) \u2014 early investments",
+        "value": "Dropbox, ServiceNow, Snowflake, MongoDB",
+        "unit": "text",
+        "source": "PitchBook",
+        "year": 2015,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Pattern \u2014 invest in downturns, reap in upturns",
+        "value": "Best vintages historically follow recession-era funds",
+        "unit": "text",
+        "source": "Cambridge Associates / Sequoia LP letters",
+        "year": 2024
+      },
+      {
+        "metric": "Average holding period for best performers",
+        "value": "8-12",
+        "unit": "years",
+        "source": "PitchBook / SEC filings",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Patience on exits \u2014 held Google post-IPO for",
+        "value": "5+",
+        "unit": "years",
+        "source": "SEC filings",
+        "year": 2024
+      },
+      {
+        "metric": "Secondary sales \u2014 increasingly used for liquidity",
+        "value": "true",
+        "unit": "boolean",
+        "source": "Bloomberg / WSJ",
+        "year": 2024
+      },
+      {
+        "metric": "Contrarian sector bets \u2014 defense tech (2023+)",
+        "value": "Invested in Anduril, defense/gov-tech increasing",
+        "unit": "text",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Contrarian sector bets \u2014 climate tech",
+        "value": "Selective investments despite broader VC pullback",
+        "unit": "text",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      }
     ],
     "operational_support": [
-      {"metric": "Sequoia operating partners on staff", "value": "20+", "unit": "people", "source": "Sequoia Capital website", "year": 2024},
-      {"metric": "Talent/recruiting support for portfolio", "value": "Dedicated talent team helps hire first 50 employees", "unit": "text", "source": "Sequoia Capital website", "year": 2024},
-      {"metric": "Marketing/comms support", "value": "In-house design and PR for portfolio companies", "unit": "text", "source": "Founder interviews", "year": 2024},
-      {"metric": "Basecamp (annual CEO summit)", "value": "Annual gathering of portfolio CEOs for networking and learning", "unit": "text", "source": "Sequoia Capital blog", "year": 2024},
-      {"metric": "Average board involvement duration", "value": "5-8", "unit": "years", "source": "PitchBook / founder interviews", "year": 2024},
-      {"metric": "Portfolio company NPS (founder satisfaction)", "value": "Top-tier among VC firms per founder surveys", "unit": "text", "source": "TheFunded / founder surveys", "year": 2024},
-      {"metric": "Data science team for portfolio support", "value": "Internal analytics team helps portfolio with growth metrics", "unit": "text", "source": "Sequoia Capital website", "year": 2024},
-      {"metric": "M&A advisory for portfolio exits", "value": "In-house team advises on acquisition negotiations", "unit": "text", "source": "Founder interviews", "year": 2024},
-      {"metric": "CFO/finance support for pre-IPO companies", "value": "Helps portfolio companies prepare S-1 filings", "unit": "text", "source": "Founder interviews / TechCrunch", "year": 2024},
-      {"metric": "Government/regulatory navigation support", "value": "Policy team assists with regulatory strategy", "unit": "text", "source": "Sequoia Capital website", "year": 2024},
-      {"metric": "Portfolio company cross-selling facilitation", "value": "Connects portfolio companies as customers of each other", "unit": "text", "source": "Founder interviews", "year": 2024},
-      {"metric": "Sequoia Capital Fund size (2024 vintage)", "value": "850", "unit": "million USD", "source": "SEC filings", "year": 2024},
-      {"metric": "Sequoia Growth Fund size (2024 vintage)", "value": "2000+", "unit": "million USD", "source": "SEC filings / Bloomberg", "year": 2024}
+      {
+        "metric": "Sequoia operating partners on staff",
+        "value": "20+",
+        "unit": "people",
+        "source": "Sequoia Capital website",
+        "year": 2024
+      },
+      {
+        "metric": "Talent/recruiting support for portfolio",
+        "value": "Dedicated talent team helps hire first 50 employees",
+        "unit": "text",
+        "source": "Sequoia Capital website",
+        "year": 2024
+      },
+      {
+        "metric": "Marketing/comms support",
+        "value": "In-house design and PR for portfolio companies",
+        "unit": "text",
+        "source": "Founder interviews",
+        "year": 2024
+      },
+      {
+        "metric": "Basecamp (annual CEO summit)",
+        "value": "Annual gathering of portfolio CEOs for networking and learning",
+        "unit": "text",
+        "source": "Sequoia Capital blog",
+        "year": 2024
+      },
+      {
+        "metric": "Average board involvement duration",
+        "value": "5-8",
+        "unit": "years",
+        "source": "PitchBook / founder interviews",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Portfolio company NPS (founder satisfaction)",
+        "value": "Top-tier among VC firms per founder surveys",
+        "unit": "text",
+        "source": "TheFunded / founder surveys",
+        "year": 2024
+      },
+      {
+        "metric": "Data science team for portfolio support",
+        "value": "Internal analytics team helps portfolio with growth metrics",
+        "unit": "text",
+        "source": "Sequoia Capital website",
+        "year": 2024
+      },
+      {
+        "metric": "M&A advisory for portfolio exits",
+        "value": "In-house team advises on acquisition negotiations",
+        "unit": "text",
+        "source": "Founder interviews",
+        "year": 2024
+      },
+      {
+        "metric": "CFO/finance support for pre-IPO companies",
+        "value": "Helps portfolio companies prepare S-1 filings",
+        "unit": "text",
+        "source": "Founder interviews / TechCrunch",
+        "year": 2024
+      },
+      {
+        "metric": "Government/regulatory navigation support",
+        "value": "Policy team assists with regulatory strategy",
+        "unit": "text",
+        "source": "Sequoia Capital website",
+        "year": 2024
+      },
+      {
+        "metric": "Portfolio company cross-selling facilitation",
+        "value": "Connects portfolio companies as customers of each other",
+        "unit": "text",
+        "source": "Founder interviews",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia Capital Fund size (2024 vintage)",
+        "value": "850",
+        "unit": "million USD",
+        "source": "SEC filings",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia Growth Fund size (2024 vintage)",
+        "value": "2000+",
+        "unit": "million USD",
+        "source": "SEC filings / Bloomberg",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia basecamp (founder community)",
+        "value": "500+",
+        "unit": "founder members",
+        "source": "Sequoia blog",
+        "year": 2024
+      },
+      {
+        "metric": "Annual events for portfolio CEOs",
+        "value": "10+",
+        "unit": "events",
+        "source": "Sequoia blog",
+        "year": 2024
+      },
+      {
+        "metric": "Talent network candidates",
+        "value": "100000+",
+        "unit": "candidates",
+        "source": "Sequoia estimate",
+        "year": 2024
+      },
+      {
+        "metric": "Executive coaching program",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Sequoia blog",
+        "year": 2024
+      },
+      {
+        "metric": "Marketing/PR support",
+        "value": "dedicated team",
+        "unit": "service",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "GTM support",
+        "value": "yes \u2014 sales playbooks, intro network",
+        "unit": "service",
+        "source": "Sequoia blog",
+        "year": 2024
+      },
+      {
+        "metric": "Technical advisory",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia content output (articles/year)",
+        "value": "200+",
+        "unit": "articles",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia podcast episodes",
+        "value": "50+",
+        "unit": "episodes",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "Don Valentine quotes still used in VC",
+        "value": "multiple \u2014 'greatest technology investor'",
+        "unit": "legacy",
+        "source": "press",
+        "year": 2024
+      },
+      {
+        "metric": "Don Valentine died",
+        "value": "2019",
+        "unit": "year",
+        "source": "press",
+        "year": 2019
+      },
+      {
+        "metric": "Michael Moritz era (1986-2012)",
+        "value": "invested in Google, Yahoo, YouTube, LinkedIn, PayPal",
+        "unit": "legacy",
+        "source": "Sequoia history",
+        "year": 2024
+      },
+      {
+        "metric": "Doug Leone era (2012-2022)",
+        "value": "invested in Airbnb, DoorDash, Stripe, WhatsApp",
+        "unit": "legacy",
+        "source": "Sequoia history",
+        "year": 2024
+      },
+      {
+        "metric": "Roelof Botha era (2022-present)",
+        "value": "restructuring, AI focus, China/India split",
+        "unit": "current",
+        "source": "press coverage",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia open-source fund model (2021)",
+        "value": "converted to registered investment advisor, single fund structure",
+        "unit": "model change",
+        "source": "Sequoia blog",
+        "year": 2021
+      },
+      {
+        "metric": "Sequoia reverted to traditional fund model",
+        "value": "2023 \u2014 reverted after LP pushback",
+        "unit": "model change",
+        "source": "press coverage",
+        "year": 2023
+      },
+      {
+        "metric": "Most common co-investors",
+        "value": "a16z, Accel, Benchmark, Tiger Global, Lightspeed",
+        "unit": "firms",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Deals syndicated",
+        "value": "65",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Deals where Sequoia leads",
+        "value": "75",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average ownership target",
+        "value": "15-25",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Follow-on rate",
+        "value": "70",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average holding period",
+        "value": "7-10",
+        "unit": "years",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Active portfolio companies",
+        "value": "300+",
+        "unit": "companies",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "Total portfolio companies ever funded",
+        "value": "1500+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with >$100M revenue",
+        "value": "50+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Companies publicly traded",
+        "value": "40+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Companies in S&P 500",
+        "value": "5+",
+        "unit": "companies",
+        "source": "S&P",
+        "year": 2024
+      },
+      {
+        "metric": "Combined market cap of public portfolio",
+        "value": "5+",
+        "unit": "trillion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Total employees across portfolio",
+        "value": "1000000+",
+        "unit": "employees estimated",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Management fee",
+        "value": "2",
+        "unit": "%",
+        "source": "industry standard",
+        "year": 2024
+      },
+      {
+        "metric": "Carried interest",
+        "value": "25-30",
+        "unit": "%",
+        "source": "press reports",
+        "year": 2024
+      },
+      {
+        "metric": "Fund lifecycle",
+        "value": "10-14",
+        "unit": "years",
+        "source": "LP agreements",
+        "year": 2024
+      },
+      {
+        "metric": "LP base includes top university endowments",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "SEC filings",
+        "year": 2024
+      },
+      {
+        "metric": "LP base includes sovereign wealth funds",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "SEC filings",
+        "year": 2024
+      },
+      {
+        "metric": "Annual deal flow reviewed",
+        "value": "10000+",
+        "unit": "pitches",
+        "source": "Sequoia estimate",
+        "year": 2024
+      },
+      {
+        "metric": "Conversion rate",
+        "value": "0.5",
+        "unit": "%",
+        "source": "industry estimate",
+        "year": 2024
+      },
+      {
+        "metric": "Brand ranking among founders",
+        "value": "#1 globally",
+        "unit": "ranking",
+        "source": "founder surveys",
+        "year": 2024
+      },
+      {
+        "metric": "Portfolio companies acquired for >$1B",
+        "value": "30+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Total IPOs from portfolio",
+        "value": "80+",
+        "unit": "IPOs",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Total value of exits",
+        "value": "1+",
+        "unit": "trillion USD estimated",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Portfolio decacorns (>$10B)",
+        "value": "20+",
+        "unit": "companies",
+        "source": "CB Insights",
+        "year": 2024
+      },
+      {
+        "metric": "Portfolio hectocorns (>$100B)",
+        "value": "5+",
+        "unit": "companies",
+        "source": "CB Insights",
+        "year": 2024
+      },
+      {
+        "metric": "AI investments count (2024)",
+        "value": "25+",
+        "unit": "deals",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "AI allocation (% of new deals 2024)",
+        "value": "40",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Enterprise software allocation",
+        "value": "35",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Consumer allocation",
+        "value": "20",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Fintech allocation",
+        "value": "15",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Healthcare allocation",
+        "value": "10",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto/web3 allocation",
+        "value": "5",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      }
+    ],
+    "market_data": [
+      {
+        "metric": "Global VC investment 2024",
+        "value": "285",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "US VC investment 2024",
+        "value": "170",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Europe VC investment 2024",
+        "value": "52",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "India VC investment 2024",
+        "value": "15",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "AI share of global VC 2024",
+        "value": "35",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Down rounds 2024",
+        "value": "20",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Startup failure rate (5yr)",
+        "value": "50",
+        "unit": "%",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Startup failure rate (10yr)",
+        "value": "90",
+        "unit": "%",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Global unicorn count",
+        "value": "1400+",
+        "unit": "companies",
+        "source": "CB Insights",
+        "year": 2024
+      },
+      {
+        "metric": "Dry powder in VC",
+        "value": "300+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average Series A size US",
+        "value": "18",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average Series B size US",
+        "value": "45",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average seed size US",
+        "value": "4",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Top quartile VC fund IRR",
+        "value": "25+",
+        "unit": "%",
+        "source": "Cambridge Associates",
+        "year": 2024
+      },
+      {
+        "metric": "Power law: top 4% = 60%+ returns",
+        "value": "true",
+        "unit": "fact",
+        "source": "Horsley Bridge",
+        "year": 2024
+      },
+      {
+        "metric": "Secondary market volume 2024",
+        "value": "60+",
+        "unit": "billion USD",
+        "source": "Forge Global",
+        "year": 2024
+      },
+      {
+        "metric": "Average time to IPO",
+        "value": "8.5",
+        "unit": "years",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Female-founded startups share of VC",
+        "value": "2.1",
+        "unit": "%",
+        "source": "PitchBook All In",
+        "year": 2024
+      },
+      {
+        "metric": "Average runway at fundraise",
+        "value": "18-24",
+        "unit": "months",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "% Series A cos raising Series B",
+        "value": "50",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "% Series B cos raising Series C",
+        "value": "40",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Average founder dilution Seed to A",
+        "value": "20-25",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Founder ownership at IPO",
+        "value": "10-15",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS median gross margin",
+        "value": "75",
+        "unit": "%",
+        "source": "Bessemer",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS median net retention",
+        "value": "110",
+        "unit": "%",
+        "source": "Bessemer",
+        "year": 2024
+      },
+      {
+        "metric": "PLG share of public SaaS",
+        "value": "40+",
+        "unit": "%",
+        "source": "OpenView",
+        "year": 2024
+      },
+      {
+        "metric": "AI-native startups funded 2024",
+        "value": "3000+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "AI startup premium vs non-AI at Series A",
+        "value": "50",
+        "unit": "% higher",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Enterprise AI adoption",
+        "value": "55",
+        "unit": "%",
+        "source": "McKinsey",
+        "year": 2024
+      },
+      {
+        "metric": "GenAI funding 2024",
+        "value": "25+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "OpenAI valuation",
+        "value": "157",
+        "unit": "billion USD",
+        "source": "WSJ",
+        "year": 2024
+      },
+      {
+        "metric": "Anthropic valuation",
+        "value": "18+",
+        "unit": "billion USD",
+        "source": "Bloomberg",
+        "year": 2024
+      },
+      {
+        "metric": "Global cloud market 2024",
+        "value": "600+",
+        "unit": "billion USD",
+        "source": "Gartner",
+        "year": 2024
+      },
+      {
+        "metric": "Global AI market 2024",
+        "value": "200+",
+        "unit": "billion USD",
+        "source": "Grand View Research",
+        "year": 2024
+      },
+      {
+        "metric": "NVIDIA market cap",
+        "value": "3+",
+        "unit": "trillion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Cybersecurity VC 2024",
+        "value": "12+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Fintech VC 2024",
+        "value": "25+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "HealthTech VC 2024",
+        "value": "20+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Climate tech VC 2024",
+        "value": "40+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Number of VC firms globally",
+        "value": "5000+",
+        "unit": "firms",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Top 20 VC firms control % of capital",
+        "value": "40+",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "VC fund median lifetime",
+        "value": "10-12",
+        "unit": "years",
+        "source": "Cambridge Associates",
+        "year": 2024
+      },
+      {
+        "metric": "Startup closures 2024",
+        "value": "3500+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Zombie startups 2024",
+        "value": "5000+",
+        "unit": "estimated",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Bridge rounds 2024",
+        "value": "30",
+        "unit": "% of rounds",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate VC investment 2024",
+        "value": "70",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Mega-rounds count 2024",
+        "value": "500+",
+        "unit": "rounds",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Venture debt market 2024",
+        "value": "35",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average startup burn rate Series A",
+        "value": "200-400",
+        "unit": "thousand USD/month",
+        "source": "Kruze",
+        "year": 2024
+      },
+      {
+        "metric": "Average founder CEO salary Series A",
+        "value": "125-175",
+        "unit": "thousand USD",
+        "source": "Kruze",
+        "year": 2024
+      },
+      {
+        "metric": "ESOP pool at Series A",
+        "value": "10-15",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Median months Seed to A",
+        "value": "20",
+        "unit": "months",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Median months A to B",
+        "value": "22",
+        "unit": "months",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS LTV:CAC benchmark",
+        "value": "3:1",
+        "unit": "ratio",
+        "source": "Bessemer",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS CAC payback",
+        "value": "18",
+        "unit": "months",
+        "source": "Bessemer",
+        "year": 2024
+      },
+      {
+        "metric": "Startups reaching $1M ARR annually",
+        "value": "5000+",
+        "unit": "startups",
+        "source": "SaaS Capital",
+        "year": 2024
+      },
+      {
+        "metric": "Startups reaching $10M ARR annually",
+        "value": "1000+",
+        "unit": "startups",
+        "source": "SaaS Capital",
+        "year": 2024
+      },
+      {
+        "metric": "Startups reaching $100M ARR annually",
+        "value": "100+",
+        "unit": "startups",
+        "source": "Bessemer",
+        "year": 2024
+      },
+      {
+        "metric": "SAFE usage in pre-seed",
+        "value": "70",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Average due diligence period",
+        "value": "4-8",
+        "unit": "weeks",
+        "source": "industry data",
+        "year": 2024
+      },
+      {
+        "metric": "VC-backed IPOs 2024",
+        "value": "30+",
+        "unit": "IPOs",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average IPO first-day return",
+        "value": "20-30",
+        "unit": "%",
+        "source": "Renaissance Capital",
+        "year": 2024
+      },
+      {
+        "metric": "Startup layoffs 2024",
+        "value": "150000+",
+        "unit": "employees",
+        "source": "Layoffs.fyi",
+        "year": 2024
+      },
+      {
+        "metric": "Data center spending 2024",
+        "value": "250+",
+        "unit": "billion USD",
+        "source": "Synergy",
+        "year": 2024
+      },
+      {
+        "metric": "Semiconductor market 2024",
+        "value": "600+",
+        "unit": "billion USD",
+        "source": "SIA",
+        "year": 2024
+      },
+      {
+        "metric": "AI chip market 2024",
+        "value": "70+",
+        "unit": "billion USD",
+        "source": "Gartner",
+        "year": 2024
+      },
+      {
+        "metric": "Space economy 2024",
+        "value": "630",
+        "unit": "billion USD",
+        "source": "Space Foundation",
+        "year": 2024
+      },
+      {
+        "metric": "Defense tech VC 2024",
+        "value": "15+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Robotics VC 2024",
+        "value": "6+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Biotech VC 2024",
+        "value": "22+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Autonomous vehicles VC 2024",
+        "value": "10+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Global fintech market 2024",
+        "value": "310",
+        "unit": "billion USD",
+        "source": "McKinsey",
+        "year": 2024
+      },
+      {
+        "metric": "Global cybersecurity market 2024",
+        "value": "200+",
+        "unit": "billion USD",
+        "source": "Gartner",
+        "year": 2024
+      },
+      {
+        "metric": "E-commerce share of retail",
+        "value": "22",
+        "unit": "%",
+        "source": "eMarketer",
+        "year": 2024
+      },
+      {
+        "metric": "Marketplace GMV globally",
+        "value": "4+",
+        "unit": "trillion USD",
+        "source": "Edge by Ascential",
+        "year": 2024
+      },
+      {
+        "metric": "Gig economy market 2024",
+        "value": "500+",
+        "unit": "billion USD",
+        "source": "Statista",
+        "year": 2024
+      },
+      {
+        "metric": "Food delivery market 2024",
+        "value": "350+",
+        "unit": "billion USD",
+        "source": "Statista",
+        "year": 2024
+      },
+      {
+        "metric": "Subscription economy 2024",
+        "value": "300+",
+        "unit": "billion USD",
+        "source": "Zuora",
+        "year": 2024
+      },
+      {
+        "metric": "Creator economy 2024",
+        "value": "250+",
+        "unit": "billion USD",
+        "source": "Goldman Sachs",
+        "year": 2024
+      },
+      {
+        "metric": "Social commerce 2024",
+        "value": "700+",
+        "unit": "billion USD",
+        "source": "eMarketer",
+        "year": 2024
+      },
+      {
+        "metric": "Apple market cap",
+        "value": "3.5+",
+        "unit": "trillion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Microsoft market cap",
+        "value": "3+",
+        "unit": "trillion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Alphabet market cap",
+        "value": "2+",
+        "unit": "trillion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Amazon market cap",
+        "value": "2+",
+        "unit": "trillion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Meta market cap",
+        "value": "1.5+",
+        "unit": "trillion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Tesla market cap",
+        "value": "800+",
+        "unit": "billion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "AWS revenue 2024",
+        "value": "100+",
+        "unit": "billion USD",
+        "source": "Amazon 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "Azure revenue 2024",
+        "value": "80+",
+        "unit": "billion USD",
+        "source": "Microsoft 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "GCP revenue 2024",
+        "value": "40+",
+        "unit": "billion USD",
+        "source": "Alphabet 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "Percentage of VC funds outperforming S&P",
+        "value": "40",
+        "unit": "%",
+        "source": "Cambridge Associates",
+        "year": 2024
+      },
+      {
+        "metric": "VC fund bottom quartile IRR",
+        "value": "-5 to 5",
+        "unit": "%",
+        "source": "Cambridge Associates",
+        "year": 2024
+      },
+      {
+        "metric": "Remote-first startups share",
+        "value": "35",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Average early employee equity",
+        "value": "0.5-2",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Average discount on secondaries",
+        "value": "30-50",
+        "unit": "%",
+        "source": "Forge Global",
+        "year": 2024
+      },
+      {
+        "metric": "Emerging manager funds 2024",
+        "value": "500+",
+        "unit": "funds",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Solo GP funds 2024",
+        "value": "200+",
+        "unit": "funds",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Angel investment volume 2024",
+        "value": "30+",
+        "unit": "billion USD",
+        "source": "ACA",
+        "year": 2024
+      },
+      {
+        "metric": "Accelerator programs globally",
+        "value": "3000+",
+        "unit": "programs",
+        "source": "GAN Global",
+        "year": 2024
+      },
+      {
+        "metric": "Revenue-based financing 2024",
+        "value": "10+",
+        "unit": "billion USD",
+        "source": "industry data",
+        "year": 2024
+      },
+      {
+        "metric": "Average venture debt rate",
+        "value": "10-14",
+        "unit": "%",
+        "source": "SVB",
+        "year": 2024
+      },
+      {
+        "metric": "Startup studio count",
+        "value": "700+",
+        "unit": "studios",
+        "source": "GSSN",
+        "year": 2024
+      },
+      {
+        "metric": "Usage-based pricing adoption in SaaS",
+        "value": "45",
+        "unit": "%",
+        "source": "OpenView",
+        "year": 2024
+      },
+      {
+        "metric": "Nuclear energy startup VC 2024",
+        "value": "3+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Quantum computing VC 2024",
+        "value": "2+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Synthetic biology VC 2024",
+        "value": "5+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      }
+    ],
+    "team_and_legacy": [
+      {
+        "metric": "Roelof Botha \u2014 current Global Managing Partner",
+        "value": "joined 2003, PayPal CFO prior",
+        "unit": "role",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "Pat Grady \u2014 US/Europe Managing Partner",
+        "value": "partner since 2013",
+        "unit": "role",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "Carl Eschenbach \u2014 partner (former VMware COO)",
+        "value": "partner since 2016",
+        "unit": "role",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "Shaun Maguire \u2014 partner (Caltech PhD)",
+        "value": "partner since 2019",
+        "unit": "role",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "Konstantine Buhler \u2014 partner",
+        "value": "partner since 2020",
+        "unit": "role",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "Sonya Huang \u2014 partner (AI focus)",
+        "value": "partner since 2021",
+        "unit": "role",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "Sonya Huang AI report widely read",
+        "value": "'Generative AI: A Creative New World' (2022)",
+        "unit": "publication",
+        "source": "Sequoia blog",
+        "year": 2022
+      },
+      {
+        "metric": "Jess Lee \u2014 partner (former Polyvore CEO)",
+        "value": "partner since 2016",
+        "unit": "role",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "Andrew Reed \u2014 partner",
+        "value": "partner since 2018",
+        "unit": "role",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia founding principle: 'The creative spirits'",
+        "value": "Don Valentine's phrase",
+        "unit": "philosophy",
+        "source": "Sequoia lore",
+        "year": 2024
+      },
+      {
+        "metric": "Don Valentine motto: 'Target big markets'",
+        "value": "true",
+        "unit": "philosophy",
+        "source": "Sequoia lore",
+        "year": 2024
+      },
+      {
+        "metric": "Don Valentine: 'I invest in markets, not people'",
+        "value": "controversial but effective",
+        "unit": "philosophy",
+        "source": "Sequoia lore",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia 'RIP Good Times' memo",
+        "value": "2008 financial crisis \u2014 legendary pitch deck",
+        "unit": "legacy",
+        "source": "Sequoia blog",
+        "year": 2008
+      },
+      {
+        "metric": "Sequoia 'Adapting to Endure' memo",
+        "value": "2022 \u2014 similar warning for downturn",
+        "unit": "legacy",
+        "source": "Sequoia blog",
+        "year": 2022
+      },
+      {
+        "metric": "Most valuable VC firm by portfolio market cap",
+        "value": "true \u2014 $5T+ combined",
+        "unit": "claim",
+        "source": "Forbes",
+        "year": 2024
+      },
+      {
+        "metric": "Longest-operating top-tier VC firm",
+        "value": "since 1972 (52 years)",
+        "unit": "fact",
+        "source": "firm history",
+        "year": 2024
+      },
+      {
+        "metric": "Only VC firm with trillion-dollar companies in portfolio",
+        "value": "true (Apple, Nvidia, Google)",
+        "unit": "fact",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia brand value to founders: most desired investor",
+        "value": "#1 consistently in founder surveys",
+        "unit": "ranking",
+        "source": "founder surveys",
+        "year": 2024
+      },
+      {
+        "metric": "Average partner compensation estimate",
+        "value": "10+",
+        "unit": "million USD/year",
+        "source": "VC compensation estimates",
+        "year": 2024
+      },
+      {
+        "metric": "Total partners on Forbes Midas List simultaneously",
+        "value": "5+",
+        "unit": "partners",
+        "source": "Forbes",
+        "year": 2024
+      },
+      {
+        "metric": "DoorDash revenue 2024",
+        "value": "10+",
+        "unit": "billion USD",
+        "source": "DoorDash 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "Snowflake revenue 2024",
+        "value": "3.4+",
+        "unit": "billion USD",
+        "source": "Snowflake 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "Zoom revenue 2024",
+        "value": "4.5+",
+        "unit": "billion USD",
+        "source": "Zoom 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "Unity revenue 2024",
+        "value": "1.5+",
+        "unit": "billion USD",
+        "source": "Unity 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "Instacart revenue 2024",
+        "value": "3+",
+        "unit": "billion USD",
+        "source": "Instacart 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "Stripe revenue estimate 2024",
+        "value": "18+",
+        "unit": "billion USD",
+        "source": "Bloomberg estimate",
+        "year": 2024
+      },
+      {
+        "metric": "Klarna revenue 2024",
+        "value": "2.5+",
+        "unit": "billion USD",
+        "source": "Klarna filings",
+        "year": 2024
+      },
+      {
+        "metric": "Cisco revenue 2024",
+        "value": "53+",
+        "unit": "billion USD",
+        "source": "Cisco 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "Google/Alphabet revenue 2024",
+        "value": "350+",
+        "unit": "billion USD",
+        "source": "Alphabet 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "Apple revenue 2024",
+        "value": "390+",
+        "unit": "billion USD",
+        "source": "Apple 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "Nvidia revenue 2024",
+        "value": "130+",
+        "unit": "billion USD",
+        "source": "Nvidia 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "LinkedIn users",
+        "value": "1+",
+        "unit": "billion",
+        "source": "Microsoft",
+        "year": 2024
+      },
+      {
+        "metric": "WhatsApp messages per day",
+        "value": "100+",
+        "unit": "billion",
+        "source": "Meta",
+        "year": 2024
+      },
+      {
+        "metric": "YouTube daily active users",
+        "value": "2.5+",
+        "unit": "billion",
+        "source": "Alphabet",
+        "year": 2024
+      },
+      {
+        "metric": "Airbnb revenue 2024",
+        "value": "10+",
+        "unit": "billion USD",
+        "source": "Airbnb 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "ESG/DEI formal policy",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "Sequoia Capital Europe launched",
+        "value": "2020",
+        "unit": "year",
+        "source": "press coverage",
+        "year": 2020
+      },
+      {
+        "metric": "Sequoia Capital Europe \u2014 Luciana Lixandru (partner)",
+        "value": "from Accel",
+        "unit": "role",
+        "source": "Sequoia website",
+        "year": 2024
+      },
+      {
+        "metric": "Peak XV Partners (India/SEA) \u2014 total cos funded",
+        "value": "400+",
+        "unit": "companies",
+        "source": "Peak XV website",
+        "year": 2024
+      },
+      {
+        "metric": "HongShan (China) \u2014 total cos funded",
+        "value": "500+",
+        "unit": "companies",
+        "source": "HongShan website",
+        "year": 2024
+      }
     ]
   }
 }

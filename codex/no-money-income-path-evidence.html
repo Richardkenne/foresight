@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>No Money Income Path With Evidence</title>
+  <style>
+    :root {
+      --bg: #f6f1e8;
+      --ink: #1a2027;
+      --muted: #66727c;
+      --border: rgba(26, 32, 39, 0.08);
+      --shadow: 0 20px 50px rgba(43, 35, 23, 0.10);
+      --panel: rgba(255, 250, 242, 0.82);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(216, 231, 247, 0.55), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(216, 234, 216, 0.50), transparent 25%),
+        var(--bg);
+    }
+    .page { padding: 28px; }
+    .header, .notes, .path-label {
+      max-width: 1700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .header { margin-bottom: 20px; }
+    .eyebrow {
+      margin-bottom: 10px;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+    }
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.45;
+      max-width: 1100px;
+    }
+    .board, .notes, .human-path {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+    .board {
+      max-width: 1700px;
+      margin: 0 auto 20px;
+      padding: 16px;
+      overflow: auto;
+    }
+    .human-path {
+      max-width: 1700px;
+      margin: 0 auto 20px;
+      padding: 18px 20px;
+    }
+    .mermaid { min-width: 1800px; }
+    .notes {
+      padding: 18px 20px;
+    }
+    .human-path h2, .notes h2 {
+      margin: 0 0 14px;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+    .human-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(160px, 1fr));
+      gap: 12px;
+    }
+    .human-card {
+      background: rgba(255,255,255,0.42);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .human-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .human-card div {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: rgba(255,255,255,0.42);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+    .metric {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 6px;
+    }
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .path-label {
+      margin-top: 14px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.95em;
+    }
+    a { color: inherit; }
+    @media (max-width: 900px) {
+      .human-grid { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <div class="eyebrow">System-Based Scenario With Evidence</div>
+      <h1>A man with no money tries to make some money</h1>
+      <p>Stesso flow del file muto, ma qui ogni snodo principale è ancorato a dati già presenti nel workspace: side hustles, Upwork, creator timelines, service benchmarks.</p>
+    </div>
+
+    <div class="board">
+      <pre class="mermaid">
+flowchart LR
+    A["STATE<br/>Man with $0 liquid margin<br/>Urgent income need<br/><br/>Evidence: framing node<br/>No direct metric"]
+    B["ACTION<br/>Starts a no-upfront-cost income path<br/><br/>Examples: freelance services<br/>gig work, local services, creator path"]
+    C{"BOTTLENECK<br/>Sticks long enough to earn first $100?<br/><br/>Upwork: 1.8% earn $100 in 90 days<br/>First dollar: 1-3 months"}
+    D["STATE<br/>First $100 earned<br/>Early proof<br/><br/>This is movement, not stability"]
+    E{"GATE<br/>Reaches $500/month?<br/><br/>Median side hustle income = $500<br/>47% stay under $500/month"}
+    F["STATE<br/>Stuck at $200-$400/month<br/><br/>Inferred from sub-$500 cohort"]
+    G["STATE<br/>$500+/month achieved<br/>Bills partly covered<br/><br/>Backed by side hustle median"]
+    H{"BOTTLENECK<br/>Scales to $1,000+/month?<br/><br/>Productized service: 1-2 months<br/>after first traction"}
+
+    O1["OUTCOME<br/>Quit, no income<br/><br/>Upwork quit year 1: 60-70%<br/>Never earn: 50-70%"]
+    O2["OUTCOME<br/>Stuck in low-income trap<br/><br/>Bottom cohort stays under meaningful monthly income"]
+    O3["OUTCOME<br/>Burnout after repeated attempts<br/><br/>Side hustle burnout: 43%<br/>Freelance burnout: 63%"]
+    O4["OUTCOME<br/>Sustainable income<br/>$1K+/month<br/><br/>Upwork active earners above $1K/mo: 15-20%"]
+
+    A --> B --> C
+    C -->|"FAIL"| O1
+    C -->|"PASS"| D
+    D --> E
+    E -->|"PARTIAL"| F
+    E -->|"YES"| G
+    F --> O2
+    F --> O3
+    G --> H
+    H -->|"PARTIAL"| O2
+    H -->|"FAIL"| O3
+    H -->|"PASS"| O4
+
+    classDef state fill:#d8ead8,stroke:#5f7d63,stroke-width:1.5px,color:#1a2027;
+    classDef action fill:#d8e7f7,stroke:#56718f,stroke-width:1.5px,color:#1a2027;
+    classDef bottleneck fill:#fde1b8,stroke:#9b7a3d,stroke-width:1.5px,color:#1a2027;
+    classDef outcome fill:#f7d4cc,stroke:#9e6257,stroke-width:1.5px,color:#1a2027;
+    classDef good fill:#d7f7e3,stroke:#1f7a45,stroke-width:2px,color:#1a2027;
+
+    class A,D,F,G state;
+    class B action;
+    class C,E,H bottleneck;
+    class O1,O2,O3 outcome;
+    class O4 good;
+      </pre>
+    </div>
+
+    <div class="human-path">
+      <h2>Human Path</h2>
+      <div class="human-grid">
+        <div class="human-card">
+          <strong>Pressure</strong>
+          <div>Starts from scarcity. This is not ambition-only; it is survival pressure.</div>
+        </div>
+        <div class="human-card">
+          <strong>Choice</strong>
+          <div>Picks a low-capital path because there is no room for expensive mistakes.</div>
+        </div>
+        <div class="human-card">
+          <strong>Delay</strong>
+          <div>The system becomes dangerous during the empty period before proof appears.</div>
+        </div>
+        <div class="human-card">
+          <strong>Proof</strong>
+          <div>The first $100 matters emotionally more than financially: it says the world may respond.</div>
+        </div>
+        <div class="human-card">
+          <strong>Break Point</strong>
+          <div>At $500 the path feels real. At $1K it starts acting less like hustle and more like system.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="notes">
+      <h2>Evidence Notes</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>First $100 / early proof</h3>
+          <div class="metric">1.8%</div>
+          <div class="small">In <a href="/Users/richardbotsiokennedy/Simulator/v2/data/upwork-data.json">upwork-data.json</a>, `18 / 1000` signups earn `$100` within 90 days. Same file also gives `time_to_first_dollar_months = 1-3`, median `1.5`.</div>
+        </div>
+        <div class="card">
+          <h3>Time to first client</h3>
+          <div class="metric">1-2 weeks</div>
+          <div class="small">In <a href="/Users/richardbotsiokennedy/Simulator/v2/data/time-to-result-benchmarks.json">time-to-result-benchmarks.json</a>, `Freelancing (cold outreach)` takes `1-2 weeks` to first client, `local services` `1-7 days`, `productized service` `1-3 weeks`.</div>
+        </div>
+        <div class="card">
+          <h3>$500/month threshold</h3>
+          <div class="metric">$500 median</div>
+          <div class="small">In <a href="/Users/richardbotsiokennedy/Simulator/v2/data/side-hustle-entrepreneurship.json">side-hustle-entrepreneurship.json</a>, `Median monthly side hustle income = $500`, average `$891`, and `47%` earn under `$500/month`.</div>
+        </div>
+        <div class="card">
+          <h3>$1K+/month threshold</h3>
+          <div class="metric">15-20%</div>
+          <div class="small">In <a href="/Users/richardbotsiokennedy/Simulator/v2/data/upwork-data.json">upwork-data.json</a>, `15-20%` of active earners exceed `$1K/month`. In <a href="/Users/richardbotsiokennedy/Simulator/v2/data/time-to-result-benchmarks.json">time-to-result-benchmarks.json</a>, `Productized service -> $1K/month = 1-2 months`.</div>
+        </div>
+        <div class="card">
+          <h3>Quit / abandonment</h3>
+          <div class="metric">60-70%</div>
+          <div class="small">In <a href="/Users/richardbotsiokennedy/Simulator/v2/data/upwork-data.json">upwork-data.json</a>, `freelancer_quit_year_1_pct = 60-70%`, and `freelancer_never_earn_pct = 50-70%`.</div>
+        </div>
+        <div class="card">
+          <h3>Burnout</h3>
+          <div class="metric">43% / 63%</div>
+          <div class="small"><a href="/Users/richardbotsiokennedy/Simulator/v2/data/side-hustle-entrepreneurship.json">side-hustle-entrepreneurship.json</a> gives `43%` side hustle burnout in year 1. <a href="/Users/richardbotsiokennedy/Simulator/v2/data/upwork-data.json">upwork-data.json</a> gives `63%` burnout in the past year for freelancers.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="path-label">
+      Mute: <code>/Users/richardbotsiokennedy/Simulator/codex/no-money-income-path.html</code><br/>
+      With evidence: <code>/Users/richardbotsiokennedy/Simulator/codex/no-money-income-path-evidence.html</code>
+    </div>
+  </div>
+
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      securityLevel: "loose",
+      flowchart: {
+        htmlLabels: true,
+        curve: "basis",
+        useMaxWidth: false,
+        nodeSpacing: 42,
+        rankSpacing: 82
+      },
+      themeVariables: {
+        background: "#fffaf2",
+        primaryTextColor: "#1a2027",
+        lineColor: "#9d8d79",
+        fontFamily: "Avenir Next, Segoe UI, sans-serif"
+      }
+    });
+  </script>
+</body>
+</html>

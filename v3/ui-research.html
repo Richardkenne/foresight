@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>UI Research — Simulator v2</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: #0a0a0a; color: #e5e5e5; padding: 40px; }
+  h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
+  .subtitle { color: #737373; font-size: 14px; margin-bottom: 40px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); gap: 32px; }
+  .card { background: #141414; border: 1px solid #262626; border-radius: 16px; overflow: hidden; }
+  .card img { width: 100%; height: 300px; object-fit: cover; object-position: top; border-bottom: 1px solid #262626; background: #1a1a1a; }
+  .card-body { padding: 20px; }
+  .card h2 { font-size: 18px; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+  .card .stars { font-size: 12px; color: #737373; font-weight: 400; }
+  .card .style { font-size: 12px; color: #a78bfa; margin-bottom: 12px; font-weight: 600; }
+  .card p { font-size: 13px; color: #a3a3a3; line-height: 1.6; margin-bottom: 8px; }
+  .card .takeaway { font-size: 12px; color: #34d399; font-weight: 600; margin-top: 8px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; margin-right: 4px; }
+  .badge-high { background: #10b981; color: #000; }
+  .badge-med { background: #f59e0b; color: #000; }
+  .badge-low { background: #6b7280; color: #fff; }
+  .section { margin-top: 48px; margin-bottom: 24px; font-size: 20px; font-weight: 700; color: #a78bfa; }
+  .summary { background: #1a1a1a; border: 1px solid #262626; border-radius: 16px; padding: 24px; margin-top: 48px; }
+  .summary h2 { font-size: 20px; margin-bottom: 16px; }
+  .summary table { width: 100%; border-collapse: collapse; }
+  .summary td, .summary th { padding: 8px 12px; text-align: left; font-size: 13px; border-bottom: 1px solid #262626; }
+  .summary th { color: #737373; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+</style>
+</head>
+<body>
+
+<h1>UI Research Gallery</h1>
+<p class="subtitle">Top 9 node-based UIs analizzate per il redesign di Simulator v2</p>
+
+<div class="section">Node-Based Editors (competitor diretti)</div>
+
+<div class="grid">
+
+  <div class="card">
+    <img src="https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-screenshot-readme.png" alt="n8n" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22><rect fill=%22%231a1a1a%22 width=%22800%22 height=%22400%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23737373%22 text-anchor=%22middle%22 font-size=%2224%22>n8n — visit n8n.io</text></svg>'">
+    <div class="card-body">
+      <h2>n8n <span class="stars">181K stars</span></h2>
+      <div class="style">Light canvas + dotted grid + colored accent bars</div>
+      <p>Nodi arrotondati con barra colorata a sinistra per tipo. Canvas bianco con griglia. Curve bezier smooth. Sidebar sinistra per componenti.</p>
+      <p class="takeaway">Da prendere: barra accent colorata per tipo nodo (gia lo facciamo parzialmente)</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://github.com/langgenius/dify/assets/13230914/b823edc1-6388-4e25-ad45-2f6b187adbb4" alt="Dify" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22><rect fill=%22%231a1a1a%22 width=%22800%22 height=%22400%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23737373%22 text-anchor=%22middle%22 font-size=%2224%22>Dify — visit dify.ai</text></svg>'">
+    <div class="card-body">
+      <h2>Dify <span class="stars">134K stars</span></h2>
+      <div class="style">White canvas + right-angle routing + purple accent</div>
+      <p>Nodi bianchi con ombra soft. Connessioni ad angolo retto (stile blueprint). Pannello configurazione a destra. Accent viola.</p>
+      <p class="takeaway">Da prendere: routing ad angolo retto per look analitico + Cmd+K spotlight search</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://github.com/user-attachments/assets/03168b17-a11d-4b2a-b0f7-c1cce69e5a2c" alt="Langflow" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22><rect fill=%22%231a1a1a%22 width=%22800%22 height=%22400%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23737373%22 text-anchor=%22middle%22 font-size=%2224%22>Langflow — visit langflow.org</text></svg>'">
+    <div class="card-body">
+      <h2>Langflow <span class="stars">146K stars</span></h2>
+      <div class="style">Dark canvas + colored handle dots + category headers</div>
+      <p>Canvas scuro con griglia. Nodi dark con handle colorati sui bordi. Ogni tipo ha colore header diverso. Playground chat a destra.</p>
+      <p class="takeaway">Da prendere: handle colorati per tipo connessione + dark mode canvas</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://github.com/FlowiseAI/Flowise/blob/main/images/flowise_agentflow.gif?raw=true" alt="Flowise" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22><rect fill=%22%231a1a1a%22 width=%22800%22 height=%22400%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23737373%22 text-anchor=%22middle%22 font-size=%2224%22>Flowise — visit flowiseai.com</text></svg>'">
+    <div class="card-body">
+      <h2>Flowise <span class="stars">51K stars</span></h2>
+      <div class="style">Light canvas + teal/purple accents + integration icons</div>
+      <p>Canvas bianco, nodi bianchi con header colorato e icona integrazione. Handle verdi/grigi. Sidebar dark. Clean e approachable.</p>
+      <p class="takeaway">Da prendere: consistenza nodi (header + icon + body + handles sempre uguali)</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://github.com/user-attachments/assets/c7f141e7-9751-407d-bb0e-d6f2c487b34f" alt="DrawDB" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22><rect fill=%22%231a1a1a%22 width=%22800%22 height=%22400%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23737373%22 text-anchor=%22middle%22 font-size=%2224%22>DrawDB — visit drawdb.app</text></svg>'">
+    <div class="card-body">
+      <h2>DrawDB <span class="stars">37K stars</span></h2>
+      <div class="style">White canvas + grid snap + minimal color + pixel-perfect</div>
+      <p>Ultra-clean. Grid snapping per allineamento perfetto. Colore solo per PK/FK. Relazioni con indicatori cardinalita. Esporta PNG.</p>
+      <p class="takeaway">Da prendere: grid snapping + minimal color approach + clean relationship lines</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.ctfassets.net/e5382hct74si/7b9gYG9UQjRBN57GyaVm2o/7dcac7fabe9db8af06bf5fa8146a32ba/opengraph-image.png" alt="Tersa" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22><rect fill=%22%231a1a1a%22 width=%22800%22 height=%22400%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23737373%22 text-anchor=%22middle%22 font-size=%2224%22>Tersa — Vercel Labs</text></svg>'">
+    <div class="card-body">
+      <h2>Tersa <span class="stars">958 stars — Vercel Labs</span></h2>
+      <div class="style">STESSO STACK: Next.js + React Flow + shadcn + Tailwind</div>
+      <p>Il reference piu vicino a noi. Nodi card con shadcn inside. Streaming output inline. Cost badges. Minimal chrome, maximum content.</p>
+      <p class="takeaway">PRIORITA MASSIMA: studiare source code, stessa architettura componenti</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="section">Design Benchmarks (north star)</div>
+
+<div class="grid">
+
+  <div class="card">
+    <img src="https://webassets.linear.app/images/ornj730p/production/b15d343ed41c5e938c26f9e2f5a61c7b63285caa-3904x2160.png" alt="Linear" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22><rect fill=%22%231a1a1a%22 width=%22800%22 height=%22400%22/><text x=%2250%%22 y=%2250%%22 fill=%22%23737373%22 text-anchor=%22middle%22 font-size=%2224%22>Linear — visit linear.app</text></svg>'">
+    <div class="card-body">
+      <h2>Linear <span class="stars">NORTH STAR</span></h2>
+      <div class="style">Warm grays + LCH colors + Inter Display + minimal</div>
+      <p>Il gold standard. Grigi caldi (non blu-grigi). Colore SOLO per significato. Bordi appena visibili. Inter Display per heading. "Structure should be felt not seen."</p>
+      <p class="takeaway">Palette warm-gray + Inter Display + colore funzionale = la nostra direzione</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22><rect fill=%22%230f172a%22 width=%22800%22 height=%22400%22/><text x=%2250%%22 y=%2240%%22 fill=%22%2360a5fa%22 text-anchor=%22middle%22 font-size=%2228%22 font-weight=%22bold%22>PALANTIR FOUNDRY</text><text x=%2250%%22 y=%2255%%22 fill=%22%2394a3b8%22 text-anchor=%22middle%22 font-size=%2214%22>Dark navy + information density + functional color</text><text x=%2250%%22 y=%2270%%22 fill=%22%2394a3b8%22 text-anchor=%22middle%22 font-size=%2214%22>Data tables + charts + maps + timeline in one view</text></svg>" alt="Palantir">
+    <div class="card-body">
+      <h2>Palantir Foundry <span class="stars">Enterprise</span></h2>
+      <div class="style">Dark navy + data-dense + Blueprint design system</div>
+      <p>Enterprise ma elegante. Info density senza clutter. Colore solo funzionale (rosso=alert, verde=healthy, blu=selected). Pannelli multipli nella stessa vista.</p>
+      <p class="takeaway">Principio: colore funzionale, mai decorativo. Info density tramite spacing preciso.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22><rect fill=%22%231a1a1a%22 width=%22800%22 height=%22400%22 rx=%2216%22/><rect fill=%22%23262626%22 x=%2240%22 y=%2240%22 width=%22720%22 height=%2248%22 rx=%2212%22/><text x=%22400%22 y=%2270%22 fill=%22%23737373%22 text-anchor=%22middle%22 font-size=%2216%22>Search Raycast...</text><rect fill=%22%23262626%22 x=%2240%22 y=%22320%22 width=%22720%22 height=%2240%22 rx=%228%22/><text x=%22400%22 y=%22345%22 fill=%22%23525252%22 text-anchor=%22middle%22 font-size=%2212%22>Tab Actions   Enter Open   Esc Close</text></svg>" alt="Raycast">
+    <div class="card-body">
+      <h2>Raycast <span class="stars">NORTH STAR</span></h2>
+      <div class="style">Compact mode + keyboard-first + native feel</div>
+      <p>Search-first. Dark translucent. Keyboard shortcuts visibili in contesto. Compact mode: solo contenuto, zero chrome. Ogni pixel intenzionale.</p>
+      <p class="takeaway">Compact mode philosophy + keyboard shortcuts in context + content-first</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="summary">
+  <h2>Top Actions per Simulator v2 Redesign</h2>
+  <table>
+    <tr><th>Priorita</th><th>Azione</th><th>Fonte</th></tr>
+    <tr><td><span class="badge badge-high">HIGH</span></td><td>Palette warm neutral grays (non blue-grays)</td><td>Linear</td></tr>
+    <tr><td><span class="badge badge-high">HIGH</span></td><td>Colore SOLO per significato (tipo nodo, status)</td><td>Linear + Palantir</td></tr>
+    <tr><td><span class="badge badge-high">HIGH</span></td><td>Studiare Tersa source code (stesso stack)</td><td>Tersa</td></tr>
+    <tr><td><span class="badge badge-high">HIGH</span></td><td>Inter Display per headings</td><td>Linear</td></tr>
+    <tr><td><span class="badge badge-med">MED</span></td><td>Grid snapping per nodi allineati</td><td>DrawDB</td></tr>
+    <tr><td><span class="badge badge-med">MED</span></td><td>Dark canvas option con handle colorati</td><td>Langflow</td></tr>
+    <tr><td><span class="badge badge-med">MED</span></td><td>Inline data badges sui nodi</td><td>Tersa</td></tr>
+    <tr><td><span class="badge badge-low">LOW</span></td><td>Right-angle edge routing</td><td>Dify</td></tr>
+    <tr><td><span class="badge badge-low">LOW</span></td><td>Keyboard shortcuts in context</td><td>Raycast</td></tr>
+  </table>
+</div>
+
+<p style="margin-top: 40px; color: #525252; font-size: 11px;">Simulator v2 UI Research — 2026-03-28</p>
+
+</body>
+</html>

@@ -29,11 +29,29 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
     return { label: (n.data as Record<string, unknown>).label as string, unique, pct, type: (n.data as Record<string, unknown>).nodeType as string };
   }).filter(r => r.unique > 0);
 
+  // Collect all data sources from nodes
+  const dataSources = ordered
+    .map(n => {
+      const d = n.data as Record<string, unknown>;
+      const source = d.source as string;
+      if (!source) return null;
+      // Parse multi-source format: "Name 2024:70:2 | Name 2023:65:1"
+      const sources = source.includes(':')
+        ? source.split('|').map(s => s.trim().split(':')[0].trim())
+        : [source];
+      return {
+        label: d.label as string,
+        nodeType: d.nodeType as string,
+        sources,
+      };
+    })
+    .filter(Boolean) as { label: string; nodeType: string; sources: string[] }[];
+
   const bottlenecks = nodes
     .filter(n => {
       const t = (n.data as Record<string, unknown>).nodeType;
       const p = (n.data as Record<string, unknown>).prob as number;
-      return (t === 'bottleneck' || t === 'decision') && p < 100;
+      return (t === 'bottleneck' || t === 'decision' || t === 'gate') && p < 100;
     })
     .map(n => {
       const reached = nodeUniqueReach[n.id] ? nodeUniqueReach[n.id].size : 0;
@@ -165,6 +183,33 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
                   </div>
                 );
               })}
+            </div>
+          </div>
+        )}
+
+        {/* Data Sources */}
+        {dataSources.length > 0 && (
+          <div className="mb-4">
+            <h3 className="text-[10px] uppercase tracking-[0.1em] font-medium mb-3" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>Data Sources</h3>
+            <div className="rounded-xl overflow-hidden" style={{ outline: '1px solid var(--border)' }}>
+              {dataSources.map((ds, i) => (
+                <div
+                  key={i}
+                  className="px-3 py-2"
+                  style={{ borderBottom: i < dataSources.length - 1 ? '1px solid var(--border-subtle)' : 'none' }}
+                >
+                  <div className="text-[10px] font-medium mb-1 truncate" style={{ color: 'var(--foreground)' }} title={ds.label}>
+                    {ds.label}
+                  </div>
+                  <div className="flex flex-col gap-0.5">
+                    {ds.sources.map((src, j) => (
+                      <span key={j} className="text-[9px]" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>
+                        {src}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         )}

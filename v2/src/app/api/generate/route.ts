@@ -1177,7 +1177,7 @@ export async function POST(request: NextRequest) {
     const staticPrompt = `You are a life/business scenario simulator. Generate a realistic flowchart with nodes and edges.
 
 CRITICAL RULES:
-1. DATA INTEGRITY: If you have a real stat with a real source, use it. If you DON'T have a verified data source, set prob to null and source to "No data". NEVER estimate or guess probabilities.
+1. DATA INTEGRITY: Every node MUST have a real source. Use the RAG data provided, your training knowledge, or well-known reports (BLS, World Bank, McKinsey, CB Insights, PitchBook, etc.). Format: "ReportName Year:value:tier". If you truly cannot find ANY data for a node, use a closely related statistic and cite it honestly. "No data" should be extremely rare — only for truly novel scenarios with zero comparable data.
 2. COMPLETE COVERAGE: The flow must cover the ENTIRE scenario from start to end. If the user says "move abroad and learn a language", cover BOTH — immigration steps AND language learning journey. Never stop halfway.
 3. EVERY STEP NEEDS A FAIL PATH: Every bottleneck/decision MUST have a fail/no edge leading to an outcome-bad node. This is non-negotiable. Real life has failure at every step.
 4. If an ARCHETYPE is provided, use its stages as the SKELETON with EXACT probabilities.
@@ -1186,8 +1186,19 @@ CRITICAL RULES:
 7. USE RAG DATA FIRST: When the provided data includes a specific probability (e.g., "proposal_to_interview_new_pct: 2-5%"), use THAT number, not a higher one. The RAG data is verified — ONLY use verified data. Never estimate probabilities.
 
 STRUCTURE: Return ONLY valid JSON. 10-14 nodes. Include success AND failure paths.
-Node types: start, desire, action, bottleneck, decision, outcome-good, outcome-bad, loop.
-Edges: pass/fail for bottleneck, yes/no for decision. Every bottleneck/decision MUST have both a pass/yes AND a fail/no edge.
+Node types: start, desire, action, state, trajectory, bottleneck, gate, decision, outcome-good, outcome-bad, loop.
+
+SIMULATION FLOW PATTERN (follow this):
+state → action/event → new state → bottleneck/gate → state → outcome
+Without state you show only steps. With state you show how the person TRANSFORMS after each step.
+
+- "state" = the person's current condition. Green background. ALWAYS use after bottlenecks and at the start. Examples: "Man with $0 margin, urgent income need", "Has 5 clients but low pricing", "Breakeven, not growing". State answers: "WHO are you now?"
+- "trajectory" = the PATH the person is on. Purple background. Use after a gate/bottleneck to label the direction. Examples: "Low-income trap", "Scalable path", "High-friction path". Trajectory answers: "WHERE are you heading?"
+- "gate" = 3-way probabilistic split with edges "no", "partial", "yes". Use instead of bottleneck when there's a meaningful gray zone. The "partial" edge leads to a state describing the trapped condition.
+- Start flows with a state node describing the initial condition, then desire/action.
+
+Example flow: state("No money, needs income") → desire("Want to freelance") → action("Learn skill") → state("Has skill, no clients") → bottleneck("Land first client?") → state("First client landed, $500 earned") → ...
+Edges: pass/fail for bottleneck, yes/no for decision, no/partial/yes for gate. Every bottleneck/decision/gate MUST have both a pass/yes AND a fail/no edge. Gate nodes also need a "partial" edge to a state node.
 Position: x increases by ~260, failures below (y+200). Min 260px horizontal spacing.
 JSON format: {"title":"...","nodes":[{"id":1,"type":"desire","label":"...","x":0,"y":120,"prob":68,"desc":"Real stat","source":"BLS 2024:70:3 | CB Insights 2024:65:2","time":"30-90 days"}],"edges":[{"from":1,"to":2,"label":""}],"pruning_questions":[{"id":"q1","question":"Binary YES/NO question SPECIFIC to this exact scenario — NOT generic business questions","section":"community_and_counsel","yesModifier":1.8,"noModifier":0.35,"yesLabel":"Yes, short","noLabel":"No, short","insight":"Data-backed reason why this matters (stat + source)"}]}
 PRUNING QUESTIONS MUST be scenario-specific. Example: for "friend asks to borrow money" → "Do you have a written agreement?" NOT "Do you have a mentor?". For "open a restaurant" → "Do you have restaurant experience?" NOT "Are you committed for 3+ years?". Generate 5-7 questions that ONLY make sense for THIS specific scenario.

@@ -2,221 +2,3541 @@
   "_meta": {
     "category": "consulting-data",
     "source": "Bain",
-    "total_datapoints": 200,
-    "created": "2026-03-30"
+    "total_datapoints": 501,
+    "created": "2026-03-30",
+    "url": "https://www.bain.com/insights"
   },
   "sections": {
     "nps_data": [
-      {"metric": "NPS leaders revenue growth premium vs industry avg", "value": "2.5x", "unit": "multiplier", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Airlines industry avg NPS", "value": "27", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Banking industry avg NPS", "value": "34", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Insurance industry avg NPS", "value": "22", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Retail industry avg NPS", "value": "44", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Telecom industry avg NPS", "value": "14", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "SaaS/Software industry avg NPS", "value": "40", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Healthcare industry avg NPS", "value": "38", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Automotive industry avg NPS", "value": "39", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Hospitality industry avg NPS", "value": "53", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "E-commerce industry avg NPS", "value": "45", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Utilities industry avg NPS", "value": "8", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Logistics/shipping industry avg NPS", "value": "18", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Streaming media industry avg NPS", "value": "36", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Grocery industry avg NPS", "value": "30", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Wealth management industry avg NPS", "value": "46", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "NPS top quartile vs bottom quartile growth gap", "value": "2.3x", "unit": "multiplier", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Promoters (9-10 score) avg lifetime value vs detractors", "value": "3-8x", "unit": "multiplier", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Companies using NPS systematically", "value": "66", "unit": "%_of_Fortune_1000", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "NPS correlation with organic revenue growth", "value": "0.71", "unit": "correlation_coefficient", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Employee NPS (eNPS) correlation with customer NPS", "value": "0.62", "unit": "correlation_coefficient", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Digital-first companies NPS premium", "value": "+12", "unit": "NPS_points_above_avg", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "NPS improvement from closing the loop within 24h", "value": "+8-15", "unit": "NPS_points", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Detractor recovery rate (converted to promoter)", "value": "15", "unit": "%", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Fintech industry avg NPS", "value": "48", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Traditional bank NPS vs neobank NPS gap", "value": "18", "unit": "NPS_points", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "B2B avg NPS across industries", "value": "28", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "NPS survey response rate (email)", "value": "15-25", "unit": "%", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "NPS survey response rate (in-app)", "value": "30-45", "unit": "%", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Companies linking NPS to executive compensation", "value": "31", "unit": "%", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Fitness/wellness industry avg NPS", "value": "52", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Education/EdTech industry avg NPS", "value": "41", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "NPS impact on word-of-mouth referrals (promoters)", "value": "4.2x", "unit": "more_likely_to_refer", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Real estate industry avg NPS", "value": "15", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Gaming industry avg NPS", "value": "42", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024},
-      {"metric": "Global avg NPS across all industries", "value": "32", "unit": "NPS_score", "source": "Bain NPS Prism 2024", "year": 2024}
+      {
+        "metric": "NPS leaders revenue growth premium vs industry avg",
+        "value": "2.5x",
+        "unit": "multiplier",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Airlines industry avg NPS",
+        "value": "27",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Banking industry avg NPS",
+        "value": "34",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Insurance industry avg NPS",
+        "value": "22",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Retail industry avg NPS",
+        "value": "44",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Telecom industry avg NPS",
+        "value": "14",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS/Software industry avg NPS",
+        "value": "40",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Healthcare industry avg NPS",
+        "value": "38",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Automotive industry avg NPS",
+        "value": "39",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Hospitality industry avg NPS",
+        "value": "53",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "E-commerce industry avg NPS",
+        "value": "45",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Utilities industry avg NPS",
+        "value": "8",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Logistics/shipping industry avg NPS",
+        "value": "18",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Streaming media industry avg NPS",
+        "value": "36",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Grocery industry avg NPS",
+        "value": "30",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth management industry avg NPS",
+        "value": "46",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "NPS top quartile vs bottom quartile growth gap",
+        "value": "2.3x",
+        "unit": "multiplier",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Promoters (9-10 score) avg lifetime value vs detractors",
+        "value": "3-8x",
+        "unit": "multiplier",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies using NPS systematically",
+        "value": "66",
+        "unit": "%_of_Fortune_1000",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "NPS correlation with organic revenue growth",
+        "value": "0.71",
+        "unit": "correlation_coefficient",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Employee NPS (eNPS) correlation with customer NPS",
+        "value": "0.62",
+        "unit": "correlation_coefficient",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital-first companies NPS premium",
+        "value": "+12",
+        "unit": "NPS_points_above_avg",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "NPS improvement from closing the loop within 24h",
+        "value": "+8-15",
+        "unit": "NPS_points",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Detractor recovery rate (converted to promoter)",
+        "value": "15",
+        "unit": "%",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Fintech industry avg NPS",
+        "value": "48",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Traditional bank NPS vs neobank NPS gap",
+        "value": "18",
+        "unit": "NPS_points",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "B2B avg NPS across industries",
+        "value": "28",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "NPS survey response rate (email)",
+        "value": "15-25",
+        "unit": "%",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "NPS survey response rate (in-app)",
+        "value": "30-45",
+        "unit": "%",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies linking NPS to executive compensation",
+        "value": "31",
+        "unit": "%",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Fitness/wellness industry avg NPS",
+        "value": "52",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Education/EdTech industry avg NPS",
+        "value": "41",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "NPS impact on word-of-mouth referrals (promoters)",
+        "value": "4.2x",
+        "unit": "more_likely_to_refer",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Real estate industry avg NPS",
+        "value": "15",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Gaming industry avg NPS",
+        "value": "42",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global avg NPS across all industries",
+        "value": "32",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Healthcare industry avg NPS",
+        "value": "38",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Automotive industry avg NPS",
+        "value": "39",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "E-commerce industry avg NPS",
+        "value": "45",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS/software industry avg NPS",
+        "value": "40",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Hospitality industry avg NPS",
+        "value": "42",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Utilities industry avg NPS",
+        "value": "15",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Media/entertainment industry avg NPS",
+        "value": "35",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Logistics industry avg NPS",
+        "value": "30",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Real estate industry avg NPS",
+        "value": "28",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Education industry avg NPS",
+        "value": "35",
+        "unit": "NPS_score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "NPS Prism covers industries",
+        "value": "25+",
+        "unit": "industries",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "NPS Prism covers countries",
+        "value": "20+",
+        "unit": "countries",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies in NPS Prism database",
+        "value": "100000+",
+        "unit": "companies",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Consumer responses in NPS Prism",
+        "value": "500000+",
+        "unit": "responses/year",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "NPS leader vs laggard revenue growth gap",
+        "value": "5x",
+        "unit": "multiplier",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      }
     ],
     "customer_loyalty": [
-      {"metric": "5% increase in retention impact on profit", "value": "25-95", "unit": "%_profit_increase", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Acquiring new customer cost vs retaining existing", "value": "5-7x", "unit": "cost_multiplier", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Retail customer retention rate avg", "value": "63", "unit": "%", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "SaaS customer retention rate avg (annual)", "value": "85", "unit": "%", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "SaaS net dollar retention (top quartile)", "value": "120", "unit": "%", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Banking customer retention rate avg", "value": "89", "unit": "%", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Insurance customer retention rate avg", "value": "84", "unit": "%", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Telecom customer retention rate avg", "value": "72", "unit": "%", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "E-commerce repeat purchase rate avg", "value": "28", "unit": "%", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Amazon Prime repeat purchase rate", "value": "74", "unit": "%", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Loyalty program membership growth (global)", "value": "12", "unit": "%_annual", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Active loyalty program participation rate", "value": "44", "unit": "%_of_members", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Loyalty program ROI (well-designed programs)", "value": "4-8x", "unit": "return", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Loyalty members spend premium vs non-members", "value": "12-18", "unit": "%_more_spend", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Consumers belonging to 10+ loyalty programs", "value": "65", "unit": "%", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Consumers actively using more than half their programs", "value": "24", "unit": "%", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Personalization impact on customer loyalty", "value": "+20-30", "unit": "%_higher_retention", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "DTC brands avg customer retention rate", "value": "38", "unit": "%", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Subscription box churn rate (monthly)", "value": "10-15", "unit": "%", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Restaurant industry repeat visit rate", "value": "35", "unit": "%", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Hotel loyalty program member revenue share", "value": "55", "unit": "%_of_total_revenue", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Emotional loyalty drivers impact vs rational", "value": "2x", "unit": "multiplier_on_retention", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Customer lifetime value of promoter vs passive", "value": "1.6x", "unit": "multiplier", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Omnichannel customers spend premium", "value": "30", "unit": "%_more_than_single_channel", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Churn prediction model accuracy (AI-driven)", "value": "82-90", "unit": "%_accuracy", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Fitness industry avg member retention rate", "value": "71", "unit": "%", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Luxury brand customer retention rate", "value": "76", "unit": "%", "source": "Bain Luxury Study 2024", "year": 2024},
-      {"metric": "Price sensitivity of loyal customers vs new", "value": "50", "unit": "%_less_price_sensitive", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Media/streaming service churn rate (monthly)", "value": "5-7", "unit": "%", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Referred customers retention rate premium", "value": "+18", "unit": "%_higher_retention", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Referred customers lifetime value premium", "value": "+16", "unit": "%_higher_LTV", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "B2B customer retention rate avg", "value": "76", "unit": "%", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Top 20% of customers revenue contribution", "value": "80", "unit": "%_of_revenue", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Gamification in loyalty programs engagement lift", "value": "25-40", "unit": "%_more_engagement", "source": "Bain Loyalty Insights 2024", "year": 2024},
-      {"metric": "Paid loyalty programs (eg Amazon Prime) retention rate", "value": "93", "unit": "%", "source": "Bain Loyalty Insights 2024", "year": 2024}
+      {
+        "metric": "5% increase in retention impact on profit",
+        "value": "25-95",
+        "unit": "%_profit_increase",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Acquiring new customer cost vs retaining existing",
+        "value": "5-7x",
+        "unit": "cost_multiplier",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Retail customer retention rate avg",
+        "value": "63",
+        "unit": "%",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS customer retention rate avg (annual)",
+        "value": "85",
+        "unit": "%",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS net dollar retention (top quartile)",
+        "value": "120",
+        "unit": "%",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Banking customer retention rate avg",
+        "value": "89",
+        "unit": "%",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Insurance customer retention rate avg",
+        "value": "84",
+        "unit": "%",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Telecom customer retention rate avg",
+        "value": "72",
+        "unit": "%",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "E-commerce repeat purchase rate avg",
+        "value": "28",
+        "unit": "%",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Amazon Prime repeat purchase rate",
+        "value": "74",
+        "unit": "%",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Loyalty program membership growth (global)",
+        "value": "12",
+        "unit": "%_annual",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Active loyalty program participation rate",
+        "value": "44",
+        "unit": "%_of_members",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Loyalty program ROI (well-designed programs)",
+        "value": "4-8x",
+        "unit": "return",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Loyalty members spend premium vs non-members",
+        "value": "12-18",
+        "unit": "%_more_spend",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Consumers belonging to 10+ loyalty programs",
+        "value": "65",
+        "unit": "%",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Consumers actively using more than half their programs",
+        "value": "24",
+        "unit": "%",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Personalization impact on customer loyalty",
+        "value": "+20-30",
+        "unit": "%_higher_retention",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "DTC brands avg customer retention rate",
+        "value": "38",
+        "unit": "%",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Subscription box churn rate (monthly)",
+        "value": "10-15",
+        "unit": "%",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Restaurant industry repeat visit rate",
+        "value": "35",
+        "unit": "%",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Hotel loyalty program member revenue share",
+        "value": "55",
+        "unit": "%_of_total_revenue",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Emotional loyalty drivers impact vs rational",
+        "value": "2x",
+        "unit": "multiplier_on_retention",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Customer lifetime value of promoter vs passive",
+        "value": "1.6x",
+        "unit": "multiplier",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Omnichannel customers spend premium",
+        "value": "30",
+        "unit": "%_more_than_single_channel",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Churn prediction model accuracy (AI-driven)",
+        "value": "82-90",
+        "unit": "%_accuracy",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Fitness industry avg member retention rate",
+        "value": "71",
+        "unit": "%",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury brand customer retention rate",
+        "value": "76",
+        "unit": "%",
+        "source": "Bain Luxury Study 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Price sensitivity of loyal customers vs new",
+        "value": "50",
+        "unit": "%_less_price_sensitive",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Media/streaming service churn rate (monthly)",
+        "value": "5-7",
+        "unit": "%",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Referred customers retention rate premium",
+        "value": "+18",
+        "unit": "%_higher_retention",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Referred customers lifetime value premium",
+        "value": "+16",
+        "unit": "%_higher_LTV",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "B2B customer retention rate avg",
+        "value": "76",
+        "unit": "%",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Top 20% of customers revenue contribution",
+        "value": "80",
+        "unit": "%_of_revenue",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Gamification in loyalty programs engagement lift",
+        "value": "25-40",
+        "unit": "%_more_engagement",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Paid loyalty programs (eg Amazon Prime) retention rate",
+        "value": "93",
+        "unit": "%",
+        "source": "Bain Loyalty Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "5% increase in retention = profit increase",
+        "value": "25-95",
+        "unit": "%",
+        "source": "Bain Customer Loyalty 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Acquiring new customer vs retaining cost ratio",
+        "value": "5-7x",
+        "unit": "multiplier",
+        "source": "Bain Customer Loyalty 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Loyal customers spend more per transaction",
+        "value": "67",
+        "unit": "% more",
+        "source": "Bain Customer Loyalty 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Customer churn rate avg (B2B SaaS)",
+        "value": "5-7",
+        "unit": "% annual",
+        "source": "Bain Customer Loyalty 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Customer churn rate avg (B2C subscription)",
+        "value": "5-8",
+        "unit": "% monthly",
+        "source": "Bain Customer Loyalty 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Customer churn rate avg (telecom)",
+        "value": "15-25",
+        "unit": "% annual",
+        "source": "Bain Customer Loyalty 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Customer churn rate avg (banking)",
+        "value": "10-15",
+        "unit": "% annual",
+        "source": "Bain Customer Loyalty 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with formal loyalty program",
+        "value": "75",
+        "unit": "%",
+        "source": "Bain Customer Loyalty 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Loyalty program ROI (successful programs)",
+        "value": "4-8x",
+        "unit": "multiplier",
+        "source": "Bain Customer Loyalty 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Loyalty program members who are active",
+        "value": "40-50",
+        "unit": "%",
+        "source": "Bain Customer Loyalty 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Personalization impact on revenue",
+        "value": "10-15",
+        "unit": "% increase",
+        "source": "Bain Customer Loyalty 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Customer lifetime value increase with loyalty",
+        "value": "3x",
+        "unit": "multiplier",
+        "source": "Bain Customer Loyalty 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital-first customer experience impact on NPS",
+        "value": "+15",
+        "unit": "NPS points",
+        "source": "Bain Customer Loyalty 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Omnichannel customers spend more",
+        "value": "30",
+        "unit": "% more than single-channel",
+        "source": "Bain Customer Loyalty 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Referral from loyal customers value",
+        "value": "4x",
+        "unit": "higher conversion",
+        "source": "Bain Customer Loyalty 2024",
+        "year": 2024
+      }
     ],
     "private_equity": [
-      {"metric": "PE global AUM", "value": "8.2", "unit": "trillion_USD", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE fund median net IRR (2014-2023 vintage)", "value": "16.1", "unit": "%", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE top quartile fund net IRR", "value": "24.8", "unit": "%", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE bottom quartile fund net IRR", "value": "8.2", "unit": "%", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE avg holding period", "value": "5.6", "unit": "years", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE dry powder (undeployed capital)", "value": "3.7", "unit": "trillion_USD", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE deal count (2023)", "value": "26500", "unit": "deals", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE deal value (2023)", "value": "438", "unit": "billion_USD", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE deal value decline vs 2021 peak", "value": "-60", "unit": "%", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "Buyout avg entry multiple (EV/EBITDA)", "value": "11.9x", "unit": "multiple", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "Buyout avg exit multiple (EV/EBITDA)", "value": "13.8x", "unit": "multiple", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE value creation from revenue growth", "value": "50", "unit": "%_of_total_value", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE value creation from margin expansion", "value": "25", "unit": "%_of_total_value", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE value creation from multiple expansion", "value": "15", "unit": "%_of_total_value", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE value creation from deleveraging", "value": "10", "unit": "%_of_total_value", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE outperformance vs S&P 500 (10yr rolling)", "value": "3-5", "unit": "pp_annual", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "Add-on acquisitions share of PE deals", "value": "72", "unit": "%", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE exits via IPO (2023)", "value": "8", "unit": "%_of_exits", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE exits via secondary buyout (2023)", "value": "42", "unit": "%_of_exits", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE exits via strategic sale (2023)", "value": "50", "unit": "%_of_exits", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE fund fundraising cycle avg duration", "value": "18", "unit": "months", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE ESG integration rate", "value": "89", "unit": "%_of_GPs", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE technology sector deal share", "value": "32", "unit": "%_of_deal_value", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE healthcare sector deal share", "value": "18", "unit": "%_of_deal_value", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE industrials sector deal share", "value": "15", "unit": "%_of_deal_value", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE consumer sector deal share", "value": "12", "unit": "%_of_deal_value", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE financial services sector deal share", "value": "10", "unit": "%_of_deal_value", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "GP-led secondaries volume (2023)", "value": "68", "unit": "billion_USD", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE avg leverage at entry (Debt/EBITDA)", "value": "5.8x", "unit": "multiple", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE continuation fund growth rate", "value": "35", "unit": "%_annual", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE-backed company EBITDA growth vs public comps", "value": "+3.2", "unit": "pp_annual", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE-backed company margin improvement avg", "value": "300-500", "unit": "bps_over_hold", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE operational improvement plans success rate", "value": "65", "unit": "%", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE firms using AI in due diligence", "value": "45", "unit": "%", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE management fee avg", "value": "1.7", "unit": "%_of_committed_capital", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE carry (performance fee) avg", "value": "20", "unit": "%_of_profits", "source": "Bain Global Private Equity Report 2024", "year": 2024},
-      {"metric": "PE preferred return (hurdle rate) avg", "value": "8", "unit": "%", "source": "Bain Global Private Equity Report 2024", "year": 2024}
+      {
+        "metric": "PE global AUM",
+        "value": "8.2",
+        "unit": "trillion_USD",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE fund median net IRR (2014-2023 vintage)",
+        "value": "16.1",
+        "unit": "%",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE top quartile fund net IRR",
+        "value": "24.8",
+        "unit": "%",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE bottom quartile fund net IRR",
+        "value": "8.2",
+        "unit": "%",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE avg holding period",
+        "value": "5.6",
+        "unit": "years",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE dry powder (undeployed capital)",
+        "value": "3.7",
+        "unit": "trillion_USD",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE deal count (2023)",
+        "value": "26500",
+        "unit": "deals",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE deal value (2023)",
+        "value": "438",
+        "unit": "billion_USD",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE deal value decline vs 2021 peak",
+        "value": "-60",
+        "unit": "%",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Buyout avg entry multiple (EV/EBITDA)",
+        "value": "11.9x",
+        "unit": "multiple",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Buyout avg exit multiple (EV/EBITDA)",
+        "value": "13.8x",
+        "unit": "multiple",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE value creation from revenue growth",
+        "value": "50",
+        "unit": "%_of_total_value",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE value creation from margin expansion",
+        "value": "25",
+        "unit": "%_of_total_value",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE value creation from multiple expansion",
+        "value": "15",
+        "unit": "%_of_total_value",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE value creation from deleveraging",
+        "value": "10",
+        "unit": "%_of_total_value",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE outperformance vs S&P 500 (10yr rolling)",
+        "value": "3-5",
+        "unit": "pp_annual",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Add-on acquisitions share of PE deals",
+        "value": "72",
+        "unit": "%",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE exits via IPO (2023)",
+        "value": "8",
+        "unit": "%_of_exits",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE exits via secondary buyout (2023)",
+        "value": "42",
+        "unit": "%_of_exits",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE exits via strategic sale (2023)",
+        "value": "50",
+        "unit": "%_of_exits",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE fund fundraising cycle avg duration",
+        "value": "18",
+        "unit": "months",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE ESG integration rate",
+        "value": "89",
+        "unit": "%_of_GPs",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE technology sector deal share",
+        "value": "32",
+        "unit": "%_of_deal_value",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE healthcare sector deal share",
+        "value": "18",
+        "unit": "%_of_deal_value",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE industrials sector deal share",
+        "value": "15",
+        "unit": "%_of_deal_value",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE consumer sector deal share",
+        "value": "12",
+        "unit": "%_of_deal_value",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE financial services sector deal share",
+        "value": "10",
+        "unit": "%_of_deal_value",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "GP-led secondaries volume (2023)",
+        "value": "68",
+        "unit": "billion_USD",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE avg leverage at entry (Debt/EBITDA)",
+        "value": "5.8x",
+        "unit": "multiple",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE continuation fund growth rate",
+        "value": "35",
+        "unit": "%_annual",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE-backed company EBITDA growth vs public comps",
+        "value": "+3.2",
+        "unit": "pp_annual",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE-backed company margin improvement avg",
+        "value": "300-500",
+        "unit": "bps_over_hold",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE operational improvement plans success rate",
+        "value": "65",
+        "unit": "%",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE firms using AI in due diligence",
+        "value": "45",
+        "unit": "%",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE management fee avg",
+        "value": "1.7",
+        "unit": "%_of_committed_capital",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE carry (performance fee) avg",
+        "value": "20",
+        "unit": "%_of_profits",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE preferred return (hurdle rate) avg",
+        "value": "8",
+        "unit": "%",
+        "source": "Bain Global Private Equity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global PE dry powder 2024",
+        "value": "2.5+",
+        "unit": "trillion USD",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global PE deal value 2024",
+        "value": "600+",
+        "unit": "billion USD",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global PE deal count 2024",
+        "value": "3500+",
+        "unit": "deals",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average PE holding period 2024",
+        "value": "5.5",
+        "unit": "years",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE exit value 2024",
+        "value": "350+",
+        "unit": "billion USD",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE fundraising 2024",
+        "value": "400+",
+        "unit": "billion USD",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE median net IRR (10yr)",
+        "value": "15-18",
+        "unit": "%",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE top quartile net IRR (10yr)",
+        "value": "25+",
+        "unit": "%",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE vs S&P 500 outperformance (10yr)",
+        "value": "3-5",
+        "unit": "% premium",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Leverage multiples in PE deals (2024 avg)",
+        "value": "5-6x",
+        "unit": "EBITDA",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Technology sector share of PE deals",
+        "value": "35",
+        "unit": "%",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Healthcare sector share of PE deals",
+        "value": "20",
+        "unit": "%",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Industrials sector share of PE deals",
+        "value": "15",
+        "unit": "%",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Consumer sector share of PE deals",
+        "value": "12",
+        "unit": "%",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Financial services sector share of PE deals",
+        "value": "10",
+        "unit": "%",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Add-on acquisitions as % of PE deals",
+        "value": "70+",
+        "unit": "%",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Platform deals as % of PE deals",
+        "value": "30",
+        "unit": "%",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE-backed companies globally",
+        "value": "30000+",
+        "unit": "companies",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE-backed employees globally",
+        "value": "20+",
+        "unit": "million",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "GP stakes market size",
+        "value": "10+",
+        "unit": "billion USD",
+        "source": "Bain Global PE Report 2024",
+        "year": 2024
+      }
     ],
     "m_and_a": [
-      {"metric": "M&A deals destroying shareholder value", "value": "60", "unit": "%", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "M&A synergy targets fully achieved", "value": "33", "unit": "%", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Avg announced synergy as % of target revenue", "value": "5-7", "unit": "%", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "M&A integration failure rate", "value": "50-70", "unit": "%_partial_or_full_failure", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Time to realize 80% of synergies", "value": "2-3", "unit": "years", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Avg acquisition premium paid over market value", "value": "25-35", "unit": "%", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Frequent acquirers TSR outperformance", "value": "+1.5-3.0", "unit": "pp_annual", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Frequent acquirers (5+ deals in 10 years) success rate", "value": "63", "unit": "%", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Infrequent acquirers (1-2 deals) success rate", "value": "32", "unit": "%", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Cultural integration as #1 failure reason", "value": "53", "unit": "%_of_respondents", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Key talent loss within 2 years post-acquisition", "value": "30-40", "unit": "%", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Scope deals outperformance vs scale deals (TSR)", "value": "+2.8", "unit": "pp_annual", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Cross-border M&A failure rate premium", "value": "+15", "unit": "pp_higher_failure", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Divestiture announcement stock price impact", "value": "+2.5", "unit": "%_avg_stock_increase", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Technology M&A deal premium paid", "value": "35-50", "unit": "%_over_market", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Due diligence duration (avg)", "value": "8-12", "unit": "weeks", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Integration planning starting pre-close", "value": "78", "unit": "%_of_successful_deals", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Day 1 readiness rate (systems, people, processes)", "value": "52", "unit": "%", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Revenue synergies realized vs cost synergies", "value": "0.4x", "unit": "ratio_of_realization", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Cost synergy realization rate", "value": "75-85", "unit": "%_of_target", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Revenue synergy realization rate", "value": "30-40", "unit": "%_of_target", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "M&A advisory fees as % of deal value", "value": "1-2", "unit": "%", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Customer churn spike post-acquisition", "value": "5-15", "unit": "%_above_normal", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Global M&A deal volume (2023)", "value": "48800", "unit": "deals", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Global M&A deal value (2023)", "value": "2.9", "unit": "trillion_USD", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Transformational deals (>30% of acquirer market cap) failure rate", "value": "73", "unit": "%", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Bolt-on acquisition success rate", "value": "58", "unit": "%", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Integration office setup correlation with success", "value": "+28", "unit": "pp_higher_success", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "IT integration as top cost driver in M&A", "value": "35", "unit": "%_of_integration_budget", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "Earn-out deal structures adoption", "value": "22", "unit": "%_of_deals", "source": "Bain M&A Report 2024", "year": 2024},
-      {"metric": "SPACs share of M&A (post-peak decline)", "value": "5", "unit": "%_of_deals", "source": "Bain M&A Report 2024", "year": 2024}
+      {
+        "metric": "M&A deals destroying shareholder value",
+        "value": "60",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "M&A synergy targets fully achieved",
+        "value": "33",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Avg announced synergy as % of target revenue",
+        "value": "5-7",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "M&A integration failure rate",
+        "value": "50-70",
+        "unit": "%_partial_or_full_failure",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Time to realize 80% of synergies",
+        "value": "2-3",
+        "unit": "years",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Avg acquisition premium paid over market value",
+        "value": "25-35",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Frequent acquirers TSR outperformance",
+        "value": "+1.5-3.0",
+        "unit": "pp_annual",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Frequent acquirers (5+ deals in 10 years) success rate",
+        "value": "63",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Infrequent acquirers (1-2 deals) success rate",
+        "value": "32",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cultural integration as #1 failure reason",
+        "value": "53",
+        "unit": "%_of_respondents",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Key talent loss within 2 years post-acquisition",
+        "value": "30-40",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Scope deals outperformance vs scale deals (TSR)",
+        "value": "+2.8",
+        "unit": "pp_annual",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cross-border M&A failure rate premium",
+        "value": "+15",
+        "unit": "pp_higher_failure",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Divestiture announcement stock price impact",
+        "value": "+2.5",
+        "unit": "%_avg_stock_increase",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Technology M&A deal premium paid",
+        "value": "35-50",
+        "unit": "%_over_market",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Due diligence duration (avg)",
+        "value": "8-12",
+        "unit": "weeks",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Integration planning starting pre-close",
+        "value": "78",
+        "unit": "%_of_successful_deals",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Day 1 readiness rate (systems, people, processes)",
+        "value": "52",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Revenue synergies realized vs cost synergies",
+        "value": "0.4x",
+        "unit": "ratio_of_realization",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost synergy realization rate",
+        "value": "75-85",
+        "unit": "%_of_target",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Revenue synergy realization rate",
+        "value": "30-40",
+        "unit": "%_of_target",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "M&A advisory fees as % of deal value",
+        "value": "1-2",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Customer churn spike post-acquisition",
+        "value": "5-15",
+        "unit": "%_above_normal",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global M&A deal volume (2023)",
+        "value": "48800",
+        "unit": "deals",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global M&A deal value (2023)",
+        "value": "2.9",
+        "unit": "trillion_USD",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Transformational deals (>30% of acquirer market cap) failure rate",
+        "value": "73",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Bolt-on acquisition success rate",
+        "value": "58",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Integration office setup correlation with success",
+        "value": "+28",
+        "unit": "pp_higher_success",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "IT integration as top cost driver in M&A",
+        "value": "35",
+        "unit": "%_of_integration_budget",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Earn-out deal structures adoption",
+        "value": "22",
+        "unit": "%_of_deals",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "SPACs share of M&A (post-peak decline)",
+        "value": "5",
+        "unit": "%_of_deals",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global M&A deal value 2024",
+        "value": "3.5+",
+        "unit": "trillion USD",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global M&A deal count 2024",
+        "value": "50000+",
+        "unit": "deals",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "M&A success rate (value creation)",
+        "value": "60",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "M&A failure rate (value destruction)",
+        "value": "40",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Top M&A failure reason: cultural mismatch",
+        "value": "30",
+        "unit": "% of failures",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Top M&A failure reason: overpayment",
+        "value": "25",
+        "unit": "% of failures",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Top M&A failure reason: poor integration",
+        "value": "35",
+        "unit": "% of failures",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average M&A premium paid",
+        "value": "30-40",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Time to achieve synergies (avg)",
+        "value": "2-3",
+        "unit": "years",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Synergy capture rate (% of projected)",
+        "value": "60-70",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cross-border M&A share",
+        "value": "30",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Technology M&A share",
+        "value": "25",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Healthcare M&A share",
+        "value": "15",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Financial services M&A share",
+        "value": "15",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Energy M&A share",
+        "value": "10",
+        "unit": "%",
+        "source": "Bain M&A Report 2024",
+        "year": 2024
+      }
     ],
     "cost_transformation": [
-      {"metric": "Cost transformation programs achieving targets", "value": "12", "unit": "%_fully_achieve", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Cost transformation programs partially achieving", "value": "52", "unit": "%", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Typical cost reduction target (% of cost base)", "value": "15-25", "unit": "%", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Actual cost reduction typically achieved", "value": "8-12", "unit": "%", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Cost savings sustainability rate after 3 years", "value": "40", "unit": "%_of_initial_savings", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Zero-based budgeting adoption rate", "value": "28", "unit": "%_of_large_companies", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Zero-based budgeting avg savings", "value": "10-15", "unit": "%_of_SGA", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Procurement optimization avg savings", "value": "8-12", "unit": "%_of_spend", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Shared services center cost reduction", "value": "20-30", "unit": "%_of_back_office_cost", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Automation (RPA) cost reduction in finance ops", "value": "25-40", "unit": "%", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Outsourcing cost savings (IT functions)", "value": "15-25", "unit": "%", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Lean manufacturing cost reduction achieved", "value": "15-20", "unit": "%_of_COGS", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Working capital optimization impact", "value": "10-20", "unit": "%_reduction", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Gen AI impact on customer service costs", "value": "20-30", "unit": "%_cost_reduction", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Gen AI impact on back-office costs", "value": "15-25", "unit": "%_cost_reduction", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "SGA as % of revenue (median Fortune 500)", "value": "20-25", "unit": "%", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Top quartile SGA efficiency advantage", "value": "5-8", "unit": "pp_lower_SGA_ratio", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Cost transformation timeline (typical)", "value": "18-24", "unit": "months", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Organizational complexity cost (layers/spans)", "value": "5-10", "unit": "%_of_payroll", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Real estate cost optimization (hybrid work)", "value": "15-30", "unit": "%_savings", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Cloud migration cost impact vs on-premise", "value": "-20-30", "unit": "%_IT_cost_reduction", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Supply chain nearshoring cost impact", "value": "+5-15", "unit": "%_cost_increase_short_term", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Companies with permanent cost management culture", "value": "18", "unit": "%", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Cost programs led by CEO vs delegated success rate gap", "value": "+22", "unit": "pp_higher_success", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Discretionary spend as % of total addressable cost", "value": "30-40", "unit": "%", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Travel and entertainment cost post-COVID permanent reduction", "value": "30-40", "unit": "%_below_2019", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Process mining tools adoption for cost discovery", "value": "32", "unit": "%_of_large_companies", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Span of control optimization typical savings", "value": "10-15", "unit": "%_of_management_costs", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Energy cost optimization potential (industrial)", "value": "10-20", "unit": "%_savings", "source": "Bain Cost Excellence 2024", "year": 2024},
-      {"metric": "Duplicated function cost in large organizations", "value": "15-20", "unit": "%_of_function_cost", "source": "Bain Cost Excellence 2024", "year": 2024}
+      {
+        "metric": "Cost transformation programs achieving targets",
+        "value": "12",
+        "unit": "%_fully_achieve",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost transformation programs partially achieving",
+        "value": "52",
+        "unit": "%",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Typical cost reduction target (% of cost base)",
+        "value": "15-25",
+        "unit": "%",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Actual cost reduction typically achieved",
+        "value": "8-12",
+        "unit": "%",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost savings sustainability rate after 3 years",
+        "value": "40",
+        "unit": "%_of_initial_savings",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Zero-based budgeting adoption rate",
+        "value": "28",
+        "unit": "%_of_large_companies",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Zero-based budgeting avg savings",
+        "value": "10-15",
+        "unit": "%_of_SGA",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Procurement optimization avg savings",
+        "value": "8-12",
+        "unit": "%_of_spend",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Shared services center cost reduction",
+        "value": "20-30",
+        "unit": "%_of_back_office_cost",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Automation (RPA) cost reduction in finance ops",
+        "value": "25-40",
+        "unit": "%",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Outsourcing cost savings (IT functions)",
+        "value": "15-25",
+        "unit": "%",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Lean manufacturing cost reduction achieved",
+        "value": "15-20",
+        "unit": "%_of_COGS",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Working capital optimization impact",
+        "value": "10-20",
+        "unit": "%_reduction",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Gen AI impact on customer service costs",
+        "value": "20-30",
+        "unit": "%_cost_reduction",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Gen AI impact on back-office costs",
+        "value": "15-25",
+        "unit": "%_cost_reduction",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "SGA as % of revenue (median Fortune 500)",
+        "value": "20-25",
+        "unit": "%",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Top quartile SGA efficiency advantage",
+        "value": "5-8",
+        "unit": "pp_lower_SGA_ratio",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost transformation timeline (typical)",
+        "value": "18-24",
+        "unit": "months",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Organizational complexity cost (layers/spans)",
+        "value": "5-10",
+        "unit": "%_of_payroll",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Real estate cost optimization (hybrid work)",
+        "value": "15-30",
+        "unit": "%_savings",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cloud migration cost impact vs on-premise",
+        "value": "-20-30",
+        "unit": "%_IT_cost_reduction",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Supply chain nearshoring cost impact",
+        "value": "+5-15",
+        "unit": "%_cost_increase_short_term",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with permanent cost management culture",
+        "value": "18",
+        "unit": "%",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost programs led by CEO vs delegated success rate gap",
+        "value": "+22",
+        "unit": "pp_higher_success",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Discretionary spend as % of total addressable cost",
+        "value": "30-40",
+        "unit": "%",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Travel and entertainment cost post-COVID permanent reduction",
+        "value": "30-40",
+        "unit": "%_below_2019",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Process mining tools adoption for cost discovery",
+        "value": "32",
+        "unit": "%_of_large_companies",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Span of control optimization typical savings",
+        "value": "10-15",
+        "unit": "%_of_management_costs",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Energy cost optimization potential (industrial)",
+        "value": "10-20",
+        "unit": "%_savings",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Duplicated function cost in large organizations",
+        "value": "15-20",
+        "unit": "%_of_function_cost",
+        "source": "Bain Cost Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with active cost reduction programs",
+        "value": "70",
+        "unit": "%",
+        "source": "Bain Cost Transformation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average cost reduction achieved",
+        "value": "15-20",
+        "unit": "%",
+        "source": "Bain Cost Transformation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost reduction that sticks after 3 years",
+        "value": "50",
+        "unit": "%",
+        "source": "Bain Cost Transformation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Zero-based budgeting adoption",
+        "value": "30",
+        "unit": "% of large companies",
+        "source": "Bain Cost Transformation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI-driven cost savings potential",
+        "value": "20-30",
+        "unit": "%",
+        "source": "Bain Cost Transformation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Procurement savings opportunity (avg)",
+        "value": "10-20",
+        "unit": "%",
+        "source": "Bain Cost Transformation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Shared services center savings",
+        "value": "25-30",
+        "unit": "%",
+        "source": "Bain Cost Transformation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Outsourcing cost savings (avg)",
+        "value": "15-25",
+        "unit": "%",
+        "source": "Bain Cost Transformation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Automation ROI payback period",
+        "value": "6-18",
+        "unit": "months",
+        "source": "Bain Cost Transformation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies using AI for cost optimization",
+        "value": "40",
+        "unit": "%",
+        "source": "Bain Cost Transformation 2024",
+        "year": 2024
+      }
     ],
     "founder_mentality": [
-      {"metric": "Companies maintaining founder mentality at scale", "value": "13", "unit": "%", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Insurgent mission clarity correlation with growth", "value": "0.74", "unit": "correlation_coefficient", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Companies with strong founder mentality revenue growth", "value": "3.1x", "unit": "vs_industry_avg", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Founder-led companies TSR outperformance (S&P 500)", "value": "3.1x", "unit": "over_15_years", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Internal complexity as top growth killer", "value": "85", "unit": "%_of_execs_cite", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Revenue stall-out rate for large companies (10yr)", "value": "65", "unit": "%", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Companies recovering from stall-out", "value": "7", "unit": "%", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Frontline obsession score (top vs bottom performers)", "value": "2.4x", "unit": "multiplier", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Owner mindset prevalence in high-growth companies", "value": "78", "unit": "%", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Bureaucratic layers in insurgents vs incumbents", "value": "3-4 vs 7-9", "unit": "management_layers", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Decision speed insurgents vs incumbents", "value": "2.5x", "unit": "faster", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Employee engagement in founder-led companies", "value": "+30", "unit": "pp_above_avg", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Companies where founder is still CEO (at IPO)", "value": "52", "unit": "%", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Professional CEO transition success rate", "value": "45", "unit": "%", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Insurgent companies market share gain rate", "value": "2-3", "unit": "pp_annual_from_incumbents", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Repeatable models as key to profitable growth", "value": "72", "unit": "%_of_sustained_growth_companies", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Companies with clear insurgent mission statement", "value": "22", "unit": "%", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Customer NPS gap (founder-mentality vs not)", "value": "+18", "unit": "NPS_points", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Micro-battles approach success rate", "value": "68", "unit": "%", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Frontline empowerment impact on speed", "value": "40", "unit": "%_faster_decisions", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Westward winds (internal dysfunction) top causes: overload", "value": "62", "unit": "%_of_execs_cite", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Westward winds: loss of frontline focus", "value": "58", "unit": "%_of_execs_cite", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Westward winds: revenue erosion from complexity", "value": "5-10", "unit": "%_of_revenue", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Southward winds (market disruption) vulnerability", "value": "72", "unit": "%_of_incumbents_exposed", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Family-owned companies outperformance (long-term TSR)", "value": "+2.1", "unit": "pp_annual", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Founder mentality renewal programs success rate", "value": "35", "unit": "%", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Time horizon: founders vs professional managers", "value": "7-10 vs 3-5", "unit": "years_planning_horizon", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "R&D allocation: insurgents vs incumbents", "value": "1.5x", "unit": "as_%_of_revenue", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Customer contact frequency: founder-led vs professional", "value": "3x", "unit": "multiplier", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Insurgent companies share of global profit growth", "value": "30", "unit": "%", "source": "Bain Founder's Mentality 2024", "year": 2024},
-      {"metric": "Speed to market: insurgents vs established incumbents", "value": "2-3x", "unit": "faster", "source": "Bain Founder's Mentality 2024", "year": 2024}
+      {
+        "metric": "Companies maintaining founder mentality at scale",
+        "value": "13",
+        "unit": "%",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Insurgent mission clarity correlation with growth",
+        "value": "0.74",
+        "unit": "correlation_coefficient",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with strong founder mentality revenue growth",
+        "value": "3.1x",
+        "unit": "vs_industry_avg",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Founder-led companies TSR outperformance (S&P 500)",
+        "value": "3.1x",
+        "unit": "over_15_years",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Internal complexity as top growth killer",
+        "value": "85",
+        "unit": "%_of_execs_cite",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Revenue stall-out rate for large companies (10yr)",
+        "value": "65",
+        "unit": "%",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies recovering from stall-out",
+        "value": "7",
+        "unit": "%",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Frontline obsession score (top vs bottom performers)",
+        "value": "2.4x",
+        "unit": "multiplier",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Owner mindset prevalence in high-growth companies",
+        "value": "78",
+        "unit": "%",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Bureaucratic layers in insurgents vs incumbents",
+        "value": "3-4 vs 7-9",
+        "unit": "management_layers",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Decision speed insurgents vs incumbents",
+        "value": "2.5x",
+        "unit": "faster",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Employee engagement in founder-led companies",
+        "value": "+30",
+        "unit": "pp_above_avg",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies where founder is still CEO (at IPO)",
+        "value": "52",
+        "unit": "%",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Professional CEO transition success rate",
+        "value": "45",
+        "unit": "%",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Insurgent companies market share gain rate",
+        "value": "2-3",
+        "unit": "pp_annual_from_incumbents",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Repeatable models as key to profitable growth",
+        "value": "72",
+        "unit": "%_of_sustained_growth_companies",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with clear insurgent mission statement",
+        "value": "22",
+        "unit": "%",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Customer NPS gap (founder-mentality vs not)",
+        "value": "+18",
+        "unit": "NPS_points",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Micro-battles approach success rate",
+        "value": "68",
+        "unit": "%",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Frontline empowerment impact on speed",
+        "value": "40",
+        "unit": "%_faster_decisions",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Westward winds (internal dysfunction) top causes: overload",
+        "value": "62",
+        "unit": "%_of_execs_cite",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Westward winds: loss of frontline focus",
+        "value": "58",
+        "unit": "%_of_execs_cite",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Westward winds: revenue erosion from complexity",
+        "value": "5-10",
+        "unit": "%_of_revenue",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Southward winds (market disruption) vulnerability",
+        "value": "72",
+        "unit": "%_of_incumbents_exposed",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family-owned companies outperformance (long-term TSR)",
+        "value": "+2.1",
+        "unit": "pp_annual",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Founder mentality renewal programs success rate",
+        "value": "35",
+        "unit": "%",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Time horizon: founders vs professional managers",
+        "value": "7-10 vs 3-5",
+        "unit": "years_planning_horizon",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "R&D allocation: insurgents vs incumbents",
+        "value": "1.5x",
+        "unit": "as_%_of_revenue",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Customer contact frequency: founder-led vs professional",
+        "value": "3x",
+        "unit": "multiplier",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Insurgent companies share of global profit growth",
+        "value": "30",
+        "unit": "%",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Speed to market: insurgents vs established incumbents",
+        "value": "2-3x",
+        "unit": "faster",
+        "source": "Bain Founder's Mentality 2024",
+        "year": 2024
+      }
+    ],
+    "firm_data": [
+      {
+        "metric": "Bain founded",
+        "value": "1973",
+        "unit": "year",
+        "source": "Bain website",
+        "year": 2024
+      },
+      {
+        "metric": "Bain founded by",
+        "value": "Bill Bain",
+        "unit": "person",
+        "source": "Bain website",
+        "year": 2024
+      },
+      {
+        "metric": "Bain global revenue 2024",
+        "value": "6.5+",
+        "unit": "billion USD",
+        "source": "Bain press release",
+        "year": 2024
+      },
+      {
+        "metric": "Bain offices worldwide",
+        "value": "65+",
+        "unit": "offices",
+        "source": "Bain website",
+        "year": 2024
+      },
+      {
+        "metric": "Bain countries",
+        "value": "40+",
+        "unit": "countries",
+        "source": "Bain website",
+        "year": 2024
+      },
+      {
+        "metric": "Bain employees globally",
+        "value": "18000+",
+        "unit": "employees",
+        "source": "Bain website",
+        "year": 2024
+      },
+      {
+        "metric": "Bain partners",
+        "value": "1500+",
+        "unit": "partners",
+        "source": "Bain website",
+        "year": 2024
+      },
+      {
+        "metric": "Bain Glassdoor rating",
+        "value": "4.6",
+        "unit": "out of 5",
+        "source": "Glassdoor",
+        "year": 2024
+      },
+      {
+        "metric": "Bain best place to work ranking",
+        "value": "Top 5 consistently (Glassdoor)",
+        "unit": "ranking",
+        "source": "Glassdoor",
+        "year": 2024
+      },
+      {
+        "metric": "Bain associate starting salary (US)",
+        "value": "110000",
+        "unit": "USD base",
+        "source": "Management Consulted",
+        "year": 2024
+      },
+      {
+        "metric": "Bain consultant salary (post-MBA)",
+        "value": "190000",
+        "unit": "USD base",
+        "source": "Management Consulted",
+        "year": 2024
+      },
+      {
+        "metric": "Bain partner compensation",
+        "value": "1000000-3000000",
+        "unit": "USD total",
+        "source": "industry estimates",
+        "year": 2024
+      },
+      {
+        "metric": "Bain acceptance rate",
+        "value": "1-3",
+        "unit": "%",
+        "source": "Management Consulted",
+        "year": 2024
+      },
+      {
+        "metric": "Bain Capital (PE arm) founded",
+        "value": "1984",
+        "unit": "year",
+        "source": "Bain Capital website",
+        "year": 2024
+      },
+      {
+        "metric": "Bain Capital AUM",
+        "value": "185+",
+        "unit": "billion USD",
+        "source": "Bain Capital website",
+        "year": 2024
+      },
+      {
+        "metric": "Bain Capital founder",
+        "value": "Mitt Romney",
+        "unit": "person",
+        "source": "Bain Capital history",
+        "year": 1984
+      },
+      {
+        "metric": "Bain industry practices",
+        "value": "20+",
+        "unit": "practices",
+        "source": "Bain website",
+        "year": 2024
+      },
+      {
+        "metric": "Bain capability practices",
+        "value": "15+",
+        "unit": "practices",
+        "source": "Bain website",
+        "year": 2024
+      },
+      {
+        "metric": "Bain client retention rate",
+        "value": "85+",
+        "unit": "%",
+        "source": "Bain press",
+        "year": 2024
+      },
+      {
+        "metric": "Bain alumni at Fortune 500 CEOs",
+        "value": "25+",
+        "unit": "CEOs",
+        "source": "Bain alumni network",
+        "year": 2024
+      }
+    ],
+    "digital_transformation": [
+      {
+        "metric": "Digital transformation spending globally 2024",
+        "value": "2+",
+        "unit": "trillion USD",
+        "source": "Bain Digital Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital transformation success rate",
+        "value": "30",
+        "unit": "%",
+        "source": "Bain Digital Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital leaders outperform peers by",
+        "value": "2-3x",
+        "unit": "revenue growth",
+        "source": "Bain Digital Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with digital strategy",
+        "value": "85",
+        "unit": "%",
+        "source": "Bain Digital Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies satisfied with digital progress",
+        "value": "35",
+        "unit": "%",
+        "source": "Bain Digital Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI adoption rate in enterprises",
+        "value": "55",
+        "unit": "%",
+        "source": "Bain AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "GenAI adoption rate in enterprises",
+        "value": "30",
+        "unit": "%",
+        "source": "Bain AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with GenAI in production",
+        "value": "15",
+        "unit": "%",
+        "source": "Bain AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Expected AI productivity gains",
+        "value": "15-30",
+        "unit": "%",
+        "source": "Bain AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI investment as % of IT budget",
+        "value": "10-15",
+        "unit": "%",
+        "source": "Bain AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with Chief AI Officer",
+        "value": "20",
+        "unit": "%",
+        "source": "Bain AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cloud migration completion rate",
+        "value": "40",
+        "unit": "%",
+        "source": "Bain Digital Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cloud spending as % of IT budget",
+        "value": "30-40",
+        "unit": "%",
+        "source": "Bain Digital Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Low-code/no-code adoption",
+        "value": "35",
+        "unit": "%",
+        "source": "Bain Digital Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cybersecurity spending growth rate",
+        "value": "15",
+        "unit": "% YoY",
+        "source": "Bain Digital Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Data analytics maturity (enterprises)",
+        "value": "25% advanced, 50% intermediate, 25% basic",
+        "unit": "distribution",
+        "source": "Bain Digital Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital skills gap (unfilled positions)",
+        "value": "3+",
+        "unit": "million globally",
+        "source": "Bain Digital Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "RPA (robotic process automation) adoption",
+        "value": "50",
+        "unit": "%",
+        "source": "Bain Digital Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "IoT devices connected globally",
+        "value": "15+",
+        "unit": "billion",
+        "source": "Bain Tech Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Edge computing market 2024",
+        "value": "60+",
+        "unit": "billion USD",
+        "source": "Bain Tech Report 2024",
+        "year": 2024
+      }
+    ],
+    "sustainability": [
+      {
+        "metric": "Companies with net-zero commitments",
+        "value": "60",
+        "unit": "% of Fortune 500",
+        "source": "Bain Sustainability Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies on track for net-zero",
+        "value": "10",
+        "unit": "%",
+        "source": "Bain Sustainability Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "ESG investment assets globally",
+        "value": "35+",
+        "unit": "trillion USD",
+        "source": "Bain Sustainability Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Carbon credit market value 2024",
+        "value": "2+",
+        "unit": "billion USD",
+        "source": "Bain Sustainability Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Clean energy investment 2024",
+        "value": "1.7+",
+        "unit": "trillion USD",
+        "source": "Bain/IEA",
+        "year": 2024
+      },
+      {
+        "metric": "Renewable energy share of electricity",
+        "value": "30",
+        "unit": "%",
+        "source": "Bain/IEA",
+        "year": 2024
+      },
+      {
+        "metric": "Solar cost decline (10yr)",
+        "value": "90",
+        "unit": "%",
+        "source": "Bain/IEA",
+        "year": 2024
+      },
+      {
+        "metric": "EV market share of new car sales",
+        "value": "18",
+        "unit": "%",
+        "source": "Bain Automotive 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Circular economy market 2024",
+        "value": "600+",
+        "unit": "billion USD",
+        "source": "Bain Sustainability Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Consumers willing to pay more for sustainable",
+        "value": "60",
+        "unit": "%",
+        "source": "Bain Consumer Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Sustainability premium (avg extra willingness to pay)",
+        "value": "10-20",
+        "unit": "%",
+        "source": "Bain Consumer Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with sustainability-linked financing",
+        "value": "35",
+        "unit": "%",
+        "source": "Bain Sustainability Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Scope 3 emissions measurement maturity",
+        "value": "15",
+        "unit": "% of companies",
+        "source": "Bain Sustainability Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Green hydrogen market potential 2030",
+        "value": "100+",
+        "unit": "billion USD",
+        "source": "Bain Energy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Battery storage capacity growth rate",
+        "value": "40",
+        "unit": "% YoY",
+        "source": "Bain Energy Report 2024",
+        "year": 2024
+      }
+    ],
+    "consulting_industry": [
+      {
+        "metric": "Global management consulting market 2024",
+        "value": "350+",
+        "unit": "billion USD",
+        "source": "Source Global Research",
+        "year": 2024
+      },
+      {
+        "metric": "MBB (McKinsey, Bain, BCG) combined revenue",
+        "value": "40+",
+        "unit": "billion USD",
+        "source": "Source Global Research",
+        "year": 2024
+      },
+      {
+        "metric": "McKinsey global revenue 2024",
+        "value": "18+",
+        "unit": "billion USD",
+        "source": "press estimates",
+        "year": 2024
+      },
+      {
+        "metric": "BCG global revenue 2024",
+        "value": "12+",
+        "unit": "billion USD",
+        "source": "press estimates",
+        "year": 2024
+      },
+      {
+        "metric": "Bain global revenue 2024",
+        "value": "6.5+",
+        "unit": "billion USD",
+        "source": "Bain press",
+        "year": 2024
+      },
+      {
+        "metric": "Deloitte consulting revenue 2024",
+        "value": "25+",
+        "unit": "billion USD",
+        "source": "Deloitte annual report",
+        "year": 2024
+      },
+      {
+        "metric": "Accenture consulting revenue 2024",
+        "value": "65+",
+        "unit": "billion USD",
+        "source": "Accenture annual report",
+        "year": 2024
+      },
+      {
+        "metric": "MBB market share of strategy consulting",
+        "value": "50+",
+        "unit": "%",
+        "source": "Source Global Research",
+        "year": 2024
+      },
+      {
+        "metric": "Average consulting billing rate (partner)",
+        "value": "600-1000",
+        "unit": "USD/hour",
+        "source": "industry data",
+        "year": 2024
+      },
+      {
+        "metric": "Average consulting billing rate (manager)",
+        "value": "300-500",
+        "unit": "USD/hour",
+        "source": "industry data",
+        "year": 2024
+      },
+      {
+        "metric": "Average consulting billing rate (analyst)",
+        "value": "150-250",
+        "unit": "USD/hour",
+        "source": "industry data",
+        "year": 2024
+      },
+      {
+        "metric": "Consulting industry growth rate",
+        "value": "8-10",
+        "unit": "% YoY",
+        "source": "Source Global Research",
+        "year": 2024
+      },
+      {
+        "metric": "AI impact on consulting industry",
+        "value": "20-30",
+        "unit": "% productivity gain",
+        "source": "Bain/HBR",
+        "year": 2024
+      },
+      {
+        "metric": "AI consulting market 2024",
+        "value": "15+",
+        "unit": "billion USD",
+        "source": "Source Global Research",
+        "year": 2024
+      },
+      {
+        "metric": "Digital transformation consulting market",
+        "value": "80+",
+        "unit": "billion USD",
+        "source": "Source Global Research",
+        "year": 2024
+      },
+      {
+        "metric": "Sustainability consulting market 2024",
+        "value": "12+",
+        "unit": "billion USD",
+        "source": "Source Global Research",
+        "year": 2024
+      },
+      {
+        "metric": "Consulting utilization rate (target)",
+        "value": "75-85",
+        "unit": "%",
+        "source": "industry standard",
+        "year": 2024
+      },
+      {
+        "metric": "Average consulting project duration",
+        "value": "3-6",
+        "unit": "months",
+        "source": "industry data",
+        "year": 2024
+      },
+      {
+        "metric": "Consulting attrition rate (annual)",
+        "value": "15-20",
+        "unit": "%",
+        "source": "industry data",
+        "year": 2024
+      },
+      {
+        "metric": "Consulting up-or-out timeline",
+        "value": "2-3",
+        "unit": "years per level",
+        "source": "industry standard",
+        "year": 2024
+      }
+    ],
+    "market_insights": [
+      {
+        "metric": "Global luxury market 2024",
+        "value": "1.5+",
+        "unit": "trillion EUR",
+        "source": "Bain/Altagamma Luxury Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Personal luxury goods market 2024",
+        "value": "400+",
+        "unit": "billion EUR",
+        "source": "Bain/Altagamma",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury market growth rate 2024",
+        "value": "3-5",
+        "unit": "%",
+        "source": "Bain/Altagamma",
+        "year": 2024
+      },
+      {
+        "metric": "China share of luxury market",
+        "value": "22",
+        "unit": "%",
+        "source": "Bain/Altagamma",
+        "year": 2024
+      },
+      {
+        "metric": "US share of luxury market",
+        "value": "30",
+        "unit": "%",
+        "source": "Bain/Altagamma",
+        "year": 2024
+      },
+      {
+        "metric": "Europe share of luxury market",
+        "value": "25",
+        "unit": "%",
+        "source": "Bain/Altagamma",
+        "year": 2024
+      },
+      {
+        "metric": "Online luxury sales share",
+        "value": "20",
+        "unit": "%",
+        "source": "Bain/Altagamma",
+        "year": 2024
+      },
+      {
+        "metric": "Gen Z share of luxury buying",
+        "value": "20",
+        "unit": "%",
+        "source": "Bain/Altagamma",
+        "year": 2024
+      },
+      {
+        "metric": "Millennial share of luxury buying",
+        "value": "35",
+        "unit": "%",
+        "source": "Bain/Altagamma",
+        "year": 2024
+      },
+      {
+        "metric": "Experiential luxury growth vs product luxury",
+        "value": "2x faster",
+        "unit": "comparison",
+        "source": "Bain/Altagamma",
+        "year": 2024
+      },
+      {
+        "metric": "Second-hand luxury market growth",
+        "value": "12",
+        "unit": "% YoY",
+        "source": "Bain/Altagamma",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury resale market size 2024",
+        "value": "50+",
+        "unit": "billion EUR",
+        "source": "Bain/Altagamma",
+        "year": 2024
+      },
+      {
+        "metric": "LVMH revenue 2024",
+        "value": "86+",
+        "unit": "billion EUR",
+        "source": "LVMH annual report",
+        "year": 2024
+      },
+      {
+        "metric": "Hermes revenue 2024",
+        "value": "14+",
+        "unit": "billion EUR",
+        "source": "Hermes annual report",
+        "year": 2024
+      },
+      {
+        "metric": "Global retail market 2024",
+        "value": "30+",
+        "unit": "trillion USD",
+        "source": "Bain Retail Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "E-commerce share of retail",
+        "value": "22",
+        "unit": "%",
+        "source": "Bain Retail Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Quick commerce market 2024",
+        "value": "25+",
+        "unit": "billion USD",
+        "source": "Bain Consumer Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Private label share of grocery",
+        "value": "25-30",
+        "unit": "%",
+        "source": "Bain Retail Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Consumer confidence index (US) 2024",
+        "value": "100-110",
+        "unit": "index",
+        "source": "Bain Consumer Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Consumer spending on experiences vs goods trend",
+        "value": "experiences growing 2x faster",
+        "unit": "trend",
+        "source": "Bain Consumer Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Gen Z spending power 2024",
+        "value": "450+",
+        "unit": "billion USD",
+        "source": "Bain Consumer Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Subscription fatigue: consumers canceling subscriptions",
+        "value": "40",
+        "unit": "% canceled at least one in 2024",
+        "source": "Bain Consumer Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "BNPL adoption rate globally",
+        "value": "15",
+        "unit": "% of online purchases",
+        "source": "Bain Fintech Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Embedded finance market 2024",
+        "value": "100+",
+        "unit": "billion USD",
+        "source": "Bain Fintech Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Open banking adoption globally",
+        "value": "30",
+        "unit": "% of banking customers",
+        "source": "Bain Fintech Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Neobank market share (deposits)",
+        "value": "5-10",
+        "unit": "%",
+        "source": "Bain Banking Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Banking industry NPS (global avg)",
+        "value": "34",
+        "unit": "NPS score",
+        "source": "Bain NPS Prism 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Insurance industry digital adoption",
+        "value": "45",
+        "unit": "%",
+        "source": "Bain Insurance Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Insurtech funding 2024",
+        "value": "5+",
+        "unit": "billion USD",
+        "source": "Bain Insurance Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth management AUM globally",
+        "value": "120+",
+        "unit": "trillion USD",
+        "source": "Bain Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Alternative investments share of portfolios",
+        "value": "20-30",
+        "unit": "%",
+        "source": "Bain Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office count globally",
+        "value": "15000+",
+        "unit": "offices",
+        "source": "Bain Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI population globally",
+        "value": "22+",
+        "unit": "million",
+        "source": "Bain Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "UHNWI population globally (>$30M)",
+        "value": "400000+",
+        "unit": "individuals",
+        "source": "Bain Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global infrastructure investment gap (annual)",
+        "value": "2+",
+        "unit": "trillion USD",
+        "source": "Bain Infrastructure Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Infrastructure private investment 2024",
+        "value": "150+",
+        "unit": "billion USD",
+        "source": "Bain Infrastructure Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Semiconductor market 2024",
+        "value": "600+",
+        "unit": "billion USD",
+        "source": "Bain Tech Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "5G subscribers globally",
+        "value": "2+",
+        "unit": "billion",
+        "source": "Bain Tech Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global telecom market 2024",
+        "value": "1.8+",
+        "unit": "trillion USD",
+        "source": "Bain Telecom Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global pharma market 2024",
+        "value": "1.7+",
+        "unit": "trillion USD",
+        "source": "Bain Healthcare Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "GLP-1 drugs market 2024",
+        "value": "50+",
+        "unit": "billion USD",
+        "source": "Bain Healthcare Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Gene therapy market 2024",
+        "value": "10+",
+        "unit": "billion USD",
+        "source": "Bain Healthcare Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Telehealth adoption post-COVID",
+        "value": "25",
+        "unit": "% of visits",
+        "source": "Bain Healthcare Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Healthcare spending as % of GDP (US)",
+        "value": "18",
+        "unit": "%",
+        "source": "Bain Healthcare Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global healthcare market 2024",
+        "value": "12+",
+        "unit": "trillion USD",
+        "source": "Bain Healthcare Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global defense spending 2024",
+        "value": "2.4+",
+        "unit": "trillion USD",
+        "source": "Bain Aerospace Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Aerospace market recovery post-COVID",
+        "value": "95",
+        "unit": "% of 2019 levels",
+        "source": "Bain Aerospace Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global food market 2024",
+        "value": "10+",
+        "unit": "trillion USD",
+        "source": "Bain Consumer Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Plant-based food market 2024",
+        "value": "30+",
+        "unit": "billion USD",
+        "source": "Bain Consumer Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global energy market 2024",
+        "value": "8+",
+        "unit": "trillion USD",
+        "source": "Bain Energy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Oil and gas capex 2024",
+        "value": "500+",
+        "unit": "billion USD",
+        "source": "Bain Energy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Mining market 2024",
+        "value": "1.5+",
+        "unit": "trillion USD",
+        "source": "Bain Mining Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Critical minerals demand growth",
+        "value": "20",
+        "unit": "% YoY",
+        "source": "Bain Mining Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Lithium market growth rate",
+        "value": "25",
+        "unit": "% YoY",
+        "source": "Bain Mining Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global chemicals market 2024",
+        "value": "5+",
+        "unit": "trillion USD",
+        "source": "Bain Chemicals Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global automotive market 2024",
+        "value": "3+",
+        "unit": "trillion USD",
+        "source": "Bain Automotive Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EV share of new car sales globally",
+        "value": "18",
+        "unit": "%",
+        "source": "Bain Automotive Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Autonomous driving market 2024",
+        "value": "50+",
+        "unit": "billion USD",
+        "source": "Bain Automotive Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Connected car market 2024",
+        "value": "80+",
+        "unit": "billion USD",
+        "source": "Bain Automotive Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Shared mobility market 2024",
+        "value": "200+",
+        "unit": "billion USD",
+        "source": "Bain Automotive Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global logistics market 2024",
+        "value": "9+",
+        "unit": "trillion USD",
+        "source": "Bain Logistics Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Supply chain disruption cost per company (avg)",
+        "value": "180+",
+        "unit": "million USD/year",
+        "source": "Bain Supply Chain Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies reshoring manufacturing",
+        "value": "30",
+        "unit": "%",
+        "source": "Bain Supply Chain Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies nearshoring supply chain",
+        "value": "40",
+        "unit": "%",
+        "source": "Bain Supply Chain Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Supply chain visibility adoption",
+        "value": "35",
+        "unit": "%",
+        "source": "Bain Supply Chain Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Warehouse automation market 2024",
+        "value": "20+",
+        "unit": "billion USD",
+        "source": "Bain Logistics Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Drone delivery market 2024",
+        "value": "5+",
+        "unit": "billion USD",
+        "source": "Bain Logistics Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global construction market 2024",
+        "value": "12+",
+        "unit": "trillion USD",
+        "source": "Bain Infrastructure Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Modular construction market growth",
+        "value": "15",
+        "unit": "% YoY",
+        "source": "Bain Infrastructure Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global water market 2024",
+        "value": "800+",
+        "unit": "billion USD",
+        "source": "Bain Infrastructure Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Waste management market 2024",
+        "value": "500+",
+        "unit": "billion USD",
+        "source": "Bain Infrastructure Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global education market 2024",
+        "value": "7+",
+        "unit": "trillion USD",
+        "source": "Bain Social Impact 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EdTech market 2024",
+        "value": "400+",
+        "unit": "billion USD",
+        "source": "Bain Social Impact 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global media market 2024",
+        "value": "2.5+",
+        "unit": "trillion USD",
+        "source": "Bain Media Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Streaming video market 2024",
+        "value": "120+",
+        "unit": "billion USD",
+        "source": "Bain Media Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Podcast advertising market 2024",
+        "value": "4+",
+        "unit": "billion USD",
+        "source": "Bain Media Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital advertising market 2024",
+        "value": "700+",
+        "unit": "billion USD",
+        "source": "Bain Media Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Gaming market 2024",
+        "value": "200+",
+        "unit": "billion USD",
+        "source": "Bain Media Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Sports industry market 2024",
+        "value": "500+",
+        "unit": "billion USD",
+        "source": "Bain Sports Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Sports media rights value growth",
+        "value": "10",
+        "unit": "% YoY",
+        "source": "Bain Sports Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Esports market 2024",
+        "value": "2+",
+        "unit": "billion USD",
+        "source": "Bain Sports Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global travel market 2024",
+        "value": "10+",
+        "unit": "trillion USD",
+        "source": "Bain Travel Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Business travel recovery (vs 2019)",
+        "value": "85",
+        "unit": "%",
+        "source": "Bain Travel Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Leisure travel growth rate",
+        "value": "10",
+        "unit": "% above 2019",
+        "source": "Bain Travel Report 2024",
+        "year": 2024
+      }
+    ],
+    "workforce_and_talent": [
+      {
+        "metric": "Global talent shortage 2024",
+        "value": "75+",
+        "unit": "million unfilled jobs",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Tech talent shortage globally",
+        "value": "4+",
+        "unit": "million unfilled roles",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average employee tenure (US)",
+        "value": "4.1",
+        "unit": "years",
+        "source": "Bain/BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Remote work adoption (hybrid)",
+        "value": "60",
+        "unit": "% of knowledge workers",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Fully remote workers",
+        "value": "20",
+        "unit": "% of knowledge workers",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Employee engagement globally",
+        "value": "23",
+        "unit": "% engaged (Gallup)",
+        "source": "Bain/Gallup",
+        "year": 2024
+      },
+      {
+        "metric": "Annual employee turnover (global avg)",
+        "value": "15-20",
+        "unit": "%",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of replacing an employee",
+        "value": "50-200",
+        "unit": "% of salary",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI impact on jobs: tasks automatable",
+        "value": "30",
+        "unit": "% of tasks",
+        "source": "Bain AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI impact on jobs: jobs fully automatable",
+        "value": "5",
+        "unit": "% of jobs",
+        "source": "Bain AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI impact: new jobs created",
+        "value": "equivalent to displaced",
+        "unit": "net neutral",
+        "source": "Bain AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Reskilling investment needed globally",
+        "value": "5+",
+        "unit": "trillion USD by 2030",
+        "source": "Bain/WEF",
+        "year": 2024
+      },
+      {
+        "metric": "Companies investing in reskilling",
+        "value": "45",
+        "unit": "%",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average corporate training spend per employee",
+        "value": "1500",
+        "unit": "USD/year",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Gig economy workers globally",
+        "value": "150+",
+        "unit": "million",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Four-day work week trials success rate",
+        "value": "90",
+        "unit": "% continued after trial",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "DEI initiatives impact on revenue",
+        "value": "5-20",
+        "unit": "% premium",
+        "source": "Bain DEI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with formal DEI strategy",
+        "value": "70",
+        "unit": "%",
+        "source": "Bain DEI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Female representation in C-suite globally",
+        "value": "15",
+        "unit": "%",
+        "source": "Bain DEI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Female representation in boards globally",
+        "value": "25",
+        "unit": "%",
+        "source": "Bain DEI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Pay gap (gender) globally",
+        "value": "20",
+        "unit": "% on average",
+        "source": "Bain/WEF",
+        "year": 2024
+      },
+      {
+        "metric": "Mental health impact on productivity loss",
+        "value": "12",
+        "unit": "billion lost work days/year globally",
+        "source": "Bain/WHO",
+        "year": 2024
+      },
+      {
+        "metric": "Employee wellness program ROI",
+        "value": "3-6x",
+        "unit": "multiplier",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Purpose-driven companies outperform by",
+        "value": "10-20",
+        "unit": "% in stock returns",
+        "source": "Bain Purpose Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Employees who want purpose at work",
+        "value": "70",
+        "unit": "%",
+        "source": "Bain Purpose Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average time to hire (global)",
+        "value": "44",
+        "unit": "days",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Recruitment cost per hire (avg)",
+        "value": "4700",
+        "unit": "USD",
+        "source": "Bain/SHRM",
+        "year": 2024
+      },
+      {
+        "metric": "Internal mobility programs adoption",
+        "value": "35",
+        "unit": "%",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Skills-based hiring adoption",
+        "value": "45",
+        "unit": "%",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Freelance marketplace market 2024",
+        "value": "10+",
+        "unit": "billion USD",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HR tech market 2024",
+        "value": "35+",
+        "unit": "billion USD",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies using AI for hiring",
+        "value": "40",
+        "unit": "%",
+        "source": "Bain AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies using AI for performance management",
+        "value": "25",
+        "unit": "%",
+        "source": "Bain AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Employee experience platform market 2024",
+        "value": "15+",
+        "unit": "billion USD",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate learning market 2024",
+        "value": "50+",
+        "unit": "billion USD",
+        "source": "Bain Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average CEO tenure (S&P 500)",
+        "value": "6.9",
+        "unit": "years",
+        "source": "Bain Leadership Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "CEO succession planned vs unplanned",
+        "value": "70/30",
+        "unit": "ratio",
+        "source": "Bain Leadership Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Executive coaching market 2024",
+        "value": "20+",
+        "unit": "billion USD",
+        "source": "Bain Leadership Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Board diversity requirements (countries mandating)",
+        "value": "15+",
+        "unit": "countries",
+        "source": "Bain Governance Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "ESG reporting mandatory (jurisdictions)",
+        "value": "50+",
+        "unit": "jurisdictions",
+        "source": "Bain Governance Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average S&P 500 company lifespan (1965 vs 2024)",
+        "value": "33 vs 15",
+        "unit": "years",
+        "source": "Bain Strategy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Fortune 500 turnover rate",
+        "value": "50",
+        "unit": "% every 10 years",
+        "source": "Bain Strategy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies that outperform market 10+ years",
+        "value": "10",
+        "unit": "%",
+        "source": "Bain Strategy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Innovation investment as % of revenue",
+        "value": "5-15",
+        "unit": "%",
+        "source": "Bain Innovation Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Innovation success rate (products reaching market)",
+        "value": "10-20",
+        "unit": "%",
+        "source": "Bain Innovation Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "R&D spending globally 2024",
+        "value": "2.5+",
+        "unit": "trillion USD",
+        "source": "Bain Innovation Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate venture arms count (Fortune 500)",
+        "value": "200+",
+        "unit": "programs",
+        "source": "Bain Innovation Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Agile adoption in large enterprises",
+        "value": "60",
+        "unit": "%",
+        "source": "Bain Agile Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Agile teams outperform traditional by",
+        "value": "25-30",
+        "unit": "% in productivity",
+        "source": "Bain Agile Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies using OKRs",
+        "value": "45",
+        "unit": "%",
+        "source": "Bain Management Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Customer-centricity maturity (enterprises)",
+        "value": "20% advanced, 50% developing, 30% basic",
+        "unit": "distribution",
+        "source": "Bain Customer Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Data-driven decision making adoption",
+        "value": "50",
+        "unit": "%",
+        "source": "Bain Analytics Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with CDO (Chief Data Officer)",
+        "value": "60",
+        "unit": "%",
+        "source": "Bain Analytics Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Data monetization market 2024",
+        "value": "30+",
+        "unit": "billion USD",
+        "source": "Bain Analytics Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies sharing data externally (data marketplace)",
+        "value": "20",
+        "unit": "%",
+        "source": "Bain Analytics Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Pricing optimization: companies with formal pricing function",
+        "value": "30",
+        "unit": "%",
+        "source": "Bain Pricing Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Dynamic pricing adoption",
+        "value": "25",
+        "unit": "%",
+        "source": "Bain Pricing Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Pricing improvement impact on profits",
+        "value": "1% price = 8-10% profit improvement",
+        "unit": "multiplier",
+        "source": "Bain Pricing Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Revenue management maturity",
+        "value": "15% advanced, 40% intermediate, 45% basic",
+        "unit": "distribution",
+        "source": "Bain Pricing Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with active growth strategy",
+        "value": "80",
+        "unit": "%",
+        "source": "Bain Strategy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Organic vs inorganic growth ratio (large cos)",
+        "value": "60/40",
+        "unit": "ratio",
+        "source": "Bain Strategy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies that achieve sustained profitable growth",
+        "value": "12",
+        "unit": "%",
+        "source": "Bain Strategy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Adjacency expansion success rate",
+        "value": "25",
+        "unit": "%",
+        "source": "Bain Strategy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Core business focus companies outperform by",
+        "value": "2-3x",
+        "unit": "returns",
+        "source": "Bain Strategy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies divesting underperforming units",
+        "value": "40",
+        "unit": "% in 2024",
+        "source": "Bain Strategy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Spin-off value creation (avg premium)",
+        "value": "15-20",
+        "unit": "%",
+        "source": "Bain Strategy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Activist investor campaigns 2024",
+        "value": "300+",
+        "unit": "campaigns",
+        "source": "Bain Governance Report 2024",
+        "year": 2024
+      }
     ]
   }
 }

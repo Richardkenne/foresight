@@ -260,9 +260,40 @@ body {
   position: relative;
 }
 
-/* Bottleneck: narrower card — visually a "tight passage" */
+/* Bottleneck: hexagon shape — 6 sides, more space than diamond */
 .sim-node--bottleneck {
-  width: 200px;
+  width: 210px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  border-radius: 0;
+  outline: none !important;
+}
+
+.sim-node--bottleneck .sim-node__body {
+  padding: 20px 28px;
+  text-align: center;
+}
+
+/* Gate: 3-way split node */
+.sim-node--gate {
+  width: 220px;
+  outline-color: rgba(217, 119, 6, 0.4);
+  border-left: 3px solid rgba(217, 119, 6, 0.5);
+}
+
+/* State: current condition node — green background */
+.sim-node--state {
+  width: 240px;
+  background: rgba(216, 234, 216, 0.5);
+  outline-color: rgba(95, 125, 99, 0.4);
+  border-left: 3px solid rgba(95, 125, 99, 0.6);
+}
+
+/* Trajectory: path direction node — purple */
+.sim-node--trajectory {
+  width: 230px;
+  outline-color: rgba(127, 90, 166, 0.4);
+  border-left: 3px solid rgba(127, 90, 166, 0.5);
+  background: rgba(239, 226, 251, 0.4);
 }
 
 /* Outcome-bad */
@@ -717,6 +748,24 @@ body {
   width: 220px;
   outline-color: rgba(245, 158, 11, 0.5);
   background: rgba(255, 247, 237, 0.8);
+}
+
+[data-display="classic"] .sim-node--gate {
+  width: 240px;
+  outline-color: rgba(217, 119, 6, 0.5);
+  background: rgba(255, 251, 235, 0.8);
+}
+
+[data-display="classic"] .sim-node--state {
+  width: 260px;
+  outline-color: rgba(95, 125, 99, 0.5);
+  background: rgba(216, 234, 216, 0.8);
+}
+
+[data-display="classic"] .sim-node--trajectory {
+  width: 250px;
+  outline-color: rgba(127, 90, 166, 0.5);
+  background: rgba(239, 226, 251, 0.8);
 }
 
 [data-display="classic"] .sim-node--card:not(.sim-node--fail):not(.sim-node--success):not(.sim-node--bottleneck) {

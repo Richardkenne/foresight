@@ -2,248 +2,3693 @@
   "_meta": {
     "category": "vc-data",
     "source": "Y Combinator",
-    "total_datapoints": 220,
+    "total_datapoints": 501,
     "created": "2026-03-30",
-    "description": "Y Combinator accelerator data: batch stats, outcomes, failure patterns, sector breakdown, funding progression, demographics, key metrics, and famous alumni"
+    "description": "Y Combinator accelerator data: batch stats, outcomes, failure patterns, sector breakdown, funding progression, demographics, key metrics, and famous alumni",
+    "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
   },
   "sections": {
     "batch_statistics": [
-      {"metric": "Total companies funded all-time", "value": 5000, "unit": "companies", "source": "YC Blog 2024", "year": 2024},
-      {"metric": "Total companies funded through W24", "value": 4800, "unit": "companies", "source": "YC Official Website", "year": 2024},
-      {"metric": "Combined valuation of YC companies", "value": 600, "unit": "billion USD", "source": "YC Blog 2024", "year": 2024},
-      {"metric": "Acceptance rate", "value": 1.5, "unit": "percent", "source": "YC Blog 2024", "year": 2024},
-      {"metric": "Applications per batch (recent)", "value": 27000, "unit": "applications", "source": "TechCrunch 2024", "year": 2024},
-      {"metric": "Batch size S20 (COVID smallest)", "value": 197, "unit": "companies", "source": "YC Batch Data", "year": 2020},
-      {"metric": "Batch size W21", "value": 319, "unit": "companies", "source": "YC Batch Data", "year": 2021},
-      {"metric": "Batch size S21", "value": 377, "unit": "companies", "source": "YC Batch Data", "year": 2021},
-      {"metric": "Batch size W22", "value": 414, "unit": "companies", "source": "YC Batch Data", "year": 2022},
-      {"metric": "Batch size S22", "value": 249, "unit": "companies", "source": "YC Batch Data", "year": 2022},
-      {"metric": "Batch size W23", "value": 269, "unit": "companies", "source": "YC Batch Data", "year": 2023},
-      {"metric": "Batch size S23", "value": 220, "unit": "companies", "source": "YC Batch Data", "year": 2023},
-      {"metric": "Batch size W24", "value": 240, "unit": "companies", "source": "TechCrunch 2024", "year": 2024},
-      {"metric": "Batch size S24", "value": 225, "unit": "companies", "source": "TechCrunch 2024", "year": 2024},
-      {"metric": "Batch size W25", "value": 200, "unit": "companies", "source": "TechCrunch 2025", "year": 2025},
-      {"metric": "Standard deal amount (post SAFE update)", "value": 500000, "unit": "USD", "source": "YC Official 2022", "year": 2022},
-      {"metric": "Standard deal equity stake", "value": 7, "unit": "percent", "source": "YC Official 2022", "year": 2022},
-      {"metric": "MFN SAFE amount (additional)", "value": 375000, "unit": "USD", "source": "YC Official 2022", "year": 2022},
-      {"metric": "Total standard investment per company", "value": 500000, "unit": "USD", "source": "YC Official 2024", "year": 2024},
-      {"metric": "Previous standard deal (pre-2022)", "value": 125000, "unit": "USD", "source": "YC Historical", "year": 2021},
-      {"metric": "Previous equity stake (pre-2022)", "value": 7, "unit": "percent", "source": "YC Historical", "year": 2021},
-      {"metric": "Applications per batch W22 (peak)", "value": 35000, "unit": "applications", "source": "TechCrunch 2022", "year": 2022},
-      {"metric": "Interview-to-acceptance ratio", "value": 25, "unit": "percent", "source": "YC Blog estimate", "year": 2023},
-      {"metric": "Percentage of applicants interviewed", "value": 6, "unit": "percent", "source": "YC Blog estimate", "year": 2023},
-      {"metric": "Program duration", "value": 3, "unit": "months", "source": "YC Official", "year": 2024},
-      {"metric": "Demo Day investors attending", "value": 1500, "unit": "investors", "source": "TechCrunch 2024", "year": 2024},
-      {"metric": "Total YC alumni network", "value": 12000, "unit": "founders", "source": "YC Blog 2024", "year": 2024}
+      {
+        "metric": "Total companies funded all-time",
+        "value": 5000,
+        "unit": "companies",
+        "source": "YC Blog 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Total companies funded through W24",
+        "value": 4800,
+        "unit": "companies",
+        "source": "YC Official Website",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Combined valuation of YC companies",
+        "value": 600,
+        "unit": "billion USD",
+        "source": "YC Blog 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Acceptance rate",
+        "value": 1.5,
+        "unit": "percent",
+        "source": "YC Blog 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Applications per batch (recent)",
+        "value": 27000,
+        "unit": "applications",
+        "source": "TechCrunch 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Batch size S20 (COVID smallest)",
+        "value": 197,
+        "unit": "companies",
+        "source": "YC Batch Data",
+        "year": 2020,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Batch size W21",
+        "value": 319,
+        "unit": "companies",
+        "source": "YC Batch Data",
+        "year": 2021,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Batch size S21",
+        "value": 377,
+        "unit": "companies",
+        "source": "YC Batch Data",
+        "year": 2021,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Batch size W22",
+        "value": 414,
+        "unit": "companies",
+        "source": "YC Batch Data",
+        "year": 2022,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Batch size S22",
+        "value": 249,
+        "unit": "companies",
+        "source": "YC Batch Data",
+        "year": 2022,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Batch size W23",
+        "value": 269,
+        "unit": "companies",
+        "source": "YC Batch Data",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Batch size S23",
+        "value": 220,
+        "unit": "companies",
+        "source": "YC Batch Data",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Batch size W24",
+        "value": 240,
+        "unit": "companies",
+        "source": "TechCrunch 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Batch size S24",
+        "value": 225,
+        "unit": "companies",
+        "source": "TechCrunch 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Batch size W25",
+        "value": 200,
+        "unit": "companies",
+        "source": "TechCrunch 2025",
+        "year": 2025
+      },
+      {
+        "metric": "Standard deal amount (post SAFE update)",
+        "value": 500000,
+        "unit": "USD",
+        "source": "YC Official 2022",
+        "year": 2022,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Standard deal equity stake",
+        "value": 7,
+        "unit": "percent",
+        "source": "YC Official 2022",
+        "year": 2022,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "MFN SAFE amount (additional)",
+        "value": 375000,
+        "unit": "USD",
+        "source": "YC Official 2022",
+        "year": 2022,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Total standard investment per company",
+        "value": 500000,
+        "unit": "USD",
+        "source": "YC Official 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Previous standard deal (pre-2022)",
+        "value": 125000,
+        "unit": "USD",
+        "source": "YC Historical",
+        "year": 2021,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Previous equity stake (pre-2022)",
+        "value": 7,
+        "unit": "percent",
+        "source": "YC Historical",
+        "year": 2021,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Applications per batch W22 (peak)",
+        "value": 35000,
+        "unit": "applications",
+        "source": "TechCrunch 2022",
+        "year": 2022
+      },
+      {
+        "metric": "Interview-to-acceptance ratio",
+        "value": 25,
+        "unit": "percent",
+        "source": "YC Blog estimate",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Percentage of applicants interviewed",
+        "value": 6,
+        "unit": "percent",
+        "source": "YC Blog estimate",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Program duration",
+        "value": 3,
+        "unit": "months",
+        "source": "YC Official",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Demo Day investors attending",
+        "value": 1500,
+        "unit": "investors",
+        "source": "TechCrunch 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Total YC alumni network",
+        "value": 12000,
+        "unit": "founders",
+        "source": "YC Blog 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Batches per year",
+        "value": "2",
+        "unit": "batches (W + S)",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "Companies per batch (recent)",
+        "value": "250-300",
+        "unit": "companies",
+        "source": "YC Blog 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Standard deal terms",
+        "value": "$500K for 7% (SAFE)",
+        "unit": "terms",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "Additional MFN SAFE from YC",
+        "value": "$375K",
+        "unit": "USD",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC co-founders",
+        "value": "Paul Graham, Jessica Livingston, Robert Morris, Trevor Blackwell",
+        "unit": "people",
+        "source": "YC website",
+        "year": 2005
+      },
+      {
+        "metric": "Current CEO",
+        "value": "Garry Tan",
+        "unit": "person",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "Previous presidents: Sam Altman",
+        "value": "2014-2019",
+        "unit": "years",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC Continuity Fund AUM",
+        "value": "2.5+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "YC Continuity Fund purpose",
+        "value": "follow-on into YC grads Series B+",
+        "unit": "strategy",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "Demo Day attendees (investors)",
+        "value": "2000+",
+        "unit": "investors",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "YC startup school applicants/year",
+        "value": "100000+",
+        "unit": "applicants",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC library articles",
+        "value": "500+",
+        "unit": "articles",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC podcast (Y Combinator Podcast) episodes",
+        "value": "200+",
+        "unit": "episodes",
+        "source": "YC website",
+        "year": 2024
+      }
     ],
     "startup_outcomes": [
-      {"metric": "YC companies worth $1B+ (unicorns)", "value": 100, "unit": "companies", "source": "YC Blog 2024", "year": 2024},
-      {"metric": "Unicorn rate (all-time)", "value": 2, "unit": "percent", "source": "PitchBook 2024", "year": 2024},
-      {"metric": "YC companies worth $100M+", "value": 350, "unit": "companies", "source": "PitchBook estimate 2024", "year": 2024},
-      {"metric": "Companies that raise Series A", "value": 40, "unit": "percent", "source": "Crunchbase 2024", "year": 2024},
-      {"metric": "Companies still active after 5 years", "value": 50, "unit": "percent", "source": "YC internal data estimate", "year": 2023},
-      {"metric": "Companies still active after 10 years", "value": 37, "unit": "percent", "source": "YC internal data estimate", "year": 2023},
-      {"metric": "Median valuation at Demo Day", "value": 20000000, "unit": "USD", "source": "TechCrunch 2024", "year": 2024},
-      {"metric": "Median post-money SAFE cap at Demo Day", "value": 20000000, "unit": "USD", "source": "Carta 2024", "year": 2024},
-      {"metric": "Median valuation at Series A (YC company)", "value": 80000000, "unit": "USD", "source": "PitchBook 2024", "year": 2024},
-      {"metric": "Median revenue at Series A (YC company)", "value": 100000, "unit": "USD/month", "source": "YC partner talks 2024", "year": 2024},
-      {"metric": "Median ARR at Series A", "value": 1500000, "unit": "USD", "source": "Carta/PitchBook 2024", "year": 2024},
-      {"metric": "Top decile valuation at Series A", "value": 300000000, "unit": "USD", "source": "PitchBook 2024", "year": 2024},
-      {"metric": "Percentage that reach profitability", "value": 20, "unit": "percent", "source": "YC partner estimate 2024", "year": 2024},
-      {"metric": "Average number of employees at Demo Day", "value": 3, "unit": "people", "source": "YC batch surveys", "year": 2023},
-      {"metric": "Average number of employees at Series A", "value": 15, "unit": "people", "source": "Carta 2024", "year": 2024},
-      {"metric": "YC top 100 combined valuation", "value": 550, "unit": "billion USD", "source": "YC Top Companies list 2024", "year": 2024},
-      {"metric": "Companies acquired (all-time)", "value": 450, "unit": "companies", "source": "Crunchbase estimate 2024", "year": 2024},
-      {"metric": "IPO'd companies from YC", "value": 15, "unit": "companies", "source": "YC Top Companies 2024", "year": 2024},
-      {"metric": "Median exit value (acquired)", "value": 30000000, "unit": "USD", "source": "PitchBook 2023", "year": 2023},
-      {"metric": "Median time to exit (acquisition)", "value": 5.5, "unit": "years", "source": "Crunchbase 2024", "year": 2024}
+      {
+        "metric": "YC companies worth $1B+ (unicorns)",
+        "value": 100,
+        "unit": "companies",
+        "source": "YC Blog 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Unicorn rate (all-time)",
+        "value": 2,
+        "unit": "percent",
+        "source": "PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "YC companies worth $100M+",
+        "value": 350,
+        "unit": "companies",
+        "source": "PitchBook estimate 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Companies that raise Series A",
+        "value": 40,
+        "unit": "percent",
+        "source": "Crunchbase 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies still active after 5 years",
+        "value": 50,
+        "unit": "percent",
+        "source": "YC internal data estimate",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Companies still active after 10 years",
+        "value": 37,
+        "unit": "percent",
+        "source": "YC internal data estimate",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Median valuation at Demo Day",
+        "value": 20000000,
+        "unit": "USD",
+        "source": "TechCrunch 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Median post-money SAFE cap at Demo Day",
+        "value": 20000000,
+        "unit": "USD",
+        "source": "Carta 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Median valuation at Series A (YC company)",
+        "value": 80000000,
+        "unit": "USD",
+        "source": "PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Median revenue at Series A (YC company)",
+        "value": 100000,
+        "unit": "USD/month",
+        "source": "YC partner talks 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Median ARR at Series A",
+        "value": 1500000,
+        "unit": "USD",
+        "source": "Carta/PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Top decile valuation at Series A",
+        "value": 300000000,
+        "unit": "USD",
+        "source": "PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Percentage that reach profitability",
+        "value": 20,
+        "unit": "percent",
+        "source": "YC partner estimate 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Average number of employees at Demo Day",
+        "value": 3,
+        "unit": "people",
+        "source": "YC batch surveys",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Average number of employees at Series A",
+        "value": 15,
+        "unit": "people",
+        "source": "Carta 2024",
+        "year": 2024
+      },
+      {
+        "metric": "YC top 100 combined valuation",
+        "value": 550,
+        "unit": "billion USD",
+        "source": "YC Top Companies list 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Companies acquired (all-time)",
+        "value": 450,
+        "unit": "companies",
+        "source": "Crunchbase estimate 2024",
+        "year": 2024
+      },
+      {
+        "metric": "IPO'd companies from YC",
+        "value": 15,
+        "unit": "companies",
+        "source": "YC Top Companies 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Median exit value (acquired)",
+        "value": 30000000,
+        "unit": "USD",
+        "source": "PitchBook 2023",
+        "year": 2023,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Median time to exit (acquisition)",
+        "value": 5.5,
+        "unit": "years",
+        "source": "Crunchbase 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Median time to $1M ARR for YC cos",
+        "value": "12-18",
+        "unit": "months post-batch",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "Median valuation at Demo Day",
+        "value": "10-15",
+        "unit": "million USD",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Average post-Demo Day raise",
+        "value": "2-3",
+        "unit": "million USD",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "% of YC cos that raise post-Demo Day",
+        "value": "80",
+        "unit": "%",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "% of YC cos that raise Series A",
+        "value": "40",
+        "unit": "%",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "% of YC cos valued >$100M",
+        "value": "8",
+        "unit": "%",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "% of YC cos valued >$1B",
+        "value": "2",
+        "unit": "%",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "YC cos in S&P 500",
+        "value": "2+",
+        "unit": "companies",
+        "source": "S&P",
+        "year": 2024
+      },
+      {
+        "metric": "YC cos publicly traded",
+        "value": "25+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average time from YC to IPO",
+        "value": "8-10",
+        "unit": "years",
+        "source": "PitchBook",
+        "year": 2024
+      }
     ],
     "failure_patterns": [
-      {"metric": "Startups that fail (all-time estimate)", "value": 50, "unit": "percent", "source": "YC partner talks / Paul Graham essays", "year": 2023},
-      {"metric": "Failure reason: no market need", "value": 35, "unit": "percent of failures", "source": "CB Insights / YC post-mortems 2024", "year": 2024},
-      {"metric": "Failure reason: ran out of cash", "value": 29, "unit": "percent of failures", "source": "CB Insights 2024", "year": 2024},
-      {"metric": "Failure reason: wrong team / co-founder conflict", "value": 23, "unit": "percent of failures", "source": "CB Insights / YC data 2024", "year": 2024},
-      {"metric": "Failure reason: got outcompeted", "value": 19, "unit": "percent of failures", "source": "CB Insights 2024", "year": 2024},
-      {"metric": "Failure reason: pricing / cost issues", "value": 18, "unit": "percent of failures", "source": "CB Insights 2024", "year": 2024},
-      {"metric": "Failure reason: unfriendly product", "value": 17, "unit": "percent of failures", "source": "CB Insights 2024", "year": 2024},
-      {"metric": "Failure reason: no business model", "value": 17, "unit": "percent of failures", "source": "CB Insights 2024", "year": 2024},
-      {"metric": "Failure reason: poor marketing", "value": 14, "unit": "percent of failures", "source": "CB Insights 2024", "year": 2024},
-      {"metric": "Failure reason: ignore customers", "value": 14, "unit": "percent of failures", "source": "CB Insights 2024", "year": 2024},
-      {"metric": "Failure reason: bad timing", "value": 13, "unit": "percent of failures", "source": "CB Insights 2024", "year": 2024},
-      {"metric": "Failure reason: pivot fatigue", "value": 10, "unit": "percent of failures", "source": "YC post-mortem analysis", "year": 2023},
-      {"metric": "Failure reason: legal / regulatory", "value": 8, "unit": "percent of failures", "source": "CB Insights 2024", "year": 2024},
-      {"metric": "Pivot rate (companies that pivot at least once)", "value": 55, "unit": "percent", "source": "YC partner talks 2023", "year": 2023},
-      {"metric": "Companies that pivot during the batch", "value": 25, "unit": "percent", "source": "YC partner talks 2023", "year": 2023},
-      {"metric": "Median time from YC to shutdown (failed companies)", "value": 24, "unit": "months", "source": "Crunchbase 2024", "year": 2024},
-      {"metric": "Companies dead within 12 months post-YC", "value": 10, "unit": "percent", "source": "YC internal estimate", "year": 2023},
-      {"metric": "Companies dead within 24 months post-YC", "value": 25, "unit": "percent", "source": "YC internal estimate", "year": 2023},
-      {"metric": "Companies dead within 36 months post-YC", "value": 35, "unit": "percent", "source": "YC internal estimate", "year": 2023},
-      {"metric": "Solo founder failure rate vs team", "value": 60, "unit": "percent higher", "source": "YC data analysis / TechCrunch 2023", "year": 2023},
-      {"metric": "Average co-founder breakup rate within 2 years", "value": 20, "unit": "percent", "source": "Noam Wasserman research / YC data", "year": 2023},
-      {"metric": "Zombie startups (alive but not growing)", "value": 15, "unit": "percent", "source": "YC partner estimate 2024", "year": 2024}
+      {
+        "metric": "Startups that fail (all-time estimate)",
+        "value": 50,
+        "unit": "percent",
+        "source": "YC partner talks / Paul Graham essays",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Failure reason: no market need",
+        "value": 35,
+        "unit": "percent of failures",
+        "source": "CB Insights / YC post-mortems 2024",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Failure reason: ran out of cash",
+        "value": 29,
+        "unit": "percent of failures",
+        "source": "CB Insights 2024",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Failure reason: wrong team / co-founder conflict",
+        "value": 23,
+        "unit": "percent of failures",
+        "source": "CB Insights / YC data 2024",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Failure reason: got outcompeted",
+        "value": 19,
+        "unit": "percent of failures",
+        "source": "CB Insights 2024",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Failure reason: pricing / cost issues",
+        "value": 18,
+        "unit": "percent of failures",
+        "source": "CB Insights 2024",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Failure reason: unfriendly product",
+        "value": 17,
+        "unit": "percent of failures",
+        "source": "CB Insights 2024",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Failure reason: no business model",
+        "value": 17,
+        "unit": "percent of failures",
+        "source": "CB Insights 2024",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Failure reason: poor marketing",
+        "value": 14,
+        "unit": "percent of failures",
+        "source": "CB Insights 2024",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Failure reason: ignore customers",
+        "value": 14,
+        "unit": "percent of failures",
+        "source": "CB Insights 2024",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Failure reason: bad timing",
+        "value": 13,
+        "unit": "percent of failures",
+        "source": "CB Insights 2024",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Failure reason: pivot fatigue",
+        "value": 10,
+        "unit": "percent of failures",
+        "source": "YC post-mortem analysis",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Failure reason: legal / regulatory",
+        "value": 8,
+        "unit": "percent of failures",
+        "source": "CB Insights 2024",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Pivot rate (companies that pivot at least once)",
+        "value": 55,
+        "unit": "percent",
+        "source": "YC partner talks 2023",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Companies that pivot during the batch",
+        "value": 25,
+        "unit": "percent",
+        "source": "YC partner talks 2023",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Median time from YC to shutdown (failed companies)",
+        "value": 24,
+        "unit": "months",
+        "source": "Crunchbase 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies dead within 12 months post-YC",
+        "value": 10,
+        "unit": "percent",
+        "source": "YC internal estimate",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Companies dead within 24 months post-YC",
+        "value": 25,
+        "unit": "percent",
+        "source": "YC internal estimate",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Companies dead within 36 months post-YC",
+        "value": 35,
+        "unit": "percent",
+        "source": "YC internal estimate",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Solo founder failure rate vs team",
+        "value": 60,
+        "unit": "percent higher",
+        "source": "YC data analysis / TechCrunch 2023",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Average co-founder breakup rate within 2 years",
+        "value": 20,
+        "unit": "percent",
+        "source": "Noam Wasserman research / YC data",
+        "year": 2023,
+        "url": "https://hbr.org/2008/02/the-founders-dilemma"
+      },
+      {
+        "metric": "Zombie startups (alive but not growing)",
+        "value": 15,
+        "unit": "percent",
+        "source": "YC partner estimate 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Top failure reason: co-founder conflict",
+        "value": "25",
+        "unit": "%",
+        "source": "YC Library",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Top failure reason: no market need",
+        "value": "35",
+        "unit": "%",
+        "source": "YC Library",
+        "year": 2024
+      },
+      {
+        "metric": "Top failure reason: ran out of cash",
+        "value": "30",
+        "unit": "%",
+        "source": "YC Library",
+        "year": 2024
+      },
+      {
+        "metric": "Top failure reason: wrong team",
+        "value": "20",
+        "unit": "%",
+        "source": "YC Library",
+        "year": 2024
+      },
+      {
+        "metric": "Top failure reason: pricing/cost issues",
+        "value": "15",
+        "unit": "%",
+        "source": "YC Library",
+        "year": 2024
+      },
+      {
+        "metric": "Top failure reason: poor product",
+        "value": "15",
+        "unit": "%",
+        "source": "YC Library",
+        "year": 2024
+      },
+      {
+        "metric": "Top failure reason: poor marketing",
+        "value": "10",
+        "unit": "%",
+        "source": "YC Library",
+        "year": 2024
+      },
+      {
+        "metric": "Median time to failure post-YC",
+        "value": "2.5",
+        "unit": "years",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Companies that pivot post-YC",
+        "value": "30",
+        "unit": "%",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "Pivoted companies success rate vs non-pivot",
+        "value": "similar",
+        "unit": "qualitative",
+        "source": "YC data",
+        "year": 2024
+      }
     ],
     "sector_breakdown": [
-      {"metric": "B2B SaaS share of batch", "value": 32, "unit": "percent", "source": "YC Batch Analysis 2024", "year": 2024},
-      {"metric": "AI / ML share of batch W24", "value": 35, "unit": "percent", "source": "TechCrunch 2024", "year": 2024},
-      {"metric": "AI / ML share of batch S23", "value": 28, "unit": "percent", "source": "TechCrunch 2023", "year": 2023},
-      {"metric": "AI / ML share of batch W25", "value": 40, "unit": "percent", "source": "TechCrunch 2025", "year": 2025},
-      {"metric": "Fintech share of batch", "value": 12, "unit": "percent", "source": "YC Batch Analysis 2024", "year": 2024},
-      {"metric": "Healthcare / Biotech share of batch", "value": 8, "unit": "percent", "source": "YC Batch Analysis 2024", "year": 2024},
-      {"metric": "Developer tools share of batch", "value": 15, "unit": "percent", "source": "YC Batch Analysis 2024", "year": 2024},
-      {"metric": "Marketplace share of batch", "value": 7, "unit": "percent", "source": "YC Batch Analysis 2024", "year": 2024},
-      {"metric": "Consumer / Social share of batch", "value": 5, "unit": "percent", "source": "YC Batch Analysis 2024", "year": 2024},
-      {"metric": "Crypto / Web3 share of batch W22 (peak)", "value": 12, "unit": "percent", "source": "TechCrunch 2022", "year": 2022},
-      {"metric": "Crypto / Web3 share of batch W24", "value": 3, "unit": "percent", "source": "TechCrunch 2024", "year": 2024},
-      {"metric": "Climate / Energy share of batch", "value": 4, "unit": "percent", "source": "YC Batch Analysis 2024", "year": 2024},
-      {"metric": "Education share of batch", "value": 3, "unit": "percent", "source": "YC Batch Analysis 2024", "year": 2024},
-      {"metric": "Real estate / Proptech share of batch", "value": 3, "unit": "percent", "source": "YC Batch Analysis 2024", "year": 2024},
-      {"metric": "Government / GovTech share of batch", "value": 2, "unit": "percent", "source": "YC Batch Analysis 2024", "year": 2024},
-      {"metric": "Open source share of batch", "value": 8, "unit": "percent", "source": "TechCrunch 2024", "year": 2024},
-      {"metric": "Infrastructure / DevOps share", "value": 10, "unit": "percent", "source": "YC Batch Analysis 2024", "year": 2024},
-      {"metric": "Security / Cybersecurity share", "value": 5, "unit": "percent", "source": "YC Batch Analysis 2024", "year": 2024},
-      {"metric": "Logistics / Supply chain share", "value": 3, "unit": "percent", "source": "YC Batch Analysis 2024", "year": 2024},
-      {"metric": "AI highest unicorn conversion rate", "value": 3.5, "unit": "percent", "source": "PitchBook 2024", "year": 2024},
-      {"metric": "Fintech highest median Series A valuation", "value": 120000000, "unit": "USD", "source": "PitchBook 2024", "year": 2024}
+      {
+        "metric": "B2B SaaS share of batch",
+        "value": 32,
+        "unit": "percent",
+        "source": "YC Batch Analysis 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "AI / ML share of batch W24",
+        "value": 35,
+        "unit": "percent",
+        "source": "TechCrunch 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI / ML share of batch S23",
+        "value": 28,
+        "unit": "percent",
+        "source": "TechCrunch 2023",
+        "year": 2023
+      },
+      {
+        "metric": "AI / ML share of batch W25",
+        "value": 40,
+        "unit": "percent",
+        "source": "TechCrunch 2025",
+        "year": 2025
+      },
+      {
+        "metric": "Fintech share of batch",
+        "value": 12,
+        "unit": "percent",
+        "source": "YC Batch Analysis 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Healthcare / Biotech share of batch",
+        "value": 8,
+        "unit": "percent",
+        "source": "YC Batch Analysis 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Developer tools share of batch",
+        "value": 15,
+        "unit": "percent",
+        "source": "YC Batch Analysis 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Marketplace share of batch",
+        "value": 7,
+        "unit": "percent",
+        "source": "YC Batch Analysis 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Consumer / Social share of batch",
+        "value": 5,
+        "unit": "percent",
+        "source": "YC Batch Analysis 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Crypto / Web3 share of batch W22 (peak)",
+        "value": 12,
+        "unit": "percent",
+        "source": "TechCrunch 2022",
+        "year": 2022
+      },
+      {
+        "metric": "Crypto / Web3 share of batch W24",
+        "value": 3,
+        "unit": "percent",
+        "source": "TechCrunch 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Climate / Energy share of batch",
+        "value": 4,
+        "unit": "percent",
+        "source": "YC Batch Analysis 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Education share of batch",
+        "value": 3,
+        "unit": "percent",
+        "source": "YC Batch Analysis 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Real estate / Proptech share of batch",
+        "value": 3,
+        "unit": "percent",
+        "source": "YC Batch Analysis 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Government / GovTech share of batch",
+        "value": 2,
+        "unit": "percent",
+        "source": "YC Batch Analysis 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Open source share of batch",
+        "value": 8,
+        "unit": "percent",
+        "source": "TechCrunch 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Infrastructure / DevOps share",
+        "value": 10,
+        "unit": "percent",
+        "source": "YC Batch Analysis 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Security / Cybersecurity share",
+        "value": 5,
+        "unit": "percent",
+        "source": "YC Batch Analysis 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Logistics / Supply chain share",
+        "value": 3,
+        "unit": "percent",
+        "source": "YC Batch Analysis 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "AI highest unicorn conversion rate",
+        "value": 3.5,
+        "unit": "percent",
+        "source": "PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Fintech highest median Series A valuation",
+        "value": 120000000,
+        "unit": "USD",
+        "source": "PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      }
     ],
     "funding_progression": [
-      {"metric": "Median pre-seed raised at Demo Day", "value": 2000000, "unit": "USD", "source": "Carta 2024", "year": 2024},
-      {"metric": "Median seed round raised post-Demo Day", "value": 3500000, "unit": "USD", "source": "Crunchbase 2024", "year": 2024},
-      {"metric": "Median Series A raised (YC companies)", "value": 15000000, "unit": "USD", "source": "PitchBook 2024", "year": 2024},
-      {"metric": "Median Series B raised (YC companies)", "value": 40000000, "unit": "USD", "source": "PitchBook 2024", "year": 2024},
-      {"metric": "Seed to Series A conversion rate", "value": 40, "unit": "percent", "source": "Carta 2024", "year": 2024},
-      {"metric": "Series A to Series B conversion rate", "value": 35, "unit": "percent", "source": "PitchBook 2024", "year": 2024},
-      {"metric": "Series B to Series C conversion rate", "value": 30, "unit": "percent", "source": "PitchBook 2024", "year": 2024},
-      {"metric": "Median time Demo Day to seed close", "value": 2, "unit": "months", "source": "TechCrunch 2024", "year": 2024},
-      {"metric": "Median time seed to Series A", "value": 22, "unit": "months", "source": "Carta 2024", "year": 2024},
-      {"metric": "Median time Series A to Series B", "value": 24, "unit": "months", "source": "PitchBook 2024", "year": 2024},
-      {"metric": "Median time Series B to Series C", "value": 26, "unit": "months", "source": "PitchBook 2024", "year": 2024},
-      {"metric": "YC companies raising within 3 months of Demo Day", "value": 70, "unit": "percent", "source": "YC partner talks 2024", "year": 2024},
-      {"metric": "Average number of investors in seed round", "value": 8, "unit": "investors", "source": "Carta 2024", "year": 2024},
-      {"metric": "Bridge round rate (between seed and A)", "value": 30, "unit": "percent", "source": "Carta 2024", "year": 2024},
-      {"metric": "Median bridge round size", "value": 1500000, "unit": "USD", "source": "Carta 2024", "year": 2024},
-      {"metric": "Down round rate at Series A (2023-24)", "value": 15, "unit": "percent", "source": "PitchBook 2024", "year": 2024},
-      {"metric": "Median dilution at seed", "value": 20, "unit": "percent", "source": "Carta 2024", "year": 2024},
-      {"metric": "Median dilution at Series A", "value": 20, "unit": "percent", "source": "Carta 2024", "year": 2024},
-      {"metric": "Total capital raised by YC companies all-time", "value": 100, "unit": "billion USD", "source": "YC Blog 2024", "year": 2024},
-      {"metric": "Continuity Fund investment per company (follow-on)", "value": 10000000, "unit": "USD typical", "source": "YC Official 2024", "year": 2024}
+      {
+        "metric": "Median pre-seed raised at Demo Day",
+        "value": 2000000,
+        "unit": "USD",
+        "source": "Carta 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Median seed round raised post-Demo Day",
+        "value": 3500000,
+        "unit": "USD",
+        "source": "Crunchbase 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Median Series A raised (YC companies)",
+        "value": 15000000,
+        "unit": "USD",
+        "source": "PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Median Series B raised (YC companies)",
+        "value": 40000000,
+        "unit": "USD",
+        "source": "PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Seed to Series A conversion rate",
+        "value": 40,
+        "unit": "percent",
+        "source": "Carta 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Series A to Series B conversion rate",
+        "value": 35,
+        "unit": "percent",
+        "source": "PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Series B to Series C conversion rate",
+        "value": 30,
+        "unit": "percent",
+        "source": "PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Median time Demo Day to seed close",
+        "value": 2,
+        "unit": "months",
+        "source": "TechCrunch 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Median time seed to Series A",
+        "value": 22,
+        "unit": "months",
+        "source": "Carta 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Median time Series A to Series B",
+        "value": 24,
+        "unit": "months",
+        "source": "PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Median time Series B to Series C",
+        "value": 26,
+        "unit": "months",
+        "source": "PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "YC companies raising within 3 months of Demo Day",
+        "value": 70,
+        "unit": "percent",
+        "source": "YC partner talks 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Average number of investors in seed round",
+        "value": 8,
+        "unit": "investors",
+        "source": "Carta 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Bridge round rate (between seed and A)",
+        "value": 30,
+        "unit": "percent",
+        "source": "Carta 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Median bridge round size",
+        "value": 1500000,
+        "unit": "USD",
+        "source": "Carta 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Down round rate at Series A (2023-24)",
+        "value": 15,
+        "unit": "percent",
+        "source": "PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Median dilution at seed",
+        "value": 20,
+        "unit": "percent",
+        "source": "Carta 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Median dilution at Series A",
+        "value": 20,
+        "unit": "percent",
+        "source": "Carta 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Total capital raised by YC companies all-time",
+        "value": 100,
+        "unit": "billion USD",
+        "source": "YC Blog 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Continuity Fund investment per company (follow-on)",
+        "value": 10000000,
+        "unit": "USD typical",
+        "source": "YC Official 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Median seed raise post-YC",
+        "value": "3",
+        "unit": "million USD",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "Median Series A raise for YC cos",
+        "value": "15",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Median Series B raise for YC cos",
+        "value": "40",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average valuation at Series A for YC cos",
+        "value": "60",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "YC premium at Series A vs non-YC",
+        "value": "30-50",
+        "unit": "% higher valuation",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average time from YC to Series A",
+        "value": "12-18",
+        "unit": "months",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "Average time from Series A to B",
+        "value": "18-24",
+        "unit": "months",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "YC cos that bootstrapped post-batch",
+        "value": "10",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Total capital raised by YC cos",
+        "value": "100+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average investor count at Demo Day per company",
+        "value": "20+",
+        "unit": "interested investors",
+        "source": "YC Blog",
+        "year": 2024
+      }
     ],
     "geographic_data": [
-      {"metric": "US-based founders share", "value": 55, "unit": "percent", "source": "YC Batch Data 2024", "year": 2024},
-      {"metric": "India-based founders share", "value": 12, "unit": "percent", "source": "YC Batch Data 2024", "year": 2024},
-      {"metric": "UK-based founders share", "value": 4, "unit": "percent", "source": "YC Batch Data 2024", "year": 2024},
-      {"metric": "Canada-based founders share", "value": 4, "unit": "percent", "source": "YC Batch Data 2024", "year": 2024},
-      {"metric": "Nigeria / Africa-based founders share", "value": 3, "unit": "percent", "source": "YC Batch Data 2024", "year": 2024},
-      {"metric": "Latin America-based founders share", "value": 5, "unit": "percent", "source": "YC Batch Data 2024", "year": 2024},
-      {"metric": "Europe (ex-UK) founders share", "value": 8, "unit": "percent", "source": "YC Batch Data 2024", "year": 2024},
-      {"metric": "Southeast Asia founders share", "value": 3, "unit": "percent", "source": "YC Batch Data 2024", "year": 2024},
-      {"metric": "China-based founders share", "value": 2, "unit": "percent", "source": "YC Batch Data 2024", "year": 2024},
-      {"metric": "Middle East founders share", "value": 2, "unit": "percent", "source": "YC Batch Data 2024", "year": 2024},
-      {"metric": "Australia / NZ founders share", "value": 2, "unit": "percent", "source": "YC Batch Data 2024", "year": 2024},
-      {"metric": "International founders total (non-US)", "value": 45, "unit": "percent", "source": "YC Batch Data 2024", "year": 2024},
-      {"metric": "SF Bay Area relocations during batch", "value": 80, "unit": "percent", "source": "YC requirement / TechCrunch 2024", "year": 2024},
-      {"metric": "Companies headquartered in SF post-batch", "value": 50, "unit": "percent", "source": "Crunchbase 2024", "year": 2024},
-      {"metric": "Remote/hybrid post-batch", "value": 35, "unit": "percent", "source": "TechCrunch 2024", "year": 2024},
-      {"metric": "Countries represented per batch (average)", "value": 50, "unit": "countries", "source": "YC Blog 2024", "year": 2024}
+      {
+        "metric": "US-based founders share",
+        "value": 55,
+        "unit": "percent",
+        "source": "YC Batch Data 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "India-based founders share",
+        "value": 12,
+        "unit": "percent",
+        "source": "YC Batch Data 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "UK-based founders share",
+        "value": 4,
+        "unit": "percent",
+        "source": "YC Batch Data 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Canada-based founders share",
+        "value": 4,
+        "unit": "percent",
+        "source": "YC Batch Data 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Nigeria / Africa-based founders share",
+        "value": 3,
+        "unit": "percent",
+        "source": "YC Batch Data 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Latin America-based founders share",
+        "value": 5,
+        "unit": "percent",
+        "source": "YC Batch Data 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Europe (ex-UK) founders share",
+        "value": 8,
+        "unit": "percent",
+        "source": "YC Batch Data 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Southeast Asia founders share",
+        "value": 3,
+        "unit": "percent",
+        "source": "YC Batch Data 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "China-based founders share",
+        "value": 2,
+        "unit": "percent",
+        "source": "YC Batch Data 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Middle East founders share",
+        "value": 2,
+        "unit": "percent",
+        "source": "YC Batch Data 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Australia / NZ founders share",
+        "value": 2,
+        "unit": "percent",
+        "source": "YC Batch Data 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "International founders total (non-US)",
+        "value": 45,
+        "unit": "percent",
+        "source": "YC Batch Data 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "SF Bay Area relocations during batch",
+        "value": 80,
+        "unit": "percent",
+        "source": "YC requirement / TechCrunch 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Companies headquartered in SF post-batch",
+        "value": 50,
+        "unit": "percent",
+        "source": "Crunchbase 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Remote/hybrid post-batch",
+        "value": 35,
+        "unit": "percent",
+        "source": "TechCrunch 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Countries represented per batch (average)",
+        "value": 50,
+        "unit": "countries",
+        "source": "YC Blog 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "US-based YC companies",
+        "value": "70",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "India-based YC companies",
+        "value": "10",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Europe-based YC companies",
+        "value": "5",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Africa-based YC companies",
+        "value": "5",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "LATAM-based YC companies",
+        "value": "5",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Southeast Asia-based YC companies",
+        "value": "3",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Middle East-based YC companies",
+        "value": "2",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Countries represented in YC",
+        "value": "80+",
+        "unit": "countries",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "Bay Area-based (after YC)",
+        "value": "50",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Remote-first YC companies",
+        "value": "30",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      }
     ],
     "founder_demographics": [
-      {"metric": "Solo founders in batch", "value": 15, "unit": "percent", "source": "YC Batch Data 2024", "year": 2024},
-      {"metric": "Two co-founders (most common)", "value": 55, "unit": "percent", "source": "YC Batch Data 2024", "year": 2024},
-      {"metric": "Three or more co-founders", "value": 30, "unit": "percent", "source": "YC Batch Data 2024", "year": 2024},
-      {"metric": "At least one technical co-founder", "value": 85, "unit": "percent", "source": "YC partner talks 2024", "year": 2024},
-      {"metric": "All-technical founding teams", "value": 40, "unit": "percent", "source": "YC partner talks 2024", "year": 2024},
-      {"metric": "Repeat founders in batch", "value": 22, "unit": "percent", "source": "TechCrunch 2024", "year": 2024},
-      {"metric": "Repeat founder success rate (Series A)", "value": 55, "unit": "percent", "source": "PitchBook 2024", "year": 2024},
-      {"metric": "First-time founder success rate (Series A)", "value": 35, "unit": "percent", "source": "PitchBook 2024", "year": 2024},
-      {"metric": "Founders with CS/engineering degree", "value": 65, "unit": "percent", "source": "YC internal data estimate", "year": 2023},
-      {"metric": "Founders with MBA", "value": 10, "unit": "percent", "source": "YC internal data estimate", "year": 2023},
-      {"metric": "Founders with PhD", "value": 8, "unit": "percent", "source": "YC internal data estimate", "year": 2023},
-      {"metric": "Founders from Stanford", "value": 10, "unit": "percent", "source": "LinkedIn analysis / TechCrunch", "year": 2023},
-      {"metric": "Founders from MIT", "value": 6, "unit": "percent", "source": "LinkedIn analysis / TechCrunch", "year": 2023},
-      {"metric": "Founders from IIT (India)", "value": 5, "unit": "percent", "source": "LinkedIn analysis", "year": 2023},
-      {"metric": "Founders with FAANG experience", "value": 30, "unit": "percent", "source": "LinkedIn analysis", "year": 2023},
-      {"metric": "Founders with prior startup experience", "value": 45, "unit": "percent", "source": "YC internal data estimate", "year": 2023},
-      {"metric": "Average founder age", "value": 29, "unit": "years", "source": "YC Batch Data / TechCrunch 2024", "year": 2024},
-      {"metric": "Median founder age", "value": 28, "unit": "years", "source": "YC Batch Data / TechCrunch 2024", "year": 2024},
-      {"metric": "Female founders share", "value": 20, "unit": "percent", "source": "YC diversity report 2024", "year": 2024},
-      {"metric": "Underrepresented minority founders (US)", "value": 15, "unit": "percent", "source": "YC diversity report 2024", "year": 2024},
-      {"metric": "Immigrant founders (first-gen)", "value": 40, "unit": "percent", "source": "NFAP / YC data 2024", "year": 2024},
-      {"metric": "Youngest founder accepted", "value": 17, "unit": "years", "source": "YC historical records", "year": 2023},
-      {"metric": "Oldest founder accepted (recent)", "value": 65, "unit": "years", "source": "YC historical records", "year": 2023}
+      {
+        "metric": "Solo founders in batch",
+        "value": 15,
+        "unit": "percent",
+        "source": "YC Batch Data 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Two co-founders (most common)",
+        "value": 55,
+        "unit": "percent",
+        "source": "YC Batch Data 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Three or more co-founders",
+        "value": 30,
+        "unit": "percent",
+        "source": "YC Batch Data 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "At least one technical co-founder",
+        "value": 85,
+        "unit": "percent",
+        "source": "YC partner talks 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "All-technical founding teams",
+        "value": 40,
+        "unit": "percent",
+        "source": "YC partner talks 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Repeat founders in batch",
+        "value": 22,
+        "unit": "percent",
+        "source": "TechCrunch 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Repeat founder success rate (Series A)",
+        "value": 55,
+        "unit": "percent",
+        "source": "PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "First-time founder success rate (Series A)",
+        "value": 35,
+        "unit": "percent",
+        "source": "PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Founders with CS/engineering degree",
+        "value": 65,
+        "unit": "percent",
+        "source": "YC internal data estimate",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Founders with MBA",
+        "value": 10,
+        "unit": "percent",
+        "source": "YC internal data estimate",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Founders with PhD",
+        "value": 8,
+        "unit": "percent",
+        "source": "YC internal data estimate",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Founders from Stanford",
+        "value": 10,
+        "unit": "percent",
+        "source": "LinkedIn analysis / TechCrunch",
+        "year": 2023
+      },
+      {
+        "metric": "Founders from MIT",
+        "value": 6,
+        "unit": "percent",
+        "source": "LinkedIn analysis / TechCrunch",
+        "year": 2023
+      },
+      {
+        "metric": "Founders from IIT (India)",
+        "value": 5,
+        "unit": "percent",
+        "source": "LinkedIn analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Founders with FAANG experience",
+        "value": 30,
+        "unit": "percent",
+        "source": "LinkedIn analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Founders with prior startup experience",
+        "value": 45,
+        "unit": "percent",
+        "source": "YC internal data estimate",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Average founder age",
+        "value": 29,
+        "unit": "years",
+        "source": "YC Batch Data / TechCrunch 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Median founder age",
+        "value": 28,
+        "unit": "years",
+        "source": "YC Batch Data / TechCrunch 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Female founders share",
+        "value": 20,
+        "unit": "percent",
+        "source": "YC diversity report 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Underrepresented minority founders (US)",
+        "value": 15,
+        "unit": "percent",
+        "source": "YC diversity report 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Immigrant founders (first-gen)",
+        "value": 40,
+        "unit": "percent",
+        "source": "NFAP / YC data 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Youngest founder accepted",
+        "value": 17,
+        "unit": "years",
+        "source": "YC historical records",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Oldest founder accepted (recent)",
+        "value": 65,
+        "unit": "years",
+        "source": "YC historical records",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Average founder age at YC application",
+        "value": "29",
+        "unit": "years",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Youngest YC founder ever",
+        "value": "17",
+        "unit": "years",
+        "source": "YC lore",
+        "year": 2024
+      },
+      {
+        "metric": "Oldest YC founder ever",
+        "value": "60+",
+        "unit": "years",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Female founders",
+        "value": "20",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Solo founders",
+        "value": "10",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Two co-founder teams",
+        "value": "60",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Three+ co-founder teams",
+        "value": "30",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "First-time founders",
+        "value": "75",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Repeat founders",
+        "value": "25",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Technical founders",
+        "value": "80",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Founders from Stanford",
+        "value": "15",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Founders from MIT",
+        "value": "10",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Founders from Harvard",
+        "value": "5",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Founders who dropped out of school",
+        "value": "10",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "International founders",
+        "value": "45",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      }
     ],
     "key_metrics": [
-      {"metric": "Median MRR at Demo Day", "value": 10000, "unit": "USD/month", "source": "YC partner talks 2024", "year": 2024},
-      {"metric": "Top quartile MRR at Demo Day", "value": 50000, "unit": "USD/month", "source": "YC partner talks 2024", "year": 2024},
-      {"metric": "Bottom quartile MRR at Demo Day", "value": 0, "unit": "USD/month", "source": "YC partner talks 2024", "year": 2024},
-      {"metric": "Expected week-over-week growth during batch", "value": 7, "unit": "percent", "source": "Paul Graham essay / YC docs", "year": 2023},
-      {"metric": "Good weekly growth rate", "value": 10, "unit": "percent", "source": "Paul Graham essay", "year": 2023},
-      {"metric": "Exceptional weekly growth rate", "value": 20, "unit": "percent", "source": "Paul Graham essay", "year": 2023},
-      {"metric": "Median runway at graduation (post-raise)", "value": 18, "unit": "months", "source": "Carta 2024", "year": 2024},
-      {"metric": "Average burn rate at graduation", "value": 50000, "unit": "USD/month", "source": "YC partner estimate 2024", "year": 2024},
-      {"metric": "Median monthly burn 6 months post-Demo Day", "value": 75000, "unit": "USD/month", "source": "Carta 2024", "year": 2024},
-      {"metric": "Companies with revenue at Demo Day", "value": 65, "unit": "percent", "source": "YC partner talks 2024", "year": 2024},
-      {"metric": "Companies with paying customers at Demo Day", "value": 60, "unit": "percent", "source": "YC partner talks 2024", "year": 2024},
-      {"metric": "Median customers at Demo Day", "value": 20, "unit": "customers", "source": "YC batch surveys 2024", "year": 2024},
-      {"metric": "Median NPS score (YC companies post-batch)", "value": 55, "unit": "score", "source": "YC internal surveys 2023", "year": 2023},
-      {"metric": "YC network effect value (estimated)", "value": 100000, "unit": "USD revenue via intros per company", "source": "YC alumni survey 2024", "year": 2024},
-      {"metric": "Companies using AWS credits from YC", "value": 90, "unit": "percent", "source": "YC official perks list", "year": 2024},
-      {"metric": "Total cloud credits provided per company", "value": 500000, "unit": "USD in credits", "source": "YC official perks list 2024", "year": 2024},
-      {"metric": "Companies with product-market fit at Demo Day", "value": 15, "unit": "percent", "source": "YC partner estimate 2024", "year": 2024},
-      {"metric": "Median CAC payback period (successful YC companies)", "value": 8, "unit": "months", "source": "YC partner talks 2024", "year": 2024},
-      {"metric": "Median LTV:CAC ratio target", "value": 3, "unit": "ratio", "source": "YC standard advice", "year": 2024},
-      {"metric": "Average office hours per company during batch", "value": 10, "unit": "sessions", "source": "YC program structure", "year": 2024},
-      {"metric": "Group partners per batch", "value": 20, "unit": "partners", "source": "YC Official 2024", "year": 2024}
+      {
+        "metric": "Median MRR at Demo Day",
+        "value": 10000,
+        "unit": "USD/month",
+        "source": "YC partner talks 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Top quartile MRR at Demo Day",
+        "value": 50000,
+        "unit": "USD/month",
+        "source": "YC partner talks 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Bottom quartile MRR at Demo Day",
+        "value": 0,
+        "unit": "USD/month",
+        "source": "YC partner talks 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Expected week-over-week growth during batch",
+        "value": 7,
+        "unit": "percent",
+        "source": "Paul Graham essay / YC docs",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Good weekly growth rate",
+        "value": 10,
+        "unit": "percent",
+        "source": "Paul Graham essay",
+        "year": 2023
+      },
+      {
+        "metric": "Exceptional weekly growth rate",
+        "value": 20,
+        "unit": "percent",
+        "source": "Paul Graham essay",
+        "year": 2023
+      },
+      {
+        "metric": "Median runway at graduation (post-raise)",
+        "value": 18,
+        "unit": "months",
+        "source": "Carta 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average burn rate at graduation",
+        "value": 50000,
+        "unit": "USD/month",
+        "source": "YC partner estimate 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Median monthly burn 6 months post-Demo Day",
+        "value": 75000,
+        "unit": "USD/month",
+        "source": "Carta 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with revenue at Demo Day",
+        "value": 65,
+        "unit": "percent",
+        "source": "YC partner talks 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Companies with paying customers at Demo Day",
+        "value": 60,
+        "unit": "percent",
+        "source": "YC partner talks 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Median customers at Demo Day",
+        "value": 20,
+        "unit": "customers",
+        "source": "YC batch surveys 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Median NPS score (YC companies post-batch)",
+        "value": 55,
+        "unit": "score",
+        "source": "YC internal surveys 2023",
+        "year": 2023,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "YC network effect value (estimated)",
+        "value": 100000,
+        "unit": "USD revenue via intros per company",
+        "source": "YC alumni survey 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Companies using AWS credits from YC",
+        "value": 90,
+        "unit": "percent",
+        "source": "YC official perks list",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Total cloud credits provided per company",
+        "value": 500000,
+        "unit": "USD in credits",
+        "source": "YC official perks list 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Companies with product-market fit at Demo Day",
+        "value": 15,
+        "unit": "percent",
+        "source": "YC partner estimate 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Median CAC payback period (successful YC companies)",
+        "value": 8,
+        "unit": "months",
+        "source": "YC partner talks 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Median LTV:CAC ratio target",
+        "value": 3,
+        "unit": "ratio",
+        "source": "YC standard advice",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Average office hours per company during batch",
+        "value": 10,
+        "unit": "sessions",
+        "source": "YC program structure",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Group partners per batch",
+        "value": 20,
+        "unit": "partners",
+        "source": "YC Official 2024",
+        "year": 2024,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "YC SAFE \u2014 standard post-money SAFE",
+        "value": "true",
+        "unit": "legal instrument",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "SAFE invented by YC",
+        "value": "2013",
+        "unit": "year",
+        "source": "YC website",
+        "year": 2013
+      },
+      {
+        "metric": "SAFE most used early-stage instrument globally",
+        "value": "true",
+        "unit": "fact",
+        "source": "industry data",
+        "year": 2024
+      },
+      {
+        "metric": "YC co-invest program active",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC alumni network size",
+        "value": "10000+",
+        "unit": "founders",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC Bookface (internal social network) active users",
+        "value": "8000+",
+        "unit": "users",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "YC Group Partners (batch advisors)",
+        "value": "40+",
+        "unit": "partners",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "Visiting Group Partners",
+        "value": "20+",
+        "unit": "partners",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC office hours per company during batch",
+        "value": "bi-weekly",
+        "unit": "frequency",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "Batch duration",
+        "value": "3",
+        "unit": "months",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "Paul Graham essays read by millions",
+        "value": "200+",
+        "unit": "essays",
+        "source": "paulgraham.com",
+        "year": 2024
+      },
+      {
+        "metric": "Most influential PG essay: 'Do Things That Don't Scale'",
+        "value": "2013",
+        "unit": "year",
+        "source": "paulgraham.com",
+        "year": 2013
+      },
+      {
+        "metric": "YC's Hacker News monthly users",
+        "value": "10+",
+        "unit": "million",
+        "source": "SimilarWeb estimate",
+        "year": 2024
+      },
+      {
+        "metric": "Hacker News \u2014 top tech community for founders",
+        "value": "true",
+        "unit": "qualitative",
+        "source": "industry consensus",
+        "year": 2024
+      }
     ],
     "famous_examples": [
-      {"metric": "Airbnb - YC batch", "value": "W09", "unit": "batch", "source": "YC Official", "year": 2009},
-      {"metric": "Airbnb - current valuation", "value": 80000000000, "unit": "USD", "source": "NYSE market cap 2024", "year": 2024},
-      {"metric": "Airbnb - revenue 2024", "value": 10800000000, "unit": "USD", "source": "Airbnb 10-K 2024", "year": 2024},
-      {"metric": "Airbnb - initial YC investment", "value": 20000, "unit": "USD", "source": "YC Historical", "year": 2009},
-      {"metric": "Airbnb - IPO date", "value": "2020-12-10", "unit": "date", "source": "NASDAQ records", "year": 2020},
-      {"metric": "Airbnb - IPO valuation", "value": 47000000000, "unit": "USD", "source": "NASDAQ records", "year": 2020},
-      {"metric": "Stripe - YC batch", "value": "S09", "unit": "batch", "source": "YC Official", "year": 2009},
-      {"metric": "Stripe - latest valuation", "value": 65000000000, "unit": "USD", "source": "Stripe secondary market 2024", "year": 2024},
-      {"metric": "Stripe - revenue 2024", "value": 18000000000, "unit": "USD (processing fees)", "source": "Bloomberg 2024", "year": 2024},
-      {"metric": "Stripe - total payment volume 2024", "value": 1000000000000, "unit": "USD", "source": "Stripe press release 2024", "year": 2024},
-      {"metric": "Stripe - employees", "value": 8000, "unit": "people", "source": "Stripe About page 2024", "year": 2024},
-      {"metric": "Dropbox - YC batch", "value": "S07", "unit": "batch", "source": "YC Official", "year": 2007},
-      {"metric": "Dropbox - current market cap", "value": 8000000000, "unit": "USD", "source": "NASDAQ 2024", "year": 2024},
-      {"metric": "Dropbox - revenue 2024", "value": 2500000000, "unit": "USD", "source": "Dropbox 10-K 2024", "year": 2024},
-      {"metric": "Dropbox - paying users", "value": 18000000, "unit": "users", "source": "Dropbox earnings 2024", "year": 2024},
-      {"metric": "DoorDash - YC batch", "value": "S13", "unit": "batch", "source": "YC Official", "year": 2013},
-      {"metric": "DoorDash - current market cap", "value": 55000000000, "unit": "USD", "source": "NYSE 2024", "year": 2024},
-      {"metric": "DoorDash - revenue 2024", "value": 9600000000, "unit": "USD", "source": "DoorDash 10-K 2024", "year": 2024},
-      {"metric": "DoorDash - US market share (food delivery)", "value": 67, "unit": "percent", "source": "Bloomberg Second Measure 2024", "year": 2024},
-      {"metric": "Coinbase - YC batch", "value": "S12", "unit": "batch", "source": "YC Official", "year": 2012},
-      {"metric": "Coinbase - market cap", "value": 45000000000, "unit": "USD", "source": "NASDAQ 2024", "year": 2024},
-      {"metric": "Coinbase - revenue 2024", "value": 5500000000, "unit": "USD", "source": "Coinbase 10-K 2024", "year": 2024},
-      {"metric": "Instacart - YC batch", "value": "S12", "unit": "batch", "source": "YC Official", "year": 2012},
-      {"metric": "Instacart - IPO valuation", "value": 10000000000, "unit": "USD", "source": "NASDAQ 2023", "year": 2023},
-      {"metric": "Twitch - YC batch (as Justin.tv)", "value": "W07", "unit": "batch", "source": "YC Official", "year": 2007},
-      {"metric": "Twitch - acquisition price (by Amazon)", "value": 970000000, "unit": "USD", "source": "Amazon press release 2014", "year": 2014},
-      {"metric": "Reddit - YC batch", "value": "S05", "unit": "batch", "source": "YC Official (first batch)", "year": 2005},
-      {"metric": "Reddit - IPO valuation", "value": 6500000000, "unit": "USD", "source": "NYSE 2024", "year": 2024},
-      {"metric": "Reddit - monthly active users", "value": 1700000000, "unit": "users", "source": "Reddit S-1 2024", "year": 2024},
-      {"metric": "Cruise - YC batch", "value": "W14", "unit": "batch", "source": "YC Official", "year": 2014},
-      {"metric": "Cruise - acquisition by GM", "value": 1000000000, "unit": "USD", "source": "GM press release 2016", "year": 2016},
-      {"metric": "Brex - YC batch", "value": "W17", "unit": "batch", "source": "YC Official", "year": 2017},
-      {"metric": "Brex - peak valuation", "value": 12300000000, "unit": "USD", "source": "TechCrunch 2022", "year": 2022},
-      {"metric": "Rappi - YC batch", "value": "W16", "unit": "batch", "source": "YC Official", "year": 2016},
-      {"metric": "Rappi - valuation", "value": 5250000000, "unit": "USD", "source": "PitchBook 2024", "year": 2024},
-      {"metric": "Razorpay - YC batch", "value": "W15", "unit": "batch", "source": "YC Official", "year": 2015},
-      {"metric": "Razorpay - valuation", "value": 7500000000, "unit": "USD", "source": "TechCrunch 2024", "year": 2024},
-      {"metric": "Ginkgo Bioworks - YC batch", "value": "S14", "unit": "batch", "source": "YC Official", "year": 2014},
-      {"metric": "Ginkgo Bioworks - peak market cap (post-SPAC)", "value": 17000000000, "unit": "USD", "source": "NYSE 2021", "year": 2021},
-      {"metric": "OpenSea - YC batch", "value": "W18", "unit": "batch", "source": "YC Official", "year": 2018},
-      {"metric": "OpenSea - peak valuation", "value": 13000000000, "unit": "USD", "source": "TechCrunch 2022", "year": 2022},
-      {"metric": "Zapier - YC batch", "value": "S12", "unit": "batch", "source": "YC Official", "year": 2012},
-      {"metric": "Zapier - ARR", "value": 350000000, "unit": "USD", "source": "Forbes 2024", "year": 2024},
-      {"metric": "Zapier - bootstrapped (no Series A)", "value": true, "unit": "boolean", "source": "Forbes 2024", "year": 2024},
-      {"metric": "Retool - YC batch", "value": "W17", "unit": "batch", "source": "YC Official", "year": 2017},
-      {"metric": "Retool - valuation", "value": 3200000000, "unit": "USD", "source": "PitchBook 2024", "year": 2024},
-      {"metric": "Faire - YC batch", "value": "W17", "unit": "batch", "source": "YC Official", "year": 2017},
-      {"metric": "Faire - valuation", "value": 12600000000, "unit": "USD", "source": "TechCrunch 2022", "year": 2022},
-      {"metric": "Gusto - YC batch", "value": "W12", "unit": "batch", "source": "YC Official", "year": 2012},
-      {"metric": "Gusto - valuation", "value": 10000000000, "unit": "USD", "source": "PitchBook 2024", "year": 2024}
+      {
+        "metric": "Airbnb - YC batch",
+        "value": "W09",
+        "unit": "batch",
+        "source": "YC Official",
+        "year": 2009,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Airbnb - current valuation",
+        "value": 80000000000,
+        "unit": "USD",
+        "source": "NYSE market cap 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Airbnb - revenue 2024",
+        "value": 10800000000,
+        "unit": "USD",
+        "source": "Airbnb 10-K 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Airbnb - initial YC investment",
+        "value": 20000,
+        "unit": "USD",
+        "source": "YC Historical",
+        "year": 2009,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Airbnb - IPO date",
+        "value": "2020-12-10",
+        "unit": "date",
+        "source": "NASDAQ records",
+        "year": 2020
+      },
+      {
+        "metric": "Airbnb - IPO valuation",
+        "value": 47000000000,
+        "unit": "USD",
+        "source": "NASDAQ records",
+        "year": 2020
+      },
+      {
+        "metric": "Stripe - YC batch",
+        "value": "S09",
+        "unit": "batch",
+        "source": "YC Official",
+        "year": 2009,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Stripe - latest valuation",
+        "value": 65000000000,
+        "unit": "USD",
+        "source": "Stripe secondary market 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Stripe - revenue 2024",
+        "value": 18000000000,
+        "unit": "USD (processing fees)",
+        "source": "Bloomberg 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Stripe - total payment volume 2024",
+        "value": 1000000000000,
+        "unit": "USD",
+        "source": "Stripe press release 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Stripe - employees",
+        "value": 8000,
+        "unit": "people",
+        "source": "Stripe About page 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Dropbox - YC batch",
+        "value": "S07",
+        "unit": "batch",
+        "source": "YC Official",
+        "year": 2007,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Dropbox - current market cap",
+        "value": 8000000000,
+        "unit": "USD",
+        "source": "NASDAQ 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Dropbox - revenue 2024",
+        "value": 2500000000,
+        "unit": "USD",
+        "source": "Dropbox 10-K 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Dropbox - paying users",
+        "value": 18000000,
+        "unit": "users",
+        "source": "Dropbox earnings 2024",
+        "year": 2024
+      },
+      {
+        "metric": "DoorDash - YC batch",
+        "value": "S13",
+        "unit": "batch",
+        "source": "YC Official",
+        "year": 2013,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "DoorDash - current market cap",
+        "value": 55000000000,
+        "unit": "USD",
+        "source": "NYSE 2024",
+        "year": 2024
+      },
+      {
+        "metric": "DoorDash - revenue 2024",
+        "value": 9600000000,
+        "unit": "USD",
+        "source": "DoorDash 10-K 2024",
+        "year": 2024
+      },
+      {
+        "metric": "DoorDash - US market share (food delivery)",
+        "value": 67,
+        "unit": "percent",
+        "source": "Bloomberg Second Measure 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Coinbase - YC batch",
+        "value": "S12",
+        "unit": "batch",
+        "source": "YC Official",
+        "year": 2012,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Coinbase - market cap",
+        "value": 45000000000,
+        "unit": "USD",
+        "source": "NASDAQ 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Coinbase - revenue 2024",
+        "value": 5500000000,
+        "unit": "USD",
+        "source": "Coinbase 10-K 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Instacart - YC batch",
+        "value": "S12",
+        "unit": "batch",
+        "source": "YC Official",
+        "year": 2012,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Instacart - IPO valuation",
+        "value": 10000000000,
+        "unit": "USD",
+        "source": "NASDAQ 2023",
+        "year": 2023
+      },
+      {
+        "metric": "Twitch - YC batch (as Justin.tv)",
+        "value": "W07",
+        "unit": "batch",
+        "source": "YC Official",
+        "year": 2007,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Twitch - acquisition price (by Amazon)",
+        "value": 970000000,
+        "unit": "USD",
+        "source": "Amazon press release 2014",
+        "year": 2014
+      },
+      {
+        "metric": "Reddit - YC batch",
+        "value": "S05",
+        "unit": "batch",
+        "source": "YC Official (first batch)",
+        "year": 2005,
+        "url": "https://www.irs.gov/statistics/soi-tax-stats-statistics-of-income"
+      },
+      {
+        "metric": "Reddit - IPO valuation",
+        "value": 6500000000,
+        "unit": "USD",
+        "source": "NYSE 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Reddit - monthly active users",
+        "value": 1700000000,
+        "unit": "users",
+        "source": "Reddit S-1 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cruise - YC batch",
+        "value": "W14",
+        "unit": "batch",
+        "source": "YC Official",
+        "year": 2014,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Cruise - acquisition by GM",
+        "value": 1000000000,
+        "unit": "USD",
+        "source": "GM press release 2016",
+        "year": 2016
+      },
+      {
+        "metric": "Brex - YC batch",
+        "value": "W17",
+        "unit": "batch",
+        "source": "YC Official",
+        "year": 2017,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Brex - peak valuation",
+        "value": 12300000000,
+        "unit": "USD",
+        "source": "TechCrunch 2022",
+        "year": 2022
+      },
+      {
+        "metric": "Rappi - YC batch",
+        "value": "W16",
+        "unit": "batch",
+        "source": "YC Official",
+        "year": 2016,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Rappi - valuation",
+        "value": 5250000000,
+        "unit": "USD",
+        "source": "PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Razorpay - YC batch",
+        "value": "W15",
+        "unit": "batch",
+        "source": "YC Official",
+        "year": 2015,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Razorpay - valuation",
+        "value": 7500000000,
+        "unit": "USD",
+        "source": "TechCrunch 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Ginkgo Bioworks - YC batch",
+        "value": "S14",
+        "unit": "batch",
+        "source": "YC Official",
+        "year": 2014,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Ginkgo Bioworks - peak market cap (post-SPAC)",
+        "value": 17000000000,
+        "unit": "USD",
+        "source": "NYSE 2021",
+        "year": 2021
+      },
+      {
+        "metric": "OpenSea - YC batch",
+        "value": "W18",
+        "unit": "batch",
+        "source": "YC Official",
+        "year": 2018,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "OpenSea - peak valuation",
+        "value": 13000000000,
+        "unit": "USD",
+        "source": "TechCrunch 2022",
+        "year": 2022
+      },
+      {
+        "metric": "Zapier - YC batch",
+        "value": "S12",
+        "unit": "batch",
+        "source": "YC Official",
+        "year": 2012,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Zapier - ARR",
+        "value": 350000000,
+        "unit": "USD",
+        "source": "Forbes 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Zapier - bootstrapped (no Series A)",
+        "value": true,
+        "unit": "boolean",
+        "source": "Forbes 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Retool - YC batch",
+        "value": "W17",
+        "unit": "batch",
+        "source": "YC Official",
+        "year": 2017,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Retool - valuation",
+        "value": 3200000000,
+        "unit": "USD",
+        "source": "PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Faire - YC batch",
+        "value": "W17",
+        "unit": "batch",
+        "source": "YC Official",
+        "year": 2017,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Faire - valuation",
+        "value": 12600000000,
+        "unit": "USD",
+        "source": "TechCrunch 2022",
+        "year": 2022
+      },
+      {
+        "metric": "Gusto - YC batch",
+        "value": "W12",
+        "unit": "batch",
+        "source": "YC Official",
+        "year": 2012,
+        "url": "https://www.ycombinator.com/library/9u-why-do-startups-fail"
+      },
+      {
+        "metric": "Gusto - valuation",
+        "value": 10000000000,
+        "unit": "USD",
+        "source": "PitchBook 2024",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "OpenAI \u2014 YC batch",
+        "value": "technically not batch, but Sam Altman connection",
+        "unit": "relationship",
+        "source": "YC/OpenAI history",
+        "year": 2024
+      },
+      {
+        "metric": "Stripe \u2014 current market cap (private)",
+        "value": "65",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Airbnb \u2014 revenue 2024",
+        "value": "10+",
+        "unit": "billion USD",
+        "source": "Airbnb 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "DoorDash \u2014 revenue 2024",
+        "value": "10+",
+        "unit": "billion USD",
+        "source": "DoorDash 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "Coinbase \u2014 revenue 2024",
+        "value": "3+",
+        "unit": "billion USD",
+        "source": "Coinbase 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "Instacart \u2014 revenue 2024",
+        "value": "3+",
+        "unit": "billion USD",
+        "source": "Instacart 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "Reddit \u2014 IPO market cap",
+        "value": "8",
+        "unit": "billion USD",
+        "source": "NYSE",
+        "year": 2024
+      },
+      {
+        "metric": "Reddit \u2014 revenue 2024",
+        "value": "1+",
+        "unit": "billion USD",
+        "source": "Reddit 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "Reddit \u2014 monthly active users",
+        "value": "1+",
+        "unit": "billion",
+        "source": "Reddit",
+        "year": 2024
+      },
+      {
+        "metric": "Dropbox \u2014 revenue 2024",
+        "value": "2.5+",
+        "unit": "billion USD",
+        "source": "Dropbox 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "Twitch \u2014 acquired by Amazon",
+        "value": "970",
+        "unit": "million USD",
+        "source": "Amazon press",
+        "year": 2014
+      },
+      {
+        "metric": "Twitch \u2014 estimated current value",
+        "value": "15+",
+        "unit": "billion USD",
+        "source": "estimates",
+        "year": 2024
+      },
+      {
+        "metric": "Cruise \u2014 acquired by GM",
+        "value": "1",
+        "unit": "billion USD",
+        "source": "GM press",
+        "year": 2016
+      },
+      {
+        "metric": "Brex \u2014 last private valuation",
+        "value": "12.3",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2022
+      },
+      {
+        "metric": "Faire \u2014 last private valuation",
+        "value": "12.4",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2022
+      },
+      {
+        "metric": "Rappi \u2014 last private valuation",
+        "value": "5.25",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2021
+      },
+      {
+        "metric": "Razorpay \u2014 last private valuation",
+        "value": "7.5",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2021
+      },
+      {
+        "metric": "Amplitude \u2014 IPO market cap",
+        "value": "5",
+        "unit": "billion USD",
+        "source": "NASDAQ",
+        "year": 2021
+      },
+      {
+        "metric": "GitLab \u2014 IPO market cap",
+        "value": "11",
+        "unit": "billion USD",
+        "source": "NASDAQ",
+        "year": 2021
+      },
+      {
+        "metric": "Segment \u2014 acquired by Twilio",
+        "value": "3.2",
+        "unit": "billion USD",
+        "source": "Twilio press",
+        "year": 2020
+      },
+      {
+        "metric": "Zapier \u2014 last private valuation",
+        "value": "5",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Zapier \u2014 bootstrapped revenue",
+        "value": "200+",
+        "unit": "million USD",
+        "source": "press estimates",
+        "year": 2024
+      },
+      {
+        "metric": "Retool \u2014 last private valuation",
+        "value": "3.2",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2022
+      },
+      {
+        "metric": "Ginkgo Bioworks \u2014 SPAC market cap",
+        "value": "15",
+        "unit": "billion USD",
+        "source": "NYSE",
+        "year": 2021
+      },
+      {
+        "metric": "Ginkgo Bioworks \u2014 current market cap (declined)",
+        "value": "1+",
+        "unit": "billion USD",
+        "source": "NYSE",
+        "year": 2024
+      },
+      {
+        "metric": "Monzo \u2014 last private valuation",
+        "value": "5",
+        "unit": "billion GBP",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Webflow \u2014 last private valuation",
+        "value": "4",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2022
+      },
+      {
+        "metric": "Scale AI \u2014 last private valuation",
+        "value": "13.8",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Scale AI \u2014 founded by Alexandr Wang (youngest YC billionaire)",
+        "value": "19 at YC",
+        "unit": "years old",
+        "source": "Forbes",
+        "year": 2016
+      },
+      {
+        "metric": "Pagerduty \u2014 IPO market cap",
+        "value": "2.8",
+        "unit": "billion USD",
+        "source": "NYSE",
+        "year": 2019
+      },
+      {
+        "metric": "Algolia \u2014 last private valuation",
+        "value": "2.25",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2022
+      },
+      {
+        "metric": "Machine Zone (MZ) \u2014 acquired by AppLovin",
+        "value": "600",
+        "unit": "million USD",
+        "source": "AppLovin press",
+        "year": 2020
+      },
+      {
+        "metric": "Meesho \u2014 last private valuation",
+        "value": "4.9",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2022
+      },
+      {
+        "metric": "Zerodha \u2014 bootstrapped, most profitable brokerage in India",
+        "value": "1+",
+        "unit": "billion USD profit",
+        "source": "Zerodha blog",
+        "year": 2024
+      },
+      {
+        "metric": "Cleartax \u2014 last private valuation",
+        "value": "1+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Groww \u2014 last private valuation",
+        "value": "3",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "YC total portfolio combined valuation",
+        "value": "600+",
+        "unit": "billion USD",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "YC total portfolio combined revenue",
+        "value": "100+",
+        "unit": "billion USD estimated",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "YC total portfolio combined employees",
+        "value": "500000+",
+        "unit": "employees estimated",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Best YC batch ever by returns (W05 \u2014 Reddit, Loopt)",
+        "value": "first batch",
+        "unit": "batch",
+        "source": "YC lore",
+        "year": 2005
+      },
+      {
+        "metric": "Largest YC company by market cap: Airbnb",
+        "value": "85+",
+        "unit": "billion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Second largest: Stripe",
+        "value": "65",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Third largest: DoorDash",
+        "value": "55+",
+        "unit": "billion USD",
+        "source": "NYSE",
+        "year": 2024
+      },
+      {
+        "metric": "Fourth largest: Coinbase",
+        "value": "50+",
+        "unit": "billion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Most common YC sector: SaaS/B2B",
+        "value": "40",
+        "unit": "% of cos",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Second most common: fintech",
+        "value": "15",
+        "unit": "% of cos",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Third most common: healthcare",
+        "value": "10",
+        "unit": "% of cos",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Fourth most common: developer tools",
+        "value": "10",
+        "unit": "% of cos",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "AI/ML companies in recent batches",
+        "value": "40+",
+        "unit": "% (2024 batches)",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "Most common co-investor post-YC",
+        "value": "a16z, Sequoia, Lightspeed, Khosla, Greylock",
+        "unit": "firms",
+        "source": "PitchBook",
+        "year": 2024
+      }
+    ],
+    "market_data": [
+      {
+        "metric": "Global VC investment 2024",
+        "value": "285",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "US VC investment 2024",
+        "value": "170",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "AI share of global VC 2024",
+        "value": "35",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Global unicorn count",
+        "value": "1400+",
+        "unit": "companies",
+        "source": "CB Insights",
+        "year": 2024
+      },
+      {
+        "metric": "Startup failure rate (5yr)",
+        "value": "50",
+        "unit": "%",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Startup failure rate (10yr)",
+        "value": "90",
+        "unit": "%",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Average seed size US 2024",
+        "value": "4",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average Series A size US 2024",
+        "value": "18",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Down rounds 2024",
+        "value": "20",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "SAFE usage in pre-seed",
+        "value": "70",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Average runway at fundraise",
+        "value": "18-24",
+        "unit": "months",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "% Series A cos raising Series B",
+        "value": "50",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Average founder dilution Seed to A",
+        "value": "20-25",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Founder ownership at IPO",
+        "value": "10-15",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS median gross margin",
+        "value": "75",
+        "unit": "%",
+        "source": "Bessemer",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS median net retention",
+        "value": "110",
+        "unit": "%",
+        "source": "Bessemer",
+        "year": 2024
+      },
+      {
+        "metric": "AI-native startups funded 2024",
+        "value": "3000+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Dry powder in VC",
+        "value": "300+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Secondary market volume 2024",
+        "value": "60+",
+        "unit": "billion USD",
+        "source": "Forge Global",
+        "year": 2024
+      },
+      {
+        "metric": "Average time to IPO",
+        "value": "8.5",
+        "unit": "years",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Power law: top 4% of deals = 60% returns",
+        "value": "true",
+        "unit": "fact",
+        "source": "Horsley Bridge",
+        "year": 2024
+      },
+      {
+        "metric": "Top quartile VC fund IRR",
+        "value": "25+",
+        "unit": "%",
+        "source": "Cambridge Associates",
+        "year": 2024
+      },
+      {
+        "metric": "Number of VC firms globally",
+        "value": "5000+",
+        "unit": "firms",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Accelerator programs globally",
+        "value": "3000+",
+        "unit": "programs",
+        "source": "GAN Global",
+        "year": 2024
+      },
+      {
+        "metric": "YC acceptance rate lowest in world",
+        "value": "1.5% vs Harvard 3.4%",
+        "unit": "comparison",
+        "source": "YC Blog / Harvard",
+        "year": 2024
+      },
+      {
+        "metric": "Average startup burn rate Series A",
+        "value": "200-400",
+        "unit": "thousand USD/month",
+        "source": "Kruze",
+        "year": 2024
+      },
+      {
+        "metric": "Average founder CEO salary Series A",
+        "value": "125-175",
+        "unit": "thousand USD",
+        "source": "Kruze",
+        "year": 2024
+      },
+      {
+        "metric": "ESOP pool at Series A",
+        "value": "10-15",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Median months Seed to A",
+        "value": "20",
+        "unit": "months",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Startups reaching $1M ARR annually",
+        "value": "5000+",
+        "unit": "startups",
+        "source": "SaaS Capital",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS LTV:CAC benchmark",
+        "value": "3:1",
+        "unit": "ratio",
+        "source": "Bessemer",
+        "year": 2024
+      },
+      {
+        "metric": "PLG share of public SaaS",
+        "value": "40+",
+        "unit": "%",
+        "source": "OpenView",
+        "year": 2024
+      },
+      {
+        "metric": "OpenAI valuation",
+        "value": "157",
+        "unit": "billion USD",
+        "source": "WSJ",
+        "year": 2024
+      },
+      {
+        "metric": "GenAI funding 2024",
+        "value": "25+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Global cloud market 2024",
+        "value": "600+",
+        "unit": "billion USD",
+        "source": "Gartner",
+        "year": 2024
+      },
+      {
+        "metric": "Global AI market 2024",
+        "value": "200+",
+        "unit": "billion USD",
+        "source": "Grand View Research",
+        "year": 2024
+      },
+      {
+        "metric": "Cybersecurity VC 2024",
+        "value": "12+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Fintech VC 2024",
+        "value": "25+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "HealthTech VC 2024",
+        "value": "20+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Climate tech VC 2024",
+        "value": "40+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Venture debt market 2024",
+        "value": "35",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate VC 2024",
+        "value": "70",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Female-founded startups share of VC",
+        "value": "2.1",
+        "unit": "%",
+        "source": "PitchBook All In",
+        "year": 2024
+      },
+      {
+        "metric": "E-commerce share of retail",
+        "value": "22",
+        "unit": "%",
+        "source": "eMarketer",
+        "year": 2024
+      },
+      {
+        "metric": "Marketplace GMV globally",
+        "value": "4+",
+        "unit": "trillion USD",
+        "source": "Edge by Ascential",
+        "year": 2024
+      },
+      {
+        "metric": "Gig economy market 2024",
+        "value": "500+",
+        "unit": "billion USD",
+        "source": "Statista",
+        "year": 2024
+      },
+      {
+        "metric": "Food delivery market 2024",
+        "value": "350+",
+        "unit": "billion USD",
+        "source": "Statista",
+        "year": 2024
+      },
+      {
+        "metric": "Subscription economy 2024",
+        "value": "300+",
+        "unit": "billion USD",
+        "source": "Zuora",
+        "year": 2024
+      },
+      {
+        "metric": "Creator economy 2024",
+        "value": "250+",
+        "unit": "billion USD",
+        "source": "Goldman Sachs",
+        "year": 2024
+      },
+      {
+        "metric": "Startup closures 2024 (VC-backed)",
+        "value": "3500+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Zombie startups 2024",
+        "value": "5000+",
+        "unit": "estimated",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Bridge rounds 2024",
+        "value": "30",
+        "unit": "% of rounds",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average discount on secondaries",
+        "value": "30-50",
+        "unit": "%",
+        "source": "Forge Global",
+        "year": 2024
+      },
+      {
+        "metric": "Remote-first startups",
+        "value": "35",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Startup layoffs 2024",
+        "value": "150000+",
+        "unit": "employees",
+        "source": "Layoffs.fyi",
+        "year": 2024
+      },
+      {
+        "metric": "NVIDIA market cap",
+        "value": "3+",
+        "unit": "trillion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Data center spending 2024",
+        "value": "250+",
+        "unit": "billion USD",
+        "source": "Synergy",
+        "year": 2024
+      },
+      {
+        "metric": "Solo GP funds 2024",
+        "value": "200+",
+        "unit": "funds",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Emerging manager funds 2024",
+        "value": "500+",
+        "unit": "funds",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Angel investment volume 2024",
+        "value": "30+",
+        "unit": "billion USD",
+        "source": "ACA",
+        "year": 2024
+      },
+      {
+        "metric": "Revenue-based financing 2024",
+        "value": "10+",
+        "unit": "billion USD",
+        "source": "industry data",
+        "year": 2024
+      },
+      {
+        "metric": "Average venture debt rate",
+        "value": "10-14",
+        "unit": "%",
+        "source": "SVB",
+        "year": 2024
+      },
+      {
+        "metric": "Startup studio count",
+        "value": "700+",
+        "unit": "studios",
+        "source": "GSSN",
+        "year": 2024
+      },
+      {
+        "metric": "Average IPO first-day return",
+        "value": "20-30",
+        "unit": "%",
+        "source": "Renaissance Capital",
+        "year": 2024
+      },
+      {
+        "metric": "Semiconductor market 2024",
+        "value": "600+",
+        "unit": "billion USD",
+        "source": "SIA",
+        "year": 2024
+      },
+      {
+        "metric": "AI chip market 2024",
+        "value": "70+",
+        "unit": "billion USD",
+        "source": "Gartner",
+        "year": 2024
+      },
+      {
+        "metric": "Enterprise AI adoption",
+        "value": "55",
+        "unit": "%",
+        "source": "McKinsey",
+        "year": 2024
+      },
+      {
+        "metric": "Usage-based pricing in SaaS",
+        "value": "45",
+        "unit": "%",
+        "source": "OpenView",
+        "year": 2024
+      },
+      {
+        "metric": "Mega-rounds count 2024",
+        "value": "500+",
+        "unit": "rounds",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average early employee equity",
+        "value": "0.5-2",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Median pre-money at seed (US)",
+        "value": "12",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Median pre-money at Series A (US)",
+        "value": "40",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Median pre-money at Series B (US)",
+        "value": "150",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Convertible notes share of early rounds",
+        "value": "40",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average due diligence period",
+        "value": "4-8",
+        "unit": "weeks",
+        "source": "industry data",
+        "year": 2024
+      },
+      {
+        "metric": "VC-backed IPOs 2024",
+        "value": "30+",
+        "unit": "IPOs",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Bootstrapped startups reaching $10M ARR",
+        "value": "500+",
+        "unit": "companies/year",
+        "source": "MicroConf",
+        "year": 2024
+      },
+      {
+        "metric": "Crowdfunding for startups 2024",
+        "value": "5+",
+        "unit": "billion USD",
+        "source": "CCA",
+        "year": 2024
+      },
+      {
+        "metric": "Anthropic valuation",
+        "value": "18+",
+        "unit": "billion USD",
+        "source": "Bloomberg",
+        "year": 2024
+      },
+      {
+        "metric": "xAI valuation",
+        "value": "24",
+        "unit": "billion USD",
+        "source": "Bloomberg",
+        "year": 2024
+      },
+      {
+        "metric": "Space economy 2024",
+        "value": "630",
+        "unit": "billion USD",
+        "source": "Space Foundation",
+        "year": 2024
+      },
+      {
+        "metric": "Robotics VC 2024",
+        "value": "6+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Defense tech VC 2024",
+        "value": "15+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Biotech VC 2024",
+        "value": "22+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Social commerce 2024",
+        "value": "700+",
+        "unit": "billion USD",
+        "source": "eMarketer",
+        "year": 2024
+      },
+      {
+        "metric": "Global fintech market 2024",
+        "value": "310",
+        "unit": "billion USD",
+        "source": "McKinsey",
+        "year": 2024
+      },
+      {
+        "metric": "Global cybersecurity market 2024",
+        "value": "200+",
+        "unit": "billion USD",
+        "source": "Gartner",
+        "year": 2024
+      },
+      {
+        "metric": "Total tech market cap (public)",
+        "value": "20+",
+        "unit": "trillion USD",
+        "source": "Bloomberg",
+        "year": 2024
+      },
+      {
+        "metric": "Percentage of VC funds outperforming S&P",
+        "value": "40",
+        "unit": "%",
+        "source": "Cambridge Associates",
+        "year": 2024
+      }
+    ],
+    "yc_model_and_legacy": [
+      {
+        "metric": "YC deal terms evolution: original (2005)",
+        "value": "$20K for 6%",
+        "unit": "terms",
+        "source": "YC lore",
+        "year": 2005
+      },
+      {
+        "metric": "YC deal terms 2014",
+        "value": "$120K for 7%",
+        "unit": "terms",
+        "source": "YC Blog",
+        "year": 2014
+      },
+      {
+        "metric": "YC deal terms 2022+",
+        "value": "$500K for 7% + $375K MFN SAFE",
+        "unit": "terms",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC equity in all companies (estimated value)",
+        "value": "40+",
+        "unit": "billion USD",
+        "source": "Forbes calculation",
+        "year": 2024
+      },
+      {
+        "metric": "YC annual revenue from management fees",
+        "value": "100+",
+        "unit": "million USD estimated",
+        "source": "industry estimate",
+        "year": 2024
+      },
+      {
+        "metric": "YC Continuity Fund returns",
+        "value": "top decile",
+        "unit": "ranking",
+        "source": "Cambridge Associates",
+        "year": 2024
+      },
+      {
+        "metric": "YC batch structure: Tuesdays = group office hours",
+        "value": "standard",
+        "unit": "schedule",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC batch structure: weekly dinners",
+        "value": "speakers include top founders/investors",
+        "unit": "schedule",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC motto: 'Make something people want'",
+        "value": "core philosophy",
+        "unit": "philosophy",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "Paul Graham: 'Do things that don't scale' principle",
+        "value": "most cited startup advice ever",
+        "unit": "philosophy",
+        "source": "paulgraham.com",
+        "year": 2013
+      },
+      {
+        "metric": "YC's influence on global accelerator model",
+        "value": "blueprint for 3000+ accelerators",
+        "unit": "legacy",
+        "source": "industry consensus",
+        "year": 2024
+      },
+      {
+        "metric": "YC grads who became YC Group Partners",
+        "value": "30+",
+        "unit": "people",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "Jessica Livingston role",
+        "value": "co-founder, wrote 'Founders at Work'",
+        "unit": "role",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "Robert Morris role",
+        "value": "co-founder, MIT professor",
+        "unit": "role",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "Trevor Blackwell role",
+        "value": "co-founder, Anybots founder",
+        "unit": "role",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "Sam Altman as YC president impact",
+        "value": "scaled batches from 60 to 200+ cos",
+        "unit": "legacy",
+        "source": "press coverage",
+        "year": 2024
+      },
+      {
+        "metric": "Sam Altman left YC for OpenAI",
+        "value": "2019",
+        "unit": "year",
+        "source": "press coverage",
+        "year": 2019
+      },
+      {
+        "metric": "Geoff Ralston as YC president (2019-2023)",
+        "value": "maintained quality at scale",
+        "unit": "legacy",
+        "source": "press coverage",
+        "year": 2024
+      },
+      {
+        "metric": "Garry Tan as YC CEO (2023-present)",
+        "value": "refocused on early-stage quality",
+        "unit": "current",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC W24 batch size",
+        "value": "260",
+        "unit": "companies",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "YC S24 batch size",
+        "value": "240",
+        "unit": "companies",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "YC interview format: 10 minutes",
+        "value": "standard",
+        "unit": "format",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC interview acceptance after interview",
+        "value": "25-30",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "YC application questions count",
+        "value": "20+",
+        "unit": "questions",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC application: 1-minute video required",
+        "value": "true",
+        "unit": "requirement",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC application: most important question",
+        "value": "'What are you building and why?'",
+        "unit": "question",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC location: San Francisco (moved from Mountain View 2019)",
+        "value": "San Francisco",
+        "unit": "city",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC in-person vs remote batches",
+        "value": "returned to in-person post-COVID",
+        "unit": "format",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "YC Bookface active daily users",
+        "value": "5000+",
+        "unit": "users",
+        "source": "YC estimate",
+        "year": 2024
+      },
+      {
+        "metric": "YC deals database (internal)",
+        "value": "investor matching for YC cos",
+        "unit": "tool",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC Work at a Startup job board",
+        "value": "10000+",
+        "unit": "active jobs",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC Work at a Startup unique visitors/month",
+        "value": "500000+",
+        "unit": "visitors",
+        "source": "SimilarWeb estimate",
+        "year": 2024
+      },
+      {
+        "metric": "YC Startup School \u2014 free online program",
+        "value": "100000+",
+        "unit": "participants/year",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC co-invest program: brings in other VCs",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC companies that raised from Sequoia",
+        "value": "100+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "YC companies that raised from a16z",
+        "value": "80+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "YC companies that raised from Lightspeed",
+        "value": "50+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "YC companies that raised from Founders Fund",
+        "value": "30+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "YC as most influential accelerator globally",
+        "value": "#1 by every measure",
+        "unit": "ranking",
+        "source": "industry consensus",
+        "year": 2024
+      },
+      {
+        "metric": "YC total disbursed capital since inception",
+        "value": "5+",
+        "unit": "billion USD",
+        "source": "Forbes estimate",
+        "year": 2024
+      },
+      {
+        "metric": "YC return on total capital deployed",
+        "value": "100x+ estimated",
+        "unit": "multiple",
+        "source": "Forbes calculation",
+        "year": 2024
+      },
+      {
+        "metric": "YC brand value to founders",
+        "value": "#1 accelerator globally",
+        "unit": "ranking",
+        "source": "founder surveys",
+        "year": 2024
+      },
+      {
+        "metric": "YC post-Demo Day investor interest per company",
+        "value": "15-30",
+        "unit": "interested investors",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "YC alumni helping current batch (mentors)",
+        "value": "500+",
+        "unit": "mentors/batch",
+        "source": "YC Blog",
+        "year": 2024
+      },
+      {
+        "metric": "YC companies hiring via YC network",
+        "value": "60",
+        "unit": "% use YC network for first hires",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "YC companies finding co-investors via YC",
+        "value": "70",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "YC companies that survived COVID (2020 cohort)",
+        "value": "75",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "YC companies that increased revenue during COVID",
+        "value": "40",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "YC Request for Startups (RFS) categories",
+        "value": "20+",
+        "unit": "categories",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC most requested category: AI/ML",
+        "value": "#1 in 2024 RFS",
+        "unit": "ranking",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC nonprofit companies funded",
+        "value": "50+",
+        "unit": "organizations",
+        "source": "YC website",
+        "year": 2024
+      },
+      {
+        "metric": "YC open source companies funded",
+        "value": "100+",
+        "unit": "companies",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "YC hardware companies funded",
+        "value": "100+",
+        "unit": "companies",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "YC biotech companies funded",
+        "value": "50+",
+        "unit": "companies",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "YC fintech companies funded",
+        "value": "300+",
+        "unit": "companies",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "YC healthcare companies funded",
+        "value": "200+",
+        "unit": "companies",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "YC marketplace companies funded",
+        "value": "400+",
+        "unit": "companies",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "YC developer tools companies funded",
+        "value": "300+",
+        "unit": "companies",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "YC SaaS/B2B companies funded",
+        "value": "2000+",
+        "unit": "companies",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "YC consumer companies funded",
+        "value": "1000+",
+        "unit": "companies",
+        "source": "YC data",
+        "year": 2024
+      }
     ]
   }
 }

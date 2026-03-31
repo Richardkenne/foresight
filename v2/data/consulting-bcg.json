@@ -2,223 +2,3562 @@
   "_meta": {
     "category": "consulting-data",
     "source": "BCG",
-    "total_datapoints": 202,
-    "created": "2026-03-30"
+    "total_datapoints": 500,
+    "created": "2026-03-30",
+    "url": "https://www.bcg.com/publications"
   },
   "sections": {
     "growth_share_matrix": [
-      {"metric": "High-growth market threshold (BCG matrix)", "value": "10", "unit": "%_annual_growth", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Stars quadrant avg market share needed", "value": "1.5x", "unit": "relative_market_share", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Cash cows avg profit margin premium vs dogs", "value": "22", "unit": "%_margin_premium", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Question marks that become stars within 5 years", "value": "35", "unit": "%", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Dogs divested or shut down within 3 years", "value": "48", "unit": "%", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Software industry avg market growth rate", "value": "12.5", "unit": "%_CAGR", "source": "BCG Global Advantage 2024", "year": 2024},
-      {"metric": "Healthcare industry avg market growth rate", "value": "7.8", "unit": "%_CAGR", "source": "BCG Global Advantage 2024", "year": 2024},
-      {"metric": "Consumer goods industry avg market growth rate", "value": "4.2", "unit": "%_CAGR", "source": "BCG Global Advantage 2024", "year": 2024},
-      {"metric": "Financial services industry avg market growth rate", "value": "6.1", "unit": "%_CAGR", "source": "BCG Global Advantage 2024", "year": 2024},
-      {"metric": "Energy industry avg market growth rate (renewables)", "value": "14.3", "unit": "%_CAGR", "source": "BCG Global Advantage 2024", "year": 2024},
-      {"metric": "Automotive industry avg market growth rate (EV segment)", "value": "21.7", "unit": "%_CAGR", "source": "BCG Global Advantage 2024", "year": 2024},
-      {"metric": "Telecom industry avg market growth rate", "value": "2.8", "unit": "%_CAGR", "source": "BCG Global Advantage 2024", "year": 2024},
-      {"metric": "Retail industry avg market growth rate (e-commerce)", "value": "9.4", "unit": "%_CAGR", "source": "BCG Global Advantage 2024", "year": 2024},
-      {"metric": "Portfolio rebalancing frequency recommended", "value": "18", "unit": "months", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Companies using growth-share matrix actively", "value": "47", "unit": "%_Fortune_500", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Market share leader profit premium over #3 player", "value": "3.5x", "unit": "multiplier", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Stars that maintain star status after 5 years", "value": "42", "unit": "%", "source": "BCG Henderson Institute 2023", "year": 2023},
-      {"metric": "Cash cows average free cash flow yield", "value": "18", "unit": "%_of_revenue", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Optimal portfolio: stars allocation", "value": "25-35", "unit": "%_of_portfolio", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Optimal portfolio: cash cows allocation", "value": "35-45", "unit": "%_of_portfolio", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Optimal portfolio: question marks allocation", "value": "15-25", "unit": "%_of_portfolio", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Optimal portfolio: dogs allocation", "value": "5-10", "unit": "%_of_portfolio", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Experience curve cost reduction per doubling of volume", "value": "20-30", "unit": "%_cost_reduction", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Market share gain impact on ROIC (per 10pp gain)", "value": "3.5", "unit": "pp_ROIC_increase", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Semiconductor industry avg growth rate", "value": "8.6", "unit": "%_CAGR", "source": "BCG Global Advantage 2024", "year": 2024},
-      {"metric": "AI/ML segment growth rate", "value": "36.8", "unit": "%_CAGR", "source": "BCG Global Advantage 2024", "year": 2024},
-      {"metric": "Biotech industry avg growth rate", "value": "11.2", "unit": "%_CAGR", "source": "BCG Global Advantage 2024", "year": 2024},
-      {"metric": "Cybersecurity market growth rate", "value": "13.4", "unit": "%_CAGR", "source": "BCG Global Advantage 2024", "year": 2024},
-      {"metric": "Cloud computing market growth rate", "value": "17.9", "unit": "%_CAGR", "source": "BCG Global Advantage 2024", "year": 2024},
-      {"metric": "Space economy growth rate", "value": "9.1", "unit": "%_CAGR", "source": "BCG Global Advantage 2024", "year": 2024},
-      {"metric": "Industrial automation growth rate", "value": "8.3", "unit": "%_CAGR", "source": "BCG Global Advantage 2024", "year": 2024},
-      {"metric": "Relative market share threshold (star vs question mark)", "value": "1.0x", "unit": "relative_to_leader", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Revenue concentration in stars for top performers", "value": "40", "unit": "%_of_total_revenue", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Avg time for question mark to become star", "value": "3.2", "unit": "years", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Cash cows reinvestment rate for sustainable position", "value": "30-40", "unit": "%_of_cash_flow", "source": "BCG Henderson Institute 2024", "year": 2024}
+      {
+        "metric": "High-growth market threshold (BCG matrix)",
+        "value": "10",
+        "unit": "%_annual_growth",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Stars quadrant avg market share needed",
+        "value": "1.5x",
+        "unit": "relative_market_share",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cash cows avg profit margin premium vs dogs",
+        "value": "22",
+        "unit": "%_margin_premium",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Question marks that become stars within 5 years",
+        "value": "35",
+        "unit": "%",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Dogs divested or shut down within 3 years",
+        "value": "48",
+        "unit": "%",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Software industry avg market growth rate",
+        "value": "12.5",
+        "unit": "%_CAGR",
+        "source": "BCG Global Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Healthcare industry avg market growth rate",
+        "value": "7.8",
+        "unit": "%_CAGR",
+        "source": "BCG Global Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Consumer goods industry avg market growth rate",
+        "value": "4.2",
+        "unit": "%_CAGR",
+        "source": "BCG Global Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Financial services industry avg market growth rate",
+        "value": "6.1",
+        "unit": "%_CAGR",
+        "source": "BCG Global Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Energy industry avg market growth rate (renewables)",
+        "value": "14.3",
+        "unit": "%_CAGR",
+        "source": "BCG Global Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Automotive industry avg market growth rate (EV segment)",
+        "value": "21.7",
+        "unit": "%_CAGR",
+        "source": "BCG Global Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Telecom industry avg market growth rate",
+        "value": "2.8",
+        "unit": "%_CAGR",
+        "source": "BCG Global Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Retail industry avg market growth rate (e-commerce)",
+        "value": "9.4",
+        "unit": "%_CAGR",
+        "source": "BCG Global Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Portfolio rebalancing frequency recommended",
+        "value": "18",
+        "unit": "months",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies using growth-share matrix actively",
+        "value": "47",
+        "unit": "%_Fortune_500",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Market share leader profit premium over #3 player",
+        "value": "3.5x",
+        "unit": "multiplier",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Stars that maintain star status after 5 years",
+        "value": "42",
+        "unit": "%",
+        "source": "BCG Henderson Institute 2023",
+        "year": 2023
+      },
+      {
+        "metric": "Cash cows average free cash flow yield",
+        "value": "18",
+        "unit": "%_of_revenue",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Optimal portfolio: stars allocation",
+        "value": "25-35",
+        "unit": "%_of_portfolio",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Optimal portfolio: cash cows allocation",
+        "value": "35-45",
+        "unit": "%_of_portfolio",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Optimal portfolio: question marks allocation",
+        "value": "15-25",
+        "unit": "%_of_portfolio",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Optimal portfolio: dogs allocation",
+        "value": "5-10",
+        "unit": "%_of_portfolio",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Experience curve cost reduction per doubling of volume",
+        "value": "20-30",
+        "unit": "%_cost_reduction",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Market share gain impact on ROIC (per 10pp gain)",
+        "value": "3.5",
+        "unit": "pp_ROIC_increase",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Semiconductor industry avg growth rate",
+        "value": "8.6",
+        "unit": "%_CAGR",
+        "source": "BCG Global Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI/ML segment growth rate",
+        "value": "36.8",
+        "unit": "%_CAGR",
+        "source": "BCG Global Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Biotech industry avg growth rate",
+        "value": "11.2",
+        "unit": "%_CAGR",
+        "source": "BCG Global Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cybersecurity market growth rate",
+        "value": "13.4",
+        "unit": "%_CAGR",
+        "source": "BCG Global Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cloud computing market growth rate",
+        "value": "17.9",
+        "unit": "%_CAGR",
+        "source": "BCG Global Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Space economy growth rate",
+        "value": "9.1",
+        "unit": "%_CAGR",
+        "source": "BCG Global Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Industrial automation growth rate",
+        "value": "8.3",
+        "unit": "%_CAGR",
+        "source": "BCG Global Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Relative market share threshold (star vs question mark)",
+        "value": "1.0x",
+        "unit": "relative_to_leader",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Revenue concentration in stars for top performers",
+        "value": "40",
+        "unit": "%_of_total_revenue",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Avg time for question mark to become star",
+        "value": "3.2",
+        "unit": "years",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cash cows reinvestment rate for sustainable position",
+        "value": "30-40",
+        "unit": "%_of_cash_flow",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      }
     ],
     "innovation_data": [
-      {"metric": "Global avg R&D spend as % of revenue", "value": "3.4", "unit": "%_of_revenue", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Top 10 innovators avg R&D spend", "value": "12.8", "unit": "%_of_revenue", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Pharma industry R&D intensity", "value": "21.6", "unit": "%_of_revenue", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Tech industry R&D intensity", "value": "15.2", "unit": "%_of_revenue", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Automotive industry R&D intensity", "value": "5.8", "unit": "%_of_revenue", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Consumer goods R&D intensity", "value": "2.1", "unit": "%_of_revenue", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Innovation success rate (ideas to market)", "value": "6", "unit": "%", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Avg time to market for new products", "value": "18", "unit": "months", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Companies using AI in R&D processes", "value": "72", "unit": "%", "source": "BCG AI at Scale 2024", "year": 2024},
-      {"metric": "AI-augmented R&D time reduction", "value": "30-40", "unit": "%_time_saved", "source": "BCG AI at Scale 2024", "year": 2024},
-      {"metric": "New product revenue share (launched in last 3 years)", "value": "28", "unit": "%_of_total_revenue", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Innovation ROI for top quartile vs bottom quartile", "value": "2.4x", "unit": "multiplier", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Breakthrough innovation share of portfolio", "value": "10-15", "unit": "%", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Incremental innovation share of portfolio", "value": "60-70", "unit": "%", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Adjacent innovation share of portfolio", "value": "20-25", "unit": "%", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Optimal innovation ambition ratio (core:adjacent:breakthrough)", "value": "70:20:10", "unit": "ratio", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Patent applications by top 50 innovators (annual)", "value": "285000", "unit": "patents", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Open innovation adoption rate", "value": "61", "unit": "%_of_large_companies", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Companies with dedicated innovation labs", "value": "54", "unit": "%_of_Fortune_500", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Median innovation project failure rate", "value": "72", "unit": "%", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Time to market reduction using agile methods", "value": "25", "unit": "%_faster", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "R&D productivity decline over last decade", "value": "35", "unit": "%_decline", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Top innovators TSR premium over sector avg", "value": "3.3", "unit": "pp_annual", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Digital-first product revenue growth vs traditional", "value": "2.1x", "unit": "multiplier", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Aerospace/defense R&D intensity", "value": "4.5", "unit": "%_of_revenue", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Financial services R&D intensity", "value": "7.2", "unit": "%_of_revenue", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Generative AI impact on R&D productivity", "value": "15-25", "unit": "%_improvement", "source": "BCG AI at Scale 2024", "year": 2024},
-      {"metric": "Cross-functional innovation team success rate vs siloed", "value": "1.8x", "unit": "multiplier", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Median R&D budget of top 50 innovators", "value": "8.4", "unit": "billion_USD", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Semiconductor R&D intensity", "value": "18.5", "unit": "%_of_revenue", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Innovation culture score correlation with TSR", "value": "0.68", "unit": "correlation_coefficient", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Companies with Chief Innovation Officer", "value": "38", "unit": "%_of_Fortune_500", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Avg innovation pipeline funnel ratio (ideas:launches)", "value": "100:6", "unit": "ratio", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Customer co-creation involvement rate in innovation", "value": "43", "unit": "%", "source": "BCG Most Innovative Companies 2024", "year": 2024},
-      {"metric": "Platform-based innovation revenue share growth", "value": "18", "unit": "%_annual_growth", "source": "BCG Most Innovative Companies 2024", "year": 2024}
+      {
+        "metric": "Global avg R&D spend as % of revenue",
+        "value": "3.4",
+        "unit": "%_of_revenue",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Top 10 innovators avg R&D spend",
+        "value": "12.8",
+        "unit": "%_of_revenue",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Pharma industry R&D intensity",
+        "value": "21.6",
+        "unit": "%_of_revenue",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Tech industry R&D intensity",
+        "value": "15.2",
+        "unit": "%_of_revenue",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Automotive industry R&D intensity",
+        "value": "5.8",
+        "unit": "%_of_revenue",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Consumer goods R&D intensity",
+        "value": "2.1",
+        "unit": "%_of_revenue",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Innovation success rate (ideas to market)",
+        "value": "6",
+        "unit": "%",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Avg time to market for new products",
+        "value": "18",
+        "unit": "months",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies using AI in R&D processes",
+        "value": "72",
+        "unit": "%",
+        "source": "BCG AI at Scale 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI-augmented R&D time reduction",
+        "value": "30-40",
+        "unit": "%_time_saved",
+        "source": "BCG AI at Scale 2024",
+        "year": 2024
+      },
+      {
+        "metric": "New product revenue share (launched in last 3 years)",
+        "value": "28",
+        "unit": "%_of_total_revenue",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Innovation ROI for top quartile vs bottom quartile",
+        "value": "2.4x",
+        "unit": "multiplier",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Breakthrough innovation share of portfolio",
+        "value": "10-15",
+        "unit": "%",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Incremental innovation share of portfolio",
+        "value": "60-70",
+        "unit": "%",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Adjacent innovation share of portfolio",
+        "value": "20-25",
+        "unit": "%",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Optimal innovation ambition ratio (core:adjacent:breakthrough)",
+        "value": "70:20:10",
+        "unit": "ratio",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Patent applications by top 50 innovators (annual)",
+        "value": "285000",
+        "unit": "patents",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Open innovation adoption rate",
+        "value": "61",
+        "unit": "%_of_large_companies",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with dedicated innovation labs",
+        "value": "54",
+        "unit": "%_of_Fortune_500",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Median innovation project failure rate",
+        "value": "72",
+        "unit": "%",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Time to market reduction using agile methods",
+        "value": "25",
+        "unit": "%_faster",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "R&D productivity decline over last decade",
+        "value": "35",
+        "unit": "%_decline",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Top innovators TSR premium over sector avg",
+        "value": "3.3",
+        "unit": "pp_annual",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital-first product revenue growth vs traditional",
+        "value": "2.1x",
+        "unit": "multiplier",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Aerospace/defense R&D intensity",
+        "value": "4.5",
+        "unit": "%_of_revenue",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Financial services R&D intensity",
+        "value": "7.2",
+        "unit": "%_of_revenue",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Generative AI impact on R&D productivity",
+        "value": "15-25",
+        "unit": "%_improvement",
+        "source": "BCG AI at Scale 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cross-functional innovation team success rate vs siloed",
+        "value": "1.8x",
+        "unit": "multiplier",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Median R&D budget of top 50 innovators",
+        "value": "8.4",
+        "unit": "billion_USD",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Semiconductor R&D intensity",
+        "value": "18.5",
+        "unit": "%_of_revenue",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Innovation culture score correlation with TSR",
+        "value": "0.68",
+        "unit": "correlation_coefficient",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with Chief Innovation Officer",
+        "value": "38",
+        "unit": "%_of_Fortune_500",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Avg innovation pipeline funnel ratio (ideas:launches)",
+        "value": "100:6",
+        "unit": "ratio",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Customer co-creation involvement rate in innovation",
+        "value": "43",
+        "unit": "%",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Platform-based innovation revenue share growth",
+        "value": "18",
+        "unit": "%_annual_growth",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      }
     ],
     "sustainability": [
-      {"metric": "Companies with net-zero commitments", "value": "65", "unit": "%_of_large_companies", "source": "BCG Climate AI Report 2024", "year": 2024},
-      {"metric": "Green premium avg across industries", "value": "10-15", "unit": "%_cost_premium", "source": "BCG Green Business Building 2024", "year": 2024},
-      {"metric": "Consumer willingness to pay green premium", "value": "41", "unit": "%_of_consumers", "source": "BCG Consumer Sentiment on Sustainability 2024", "year": 2024},
-      {"metric": "Avg green premium consumers will accept", "value": "5-10", "unit": "%_price_increase", "source": "BCG Consumer Sentiment on Sustainability 2024", "year": 2024},
-      {"metric": "ESG fund inflows as % of total fund inflows", "value": "18", "unit": "%", "source": "BCG Global Asset Management 2024", "year": 2024},
-      {"metric": "Companies reporting Scope 1+2 emissions", "value": "78", "unit": "%_of_large_companies", "source": "BCG Climate AI Report 2024", "year": 2024},
-      {"metric": "Companies reporting Scope 3 emissions", "value": "38", "unit": "%_of_large_companies", "source": "BCG Climate AI Report 2024", "year": 2024},
-      {"metric": "Decarbonization CapEx as % of revenue needed", "value": "2-4", "unit": "%_of_revenue", "source": "BCG Climate AI Report 2024", "year": 2024},
-      {"metric": "Green revenue share for sustainability leaders", "value": "25-30", "unit": "%_of_revenue", "source": "BCG Green Business Building 2024", "year": 2024},
-      {"metric": "Carbon price needed for net-zero by 2050", "value": "100-150", "unit": "USD_per_ton", "source": "BCG Climate AI Report 2024", "year": 2024},
-      {"metric": "Current global avg carbon price", "value": "23", "unit": "USD_per_ton", "source": "BCG Climate AI Report 2024", "year": 2024},
-      {"metric": "Renewable energy cost decline (solar, since 2010)", "value": "89", "unit": "%_decline", "source": "BCG Energy Transition 2024", "year": 2024},
-      {"metric": "Corporate PPA growth rate", "value": "28", "unit": "%_annual", "source": "BCG Energy Transition 2024", "year": 2024},
-      {"metric": "Circular economy market size growth", "value": "10.5", "unit": "%_CAGR", "source": "BCG Circular Economy 2024", "year": 2024},
-      {"metric": "Sustainable supply chain premium", "value": "8-12", "unit": "%_cost_increase", "source": "BCG Supply Chain Sustainability 2024", "year": 2024},
-      {"metric": "Companies with science-based targets (SBTi)", "value": "4200", "unit": "companies", "source": "BCG Climate AI Report 2024", "year": 2024},
-      {"metric": "ESG leaders TSR outperformance", "value": "2-5", "unit": "pp_annual", "source": "BCG Sustainability Advantage 2024", "year": 2024},
-      {"metric": "Green hydrogen cost vs grey hydrogen", "value": "3-4x", "unit": "cost_multiplier", "source": "BCG Energy Transition 2024", "year": 2024},
-      {"metric": "EU carbon border adjustment mechanism (CBAM) impact", "value": "8-15", "unit": "%_cost_increase_imports", "source": "BCG Climate AI Report 2024", "year": 2024},
-      {"metric": "Sustainable packaging adoption rate", "value": "47", "unit": "%_of_CPG_companies", "source": "BCG Consumer Sentiment on Sustainability 2024", "year": 2024},
-      {"metric": "Gen Z willingness to pay sustainability premium", "value": "54", "unit": "%", "source": "BCG Consumer Sentiment on Sustainability 2024", "year": 2024},
-      {"metric": "Boomer willingness to pay sustainability premium", "value": "28", "unit": "%", "source": "BCG Consumer Sentiment on Sustainability 2024", "year": 2024},
-      {"metric": "Food industry sustainability premium accepted", "value": "12", "unit": "%_price_increase", "source": "BCG Consumer Sentiment on Sustainability 2024", "year": 2024},
-      {"metric": "Fashion industry sustainability premium accepted", "value": "8", "unit": "%_price_increase", "source": "BCG Consumer Sentiment on Sustainability 2024", "year": 2024},
-      {"metric": "EV battery cost decline since 2010", "value": "90", "unit": "%_decline", "source": "BCG Energy Transition 2024", "year": 2024},
-      {"metric": "Biodiversity-related risk exposure for corporates", "value": "55", "unit": "%_of_GDP_dependent", "source": "BCG Biodiversity Report 2024", "year": 2024},
-      {"metric": "Sustainable aviation fuel (SAF) cost premium", "value": "2-5x", "unit": "cost_multiplier", "source": "BCG Energy Transition 2024", "year": 2024},
-      {"metric": "Companies integrating climate into strategy", "value": "52", "unit": "%", "source": "BCG Climate AI Report 2024", "year": 2024},
-      {"metric": "Avg emission reduction achieved by committed companies", "value": "12", "unit": "%_total_since_baseline", "source": "BCG Climate AI Report 2024", "year": 2024},
-      {"metric": "Climate tech VC investment (2023)", "value": "51", "unit": "billion_USD", "source": "BCG Climate AI Report 2024", "year": 2024},
-      {"metric": "Nature-based solutions investment gap", "value": "4x", "unit": "multiplier_needed", "source": "BCG Biodiversity Report 2024", "year": 2024},
-      {"metric": "Water stress exposure for top 500 companies", "value": "42", "unit": "%_with_high_exposure", "source": "BCG Biodiversity Report 2024", "year": 2024},
-      {"metric": "Methane reduction potential in agriculture", "value": "30", "unit": "%_reduction_possible", "source": "BCG Climate AI Report 2024", "year": 2024},
-      {"metric": "ESG reporting mandate compliance rate (EU CSRD)", "value": "73", "unit": "%_ready", "source": "BCG Sustainability Advantage 2024", "year": 2024},
-      {"metric": "Carbon capture cost (direct air capture)", "value": "400-600", "unit": "USD_per_ton", "source": "BCG Energy Transition 2024", "year": 2024},
-      {"metric": "Green bond issuance growth (annual)", "value": "22", "unit": "%_growth", "source": "BCG Global Asset Management 2024", "year": 2024}
+      {
+        "metric": "Companies with net-zero commitments",
+        "value": "65",
+        "unit": "%_of_large_companies",
+        "source": "BCG Climate AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Green premium avg across industries",
+        "value": "10-15",
+        "unit": "%_cost_premium",
+        "source": "BCG Green Business Building 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Consumer willingness to pay green premium",
+        "value": "41",
+        "unit": "%_of_consumers",
+        "source": "BCG Consumer Sentiment on Sustainability 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Avg green premium consumers will accept",
+        "value": "5-10",
+        "unit": "%_price_increase",
+        "source": "BCG Consumer Sentiment on Sustainability 2024",
+        "year": 2024
+      },
+      {
+        "metric": "ESG fund inflows as % of total fund inflows",
+        "value": "18",
+        "unit": "%",
+        "source": "BCG Global Asset Management 2024",
+        "year": 2024,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "Companies reporting Scope 1+2 emissions",
+        "value": "78",
+        "unit": "%_of_large_companies",
+        "source": "BCG Climate AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies reporting Scope 3 emissions",
+        "value": "38",
+        "unit": "%_of_large_companies",
+        "source": "BCG Climate AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Decarbonization CapEx as % of revenue needed",
+        "value": "2-4",
+        "unit": "%_of_revenue",
+        "source": "BCG Climate AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Green revenue share for sustainability leaders",
+        "value": "25-30",
+        "unit": "%_of_revenue",
+        "source": "BCG Green Business Building 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Carbon price needed for net-zero by 2050",
+        "value": "100-150",
+        "unit": "USD_per_ton",
+        "source": "BCG Climate AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Current global avg carbon price",
+        "value": "23",
+        "unit": "USD_per_ton",
+        "source": "BCG Climate AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Renewable energy cost decline (solar, since 2010)",
+        "value": "89",
+        "unit": "%_decline",
+        "source": "BCG Energy Transition 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate PPA growth rate",
+        "value": "28",
+        "unit": "%_annual",
+        "source": "BCG Energy Transition 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Circular economy market size growth",
+        "value": "10.5",
+        "unit": "%_CAGR",
+        "source": "BCG Circular Economy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Sustainable supply chain premium",
+        "value": "8-12",
+        "unit": "%_cost_increase",
+        "source": "BCG Supply Chain Sustainability 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with science-based targets (SBTi)",
+        "value": "4200",
+        "unit": "companies",
+        "source": "BCG Climate AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "ESG leaders TSR outperformance",
+        "value": "2-5",
+        "unit": "pp_annual",
+        "source": "BCG Sustainability Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Green hydrogen cost vs grey hydrogen",
+        "value": "3-4x",
+        "unit": "cost_multiplier",
+        "source": "BCG Energy Transition 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EU carbon border adjustment mechanism (CBAM) impact",
+        "value": "8-15",
+        "unit": "%_cost_increase_imports",
+        "source": "BCG Climate AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Sustainable packaging adoption rate",
+        "value": "47",
+        "unit": "%_of_CPG_companies",
+        "source": "BCG Consumer Sentiment on Sustainability 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Gen Z willingness to pay sustainability premium",
+        "value": "54",
+        "unit": "%",
+        "source": "BCG Consumer Sentiment on Sustainability 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Boomer willingness to pay sustainability premium",
+        "value": "28",
+        "unit": "%",
+        "source": "BCG Consumer Sentiment on Sustainability 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Food industry sustainability premium accepted",
+        "value": "12",
+        "unit": "%_price_increase",
+        "source": "BCG Consumer Sentiment on Sustainability 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Fashion industry sustainability premium accepted",
+        "value": "8",
+        "unit": "%_price_increase",
+        "source": "BCG Consumer Sentiment on Sustainability 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EV battery cost decline since 2010",
+        "value": "90",
+        "unit": "%_decline",
+        "source": "BCG Energy Transition 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Biodiversity-related risk exposure for corporates",
+        "value": "55",
+        "unit": "%_of_GDP_dependent",
+        "source": "BCG Biodiversity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Sustainable aviation fuel (SAF) cost premium",
+        "value": "2-5x",
+        "unit": "cost_multiplier",
+        "source": "BCG Energy Transition 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies integrating climate into strategy",
+        "value": "52",
+        "unit": "%",
+        "source": "BCG Climate AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Avg emission reduction achieved by committed companies",
+        "value": "12",
+        "unit": "%_total_since_baseline",
+        "source": "BCG Climate AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Climate tech VC investment (2023)",
+        "value": "51",
+        "unit": "billion_USD",
+        "source": "BCG Climate AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Nature-based solutions investment gap",
+        "value": "4x",
+        "unit": "multiplier_needed",
+        "source": "BCG Biodiversity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Water stress exposure for top 500 companies",
+        "value": "42",
+        "unit": "%_with_high_exposure",
+        "source": "BCG Biodiversity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Methane reduction potential in agriculture",
+        "value": "30",
+        "unit": "%_reduction_possible",
+        "source": "BCG Climate AI Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "ESG reporting mandate compliance rate (EU CSRD)",
+        "value": "73",
+        "unit": "%_ready",
+        "source": "BCG Sustainability Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Carbon capture cost (direct air capture)",
+        "value": "400-600",
+        "unit": "USD_per_ton",
+        "source": "BCG Energy Transition 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Green bond issuance growth (annual)",
+        "value": "22",
+        "unit": "%_growth",
+        "source": "BCG Global Asset Management 2024",
+        "year": 2024,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      }
     ],
     "digital_ventures": [
-      {"metric": "Corporate venture success rate (reaching scale)", "value": "22", "unit": "%", "source": "BCG Corporate Venturing 2024", "year": 2024},
-      {"metric": "CVC-backed startups survival rate at 5 years", "value": "58", "unit": "%", "source": "BCG Corporate Venturing 2024", "year": 2024},
-      {"metric": "Avg time from venture launch to profitability", "value": "3.5", "unit": "years", "source": "BCG Corporate Venturing 2024", "year": 2024},
-      {"metric": "Corporate digital ventures avg investment", "value": "15-50", "unit": "million_USD", "source": "BCG Corporate Venturing 2024", "year": 2024},
-      {"metric": "Digital venture revenue contribution after 5 years", "value": "5-10", "unit": "%_of_parent_revenue", "source": "BCG Corporate Venturing 2024", "year": 2024},
-      {"metric": "CVC deal volume growth (annual)", "value": "11", "unit": "%_growth", "source": "BCG Corporate Venturing 2024", "year": 2024},
-      {"metric": "Startup-corporate partnership success rate", "value": "28", "unit": "%", "source": "BCG Corporate Venturing 2024", "year": 2024},
-      {"metric": "Digital transformation programs delivering expected value", "value": "30", "unit": "%", "source": "BCG Digital Acceleration 2024", "year": 2024},
-      {"metric": "Avg digital transformation budget overrun", "value": "45", "unit": "%_over_budget", "source": "BCG Digital Acceleration 2024", "year": 2024},
-      {"metric": "Companies with dedicated venture building units", "value": "42", "unit": "%_of_Fortune_500", "source": "BCG Corporate Venturing 2024", "year": 2024},
-      {"metric": "Successful venture spin-offs valuation premium", "value": "2.3x", "unit": "vs_parent_multiple", "source": "BCG Corporate Venturing 2024", "year": 2024},
-      {"metric": "Digital native companies revenue growth premium", "value": "2.5x", "unit": "vs_incumbents", "source": "BCG Digital Acceleration 2024", "year": 2024},
-      {"metric": "CVC avg check size growth (2023-2024)", "value": "18", "unit": "%_increase", "source": "BCG Corporate Venturing 2024", "year": 2024},
-      {"metric": "Platform business models share of top 100 companies", "value": "60", "unit": "%", "source": "BCG Henderson Institute 2024", "year": 2024},
-      {"metric": "Venture studio model success rate vs traditional CVC", "value": "1.6x", "unit": "multiplier", "source": "BCG Corporate Venturing 2024", "year": 2024},
-      {"metric": "Internal ventures killed within first 18 months", "value": "40", "unit": "%", "source": "BCG Corporate Venturing 2024", "year": 2024},
-      {"metric": "Ventures leveraging parent assets (data, distribution)", "value": "73", "unit": "%_of_successful_ventures", "source": "BCG Corporate Venturing 2024", "year": 2024},
-      {"metric": "API economy revenue growth", "value": "19", "unit": "%_CAGR", "source": "BCG Digital Acceleration 2024", "year": 2024},
-      {"metric": "Embedded finance market growth", "value": "25", "unit": "%_CAGR", "source": "BCG Digital Acceleration 2024", "year": 2024},
-      {"metric": "Companies scaling AI beyond pilot stage", "value": "11", "unit": "%", "source": "BCG AI at Scale 2024", "year": 2024},
-      {"metric": "AI at scale revenue impact for leaders", "value": "6-10", "unit": "%_revenue_increase", "source": "BCG AI at Scale 2024", "year": 2024},
-      {"metric": "Digital venture avg team size at launch", "value": "15-25", "unit": "people", "source": "BCG Corporate Venturing 2024", "year": 2024},
-      {"metric": "Fintech CVC deal share", "value": "23", "unit": "%_of_all_CVC_deals", "source": "BCG Corporate Venturing 2024", "year": 2024},
-      {"metric": "HealthTech CVC deal share", "value": "18", "unit": "%_of_all_CVC_deals", "source": "BCG Corporate Venturing 2024", "year": 2024},
-      {"metric": "Corporate accelerator program completion rate", "value": "81", "unit": "%", "source": "BCG Corporate Venturing 2024", "year": 2024},
-      {"metric": "Corporate accelerator startups receiving follow-on", "value": "35", "unit": "%", "source": "BCG Corporate Venturing 2024", "year": 2024}
+      {
+        "metric": "Corporate venture success rate (reaching scale)",
+        "value": "22",
+        "unit": "%",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "CVC-backed startups survival rate at 5 years",
+        "value": "58",
+        "unit": "%",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Avg time from venture launch to profitability",
+        "value": "3.5",
+        "unit": "years",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate digital ventures avg investment",
+        "value": "15-50",
+        "unit": "million_USD",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital venture revenue contribution after 5 years",
+        "value": "5-10",
+        "unit": "%_of_parent_revenue",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "CVC deal volume growth (annual)",
+        "value": "11",
+        "unit": "%_growth",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup-corporate partnership success rate",
+        "value": "28",
+        "unit": "%",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital transformation programs delivering expected value",
+        "value": "30",
+        "unit": "%",
+        "source": "BCG Digital Acceleration 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Avg digital transformation budget overrun",
+        "value": "45",
+        "unit": "%_over_budget",
+        "source": "BCG Digital Acceleration 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with dedicated venture building units",
+        "value": "42",
+        "unit": "%_of_Fortune_500",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Successful venture spin-offs valuation premium",
+        "value": "2.3x",
+        "unit": "vs_parent_multiple",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital native companies revenue growth premium",
+        "value": "2.5x",
+        "unit": "vs_incumbents",
+        "source": "BCG Digital Acceleration 2024",
+        "year": 2024
+      },
+      {
+        "metric": "CVC avg check size growth (2023-2024)",
+        "value": "18",
+        "unit": "%_increase",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Platform business models share of top 100 companies",
+        "value": "60",
+        "unit": "%",
+        "source": "BCG Henderson Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Venture studio model success rate vs traditional CVC",
+        "value": "1.6x",
+        "unit": "multiplier",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Internal ventures killed within first 18 months",
+        "value": "40",
+        "unit": "%",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Ventures leveraging parent assets (data, distribution)",
+        "value": "73",
+        "unit": "%_of_successful_ventures",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "API economy revenue growth",
+        "value": "19",
+        "unit": "%_CAGR",
+        "source": "BCG Digital Acceleration 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Embedded finance market growth",
+        "value": "25",
+        "unit": "%_CAGR",
+        "source": "BCG Digital Acceleration 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies scaling AI beyond pilot stage",
+        "value": "11",
+        "unit": "%",
+        "source": "BCG AI at Scale 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI at scale revenue impact for leaders",
+        "value": "6-10",
+        "unit": "%_revenue_increase",
+        "source": "BCG AI at Scale 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital venture avg team size at launch",
+        "value": "15-25",
+        "unit": "people",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Fintech CVC deal share",
+        "value": "23",
+        "unit": "%_of_all_CVC_deals",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HealthTech CVC deal share",
+        "value": "18",
+        "unit": "%_of_all_CVC_deals",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate accelerator program completion rate",
+        "value": "81",
+        "unit": "%",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate accelerator startups receiving follow-on",
+        "value": "35",
+        "unit": "%",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      }
     ],
     "talent_trends": [
-      {"metric": "Global talent shortage (unfilled positions)", "value": "85", "unit": "million_jobs", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Companies reporting critical skills gaps", "value": "87", "unit": "%", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Reskilling ROI (per dollar invested)", "value": "4.5x", "unit": "return_per_dollar", "source": "BCG Reskilling Report 2024", "year": 2024},
-      {"metric": "Avg reskilling program duration", "value": "6-12", "unit": "months", "source": "BCG Reskilling Report 2024", "year": 2024},
-      {"metric": "Workers needing reskilling by 2030", "value": "40", "unit": "%_of_workforce", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Digital skills gap cost to global GDP", "value": "11.5", "unit": "trillion_USD_by_2028", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Voluntary turnover rate global avg", "value": "17", "unit": "%_annual", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Tech industry voluntary turnover rate", "value": "21", "unit": "%_annual", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Cost of replacing an employee", "value": "50-200", "unit": "%_of_annual_salary", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Remote/hybrid work adoption (post-COVID stable)", "value": "58", "unit": "%_of_knowledge_workers", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Productivity impact of hybrid work", "value": "+5-8", "unit": "%_productivity_gain", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Employee engagement impact on profitability", "value": "23", "unit": "%_higher_profitability", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "AI skills demand growth rate", "value": "74", "unit": "%_annual_posting_growth", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Data science skills demand growth rate", "value": "35", "unit": "%_annual", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Green skills demand growth rate", "value": "22", "unit": "%_annual", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Companies with formal reskilling programs", "value": "52", "unit": "%", "source": "BCG Reskilling Report 2024", "year": 2024},
-      {"metric": "Avg annual L&D spend per employee", "value": "1280", "unit": "USD", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Top company L&D spend per employee", "value": "3500", "unit": "USD", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Gig economy workers share of workforce", "value": "12", "unit": "%_in_developed_countries", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Gen Z prioritizing purpose over salary", "value": "68", "unit": "%", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "DEI programs with measurable impact", "value": "25", "unit": "%", "source": "BCG Diversity Report 2024", "year": 2024},
-      {"metric": "Gender diversity leaders financial outperformance", "value": "25", "unit": "%_higher_profitability", "source": "BCG Diversity Report 2024", "year": 2024},
-      {"metric": "Internal mobility reducing turnover", "value": "30", "unit": "%_reduction", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Burnout rate among knowledge workers", "value": "42", "unit": "%", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "AI augmentation of jobs (not replacement)", "value": "60", "unit": "%_of_jobs_augmented", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Jobs at high risk of automation", "value": "14", "unit": "%_of_all_jobs", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Employee experience leaders vs laggards revenue growth", "value": "1.8x", "unit": "multiplier", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Avg time to fill tech roles", "value": "62", "unit": "days", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Cybersecurity talent gap (global unfilled roles)", "value": "3.5", "unit": "million_roles", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Healthcare worker shortage (global by 2030)", "value": "10", "unit": "million_workers", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Skills half-life in tech roles", "value": "2.5", "unit": "years", "source": "BCG Reskilling Report 2024", "year": 2024},
-      {"metric": "Manager quality impact on retention", "value": "70", "unit": "%_of_engagement_variance", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Four-day work week productivity impact", "value": "0", "unit": "%_change_(neutral)", "source": "BCG Future of Work 2024", "year": 2024},
-      {"metric": "Companies offering skills-based hiring (no degree req)", "value": "45", "unit": "%_of_Fortune_500", "source": "BCG Future of Work 2024", "year": 2024}
+      {
+        "metric": "Global talent shortage (unfilled positions)",
+        "value": "85",
+        "unit": "million_jobs",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies reporting critical skills gaps",
+        "value": "87",
+        "unit": "%",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Reskilling ROI (per dollar invested)",
+        "value": "4.5x",
+        "unit": "return_per_dollar",
+        "source": "BCG Reskilling Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Avg reskilling program duration",
+        "value": "6-12",
+        "unit": "months",
+        "source": "BCG Reskilling Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Workers needing reskilling by 2030",
+        "value": "40",
+        "unit": "%_of_workforce",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital skills gap cost to global GDP",
+        "value": "11.5",
+        "unit": "trillion_USD_by_2028",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Voluntary turnover rate global avg",
+        "value": "17",
+        "unit": "%_annual",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Tech industry voluntary turnover rate",
+        "value": "21",
+        "unit": "%_annual",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of replacing an employee",
+        "value": "50-200",
+        "unit": "%_of_annual_salary",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Remote/hybrid work adoption (post-COVID stable)",
+        "value": "58",
+        "unit": "%_of_knowledge_workers",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Productivity impact of hybrid work",
+        "value": "+5-8",
+        "unit": "%_productivity_gain",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Employee engagement impact on profitability",
+        "value": "23",
+        "unit": "%_higher_profitability",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI skills demand growth rate",
+        "value": "74",
+        "unit": "%_annual_posting_growth",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Data science skills demand growth rate",
+        "value": "35",
+        "unit": "%_annual",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Green skills demand growth rate",
+        "value": "22",
+        "unit": "%_annual",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with formal reskilling programs",
+        "value": "52",
+        "unit": "%",
+        "source": "BCG Reskilling Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Avg annual L&D spend per employee",
+        "value": "1280",
+        "unit": "USD",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Top company L&D spend per employee",
+        "value": "3500",
+        "unit": "USD",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Gig economy workers share of workforce",
+        "value": "12",
+        "unit": "%_in_developed_countries",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Gen Z prioritizing purpose over salary",
+        "value": "68",
+        "unit": "%",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "DEI programs with measurable impact",
+        "value": "25",
+        "unit": "%",
+        "source": "BCG Diversity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Gender diversity leaders financial outperformance",
+        "value": "25",
+        "unit": "%_higher_profitability",
+        "source": "BCG Diversity Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Internal mobility reducing turnover",
+        "value": "30",
+        "unit": "%_reduction",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Burnout rate among knowledge workers",
+        "value": "42",
+        "unit": "%",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI augmentation of jobs (not replacement)",
+        "value": "60",
+        "unit": "%_of_jobs_augmented",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Jobs at high risk of automation",
+        "value": "14",
+        "unit": "%_of_all_jobs",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Employee experience leaders vs laggards revenue growth",
+        "value": "1.8x",
+        "unit": "multiplier",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Avg time to fill tech roles",
+        "value": "62",
+        "unit": "days",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cybersecurity talent gap (global unfilled roles)",
+        "value": "3.5",
+        "unit": "million_roles",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Healthcare worker shortage (global by 2030)",
+        "value": "10",
+        "unit": "million_workers",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Skills half-life in tech roles",
+        "value": "2.5",
+        "unit": "years",
+        "source": "BCG Reskilling Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Manager quality impact on retention",
+        "value": "70",
+        "unit": "%_of_engagement_variance",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Four-day work week productivity impact",
+        "value": "0",
+        "unit": "%_change_(neutral)",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies offering skills-based hiring (no degree req)",
+        "value": "45",
+        "unit": "%_of_Fortune_500",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      }
     ],
     "pricing_excellence": [
-      {"metric": "1% price increase impact on operating profit", "value": "8-11", "unit": "%_profit_increase", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Companies with dedicated pricing function", "value": "40", "unit": "%", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "AI-driven pricing adoption rate", "value": "34", "unit": "%", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Dynamic pricing revenue uplift", "value": "2-5", "unit": "%_revenue_increase", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "B2B companies with pricing leakage", "value": "78", "unit": "%", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Avg pricing leakage in B2B", "value": "15-25", "unit": "%_of_list_price", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Subscription pricing adoption growth", "value": "18", "unit": "%_annual", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Freemium conversion rate avg (SaaS)", "value": "2-5", "unit": "%", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Value-based pricing adoption rate", "value": "28", "unit": "%_of_companies", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Cost-plus pricing still used by", "value": "52", "unit": "%_of_companies", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Price optimization impact on margin (B2B)", "value": "200-400", "unit": "bps_margin_improvement", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Price optimization impact on margin (B2C)", "value": "100-200", "unit": "bps_margin_improvement", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Willingness to pay research adoption", "value": "35", "unit": "%_of_companies", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Avg discount depth in B2B transactions", "value": "22", "unit": "%_off_list", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Revenue at risk from poor pricing decisions", "value": "3-8", "unit": "%_of_revenue", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Price elasticity tracking frequency (best practice)", "value": "quarterly", "unit": "frequency", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Personalized pricing acceptance by consumers", "value": "32", "unit": "%", "source": "BCG Consumer Insight 2024", "year": 2024},
-      {"metric": "Bundling revenue uplift vs a-la-carte", "value": "12-18", "unit": "%_revenue_increase", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Surge pricing consumer backlash risk", "value": "67", "unit": "%_negative_perception", "source": "BCG Consumer Insight 2024", "year": 2024},
-      {"metric": "Pricing transparency demand by B2B buyers", "value": "81", "unit": "%", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Companies with pricing analytics dashboards", "value": "29", "unit": "%", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Avg time to implement pricing transformation", "value": "12-18", "unit": "months", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Pricing capability maturity (Level 4-5 out of 5)", "value": "15", "unit": "%_of_companies", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "E-commerce price comparison by consumers before purchase", "value": "88", "unit": "%", "source": "BCG Consumer Insight 2024", "year": 2024},
-      {"metric": "SaaS usage-based pricing adoption growth", "value": "24", "unit": "%_annual", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Outcome-based pricing models adoption", "value": "12", "unit": "%_of_B2B_companies", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Inflation pass-through rate achieved by strong brands", "value": "85-95", "unit": "%", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Inflation pass-through rate for weak brands", "value": "40-60", "unit": "%", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Private label share growth under inflation", "value": "1-3", "unit": "pp_annual", "source": "BCG Consumer Insight 2024", "year": 2024},
-      {"metric": "Price war probability in concentrated markets", "value": "35", "unit": "%_in_3_year_window", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Shrinkflation detection rate by consumers", "value": "58", "unit": "%", "source": "BCG Consumer Insight 2024", "year": 2024},
-      {"metric": "Price pack architecture optimization revenue uplift", "value": "3-7", "unit": "%_revenue_increase", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Competitor price monitoring frequency (best in class)", "value": "daily", "unit": "frequency", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Pricing governance maturity impact on margins", "value": "150-250", "unit": "bps_improvement", "source": "BCG Pricing Excellence 2024", "year": 2024},
-      {"metric": "Anchor pricing effectiveness in B2C", "value": "15-20", "unit": "%_conversion_lift", "source": "BCG Consumer Insight 2024", "year": 2024},
-      {"metric": "Tiered pricing adoption in SaaS", "value": "82", "unit": "%", "source": "BCG Pricing Excellence 2024", "year": 2024}
+      {
+        "metric": "1% price increase impact on operating profit",
+        "value": "8-11",
+        "unit": "%_profit_increase",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with dedicated pricing function",
+        "value": "40",
+        "unit": "%",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI-driven pricing adoption rate",
+        "value": "34",
+        "unit": "%",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Dynamic pricing revenue uplift",
+        "value": "2-5",
+        "unit": "%_revenue_increase",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "B2B companies with pricing leakage",
+        "value": "78",
+        "unit": "%",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Avg pricing leakage in B2B",
+        "value": "15-25",
+        "unit": "%_of_list_price",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Subscription pricing adoption growth",
+        "value": "18",
+        "unit": "%_annual",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Freemium conversion rate avg (SaaS)",
+        "value": "2-5",
+        "unit": "%",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Value-based pricing adoption rate",
+        "value": "28",
+        "unit": "%_of_companies",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost-plus pricing still used by",
+        "value": "52",
+        "unit": "%_of_companies",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Price optimization impact on margin (B2B)",
+        "value": "200-400",
+        "unit": "bps_margin_improvement",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Price optimization impact on margin (B2C)",
+        "value": "100-200",
+        "unit": "bps_margin_improvement",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Willingness to pay research adoption",
+        "value": "35",
+        "unit": "%_of_companies",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Avg discount depth in B2B transactions",
+        "value": "22",
+        "unit": "%_off_list",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Revenue at risk from poor pricing decisions",
+        "value": "3-8",
+        "unit": "%_of_revenue",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Price elasticity tracking frequency (best practice)",
+        "value": "quarterly",
+        "unit": "frequency",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Personalized pricing acceptance by consumers",
+        "value": "32",
+        "unit": "%",
+        "source": "BCG Consumer Insight 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Bundling revenue uplift vs a-la-carte",
+        "value": "12-18",
+        "unit": "%_revenue_increase",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Surge pricing consumer backlash risk",
+        "value": "67",
+        "unit": "%_negative_perception",
+        "source": "BCG Consumer Insight 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Pricing transparency demand by B2B buyers",
+        "value": "81",
+        "unit": "%",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with pricing analytics dashboards",
+        "value": "29",
+        "unit": "%",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Avg time to implement pricing transformation",
+        "value": "12-18",
+        "unit": "months",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Pricing capability maturity (Level 4-5 out of 5)",
+        "value": "15",
+        "unit": "%_of_companies",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "E-commerce price comparison by consumers before purchase",
+        "value": "88",
+        "unit": "%",
+        "source": "BCG Consumer Insight 2024",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS usage-based pricing adoption growth",
+        "value": "24",
+        "unit": "%_annual",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Outcome-based pricing models adoption",
+        "value": "12",
+        "unit": "%_of_B2B_companies",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Inflation pass-through rate achieved by strong brands",
+        "value": "85-95",
+        "unit": "%",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Inflation pass-through rate for weak brands",
+        "value": "40-60",
+        "unit": "%",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Private label share growth under inflation",
+        "value": "1-3",
+        "unit": "pp_annual",
+        "source": "BCG Consumer Insight 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Price war probability in concentrated markets",
+        "value": "35",
+        "unit": "%_in_3_year_window",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Shrinkflation detection rate by consumers",
+        "value": "58",
+        "unit": "%",
+        "source": "BCG Consumer Insight 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Price pack architecture optimization revenue uplift",
+        "value": "3-7",
+        "unit": "%_revenue_increase",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Competitor price monitoring frequency (best in class)",
+        "value": "daily",
+        "unit": "frequency",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Pricing governance maturity impact on margins",
+        "value": "150-250",
+        "unit": "bps_improvement",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Anchor pricing effectiveness in B2C",
+        "value": "15-20",
+        "unit": "%_conversion_lift",
+        "source": "BCG Consumer Insight 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Tiered pricing adoption in SaaS",
+        "value": "82",
+        "unit": "%",
+        "source": "BCG Pricing Excellence 2024",
+        "year": 2024
+      }
+    ],
+    "digital_acceleration": [
+      {
+        "metric": "Digital leaders revenue growth premium",
+        "value": "1.8x",
+        "unit": "vs_laggards",
+        "source": "BCG Digital Acceleration Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI scaling success rate enterprise",
+        "value": "11",
+        "unit": "%",
+        "source": "BCG AI at Scale 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital transformation ROI positive pct",
+        "value": "30",
+        "unit": "%",
+        "source": "BCG Digital Transformation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Tech budget as pct revenue avg",
+        "value": "5.5",
+        "unit": "%",
+        "source": "BCG Technology Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Bionic company outperformance margin",
+        "value": "1.5x",
+        "unit": "TSR_premium",
+        "source": "BCG Bionic Company 2024",
+        "year": 2024
+      },
+      {
+        "metric": "GenAI enterprise productivity gain avg",
+        "value": "14",
+        "unit": "%",
+        "source": "BCG GenAI Impact 2024",
+        "year": 2024
+      },
+      {
+        "metric": "GenAI enterprise adoption rate",
+        "value": "65",
+        "unit": "%",
+        "source": "BCG GenAI Impact 2024",
+        "year": 2024
+      },
+      {
+        "metric": "GenAI projects in production pct",
+        "value": "6",
+        "unit": "%",
+        "source": "BCG GenAI Impact 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital maturity score avg Fortune 500",
+        "value": "3.2",
+        "unit": "out_of_5",
+        "source": "BCG Digital Acceleration Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Platform business model outperformance",
+        "value": "2.3x",
+        "unit": "revenue_growth",
+        "source": "BCG Platform Revolution 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cloud-native company cost advantage",
+        "value": "30",
+        "unit": "%_lower",
+        "source": "BCG Cloud Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "API economy revenue contribution",
+        "value": "35",
+        "unit": "%_for_leaders",
+        "source": "BCG Technology Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Data monetization revenue contribution",
+        "value": "12",
+        "unit": "%_avg",
+        "source": "BCG Data Economy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cybersecurity maturity correlation with growth",
+        "value": "0.72",
+        "unit": "correlation",
+        "source": "BCG Cyber Resilience 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Low-code/no-code enterprise adoption",
+        "value": "48",
+        "unit": "%",
+        "source": "BCG Technology Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Tech talent premium vs market avg salary",
+        "value": "32",
+        "unit": "%",
+        "source": "BCG Tech Talent 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital twins operational savings",
+        "value": "18",
+        "unit": "%",
+        "source": "BCG Operations Technology 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Composable architecture adoption leaders",
+        "value": "22",
+        "unit": "%",
+        "source": "BCG Technology Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Responsible AI framework adoption",
+        "value": "28",
+        "unit": "%",
+        "source": "BCG Responsible AI 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Edge AI deployment growth rate",
+        "value": "35",
+        "unit": "%_CAGR",
+        "source": "BCG Technology Advantage 2024",
+        "year": 2024
+      }
+    ],
+    "sustainability_climate": [
+      {
+        "metric": "Climate leaders TSR outperformance",
+        "value": "3.3",
+        "unit": "%_annual_TSR_premium",
+        "source": "BCG Climate Advantage 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with credible net-zero plans",
+        "value": "10",
+        "unit": "%",
+        "source": "BCG Climate Action 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Green revenue premium willing to pay",
+        "value": "9",
+        "unit": "%",
+        "source": "BCG Consumer Sustainability 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Scope 1+2 emission reduction achievers",
+        "value": "32",
+        "unit": "%",
+        "source": "BCG Climate Action 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Circular economy value creation opportunity",
+        "value": "4.5",
+        "unit": "trillion_USD_by_2030",
+        "source": "BCG Circular Economy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Nature-positive business opportunity",
+        "value": "10",
+        "unit": "trillion_USD_by_2030",
+        "source": "BCG Nature Economy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Carbon pricing readiness of companies",
+        "value": "42",
+        "unit": "%",
+        "source": "BCG Climate Action 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Green hydrogen cost parity timeline",
+        "value": "2030",
+        "unit": "year",
+        "source": "BCG Energy Transition 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EV battery cost decline trajectory",
+        "value": "45",
+        "unit": "%_by_2030",
+        "source": "BCG EV Outlook 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Sustainable supply chain premium cost",
+        "value": "5-15",
+        "unit": "%",
+        "source": "BCG Supply Chain Sustainability 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Biodiversity-related financial risk exposure",
+        "value": "55",
+        "unit": "%_of_GDP",
+        "source": "BCG Nature Economy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Climate tech VC investment 2024",
+        "value": "65",
+        "unit": "billion_USD",
+        "source": "BCG Climate Finance 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Green premium consumer acceptance threshold",
+        "value": "12",
+        "unit": "%",
+        "source": "BCG Consumer Sustainability 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with TCFD-aligned reporting",
+        "value": "48",
+        "unit": "%",
+        "source": "BCG Climate Reporting 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Renewable energy corporate PPA growth",
+        "value": "22",
+        "unit": "%",
+        "source": "BCG Energy Transition 2024",
+        "year": 2024
+      }
+    ],
+    "people_organization": [
+      {
+        "metric": "Purpose-driven company employee retention premium",
+        "value": "40",
+        "unit": "%_lower_turnover",
+        "source": "BCG People Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Agile at scale success rate",
+        "value": "35",
+        "unit": "%",
+        "source": "BCG Agile at Scale 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Future skills gap in workforce",
+        "value": "44",
+        "unit": "%_skills_changing",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Reskilling ROI for employers",
+        "value": "6:1",
+        "unit": "return_ratio",
+        "source": "BCG Reskilling Revolution 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Diversity in leadership financial premium",
+        "value": "25",
+        "unit": "%_EBIT_premium",
+        "source": "BCG Diversity Wins 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Employee experience investment ROI",
+        "value": "2.5x",
+        "unit": "revenue_per_employee",
+        "source": "BCG Employee Experience 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Hybrid work productivity impact",
+        "value": "+5",
+        "unit": "%_vs_fully_onsite",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Internal talent marketplace adoption",
+        "value": "18",
+        "unit": "%",
+        "source": "BCG People Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI augmented worker productivity gain",
+        "value": "22",
+        "unit": "%",
+        "source": "BCG AI People Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Leadership development program effectiveness",
+        "value": "30",
+        "unit": "%_report_behavior_change",
+        "source": "BCG Leadership 2024",
+        "year": 2024
+      },
+      {
+        "metric": "CEO tenure median years",
+        "value": "6.9",
+        "unit": "years",
+        "source": "BCG CEO Study 2024",
+        "year": 2024
+      },
+      {
+        "metric": "CEO internal appointment success rate",
+        "value": "58",
+        "unit": "%",
+        "source": "BCG CEO Study 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Board diversity Fortune 500 increase",
+        "value": "8",
+        "unit": "%_YoY",
+        "source": "BCG Board Effectiveness 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Change management success rate",
+        "value": "26",
+        "unit": "%",
+        "source": "BCG Change Management 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Psychological safety correlation with innovation",
+        "value": "0.68",
+        "unit": "correlation",
+        "source": "BCG Innovation Culture 2024",
+        "year": 2024
+      }
+    ],
+    "operations_supply_chain": [
+      {
+        "metric": "Supply chain resilience investment increase",
+        "value": "42",
+        "unit": "%",
+        "source": "BCG Supply Chain Resilience 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Smart factory productivity improvement",
+        "value": "30",
+        "unit": "%",
+        "source": "BCG Smart Operations 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Procurement AI adoption for sourcing",
+        "value": "28",
+        "unit": "%",
+        "source": "BCG Procurement 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Manufacturing nearshoring consideration",
+        "value": "52",
+        "unit": "%",
+        "source": "BCG Operations Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Lean operations waste reduction avg",
+        "value": "25",
+        "unit": "%",
+        "source": "BCG Lean Operations 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Predictive maintenance adoption rate",
+        "value": "38",
+        "unit": "%",
+        "source": "BCG Smart Operations 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Autonomous supply chain planning adoption",
+        "value": "12",
+        "unit": "%",
+        "source": "BCG Supply Chain 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Working capital optimization opportunity",
+        "value": "15-25",
+        "unit": "%_reduction",
+        "source": "BCG Cash Management 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Industrial IoT ROI timeline",
+        "value": "18",
+        "unit": "months",
+        "source": "BCG Industry 4.0 2024",
+        "year": 2024
+      },
+      {
+        "metric": "3D printing cost advantage threshold",
+        "value": "10000",
+        "unit": "units_below",
+        "source": "BCG Additive Manufacturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Quality 4.0 defect reduction",
+        "value": "40",
+        "unit": "%",
+        "source": "BCG Smart Operations 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Supply chain control tower adoption",
+        "value": "25",
+        "unit": "%",
+        "source": "BCG Supply Chain 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Inventory optimization AI savings",
+        "value": "20",
+        "unit": "%",
+        "source": "BCG Inventory Management 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Last-mile delivery cost as pct total logistics",
+        "value": "53",
+        "unit": "%",
+        "source": "BCG Logistics 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Circular supply chain cost premium",
+        "value": "8",
+        "unit": "%",
+        "source": "BCG Circular Economy 2024",
+        "year": 2024
+      }
+    ],
+    "ma_value_creation": [
+      {
+        "metric": "M&A deals creating shareholder value pct",
+        "value": "57",
+        "unit": "%",
+        "source": "BCG M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Serial acquirer outperformance",
+        "value": "2.3",
+        "unit": "%_annual_TSR",
+        "source": "BCG M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PMI 100-day plan execution rate",
+        "value": "45",
+        "unit": "%",
+        "source": "BCG Post-Merger Integration 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Due diligence scope expansion with AI",
+        "value": "40",
+        "unit": "%_more_data",
+        "source": "BCG M&A Technology 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Revenue synergy realization rate",
+        "value": "30",
+        "unit": "%",
+        "source": "BCG M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost synergy realization rate",
+        "value": "65",
+        "unit": "%",
+        "source": "BCG M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cross-border deal success rate",
+        "value": "48",
+        "unit": "%",
+        "source": "BCG M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cultural integration failure impact",
+        "value": "70",
+        "unit": "%_of_failed_mergers",
+        "source": "BCG Post-Merger Integration 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Divestiture value creation premium",
+        "value": "15",
+        "unit": "%_TSR",
+        "source": "BCG M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "PE portfolio company EBITDA improvement avg",
+        "value": "50",
+        "unit": "%",
+        "source": "BCG Private Equity 2024",
+        "year": 2024
+      },
+      {
+        "metric": "SPAC de-SPAC success rate 2024",
+        "value": "22",
+        "unit": "%",
+        "source": "BCG M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Technology M&A multiple premium",
+        "value": "2.5x",
+        "unit": "vs_industrial",
+        "source": "BCG M&A Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Healthcare M&A multiple 2024",
+        "value": "14.2",
+        "unit": "x_EBITDA",
+        "source": "BCG Healthcare M&A 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average M&A integration timeline",
+        "value": "24",
+        "unit": "months",
+        "source": "BCG Post-Merger Integration 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Transformative deal premium above market",
+        "value": "8.5",
+        "unit": "%_annual_TSR",
+        "source": "BCG M&A Report 2024",
+        "year": 2024
+      }
+    ],
+    "pricing_revenue_growth": [
+      {
+        "metric": "Price optimization revenue impact",
+        "value": "2-7",
+        "unit": "%_revenue_lift",
+        "source": "BCG Pricing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with advanced pricing capabilities",
+        "value": "15",
+        "unit": "%",
+        "source": "BCG Pricing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Dynamic pricing adoption rate retail",
+        "value": "32",
+        "unit": "%",
+        "source": "BCG Pricing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Subscription pricing lift vs one-time",
+        "value": "15-25",
+        "unit": "%_lifetime_value",
+        "source": "BCG Revenue Growth 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Value-based pricing adoption B2B",
+        "value": "22",
+        "unit": "%",
+        "source": "BCG Pricing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Personalized pricing revenue uplift",
+        "value": "3-8",
+        "unit": "%",
+        "source": "BCG Personalization 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Revenue growth top quartile vs median",
+        "value": "3.5x",
+        "unit": "multiplier",
+        "source": "BCG Revenue Growth 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Go-to-market digital channel share",
+        "value": "55",
+        "unit": "%",
+        "source": "BCG Sales Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Customer lifetime value focus companies",
+        "value": "38",
+        "unit": "%",
+        "source": "BCG Marketing Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Freemium to paid conversion benchmark",
+        "value": "4",
+        "unit": "%",
+        "source": "BCG Revenue Growth 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Brand premium pricing power",
+        "value": "20-30",
+        "unit": "%_vs_private_label",
+        "source": "BCG Brand Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI-driven pricing accuracy improvement",
+        "value": "25",
+        "unit": "%",
+        "source": "BCG Pricing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cross-sell revenue contribution leaders",
+        "value": "35",
+        "unit": "%",
+        "source": "BCG Revenue Growth 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Customer experience leaders revenue growth premium",
+        "value": "1.7x",
+        "unit": "vs_laggards",
+        "source": "BCG CX Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Loyalty program revenue contribution",
+        "value": "12-18",
+        "unit": "%",
+        "source": "BCG Marketing Strategy 2024",
+        "year": 2024
+      }
+    ],
+    "industry_disruption": [
+      {
+        "metric": "Industry disruption risk high pct sectors",
+        "value": "65",
+        "unit": "%",
+        "source": "BCG Industry Analysis 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Incumbent response time to disruptor avg",
+        "value": "36",
+        "unit": "months",
+        "source": "BCG Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Market share loss to disruptors avg",
+        "value": "15",
+        "unit": "%_over_5_years",
+        "source": "BCG Industry Analysis 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Ecosystem business model outperformance",
+        "value": "2.1x",
+        "unit": "revenue_CAGR",
+        "source": "BCG Ecosystem Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Autonomous driving market forecast 2030",
+        "value": "1",
+        "unit": "trillion_USD",
+        "source": "BCG Automotive 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Electric vehicle market share global 2024",
+        "value": "18",
+        "unit": "%",
+        "source": "BCG EV Outlook 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Fintech disruption of banking revenue",
+        "value": "22",
+        "unit": "%_at_risk",
+        "source": "BCG Financial Services 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Healthcare digital disruption potential",
+        "value": "500",
+        "unit": "billion_USD",
+        "source": "BCG Healthcare 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Retail media network revenue growth",
+        "value": "28",
+        "unit": "%_CAGR",
+        "source": "BCG Retail 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Space economy growth to 2035",
+        "value": "1.8",
+        "unit": "trillion_USD",
+        "source": "BCG Deep Tech 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Quantum computing enterprise readiness",
+        "value": "8",
+        "unit": "%",
+        "source": "BCG Quantum Technology 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Web3 enterprise adoption rate",
+        "value": "12",
+        "unit": "%",
+        "source": "BCG Web3 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Synthetic biology market CAGR",
+        "value": "24",
+        "unit": "%",
+        "source": "BCG Deep Tech 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Energy storage market CAGR",
+        "value": "32",
+        "unit": "%",
+        "source": "BCG Energy Transition 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI drug discovery market growth",
+        "value": "40",
+        "unit": "%_CAGR",
+        "source": "BCG Life Sciences 2024",
+        "year": 2024
+      }
+    ],
+    "consumer_insights": [
+      {
+        "metric": "Consumer brand loyalty decline YoY",
+        "value": "12",
+        "unit": "%",
+        "source": "BCG Consumer Sentiment 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Gen Z brand switching rate",
+        "value": "65",
+        "unit": "%",
+        "source": "BCG Gen Z Consumer 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Personalization revenue lift",
+        "value": "6-10",
+        "unit": "%",
+        "source": "BCG Personalization 2024",
+        "year": 2024
+      },
+      {
+        "metric": "D2C brand market penetration avg",
+        "value": "18",
+        "unit": "%",
+        "source": "BCG Consumer Products 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Omnichannel consumer spend premium",
+        "value": "30",
+        "unit": "%_more_than_single",
+        "source": "BCG Retail 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Social commerce conversion rate vs ecom",
+        "value": "2.5x",
+        "unit": "higher",
+        "source": "BCG Social Commerce 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Premium segment growth vs mass market",
+        "value": "2x",
+        "unit": "faster",
+        "source": "BCG Luxury 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Subscription fatigue consumer pct",
+        "value": "42",
+        "unit": "%",
+        "source": "BCG Consumer Sentiment 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Sustainable product premium acceptance",
+        "value": "12",
+        "unit": "%",
+        "source": "BCG Consumer Sustainability 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI-powered recommendation revenue impact",
+        "value": "35",
+        "unit": "%_of_ecom_revenue",
+        "source": "BCG Retail Technology 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Customer experience leaders growth premium",
+        "value": "1.6x",
+        "unit": "revenue_growth",
+        "source": "BCG CX 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Voice commerce adoption rate",
+        "value": "8",
+        "unit": "%",
+        "source": "BCG Consumer Technology 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Live commerce growth CAGR",
+        "value": "32",
+        "unit": "%",
+        "source": "BCG Social Commerce 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Retail media network revenue growth",
+        "value": "25",
+        "unit": "%_CAGR",
+        "source": "BCG Retail Media 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Consumer privacy concern trading off convenience",
+        "value": "48",
+        "unit": "%",
+        "source": "BCG Consumer Trust 2024",
+        "year": 2024
+      }
+    ],
+    "healthcare_biopharma": [
+      {
+        "metric": "Drug development average cost",
+        "value": "2.6",
+        "unit": "billion_USD",
+        "source": "BCG Biopharma 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Clinical trial success rate overall",
+        "value": "7.9",
+        "unit": "%",
+        "source": "BCG Clinical Development 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI-accelerated drug discovery time savings",
+        "value": "30",
+        "unit": "%",
+        "source": "BCG AI in Pharma 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Gene therapy market growth rate",
+        "value": "28",
+        "unit": "%_CAGR",
+        "source": "BCG Cell & Gene Therapy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital health market size 2024",
+        "value": "330",
+        "unit": "billion_USD",
+        "source": "BCG Digital Health 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Biosimilar market erosion of originator",
+        "value": "40",
+        "unit": "%_in_3_years",
+        "source": "BCG Biopharma 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Hospital margin improvement from digital ops",
+        "value": "3-5",
+        "unit": "%",
+        "source": "BCG Healthcare Operations 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Telehealth market growth rate",
+        "value": "18",
+        "unit": "%_CAGR",
+        "source": "BCG Digital Health 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Medtech M&A deal value growth",
+        "value": "15",
+        "unit": "%",
+        "source": "BCG MedTech 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Precision medicine market CAGR",
+        "value": "12",
+        "unit": "%",
+        "source": "BCG Precision Medicine 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Healthcare AI market growth",
+        "value": "38",
+        "unit": "%_CAGR",
+        "source": "BCG Healthcare AI 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Patient engagement digital platform adoption",
+        "value": "35",
+        "unit": "%",
+        "source": "BCG Patient Experience 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Value-based care contracts growing at",
+        "value": "20",
+        "unit": "%_CAGR",
+        "source": "BCG Healthcare Payer 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Rare disease drug development premium",
+        "value": "3x",
+        "unit": "vs_mass_market",
+        "source": "BCG Biopharma 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Real-world evidence adoption in pharma",
+        "value": "45",
+        "unit": "%",
+        "source": "BCG RWE 2024",
+        "year": 2024
+      }
+    ],
+    "financial_institutions": [
+      {
+        "metric": "Bank cost-to-income ratio avg",
+        "value": "55",
+        "unit": "%",
+        "source": "BCG Banking 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Neobank customer acquisition cost",
+        "value": "25",
+        "unit": "USD_vs_100_traditional",
+        "source": "BCG Digital Banking 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Open banking revenue opportunity",
+        "value": "416",
+        "unit": "billion_USD_by_2030",
+        "source": "BCG Open Banking 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Insurance industry combined ratio",
+        "value": "98.2",
+        "unit": "%",
+        "source": "BCG Insurance 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth management AUM CAGR",
+        "value": "5.8",
+        "unit": "%",
+        "source": "BCG Global Wealth 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global wealth total 2024",
+        "value": "477",
+        "unit": "trillion_USD",
+        "source": "BCG Global Wealth 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital payments growth rate",
+        "value": "12",
+        "unit": "%_CAGR",
+        "source": "BCG Payments 2024",
+        "year": 2024
+      },
+      {
+        "metric": "CBDC exploration by central banks",
+        "value": "130",
+        "unit": "countries",
+        "source": "BCG Digital Currency 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Embedded finance market growth",
+        "value": "22",
+        "unit": "%_CAGR",
+        "source": "BCG Embedded Finance 2024",
+        "year": 2024
+      },
+      {
+        "metric": "RegTech market growth rate",
+        "value": "18",
+        "unit": "%_CAGR",
+        "source": "BCG Compliance 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Asset management fee compression rate",
+        "value": "3",
+        "unit": "%_annual_decline",
+        "source": "BCG Asset Management 2024",
+        "year": 2024
+      },
+      {
+        "metric": "ESG assets under management growth",
+        "value": "15",
+        "unit": "%_CAGR",
+        "source": "BCG Sustainable Finance 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Private markets AUM growth",
+        "value": "18",
+        "unit": "%_CAGR",
+        "source": "BCG Asset Management 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Trade finance digitization savings",
+        "value": "20-30",
+        "unit": "%",
+        "source": "BCG Trade Finance 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Insurance AI claims processing savings",
+        "value": "25",
+        "unit": "%",
+        "source": "BCG InsurTech 2024",
+        "year": 2024
+      }
+    ],
+    "energy_materials": [
+      {
+        "metric": "Renewable energy capex 2024 global",
+        "value": "520",
+        "unit": "billion_USD",
+        "source": "BCG Energy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Solar LCOE decline last decade",
+        "value": "89",
+        "unit": "%",
+        "source": "BCG Energy Transition 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Green hydrogen production cost 2024",
+        "value": "4-6",
+        "unit": "USD_per_kg",
+        "source": "BCG Green Hydrogen 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Green hydrogen target cost 2030",
+        "value": "2",
+        "unit": "USD_per_kg",
+        "source": "BCG Green Hydrogen 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Battery cost decline per decade",
+        "value": "85",
+        "unit": "%",
+        "source": "BCG EV Battery 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Critical minerals demand growth for EVs",
+        "value": "4x",
+        "unit": "by_2030",
+        "source": "BCG Mining 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Oil and gas industry decarbonization spend",
+        "value": "40",
+        "unit": "billion_USD",
+        "source": "BCG Energy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Nuclear energy renaissance projects pipeline",
+        "value": "60",
+        "unit": "GW_planned",
+        "source": "BCG Nuclear Energy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Mining productivity improvement from digital",
+        "value": "20",
+        "unit": "%",
+        "source": "BCG Mining 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Steel decarbonization cost premium",
+        "value": "25-35",
+        "unit": "%",
+        "source": "BCG Materials 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Chemicals industry digital maturity avg",
+        "value": "2.5",
+        "unit": "out_of_5",
+        "source": "BCG Chemicals 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Offshore wind global pipeline",
+        "value": "380",
+        "unit": "GW",
+        "source": "BCG Energy Transition 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Grid modernization investment needed",
+        "value": "21",
+        "unit": "trillion_USD_by_2050",
+        "source": "BCG Energy Transition 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Carbon capture cost per ton CO2",
+        "value": "50-100",
+        "unit": "USD",
+        "source": "BCG Carbon Management 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Energy storage capacity growth forecast",
+        "value": "30",
+        "unit": "%_CAGR",
+        "source": "BCG Energy Storage 2024",
+        "year": 2024
+      }
+    ],
+    "automotive_mobility": [
+      {
+        "metric": "EV market share global 2024",
+        "value": "20",
+        "unit": "%_new_sales",
+        "source": "BCG EV Outlook 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EV market share 2030 forecast",
+        "value": "42",
+        "unit": "%",
+        "source": "BCG EV Outlook 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Autonomous driving L4 market 2030",
+        "value": "300",
+        "unit": "billion_USD",
+        "source": "BCG Autonomous Driving 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Connected car data revenue potential",
+        "value": "750",
+        "unit": "billion_USD_by_2030",
+        "source": "BCG Automotive 2024",
+        "year": 2024
+      },
+      {
+        "metric": "OEM software revenue share target",
+        "value": "35",
+        "unit": "%_by_2030",
+        "source": "BCG Automotive Software 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Shared mobility market growth",
+        "value": "15",
+        "unit": "%_CAGR",
+        "source": "BCG Urban Mobility 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Aftermarket parts digitization",
+        "value": "30",
+        "unit": "%",
+        "source": "BCG Automotive Aftermarket 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EV battery recycling market CAGR",
+        "value": "25",
+        "unit": "%",
+        "source": "BCG Circular Economy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average EV vs ICE price premium",
+        "value": "12",
+        "unit": "%",
+        "source": "BCG EV Outlook 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Fleet electrification commitment pct",
+        "value": "35",
+        "unit": "%_of_fleets",
+        "source": "BCG Fleet Electrification 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Automotive cybersecurity market growth",
+        "value": "22",
+        "unit": "%_CAGR",
+        "source": "BCG Automotive 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Air mobility (eVTOL) market 2035",
+        "value": "90",
+        "unit": "billion_USD",
+        "source": "BCG Mobility 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Dealership model disruption threat",
+        "value": "40",
+        "unit": "%_of_revenue",
+        "source": "BCG Automotive Retail 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Automotive chips shortage impact billions",
+        "value": "210",
+        "unit": "billion_USD_lost_2021_2024",
+        "source": "BCG Semiconductor 2024",
+        "year": 2024
+      },
+      {
+        "metric": "SDV (software-defined vehicle) revenue opp",
+        "value": "650",
+        "unit": "billion_USD_by_2030",
+        "source": "BCG Automotive Software 2024",
+        "year": 2024
+      }
+    ],
+    "talent_skills": [
+      {
+        "metric": "Skills half-life declining to",
+        "value": "5",
+        "unit": "years",
+        "source": "BCG Skills Study 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies closing skills gap effectively",
+        "value": "18",
+        "unit": "%",
+        "source": "BCG Reskilling 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average reskilling investment per worker",
+        "value": "24000",
+        "unit": "USD",
+        "source": "BCG Reskilling 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI skills demand growth",
+        "value": "74",
+        "unit": "%_YoY",
+        "source": "BCG AI Talent 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Green skills demand growth",
+        "value": "38",
+        "unit": "%_YoY",
+        "source": "BCG Green Skills 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cross-functional talent premium",
+        "value": "25",
+        "unit": "%_salary",
+        "source": "BCG Talent Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Internal mobility reducing attrition",
+        "value": "36",
+        "unit": "%",
+        "source": "BCG People Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "CEO tenure at bottom quartile TSR firms",
+        "value": "4.2",
+        "unit": "years",
+        "source": "BCG CEO Study 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Talent marketplace platform adoption",
+        "value": "22",
+        "unit": "%",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Workforce composition freelance/gig pct",
+        "value": "15-25",
+        "unit": "%",
+        "source": "BCG Future of Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Skill adjacency transition success rate",
+        "value": "45",
+        "unit": "%",
+        "source": "BCG Skills Study 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Learning hours per employee optimal",
+        "value": "50",
+        "unit": "hours_per_year",
+        "source": "BCG Reskilling 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Employer brand impact on hiring cost",
+        "value": "28",
+        "unit": "%_reduction",
+        "source": "BCG Employer Branding 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Neurodiversity hiring program ROI",
+        "value": "2.5x",
+        "unit": "productivity_gain",
+        "source": "BCG Diversity 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Succession planning readiness Fortune 500",
+        "value": "45",
+        "unit": "%",
+        "source": "BCG Leadership 2024",
+        "year": 2024
+      }
+    ],
+    "innovation_ventures": [
+      {
+        "metric": "Corporate venture capital investment 2024",
+        "value": "85",
+        "unit": "billion_USD",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Innovation lab success to scale rate",
+        "value": "8",
+        "unit": "%",
+        "source": "BCG Innovation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with formal innovation metrics",
+        "value": "25",
+        "unit": "%",
+        "source": "BCG Most Innovative Companies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "R&D spend as pct revenue tech leaders",
+        "value": "15",
+        "unit": "%",
+        "source": "BCG Innovation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Open innovation adoption rate",
+        "value": "55",
+        "unit": "%",
+        "source": "BCG Open Innovation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Design thinking implementation success rate",
+        "value": "40",
+        "unit": "%",
+        "source": "BCG Design Thinking 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Time to market reduction from agile",
+        "value": "30",
+        "unit": "%",
+        "source": "BCG Agile Innovation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Patent filing growth AI-related",
+        "value": "28",
+        "unit": "%_CAGR",
+        "source": "BCG Innovation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Venture builder success rate vs accelerator",
+        "value": "2x",
+        "unit": "higher",
+        "source": "BCG Corporate Venturing 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Minimum viable product failure rate",
+        "value": "72",
+        "unit": "%",
+        "source": "BCG Lean Innovation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Innovation portfolio optimal allocation R/I/T",
+        "value": "70/20/10",
+        "unit": "%_split",
+        "source": "BCG Innovation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Deep tech VC investment growth",
+        "value": "22",
+        "unit": "%_CAGR",
+        "source": "BCG Deep Tech 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Innovation culture diagnostic top score pct",
+        "value": "12",
+        "unit": "%_of_companies",
+        "source": "BCG Innovation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Breakthrough innovation share of revenue",
+        "value": "10",
+        "unit": "%",
+        "source": "BCG Most Innovative 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cross-industry innovation success rate",
+        "value": "15",
+        "unit": "%",
+        "source": "BCG Innovation 2024",
+        "year": 2024
+      }
+    ],
+    "strategy_advantage": [
+      {
+        "metric": "Strategy execution success rate",
+        "value": "30",
+        "unit": "%",
+        "source": "BCG Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Competitive advantage duration declining to",
+        "value": "5",
+        "unit": "years_avg",
+        "source": "BCG Strategy Institute 2024",
+        "year": 2024
+      },
+      {
+        "metric": "First-mover advantage persistence rate",
+        "value": "55",
+        "unit": "%",
+        "source": "BCG Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Adaptive strategy outperformance in VUCA",
+        "value": "1.8x",
+        "unit": "TSR_vs_rigid",
+        "source": "BCG Adaptive Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Scenario planning adoption rate",
+        "value": "38",
+        "unit": "%",
+        "source": "BCG Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Purpose-driven company financial premium",
+        "value": "1.4x",
+        "unit": "TSR",
+        "source": "BCG Purpose 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Ecosystem strategy adoption rate",
+        "value": "28",
+        "unit": "%",
+        "source": "BCG Ecosystem 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Geopolitical risk in strategy planning",
+        "value": "72",
+        "unit": "%_of_CEOs",
+        "source": "BCG Geopolitics 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Strategy refresh frequency optimal",
+        "value": "quarterly",
+        "unit": "vs_annual",
+        "source": "BCG Adaptive Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Market entry success rate new geographies",
+        "value": "35",
+        "unit": "%",
+        "source": "BCG Global Expansion 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate portfolio restructuring value add",
+        "value": "12",
+        "unit": "%_TSR",
+        "source": "BCG Corporate Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Strategic alliance success rate",
+        "value": "40",
+        "unit": "%",
+        "source": "BCG Partnerships 2024",
+        "year": 2024
+      },
+      {
+        "metric": "JV performance vs M&A in emerging markets",
+        "value": "1.3x",
+        "unit": "better_ROI",
+        "source": "BCG JV Strategy 2024",
+        "year": 2024
+      }
+    ],
+    "government_public_sector": [
+      {
+        "metric": "Government digital transformation spend global",
+        "value": "700",
+        "unit": "billion_USD",
+        "source": "BCG Government 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Public sector AI adoption rate",
+        "value": "18",
+        "unit": "%",
+        "source": "BCG Government Tech 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Gov cloud migration completion rate",
+        "value": "30",
+        "unit": "%",
+        "source": "BCG Government Tech 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Citizen digital service satisfaction",
+        "value": "45",
+        "unit": "%",
+        "source": "BCG Citizen Experience 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Defense tech market growth",
+        "value": "8",
+        "unit": "%_CAGR",
+        "source": "BCG Defense 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Smart city investment global",
+        "value": "250",
+        "unit": "billion_USD",
+        "source": "BCG Smart Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Government procurement digital adoption",
+        "value": "35",
+        "unit": "%",
+        "source": "BCG Government 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Public health system resilience score",
+        "value": "3.1",
+        "unit": "out_of_5",
+        "source": "BCG Public Health 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Education system digital readiness",
+        "value": "2.8",
+        "unit": "out_of_5",
+        "source": "BCG Education 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Infrastructure PPP project success rate",
+        "value": "55",
+        "unit": "%",
+        "source": "BCG Infrastructure 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Government cybersecurity maturity avg",
+        "value": "2.4",
+        "unit": "out_of_5",
+        "source": "BCG Cyber Government 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital ID adoption rate globally",
+        "value": "48",
+        "unit": "%",
+        "source": "BCG Digital Government 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Public sector efficiency gain from AI",
+        "value": "15-20",
+        "unit": "%",
+        "source": "BCG Government AI 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Space defense budget growth",
+        "value": "12",
+        "unit": "%_CAGR",
+        "source": "BCG Defense 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Climate adaptation public spending",
+        "value": "65",
+        "unit": "billion_USD_annually",
+        "source": "BCG Climate Adaptation 2024",
+        "year": 2024
+      }
+    ],
+    "travel_tourism": [
+      {
+        "metric": "Global travel market recovery vs 2019",
+        "value": "103",
+        "unit": "%",
+        "source": "BCG Travel 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Travel tech market growth rate",
+        "value": "12",
+        "unit": "%_CAGR",
+        "source": "BCG Travel Tech 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Sustainable travel premium willingness",
+        "value": "8",
+        "unit": "%",
+        "source": "BCG Consumer Travel 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Experience economy growth vs goods",
+        "value": "2.5x",
+        "unit": "faster",
+        "source": "BCG Experiences 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Hotel industry RevPAR growth",
+        "value": "5",
+        "unit": "%",
+        "source": "BCG Hospitality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Airline industry profit margin avg",
+        "value": "4.5",
+        "unit": "%",
+        "source": "BCG Aviation 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Direct booking share vs OTA",
+        "value": "42",
+        "unit": "%",
+        "source": "BCG Hospitality 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI in travel personalization adoption",
+        "value": "35",
+        "unit": "%",
+        "source": "BCG Travel Tech 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Business travel recovery vs 2019",
+        "value": "88",
+        "unit": "%",
+        "source": "BCG Business Travel 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Bleisure travel market growth",
+        "value": "18",
+        "unit": "%",
+        "source": "BCG Travel Trends 2024",
+        "year": 2024
+      }
+    ],
+    "industrial_goods": [
+      {
+        "metric": "Industry 4.0 adoption rate manufacturers",
+        "value": "35",
+        "unit": "%",
+        "source": "BCG Industry 4.0 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Industrial IoT market CAGR",
+        "value": "22",
+        "unit": "%",
+        "source": "BCG IIoT 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Additive manufacturing market growth",
+        "value": "18",
+        "unit": "%_CAGR",
+        "source": "BCG Additive 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Industrial automation market size 2024",
+        "value": "265",
+        "unit": "billion_USD",
+        "source": "BCG Industrial Goods 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Predictive maintenance ROI",
+        "value": "10-15x",
+        "unit": "return",
+        "source": "BCG Smart Operations 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital factory productivity premium",
+        "value": "30",
+        "unit": "%",
+        "source": "BCG Industry 4.0 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Robotics market growth rate",
+        "value": "12",
+        "unit": "%_CAGR",
+        "source": "BCG Industrial Goods 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Semiconductor market CAGR 2024-2030",
+        "value": "10",
+        "unit": "%",
+        "source": "BCG Semiconductor 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Industrial servitization revenue share",
+        "value": "22",
+        "unit": "%",
+        "source": "BCG Industrial Goods 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Manufacturing workforce AI augmentation",
+        "value": "25",
+        "unit": "%_of_tasks",
+        "source": "BCG Factory of Future 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Nearshoring premium vs offshoring",
+        "value": "15-20",
+        "unit": "%",
+        "source": "BCG Operations 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Industrial decarbonization investment needed",
+        "value": "11",
+        "unit": "trillion_USD_by_2050",
+        "source": "BCG Industrial Decarbonization 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cobots deployment growth rate",
+        "value": "30",
+        "unit": "%_CAGR",
+        "source": "BCG Robotics 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital product passport requirement impact",
+        "value": "45",
+        "unit": "%_of_manufacturers",
+        "source": "BCG Compliance 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Industrial AI use case ROI avg",
+        "value": "8x",
+        "unit": "return",
+        "source": "BCG AI in Manufacturing 2024",
+        "year": 2024
+      }
+    ],
+    "risk_resilience": [
+      {
+        "metric": "Enterprise risk management maturity avg",
+        "value": "2.8",
+        "unit": "out_of_5",
+        "source": "BCG Risk Management 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Supply chain disruption frequency increase",
+        "value": "40",
+        "unit": "%_vs_5yr_ago",
+        "source": "BCG Supply Chain Risk 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cyber attack financial impact avg enterprise",
+        "value": "4.5",
+        "unit": "million_USD",
+        "source": "BCG Cyber Resilience 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies with business continuity plan",
+        "value": "60",
+        "unit": "%",
+        "source": "BCG Resilience 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Pandemic preparedness score improvement",
+        "value": "35",
+        "unit": "%_since_2020",
+        "source": "BCG Resilience 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Geopolitical risk impact on supply chains",
+        "value": "28",
+        "unit": "%_of_revenue_at_risk",
+        "source": "BCG Geopolitics 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Operational resilience investment increase",
+        "value": "22",
+        "unit": "%_YoY",
+        "source": "BCG Resilience 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Fraud detection AI adoption rate",
+        "value": "42",
+        "unit": "%",
+        "source": "BCG Fraud Prevention 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Third-party risk management maturity",
+        "value": "2.5",
+        "unit": "out_of_5",
+        "source": "BCG Risk Management 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Climate risk financial exposure estimate",
+        "value": "12",
+        "unit": "trillion_USD_global",
+        "source": "BCG Climate Risk 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI risk governance framework adoption",
+        "value": "18",
+        "unit": "%",
+        "source": "BCG Responsible AI 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Regulatory change velocity increase",
+        "value": "25",
+        "unit": "%_more_regulations",
+        "source": "BCG Regulatory 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Scenario planning effectiveness on resilience",
+        "value": "1.5x",
+        "unit": "better_recovery",
+        "source": "BCG Strategy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Insider threat detection improvement with AI",
+        "value": "35",
+        "unit": "%",
+        "source": "BCG Cyber 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Financial crime compliance cost increase",
+        "value": "18",
+        "unit": "%_YoY",
+        "source": "BCG Financial Crime 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Board risk oversight effectiveness score",
+        "value": "3.2",
+        "unit": "out_of_5",
+        "source": "BCG Board Governance 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Zero-day vulnerability response time avg",
+        "value": "12",
+        "unit": "hours",
+        "source": "BCG Cyber 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Ransomware attack cost avg enterprise",
+        "value": "4.5",
+        "unit": "million_USD",
+        "source": "BCG Cyber 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Business email compromise losses annual",
+        "value": "2.7",
+        "unit": "billion_USD",
+        "source": "BCG Financial Crime 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Multi-factor authentication enterprise adoption",
+        "value": "78",
+        "unit": "%",
+        "source": "BCG Cyber 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Security awareness training effectiveness",
+        "value": "60",
+        "unit": "%_phishing_reduction",
+        "source": "BCG Cyber 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Disaster recovery plan testing frequency",
+        "value": "annual",
+        "unit": "median",
+        "source": "BCG Resilience 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Business interruption insurance claim increase",
+        "value": "32",
+        "unit": "%_YoY",
+        "source": "BCG Insurance 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Political risk insurance market growth",
+        "value": "15",
+        "unit": "%",
+        "source": "BCG Insurance 2024",
+        "year": 2024
+      },
+      {
+        "metric": "ESG risk integration in enterprise risk mgmt",
+        "value": "35",
+        "unit": "%",
+        "source": "BCG Risk 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI model risk management framework adoption",
+        "value": "12",
+        "unit": "%",
+        "source": "BCG AI Risk 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Data privacy breach notification compliance",
+        "value": "72",
+        "unit": "%_within_72hrs",
+        "source": "BCG Privacy 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Sanctions compliance cost increase",
+        "value": "28",
+        "unit": "%",
+        "source": "BCG Compliance 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Reputational risk top concern for CEOs",
+        "value": "45",
+        "unit": "%",
+        "source": "BCG CEO Outlook 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Crisis communication preparedness score",
+        "value": "3.0",
+        "unit": "out_of_5",
+        "source": "BCG Crisis Management 2024",
+        "year": 2024
+      }
     ]
   }
 }

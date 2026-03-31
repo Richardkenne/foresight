@@ -2,233 +2,2298 @@
   "_meta": {
     "category": "bank-data",
     "source": "UBS",
-    "total_datapoints": 208,
-    "created": "2026-03-30"
+    "total_datapoints": 322,
+    "created": "2026-03-30",
+    "url": "https://www.ubs.com/global/en/wealth-management/insights.html"
   },
   "sections": {
     "global_wealth_report": [
-      {"metric": "Total global household wealth", "value": "454.4", "unit": "trillion_usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Global wealth growth YoY", "value": "4.2", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Global wealth per adult", "value": "84168", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — Switzerland", "value": "709612", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — United States", "value": "564860", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — Australia", "value": "496820", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — Denmark", "value": "407220", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — Singapore", "value": "382960", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — Hong Kong", "value": "375750", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — Netherlands", "value": "363090", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — Canada", "value": "344700", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — United Kingdom", "value": "302775", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — Japan", "value": "270958", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — Germany", "value": "265820", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — Italy", "value": "231450", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — China", "value": "75730", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — India", "value": "16510", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — Indonesia", "value": "17520", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Millionaires — United States", "value": "22710000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Millionaires — China", "value": "6230000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Millionaires — United Kingdom", "value": "2860000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Millionaires — France", "value": "2820000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Millionaires — Germany", "value": "2680000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Millionaires — Japan", "value": "2960000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Millionaires — Australia", "value": "2180000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Millionaires — Canada", "value": "1680000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Millionaires — Italy", "value": "1460000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Millionaires — Switzerland", "value": "1520000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Millionaires — India", "value": "850000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Total global millionaires", "value": "59400000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Projected global millionaires by 2028", "value": "86000000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Top 1% share of global wealth", "value": "45.8", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Bottom 50% share of global wealth", "value": "1.2", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Median wealth per adult — global", "value": "8654", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Adults with wealth below $10,000", "value": "2830000000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Adults with wealth $10K-$100K", "value": "1860000000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Adults with wealth $100K-$1M", "value": "625000000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Global wealth Gini coefficient", "value": "0.892", "unit": "index", "source": "UBS Global Wealth Report 2024", "year": 2024}
+      {
+        "metric": "Total global household wealth",
+        "value": "454.4",
+        "unit": "trillion_usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global wealth growth YoY",
+        "value": "4.2",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global wealth per adult",
+        "value": "84168",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Switzerland",
+        "value": "709612",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 United States",
+        "value": "564860",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Australia",
+        "value": "496820",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Denmark",
+        "value": "407220",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Singapore",
+        "value": "382960",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Hong Kong",
+        "value": "375750",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Netherlands",
+        "value": "363090",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Canada",
+        "value": "344700",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 United Kingdom",
+        "value": "302775",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Japan",
+        "value": "270958",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Germany",
+        "value": "265820",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Italy",
+        "value": "231450",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 China",
+        "value": "75730",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 India",
+        "value": "16510",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Indonesia",
+        "value": "17520",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Millionaires \u2014 United States",
+        "value": "22710000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Millionaires \u2014 China",
+        "value": "6230000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Millionaires \u2014 United Kingdom",
+        "value": "2860000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Millionaires \u2014 France",
+        "value": "2820000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Millionaires \u2014 Germany",
+        "value": "2680000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Millionaires \u2014 Japan",
+        "value": "2960000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Millionaires \u2014 Australia",
+        "value": "2180000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Millionaires \u2014 Canada",
+        "value": "1680000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Millionaires \u2014 Italy",
+        "value": "1460000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Millionaires \u2014 Switzerland",
+        "value": "1520000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Millionaires \u2014 India",
+        "value": "850000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Total global millionaires",
+        "value": "59400000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Projected global millionaires by 2028",
+        "value": "86000000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Top 1% share of global wealth",
+        "value": "45.8",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Bottom 50% share of global wealth",
+        "value": "1.2",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Median wealth per adult \u2014 global",
+        "value": "8654",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Adults with wealth below $10,000",
+        "value": "2830000000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Adults with wealth $10K-$100K",
+        "value": "1860000000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Adults with wealth $100K-$1M",
+        "value": "625000000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global wealth Gini coefficient",
+        "value": "0.892",
+        "unit": "index",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      }
     ],
     "billionaire_census": [
-      {"metric": "Total global billionaires", "value": "2682", "unit": "people", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Total billionaire wealth", "value": "14.0", "unit": "trillion_usd", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Self-made billionaires share", "value": "72", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Inherited billionaires share", "value": "28", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaires — United States", "value": "835", "unit": "people", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaires — China", "value": "473", "unit": "people", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaires — India", "value": "185", "unit": "people", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaires — Germany", "value": "132", "unit": "people", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaires — Russia", "value": "110", "unit": "people", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaires — United Kingdom", "value": "88", "unit": "people", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaires — Switzerland", "value": "65", "unit": "people", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaires — Brazil", "value": "74", "unit": "people", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaire wealth source — Technology", "value": "22.8", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaire wealth source — Finance", "value": "14.3", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaire wealth source — Consumer/Retail", "value": "13.1", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaire wealth source — Real Estate", "value": "9.8", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaire wealth source — Industrial", "value": "9.5", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaire wealth source — Healthcare", "value": "8.7", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaire wealth source — Energy", "value": "6.2", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaire wealth source — Food & Beverage", "value": "5.4", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaire wealth source — Media/Entertainment", "value": "4.8", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaire wealth source — Other", "value": "5.4", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaires aged under 50", "value": "12.8", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaires aged 50-70", "value": "47.6", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaires aged 70+", "value": "39.6", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Female billionaires share", "value": "12.4", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Average billionaire net worth", "value": "5.2", "unit": "billion_usd", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaire wealth growth rate 2023-2024", "value": "17.0", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaires investing in AI", "value": "58", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaires with philanthropy commitments", "value": "63", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Wealth transfer to next generation (next 20 years)", "value": "5.2", "unit": "trillion_usd", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024}
+      {
+        "metric": "Total global billionaires",
+        "value": "2682",
+        "unit": "people",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Total billionaire wealth",
+        "value": "14.0",
+        "unit": "trillion_usd",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Self-made billionaires share",
+        "value": "72",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Inherited billionaires share",
+        "value": "28",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaires \u2014 United States",
+        "value": "835",
+        "unit": "people",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaires \u2014 China",
+        "value": "473",
+        "unit": "people",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaires \u2014 India",
+        "value": "185",
+        "unit": "people",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaires \u2014 Germany",
+        "value": "132",
+        "unit": "people",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaires \u2014 Russia",
+        "value": "110",
+        "unit": "people",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaires \u2014 United Kingdom",
+        "value": "88",
+        "unit": "people",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaires \u2014 Switzerland",
+        "value": "65",
+        "unit": "people",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaires \u2014 Brazil",
+        "value": "74",
+        "unit": "people",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaire wealth source \u2014 Technology",
+        "value": "22.8",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaire wealth source \u2014 Finance",
+        "value": "14.3",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaire wealth source \u2014 Consumer/Retail",
+        "value": "13.1",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaire wealth source \u2014 Real Estate",
+        "value": "9.8",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaire wealth source \u2014 Industrial",
+        "value": "9.5",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaire wealth source \u2014 Healthcare",
+        "value": "8.7",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaire wealth source \u2014 Energy",
+        "value": "6.2",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaire wealth source \u2014 Food & Beverage",
+        "value": "5.4",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaire wealth source \u2014 Media/Entertainment",
+        "value": "4.8",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaire wealth source \u2014 Other",
+        "value": "5.4",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaires aged under 50",
+        "value": "12.8",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaires aged 50-70",
+        "value": "47.6",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaires aged 70+",
+        "value": "39.6",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Female billionaires share",
+        "value": "12.4",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average billionaire net worth",
+        "value": "5.2",
+        "unit": "billion_usd",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaire wealth growth rate 2023-2024",
+        "value": "17.0",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaires investing in AI",
+        "value": "58",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaires with philanthropy commitments",
+        "value": "63",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth transfer to next generation (next 20 years)",
+        "value": "5.2",
+        "unit": "trillion_usd",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      }
     ],
     "entrepreneur_data": [
-      {"metric": "First-generation billionaires (self-made)", "value": "1931", "unit": "people", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Average years from founding to first million", "value": "7.4", "unit": "years", "source": "UBS Global Entrepreneurship Report 2024", "year": 2024},
-      {"metric": "Entrepreneurs who failed before succeeding", "value": "62", "unit": "percent", "source": "UBS Global Entrepreneurship Report 2024", "year": 2024},
-      {"metric": "Average number of ventures before breakthrough", "value": "2.8", "unit": "ventures", "source": "UBS Global Entrepreneurship Report 2024", "year": 2024},
-      {"metric": "Median age at first company founding", "value": "31", "unit": "years", "source": "UBS Global Entrepreneurship Report 2024", "year": 2024},
-      {"metric": "Tech founders average age at first billion", "value": "42", "unit": "years", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Finance founders average age at first billion", "value": "51", "unit": "years", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaire entrepreneurs with STEM background", "value": "38", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaire entrepreneurs with MBA", "value": "22", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaire entrepreneurs without college degree", "value": "14", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Path to wealth — Technology/Software", "value": "28", "unit": "percent_of_self_made", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Path to wealth — Finance/Investments", "value": "18", "unit": "percent_of_self_made", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Path to wealth — Consumer/Retail", "value": "15", "unit": "percent_of_self_made", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Path to wealth — Manufacturing", "value": "12", "unit": "percent_of_self_made", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Path to wealth — Real Estate", "value": "10", "unit": "percent_of_self_made", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Path to wealth — Healthcare/Pharma", "value": "9", "unit": "percent_of_self_made", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Path to wealth — Energy/Resources", "value": "8", "unit": "percent_of_self_made", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Risk tolerance — high risk appetite", "value": "84", "unit": "percent_of_UHNW", "source": "UBS Investor Sentiment 2024", "year": 2024},
-      {"metric": "Serial entrepreneurs among billionaires", "value": "45", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Cross-border entrepreneurs (operate in 3+ countries)", "value": "67", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024}
+      {
+        "metric": "First-generation billionaires (self-made)",
+        "value": "1931",
+        "unit": "people",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average years from founding to first million",
+        "value": "7.4",
+        "unit": "years",
+        "source": "UBS Global Entrepreneurship Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Entrepreneurs who failed before succeeding",
+        "value": "62",
+        "unit": "percent",
+        "source": "UBS Global Entrepreneurship Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average number of ventures before breakthrough",
+        "value": "2.8",
+        "unit": "ventures",
+        "source": "UBS Global Entrepreneurship Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Median age at first company founding",
+        "value": "31",
+        "unit": "years",
+        "source": "UBS Global Entrepreneurship Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Tech founders average age at first billion",
+        "value": "42",
+        "unit": "years",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Finance founders average age at first billion",
+        "value": "51",
+        "unit": "years",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaire entrepreneurs with STEM background",
+        "value": "38",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaire entrepreneurs with MBA",
+        "value": "22",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaire entrepreneurs without college degree",
+        "value": "14",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Path to wealth \u2014 Technology/Software",
+        "value": "28",
+        "unit": "percent_of_self_made",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Path to wealth \u2014 Finance/Investments",
+        "value": "18",
+        "unit": "percent_of_self_made",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Path to wealth \u2014 Consumer/Retail",
+        "value": "15",
+        "unit": "percent_of_self_made",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Path to wealth \u2014 Manufacturing",
+        "value": "12",
+        "unit": "percent_of_self_made",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Path to wealth \u2014 Real Estate",
+        "value": "10",
+        "unit": "percent_of_self_made",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Path to wealth \u2014 Healthcare/Pharma",
+        "value": "9",
+        "unit": "percent_of_self_made",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Path to wealth \u2014 Energy/Resources",
+        "value": "8",
+        "unit": "percent_of_self_made",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Risk tolerance \u2014 high risk appetite",
+        "value": "84",
+        "unit": "percent_of_UHNW",
+        "source": "UBS Investor Sentiment 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Serial entrepreneurs among billionaires",
+        "value": "45",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cross-border entrepreneurs (operate in 3+ countries)",
+        "value": "67",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      }
     ],
     "investor_sentiment": [
-      {"metric": "UBS Global Risk Appetite Index", "value": "0.42", "unit": "index_-1_to_1", "source": "UBS Investor Sentiment Survey 2024", "year": 2024},
-      {"metric": "UHNW allocation — Equities", "value": "28", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "UHNW allocation — Fixed Income", "value": "18", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "UHNW allocation — Real Estate", "value": "17", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "UHNW allocation — Private Equity", "value": "12", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "UHNW allocation — Cash/Equivalents", "value": "10", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "UHNW allocation — Hedge Funds", "value": "5", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "UHNW allocation — Commodities", "value": "4", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "UHNW allocation — Crypto/Digital Assets", "value": "3", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "UHNW allocation — Art/Collectibles", "value": "3", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNW ($1M-$5M) equities allocation", "value": "32", "unit": "percent", "source": "UBS Investor Sentiment Survey 2024", "year": 2024},
-      {"metric": "HNW ($1M-$5M) cash allocation", "value": "18", "unit": "percent", "source": "UBS Investor Sentiment Survey 2024", "year": 2024},
-      {"metric": "Mass affluent ($250K-$1M) equities allocation", "value": "35", "unit": "percent", "source": "UBS Investor Sentiment Survey 2024", "year": 2024},
-      {"metric": "Mass affluent ($250K-$1M) cash allocation", "value": "22", "unit": "percent", "source": "UBS Investor Sentiment Survey 2024", "year": 2024},
-      {"metric": "Interest in AI investments", "value": "68", "unit": "percent_of_UHNW", "source": "UBS Investor Sentiment Survey 2024", "year": 2024},
-      {"metric": "Interest in sustainability investments", "value": "54", "unit": "percent_of_UHNW", "source": "UBS Investor Sentiment Survey 2024", "year": 2024},
-      {"metric": "Interest in private credit", "value": "41", "unit": "percent_of_UHNW", "source": "UBS Investor Sentiment Survey 2024", "year": 2024},
-      {"metric": "Investors expecting recession within 12 months", "value": "24", "unit": "percent", "source": "UBS Investor Sentiment Survey 2024", "year": 2024},
-      {"metric": "Investors increasing US equity exposure", "value": "45", "unit": "percent", "source": "UBS Investor Sentiment Survey 2024", "year": 2024},
-      {"metric": "Investors increasing emerging market exposure", "value": "32", "unit": "percent", "source": "UBS Investor Sentiment Survey 2024", "year": 2024}
+      {
+        "metric": "UBS Global Risk Appetite Index",
+        "value": "0.42",
+        "unit": "index_-1_to_1",
+        "source": "UBS Investor Sentiment Survey 2024",
+        "year": 2024
+      },
+      {
+        "metric": "UHNW allocation \u2014 Equities",
+        "value": "28",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "UHNW allocation \u2014 Fixed Income",
+        "value": "18",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "UHNW allocation \u2014 Real Estate",
+        "value": "17",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "UHNW allocation \u2014 Private Equity",
+        "value": "12",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "UHNW allocation \u2014 Cash/Equivalents",
+        "value": "10",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "UHNW allocation \u2014 Hedge Funds",
+        "value": "5",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "UHNW allocation \u2014 Commodities",
+        "value": "4",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "UHNW allocation \u2014 Crypto/Digital Assets",
+        "value": "3",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "UHNW allocation \u2014 Art/Collectibles",
+        "value": "3",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNW ($1M-$5M) equities allocation",
+        "value": "32",
+        "unit": "percent",
+        "source": "UBS Investor Sentiment Survey 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNW ($1M-$5M) cash allocation",
+        "value": "18",
+        "unit": "percent",
+        "source": "UBS Investor Sentiment Survey 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Mass affluent ($250K-$1M) equities allocation",
+        "value": "35",
+        "unit": "percent",
+        "source": "UBS Investor Sentiment Survey 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Mass affluent ($250K-$1M) cash allocation",
+        "value": "22",
+        "unit": "percent",
+        "source": "UBS Investor Sentiment Survey 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Interest in AI investments",
+        "value": "68",
+        "unit": "percent_of_UHNW",
+        "source": "UBS Investor Sentiment Survey 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Interest in sustainability investments",
+        "value": "54",
+        "unit": "percent_of_UHNW",
+        "source": "UBS Investor Sentiment Survey 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Interest in private credit",
+        "value": "41",
+        "unit": "percent_of_UHNW",
+        "source": "UBS Investor Sentiment Survey 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Investors expecting recession within 12 months",
+        "value": "24",
+        "unit": "percent",
+        "source": "UBS Investor Sentiment Survey 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Investors increasing US equity exposure",
+        "value": "45",
+        "unit": "percent",
+        "source": "UBS Investor Sentiment Survey 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Investors increasing emerging market exposure",
+        "value": "32",
+        "unit": "percent",
+        "source": "UBS Investor Sentiment Survey 2024",
+        "year": 2024
+      }
     ],
     "real_estate_luxury": [
-      {"metric": "Luxury property price — Monaco (per sqm)", "value": "53000", "unit": "usd_per_sqm", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Luxury property price — Hong Kong (per sqm)", "value": "38500", "unit": "usd_per_sqm", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Luxury property price — New York (per sqm)", "value": "28700", "unit": "usd_per_sqm", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Luxury property price — London (per sqm)", "value": "26300", "unit": "usd_per_sqm", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Luxury property price — Singapore (per sqm)", "value": "24800", "unit": "usd_per_sqm", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Luxury property price — Paris (per sqm)", "value": "22100", "unit": "usd_per_sqm", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Luxury property price — Tokyo (per sqm)", "value": "19600", "unit": "usd_per_sqm", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Luxury property price — Sydney (per sqm)", "value": "18200", "unit": "usd_per_sqm", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Luxury property price — Zurich (per sqm)", "value": "21500", "unit": "usd_per_sqm", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Luxury property price — Dubai (per sqm)", "value": "12800", "unit": "usd_per_sqm", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Luxury property price — Miami (per sqm)", "value": "15400", "unit": "usd_per_sqm", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Luxury property price — Los Angeles (per sqm)", "value": "16900", "unit": "usd_per_sqm", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Bubble risk index — Zurich", "value": "1.71", "unit": "index", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Bubble risk index — Tokyo", "value": "1.67", "unit": "index", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Bubble risk index — Miami", "value": "1.79", "unit": "index", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Bubble risk index — Munich", "value": "1.18", "unit": "index", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Luxury rental yield — London", "value": "2.8", "unit": "percent", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Luxury rental yield — New York", "value": "3.1", "unit": "percent", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Luxury rental yield — Singapore", "value": "2.5", "unit": "percent", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Luxury rental yield — Dubai", "value": "5.8", "unit": "percent", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Luxury rental yield — Sydney", "value": "2.9", "unit": "percent", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Luxury rental yield — Paris", "value": "2.4", "unit": "percent", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Foreign buyer share — London luxury", "value": "38", "unit": "percent", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Foreign buyer share — Dubai luxury", "value": "65", "unit": "percent", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Foreign buyer share — Singapore luxury", "value": "22", "unit": "percent", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Foreign buyer share — New York luxury", "value": "28", "unit": "percent", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Foreign buyer share — Sydney luxury", "value": "15", "unit": "percent", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Foreign buyer share — Paris luxury", "value": "32", "unit": "percent", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "Global luxury residential volume 2024", "value": "185", "unit": "billion_usd", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "YoY luxury price change — Dubai", "value": "18.5", "unit": "percent", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "YoY luxury price change — Tokyo", "value": "12.3", "unit": "percent", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024},
-      {"metric": "YoY luxury price change — Mumbai", "value": "9.8", "unit": "percent", "source": "UBS Global Real Estate Bubble Index 2024", "year": 2024}
+      {
+        "metric": "Luxury property price \u2014 Monaco (per sqm)",
+        "value": "53000",
+        "unit": "usd_per_sqm",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury property price \u2014 Hong Kong (per sqm)",
+        "value": "38500",
+        "unit": "usd_per_sqm",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury property price \u2014 New York (per sqm)",
+        "value": "28700",
+        "unit": "usd_per_sqm",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury property price \u2014 London (per sqm)",
+        "value": "26300",
+        "unit": "usd_per_sqm",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury property price \u2014 Singapore (per sqm)",
+        "value": "24800",
+        "unit": "usd_per_sqm",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury property price \u2014 Paris (per sqm)",
+        "value": "22100",
+        "unit": "usd_per_sqm",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury property price \u2014 Tokyo (per sqm)",
+        "value": "19600",
+        "unit": "usd_per_sqm",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury property price \u2014 Sydney (per sqm)",
+        "value": "18200",
+        "unit": "usd_per_sqm",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury property price \u2014 Zurich (per sqm)",
+        "value": "21500",
+        "unit": "usd_per_sqm",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury property price \u2014 Dubai (per sqm)",
+        "value": "12800",
+        "unit": "usd_per_sqm",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury property price \u2014 Miami (per sqm)",
+        "value": "15400",
+        "unit": "usd_per_sqm",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury property price \u2014 Los Angeles (per sqm)",
+        "value": "16900",
+        "unit": "usd_per_sqm",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Bubble risk index \u2014 Zurich",
+        "value": "1.71",
+        "unit": "index",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Bubble risk index \u2014 Tokyo",
+        "value": "1.67",
+        "unit": "index",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Bubble risk index \u2014 Miami",
+        "value": "1.79",
+        "unit": "index",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Bubble risk index \u2014 Munich",
+        "value": "1.18",
+        "unit": "index",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury rental yield \u2014 London",
+        "value": "2.8",
+        "unit": "percent",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury rental yield \u2014 New York",
+        "value": "3.1",
+        "unit": "percent",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury rental yield \u2014 Singapore",
+        "value": "2.5",
+        "unit": "percent",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury rental yield \u2014 Dubai",
+        "value": "5.8",
+        "unit": "percent",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury rental yield \u2014 Sydney",
+        "value": "2.9",
+        "unit": "percent",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury rental yield \u2014 Paris",
+        "value": "2.4",
+        "unit": "percent",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Foreign buyer share \u2014 London luxury",
+        "value": "38",
+        "unit": "percent",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Foreign buyer share \u2014 Dubai luxury",
+        "value": "65",
+        "unit": "percent",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Foreign buyer share \u2014 Singapore luxury",
+        "value": "22",
+        "unit": "percent",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Foreign buyer share \u2014 New York luxury",
+        "value": "28",
+        "unit": "percent",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Foreign buyer share \u2014 Sydney luxury",
+        "value": "15",
+        "unit": "percent",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Foreign buyer share \u2014 Paris luxury",
+        "value": "32",
+        "unit": "percent",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global luxury residential volume 2024",
+        "value": "185",
+        "unit": "billion_usd",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "YoY luxury price change \u2014 Dubai",
+        "value": "18.5",
+        "unit": "percent",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "YoY luxury price change \u2014 Tokyo",
+        "value": "12.3",
+        "unit": "percent",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "YoY luxury price change \u2014 Mumbai",
+        "value": "9.8",
+        "unit": "percent",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      }
     ],
     "family_office": [
-      {"metric": "Total single-family offices globally", "value": "8030", "unit": "offices", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Total family office AUM globally", "value": "3.1", "unit": "trillion_usd", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Average family office AUM", "value": "600", "unit": "million_usd", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Median family office AUM", "value": "320", "unit": "million_usd", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Family office allocation — Equities", "value": "28", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Family office allocation — Fixed Income", "value": "18", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Family office allocation — Private Equity", "value": "22", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Family office allocation — Real Estate", "value": "12", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Family office allocation — Hedge Funds", "value": "6", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Family office allocation — Cash", "value": "8", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Family office allocation — Infrastructure", "value": "3", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Family office allocation — Crypto/Digital", "value": "3", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Family offices with direct investments", "value": "78", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Average direct deal size", "value": "12.5", "unit": "million_usd", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Family offices co-investing with peers", "value": "43", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Average family office staff size", "value": "15", "unit": "people", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Average total operating cost", "value": "3.2", "unit": "million_usd_per_year", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Operating cost as % of AUM", "value": "0.53", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Family offices using AI/ML tools", "value": "35", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Average portfolio return 2023", "value": "12.3", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Family offices with ESG policy", "value": "48", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Family offices increasing PE allocation", "value": "52", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Family offices in North America", "value": "38", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Family offices in Europe", "value": "30", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Family offices in Asia-Pacific", "value": "25", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Family offices in Middle East/Africa", "value": "7", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Next-gen involvement in investment decisions", "value": "41", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024},
-      {"metric": "Succession plan in place", "value": "52", "unit": "percent", "source": "UBS Global Family Office Report 2024", "year": 2024}
+      {
+        "metric": "Total single-family offices globally",
+        "value": "8030",
+        "unit": "offices",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Total family office AUM globally",
+        "value": "3.1",
+        "unit": "trillion_usd",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average family office AUM",
+        "value": "600",
+        "unit": "million_usd",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Median family office AUM",
+        "value": "320",
+        "unit": "million_usd",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office allocation \u2014 Equities",
+        "value": "28",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office allocation \u2014 Fixed Income",
+        "value": "18",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office allocation \u2014 Private Equity",
+        "value": "22",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office allocation \u2014 Real Estate",
+        "value": "12",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office allocation \u2014 Hedge Funds",
+        "value": "6",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office allocation \u2014 Cash",
+        "value": "8",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office allocation \u2014 Infrastructure",
+        "value": "3",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office allocation \u2014 Crypto/Digital",
+        "value": "3",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family offices with direct investments",
+        "value": "78",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average direct deal size",
+        "value": "12.5",
+        "unit": "million_usd",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family offices co-investing with peers",
+        "value": "43",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average family office staff size",
+        "value": "15",
+        "unit": "people",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average total operating cost",
+        "value": "3.2",
+        "unit": "million_usd_per_year",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Operating cost as % of AUM",
+        "value": "0.53",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family offices using AI/ML tools",
+        "value": "35",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average portfolio return 2023",
+        "value": "12.3",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family offices with ESG policy",
+        "value": "48",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family offices increasing PE allocation",
+        "value": "52",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family offices in North America",
+        "value": "38",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family offices in Europe",
+        "value": "30",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family offices in Asia-Pacific",
+        "value": "25",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family offices in Middle East/Africa",
+        "value": "7",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Next-gen involvement in investment decisions",
+        "value": "41",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Succession plan in place",
+        "value": "52",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      }
     ],
     "wealth_inequality": [
-      {"metric": "Wealth share of top 10% — United States", "value": "71.2", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth share of top 10% — China", "value": "67.8", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth share of top 10% — Russia", "value": "74.5", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth share of top 10% — India", "value": "72.6", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth share of top 10% — Germany", "value": "64.8", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth share of top 10% — Japan", "value": "58.2", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth share of top 10% — Indonesia", "value": "73.1", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth share of top 10% — Brazil", "value": "75.6", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth share of top 10% — UK", "value": "57.4", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth share of top 10% — South Africa", "value": "85.7", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — South Korea", "value": "237120", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — UAE", "value": "146830", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — Brazil", "value": "22890", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — Mexico", "value": "38240", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth per adult — Nigeria", "value": "4680", "unit": "usd", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Millionaires — South Korea", "value": "1320000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Millionaires — UAE", "value": "116000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Millionaires — Indonesia", "value": "172000", "unit": "people", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Global financial assets share of total wealth", "value": "55", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Global non-financial assets share of total wealth", "value": "45", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Global household debt as % of gross wealth", "value": "12.8", "unit": "percent", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth growth forecast 2024-2028 — India", "value": "85", "unit": "percent_total_growth", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth growth forecast 2024-2028 — Indonesia", "value": "62", "unit": "percent_total_growth", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth growth forecast 2024-2028 — Vietnam", "value": "78", "unit": "percent_total_growth", "source": "UBS Global Wealth Report 2024", "year": 2024},
-      {"metric": "Wealth growth forecast 2024-2028 — US", "value": "28", "unit": "percent_total_growth", "source": "UBS Global Wealth Report 2024", "year": 2024}
+      {
+        "metric": "Wealth share of top 10% \u2014 United States",
+        "value": "71.2",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth share of top 10% \u2014 China",
+        "value": "67.8",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth share of top 10% \u2014 Russia",
+        "value": "74.5",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth share of top 10% \u2014 India",
+        "value": "72.6",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth share of top 10% \u2014 Germany",
+        "value": "64.8",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth share of top 10% \u2014 Japan",
+        "value": "58.2",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth share of top 10% \u2014 Indonesia",
+        "value": "73.1",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth share of top 10% \u2014 Brazil",
+        "value": "75.6",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth share of top 10% \u2014 UK",
+        "value": "57.4",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth share of top 10% \u2014 South Africa",
+        "value": "85.7",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 South Korea",
+        "value": "237120",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 UAE",
+        "value": "146830",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Brazil",
+        "value": "22890",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Mexico",
+        "value": "38240",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Nigeria",
+        "value": "4680",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Millionaires \u2014 South Korea",
+        "value": "1320000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Millionaires \u2014 UAE",
+        "value": "116000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Millionaires \u2014 Indonesia",
+        "value": "172000",
+        "unit": "people",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global financial assets share of total wealth",
+        "value": "55",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global non-financial assets share of total wealth",
+        "value": "45",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global household debt as % of gross wealth",
+        "value": "12.8",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth growth forecast 2024-2028 \u2014 India",
+        "value": "85",
+        "unit": "percent_total_growth",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth growth forecast 2024-2028 \u2014 Indonesia",
+        "value": "62",
+        "unit": "percent_total_growth",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth growth forecast 2024-2028 \u2014 Vietnam",
+        "value": "78",
+        "unit": "percent_total_growth",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth growth forecast 2024-2028 \u2014 US",
+        "value": "28",
+        "unit": "percent_total_growth",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      }
     ],
     "philanthropy_giving": [
-      {"metric": "Billionaires with active foundation", "value": "57", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Average philanthropic giving as % of wealth", "value": "3.2", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Top giving sector — Education", "value": "28", "unit": "percent_of_giving", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Top giving sector — Health", "value": "24", "unit": "percent_of_giving", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Top giving sector — Environment", "value": "16", "unit": "percent_of_giving", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Top giving sector — Poverty/Social", "value": "14", "unit": "percent_of_giving", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Top giving sector — Arts/Culture", "value": "8", "unit": "percent_of_giving", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Top giving sector — Science/Research", "value": "10", "unit": "percent_of_giving", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Impact investing by billionaires", "value": "42", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Global philanthropic giving 2024", "value": "575", "unit": "billion_usd", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "US share of global philanthropy", "value": "55", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Asia philanthropy growth rate", "value": "18", "unit": "percent_yoy", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Billionaires using donor-advised funds", "value": "35", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024},
-      {"metric": "Next-gen billionaires focused on climate giving", "value": "48", "unit": "percent", "source": "UBS Billionaire Ambitions Report 2024", "year": 2024}
+      {
+        "metric": "Billionaires with active foundation",
+        "value": "57",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average philanthropic giving as % of wealth",
+        "value": "3.2",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Top giving sector \u2014 Education",
+        "value": "28",
+        "unit": "percent_of_giving",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Top giving sector \u2014 Health",
+        "value": "24",
+        "unit": "percent_of_giving",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Top giving sector \u2014 Environment",
+        "value": "16",
+        "unit": "percent_of_giving",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Top giving sector \u2014 Poverty/Social",
+        "value": "14",
+        "unit": "percent_of_giving",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Top giving sector \u2014 Arts/Culture",
+        "value": "8",
+        "unit": "percent_of_giving",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Top giving sector \u2014 Science/Research",
+        "value": "10",
+        "unit": "percent_of_giving",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Impact investing by billionaires",
+        "value": "42",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global philanthropic giving 2024",
+        "value": "575",
+        "unit": "billion_usd",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "US share of global philanthropy",
+        "value": "55",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Asia philanthropy growth rate",
+        "value": "18",
+        "unit": "percent_yoy",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaires using donor-advised funds",
+        "value": "35",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Next-gen billionaires focused on climate giving",
+        "value": "48",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      }
+    ],
+    "investment_outlook": [
+      {
+        "metric": "Global equity expected return 10yr annualized",
+        "value": "6-8",
+        "unit": "percent",
+        "source": "UBS Global Investment Returns Yearbook 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global bond expected return 10yr annualized",
+        "value": "3-5",
+        "unit": "percent",
+        "source": "UBS Global Investment Returns Yearbook 2024",
+        "year": 2024
+      },
+      {
+        "metric": "US equity 10yr expected return annualized",
+        "value": "5-7",
+        "unit": "percent",
+        "source": "UBS CIO Year Ahead 2025",
+        "year": 2024
+      },
+      {
+        "metric": "Emerging market equity premium over developed",
+        "value": "2-3",
+        "unit": "percent",
+        "source": "UBS CIO Emerging Markets Report",
+        "year": 2024
+      },
+      {
+        "metric": "Private equity expected premium over public equity",
+        "value": "3-5",
+        "unit": "percent",
+        "source": "UBS CIO Alternative Investments",
+        "year": 2024
+      },
+      {
+        "metric": "Real estate expected annual return",
+        "value": "5-7",
+        "unit": "percent",
+        "source": "UBS Real Estate Outlook 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Infrastructure investments expected annual return",
+        "value": "6-9",
+        "unit": "percent",
+        "source": "UBS CIO Infrastructure Report",
+        "year": 2024
+      },
+      {
+        "metric": "Commodities expected annual return",
+        "value": "3-5",
+        "unit": "percent",
+        "source": "UBS CIO Commodities Outlook",
+        "year": 2024
+      },
+      {
+        "metric": "Hedge fund expected annual return",
+        "value": "6-8",
+        "unit": "percent",
+        "source": "UBS CIO Alternative Investments",
+        "year": 2024
+      },
+      {
+        "metric": "Cash/money market expected return 2025",
+        "value": "4-5",
+        "unit": "percent",
+        "source": "UBS CIO Year Ahead 2025",
+        "year": 2024
+      },
+      {
+        "metric": "60/40 portfolio expected 10yr return",
+        "value": "5-6",
+        "unit": "percent",
+        "source": "UBS CIO Asset Allocation",
+        "year": 2024
+      },
+      {
+        "metric": "AI sector expected revenue growth CAGR 5yr",
+        "value": "20-25",
+        "unit": "percent",
+        "source": "UBS Technology Research",
+        "year": 2024
+      },
+      {
+        "metric": "Clean energy sector CAGR 5yr",
+        "value": "15-20",
+        "unit": "percent",
+        "source": "UBS Sustainability Research",
+        "year": 2024
+      },
+      {
+        "metric": "Healthcare sector CAGR 5yr",
+        "value": "8-12",
+        "unit": "percent",
+        "source": "UBS Healthcare Research",
+        "year": 2024
+      },
+      {
+        "metric": "Cybersecurity market CAGR 5yr",
+        "value": "12-15",
+        "unit": "percent",
+        "source": "UBS Technology Research",
+        "year": 2024
+      }
+    ],
+    "wealth_inequality_global": [
+      {
+        "metric": "Share of global wealth held by top 1%",
+        "value": "45.8",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Share of global wealth held by bottom 50%",
+        "value": "1.1",
+        "unit": "percent",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Millionaires globally",
+        "value": "59.4",
+        "unit": "million",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "UHNW individuals globally ($50M+)",
+        "value": "239200",
+        "unit": "individuals",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaires globally",
+        "value": "2682",
+        "unit": "individuals",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Billionaire total wealth",
+        "value": "14",
+        "unit": "trillion_usd",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Self-made billionaires as % of total",
+        "value": "72",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Women billionaires as % of total",
+        "value": "12.7",
+        "unit": "percent",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average billionaire age",
+        "value": "65",
+        "unit": "years",
+        "source": "UBS Billionaire Ambitions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 China",
+        "value": "75731",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 India",
+        "value": "16500",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Japan",
+        "value": "268330",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Germany",
+        "value": "256180",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 UK",
+        "value": "302610",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Singapore",
+        "value": "382960",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Indonesia",
+        "value": "17530",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Brazil",
+        "value": "21400",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 Nigeria",
+        "value": "4000",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Wealth per adult \u2014 South Korea",
+        "value": "183600",
+        "unit": "usd",
+        "source": "UBS Global Wealth Report 2024",
+        "year": 2024
+      }
+    ],
+    "family_office_insights": [
+      {
+        "metric": "Single family offices globally",
+        "value": "10000+",
+        "unit": "offices",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office average AUM",
+        "value": "1.1",
+        "unit": "billion_usd",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office average annual return 2024",
+        "value": "9.5",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office allocation \u2014 equities",
+        "value": "28",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office allocation \u2014 fixed income",
+        "value": "16",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office allocation \u2014 private equity",
+        "value": "22",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office allocation \u2014 real estate",
+        "value": "12",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office allocation \u2014 hedge funds",
+        "value": "7",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office allocation \u2014 cash/bonds",
+        "value": "10",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office allocation \u2014 alternatives",
+        "value": "5",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family office avg operating cost as % of AUM",
+        "value": "0.5-1",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Family wealth surviving to third generation",
+        "value": "10",
+        "unit": "percent",
+        "source": "UBS Family Wealth Report",
+        "year": 2024
+      },
+      {
+        "metric": "Family office sustainability/impact investing allocation",
+        "value": "15",
+        "unit": "percent",
+        "source": "UBS Global Family Office Report 2024",
+        "year": 2024
+      }
+    ],
+    "macro_economics": [
+      {
+        "metric": "Global GDP growth forecast 2025",
+        "value": "3.0",
+        "unit": "percent",
+        "source": "UBS CIO Year Ahead 2025",
+        "year": 2024
+      },
+      {
+        "metric": "US GDP growth forecast 2025",
+        "value": "2.2",
+        "unit": "percent",
+        "source": "UBS CIO Year Ahead 2025",
+        "year": 2024
+      },
+      {
+        "metric": "Eurozone GDP growth forecast 2025",
+        "value": "1.0",
+        "unit": "percent",
+        "source": "UBS CIO Year Ahead 2025",
+        "year": 2024
+      },
+      {
+        "metric": "China GDP growth forecast 2025",
+        "value": "4.5",
+        "unit": "percent",
+        "source": "UBS CIO Year Ahead 2025",
+        "year": 2024
+      },
+      {
+        "metric": "India GDP growth forecast 2025",
+        "value": "6.5",
+        "unit": "percent",
+        "source": "UBS CIO Year Ahead 2025",
+        "year": 2024
+      },
+      {
+        "metric": "Global inflation forecast 2025",
+        "value": "3.5",
+        "unit": "percent",
+        "source": "UBS CIO Year Ahead 2025",
+        "year": 2024
+      },
+      {
+        "metric": "US inflation forecast 2025",
+        "value": "2.5",
+        "unit": "percent",
+        "source": "UBS CIO Year Ahead 2025",
+        "year": 2024
+      },
+      {
+        "metric": "Federal Reserve terminal rate forecast",
+        "value": "3.5",
+        "unit": "percent",
+        "source": "UBS CIO Year Ahead 2025",
+        "year": 2024
+      },
+      {
+        "metric": "USD/EUR forecast end 2025",
+        "value": "1.12",
+        "unit": "ratio",
+        "source": "UBS FX Research",
+        "year": 2024
+      },
+      {
+        "metric": "Gold price forecast end 2025",
+        "value": "2800",
+        "unit": "usd/oz",
+        "source": "UBS CIO Year Ahead 2025",
+        "year": 2024
+      },
+      {
+        "metric": "Oil price forecast 2025 average Brent",
+        "value": "75-80",
+        "unit": "usd/barrel",
+        "source": "UBS CIO Commodities",
+        "year": 2024
+      },
+      {
+        "metric": "US 10yr Treasury yield forecast end 2025",
+        "value": "4.0",
+        "unit": "percent",
+        "source": "UBS CIO Fixed Income",
+        "year": 2024
+      },
+      {
+        "metric": "S&P 500 target end 2025",
+        "value": "6400",
+        "unit": "points",
+        "source": "UBS CIO Year Ahead 2025",
+        "year": 2024
+      },
+      {
+        "metric": "Global debt to GDP ratio",
+        "value": "336",
+        "unit": "percent",
+        "source": "UBS Research / IIF",
+        "year": 2024
+      },
+      {
+        "metric": "Geopolitical risk \u2014 US-China decoupling investment cost",
+        "value": "1-3",
+        "unit": "trillion_usd over decade",
+        "source": "UBS Research",
+        "year": 2024
+      }
+    ],
+    "real_estate_global": [
+      {
+        "metric": "Global real estate market value",
+        "value": "326",
+        "unit": "trillion_usd",
+        "source": "UBS Real Estate Research",
+        "year": 2024
+      },
+      {
+        "metric": "Global commercial real estate AUM",
+        "value": "12",
+        "unit": "trillion_usd",
+        "source": "UBS Real Estate Research",
+        "year": 2024
+      },
+      {
+        "metric": "UBS Global Real Estate Bubble Index \u2014 most overvalued city 2024",
+        "value": "Zurich",
+        "unit": "city",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "UBS Global Real Estate Bubble Index \u2014 US city closest to bubble",
+        "value": "Miami",
+        "unit": "city",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cities in bubble risk territory",
+        "value": "3",
+        "unit": "cities",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cities in overvalued territory",
+        "value": "12",
+        "unit": "cities",
+        "source": "UBS Global Real Estate Bubble Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average price-to-income ratio top global cities",
+        "value": "12",
+        "unit": "x annual income",
+        "source": "UBS Real Estate Research",
+        "year": 2024
+      },
+      {
+        "metric": "Average years to save for down payment top cities",
+        "value": "8-15",
+        "unit": "years",
+        "source": "UBS Real Estate Research",
+        "year": 2024
+      },
+      {
+        "metric": "Office to residential conversion projects US",
+        "value": "200+",
+        "unit": "active projects",
+        "source": "UBS Real Estate Research",
+        "year": 2024
+      },
+      {
+        "metric": "Data center REIT growth rate 5yr CAGR",
+        "value": "15-20",
+        "unit": "percent",
+        "source": "UBS Real Estate Research",
+        "year": 2024
+      }
+    ],
+    "philanthropy_social_impact": [
+      {
+        "metric": "Global philanthropy total annual giving",
+        "value": "580",
+        "unit": "billion_usd",
+        "source": "UBS Philanthropy Report",
+        "year": 2024
+      },
+      {
+        "metric": "US total charitable giving 2024",
+        "value": "557",
+        "unit": "billion_usd",
+        "source": "UBS / Giving USA Report",
+        "year": 2024
+      },
+      {
+        "metric": "UHNW individuals giving as % of wealth",
+        "value": "1.5",
+        "unit": "percent",
+        "source": "UBS Philanthropy Report",
+        "year": 2024
+      },
+      {
+        "metric": "Impact investing market size global",
+        "value": "1.2",
+        "unit": "trillion_usd",
+        "source": "UBS Impact Investing Report / GIIN",
+        "year": 2024
+      },
+      {
+        "metric": "Impact investing average return",
+        "value": "6-9",
+        "unit": "percent",
+        "source": "UBS Impact Investing Report / GIIN",
+        "year": 2024
+      },
+      {
+        "metric": "ESG AUM global",
+        "value": "35",
+        "unit": "trillion_usd",
+        "source": "UBS Sustainability Research",
+        "year": 2024
+      },
+      {
+        "metric": "Green bond issuance annual",
+        "value": "575",
+        "unit": "billion_usd",
+        "source": "UBS Fixed Income Research",
+        "year": 2024
+      },
+      {
+        "metric": "Social bond issuance annual",
+        "value": "160",
+        "unit": "billion_usd",
+        "source": "UBS Fixed Income Research",
+        "year": 2024
+      },
+      {
+        "metric": "Philanthropic foundations globally",
+        "value": "260000+",
+        "unit": "foundations",
+        "source": "UBS Philanthropy Report",
+        "year": 2024
+      },
+      {
+        "metric": "Donor-advised fund contributions annual US",
+        "value": "85",
+        "unit": "billion_usd",
+        "source": "UBS / National Philanthropic Trust",
+        "year": 2024
+      }
+    ],
+    "technology_disruption": [
+      {
+        "metric": "Global AI market size 2024",
+        "value": "200",
+        "unit": "billion_usd",
+        "source": "UBS Technology Research",
+        "year": 2024
+      },
+      {
+        "metric": "AI semiconductor market size 2024",
+        "value": "65",
+        "unit": "billion_usd",
+        "source": "UBS Technology Research",
+        "year": 2024
+      },
+      {
+        "metric": "Cloud computing market size 2024",
+        "value": "680",
+        "unit": "billion_usd",
+        "source": "UBS Technology Research",
+        "year": 2024
+      },
+      {
+        "metric": "Quantum computing market size forecast 2030",
+        "value": "125",
+        "unit": "billion_usd",
+        "source": "UBS Technology Research",
+        "year": 2024
+      },
+      {
+        "metric": "Autonomous driving market size forecast 2030",
+        "value": "2",
+        "unit": "trillion_usd",
+        "source": "UBS Technology Research",
+        "year": 2024
+      },
+      {
+        "metric": "Blockchain/DLT enterprise spending 2024",
+        "value": "19",
+        "unit": "billion_usd",
+        "source": "UBS Technology Research",
+        "year": 2024
+      },
+      {
+        "metric": "IoT connected devices globally 2024",
+        "value": "18",
+        "unit": "billion devices",
+        "source": "UBS Technology Research",
+        "year": 2024
+      },
+      {
+        "metric": "5G subscriptions globally 2024",
+        "value": "1.9",
+        "unit": "billion",
+        "source": "UBS Technology Research",
+        "year": 2024
+      },
+      {
+        "metric": "Robotics market size 2024",
+        "value": "65",
+        "unit": "billion_usd",
+        "source": "UBS Technology Research",
+        "year": 2024
+      },
+      {
+        "metric": "Biotechnology market size 2024",
+        "value": "1.3",
+        "unit": "trillion_usd",
+        "source": "UBS Healthcare Research",
+        "year": 2024
+      },
+      {
+        "metric": "Space economy market size 2024",
+        "value": "550",
+        "unit": "billion_usd",
+        "source": "UBS Technology Research",
+        "year": 2024
+      },
+      {
+        "metric": "Metaverse market size forecast 2030",
+        "value": "800",
+        "unit": "billion_usd",
+        "source": "UBS Technology Research",
+        "year": 2024
+      }
+    ],
+    "generational_wealth_transfer": [
+      {
+        "metric": "Great Wealth Transfer total amount by 2045",
+        "value": "84",
+        "unit": "trillion_usd",
+        "source": "UBS Wealth Transfer Report / Cerulli",
+        "year": 2024
+      },
+      {
+        "metric": "Boomers transferring wealth annually",
+        "value": "2.5",
+        "unit": "trillion_usd/year",
+        "source": "UBS Wealth Transfer Report",
+        "year": 2024
+      },
+      {
+        "metric": "Heirs who change financial advisor after inheritance",
+        "value": "70",
+        "unit": "percent",
+        "source": "UBS Wealth Management Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Families with formal succession plan",
+        "value": "30",
+        "unit": "percent",
+        "source": "UBS Family Business Report",
+        "year": 2024
+      },
+      {
+        "metric": "Family businesses surviving to second generation",
+        "value": "30",
+        "unit": "percent",
+        "source": "UBS Family Business Report",
+        "year": 2024
+      },
+      {
+        "metric": "Family businesses surviving to third generation",
+        "value": "12",
+        "unit": "percent",
+        "source": "UBS Family Business Report",
+        "year": 2024
+      },
+      {
+        "metric": "Next-gen heirs interested in impact investing",
+        "value": "75",
+        "unit": "percent",
+        "source": "UBS Next Gen Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Next-gen heirs interested in cryptocurrency",
+        "value": "45",
+        "unit": "percent",
+        "source": "UBS Next Gen Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Next-gen heirs interested in sustainable investing",
+        "value": "80",
+        "unit": "percent",
+        "source": "UBS Next Gen Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Trust assets managed globally by banks",
+        "value": "15",
+        "unit": "trillion_usd",
+        "source": "UBS Wealth Management",
+        "year": 2024
+      }
+    ],
+    "retirement_longevity": [
+      {
+        "metric": "Retirement savings gap global",
+        "value": "70",
+        "unit": "trillion_usd",
+        "source": "UBS / World Economic Forum",
+        "year": 2024
+      },
+      {
+        "metric": "Average retirement duration expected",
+        "value": "20-25",
+        "unit": "years",
+        "source": "UBS Retirement Research",
+        "year": 2024
+      },
+      {
+        "metric": "Retirees underestimating healthcare costs",
+        "value": "70",
+        "unit": "percent",
+        "source": "UBS Retirement Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Retirement income replacement target",
+        "value": "70-80",
+        "unit": "percent of pre-retirement income",
+        "source": "UBS Wealth Planning",
+        "year": 2024
+      },
+      {
+        "metric": "Longevity risk \u2014 probability of at least one spouse living to 95 (couple both 65)",
+        "value": "25",
+        "unit": "percent",
+        "source": "UBS Longevity Research",
+        "year": 2024
+      },
+      {
+        "metric": "Annual inflation impact on 30yr retirement purchasing power",
+        "value": "-55",
+        "unit": "percent loss at 3% inflation",
+        "source": "UBS Wealth Planning",
+        "year": 2024
+      },
+      {
+        "metric": "4% withdrawal rule success rate over 30 years",
+        "value": "95",
+        "unit": "percent",
+        "source": "UBS / Trinity Study Updated",
+        "year": 2024
+      },
+      {
+        "metric": "Sequence of returns risk \u2014 worst case impact on retirement",
+        "value": "-40",
+        "unit": "percent portfolio reduction",
+        "source": "UBS Wealth Planning",
+        "year": 2024
+      },
+      {
+        "metric": "Early retirement (before 55) financial success rate",
+        "value": "55",
+        "unit": "percent",
+        "source": "UBS Retirement Research",
+        "year": 2024
+      },
+      {
+        "metric": "Pension portability \u2014 workers losing benefits from job changes",
+        "value": "45",
+        "unit": "percent",
+        "source": "UBS Retirement Research",
+        "year": 2024
+      }
     ]
   }
 }

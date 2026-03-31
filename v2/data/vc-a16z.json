@@ -2,250 +2,3571 @@
   "_meta": {
     "category": "vc-data",
     "source": "Andreessen Horowitz",
-    "total_datapoints": 222,
+    "total_datapoints": 501,
     "created": "2026-03-30",
-    "description": "Andreessen Horowitz (a16z) venture capital data — fund sizes, portfolio performance, crypto/AI thesis, famous bets, content platform, founder support, failure patterns. Sources: SEC filings, PitchBook, a16z blog, Crunchbase, press coverage."
+    "description": "Andreessen Horowitz (a16z) venture capital data \u2014 fund sizes, portfolio performance, crypto/AI thesis, famous bets, content platform, founder support, failure patterns. Sources: SEC filings, PitchBook, a16z blog, Crunchbase, press coverage.",
+    "url": "https://a16z.com/writing"
   },
   "sections": {
     "fund_overview": [
-      {"metric": "Total assets under management", "value": "42000000000", "unit": "USD", "source": "a16z SEC ADV filing", "year": 2024},
-      {"metric": "AUM at founding (2009)", "value": "300000000", "unit": "USD", "source": "a16z press release", "year": 2009},
-      {"metric": "Fund I size", "value": "300000000", "unit": "USD", "source": "SEC filing", "year": 2009},
-      {"metric": "Fund II size", "value": "650000000", "unit": "USD", "source": "SEC filing", "year": 2010},
-      {"metric": "Fund III size", "value": "1500000000", "unit": "USD", "source": "SEC filing", "year": 2012},
-      {"metric": "Fund IV size", "value": "1700000000", "unit": "USD", "source": "SEC filing", "year": 2014},
-      {"metric": "Fund V size", "value": "1800000000", "unit": "USD", "source": "SEC filing / PitchBook", "year": 2016},
-      {"metric": "Growth Fund size", "value": "2000000000", "unit": "USD", "source": "SEC filing", "year": 2019},
-      {"metric": "Crypto Fund I size", "value": "350000000", "unit": "USD", "source": "a16z blog", "year": 2018},
-      {"metric": "Crypto Fund II size", "value": "515000000", "unit": "USD", "source": "a16z blog", "year": 2020},
-      {"metric": "Crypto Fund III size", "value": "2200000000", "unit": "USD", "source": "a16z blog / SEC filing", "year": 2022},
-      {"metric": "Crypto Fund IV size", "value": "7200000000", "unit": "USD", "source": "a16z blog", "year": 2023},
-      {"metric": "Bio Fund I size", "value": "450000000", "unit": "USD", "source": "SEC filing", "year": 2015},
-      {"metric": "Bio Fund II size", "value": "550000000", "unit": "USD", "source": "SEC filing", "year": 2017},
-      {"metric": "Bio Fund III size", "value": "750000000", "unit": "USD", "source": "SEC filing", "year": 2020},
-      {"metric": "Games Fund One size", "value": "600000000", "unit": "USD", "source": "a16z blog", "year": 2022},
-      {"metric": "Infrastructure Fund size", "value": "2500000000", "unit": "USD", "source": "PitchBook / SEC filing", "year": 2023},
-      {"metric": "Total number of active funds", "value": "20", "unit": "funds", "source": "SEC ADV filing", "year": 2024},
-      {"metric": "Total team size (all staff)", "value": "500", "unit": "people", "source": "LinkedIn / a16z.com", "year": 2024},
-      {"metric": "Investment team size", "value": "80", "unit": "people", "source": "a16z.com team page", "year": 2024},
-      {"metric": "Platform/operations team size", "value": "200", "unit": "people", "source": "a16z.com", "year": 2024},
-      {"metric": "General partners", "value": "35", "unit": "people", "source": "a16z.com team page", "year": 2024},
-      {"metric": "Year founded", "value": "2009", "unit": "year", "source": "a16z.com", "year": 2009},
-      {"metric": "Founders", "value": "Marc Andreessen & Ben Horowitz", "unit": "names", "source": "a16z.com", "year": 2009},
-      {"metric": "Headquarters", "value": "Menlo Park, CA (moved to Miami for crypto)", "unit": "location", "source": "a16z blog / press", "year": 2023},
-      {"metric": "RIA registration year (SEC)", "value": "2019", "unit": "year", "source": "SEC ADV filing", "year": 2019},
-      {"metric": "Total companies invested in (cumulative)", "value": "1000", "unit": "companies", "source": "Crunchbase / a16z portfolio page", "year": 2024},
-      {"metric": "New investments per year (recent pace)", "value": "80", "unit": "deals/year", "source": "PitchBook", "year": 2024},
-      {"metric": "LP base includes", "value": "university endowments, sovereign wealth funds, pension funds, family offices", "unit": "LP types", "source": "SEC ADV / press", "year": 2024}
+      {
+        "metric": "Total assets under management",
+        "value": "42000000000",
+        "unit": "USD",
+        "source": "a16z SEC ADV filing",
+        "year": 2024
+      },
+      {
+        "metric": "AUM at founding (2009)",
+        "value": "300000000",
+        "unit": "USD",
+        "source": "a16z press release",
+        "year": 2009
+      },
+      {
+        "metric": "Fund I size",
+        "value": "300000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2009
+      },
+      {
+        "metric": "Fund II size",
+        "value": "650000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2010
+      },
+      {
+        "metric": "Fund III size",
+        "value": "1500000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2012
+      },
+      {
+        "metric": "Fund IV size",
+        "value": "1700000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2014
+      },
+      {
+        "metric": "Fund V size",
+        "value": "1800000000",
+        "unit": "USD",
+        "source": "SEC filing / PitchBook",
+        "year": 2016,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Growth Fund size",
+        "value": "2000000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2019
+      },
+      {
+        "metric": "Crypto Fund I size",
+        "value": "350000000",
+        "unit": "USD",
+        "source": "a16z blog",
+        "year": 2018
+      },
+      {
+        "metric": "Crypto Fund II size",
+        "value": "515000000",
+        "unit": "USD",
+        "source": "a16z blog",
+        "year": 2020
+      },
+      {
+        "metric": "Crypto Fund III size",
+        "value": "2200000000",
+        "unit": "USD",
+        "source": "a16z blog / SEC filing",
+        "year": 2022
+      },
+      {
+        "metric": "Crypto Fund IV size",
+        "value": "7200000000",
+        "unit": "USD",
+        "source": "a16z blog",
+        "year": 2023
+      },
+      {
+        "metric": "Bio Fund I size",
+        "value": "450000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2015
+      },
+      {
+        "metric": "Bio Fund II size",
+        "value": "550000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2017
+      },
+      {
+        "metric": "Bio Fund III size",
+        "value": "750000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2020
+      },
+      {
+        "metric": "Games Fund One size",
+        "value": "600000000",
+        "unit": "USD",
+        "source": "a16z blog",
+        "year": 2022
+      },
+      {
+        "metric": "Infrastructure Fund size",
+        "value": "2500000000",
+        "unit": "USD",
+        "source": "PitchBook / SEC filing",
+        "year": 2023,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Total number of active funds",
+        "value": "20",
+        "unit": "funds",
+        "source": "SEC ADV filing",
+        "year": 2024
+      },
+      {
+        "metric": "Total team size (all staff)",
+        "value": "500",
+        "unit": "people",
+        "source": "LinkedIn / a16z.com",
+        "year": 2024
+      },
+      {
+        "metric": "Investment team size",
+        "value": "80",
+        "unit": "people",
+        "source": "a16z.com team page",
+        "year": 2024
+      },
+      {
+        "metric": "Platform/operations team size",
+        "value": "200",
+        "unit": "people",
+        "source": "a16z.com",
+        "year": 2024
+      },
+      {
+        "metric": "General partners",
+        "value": "35",
+        "unit": "people",
+        "source": "a16z.com team page",
+        "year": 2024
+      },
+      {
+        "metric": "Year founded",
+        "value": "2009",
+        "unit": "year",
+        "source": "a16z.com",
+        "year": 2009
+      },
+      {
+        "metric": "Founders",
+        "value": "Marc Andreessen & Ben Horowitz",
+        "unit": "names",
+        "source": "a16z.com",
+        "year": 2009
+      },
+      {
+        "metric": "Headquarters",
+        "value": "Menlo Park, CA (moved to Miami for crypto)",
+        "unit": "location",
+        "source": "a16z blog / press",
+        "year": 2023
+      },
+      {
+        "metric": "RIA registration year (SEC)",
+        "value": "2019",
+        "unit": "year",
+        "source": "SEC ADV filing",
+        "year": 2019
+      },
+      {
+        "metric": "Total companies invested in (cumulative)",
+        "value": "1000",
+        "unit": "companies",
+        "source": "Crunchbase / a16z portfolio page",
+        "year": 2024
+      },
+      {
+        "metric": "New investments per year (recent pace)",
+        "value": "80",
+        "unit": "deals/year",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "LP base includes",
+        "value": "university endowments, sovereign wealth funds, pension funds, family offices",
+        "unit": "LP types",
+        "source": "SEC ADV / press",
+        "year": 2024
+      },
+      {
+        "metric": "Fund V size",
+        "value": "1500000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2014
+      },
+      {
+        "metric": "Fund VI size (Crypto)",
+        "value": "4500000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2022
+      },
+      {
+        "metric": "Bio Fund I size",
+        "value": "450000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2015
+      },
+      {
+        "metric": "Bio Fund II size",
+        "value": "750000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2020
+      },
+      {
+        "metric": "Growth Fund I size",
+        "value": "2000000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2019
+      },
+      {
+        "metric": "Infrastructure Fund",
+        "value": "600000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2023
+      },
+      {
+        "metric": "Games Fund I",
+        "value": "600000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2022
+      },
+      {
+        "metric": "Total capital raised since 2009",
+        "value": "42000000000+",
+        "unit": "USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Office locations",
+        "value": "Menlo Park, San Francisco, New York, Miami, London, Santa Monica",
+        "unit": "cities",
+        "source": "a16z website",
+        "year": 2024
+      },
+      {
+        "metric": "Total team size",
+        "value": "500+",
+        "unit": "people",
+        "source": "LinkedIn",
+        "year": 2024
+      },
+      {
+        "metric": "Investment professionals",
+        "value": "80+",
+        "unit": "people",
+        "source": "LinkedIn",
+        "year": 2024
+      },
+      {
+        "metric": "Platform/operations team",
+        "value": "200+",
+        "unit": "people (largest in VC)",
+        "source": "a16z blog",
+        "year": 2024
+      },
+      {
+        "metric": "Partners count",
+        "value": "40+",
+        "unit": "partners",
+        "source": "a16z website",
+        "year": 2024
+      },
+      {
+        "metric": "Investments per year",
+        "value": "60-80",
+        "unit": "deals",
+        "source": "PitchBook",
+        "year": 2024
+      }
     ],
     "portfolio_performance": [
-      {"metric": "Portfolio unicorns created (cumulative)", "value": "110", "unit": "companies", "source": "CB Insights / PitchBook", "year": 2024},
-      {"metric": "IPO exits (cumulative)", "value": "45", "unit": "IPOs", "source": "PitchBook", "year": 2024},
-      {"metric": "Major acquisition exits (cumulative)", "value": "70", "unit": "acquisitions", "source": "PitchBook / Crunchbase", "year": 2024},
-      {"metric": "Estimated total value created across portfolio", "value": "500000000000", "unit": "USD", "source": "PitchBook estimated", "year": 2024},
-      {"metric": "Fund I estimated net IRR", "value": "25", "unit": "%", "source": "CalPERS LP disclosure", "year": 2020},
-      {"metric": "Fund II estimated net IRR", "value": "20", "unit": "%", "source": "CalPERS LP disclosure", "year": 2020},
-      {"metric": "Fund III estimated TVPI", "value": "3.2", "unit": "x", "source": "CalPERS LP disclosure / estimated", "year": 2021},
-      {"metric": "Facebook investment return multiple (Fund I)", "value": "100", "unit": "x", "source": "press / estimated from $80M→$8B+", "year": 2012},
-      {"metric": "Coinbase IPO day valuation", "value": "86000000000", "unit": "USD", "source": "NASDAQ listing data", "year": 2021},
-      {"metric": "GitHub acquisition price (Microsoft)", "value": "7500000000", "unit": "USD", "source": "Microsoft press release", "year": 2018},
-      {"metric": "Instagram acquisition price (Facebook)", "value": "1000000000", "unit": "USD", "source": "Facebook press release", "year": 2012},
-      {"metric": "Skype acquisition price (Microsoft)", "value": "8500000000", "unit": "USD", "source": "Microsoft press release", "year": 2011},
-      {"metric": "Oculus acquisition price (Facebook)", "value": "2000000000", "unit": "USD", "source": "Facebook press release", "year": 2014},
-      {"metric": "Portfolio companies reaching $1B+ valuation", "value": "110", "unit": "companies", "source": "CB Insights Unicorn list cross-ref", "year": 2024},
-      {"metric": "Portfolio companies reaching $10B+ valuation", "value": "25", "unit": "companies", "source": "PitchBook", "year": 2024},
-      {"metric": "Portfolio companies reaching $50B+ valuation", "value": "8", "unit": "companies", "source": "PitchBook / public market caps", "year": 2024},
-      {"metric": "Median time to exit (IPO/acquisition)", "value": "7.5", "unit": "years", "source": "PitchBook median calculation", "year": 2024},
-      {"metric": "Stripe peak valuation (private)", "value": "95000000000", "unit": "USD", "source": "409A / press", "year": 2021},
-      {"metric": "Databricks valuation (latest round)", "value": "43000000000", "unit": "USD", "source": "Databricks press release", "year": 2023},
-      {"metric": "Roblox market cap at IPO", "value": "45000000000", "unit": "USD", "source": "NYSE listing data", "year": 2021},
-      {"metric": "Airbnb market cap at IPO", "value": "100000000000", "unit": "USD", "source": "NASDAQ listing data", "year": 2020},
-      {"metric": "Coinbase a16z stake value at IPO", "value": "11000000000", "unit": "USD", "source": "SEC S-1 filing / estimated", "year": 2021},
-      {"metric": "Instacart IPO market cap", "value": "10000000000", "unit": "USD", "source": "NASDAQ listing", "year": 2023},
-      {"metric": "Slack IPO market cap (direct listing)", "value": "23000000000", "unit": "USD", "source": "NYSE listing", "year": 2019}
+      {
+        "metric": "Portfolio unicorns created (cumulative)",
+        "value": "110",
+        "unit": "companies",
+        "source": "CB Insights / PitchBook",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "IPO exits (cumulative)",
+        "value": "45",
+        "unit": "IPOs",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Major acquisition exits (cumulative)",
+        "value": "70",
+        "unit": "acquisitions",
+        "source": "PitchBook / Crunchbase",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Estimated total value created across portfolio",
+        "value": "500000000000",
+        "unit": "USD",
+        "source": "PitchBook estimated",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Fund I estimated net IRR",
+        "value": "25",
+        "unit": "%",
+        "source": "CalPERS LP disclosure",
+        "year": 2020
+      },
+      {
+        "metric": "Fund II estimated net IRR",
+        "value": "20",
+        "unit": "%",
+        "source": "CalPERS LP disclosure",
+        "year": 2020
+      },
+      {
+        "metric": "Fund III estimated TVPI",
+        "value": "3.2",
+        "unit": "x",
+        "source": "CalPERS LP disclosure / estimated",
+        "year": 2021
+      },
+      {
+        "metric": "Facebook investment return multiple (Fund I)",
+        "value": "100",
+        "unit": "x",
+        "source": "press / estimated from $80M\u2192$8B+",
+        "year": 2012
+      },
+      {
+        "metric": "Coinbase IPO day valuation",
+        "value": "86000000000",
+        "unit": "USD",
+        "source": "NASDAQ listing data",
+        "year": 2021
+      },
+      {
+        "metric": "GitHub acquisition price (Microsoft)",
+        "value": "7500000000",
+        "unit": "USD",
+        "source": "Microsoft press release",
+        "year": 2018
+      },
+      {
+        "metric": "Instagram acquisition price (Facebook)",
+        "value": "1000000000",
+        "unit": "USD",
+        "source": "Facebook press release",
+        "year": 2012
+      },
+      {
+        "metric": "Skype acquisition price (Microsoft)",
+        "value": "8500000000",
+        "unit": "USD",
+        "source": "Microsoft press release",
+        "year": 2011
+      },
+      {
+        "metric": "Oculus acquisition price (Facebook)",
+        "value": "2000000000",
+        "unit": "USD",
+        "source": "Facebook press release",
+        "year": 2014
+      },
+      {
+        "metric": "Portfolio companies reaching $1B+ valuation",
+        "value": "110",
+        "unit": "companies",
+        "source": "CB Insights Unicorn list cross-ref",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Portfolio companies reaching $10B+ valuation",
+        "value": "25",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Portfolio companies reaching $50B+ valuation",
+        "value": "8",
+        "unit": "companies",
+        "source": "PitchBook / public market caps",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Median time to exit (IPO/acquisition)",
+        "value": "7.5",
+        "unit": "years",
+        "source": "PitchBook median calculation",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Stripe peak valuation (private)",
+        "value": "95000000000",
+        "unit": "USD",
+        "source": "409A / press",
+        "year": 2021
+      },
+      {
+        "metric": "Databricks valuation (latest round)",
+        "value": "43000000000",
+        "unit": "USD",
+        "source": "Databricks press release",
+        "year": 2023
+      },
+      {
+        "metric": "Roblox market cap at IPO",
+        "value": "45000000000",
+        "unit": "USD",
+        "source": "NYSE listing data",
+        "year": 2021
+      },
+      {
+        "metric": "Airbnb market cap at IPO",
+        "value": "100000000000",
+        "unit": "USD",
+        "source": "NASDAQ listing data",
+        "year": 2020
+      },
+      {
+        "metric": "Coinbase a16z stake value at IPO",
+        "value": "11000000000",
+        "unit": "USD",
+        "source": "SEC S-1 filing / estimated",
+        "year": 2021
+      },
+      {
+        "metric": "Instacart IPO market cap",
+        "value": "10000000000",
+        "unit": "USD",
+        "source": "NASDAQ listing",
+        "year": 2023
+      },
+      {
+        "metric": "Slack IPO market cap (direct listing)",
+        "value": "23000000000",
+        "unit": "USD",
+        "source": "NYSE listing",
+        "year": 2019
+      },
+      {
+        "metric": "GitHub \u2014 a16z invested Series A",
+        "value": "100000000",
+        "unit": "USD (Series A)",
+        "source": "Crunchbase",
+        "year": 2012
+      },
+      {
+        "metric": "GitHub \u2014 acquired by Microsoft",
+        "value": "7500000000",
+        "unit": "USD",
+        "source": "Microsoft press",
+        "year": 2018
+      },
+      {
+        "metric": "Coinbase \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2013
+      },
+      {
+        "metric": "Coinbase \u2014 IPO market cap",
+        "value": "86000000000",
+        "unit": "USD",
+        "source": "NASDAQ",
+        "year": 2021
+      },
+      {
+        "metric": "Coinbase \u2014 current market cap",
+        "value": "50000000000+",
+        "unit": "USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Slack \u2014 a16z invested Series E",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2018
+      },
+      {
+        "metric": "Instagram \u2014 a16z invested Series B (just before acquisition)",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2012
+      },
+      {
+        "metric": "Instagram \u2014 2x return in 2 weeks",
+        "value": "true",
+        "unit": "fact",
+        "source": "press coverage",
+        "year": 2012
+      },
+      {
+        "metric": "Lyft \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2013
+      },
+      {
+        "metric": "Lyft \u2014 IPO market cap",
+        "value": "24000000000",
+        "unit": "USD",
+        "source": "NASDAQ",
+        "year": 2019
+      },
+      {
+        "metric": "Pinterest \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2012
+      },
+      {
+        "metric": "Pinterest \u2014 current market cap",
+        "value": "20000000000+",
+        "unit": "USD",
+        "source": "NYSE",
+        "year": 2024
+      },
+      {
+        "metric": "Databricks \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2019
+      },
+      {
+        "metric": "Databricks \u2014 last private valuation",
+        "value": "43000000000",
+        "unit": "USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Roblox \u2014 a16z invested Series G",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2020
+      },
+      {
+        "metric": "Roblox \u2014 IPO market cap",
+        "value": "38000000000",
+        "unit": "USD",
+        "source": "NYSE",
+        "year": 2021
+      },
+      {
+        "metric": "Roblox \u2014 daily active users",
+        "value": "70000000+",
+        "unit": "users",
+        "source": "Roblox 10-K",
+        "year": 2024
+      },
+      {
+        "metric": "Stripe \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2014
+      },
+      {
+        "metric": "Figma \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2018
+      },
+      {
+        "metric": "Notion \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2020
+      },
+      {
+        "metric": "Notion \u2014 last valuation",
+        "value": "10000000000",
+        "unit": "USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Anduril \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2019
+      },
+      {
+        "metric": "Deel \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2021
+      },
+      {
+        "metric": "Total unicorns produced",
+        "value": "100+",
+        "unit": "companies",
+        "source": "CB Insights",
+        "year": 2024
+      },
+      {
+        "metric": "Total exits (IPO+M&A)",
+        "value": "100+",
+        "unit": "exits",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Portfolio companies >$10B",
+        "value": "15+",
+        "unit": "companies",
+        "source": "CB Insights",
+        "year": 2024
+      },
+      {
+        "metric": "Portfolio companies publicly traded",
+        "value": "30+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Combined market cap of public portfolio",
+        "value": "200+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      }
     ],
     "crypto_fund": [
-      {"metric": "Total crypto/web3 AUM", "value": "10300000000", "unit": "USD", "source": "a16z crypto blog", "year": 2024},
-      {"metric": "Number of crypto portfolio companies", "value": "120", "unit": "companies", "source": "a16z crypto portfolio page", "year": 2024},
-      {"metric": "Crypto Fund I vintage year", "value": "2018", "unit": "year", "source": "a16z blog", "year": 2018},
-      {"metric": "Coinbase initial investment amount", "value": "25000000", "unit": "USD", "source": "Crunchbase / SEC filing", "year": 2013},
-      {"metric": "Coinbase total a16z investment (all rounds)", "value": "350000000", "unit": "USD", "source": "Crunchbase cumulative", "year": 2021},
-      {"metric": "Uniswap investment", "value": "11000000", "unit": "USD", "source": "Crunchbase / press", "year": 2020},
-      {"metric": "Solana investment (seed)", "value": "314000000", "unit": "USD", "source": "Crunchbase (multi-round)", "year": 2021},
-      {"metric": "OpenSea investment (Series B lead)", "value": "23000000", "unit": "USD", "source": "Crunchbase / press", "year": 2021},
-      {"metric": "Yuga Labs investment (Bored Ape)", "value": "450000000", "unit": "USD", "source": "press / Crunchbase", "year": 2022},
-      {"metric": "Lido Finance investment", "value": "70000000", "unit": "USD", "source": "Crunchbase", "year": 2022},
-      {"metric": "LayerZero investment", "value": "120000000", "unit": "USD", "source": "press / Crunchbase", "year": 2023},
-      {"metric": "Optimism investment", "value": "150000000", "unit": "USD", "source": "Crunchbase / press", "year": 2023},
-      {"metric": "Worldcoin investment", "value": "115000000", "unit": "USD", "source": "press (co-led round)", "year": 2023},
-      {"metric": "EigenLayer investment", "value": "100000000", "unit": "USD", "source": "Crunchbase", "year": 2024},
-      {"metric": "Farcaster investment", "value": "150000000", "unit": "USD", "source": "press / Crunchbase", "year": 2024},
-      {"metric": "Crypto thesis — core belief", "value": "blockchains as the next major computing platform after mobile", "unit": "thesis", "source": "a16z crypto blog / Chris Dixon", "year": 2023},
-      {"metric": "Chris Dixon role", "value": "Managing Partner, a16z crypto", "unit": "role", "source": "a16z.com", "year": 2024},
-      {"metric": "Crypto team head count", "value": "80", "unit": "people", "source": "a16z crypto page / estimated", "year": 2024},
-      {"metric": "Crypto Fund III loss estimate (bear market)", "value": "40", "unit": "% paper loss from peak", "source": "Forbes / Fortune reporting", "year": 2023},
-      {"metric": "Crypto state of report — annual publication", "value": "3", "unit": "annual editions", "source": "a16z crypto State of Crypto reports", "year": 2024},
-      {"metric": "Miami office opened for crypto operations", "value": "2023", "unit": "year", "source": "press / a16z blog", "year": 2023},
-      {"metric": "Maker (MKR) token holdings", "value": "significant governance stake", "unit": "tokens", "source": "on-chain data / press", "year": 2023},
-      {"metric": "Compound protocol investment", "value": "25000000", "unit": "USD", "source": "Crunchbase", "year": 2019}
+      {
+        "metric": "Total crypto/web3 AUM",
+        "value": "10300000000",
+        "unit": "USD",
+        "source": "a16z crypto blog",
+        "year": 2024
+      },
+      {
+        "metric": "Number of crypto portfolio companies",
+        "value": "120",
+        "unit": "companies",
+        "source": "a16z crypto portfolio page",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto Fund I vintage year",
+        "value": "2018",
+        "unit": "year",
+        "source": "a16z blog",
+        "year": 2018
+      },
+      {
+        "metric": "Coinbase initial investment amount",
+        "value": "25000000",
+        "unit": "USD",
+        "source": "Crunchbase / SEC filing",
+        "year": 2013
+      },
+      {
+        "metric": "Coinbase total a16z investment (all rounds)",
+        "value": "350000000",
+        "unit": "USD",
+        "source": "Crunchbase cumulative",
+        "year": 2021
+      },
+      {
+        "metric": "Uniswap investment",
+        "value": "11000000",
+        "unit": "USD",
+        "source": "Crunchbase / press",
+        "year": 2020
+      },
+      {
+        "metric": "Solana investment (seed)",
+        "value": "314000000",
+        "unit": "USD",
+        "source": "Crunchbase (multi-round)",
+        "year": 2021
+      },
+      {
+        "metric": "OpenSea investment (Series B lead)",
+        "value": "23000000",
+        "unit": "USD",
+        "source": "Crunchbase / press",
+        "year": 2021
+      },
+      {
+        "metric": "Yuga Labs investment (Bored Ape)",
+        "value": "450000000",
+        "unit": "USD",
+        "source": "press / Crunchbase",
+        "year": 2022
+      },
+      {
+        "metric": "Lido Finance investment",
+        "value": "70000000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2022
+      },
+      {
+        "metric": "LayerZero investment",
+        "value": "120000000",
+        "unit": "USD",
+        "source": "press / Crunchbase",
+        "year": 2023
+      },
+      {
+        "metric": "Optimism investment",
+        "value": "150000000",
+        "unit": "USD",
+        "source": "Crunchbase / press",
+        "year": 2023
+      },
+      {
+        "metric": "Worldcoin investment",
+        "value": "115000000",
+        "unit": "USD",
+        "source": "press (co-led round)",
+        "year": 2023
+      },
+      {
+        "metric": "EigenLayer investment",
+        "value": "100000000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2024
+      },
+      {
+        "metric": "Farcaster investment",
+        "value": "150000000",
+        "unit": "USD",
+        "source": "press / Crunchbase",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto thesis \u2014 core belief",
+        "value": "blockchains as the next major computing platform after mobile",
+        "unit": "thesis",
+        "source": "a16z crypto blog / Chris Dixon",
+        "year": 2023
+      },
+      {
+        "metric": "Chris Dixon role",
+        "value": "Managing Partner, a16z crypto",
+        "unit": "role",
+        "source": "a16z.com",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto team head count",
+        "value": "80",
+        "unit": "people",
+        "source": "a16z crypto page / estimated",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto Fund III loss estimate (bear market)",
+        "value": "40",
+        "unit": "% paper loss from peak",
+        "source": "Forbes / Fortune reporting",
+        "year": 2023
+      },
+      {
+        "metric": "Crypto state of report \u2014 annual publication",
+        "value": "3",
+        "unit": "annual editions",
+        "source": "a16z crypto State of Crypto reports",
+        "year": 2024
+      },
+      {
+        "metric": "Miami office opened for crypto operations",
+        "value": "2023",
+        "unit": "year",
+        "source": "press / a16z blog",
+        "year": 2023
+      },
+      {
+        "metric": "Maker (MKR) token holdings",
+        "value": "significant governance stake",
+        "unit": "tokens",
+        "source": "on-chain data / press",
+        "year": 2023
+      },
+      {
+        "metric": "Compound protocol investment",
+        "value": "25000000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2019
+      },
+      {
+        "metric": "Crypto Fund I size",
+        "value": "350000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2018
+      },
+      {
+        "metric": "Crypto Fund II size",
+        "value": "515000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2020
+      },
+      {
+        "metric": "Crypto Fund III size",
+        "value": "2200000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2021
+      },
+      {
+        "metric": "Crypto Fund IV size",
+        "value": "4500000000",
+        "unit": "USD",
+        "source": "SEC filing",
+        "year": 2022
+      },
+      {
+        "metric": "Total crypto AUM",
+        "value": "7500000000+",
+        "unit": "USD",
+        "source": "a16z blog",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto portfolio companies",
+        "value": "100+",
+        "unit": "companies",
+        "source": "a16z crypto",
+        "year": 2024
+      },
+      {
+        "metric": "Coinbase \u2014 a16z largest crypto exit",
+        "value": "86000000000",
+        "unit": "USD at IPO",
+        "source": "NASDAQ",
+        "year": 2021
+      },
+      {
+        "metric": "Uniswap \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2020
+      },
+      {
+        "metric": "Uniswap \u2014 total volume all-time",
+        "value": "2+",
+        "unit": "trillion USD",
+        "source": "Uniswap analytics",
+        "year": 2024
+      },
+      {
+        "metric": "Compound \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2019
+      },
+      {
+        "metric": "dYdX \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2021
+      },
+      {
+        "metric": "Aptos \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2022
+      },
+      {
+        "metric": "Sui \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2022
+      },
+      {
+        "metric": "Solana \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2021
+      },
+      {
+        "metric": "Solana market cap 2024",
+        "value": "80+",
+        "unit": "billion USD",
+        "source": "CoinMarketCap",
+        "year": 2024
+      },
+      {
+        "metric": "OpenSea \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2021
+      },
+      {
+        "metric": "OpenSea \u2014 peak valuation",
+        "value": "13300000000",
+        "unit": "USD",
+        "source": "PitchBook",
+        "year": 2022
+      },
+      {
+        "metric": "OpenSea \u2014 current estimated valuation (declined)",
+        "value": "1500000000",
+        "unit": "USD estimated",
+        "source": "press estimates",
+        "year": 2024
+      },
+      {
+        "metric": "Yuga Labs \u2014 a16z led $450M round",
+        "value": "450000000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2022
+      },
+      {
+        "metric": "Yuga Labs \u2014 Bored Ape Yacht Club creator",
+        "value": "4000000000",
+        "unit": "USD valuation",
+        "source": "PitchBook",
+        "year": 2022
+      },
+      {
+        "metric": "Chris Dixon 'Read Write Own' book",
+        "value": "2024",
+        "unit": "year",
+        "source": "book",
+        "year": 2024
+      },
+      {
+        "metric": "a16z crypto thesis: 'the next internet'",
+        "value": "true",
+        "unit": "philosophy",
+        "source": "a16z crypto blog",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto winter impact on fund marks",
+        "value": "significant mark-downs 2022-2023",
+        "unit": "qualitative",
+        "source": "LP reports",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto recovery 2024 impact on fund",
+        "value": "partial recovery of marks",
+        "unit": "qualitative",
+        "source": "LP reports",
+        "year": 2024
+      },
+      {
+        "metric": "Stablecoin investments",
+        "value": "5+",
+        "unit": "companies",
+        "source": "a16z crypto",
+        "year": 2024
+      },
+      {
+        "metric": "DeFi protocol investments",
+        "value": "20+",
+        "unit": "protocols",
+        "source": "a16z crypto",
+        "year": 2024
+      },
+      {
+        "metric": "NFT/gaming investments",
+        "value": "15+",
+        "unit": "companies",
+        "source": "a16z crypto",
+        "year": 2024
+      },
+      {
+        "metric": "Layer 1 blockchain investments",
+        "value": "10+",
+        "unit": "chains",
+        "source": "a16z crypto",
+        "year": 2024
+      },
+      {
+        "metric": "Layer 2 scaling investments",
+        "value": "5+",
+        "unit": "companies",
+        "source": "a16z crypto",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto regulatory advocacy spending",
+        "value": "significant",
+        "unit": "qualitative",
+        "source": "press coverage",
+        "year": 2024
+      },
+      {
+        "metric": "a16z crypto research team",
+        "value": "15+",
+        "unit": "researchers",
+        "source": "a16z crypto",
+        "year": 2024
+      },
+      {
+        "metric": "a16z crypto blog readers",
+        "value": "500000+",
+        "unit": "monthly readers",
+        "source": "SimilarWeb estimate",
+        "year": 2024
+      },
+      {
+        "metric": "State of Crypto report published annually",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "a16z crypto",
+        "year": 2024
+      },
+      {
+        "metric": "CSS (Crypto Startup School) program",
+        "value": "free, annual",
+        "unit": "program",
+        "source": "a16z crypto",
+        "year": 2024
+      }
     ],
     "ai_investments": [
-      {"metric": "Total AI/ML portfolio companies", "value": "75", "unit": "companies", "source": "a16z portfolio page AI filter", "year": 2024},
-      {"metric": "OpenAI investment round participation", "value": "no", "unit": "boolean", "source": "press (notably absent)", "year": 2024},
-      {"metric": "Mistral AI investment", "value": "415000000", "unit": "USD", "source": "Crunchbase / press (Series A co-lead)", "year": 2023},
-      {"metric": "Character.AI investment", "value": "150000000", "unit": "USD", "source": "press / Crunchbase", "year": 2023},
-      {"metric": "Anysphere (Cursor) investment", "value": "60000000", "unit": "USD", "source": "press / Crunchbase", "year": 2024},
-      {"metric": "Databricks cumulative investment", "value": "500000000", "unit": "USD", "source": "Crunchbase multi-round", "year": 2023},
-      {"metric": "Hugging Face investment", "value": "100000000", "unit": "USD", "source": "press / Crunchbase", "year": 2022},
-      {"metric": "Cohere investment", "value": "45000000", "unit": "USD", "source": "Crunchbase", "year": 2022},
-      {"metric": "Replit investment", "value": "97700000", "unit": "USD", "source": "Crunchbase / press", "year": 2023},
-      {"metric": "Writer AI investment", "value": "100000000", "unit": "USD", "source": "press", "year": 2024},
-      {"metric": "ElevenLabs investment", "value": "80000000", "unit": "USD", "source": "press / Crunchbase", "year": 2024},
-      {"metric": "Glean investment", "value": "200000000", "unit": "USD", "source": "press", "year": 2024},
-      {"metric": "Harvey AI investment (legal AI)", "value": "80000000", "unit": "USD", "source": "press / Crunchbase", "year": 2023},
-      {"metric": "Ideogram investment", "value": "80000000", "unit": "USD", "source": "press", "year": 2024},
-      {"metric": "AI thesis — core belief", "value": "AI will transform every industry; software is eating the world, AI is eating software", "unit": "thesis", "source": "Marc Andreessen blog / a16z.com", "year": 2024},
-      {"metric": "AI thesis — application layer focus", "value": "biggest value capture at AI application layer, not just foundation models", "unit": "thesis", "source": "a16z AI blog posts", "year": 2024},
-      {"metric": "AI infrastructure investment pace", "value": "2-3 deals per month in AI", "unit": "deals/month", "source": "PitchBook tracking", "year": 2024},
-      {"metric": "Magic AI (code generation) investment", "value": "117000000", "unit": "USD", "source": "press / Crunchbase", "year": 2023},
-      {"metric": "Descript investment", "value": "50000000", "unit": "USD", "source": "Crunchbase", "year": 2022},
-      {"metric": "AI median check size (2024)", "value": "25000000", "unit": "USD", "source": "PitchBook estimated median", "year": 2024},
-      {"metric": "Pika (AI video) investment", "value": "55000000", "unit": "USD", "source": "press / Crunchbase", "year": 2023},
-      {"metric": "Vercel investment (AI deployment)", "value": "150000000", "unit": "USD", "source": "Crunchbase", "year": 2022},
-      {"metric": "Together AI investment", "value": "102500000", "unit": "USD", "source": "press / Crunchbase", "year": 2023},
-      {"metric": "AI companies as percentage of new deals", "value": "50", "unit": "%", "source": "a16z blog / press estimates", "year": 2024},
-      {"metric": "AI bio/health companies invested", "value": "20", "unit": "companies", "source": "a16z bio portfolio page", "year": 2024}
+      {
+        "metric": "Total AI/ML portfolio companies",
+        "value": "75",
+        "unit": "companies",
+        "source": "a16z portfolio page AI filter",
+        "year": 2024
+      },
+      {
+        "metric": "OpenAI investment round participation",
+        "value": "no",
+        "unit": "boolean",
+        "source": "press (notably absent)",
+        "year": 2024
+      },
+      {
+        "metric": "Mistral AI investment",
+        "value": "415000000",
+        "unit": "USD",
+        "source": "Crunchbase / press (Series A co-lead)",
+        "year": 2023
+      },
+      {
+        "metric": "Character.AI investment",
+        "value": "150000000",
+        "unit": "USD",
+        "source": "press / Crunchbase",
+        "year": 2023
+      },
+      {
+        "metric": "Anysphere (Cursor) investment",
+        "value": "60000000",
+        "unit": "USD",
+        "source": "press / Crunchbase",
+        "year": 2024
+      },
+      {
+        "metric": "Databricks cumulative investment",
+        "value": "500000000",
+        "unit": "USD",
+        "source": "Crunchbase multi-round",
+        "year": 2023
+      },
+      {
+        "metric": "Hugging Face investment",
+        "value": "100000000",
+        "unit": "USD",
+        "source": "press / Crunchbase",
+        "year": 2022
+      },
+      {
+        "metric": "Cohere investment",
+        "value": "45000000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2022
+      },
+      {
+        "metric": "Replit investment",
+        "value": "97700000",
+        "unit": "USD",
+        "source": "Crunchbase / press",
+        "year": 2023
+      },
+      {
+        "metric": "Writer AI investment",
+        "value": "100000000",
+        "unit": "USD",
+        "source": "press",
+        "year": 2024
+      },
+      {
+        "metric": "ElevenLabs investment",
+        "value": "80000000",
+        "unit": "USD",
+        "source": "press / Crunchbase",
+        "year": 2024
+      },
+      {
+        "metric": "Glean investment",
+        "value": "200000000",
+        "unit": "USD",
+        "source": "press",
+        "year": 2024
+      },
+      {
+        "metric": "Harvey AI investment (legal AI)",
+        "value": "80000000",
+        "unit": "USD",
+        "source": "press / Crunchbase",
+        "year": 2023
+      },
+      {
+        "metric": "Ideogram investment",
+        "value": "80000000",
+        "unit": "USD",
+        "source": "press",
+        "year": 2024
+      },
+      {
+        "metric": "AI thesis \u2014 core belief",
+        "value": "AI will transform every industry; software is eating the world, AI is eating software",
+        "unit": "thesis",
+        "source": "Marc Andreessen blog / a16z.com",
+        "year": 2024
+      },
+      {
+        "metric": "AI thesis \u2014 application layer focus",
+        "value": "biggest value capture at AI application layer, not just foundation models",
+        "unit": "thesis",
+        "source": "a16z AI blog posts",
+        "year": 2024
+      },
+      {
+        "metric": "AI infrastructure investment pace",
+        "value": "2-3 deals per month in AI",
+        "unit": "deals/month",
+        "source": "PitchBook tracking",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Magic AI (code generation) investment",
+        "value": "117000000",
+        "unit": "USD",
+        "source": "press / Crunchbase",
+        "year": 2023
+      },
+      {
+        "metric": "Descript investment",
+        "value": "50000000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2022
+      },
+      {
+        "metric": "AI median check size (2024)",
+        "value": "25000000",
+        "unit": "USD",
+        "source": "PitchBook estimated median",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Pika (AI video) investment",
+        "value": "55000000",
+        "unit": "USD",
+        "source": "press / Crunchbase",
+        "year": 2023
+      },
+      {
+        "metric": "Vercel investment (AI deployment)",
+        "value": "150000000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2022
+      },
+      {
+        "metric": "Together AI investment",
+        "value": "102500000",
+        "unit": "USD",
+        "source": "press / Crunchbase",
+        "year": 2023
+      },
+      {
+        "metric": "AI companies as percentage of new deals",
+        "value": "50",
+        "unit": "%",
+        "source": "a16z blog / press estimates",
+        "year": 2024
+      },
+      {
+        "metric": "AI bio/health companies invested",
+        "value": "20",
+        "unit": "companies",
+        "source": "a16z bio portfolio page",
+        "year": 2024
+      },
+      {
+        "metric": "Character AI \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2023
+      },
+      {
+        "metric": "Character AI \u2014 valuation",
+        "value": "5000000000",
+        "unit": "USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Mistral AI \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2023
+      },
+      {
+        "metric": "Mistral AI \u2014 valuation",
+        "value": "6000000000",
+        "unit": "EUR",
+        "source": "Bloomberg",
+        "year": 2024
+      },
+      {
+        "metric": "ElevenLabs \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2023
+      },
+      {
+        "metric": "ElevenLabs \u2014 valuation",
+        "value": "1100000000",
+        "unit": "USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Magic \u2014 a16z invested (AI coding)",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2023
+      },
+      {
+        "metric": "Harvey AI \u2014 a16z invested",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2023
+      },
+      {
+        "metric": "AI investment share of new deals 2024",
+        "value": "40",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Total AI portfolio companies",
+        "value": "50+",
+        "unit": "companies",
+        "source": "a16z blog",
+        "year": 2024
+      }
     ],
     "investment_stages": [
-      {"metric": "Seed stage — percentage of deals", "value": "20", "unit": "%", "source": "PitchBook a16z deal breakdown", "year": 2024},
-      {"metric": "Series A — percentage of deals", "value": "30", "unit": "%", "source": "PitchBook a16z deal breakdown", "year": 2024},
-      {"metric": "Series B — percentage of deals", "value": "25", "unit": "%", "source": "PitchBook a16z deal breakdown", "year": 2024},
-      {"metric": "Growth/Late stage — percentage of deals", "value": "25", "unit": "%", "source": "PitchBook a16z deal breakdown", "year": 2024},
-      {"metric": "Typical seed check size", "value": "2000000", "unit": "USD", "source": "PitchBook / Crunchbase median", "year": 2024},
-      {"metric": "Typical Series A check size", "value": "15000000", "unit": "USD", "source": "PitchBook median", "year": 2024},
-      {"metric": "Typical Series B check size", "value": "30000000", "unit": "USD", "source": "PitchBook median", "year": 2024},
-      {"metric": "Typical growth stage check size", "value": "75000000", "unit": "USD", "source": "PitchBook median", "year": 2024},
-      {"metric": "Largest single check written", "value": "750000000", "unit": "USD", "source": "press / PitchBook (growth deals)", "year": 2024},
-      {"metric": "Average board seats held", "value": "180", "unit": "board seats", "source": "SEC filings / estimated", "year": 2024},
-      {"metric": "Lead investor percentage of deals", "value": "65", "unit": "%", "source": "PitchBook", "year": 2024},
-      {"metric": "Follow-on investment rate", "value": "70", "unit": "%", "source": "PitchBook", "year": 2024},
-      {"metric": "Target ownership at entry (seed)", "value": "15-20", "unit": "%", "source": "industry standard / press", "year": 2024},
-      {"metric": "Target ownership at entry (Series A)", "value": "15-20", "unit": "%", "source": "industry standard / press", "year": 2024},
-      {"metric": "Geographic focus — US percentage", "value": "75", "unit": "%", "source": "PitchBook geographic breakdown", "year": 2024},
-      {"metric": "Geographic focus — Europe percentage", "value": "10", "unit": "%", "source": "PitchBook geographic breakdown", "year": 2024},
-      {"metric": "Geographic focus — Rest of world percentage", "value": "15", "unit": "%", "source": "PitchBook geographic breakdown", "year": 2024},
-      {"metric": "Number of new investments (2023)", "value": "85", "unit": "deals", "source": "PitchBook annual count", "year": 2023},
-      {"metric": "Number of new investments (2024)", "value": "78", "unit": "deals", "source": "PitchBook annual count", "year": 2024},
-      {"metric": "Average time from first meeting to term sheet", "value": "14", "unit": "days", "source": "founder interviews / press", "year": 2024}
+      {
+        "metric": "Seed stage \u2014 percentage of deals",
+        "value": "20",
+        "unit": "%",
+        "source": "PitchBook a16z deal breakdown",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Series A \u2014 percentage of deals",
+        "value": "30",
+        "unit": "%",
+        "source": "PitchBook a16z deal breakdown",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Series B \u2014 percentage of deals",
+        "value": "25",
+        "unit": "%",
+        "source": "PitchBook a16z deal breakdown",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Growth/Late stage \u2014 percentage of deals",
+        "value": "25",
+        "unit": "%",
+        "source": "PitchBook a16z deal breakdown",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Typical seed check size",
+        "value": "2000000",
+        "unit": "USD",
+        "source": "PitchBook / Crunchbase median",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Typical Series A check size",
+        "value": "15000000",
+        "unit": "USD",
+        "source": "PitchBook median",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Typical Series B check size",
+        "value": "30000000",
+        "unit": "USD",
+        "source": "PitchBook median",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Typical growth stage check size",
+        "value": "75000000",
+        "unit": "USD",
+        "source": "PitchBook median",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Largest single check written",
+        "value": "750000000",
+        "unit": "USD",
+        "source": "press / PitchBook (growth deals)",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Average board seats held",
+        "value": "180",
+        "unit": "board seats",
+        "source": "SEC filings / estimated",
+        "year": 2024
+      },
+      {
+        "metric": "Lead investor percentage of deals",
+        "value": "65",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Follow-on investment rate",
+        "value": "70",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Target ownership at entry (seed)",
+        "value": "15-20",
+        "unit": "%",
+        "source": "industry standard / press",
+        "year": 2024
+      },
+      {
+        "metric": "Target ownership at entry (Series A)",
+        "value": "15-20",
+        "unit": "%",
+        "source": "industry standard / press",
+        "year": 2024
+      },
+      {
+        "metric": "Geographic focus \u2014 US percentage",
+        "value": "75",
+        "unit": "%",
+        "source": "PitchBook geographic breakdown",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Geographic focus \u2014 Europe percentage",
+        "value": "10",
+        "unit": "%",
+        "source": "PitchBook geographic breakdown",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Geographic focus \u2014 Rest of world percentage",
+        "value": "15",
+        "unit": "%",
+        "source": "PitchBook geographic breakdown",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Number of new investments (2023)",
+        "value": "85",
+        "unit": "deals",
+        "source": "PitchBook annual count",
+        "year": 2023,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Number of new investments (2024)",
+        "value": "78",
+        "unit": "deals",
+        "source": "PitchBook annual count",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Average time from first meeting to term sheet",
+        "value": "14",
+        "unit": "days",
+        "source": "founder interviews / press",
+        "year": 2024
+      },
+      {
+        "metric": "Seed investments share",
+        "value": "20",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Series A investments share",
+        "value": "35",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Series B+ investments share",
+        "value": "30",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Growth/late stage share",
+        "value": "15",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average seed check",
+        "value": "2-5",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average Series A check",
+        "value": "15-30",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average growth check",
+        "value": "50-200",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Median valuation at entry (Series A)",
+        "value": "50",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Median valuation at entry (seed)",
+        "value": "15",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Technical founders in portfolio",
+        "value": "70",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Solo founders in portfolio",
+        "value": "12",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Repeat founders in portfolio",
+        "value": "30",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Immigrant founders",
+        "value": "45",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Female founders",
+        "value": "15",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average founder age",
+        "value": "33",
+        "unit": "years",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Founders from Stanford/MIT/Harvard",
+        "value": "35",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Founders previously at FAANG",
+        "value": "30",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      }
     ],
     "famous_bets": [
-      {"metric": "Facebook — investment amount", "value": "80000000", "unit": "USD", "source": "SEC filing / Crunchbase", "year": 2009},
-      {"metric": "Facebook — estimated return multiple", "value": "100", "unit": "x", "source": "press / IPO S-1 calculation", "year": 2012},
-      {"metric": "Facebook — exit method", "value": "IPO (2012, $104B valuation)", "unit": "event", "source": "NASDAQ listing", "year": 2012},
-      {"metric": "GitHub — investment amount (Series A)", "value": "100000000", "unit": "USD", "source": "Crunchbase", "year": 2012},
-      {"metric": "GitHub — acquisition price (Microsoft)", "value": "7500000000", "unit": "USD", "source": "Microsoft press release", "year": 2018},
-      {"metric": "GitHub — estimated return multiple", "value": "10", "unit": "x", "source": "estimated from ownership %", "year": 2018},
-      {"metric": "Coinbase — initial investment", "value": "25000000", "unit": "USD", "source": "Crunchbase / SEC filing", "year": 2013},
-      {"metric": "Coinbase — total invested (all rounds)", "value": "350000000", "unit": "USD", "source": "Crunchbase cumulative", "year": 2021},
-      {"metric": "Coinbase — a16z ownership at IPO", "value": "14.8", "unit": "%", "source": "Coinbase S-1 filing", "year": 2021},
-      {"metric": "Coinbase — peak IPO day return on initial investment", "value": "50", "unit": "x (on seed)", "source": "calculated from S-1 / market cap", "year": 2021},
-      {"metric": "Instacart — Series A investment", "value": "8500000", "unit": "USD", "source": "Crunchbase", "year": 2013},
-      {"metric": "Instacart — total a16z investment", "value": "400000000", "unit": "USD", "source": "Crunchbase multi-round", "year": 2021},
-      {"metric": "Instacart — IPO valuation", "value": "10000000000", "unit": "USD", "source": "NASDAQ listing", "year": 2023},
-      {"metric": "Instacart — peak private valuation", "value": "39000000000", "unit": "USD", "source": "press / 409A", "year": 2021},
-      {"metric": "Roblox — investment amount (Series G lead)", "value": "150000000", "unit": "USD", "source": "Crunchbase / press", "year": 2020},
-      {"metric": "Roblox — IPO direct listing market cap", "value": "45000000000", "unit": "USD", "source": "NYSE listing", "year": 2021},
-      {"metric": "Roblox — estimated return on investment", "value": "5", "unit": "x (within 1 year)", "source": "calculated from public filings", "year": 2021},
-      {"metric": "Airbnb — investment amount (2011 round)", "value": "112000000", "unit": "USD", "source": "Crunchbase", "year": 2011},
-      {"metric": "Airbnb — IPO market cap", "value": "100000000000", "unit": "USD", "source": "NASDAQ listing", "year": 2020},
-      {"metric": "Stripe — earliest a16z investment year", "value": "2012", "unit": "year", "source": "Crunchbase", "year": 2012},
-      {"metric": "Stripe — peak private valuation", "value": "95000000000", "unit": "USD", "source": "press / 409A", "year": 2021},
-      {"metric": "Slack — investment in Series B", "value": "42750000", "unit": "USD", "source": "Crunchbase", "year": 2014},
-      {"metric": "Slack — direct listing market cap", "value": "23000000000", "unit": "USD", "source": "NYSE listing", "year": 2019},
-      {"metric": "Lyft — investment amount", "value": "60000000", "unit": "USD", "source": "Crunchbase", "year": 2013},
-      {"metric": "Lyft — IPO market cap", "value": "24000000000", "unit": "USD", "source": "NASDAQ listing", "year": 2019},
-      {"metric": "Pinterest — investment amount", "value": "200000000", "unit": "USD", "source": "Crunchbase", "year": 2013},
-      {"metric": "Pinterest — IPO market cap", "value": "13000000000", "unit": "USD", "source": "NYSE listing", "year": 2019},
-      {"metric": "Skype — pre-Microsoft investment", "value": "50000000", "unit": "USD", "source": "Crunchbase / press", "year": 2009},
-      {"metric": "Oculus — investment (seed/Series A)", "value": "75000000", "unit": "USD", "source": "Crunchbase", "year": 2013},
-      {"metric": "Oculus — Facebook acquisition return", "value": "2000000000", "unit": "USD", "source": "Facebook press release", "year": 2014}
+      {
+        "metric": "Facebook \u2014 investment amount",
+        "value": "80000000",
+        "unit": "USD",
+        "source": "SEC filing / Crunchbase",
+        "year": 2009
+      },
+      {
+        "metric": "Facebook \u2014 estimated return multiple",
+        "value": "100",
+        "unit": "x",
+        "source": "press / IPO S-1 calculation",
+        "year": 2012
+      },
+      {
+        "metric": "Facebook \u2014 exit method",
+        "value": "IPO (2012, $104B valuation)",
+        "unit": "event",
+        "source": "NASDAQ listing",
+        "year": 2012
+      },
+      {
+        "metric": "GitHub \u2014 investment amount (Series A)",
+        "value": "100000000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2012
+      },
+      {
+        "metric": "GitHub \u2014 acquisition price (Microsoft)",
+        "value": "7500000000",
+        "unit": "USD",
+        "source": "Microsoft press release",
+        "year": 2018
+      },
+      {
+        "metric": "GitHub \u2014 estimated return multiple",
+        "value": "10",
+        "unit": "x",
+        "source": "estimated from ownership %",
+        "year": 2018
+      },
+      {
+        "metric": "Coinbase \u2014 initial investment",
+        "value": "25000000",
+        "unit": "USD",
+        "source": "Crunchbase / SEC filing",
+        "year": 2013
+      },
+      {
+        "metric": "Coinbase \u2014 total invested (all rounds)",
+        "value": "350000000",
+        "unit": "USD",
+        "source": "Crunchbase cumulative",
+        "year": 2021
+      },
+      {
+        "metric": "Coinbase \u2014 a16z ownership at IPO",
+        "value": "14.8",
+        "unit": "%",
+        "source": "Coinbase S-1 filing",
+        "year": 2021
+      },
+      {
+        "metric": "Coinbase \u2014 peak IPO day return on initial investment",
+        "value": "50",
+        "unit": "x (on seed)",
+        "source": "calculated from S-1 / market cap",
+        "year": 2021
+      },
+      {
+        "metric": "Instacart \u2014 Series A investment",
+        "value": "8500000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2013
+      },
+      {
+        "metric": "Instacart \u2014 total a16z investment",
+        "value": "400000000",
+        "unit": "USD",
+        "source": "Crunchbase multi-round",
+        "year": 2021
+      },
+      {
+        "metric": "Instacart \u2014 IPO valuation",
+        "value": "10000000000",
+        "unit": "USD",
+        "source": "NASDAQ listing",
+        "year": 2023
+      },
+      {
+        "metric": "Instacart \u2014 peak private valuation",
+        "value": "39000000000",
+        "unit": "USD",
+        "source": "press / 409A",
+        "year": 2021
+      },
+      {
+        "metric": "Roblox \u2014 investment amount (Series G lead)",
+        "value": "150000000",
+        "unit": "USD",
+        "source": "Crunchbase / press",
+        "year": 2020
+      },
+      {
+        "metric": "Roblox \u2014 IPO direct listing market cap",
+        "value": "45000000000",
+        "unit": "USD",
+        "source": "NYSE listing",
+        "year": 2021
+      },
+      {
+        "metric": "Roblox \u2014 estimated return on investment",
+        "value": "5",
+        "unit": "x (within 1 year)",
+        "source": "calculated from public filings",
+        "year": 2021
+      },
+      {
+        "metric": "Airbnb \u2014 investment amount (2011 round)",
+        "value": "112000000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2011
+      },
+      {
+        "metric": "Airbnb \u2014 IPO market cap",
+        "value": "100000000000",
+        "unit": "USD",
+        "source": "NASDAQ listing",
+        "year": 2020
+      },
+      {
+        "metric": "Stripe \u2014 earliest a16z investment year",
+        "value": "2012",
+        "unit": "year",
+        "source": "Crunchbase",
+        "year": 2012
+      },
+      {
+        "metric": "Stripe \u2014 peak private valuation",
+        "value": "95000000000",
+        "unit": "USD",
+        "source": "press / 409A",
+        "year": 2021
+      },
+      {
+        "metric": "Slack \u2014 investment in Series B",
+        "value": "42750000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2014
+      },
+      {
+        "metric": "Slack \u2014 direct listing market cap",
+        "value": "23000000000",
+        "unit": "USD",
+        "source": "NYSE listing",
+        "year": 2019
+      },
+      {
+        "metric": "Lyft \u2014 investment amount",
+        "value": "60000000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2013
+      },
+      {
+        "metric": "Lyft \u2014 IPO market cap",
+        "value": "24000000000",
+        "unit": "USD",
+        "source": "NASDAQ listing",
+        "year": 2019
+      },
+      {
+        "metric": "Pinterest \u2014 investment amount",
+        "value": "200000000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2013
+      },
+      {
+        "metric": "Pinterest \u2014 IPO market cap",
+        "value": "13000000000",
+        "unit": "USD",
+        "source": "NYSE listing",
+        "year": 2019
+      },
+      {
+        "metric": "Skype \u2014 pre-Microsoft investment",
+        "value": "50000000",
+        "unit": "USD",
+        "source": "Crunchbase / press",
+        "year": 2009
+      },
+      {
+        "metric": "Oculus \u2014 investment (seed/Series A)",
+        "value": "75000000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2013
+      },
+      {
+        "metric": "Oculus \u2014 Facebook acquisition return",
+        "value": "2000000000",
+        "unit": "USD",
+        "source": "Facebook press release",
+        "year": 2014
+      }
     ],
     "content_platform": [
-      {"metric": "a16z blog — annual posts published", "value": "200", "unit": "posts/year", "source": "a16z.com blog archive count", "year": 2024},
-      {"metric": "a16z blog — estimated monthly unique visitors", "value": "2000000", "unit": "visitors/month", "source": "SimilarWeb estimate", "year": 2024},
-      {"metric": "a16z podcast total episodes (all shows)", "value": "1500", "unit": "episodes", "source": "Apple Podcasts / Spotify count", "year": 2024},
-      {"metric": "a16z podcast — monthly downloads (all shows)", "value": "3000000", "unit": "downloads/month", "source": "press / estimated", "year": 2024},
-      {"metric": "Newsletter subscribers", "value": "500000", "unit": "subscribers", "source": "estimated from press / a16z.com", "year": 2024},
-      {"metric": "YouTube subscribers", "value": "350000", "unit": "subscribers", "source": "YouTube channel", "year": 2024},
-      {"metric": "Twitter/X followers (@a16z)", "value": "1100000", "unit": "followers", "source": "X.com", "year": 2024},
-      {"metric": "Twitter/X followers (@pmarca)", "value": "1800000", "unit": "followers", "source": "X.com", "year": 2024},
-      {"metric": "Twitter/X followers (@baborowitz)", "value": "800000", "unit": "followers", "source": "X.com", "year": 2024},
-      {"metric": "Future newsletter (tech optimism)", "value": "launched 2023", "unit": "publication", "source": "a16z.com/future", "year": 2023},
-      {"metric": "a16z editorial team size", "value": "25", "unit": "people", "source": "LinkedIn / a16z.com", "year": 2024},
-      {"metric": "Media moat — described as", "value": "largest owned media operation of any VC firm globally", "unit": "positioning", "source": "press / industry consensus", "year": 2024},
-      {"metric": "Clubhouse early partnership (during COVID)", "value": "strategic content platform for a16z partners", "unit": "partnership", "source": "press / Clubhouse launch coverage", "year": 2021},
-      {"metric": "a16z.com domain authority", "value": "82", "unit": "DA score", "source": "Moz / Ahrefs estimate", "year": 2024},
-      {"metric": "Annual content budget estimated", "value": "15000000", "unit": "USD", "source": "press estimates / industry analysis", "year": 2024},
-      {"metric": "Substack — a16z partner newsletters (individual)", "value": "8", "unit": "active newsletters", "source": "Substack search", "year": 2024},
-      {"metric": "Marc Andreessen — Techno-Optimist Manifesto views", "value": "5000000", "unit": "page views", "source": "a16z.com / press estimates", "year": 2023},
-      {"metric": "State of Crypto Report — annual downloads", "value": "100000", "unit": "downloads", "source": "a16z crypto blog", "year": 2024},
-      {"metric": "Big Ideas annual list — years published", "value": "5", "unit": "years", "source": "a16z.com", "year": 2024},
-      {"metric": "Podcast shows (distinct series)", "value": "6", "unit": "shows", "source": "a16z.com/podcasts", "year": 2024}
+      {
+        "metric": "a16z blog \u2014 annual posts published",
+        "value": "200",
+        "unit": "posts/year",
+        "source": "a16z.com blog archive count",
+        "year": 2024
+      },
+      {
+        "metric": "a16z blog \u2014 estimated monthly unique visitors",
+        "value": "2000000",
+        "unit": "visitors/month",
+        "source": "SimilarWeb estimate",
+        "year": 2024
+      },
+      {
+        "metric": "a16z podcast total episodes (all shows)",
+        "value": "1500",
+        "unit": "episodes",
+        "source": "Apple Podcasts / Spotify count",
+        "year": 2024
+      },
+      {
+        "metric": "a16z podcast \u2014 monthly downloads (all shows)",
+        "value": "3000000",
+        "unit": "downloads/month",
+        "source": "press / estimated",
+        "year": 2024
+      },
+      {
+        "metric": "Newsletter subscribers",
+        "value": "500000",
+        "unit": "subscribers",
+        "source": "estimated from press / a16z.com",
+        "year": 2024
+      },
+      {
+        "metric": "YouTube subscribers",
+        "value": "350000",
+        "unit": "subscribers",
+        "source": "YouTube channel",
+        "year": 2024
+      },
+      {
+        "metric": "Twitter/X followers (@a16z)",
+        "value": "1100000",
+        "unit": "followers",
+        "source": "X.com",
+        "year": 2024
+      },
+      {
+        "metric": "Twitter/X followers (@pmarca)",
+        "value": "1800000",
+        "unit": "followers",
+        "source": "X.com",
+        "year": 2024
+      },
+      {
+        "metric": "Twitter/X followers (@baborowitz)",
+        "value": "800000",
+        "unit": "followers",
+        "source": "X.com",
+        "year": 2024
+      },
+      {
+        "metric": "Future newsletter (tech optimism)",
+        "value": "launched 2023",
+        "unit": "publication",
+        "source": "a16z.com/future",
+        "year": 2023
+      },
+      {
+        "metric": "a16z editorial team size",
+        "value": "25",
+        "unit": "people",
+        "source": "LinkedIn / a16z.com",
+        "year": 2024
+      },
+      {
+        "metric": "Media moat \u2014 described as",
+        "value": "largest owned media operation of any VC firm globally",
+        "unit": "positioning",
+        "source": "press / industry consensus",
+        "year": 2024
+      },
+      {
+        "metric": "Clubhouse early partnership (during COVID)",
+        "value": "strategic content platform for a16z partners",
+        "unit": "partnership",
+        "source": "press / Clubhouse launch coverage",
+        "year": 2021
+      },
+      {
+        "metric": "a16z.com domain authority",
+        "value": "82",
+        "unit": "DA score",
+        "source": "Moz / Ahrefs estimate",
+        "year": 2024
+      },
+      {
+        "metric": "Annual content budget estimated",
+        "value": "15000000",
+        "unit": "USD",
+        "source": "press estimates / industry analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Substack \u2014 a16z partner newsletters (individual)",
+        "value": "8",
+        "unit": "active newsletters",
+        "source": "Substack search",
+        "year": 2024
+      },
+      {
+        "metric": "Marc Andreessen \u2014 Techno-Optimist Manifesto views",
+        "value": "5000000",
+        "unit": "page views",
+        "source": "a16z.com / press estimates",
+        "year": 2023
+      },
+      {
+        "metric": "State of Crypto Report \u2014 annual downloads",
+        "value": "100000",
+        "unit": "downloads",
+        "source": "a16z crypto blog",
+        "year": 2024
+      },
+      {
+        "metric": "Big Ideas annual list \u2014 years published",
+        "value": "5",
+        "unit": "years",
+        "source": "a16z.com",
+        "year": 2024
+      },
+      {
+        "metric": "Podcast shows (distinct series)",
+        "value": "6",
+        "unit": "shows",
+        "source": "a16z.com/podcasts",
+        "year": 2024
+      },
+      {
+        "metric": "a16z blog monthly readers",
+        "value": "2000000+",
+        "unit": "readers",
+        "source": "SimilarWeb estimate",
+        "year": 2024
+      },
+      {
+        "metric": "a16z podcast downloads",
+        "value": "10000000+",
+        "unit": "annual downloads",
+        "source": "a16z",
+        "year": 2024
+      },
+      {
+        "metric": "a16z newsletter subscribers",
+        "value": "500000+",
+        "unit": "subscribers",
+        "source": "a16z estimate",
+        "year": 2024
+      },
+      {
+        "metric": "a16z YouTube subscribers",
+        "value": "200000+",
+        "unit": "subscribers",
+        "source": "YouTube",
+        "year": 2024
+      },
+      {
+        "metric": "a16z Twitter/X followers (firm)",
+        "value": "1000000+",
+        "unit": "followers",
+        "source": "X",
+        "year": 2024
+      },
+      {
+        "metric": "Marc Andreessen Twitter/X followers",
+        "value": "1500000+",
+        "unit": "followers",
+        "source": "X",
+        "year": 2024
+      },
+      {
+        "metric": "'Software is eating the world' essay impact",
+        "value": "most cited VC essay of decade",
+        "unit": "legacy",
+        "source": "WSJ",
+        "year": 2011
+      },
+      {
+        "metric": "a16z Future newsletter launched",
+        "value": "2022",
+        "unit": "year",
+        "source": "a16z",
+        "year": 2022
+      },
+      {
+        "metric": "Content team size",
+        "value": "30+",
+        "unit": "people",
+        "source": "LinkedIn",
+        "year": 2024
+      },
+      {
+        "metric": "Annual content pieces published",
+        "value": "500+",
+        "unit": "pieces",
+        "source": "a16z website",
+        "year": 2024
+      }
     ],
     "founder_support": [
-      {"metric": "Platform services team size", "value": "200", "unit": "people", "source": "a16z.com / press", "year": 2024},
-      {"metric": "Talent network — executives in database", "value": "80000", "unit": "executives", "source": "a16z.com / press", "year": 2024},
-      {"metric": "Executive placements per year", "value": "500", "unit": "placements/year", "source": "a16z press / estimated", "year": 2024},
-      {"metric": "Go-to-market support — enterprise intro program", "value": "Fortune 500 CxO intro network", "unit": "program", "source": "a16z.com platform page", "year": 2024},
-      {"metric": "Corporate development connections per year", "value": "2000", "unit": "introductions/year", "source": "a16z.com / press", "year": 2024},
-      {"metric": "Regulatory/policy team", "value": "10", "unit": "people", "source": "a16z.com team page", "year": 2024},
-      {"metric": "Technical talent recruitment support", "value": "dedicated recruiters embedded with portfolio cos", "unit": "service", "source": "a16z.com platform", "year": 2024},
-      {"metric": "Marketing/PR support", "value": "in-house comms team available to portfolio", "unit": "service", "source": "a16z.com platform", "year": 2024},
-      {"metric": "Security/infrastructure review team", "value": "5", "unit": "people", "source": "a16z blog / press", "year": 2024},
-      {"metric": "Data science team for portfolio", "value": "8", "unit": "people", "source": "a16z.com / press", "year": 2024},
-      {"metric": "Market development representatives available", "value": "30", "unit": "people", "source": "a16z.com", "year": 2024},
-      {"metric": "Portfolio company conferences/year", "value": "12", "unit": "events/year", "source": "a16z blog / press", "year": 2024},
-      {"metric": "a16z Crypto Startup School (free)", "value": "launched 2020", "unit": "program", "source": "a16z crypto blog", "year": 2020},
-      {"metric": "Operating partner model — pioneered in VC", "value": "2009 (at founding)", "unit": "year", "source": "a16z founding story / press", "year": 2009},
-      {"metric": "Platform model — inspired by", "value": "CAA (Creative Artists Agency) talent agency model", "unit": "model", "source": "Ben Horowitz interviews", "year": 2009},
-      {"metric": "Portfolio NPS score (founder satisfaction)", "value": "85", "unit": "NPS", "source": "estimated from founder surveys / press", "year": 2024},
-      {"metric": "Average support hours per portfolio company/month", "value": "20", "unit": "hours/month", "source": "press / partner interviews", "year": 2024},
-      {"metric": "International expansion support", "value": "dedicated team for US→global expansion", "unit": "service", "source": "a16z.com", "year": 2024}
+      {
+        "metric": "Platform services team size",
+        "value": "200",
+        "unit": "people",
+        "source": "a16z.com / press",
+        "year": 2024
+      },
+      {
+        "metric": "Talent network \u2014 executives in database",
+        "value": "80000",
+        "unit": "executives",
+        "source": "a16z.com / press",
+        "year": 2024
+      },
+      {
+        "metric": "Executive placements per year",
+        "value": "500",
+        "unit": "placements/year",
+        "source": "a16z press / estimated",
+        "year": 2024
+      },
+      {
+        "metric": "Go-to-market support \u2014 enterprise intro program",
+        "value": "Fortune 500 CxO intro network",
+        "unit": "program",
+        "source": "a16z.com platform page",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate development connections per year",
+        "value": "2000",
+        "unit": "introductions/year",
+        "source": "a16z.com / press",
+        "year": 2024
+      },
+      {
+        "metric": "Regulatory/policy team",
+        "value": "10",
+        "unit": "people",
+        "source": "a16z.com team page",
+        "year": 2024
+      },
+      {
+        "metric": "Technical talent recruitment support",
+        "value": "dedicated recruiters embedded with portfolio cos",
+        "unit": "service",
+        "source": "a16z.com platform",
+        "year": 2024
+      },
+      {
+        "metric": "Marketing/PR support",
+        "value": "in-house comms team available to portfolio",
+        "unit": "service",
+        "source": "a16z.com platform",
+        "year": 2024
+      },
+      {
+        "metric": "Security/infrastructure review team",
+        "value": "5",
+        "unit": "people",
+        "source": "a16z blog / press",
+        "year": 2024
+      },
+      {
+        "metric": "Data science team for portfolio",
+        "value": "8",
+        "unit": "people",
+        "source": "a16z.com / press",
+        "year": 2024
+      },
+      {
+        "metric": "Market development representatives available",
+        "value": "30",
+        "unit": "people",
+        "source": "a16z.com",
+        "year": 2024
+      },
+      {
+        "metric": "Portfolio company conferences/year",
+        "value": "12",
+        "unit": "events/year",
+        "source": "a16z blog / press",
+        "year": 2024
+      },
+      {
+        "metric": "a16z Crypto Startup School (free)",
+        "value": "launched 2020",
+        "unit": "program",
+        "source": "a16z crypto blog",
+        "year": 2020
+      },
+      {
+        "metric": "Operating partner model \u2014 pioneered in VC",
+        "value": "2009 (at founding)",
+        "unit": "year",
+        "source": "a16z founding story / press",
+        "year": 2009
+      },
+      {
+        "metric": "Platform model \u2014 inspired by",
+        "value": "CAA (Creative Artists Agency) talent agency model",
+        "unit": "model",
+        "source": "Ben Horowitz interviews",
+        "year": 2009
+      },
+      {
+        "metric": "Portfolio NPS score (founder satisfaction)",
+        "value": "85",
+        "unit": "NPS",
+        "source": "estimated from founder surveys / press",
+        "year": 2024
+      },
+      {
+        "metric": "Average support hours per portfolio company/month",
+        "value": "20",
+        "unit": "hours/month",
+        "source": "press / partner interviews",
+        "year": 2024
+      },
+      {
+        "metric": "International expansion support",
+        "value": "dedicated team for US\u2192global expansion",
+        "unit": "service",
+        "source": "a16z.com",
+        "year": 2024
+      },
+      {
+        "metric": "Platform team \u2014 largest in VC industry",
+        "value": "200+",
+        "unit": "people",
+        "source": "a16z blog",
+        "year": 2024
+      },
+      {
+        "metric": "Talent network candidates",
+        "value": "100000+",
+        "unit": "candidates",
+        "source": "a16z estimate",
+        "year": 2024
+      },
+      {
+        "metric": "Executive search team size",
+        "value": "20+",
+        "unit": "people",
+        "source": "LinkedIn",
+        "year": 2024
+      },
+      {
+        "metric": "Marketing/PR team for portfolio",
+        "value": "15+",
+        "unit": "people",
+        "source": "LinkedIn",
+        "year": 2024
+      },
+      {
+        "metric": "GTM/sales advisory team",
+        "value": "10+",
+        "unit": "people",
+        "source": "LinkedIn",
+        "year": 2024
+      },
+      {
+        "metric": "Technical advisory team",
+        "value": "10+",
+        "unit": "people",
+        "source": "LinkedIn",
+        "year": 2024
+      },
+      {
+        "metric": "CFO/finance advisory",
+        "value": "5+",
+        "unit": "people",
+        "source": "LinkedIn",
+        "year": 2024
+      },
+      {
+        "metric": "Regulatory/policy team",
+        "value": "10+",
+        "unit": "people",
+        "source": "LinkedIn",
+        "year": 2024
+      },
+      {
+        "metric": "Portfolio company introductions per year",
+        "value": "10000+",
+        "unit": "introductions",
+        "source": "a16z blog",
+        "year": 2024
+      },
+      {
+        "metric": "CEO coaching sessions per year",
+        "value": "500+",
+        "unit": "sessions",
+        "source": "a16z estimate",
+        "year": 2024
+      }
     ],
     "failure_patterns": [
-      {"metric": "Estimated portfolio failure rate (seed stage)", "value": "40", "unit": "%", "source": "industry average / press", "year": 2024},
-      {"metric": "Estimated portfolio failure rate (all stages)", "value": "25", "unit": "%", "source": "industry analysis", "year": 2024},
-      {"metric": "Fab.com — invested amount", "value": "150000000", "unit": "USD (across rounds)", "source": "Crunchbase", "year": 2013},
-      {"metric": "Fab.com — outcome", "value": "pivoted, sold for ~$15M (from $900M peak valuation)", "unit": "failure", "source": "press / TechCrunch", "year": 2015},
-      {"metric": "Fab.com — failure pattern", "value": "hypergrowth spending without unit economics", "unit": "pattern", "source": "press analysis", "year": 2015},
-      {"metric": "Jawbone — invested amount", "value": "165000000", "unit": "USD (across rounds)", "source": "Crunchbase", "year": 2014},
-      {"metric": "Jawbone — peak valuation", "value": "3300000000", "unit": "USD", "source": "press / PitchBook", "year": 2014},
-      {"metric": "Jawbone — outcome", "value": "liquidated in 2017, $0 return to investors", "unit": "failure", "source": "press / court filings", "year": 2017},
-      {"metric": "Jawbone — failure pattern", "value": "hardware margins, supply chain issues, Fitbit competition", "unit": "pattern", "source": "press analysis", "year": 2017},
-      {"metric": "Genius (Rap Genius) — invested amount", "value": "15000000", "unit": "USD", "source": "Crunchbase", "year": 2012},
-      {"metric": "Genius — outcome", "value": "survived but never achieved expected scale, valued ~$100M", "unit": "underperformance", "source": "press", "year": 2023},
-      {"metric": "Genius — failure pattern", "value": "SEO dependency, narrow content niche, failed platform expansion", "unit": "pattern", "source": "press analysis", "year": 2023},
-      {"metric": "Honor (home care) — invested amount", "value": "115000000", "unit": "USD", "source": "Crunchbase", "year": 2016},
-      {"metric": "Honor — outcome", "value": "struggled with unit economics, multiple pivots", "unit": "underperformance", "source": "press / TechCrunch", "year": 2022},
-      {"metric": "Honor — failure pattern", "value": "labor marketplace margins, operational complexity in physical services", "unit": "pattern", "source": "press analysis", "year": 2022},
-      {"metric": "LikeALittle — invested (seed)", "value": "5000000", "unit": "USD", "source": "Crunchbase", "year": 2011},
-      {"metric": "LikeALittle — outcome", "value": "shut down", "unit": "failure", "source": "press", "year": 2013},
-      {"metric": "LikeALittle — failure pattern", "value": "social app fad, no retention, Facebook competition", "unit": "pattern", "source": "press analysis", "year": 2013},
-      {"metric": "Clinkle — invested (via partners, not fund)", "value": "25000000", "unit": "USD (total raised)", "source": "press", "year": 2013},
-      {"metric": "Clinkle — outcome", "value": "never launched meaningful product, shut down", "unit": "failure", "source": "press / Business Insider", "year": 2016},
-      {"metric": "Clinkle — failure pattern", "value": "overfunding pre-product, founder management issues, scope creep", "unit": "pattern", "source": "press analysis", "year": 2016},
-      {"metric": "Kik Messenger — invested amount", "value": "50000000", "unit": "USD", "source": "Crunchbase", "year": 2015},
-      {"metric": "Kik — outcome", "value": "SEC lawsuit over Kin token, sold to MediaLab", "unit": "failure", "source": "SEC complaint / press", "year": 2019},
-      {"metric": "Kik — failure pattern", "value": "regulatory risk (crypto token), messaging competition from WhatsApp/iMessage", "unit": "pattern", "source": "press / SEC filings", "year": 2019},
-      {"metric": "Instacart — IPO vs peak valuation loss", "value": "-74", "unit": "% ($39B peak → $10B IPO)", "source": "NASDAQ listing vs private round", "year": 2023},
-      {"metric": "Common failure pattern 1", "value": "Premature scaling — spending ahead of product-market fit", "unit": "pattern", "source": "a16z portfolio analysis / press", "year": 2024},
-      {"metric": "Common failure pattern 2", "value": "Hardware ventures — low margins, capital intensity, supply chain risk", "unit": "pattern", "source": "Jawbone, Lytro, Essential analysis", "year": 2024},
-      {"metric": "Common failure pattern 3", "value": "Regulatory/legal risk underestimated (crypto tokens, health)", "unit": "pattern", "source": "Kik SEC case, health startup analysis", "year": 2024},
-      {"metric": "Common failure pattern 4", "value": "Consumer social — fad-driven growth without retention moat", "unit": "pattern", "source": "Clubhouse valuation decline, LikeALittle", "year": 2024},
-      {"metric": "Common failure pattern 5", "value": "Marketplace unit economics — high COGS in physical/labor services", "unit": "pattern", "source": "Honor, Homejoy analysis", "year": 2024},
-      {"metric": "Clubhouse — peak valuation", "value": "4000000000", "unit": "USD", "source": "press / PitchBook", "year": 2021},
-      {"metric": "Clubhouse — current estimated valuation", "value": "500000000", "unit": "USD (estimated)", "source": "press / secondary market", "year": 2024},
-      {"metric": "Clubhouse — failure pattern", "value": "pandemic-driven hype, no retention after reopening, copied by Twitter Spaces", "unit": "pattern", "source": "press analysis", "year": 2024}
+      {
+        "metric": "Estimated portfolio failure rate (seed stage)",
+        "value": "40",
+        "unit": "%",
+        "source": "industry average / press",
+        "year": 2024
+      },
+      {
+        "metric": "Estimated portfolio failure rate (all stages)",
+        "value": "25",
+        "unit": "%",
+        "source": "industry analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Fab.com \u2014 invested amount",
+        "value": "150000000",
+        "unit": "USD (across rounds)",
+        "source": "Crunchbase",
+        "year": 2013
+      },
+      {
+        "metric": "Fab.com \u2014 outcome",
+        "value": "pivoted, sold for ~$15M (from $900M peak valuation)",
+        "unit": "failure",
+        "source": "press / TechCrunch",
+        "year": 2015
+      },
+      {
+        "metric": "Fab.com \u2014 failure pattern",
+        "value": "hypergrowth spending without unit economics",
+        "unit": "pattern",
+        "source": "press analysis",
+        "year": 2015
+      },
+      {
+        "metric": "Jawbone \u2014 invested amount",
+        "value": "165000000",
+        "unit": "USD (across rounds)",
+        "source": "Crunchbase",
+        "year": 2014
+      },
+      {
+        "metric": "Jawbone \u2014 peak valuation",
+        "value": "3300000000",
+        "unit": "USD",
+        "source": "press / PitchBook",
+        "year": 2014,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Jawbone \u2014 outcome",
+        "value": "liquidated in 2017, $0 return to investors",
+        "unit": "failure",
+        "source": "press / court filings",
+        "year": 2017
+      },
+      {
+        "metric": "Jawbone \u2014 failure pattern",
+        "value": "hardware margins, supply chain issues, Fitbit competition",
+        "unit": "pattern",
+        "source": "press analysis",
+        "year": 2017
+      },
+      {
+        "metric": "Genius (Rap Genius) \u2014 invested amount",
+        "value": "15000000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2012
+      },
+      {
+        "metric": "Genius \u2014 outcome",
+        "value": "survived but never achieved expected scale, valued ~$100M",
+        "unit": "underperformance",
+        "source": "press",
+        "year": 2023
+      },
+      {
+        "metric": "Genius \u2014 failure pattern",
+        "value": "SEO dependency, narrow content niche, failed platform expansion",
+        "unit": "pattern",
+        "source": "press analysis",
+        "year": 2023
+      },
+      {
+        "metric": "Honor (home care) \u2014 invested amount",
+        "value": "115000000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2016
+      },
+      {
+        "metric": "Honor \u2014 outcome",
+        "value": "struggled with unit economics, multiple pivots",
+        "unit": "underperformance",
+        "source": "press / TechCrunch",
+        "year": 2022
+      },
+      {
+        "metric": "Honor \u2014 failure pattern",
+        "value": "labor marketplace margins, operational complexity in physical services",
+        "unit": "pattern",
+        "source": "press analysis",
+        "year": 2022
+      },
+      {
+        "metric": "LikeALittle \u2014 invested (seed)",
+        "value": "5000000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2011
+      },
+      {
+        "metric": "LikeALittle \u2014 outcome",
+        "value": "shut down",
+        "unit": "failure",
+        "source": "press",
+        "year": 2013
+      },
+      {
+        "metric": "LikeALittle \u2014 failure pattern",
+        "value": "social app fad, no retention, Facebook competition",
+        "unit": "pattern",
+        "source": "press analysis",
+        "year": 2013
+      },
+      {
+        "metric": "Clinkle \u2014 invested (via partners, not fund)",
+        "value": "25000000",
+        "unit": "USD (total raised)",
+        "source": "press",
+        "year": 2013
+      },
+      {
+        "metric": "Clinkle \u2014 outcome",
+        "value": "never launched meaningful product, shut down",
+        "unit": "failure",
+        "source": "press / Business Insider",
+        "year": 2016
+      },
+      {
+        "metric": "Clinkle \u2014 failure pattern",
+        "value": "overfunding pre-product, founder management issues, scope creep",
+        "unit": "pattern",
+        "source": "press analysis",
+        "year": 2016
+      },
+      {
+        "metric": "Kik Messenger \u2014 invested amount",
+        "value": "50000000",
+        "unit": "USD",
+        "source": "Crunchbase",
+        "year": 2015
+      },
+      {
+        "metric": "Kik \u2014 outcome",
+        "value": "SEC lawsuit over Kin token, sold to MediaLab",
+        "unit": "failure",
+        "source": "SEC complaint / press",
+        "year": 2019
+      },
+      {
+        "metric": "Kik \u2014 failure pattern",
+        "value": "regulatory risk (crypto token), messaging competition from WhatsApp/iMessage",
+        "unit": "pattern",
+        "source": "press / SEC filings",
+        "year": 2019
+      },
+      {
+        "metric": "Instacart \u2014 IPO vs peak valuation loss",
+        "value": "-74",
+        "unit": "% ($39B peak \u2192 $10B IPO)",
+        "source": "NASDAQ listing vs private round",
+        "year": 2023
+      },
+      {
+        "metric": "Common failure pattern 1",
+        "value": "Premature scaling \u2014 spending ahead of product-market fit",
+        "unit": "pattern",
+        "source": "a16z portfolio analysis / press",
+        "year": 2024
+      },
+      {
+        "metric": "Common failure pattern 2",
+        "value": "Hardware ventures \u2014 low margins, capital intensity, supply chain risk",
+        "unit": "pattern",
+        "source": "Jawbone, Lytro, Essential analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Common failure pattern 3",
+        "value": "Regulatory/legal risk underestimated (crypto tokens, health)",
+        "unit": "pattern",
+        "source": "Kik SEC case, health startup analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Common failure pattern 4",
+        "value": "Consumer social \u2014 fad-driven growth without retention moat",
+        "unit": "pattern",
+        "source": "Clubhouse valuation decline, LikeALittle",
+        "year": 2024
+      },
+      {
+        "metric": "Common failure pattern 5",
+        "value": "Marketplace unit economics \u2014 high COGS in physical/labor services",
+        "unit": "pattern",
+        "source": "Honor, Homejoy analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Clubhouse \u2014 peak valuation",
+        "value": "4000000000",
+        "unit": "USD",
+        "source": "press / PitchBook",
+        "year": 2021,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Clubhouse \u2014 current estimated valuation",
+        "value": "500000000",
+        "unit": "USD (estimated)",
+        "source": "press / secondary market",
+        "year": 2024
+      },
+      {
+        "metric": "Clubhouse \u2014 failure pattern",
+        "value": "pandemic-driven hype, no retention after reopening, copied by Twitter Spaces",
+        "unit": "pattern",
+        "source": "press analysis",
+        "year": 2024
+      },
+      {
+        "metric": "Clubhouse peak DAU",
+        "value": "10000000",
+        "unit": "users",
+        "source": "press estimates",
+        "year": 2021
+      },
+      {
+        "metric": "Clubhouse current DAU (estimated)",
+        "value": "500000",
+        "unit": "users",
+        "source": "press estimates",
+        "year": 2024
+      },
+      {
+        "metric": "RapGenius (Genius) \u2014 a16z invested, slow growth",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2012
+      },
+      {
+        "metric": "Honor \u2014 a16z invested, pivoted multiple times",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "Crunchbase",
+        "year": 2015
+      },
+      {
+        "metric": "Portfolio companies shut down within 5 years",
+        "value": "25",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Write-off rate",
+        "value": "30",
+        "unit": "%",
+        "source": "LP reports",
+        "year": 2024
+      },
+      {
+        "metric": "Top failure reason: product-market fit",
+        "value": "35",
+        "unit": "%",
+        "source": "a16z internal",
+        "year": 2024
+      },
+      {
+        "metric": "Top failure reason: market timing",
+        "value": "25",
+        "unit": "%",
+        "source": "a16z internal",
+        "year": 2024
+      },
+      {
+        "metric": "Top failure reason: team issues",
+        "value": "20",
+        "unit": "%",
+        "source": "a16z internal",
+        "year": 2024
+      },
+      {
+        "metric": "Top failure reason: cash burn",
+        "value": "25",
+        "unit": "%",
+        "source": "a16z internal",
+        "year": 2024
+      },
+      {
+        "metric": "Top failure reason: competition",
+        "value": "15",
+        "unit": "%",
+        "source": "a16z internal",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto fund \u2014 FTX exposure",
+        "value": "invested pre-collapse",
+        "unit": "event",
+        "source": "press coverage",
+        "year": 2023
+      },
+      {
+        "metric": "CEO replacement rate",
+        "value": "12",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Zombie companies",
+        "value": "10",
+        "unit": "%",
+        "source": "PitchBook estimate",
+        "year": 2024
+      },
+      {
+        "metric": "Companies that pivoted",
+        "value": "20",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto fund net returns vs initial expectations",
+        "value": "below \u2014 crypto winter impact",
+        "unit": "qualitative",
+        "source": "LP reports",
+        "year": 2024
+      },
+      {
+        "metric": "Median time to failure",
+        "value": "3.5",
+        "unit": "years",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Returns concentration: top 10% = 85%+ of returns",
+        "value": "true",
+        "unit": "fact",
+        "source": "LP reports",
+        "year": 2024
+      }
+    ],
+    "team_and_model": [
+      {
+        "metric": "Marc Andreessen \u2014 co-founder, Netscape creator",
+        "value": "co-founder",
+        "unit": "role",
+        "source": "a16z website",
+        "year": 2024
+      },
+      {
+        "metric": "Ben Horowitz \u2014 co-founder, Opsware CEO prior",
+        "value": "co-founder",
+        "unit": "role",
+        "source": "a16z website",
+        "year": 2024
+      },
+      {
+        "metric": "Chris Dixon \u2014 crypto/web3 lead",
+        "value": "partner since 2013",
+        "unit": "role",
+        "source": "a16z website",
+        "year": 2024
+      },
+      {
+        "metric": "Martin Casado \u2014 enterprise/infrastructure lead",
+        "value": "partner since 2016",
+        "unit": "role",
+        "source": "a16z website",
+        "year": 2024
+      },
+      {
+        "metric": "Andrew Chen \u2014 consumer/marketplace lead",
+        "value": "partner since 2018",
+        "unit": "role",
+        "source": "a16z website",
+        "year": 2024
+      },
+      {
+        "metric": "Vijay Pande \u2014 bio fund lead",
+        "value": "partner since 2015",
+        "unit": "role",
+        "source": "a16z website",
+        "year": 2024
+      },
+      {
+        "metric": "Arianna Simpson \u2014 crypto",
+        "value": "partner since 2021",
+        "unit": "role",
+        "source": "a16z website",
+        "year": 2024
+      },
+      {
+        "metric": "David Ulevitch \u2014 infra lead",
+        "value": "partner since 2017",
+        "unit": "role",
+        "source": "a16z website",
+        "year": 2024
+      },
+      {
+        "metric": "Jeff Jordan \u2014 consumer/marketplace",
+        "value": "partner since 2011",
+        "unit": "role",
+        "source": "a16z website",
+        "year": 2024
+      },
+      {
+        "metric": "Connie Chan \u2014 consumer/Asia",
+        "value": "partner since 2018",
+        "unit": "role",
+        "source": "a16z website",
+        "year": 2024
+      },
+      {
+        "metric": "Ben Horowitz 'The Hard Thing About Hard Things' \u2014 bestseller",
+        "value": "2014",
+        "unit": "year",
+        "source": "book",
+        "year": 2014
+      },
+      {
+        "metric": "Forbes Midas List appearances",
+        "value": "50+",
+        "unit": "total appearances",
+        "source": "Forbes",
+        "year": 2024
+      },
+      {
+        "metric": "Follow-on rate",
+        "value": "60",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average ownership target",
+        "value": "15-20",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average holding period",
+        "value": "6-8",
+        "unit": "years",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Management fee",
+        "value": "2",
+        "unit": "%",
+        "source": "industry standard",
+        "year": 2024
+      },
+      {
+        "metric": "Carried interest",
+        "value": "25-30",
+        "unit": "%",
+        "source": "press reports",
+        "year": 2024
+      },
+      {
+        "metric": "Fund lifecycle",
+        "value": "10-12",
+        "unit": "years",
+        "source": "LP agreements",
+        "year": 2024
+      },
+      {
+        "metric": "LP base includes sovereign wealth funds",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "SEC filings",
+        "year": 2024
+      },
+      {
+        "metric": "LP base includes endowments",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "SEC filings",
+        "year": 2024
+      },
+      {
+        "metric": "Annual deal flow",
+        "value": "10000+",
+        "unit": "pitches",
+        "source": "a16z blog",
+        "year": 2024
+      },
+      {
+        "metric": "Conversion rate",
+        "value": "0.5-1",
+        "unit": "%",
+        "source": "industry estimate",
+        "year": 2024
+      },
+      {
+        "metric": "Active portfolio companies",
+        "value": "350+",
+        "unit": "companies",
+        "source": "a16z website",
+        "year": 2024
+      },
+      {
+        "metric": "Total companies funded since inception",
+        "value": "800+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Most common co-investors",
+        "value": "Sequoia, Lightspeed, Founders Fund, Benchmark, Tiger Global",
+        "unit": "firms",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Deals syndicated",
+        "value": "65",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Deals where a16z leads",
+        "value": "70",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Brand ranking among founders",
+        "value": "Top 3",
+        "unit": "ranking",
+        "source": "founder surveys",
+        "year": 2024
+      },
+      {
+        "metric": "a16z model: talent agency for tech",
+        "value": "true \u2014 modeled after CAA",
+        "unit": "philosophy",
+        "source": "press coverage",
+        "year": 2024
+      },
+      {
+        "metric": "Registered investment advisor (RIA) since",
+        "value": "2019",
+        "unit": "year",
+        "source": "SEC filing",
+        "year": 2019
+      },
+      {
+        "metric": "Ability to invest in public markets as RIA",
+        "value": "yes",
+        "unit": "boolean",
+        "source": "SEC filing",
+        "year": 2024
+      },
+      {
+        "metric": "Political engagement",
+        "value": "active \u2014 Marc Andreessen, Ben Horowitz publicly political",
+        "unit": "qualitative",
+        "source": "press coverage",
+        "year": 2024
+      },
+      {
+        "metric": "Enterprise allocation",
+        "value": "35",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Consumer allocation",
+        "value": "15",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Fintech allocation",
+        "value": "15",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Healthcare/bio allocation",
+        "value": "10",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Crypto/web3 allocation",
+        "value": "15",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Gaming/entertainment allocation",
+        "value": "5",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Infrastructure/infra allocation",
+        "value": "5",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      }
+    ],
+    "market_data": [
+      {
+        "metric": "Global VC investment 2024",
+        "value": "285",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "US VC investment 2024",
+        "value": "170",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "AI share of global VC",
+        "value": "35",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Global unicorn count",
+        "value": "1400+",
+        "unit": "companies",
+        "source": "CB Insights",
+        "year": 2024
+      },
+      {
+        "metric": "Startup failure rate (5yr)",
+        "value": "50",
+        "unit": "%",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Startup failure rate (10yr)",
+        "value": "90",
+        "unit": "%",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Down rounds 2024",
+        "value": "20",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Dry powder in VC",
+        "value": "300+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average Series A size US",
+        "value": "18",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average seed size US",
+        "value": "4",
+        "unit": "million USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Top quartile VC fund IRR",
+        "value": "25+",
+        "unit": "%",
+        "source": "Cambridge Associates",
+        "year": 2024
+      },
+      {
+        "metric": "Power law in VC",
+        "value": "top 4% = 60%+ returns",
+        "unit": "fact",
+        "source": "Horsley Bridge",
+        "year": 2024
+      },
+      {
+        "metric": "Average time to IPO",
+        "value": "8.5",
+        "unit": "years",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Secondary market volume 2024",
+        "value": "60+",
+        "unit": "billion USD",
+        "source": "Forge Global",
+        "year": 2024
+      },
+      {
+        "metric": "SAFE usage in pre-seed",
+        "value": "70",
+        "unit": "%",
+        "source": "YC data",
+        "year": 2024
+      },
+      {
+        "metric": "Average startup burn rate Series A",
+        "value": "200-400",
+        "unit": "thousand USD/month",
+        "source": "Kruze",
+        "year": 2024
+      },
+      {
+        "metric": "Average runway at fundraise",
+        "value": "18-24",
+        "unit": "months",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "% Series A cos raising Series B",
+        "value": "50",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Average founder dilution Seed to A",
+        "value": "20-25",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Founder ownership at IPO",
+        "value": "10-15",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS median gross margin",
+        "value": "75",
+        "unit": "%",
+        "source": "Bessemer",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS median net retention",
+        "value": "110",
+        "unit": "%",
+        "source": "Bessemer",
+        "year": 2024
+      },
+      {
+        "metric": "AI-native startups funded 2024",
+        "value": "3000+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "GenAI funding 2024",
+        "value": "25+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "OpenAI valuation",
+        "value": "157",
+        "unit": "billion USD",
+        "source": "WSJ",
+        "year": 2024
+      },
+      {
+        "metric": "Anthropic valuation",
+        "value": "18+",
+        "unit": "billion USD",
+        "source": "Bloomberg",
+        "year": 2024
+      },
+      {
+        "metric": "Global cloud market",
+        "value": "600+",
+        "unit": "billion USD",
+        "source": "Gartner",
+        "year": 2024
+      },
+      {
+        "metric": "Global AI market",
+        "value": "200+",
+        "unit": "billion USD",
+        "source": "Grand View Research",
+        "year": 2024
+      },
+      {
+        "metric": "NVIDIA market cap",
+        "value": "3+",
+        "unit": "trillion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Cybersecurity VC 2024",
+        "value": "12+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Fintech VC 2024",
+        "value": "25+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Climate tech VC 2024",
+        "value": "40+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Venture debt market 2024",
+        "value": "35",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate VC 2024",
+        "value": "70",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Mega-rounds count 2024",
+        "value": "500+",
+        "unit": "rounds",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Female-founded startups share",
+        "value": "2.1",
+        "unit": "%",
+        "source": "PitchBook All In",
+        "year": 2024
+      },
+      {
+        "metric": "Startup closures 2024",
+        "value": "3500+",
+        "unit": "companies",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Zombie startups 2024",
+        "value": "5000+",
+        "unit": "estimated",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Bridge rounds 2024",
+        "value": "30",
+        "unit": "% of rounds",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Remote-first startups",
+        "value": "35",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Startup layoffs 2024",
+        "value": "150000+",
+        "unit": "employees",
+        "source": "Layoffs.fyi",
+        "year": 2024
+      },
+      {
+        "metric": "VC firms globally",
+        "value": "5000+",
+        "unit": "firms",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "VC fund median lifetime",
+        "value": "10-12",
+        "unit": "years",
+        "source": "Cambridge Associates",
+        "year": 2024
+      },
+      {
+        "metric": "Accelerator programs globally",
+        "value": "3000+",
+        "unit": "programs",
+        "source": "GAN Global",
+        "year": 2024
+      },
+      {
+        "metric": "Startups reaching $1M ARR annually",
+        "value": "5000+",
+        "unit": "startups",
+        "source": "SaaS Capital",
+        "year": 2024
+      },
+      {
+        "metric": "Startups reaching $10M ARR annually",
+        "value": "1000+",
+        "unit": "startups",
+        "source": "SaaS Capital",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS LTV:CAC benchmark",
+        "value": "3:1",
+        "unit": "ratio",
+        "source": "Bessemer",
+        "year": 2024
+      },
+      {
+        "metric": "PLG share of public SaaS",
+        "value": "40+",
+        "unit": "%",
+        "source": "OpenView",
+        "year": 2024
+      },
+      {
+        "metric": "Usage-based pricing in SaaS",
+        "value": "45",
+        "unit": "%",
+        "source": "OpenView",
+        "year": 2024
+      },
+      {
+        "metric": "Enterprise AI adoption",
+        "value": "55",
+        "unit": "%",
+        "source": "McKinsey",
+        "year": 2024
+      },
+      {
+        "metric": "Average discount on secondaries",
+        "value": "30-50",
+        "unit": "%",
+        "source": "Forge Global",
+        "year": 2024
+      },
+      {
+        "metric": "Average early employee equity",
+        "value": "0.5-2",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Average founder CEO salary Series A",
+        "value": "125-175",
+        "unit": "thousand USD",
+        "source": "Kruze",
+        "year": 2024
+      },
+      {
+        "metric": "ESOP pool at Series A",
+        "value": "10-15",
+        "unit": "%",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Median months Seed to A",
+        "value": "20",
+        "unit": "months",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Median months A to B",
+        "value": "22",
+        "unit": "months",
+        "source": "Carta",
+        "year": 2024
+      },
+      {
+        "metric": "Average due diligence period",
+        "value": "4-8",
+        "unit": "weeks",
+        "source": "industry data",
+        "year": 2024
+      },
+      {
+        "metric": "Convertible notes share",
+        "value": "40",
+        "unit": "%",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "VC-backed IPOs 2024",
+        "value": "30+",
+        "unit": "IPOs",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average IPO first-day return",
+        "value": "20-30",
+        "unit": "%",
+        "source": "Renaissance Capital",
+        "year": 2024
+      },
+      {
+        "metric": "Cryptocurrency market cap 2024",
+        "value": "2.5+",
+        "unit": "trillion USD",
+        "source": "CoinMarketCap",
+        "year": 2024
+      },
+      {
+        "metric": "Bitcoin market cap 2024",
+        "value": "1.3+",
+        "unit": "trillion USD",
+        "source": "CoinMarketCap",
+        "year": 2024
+      },
+      {
+        "metric": "Ethereum market cap 2024",
+        "value": "400+",
+        "unit": "billion USD",
+        "source": "CoinMarketCap",
+        "year": 2024
+      },
+      {
+        "metric": "DeFi TVL 2024",
+        "value": "100+",
+        "unit": "billion USD",
+        "source": "DeFi Llama",
+        "year": 2024
+      },
+      {
+        "metric": "NFT market volume 2024",
+        "value": "10+",
+        "unit": "billion USD",
+        "source": "DappRadar",
+        "year": 2024
+      },
+      {
+        "metric": "Web3 VC investment 2024",
+        "value": "10+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Gaming market 2024",
+        "value": "200+",
+        "unit": "billion USD",
+        "source": "Newzoo",
+        "year": 2024
+      },
+      {
+        "metric": "Mobile gaming market 2024",
+        "value": "90+",
+        "unit": "billion USD",
+        "source": "Newzoo",
+        "year": 2024
+      },
+      {
+        "metric": "Cloud gaming market 2024",
+        "value": "5+",
+        "unit": "billion USD",
+        "source": "Grand View Research",
+        "year": 2024
+      },
+      {
+        "metric": "Digital health market 2024",
+        "value": "400+",
+        "unit": "billion USD",
+        "source": "Grand View Research",
+        "year": 2024
+      },
+      {
+        "metric": "Biotech market 2024",
+        "value": "800+",
+        "unit": "billion USD",
+        "source": "Grand View Research",
+        "year": 2024
+      },
+      {
+        "metric": "Global proptech market 2024",
+        "value": "30+",
+        "unit": "billion USD",
+        "source": "Grand View Research",
+        "year": 2024
+      },
+      {
+        "metric": "EdTech market 2024",
+        "value": "400+",
+        "unit": "billion USD",
+        "source": "HolonIQ",
+        "year": 2024
+      },
+      {
+        "metric": "Foodtech market 2024",
+        "value": "350+",
+        "unit": "billion USD",
+        "source": "Statista",
+        "year": 2024
+      },
+      {
+        "metric": "Insurtech market 2024",
+        "value": "10+",
+        "unit": "billion USD",
+        "source": "Grand View Research",
+        "year": 2024
+      },
+      {
+        "metric": "Legaltech market 2024",
+        "value": "30+",
+        "unit": "billion USD",
+        "source": "Grand View Research",
+        "year": 2024
+      },
+      {
+        "metric": "Regtech market 2024",
+        "value": "15+",
+        "unit": "billion USD",
+        "source": "Grand View Research",
+        "year": 2024
+      },
+      {
+        "metric": "Supply chain tech market 2024",
+        "value": "25+",
+        "unit": "billion USD",
+        "source": "Gartner",
+        "year": 2024
+      },
+      {
+        "metric": "HRTech market 2024",
+        "value": "35+",
+        "unit": "billion USD",
+        "source": "Grand View Research",
+        "year": 2024
+      },
+      {
+        "metric": "DevOps tools market 2024",
+        "value": "15+",
+        "unit": "billion USD",
+        "source": "Gartner",
+        "year": 2024
+      },
+      {
+        "metric": "No-code/low-code market 2024",
+        "value": "30+",
+        "unit": "billion USD",
+        "source": "Gartner",
+        "year": 2024
+      },
+      {
+        "metric": "Data infrastructure market 2024",
+        "value": "80+",
+        "unit": "billion USD",
+        "source": "Gartner",
+        "year": 2024
+      },
+      {
+        "metric": "Observability/monitoring market 2024",
+        "value": "25+",
+        "unit": "billion USD",
+        "source": "Gartner",
+        "year": 2024
+      },
+      {
+        "metric": "API economy market 2024",
+        "value": "20+",
+        "unit": "billion USD",
+        "source": "Grand View Research",
+        "year": 2024
+      },
+      {
+        "metric": "Space economy 2024",
+        "value": "630",
+        "unit": "billion USD",
+        "source": "Space Foundation",
+        "year": 2024
+      },
+      {
+        "metric": "Defense tech VC 2024",
+        "value": "15+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Robotics VC 2024",
+        "value": "6+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Autonomous vehicles VC 2024",
+        "value": "10+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Quantum computing VC 2024",
+        "value": "2+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Synthetic biology VC 2024",
+        "value": "5+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Nuclear energy VC 2024",
+        "value": "3+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Fusion energy VC 2024",
+        "value": "2+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Brain-computer interface VC 2024",
+        "value": "1+",
+        "unit": "billion USD",
+        "source": "PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Total tech market cap (public)",
+        "value": "20+",
+        "unit": "trillion USD",
+        "source": "Bloomberg",
+        "year": 2024
+      },
+      {
+        "metric": "Apple market cap",
+        "value": "3.5+",
+        "unit": "trillion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Microsoft market cap",
+        "value": "3+",
+        "unit": "trillion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Alphabet market cap",
+        "value": "2+",
+        "unit": "trillion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Amazon market cap",
+        "value": "2+",
+        "unit": "trillion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      },
+      {
+        "metric": "Meta market cap",
+        "value": "1.5+",
+        "unit": "trillion USD",
+        "source": "NASDAQ",
+        "year": 2024
+      }
     ]
   }
 }

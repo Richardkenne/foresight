@@ -2,228 +2,3873 @@
   "_meta": {
     "category": "bank-data",
     "source": "Citibank/Citigroup",
-    "total_datapoints": 203,
-    "created": "2026-03-30"
+    "total_datapoints": 501,
+    "created": "2026-03-30",
+    "url": "https://www.citigroup.com/global/insights"
   },
   "sections": {
     "global_perspectives": [
-      {"metric": "Global GDP 2024", "value": "105.4", "unit": "trillion_usd", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "Global GDP projected 2030", "value": "128", "unit": "trillion_usd", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "GDP — United States 2024", "value": "28.8", "unit": "trillion_usd", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "GDP — China 2024", "value": "18.5", "unit": "trillion_usd", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "GDP — India projected 2030", "value": "6.5", "unit": "trillion_usd", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "GDP — Indonesia projected 2030", "value": "2.2", "unit": "trillion_usd", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "GDP growth — India 2025 forecast", "value": "6.3", "unit": "percent", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "GDP growth — Vietnam 2025 forecast", "value": "5.8", "unit": "percent", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "GDP growth — Nigeria 2025 forecast", "value": "3.2", "unit": "percent", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "GDP growth — Brazil 2025 forecast", "value": "2.1", "unit": "percent", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "GDP growth — EU 2025 forecast", "value": "1.2", "unit": "percent", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "Global urbanization rate 2024", "value": "57", "unit": "percent", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Global urbanization rate projected 2050", "value": "68", "unit": "percent", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "People moving to cities annually", "value": "80000000", "unit": "people_per_year", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Africa urbanization rate 2024", "value": "44", "unit": "percent", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Africa urbanization rate projected 2050", "value": "59", "unit": "percent", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Demographic dividend — Nigeria median age", "value": "18.1", "unit": "years", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "Demographic dividend — Indonesia median age", "value": "30.5", "unit": "years", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "Demographic dividend — India median age", "value": "28.4", "unit": "years", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "Aging population — Japan median age", "value": "48.6", "unit": "years", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "Aging population — Germany median age", "value": "46.8", "unit": "years", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "Aging population — Italy median age", "value": "47.3", "unit": "years", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "Working-age population growth 2024-2030 — Africa", "value": "2.7", "unit": "percent_annual", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "Working-age population growth 2024-2030 — South Asia", "value": "1.2", "unit": "percent_annual", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "Working-age population decline 2024-2030 — Europe", "value": "-0.4", "unit": "percent_annual", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "Working-age population decline 2024-2030 — East Asia", "value": "-0.6", "unit": "percent_annual", "source": "Citi GPS Global Perspectives 2024", "year": 2024}
+      {
+        "metric": "Global GDP 2024",
+        "value": "105.4",
+        "unit": "trillion_usd",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global GDP projected 2030",
+        "value": "128",
+        "unit": "trillion_usd",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "GDP \u2014 United States 2024",
+        "value": "28.8",
+        "unit": "trillion_usd",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "GDP \u2014 China 2024",
+        "value": "18.5",
+        "unit": "trillion_usd",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "GDP \u2014 India projected 2030",
+        "value": "6.5",
+        "unit": "trillion_usd",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "GDP \u2014 Indonesia projected 2030",
+        "value": "2.2",
+        "unit": "trillion_usd",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "GDP growth \u2014 India 2025 forecast",
+        "value": "6.3",
+        "unit": "percent",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "GDP growth \u2014 Vietnam 2025 forecast",
+        "value": "5.8",
+        "unit": "percent",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "GDP growth \u2014 Nigeria 2025 forecast",
+        "value": "3.2",
+        "unit": "percent",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "GDP growth \u2014 Brazil 2025 forecast",
+        "value": "2.1",
+        "unit": "percent",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "GDP growth \u2014 EU 2025 forecast",
+        "value": "1.2",
+        "unit": "percent",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global urbanization rate 2024",
+        "value": "57",
+        "unit": "percent",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global urbanization rate projected 2050",
+        "value": "68",
+        "unit": "percent",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "People moving to cities annually",
+        "value": "80000000",
+        "unit": "people_per_year",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Africa urbanization rate 2024",
+        "value": "44",
+        "unit": "percent",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Africa urbanization rate projected 2050",
+        "value": "59",
+        "unit": "percent",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Demographic dividend \u2014 Nigeria median age",
+        "value": "18.1",
+        "unit": "years",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Demographic dividend \u2014 Indonesia median age",
+        "value": "30.5",
+        "unit": "years",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Demographic dividend \u2014 India median age",
+        "value": "28.4",
+        "unit": "years",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Aging population \u2014 Japan median age",
+        "value": "48.6",
+        "unit": "years",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Aging population \u2014 Germany median age",
+        "value": "46.8",
+        "unit": "years",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Aging population \u2014 Italy median age",
+        "value": "47.3",
+        "unit": "years",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Working-age population growth 2024-2030 \u2014 Africa",
+        "value": "2.7",
+        "unit": "percent_annual",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Working-age population growth 2024-2030 \u2014 South Asia",
+        "value": "1.2",
+        "unit": "percent_annual",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Working-age population decline 2024-2030 \u2014 Europe",
+        "value": "-0.4",
+        "unit": "percent_annual",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Working-age population decline 2024-2030 \u2014 East Asia",
+        "value": "-0.6",
+        "unit": "percent_annual",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      }
     ],
     "wealth_report": [
-      {"metric": "HNWI population — New York City", "value": "349500", "unit": "people", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNWI population — Tokyo", "value": "298300", "unit": "people", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNWI population — San Francisco Bay Area", "value": "276400", "unit": "people", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNWI population — London", "value": "258400", "unit": "people", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNWI population — Singapore", "value": "244800", "unit": "people", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNWI population — Los Angeles", "value": "212600", "unit": "people", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNWI population — Hong Kong", "value": "185900", "unit": "people", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNWI population — Beijing", "value": "178200", "unit": "people", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNWI population — Shanghai", "value": "165800", "unit": "people", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNWI population — Sydney", "value": "128600", "unit": "people", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNWI population — Dubai", "value": "72500", "unit": "people", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNWI population — Mumbai", "value": "58800", "unit": "people", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNWI population — Jakarta", "value": "38200", "unit": "people", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNWI wealth growth — India", "value": "12.4", "unit": "percent_yoy", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNWI wealth growth — UAE", "value": "10.8", "unit": "percent_yoy", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNWI wealth growth — Singapore", "value": "8.2", "unit": "percent_yoy", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNWI wealth growth — US", "value": "7.5", "unit": "percent_yoy", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "HNWI wealth growth — Indonesia", "value": "9.1", "unit": "percent_yoy", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "Luxury spending — HNWI average annual", "value": "234000", "unit": "usd", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "Luxury spending — watches/jewelry share", "value": "22", "unit": "percent", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "Luxury spending — travel/experiences share", "value": "28", "unit": "percent", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "Luxury spending — fashion share", "value": "18", "unit": "percent", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "Luxury spending — fine dining share", "value": "12", "unit": "percent", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "Luxury spending — wellness share", "value": "10", "unit": "percent", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024},
-      {"metric": "Luxury spending — art/collectibles share", "value": "10", "unit": "percent", "source": "Citi Private Bank Global Wealth Report 2024", "year": 2024}
+      {
+        "metric": "HNWI population \u2014 New York City",
+        "value": "349500",
+        "unit": "people",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI population \u2014 Tokyo",
+        "value": "298300",
+        "unit": "people",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI population \u2014 San Francisco Bay Area",
+        "value": "276400",
+        "unit": "people",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI population \u2014 London",
+        "value": "258400",
+        "unit": "people",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI population \u2014 Singapore",
+        "value": "244800",
+        "unit": "people",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI population \u2014 Los Angeles",
+        "value": "212600",
+        "unit": "people",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI population \u2014 Hong Kong",
+        "value": "185900",
+        "unit": "people",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI population \u2014 Beijing",
+        "value": "178200",
+        "unit": "people",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI population \u2014 Shanghai",
+        "value": "165800",
+        "unit": "people",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI population \u2014 Sydney",
+        "value": "128600",
+        "unit": "people",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI population \u2014 Dubai",
+        "value": "72500",
+        "unit": "people",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI population \u2014 Mumbai",
+        "value": "58800",
+        "unit": "people",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI population \u2014 Jakarta",
+        "value": "38200",
+        "unit": "people",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI wealth growth \u2014 India",
+        "value": "12.4",
+        "unit": "percent_yoy",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI wealth growth \u2014 UAE",
+        "value": "10.8",
+        "unit": "percent_yoy",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI wealth growth \u2014 Singapore",
+        "value": "8.2",
+        "unit": "percent_yoy",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI wealth growth \u2014 US",
+        "value": "7.5",
+        "unit": "percent_yoy",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "HNWI wealth growth \u2014 Indonesia",
+        "value": "9.1",
+        "unit": "percent_yoy",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury spending \u2014 HNWI average annual",
+        "value": "234000",
+        "unit": "usd",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury spending \u2014 watches/jewelry share",
+        "value": "22",
+        "unit": "percent",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury spending \u2014 travel/experiences share",
+        "value": "28",
+        "unit": "percent",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury spending \u2014 fashion share",
+        "value": "18",
+        "unit": "percent",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury spending \u2014 fine dining share",
+        "value": "12",
+        "unit": "percent",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury spending \u2014 wellness share",
+        "value": "10",
+        "unit": "percent",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Luxury spending \u2014 art/collectibles share",
+        "value": "10",
+        "unit": "percent",
+        "source": "Citi Private Bank Global Wealth Report 2024",
+        "year": 2024
+      }
     ],
     "digital_economy": [
-      {"metric": "Global digital payment transaction value 2024", "value": "11.6", "unit": "trillion_usd", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "Digital payment CAGR 2024-2028", "value": "15", "unit": "percent", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "Mobile payment adoption — China", "value": "87", "unit": "percent", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "Mobile payment adoption — India", "value": "72", "unit": "percent", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "Mobile payment adoption — South Korea", "value": "81", "unit": "percent", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "Mobile payment adoption — US", "value": "52", "unit": "percent", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "Mobile payment adoption — UK", "value": "58", "unit": "percent", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "Mobile payment adoption — Indonesia", "value": "61", "unit": "percent", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "Mobile payment adoption — Nigeria", "value": "48", "unit": "percent", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "Mobile payment adoption — Brazil", "value": "65", "unit": "percent", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "Fintech disruption rate — payments", "value": "42", "unit": "percent_market_share", "source": "Citi GPS Fintech Report 2024", "year": 2024},
-      {"metric": "Fintech disruption rate — lending", "value": "18", "unit": "percent_market_share", "source": "Citi GPS Fintech Report 2024", "year": 2024},
-      {"metric": "Fintech disruption rate — insurance", "value": "8", "unit": "percent_market_share", "source": "Citi GPS Fintech Report 2024", "year": 2024},
-      {"metric": "Fintech disruption rate — wealth management", "value": "12", "unit": "percent_market_share", "source": "Citi GPS Fintech Report 2024", "year": 2024},
-      {"metric": "Fintech disruption rate — cross-border transfers", "value": "28", "unit": "percent_market_share", "source": "Citi GPS Fintech Report 2024", "year": 2024},
-      {"metric": "Global fintech funding 2024", "value": "52", "unit": "billion_usd", "source": "Citi GPS Fintech Report 2024", "year": 2024},
-      {"metric": "Neobank users globally", "value": "450000000", "unit": "users", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "CBDC pilot programs active", "value": "134", "unit": "countries", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "Real-time payment systems operational", "value": "82", "unit": "countries", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "Embedded finance market size 2024", "value": "92", "unit": "billion_usd", "source": "Citi GPS Fintech Report 2024", "year": 2024},
-      {"metric": "Embedded finance projected 2030", "value": "320", "unit": "billion_usd", "source": "Citi GPS Fintech Report 2024", "year": 2024},
-      {"metric": "Buy Now Pay Later market size", "value": "316", "unit": "billion_usd", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "Stablecoin total market cap", "value": "165", "unit": "billion_usd", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "Tokenized real-world assets market", "value": "12.8", "unit": "billion_usd", "source": "Citi GPS Digital Money 2024", "year": 2024}
+      {
+        "metric": "Global digital payment transaction value 2024",
+        "value": "11.6",
+        "unit": "trillion_usd",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital payment CAGR 2024-2028",
+        "value": "15",
+        "unit": "percent",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Mobile payment adoption \u2014 China",
+        "value": "87",
+        "unit": "percent",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Mobile payment adoption \u2014 India",
+        "value": "72",
+        "unit": "percent",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Mobile payment adoption \u2014 South Korea",
+        "value": "81",
+        "unit": "percent",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Mobile payment adoption \u2014 US",
+        "value": "52",
+        "unit": "percent",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Mobile payment adoption \u2014 UK",
+        "value": "58",
+        "unit": "percent",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Mobile payment adoption \u2014 Indonesia",
+        "value": "61",
+        "unit": "percent",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Mobile payment adoption \u2014 Nigeria",
+        "value": "48",
+        "unit": "percent",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Mobile payment adoption \u2014 Brazil",
+        "value": "65",
+        "unit": "percent",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Fintech disruption rate \u2014 payments",
+        "value": "42",
+        "unit": "percent_market_share",
+        "source": "Citi GPS Fintech Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Fintech disruption rate \u2014 lending",
+        "value": "18",
+        "unit": "percent_market_share",
+        "source": "Citi GPS Fintech Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Fintech disruption rate \u2014 insurance",
+        "value": "8",
+        "unit": "percent_market_share",
+        "source": "Citi GPS Fintech Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Fintech disruption rate \u2014 wealth management",
+        "value": "12",
+        "unit": "percent_market_share",
+        "source": "Citi GPS Fintech Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Fintech disruption rate \u2014 cross-border transfers",
+        "value": "28",
+        "unit": "percent_market_share",
+        "source": "Citi GPS Fintech Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global fintech funding 2024",
+        "value": "52",
+        "unit": "billion_usd",
+        "source": "Citi GPS Fintech Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Neobank users globally",
+        "value": "450000000",
+        "unit": "users",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "CBDC pilot programs active",
+        "value": "134",
+        "unit": "countries",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Real-time payment systems operational",
+        "value": "82",
+        "unit": "countries",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Embedded finance market size 2024",
+        "value": "92",
+        "unit": "billion_usd",
+        "source": "Citi GPS Fintech Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Embedded finance projected 2030",
+        "value": "320",
+        "unit": "billion_usd",
+        "source": "Citi GPS Fintech Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Buy Now Pay Later market size",
+        "value": "316",
+        "unit": "billion_usd",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Stablecoin total market cap",
+        "value": "165",
+        "unit": "billion_usd",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Tokenized real-world assets market",
+        "value": "12.8",
+        "unit": "billion_usd",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      }
     ],
     "trade_data": [
-      {"metric": "Global trade in goods 2024", "value": "25.2", "unit": "trillion_usd", "source": "Citi Trade & Treasury Solutions Report 2024", "year": 2024},
-      {"metric": "Global trade in services 2024", "value": "7.8", "unit": "trillion_usd", "source": "Citi Trade & Treasury Solutions Report 2024", "year": 2024},
-      {"metric": "Global trade growth forecast 2025", "value": "3.2", "unit": "percent", "source": "Citi Trade & Treasury Solutions Report 2024", "year": 2024},
-      {"metric": "Supply chain resilience index — Vietnam", "value": "78", "unit": "index_0_100", "source": "Citi GPS Supply Chain 2024", "year": 2024},
-      {"metric": "Supply chain resilience index — India", "value": "72", "unit": "index_0_100", "source": "Citi GPS Supply Chain 2024", "year": 2024},
-      {"metric": "Supply chain resilience index — Mexico", "value": "82", "unit": "index_0_100", "source": "Citi GPS Supply Chain 2024", "year": 2024},
-      {"metric": "Supply chain resilience index — Indonesia", "value": "68", "unit": "index_0_100", "source": "Citi GPS Supply Chain 2024", "year": 2024},
-      {"metric": "Supply chain resilience index — Poland", "value": "75", "unit": "index_0_100", "source": "Citi GPS Supply Chain 2024", "year": 2024},
-      {"metric": "Companies nearshoring supply chains", "value": "42", "unit": "percent", "source": "Citi GPS Supply Chain 2024", "year": 2024},
-      {"metric": "Companies friendshoring", "value": "35", "unit": "percent", "source": "Citi GPS Supply Chain 2024", "year": 2024},
-      {"metric": "China+1 strategy adoption", "value": "58", "unit": "percent_of_multinationals", "source": "Citi GPS Supply Chain 2024", "year": 2024},
-      {"metric": "Average supply chain disruption cost per company", "value": "182", "unit": "million_usd_per_year", "source": "Citi GPS Supply Chain 2024", "year": 2024},
-      {"metric": "US-Mexico trade volume 2024", "value": "798", "unit": "billion_usd", "source": "Citi Trade & Treasury Solutions Report 2024", "year": 2024},
-      {"metric": "EU-China trade volume 2024", "value": "856", "unit": "billion_usd", "source": "Citi Trade & Treasury Solutions Report 2024", "year": 2024},
-      {"metric": "ASEAN-China trade volume 2024", "value": "975", "unit": "billion_usd", "source": "Citi Trade & Treasury Solutions Report 2024", "year": 2024},
-      {"metric": "Global semiconductor trade 2024", "value": "620", "unit": "billion_usd", "source": "Citi GPS Supply Chain 2024", "year": 2024},
-      {"metric": "Critical minerals trade growth", "value": "18", "unit": "percent_yoy", "source": "Citi GPS Supply Chain 2024", "year": 2024},
-      {"metric": "Digital services trade growth", "value": "12", "unit": "percent_yoy", "source": "Citi Trade & Treasury Solutions Report 2024", "year": 2024},
-      {"metric": "Trade-weighted tariff average — developed", "value": "3.8", "unit": "percent", "source": "Citi Trade & Treasury Solutions Report 2024", "year": 2024},
-      {"metric": "Trade-weighted tariff average — developing", "value": "8.2", "unit": "percent", "source": "Citi Trade & Treasury Solutions Report 2024", "year": 2024}
+      {
+        "metric": "Global trade in goods 2024",
+        "value": "25.2",
+        "unit": "trillion_usd",
+        "source": "Citi Trade & Treasury Solutions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global trade in services 2024",
+        "value": "7.8",
+        "unit": "trillion_usd",
+        "source": "Citi Trade & Treasury Solutions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global trade growth forecast 2025",
+        "value": "3.2",
+        "unit": "percent",
+        "source": "Citi Trade & Treasury Solutions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Supply chain resilience index \u2014 Vietnam",
+        "value": "78",
+        "unit": "index_0_100",
+        "source": "Citi GPS Supply Chain 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Supply chain resilience index \u2014 India",
+        "value": "72",
+        "unit": "index_0_100",
+        "source": "Citi GPS Supply Chain 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Supply chain resilience index \u2014 Mexico",
+        "value": "82",
+        "unit": "index_0_100",
+        "source": "Citi GPS Supply Chain 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Supply chain resilience index \u2014 Indonesia",
+        "value": "68",
+        "unit": "index_0_100",
+        "source": "Citi GPS Supply Chain 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Supply chain resilience index \u2014 Poland",
+        "value": "75",
+        "unit": "index_0_100",
+        "source": "Citi GPS Supply Chain 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies nearshoring supply chains",
+        "value": "42",
+        "unit": "percent",
+        "source": "Citi GPS Supply Chain 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Companies friendshoring",
+        "value": "35",
+        "unit": "percent",
+        "source": "Citi GPS Supply Chain 2024",
+        "year": 2024
+      },
+      {
+        "metric": "China+1 strategy adoption",
+        "value": "58",
+        "unit": "percent_of_multinationals",
+        "source": "Citi GPS Supply Chain 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average supply chain disruption cost per company",
+        "value": "182",
+        "unit": "million_usd_per_year",
+        "source": "Citi GPS Supply Chain 2024",
+        "year": 2024
+      },
+      {
+        "metric": "US-Mexico trade volume 2024",
+        "value": "798",
+        "unit": "billion_usd",
+        "source": "Citi Trade & Treasury Solutions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EU-China trade volume 2024",
+        "value": "856",
+        "unit": "billion_usd",
+        "source": "Citi Trade & Treasury Solutions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "ASEAN-China trade volume 2024",
+        "value": "975",
+        "unit": "billion_usd",
+        "source": "Citi Trade & Treasury Solutions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global semiconductor trade 2024",
+        "value": "620",
+        "unit": "billion_usd",
+        "source": "Citi GPS Supply Chain 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Critical minerals trade growth",
+        "value": "18",
+        "unit": "percent_yoy",
+        "source": "Citi GPS Supply Chain 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Digital services trade growth",
+        "value": "12",
+        "unit": "percent_yoy",
+        "source": "Citi Trade & Treasury Solutions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Trade-weighted tariff average \u2014 developed",
+        "value": "3.8",
+        "unit": "percent",
+        "source": "Citi Trade & Treasury Solutions Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Trade-weighted tariff average \u2014 developing",
+        "value": "8.2",
+        "unit": "percent",
+        "source": "Citi Trade & Treasury Solutions Report 2024",
+        "year": 2024
+      }
     ],
     "consumer_banking": [
-      {"metric": "Global credit card spending 2024", "value": "4.2", "unit": "trillion_usd", "source": "Citi Consumer Banking Report 2024", "year": 2024},
-      {"metric": "Average credit card spend per cardholder — US", "value": "8200", "unit": "usd_per_year", "source": "Citi Consumer Banking Report 2024", "year": 2024},
-      {"metric": "Average credit card spend per cardholder — UK", "value": "5400", "unit": "usd_per_year", "source": "Citi Consumer Banking Report 2024", "year": 2024},
-      {"metric": "Average credit card spend per cardholder — Singapore", "value": "7100", "unit": "usd_per_year", "source": "Citi Consumer Banking Report 2024", "year": 2024},
-      {"metric": "Average credit card spend per cardholder — Australia", "value": "6300", "unit": "usd_per_year", "source": "Citi Consumer Banking Report 2024", "year": 2024},
-      {"metric": "Credit card spending category — Retail", "value": "32", "unit": "percent", "source": "Citi Consumer Banking Report 2024", "year": 2024},
-      {"metric": "Credit card spending category — Travel", "value": "18", "unit": "percent", "source": "Citi Consumer Banking Report 2024", "year": 2024},
-      {"metric": "Credit card spending category — Dining", "value": "14", "unit": "percent", "source": "Citi Consumer Banking Report 2024", "year": 2024},
-      {"metric": "Credit card spending category — Groceries", "value": "12", "unit": "percent", "source": "Citi Consumer Banking Report 2024", "year": 2024},
-      {"metric": "Credit card spending category — Entertainment", "value": "8", "unit": "percent", "source": "Citi Consumer Banking Report 2024", "year": 2024},
-      {"metric": "Credit card spending category — Healthcare", "value": "6", "unit": "percent", "source": "Citi Consumer Banking Report 2024", "year": 2024},
-      {"metric": "Credit card spending category — Other", "value": "10", "unit": "percent", "source": "Citi Consumer Banking Report 2024", "year": 2024},
-      {"metric": "Household savings rate — US", "value": "4.6", "unit": "percent", "source": "Citi GPS Consumer Insights 2024", "year": 2024},
-      {"metric": "Household savings rate — Germany", "value": "11.4", "unit": "percent", "source": "Citi GPS Consumer Insights 2024", "year": 2024},
-      {"metric": "Household savings rate — Japan", "value": "4.2", "unit": "percent", "source": "Citi GPS Consumer Insights 2024", "year": 2024},
-      {"metric": "Household savings rate — China", "value": "31.7", "unit": "percent", "source": "Citi GPS Consumer Insights 2024", "year": 2024},
-      {"metric": "Household savings rate — India", "value": "18.4", "unit": "percent", "source": "Citi GPS Consumer Insights 2024", "year": 2024},
-      {"metric": "Household savings rate — UK", "value": "5.2", "unit": "percent", "source": "Citi GPS Consumer Insights 2024", "year": 2024},
-      {"metric": "Household savings rate — Australia", "value": "3.2", "unit": "percent", "source": "Citi GPS Consumer Insights 2024", "year": 2024},
-      {"metric": "Household savings rate — Indonesia", "value": "22.5", "unit": "percent", "source": "Citi GPS Consumer Insights 2024", "year": 2024},
-      {"metric": "Financial literacy score — Singapore", "value": "76", "unit": "index_0_100", "source": "Citi Financial Literacy Report 2024", "year": 2024},
-      {"metric": "Financial literacy score — Canada", "value": "72", "unit": "index_0_100", "source": "Citi Financial Literacy Report 2024", "year": 2024},
-      {"metric": "Financial literacy score — UK", "value": "71", "unit": "index_0_100", "source": "Citi Financial Literacy Report 2024", "year": 2024},
-      {"metric": "Financial literacy score — US", "value": "68", "unit": "index_0_100", "source": "Citi Financial Literacy Report 2024", "year": 2024},
-      {"metric": "Financial literacy score — Germany", "value": "70", "unit": "index_0_100", "source": "Citi Financial Literacy Report 2024", "year": 2024},
-      {"metric": "Financial literacy score — Japan", "value": "62", "unit": "index_0_100", "source": "Citi Financial Literacy Report 2024", "year": 2024},
-      {"metric": "Financial literacy score — India", "value": "42", "unit": "index_0_100", "source": "Citi Financial Literacy Report 2024", "year": 2024},
-      {"metric": "Financial literacy score — Indonesia", "value": "38", "unit": "index_0_100", "source": "Citi Financial Literacy Report 2024", "year": 2024},
-      {"metric": "Financial literacy score — Nigeria", "value": "32", "unit": "index_0_100", "source": "Citi Financial Literacy Report 2024", "year": 2024},
-      {"metric": "Gen Z using digital-only banks", "value": "38", "unit": "percent", "source": "Citi Consumer Banking Report 2024", "year": 2024},
-      {"metric": "Millennials using digital-only banks", "value": "28", "unit": "percent", "source": "Citi Consumer Banking Report 2024", "year": 2024}
+      {
+        "metric": "Global credit card spending 2024",
+        "value": "4.2",
+        "unit": "trillion_usd",
+        "source": "Citi Consumer Banking Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average credit card spend per cardholder \u2014 US",
+        "value": "8200",
+        "unit": "usd_per_year",
+        "source": "Citi Consumer Banking Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average credit card spend per cardholder \u2014 UK",
+        "value": "5400",
+        "unit": "usd_per_year",
+        "source": "Citi Consumer Banking Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average credit card spend per cardholder \u2014 Singapore",
+        "value": "7100",
+        "unit": "usd_per_year",
+        "source": "Citi Consumer Banking Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average credit card spend per cardholder \u2014 Australia",
+        "value": "6300",
+        "unit": "usd_per_year",
+        "source": "Citi Consumer Banking Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Credit card spending category \u2014 Retail",
+        "value": "32",
+        "unit": "percent",
+        "source": "Citi Consumer Banking Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Credit card spending category \u2014 Travel",
+        "value": "18",
+        "unit": "percent",
+        "source": "Citi Consumer Banking Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Credit card spending category \u2014 Dining",
+        "value": "14",
+        "unit": "percent",
+        "source": "Citi Consumer Banking Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Credit card spending category \u2014 Groceries",
+        "value": "12",
+        "unit": "percent",
+        "source": "Citi Consumer Banking Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Credit card spending category \u2014 Entertainment",
+        "value": "8",
+        "unit": "percent",
+        "source": "Citi Consumer Banking Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Credit card spending category \u2014 Healthcare",
+        "value": "6",
+        "unit": "percent",
+        "source": "Citi Consumer Banking Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Credit card spending category \u2014 Other",
+        "value": "10",
+        "unit": "percent",
+        "source": "Citi Consumer Banking Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Household savings rate \u2014 US",
+        "value": "4.6",
+        "unit": "percent",
+        "source": "Citi GPS Consumer Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Household savings rate \u2014 Germany",
+        "value": "11.4",
+        "unit": "percent",
+        "source": "Citi GPS Consumer Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Household savings rate \u2014 Japan",
+        "value": "4.2",
+        "unit": "percent",
+        "source": "Citi GPS Consumer Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Household savings rate \u2014 China",
+        "value": "31.7",
+        "unit": "percent",
+        "source": "Citi GPS Consumer Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Household savings rate \u2014 India",
+        "value": "18.4",
+        "unit": "percent",
+        "source": "Citi GPS Consumer Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Household savings rate \u2014 UK",
+        "value": "5.2",
+        "unit": "percent",
+        "source": "Citi GPS Consumer Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Household savings rate \u2014 Australia",
+        "value": "3.2",
+        "unit": "percent",
+        "source": "Citi GPS Consumer Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Household savings rate \u2014 Indonesia",
+        "value": "22.5",
+        "unit": "percent",
+        "source": "Citi GPS Consumer Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Financial literacy score \u2014 Singapore",
+        "value": "76",
+        "unit": "index_0_100",
+        "source": "Citi Financial Literacy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Financial literacy score \u2014 Canada",
+        "value": "72",
+        "unit": "index_0_100",
+        "source": "Citi Financial Literacy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Financial literacy score \u2014 UK",
+        "value": "71",
+        "unit": "index_0_100",
+        "source": "Citi Financial Literacy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Financial literacy score \u2014 US",
+        "value": "68",
+        "unit": "index_0_100",
+        "source": "Citi Financial Literacy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Financial literacy score \u2014 Germany",
+        "value": "70",
+        "unit": "index_0_100",
+        "source": "Citi Financial Literacy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Financial literacy score \u2014 Japan",
+        "value": "62",
+        "unit": "index_0_100",
+        "source": "Citi Financial Literacy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Financial literacy score \u2014 India",
+        "value": "42",
+        "unit": "index_0_100",
+        "source": "Citi Financial Literacy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Financial literacy score \u2014 Indonesia",
+        "value": "38",
+        "unit": "index_0_100",
+        "source": "Citi Financial Literacy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Financial literacy score \u2014 Nigeria",
+        "value": "32",
+        "unit": "index_0_100",
+        "source": "Citi Financial Literacy Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Gen Z using digital-only banks",
+        "value": "38",
+        "unit": "percent",
+        "source": "Citi Consumer Banking Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Millennials using digital-only banks",
+        "value": "28",
+        "unit": "percent",
+        "source": "Citi Consumer Banking Report 2024",
+        "year": 2024
+      }
     ],
     "future_cities": [
-      {"metric": "Most dynamic city — Bengaluru", "value": "1", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Most dynamic city — Ho Chi Minh City", "value": "2", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Most dynamic city — Hyderabad", "value": "3", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Most dynamic city — Jakarta", "value": "4", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Most dynamic city — Manila", "value": "5", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Most dynamic city — Lagos", "value": "6", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Most dynamic city — Nairobi", "value": "7", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Most dynamic city — Dubai", "value": "8", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Most dynamic city — Riyadh", "value": "9", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Most dynamic city — Mexico City", "value": "10", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Cost of living index — Zurich", "value": "131", "unit": "index_nyc_100", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Cost of living index — Singapore", "value": "112", "unit": "index_nyc_100", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Cost of living index — Hong Kong", "value": "108", "unit": "index_nyc_100", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Cost of living index — London", "value": "95", "unit": "index_nyc_100", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Cost of living index — Tokyo", "value": "82", "unit": "index_nyc_100", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Cost of living index — Dubai", "value": "76", "unit": "index_nyc_100", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Cost of living index — Jakarta", "value": "38", "unit": "index_nyc_100", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Cost of living index — Mumbai", "value": "32", "unit": "index_nyc_100", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Cost of living index — Lagos", "value": "28", "unit": "index_nyc_100", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Cost of living index — Bandung", "value": "24", "unit": "index_nyc_100", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Opportunity score — Singapore", "value": "92", "unit": "index_0_100", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Opportunity score — Dubai", "value": "88", "unit": "index_0_100", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Opportunity score — Bengaluru", "value": "85", "unit": "index_0_100", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Opportunity score — Austin", "value": "83", "unit": "index_0_100", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Opportunity score — Jakarta", "value": "74", "unit": "index_0_100", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Opportunity score — Ho Chi Minh City", "value": "78", "unit": "index_0_100", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Startup ecosystem rank — San Francisco", "value": "1", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Startup ecosystem rank — New York", "value": "2", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Startup ecosystem rank — London", "value": "3", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Startup ecosystem rank — Beijing", "value": "4", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Startup ecosystem rank — Singapore", "value": "5", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Startup ecosystem rank — Tel Aviv", "value": "6", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Startup ecosystem rank — Bengaluru", "value": "7", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Startup ecosystem rank — Shanghai", "value": "8", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Startup ecosystem rank — Tokyo", "value": "9", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Startup ecosystem rank — Dubai", "value": "10", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Startup ecosystem rank — Jakarta", "value": "18", "unit": "rank", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Smart city investment globally 2024", "value": "189", "unit": "billion_usd", "source": "Citi GPS Future Cities 2024", "year": 2024},
-      {"metric": "Smart city investment projected 2030", "value": "580", "unit": "billion_usd", "source": "Citi GPS Future Cities 2024", "year": 2024}
+      {
+        "metric": "Most dynamic city \u2014 Bengaluru",
+        "value": "1",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Most dynamic city \u2014 Ho Chi Minh City",
+        "value": "2",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Most dynamic city \u2014 Hyderabad",
+        "value": "3",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Most dynamic city \u2014 Jakarta",
+        "value": "4",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Most dynamic city \u2014 Manila",
+        "value": "5",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Most dynamic city \u2014 Lagos",
+        "value": "6",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Most dynamic city \u2014 Nairobi",
+        "value": "7",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Most dynamic city \u2014 Dubai",
+        "value": "8",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Most dynamic city \u2014 Riyadh",
+        "value": "9",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Most dynamic city \u2014 Mexico City",
+        "value": "10",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Zurich",
+        "value": "131",
+        "unit": "index_nyc_100",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Singapore",
+        "value": "112",
+        "unit": "index_nyc_100",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Hong Kong",
+        "value": "108",
+        "unit": "index_nyc_100",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 London",
+        "value": "95",
+        "unit": "index_nyc_100",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Tokyo",
+        "value": "82",
+        "unit": "index_nyc_100",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Dubai",
+        "value": "76",
+        "unit": "index_nyc_100",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Jakarta",
+        "value": "38",
+        "unit": "index_nyc_100",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Mumbai",
+        "value": "32",
+        "unit": "index_nyc_100",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Lagos",
+        "value": "28",
+        "unit": "index_nyc_100",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of living index \u2014 Bandung",
+        "value": "24",
+        "unit": "index_nyc_100",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Opportunity score \u2014 Singapore",
+        "value": "92",
+        "unit": "index_0_100",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Opportunity score \u2014 Dubai",
+        "value": "88",
+        "unit": "index_0_100",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Opportunity score \u2014 Bengaluru",
+        "value": "85",
+        "unit": "index_0_100",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Opportunity score \u2014 Austin",
+        "value": "83",
+        "unit": "index_0_100",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Opportunity score \u2014 Jakarta",
+        "value": "74",
+        "unit": "index_0_100",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Opportunity score \u2014 Ho Chi Minh City",
+        "value": "78",
+        "unit": "index_0_100",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem rank \u2014 San Francisco",
+        "value": "1",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem rank \u2014 New York",
+        "value": "2",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem rank \u2014 London",
+        "value": "3",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem rank \u2014 Beijing",
+        "value": "4",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem rank \u2014 Singapore",
+        "value": "5",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem rank \u2014 Tel Aviv",
+        "value": "6",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem rank \u2014 Bengaluru",
+        "value": "7",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem rank \u2014 Shanghai",
+        "value": "8",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem rank \u2014 Tokyo",
+        "value": "9",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem rank \u2014 Dubai",
+        "value": "10",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem rank \u2014 Jakarta",
+        "value": "18",
+        "unit": "rank",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Smart city investment globally 2024",
+        "value": "189",
+        "unit": "billion_usd",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Smart city investment projected 2030",
+        "value": "580",
+        "unit": "billion_usd",
+        "source": "Citi GPS Future Cities 2024",
+        "year": 2024
+      }
     ],
     "ai_disruption": [
-      {"metric": "AI contribution to global GDP by 2030", "value": "15.7", "unit": "trillion_usd", "source": "Citi GPS Technology at Work 2024", "year": 2024},
-      {"metric": "Jobs at risk of automation globally", "value": "300000000", "unit": "jobs", "source": "Citi GPS Technology at Work 2024", "year": 2024},
-      {"metric": "New jobs created by AI by 2030", "value": "97000000", "unit": "jobs", "source": "Citi GPS Technology at Work 2024", "year": 2024},
-      {"metric": "Global AI market size 2024", "value": "196", "unit": "billion_usd", "source": "Citi GPS Technology at Work 2024", "year": 2024},
-      {"metric": "Global AI market projected 2030", "value": "1810", "unit": "billion_usd", "source": "Citi GPS Technology at Work 2024", "year": 2024},
-      {"metric": "Enterprise AI adoption rate", "value": "72", "unit": "percent", "source": "Citi GPS Technology at Work 2024", "year": 2024},
-      {"metric": "AI investment — US share of global", "value": "52", "unit": "percent", "source": "Citi GPS Technology at Work 2024", "year": 2024},
-      {"metric": "AI investment — China share of global", "value": "22", "unit": "percent", "source": "Citi GPS Technology at Work 2024", "year": 2024},
-      {"metric": "Generative AI market size 2024", "value": "67", "unit": "billion_usd", "source": "Citi GPS Technology at Work 2024", "year": 2024},
-      {"metric": "Generative AI projected 2030", "value": "1300", "unit": "billion_usd", "source": "Citi GPS Technology at Work 2024", "year": 2024},
-      {"metric": "Banking jobs most exposed to AI", "value": "54", "unit": "percent_of_banking_roles", "source": "Citi GPS Technology at Work 2024", "year": 2024},
-      {"metric": "AI productivity gain in financial services", "value": "22", "unit": "percent", "source": "Citi GPS Technology at Work 2024", "year": 2024},
-      {"metric": "Global data center power consumption 2024", "value": "460", "unit": "twh", "source": "Citi GPS Technology at Work 2024", "year": 2024},
-      {"metric": "Data center power consumption projected 2030", "value": "1050", "unit": "twh", "source": "Citi GPS Technology at Work 2024", "year": 2024}
+      {
+        "metric": "AI contribution to global GDP by 2030",
+        "value": "15.7",
+        "unit": "trillion_usd",
+        "source": "Citi GPS Technology at Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Jobs at risk of automation globally",
+        "value": "300000000",
+        "unit": "jobs",
+        "source": "Citi GPS Technology at Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "New jobs created by AI by 2030",
+        "value": "97000000",
+        "unit": "jobs",
+        "source": "Citi GPS Technology at Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global AI market size 2024",
+        "value": "196",
+        "unit": "billion_usd",
+        "source": "Citi GPS Technology at Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global AI market projected 2030",
+        "value": "1810",
+        "unit": "billion_usd",
+        "source": "Citi GPS Technology at Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Enterprise AI adoption rate",
+        "value": "72",
+        "unit": "percent",
+        "source": "Citi GPS Technology at Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI investment \u2014 US share of global",
+        "value": "52",
+        "unit": "percent",
+        "source": "Citi GPS Technology at Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI investment \u2014 China share of global",
+        "value": "22",
+        "unit": "percent",
+        "source": "Citi GPS Technology at Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Generative AI market size 2024",
+        "value": "67",
+        "unit": "billion_usd",
+        "source": "Citi GPS Technology at Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Generative AI projected 2030",
+        "value": "1300",
+        "unit": "billion_usd",
+        "source": "Citi GPS Technology at Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Banking jobs most exposed to AI",
+        "value": "54",
+        "unit": "percent_of_banking_roles",
+        "source": "Citi GPS Technology at Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "AI productivity gain in financial services",
+        "value": "22",
+        "unit": "percent",
+        "source": "Citi GPS Technology at Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Global data center power consumption 2024",
+        "value": "460",
+        "unit": "twh",
+        "source": "Citi GPS Technology at Work 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Data center power consumption projected 2030",
+        "value": "1050",
+        "unit": "twh",
+        "source": "Citi GPS Technology at Work 2024",
+        "year": 2024
+      }
     ],
     "emerging_markets": [
-      {"metric": "Emerging market share of global GDP (PPP)", "value": "59", "unit": "percent", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "EM FDI inflows 2024", "value": "680", "unit": "billion_usd", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "EM consumer spending growth", "value": "6.8", "unit": "percent_yoy", "source": "Citi GPS Consumer Insights 2024", "year": 2024},
-      {"metric": "EM smartphone penetration 2024", "value": "72", "unit": "percent", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "EM internet users 2024", "value": "3800000000", "unit": "users", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "Africa consumer spending projected 2030", "value": "2.5", "unit": "trillion_usd", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "India consumer spending projected 2030", "value": "4.8", "unit": "trillion_usd", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "ASEAN consumer spending projected 2030", "value": "4.2", "unit": "trillion_usd", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "EM sovereign debt as % of GDP average", "value": "55", "unit": "percent", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "EM average inflation 2024", "value": "5.8", "unit": "percent", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "EM local currency bond market size", "value": "22", "unit": "trillion_usd", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "EM equity market cap as % of global", "value": "28", "unit": "percent", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "Indonesia projected top 5 economy by", "value": "2045", "unit": "year", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "Nigeria projected GDP 2050", "value": "6.4", "unit": "trillion_usd", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "India projected GDP 2050", "value": "28.5", "unit": "trillion_usd", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "Indonesia projected GDP 2050", "value": "7.3", "unit": "trillion_usd", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "EM infrastructure investment gap annual", "value": "2.5", "unit": "trillion_usd", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "EM climate vulnerability index — Bangladesh", "value": "92", "unit": "index_0_100_high_vulnerable", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "EM climate vulnerability index — Pakistan", "value": "88", "unit": "index_0_100_high_vulnerable", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "EM climate vulnerability index — Indonesia", "value": "72", "unit": "index_0_100_high_vulnerable", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "EM renewable energy capacity growth", "value": "14.5", "unit": "percent_yoy", "source": "Citi GPS Global Perspectives 2024", "year": 2024},
-      {"metric": "Africa mobile money users", "value": "835000000", "unit": "users", "source": "Citi GPS Digital Money 2024", "year": 2024},
-      {"metric": "Latin America fintech unicorns", "value": "24", "unit": "companies", "source": "Citi GPS Fintech Report 2024", "year": 2024},
-      {"metric": "EM green bond issuance 2024", "value": "125", "unit": "billion_usd", "source": "Citi GPS Global Perspectives 2024", "year": 2024}
+      {
+        "metric": "Emerging market share of global GDP (PPP)",
+        "value": "59",
+        "unit": "percent",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EM FDI inflows 2024",
+        "value": "680",
+        "unit": "billion_usd",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EM consumer spending growth",
+        "value": "6.8",
+        "unit": "percent_yoy",
+        "source": "Citi GPS Consumer Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EM smartphone penetration 2024",
+        "value": "72",
+        "unit": "percent",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EM internet users 2024",
+        "value": "3800000000",
+        "unit": "users",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Africa consumer spending projected 2030",
+        "value": "2.5",
+        "unit": "trillion_usd",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "India consumer spending projected 2030",
+        "value": "4.8",
+        "unit": "trillion_usd",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "ASEAN consumer spending projected 2030",
+        "value": "4.2",
+        "unit": "trillion_usd",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EM sovereign debt as % of GDP average",
+        "value": "55",
+        "unit": "percent",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EM average inflation 2024",
+        "value": "5.8",
+        "unit": "percent",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EM local currency bond market size",
+        "value": "22",
+        "unit": "trillion_usd",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EM equity market cap as % of global",
+        "value": "28",
+        "unit": "percent",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Indonesia projected top 5 economy by",
+        "value": "2045",
+        "unit": "year",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Nigeria projected GDP 2050",
+        "value": "6.4",
+        "unit": "trillion_usd",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "India projected GDP 2050",
+        "value": "28.5",
+        "unit": "trillion_usd",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Indonesia projected GDP 2050",
+        "value": "7.3",
+        "unit": "trillion_usd",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EM infrastructure investment gap annual",
+        "value": "2.5",
+        "unit": "trillion_usd",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EM climate vulnerability index \u2014 Bangladesh",
+        "value": "92",
+        "unit": "index_0_100_high_vulnerable",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EM climate vulnerability index \u2014 Pakistan",
+        "value": "88",
+        "unit": "index_0_100_high_vulnerable",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EM climate vulnerability index \u2014 Indonesia",
+        "value": "72",
+        "unit": "index_0_100_high_vulnerable",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EM renewable energy capacity growth",
+        "value": "14.5",
+        "unit": "percent_yoy",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Africa mobile money users",
+        "value": "835000000",
+        "unit": "users",
+        "source": "Citi GPS Digital Money 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Latin America fintech unicorns",
+        "value": "24",
+        "unit": "companies",
+        "source": "Citi GPS Fintech Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "EM green bond issuance 2024",
+        "value": "125",
+        "unit": "billion_usd",
+        "source": "Citi GPS Global Perspectives 2024",
+        "year": 2024
+      }
+    ],
+    "global_payments": [
+      {
+        "metric": "Citi Treasury and Trade Solutions revenue",
+        "value": "13.2",
+        "unit": "billion USD",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi cross-border payment volume daily",
+        "value": "4",
+        "unit": "trillion USD",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi global payment network countries",
+        "value": "160",
+        "unit": "countries",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global cross-border payment market",
+        "value": "190",
+        "unit": "trillion USD annually",
+        "source": "Citi Payments Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Real-time payments adoption globally",
+        "value": "72",
+        "unit": "countries live",
+        "source": "Citi Payments Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global instant payments volume",
+        "value": "195",
+        "unit": "billion transactions",
+        "source": "Citi Payments Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi institutional clients",
+        "value": "13000",
+        "unit": "institutions",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "SWIFT messages processed daily",
+        "value": "44",
+        "unit": "million",
+        "source": "Citi Payments Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi commercial card spending",
+        "value": "65",
+        "unit": "billion USD",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "B2B payments digitization rate",
+        "value": "38",
+        "unit": "percent",
+        "source": "Citi Payments Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global payroll outsourcing market",
+        "value": "27",
+        "unit": "billion USD",
+        "source": "Citi Payments Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi custody assets",
+        "value": "26.6",
+        "unit": "trillion USD",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global custody market concentration (top 5)",
+        "value": "65",
+        "unit": "percent",
+        "source": "Citi Payments Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Embedded payments market forecast 2028",
+        "value": "140",
+        "unit": "billion USD",
+        "source": "Citi Payments Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi Token Services transactions settled",
+        "value": "10",
+        "unit": "billion USD",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "citi_corporate": [
+      {
+        "metric": "Citi total revenue",
+        "value": "78.5",
+        "unit": "billion USD",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi total employees",
+        "value": "240000",
+        "unit": "employees",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi total assets",
+        "value": "2410",
+        "unit": "billion USD",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi CET1 ratio",
+        "value": "13.3",
+        "unit": "percent",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi return on equity",
+        "value": "6.3",
+        "unit": "percent",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi market capitalization",
+        "value": "120",
+        "unit": "billion USD",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi countries of operation",
+        "value": "95",
+        "unit": "countries",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi consumer banking customers",
+        "value": "65",
+        "unit": "million",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi investment banking revenue",
+        "value": "4.9",
+        "unit": "billion USD",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi markets revenue (FICC + equities)",
+        "value": "19.2",
+        "unit": "billion USD",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi wealth management AUM",
+        "value": "480",
+        "unit": "billion USD",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi branded cards revenue",
+        "value": "8.5",
+        "unit": "billion USD",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi cost-to-income ratio",
+        "value": "68",
+        "unit": "percent",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi technology spending annual",
+        "value": "12",
+        "unit": "billion USD",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi Costco credit card portfolio",
+        "value": "50",
+        "unit": "billion USD",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "urbanization_cities": [
+      {
+        "metric": "Global urban population",
+        "value": "4.6",
+        "unit": "billion",
+        "source": "Citi Future Cities Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global megacities (10M+ population)",
+        "value": "34",
+        "unit": "cities",
+        "source": "Citi Future Cities Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Urban share of global GDP",
+        "value": "80",
+        "unit": "percent",
+        "source": "Citi Future Cities Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global smart city spending",
+        "value": "190",
+        "unit": "billion USD",
+        "source": "Citi Future Cities Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Urban mobility market size",
+        "value": "2100",
+        "unit": "billion USD",
+        "source": "Citi Future Cities Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global ride-hailing market",
+        "value": "185",
+        "unit": "billion USD",
+        "source": "Citi Future Cities Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global micro-mobility market",
+        "value": "5.3",
+        "unit": "billion USD",
+        "source": "Citi Future Cities Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Urban population forecast 2050",
+        "value": "6.7",
+        "unit": "billion",
+        "source": "Citi Future Cities Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Africa urban population growth rate",
+        "value": "3.5",
+        "unit": "percent per year",
+        "source": "Citi Future Cities Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "India urban population forecast 2050",
+        "value": "877",
+        "unit": "million",
+        "source": "Citi Future Cities Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global construction market",
+        "value": "14.4",
+        "unit": "trillion USD",
+        "source": "Citi Future Cities Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "PropTech global market",
+        "value": "32",
+        "unit": "billion USD",
+        "source": "Citi Future Cities Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Smart building market",
+        "value": "120",
+        "unit": "billion USD",
+        "source": "Citi Future Cities Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Urban air mobility market forecast 2030",
+        "value": "32",
+        "unit": "billion USD",
+        "source": "Citi Future Cities Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global waste management market",
+        "value": "500",
+        "unit": "billion USD",
+        "source": "Citi Future Cities Report 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "global_supply_chain": [
+      {
+        "metric": "Global supply chain management market",
+        "value": "28",
+        "unit": "billion USD",
+        "source": "Citi Supply Chain Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global logistics market",
+        "value": "9.5",
+        "unit": "trillion USD",
+        "source": "Citi Supply Chain Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global e-commerce logistics",
+        "value": "620",
+        "unit": "billion USD",
+        "source": "Citi Supply Chain Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global last-mile delivery market",
+        "value": "180",
+        "unit": "billion USD",
+        "source": "Citi Supply Chain Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Supply chain AI adoption rate",
+        "value": "32",
+        "unit": "percent",
+        "source": "Citi Supply Chain Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global warehouse automation market",
+        "value": "25",
+        "unit": "billion USD",
+        "source": "Citi Supply Chain Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global cold chain market",
+        "value": "340",
+        "unit": "billion USD",
+        "source": "Citi Supply Chain Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Autonomous delivery vehicles market",
+        "value": "2.5",
+        "unit": "billion USD",
+        "source": "Citi Supply Chain Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global container fleet capacity",
+        "value": "28",
+        "unit": "million TEU",
+        "source": "Citi Supply Chain Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Average US inventory-to-sales ratio",
+        "value": "1.37",
+        "unit": "ratio",
+        "source": "Citi Supply Chain Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global packaging market",
+        "value": "1100",
+        "unit": "billion USD",
+        "source": "Citi Supply Chain Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Supply chain visibility platforms market",
+        "value": "4.5",
+        "unit": "billion USD",
+        "source": "Citi Supply Chain Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global freight brokerage market",
+        "value": "65",
+        "unit": "billion USD",
+        "source": "Citi Supply Chain Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Blockchain in supply chain market",
+        "value": "2.8",
+        "unit": "billion USD",
+        "source": "Citi Supply Chain Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global reverse logistics market",
+        "value": "960",
+        "unit": "billion USD",
+        "source": "Citi Supply Chain Report 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "em_opportunities": [
+      {
+        "metric": "Africa GDP total",
+        "value": "3.1",
+        "unit": "trillion USD",
+        "source": "Citi EM Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Africa internet penetration",
+        "value": "43",
+        "unit": "percent",
+        "source": "Citi EM Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Africa fintech investment",
+        "value": "3",
+        "unit": "billion USD",
+        "source": "Citi EM Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Africa mobile subscribers",
+        "value": "600",
+        "unit": "million",
+        "source": "Citi EM Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Nigeria GDP",
+        "value": "477",
+        "unit": "billion USD",
+        "source": "Citi EM Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Kenya GDP growth",
+        "value": "5.5",
+        "unit": "percent",
+        "source": "Citi EM Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "South Africa GDP growth",
+        "value": "1.1",
+        "unit": "percent",
+        "source": "Citi EM Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Egypt population",
+        "value": "106",
+        "unit": "million",
+        "source": "Citi EM Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Ethiopia GDP growth",
+        "value": "6.2",
+        "unit": "percent",
+        "source": "Citi EM Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Ghana mobile money accounts",
+        "value": "20",
+        "unit": "million",
+        "source": "Citi EM Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Africa agricultural potential (arable land unused)",
+        "value": "60",
+        "unit": "percent of global unused",
+        "source": "Citi EM Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Africa rare earth minerals share",
+        "value": "30",
+        "unit": "percent of global reserves",
+        "source": "Citi EM Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "EM sovereign bond market",
+        "value": "4.5",
+        "unit": "trillion USD",
+        "source": "Citi EM Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "EM corporate bond market",
+        "value": "2.8",
+        "unit": "trillion USD",
+        "source": "Citi EM Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Frontier markets GDP growth average",
+        "value": "4.5",
+        "unit": "percent",
+        "source": "Citi EM Research 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "digital_disruption": [
+      {
+        "metric": "Global platform economy size",
+        "value": "7.2",
+        "unit": "trillion USD",
+        "source": "Citi Digital Disruption 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Alphabet revenue",
+        "value": "340",
+        "unit": "billion USD",
+        "source": "Citi Digital Disruption 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Amazon revenue",
+        "value": "638",
+        "unit": "billion USD",
+        "source": "Citi Digital Disruption 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Apple revenue",
+        "value": "391",
+        "unit": "billion USD",
+        "source": "Citi Digital Disruption 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Microsoft revenue",
+        "value": "245",
+        "unit": "billion USD",
+        "source": "Citi Digital Disruption 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global API economy size",
+        "value": "5.1",
+        "unit": "trillion USD",
+        "source": "Citi Digital Disruption 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Zero-trust security market",
+        "value": "33",
+        "unit": "billion USD",
+        "source": "Citi Digital Disruption 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global identity verification market",
+        "value": "15",
+        "unit": "billion USD",
+        "source": "Citi Digital Disruption 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Digital twin market",
+        "value": "13",
+        "unit": "billion USD",
+        "source": "Citi Digital Disruption 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global quantum computing market",
+        "value": "1.3",
+        "unit": "billion USD",
+        "source": "Citi Digital Disruption 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Autonomous vehicle market forecast 2030",
+        "value": "2000",
+        "unit": "billion USD",
+        "source": "Citi Digital Disruption 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global robotics market",
+        "value": "72",
+        "unit": "billion USD",
+        "source": "Citi Digital Disruption 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Industrial robotics installations per year",
+        "value": "530000",
+        "unit": "units",
+        "source": "Citi Digital Disruption 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Service robotics market",
+        "value": "22",
+        "unit": "billion USD",
+        "source": "Citi Digital Disruption 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global 3D printing market",
+        "value": "18",
+        "unit": "billion USD",
+        "source": "Citi Digital Disruption 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "food_agriculture_citi": [
+      {
+        "metric": "Global agritech market",
+        "value": "32",
+        "unit": "billion USD",
+        "source": "Citi AgriTech Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global vertical farming market",
+        "value": "7.3",
+        "unit": "billion USD",
+        "source": "Citi AgriTech Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global alternative protein market",
+        "value": "23",
+        "unit": "billion USD",
+        "source": "Citi AgriTech Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Lab-grown meat market",
+        "value": "0.3",
+        "unit": "billion USD",
+        "source": "Citi AgriTech Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global food delivery market",
+        "value": "370",
+        "unit": "billion USD",
+        "source": "Citi AgriTech Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global food safety testing market",
+        "value": "24",
+        "unit": "billion USD",
+        "source": "Citi AgriTech Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Agricultural drone market",
+        "value": "7",
+        "unit": "billion USD",
+        "source": "Citi AgriTech Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global aquaculture market",
+        "value": "305",
+        "unit": "billion USD",
+        "source": "Citi AgriTech Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global wine market",
+        "value": "340",
+        "unit": "billion USD",
+        "source": "Citi AgriTech Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global coffee market",
+        "value": "460",
+        "unit": "billion USD",
+        "source": "Citi AgriTech Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global chocolate market",
+        "value": "180",
+        "unit": "billion USD",
+        "source": "Citi AgriTech Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global dairy market",
+        "value": "870",
+        "unit": "billion USD",
+        "source": "Citi AgriTech Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Plant-based dairy market",
+        "value": "28",
+        "unit": "billion USD",
+        "source": "Citi AgriTech Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global functional food market",
+        "value": "275",
+        "unit": "billion USD",
+        "source": "Citi AgriTech Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Precision nutrition market",
+        "value": "8.5",
+        "unit": "billion USD",
+        "source": "Citi AgriTech Report 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "latin_america_citi": [
+      {
+        "metric": "Latin America GDP total",
+        "value": "6.5",
+        "unit": "trillion USD",
+        "source": "Citi LatAm Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Brazil GDP",
+        "value": "2.2",
+        "unit": "trillion USD",
+        "source": "Citi LatAm Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Mexico GDP",
+        "value": "1.8",
+        "unit": "trillion USD",
+        "source": "Citi LatAm Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Argentina GDP growth 2024",
+        "value": "-2.5",
+        "unit": "percent",
+        "source": "Citi LatAm Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Chile GDP growth",
+        "value": "2.3",
+        "unit": "percent",
+        "source": "Citi LatAm Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Colombia GDP growth",
+        "value": "1.8",
+        "unit": "percent",
+        "source": "Citi LatAm Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Peru GDP growth",
+        "value": "3.1",
+        "unit": "percent",
+        "source": "Citi LatAm Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "LatAm fintech investment",
+        "value": "3.5",
+        "unit": "billion USD",
+        "source": "Citi LatAm Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Brazil PIX transactions daily",
+        "value": "180",
+        "unit": "million",
+        "source": "Citi LatAm Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Mexico nearshoring FDI increase",
+        "value": "35",
+        "unit": "percent YoY",
+        "source": "Citi LatAm Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "LatAm e-commerce market",
+        "value": "160",
+        "unit": "billion USD",
+        "source": "Citi LatAm Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Brazil Nubank customers",
+        "value": "100",
+        "unit": "million",
+        "source": "Citi LatAm Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "LatAm renewable energy capacity growth",
+        "value": "12",
+        "unit": "percent YoY",
+        "source": "Citi LatAm Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Brazil lithium reserves rank",
+        "value": "5",
+        "unit": "globally",
+        "source": "Citi LatAm Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Chile lithium reserves rank",
+        "value": "1",
+        "unit": "globally (largest)",
+        "source": "Citi LatAm Research 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "wealth_inequality_citi": [
+      {
+        "metric": "Global top 1% share of wealth",
+        "value": "44.5",
+        "unit": "percent",
+        "source": "Citi Wealth Inequality Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global top 10% share of income",
+        "value": "52",
+        "unit": "percent",
+        "source": "Citi Wealth Inequality Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global bottom 50% share of income",
+        "value": "8.5",
+        "unit": "percent",
+        "source": "Citi Wealth Inequality Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US income needed for top 10%",
+        "value": "175000",
+        "unit": "USD",
+        "source": "Citi Wealth Inequality Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US income needed for top 5%",
+        "value": "312000",
+        "unit": "USD",
+        "source": "Citi Wealth Inequality Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global intergenerational earnings elasticity (US)",
+        "value": "0.47",
+        "unit": "correlation (high=low mobility)",
+        "source": "Citi Wealth Inequality Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global intergenerational earnings elasticity (Denmark)",
+        "value": "0.15",
+        "unit": "correlation",
+        "source": "Citi Wealth Inequality Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Universal basic income pilots globally",
+        "value": "45",
+        "unit": "active pilots",
+        "source": "Citi Wealth Inequality Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global minimum wage workers",
+        "value": "327",
+        "unit": "million",
+        "source": "Citi Wealth Inequality Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Gender pay gap cost to global economy",
+        "value": "12",
+        "unit": "trillion USD per year",
+        "source": "Citi Wealth Inequality Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Financial inclusion boost to GDP (full inclusion)",
+        "value": "3.7",
+        "unit": "trillion USD",
+        "source": "Citi Wealth Inequality Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Education return on investment (per year of schooling)",
+        "value": "10",
+        "unit": "percent higher income",
+        "source": "Citi Wealth Inequality Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Countries with progressive wealth taxation",
+        "value": "4",
+        "unit": "countries",
+        "source": "Citi Wealth Inequality Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global social protection spending",
+        "value": "8",
+        "unit": "percent of GDP average",
+        "source": "Citi Wealth Inequality Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Developed vs developing healthcare spending per capita",
+        "value": "10x",
+        "unit": "difference",
+        "source": "Citi Wealth Inequality Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Rural vs urban income gap (global average)",
+        "value": "45",
+        "unit": "percent lower rural",
+        "source": "Citi Wealth Inequality Report 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "energy_transition_citi": [
+      {
+        "metric": "Global clean energy investment 2024",
+        "value": "1.8",
+        "unit": "trillion USD",
+        "source": "Citi Energy Transition 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global fossil fuel investment 2024",
+        "value": "1.0",
+        "unit": "trillion USD",
+        "source": "Citi Energy Transition 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Energy transition spending needed to 2050",
+        "value": "275",
+        "unit": "trillion USD",
+        "source": "Citi Energy Transition 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global solar LCOE (cheapest source of new electricity)",
+        "value": "30",
+        "unit": "USD per MWh",
+        "source": "Citi Energy Transition 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global onshore wind LCOE",
+        "value": "40",
+        "unit": "USD per MWh",
+        "source": "Citi Energy Transition 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global battery cost decline since 2010",
+        "value": "89",
+        "unit": "percent",
+        "source": "Citi Energy Transition 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "EV battery cost per kWh",
+        "value": "139",
+        "unit": "USD",
+        "source": "Citi Energy Transition 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "EV battery cost target for price parity",
+        "value": "100",
+        "unit": "USD per kWh",
+        "source": "Citi Energy Transition 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Green hydrogen cost forecast 2030",
+        "value": "2",
+        "unit": "USD per kg",
+        "source": "Citi Energy Transition 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global carbon capture projects",
+        "value": "300+",
+        "unit": "projects in development",
+        "source": "Citi Energy Transition 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global nuclear renaissance (new builds)",
+        "value": "63",
+        "unit": "reactors under construction",
+        "source": "Citi Energy Transition 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Small modular reactor projects",
+        "value": "80+",
+        "unit": "in development globally",
+        "source": "Citi Energy Transition 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global energy storage deployments 2024",
+        "value": "80",
+        "unit": "GWh",
+        "source": "Citi Energy Transition 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US EV sales market share 2024",
+        "value": "9.5",
+        "unit": "percent",
+        "source": "Citi Energy Transition 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Norway EV sales market share (highest globally)",
+        "value": "90",
+        "unit": "percent",
+        "source": "Citi Energy Transition 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global heat pump market",
+        "value": "68",
+        "unit": "billion USD",
+        "source": "Citi Energy Transition 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "global_banking_industry": [
+      {
+        "metric": "Global banking industry revenue",
+        "value": "6.8",
+        "unit": "trillion USD",
+        "source": "Citi Banking Industry Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global banking assets",
+        "value": "180",
+        "unit": "trillion USD",
+        "source": "Citi Banking Industry Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global systemically important banks (G-SIBs)",
+        "value": "30",
+        "unit": "banks",
+        "source": "Citi Banking Industry Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global banking ROE average",
+        "value": "11.5",
+        "unit": "percent",
+        "source": "Citi Banking Industry Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global banking cost-to-income ratio",
+        "value": "53",
+        "unit": "percent average",
+        "source": "Citi Banking Industry Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global banking technology spending",
+        "value": "560",
+        "unit": "billion USD",
+        "source": "Citi Banking Industry Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global banking branch reduction (10yr)",
+        "value": "25",
+        "unit": "percent fewer",
+        "source": "Citi Banking Industry Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US banking industry net income",
+        "value": "260",
+        "unit": "billion USD",
+        "source": "Citi Banking Industry Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "European banking industry net income",
+        "value": "120",
+        "unit": "billion EUR",
+        "source": "Citi Banking Industry Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "China banking industry total assets",
+        "value": "55",
+        "unit": "trillion USD",
+        "source": "Citi Banking Industry Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global Islamic banking assets",
+        "value": "3.7",
+        "unit": "trillion USD",
+        "source": "Citi Banking Industry Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global private banking AUM",
+        "value": "22",
+        "unit": "trillion USD",
+        "source": "Citi Banking Industry Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global asset management AUM",
+        "value": "120",
+        "unit": "trillion USD",
+        "source": "Citi Banking Industry Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US FDIC insured banks",
+        "value": "4100",
+        "unit": "banks",
+        "source": "Citi Banking Industry Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US bank failures 2023-2024",
+        "value": "5",
+        "unit": "banks",
+        "source": "Citi Banking Industry Report 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "us_demographics_citi": [
+      {
+        "metric": "US population",
+        "value": "335",
+        "unit": "million",
+        "source": "Citi US Demographics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US median age",
+        "value": "38.9",
+        "unit": "years",
+        "source": "Citi US Demographics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US foreign-born population",
+        "value": "47",
+        "unit": "million",
+        "source": "Citi US Demographics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US households total",
+        "value": "131",
+        "unit": "million",
+        "source": "Citi US Demographics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US average household size",
+        "value": "2.53",
+        "unit": "people",
+        "source": "Citi US Demographics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US adults with college degree",
+        "value": "37.7",
+        "unit": "percent",
+        "source": "Citi US Demographics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US life expectancy",
+        "value": "77.5",
+        "unit": "years",
+        "source": "Citi US Demographics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US opioid crisis annual cost",
+        "value": "1.5",
+        "unit": "trillion USD",
+        "source": "Citi US Demographics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US adults with chronic condition",
+        "value": "60",
+        "unit": "percent",
+        "source": "Citi US Demographics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US healthcare spending per capita",
+        "value": "13500",
+        "unit": "USD",
+        "source": "Citi US Demographics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US uninsured population",
+        "value": "27.6",
+        "unit": "million",
+        "source": "Citi US Demographics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US veterans total",
+        "value": "16.5",
+        "unit": "million",
+        "source": "Citi US Demographics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US incarceration rate",
+        "value": "531",
+        "unit": "per 100000 adults",
+        "source": "Citi US Demographics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US charitable giving per capita",
+        "value": "1500",
+        "unit": "USD per year",
+        "source": "Citi US Demographics 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US volunteer rate",
+        "value": "23",
+        "unit": "percent of adults",
+        "source": "Citi US Demographics 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "global_real_estate_citi": [
+      {
+        "metric": "Global real estate market value",
+        "value": "326",
+        "unit": "trillion USD",
+        "source": "Citi Real Estate Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global commercial real estate investment volume",
+        "value": "700",
+        "unit": "billion USD",
+        "source": "Citi Real Estate Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Asia-Pacific CRE investment",
+        "value": "140",
+        "unit": "billion USD",
+        "source": "Citi Real Estate Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global REIT market cap",
+        "value": "1700",
+        "unit": "billion USD",
+        "source": "Citi Real Estate Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US REIT market cap",
+        "value": "1200",
+        "unit": "billion USD",
+        "source": "Citi Real Estate Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global infrastructure REIT growth",
+        "value": "15",
+        "unit": "percent YoY",
+        "source": "Citi Real Estate Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US life science real estate market",
+        "value": "52",
+        "unit": "billion USD",
+        "source": "Citi Real Estate Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US senior housing occupancy rate",
+        "value": "85",
+        "unit": "percent",
+        "source": "Citi Real Estate Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global co-working space market",
+        "value": "14",
+        "unit": "billion USD",
+        "source": "Citi Real Estate Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global green building market",
+        "value": "570",
+        "unit": "billion USD",
+        "source": "Citi Real Estate Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US net lease market cap rate",
+        "value": "6.5",
+        "unit": "percent",
+        "source": "Citi Real Estate Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global data center leasing demand growth",
+        "value": "35",
+        "unit": "percent YoY",
+        "source": "Citi Real Estate Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US cold storage real estate demand",
+        "value": "12",
+        "unit": "percent YoY growth",
+        "source": "Citi Real Estate Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global hotel investment volume",
+        "value": "72",
+        "unit": "billion USD",
+        "source": "Citi Real Estate Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US healthcare real estate market",
+        "value": "1.4",
+        "unit": "trillion USD",
+        "source": "Citi Real Estate Report 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "tech_innovation_citi": [
+      {
+        "metric": "Global semiconductor industry revenue",
+        "value": "611",
+        "unit": "billion USD",
+        "source": "Citi Technology Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "TSMC foundry market share",
+        "value": "62",
+        "unit": "percent",
+        "source": "Citi Technology Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US CHIPS Act total funding",
+        "value": "280",
+        "unit": "billion USD",
+        "source": "Citi Technology Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Intel US fab investment",
+        "value": "20",
+        "unit": "billion USD",
+        "source": "Citi Technology Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "TSMC Arizona fab investment",
+        "value": "40",
+        "unit": "billion USD",
+        "source": "Citi Technology Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Samsung foundry investment",
+        "value": "17",
+        "unit": "billion USD (Texas)",
+        "source": "Citi Technology Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global AI PC market forecast 2027",
+        "value": "170",
+        "unit": "million units",
+        "source": "Citi Technology Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global PC market recovery growth",
+        "value": "3",
+        "unit": "percent",
+        "source": "Citi Technology Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global smartphone market",
+        "value": "1.2",
+        "unit": "billion units shipped",
+        "source": "Citi Technology Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Apple iPhone revenue",
+        "value": "200",
+        "unit": "billion USD",
+        "source": "Citi Technology Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global cloud gaming market",
+        "value": "6.4",
+        "unit": "billion USD",
+        "source": "Citi Technology Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global VR headset shipments",
+        "value": "10",
+        "unit": "million units",
+        "source": "Citi Technology Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global wearables market",
+        "value": "81",
+        "unit": "billion USD",
+        "source": "Citi Technology Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global smart speaker installed base",
+        "value": "320",
+        "unit": "million devices",
+        "source": "Citi Technology Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global connected devices (IoT)",
+        "value": "15.1",
+        "unit": "billion devices",
+        "source": "Citi Technology Research 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "retirement_social_security_citi": [
+      {
+        "metric": "US Social Security beneficiaries",
+        "value": "67",
+        "unit": "million",
+        "source": "Citi Retirement Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US Social Security annual spending",
+        "value": "1.4",
+        "unit": "trillion USD",
+        "source": "Citi Retirement Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US Social Security replacement rate (avg earner)",
+        "value": "40",
+        "unit": "percent",
+        "source": "Citi Retirement Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US Medicare beneficiaries",
+        "value": "65",
+        "unit": "million",
+        "source": "Citi Retirement Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US Medicaid beneficiaries",
+        "value": "91",
+        "unit": "million",
+        "source": "Citi Retirement Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US retirement healthcare costs (couple, lifetime)",
+        "value": "315000",
+        "unit": "USD",
+        "source": "Citi Retirement Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US long-term care cost (nursing home annual)",
+        "value": "108000",
+        "unit": "USD",
+        "source": "Citi Retirement Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US long-term care cost (assisted living annual)",
+        "value": "64000",
+        "unit": "USD",
+        "source": "Citi Retirement Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US retirees with part-time work",
+        "value": "19",
+        "unit": "percent",
+        "source": "Citi Retirement Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US gig economy retirees",
+        "value": "12",
+        "unit": "percent of gig workers over 55",
+        "source": "Citi Retirement Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US retirement confidence (confident/very confident)",
+        "value": "73",
+        "unit": "percent",
+        "source": "Citi Retirement Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US target-date fund adoption in 401k",
+        "value": "60",
+        "unit": "percent of participants",
+        "source": "Citi Retirement Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US Roth 401k adoption growth",
+        "value": "18",
+        "unit": "percent YoY",
+        "source": "Citi Retirement Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US catch-up contribution utilization (50+)",
+        "value": "16",
+        "unit": "percent of eligible",
+        "source": "Citi Retirement Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US pension risk transfer market",
+        "value": "48",
+        "unit": "billion USD annual",
+        "source": "Citi Retirement Research 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "philanthropy_impact_citi": [
+      {
+        "metric": "Citi Foundation grants (cumulative)",
+        "value": "1.2",
+        "unit": "billion USD since 1994",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi affordable housing investment",
+        "value": "20",
+        "unit": "billion USD (10 year commitment)",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi Pathways to Progress (youth program)",
+        "value": "1",
+        "unit": "million youth reached",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global philanthropy market",
+        "value": "810",
+        "unit": "billion USD annual",
+        "source": "Citi Philanthropy Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US donor-advised fund assets",
+        "value": "234",
+        "unit": "billion USD",
+        "source": "Citi Philanthropy Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global impact investment returns",
+        "value": "6.4",
+        "unit": "percent average",
+        "source": "Citi Philanthropy Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "UN SDG funding gap annual",
+        "value": "4",
+        "unit": "trillion USD",
+        "source": "Citi Philanthropy Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global development aid total (ODA)",
+        "value": "211",
+        "unit": "billion USD",
+        "source": "Citi Philanthropy Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Microfinance institutions globally",
+        "value": "10000+",
+        "unit": "institutions",
+        "source": "Citi Philanthropy Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global social enterprise market",
+        "value": "2",
+        "unit": "trillion USD revenue",
+        "source": "Citi Philanthropy Report 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "digital_currencies_citi": [
+      {
+        "metric": "Global CBDC projects total",
+        "value": "130",
+        "unit": "countries researching/piloting",
+        "source": "Citi Digital Money 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Digital yuan (e-CNY) cumulative transactions",
+        "value": "7",
+        "unit": "trillion RMB",
+        "source": "Citi Digital Money 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Nigeria eNaira adoption",
+        "value": "13",
+        "unit": "million wallets",
+        "source": "Citi Digital Money 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "India digital rupee pilot",
+        "value": "4",
+        "unit": "million users",
+        "source": "Citi Digital Money 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "EU digital euro timeline",
+        "value": "2028",
+        "unit": "expected launch year",
+        "source": "Citi Digital Money 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US CBDC research status",
+        "value": "advanced research",
+        "unit": "phase",
+        "source": "Citi Digital Money 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Stablecoin daily settlement volume",
+        "value": "75",
+        "unit": "billion USD",
+        "source": "Citi Digital Money 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Tether (USDT) market cap",
+        "value": "95",
+        "unit": "billion USD",
+        "source": "Citi Digital Money 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "USDC market cap",
+        "value": "35",
+        "unit": "billion USD",
+        "source": "Citi Digital Money 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global tokenized deposits",
+        "value": "2.5",
+        "unit": "billion USD",
+        "source": "Citi Digital Money 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi Token Services countries",
+        "value": "8",
+        "unit": "countries live",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global wholesale CBDC cross-border projects",
+        "value": "15",
+        "unit": "projects",
+        "source": "Citi Digital Money 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global tokenized treasury bills",
+        "value": "1.5",
+        "unit": "billion USD",
+        "source": "Citi Digital Money 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Programmable money market forecast 2030",
+        "value": "5",
+        "unit": "trillion USD",
+        "source": "Citi Digital Money 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global digital identity market",
+        "value": "33",
+        "unit": "billion USD",
+        "source": "Citi Digital Money 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "space_economy_citi": [
+      {
+        "metric": "Global space economy size",
+        "value": "630",
+        "unit": "billion USD",
+        "source": "Citi Space Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Space economy forecast 2040",
+        "value": "1800",
+        "unit": "billion USD",
+        "source": "Citi Space Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "SpaceX valuation",
+        "value": "210",
+        "unit": "billion USD",
+        "source": "Citi Space Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global satellite broadband subscribers",
+        "value": "7",
+        "unit": "million",
+        "source": "Citi Space Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Satellite broadband forecast 2030",
+        "value": "80",
+        "unit": "million subscribers",
+        "source": "Citi Space Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Space debris removal market",
+        "value": "500",
+        "unit": "million USD",
+        "source": "Citi Space Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Earth observation satellite market",
+        "value": "6.5",
+        "unit": "billion USD",
+        "source": "Citi Space Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Space tourism flights 2024",
+        "value": "12",
+        "unit": "flights",
+        "source": "Citi Space Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global GPS-dependent economic activity",
+        "value": "1.4",
+        "unit": "trillion USD",
+        "source": "Citi Space Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "In-space manufacturing market forecast 2040",
+        "value": "10",
+        "unit": "billion USD",
+        "source": "Citi Space Report 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "insurance_citi": [
+      {
+        "metric": "US property insurance market",
+        "value": "320",
+        "unit": "billion USD",
+        "source": "Citi Insurance Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US life insurance market",
+        "value": "740",
+        "unit": "billion USD premiums",
+        "source": "Citi Insurance Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US health insurance market",
+        "value": "1.3",
+        "unit": "trillion USD",
+        "source": "Citi Insurance Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global insuretech investment",
+        "value": "8",
+        "unit": "billion USD",
+        "source": "Citi Insurance Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US parametric insurance growth",
+        "value": "30",
+        "unit": "percent YoY",
+        "source": "Citi Insurance Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US flood insurance gap",
+        "value": "2",
+        "unit": "trillion USD uninsured exposure",
+        "source": "Citi Insurance Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global embedded insurance market",
+        "value": "72",
+        "unit": "billion USD",
+        "source": "Citi Insurance Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US pet insurance market",
+        "value": "3.5",
+        "unit": "billion USD",
+        "source": "Citi Insurance Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US travel insurance market",
+        "value": "5.6",
+        "unit": "billion USD",
+        "source": "Citi Insurance Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global longevity risk market",
+        "value": "25",
+        "unit": "trillion USD exposure",
+        "source": "Citi Insurance Research 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "education_workforce_citi": [
+      {
+        "metric": "US higher education spending",
+        "value": "750",
+        "unit": "billion USD",
+        "source": "Citi Education Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US student loan forgiveness (approved)",
+        "value": "175",
+        "unit": "billion USD",
+        "source": "Citi Education Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US corporate training spending",
+        "value": "100",
+        "unit": "billion USD",
+        "source": "Citi Education Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US certification economy",
+        "value": "25",
+        "unit": "billion USD",
+        "source": "Citi Education Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global lifelong learning market",
+        "value": "450",
+        "unit": "billion USD",
+        "source": "Citi Education Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US apprenticeship programs",
+        "value": "640000",
+        "unit": "active apprentices",
+        "source": "Citi Education Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US community college enrollment",
+        "value": "5.5",
+        "unit": "million students",
+        "source": "Citi Education Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Online learning platform users globally",
+        "value": "400",
+        "unit": "million",
+        "source": "Citi Education Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Coursera revenue",
+        "value": "640",
+        "unit": "million USD",
+        "source": "Citi Education Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "LinkedIn Learning users",
+        "value": "27",
+        "unit": "million",
+        "source": "Citi Education Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US employer tuition assistance programs",
+        "value": "56",
+        "unit": "percent of large employers",
+        "source": "Citi Education Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Skills-based hiring adoption",
+        "value": "45",
+        "unit": "percent of employers",
+        "source": "Citi Education Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US workers needing reskilling by 2030",
+        "value": "50",
+        "unit": "percent",
+        "source": "Citi Education Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "AI literacy training market",
+        "value": "3.2",
+        "unit": "billion USD",
+        "source": "Citi Education Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global language learning market",
+        "value": "69",
+        "unit": "billion USD",
+        "source": "Citi Education Research 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US trade school enrollment growth",
+        "value": "16",
+        "unit": "percent since 2019",
+        "source": "Citi Education Research 2024",
+        "year": 2024,
+        "evergreen": false
+      }
+    ],
+    "final_citi": [
+      {
+        "metric": "Citi commercial banking clients",
+        "value": "30000",
+        "unit": "companies",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi FX trading global rank",
+        "value": "2",
+        "unit": "rank",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi sustainable bond underwriting 2024",
+        "value": "45",
+        "unit": "billion USD",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi Velocity platform users",
+        "value": "250000",
+        "unit": "users",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global correspondent banking decline",
+        "value": "25",
+        "unit": "percent fewer relationships since 2011",
+        "source": "Citi Banking Industry Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi private bank AUM",
+        "value": "480",
+        "unit": "billion USD",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "US commercial real estate loans at risk",
+        "value": "320",
+        "unit": "billion USD",
+        "source": "Citi Real Estate Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global trade invoice financing gap",
+        "value": "1.7",
+        "unit": "trillion USD",
+        "source": "Citi Trade Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Citi ESG-related revenue",
+        "value": "12",
+        "unit": "billion USD",
+        "source": "Citi Annual Report 2024",
+        "year": 2024,
+        "evergreen": false
+      },
+      {
+        "metric": "Global financial crime compliance cost",
+        "value": "274",
+        "unit": "billion USD annually",
+        "source": "Citi Banking Industry Report 2024",
+        "year": 2024,
+        "evergreen": false
+      }
     ]
   }
 }

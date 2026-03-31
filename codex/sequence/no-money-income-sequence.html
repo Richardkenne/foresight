@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>No Money Income Sequence</title>
+  <style>
+    :root {
+      --bg: #f6f1e8;
+      --panel: rgba(255, 250, 242, 0.94);
+      --ink: #1a2027;
+      --muted: #66727c;
+      --border: rgba(26, 32, 39, 0.08);
+      --shadow: 0 20px 50px rgba(43, 35, 23, 0.10);
+      --state: #d8ead8;
+      --action: #d8e7f7;
+      --gate: #fde1b8;
+      --bad: #f7d4cc;
+      --good: #d7f7e3;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(216, 231, 247, 0.55), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(216, 234, 216, 0.50), transparent 25%),
+        var(--bg);
+    }
+
+    .page {
+      width: 1600px;
+      min-height: 900px;
+      margin: 0 auto;
+      padding: 28px 32px 32px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow {
+      margin-bottom: 10px;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 52px;
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      max-width: 960px;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 920px;
+      line-height: 1.45;
+    }
+
+    .controls {
+      min-width: 280px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 14px 16px;
+    }
+
+    .controls .meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .progress {
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(26, 32, 39, 0.08);
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .progress > div {
+      height: 100%;
+      background: linear-gradient(90deg, #56718f, #1f7a45);
+      width: 0%;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(255,255,255,0.45);
+    }
+
+    .canvas {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .tree {
+      display: grid;
+      grid-template-columns: 250px 90px 250px 90px 250px 90px 1fr;
+      align-items: start;
+      gap: 0;
+      min-height: 620px;
+    }
+
+    .col, .branch-col {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      min-height: 100px;
+    }
+
+    .arrow {
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9d8d79;
+      font-size: 42px;
+      min-height: 120px;
+      font-weight: 700;
+    }
+
+    .branches {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .branch {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 14px;
+      background: rgba(255,255,255,0.32);
+      min-height: 420px;
+    }
+
+    .branch-title {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+
+    .branch-title.no { color: #a12f2f; }
+    .branch-title.partial { color: #9b6a00; }
+    .branch-title.yes { color: #1f7a45; }
+
+    .card {
+      border-radius: 18px;
+      padding: 14px 14px 12px;
+      border: 1px solid rgba(26, 32, 39, 0.10);
+      box-shadow: 0 10px 22px rgba(43, 35, 23, 0.07);
+      background: #fff;
+    }
+
+    .state { background: linear-gradient(180deg, #edf8ed, var(--state)); }
+    .action { background: linear-gradient(180deg, #edf5fd, var(--action)); }
+    .gate { background: linear-gradient(180deg, #fff4de, var(--gate)); }
+    .bad { background: linear-gradient(180deg, #fce8e2, var(--bad)); }
+    .good { background: linear-gradient(180deg, #edfdf2, var(--good)); }
+
+    .label {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .title {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+    }
+
+    .body {
+      margin-top: 8px;
+      font-size: 16px;
+      line-height: 1.42;
+      color: #24303a;
+    }
+
+    .step-note {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 18px;
+      align-items: start;
+      background: rgba(255,255,255,0.32);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 16px;
+    }
+
+    .step-kicker {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .step-title {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-top: 6px;
+    }
+
+    .step-copy {
+      font-size: 17px;
+      line-height: 1.5;
+      color: #23303a;
+    }
+
+    .hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <div class="eyebrow">Sequence Ready Tree</div>
+        <h1>A man with no money tries to make some money</h1>
+        <p class="subtitle">Step-based visual for exporting JPEG frames. Use `?step=1` to `?step=7` in the URL, or run the export script in this folder.</p>
+      </div>
+      <div class="controls">
+        <div class="meta" id="meta">Step 1 of 7</div>
+        <div class="progress"><div id="bar"></div></div>
+        <div class="buttons">
+          <a id="prev" href="?step=1">Prev</a>
+          <a id="next" href="?step=2">Next</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="tree">
+        <div class="col">
+          <section class="card state reveal step-1">
+            <div class="label">State</div>
+            <h2 class="title">Man with $0 liquid margin</h2>
+            <div class="body">Urgent income need. No buffer. Every week without cash hurts.</div>
+          </section>
+        </div>
+
+        <div class="arrow reveal step-2">→</div>
+
+        <div class="col">
+          <section class="card action reveal step-2">
+            <div class="label">Action</div>
+            <h2 class="title">Starts a no-upfront-cost income path</h2>
+            <div class="body">Freelancing, gig work, simple services, or low-cost content path.</div>
+          </section>
+        </div>
+
+        <div class="arrow reveal step-3">→</div>
+
+        <div class="col">
+          <section class="card gate reveal step-3">
+            <div class="label">Bottleneck</div>
+            <h2 class="title">Sticks long enough to earn first $100?</h2>
+            <div class="body">The danger is not just failure. It is surviving the silent period before proof.</div>
+          </section>
+        </div>
+
+        <div class="arrow reveal step-4">→</div>
+
+        <div class="branch-col">
+          <div class="branches">
+            <div class="branch reveal step-5">
+              <div class="branch-title no">FAIL</div>
+              <section class="card bad">
+                <div class="label">Outcome</div>
+                <h2 class="title">Quit, no income</h2>
+                <div class="body">Too much silence, too little proof. Stops before traction forms.</div>
+              </section>
+            </div>
+
+            <div class="branch reveal step-6">
+              <div class="branch-title partial">PARTIAL</div>
+              <section class="card state">
+                <div class="label">State</div>
+                <h2 class="title">First $100 earned</h2>
+                <div class="body">Proof exists, but stability does not. Hope returns, pressure stays.</div>
+              </section>
+              <section class="card gate" style="margin-top:14px;">
+                <div class="label">Gate</div>
+                <h2 class="title">Reaches $500/month?</h2>
+                <div class="body">First meaningful sustainability threshold.</div>
+              </section>
+              <section class="card bad" style="margin-top:14px;">
+                <div class="label">State</div>
+                <h2 class="title">Stuck at $200-$400/month</h2>
+                <div class="body">Real income, but too weak to change the financial condition.</div>
+              </section>
+              <section class="card bad" style="margin-top:14px;">
+                <div class="label">Outcome</div>
+                <h2 class="title">Low-income trap or burnout</h2>
+                <div class="body">The path is alive, but not strong enough.</div>
+              </section>
+            </div>
+
+            <div class="branch reveal step-7">
+              <div class="branch-title yes">YES</div>
+              <section class="card state">
+                <div class="label">State</div>
+                <h2 class="title">$500+/month achieved</h2>
+                <div class="body">Bills partly covered. The path starts behaving like a system.</div>
+              </section>
+              <section class="card gate" style="margin-top:14px;">
+                <div class="label">Bottleneck</div>
+                <h2 class="title">Scales to $1,000+/month?</h2>
+                <div class="body">Second threshold. This is where hustle either compounds or stalls.</div>
+              </section>
+              <section class="card good" style="margin-top:14px;">
+                <div class="label">Outcome</div>
+                <h2 class="title">Sustainable income</h2>
+                <div class="body">$1K+/month. No longer random proof. Now the path can support life.</div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-note">
+        <div>
+          <div class="step-kicker">Current Frame</div>
+          <div class="step-title" id="step-title">Starting pressure</div>
+        </div>
+        <div class="step-copy" id="step-copy">
+          Start from the condition, not from fake motivation. Scarcity comes first.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const maxStep = 7;
+    const params = new URLSearchParams(window.location.search);
+    const step = Math.max(1, Math.min(maxStep, parseInt(params.get("step") || "1", 10)));
+
+    const stepMeta = {
+      1: ["Starting pressure", "Start from the condition, not from fake motivation. Scarcity comes first."],
+      2: ["Low-cost attempt", "The person picks something cheap to try because there is no capital for expensive mistakes."],
+      3: ["The silent phase", "The first real gate is surviving long enough to see proof."],
+      4: ["Tension before split", "The system is about to branch into early failure, partial proof, or real traction."],
+      5: ["Fast collapse", "Many paths end before the first meaningful result arrives."],
+      6: ["Partial path", "The person gets signal, but not enough signal to escape pressure."],
+      7: ["System path", "The path becomes real only when it starts crossing monthly thresholds repeatedly."]
+    };
+
+    document.querySelectorAll(".reveal").forEach((el) => {
+      const cls = [...el.classList].find((c) => c.startsWith("step-"));
+      if (!cls) return;
+      const revealAt = parseInt(cls.split("-")[1], 10);
+      if (revealAt > step) el.classList.add("hidden");
+    });
+
+    document.getElementById("meta").textContent = `Step ${step} of ${maxStep}`;
+    document.getElementById("bar").style.width = `${(step / maxStep) * 100}%`;
+    document.getElementById("prev").href = `?step=${Math.max(1, step - 1)}`;
+    document.getElementById("next").href = `?step=${Math.min(maxStep, step + 1)}`;
+    document.getElementById("step-title").textContent = stepMeta[step][0];
+    document.getElementById("step-copy").textContent = stepMeta[step][1];
+  </script>
+</body>
+</html>

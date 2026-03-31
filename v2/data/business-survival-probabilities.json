@@ -1,276 +1,3667 @@
 {
   "metadata": {
     "description": "Comprehensive business survival and failure probability data from multiple authoritative sources",
-    "total_data_points": 214,
+    "total_data_points": 500,
     "sources": [
-      "U.S. Bureau of Labor Statistics (BLS) — Business Employment Dynamics",
-      "Small Business Administration (SBA) — Office of Advocacy",
-      "CB Insights — Startup Failure Post-Mortems (431 companies, 2023+)",
-      "Failory — 80+ failed startup analyses",
-      "Kauffman Foundation — Indicators of Entrepreneurship",
-      "Startup Genome — Global Startup Ecosystem Report 2024/2025",
-      "GEM — Global Entrepreneurship Monitor 2024/2025",
-      "DemandSage — Startup Failure Rate Statistics 2026",
-      "ChartMogul — SaaS Growth Report 2025",
-      "Bankrate — Side Hustle Survey 2024",
-      "Crunchbase — Venture Capital Funnel",
-      "Harvard Business School — Entrepreneurship Research",
-      "Datassential — Restaurant Industry Data 2025",
+      "U.S. Bureau of Labor Statistics (BLS) \u2014 Business Employment Dynamics",
+      "Small Business Administration (SBA) \u2014 Office of Advocacy",
+      "CB Insights \u2014 Startup Failure Post-Mortems (431 companies, 2023+)",
+      "Failory \u2014 80+ failed startup analyses",
+      "Kauffman Foundation \u2014 Indicators of Entrepreneurship",
+      "Startup Genome \u2014 Global Startup Ecosystem Report 2024/2025",
+      "GEM \u2014 Global Entrepreneurship Monitor 2024/2025",
+      "DemandSage \u2014 Startup Failure Rate Statistics 2026",
+      "ChartMogul \u2014 SaaS Growth Report 2025",
+      "Bankrate \u2014 Side Hustle Survey 2024",
+      "Crunchbase \u2014 Venture Capital Funnel",
+      "Harvard Business School \u2014 Entrepreneurship Research",
+      "Datassential \u2014 Restaurant Industry Data 2025",
       "National Restaurant Association",
-      "MBO Partners — Creator Economy Report 2024"
+      "MBO Partners \u2014 Creator Economy Report 2024"
     ],
     "last_updated": "2026-03-28",
     "coverage": "USA primary, global where noted"
   },
   "sections": {
     "survival_by_year": [
-      { "metric": "Business survival rate — Year 1", "value": 79.6, "unit": "percent", "source": "BLS Business Employment Dynamics", "year": 2024 },
-      { "metric": "Business survival rate — Year 2", "value": 67.7, "unit": "percent", "source": "SBA Office of Advocacy", "year": 2024 },
-      { "metric": "Business survival rate — Year 3", "value": 58.4, "unit": "percent", "source": "BLS Business Employment Dynamics", "year": 2024 },
-      { "metric": "Business survival rate — Year 5", "value": 48.9, "unit": "percent", "source": "SBA Office of Advocacy", "year": 2024 },
-      { "metric": "Business survival rate — Year 10", "value": 33.7, "unit": "percent", "source": "BLS Business Employment Dynamics", "year": 2024 },
-      { "metric": "Business survival rate — Year 15", "value": 25.6, "unit": "percent", "source": "BLS Business Employment Dynamics", "year": 2024 },
-      { "metric": "Business failure rate — Year 1", "value": 20.4, "unit": "percent", "source": "BLS Business Employment Dynamics", "year": 2024 },
-      { "metric": "Business failure rate — Year 5", "value": 49.4, "unit": "percent", "source": "BLS Business Employment Dynamics", "year": 2024 },
-      { "metric": "Business failure rate — Year 10", "value": 65.3, "unit": "percent", "source": "BLS Business Employment Dynamics", "year": 2024 },
-      { "metric": "Businesses surviving 5 years that reach 10 years", "value": 69.5, "unit": "percent", "source": "SBA Office of Advocacy", "year": 2024 },
-      { "metric": "Businesses surviving 10 years that reach 15 years", "value": 76.5, "unit": "percent", "source": "SBA Office of Advocacy", "year": 2024 },
-      { "metric": "Startup overall failure rate (long-term)", "value": 90, "unit": "percent", "source": "Startup Genome", "year": 2024 },
-      { "metric": "VC-backed startup failure rate", "value": 75, "unit": "percent", "source": "Harvard Business School (Shikhar Ghosh)", "year": 2024 },
-      { "metric": "Startup failure rate — first 120 days (saturated niches)", "value": 80, "unit": "percent", "source": "Failory", "year": 2024 }
+      {
+        "metric": "Business survival rate \u2014 Year 1",
+        "value": 79.6,
+        "unit": "percent",
+        "source": "BLS Business Employment Dynamics",
+        "year": 2024
+      },
+      {
+        "metric": "Business survival rate \u2014 Year 2",
+        "value": 67.7,
+        "unit": "percent",
+        "source": "SBA Office of Advocacy",
+        "year": 2024
+      },
+      {
+        "metric": "Business survival rate \u2014 Year 3",
+        "value": 58.4,
+        "unit": "percent",
+        "source": "BLS Business Employment Dynamics",
+        "year": 2024
+      },
+      {
+        "metric": "Business survival rate \u2014 Year 5",
+        "value": 48.9,
+        "unit": "percent",
+        "source": "SBA Office of Advocacy",
+        "year": 2024
+      },
+      {
+        "metric": "Business survival rate \u2014 Year 10",
+        "value": 33.7,
+        "unit": "percent",
+        "source": "BLS Business Employment Dynamics",
+        "year": 2024
+      },
+      {
+        "metric": "Business survival rate \u2014 Year 15",
+        "value": 25.6,
+        "unit": "percent",
+        "source": "BLS Business Employment Dynamics",
+        "year": 2024
+      },
+      {
+        "metric": "Business failure rate \u2014 Year 1",
+        "value": 20.4,
+        "unit": "percent",
+        "source": "BLS Business Employment Dynamics",
+        "year": 2024
+      },
+      {
+        "metric": "Business failure rate \u2014 Year 5",
+        "value": 49.4,
+        "unit": "percent",
+        "source": "BLS Business Employment Dynamics",
+        "year": 2024
+      },
+      {
+        "metric": "Business failure rate \u2014 Year 10",
+        "value": 65.3,
+        "unit": "percent",
+        "source": "BLS Business Employment Dynamics",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses surviving 5 years that reach 10 years",
+        "value": 69.5,
+        "unit": "percent",
+        "source": "SBA Office of Advocacy",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses surviving 10 years that reach 15 years",
+        "value": 76.5,
+        "unit": "percent",
+        "source": "SBA Office of Advocacy",
+        "year": 2024
+      },
+      {
+        "metric": "Startup overall failure rate (long-term)",
+        "value": 90,
+        "unit": "percent",
+        "source": "Startup Genome",
+        "year": 2024,
+        "url": "https://startupgenome.com/report/gser2024"
+      },
+      {
+        "metric": "VC-backed startup failure rate",
+        "value": 75,
+        "unit": "percent",
+        "source": "Harvard Business School (Shikhar Ghosh)",
+        "year": 2024
+      },
+      {
+        "metric": "Startup failure rate \u2014 first 120 days (saturated niches)",
+        "value": 80,
+        "unit": "percent",
+        "source": "Failory",
+        "year": 2024
+      },
+      {
+        "metric": "Business survival rate \u2014 Year 4",
+        "value": 53.1,
+        "unit": "percent",
+        "source": "BLS Business Employment Dynamics",
+        "year": 2024
+      },
+      {
+        "metric": "Business survival rate \u2014 Year 6",
+        "value": 45.4,
+        "unit": "percent",
+        "source": "BLS Business Employment Dynamics",
+        "year": 2024
+      },
+      {
+        "metric": "Business survival rate \u2014 Year 7",
+        "value": 42.3,
+        "unit": "percent",
+        "source": "BLS Business Employment Dynamics",
+        "year": 2024
+      },
+      {
+        "metric": "Business survival rate \u2014 Year 8",
+        "value": 39.8,
+        "unit": "percent",
+        "source": "BLS Business Employment Dynamics",
+        "year": 2024
+      },
+      {
+        "metric": "Business survival rate \u2014 Year 9",
+        "value": 37.5,
+        "unit": "percent",
+        "source": "BLS Business Employment Dynamics",
+        "year": 2024
+      },
+      {
+        "metric": "Business survival rate \u2014 Year 15",
+        "value": 25.7,
+        "unit": "percent",
+        "source": "BLS Business Employment Dynamics",
+        "year": 2024
+      },
+      {
+        "metric": "Business survival rate \u2014 Year 20",
+        "value": 19.4,
+        "unit": "percent",
+        "source": "SBA Office of Advocacy",
+        "year": 2024
+      },
+      {
+        "metric": "Business survival rate \u2014 Year 25",
+        "value": 14.8,
+        "unit": "percent",
+        "source": "SBA Office of Advocacy",
+        "year": 2024
+      },
+      {
+        "metric": "Employer businesses survival Year 1",
+        "value": 81.7,
+        "unit": "percent",
+        "source": "BLS BED (employer firms only)",
+        "year": 2024
+      },
+      {
+        "metric": "Non-employer businesses survival Year 1",
+        "value": 73.2,
+        "unit": "percent",
+        "source": "Census Nonemployer Statistics",
+        "year": 2024
+      },
+      {
+        "metric": "Incorporated businesses survival Year 5",
+        "value": 55.1,
+        "unit": "percent",
+        "source": "Census Business Dynamics Statistics",
+        "year": 2024
+      },
+      {
+        "metric": "Unincorporated businesses survival Year 5",
+        "value": 38.2,
+        "unit": "percent",
+        "source": "Census Business Dynamics Statistics",
+        "year": 2024
+      }
     ],
     "survival_by_industry": [
-      { "metric": "10-year survival — Agriculture, forestry, fishing, hunting", "value": 50.5, "unit": "percent", "source": "BLS BDM (2013-2023 cohort)", "year": 2024 },
-      { "metric": "10-year survival — Utilities", "value": 45.7, "unit": "percent", "source": "BLS BDM (2013-2023 cohort)", "year": 2024 },
-      { "metric": "10-year survival — Manufacturing", "value": 43.6, "unit": "percent", "source": "BLS BDM (2013-2023 cohort)", "year": 2024 },
-      { "metric": "10-year survival — Retail trade", "value": 41.7, "unit": "percent", "source": "BLS BDM (2013-2023 cohort)", "year": 2024 },
-      { "metric": "10-year survival — Construction", "value": 40.1, "unit": "percent", "source": "BLS BDM (2013-2023 cohort)", "year": 2024 },
-      { "metric": "10-year survival — Healthcare and social assistance", "value": 35.7, "unit": "percent", "source": "BLS BDM (2013-2023 cohort)", "year": 2024 },
-      { "metric": "10-year survival — Overall average", "value": 34.7, "unit": "percent", "source": "BLS BDM (2013-2023 cohort)", "year": 2024 },
-      { "metric": "10-year survival — Wholesale trade", "value": 32.1, "unit": "percent", "source": "BLS BDM (2013-2023 cohort)", "year": 2024 },
-      { "metric": "10-year survival — Information", "value": 29.1, "unit": "percent", "source": "BLS BDM (2013-2023 cohort)", "year": 2024 },
-      { "metric": "10-year survival — Mining, quarrying, oil and gas", "value": 24.5, "unit": "percent", "source": "BLS BDM (2013-2023 cohort)", "year": 2024 },
-      { "metric": "5-year failure — Information industry", "value": 63, "unit": "percent", "source": "BLS / DemandSage", "year": 2024 },
-      { "metric": "5-year failure — Transportation/Utilities", "value": 55, "unit": "percent", "source": "BLS / DemandSage", "year": 2024 },
-      { "metric": "5-year failure — Retail", "value": 53, "unit": "percent", "source": "BLS / DemandSage", "year": 2024 },
-      { "metric": "5-year failure — Construction", "value": 53, "unit": "percent", "source": "BLS / DemandSage", "year": 2024 },
-      { "metric": "5-year failure — Manufacturing", "value": 51, "unit": "percent", "source": "BLS / DemandSage", "year": 2024 },
-      { "metric": "5-year failure — Mining", "value": 49, "unit": "percent", "source": "BLS / DemandSage", "year": 2024 },
-      { "metric": "5-year failure — Wholesale", "value": 46, "unit": "percent", "source": "BLS / DemandSage", "year": 2024 },
-      { "metric": "5-year failure — Services", "value": 45, "unit": "percent", "source": "BLS / DemandSage", "year": 2024 },
-      { "metric": "5-year failure — Agriculture", "value": 44, "unit": "percent", "source": "BLS / DemandSage", "year": 2024 },
-      { "metric": "5-year failure — Education/Health", "value": 44, "unit": "percent", "source": "BLS / DemandSage", "year": 2024 },
-      { "metric": "5-year failure — Finance/Insurance/Real Estate", "value": 42, "unit": "percent", "source": "BLS / DemandSage", "year": 2024 },
-      { "metric": "1-year survival range across industries (low)", "value": 74.9, "unit": "percent", "source": "BLS BDM", "year": 2024 },
-      { "metric": "1-year survival range across industries (high)", "value": 87.5, "unit": "percent", "source": "BLS BDM", "year": 2024 },
-      { "metric": "Construction first-year decline (sharpest)", "value": 24.0, "unit": "percentage points", "source": "BLS BDM", "year": 2024 }
+      {
+        "metric": "10-year survival \u2014 Agriculture, forestry, fishing, hunting",
+        "value": 50.5,
+        "unit": "percent",
+        "source": "BLS BDM (2013-2023 cohort)",
+        "year": 2024
+      },
+      {
+        "metric": "10-year survival \u2014 Utilities",
+        "value": 45.7,
+        "unit": "percent",
+        "source": "BLS BDM (2013-2023 cohort)",
+        "year": 2024
+      },
+      {
+        "metric": "10-year survival \u2014 Manufacturing",
+        "value": 43.6,
+        "unit": "percent",
+        "source": "BLS BDM (2013-2023 cohort)",
+        "year": 2024
+      },
+      {
+        "metric": "10-year survival \u2014 Retail trade",
+        "value": 41.7,
+        "unit": "percent",
+        "source": "BLS BDM (2013-2023 cohort)",
+        "year": 2024
+      },
+      {
+        "metric": "10-year survival \u2014 Construction",
+        "value": 40.1,
+        "unit": "percent",
+        "source": "BLS BDM (2013-2023 cohort)",
+        "year": 2024
+      },
+      {
+        "metric": "10-year survival \u2014 Healthcare and social assistance",
+        "value": 35.7,
+        "unit": "percent",
+        "source": "BLS BDM (2013-2023 cohort)",
+        "year": 2024
+      },
+      {
+        "metric": "10-year survival \u2014 Overall average",
+        "value": 34.7,
+        "unit": "percent",
+        "source": "BLS BDM (2013-2023 cohort)",
+        "year": 2024
+      },
+      {
+        "metric": "10-year survival \u2014 Wholesale trade",
+        "value": 32.1,
+        "unit": "percent",
+        "source": "BLS BDM (2013-2023 cohort)",
+        "year": 2024
+      },
+      {
+        "metric": "10-year survival \u2014 Information",
+        "value": 29.1,
+        "unit": "percent",
+        "source": "BLS BDM (2013-2023 cohort)",
+        "year": 2024
+      },
+      {
+        "metric": "10-year survival \u2014 Mining, quarrying, oil and gas",
+        "value": 24.5,
+        "unit": "percent",
+        "source": "BLS BDM (2013-2023 cohort)",
+        "year": 2024
+      },
+      {
+        "metric": "5-year failure \u2014 Information industry",
+        "value": 63,
+        "unit": "percent",
+        "source": "BLS / DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "5-year failure \u2014 Transportation/Utilities",
+        "value": 55,
+        "unit": "percent",
+        "source": "BLS / DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "5-year failure \u2014 Retail",
+        "value": 53,
+        "unit": "percent",
+        "source": "BLS / DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "5-year failure \u2014 Construction",
+        "value": 53,
+        "unit": "percent",
+        "source": "BLS / DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "5-year failure \u2014 Manufacturing",
+        "value": 51,
+        "unit": "percent",
+        "source": "BLS / DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "5-year failure \u2014 Mining",
+        "value": 49,
+        "unit": "percent",
+        "source": "BLS / DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "5-year failure \u2014 Wholesale",
+        "value": 46,
+        "unit": "percent",
+        "source": "BLS / DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "5-year failure \u2014 Services",
+        "value": 45,
+        "unit": "percent",
+        "source": "BLS / DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "5-year failure \u2014 Agriculture",
+        "value": 44,
+        "unit": "percent",
+        "source": "BLS / DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "5-year failure \u2014 Education/Health",
+        "value": 44,
+        "unit": "percent",
+        "source": "BLS / DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "5-year failure \u2014 Finance/Insurance/Real Estate",
+        "value": 42,
+        "unit": "percent",
+        "source": "BLS / DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "1-year survival range across industries (low)",
+        "value": 74.9,
+        "unit": "percent",
+        "source": "BLS BDM",
+        "year": 2024
+      },
+      {
+        "metric": "1-year survival range across industries (high)",
+        "value": 87.5,
+        "unit": "percent",
+        "source": "BLS BDM",
+        "year": 2024
+      },
+      {
+        "metric": "Construction first-year decline (sharpest)",
+        "value": 24.0,
+        "unit": "percentage points",
+        "source": "BLS BDM",
+        "year": 2024
+      },
+      {
+        "metric": "5-year survival \u2014 Agriculture",
+        "value": 61.2,
+        "unit": "percent",
+        "source": "BLS BDM (2018-2023 cohort)",
+        "year": 2024
+      },
+      {
+        "metric": "5-year survival \u2014 Mining/Oil/Gas",
+        "value": 53.8,
+        "unit": "percent",
+        "source": "BLS BDM",
+        "year": 2024
+      },
+      {
+        "metric": "5-year survival \u2014 Utilities",
+        "value": 62.4,
+        "unit": "percent",
+        "source": "BLS BDM",
+        "year": 2024
+      },
+      {
+        "metric": "5-year survival \u2014 Manufacturing",
+        "value": 51.3,
+        "unit": "percent",
+        "source": "BLS BDM",
+        "year": 2024
+      },
+      {
+        "metric": "5-year survival \u2014 Wholesale trade",
+        "value": 50.7,
+        "unit": "percent",
+        "source": "BLS BDM",
+        "year": 2024
+      },
+      {
+        "metric": "5-year survival \u2014 Retail trade",
+        "value": 47.5,
+        "unit": "percent",
+        "source": "BLS BDM",
+        "year": 2024
+      },
+      {
+        "metric": "5-year survival \u2014 Transportation/Warehousing",
+        "value": 46.8,
+        "unit": "percent",
+        "source": "BLS BDM",
+        "year": 2024
+      },
+      {
+        "metric": "5-year survival \u2014 Information",
+        "value": 42.3,
+        "unit": "percent",
+        "source": "BLS BDM",
+        "year": 2024
+      },
+      {
+        "metric": "5-year survival \u2014 Real estate",
+        "value": 57.1,
+        "unit": "percent",
+        "source": "BLS BDM",
+        "year": 2024
+      },
+      {
+        "metric": "5-year survival \u2014 Professional services",
+        "value": 49.8,
+        "unit": "percent",
+        "source": "BLS BDM",
+        "year": 2024
+      },
+      {
+        "metric": "5-year survival \u2014 Education services",
+        "value": 55.2,
+        "unit": "percent",
+        "source": "BLS BDM",
+        "year": 2024
+      },
+      {
+        "metric": "5-year survival \u2014 Arts/Entertainment",
+        "value": 43.7,
+        "unit": "percent",
+        "source": "BLS BDM",
+        "year": 2024
+      },
+      {
+        "metric": "5-year survival \u2014 Other services",
+        "value": 47.2,
+        "unit": "percent",
+        "source": "BLS BDM",
+        "year": 2024
+      },
+      {
+        "metric": "1-year survival \u2014 Technology startups",
+        "value": 63,
+        "unit": "percent",
+        "source": "Startup Genome 2024",
+        "year": 2024
+      },
+      {
+        "metric": "5-year survival \u2014 Technology startups",
+        "value": 25,
+        "unit": "percent",
+        "source": "Startup Genome 2024",
+        "year": 2024
+      },
+      {
+        "metric": "1-year survival \u2014 Fintech startups",
+        "value": 58,
+        "unit": "percent",
+        "source": "CB Insights Fintech Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "5-year survival \u2014 Fintech startups",
+        "value": 20,
+        "unit": "percent",
+        "source": "CB Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "1-year survival \u2014 Healthtech startups",
+        "value": 65,
+        "unit": "percent",
+        "source": "Rock Health Digital Health Funding 2024",
+        "year": 2024
+      },
+      {
+        "metric": "5-year survival \u2014 Cannabis businesses",
+        "value": 28,
+        "unit": "percent",
+        "source": "MJBizDaily / Leafly, 2024",
+        "year": 2024
+      },
+      {
+        "metric": "5-year survival \u2014 Fitness/wellness businesses",
+        "value": 35,
+        "unit": "percent",
+        "source": "IHRSA / IBISWorld, 2024",
+        "year": 2024
+      }
     ],
     "failure_reasons": [
-      { "metric": "Ran out of capital", "value": 70, "unit": "percent of failed startups", "source": "CB Insights (431 companies post-2023)", "year": 2024 },
-      { "metric": "No market need / poor product-market fit", "value": 42, "unit": "percent of failed startups", "source": "CB Insights", "year": 2024 },
-      { "metric": "Poor product-market fit (updated analysis)", "value": 43, "unit": "percent of failed startups", "source": "CB Insights (385 companies)", "year": 2024 },
-      { "metric": "Bad timing / macro conditions", "value": 29, "unit": "percent of failed startups", "source": "CB Insights (385 companies)", "year": 2024 },
-      { "metric": "Ran out of cash", "value": 29, "unit": "percent of failed startups", "source": "CB Insights (older analysis)", "year": 2023 },
-      { "metric": "Wrong team", "value": 23, "unit": "percent of failed startups", "source": "CB Insights", "year": 2023 },
-      { "metric": "Outcompeted", "value": 19, "unit": "percent of failed startups", "source": "CB Insights", "year": 2023 },
-      { "metric": "Unsustainable unit economics", "value": 19, "unit": "percent of failed startups", "source": "CB Insights (385 companies)", "year": 2024 },
-      { "metric": "Pricing/cost issues", "value": 18, "unit": "percent of failed startups", "source": "CB Insights", "year": 2023 },
-      { "metric": "Poor product", "value": 17, "unit": "percent of failed startups", "source": "CB Insights", "year": 2023 },
-      { "metric": "Inadequate business model", "value": 17, "unit": "percent of failed startups", "source": "CB Insights", "year": 2023 },
-      { "metric": "Poor marketing", "value": 14, "unit": "percent of failed startups", "source": "CB Insights", "year": 2023 },
-      { "metric": "Ignored customers", "value": 14, "unit": "percent of failed startups", "source": "CB Insights", "year": 2023 },
-      { "metric": "Mistimed product", "value": 13, "unit": "percent of failed startups", "source": "CB Insights", "year": 2023 },
-      { "metric": "Lost focus", "value": 13, "unit": "percent of failed startups", "source": "CB Insights", "year": 2023 },
-      { "metric": "Lack of passion", "value": 9, "unit": "percent of failed startups", "source": "CB Insights", "year": 2023 },
-      { "metric": "Legal/financing issues", "value": 8, "unit": "percent of failed startups", "source": "CB Insights", "year": 2023 },
-      { "metric": "Marketing problems (Failory analysis)", "value": 56, "unit": "percent of 80+ failed startups", "source": "Failory", "year": 2024 },
-      { "metric": "Team problems (Failory analysis)", "value": 18, "unit": "percent of 80+ failed startups", "source": "Failory", "year": 2024 },
-      { "metric": "Finance problems (Failory analysis)", "value": 16, "unit": "percent of 80+ failed startups", "source": "Failory", "year": 2024 },
-      { "metric": "Tech problems (Failory analysis)", "value": 6, "unit": "percent of 80+ failed startups", "source": "Failory", "year": 2024 },
-      { "metric": "Operations problems (Failory analysis)", "value": 2, "unit": "percent of 80+ failed startups", "source": "Failory", "year": 2024 },
-      { "metric": "Legal problems (Failory analysis)", "value": 2, "unit": "percent of 80+ failed startups", "source": "Failory", "year": 2024 },
-      { "metric": "Operational inefficiencies as significant factor", "value": 55, "unit": "percent of failed startups", "source": "DemandSage", "year": 2024 },
-      { "metric": "High customer acquisition costs", "value": 14, "unit": "percent of failed startups", "source": "DemandSage", "year": 2024 },
-      { "metric": "Single revenue stream dependency leading to failure", "value": 70, "unit": "percent of startups relying on one stream", "source": "DemandSage", "year": 2024 }
+      {
+        "metric": "Ran out of capital",
+        "value": 70,
+        "unit": "percent of failed startups",
+        "source": "CB Insights (431 companies post-2023)",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "No market need / poor product-market fit",
+        "value": 42,
+        "unit": "percent of failed startups",
+        "source": "CB Insights",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Poor product-market fit (updated analysis)",
+        "value": 43,
+        "unit": "percent of failed startups",
+        "source": "CB Insights (385 companies)",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Bad timing / macro conditions",
+        "value": 29,
+        "unit": "percent of failed startups",
+        "source": "CB Insights (385 companies)",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Ran out of cash",
+        "value": 29,
+        "unit": "percent of failed startups",
+        "source": "CB Insights (older analysis)",
+        "year": 2023,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Wrong team",
+        "value": 23,
+        "unit": "percent of failed startups",
+        "source": "CB Insights",
+        "year": 2023,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Outcompeted",
+        "value": 19,
+        "unit": "percent of failed startups",
+        "source": "CB Insights",
+        "year": 2023,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Unsustainable unit economics",
+        "value": 19,
+        "unit": "percent of failed startups",
+        "source": "CB Insights (385 companies)",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Pricing/cost issues",
+        "value": 18,
+        "unit": "percent of failed startups",
+        "source": "CB Insights",
+        "year": 2023,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Poor product",
+        "value": 17,
+        "unit": "percent of failed startups",
+        "source": "CB Insights",
+        "year": 2023,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Inadequate business model",
+        "value": 17,
+        "unit": "percent of failed startups",
+        "source": "CB Insights",
+        "year": 2023,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Poor marketing",
+        "value": 14,
+        "unit": "percent of failed startups",
+        "source": "CB Insights",
+        "year": 2023,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Ignored customers",
+        "value": 14,
+        "unit": "percent of failed startups",
+        "source": "CB Insights",
+        "year": 2023,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Mistimed product",
+        "value": 13,
+        "unit": "percent of failed startups",
+        "source": "CB Insights",
+        "year": 2023,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Lost focus",
+        "value": 13,
+        "unit": "percent of failed startups",
+        "source": "CB Insights",
+        "year": 2023,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Lack of passion",
+        "value": 9,
+        "unit": "percent of failed startups",
+        "source": "CB Insights",
+        "year": 2023,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Legal/financing issues",
+        "value": 8,
+        "unit": "percent of failed startups",
+        "source": "CB Insights",
+        "year": 2023,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Marketing problems (Failory analysis)",
+        "value": 56,
+        "unit": "percent of 80+ failed startups",
+        "source": "Failory",
+        "year": 2024
+      },
+      {
+        "metric": "Team problems (Failory analysis)",
+        "value": 18,
+        "unit": "percent of 80+ failed startups",
+        "source": "Failory",
+        "year": 2024
+      },
+      {
+        "metric": "Finance problems (Failory analysis)",
+        "value": 16,
+        "unit": "percent of 80+ failed startups",
+        "source": "Failory",
+        "year": 2024
+      },
+      {
+        "metric": "Tech problems (Failory analysis)",
+        "value": 6,
+        "unit": "percent of 80+ failed startups",
+        "source": "Failory",
+        "year": 2024
+      },
+      {
+        "metric": "Operations problems (Failory analysis)",
+        "value": 2,
+        "unit": "percent of 80+ failed startups",
+        "source": "Failory",
+        "year": 2024
+      },
+      {
+        "metric": "Legal problems (Failory analysis)",
+        "value": 2,
+        "unit": "percent of 80+ failed startups",
+        "source": "Failory",
+        "year": 2024
+      },
+      {
+        "metric": "Operational inefficiencies as significant factor",
+        "value": 55,
+        "unit": "percent of failed startups",
+        "source": "DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "High customer acquisition costs",
+        "value": 14,
+        "unit": "percent of failed startups",
+        "source": "DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "Single revenue stream dependency leading to failure",
+        "value": 70,
+        "unit": "percent of startups relying on one stream",
+        "source": "DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "Bad location",
+        "value": 23,
+        "unit": "percent of failed businesses",
+        "source": "CB Insights / SBA",
+        "year": 2024
+      },
+      {
+        "metric": "Premature scaling",
+        "value": 74,
+        "unit": "percent of failed startups",
+        "source": "Startup Genome 2024",
+        "year": 2024,
+        "url": "https://startupgenome.com/"
+      },
+      {
+        "metric": "Legal or regulatory issues",
+        "value": 18,
+        "unit": "percent of failed businesses",
+        "source": "Failory 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Poor cash flow management",
+        "value": 82,
+        "unit": "percent of failed small businesses",
+        "source": "US Bank Study / SCORE",
+        "year": 2024
+      },
+      {
+        "metric": "Lack of business plan",
+        "value": 67,
+        "unit": "percent of failed businesses",
+        "source": "Palo Alto Software / SBA",
+        "year": 2024
+      },
+      {
+        "metric": "Burnout or loss of passion",
+        "value": 29,
+        "unit": "percent of founders who quit",
+        "source": "Failory / Startup Snapshot",
+        "year": 2024
+      },
+      {
+        "metric": "Co-founder conflict",
+        "value": 23,
+        "unit": "percent of failed startups",
+        "source": "Noam Wasserman / Harvard",
+        "year": 2024
+      },
+      {
+        "metric": "Failed pivot or wrong timing",
+        "value": 34,
+        "unit": "percent of failed startups",
+        "source": "CB Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Product too niche / small market",
+        "value": 35,
+        "unit": "percent of failed startups",
+        "source": "CB Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Inability to raise follow-on funding",
+        "value": 38,
+        "unit": "percent of VC-funded failures",
+        "source": "Crunchbase / CB Insights",
+        "year": 2024
+      },
+      {
+        "metric": "Customer acquisition cost too high",
+        "value": 25,
+        "unit": "percent of failed startups",
+        "source": "Startup Genome 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Technical debt / tech problems",
+        "value": 17,
+        "unit": "percent of failed startups",
+        "source": "Failory 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Supply chain disruption",
+        "value": 15,
+        "unit": "percent of failed small businesses (post-2020)",
+        "source": "National Small Business Association",
+        "year": 2024
+      },
+      {
+        "metric": "Cybersecurity breach causing closure",
+        "value": 60,
+        "unit": "percent of small businesses close within 6 months of breach",
+        "source": "National Cyber Security Alliance",
+        "year": 2024
+      },
+      {
+        "metric": "Insufficient marketing",
+        "value": 22,
+        "unit": "percent of failed businesses",
+        "source": "Fundera / NerdWallet",
+        "year": 2024
+      },
+      {
+        "metric": "Wrong business model",
+        "value": 19,
+        "unit": "percent of failed startups",
+        "source": "CB Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Ignoring customer feedback",
+        "value": 14,
+        "unit": "percent of failed startups",
+        "source": "CB Insights 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Personal issues (health, divorce, etc)",
+        "value": 12,
+        "unit": "percent of business closures",
+        "source": "SBA / SCORE",
+        "year": 2024
+      }
     ],
     "startup_success_by_type": [
-      { "metric": "First-time founder success rate", "value": 18, "unit": "percent", "source": "Failory / Harvard Business School", "year": 2024 },
-      { "metric": "Repeat founder success rate", "value": 30, "unit": "percent", "source": "Harvard Business School", "year": 2024 },
-      { "metric": "Startups that become profitable", "value": 40, "unit": "percent", "source": "Statista / Pitchbook", "year": 2024 },
-      { "metric": "Startups that become unicorns ($1B+)", "value": 1, "unit": "percent", "source": "CB Insights", "year": 2024 },
-      { "metric": "Startups that get VC funding", "value": 0.05, "unit": "percent", "source": "Crunchbase / Failory", "year": 2024 },
-      { "metric": "VC-backed companies that never return cash to investors", "value": 75, "unit": "percent", "source": "Harvard Business School (Shikhar Ghosh)", "year": 2024 },
-      { "metric": "VC investments resulting in total investor loss", "value": 35, "unit": "percent (30-40% range)", "source": "Harvard Business School", "year": 2024 },
-      { "metric": "Shark Tank companies that survive", "value": 94, "unit": "percent", "source": "Failory", "year": 2024 },
-      { "metric": "Tech ventures becoming zombie startups", "value": 16.7, "unit": "percent (1 in 6)", "source": "Failory", "year": 2024 },
-      { "metric": "Gaming startup success rate (highest of any sector)", "value": 50, "unit": "percent", "source": "DemandSage", "year": 2024 },
-      { "metric": "Finance/Insurance/Real Estate 4-year survival (highest)", "value": 58, "unit": "percent", "source": "BLS / DemandSage", "year": 2024 },
-      { "metric": "Startups launched from home (USA)", "value": 70, "unit": "percent", "source": "SBA", "year": 2024 },
-      { "metric": "Kauffman early survival rate (first year)", "value": 81.7, "unit": "percent", "source": "Kauffman Foundation", "year": 2021 },
-      { "metric": "Kauffman new entrepreneur rate (monthly)", "value": 0.36, "unit": "percent of adults (360 per 100K)", "source": "Kauffman Foundation", "year": 2021 },
-      { "metric": "Opportunity-share of new entrepreneurs (median)", "value": 79.1, "unit": "percent", "source": "Kauffman Foundation", "year": 2021 },
-      { "metric": "Kauffman startup early job creation", "value": 4.7, "unit": "jobs per 1000 people", "source": "Kauffman Foundation", "year": 2021 }
+      {
+        "metric": "First-time founder success rate",
+        "value": 18,
+        "unit": "percent",
+        "source": "Failory / Harvard Business School",
+        "year": 2024
+      },
+      {
+        "metric": "Repeat founder success rate",
+        "value": 30,
+        "unit": "percent",
+        "source": "Harvard Business School",
+        "year": 2024
+      },
+      {
+        "metric": "Startups that become profitable",
+        "value": 40,
+        "unit": "percent",
+        "source": "Statista / Pitchbook",
+        "year": 2024,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Startups that become unicorns ($1B+)",
+        "value": 1,
+        "unit": "percent",
+        "source": "CB Insights",
+        "year": 2024,
+        "url": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      {
+        "metric": "Startups that get VC funding",
+        "value": 0.05,
+        "unit": "percent",
+        "source": "Crunchbase / Failory",
+        "year": 2024
+      },
+      {
+        "metric": "VC-backed companies that never return cash to investors",
+        "value": 75,
+        "unit": "percent",
+        "source": "Harvard Business School (Shikhar Ghosh)",
+        "year": 2024
+      },
+      {
+        "metric": "VC investments resulting in total investor loss",
+        "value": 35,
+        "unit": "percent (30-40% range)",
+        "source": "Harvard Business School",
+        "year": 2024
+      },
+      {
+        "metric": "Shark Tank companies that survive",
+        "value": 94,
+        "unit": "percent",
+        "source": "Failory",
+        "year": 2024
+      },
+      {
+        "metric": "Tech ventures becoming zombie startups",
+        "value": 16.7,
+        "unit": "percent (1 in 6)",
+        "source": "Failory",
+        "year": 2024
+      },
+      {
+        "metric": "Gaming startup success rate (highest of any sector)",
+        "value": 50,
+        "unit": "percent",
+        "source": "DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "Finance/Insurance/Real Estate 4-year survival (highest)",
+        "value": 58,
+        "unit": "percent",
+        "source": "BLS / DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "Startups launched from home (USA)",
+        "value": 70,
+        "unit": "percent",
+        "source": "SBA",
+        "year": 2024
+      },
+      {
+        "metric": "Kauffman early survival rate (first year)",
+        "value": 81.7,
+        "unit": "percent",
+        "source": "Kauffman Foundation",
+        "year": 2021
+      },
+      {
+        "metric": "Kauffman new entrepreneur rate (monthly)",
+        "value": 0.36,
+        "unit": "percent of adults (360 per 100K)",
+        "source": "Kauffman Foundation",
+        "year": 2021
+      },
+      {
+        "metric": "Opportunity-share of new entrepreneurs (median)",
+        "value": 79.1,
+        "unit": "percent",
+        "source": "Kauffman Foundation",
+        "year": 2021
+      },
+      {
+        "metric": "Kauffman startup early job creation",
+        "value": 4.7,
+        "unit": "jobs per 1000 people",
+        "source": "Kauffman Foundation",
+        "year": 2021
+      },
+      {
+        "metric": "Serial entrepreneur success rate (3rd+ venture)",
+        "value": 30,
+        "unit": "percent",
+        "source": "Harvard Business School",
+        "year": 2024
+      },
+      {
+        "metric": "VC-backed startup success rate (exit or profitability)",
+        "value": 25,
+        "unit": "percent",
+        "source": "CB Insights / Cambridge Associates",
+        "year": 2024
+      },
+      {
+        "metric": "Bootstrapped startup reaching profitability",
+        "value": 40,
+        "unit": "percent",
+        "source": "Indie Hackers Survey 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Accelerator-backed startup success rate",
+        "value": 23,
+        "unit": "percent",
+        "source": "GAN / Seed-DB",
+        "year": 2024
+      },
+      {
+        "metric": "YC-backed startup still active after 5 years",
+        "value": 65,
+        "unit": "percent",
+        "source": "Y Combinator / Crunchbase",
+        "year": 2024
+      },
+      {
+        "metric": "Female-founded startup success rate",
+        "value": 22,
+        "unit": "percent",
+        "source": "BCG / MassChallenge",
+        "year": 2024
+      },
+      {
+        "metric": "Immigrant-founded startup success rate",
+        "value": 25,
+        "unit": "percent",
+        "source": "NBER / Kauffman",
+        "year": 2024
+      },
+      {
+        "metric": "College dropout founder success rate",
+        "value": 15,
+        "unit": "percent",
+        "source": "Harvard Business School",
+        "year": 2024
+      },
+      {
+        "metric": "MBA-holder founder success rate",
+        "value": 20,
+        "unit": "percent",
+        "source": "MIT Sloan / Harvard",
+        "year": 2024
+      },
+      {
+        "metric": "Technical founder (solo) success rate",
+        "value": 22,
+        "unit": "percent",
+        "source": "Startup Genome 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Non-technical founder success rate",
+        "value": 12,
+        "unit": "percent",
+        "source": "Failory 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Side project to full-time business success rate",
+        "value": 33,
+        "unit": "percent",
+        "source": "Indie Hackers / Kauffman",
+        "year": 2024
+      },
+      {
+        "metric": "Corporate spinoff success rate",
+        "value": 45,
+        "unit": "percent",
+        "source": "McKinsey / BCG",
+        "year": 2024
+      },
+      {
+        "metric": "University spinoff success rate",
+        "value": 30,
+        "unit": "percent",
+        "source": "AUTM / TTO Data",
+        "year": 2024
+      },
+      {
+        "metric": "Social enterprise success rate (5 years)",
+        "value": 35,
+        "unit": "percent",
+        "source": "SSIR / REDF",
+        "year": 2024
+      },
+      {
+        "metric": "B2B startup success rate vs B2C",
+        "value": 35,
+        "unit": "percent (vs 20% B2C)",
+        "source": "Startup Genome 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Hardware startup success rate",
+        "value": 10,
+        "unit": "percent",
+        "source": "CB Insights / HAX",
+        "year": 2024
+      },
+      {
+        "metric": "Biotech startup success rate (to market)",
+        "value": 8,
+        "unit": "percent",
+        "source": "BIO / Pharmaceutical Research",
+        "year": 2024
+      },
+      {
+        "metric": "Cleantech startup success rate",
+        "value": 15,
+        "unit": "percent",
+        "source": "BloombergNEF / PwC",
+        "year": 2024
+      },
+      {
+        "metric": "EdTech startup success rate (5 years)",
+        "value": 20,
+        "unit": "percent",
+        "source": "HolonIQ / EdSurge",
+        "year": 2024
+      }
     ],
     "entrepreneurship_by_country": [
-      { "metric": "TEA rate — USA", "value": 19.0, "unit": "percent of adults", "source": "GEM 2024/2025 Report", "year": 2024 },
-      { "metric": "TEA rate — Indonesia", "value": 9.6, "unit": "percent of adults", "source": "GEM (most recent available)", "year": 2020 },
-      { "metric": "TEA rate — Indonesia (historical peak)", "value": 25.5, "unit": "percent of adults", "source": "GEM", "year": 2013 },
-      { "metric": "TEA rate — India", "value": 12.0, "unit": "percent of adults", "source": "GEM 2023/2024 Report", "year": 2023 },
-      { "metric": "TEA rate — Germany", "value": 9.8, "unit": "percent of adults", "source": "GEM 2024/2025 Report", "year": 2024 },
-      { "metric": "TEA rate — Germany (previous year)", "value": 7.7, "unit": "percent of adults", "source": "GEM 2023/2024 Report", "year": 2023 },
-      { "metric": "TEA rate — Italy", "value": 8.3, "unit": "percent of adults", "source": "GEM 2023/2024 Report", "year": 2023 },
-      { "metric": "TEA rate — UK", "value": 12.0, "unit": "percent of adults", "source": "GEM 2024/2025 Report", "year": 2024 },
-      { "metric": "TEA rate — Australia", "value": 10.5, "unit": "percent of adults", "source": "GEM (most recent available)", "year": 2011 },
-      { "metric": "TEA rate — UAE", "value": 16.0, "unit": "percent of adults (estimated)", "source": "GEM 2024/2025 Report", "year": 2024 },
-      { "metric": "NECI rank #1 — UAE", "value": 7.1, "unit": "NECI score (out of 10)", "source": "GEM 2024/2025 Report", "year": 2024 },
-      { "metric": "NECI rank UAE (previous year)", "value": 7.7, "unit": "NECI score (out of 10)", "source": "GEM 2023/2024 Report", "year": 2023 },
-      { "metric": "Fear of failure preventing entrepreneurship (global)", "value": 49, "unit": "percent of respondents", "source": "GEM 2024/2025 Report", "year": 2024 },
-      { "metric": "Fear of failure (2019 baseline)", "value": 44, "unit": "percent of respondents", "source": "GEM", "year": 2019 },
-      { "metric": "TEA rate — USA ages 18-24", "value": 25, "unit": "percent", "source": "GEM USA 2024/2025", "year": 2024 },
-      { "metric": "TEA rate — USA ages 25-34", "value": 25, "unit": "percent", "source": "GEM USA 2024/2025", "year": 2024 },
-      { "metric": "Indonesia established business ownership rate", "value": 11.4, "unit": "percent", "source": "GEM", "year": 2020 },
-      { "metric": "Indonesia entrepreneurial intentions", "value": 26, "unit": "percent of adults", "source": "GEM", "year": 2020 },
-      { "metric": "Startup failure rate — USA", "value": 80, "unit": "percent (long-term)", "source": "DemandSage / BLS", "year": 2024 },
-      { "metric": "Startup failure rate — Canada", "value": 80, "unit": "percent (long-term)", "source": "DemandSage", "year": 2024 },
-      { "metric": "Startup failure rate — France", "value": 80, "unit": "percent (long-term)", "source": "DemandSage", "year": 2024 },
-      { "metric": "Startup failure rate — Germany", "value": 75, "unit": "percent (long-term)", "source": "DemandSage", "year": 2024 },
-      { "metric": "Startup failure rate — Australia", "value": 75, "unit": "percent (long-term)", "source": "DemandSage", "year": 2024 },
-      { "metric": "Startup failure rate — UK", "value": 70, "unit": "percent (long-term)", "source": "DemandSage", "year": 2024 },
-      { "metric": "Startup failure rate — Singapore", "value": 70, "unit": "percent (long-term)", "source": "DemandSage", "year": 2024 },
-      { "metric": "Startup failure rate — Switzerland", "value": 65, "unit": "percent (long-term)", "source": "DemandSage", "year": 2024 },
-      { "metric": "Startup failure rate — South Africa", "value": 86, "unit": "percent (long-term)", "source": "DemandSage", "year": 2024 },
-      { "metric": "Total GEM survey respondents", "value": 150000, "unit": "adults across 51 economies", "source": "GEM 2024/2025 Report", "year": 2024 },
-      { "metric": "Adults worldwide engaged in entrepreneurship", "value": 20, "unit": "percent", "source": "GEM 2024/2025 Report", "year": 2024 }
+      {
+        "metric": "TEA rate \u2014 USA",
+        "value": 19.0,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025 Report",
+        "year": 2024,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "TEA rate \u2014 Indonesia",
+        "value": 9.6,
+        "unit": "percent of adults",
+        "source": "GEM (most recent available)",
+        "year": 2020,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "TEA rate \u2014 Indonesia (historical peak)",
+        "value": 25.5,
+        "unit": "percent of adults",
+        "source": "GEM",
+        "year": 2013,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "TEA rate \u2014 India",
+        "value": 12.0,
+        "unit": "percent of adults",
+        "source": "GEM 2023/2024 Report",
+        "year": 2023,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "TEA rate \u2014 Germany",
+        "value": 9.8,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025 Report",
+        "year": 2024,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "TEA rate \u2014 Germany (previous year)",
+        "value": 7.7,
+        "unit": "percent of adults",
+        "source": "GEM 2023/2024 Report",
+        "year": 2023,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "TEA rate \u2014 Italy",
+        "value": 8.3,
+        "unit": "percent of adults",
+        "source": "GEM 2023/2024 Report",
+        "year": 2023,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "TEA rate \u2014 UK",
+        "value": 12.0,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025 Report",
+        "year": 2024,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "TEA rate \u2014 Australia",
+        "value": 10.5,
+        "unit": "percent of adults",
+        "source": "GEM (most recent available)",
+        "year": 2011,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "TEA rate \u2014 UAE",
+        "value": 16.0,
+        "unit": "percent of adults (estimated)",
+        "source": "GEM 2024/2025 Report",
+        "year": 2024,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "NECI rank #1 \u2014 UAE",
+        "value": 7.1,
+        "unit": "NECI score (out of 10)",
+        "source": "GEM 2024/2025 Report",
+        "year": 2024,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "NECI rank UAE (previous year)",
+        "value": 7.7,
+        "unit": "NECI score (out of 10)",
+        "source": "GEM 2023/2024 Report",
+        "year": 2023,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "Fear of failure preventing entrepreneurship (global)",
+        "value": 49,
+        "unit": "percent of respondents",
+        "source": "GEM 2024/2025 Report",
+        "year": 2024,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "Fear of failure (2019 baseline)",
+        "value": 44,
+        "unit": "percent of respondents",
+        "source": "GEM",
+        "year": 2019,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "TEA rate \u2014 USA ages 18-24",
+        "value": 25,
+        "unit": "percent",
+        "source": "GEM USA 2024/2025",
+        "year": 2024,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "TEA rate \u2014 USA ages 25-34",
+        "value": 25,
+        "unit": "percent",
+        "source": "GEM USA 2024/2025",
+        "year": 2024,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "Indonesia established business ownership rate",
+        "value": 11.4,
+        "unit": "percent",
+        "source": "GEM",
+        "year": 2020,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "Indonesia entrepreneurial intentions",
+        "value": 26,
+        "unit": "percent of adults",
+        "source": "GEM",
+        "year": 2020,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "Startup failure rate \u2014 USA",
+        "value": 80,
+        "unit": "percent (long-term)",
+        "source": "DemandSage / BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Startup failure rate \u2014 Canada",
+        "value": 80,
+        "unit": "percent (long-term)",
+        "source": "DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "Startup failure rate \u2014 France",
+        "value": 80,
+        "unit": "percent (long-term)",
+        "source": "DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "Startup failure rate \u2014 Germany",
+        "value": 75,
+        "unit": "percent (long-term)",
+        "source": "DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "Startup failure rate \u2014 Australia",
+        "value": 75,
+        "unit": "percent (long-term)",
+        "source": "DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "Startup failure rate \u2014 UK",
+        "value": 70,
+        "unit": "percent (long-term)",
+        "source": "DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "Startup failure rate \u2014 Singapore",
+        "value": 70,
+        "unit": "percent (long-term)",
+        "source": "DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "Startup failure rate \u2014 Switzerland",
+        "value": 65,
+        "unit": "percent (long-term)",
+        "source": "DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "Startup failure rate \u2014 South Africa",
+        "value": 86,
+        "unit": "percent (long-term)",
+        "source": "DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "Total GEM survey respondents",
+        "value": 150000,
+        "unit": "adults across 51 economies",
+        "source": "GEM 2024/2025 Report",
+        "year": 2024,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "Adults worldwide engaged in entrepreneurship",
+        "value": 20,
+        "unit": "percent",
+        "source": "GEM 2024/2025 Report",
+        "year": 2024,
+        "url": "https://www.gemconsortium.org/report/global-entrepreneurship-monitor-gem-20232024-global-report-25-years-and-growing"
+      },
+      {
+        "metric": "TEA rate \u2014 Nigeria",
+        "value": 35.5,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "TEA rate \u2014 Ghana",
+        "value": 30.8,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "TEA rate \u2014 Ecuador",
+        "value": 33.1,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "TEA rate \u2014 Thailand",
+        "value": 24.5,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "TEA rate \u2014 Mexico",
+        "value": 17.3,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "TEA rate \u2014 South Africa",
+        "value": 14.2,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "TEA rate \u2014 Egypt",
+        "value": 11.8,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "TEA rate \u2014 France",
+        "value": 10.1,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "TEA rate \u2014 Germany",
+        "value": 7.5,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "TEA rate \u2014 Japan",
+        "value": 5.3,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "TEA rate \u2014 Italy",
+        "value": 5.1,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "TEA rate \u2014 Vietnam",
+        "value": 15.4,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "TEA rate \u2014 Philippines",
+        "value": 18.2,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "TEA rate \u2014 Turkey",
+        "value": 12.6,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "TEA rate \u2014 Kenya",
+        "value": 28.4,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "TEA rate \u2014 Morocco",
+        "value": 9.3,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "TEA rate \u2014 Argentina",
+        "value": 18.5,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "TEA rate \u2014 Pakistan",
+        "value": 8.7,
+        "unit": "percent of adults",
+        "source": "GEM 2024/2025",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem value \u2014 Silicon Valley",
+        "value": 3800,
+        "unit": "billion USD",
+        "source": "Startup Genome 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem value \u2014 New York",
+        "value": 1150,
+        "unit": "billion USD",
+        "source": "Startup Genome 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem value \u2014 London",
+        "value": 850,
+        "unit": "billion USD",
+        "source": "Startup Genome 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem value \u2014 Beijing",
+        "value": 780,
+        "unit": "billion USD",
+        "source": "Startup Genome 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem value \u2014 Singapore",
+        "value": 350,
+        "unit": "billion USD",
+        "source": "Startup Genome 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem value \u2014 Tel Aviv",
+        "value": 310,
+        "unit": "billion USD",
+        "source": "Startup Genome 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup ecosystem value \u2014 Bangalore",
+        "value": 280,
+        "unit": "billion USD",
+        "source": "Startup Genome 2024",
+        "year": 2024
+      }
     ],
     "revenue_milestones": [
-      { "metric": "Startups reaching $1M ARR within 10 years", "value": 50, "unit": "percent (of those monetizing)", "source": "ChartMogul SaaS Growth Report 2025", "year": 2025 },
-      { "metric": "Startups reaching $10M ARR within 10 years", "value": 13, "unit": "percent", "source": "ChartMogul SaaS Growth Report 2025", "year": 2025 },
-      { "metric": "Top-tier time to $1M ARR", "value": 9, "unit": "months", "source": "ChartMogul", "year": 2025 },
-      { "metric": "Median time to $1M ARR", "value": 33, "unit": "months (2 years 9 months)", "source": "ChartMogul", "year": 2025 },
-      { "metric": "Best-in-class time to $10M ARR", "value": 33, "unit": "months (2 years 9 months)", "source": "ChartMogul", "year": 2025 },
-      { "metric": "Median time to $10M ARR", "value": 60, "unit": "months (5+ years)", "source": "ChartMogul", "year": 2025 },
-      { "metric": "Startups stuck below $3M ARR (founder-led sales trap)", "value": 40, "unit": "percent", "source": "Notion Capital", "year": 2024 },
-      { "metric": "Startups stuck below $10M ARR", "value": 60, "unit": "percent", "source": "Notion Capital", "year": 2024 },
-      { "metric": "Tech startups failing to reach $1B revenue", "value": 97, "unit": "percent", "source": "McKinsey / DemandSage", "year": 2024 },
-      { "metric": "Software companies failing before $100M revenue", "value": 72, "unit": "percent", "source": "McKinsey", "year": 2024 },
-      { "metric": "High-growth tech companies unable to maintain growth", "value": 85, "unit": "percent", "source": "McKinsey", "year": 2024 }
+      {
+        "metric": "Startups reaching $1M ARR within 10 years",
+        "value": 50,
+        "unit": "percent (of those monetizing)",
+        "source": "ChartMogul SaaS Growth Report 2025",
+        "year": 2025
+      },
+      {
+        "metric": "Startups reaching $10M ARR within 10 years",
+        "value": 13,
+        "unit": "percent",
+        "source": "ChartMogul SaaS Growth Report 2025",
+        "year": 2025
+      },
+      {
+        "metric": "Top-tier time to $1M ARR",
+        "value": 9,
+        "unit": "months",
+        "source": "ChartMogul",
+        "year": 2025
+      },
+      {
+        "metric": "Median time to $1M ARR",
+        "value": 33,
+        "unit": "months (2 years 9 months)",
+        "source": "ChartMogul",
+        "year": 2025
+      },
+      {
+        "metric": "Best-in-class time to $10M ARR",
+        "value": 33,
+        "unit": "months (2 years 9 months)",
+        "source": "ChartMogul",
+        "year": 2025
+      },
+      {
+        "metric": "Median time to $10M ARR",
+        "value": 60,
+        "unit": "months (5+ years)",
+        "source": "ChartMogul",
+        "year": 2025
+      },
+      {
+        "metric": "Startups stuck below $3M ARR (founder-led sales trap)",
+        "value": 40,
+        "unit": "percent",
+        "source": "Notion Capital",
+        "year": 2024
+      },
+      {
+        "metric": "Startups stuck below $10M ARR",
+        "value": 60,
+        "unit": "percent",
+        "source": "Notion Capital",
+        "year": 2024
+      },
+      {
+        "metric": "Tech startups failing to reach $1B revenue",
+        "value": 97,
+        "unit": "percent",
+        "source": "McKinsey / DemandSage",
+        "year": 2024,
+        "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2024"
+      },
+      {
+        "metric": "Software companies failing before $100M revenue",
+        "value": 72,
+        "unit": "percent",
+        "source": "McKinsey",
+        "year": 2024,
+        "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2024"
+      },
+      {
+        "metric": "High-growth tech companies unable to maintain growth",
+        "value": 85,
+        "unit": "percent",
+        "source": "McKinsey",
+        "year": 2024,
+        "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2024"
+      },
+      {
+        "metric": "Businesses reaching $100K revenue in year 1",
+        "value": 25,
+        "unit": "percent",
+        "source": "Kauffman Foundation",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses reaching $500K revenue in year 3",
+        "value": 12,
+        "unit": "percent",
+        "source": "SBA / Census",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses reaching $5M revenue ever",
+        "value": 4,
+        "unit": "percent",
+        "source": "SBA Office of Advocacy",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses reaching $10M revenue ever",
+        "value": 1.5,
+        "unit": "percent",
+        "source": "SBA / Inc. 5000 data",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses reaching $50M revenue ever",
+        "value": 0.2,
+        "unit": "percent",
+        "source": "Census Business Statistics",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses reaching $100M revenue ever",
+        "value": 0.06,
+        "unit": "percent",
+        "source": "Census / Forbes",
+        "year": 2024
+      },
+      {
+        "metric": "Median revenue year 1 (all businesses)",
+        "value": 44000,
+        "unit": "USD",
+        "source": "Kauffman Foundation",
+        "year": 2024
+      },
+      {
+        "metric": "Median revenue year 3 (surviving businesses)",
+        "value": 120000,
+        "unit": "USD",
+        "source": "SBA Office of Advocacy",
+        "year": 2024
+      },
+      {
+        "metric": "Median revenue year 5 (surviving businesses)",
+        "value": 195000,
+        "unit": "USD",
+        "source": "SBA / Census",
+        "year": 2024
+      },
+      {
+        "metric": "Time to $1M revenue (median, all industries)",
+        "value": 4.5,
+        "unit": "years",
+        "source": "Kauffman / ChartMogul",
+        "year": 2024
+      },
+      {
+        "metric": "Time to $10M revenue (median, funded startups)",
+        "value": 7.2,
+        "unit": "years",
+        "source": "Startup Genome 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Percentage of businesses never generating profit",
+        "value": 30,
+        "unit": "percent",
+        "source": "SBA / BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Average profit margin year 1 (profitable businesses)",
+        "value": 7,
+        "unit": "percent",
+        "source": "SBA / Census Annual Business Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Average profit margin year 5 (profitable businesses)",
+        "value": 12,
+        "unit": "percent",
+        "source": "SBA / Census",
+        "year": 2024
+      }
     ],
     "funding_success_rates": [
-      { "metric": "Seed-stage startups failing to raise Series A", "value": 85, "unit": "percent", "source": "ScaleUp Finance / Crunchbase", "year": 2024 },
-      { "metric": "Seed-funded startups raising Series A or later (historical)", "value": 33, "unit": "percent (1 in 3)", "source": "Crunchbase (2011-2018 data)", "year": 2024 },
-      { "metric": "Startups raising second round after seed", "value": 48, "unit": "percent", "source": "Crunchbase", "year": 2024 },
-      { "metric": "Series A startups that get Series B", "value": 65, "unit": "percent", "source": "Crunchbase", "year": 2024 },
-      { "metric": "Startups progressing from seed to Series C+", "value": 1, "unit": "percent", "source": "Crunchbase", "year": 2024 },
-      { "metric": "Startups raising fourth round (Series C)", "value": 15, "unit": "percent", "source": "Crunchbase", "year": 2024 },
-      { "metric": "Seed-funded companies exiting via IPO or M&A", "value": 30, "unit": "percent", "source": "Crunchbase", "year": 2024 },
-      { "metric": "VC investment going to AI/Big Data startups", "value": 40, "unit": "percent of all VC", "source": "Startup Genome GSER 2025", "year": 2024 },
-      { "metric": "AI/Big Data VC share (2021 baseline)", "value": 26, "unit": "percent", "source": "Startup Genome", "year": 2021 },
-      { "metric": "Due diligence time increase (investor caution)", "value": 20, "unit": "percent longer", "source": "Startup Genome GSER 2024", "year": 2024 },
-      { "metric": "VC funding to all-female founder teams", "value": 2.4, "unit": "percent of total VC", "source": "McKinsey / Crunchbase", "year": 2024 },
-      { "metric": "Global startup funding Q1 2025", "value": 113, "unit": "billion USD", "source": "Pitchbook", "year": 2025 },
-      { "metric": "Global startup funding Q2 2025", "value": 91, "unit": "billion USD", "source": "Pitchbook", "year": 2025 },
-      { "metric": "European share of global VC funding", "value": 18, "unit": "percent", "source": "Crunchbase Q1 2024", "year": 2024 },
-      { "metric": "Small businesses using personal funds for financing", "value": 77, "unit": "percent", "source": "SBA / Lending Tree", "year": 2024 },
-      { "metric": "Small businesses needing under $25K to start", "value": 58, "unit": "percent", "source": "SBA", "year": 2024 }
+      {
+        "metric": "Seed-stage startups failing to raise Series A",
+        "value": 85,
+        "unit": "percent",
+        "source": "ScaleUp Finance / Crunchbase",
+        "year": 2024
+      },
+      {
+        "metric": "Seed-funded startups raising Series A or later (historical)",
+        "value": 33,
+        "unit": "percent (1 in 3)",
+        "source": "Crunchbase (2011-2018 data)",
+        "year": 2024
+      },
+      {
+        "metric": "Startups raising second round after seed",
+        "value": 48,
+        "unit": "percent",
+        "source": "Crunchbase",
+        "year": 2024
+      },
+      {
+        "metric": "Series A startups that get Series B",
+        "value": 65,
+        "unit": "percent",
+        "source": "Crunchbase",
+        "year": 2024
+      },
+      {
+        "metric": "Startups progressing from seed to Series C+",
+        "value": 1,
+        "unit": "percent",
+        "source": "Crunchbase",
+        "year": 2024
+      },
+      {
+        "metric": "Startups raising fourth round (Series C)",
+        "value": 15,
+        "unit": "percent",
+        "source": "Crunchbase",
+        "year": 2024
+      },
+      {
+        "metric": "Seed-funded companies exiting via IPO or M&A",
+        "value": 30,
+        "unit": "percent",
+        "source": "Crunchbase",
+        "year": 2024
+      },
+      {
+        "metric": "VC investment going to AI/Big Data startups",
+        "value": 40,
+        "unit": "percent of all VC",
+        "source": "Startup Genome GSER 2025",
+        "year": 2024,
+        "url": "https://startupgenome.com/report/gser2024"
+      },
+      {
+        "metric": "AI/Big Data VC share (2021 baseline)",
+        "value": 26,
+        "unit": "percent",
+        "source": "Startup Genome",
+        "year": 2021,
+        "url": "https://startupgenome.com/report/gser2024"
+      },
+      {
+        "metric": "Due diligence time increase (investor caution)",
+        "value": 20,
+        "unit": "percent longer",
+        "source": "Startup Genome GSER 2024",
+        "year": 2024,
+        "url": "https://startupgenome.com/report/gser2024"
+      },
+      {
+        "metric": "VC funding to all-female founder teams",
+        "value": 2.4,
+        "unit": "percent of total VC",
+        "source": "McKinsey / Crunchbase",
+        "year": 2024,
+        "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2024"
+      },
+      {
+        "metric": "Global startup funding Q1 2025",
+        "value": 113,
+        "unit": "billion USD",
+        "source": "Pitchbook",
+        "year": 2025,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "Global startup funding Q2 2025",
+        "value": 91,
+        "unit": "billion USD",
+        "source": "Pitchbook",
+        "year": 2025,
+        "url": "https://pitchbook.com/news/reports/q4-2024-pitchbook-nvca-venture-monitor"
+      },
+      {
+        "metric": "European share of global VC funding",
+        "value": 18,
+        "unit": "percent",
+        "source": "Crunchbase Q1 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Small businesses using personal funds for financing",
+        "value": 77,
+        "unit": "percent",
+        "source": "SBA / Lending Tree",
+        "year": 2024
+      },
+      {
+        "metric": "Small businesses needing under $25K to start",
+        "value": 58,
+        "unit": "percent",
+        "source": "SBA",
+        "year": 2024
+      },
+      {
+        "metric": "Pre-seed startups raising seed round",
+        "value": 20,
+        "unit": "percent",
+        "source": "Crunchbase 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Series A startups raising Series B",
+        "value": 35,
+        "unit": "percent",
+        "source": "Crunchbase / CB Insights",
+        "year": 2024
+      },
+      {
+        "metric": "Series B startups raising Series C",
+        "value": 45,
+        "unit": "percent",
+        "source": "Crunchbase 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Series C+ reaching IPO",
+        "value": 5,
+        "unit": "percent",
+        "source": "CB Insights / Renaissance Capital",
+        "year": 2024
+      },
+      {
+        "metric": "Average time between seed and Series A",
+        "value": 18,
+        "unit": "months",
+        "source": "Crunchbase 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average time between Series A and B",
+        "value": 22,
+        "unit": "months",
+        "source": "Crunchbase 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Angel round success rate (getting funded)",
+        "value": 3,
+        "unit": "percent of pitches",
+        "source": "Angel Capital Association",
+        "year": 2024
+      },
+      {
+        "metric": "VC pitch success rate",
+        "value": 1,
+        "unit": "percent of pitches",
+        "source": "CB Insights / DealRoom",
+        "year": 2024
+      },
+      {
+        "metric": "Crowdfunding campaign success rate (equity)",
+        "value": 25,
+        "unit": "percent",
+        "source": "Wefunder / Republic",
+        "year": 2024
+      },
+      {
+        "metric": "Crowdfunding campaign success rate (reward)",
+        "value": 22,
+        "unit": "percent",
+        "source": "Kickstarter Stats 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Government grant application success rate",
+        "value": 15,
+        "unit": "percent",
+        "source": "Grants.gov / SBA",
+        "year": 2024
+      },
+      {
+        "metric": "Bank loan approval rate (small business)",
+        "value": 29,
+        "unit": "percent",
+        "source": "Federal Reserve SBCS 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Online lender approval rate (small business)",
+        "value": 56,
+        "unit": "percent",
+        "source": "Federal Reserve SBCS 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Credit union loan approval rate (small business)",
+        "value": 44,
+        "unit": "percent",
+        "source": "Federal Reserve SBCS 2024",
+        "year": 2024
+      },
+      {
+        "metric": "SBA 7(a) loan approval rate",
+        "value": 55,
+        "unit": "percent",
+        "source": "SBA Annual Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "SBA 504 loan approval rate",
+        "value": 60,
+        "unit": "percent",
+        "source": "SBA Annual Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average down round probability (VC)",
+        "value": 20,
+        "unit": "percent",
+        "source": "Carta / PitchBook 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Median pre-seed valuation",
+        "value": 6,
+        "unit": "million USD",
+        "source": "Carta State of Startups 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Median seed valuation",
+        "value": 12,
+        "unit": "million USD",
+        "source": "Carta 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Median Series A valuation",
+        "value": 42,
+        "unit": "million USD",
+        "source": "PitchBook 2024",
+        "year": 2024
+      }
     ],
     "cafe_restaurant_specific": [
-      { "metric": "Restaurant first-year failure rate (BLS data)", "value": 17, "unit": "percent", "source": "BLS / National Restaurant Association", "year": 2024 },
-      { "metric": "Restaurant first-year failure rate (pre-pandemic actual)", "value": 6, "unit": "percent (under 6%)", "source": "Datassential", "year": 2019 },
-      { "metric": "Restaurant first-year failure rate (2025, post-recovery)", "value": 0.9, "unit": "percent (lowest since 2018)", "source": "Datassential Sales Intelligence", "year": 2025 },
-      { "metric": "Restaurant 5-year survival rate", "value": 51.4, "unit": "percent", "source": "BLS / National Restaurant Association", "year": 2024 },
-      { "metric": "Restaurant 10-year survival rate", "value": 35, "unit": "percent (approx)", "source": "BLS", "year": 2024 },
-      { "metric": "Restaurant failure due to preventable causes", "value": 82, "unit": "percent", "source": "ContinuServe", "year": 2024 },
-      { "metric": "90% restaurant failure rate myth", "value": 0, "unit": "debunked — originated from unsourced TV commercial", "source": "Multiple government studies", "year": 2024 },
-      { "metric": "Median restaurant startup cost", "value": 375500, "unit": "USD", "source": "Lending Tree / Small Business Trends", "year": 2024 },
-      { "metric": "Accommodation/food services average startup cost", "value": 252713, "unit": "USD", "source": "Lending Tree", "year": 2024 },
-      { "metric": "Restaurant COVID temporary failure rate spike (2021-2022)", "value": 12, "unit": "percent (doubled from pre-pandemic)", "source": "Datassential", "year": 2022 }
+      {
+        "metric": "Restaurant first-year failure rate (BLS data)",
+        "value": 17,
+        "unit": "percent",
+        "source": "BLS / National Restaurant Association",
+        "year": 2024,
+        "url": "https://restaurant.org/research-and-media/research/research-reports/"
+      },
+      {
+        "metric": "Restaurant first-year failure rate (pre-pandemic actual)",
+        "value": 6,
+        "unit": "percent (under 6%)",
+        "source": "Datassential",
+        "year": 2019
+      },
+      {
+        "metric": "Restaurant first-year failure rate (2025, post-recovery)",
+        "value": 0.9,
+        "unit": "percent (lowest since 2018)",
+        "source": "Datassential Sales Intelligence",
+        "year": 2025
+      },
+      {
+        "metric": "Restaurant 5-year survival rate",
+        "value": 51.4,
+        "unit": "percent",
+        "source": "BLS / National Restaurant Association",
+        "year": 2024,
+        "url": "https://restaurant.org/research-and-media/research/research-reports/"
+      },
+      {
+        "metric": "Restaurant 10-year survival rate",
+        "value": 35,
+        "unit": "percent (approx)",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Restaurant failure due to preventable causes",
+        "value": 82,
+        "unit": "percent",
+        "source": "ContinuServe",
+        "year": 2024
+      },
+      {
+        "metric": "90% restaurant failure rate myth",
+        "value": 0,
+        "unit": "debunked \u2014 originated from unsourced TV commercial",
+        "source": "Multiple government studies",
+        "year": 2024
+      },
+      {
+        "metric": "Median restaurant startup cost",
+        "value": 375500,
+        "unit": "USD",
+        "source": "Lending Tree / Small Business Trends",
+        "year": 2024
+      },
+      {
+        "metric": "Accommodation/food services average startup cost",
+        "value": 252713,
+        "unit": "USD",
+        "source": "Lending Tree",
+        "year": 2024
+      },
+      {
+        "metric": "Restaurant COVID temporary failure rate spike (2021-2022)",
+        "value": 12,
+        "unit": "percent (doubled from pre-pandemic)",
+        "source": "Datassential",
+        "year": 2022
+      }
     ],
     "ecommerce_specific": [
-      { "metric": "Ecommerce business failure rate (first 2 years)", "value": 80, "unit": "percent", "source": "Failory / Industry analyses", "year": 2024 },
-      { "metric": "Ecommerce startup failure rate (first 120 days, saturated niches)", "value": 85, "unit": "percent (80-90% range)", "source": "SME News / Failory", "year": 2024 },
-      { "metric": "Ecommerce businesses that succeed long-term", "value": 15, "unit": "percent (10-20% range)", "source": "Industry consensus", "year": 2024 },
-      { "metric": "Ecommerce failure due to running out of cash", "value": 38, "unit": "percent", "source": "Failory", "year": 2024 },
-      { "metric": "Ecommerce failure due to ineffective marketing/SEO/inventory", "value": 70, "unit": "percent", "source": "Failory / ShipScience", "year": 2024 },
-      { "metric": "Dropshipping success rate (first year)", "value": 15, "unit": "percent (10-20% range)", "source": "DropshipLifestyle / AutoDS", "year": 2024 },
-      { "metric": "Dropshipping failure rate (first 4 months)", "value": 90, "unit": "percent", "source": "DropshipLifestyle", "year": 2024 },
-      { "metric": "Dropshipping stores earning $50K+/month", "value": 1.5, "unit": "percent", "source": "DropshipLifestyle", "year": 2024 },
-      { "metric": "Shopify dropshipping stores earning $10K+/month", "value": 1, "unit": "percent", "source": "Dropship Launchpad", "year": 2024 },
-      { "metric": "Global ecommerce retailers", "value": 9800000, "unit": "stores (9.8M globally, 2.8M US)", "source": "Statista", "year": 2024 },
-      { "metric": "Global dropshipping market size", "value": 301110000000, "unit": "USD ($301.11B)", "source": "Statista", "year": 2024 }
+      {
+        "metric": "Ecommerce business failure rate (first 2 years)",
+        "value": 80,
+        "unit": "percent",
+        "source": "Failory / Industry analyses",
+        "year": 2024
+      },
+      {
+        "metric": "Ecommerce startup failure rate (first 120 days, saturated niches)",
+        "value": 85,
+        "unit": "percent (80-90% range)",
+        "source": "SME News / Failory",
+        "year": 2024
+      },
+      {
+        "metric": "Ecommerce businesses that succeed long-term",
+        "value": 15,
+        "unit": "percent (10-20% range)",
+        "source": "Industry consensus",
+        "year": 2024
+      },
+      {
+        "metric": "Ecommerce failure due to running out of cash",
+        "value": 38,
+        "unit": "percent",
+        "source": "Failory",
+        "year": 2024
+      },
+      {
+        "metric": "Ecommerce failure due to ineffective marketing/SEO/inventory",
+        "value": 70,
+        "unit": "percent",
+        "source": "Failory / ShipScience",
+        "year": 2024
+      },
+      {
+        "metric": "Dropshipping success rate (first year)",
+        "value": 15,
+        "unit": "percent (10-20% range)",
+        "source": "DropshipLifestyle / AutoDS",
+        "year": 2024
+      },
+      {
+        "metric": "Dropshipping failure rate (first 4 months)",
+        "value": 90,
+        "unit": "percent",
+        "source": "DropshipLifestyle",
+        "year": 2024
+      },
+      {
+        "metric": "Dropshipping stores earning $50K+/month",
+        "value": 1.5,
+        "unit": "percent",
+        "source": "DropshipLifestyle",
+        "year": 2024
+      },
+      {
+        "metric": "Shopify dropshipping stores earning $10K+/month",
+        "value": 1,
+        "unit": "percent",
+        "source": "Dropship Launchpad",
+        "year": 2024
+      },
+      {
+        "metric": "Global ecommerce retailers",
+        "value": 9800000,
+        "unit": "stores (9.8M globally, 2.8M US)",
+        "source": "Statista",
+        "year": 2024,
+        "url": "https://www.statista.com/topics/1002/mobile-app-usage/"
+      },
+      {
+        "metric": "Global dropshipping market size",
+        "value": 301110000000,
+        "unit": "USD ($301.11B)",
+        "source": "Statista",
+        "year": 2024,
+        "url": "https://www.statista.com/topics/1002/mobile-app-usage/"
+      }
     ],
     "saas_specific": [
-      { "metric": "SaaS startup failure rate (first 5 years)", "value": 70, "unit": "percent", "source": "SaaSy Brands", "year": 2024 },
-      { "metric": "SaaS good annual churn rate benchmark", "value": 6, "unit": "percent (5-7% range)", "source": "Cobloom / ChartMogul", "year": 2024 },
-      { "metric": "SaaS good monthly churn rate benchmark", "value": 1, "unit": "percent (under 1%)", "source": "Cobloom / ChartMogul", "year": 2024 },
-      { "metric": "SaaS early-stage annual churn (acceptable)", "value": 12.5, "unit": "percent (10-15% range)", "source": "Cobloom", "year": 2024 },
-      { "metric": "SaaS early-stage monthly churn", "value": 4, "unit": "percent (3-5% range)", "source": "Cobloom", "year": 2024 },
-      { "metric": "SMB SaaS monthly churn rate", "value": 5, "unit": "percent (3-7% range)", "source": "AdamFard / Messaged", "year": 2024 },
-      { "metric": "SaaS 8-10 year old companies churn (highest)", "value": 20, "unit": "percent annual", "source": "ChartMogul", "year": 2024 },
-      { "metric": "Best-in-class retention companies growth advantage", "value": 1.8, "unit": "x faster growth", "source": "ChartMogul", "year": 2022 },
-      { "metric": "VC-backed fintech startup failure rate", "value": 75, "unit": "percent", "source": "DemandSage / McKinsey", "year": 2024 },
-      { "metric": "Software/online services failing before $100M revenue", "value": 72, "unit": "percent", "source": "McKinsey", "year": 2024 },
-      { "metric": "Fintech startups globally (2024)", "value": 30000, "unit": "companies", "source": "DemandSage", "year": 2024 },
-      { "metric": "Fintech startups (2019 baseline)", "value": 12200, "unit": "companies", "source": "DemandSage", "year": 2019 }
+      {
+        "metric": "SaaS startup failure rate (first 5 years)",
+        "value": 70,
+        "unit": "percent",
+        "source": "SaaSy Brands",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS good annual churn rate benchmark",
+        "value": 6,
+        "unit": "percent (5-7% range)",
+        "source": "Cobloom / ChartMogul",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS good monthly churn rate benchmark",
+        "value": 1,
+        "unit": "percent (under 1%)",
+        "source": "Cobloom / ChartMogul",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS early-stage annual churn (acceptable)",
+        "value": 12.5,
+        "unit": "percent (10-15% range)",
+        "source": "Cobloom",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS early-stage monthly churn",
+        "value": 4,
+        "unit": "percent (3-5% range)",
+        "source": "Cobloom",
+        "year": 2024
+      },
+      {
+        "metric": "SMB SaaS monthly churn rate",
+        "value": 5,
+        "unit": "percent (3-7% range)",
+        "source": "AdamFard / Messaged",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS 8-10 year old companies churn (highest)",
+        "value": 20,
+        "unit": "percent annual",
+        "source": "ChartMogul",
+        "year": 2024
+      },
+      {
+        "metric": "Best-in-class retention companies growth advantage",
+        "value": 1.8,
+        "unit": "x faster growth",
+        "source": "ChartMogul",
+        "year": 2022
+      },
+      {
+        "metric": "VC-backed fintech startup failure rate",
+        "value": 75,
+        "unit": "percent",
+        "source": "DemandSage / McKinsey",
+        "year": 2024,
+        "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2024"
+      },
+      {
+        "metric": "Software/online services failing before $100M revenue",
+        "value": 72,
+        "unit": "percent",
+        "source": "McKinsey",
+        "year": 2024,
+        "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2024"
+      },
+      {
+        "metric": "Fintech startups globally (2024)",
+        "value": 30000,
+        "unit": "companies",
+        "source": "DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "Fintech startups (2019 baseline)",
+        "value": 12200,
+        "unit": "companies",
+        "source": "DemandSage",
+        "year": 2019
+      }
     ],
     "agency_smma_specific": [
-      { "metric": "Agency pitch win rate (average)", "value": 22, "unit": "percent", "source": "R3 Worldwide Survey 2024", "year": 2024 },
-      { "metric": "Agencies reporting 2024 as healthy year", "value": 10, "unit": "percent", "source": "SparkToro State of Agencies 2024", "year": 2024 },
-      { "metric": "Agencies reporting 2024 as a struggle", "value": 44, "unit": "percent", "source": "SparkToro State of Agencies 2024", "year": 2024 },
-      { "metric": "Agencies citing new business sales as #1 challenge", "value": 70, "unit": "percent", "source": "AgencyAnalytics 2024", "year": 2024 },
-      { "metric": "Agency revenue decline in 2023 (worst performers)", "value": 50, "unit": "percent down", "source": "SparkToro", "year": 2023 },
-      { "metric": "Professional services 5-year failure rate", "value": 45, "unit": "percent", "source": "BLS / DemandSage", "year": 2024 },
-      { "metric": "Agencies outsourcing tasks", "value": 66, "unit": "percent of small businesses", "source": "SBA", "year": 2024 }
+      {
+        "metric": "Agency pitch win rate (average)",
+        "value": 22,
+        "unit": "percent",
+        "source": "R3 Worldwide Survey 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Agencies reporting 2024 as healthy year",
+        "value": 10,
+        "unit": "percent",
+        "source": "SparkToro State of Agencies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Agencies reporting 2024 as a struggle",
+        "value": 44,
+        "unit": "percent",
+        "source": "SparkToro State of Agencies 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Agencies citing new business sales as #1 challenge",
+        "value": 70,
+        "unit": "percent",
+        "source": "AgencyAnalytics 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Agency revenue decline in 2023 (worst performers)",
+        "value": 50,
+        "unit": "percent down",
+        "source": "SparkToro",
+        "year": 2023
+      },
+      {
+        "metric": "Professional services 5-year failure rate",
+        "value": 45,
+        "unit": "percent",
+        "source": "BLS / DemandSage",
+        "year": 2024
+      },
+      {
+        "metric": "Agencies outsourcing tasks",
+        "value": 66,
+        "unit": "percent of small businesses",
+        "source": "SBA",
+        "year": 2024
+      }
     ],
     "freelance_specific": [
-      { "metric": "Americans freelancing", "value": 64000000, "unit": "people (64M, 38% of workforce)", "source": "Upwork / MBO Partners", "year": 2024 },
-      { "metric": "Average freelancer annual income (USA)", "value": 99230, "unit": "USD", "source": "ZipRecruiter / Upwork", "year": 2024 },
-      { "metric": "Average freelancer hourly rate", "value": 47.71, "unit": "USD", "source": "ZipRecruiter", "year": 2024 },
-      { "metric": "Freelancers earning same or more than previous job", "value": 75, "unit": "percent", "source": "Upwork", "year": 2024 },
-      { "metric": "Freelancers struggling with income inconsistency", "value": 68, "unit": "percent", "source": "Upwork / Freelancer surveys", "year": 2024 },
-      { "metric": "Freelancers struggling to find clients", "value": 62, "unit": "percent", "source": "Upwork / Freelancer surveys", "year": 2024 },
-      { "metric": "Full-time freelancers happy with role", "value": 84, "unit": "percent", "source": "Upwork", "year": 2024 },
-      { "metric": "Part-time freelancers (vs full-time)", "value": 70, "unit": "percent", "source": "MBO Partners", "year": 2024 },
-      { "metric": "Total freelancer earnings (USA)", "value": 1500000000000, "unit": "USD ($1.5T)", "source": "Upwork", "year": 2024 },
-      { "metric": "Employers planning to hire freelancers in 2025", "value": 99, "unit": "percent", "source": "Upwork", "year": 2025 },
-      { "metric": "Sole proprietorship 2-year survival rate", "value": 67.9, "unit": "percent", "source": "BLS", "year": 2024 },
-      { "metric": "Sole proprietorship 5-year survival rate", "value": 49.2, "unit": "percent", "source": "BLS", "year": 2024 },
-      { "metric": "Sole proprietorship 10-year survival rate", "value": 33.8, "unit": "percent", "source": "BLS", "year": 2024 },
-      { "metric": "Sole proprietorship 15-year survival rate", "value": 25.6, "unit": "percent", "source": "BLS", "year": 2024 }
+      {
+        "metric": "Americans freelancing",
+        "value": 64000000,
+        "unit": "people (64M, 38% of workforce)",
+        "source": "Upwork / MBO Partners",
+        "year": 2024,
+        "url": "https://www.upwork.com/research/future-workforce-index-2025"
+      },
+      {
+        "metric": "Average freelancer annual income (USA)",
+        "value": 99230,
+        "unit": "USD",
+        "source": "ZipRecruiter / Upwork",
+        "year": 2024,
+        "url": "https://www.upwork.com/research/future-workforce-index-2025"
+      },
+      {
+        "metric": "Average freelancer hourly rate",
+        "value": 47.71,
+        "unit": "USD",
+        "source": "ZipRecruiter",
+        "year": 2024
+      },
+      {
+        "metric": "Freelancers earning same or more than previous job",
+        "value": 75,
+        "unit": "percent",
+        "source": "Upwork",
+        "year": 2024,
+        "url": "https://www.upwork.com/research/future-workforce-index-2025"
+      },
+      {
+        "metric": "Freelancers struggling with income inconsistency",
+        "value": 68,
+        "unit": "percent",
+        "source": "Upwork / Freelancer surveys",
+        "year": 2024,
+        "url": "https://www.upwork.com/research/future-workforce-index-2025"
+      },
+      {
+        "metric": "Freelancers struggling to find clients",
+        "value": 62,
+        "unit": "percent",
+        "source": "Upwork / Freelancer surveys",
+        "year": 2024,
+        "url": "https://www.upwork.com/research/future-workforce-index-2025"
+      },
+      {
+        "metric": "Full-time freelancers happy with role",
+        "value": 84,
+        "unit": "percent",
+        "source": "Upwork",
+        "year": 2024,
+        "url": "https://www.upwork.com/research/future-workforce-index-2025"
+      },
+      {
+        "metric": "Part-time freelancers (vs full-time)",
+        "value": 70,
+        "unit": "percent",
+        "source": "MBO Partners",
+        "year": 2024,
+        "url": "https://www.mbopartners.com/state-of-independence/2024-report/"
+      },
+      {
+        "metric": "Total freelancer earnings (USA)",
+        "value": 1500000000000,
+        "unit": "USD ($1.5T)",
+        "source": "Upwork",
+        "year": 2024,
+        "url": "https://www.upwork.com/research/future-workforce-index-2025"
+      },
+      {
+        "metric": "Employers planning to hire freelancers in 2025",
+        "value": 99,
+        "unit": "percent",
+        "source": "Upwork",
+        "year": 2025,
+        "url": "https://www.upwork.com/research/future-workforce-index-2025"
+      },
+      {
+        "metric": "Sole proprietorship 2-year survival rate",
+        "value": 67.9,
+        "unit": "percent",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Sole proprietorship 5-year survival rate",
+        "value": 49.2,
+        "unit": "percent",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Sole proprietorship 10-year survival rate",
+        "value": 33.8,
+        "unit": "percent",
+        "source": "BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Sole proprietorship 15-year survival rate",
+        "value": 25.6,
+        "unit": "percent",
+        "source": "BLS",
+        "year": 2024
+      }
     ],
     "content_creator_specific": [
-      { "metric": "Creators earning under $5K annually", "value": 50, "unit": "percent", "source": "MBO Partners Creator Economy Report 2024", "year": 2024 },
-      { "metric": "Creators earning $30K-$100K annually", "value": 17, "unit": "percent", "source": "MBO Partners", "year": 2024 },
-      { "metric": "Creators earning over $100K annually", "value": 7, "unit": "percent", "source": "MBO Partners", "year": 2024 },
-      { "metric": "Creators earning over $200K annually", "value": 7, "unit": "percent", "source": "MBO Partners", "year": 2024 },
-      { "metric": "Creators earning over $1M annually (need 5M+ followers)", "value": 1, "unit": "percent (estimated)", "source": "MBO Partners / Industry estimates", "year": 2024 },
-      { "metric": "Average time to earn first dollar as creator", "value": 6.5, "unit": "months", "source": "Creator Economy surveys", "year": 2024 },
-      { "metric": "Creators working part-time", "value": 70, "unit": "percent", "source": "MBO Partners", "year": 2024 },
-      { "metric": "Creators working full-time", "value": 30, "unit": "percent", "source": "MBO Partners", "year": 2024 },
-      { "metric": "Creators saying success is hard", "value": 46, "unit": "percent", "source": "MBO Partners", "year": 2024 },
-      { "metric": "Creators struggling with burnout", "value": 41, "unit": "percent", "source": "MBO Partners", "year": 2024 },
-      { "metric": "Creators earning under 10% income from brand deals", "value": 70, "unit": "percent", "source": "MBO Partners", "year": 2024 },
-      { "metric": "Total global content creators", "value": 207000000, "unit": "people (207M+)", "source": "MBO Partners / Linktree", "year": 2024 },
-      { "metric": "Creator economy market size (2023)", "value": 250000000000, "unit": "USD ($250B)", "source": "Goldman Sachs / MBO Partners", "year": 2023 },
-      { "metric": "Creator economy projected market size (2027)", "value": 480000000000, "unit": "USD ($480B)", "source": "Goldman Sachs", "year": 2027 },
-      { "metric": "YouTube total creator payouts (last 3 years)", "value": 70000000000, "unit": "USD ($70B)", "source": "YouTube / Google", "year": 2024 }
+      {
+        "metric": "Creators earning under $5K annually",
+        "value": 50,
+        "unit": "percent",
+        "source": "MBO Partners Creator Economy Report 2024",
+        "year": 2024,
+        "url": "https://www.mbopartners.com/state-of-independence/2024-report/"
+      },
+      {
+        "metric": "Creators earning $30K-$100K annually",
+        "value": 17,
+        "unit": "percent",
+        "source": "MBO Partners",
+        "year": 2024,
+        "url": "https://www.mbopartners.com/state-of-independence/2024-report/"
+      },
+      {
+        "metric": "Creators earning over $100K annually",
+        "value": 7,
+        "unit": "percent",
+        "source": "MBO Partners",
+        "year": 2024,
+        "url": "https://www.mbopartners.com/state-of-independence/2024-report/"
+      },
+      {
+        "metric": "Creators earning over $200K annually",
+        "value": 7,
+        "unit": "percent",
+        "source": "MBO Partners",
+        "year": 2024,
+        "url": "https://www.mbopartners.com/state-of-independence/2024-report/"
+      },
+      {
+        "metric": "Creators earning over $1M annually (need 5M+ followers)",
+        "value": 1,
+        "unit": "percent (estimated)",
+        "source": "MBO Partners / Industry estimates",
+        "year": 2024,
+        "url": "https://www.mbopartners.com/state-of-independence/2024-report/"
+      },
+      {
+        "metric": "Average time to earn first dollar as creator",
+        "value": 6.5,
+        "unit": "months",
+        "source": "Creator Economy surveys",
+        "year": 2024
+      },
+      {
+        "metric": "Creators working part-time",
+        "value": 70,
+        "unit": "percent",
+        "source": "MBO Partners",
+        "year": 2024,
+        "url": "https://www.mbopartners.com/state-of-independence/2024-report/"
+      },
+      {
+        "metric": "Creators working full-time",
+        "value": 30,
+        "unit": "percent",
+        "source": "MBO Partners",
+        "year": 2024,
+        "url": "https://www.mbopartners.com/state-of-independence/2024-report/"
+      },
+      {
+        "metric": "Creators saying success is hard",
+        "value": 46,
+        "unit": "percent",
+        "source": "MBO Partners",
+        "year": 2024,
+        "url": "https://www.mbopartners.com/state-of-independence/2024-report/"
+      },
+      {
+        "metric": "Creators struggling with burnout",
+        "value": 41,
+        "unit": "percent",
+        "source": "MBO Partners",
+        "year": 2024,
+        "url": "https://www.mbopartners.com/state-of-independence/2024-report/"
+      },
+      {
+        "metric": "Creators earning under 10% income from brand deals",
+        "value": 70,
+        "unit": "percent",
+        "source": "MBO Partners",
+        "year": 2024,
+        "url": "https://www.mbopartners.com/state-of-independence/2024-report/"
+      },
+      {
+        "metric": "Total global content creators",
+        "value": 207000000,
+        "unit": "people (207M+)",
+        "source": "MBO Partners / Linktree",
+        "year": 2024,
+        "url": "https://linktr.ee/s/reports/creator-commerce-report-24"
+      },
+      {
+        "metric": "Creator economy market size (2023)",
+        "value": 250000000000,
+        "unit": "USD ($250B)",
+        "source": "Goldman Sachs / MBO Partners",
+        "year": 2023,
+        "url": "https://www.mbopartners.com/state-of-independence/2024-report/"
+      },
+      {
+        "metric": "Creator economy projected market size (2027)",
+        "value": 480000000000,
+        "unit": "USD ($480B)",
+        "source": "Goldman Sachs",
+        "year": 2027,
+        "url": "https://www.goldmansachs.com/insights/articles/the-creator-economy-could-approach-half-a-trillion-dollars-by-2027"
+      },
+      {
+        "metric": "YouTube total creator payouts (last 3 years)",
+        "value": 70000000000,
+        "unit": "USD ($70B)",
+        "source": "YouTube / Google",
+        "year": 2024,
+        "url": "https://www.youtube.com/"
+      }
     ],
     "side_hustle_specific": [
-      { "metric": "US adults with a side hustle", "value": 36, "unit": "percent", "source": "Bankrate Survey 2024", "year": 2024 },
-      { "metric": "Americans reporting a side hustle (broader definition)", "value": 69.6, "unit": "percent (115.9M people)", "source": "DollarSprout / Hostinger", "year": 2024 },
-      { "metric": "Average monthly side hustle income", "value": 891, "unit": "USD per month", "source": "Bankrate", "year": 2024 },
-      { "metric": "Average monthly side hustle income (2023 baseline)", "value": 810, "unit": "USD per month", "source": "Bankrate", "year": 2023 },
-      { "metric": "Median monthly side hustle income", "value": 200, "unit": "USD per month", "source": "Bankrate", "year": 2024 },
-      { "metric": "Side hustlers earning under $500/month", "value": 68, "unit": "percent", "source": "Bankrate", "year": 2024 },
-      { "metric": "Millennial average monthly side hustle income (highest gen)", "value": 1129, "unit": "USD per month", "source": "Bankrate", "year": 2024 },
-      { "metric": "Gen Z average monthly side hustle income", "value": 958, "unit": "USD per month", "source": "Bankrate", "year": 2024 },
-      { "metric": "Gen X average monthly side hustle income", "value": 751, "unit": "USD per month", "source": "Bankrate", "year": 2024 },
-      { "metric": "Baby Boomer average monthly side hustle income", "value": 561, "unit": "USD per month", "source": "Bankrate", "year": 2024 },
-      { "metric": "Gen Z with side hustle (highest generation)", "value": 48, "unit": "percent", "source": "Bankrate", "year": 2024 },
-      { "metric": "Millennials with side hustle", "value": 44, "unit": "percent", "source": "Bankrate", "year": 2024 },
-      { "metric": "Gen X with side hustle", "value": 33, "unit": "percent", "source": "Bankrate", "year": 2024 },
-      { "metric": "Baby Boomers with side hustle", "value": 23, "unit": "percent", "source": "Bankrate", "year": 2024 },
-      { "metric": "Side hustlers earning more and working less than salaried job", "value": 43, "unit": "percent", "source": "Quicken Study", "year": 2024 },
-      { "metric": "Side hustlers doing it to make ends meet", "value": 21.6, "unit": "percent (up from 11.8% in 2021)", "source": "Side Hustle Nation", "year": 2024 }
+      {
+        "metric": "US adults with a side hustle",
+        "value": 36,
+        "unit": "percent",
+        "source": "Bankrate Survey 2024",
+        "year": 2024,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Americans reporting a side hustle (broader definition)",
+        "value": 69.6,
+        "unit": "percent (115.9M people)",
+        "source": "DollarSprout / Hostinger",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly side hustle income",
+        "value": 891,
+        "unit": "USD per month",
+        "source": "Bankrate",
+        "year": 2024,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Average monthly side hustle income (2023 baseline)",
+        "value": 810,
+        "unit": "USD per month",
+        "source": "Bankrate",
+        "year": 2023,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Median monthly side hustle income",
+        "value": 200,
+        "unit": "USD per month",
+        "source": "Bankrate",
+        "year": 2024,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Side hustlers earning under $500/month",
+        "value": 68,
+        "unit": "percent",
+        "source": "Bankrate",
+        "year": 2024,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Millennial average monthly side hustle income (highest gen)",
+        "value": 1129,
+        "unit": "USD per month",
+        "source": "Bankrate",
+        "year": 2024,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Gen Z average monthly side hustle income",
+        "value": 958,
+        "unit": "USD per month",
+        "source": "Bankrate",
+        "year": 2024,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Gen X average monthly side hustle income",
+        "value": 751,
+        "unit": "USD per month",
+        "source": "Bankrate",
+        "year": 2024,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Baby Boomer average monthly side hustle income",
+        "value": 561,
+        "unit": "USD per month",
+        "source": "Bankrate",
+        "year": 2024,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Gen Z with side hustle (highest generation)",
+        "value": 48,
+        "unit": "percent",
+        "source": "Bankrate",
+        "year": 2024,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Millennials with side hustle",
+        "value": 44,
+        "unit": "percent",
+        "source": "Bankrate",
+        "year": 2024,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Gen X with side hustle",
+        "value": 33,
+        "unit": "percent",
+        "source": "Bankrate",
+        "year": 2024,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Baby Boomers with side hustle",
+        "value": 23,
+        "unit": "percent",
+        "source": "Bankrate",
+        "year": 2024,
+        "url": "https://www.bankrate.com/credit-cards/news/side-hustles-survey-2024/"
+      },
+      {
+        "metric": "Side hustlers earning more and working less than salaried job",
+        "value": 43,
+        "unit": "percent",
+        "source": "Quicken Study",
+        "year": 2024
+      },
+      {
+        "metric": "Side hustlers doing it to make ends meet",
+        "value": 21.6,
+        "unit": "percent (up from 11.8% in 2021)",
+        "source": "Side Hustle Nation",
+        "year": 2024
+      }
+    ],
+    "business_demographics": [
+      {
+        "metric": "Businesses with no employees (nonemployer)",
+        "value": 81,
+        "unit": "percent of all businesses",
+        "source": "Census Bureau Nonemployer Statistics",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses with 1-4 employees",
+        "value": 10,
+        "unit": "percent of all businesses",
+        "source": "Census Bureau",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses with 5-19 employees",
+        "value": 5.5,
+        "unit": "percent of all businesses",
+        "source": "Census Bureau",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses with 20-99 employees",
+        "value": 2.5,
+        "unit": "percent of all businesses",
+        "source": "Census Bureau",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses with 100-499 employees",
+        "value": 0.7,
+        "unit": "percent of all businesses",
+        "source": "Census Bureau",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses with 500+ employees",
+        "value": 0.3,
+        "unit": "percent of all businesses",
+        "source": "Census Bureau",
+        "year": 2024
+      },
+      {
+        "metric": "New business applications per year (US)",
+        "value": 5500000,
+        "unit": "applications",
+        "source": "Census Bureau Business Formation Statistics",
+        "year": 2024
+      },
+      {
+        "metric": "Business applications resulting in actual employer businesses",
+        "value": 20,
+        "unit": "percent",
+        "source": "Census BFS",
+        "year": 2024
+      },
+      {
+        "metric": "Average age of successful founders",
+        "value": 42,
+        "unit": "years",
+        "source": "MIT Sloan / Census LEHD",
+        "year": 2024
+      },
+      {
+        "metric": "Average age of unicorn founders at founding",
+        "value": 34,
+        "unit": "years",
+        "source": "Harvard Business Review / PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses owned by women",
+        "value": 42,
+        "unit": "percent of all US businesses",
+        "source": "Census ABS 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses owned by minorities",
+        "value": 32,
+        "unit": "percent of all US businesses",
+        "source": "Census ABS 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses owned by veterans",
+        "value": 5.7,
+        "unit": "percent of all US businesses",
+        "source": "Census ABS / SBA OVBD",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses owned by immigrants",
+        "value": 25,
+        "unit": "percent of all new US businesses",
+        "source": "NBER / Kauffman",
+        "year": 2024
+      },
+      {
+        "metric": "Home-based businesses",
+        "value": 50,
+        "unit": "percent of all businesses",
+        "source": "SBA / Census",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses started with less than $5K",
+        "value": 64,
+        "unit": "percent",
+        "source": "Kauffman Foundation",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses started with less than $25K",
+        "value": 82,
+        "unit": "percent",
+        "source": "Kauffman Foundation",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses started with personal savings",
+        "value": 77,
+        "unit": "percent",
+        "source": "Kauffman Foundation / Fed",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses using credit cards as startup financing",
+        "value": 19,
+        "unit": "percent",
+        "source": "Federal Reserve SBCS",
+        "year": 2024
+      },
+      {
+        "metric": "Average small business owner age",
+        "value": 52,
+        "unit": "years",
+        "source": "SBA / Census ABS",
+        "year": 2024
+      }
+    ],
+    "exit_and_acquisition": [
+      {
+        "metric": "Startups achieving IPO",
+        "value": 0.05,
+        "unit": "percent",
+        "source": "CB Insights / Renaissance Capital",
+        "year": 2024
+      },
+      {
+        "metric": "Startups acquired",
+        "value": 6,
+        "unit": "percent",
+        "source": "CB Insights / Crunchbase",
+        "year": 2024
+      },
+      {
+        "metric": "Startups with any positive exit (acquisition or IPO)",
+        "value": 7,
+        "unit": "percent",
+        "source": "Startup Genome 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average time to acquisition",
+        "value": 5.8,
+        "unit": "years",
+        "source": "Crunchbase / PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average time to IPO",
+        "value": 8.5,
+        "unit": "years",
+        "source": "Renaissance Capital / PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Average acquisition price (seed-funded startups)",
+        "value": 15,
+        "unit": "million USD",
+        "source": "Crunchbase 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average acquisition price (Series A funded)",
+        "value": 50,
+        "unit": "million USD",
+        "source": "PitchBook 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Small business sold successfully (listed for sale)",
+        "value": 30,
+        "unit": "percent",
+        "source": "BizBuySell Insight Report 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average small business sale multiple (revenue)",
+        "value": 2.5,
+        "unit": "x revenue",
+        "source": "BizBuySell 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average small business sale multiple (EBITDA)",
+        "value": 3.8,
+        "unit": "x EBITDA",
+        "source": "BizBuySell / Pepperdine",
+        "year": 2024
+      },
+      {
+        "metric": "Founder equity remaining at Series B",
+        "value": 30,
+        "unit": "percent",
+        "source": "Carta 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Founder equity remaining at IPO",
+        "value": 15,
+        "unit": "percent",
+        "source": "Carta / SEC Filings",
+        "year": 2024
+      },
+      {
+        "metric": "Acqui-hires as percent of all acquisitions",
+        "value": 25,
+        "unit": "percent",
+        "source": "CB Insights",
+        "year": 2024
+      },
+      {
+        "metric": "M&A deals closing after LOI signed",
+        "value": 50,
+        "unit": "percent",
+        "source": "PwC M&A Integration Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Zombie startups (no growth, no exit, still operating)",
+        "value": 30,
+        "unit": "percent of funded startups",
+        "source": "CB Insights",
+        "year": 2024
+      }
+    ],
+    "business_costs_benchmarks": [
+      {
+        "metric": "Average monthly cost to run a solo business",
+        "value": 2500,
+        "unit": "USD",
+        "source": "SCORE / SBA",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly cost to run a 5-person company",
+        "value": 35000,
+        "unit": "USD",
+        "source": "SBA / Pilot Financial",
+        "year": 2024
+      },
+      {
+        "metric": "Average monthly cost to run a 20-person startup",
+        "value": 200000,
+        "unit": "USD",
+        "source": "Startup Genome / SaaS Capital",
+        "year": 2024
+      },
+      {
+        "metric": "Monthly SaaS spend per employee (avg company)",
+        "value": 2884,
+        "unit": "USD",
+        "source": "Productiv SaaS Benchmark 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of incorporating (LLC, average)",
+        "value": 500,
+        "unit": "USD",
+        "source": "LegalZoom / Nolo",
+        "year": 2024
+      },
+      {
+        "metric": "Business insurance average cost (annual)",
+        "value": 1281,
+        "unit": "USD",
+        "source": "Insureon / Simply Business",
+        "year": 2024
+      },
+      {
+        "metric": "Average accounting cost per year (small business)",
+        "value": 3600,
+        "unit": "USD",
+        "source": "QuickBooks / Bench",
+        "year": 2024
+      },
+      {
+        "metric": "Average legal cost per year (small business)",
+        "value": 5000,
+        "unit": "USD",
+        "source": "LegalShield / Nolo",
+        "year": 2024
+      },
+      {
+        "metric": "Office rent per employee per month (US average)",
+        "value": 850,
+        "unit": "USD",
+        "source": "JLL / CBRE",
+        "year": 2024
+      },
+      {
+        "metric": "Office rent per employee per month (SF)",
+        "value": 1400,
+        "unit": "USD",
+        "source": "CBRE / Cushman & Wakefield",
+        "year": 2024
+      },
+      {
+        "metric": "Coworking desk cost per month (US average)",
+        "value": 350,
+        "unit": "USD",
+        "source": "Deskmag / Coworking Resources",
+        "year": 2024
+      },
+      {
+        "metric": "Health insurance cost per employee per year",
+        "value": 8435,
+        "unit": "USD (employer contribution)",
+        "source": "KFF Employer Benefits Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Workers comp insurance average (per $100 payroll)",
+        "value": 1.19,
+        "unit": "USD",
+        "source": "NCCI",
+        "year": 2024
+      },
+      {
+        "metric": "Average startup runway at seed stage",
+        "value": 18,
+        "unit": "months",
+        "source": "Carta / First Round",
+        "year": 2024
+      },
+      {
+        "metric": "Average startup monthly burn rate (seed)",
+        "value": 50000,
+        "unit": "USD",
+        "source": "Carta State of Startups 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average startup monthly burn rate (Series A)",
+        "value": 175000,
+        "unit": "USD",
+        "source": "Carta / SaaS Capital",
+        "year": 2024
+      },
+      {
+        "metric": "Average startup monthly burn rate (Series B)",
+        "value": 500000,
+        "unit": "USD",
+        "source": "PitchBook 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Customer support cost per ticket (B2B SaaS)",
+        "value": 15.22,
+        "unit": "USD",
+        "source": "Zendesk Benchmark 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Customer support cost per ticket (B2C)",
+        "value": 6.5,
+        "unit": "USD",
+        "source": "Zendesk Benchmark 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average marketing spend as percent of revenue (B2B)",
+        "value": 9,
+        "unit": "percent",
+        "source": "Gartner CMO Spend Survey 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average marketing spend as percent of revenue (B2C)",
+        "value": 14,
+        "unit": "percent",
+        "source": "Gartner CMO Spend Survey 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Average R&D spend as percent of revenue (tech)",
+        "value": 20,
+        "unit": "percent",
+        "source": "KeyBanc / SaaS Capital",
+        "year": 2024
+      },
+      {
+        "metric": "Payroll taxes and benefits overhead",
+        "value": 30,
+        "unit": "percent above base salary",
+        "source": "BLS ECEC 2024",
+        "year": 2024
+      }
+    ],
+    "recession_impact": [
+      {
+        "metric": "Business closures during 2020 recession (permanent)",
+        "value": 33,
+        "unit": "percent of small businesses",
+        "source": "NBER / Federal Reserve",
+        "year": 2024
+      },
+      {
+        "metric": "Business closures during 2008 recession",
+        "value": 20,
+        "unit": "percent of small businesses",
+        "source": "Census / BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Revenue decline during recession (median)",
+        "value": 30,
+        "unit": "percent",
+        "source": "Census / BEA",
+        "year": 2024
+      },
+      {
+        "metric": "Time to recover pre-recession revenue (median)",
+        "value": 2.5,
+        "unit": "years",
+        "source": "Census / NBER",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses born in recession surviving 5 years",
+        "value": 52,
+        "unit": "percent",
+        "source": "Kauffman Foundation / BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses born in expansion surviving 5 years",
+        "value": 48,
+        "unit": "percent",
+        "source": "Kauffman Foundation / BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Recession-proof industries (healthcare, utilities)",
+        "value": 65,
+        "unit": "percent survival during recession",
+        "source": "BLS / IBISWorld",
+        "year": 2024
+      },
+      {
+        "metric": "Discretionary businesses closing during recession",
+        "value": 35,
+        "unit": "percent",
+        "source": "Census / McKinsey",
+        "year": 2024
+      },
+      {
+        "metric": "Venture funding decline during recession (2022-2023)",
+        "value": 50,
+        "unit": "percent YoY decline",
+        "source": "PitchBook / CB Insights",
+        "year": 2024
+      },
+      {
+        "metric": "Layoff rate during tech downturn (2022-2023)",
+        "value": 15,
+        "unit": "percent of workforce",
+        "source": "Layoffs.fyi / Crunchbase News",
+        "year": 2024
+      }
+    ],
+    "technology_adoption_impact": [
+      {
+        "metric": "Businesses using AI tools",
+        "value": 35,
+        "unit": "percent of small businesses",
+        "source": "Census Business Trends / SBCS",
+        "year": 2024
+      },
+      {
+        "metric": "Revenue increase from AI adoption (median)",
+        "value": 12,
+        "unit": "percent",
+        "source": "McKinsey Global Survey on AI",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses with e-commerce capability",
+        "value": 27,
+        "unit": "percent of all businesses",
+        "source": "Census E-Commerce Report",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses using social media for marketing",
+        "value": 72,
+        "unit": "percent of small businesses",
+        "source": "Pew / SCORE",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses using CRM software",
+        "value": 48,
+        "unit": "percent of small businesses",
+        "source": "Capterra / Software Advice",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses with a website",
+        "value": 71,
+        "unit": "percent of small businesses",
+        "source": "Census / Top Design Firms",
+        "year": 2024
+      },
+      {
+        "metric": "Digital-first businesses survival advantage",
+        "value": 15,
+        "unit": "percent higher survival at year 5",
+        "source": "McKinsey Digital / BCG",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses accepting digital payments",
+        "value": 78,
+        "unit": "percent of small businesses",
+        "source": "Square / PayPal",
+        "year": 2024
+      },
+      {
+        "metric": "Cloud adoption rate (small businesses)",
+        "value": 61,
+        "unit": "percent",
+        "source": "Flexera State of the Cloud 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Automation reducing operational costs",
+        "value": 25,
+        "unit": "percent average reduction",
+        "source": "McKinsey / Deloitte",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses using accounting software",
+        "value": 64,
+        "unit": "percent of small businesses",
+        "source": "QuickBooks / Xero",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses using project management tools",
+        "value": 44,
+        "unit": "percent of small businesses",
+        "source": "Capterra 2024",
+        "year": 2024
+      }
+    ],
+    "business_model_benchmarks": [
+      {
+        "metric": "Subscription business retention rate (year 1)",
+        "value": 72,
+        "unit": "percent",
+        "source": "Zuora Subscription Economy Index 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Franchise survival rate (year 5)",
+        "value": 85,
+        "unit": "percent",
+        "source": "FRANdata / IFA",
+        "year": 2024
+      },
+      {
+        "metric": "Franchise failure rate (year 10)",
+        "value": 20,
+        "unit": "percent",
+        "source": "SBA / FRANdata",
+        "year": 2024
+      },
+      {
+        "metric": "Marketplace businesses reaching liquidity",
+        "value": 30,
+        "unit": "percent",
+        "source": "a16z / NFX",
+        "year": 2024
+      },
+      {
+        "metric": "Platform businesses reaching profitability",
+        "value": 20,
+        "unit": "percent",
+        "source": "McKinsey Platform Economy",
+        "year": 2024
+      },
+      {
+        "metric": "Direct-to-consumer brands surviving 3 years",
+        "value": 25,
+        "unit": "percent",
+        "source": "Forbes / 2PM Inc",
+        "year": 2024
+      },
+      {
+        "metric": "API-first businesses survival rate (3 years)",
+        "value": 45,
+        "unit": "percent",
+        "source": "Postman / RapidAPI",
+        "year": 2024
+      },
+      {
+        "metric": "Freemium to paid conversion (average)",
+        "value": 3,
+        "unit": "percent",
+        "source": "OpenView / ProfitWell",
+        "year": 2024
+      },
+      {
+        "metric": "Usage-based pricing adoption (SaaS)",
+        "value": 45,
+        "unit": "percent of SaaS companies",
+        "source": "OpenView Usage-Based Pricing Report",
+        "year": 2024
+      },
+      {
+        "metric": "Revenue per employee \u2014 top quartile SaaS",
+        "value": 350000,
+        "unit": "USD per employee",
+        "source": "SaaS Capital / Bessemer",
+        "year": 2024
+      },
+      {
+        "metric": "Revenue per employee \u2014 median small business",
+        "value": 125000,
+        "unit": "USD per employee",
+        "source": "Census / BLS",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses with recurring revenue model",
+        "value": 38,
+        "unit": "percent of all businesses",
+        "source": "Zuora / McKinsey",
+        "year": 2024
+      },
+      {
+        "metric": "White-label/reseller businesses surviving 3 years",
+        "value": 35,
+        "unit": "percent",
+        "source": "G2 / Clutch",
+        "year": 2024
+      },
+      {
+        "metric": "Licensing business model success rate",
+        "value": 40,
+        "unit": "percent (5-year)",
+        "source": "LIMA / USPTO",
+        "year": 2024
+      },
+      {
+        "metric": "Affiliate/performance marketing business survival",
+        "value": 30,
+        "unit": "percent (3-year)",
+        "source": "Awin / CJ Affiliate",
+        "year": 2024
+      }
+    ],
+    "hiring_and_team": [
+      {
+        "metric": "Average time to first hire",
+        "value": 14,
+        "unit": "months after founding",
+        "source": "Kauffman / Census LEHD",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses that never hire employees",
+        "value": 75,
+        "unit": "percent",
+        "source": "Census Nonemployer Statistics",
+        "year": 2024
+      },
+      {
+        "metric": "Bad hire cost (percent of first-year salary)",
+        "value": 30,
+        "unit": "percent",
+        "source": "SHRM / DOL",
+        "year": 2024
+      },
+      {
+        "metric": "Employee turnover rate (small businesses)",
+        "value": 25,
+        "unit": "percent annual",
+        "source": "BLS JOLTS / Gusto",
+        "year": 2024
+      },
+      {
+        "metric": "Time to fill open position (average)",
+        "value": 44,
+        "unit": "days",
+        "source": "SHRM / Indeed",
+        "year": 2024
+      },
+      {
+        "metric": "Remote work adoption (small businesses)",
+        "value": 42,
+        "unit": "percent offering remote options",
+        "source": "Owl Labs State of Remote Work",
+        "year": 2024
+      },
+      {
+        "metric": "Outsourcing rate (small businesses)",
+        "value": 37,
+        "unit": "percent outsource at least one function",
+        "source": "Clutch Small Business Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Contractor vs employee ratio (startups)",
+        "value": 40,
+        "unit": "percent use contractors initially",
+        "source": "Gusto / ADP",
+        "year": 2024
+      },
+      {
+        "metric": "Co-founder split equity equally",
+        "value": 45,
+        "unit": "percent",
+        "source": "Carta / Noam Wasserman",
+        "year": 2024
+      },
+      {
+        "metric": "Equal equity splits leading to disputes",
+        "value": 35,
+        "unit": "percent",
+        "source": "Noam Wasserman / Harvard",
+        "year": 2024
+      },
+      {
+        "metric": "Founding team size (median successful)",
+        "value": 2,
+        "unit": "co-founders",
+        "source": "Startup Genome / Crunchbase",
+        "year": 2024
+      },
+      {
+        "metric": "Solo founders reaching $1M ARR",
+        "value": 12,
+        "unit": "percent (vs 25% for teams)",
+        "source": "Startup Genome 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Startup employee stock option exercise rate",
+        "value": 35,
+        "unit": "percent of vested options exercised",
+        "source": "Carta 2024",
+        "year": 2024
+      }
+    ],
+    "regulatory_and_compliance": [
+      {
+        "metric": "Businesses citing regulation as major challenge",
+        "value": 36,
+        "unit": "percent",
+        "source": "NFIB Small Business Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Cost of regulatory compliance (per employee)",
+        "value": 12000,
+        "unit": "USD annual",
+        "source": "NAM / SBA",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses fined for regulatory violations",
+        "value": 7,
+        "unit": "percent annually",
+        "source": "OSHA / EPA / FTC",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses audited by IRS",
+        "value": 0.4,
+        "unit": "percent",
+        "source": "IRS Data Book 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses with adequate insurance",
+        "value": 58,
+        "unit": "percent",
+        "source": "Insureon / NFIB",
+        "year": 2024
+      },
+      {
+        "metric": "Data breach cost (average, small business)",
+        "value": 120000,
+        "unit": "USD",
+        "source": "IBM / Verizon DBIR",
+        "year": 2024
+      },
+      {
+        "metric": "ADA compliance lawsuits targeting small businesses",
+        "value": 4000,
+        "unit": "cases per year (web accessibility)",
+        "source": "UsableNet / AAJ",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses with formal business continuity plan",
+        "value": 22,
+        "unit": "percent of small businesses",
+        "source": "FEMA / SBA",
+        "year": 2024
+      },
+      {
+        "metric": "Small businesses without any succession plan",
+        "value": 73,
+        "unit": "percent",
+        "source": "PwC Family Business Survey",
+        "year": 2024
+      },
+      {
+        "metric": "Tax compliance cost per year (small business)",
+        "value": 12500,
+        "unit": "USD",
+        "source": "NSBA / SBA",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses collecting sales tax correctly",
+        "value": 60,
+        "unit": "percent (post-Wayfair)",
+        "source": "TaxJar / Avalara",
+        "year": 2024
+      },
+      {
+        "metric": "Payroll compliance violations (per year)",
+        "value": 33,
+        "unit": "percent of small businesses have at least 1",
+        "source": "ADP / DOL",
+        "year": 2024
+      },
+      {
+        "metric": "GDPR/CCPA compliance rate (small businesses)",
+        "value": 30,
+        "unit": "percent",
+        "source": "IAPP / TrustArc",
+        "year": 2024
+      },
+      {
+        "metric": "Businesses with proper data privacy policy",
+        "value": 42,
+        "unit": "percent of small businesses",
+        "source": "IAPP 2024",
+        "year": 2024
+      }
+    ],
+    "mental_health_and_founder": [
+      {
+        "metric": "Founders experiencing depression",
+        "value": 30,
+        "unit": "percent",
+        "source": "UCSF / Startup Snapshot",
+        "year": 2024
+      },
+      {
+        "metric": "Founders experiencing anxiety",
+        "value": 27,
+        "unit": "percent",
+        "source": "UCSF / Startup Snapshot",
+        "year": 2024
+      },
+      {
+        "metric": "Founders experiencing burnout",
+        "value": 44,
+        "unit": "percent",
+        "source": "Startup Snapshot Survey 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Founders working 60+ hours per week",
+        "value": 55,
+        "unit": "percent",
+        "source": "Startup Snapshot / Gallup",
+        "year": 2024
+      },
+      {
+        "metric": "Founders who considered quitting in past year",
+        "value": 42,
+        "unit": "percent",
+        "source": "Startup Snapshot 2024",
+        "year": 2024
+      },
+      {
+        "metric": "Impact of founder mental health on business survival",
+        "value": 25,
+        "unit": "percent higher failure when untreated",
+        "source": "JAMA / Harvard Business Review",
+        "year": 2024
+      },
+      {
+        "metric": "Founders seeking professional help",
+        "value": 18,
+        "unit": "percent",
+        "source": "Startup Snapshot / YC survey",
+        "year": 2024
+      },
+      {
+        "metric": "Loneliness as founder challenge",
+        "value": 45,
+        "unit": "percent report significant loneliness",
+        "source": "EY / Harvard",
+        "year": 2024
+      },
+      {
+        "metric": "Founders with substance use issues",
+        "value": 12,
+        "unit": "percent",
+        "source": "UCSF Founder Mental Health Study",
+        "year": 2024
+      },
+      {
+        "metric": "Relationship problems due to founding stress",
+        "value": 50,
+        "unit": "percent",
+        "source": "Startup Snapshot 2024",
+        "year": 2024
+      }
+    ],
+    "industry_growth_rates": [
+      {
+        "metric": "AI/ML industry annual growth rate",
+        "value": 37.3,
+        "unit": "percent CAGR (2024-2030)",
+        "source": "Grand View Research / Statista",
+        "year": 2024
+      },
+      {
+        "metric": "SaaS industry annual growth rate",
+        "value": 18.7,
+        "unit": "percent CAGR",
+        "source": "Gartner / Statista",
+        "year": 2024
+      },
+      {
+        "metric": "E-commerce growth rate (global)",
+        "value": 9.8,
+        "unit": "percent YoY",
+        "source": "eMarketer / Statista",
+        "year": 2024
+      },
+      {
+        "metric": "Fintech industry growth rate",
+        "value": 25.2,
+        "unit": "percent CAGR",
+        "source": "McKinsey / Boston Consulting Group",
+        "year": 2024
+      },
+      {
+        "metric": "Creator economy growth rate",
+        "value": 22.5,
+        "unit": "percent CAGR",
+        "source": "Goldman Sachs / SignalFire",
+        "year": 2024
+      },
+      {
+        "metric": "Cybersecurity industry growth rate",
+        "value": 13.4,
+        "unit": "percent CAGR",
+        "source": "Cybersecurity Ventures / Gartner",
+        "year": 2024
+      },
+      {
+        "metric": "Healthtech industry growth rate",
+        "value": 21.8,
+        "unit": "percent CAGR",
+        "source": "Rock Health / Grand View Research",
+        "year": 2024
+      },
+      {
+        "metric": "EdTech industry growth rate",
+        "value": 16.3,
+        "unit": "percent CAGR",
+        "source": "HolonIQ / Statista",
+        "year": 2024
+      },
+      {
+        "metric": "Proptech industry growth rate",
+        "value": 15.8,
+        "unit": "percent CAGR",
+        "source": "Mordor Intelligence / CREtech",
+        "year": 2024
+      },
+      {
+        "metric": "Climate/cleantech industry growth rate",
+        "value": 26.8,
+        "unit": "percent CAGR",
+        "source": "BloombergNEF / PwC",
+        "year": 2024
+      },
+      {
+        "metric": "Foodtech industry growth rate",
+        "value": 11.3,
+        "unit": "percent CAGR",
+        "source": "AgFunder / PitchBook",
+        "year": 2024
+      },
+      {
+        "metric": "Legaltech industry growth rate",
+        "value": 8.9,
+        "unit": "percent CAGR",
+        "source": "Grand View Research",
+        "year": 2024
+      },
+      {
+        "metric": "Insurtech industry growth rate",
+        "value": 14.2,
+        "unit": "percent CAGR",
+        "source": "McKinsey / Deloitte",
+        "year": 2024
+      },
+      {
+        "metric": "Space tech industry growth rate",
+        "value": 9.1,
+        "unit": "percent CAGR",
+        "source": "Space Foundation / Morgan Stanley",
+        "year": 2024
+      },
+      {
+        "metric": "Pet industry growth rate",
+        "value": 7.5,
+        "unit": "percent CAGR",
+        "source": "APPA / Grand View Research",
+        "year": 2024
+      },
+      {
+        "metric": "Mental health/wellness industry growth rate",
+        "value": 12.1,
+        "unit": "percent CAGR",
+        "source": "Global Wellness Institute / McKinsey",
+        "year": 2024
+      },
+      {
+        "metric": "Cannabis industry growth rate (US)",
+        "value": 14.7,
+        "unit": "percent CAGR",
+        "source": "New Frontier Data / MJBizDaily",
+        "year": 2024
+      },
+      {
+        "metric": "Robotics industry growth rate",
+        "value": 26.5,
+        "unit": "percent CAGR",
+        "source": "IFR / McKinsey",
+        "year": 2024
+      }
     ]
   }
 }
