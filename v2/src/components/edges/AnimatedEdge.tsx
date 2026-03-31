@@ -24,8 +24,9 @@ function AnimatedEdgeComponent({
     targetPosition,
   });
 
-  const isPass = label === 'pass' || label === 'yes';
-  const isFail = label === 'fail' || label === 'no';
+  const lbl = String(label || '').toLowerCase();
+  const isPass = lbl.startsWith('pass') || lbl.startsWith('yes');
+  const isFail = lbl.startsWith('fail') || lbl.startsWith('no');
 
   return (
     <>
@@ -47,25 +48,34 @@ function AnimatedEdgeComponent({
         </circle>
       )}
 
-      {/* Label */}
+      {/* Label — positioned above the line with background */}
       {label && (
-        <text
-          x={labelX}
-          y={labelY}
-          className="react-flow__edge-text"
-          textAnchor="middle"
-          dominantBaseline="central"
-          style={{
-            ...labelStyle,
-            fontFamily: 'var(--font-geist-mono), monospace',
-            fontSize: 9,
-            fontWeight: 600,
-            letterSpacing: '0.04em',
-            textTransform: 'uppercase' as const,
-          }}
-        >
-          {label as string}
-        </text>
+        <g transform={`translate(${labelX}, ${labelY - 12})`}>
+          <rect
+            x={-(String(label).length * 3.5 + 8)}
+            y={-8}
+            width={String(label).length * 7 + 16}
+            height={16}
+            rx={4}
+            fill="var(--background, #ffffff)"
+            opacity={0.9}
+          />
+          <text
+            className="react-flow__edge-text"
+            textAnchor="middle"
+            dominantBaseline="central"
+            style={{
+              ...labelStyle,
+              fontFamily: 'var(--font-geist-mono), monospace',
+              fontSize: 9,
+              fontWeight: 600,
+              letterSpacing: '0.04em',
+              textTransform: 'uppercase' as const,
+            }}
+          >
+            {label as string}
+          </text>
+        </g>
       )}
     </>
   );

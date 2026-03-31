@@ -8,6 +8,8 @@
 - **Spacing** — Follow 4px grid (4, 8, 12, 16, 20, 24, 32, 40, 48). No arbitrary values. Padding/margin must be consistent across components.
 - **Responsive** — Must work on mobile (320px+), tablet (768px+), and desktop (1024px+). Use Tailwind responsive prefixes. Test at all breakpoints.
 - **Quality bar** — Must look like a top-tier product (Linear, Vercel, Raycast level). No generic AI slop. Clean, minimal, professional.
+- **No overlap** — Cards/nodes must NEVER overlap. Dagre node height must account for actual content (desc, sources, footer). Increase nodesep if needed.
+- **Edge labels** — NEVER cross the edge line. Always positioned above the line with a background rect. No/fail = red, yes/pass = green, partial = amber. Labels matched with startsWith (case-insensitive) to handle long labels like "YES (reason)".
 
 ## Core Philosophy (NON-NEGOTIABLE)
 - **DETERMINISTIC** — The simulator maps observed reality. No randomness, no noise, no estimation.
