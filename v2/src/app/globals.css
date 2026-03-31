@@ -260,20 +260,23 @@ body {
   position: relative;
 }
 
-/* Bottleneck: diamond (rhombus) shape — 4 sides, classic decision point */
+/* Bottleneck: hexagon shape with red drop-shadow border */
 .sim-node--bottleneck {
-  width: 200px;
-  height: 200px;
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  width: 210px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   border-radius: 0;
   outline: none !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  filter: drop-shadow(0 0 0 #dc2626) drop-shadow(2px 0 0 #dc2626) drop-shadow(-2px 0 0 #dc2626) drop-shadow(0 2px 0 #dc2626) drop-shadow(0 -2px 0 #dc2626);
+  background: #fef2f2 !important;
+}
+
+.sim-node--bottleneck .sim-node__type-label {
+  color: #dc2626;
+  font-weight: 700;
 }
 
 .sim-node--bottleneck .sim-node__body {
-  padding: 40px 32px;
+  padding: 20px 28px;
   text-align: center;
 }
 

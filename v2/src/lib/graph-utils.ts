@@ -89,8 +89,6 @@ export function templateToFlow(
   // Reroute edges: skip merged action nodes
   const rerouteEdges = (edges: TemplateEdge[]): TemplateEdge[] => {
     return edges
-      .filter(e => !mergedNodeIds.has(e.from) || mergedNodeIds.has(e.to)) // remove desire→action edge
-      .filter(e => !(mergeMap.has(e.from) && mergedNodeIds.has(e.to))) // remove the merge edge itself
       .map(e => {
         // Reroute edges FROM merged action to come FROM desire instead
         if (mergedNodeIds.has(e.from)) {
@@ -98,7 +96,9 @@ export function templateToFlow(
           return desireId != null ? { ...e, from: desireId } : e;
         }
         return e;
-      });
+      })
+      // Remove desire→action edge (now desire→desire after reroute, or original)
+      .filter(e => !(mergeMap.has(e.from) && mergedNodeIds.has(e.to)));
   };
 
   const adjustedEdges = rerouteEdges(templateEdges);
@@ -114,8 +114,8 @@ export function templateToFlow(
       label: e.label || '',
       type: 'animated',
       style: {
-        stroke: isFail ? '#fca5a5' : isPartial ? '#fbbf24' : isPass ? '#4ade80' : '#d4d4d8',
-        strokeWidth: isPass ? 4.5 : isPartial ? 3 : isFail ? 1.5 : 1.5,
+        stroke: isFail ? '#fca5a5' : isPartial ? '#fbbf24' : isPass ? '#4ade80' : '#a1a1aa',
+        strokeWidth: isPass ? 4.5 : isPartial ? 3 : isFail ? 1.5 : 2.5,
       },
       labelStyle: {
         fill: isFail ? '#ef4444' : isPartial ? '#d97706' : isPass ? '#10b981' : '#a1a1aa',
