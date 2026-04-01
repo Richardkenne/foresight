@@ -350,7 +350,17 @@
 - [x] `docs/ui-references.md` — tutti i link demo (33 vasturiano + reagraph + vizceral + cosmograph + AntV + sigma + deck.gl)
 - [x] `docs/competitor.md` — analisi ParallelLives.ai
 
-## Problemi da Risolvere / Prossimi Step Urgenti
+## Prossima Sessione — 3D Force Graph Migration
+
+Priorita: migrare simulazione a 3d-force-graph come modalita 3D.
+- [ ] Toggle "2D / 3D" in settings
+- [ ] 3D rendering con card HTML (CSS2DRenderer), particelle, DAG top-down
+- [ ] Simulazione 100 persone in 3D (wave system)
+- [ ] Effetti cinematici: bloom, fog, camera orbit
+- [ ] Fly-through mode (WASD prima persona)
+- Dettagli completi: `docs/step-by-step.md` → Fase 1D
+
+## Problemi da Risolvere
 - [ ] AI prompt needs deeper flow generation — v1 produce lifecycle paths piu completi di v2
 - [ ] Backtest full run pendente (250 casi)
 - [ ] Import 62 data file di v1 nel RAG v2 (file presenti, serve verifica e indicizzazione)
