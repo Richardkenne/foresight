@@ -347,11 +347,13 @@
 ## Infrastruttura
 - Repo: github.com/Richardkenne/simulator
 - Deploy: v2-nine-jade.vercel.app
-- Stack: Next.js 16 + React 19 + TypeScript + React Flow + Tailwind CSS → Vercel
-- AI: Claude Haiku 4.5 (primary) + Groq (fallback)
-- Dati: 122 file JSON (~86MB) + 334K data points + 7 API live + 16K sacred patterns + 3,260+ probabilita deep
+- Stack: Next.js 16 + React 19 + TypeScript + React Flow + Tailwind CSS + Framer Motion → Vercel
+- AI: Claude Haiku 4.5 (primary) + OpenAI GPT-4o-mini (fallback) + Groq Llama 3.3 (fallback)
+- Dati: 179 file JSON + 374K+ data points + 7 API live + 15K+ sacred patterns + 36 sacred roots + 3,260+ probabilita deep
+- Input: 7 modalita (testo, audio/mic, foto, video, URL, PDF, template)
+- UX: Framer Motion, Cmd+K palette, dark mode, toasts, skeletons, confetti, sound design, undo/redo
 - Target: 1M+ data points (pipeline notturna + bulk sessions)
-- Pipeline: RAG Supabase pgvector (50K+ rows, 512 dim, HNSW) + keyword matching (fallback)
+- Pipeline: RAG Supabase pgvector (66K+ rows, 512 dim, HNSW) + keyword matching (fallback)
 - Supabase: progetto "Simulator" (rkkfwsmoqylctprzqhfj), ap-southeast-1, free tier
 - Re-index: `npm run index-data`
 - Local: localhost:3000

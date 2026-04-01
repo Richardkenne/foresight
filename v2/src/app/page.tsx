@@ -194,14 +194,14 @@ export default function LandingPage() {
         <div className="hero-badge">350,000+ verified data points</div>
 
         <h1 className="hero-title">
-          See the outcome<br />
-          <span className="hero-gradient">before you decide.</span>
+          Live the life you're afraid to choose<br />
+          <span className="hero-gradient">before it's too late.</span>
         </h1>
 
         <p className="hero-sub">
-          The first deterministic life simulator. No guessing, no vibes —
-          real data from sacred texts, psychology, and economics mapped into
-          decision graphs that show exactly who makes it and who doesn't.
+          That decision keeping you up at night — quitting your job, moving countries,
+          starting over — what if you could see how it actually plays out?
+          Not a guess. Not a vibe. The real outcome, backed by data.
         </p>
 
         {/* Search input → goes to /sim */}
@@ -263,30 +263,45 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ─── Emotional hook ─── */}
+      <section className="section-emotion">
+        <div className="emotion-inner">
+          <p className="emotion-quote">
+            "I spent 3 years wondering if I should leave my job.
+            I finally did. It was the wrong choice.
+            I wish I could have seen it coming."
+          </p>
+          <p className="emotion-attr">
+            — The story of millions. Every single day.
+          </p>
+        </div>
+      </section>
+
       {/* ─── Problem ─── */}
       <section className="section-problem">
-        <h2 className="section-heading">The world runs on guesswork.</h2>
+        <h2 className="section-heading">You already know the feeling.</h2>
         <p className="section-sub">
-          People agonize over decisions — career, money, relationships, faith — then pick
-          based on feelings. The data exists to know what actually happens. Nobody uses it.
+          Lying awake at 2am. Running the same scenario in your head for the hundredth time.
+          Asking people who have never been where you're going.
+          The data to answer your question exists — you just can't see it.
         </p>
         <div className="problem-grid">
           <div className="problem-card">
             <div className="problem-label old">How people decide</div>
             <ul className="problem-list">
               <li>Ask friends (sample size: 3)</li>
-              <li>Read Reddit threads</li>
-              <li>Follow gut feeling</li>
-              <li>Hope for the best</li>
+              <li>Read Reddit threads at 3am</li>
+              <li>Follow gut feeling and pray</li>
+              <li>Postpone until life decides for them</li>
             </ul>
           </div>
           <div className="problem-card">
             <div className="problem-label new">How Simulator works</div>
             <ul className="problem-list">
               <li>350K verified data points</li>
-              <li>Sacred text + psychology + economics</li>
-              <li>Deterministic decision graphs</li>
-              <li>Exact probabilities, zero randomness</li>
+              <li>Sacred texts + psychology + economics</li>
+              <li>See 100 people run your exact scenario</li>
+              <li>Know who makes it — and exactly why</li>
             </ul>
           </div>
         </div>
@@ -294,30 +309,30 @@ export default function LandingPage() {
 
       {/* ─── How it works ─── */}
       <section id="how" className="section-how">
-        <h2 className="section-heading">Three steps to clarity.</h2>
+        <h2 className="section-heading">From doubt to clarity in 30 seconds.</h2>
         <div className="steps-grid">
           <div className="step-card">
             <div className="step-num">01</div>
-            <h3 className="step-title">Describe your scenario</h3>
+            <h3 className="step-title">Tell us what's on your mind</h3>
             <p className="step-desc">
-              Type any life or business decision in plain language.
-              "I'm 28, want to quit my $80K job and start a SaaS."
+              "I'm 28, thinking of quitting my $80K job to start a company.
+              I have $12K saved and no co-founder." Just talk to it.
             </p>
           </div>
           <div className="step-card">
             <div className="step-num">02</div>
-            <h3 className="step-title">AI builds the graph</h3>
+            <h3 className="step-title">See every path unfold</h3>
             <p className="step-desc">
-              Claude AI maps your scenario into nodes — states, actions, bottlenecks,
-              trajectories — backed by real data and sacred root causes.
+              AI maps your exact situation into a decision tree — every bottleneck,
+              every fork, every outcome — backed by real-world data.
             </p>
           </div>
           <div className="step-card">
             <div className="step-num">03</div>
-            <h3 className="step-title">Watch the simulation</h3>
+            <h3 className="step-title">Watch 100 lives play out</h3>
             <p className="step-desc">
-              100 people run your exact scenario. See who passes each bottleneck,
-              who fails, and why. Every probability is a fact, not a guess.
+              100 people walk your path. Some make it. Some don't.
+              You see exactly where things break — and what the survivors did differently.
             </p>
           </div>
         </div>
@@ -325,9 +340,10 @@ export default function LandingPage() {
 
       {/* ─── Features ─── */}
       <section id="features" className="section-features">
-        <h2 className="section-heading">Not another AI toy.</h2>
+        <h2 className="section-heading">This isn't another AI toy.</h2>
         <p className="section-sub">
-          Built on verified data, deterministic logic, and source triangulation — not vibes.
+          Other tools guess. We calculate. Every number traces back to a real source.
+          Every outcome is deterministic — same input, same result, every time.
         </p>
         <div className="features-grid">
           <div className="feature-card">
@@ -348,26 +364,27 @@ export default function LandingPage() {
           <div className="feature-card">
             <FeatureIcon type="graph" />
             <h3>Interactive decision graphs</h3>
-            <p>React Flow canvas with 11 node types, auto-layout, path filtering, step-by-step mode, and particle simulation.</p>
+            <p>Watch your life unfold on an interactive canvas. Zoom into any decision point. Filter by success or failure path.</p>
           </div>
           <div className="feature-card">
             <FeatureIcon type="ai" />
-            <h3>RAG-powered AI</h3>
-            <p>Claude Haiku + Supabase pgvector with 62K embeddings. Every claim traced to a source with URL.</p>
+            <h3>Every claim has a source</h3>
+            <p>AI retrieves from 62K+ verified embeddings. Click any number and see the study, the dataset, the URL. No black boxes.</p>
           </div>
           <div className="feature-card">
             <FeatureIcon type="speed" />
-            <h3>Instant simulation</h3>
-            <p>Type a scenario, get a full decision graph in seconds. No signup, no paywall, no friction.</p>
+            <h3>Answers in seconds</h3>
+            <p>Type what's on your mind. Get a full decision map in seconds. No signup. No paywall. Just clarity.</p>
           </div>
         </div>
       </section>
 
       {/* ─── Data sources ─── */}
       <section id="data" className="section-data">
-        <h2 className="section-heading">Backed by real data.</h2>
+        <h2 className="section-heading">We don't make things up.</h2>
         <p className="section-sub">
           Every probability in every node traces back to a verified source.
+          If we can't prove it, we don't show it.
         </p>
         <div className="data-grid">
           {[
@@ -417,9 +434,9 @@ export default function LandingPage() {
 
       {/* ─── Final CTA ─── */}
       <section className="section-cta">
-        <h2 className="cta-heading">Stop guessing.<br />Start simulating.</h2>
+        <h2 className="cta-heading">Your next chapter<br />doesn't have to be a gamble.</h2>
         <p className="cta-sub">
-          Type any life or business scenario. See the outcome in seconds. Free, forever.
+          The decision you've been putting off — type it in. See what happens. Free, forever.
         </p>
         <Link href="/sim" className="cta-button">
           Open Simulator

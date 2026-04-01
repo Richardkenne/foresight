@@ -1727,10 +1727,15 @@ body {
 
 .landing-page {
   min-height: 100vh;
-  overflow-y: auto;
+  overflow-y: auto !important;
   overflow-x: hidden;
   background: var(--background);
   color: var(--foreground);
+  height: 100vh;
+}
+/* Override body overflow-hidden when landing page is shown */
+body:has(.landing-page) {
+  overflow: auto !important;
 }
 
 /* ─── Nav ─── */
@@ -1979,6 +1984,43 @@ body {
   max-width: 520px;
   margin: 0 auto 48px;
   line-height: 1.6;
+}
+
+/* ─── Emotional hook ─── */
+.section-emotion {
+  padding: 80px 24px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.emotion-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.emotion-quote {
+  font-size: clamp(18px, 3vw, 24px);
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--foreground);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  position: relative;
+}
+.emotion-quote::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+  margin: 0 auto 24px;
+  opacity: 0.5;
+}
+.emotion-attr {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 20px;
+  font-weight: 500;
 }
 
 /* ─── Problem ─── */

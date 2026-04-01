@@ -21,11 +21,14 @@
 - The only Math.random() allowed is COSMETIC (particle appearance, animation scatter).
 
 ## Stack
-- Next.js 16 + React + TypeScript
-- Tailwind CSS
+- Next.js 16 + React 19 + TypeScript
+- Tailwind CSS + Framer Motion
 - React Flow (@xyflow/react) for node graph
 - Dagre for auto-layout
-- Claude Haiku for AI generation
+- Claude Haiku 4.5 for AI generation (fallback: OpenAI, Groq)
+- Supabase pgvector for RAG (66K+ embeddings, 512 dim, HNSW)
+- OpenAI Whisper for audio/video transcription
+- Web Audio API for sound design
 
 ## Architecture
 - `src/components/SimulatorCanvas.tsx` — core simulation engine + React Flow canvas (~1,677 lines)
@@ -42,12 +45,12 @@ The simulation follows this pattern:
 
 | Type | Color | Purpose | Answers |
 |------|-------|---------|---------|
-| `state` | Green bg | Current condition of the person | "Who are you NOW?" |
+| `state` | Neutral (white), pill shape | Current condition of the person | "Who are you NOW?" |
 | `desire` | Gray | What you want | "What do you want?" |
 | `action` | Gray | What you do | "What are you doing?" |
-| `trajectory` | Purple bg | The path you're on | "Where are you heading?" |
-| `bottleneck` | Diamond (rhombus), dynamic border | Binary gate (pass/fail) | "Do you pass?" |
-| `gate` | Amber, left border | 3-way split (no/partial/yes) | "Which path?" |
+| `trajectory` | Neutral, subtle left border | The path you're on | "Where are you heading?" |
+| `bottleneck` | Neutral hexagon, subtle border | Binary gate (pass/fail) | "Do you pass?" |
+| `gate` | Neutral, left border | 3-way split (no/partial/yes) | "Which path?" |
 | `decision` | Gray | Yes/no choice | "Do you choose yes?" |
 | `outcome-good` | Green outline | Positive end | "You made it" |
 | `outcome-bad` | Red outline | Negative end | "You didn't make it" |
