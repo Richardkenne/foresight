@@ -20,6 +20,7 @@ interface IdleToolbarProps {
   shareUrl: string;
   canUndo: boolean;
   canRedo: boolean;
+  viewMode?: '2d' | '3d';
   onUndo: () => void;
   onRedo: () => void;
   onSimulate: () => void;
@@ -41,7 +42,9 @@ export function IdleToolbar({
   canUndo, canRedo, onUndo, onRedo,
   onSimulate, onSimulateFromCut, onRestart, onEnterStepMode, onSimulateReverse,
   onToggleReplayMode, onToggleSacredMode, onBacktest, onSave, onShare, onExportPNG, onClear,
+  viewMode = '2d',
 }: IdleToolbarProps) {
+  const is3D = viewMode === '3d';
   return (
     <motion.div
       className="fixed bottom-6 right-6 z-50"
@@ -58,23 +61,23 @@ export function IdleToolbar({
           boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
         }}
       >
-        {/* Simulate */}
-        {replayMode && cutNodeId ? (
+        {/* Simulate (2D only) */}
+        {!is3D && replayMode && cutNodeId ? (
           <button onClick={onSimulateFromCut} className="toolbar-btn toolbar-btn--primary" title="Replay from cut">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <polygon points="5 3 19 12 5 21 5 3" />
             </svg>
           </button>
-        ) : (
+        ) : !is3D ? (
           <button onClick={onSimulate} disabled={replayMode} className="toolbar-btn toolbar-btn--primary" title="Simulate">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <polygon points="5 3 19 12 5 21 5 3" />
             </svg>
           </button>
-        )}
+        ) : null}
 
-        {/* Restart — re-run simulation */}
-        {hasStats && (
+        {/* Restart */}
+        {hasStats && !is3D && (
           <button onClick={onRestart} className="toolbar-btn" title="Restart simulation">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" /><path d="M21 3v5h-5" />
@@ -82,32 +85,36 @@ export function IdleToolbar({
           </button>
         )}
 
-        {/* Step mode — card by card */}
-        <button onClick={onEnterStepMode} className="toolbar-btn" title="Step-by-step (card by card)">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
+        {/* Step mode (2D only) */}
+        {!is3D && (
+          <button onClick={onEnterStepMode} className="toolbar-btn" title="Step-by-step (card by card)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        )}
 
-        {/* Reverse */}
+        {/* Reverse (both modes) */}
         <button onClick={onSimulateReverse} disabled={replayMode} className="toolbar-btn" title="Reverse">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M9 14L4 9l5-5" /><path d="M20 20v-7a4 4 0 0 0-4-4H4" />
           </svg>
         </button>
 
-        {/* Scissors / Replay mode */}
-        <button
-          onClick={onToggleReplayMode}
-          className={`toolbar-btn ${replayMode ? 'toolbar-btn--active' : ''}`}
-          title={replayMode ? 'Exit replay mode' : 'Replay mode'}
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
-            <line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/>
-            <line x1="8.12" y1="8.12" x2="12" y2="12"/>
-          </svg>
-        </button>
+        {/* Scissors / Replay mode (2D only) */}
+        {!is3D && (
+          <button
+            onClick={onToggleReplayMode}
+            className={`toolbar-btn ${replayMode ? 'toolbar-btn--active' : ''}`}
+            title={replayMode ? 'Exit replay mode' : 'Replay mode'}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
+              <line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/>
+              <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+            </svg>
+          </button>
+        )}
 
         <div className="w-px h-5 bg-[var(--border)] mx-0.5" />
 

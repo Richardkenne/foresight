@@ -75,42 +75,35 @@
 
 ---
 
-## Fase 1D: 3D Force Graph Migration — PROSSIMA SESSIONE
+## Fase 1D: 3D Mode — FATTO (2026-04-01 sera)
 
-Migrare la simulazione a 3d-force-graph come modalita 3D (React Flow resta per 2D).
+### Step 1: Rendering base — FATTO
+- [x] Toggle "3D Mode" in Settings (hamburger menu)
+- [x] Three.js scena: sfere luminose, tubi 3D, griglia, fog
+- [x] Card ologramma CSS2DRenderer (glassmorphism, glow, hover)
+- [x] Colori edge: verde (pass), rosso (fail)
+- [x] Posizioni basate su layout dagre del 2D
 
-### Step 1: Rendering base
-- [ ] Pagina `/sim` con toggle "2D / 3D" in settings
-- [ ] 3D mode: renderizza nodi da `/api/generate` con react-force-graph-3d
-- [ ] Card HTML nodi (CSS2DRenderer): label, desc, prob, source, time, type badge
-- [ ] DAG layout top-down (`dagMode: 'td'`)
-- [ ] Colori edge: verde (pass), rosso (fail), giallo (partial)
-- [ ] Particelle direzionali sugli edge (native)
+### Step 2: Walk-through persona — FATTO
+- [x] Personaggio 3D (capsule + testa) con bob animation
+- [x] "Walk through" button — cammina nodo per nodo
+- [x] Camera follow mode (terza persona)
+- [x] Spazio = pausa, +/- = velocita, WASD = muovi camera
+- [x] Point cloud clessidra (800 particelle) ai bottleneck
 
-### Step 2: Simulazione 100 persone
-- [ ] Wave system portato in 3D (10 wave, 10 persone per wave)
-- [ ] Particelle-persona che scorrono lungo gli edge
-- [ ] Al bottleneck: pass → continua, fail → particella si ferma/cade
-- [ ] Stats bar (total, success, blocked, rate)
+### Step 3: Effetti — PARZIALE
+- [x] Fog (profondita)
+- [x] Camera isometric 3/4 view + follow mode toggle
+- [x] Sfondo scuro per ologramma
+- [ ] UnrealBloomPass (glow) — prossima sessione
+- [ ] Camera auto-orbit — prossima sessione
 
-### Step 3: Effetti cinematici
-- [ ] UnrealBloomPass (glow sui nodi)
-- [ ] Fog (profondita — nodi lontani sfocati)
-- [ ] Camera auto-orbit durante simulazione
-- [ ] Click nodo → camera vola li
-- [ ] Sfondo scuro cinematico (#060810)
-
-### Step 4: Fly-through mode
-- [ ] Fly controls (WASD + mouse) — prima persona dentro il grafo
-- [ ] Camera segue la particella "YOU" lungo il percorso
-- [ ] Opzione: auto-follow o manual
-
-### Step 5: Polish
-- [ ] Hover glow sulle card
-- [ ] Edge con gradiente (start color → end color)
-- [ ] Animazione ingresso nodi (scale from 0)
-- [ ] Sound design per pass/fail
-- [ ] Screenshot/export 3D canvas
+### Step 4: Da fare prossima sessione
+- [ ] Simulazione 100 persone in 3D (wave system)
+- [ ] 35 point cloud aggiuntivi per Sacred Roots
+- [ ] Sacred mode nel 3D (card ologramma con versetti)
+- [ ] Sound design per pass/fail in 3D
+- [ ] Bloom post-processing
 
 ---
 

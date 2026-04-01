@@ -25,6 +25,7 @@ interface TopBarProps {
   hasNodes: boolean;
   generating: boolean;
   onGenerate: () => void;
+  onRestart?: () => void;
   onStop?: () => void;
   onLoadTemplate: (key: string) => void;
   onPhotoScenario?: (scenario: string, photoPreview?: string) => void;
@@ -39,6 +40,8 @@ interface TopBarProps {
   onAttachmentsChange?: (attachments: Attachment[]) => void;
   layoutDirection?: 'LR' | 'TB';
   onLayoutDirectionChange?: (dir: 'LR' | 'TB') => void;
+  viewMode?: '2d' | '3d';
+  onViewModeChange?: (mode: '2d' | '3d') => void;
   // Trigger counter props: increment to open the respective panel (used by CommandPalette)
   openHistoryTrigger?: number;
   openProfileTrigger?: number;
@@ -95,9 +98,9 @@ function TagIcon({ name }: { name: string }) {
 }
 
 export default function TopBar({
-  scenario, onScenarioChange, generating,
-  onGenerate, onStop, onLoadTemplate, onPhotoScenario, onAudioScenario, onTagsChange, onHistorySelect, onProfileChange, photoPreview,
-  sacredMode, onSacredModeChange, attachments = [], onAttachmentsChange, layoutDirection = 'LR', onLayoutDirectionChange, openHistoryTrigger, openProfileTrigger,
+  scenario, onScenarioChange, hasNodes, generating,
+  onGenerate, onRestart, onStop, onLoadTemplate, onPhotoScenario, onAudioScenario, onTagsChange, onHistorySelect, onProfileChange, photoPreview,
+  sacredMode, onSacredModeChange, attachments = [], onAttachmentsChange, layoutDirection = 'LR', onLayoutDirectionChange, viewMode = '2d', onViewModeChange, openHistoryTrigger, openProfileTrigger,
 }: TopBarProps) {
   const addAttachment = useCallback((att: Omit<Attachment, 'id'>) => {
     const newAtt: Attachment = { ...att, id: `${att.type}-${Date.now()}` };
@@ -646,15 +649,29 @@ export default function TopBar({
               Stop
             </Button>
           ) : (
-            <Button
-              variant="primary"
-              size="md"
-              onClick={onGenerate}
-              disabled={!scenario.trim() && attachments.length === 0}
-              className="!px-6 !py-2.5 !text-[14px] !rounded-full"
-            >
-              Generate
-            </Button>
+            <>
+              {hasNodes && (
+                <button
+                  onClick={() => onRestart?.()}
+                  title="Restart — clear simulation state"
+                  className="flex items-center justify-center w-[36px] h-[36px] rounded-full transition-colors cursor-pointer hover:bg-[var(--surface-hover)]"
+                  style={{ color: 'var(--muted)', border: '1px solid var(--border)' }}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" /><path d="M21 3v5h-5" />
+                  </svg>
+                </button>
+              )}
+              <Button
+                variant="primary"
+                size="md"
+                onClick={onGenerate}
+                disabled={!scenario.trim() && attachments.length === 0}
+                className="!px-6 !py-2.5 !text-[14px] !rounded-full"
+              >
+                Generate
+              </Button>
+            </>
           )}
         </div>
 
@@ -981,6 +998,34 @@ export default function TopBar({
                   <div
                     className="absolute top-[2px] w-[20px] h-[20px] rounded-full shadow transition-all"
                     style={{ left: layoutDirection === 'TB' ? '22px' : '2px', background: 'var(--surface)' }}
+                  />
+                </div>
+              </button>
+              {/* 3D mode toggle */}
+              <button
+                onClick={() => {
+                  const next = viewMode === '2d' ? '3d' : '2d';
+                  onViewModeChange?.(next);
+                }}
+                className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-[14px] transition-colors cursor-pointer hover:bg-[var(--surface-hover)]"
+                style={{ color: 'var(--foreground)' }}
+              >
+                <div className="flex items-center gap-3">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" />
+                    <path d="M12 12l8-4.5" />
+                    <path d="M12 12v9" />
+                    <path d="M12 12L4 7.5" />
+                  </svg>
+                  <span>3D Mode</span>
+                </div>
+                <div
+                  className="relative w-[44px] h-[24px] rounded-full transition-colors"
+                  style={{ background: viewMode === '3d' ? 'var(--accent)' : 'var(--border)' }}
+                >
+                  <div
+                    className="absolute top-[2px] w-[20px] h-[20px] rounded-full shadow transition-all"
+                    style={{ left: viewMode === '3d' ? '22px' : '2px', background: 'var(--surface)' }}
                   />
                 </div>
               </button>

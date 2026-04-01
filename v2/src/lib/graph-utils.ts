@@ -13,9 +13,9 @@ export function getLayoutedElements(
   const isVertical = direction === 'TB';
   g.setGraph({
     rankdir: direction,
-    nodesep: isVertical ? 80 : 140,
-    ranksep: isVertical ? 180 : 250,
-    edgesep: isVertical ? 30 : 50,
+    nodesep: isVertical ? 60 : 140,
+    ranksep: isVertical ? 100 : 250,
+    edgesep: isVertical ? 20 : 50,
   });
 
   nodes.forEach((node) => {
@@ -26,7 +26,9 @@ export function getLayoutedElements(
     const hasDesc = !!data.desc;
     const baseH = 100;
     const h = isContext ? 180 : baseH + (hasDesc ? 40 : 0) + (hasSource ? 120 : 0);
-    g.setNode(node.id, { width: isContext ? 220 : 210, height: h });
+    // In vertical mode, use fixed width so dagre centers children properly
+    const w = isContext ? 220 : (isVertical ? 240 : 210);
+    g.setNode(node.id, { width: w, height: isVertical ? 80 : h });
   });
 
   edges.forEach((edge) => {
@@ -40,8 +42,12 @@ export function getLayoutedElements(
     return {
       ...node,
       position: {
-        x: nodeWithPosition.x - 85,
+        x: nodeWithPosition.x - (isVertical ? 120 : 85),
         y: nodeWithPosition.y - 50,
+      },
+      data: {
+        ...(node.data as Record<string, unknown>),
+        direction,
       },
     };
   });
@@ -116,6 +122,7 @@ export function templateToFlow(
 
   const adjustedEdges = rerouteEdges(templateEdges);
 
+  const isVertical = direction === 'TB';
   const rfEdges: RFEdge[] = adjustedEdges.map((e, i) => {
     const lbl = (e.label || '').toLowerCase();
     const isPass = lbl === 'pass' || lbl === 'yes' || lbl.startsWith('yes') || lbl.startsWith('pass');
@@ -125,11 +132,14 @@ export function templateToFlow(
       id: `e-${e.from}-${e.to}-${i}`,
       source: String(e.from),
       target: String(e.to),
+      sourceHandle: isVertical ? 'bottom' : undefined,
+      targetHandle: isVertical ? 'top' : undefined,
       label: e.label || '',
-      type: 'animated',
+      type: isVertical ? 'smoothstep' : 'animated',
       style: {
         stroke: isFail ? '#fca5a5' : isPartial ? '#fbbf24' : isPass ? '#4ade80' : '#a1a1aa',
         strokeWidth: isPass ? 4.5 : isPartial ? 3 : isFail ? 1.5 : 2.5,
+        borderRadius: isVertical ? 8 : undefined,
       },
       labelStyle: {
         fill: isFail ? '#ef4444' : isPartial ? '#d97706' : isPass ? '#10b981' : '#a1a1aa',

@@ -136,25 +136,38 @@ interface SimNodeData {
   computedValue?: number;
   onSliderChange?: (value: number) => void;
   sacredMode?: boolean;
+  sacredRoots?: string[];
   isCutPoint?: boolean;
   [key: string]: unknown;
 }
 
-// Sacred verse mapping — based on node type and keywords in label
-// These are the foundational verses that explain WHY each node type exists
-const SACRED_VERSES: Record<string, { bible: string; bRef: string; quran: string; qRef: string; law: string }> = {
-  start:          { bible: 'Commit to the Lord whatever you do, and he will establish your plans.', bRef: 'Proverbs 16:3', quran: 'And whoever puts their trust in Allah, He will be enough for them.', qRef: 'Quran 65:3', law: 'Faith & Trust' },
-  desire:         { bible: 'Delight yourself in the Lord, and he will give you the desires of your heart.', bRef: 'Psalm 37:4', quran: 'And for those who fear Allah, He will make a way out.', qRef: 'Quran 65:2', law: 'Desire & Purpose' },
-  action:         { bible: 'Faith by itself, if it does not have works, is dead.', bRef: 'James 2:17', quran: 'Indeed, Allah will not change the condition of a people until they change what is in themselves.', qRef: 'Quran 13:11', law: 'Action & Works' },
-  state:          { bible: 'Search me, O God, and know my heart; test me and know my anxious thoughts.', bRef: 'Psalm 139:23', quran: 'Indeed, Allah knows what is in every heart.', qRef: 'Quran 67:13', law: 'Awareness & Truth' },
-  bottleneck:     { bible: 'Enter through the narrow gate. For wide is the gate that leads to destruction.', bRef: 'Matthew 7:13-14', quran: 'Indeed, with hardship comes ease.', qRef: 'Quran 94:5-6', law: 'Testing & Trials' },
-  trajectory:     { bible: 'Broad is the road that leads to destruction, and narrow the road that leads to life.', bRef: 'Matthew 7:13-14', quran: 'And that this is My path, which is straight, so follow it.', qRef: 'Quran 6:153', law: 'Direction & Path' },
-  gate:           { bible: 'There is a way that appears to be right, but in the end it leads to death.', bRef: 'Proverbs 14:12', quran: 'We have shown him the two paths.', qRef: 'Quran 90:10', law: 'Divergence & Fate' },
-  decision:       { bible: 'Plans fail for lack of counsel, but with many advisers they succeed.', bRef: 'Proverbs 15:22', quran: 'And whose affair is determined by consultation among themselves.', qRef: 'Quran 42:38', law: 'Counsel & Wisdom' },
-  'outcome-good': { bible: 'Let us not become weary in doing good, for at the proper time we will reap a harvest.', bRef: 'Galatians 6:9', quran: 'So whoever does an atom\'s weight of good will see it.', qRef: 'Quran 99:7', law: 'Harvest & Reward' },
-  'outcome-bad':  { bible: 'Do not be deceived: God cannot be mocked. A man reaps what he sows.', bRef: 'Galatians 6:7', quran: 'And whoever does an atom\'s weight of evil will see it.', qRef: 'Quran 99:8', law: 'Consequence & Justice' },
-  loop:           { bible: 'As iron sharpens iron, so one person sharpens another.', bRef: 'Proverbs 27:17', quran: 'And cooperate in righteousness and piety.', qRef: 'Quran 5:2', law: 'Growth & Refinement' },
+// 36 Sacred Roots — loaded from data, indexed by ID
+import sacredRootsData from '@/lib/sacred-roots.json';
+
+interface SacredRoot {
+  id: string;
+  label_positive: string;
+  bible_text: string;
+  bible_key: string;
+  quran_text: string;
+  quran_key: string;
+}
+
+const SACRED_ROOTS_MAP: Record<string, SacredRoot> = {};
+(sacredRootsData as SacredRoot[]).forEach(r => { SACRED_ROOTS_MAP[r.id] = r; });
+
+// Fallback: type-based verses (used when node has no sacredRoots)
+const TYPE_FALLBACK: Record<string, string[]> = {
+  start: ['SR-001', 'SR-016'], desire: ['SR-007', 'SR-016'], action: ['SR-012', 'SR-003'],
+  state: ['SR-018', 'SR-035'], bottleneck: ['SR-010', 'SR-001'], trajectory: ['SR-017', 'SR-035'],
+  gate: ['SR-017', 'SR-007'], decision: ['SR-017', 'SR-025'], 'outcome-good': ['SR-004', 'SR-012'],
+  'outcome-bad': ['SR-005', 'SR-019'], loop: ['SR-036', 'SR-025'],
 };
+
+function getSacredForNode(nodeType: string, sacredRootIds?: string[]): SacredRoot[] {
+  const ids = sacredRootIds?.length ? sacredRootIds : (TYPE_FALLBACK[nodeType] || ['SR-001', 'SR-012']);
+  return ids.map(id => SACRED_ROOTS_MAP[id]).filter(Boolean);
+}
 
 function SimNodeComponent({ data }: NodeProps) {
   const d = data as SimNodeData;
@@ -167,7 +180,8 @@ function SimNodeComponent({ data }: NodeProps) {
 
   // Difficulty border removed — only outcome nodes get strong colors
   const difficultyBorder: string | undefined = undefined;
-  const sacredVerse = SACRED_VERSES[nodeType] || SACRED_VERSES.action;
+  const sacredRoots = getSacredForNode(nodeType, d.sacredRoots as string[] | undefined);
+  const primaryRoot = sacredRoots[0];
   const computedValue = d.computedValue;
   // Only show value bar if value is meaningful (> 0)
   const hasValue = typeof computedValue === 'number' && computedValue > 0.001;
@@ -197,12 +211,12 @@ function SimNodeComponent({ data }: NodeProps) {
         whileHover={{ scale: 1.02, y: -2 }}
         layout={false}
       >
-        <Handle type="target" position={Position.Left} className="sim-handle" />
+        <Handle type="target" position={d.direction === 'TB' ? Position.Top : Position.Left} className="sim-handle" />
         <div className="sim-node__start-inner">
           <span className="sim-node__start-icon">{icon}</span>
-          <span className="sim-node__start-label">{isSacred ? sacredVerse.law : d.label}</span>
+          <span className="sim-node__start-label">{isSacred && primaryRoot ? primaryRoot.label_positive : d.label}</span>
         </div>
-        <Handle type="source" position={Position.Right} className="sim-handle" />
+        <Handle type="source" position={d.direction === 'TB' ? Position.Bottom : Position.Right} className="sim-handle" />
       </motion.div>
     );
   }
@@ -217,7 +231,7 @@ function SimNodeComponent({ data }: NodeProps) {
       whileHover={{ scale: 1.02, y: -2 }}
       layout={false}
     >
-      <Handle type="target" position={Position.Left} className="sim-handle" />
+      <Handle type="target" position={d.direction === 'TB' ? Position.Top : Position.Left} className="sim-handle" />
 
       {/* Type label above node */}
       <div className="sim-node__type-label">{NODE_TYPE_LABELS[nodeType] || 'NODE'}</div>
@@ -226,23 +240,25 @@ function SimNodeComponent({ data }: NodeProps) {
       <div className="sim-node__body">
         {isSacred ? (
           <>
-            <div className="sim-node__header">
-              <div className="sim-node__icon">{icon}</div>
-              <div className="sim-node__label">{sacredVerse.law}</div>
-              {hasProb && d.prob != null && (
-                <div className="sim-node__prob">{d.prob}%</div>
-              )}
-            </div>
-            <div className="sim-node__desc sim-node__desc--sacred">
-              &ldquo;{sacredVerse.bible}&rdquo;
-            </div>
-            <div className="sim-node__desc sim-node__desc--sacred" style={{ marginTop: '2px', opacity: 0.6 }}>
-              &ldquo;{sacredVerse.quran}&rdquo;
-            </div>
-            <div className="sim-node__footer">
-              <span className="sim-node__source">{sacredVerse.bRef}</span>
-              <span className="sim-node__source">{sacredVerse.qRef}</span>
-            </div>
+            {sacredRoots.map((root, idx) => (
+              <div key={root.id} style={idx > 0 ? { marginTop: 8, paddingTop: 6, borderTop: '1px solid rgba(168,85,247,0.1)' } : undefined}>
+                <div className="sim-node__header">
+                  <div className="sim-node__icon">{icon}</div>
+                  <div className="sim-node__label" style={{ color: '#a855f7' }}>{root.label_positive}</div>
+                  {idx === 0 && hasProb && d.prob != null && (
+                    <div className="sim-node__prob">{d.prob}%</div>
+                  )}
+                </div>
+                <div className="sim-node__desc sim-node__desc--sacred">
+                  &ldquo;{root.bible_text}&rdquo;
+                </div>
+                <div style={{ fontSize: 7, color: '#a855f7', opacity: 0.6, marginTop: 1 }}>{root.bible_key}</div>
+                <div className="sim-node__desc sim-node__desc--sacred" style={{ marginTop: 3, opacity: 0.7 }}>
+                  &ldquo;{root.quran_text}&rdquo;
+                </div>
+                <div style={{ fontSize: 7, color: '#a855f7', opacity: 0.6, marginTop: 1 }}>{root.quran_key}</div>
+              </div>
+            ))}
           </>
         ) : (
           <>
@@ -345,6 +361,7 @@ function SimNodeComponent({ data }: NodeProps) {
             })()}
           </>
         )}
+
       </div>
 
       {/* Death counter badge */}
@@ -372,7 +389,7 @@ function SimNodeComponent({ data }: NodeProps) {
         </div>
       )}
 
-      <Handle type="source" position={Position.Right} className="sim-handle" />
+      <Handle type="source" position={d.direction === 'TB' ? Position.Bottom : Position.Right} className="sim-handle" />
     </motion.div>
   );
 }

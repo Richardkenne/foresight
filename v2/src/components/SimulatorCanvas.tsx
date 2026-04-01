@@ -31,7 +31,7 @@ import { SimulatorDataflow } from '@/lib/dataflow-engine';
 import { applyRealProbabilities } from '@/lib/probability-matcher';
 import DecisionPruning, { type PruningResult } from './DecisionPruning';
 import { type UserProfile, loadProfile, getProfilePromptModifier } from '@/lib/user-profile';
-import { templateToFlow } from '@/lib/graph-utils';
+import { templateToFlow, getLayoutedElements } from '@/lib/graph-utils';
 import { SPD_BASE, SPEED_LEVELS, SPEED_LABELS, precomputeFates } from '@/lib/simulation-types';
 import { CutLineIndicator, ParticleLayer } from './SimOverlays';
 import { IdleToolbar, RunningToolbar, StatsBar, ReplayBar, StepModeBar, PathFilterBar, ResultsTab } from './SimToolbar';
@@ -39,6 +39,9 @@ import { usePathFilter } from './usePathFilter';
 import { triggerConfetti } from './ui/Confetti';
 import { useUndoRedo } from '@/hooks/useUndoRedo';
 import { sounds } from '@/lib/sounds';
+import dynamic from 'next/dynamic';
+
+const Graph3DView = dynamic(() => import('./Graph3DView'), { ssr: false });
 
 const nodeTypes = { simNode: SimNodeComponent, contextNode: ContextNodeComponent };
 const edgeTypes = { animated: AnimatedEdgeComponent };
@@ -60,6 +63,12 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       return (localStorage.getItem('sim-layout-direction') as 'LR' | 'TB') || 'LR';
     }
     return 'LR';
+  });
+  const [viewMode, setViewMode] = useState<'2d' | '3d'>(() => {
+    if (typeof window !== 'undefined') {
+      return (localStorage.getItem('sim-view-mode') as '2d' | '3d') || '2d';
+    }
+    return '2d';
   });
 
   // Simulation state
@@ -1532,6 +1541,20 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         hasNodes={hasNodes}
         generating={generating}
         onGenerate={generateFlow}
+        onRestart={() => {
+          // Instant reset: clear simulation state, keep the graph
+          stopSim();
+          statsRef.current = { total: 0, success: 0, blocked: 0 };
+          setSimStats({ total: 0, success: 0, blocked: 0 });
+          setShowDashboard(false);
+          particlesRef.current = [];
+          setParticles([]);
+          setErrorMsg('');
+          // Re-reveal all nodes and edges
+          setNodes(prev => prev.map(n => ({ ...n, style: { ...n.style, opacity: 1 } })));
+          setEdges(prev => prev.map(e => ({ ...e, hidden: false })));
+          setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100);
+        }}
         onStop={() => abortRef.current?.abort()}
         onLoadTemplate={loadTemplate}
         photoPreview={photoPreview}
@@ -1595,13 +1618,41 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         onProfileChange={(p) => { profileRef.current = p; }}
         onHistorySelect={handleHistorySelect}
         sacredMode={sacredMode}
-        onSacredModeChange={setSacredMode}
+        onSacredModeChange={(newMode) => {
+          setSacredMode(newMode);
+          // Pure UI toggle — reveal/hide sacred layer on existing nodes, no API call
+          setNodes(prev => prev.map(n => ({ ...n, data: { ...n.data, sacredMode: newMode } })));
+        }}
         attachments={attachments}
         onAttachmentsChange={setAttachments}
         layoutDirection={layoutDirection}
         onLayoutDirectionChange={(dir) => {
           setLayoutDirection(dir);
           localStorage.setItem('sim-layout-direction', dir);
+          // Re-layout existing graph with new direction
+          const currentNodes = nodesRef.current;
+          const currentEdges = edgesRef.current;
+          if (currentNodes.length > 0) {
+            // Update direction in node data + re-layout with dagre
+            const updatedNodes = currentNodes.map(n => ({
+              ...n,
+              data: { ...(n.data as Record<string, unknown>), direction: dir },
+            }));
+            const { nodes: ln, edges: le } = getLayoutedElements(updatedNodes, currentEdges, dir);
+            // For TB mode, edges should be smoothstep
+            const styledEdges = le.map(e => ({
+              ...e,
+              type: dir === 'TB' ? 'smoothstep' : (e.type || 'animated'),
+            }));
+            setNodes(ln);
+            setEdges(styledEdges);
+            setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100);
+          }
+        }}
+        viewMode={viewMode}
+        onViewModeChange={(mode) => {
+          setViewMode(mode);
+          localStorage.setItem('sim-view-mode', mode);
         }}
         openHistoryTrigger={openHistoryTrigger}
         openProfileTrigger={openProfileTrigger}
@@ -1642,7 +1693,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       )}
 
       {/* ========== EMPTY STATE ========== */}
-      {!hasNodes && !generating && (
+      {!hasNodes && !generating && viewMode === '2d' && (
         <div className="absolute inset-0 top-[94px] z-20 flex items-center justify-center">
           <div className="flex flex-col items-center gap-6" style={{ maxWidth: 480 }}>
             {/* Compass icon */}
@@ -1710,58 +1761,64 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
       {/* ========== MAIN LAYOUT: Canvas + Results Panel ========== */}
       <div className="flex-1 flex relative overflow-hidden">
-        {/* ========== REACT FLOW CANVAS ========== */}
-        <div className={`flex-1 relative ${replayMode && !simRunning ? 'cursor-crosshair' : ''}`} ref={flowContainerRef}>
-          <ReactFlow
-            nodes={nodes}
-            edges={edges}
-            onNodesChange={onNodesChange}
-            onEdgesChange={onEdgesChange}
-            onNodeClick={onNodeClickReplay}
-            nodeTypes={nodeTypes}
-            edgeTypes={edgeTypes}
-            fitView
-            fitViewOptions={{ padding: 0.2 }}
-            minZoom={0.3}
-            maxZoom={2}
-            defaultEdgeOptions={{
-              type: 'default',
-              style: { stroke: '#d4d4d4', strokeWidth: 2 },
-            }}
-          >
-            <Background variant={BackgroundVariant.Dots} gap={20} size={1.5} color="var(--muted)" style={{ opacity: 0.5 }} />
-            <Controls
-              position="bottom-left"
-              showInteractive={false}
-              className="!border-[var(--border)] !rounded-lg !shadow-sm !overflow-hidden !mb-6 !ml-6"
-            />
-            <MiniMap
-              position="bottom-right"
-              pannable
-              zoomable
-              nodeColor={(node) => {
-                const t = (node.data as Record<string, unknown>).nodeType as string;
-                if (t === 'outcome-good') return '#34d399';
-                if (t === 'outcome-bad') return '#f87171';
-                return '#cbd5e1';
+        {/* ========== CANVAS: 2D (React Flow) or 3D (Force Graph) ========== */}
+        {viewMode === '3d' ? (
+          <div className="flex-1 relative">
+            <Graph3DView nodes={nodes} edges={edges} layoutDirection={layoutDirection} />
+          </div>
+        ) : (
+          <div className={`flex-1 relative ${replayMode && !simRunning ? 'cursor-crosshair' : ''}`} ref={flowContainerRef}>
+            <ReactFlow
+              nodes={nodes}
+              edges={edges}
+              onNodesChange={onNodesChange}
+              onEdgesChange={onEdgesChange}
+              onNodeClick={onNodeClickReplay}
+              nodeTypes={nodeTypes}
+              edgeTypes={edgeTypes}
+              fitView
+              fitViewOptions={{ padding: 0.2 }}
+              minZoom={0.3}
+              maxZoom={2}
+              defaultEdgeOptions={{
+                type: 'default',
+                style: { stroke: '#d4d4d4', strokeWidth: 2 },
               }}
-              maskColor="rgba(0,0,0,0.08)"
-              style={{
-                opacity: 0.7,
-                width: 140,
-                height: 90,
-                marginBottom: 24,
-                marginRight: 24,
-              }}
-            />
-          </ReactFlow>
+            >
+              <Background variant={BackgroundVariant.Dots} gap={20} size={1.5} color="var(--muted)" style={{ opacity: 0.5 }} />
+              <Controls
+                position="bottom-left"
+                showInteractive={false}
+                className="!border-[var(--border)] !rounded-lg !shadow-sm !overflow-hidden !mb-6 !ml-6"
+              />
+              <MiniMap
+                position="bottom-right"
+                pannable
+                zoomable
+                nodeColor={(node) => {
+                  const t = (node.data as Record<string, unknown>).nodeType as string;
+                  if (t === 'outcome-good') return '#34d399';
+                  if (t === 'outcome-bad') return '#f87171';
+                  return '#cbd5e1';
+                }}
+                maskColor="rgba(0,0,0,0.08)"
+                style={{
+                  opacity: 0.7,
+                  width: 140,
+                  height: 90,
+                  marginBottom: 24,
+                  marginRight: 24,
+                }}
+              />
+            </ReactFlow>
 
-          {/* ========== CUT LINE (replay mode) ========== */}
-          {replayMode && <CutLineIndicator cutNodeId={cutNodeId} nodes={nodes} />}
+            {/* ========== CUT LINE (replay mode) ========== */}
+            {replayMode && <CutLineIndicator cutNodeId={cutNodeId} nodes={nodes} />}
 
-          {/* ========== PARTICLE OVERLAY (inside React Flow viewport) ========== */}
-          <ParticleLayer particles={particles} moveDuration={getSPD().move} />
-        </div>
+            {/* ========== PARTICLE OVERLAY (inside React Flow viewport) ========== */}
+            <ParticleLayer particles={particles} moveDuration={getSPD().move} />
+          </div>
+        )}
 
         {/* ========== RESULTS PANEL (fixed right, always visible when results exist) ========== */}
         {showDashboard && (
@@ -1806,6 +1863,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
           onToggleSacredMode={() => {
             const newMode = !sacredMode;
             setSacredMode(newMode);
+            // Pure UI toggle — reveal/hide sacred layer, no API call
             setNodes(prev => prev.map(n => ({ ...n, data: { ...n.data, sacredMode: newMode } })));
           }}
           onBacktest={() => {
@@ -1818,10 +1876,11 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
           onShare={handleShare}
           onExportPNG={handleExportPNG}
           onClear={() => { stopSim(); setNodes([]); setEdges([]); setShowDashboard(false); setScenario(''); setErrorMsg(''); }}
+          viewMode={viewMode}
         />
       )}
 
-      {simRunning && (
+      {simRunning && viewMode === '2d' && (
         <RunningToolbar
           simPaused={simPaused}
           onTogglePause={togglePause}
@@ -1829,7 +1888,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         />
       )}
 
-      {simRunning && (
+      {simRunning && viewMode === '2d' && (
         <StatsBar
           speedLevel={speedLevel}
           currentWave={currentWave}
@@ -1841,7 +1900,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         />
       )}
 
-      {replayMode && !simRunning && (
+      {replayMode && !simRunning && viewMode === '2d' && (
         <ReplayBar
           cutNodeId={cutNodeId}
           cutNodeLabel={nodesRef.current.find(n => n.id === cutNodeId)?.data?.label as string || 'node'}
@@ -1852,7 +1911,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         />
       )}
 
-      {stepMode && (
+      {stepMode && viewMode === '2d' && (
         <StepModeBar
           stepIndex={stepIndex}
           totalSteps={stepOrderRef.current.length}
@@ -1862,7 +1921,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         />
       )}
 
-      {!simRunning && statsRef.current.total > 0 && !showDashboard && !stepMode && (
+      {!simRunning && statsRef.current.total > 0 && !showDashboard && !stepMode && viewMode === '2d' && (
         <>
           <ResultsTab onShowDashboard={() => { setShowDashboard(true); setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100); }} />
           <PathFilterBar pathFilter={pathFilter} onFilterChange={applyPathFilter} />

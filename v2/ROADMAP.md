@@ -350,15 +350,48 @@
 - [x] `docs/ui-references.md` — tutti i link demo (33 vasturiano + reagraph + vizceral + cosmograph + AntV + sigma + deck.gl)
 - [x] `docs/competitor.md` — analisi ParallelLives.ai
 
-## Prossima Sessione — 3D Force Graph Migration
+## Completato (sessione 2026-04-01 sera)
 
-Priorita: migrare simulazione a 3d-force-graph come modalita 3D.
-- [ ] Toggle "2D / 3D" in settings
-- [ ] 3D rendering con card HTML (CSS2DRenderer), particelle, DAG top-down
-- [ ] Simulazione 100 persone in 3D (wave system)
-- [ ] Effetti cinematici: bloom, fog, camera orbit
-- [ ] Fly-through mode (WASD prima persona)
-- Dettagli completi: `docs/step-by-step.md` → Fase 1D
+### 3D Mode — Three.js Scene
+- [x] Toggle "3D Mode" nel menu hamburger (Settings)
+- [x] Scena Three.js con: sfere luminose per nodi, tubi 3D per edge, griglia a terra, fog
+- [x] Card ologramma CSS2DRenderer (semi-trasparenti, glow, hover)
+- [x] Personaggio 3D (capsule gialla + testa) con bob animation
+- [x] "Walk through" — personaggio cammina lungo il grafo nodo per nodo
+- [x] Camera: isometric (3/4 view) + follow mode (terza persona)
+- [x] WASD per muovere camera, Spazio per pausa, +/- per velocita
+- [x] Point cloud clessidra (SR-010 Patience/Sabr) — 800 particelle che si assemblano ai bottleneck
+- [x] Toolbar condivisa: save, share, export, reverse, sacred, undo/redo (simulate/step/scissors nascosti in 3D)
+- [x] Immagini/foto context node in 3D (texture su piano + bordo)
+- [x] Camera limitata sopra la superficie (maxPolarAngle)
+
+### Sacred Mode — Puro UI Toggle
+- [x] Sacred toggle istantaneo (zero API call) — rivela/nasconde layer sacro
+- [x] Sacred ON = solo versetti (legge sacra + Bibbia + Corano)
+- [x] Sacred OFF = solo dati statistici (fonti, probabilita)
+- [x] Collegato alle 36 Sacred Roots reali (non piu 10 versetti fissi per tipo)
+- [x] Tutti i 340 nodi dei template hanno sacredRoots specifici per contenuto
+- [x] SimNode legge `sacred-roots.json` e mostra versetti specifici per nodo
+
+### Template Upgrade
+- [x] 10 template aggiornati con fonti doppie + anno (CB Insights 2024 | Startup Genome 2024)
+- [x] 340 nodi con sacredRoots mappati per contenuto (non per tipo)
+- [x] Bottone Restart (refresh icon) accanto a Generate — reset istantaneo senza API call
+
+### Decision Tree Layout (TB mode)
+- [x] Edge smoothstep in verticale (linee ortogonali tipo flowchart)
+- [x] Handle Top/Bottom per nodi in TB mode
+- [x] Dagre centrato con spacing ottimizzato
+- [x] Toggle Vertical ri-dispone il grafo esistente istantaneamente
+
+## Prossima Sessione
+
+Priorita:
+- [ ] Simulazione 100 persone in 3D (wave system con precomputeFates)
+- [ ] Bloom/glow post-processing (UnrealBloomPass)
+- [ ] 35 point cloud aggiuntivi (cuore, albero, bilancia...) per le altre Sacred Roots
+- [ ] Sacred mode nel 3D (card ologramma mostrano versetti)
+- [ ] Fly-through mode completo (camera segue particella "YOU")
 
 ## Problemi da Risolvere
 - [ ] AI prompt needs deeper flow generation — v1 produce lifecycle paths piu completi di v2
