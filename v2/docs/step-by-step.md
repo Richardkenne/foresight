@@ -6,6 +6,7 @@
 - [Fase 2: Recursive Simulation](#fase-2-recursive-simulation)
 - [Fase 3: Profilo Utente](#fase-3-profilo-utente)
 - [Fase 4: Data Pipeline Automatico](#fase-4-data-pipeline-automatico)
+- [Fase 5: Avatar / Digital Twin](#fase-5-avatar--digital-twin-prossimo--priorita) ← NEXT
 - [Livello 90-100: Credibilita Assoluta](#livello-90-100-credibilita-assoluta)
 - [Livello 100+: Oracolo Predittivo](#livello-100-oracolo-predittivo)
 - [Livello Beyond: Reality Engine](#livello-beyond-reality-engine)
@@ -62,6 +63,35 @@
 - [ ] Aggiornamento `real-probabilities.json` con dati freschi
 - [ ] Email report con diff: cosa e cambiato questa settimana
 - [ ] Test: eseguire pipeline manualmente e verificare dati aggiornati
+
+---
+
+## Fase 5: Avatar / Digital Twin (PROSSIMO — PRIORITA')
+
+### Livello 1: Sacred Root Self-Assessment
+- [ ] 15-20 domande comportamentali nel Profile (nuova sezione "Sacred Profile")
+- [ ] Ogni domanda mappa a 1-2 delle 36 radici sacre (es: "Quando perdi soldi, cosa fai?" → SR-010 Patience + SR-001 Faith)
+- [ ] Output: 36 punteggi (0-10) che descrivono il profilo sacro dell'utente
+- [ ] Storage: localStorage come il profile attuale
+
+### Livello 2: Probabilita Personalizzate
+- [ ] Modifier engine: `prob_personale = prob_generico * modifier(sacred_scores)`
+- [ ] Ogni nodo mostra DUE probabilita: generica e TUA
+- [ ] Claude riceve il sacred profile e calibra i nodi sulla persona
+- [ ] Tooltip su ogni nodo: "La tua prob e X% perche la tua [radice] e a Y/10"
+
+### Livello 3: Avatar Visuale
+- [ ] Particella avatar distinta (colore diverso, piu grande, con label "YOU")
+- [ ] L'avatar percorre il grafo e mostra il percorso personalizzato
+- [ ] Le altre 99 particelle restano generiche per confronto
+
+### Livello 4: Avatar Report (post-simulazione)
+- [ ] Dashboard "Personal Report" dopo la simulazione
+- [ ] Percorso dell'avatar: dove e passato, dove e caduto
+- [ ] Diagnosi sacra per ogni punto di fallimento: "Sei caduto qui perche la tua SR-025 (Community) e a 2/10"
+- [ ] Prescrizione: verso sacro + azione concreta per migliorare
+- [ ] What-if: "Se la tua pazienza fosse 8/10, la probabilita salirebbe dal 28% al 62%"
+- [ ] Confronto: avatar vs media delle 100 persone
 
 ---
 
@@ -205,4 +235,4 @@
 
 ---
 
-*Ultimo aggiornamento: 2026-03-31*
+*Ultimo aggiornamento: 2026-04-01*

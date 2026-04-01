@@ -60,6 +60,20 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
   const [shareUrl, setShareUrl] = useState('');
   const [lastFlowData, setLastFlowData] = useState<Record<string, unknown> | null>(null);
 
+  // Abort controller for cancelling generation
+  const abortRef = useRef<AbortController | null>(null);
+
+  // Esc to cancel generation
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && generating && abortRef.current) {
+        abortRef.current.abort();
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [generating]);
+
   // Sacred patterns data for sacred mode view
   const sacredDataRef = useRef<Record<string, { bible: string; quran: string; pattern: string }>>({});
   const [particles, setParticles] = useState<ParticleData[]>([]);
@@ -396,11 +410,13 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     // Call AI API
     setGenerating(true);
     setErrorMsg('');
+    abortRef.current = new AbortController();
     try {
       const res = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ scenario: input, tags: contextTagsRef.current, profile: profileRef.current }),
+        body: JSON.stringify({ scenario: input, tags: contextTagsRef.current, profile: profileRef.current, sacredMode }),
+        signal: abortRef.current.signal,
       });
       if (!res.ok) throw new Error('Server error');
       const flow = await res.json();
@@ -464,14 +480,17 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         // Show Decision Pruning after generate (instead of auto-simulate)
         setTimeout(() => requestSimulate(), 500);
       }, 100);
-    } catch {
-      if (best && bestScore >= 2) {
+    } catch (err) {
+      if (err instanceof DOMException && err.name === 'AbortError') {
+        // User cancelled — no error message needed
+      } else if (best && bestScore >= 2) {
         loadTemplate(best, true);
       } else {
         setErrorMsg('Could not generate scenario. Check your internet connection or pick a template.');
       }
     } finally {
       setGenerating(false);
+      abortRef.current = null;
     }
   }, [scenario, loadTemplate, setNodes, setEdges, fitView]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -1409,6 +1428,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         hasNodes={hasNodes}
         generating={generating}
         onGenerate={generateFlow}
+        onStop={() => abortRef.current?.abort()}
         onLoadTemplate={loadTemplate}
         photoPreview={photoPreview}
         onPhotoScenario={(s, preview) => {
@@ -1423,7 +1443,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
             fetch('/api/generate', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ scenario: input, tags: contextTagsRef.current, profile: profileRef.current }),
+              body: JSON.stringify({ scenario: input, tags: contextTagsRef.current, profile: profileRef.current, sacredMode }),
             })
               .then(res => { if (!res.ok) throw new Error('Server error'); return res.json(); })
               .then(flow => {
@@ -1463,9 +1483,15 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
               .finally(() => setGenerating(false));
           }, 50);
         }}
+        onAudioScenario={(text) => {
+          setScenario(text);
+          setTimeout(() => generateFlow(), 50);
+        }}
         onTagsChange={(t) => { contextTagsRef.current = t; }}
         onProfileChange={(p) => { profileRef.current = p; }}
         onHistorySelect={handleHistorySelect}
+        sacredMode={sacredMode}
+        onSacredModeChange={setSacredMode}
       />
 
       {/* ========== ERROR MESSAGE ========== */}

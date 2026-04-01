@@ -38,6 +38,66 @@ function loadSacredIndex(): SacredIndex | null {
   } catch { return null; }
 }
 
+// ============ 36 SACRED ROOTS — Irreducible behavioral atoms ============
+interface SacredRoot {
+  id: string; domain: string; name_en: string;
+  label_positive: string; label_negative: string;
+  bible_key: string; bible_text: string;
+  quran_key: string; quran_text: string;
+  description: string; example_sentences: string[];
+  keywords: string[];
+}
+
+let sacredRoots: SacredRoot[] | null = null;
+function loadSacredRoots(): SacredRoot[] | null {
+  if (sacredRoots) return sacredRoots;
+  try {
+    const filePath = path.join(process.cwd(), 'data', 'sacred-roots.json');
+    sacredRoots = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    return sacredRoots;
+  } catch { return null; }
+}
+
+function matchSacredRoots(scenario: string, limit = 5): string {
+  const roots = loadSacredRoots();
+  if (!roots) return '';
+
+  const words = scenario.toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter(w => w.length > 2);
+
+  const scores: { root: SacredRoot; score: number }[] = [];
+  for (const root of roots) {
+    let score = 0;
+    for (const word of words) {
+      if (root.keywords.some(kw => kw.includes(word) || word.includes(kw))) score += 2;
+      if (root.description.toLowerCase().includes(word)) score += 1;
+      if (root.label_positive.toLowerCase().includes(word)) score += 1;
+      if (root.label_negative.toLowerCase().includes(word)) score += 1;
+    }
+    // Check example sentences for semantic match
+    for (const ex of root.example_sentences) {
+      const exWords = ex.toLowerCase().split(/\s+/);
+      const overlap = words.filter(w => exWords.some(ew => ew.includes(w))).length;
+      score += overlap;
+    }
+    if (score > 0) scores.push({ root, score });
+  }
+
+  scores.sort((a, b) => b.score - a.score);
+  const top = scores.slice(0, limit);
+  if (top.length === 0) return '';
+
+  const lines = top.map(({ root }) =>
+    `- [${root.id}] ${root.label_positive} <-> ${root.label_negative} | Bible: ${root.bible_key} "${root.bible_text.substring(0, 80)}..." | Quran: ${root.quran_key} | ${root.description}`
+  );
+
+  return `\n\nSACRED ROOTS (36 irreducible behavioral atoms — these determine the outcome):
+${lines.join('\n')}
+Use these roots to determine WHY nodes succeed or fail. Each bottleneck/gate outcome is determined by which pole of these roots the person is on.`;
+}
+
 function findSacredPatterns(scenario: string, limit = 20): string {
   const idx = loadSacredIndex();
   if (!idx) return '';
@@ -1149,7 +1209,7 @@ import { getTagKeywords, getTagPromptModifier, type ContextTags } from '@/lib/co
 // ============ HANDLER ============
 export async function POST(request: NextRequest) {
   try {
-    const { scenario, tags, profile } = await request.json() as { scenario: string; tags?: ContextTags; profile?: Record<string, unknown> };
+    const { scenario, tags, profile, sacredMode } = await request.json() as { scenario: string; tags?: ContextTags; profile?: Record<string, unknown>; sacredMode?: boolean };
     if (!scenario) return NextResponse.json({ error: 'Missing scenario' }, { status: 400 });
 
     // Inject tag keywords into scenario for better routing
@@ -1253,7 +1313,8 @@ Without state you show only steps. With state you show how the person TRANSFORMS
 Example flow: state("No money, needs income") → desire("Want to freelance") → action("Learn skill") → state("Has skill, no clients") → bottleneck("Land first client?") → state("First client landed, $500 earned") → ...
 Edges: pass/fail for bottleneck, yes/no for decision, no/partial/yes for gate. Every bottleneck/decision/gate MUST have both a pass/yes AND a fail/no edge. Gate nodes also need a "partial" edge to a state node.
 Position: x increases by ~260, failures below (y+200). Min 260px horizontal spacing.
-JSON format: {"title":"...","nodes":[{"id":1,"type":"desire","label":"...","x":0,"y":120,"prob":68,"desc":"Real stat","source":"BLS 2024:70:3 | CB Insights 2024:65:2","time":"30-90 days"}],"edges":[{"from":1,"to":2,"label":""}],"pruning_questions":[{"id":"q1","question":"Binary YES/NO question SPECIFIC to this exact scenario — NOT generic business questions","section":"community_and_counsel","yesModifier":1.8,"noModifier":0.35,"yesLabel":"Yes, short","noLabel":"No, short","insight":"Data-backed reason why this matters (stat + source)"}]}
+JSON format: {"title":"...","nodes":[{"id":1,"type":"desire","label":"...","x":0,"y":120,"prob":68,"desc":"Real stat","source":"BLS 2024:70:3 | CB Insights 2024:65:2","time":"30-90 days","sacredRoots":["SR-009","SR-031"]}],"edges":[{"from":1,"to":2,"label":""}],"pruning_questions":[{"id":"q1","question":"Binary YES/NO question SPECIFIC to this exact scenario — NOT generic business questions","sacredRoot":"SR-031","yesModifier":1.8,"noModifier":0.35,"yesLabel":"Yes, short","noLabel":"No, short","insight":"Data-backed reason why this matters (stat + source)"}]}
+For each node, include "sacredRoots": an array of 1-3 sacred root IDs (from the 36) that determine the outcome at that node. This connects every simulation step to its irreducible behavioral atoms.
 PRUNING QUESTIONS MUST be scenario-specific. Example: for "friend asks to borrow money" → "Do you have a written agreement?" NOT "Do you have a mentor?". For "open a restaurant" → "Do you have restaurant experience?" NOT "Are you committed for 3+ years?". Generate 5-7 questions that ONLY make sense for THIS specific scenario.
 prob = weighted average of all sources. Only bottleneck/decision need realistic prob (<100). Others = 100.
 For bottleneck/decision nodes, also include "probRange" with optimistic and adverse: {"prob":40,"probRange":{"optimistic":65,"adverse":15}}.
@@ -1279,7 +1340,7 @@ UPWORK/FREELANCE PLATFORM MECHANICS (use when scenario involves Upwork or freela
 
 DECISION PRUNING QUESTIONS: Generate exactly 5-7 binary YES/NO questions that determine success/failure for THIS specific scenario. Each question must:
 - Be a simple YES/NO binary decision the person makes BEFORE starting
-- Map to one of these sacred sections: community_and_counsel, deception_and_shortcuts, envy_and_comparison, fear_and_lack_of_faith, forbidden_fruit, greed_and_excess, patience_and_perseverance, pride_and_hubris, sloth_and_procrastination, stewardship_and_responsibility
+- Map to one of these sacred root IDs (36 irreducible atoms): SR-001 (Faith/Doubt), SR-002 (Worship/Idolatry), SR-003 (Obedience/Rebellion), SR-004 (Gratitude/Ingratitude), SR-005 (Repentance/Hardening), SR-006 (Remembrance/Forgetfulness), SR-007 (Hope/Despair), SR-008 (Fervor/Lukewarmness), SR-009 (Humility/Pride), SR-010 (Patience/Haste), SR-011 (Self-control/Lust), SR-012 (Diligence/Sloth), SR-013 (Contentment/Greed), SR-014 (Moderation/Excess), SR-015 (Conscience/Numbness), SR-016 (Pure Intention/Performance), SR-017 (Wisdom/Folly), SR-018 (Transparency/Hiding), SR-019 (Accountability/Blame), SR-020 (Love/Hatred), SR-021 (Justice/Oppression), SR-022 (Mercy/Vengeance), SR-023 (Truth/Deception), SR-024 (Generosity/Hoarding), SR-025 (Community/Isolation), SR-026 (Loyalty/Betrayal), SR-027 (Celebration/Envy), SR-028 (Compassion/Indifference), SR-029 (Inclusion/Tribalism), SR-030 (Reverence/Mockery), SR-031 (Stewardship/Waste), SR-032 (Service/Domination), SR-033 (Reform/Corruption), SR-034 (Middle Path/Extremism), SR-035 (Certainty/Conjecture), SR-036 (Teachability/Closedness)
 - Have yesModifier (1.2-2.5) and noModifier (0.05-0.5) that reflect real data
 - Include a data-backed "insight" with a real statistic
 - Be SPECIFIC to the scenario — ask about CONCRETE MECHANICS, not generic self-help. Examples:
@@ -1300,6 +1361,26 @@ DECISION PRUNING QUESTIONS: Generate exactly 5-7 binary YES/NO questions that de
     const sacredContext = findSacredPatterns(scenario);
     if (sacredContext) {
       liveStr += `\n\n${sacredContext}`;
+    }
+
+    // LAYER 0.5: Sacred Roots — 36 irreducible behavioral atoms that determine ALL outcomes
+    const sacredRootsContext = matchSacredRoots(scenario);
+    if (sacredRootsContext) {
+      liveStr += sacredRootsContext;
+    }
+
+    // SACRED MODE: generate nodes with sacred text instead of statistics
+    if (sacredMode) {
+      liveStr += `\n\nSACRED MODE ACTIVE: Generate the simulation using ONLY sacred texts (Bible + Quran) as sources.
+- Node "desc" must contain the sacred verse text (not statistics)
+- Node "source" must be formatted as "Bible: [verse] | Quran: [verse]"
+- Probabilities come from the 36 sacred roots, not from statistical data
+- Each node MUST include "sacredRoots" array with the relevant root IDs
+- The flow structure is the same (state → action → bottleneck → outcome) but all content is sacred
+- Do NOT use McKinsey, BLS, CB Insights or any statistical source — ONLY Bible and Quran
+- Edge labels remain the same (pass/fail, yes/no/partial)
+- Example node: {"id":1,"type":"state","label":"Man with nothing","desc":"When the woman saw that the fruit of the tree was good for food and pleasing to the eye, she took some and ate it.","source":"Bible: Genesis 3:6 | Quran: Al-Araf 7:20","prob":100,"sacredRoots":["SR-013","SR-003"]}`;
+      console.log('[API] Sacred mode active');
     }
 
     // LAYER 2: Real probabilities (confirms Layer 0)

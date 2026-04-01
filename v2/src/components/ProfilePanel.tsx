@@ -2,10 +2,13 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { type UserProfile, saveProfile, loadProfile, isProfileComplete } from '@/lib/user-profile';
+import type { ContextTags } from '@/lib/context-tags';
 
 interface ProfilePanelProps {
   onBack: () => void;
   onProfileChange?: (profile: UserProfile) => void;
+  tags?: ContextTags;
+  onTagsChange?: (tags: ContextTags) => void;
 }
 
 const SKILL_SUGGESTIONS = [
@@ -19,9 +22,19 @@ const LANGUAGE_SUGGESTIONS = [
   'Portuguese', 'Chinese', 'Japanese', 'Korean', 'Arabic', 'Hindi',
 ];
 
-export default function ProfilePanel({ onBack, onProfileChange }: ProfilePanelProps) {
+const EXPERIENCE_OPTIONS = ['none', 'beginner', 'intermediate', 'expert'] as const;
+
+export default function ProfilePanel({ onBack, onProfileChange, tags: externalTags, onTagsChange }: ProfilePanelProps) {
   const [profile, setProfile] = useState<UserProfile>({});
-  const [activeSection, setActiveSection] = useState<string | null>('identity');
+  const [activeSection, setActiveSection] = useState<string | null>('context');
+  const [tags, setTags] = useState<ContextTags>(externalTags || {});
+
+  // Sync tags to parent
+  const updateTag = (key: keyof ContextTags, value: string | undefined) => {
+    const next = { ...tags, [key]: value || undefined };
+    setTags(next);
+    onTagsChange?.(next);
+  };
 
   useEffect(() => { setProfile(loadProfile()); }, []);
 
@@ -49,6 +62,7 @@ export default function ProfilePanel({ onBack, onProfileChange }: ProfilePanelPr
   const filledCount = Object.entries(profile).filter(([, v]) => v != null && v !== '' && (!Array.isArray(v) || v.length > 0)).length;
 
   const sections = [
+    { id: 'context', label: 'Context', icon: 'M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z' },
     { id: 'identity', label: 'Identity', icon: 'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2' },
     { id: 'financial', label: 'Financial', icon: 'M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' },
     { id: 'professional', label: 'Professional', icon: 'M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z' },
@@ -93,6 +107,15 @@ export default function ProfilePanel({ onBack, onProfileChange }: ProfilePanelPr
 
       {/* Content */}
       <div style={{ flex: 1, overflowY: 'auto', padding: '12px 16px' }}>
+
+        {activeSection === 'context' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <FieldRow label="Location" value={tags.location ?? ''} placeholder="City or country..." onChange={v => updateTag('location', v)} />
+            <FieldRow label="Budget" value={tags.budget ?? ''} placeholder="e.g. $5000, 10 juta..." onChange={v => updateTag('budget', v)} />
+            <FieldRow label="Timeline" value={tags.timeline ?? ''} placeholder="e.g. 6 months, 2 years..." onChange={v => updateTag('timeline', v)} />
+            <ChipField label="Experience" options={[...EXPERIENCE_OPTIONS]} selected={tags.experience ? [tags.experience] : []} onToggle={v => updateTag('experience', tags.experience === v ? undefined : v)} />
+          </div>
+        )}
 
         {activeSection === 'identity' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>

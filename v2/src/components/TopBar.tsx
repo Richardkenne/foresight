@@ -16,12 +16,16 @@ interface TopBarProps {
   hasNodes: boolean;
   generating: boolean;
   onGenerate: () => void;
+  onStop?: () => void;
   onLoadTemplate: (key: string) => void;
   onPhotoScenario?: (scenario: string, photoPreview?: string) => void;
+  onAudioScenario?: (scenario: string) => void;
   onTagsChange?: (tags: ContextTags) => void;
   onHistorySelect?: (entry: HistoryEntry) => void;
   onProfileChange?: (profile: UserProfile) => void;
   photoPreview?: string | null;
+  sacredMode?: boolean;
+  onSacredModeChange?: (val: boolean) => void;
 }
 
 function Logo() {
@@ -76,11 +80,18 @@ function TagIcon({ name }: { name: string }) {
 
 export default function TopBar({
   scenario, onScenarioChange, generating,
-  onGenerate, onLoadTemplate, onPhotoScenario, onTagsChange, onHistorySelect, onProfileChange, photoPreview,
+  onGenerate, onStop, onLoadTemplate, onPhotoScenario, onAudioScenario, onTagsChange, onHistorySelect, onProfileChange, photoPreview,
+  sacredMode, onSacredModeChange,
 }: TopBarProps) {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const [showTemplates, setShowTemplates] = useState(false);
   const [showPhoto, setShowPhoto] = useState(false);
+  const [showAudio, setShowAudio] = useState(false);
+  const [audioProcessing, setAudioProcessing] = useState(false);
+  const [isRecording, setIsRecording] = useState(false);
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const audioChunksRef = useRef<Blob[]>([]);
+  const audioInputRef = useRef<HTMLInputElement>(null);
   const [showProfile, setShowProfile] = useState(false);
   const [inputExpanded, setInputExpanded] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -246,6 +257,251 @@ export default function TopBar({
 
         {/* Actions */}
         <div className="flex items-center gap-3 shrink-0">
+          {/* Hidden file inputs for Others menu */}
+          <input type="file" accept=".pdf,application/pdf" className="hidden" ref={(el) => { if (el) el.dataset.pdfInput = 'true'; }}
+            onChange={async (e) => {
+              const file = e.target.files?.[0]; if (!file) return;
+              setAudioProcessing(true);
+              try {
+                const formData = new FormData(); formData.append('pdf', file);
+                const res = await fetch('/api/analyze-pdf', { method: 'POST', body: formData });
+                if (!res.ok) throw new Error('PDF analysis failed');
+                const { scenario: s } = await res.json();
+                if (s && onAudioScenario) onAudioScenario(s); else if (s) onScenarioChange(s);
+              } catch (err) { console.error('PDF error:', err); }
+              setAudioProcessing(false); e.target.value = '';
+            }}
+          />
+          <input type="file" accept="video/*" className="hidden" ref={(el) => { if (el) el.dataset.videoInput = 'true'; }}
+            onChange={async (e) => {
+              const file = e.target.files?.[0]; if (!file) return;
+              setAudioProcessing(true);
+              try {
+                const frames: string[] = [];
+                const video = document.createElement('video'); video.muted = true; video.preload = 'auto';
+                const vUrl = URL.createObjectURL(file); video.src = vUrl;
+                await new Promise<void>((r) => { video.onloadedmetadata = () => r(); video.onerror = () => r(); });
+                const duration = video.duration || 0;
+                if (duration > 0) {
+                  const canvas = document.createElement('canvas'); const ctx = canvas.getContext('2d');
+                  canvas.width = 512; canvas.height = 288;
+                  const fc = Math.min(5, Math.max(3, Math.floor(duration / 10)));
+                  for (let i = 0; i < fc; i++) {
+                    video.currentTime = (duration / (fc + 1)) * (i + 1);
+                    await new Promise<void>((r2) => { video.onseeked = () => r2(); });
+                    ctx?.drawImage(video, 0, 0, canvas.width, canvas.height);
+                    frames.push(canvas.toDataURL('image/jpeg', 0.6).split(',')[1]);
+                  }
+                }
+                URL.revokeObjectURL(vUrl);
+                const videoMeta: Record<string, string> = {};
+                if (file.lastModified) { const d = new Date(file.lastModified); videoMeta.date = d.toISOString().split('T')[0]; videoMeta.time = d.toTimeString().split(' ')[0]; }
+                if (duration > 0) videoMeta.duration = Math.round(duration) + 's';
+                if (file.name) videoMeta.filename = file.name;
+                try {
+                  const pos = await new Promise<GeolocationPosition>((res2, rej2) => navigator.geolocation.getCurrentPosition(res2, rej2, { timeout: 3000 }));
+                  videoMeta.latitude = pos.coords.latitude.toFixed(4); videoMeta.longitude = pos.coords.longitude.toFixed(4);
+                  const geoRes = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${pos.coords.latitude}&longitude=${pos.coords.longitude}&localityLanguage=en`);
+                  const geoData = await geoRes.json();
+                  if (geoData.city || geoData.locality) videoMeta.location = `${geoData.city || geoData.locality}, ${geoData.countryName || ''}`;
+                } catch { /* skip */ }
+                const formData = new FormData(); formData.append('video', file);
+                if (frames.length > 0) formData.append('frames', JSON.stringify(frames));
+                if (Object.keys(videoMeta).length > 0) formData.append('metadata', JSON.stringify(videoMeta));
+                const res = await fetch('/api/analyze-video', { method: 'POST', body: formData });
+                if (!res.ok) throw new Error('Video analysis failed');
+                const { scenario: s } = await res.json();
+                if (s && onAudioScenario) onAudioScenario(s); else if (s) onScenarioChange(s);
+              } catch (err) { console.error('Video error:', err); }
+              setAudioProcessing(false); e.target.value = '';
+            }}
+          />
+
+          {/* Others dropdown (URL, PDF, Video) */}
+          <div className="relative">
+            <button
+              onClick={(e) => { e.stopPropagation(); setShowAudio(!showAudio); setShowTemplates(false); setShowPhoto(false); }}
+              className="h-11 px-3 text-[13px] font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-lg transition-colors cursor-pointer flex items-center gap-1.5"
+              title="More input types"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="1" /><circle cx="19" cy="12" r="1" /><circle cx="5" cy="12" r="1" />
+              </svg>
+              <span className="hidden sm:inline">Others</span>
+            </button>
+            {showAudio && (
+              <>
+                <div className="fixed inset-0 z-30" onClick={() => setShowAudio(false)} />
+                <div
+                  className="absolute top-full right-0 mt-2 z-40 rounded-xl border border-[var(--border)] shadow-lg overflow-hidden"
+                  style={{ background: 'var(--surface)', minWidth: '180px' }}
+                >
+                  <button
+                    onClick={async () => {
+                      setShowAudio(false);
+                      const url = prompt('Paste a URL (job listing, Airbnb, LinkedIn, website...)');
+                      if (!url?.trim()) return;
+                      setAudioProcessing(true);
+                      try {
+                        const res = await fetch('/api/analyze-url', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url: url.trim() }) });
+                        if (!res.ok) throw new Error('URL analysis failed');
+                        const { scenario: s } = await res.json();
+                        if (s && onAudioScenario) onAudioScenario(s); else if (s) onScenarioChange(s);
+                      } catch (err) { console.error('URL error:', err); }
+                      setAudioProcessing(false);
+                    }}
+                    className="w-full flex items-center gap-3 px-4 py-3 text-[13px] text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors cursor-pointer"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                    </svg>
+                    URL
+                  </button>
+                  <button
+                    onClick={() => { setShowAudio(false); (document.querySelector('input[data-pdf-input]') as HTMLInputElement)?.click(); }}
+                    className="w-full flex items-center gap-3 px-4 py-3 text-[13px] text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors cursor-pointer"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                      <polyline points="14 2 14 8 20 8" />
+                      <line x1="16" y1="13" x2="8" y2="13" />
+                      <line x1="16" y1="17" x2="8" y2="17" />
+                    </svg>
+                    PDF
+                  </button>
+                  <button
+                    onClick={() => { setShowAudio(false); (document.querySelector('input[data-video-input]') as HTMLInputElement)?.click(); }}
+                    className="w-full flex items-center gap-3 px-4 py-3 text-[13px] text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors cursor-pointer"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                      <path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none" />
+                    </svg>
+                    Video
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+
+          {/* Audio: record or upload */}
+          <div className="relative">
+            <input
+              ref={audioInputRef}
+              type="file"
+              accept="audio/*"
+              className="hidden"
+              onChange={async (e) => {
+                const file = e.target.files?.[0];
+                if (!file) return;
+                setAudioProcessing(true);
+                try {
+                  const formData = new FormData();
+                  formData.append('audio', file);
+                  const res = await fetch('/api/transcribe', { method: 'POST', body: formData });
+                  if (!res.ok) throw new Error('Transcription failed');
+                  const { text } = await res.json();
+                  if (text && onAudioScenario) {
+                    onAudioScenario(text);
+                  } else if (text) {
+                    onScenarioChange(text);
+                  }
+                } catch (err) {
+                  console.error('Audio transcription error:', err);
+                }
+                setAudioProcessing(false);
+                e.target.value = '';
+              }}
+            />
+            <button
+              onClick={async () => {
+                if (audioProcessing) return;
+
+                // If recording, stop and transcribe
+                if (isRecording && mediaRecorderRef.current) {
+                  mediaRecorderRef.current.stop();
+                  return;
+                }
+
+                // Start recording
+                try {
+                  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                  const mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/webm' });
+                  mediaRecorderRef.current = mediaRecorder;
+                  audioChunksRef.current = [];
+
+                  mediaRecorder.ondataavailable = (e) => {
+                    if (e.data.size > 0) audioChunksRef.current.push(e.data);
+                  };
+
+                  mediaRecorder.onstop = async () => {
+                    setIsRecording(false);
+                    stream.getTracks().forEach(t => t.stop());
+
+                    const blob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
+                    if (blob.size < 1000) return; // too short
+
+                    setAudioProcessing(true);
+                    try {
+                      const formData = new FormData();
+                      formData.append('audio', blob, 'recording.webm');
+                      const res = await fetch('/api/transcribe', { method: 'POST', body: formData });
+                      if (!res.ok) throw new Error('Transcription failed');
+                      const { text } = await res.json();
+                      if (text && onAudioScenario) {
+                        onAudioScenario(text);
+                      } else if (text) {
+                        onScenarioChange(text);
+                      }
+                    } catch (err) {
+                      console.error('Audio transcription error:', err);
+                    }
+                    setAudioProcessing(false);
+                  };
+
+                  mediaRecorder.start();
+                  setIsRecording(true);
+                } catch (err) {
+                  console.error('Microphone access denied:', err);
+                  // Fallback: open file picker
+                  audioInputRef.current?.click();
+                }
+              }}
+              onContextMenu={(e) => {
+                // Right-click: open file picker for audio upload
+                e.preventDefault();
+                audioInputRef.current?.click();
+              }}
+              disabled={audioProcessing}
+              className="h-11 w-11 flex items-center justify-center rounded-lg transition-colors cursor-pointer"
+              style={{
+                color: isRecording ? '#ef4444' : audioProcessing ? 'var(--muted)' : 'var(--muted-foreground)',
+                background: isRecording ? 'rgba(239, 68, 68, 0.1)' : 'transparent',
+                outline: isRecording ? '2px solid rgba(239, 68, 68, 0.4)' : 'none',
+                animation: isRecording ? 'pulse 1.5s infinite' : 'none',
+              }}
+              title={isRecording ? 'Click to stop recording' : audioProcessing ? 'Transcribing...' : 'Click to record / Right-click to upload audio'}
+            >
+              {audioProcessing ? (
+                <svg className="animate-spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+                </svg>
+              ) : isRecording ? (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <rect x="6" y="6" width="12" height="12" rx="2" />
+                </svg>
+              ) : (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                  <line x1="12" y1="19" x2="12" y2="23" />
+                  <line x1="8" y1="23" x2="16" y2="23" />
+                </svg>
+              )}
+            </button>
+          </div>
+
           {/* Photo upload */}
           <div className="relative">
             <button
@@ -287,16 +543,26 @@ export default function TopBar({
 
           <div className="w-px h-7 bg-[var(--border)]" />
 
-          <Button
-            variant="primary"
-            size="md"
-            onClick={onGenerate}
-            disabled={generating || !scenario.trim()}
-            loading={generating}
-            className="!px-6 !py-2.5 !text-[14px] !rounded-full"
-          >
-            {generating ? 'Generating...' : 'Generate'}
-          </Button>
+          {generating ? (
+            <Button
+              variant="primary"
+              size="md"
+              onClick={() => onStop?.()}
+              className="!px-6 !py-2.5 !text-[14px] !rounded-full !bg-red-500 hover:!bg-red-600"
+            >
+              Stop
+            </Button>
+          ) : (
+            <Button
+              variant="primary"
+              size="md"
+              onClick={onGenerate}
+              disabled={!scenario.trim()}
+              className="!px-6 !py-2.5 !text-[14px] !rounded-full"
+            >
+              Generate
+            </Button>
+          )}
         </div>
 
         {(showTemplates || showPhoto) && (
@@ -304,162 +570,24 @@ export default function TopBar({
         )}
       </div>
 
-      {/* Context tags row */}
-      <div className="h-[32px] flex items-center gap-1.5 px-6 border-t border-[var(--border)] overflow-x-auto" style={{ scrollbarWidth: 'none', background: hasAnyTag ? 'var(--surface)' : 'transparent' }}>
-        {/* Tag count indicator */}
-        {activeTagCount > 0 && (
-          <span className="text-[9px] font-medium text-blue-500 bg-blue-500/10 px-1.5 py-0.5 rounded shrink-0">
-            {activeTagCount} tag{activeTagCount > 1 ? 's' : ''}
-          </span>
-        )}
-
-        {/* Tag chips */}
-        {(['location', 'budget', 'timeline', 'experience'] as const).map((key) => {
-          const value = tags[key];
-          const isEditing = editingTag === key;
-
-          // Active tag (has value)
-          if (value && !isEditing) {
-            return (
-              <div
-                key={key}
-                className="group flex items-center gap-1.5 h-[22px] px-2 rounded-md text-[10px] font-medium shrink-0 cursor-pointer transition-all"
-                style={{
-                  background: 'rgba(59,130,246,0.08)',
-                  color: '#3b82f6',
-                  border: '1px solid rgba(59,130,246,0.15)',
-                }}
-                onClick={() => { setEditingTag(key); setTagInput(value); }}
-              >
-                <TagIcon name={key} />
-                <span className="max-w-[120px] truncate">{value}</span>
-                <button
-                  onClick={(e) => { e.stopPropagation(); removeTag(key); }}
-                  className="opacity-0 group-hover:opacity-100 transition-opacity ml-0.5 hover:text-red-500"
-                >
-                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
-                    <path d="M18 6L6 18M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-            );
-          }
-
-          // Editing state
-          if (isEditing) {
-            if (key === 'experience') {
-              return (
-                <div key={key} className="flex items-center gap-1 shrink-0">
-                  {EXPERIENCE_OPTIONS.map((opt) => (
-                    <button
-                      key={opt}
-                      onClick={() => setTag('experience', opt)}
-                      className="h-[22px] px-2 rounded-md text-[10px] font-medium cursor-pointer transition-all"
-                      style={{
-                        background: value === opt ? 'rgba(59,130,246,0.15)' : 'rgba(0,0,0,0.03)',
-                        color: value === opt ? '#3b82f6' : 'var(--muted-foreground)',
-                        border: `1px solid ${value === opt ? 'rgba(59,130,246,0.2)' : 'transparent'}`,
-                      }}
-                    >
-                      {opt}
-                    </button>
-                  ))}
-                  <button
-                    onClick={() => setEditingTag(null)}
-                    className="text-[var(--muted)] hover:text-[var(--foreground)] cursor-pointer ml-0.5"
-                  >
-                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
-                      <path d="M18 6L6 18M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-              );
-            }
-
-            return (
-              <div key={key} className="flex items-center gap-1 shrink-0">
-                <div
-                  className="flex items-center gap-1 h-[22px] px-2 rounded-md text-[10px]"
-                  style={{
-                    background: 'rgba(59,130,246,0.05)',
-                    border: '1px solid rgba(59,130,246,0.2)',
-                  }}
-                >
-                  <TagIcon name={key} />
-                  <input
-                    ref={tagInputRef}
-                    type="text"
-                    value={tagInput}
-                    onChange={(e) => setTagInput(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter') handleTagSubmit(key);
-                      if (e.key === 'Escape') { setEditingTag(null); setTagInput(''); }
-                    }}
-                    onBlur={() => handleTagSubmit(key)}
-                    placeholder={TAG_PLACEHOLDERS[key]}
-                    className="w-[100px] bg-transparent outline-none text-[10px] text-[var(--foreground)] placeholder-gray-400"
-                  />
-                </div>
-                {/* Geo detect button for location */}
-                {key === 'location' && (
-                  <button
-                    onClick={detectLocation}
-                    disabled={geoLoading}
-                    className="h-[26px] w-[26px] flex items-center justify-center rounded-md cursor-pointer transition-colors hover:bg-blue-500/10"
-                    style={{ color: geoLoading ? '#93c5fd' : '#3b82f6' }}
-                    title="Detect my location"
-                  >
-                    {geoLoading ? (
-                      <svg className="animate-spin" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M21 12a9 9 0 1 1-6.219-8.56" />
-                      </svg>
-                    ) : (
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                        <circle cx="12" cy="12" r="3" />
-                        <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
-                      </svg>
-                    )}
-                  </button>
-                )}
-              </div>
-            );
-          }
-
-          // Inactive chip (no value, not editing)
-          return (
-            <button
-              key={key}
-              onClick={() => { setEditingTag(key); setTagInput(''); }}
-              className="flex items-center gap-1 h-[22px] px-2 rounded-md text-[10px] font-medium shrink-0 cursor-pointer transition-all"
-              style={{
-                background: 'transparent',
-                color: 'var(--muted)',
-                border: '1px dashed rgba(0,0,0,0.1)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(59,130,246,0.3)';
-                e.currentTarget.style.color = '#3b82f6';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(0,0,0,0.1)';
-                e.currentTarget.style.color = 'var(--muted)';
-              }}
-            >
-              <TagIcon name={key} />
-              <span>+ {TAG_LABELS[key]}</span>
-            </button>
-          );
-        })}
-
-        {/* Clear all */}
-        {activeTagCount > 0 && (
-          <button
-            onClick={() => setTags({})}
-            className="text-[9px] text-gray-400 hover:text-red-500 cursor-pointer ml-1 shrink-0 transition-colors"
-          >
-            Clear all
-          </button>
-        )}
+      {/* Sacred mode toggle row */}
+      <div className="h-[32px] flex items-center gap-1.5 px-6 border-t border-[var(--border)]">
+        <button
+          onClick={() => onSacredModeChange?.(!sacredMode)}
+          className="flex items-center gap-1.5 h-[22px] px-2.5 rounded-md text-[10px] font-medium shrink-0 cursor-pointer transition-all"
+          style={{
+            background: sacredMode ? 'rgba(168,85,247,0.12)' : 'transparent',
+            color: sacredMode ? '#a855f7' : 'var(--muted)',
+            border: sacredMode ? '1px solid rgba(168,85,247,0.25)' : '1px dashed rgba(0,0,0,0.1)',
+          }}
+          title={sacredMode ? 'Switch to Data mode' : 'Switch to Sacred mode (Bible + Quran)'}
+        >
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+          </svg>
+          {sacredMode ? 'Sacred' : 'Sacred'}
+        </button>
       </div>
 
       {/* Sidebar menu drawer */}
@@ -504,6 +632,8 @@ export default function TopBar({
               <ProfilePanel
                 onBack={() => setShowProfile(false)}
                 onProfileChange={onProfileChange}
+                tags={tags}
+                onTagsChange={(t) => { setTags(t); if (onTagsChange) onTagsChange(t); }}
               />
             ) : (
               <nav className="flex-1 py-3 px-3">

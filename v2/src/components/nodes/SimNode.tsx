@@ -164,16 +164,8 @@ function SimNodeComponent({ data }: NodeProps) {
   const isStart = nodeType === 'start';
   const isSacred = d.sacredMode === true;
 
-  // Dynamic border color for bottleneck/gate based on probability severity
-  const getDifficultyBorder = (): string | undefined => {
-    if ((nodeType !== 'bottleneck' && nodeType !== 'gate') || d.prob == null) return undefined;
-    const p = d.prob;
-    if (p >= 60) return 'rgba(16, 185, 129, 0.6)';   // green — easy
-    if (p >= 30) return 'rgba(245, 158, 11, 0.6)';    // orange — medium
-    if (p >= 10) return 'rgba(239, 68, 68, 0.7)';     // red — hard
-    return 'rgba(127, 29, 29, 0.85)';                  // dark red — killer
-  };
-  const difficultyBorder = getDifficultyBorder();
+  // Difficulty border removed — only outcome nodes get strong colors
+  const difficultyBorder: string | undefined = undefined;
   const sacredVerse = SACRED_VERSES[nodeType] || SACRED_VERSES.action;
   const computedValue = d.computedValue;
   // Only show value bar if value is meaningful (> 0)

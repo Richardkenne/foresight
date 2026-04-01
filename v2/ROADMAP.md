@@ -283,6 +283,41 @@
 - **Log**: /tmp/simulator-overnight.log
 - **Complementare**: non è una fase — rafforza TUTTE le fasi continuamente
 
+## Completato (sessione 2026-04-01)
+
+### 36 Sacred Roots — Tassonomia Universale del Comportamento Umano
+- [x] Ricerca esaustiva Bibbia (48 pattern estratti) + Corano (23 pattern estratti)
+- [x] Merge e deduplica → **36 radici irriducibili** organizzate in 5 domini (god, self, others, resources, epistemic)
+- [x] File `data/sacred-roots.json` con versi reali Bibbia + Corano, keywords, frasi esempio
+- [x] 36 sacred roots indicizzate in Supabase RAG (embeddings 512 dim)
+- [x] `matchSacredRoots()` integrato in `/api/generate` come Layer 0.5
+- [x] Prompt aggiornato: pruning questions ora mappano ai 36 root IDs (non piu 10 categorie)
+- [x] Ogni nodo generato include `sacredRoots` array con gli ID delle radici che determinano l'outcome
+
+### Sacred Mode (generazione biblica)
+- [x] Toggle "Sacred" nella tag bar — attivabile PRIMA della generazione
+- [x] Quando attivo: nodi usano solo versetti sacri come contenuto (no McKinsey/BLS)
+- [x] Backend: `sacredMode` flag inviato a `/api/generate`, modifica il prompt
+
+### Multi-Modal Input (7 tipi)
+- [x] **Audio/Voce**: registrazione live dal microfono (click start/stop) + upload file audio → Whisper → scenario
+- [x] **Video**: estrae 3-5 frame + audio + metadata (GPS, data, durata) → Claude Vision + Whisper → scenario
+- [x] **URL**: scrape pagina web → Claude analizza contenuto → scenario
+- [x] **PDF**: Claude legge PDF nativamente → scenario
+- [x] UI: Audio, Foto, Templates visibili — URL, PDF, Video dentro dropdown "Others"
+- [x] Endpoint `/api/transcribe` (Whisper), `/api/analyze-video`, `/api/analyze-url`, `/api/analyze-pdf`
+
+### Stop Generation
+- [x] Pulsante "Stop" (rosso) sostituisce "Generate" durante la generazione
+- [x] Tasto Esc per cancellare (AbortController)
+- [x] Nota: l'API viene comunque consumata, ma la UI si libera subito
+
+### UI Cleanup
+- [x] Nodi intermedi (state, bottleneck, gate, decision, trajectory) ora neutri/bianchi
+- [x] Solo outcome-good (verde) e outcome-bad (rosso) hanno colori forti
+- [x] Context tags (Location, Budget, Timeline, Experience) spostati nel Profile → sezione "Context"
+- [x] Tag bar semplificata: solo toggle Sacred
+
 ## Problemi da Risolvere / Prossimi Step Urgenti
 - [ ] AI prompt needs deeper flow generation — v1 produce lifecycle paths piu completi di v2
 - [ ] Backtest full run pendente (250 casi)
@@ -325,4 +360,4 @@
 
 ---
 
-*Ultimo aggiornamento: 2026-03-31*
+*Ultimo aggiornamento: 2026-04-01*
