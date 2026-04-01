@@ -10,7 +10,13 @@ export function getLayoutedElements(
 ): { nodes: RFNode[]; edges: RFEdge[] } {
   const g = new dagre.graphlib.Graph();
   g.setDefaultEdgeLabel(() => ({}));
-  g.setGraph({ rankdir: direction, nodesep: 140, ranksep: 250, edgesep: 50 });
+  const isVertical = direction === 'TB';
+  g.setGraph({
+    rankdir: direction,
+    nodesep: isVertical ? 80 : 140,
+    ranksep: isVertical ? 180 : 250,
+    edgesep: isVertical ? 30 : 50,
+  });
 
   nodes.forEach((node) => {
     const isContext = node.type === 'contextNode';
@@ -47,7 +53,8 @@ export function getLayoutedElements(
 export function templateToFlow(
   templateNodes: TemplateNode[],
   templateEdges: TemplateEdge[],
-  context?: { photoUrl?: string; scenario?: string }
+  context?: { photoUrl?: string; scenario?: string },
+  direction: 'LR' | 'TB' = 'LR'
 ) {
   // Merge adjacent desire → action pairs into a single node
   const mergedNodeIds = new Set<number>();
@@ -157,5 +164,5 @@ export function templateToFlow(
     }
   }
 
-  return getLayoutedElements(rfNodes, rfEdges);
+  return getLayoutedElements(rfNodes, rfEdges, direction);
 }

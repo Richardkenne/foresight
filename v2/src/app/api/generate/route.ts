@@ -1383,10 +1383,12 @@ DECISION PRUNING QUESTIONS: Generate exactly 5-7 binary YES/NO questions that de
       console.log('[API] Sacred mode active');
     }
 
-    // LAYER 2: Real probabilities (confirms Layer 0)
-    const realProbs = loadRealProbabilities();
-    if (realProbs) {
-      liveStr += `\n\nVERIFIED REAL PROBABILITIES (confirms the sacred patterns above — use these exact numbers):\n${realProbs}`;
+    // LAYER 2: Real probabilities (confirms Layer 0) — SKIP in sacred mode
+    if (!sacredMode) {
+      const realProbs = loadRealProbabilities();
+      if (realProbs) {
+        liveStr += `\n\nVERIFIED REAL PROBABILITIES (confirms the sacred patterns above — use these exact numbers):\n${realProbs}`;
+      }
     }
 
     // CONTEXT TAGS: structured routing modifiers
@@ -1409,7 +1411,9 @@ DECISION PRUNING QUESTIONS: Generate exactly 5-7 binary YES/NO questions that de
     // Dynamic part — changes per request (live data, KB context, tags, profile)
     const dynamicPrompt = liveStr ? liveStr.trim() : '';
 
-    const userMsg = `Scenario: "${scenario}"\n\nUSE THESE DATA POINTS:\n${kbContext || 'Use Tier S/A sources.'}\n\nReturn ONLY JSON.`;
+    const userMsg = sacredMode
+      ? `Scenario: "${scenario}"\n\nUSE ONLY SACRED TEXTS (Bible, Quran, Torah, Bhagavad Gita, Tao Te Ching). NO statistical data. Every node desc must be a sacred verse. Every source must be a scripture reference.\n\nReturn ONLY JSON.`
+      : `Scenario: "${scenario}"\n\nUSE THESE DATA POINTS:\n${kbContext || 'Use Tier S/A sources.'}\n\nReturn ONLY JSON.`;
 
     let flow: Record<string, unknown>;
     try {

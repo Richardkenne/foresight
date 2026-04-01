@@ -318,6 +318,38 @@
 - [x] Context tags (Location, Budget, Timeline, Experience) spostati nel Profile → sezione "Context"
 - [x] Tag bar semplificata: solo toggle Sacred
 
+## Completato (sessione 2026-04-01 pomeriggio)
+
+### Landing Page
+- [x] Landing page su `/` con hero, emotional copy, search bar, problem/solution, how it works, features, data sources, comparison table, CTA
+- [x] Simulator spostato su `/sim` (era su `/`)
+- [x] Responsive, animated SVG hero graph, rotating placeholders
+
+### Sacred Mode Fix
+- [x] Sacred mode ora salta dati statistici (realProbs + kbContext) — output 100% sacro
+- [x] Template in sacred mode chiamano `/api/generate` con `sacredMode: true` (non caricano dati statici)
+- [x] Bottone Sacred spostato nella TopBar vicino a Generate (pill style, viola)
+
+### Multi-Input
+- [x] Tutti gli input (foto, audio, URL, PDF, video) ora si accumulano come attachment
+- [x] Chip visivi sotto input bar con icona tipo, label, X per rimuovere, "Clear all"
+- [x] Al Generate: testo + allegati combinati in un unico scenario arricchito
+
+### Vertical Layout
+- [x] Toggle "Vertical/Horizontal" in Settings (hamburger menu)
+- [x] dagre rankdir switch LR/TB, persiste in localStorage
+
+### 3D Force Graph Prototypes
+- [x] Installato react-force-graph-3d/2d + reagraph + three
+- [x] Prototipo `/ui/force3d` con card HTML (CSS2DRenderer), particelle, DAG top-down
+- [x] Reagraph: incompatibile (conflitto Three.js) — scartato
+- [x] Decisione: 3d-force-graph = #1 open source browser. Piano: React Flow (2D) + 3d-force-graph (3D) toggle
+
+### Documentazione
+- [x] `docs/stack.md` — guida completa stack web: 13 categorie, top 10 con prezzi, graph DB, classifiche per contesto, glossario
+- [x] `docs/ui-references.md` — tutti i link demo (33 vasturiano + reagraph + vizceral + cosmograph + AntV + sigma + deck.gl)
+- [x] `docs/competitor.md` — analisi ParallelLives.ai
+
 ## Problemi da Risolvere / Prossimi Step Urgenti
 - [ ] AI prompt needs deeper flow generation — v1 produce lifecycle paths piu completi di v2
 - [ ] Backtest full run pendente (250 casi)

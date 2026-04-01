@@ -54,6 +54,13 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
   const contextTagsRef = useRef<ContextTags>({});
   const profileRef = useRef<UserProfile>(loadProfile());
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
+  const [attachments, setAttachments] = useState<import('./TopBar').Attachment[]>([]);
+  const [layoutDirection, setLayoutDirection] = useState<'LR' | 'TB'>(() => {
+    if (typeof window !== 'undefined') {
+      return (localStorage.getItem('sim-layout-direction') as 'LR' | 'TB') || 'LR';
+    }
+    return 'LR';
+  });
 
   // Simulation state
   const [simRunning, setSimRunning] = useState(false);
@@ -116,7 +123,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     setScenario((sharedSimulation.scenario as string) || '');
     setLastFlowData(flow);
     const tNodes = (flow.nodes as TemplateNode[]).map(n => ({ ...n, source: n.source || 'Shared' }));
-    const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges as TemplateEdge[]);
+    const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges as TemplateEdge[], undefined, layoutDirection);
     setNodes(ln);
     setEdges(le);
     setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 200);
@@ -338,9 +345,42 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     particlesRef.current = [];
     setParticles([]);
     setScenario(t.input);
+
+    // SACRED MODE: generate via API instead of loading static template
+    if (sacredMode) {
+      setGenerating(true);
+      setErrorMsg('');
+      fetch('/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ scenario: t.input, tags: contextTagsRef.current, profile: profileRef.current, sacredMode: true }),
+      })
+        .then(res => { if (!res.ok) throw new Error('Server error'); return res.json(); })
+        .then(flow => {
+          if (!flow.nodes || !flow.edges) throw new Error('Invalid flow');
+          setLastFlowData(flow);
+          if (flow.pruning_questions && Array.isArray(flow.pruning_questions)) {
+            setApiPruningQuestions(flow.pruning_questions);
+          }
+          const tNodes = flow.nodes.map((n: TemplateNode) => ({ ...n, source: n.source || 'Sacred text' }));
+          const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges, undefined, layoutDirection);
+          setNodes(ln);
+          setEdges(le);
+          sounds.whoosh();
+          undoPushState({ nodes: ln, edges: le });
+          saveToHistory({ scenario: t.input, flowData: { nodes: flow.nodes, edges: flow.edges } });
+          setTimeout(() => {
+            fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 });
+            setTimeout(() => simulate(), 500);
+          }, 100);
+        })
+        .catch(() => { setErrorMsg('Sacred generation failed.'); })
+        .finally(() => setGenerating(false));
+      return;
+    }
     // Apply real probabilities from verified data (Layer 2 overrides AI estimates)
     const enrichedNodes = applyRealProbabilities(t.nodes) as typeof t.nodes;
-    const { nodes: ln, edges: le } = templateToFlow(enrichedNodes, t.edges);
+    const { nodes: ln, edges: le } = templateToFlow(enrichedNodes, t.edges, undefined, layoutDirection);
     setNodes(ln);
     setEdges(le);
     setErrorMsg('');
@@ -377,9 +417,18 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
   // Generate from AI
   const generateFlow = useCallback(async () => {
-    const input = scenario.trim();
+    const textInput = scenario.trim();
+    // Combine text + attachments into one enriched scenario
+    let input = textInput;
+    if (attachments.length > 0) {
+      const parts: string[] = [];
+      if (textInput) parts.push(textInput);
+      for (const att of attachments) {
+        parts.push(`[${att.type.toUpperCase()} source: ${att.label}]\n${att.content}`);
+      }
+      input = parts.join('\n\n---\n\n');
+    }
     if (!input) {
-      // input is in TopBar now
       return;
     }
     sounds.click();
@@ -472,7 +521,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         return e;
       });
       const ctx = photoPreview ? { photoUrl: photoPreview, scenario: input } : undefined;
-      const { nodes: ln, edges: le } = templateToFlow(tNodes, tEdges, ctx);
+      const { nodes: ln, edges: le } = templateToFlow(tNodes, tEdges, ctx, layoutDirection);
       setNodes(ln);
       setEdges(le);
       undoPushState({ nodes: ln, edges: le });
@@ -509,7 +558,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       setGenerating(false);
       abortRef.current = null;
     }
-  }, [scenario, loadTemplate, setNodes, setEdges, fitView]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [scenario, attachments, loadTemplate, setNodes, setEdges, fitView]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // precomputeFates is now imported from @/lib/simulation-types
 
@@ -1464,7 +1513,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
     const tNodes = (flow.nodes as TemplateNode[]).map(n => ({ ...n, source: n.source || 'History' }));
     const ctx = entry.photoThumbnail ? { photoUrl: entry.photoThumbnail, scenario: entry.scenario } : undefined;
-    const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges as TemplateEdge[], ctx);
+    const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges as TemplateEdge[], ctx, layoutDirection);
     setNodes(ln);
     setEdges(le);
 
@@ -1511,7 +1560,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
                 particlesRef.current = [];
                 setParticles([]);
                 const tNodes = flow.nodes.map((n: TemplateNode) => ({ ...n, source: n.source || 'AI generated (photo)' }));
-                const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges, preview ? { photoUrl: preview, scenario: s } : undefined);
+                const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges, preview ? { photoUrl: preview, scenario: s } : undefined, layoutDirection);
                 setNodes(ln);
                 setEdges(le);
 
@@ -1547,6 +1596,13 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         onHistorySelect={handleHistorySelect}
         sacredMode={sacredMode}
         onSacredModeChange={setSacredMode}
+        attachments={attachments}
+        onAttachmentsChange={setAttachments}
+        layoutDirection={layoutDirection}
+        onLayoutDirectionChange={(dir) => {
+          setLayoutDirection(dir);
+          localStorage.setItem('sim-layout-direction', dir);
+        }}
         openHistoryTrigger={openHistoryTrigger}
         openProfileTrigger={openProfileTrigger}
       />

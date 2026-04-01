@@ -11,6 +11,14 @@ import type { ContextTags } from '@/lib/context-tags';
 import type { HistoryEntry } from '@/lib/history';
 import type { UserProfile } from '@/lib/user-profile';
 
+export interface Attachment {
+  id: string;
+  type: 'photo' | 'audio' | 'url' | 'pdf' | 'video';
+  label: string;       // short display label
+  content: string;     // extracted text/scenario from this source
+  preview?: string;    // image data URL for photos
+}
+
 interface TopBarProps {
   scenario: string;
   onScenarioChange: (val: string) => void;
@@ -27,6 +35,10 @@ interface TopBarProps {
   photoPreview?: string | null;
   sacredMode?: boolean;
   onSacredModeChange?: (val: boolean) => void;
+  attachments?: Attachment[];
+  onAttachmentsChange?: (attachments: Attachment[]) => void;
+  layoutDirection?: 'LR' | 'TB';
+  onLayoutDirectionChange?: (dir: 'LR' | 'TB') => void;
   // Trigger counter props: increment to open the respective panel (used by CommandPalette)
   openHistoryTrigger?: number;
   openProfileTrigger?: number;
@@ -85,8 +97,16 @@ function TagIcon({ name }: { name: string }) {
 export default function TopBar({
   scenario, onScenarioChange, generating,
   onGenerate, onStop, onLoadTemplate, onPhotoScenario, onAudioScenario, onTagsChange, onHistorySelect, onProfileChange, photoPreview,
-  sacredMode, onSacredModeChange, openHistoryTrigger, openProfileTrigger,
+  sacredMode, onSacredModeChange, attachments = [], onAttachmentsChange, layoutDirection = 'LR', onLayoutDirectionChange, openHistoryTrigger, openProfileTrigger,
 }: TopBarProps) {
+  const addAttachment = useCallback((att: Omit<Attachment, 'id'>) => {
+    const newAtt: Attachment = { ...att, id: `${att.type}-${Date.now()}` };
+    onAttachmentsChange?.([...attachments, newAtt]);
+  }, [attachments, onAttachmentsChange]);
+
+  const removeAttachment = useCallback((id: string) => {
+    onAttachmentsChange?.(attachments.filter(a => a.id !== id));
+  }, [attachments, onAttachmentsChange]);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const [showTemplates, setShowTemplates] = useState(false);
   const [showPhoto, setShowPhoto] = useState(false);
@@ -304,7 +324,9 @@ export default function TopBar({
                 const res = await fetch('/api/analyze-pdf', { method: 'POST', body: formData });
                 if (!res.ok) throw new Error('PDF analysis failed');
                 const { scenario: s } = await res.json();
-                if (s && onAudioScenario) onAudioScenario(s); else if (s) onScenarioChange(s);
+                if (s) {
+                  addAttachment({ type: 'pdf', label: file.name.slice(0, 30), content: s });
+                }
               } catch (err) { console.error('PDF error:', err); }
               setAudioProcessing(false); e.target.value = '';
             }}
@@ -348,7 +370,9 @@ export default function TopBar({
                 const res = await fetch('/api/analyze-video', { method: 'POST', body: formData });
                 if (!res.ok) throw new Error('Video analysis failed');
                 const { scenario: s } = await res.json();
-                if (s && onAudioScenario) onAudioScenario(s); else if (s) onScenarioChange(s);
+                if (s) {
+                  addAttachment({ type: 'video', label: file.name.slice(0, 30), content: s });
+                }
               } catch (err) { console.error('Video error:', err); }
               setAudioProcessing(false); e.target.value = '';
             }}
@@ -371,10 +395,8 @@ export default function TopBar({
                   const res = await fetch('/api/transcribe', { method: 'POST', body: formData });
                   if (!res.ok) throw new Error('Transcription failed');
                   const { text } = await res.json();
-                  if (text && onAudioScenario) {
-                    onAudioScenario(text);
-                  } else if (text) {
-                    onScenarioChange(text);
+                  if (text) {
+                    addAttachment({ type: 'audio', label: 'Audio file', content: text });
                   }
                 } catch (err) {
                   console.error('Audio transcription error:', err);
@@ -418,10 +440,8 @@ export default function TopBar({
                       const res = await fetch('/api/transcribe', { method: 'POST', body: formData });
                       if (!res.ok) throw new Error('Transcription failed');
                       const { text } = await res.json();
-                      if (text && onAudioScenario) {
-                        onAudioScenario(text);
-                      } else if (text) {
-                        onScenarioChange(text);
+                      if (text) {
+                        addAttachment({ type: 'audio', label: 'Voice recording', content: text });
                       }
                     } catch (err) {
                       console.error('Audio transcription error:', err);
@@ -486,7 +506,10 @@ export default function TopBar({
             </button>
             {showPhoto && (
               <PhotoUpload
-                onSeedSelect={(s, preview) => { if (onPhotoScenario) onPhotoScenario(s, preview); }}
+                onSeedSelect={(s, preview) => {
+                  addAttachment({ type: 'photo', label: 'Photo analysis', content: s, preview });
+                  setShowPhoto(false);
+                }}
                 onClose={() => setShowPhoto(false)}
               />
             )}
@@ -545,10 +568,13 @@ export default function TopBar({
                         if (!res.ok) throw new Error('URL analysis failed');
                         const data = await res.json();
                         if (data.seeds && Array.isArray(data.seeds)) {
-                          setUrlSeeds(data.seeds);
-                          setUrlMeta(data.meta || {});
+                          // If seeds, pick best one as attachment
+                          const best = data.seeds[0];
+                          if (best) {
+                            addAttachment({ type: 'url', label: url.trim().replace(/^https?:\/\//, '').slice(0, 30), content: best.scenario });
+                          }
                         } else if (data.scenario) {
-                          if (onAudioScenario) onAudioScenario(data.scenario); else onScenarioChange(data.scenario);
+                          addAttachment({ type: 'url', label: url.trim().replace(/^https?:\/\//, '').slice(0, 30), content: data.scenario });
                         }
                       } catch (err) { console.error('URL error:', err); }
                       setAudioProcessing(false);
@@ -591,6 +617,25 @@ export default function TopBar({
 
           <div className="w-px h-7 bg-[var(--border)]" />
 
+          {/* Sacred mode toggle */}
+          {onSacredModeChange && (
+            <button
+              onClick={() => onSacredModeChange(!sacredMode)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] font-semibold transition-all"
+              style={{
+                background: sacredMode ? 'color-mix(in srgb, var(--purple) 15%, transparent)' : 'transparent',
+                color: sacredMode ? 'var(--purple)' : 'var(--muted)',
+                border: `1px solid ${sacredMode ? 'var(--purple)' : 'var(--border)'}`,
+              }}
+              title={sacredMode ? 'Switch to data mode' : 'Switch to sacred mode (Bible + Quran only)'}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              Sacred
+            </button>
+          )}
+
           {generating ? (
             <Button
               variant="primary"
@@ -605,7 +650,7 @@ export default function TopBar({
               variant="primary"
               size="md"
               onClick={onGenerate}
-              disabled={!scenario.trim()}
+              disabled={!scenario.trim() && attachments.length === 0}
               className="!px-6 !py-2.5 !text-[14px] !rounded-full"
             >
               Generate
@@ -617,6 +662,53 @@ export default function TopBar({
           <div className="fixed inset-0 z-30" onClick={() => { setShowTemplates(false); setShowPhoto(false); }} />
         )}
       </div>
+
+      {/* ─── Attachment chips ─── */}
+      {attachments.length > 0 && (
+        <div className="flex items-center gap-2 px-6 py-2 border-t border-[var(--border)]" style={{ background: 'var(--surface)' }}>
+          <span className="text-[11px] text-[var(--muted)] font-medium shrink-0">Sources:</span>
+          <div className="flex items-center gap-1.5 flex-wrap">
+            {attachments.map((att) => (
+              <div
+                key={att.id}
+                className="flex items-center gap-1.5 pl-2 pr-1 py-0.5 rounded-md text-[11px] font-medium border"
+                style={{
+                  background: 'color-mix(in srgb, var(--accent) 8%, transparent)',
+                  borderColor: 'color-mix(in srgb, var(--accent) 20%, transparent)',
+                  color: 'var(--accent)',
+                }}
+              >
+                {att.type === 'photo' && att.preview && (
+                  <img src={att.preview} alt="" className="w-4 h-4 rounded object-cover shrink-0" />
+                )}
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                  {att.type === 'audio' && <><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" /><path d="M19 10v2a7 7 0 0 1-14 0v-2" /></>}
+                  {att.type === 'photo' && <><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="M21 15l-5-5L5 21" /></>}
+                  {att.type === 'url' && <><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></>}
+                  {att.type === 'pdf' && <><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /></>}
+                  {att.type === 'video' && <><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M10 9l5 3-5 3V9z" /></>}
+                </svg>
+                <span className="max-w-[120px] truncate">{att.label}</span>
+                <button
+                  onClick={() => removeAttachment(att.id)}
+                  className="w-4 h-4 flex items-center justify-center rounded hover:bg-black/10 shrink-0"
+                  title="Remove"
+                >
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                    <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
+              </div>
+            ))}
+            <button
+              onClick={() => onAttachmentsChange?.([])}
+              className="text-[10px] text-[var(--muted)] hover:text-[var(--foreground)] px-1"
+            >
+              Clear all
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* URL Seeds popup */}
       <AnimatePresence>
@@ -860,6 +952,35 @@ export default function TopBar({
                       })(),
                       background: 'var(--surface)',
                     }}
+                  />
+                </div>
+              </button>
+              {/* Vertical layout toggle */}
+              <button
+                onClick={() => {
+                  const next = layoutDirection === 'LR' ? 'TB' : 'LR';
+                  onLayoutDirectionChange?.(next);
+                }}
+                className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-[14px] transition-colors cursor-pointer hover:bg-[var(--surface-hover)]"
+                style={{ color: 'var(--foreground)' }}
+              >
+                <div className="flex items-center gap-3">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    {layoutDirection === 'TB' ? (
+                      <><line x1="12" y1="2" x2="12" y2="22" /><polyline points="8 6 12 2 16 6" /><polyline points="8 18 12 22 16 18" /></>
+                    ) : (
+                      <><line x1="2" y1="12" x2="22" y2="12" /><polyline points="6 8 2 12 6 16" /><polyline points="18 8 22 12 18 16" /></>
+                    )}
+                  </svg>
+                  <span>{layoutDirection === 'TB' ? 'Vertical' : 'Horizontal'}</span>
+                </div>
+                <div
+                  className="relative w-[44px] h-[24px] rounded-full transition-colors"
+                  style={{ background: layoutDirection === 'TB' ? 'var(--purple)' : 'var(--border)' }}
+                >
+                  <div
+                    className="absolute top-[2px] w-[20px] h-[20px] rounded-full shadow transition-all"
+                    style={{ left: layoutDirection === 'TB' ? '22px' : '2px', background: 'var(--surface)' }}
                   />
                 </div>
               </button>
