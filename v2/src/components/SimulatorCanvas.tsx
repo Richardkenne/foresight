@@ -37,6 +37,8 @@ import { CutLineIndicator, ParticleLayer } from './SimOverlays';
 import { IdleToolbar, RunningToolbar, StatsBar, ReplayBar, StepModeBar, PathFilterBar, ResultsTab } from './SimToolbar';
 import { usePathFilter } from './usePathFilter';
 import { triggerConfetti } from './ui/Confetti';
+import { useUndoRedo } from '@/hooks/useUndoRedo';
+import { sounds } from '@/lib/sounds';
 
 const nodeTypes = { simNode: SimNodeComponent, contextNode: ContextNodeComponent };
 const edgeTypes = { animated: AnimatedEdgeComponent };
@@ -342,6 +344,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     setNodes(ln);
     setEdges(le);
     setErrorMsg('');
+    sounds.whoosh();
+    undoPushState({ nodes: ln, edges: le });
 
     // Build dataflow graph and compute initial values
     dataflowRef.current.buildFromTemplate(t.nodes, t.edges).then(async () => {
@@ -378,6 +382,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       // input is in TopBar now
       return;
     }
+    sounds.click();
     const inputLower = input.toLowerCase();
     const inputWords = inputLower.split(/\s+/).filter(w => w.length > 2);
 
@@ -470,6 +475,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       const { nodes: ln, edges: le } = templateToFlow(tNodes, tEdges, ctx);
       setNodes(ln);
       setEdges(le);
+      undoPushState({ nodes: ln, edges: le });
 
       // Save to history
       const historyEntry: Omit<HistoryEntry, 'id' | 'timestamp'> = {
@@ -1019,8 +1025,12 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       // Trigger confetti if success rate > 50%
       const _total = statsRef.current.total;
       const _success = statsRef.current.success;
-      if (_total > 0 && _success / _total > 0.5) {
+      const _rate = _total > 0 ? _success / _total : 0;
+      if (_rate > 0.5) {
         setTimeout(() => triggerConfetti(), 300);
+        setTimeout(() => sounds.success(), 200);
+      } else if (_rate < 0.2) {
+        setTimeout(() => sounds.fail(), 200);
       }
       setTimeout(() => { setShowDashboard(true); setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100); }, 500);
     }
@@ -1167,6 +1177,28 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     const handleKey = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement;
       const isInput = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA';
+
+      // Cmd+Z = undo, Cmd+Shift+Z = redo
+      if ((e.metaKey || e.ctrlKey) && e.key === 'z' && !e.shiftKey && !isInput) {
+        e.preventDefault();
+        const state = undo();
+        if (state) {
+          setNodes(state.nodes);
+          setEdges(state.edges);
+          sounds.click();
+        }
+        return;
+      }
+      if ((e.metaKey || e.ctrlKey) && e.key === 'z' && e.shiftKey && !isInput) {
+        e.preventDefault();
+        const state = redo();
+        if (state) {
+          setNodes(state.nodes);
+          setEdges(state.edges);
+          sounds.click();
+        }
+        return;
+      }
 
       // Enter in input = generate
       if (e.key === 'Enter' && !e.shiftKey && isInput && scenario.trim()) {
@@ -1333,6 +1365,9 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
   // Path filter extracted to usePathFilter hook
   const { pathFilter, setPathFilter, applyPathFilter } = usePathFilter(setNodes, setEdges, nodesRef, edgesRef);
+
+  // ─── Undo / Redo ───
+  const { undo, redo, canUndo, canRedo, pushState: undoPushState } = useUndoRedo();
 
   // Save simulation to Supabase
   const handleSave = useCallback(async () => {
@@ -1696,6 +1731,10 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       {/* ========== TOOLBARS (extracted components) ========== */}
       {hasNodes && !simRunning && (
         <IdleToolbar
+          canUndo={canUndo}
+          canRedo={canRedo}
+          onUndo={() => { const s = undo(); if (s) { setNodes(s.nodes); setEdges(s.edges); sounds.click(); } }}
+          onRedo={() => { const s = redo(); if (s) { setNodes(s.nodes); setEdges(s.edges); sounds.click(); } }}
           replayMode={replayMode}
           cutNodeId={cutNodeId}
           hasStats={statsRef.current.total > 0}

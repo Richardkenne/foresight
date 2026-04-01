@@ -18,6 +18,10 @@ interface IdleToolbarProps {
   sacredMode: boolean;
   saving: boolean;
   shareUrl: string;
+  canUndo: boolean;
+  canRedo: boolean;
+  onUndo: () => void;
+  onRedo: () => void;
   onSimulate: () => void;
   onSimulateFromCut: () => void;
   onRestart: () => void;
@@ -34,6 +38,7 @@ interface IdleToolbarProps {
 
 export function IdleToolbar({
   replayMode, cutNodeId, hasStats, sacredMode, saving, shareUrl,
+  canUndo, canRedo, onUndo, onRedo,
   onSimulate, onSimulateFromCut, onRestart, onEnterStepMode, onSimulateReverse,
   onToggleReplayMode, onToggleSacredMode, onBacktest, onSave, onShare, onExportPNG, onClear,
 }: IdleToolbarProps) {
@@ -145,6 +150,22 @@ export function IdleToolbar({
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
             <polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+        </button>
+
+        <div className="w-px h-5 bg-[var(--border)] mx-0.5" />
+
+        {/* Undo */}
+        <button onClick={onUndo} disabled={!canUndo} className="toolbar-btn" title="Undo (Cmd+Z)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M3 7v6h6" /><path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13" />
+          </svg>
+        </button>
+
+        {/* Redo */}
+        <button onClick={onRedo} disabled={!canRedo} className="toolbar-btn" title="Redo (Cmd+Shift+Z)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M21 7v6h-6" /><path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3L21 13" />
           </svg>
         </button>
 
