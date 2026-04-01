@@ -1,6 +1,7 @@
 'use client';
 
 import 'react';
+import { motion } from 'framer-motion';
 import { type Node as RFNode } from '@xyflow/react';
 
 interface SimStats {
@@ -74,7 +75,14 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
   const successRate = totalPeople > 0 ? Math.round(stats.success / totalPeople * 100) : 0;
 
   return (
-    <div className="w-full sm:w-[380px] shrink-0 h-full bg-[var(--surface)] border-l border-[var(--border)] flex flex-col overflow-hidden" style={{ maxWidth: '100vw' }}>
+    <motion.div
+      className="w-full sm:w-[380px] shrink-0 h-full bg-[var(--surface)] border-l border-[var(--border)] flex flex-col overflow-hidden"
+      style={{ maxWidth: '100vw' }}
+      initial={{ x: 380, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: 380, opacity: 0 }}
+      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+    >
       {/* Header */}
       <div className="flex justify-between items-center px-6 pt-6 pb-4">
         <div>
@@ -221,6 +229,6 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
           Unique reach, not visits
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }

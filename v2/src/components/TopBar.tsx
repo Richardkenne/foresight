@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Button from './ui/Button';
 import TemplateSelector from './TemplateSelector';
 import PhotoUpload from './PhotoUpload';
@@ -26,6 +27,9 @@ interface TopBarProps {
   photoPreview?: string | null;
   sacredMode?: boolean;
   onSacredModeChange?: (val: boolean) => void;
+  // Trigger counter props: increment to open the respective panel (used by CommandPalette)
+  openHistoryTrigger?: number;
+  openProfileTrigger?: number;
 }
 
 function Logo() {
@@ -81,7 +85,7 @@ function TagIcon({ name }: { name: string }) {
 export default function TopBar({
   scenario, onScenarioChange, generating,
   onGenerate, onStop, onLoadTemplate, onPhotoScenario, onAudioScenario, onTagsChange, onHistorySelect, onProfileChange, photoPreview,
-  sacredMode, onSacredModeChange,
+  sacredMode, onSacredModeChange, openHistoryTrigger, openProfileTrigger,
 }: TopBarProps) {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const [showTemplates, setShowTemplates] = useState(false);
@@ -93,17 +97,25 @@ export default function TopBar({
   const audioChunksRef = useRef<Blob[]>([]);
   const audioInputRef = useRef<HTMLInputElement>(null);
   const [showProfile, setShowProfile] = useState(false);
+  const [urlSeeds, setUrlSeeds] = useState<{ category: string; icon: string; scenario: string; confidence: number }[] | null>(null);
+  const [urlMeta, setUrlMeta] = useState<Record<string, string>>({});
   const [inputExpanded, setInputExpanded] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
   const [displayMode, setDisplayMode] = useState<'minimal' | 'classic'>('minimal');
+  const [darkMode, setDarkMode] = useState<boolean | null>(null); // null = follows system
 
-  // Load display mode from localStorage on mount
+  // Load display mode and theme from localStorage on mount
   useEffect(() => {
     const saved = localStorage.getItem('sim-display-mode') as 'minimal' | 'classic' | null;
     if (saved) {
       setDisplayMode(saved);
       document.documentElement.setAttribute('data-display', saved);
+    }
+    const savedTheme = localStorage.getItem('sim-theme') as 'dark' | 'light' | null;
+    if (savedTheme) {
+      setDarkMode(savedTheme === 'dark');
+      document.documentElement.setAttribute('data-theme', savedTheme);
     }
   }, []);
 
@@ -113,6 +125,31 @@ export default function TopBar({
     localStorage.setItem('sim-display-mode', next);
     document.documentElement.setAttribute('data-display', next);
   };
+
+  const toggleDarkMode = () => {
+    // If null (system), detect current effective theme and flip it
+    const currentlyDark = darkMode === null
+      ? window.matchMedia('(prefers-color-scheme: dark)').matches
+      : darkMode;
+    const next = !currentlyDark;
+    setDarkMode(next);
+    const theme = next ? 'dark' : 'light';
+    localStorage.setItem('sim-theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+  };
+
+  // Trigger-based imperative open: parent increments the counter to open a panel
+  const mountedRef = useRef(false);
+  useEffect(() => {
+    if (!mountedRef.current) { mountedRef.current = true; return; } // skip on mount
+    if (openHistoryTrigger) { setShowMenu(true); setShowHistory(true); setShowProfile(false); }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [openHistoryTrigger]);
+  useEffect(() => {
+    if (!mountedRef.current) return;
+    if (openProfileTrigger) { setShowMenu(true); setShowProfile(true); setShowHistory(false); }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [openProfileTrigger]);
 
   // Context tags state
   const [tags, setTags] = useState<ContextTags>({});
@@ -232,8 +269,8 @@ export default function TopBar({
             <div className="fixed z-[251] left-6 right-6 max-w-[600px] mx-auto" style={{ top: '64px' }}>
               <textarea
                 ref={inputRef}
-                className="w-full px-4 py-3 rounded-xl text-[14px] text-[var(--foreground)] placeholder-[var(--muted)] bg-white dark:bg-[#1a1a1a] border border-[var(--border)] outline-none resize-none shadow-lg"
-                style={{ minHeight: '80px', maxHeight: '200px' }}
+                className="w-full px-4 py-3 rounded-xl text-[14px] text-[var(--foreground)] placeholder-[var(--muted)] border border-[var(--border)] outline-none resize-none shadow-lg"
+                style={{ minHeight: '80px', maxHeight: '200px', background: 'var(--surface)' }}
                 placeholder="Describe a scenario..."
                 value={scenario}
                 onChange={(e) => onScenarioChange(e.target.value)}
@@ -316,74 +353,6 @@ export default function TopBar({
               setAudioProcessing(false); e.target.value = '';
             }}
           />
-
-          {/* Others dropdown (URL, PDF, Video) */}
-          <div className="relative">
-            <button
-              onClick={(e) => { e.stopPropagation(); setShowAudio(!showAudio); setShowTemplates(false); setShowPhoto(false); }}
-              className="h-11 px-3 text-[13px] font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-lg transition-colors cursor-pointer flex items-center gap-1.5"
-              title="More input types"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="1" /><circle cx="19" cy="12" r="1" /><circle cx="5" cy="12" r="1" />
-              </svg>
-              <span className="hidden sm:inline">Others</span>
-            </button>
-            {showAudio && (
-              <>
-                <div className="fixed inset-0 z-30" onClick={() => setShowAudio(false)} />
-                <div
-                  className="absolute top-full right-0 mt-2 z-40 rounded-xl border border-[var(--border)] shadow-lg overflow-hidden"
-                  style={{ background: 'var(--surface)', minWidth: '180px' }}
-                >
-                  <button
-                    onClick={async () => {
-                      setShowAudio(false);
-                      const url = prompt('Paste a URL (job listing, Airbnb, LinkedIn, website...)');
-                      if (!url?.trim()) return;
-                      setAudioProcessing(true);
-                      try {
-                        const res = await fetch('/api/analyze-url', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url: url.trim() }) });
-                        if (!res.ok) throw new Error('URL analysis failed');
-                        const { scenario: s } = await res.json();
-                        if (s && onAudioScenario) onAudioScenario(s); else if (s) onScenarioChange(s);
-                      } catch (err) { console.error('URL error:', err); }
-                      setAudioProcessing(false);
-                    }}
-                    className="w-full flex items-center gap-3 px-4 py-3 text-[13px] text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors cursor-pointer"
-                  >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-                      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-                    </svg>
-                    URL
-                  </button>
-                  <button
-                    onClick={() => { setShowAudio(false); (document.querySelector('input[data-pdf-input]') as HTMLInputElement)?.click(); }}
-                    className="w-full flex items-center gap-3 px-4 py-3 text-[13px] text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors cursor-pointer"
-                  >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                      <polyline points="14 2 14 8 20 8" />
-                      <line x1="16" y1="13" x2="8" y2="13" />
-                      <line x1="16" y1="17" x2="8" y2="17" />
-                    </svg>
-                    PDF
-                  </button>
-                  <button
-                    onClick={() => { setShowAudio(false); (document.querySelector('input[data-video-input]') as HTMLInputElement)?.click(); }}
-                    className="w-full flex items-center gap-3 px-4 py-3 text-[13px] text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors cursor-pointer"
-                  >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="2" y="4" width="20" height="16" rx="2" />
-                      <path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none" />
-                    </svg>
-                    Video
-                  </button>
-                </div>
-              </>
-            )}
-          </div>
 
           {/* Audio: record or upload */}
           <div className="relative">
@@ -541,6 +510,85 @@ export default function TopBar({
             )}
           </div>
 
+          {/* Others dropdown (URL, PDF, Video) */}
+          <div className="relative">
+            <button
+              onClick={(e) => { e.stopPropagation(); setShowAudio(!showAudio); setShowTemplates(false); setShowPhoto(false); }}
+              className="h-11 px-3 text-[13px] font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-lg transition-colors cursor-pointer flex items-center gap-1.5"
+              title="More input types"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="1" /><circle cx="19" cy="12" r="1" /><circle cx="5" cy="12" r="1" />
+              </svg>
+              <span className="hidden sm:inline">Others</span>
+            </button>
+            <AnimatePresence>
+            {showAudio && (
+              <>
+                <div className="fixed inset-0 z-30" onClick={() => setShowAudio(false)} />
+                <motion.div
+                  className="absolute top-full right-0 mt-2 z-40 rounded-xl border border-[var(--border)] shadow-lg overflow-hidden"
+                  style={{ background: 'var(--surface)', minWidth: '180px' }}
+                  initial={{ opacity: 0, y: -8, scale: 0.96 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -8, scale: 0.96 }}
+                  transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <button
+                    onClick={async () => {
+                      setShowAudio(false);
+                      const url = prompt('Paste a URL (job listing, Airbnb, LinkedIn, website...)');
+                      if (!url?.trim()) return;
+                      setAudioProcessing(true);
+                      try {
+                        const res = await fetch('/api/analyze-url', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url: url.trim() }) });
+                        if (!res.ok) throw new Error('URL analysis failed');
+                        const data = await res.json();
+                        if (data.seeds && Array.isArray(data.seeds)) {
+                          setUrlSeeds(data.seeds);
+                          setUrlMeta(data.meta || {});
+                        } else if (data.scenario) {
+                          if (onAudioScenario) onAudioScenario(data.scenario); else onScenarioChange(data.scenario);
+                        }
+                      } catch (err) { console.error('URL error:', err); }
+                      setAudioProcessing(false);
+                    }}
+                    className="w-full flex items-center gap-3 px-4 py-3 text-[13px] text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors cursor-pointer"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                    </svg>
+                    URL
+                  </button>
+                  <button
+                    onClick={() => { setShowAudio(false); (document.querySelector('input[data-pdf-input]') as HTMLInputElement)?.click(); }}
+                    className="w-full flex items-center gap-3 px-4 py-3 text-[13px] text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors cursor-pointer"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                      <polyline points="14 2 14 8 20 8" />
+                      <line x1="16" y1="13" x2="8" y2="13" />
+                      <line x1="16" y1="17" x2="8" y2="17" />
+                    </svg>
+                    PDF
+                  </button>
+                  <button
+                    onClick={() => { setShowAudio(false); (document.querySelector('input[data-video-input]') as HTMLInputElement)?.click(); }}
+                    className="w-full flex items-center gap-3 px-4 py-3 text-[13px] text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors cursor-pointer"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                      <path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none" />
+                    </svg>
+                    Video
+                  </button>
+                </motion.div>
+              </>
+            )}
+            </AnimatePresence>
+          </div>
+
           <div className="w-px h-7 bg-[var(--border)]" />
 
           {generating ? (
@@ -570,6 +618,63 @@ export default function TopBar({
         )}
       </div>
 
+      {/* URL Seeds popup */}
+      <AnimatePresence>
+      {urlSeeds && (
+        <>
+          <motion.div
+            className="fixed inset-0 z-[200] bg-black/30 backdrop-blur-[2px]"
+            onClick={() => setUrlSeeds(null)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          />
+          <motion.div
+            className="fixed z-[201] left-6 right-6 max-w-[600px] mx-auto rounded-2xl border border-[var(--border)] shadow-2xl overflow-hidden"
+            style={{ top: '80px', background: 'var(--surface)' }}
+            initial={{ opacity: 0, y: -10, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.97 }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="px-5 py-4 border-b border-[var(--border)]">
+              <div className="text-[14px] font-semibold text-[var(--foreground)]">{urlMeta.title || 'URL Analysis'}</div>
+              {urlMeta.description && <div className="text-[11px] text-[var(--muted)] mt-1 line-clamp-2">{urlMeta.description}</div>}
+            </div>
+            <div className="p-4 grid grid-cols-2 gap-2.5 max-h-[400px] overflow-y-auto">
+              {urlSeeds.map((seed, i) => {
+                const catColors: Record<string, string> = { intention: '#3b82f6', content: '#8b5cf6', opportunity: '#10b981', risk: '#ef4444', competitor: '#f59e0b', market: '#06b6d4' };
+                const catLabels: Record<string, string> = { intention: 'Intention', content: 'Content', opportunity: 'Opportunity', risk: 'Risk', competitor: 'Competitor', market: 'Market' };
+                const color = catColors[seed.category] || '#64748b';
+                return (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      setUrlSeeds(null);
+                      if (onAudioScenario) onAudioScenario(seed.scenario);
+                      else onScenarioChange(seed.scenario);
+                    }}
+                    className="text-left p-3 rounded-xl border border-[var(--border)] hover:border-[var(--foreground)] transition-all cursor-pointer"
+                    style={{ background: 'var(--background)' }}
+                  >
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ background: color + '15', color }}>{catLabels[seed.category] || seed.category}</span>
+                      <span className="text-[9px] text-[var(--muted)] ml-auto" style={{ fontFamily: 'var(--font-geist-mono)' }}>{Math.round(seed.confidence * 100)}%</span>
+                    </div>
+                    <div className="text-[12px] text-[var(--foreground)] leading-snug line-clamp-3">{seed.scenario}</div>
+                  </button>
+                );
+              })}
+            </div>
+            <div className="px-5 py-3 border-t border-[var(--border)] text-center">
+              <button onClick={() => setUrlSeeds(null)} className="text-[11px] text-[var(--muted)] hover:text-[var(--foreground)] cursor-pointer">Close</button>
+            </div>
+          </motion.div>
+        </>
+      )}
+      </AnimatePresence>
+
       {/* Sacred mode toggle row */}
       <div className="h-[32px] flex items-center gap-1.5 px-6 border-t border-[var(--border)]">
         <button
@@ -591,17 +696,28 @@ export default function TopBar({
       </div>
 
       {/* Sidebar menu drawer */}
+      <AnimatePresence>
       {showMenu && (
         <>
-          <div className="fixed inset-0 bg-black/20 z-[300] backdrop-blur-[2px]" onClick={() => { setShowMenu(false); setShowHistory(false); }} />
-          <div
+          <motion.div
+            className="fixed inset-0 bg-black/20 z-[300] backdrop-blur-[2px]"
+            onClick={() => { setShowMenu(false); setShowHistory(false); }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          />
+          <motion.div
             className="fixed top-0 left-0 h-full w-[260px] z-[301] flex flex-col"
             style={{
               background: 'var(--surface)',
               borderRight: '1px solid var(--border)',
               boxShadow: '4px 0 24px rgba(0,0,0,0.08)',
-              animation: 'slideInLeft 0.2s cubic-bezier(0.16,1,0.3,1)',
             }}
+            initial={{ x: -260 }}
+            animate={{ x: 0 }}
+            exit={{ x: -260 }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
           >
             {/* Menu header */}
             <div className="h-[56px] flex items-center justify-between px-5 border-b border-[var(--border)]">
@@ -687,14 +803,119 @@ export default function TopBar({
                 {/* Toggle switch */}
                 <div
                   className="relative w-[44px] h-[24px] rounded-full transition-colors"
-                  style={{ background: displayMode === 'classic' ? '#f59e0b' : '#cbd5e1' }}
+                  style={{ background: displayMode === 'classic' ? '#f59e0b' : 'var(--border)' }}
                 >
                   <div
-                    className="absolute top-[2px] w-[20px] h-[20px] rounded-full bg-white shadow transition-all"
-                    style={{ left: displayMode === 'classic' ? '22px' : '2px' }}
+                    className="absolute top-[2px] w-[20px] h-[20px] rounded-full shadow transition-all"
+                    style={{ left: displayMode === 'classic' ? '22px' : '2px', background: 'var(--surface)' }}
                   />
                 </div>
               </button>
+              {/* Dark mode toggle */}
+              <button
+                onClick={toggleDarkMode}
+                className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-[14px] transition-colors cursor-pointer hover:bg-[var(--surface-hover)]"
+                style={{ color: 'var(--foreground)' }}
+              >
+                <div className="flex items-center gap-3">
+                  {(() => {
+                    const isDark = darkMode === null
+                      ? (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+                      : darkMode;
+                    return isDark ? (
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                      </svg>
+                    ) : (
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                      </svg>
+                    );
+                  })()}
+                  <span>{(() => {
+                    const isDark = darkMode === null
+                      ? (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+                      : darkMode;
+                    return isDark ? 'Light mode' : 'Dark mode';
+                  })()}</span>
+                </div>
+                {/* Toggle switch */}
+                <div
+                  className="relative w-[44px] h-[24px] rounded-full transition-colors"
+                  style={{ background: (() => {
+                    const isDark = darkMode === null
+                      ? (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+                      : darkMode;
+                    return isDark ? 'var(--accent)' : 'var(--border)';
+                  })() }}
+                >
+                  <div
+                    className="absolute top-[2px] w-[20px] h-[20px] rounded-full shadow transition-all"
+                    style={{
+                      left: (() => {
+                        const isDark = darkMode === null
+                          ? (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+                          : darkMode;
+                        return isDark ? '22px' : '2px';
+                      })(),
+                      background: 'var(--surface)',
+                    }}
+                  />
+                </div>
+              </button>
+            </div>
+
+            {/* Shortcuts section */}
+            <div className="px-3 py-3 border-t border-[var(--border)]">
+              <div className="text-[10px] font-semibold text-[var(--muted)] uppercase tracking-wider px-4 mb-2">Shortcuts</div>
+              {[
+                { label: 'Command palette', keys: ['Cmd', 'K'] },
+                { label: 'Generate', keys: ['Enter'] },
+                { label: 'Stop / Cancel', keys: ['Esc'] },
+                { label: 'Undo', keys: ['Cmd', 'Z'], soon: true },
+              ].map((s) => (
+                <div
+                  key={s.label}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '6px 16px',
+                    borderRadius: '8px',
+                  }}
+                >
+                  <span style={{ fontSize: '12px', color: 'var(--muted-foreground)' }}>
+                    {s.label}
+                    {s.soon && (
+                      <span style={{ marginLeft: '6px', fontSize: '9px', color: 'var(--muted)', background: 'var(--border)', padding: '1px 5px', borderRadius: '4px' }}>
+                        soon
+                      </span>
+                    )}
+                  </span>
+                  <span style={{ display: 'flex', gap: '3px' }}>
+                    {s.keys.map((k, i) => (
+                      <kbd
+                        key={i}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          padding: '2px 5px',
+                          borderRadius: '4px',
+                          fontSize: '10px',
+                          fontFamily: 'var(--font-geist-mono), monospace',
+                          fontWeight: 500,
+                          color: 'var(--muted-foreground)',
+                          background: 'var(--surface-hover)',
+                          border: '1px solid var(--border)',
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        {k}
+                      </kbd>
+                    ))}
+                  </span>
+                </div>
+              ))}
             </div>
 
             {/* Menu footer */}
@@ -703,9 +924,10 @@ export default function TopBar({
                 Simulator v2
               </div>
             </div>
-          </div>
+          </motion.div>
         </>
       )}
+      </AnimatePresence>
     </div>
   );
 }

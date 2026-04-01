@@ -1,6 +1,7 @@
 'use client';
 
 import { memo } from 'react';
+import { motion } from 'framer-motion';
 import { Handle, Position, type NodeProps } from '@xyflow/react';
 
 // Minimal palette: neutral for most nodes, green for success, red for fail
@@ -188,21 +189,33 @@ function SimNodeComponent({ data }: NodeProps) {
 
   if (isStart) {
     return (
-      <div className="sim-node sim-node--start">
+      <motion.div
+        className="sim-node sim-node--start"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        whileHover={{ scale: 1.02, y: -2 }}
+        layout={false}
+      >
         <Handle type="target" position={Position.Left} className="sim-handle" />
         <div className="sim-node__start-inner">
           <span className="sim-node__start-icon">{icon}</span>
           <span className="sim-node__start-label">{isSacred ? sacredVerse.law : d.label}</span>
         </div>
         <Handle type="source" position={Position.Right} className="sim-handle" />
-      </div>
+      </motion.div>
     );
   }
 
   return (
-    <div
+    <motion.div
       className={`sim-node sim-node--card${nodeType === 'bottleneck' ? ' sim-node--bottleneck' : ''}${nodeType === 'gate' ? ' sim-node--gate' : ''}${nodeType === 'state' ? ' sim-node--state' : ''}${nodeType === 'trajectory' ? ' sim-node--trajectory' : ''}${nodeType === 'decision' ? ' sim-node--decision' : ''}${nodeType === 'outcome-bad' ? ' sim-node--fail' : nodeType === 'outcome-good' ? ' sim-node--success' : ''}${d.isCutPoint ? ' sim-node--cut' : ''}`}
       style={difficultyBorder ? { outlineColor: difficultyBorder, outlineWidth: 2, outlineStyle: 'solid', '--node-accent': difficultyBorder } as React.CSSProperties : undefined}
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{ scale: 1.02, y: -2 }}
+      layout={false}
     >
       <Handle type="target" position={Position.Left} className="sim-handle" />
 
@@ -360,7 +373,7 @@ function SimNodeComponent({ data }: NodeProps) {
       )}
 
       <Handle type="source" position={Position.Right} className="sim-handle" />
-    </div>
+    </motion.div>
   );
 }
 

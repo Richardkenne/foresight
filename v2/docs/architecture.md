@@ -25,22 +25,29 @@ The foundation of the Simulator. Every simulation outcome is rooted in a 3-layer
 ║   "Pride goes before destruction" (Proverbs 16:18)                   ║
 ║   "Do not walk upon earth with insolence" (Quran 17:37)              ║
 ║                                                                      ║
-║   10 Fundamental Laws:                                               ║
+║   36 Irreducible Sacred Roots (derived from Bible + Quran):           ║
 ║   ┌─────────────────────────┬──────────────────────────────┐         ║
-║   │ Community & Counsel     │ Seek advice, don't go alone  │         ║
-║   │ Deception & Shortcuts   │ You reap what you sow        │         ║
-║   │ Envy & Comparison       │ Envy rots, be original       │         ║
-║   │ Fear & Lack of Faith    │ Fear paralyzes, act in faith │         ║
-║   │ Forbidden Fruit         │ Focus, don't chase shiny     │         ║
-║   │ Greed & Excess          │ Moderation, not excess       │         ║
-║   │ Patience & Perseverance │ Endure, compound results     │         ║
-║   │ Pride & Hubris          │ Listen, validate, be humble  │         ║
-║   │ Sloth & Procrastination │ Act now, don't delay         │         ║
-║   │ Stewardship             │ Faithful in little = much    │         ║
+║   │ GOD (8 roots)           │ Faith, Worship, Obedience,   │         ║
+║   │                         │ Gratitude, Repentance,       │         ║
+║   │                         │ Remembrance, Hope, Fervor    │         ║
+║   │ SELF (11 roots)         │ Humility, Patience, Self-    │         ║
+║   │                         │ control, Diligence, Content- │         ║
+║   │                         │ ment, Moderation, Conscience,│         ║
+║   │                         │ Pure Intention, Wisdom,      │         ║
+║   │                         │ Transparency, Accountability │         ║
+║   │ OTHERS (11 roots)       │ Love, Justice, Mercy, Truth, │         ║
+║   │                         │ Generosity, Community,       │         ║
+║   │                         │ Loyalty, Envy, Compassion,   │         ║
+║   │                         │ Inclusion, Reverence         │         ║
+║   │ RESOURCES (3 roots)     │ Stewardship, Service, Reform │         ║
+║   │ EPISTEMIC (3 roots)     │ Middle Path, Certainty,      │         ║
+║   │                         │ Teachability                 │         ║
 ║   └─────────────────────────┴──────────────────────────────┘         ║
 ║                                                                      ║
-║   250 individual patterns (expanding to 1000+)                       ║
+║   ~15,000 individual patterns + 36 roots in Supabase RAG            ║
 ║   Each pattern: Bible verse + Quran verse + modern data confirmation ║
+║   Outcomes: 3 (excellent / good / failure) per Surah Al-Waqi'ah     ║
+║   Combinations: 2^36 - 1 = ~69 billion possible root combinations   ║
 ║                                                                      ║
 ╠══════════════════════════════════════════════════════════════════════╣
 ║                          ▼ EXPLAINS ▼                                ║
@@ -170,22 +177,26 @@ The foundation of the Simulator. Every simulation outcome is rooted in a 3-layer
     +---------v---------+ +-------v--------+ +---------v---------+
     |  SimulatorCanvas   | | TemplateSelector| |  API /generate    |
     |  + Dataflow Engine | | (template list  | |  (Claude Haiku    |
-    |  + Sacred Rules    | |  + categories)  | |   4.5 endpoint)   |
-    |  + Particle System | |                 | |  + real-probs     |
+    |  + 36 Sacred Roots | |  + categories)  | |   4.5 endpoint)   |
+    |  + Particle System | |                 | |  + sacred roots   |
+    |  + Sacred Mode     | |                 | |  + real-probs     |
     +---------+----------+ +-------+--------+ +---------+---------+
               |                    |                     |
     +---------v----------+  +-----v------+     +--------v--------+
-    | SimNode (8 types)  |  | templates.ts|     | Anthropic API   |
-    | Particle (SVG)     |  | (50+ tmpl)  |     | (Claude Haiku)  |
+    | SimNode (11 types) |  | templates.ts|     | Anthropic API   |
+    | Particle (SVG)     |  | (30+ tmpl)  |     | (Claude Haiku)  |
     | Dashboard (stats)  |  +-----+------+     +--------+--------+
-    +--------------------+        |                      |
-                           +------v---------+    +-------v--------+
-                           | 69 JSON data   |    | 7 Live APIs    |
-                           | files:         |    | (World Bank,   |
-                           | - 46K+ dp      |    |  REST Countries|
-                           | - 250+ sacred  |    |  BLS, etc.)    |
-                           |   patterns     |    +----------------+
-                           | - 106 real     |
+    | DecisionPruning    |        |                      |
+    +--------------------+        |              +-------v--------+
+              |            +------v---------+    | 7 Live APIs    |
+    +---------v----------+ | 179 JSON data  |    +----------------+
+    | 7 Input Modes:     | | files:         |
+    | Text, Audio, Photo | | - 374K+ dp     |   +----------------+
+    | Video, URL, PDF,   | | - 15K+ sacred  |   | Supabase RAG   |
+    | Templates          | |   patterns     |   | 66K+ vectors   |
+    +--------------------+ | - 36 sacred    |   | pgvector HNSW  |
+                           |   roots        |   +----------------+
+                           | - 3,260+ deep  |
                            |   probabilities|
                            +----------------+
 ```
@@ -202,8 +213,8 @@ src/lib/dataflow-engine.ts
 │                                                      │
 │  ┌───────────────────────────────────────────────┐   │
 │  │ LAYER 0: Sacred Foundation                    │   │
-│  │ 10 sections × 25 patterns = 250 rules         │   │
-│  │ (expanding to 1000+ via sacred-batch files)   │   │
+│  │ 36 irreducible roots × 15K+ patterns          │   │
+│  │ matchSacredRoots() + findSacredPatterns()     │   │
 │  │                                                │   │
 │  │ Applied to EVERY node as modifiers:            │   │
 │  │ - Negative match (sin present) → prob * 0.2   │   │
@@ -246,23 +257,30 @@ src/lib/dataflow-engine.ts
 | `src/components/Dashboard.tsx` | Pannello risultati laterale dx (400px), stats | ~226 |
 | `src/components/Particle.tsx` | Generatore SVG persone animate, status 'failing' con caduta | ~122 |
 | `src/components/TemplateSelector.tsx` | Picker template con categorie e ricerca | ~252 |
-| `src/components/TopBar.tsx` | Barra superiore minimal (56px): Logo + Input + Templates + Generate | ~581 |
+| `src/components/TopBar.tsx` | Barra superiore: Logo + Input + 7 input modes + Templates + Others + Generate/Stop + Sacred toggle | ~650 |
 | `src/components/PhotoUpload.tsx` | Photo upload: drag/drop, HEIC, EXIF, Claude Vision seeds | ~464 |
-| `src/components/ProfilePanel.tsx` | User profile panel: identity, financial, professional, network | ~240 |
+| `src/components/ProfilePanel.tsx` | User profile panel: Context + Identity + Financial + Professional + Network + Upwork | ~260 |
 | `src/components/DecisionPruning.tsx` | Modal pre-simulazione: 5-7 domande binarie YES/NO, modifier live, dynamic questions da API | ~318 |
 | `src/components/HistoryPanel.tsx` | History drawer: saved simulations, thumbnails, tags | ~172 |
 | `src/components/ui/Button.tsx` | Button component (6 varianti) | ~53 |
 | `src/components/ui/Spinner.tsx` | Animated SVG loader | ~9 |
 | `src/lib/templates.ts` | Definizioni 30 template con nodi, edge, metadata | ~762 |
-| `src/app/api/generate/route.ts` | Endpoint API: prompt + sacred data + real probs → Claude → JSON + pruning_questions | ~1303 |
+| `src/app/api/generate/route.ts` | Endpoint API: prompt + 36 sacred roots + sacred patterns + real probs + sacred mode → Claude → JSON + pruning_questions | ~1400 |
 | `src/app/api/index-data/route.ts` | Auto-indexing: delta detection + embed + upload to Supabase. Vercel Cron nightly. | ~259 |
+| `src/app/api/transcribe/route.ts` | Audio → Whisper transcription → text | ~75 |
+| `src/app/api/analyze-video/route.ts` | Video → frame extraction + Whisper + GPS metadata → Claude Vision → scenario | ~140 |
+| `src/app/api/analyze-url/route.ts` | URL → scrape page → Claude → 6 simulation seeds (intention, content, opportunity, risk, competitor, market) | ~120 |
+| `src/app/api/analyze-pdf/route.ts` | PDF → Claude native PDF reading → scenario | ~70 |
 
 ---
 
 ## Data Flow
 
 ```
-User types scenario or selects template
+User inputs scenario via 7 modes:
+  Text (typed) | Audio (mic/file → Whisper) | Photo (Claude Vision)
+  Video (frames+audio+GPS → Claude Vision+Whisper) | URL (scrape → 6 seeds)
+  PDF (Claude native) | Templates (pre-built)
   → TemplateSelector loads template data
   → Dataflow Engine builds computation graph
   → Sacred rules (Layer 0) applied to every node
@@ -288,13 +306,16 @@ AI Generation flow:
   → API embeds scenario with OpenAI text-embedding-3-small (512 dimensions)
   → Supabase pgvector finds top 30 most relevant data points (RAG)
   → API loads real-probabilities.json (106 verified stats)
-  → API loads sacred patterns context (16K patterns)
+  → API loads sacred patterns context (15K+ patterns)
+  → API matches 36 sacred roots (matchSacredRoots) — Layer 0.5
+  → If sacredMode: nodes generated with sacred verses only
   → 7 live APIs called in parallel (World Bank, BLS, etc.)
   → All data injected into Claude Haiku prompt
-  → Claude generates nodes + edges + pruning_questions (dynamic per scenario)
+  → Claude generates nodes + edges + sacredRoots[] per node + pruning_questions
   → Fallback: keyword matching if RAG unavailable
-  → Fallback: Groq Llama if Claude fails
+  → Fallback: OpenAI GPT-4o-mini → Groq Llama if Claude fails
   → Dataflow Engine applies sacred modifiers on top
+  → Stop generation: Esc key or Stop button (AbortController)
 ```
 
 ---
@@ -324,10 +345,13 @@ AI Generation flow:
 - **Manual trigger**: `curl -X POST localhost:3000/api/index-data`
 
 ### Sacred Foundation (Layer 0)
+- `data/sacred-roots.json` — **36 irreducible behavioral roots** (Bible + Quran), 5 domini (god/self/others/resources/epistemic), indexed in Supabase RAG
 - `data/sacred-texts-patterns.json` — 250 core patterns (Bible + Quran)
-- `data/sacred-batch-*.json` — 7 batch files, 16,095 total patterns
+- `data/sacred-batch-*.json` — 7 batch files, ~15,000 total patterns
 - `data/sacred-texts-expanded.json` — 210 refined patterns
 - `data/sacred-index.json` — 5,774 patterns with keyword index
+- **Sacred Mode**: toggle per generare simulazioni con solo versetti sacri (no statistical data)
+- **matchSacredRoots()**: keyword + semantic matching dello scenario contro le 36 radici → iniettate nel prompt Claude come Layer 0.5
 
 ### Probability Data (Layer 2)
 - `data/real-probabilities.json` — 106 verified stats (BLS, CDC, Census, Fed)
@@ -389,7 +413,8 @@ Format in source field:
 | `geist` | latest | Font Geist Sans + Mono (Vercel) |
 | `rete` | 2 | Dataflow engine types |
 | `rete-engine` | 2 | Dataflow computation |
+| `framer-motion` | latest | Premium animations (nodes, toolbars, modals) |
 
 ---
 
-*Ultimo aggiornamento: 2026-03-31*
+*Ultimo aggiornamento: 2026-04-01*

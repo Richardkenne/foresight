@@ -36,7 +36,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --background: #0c0f1a;
     --foreground: #e2e8f0;
     --surface: #151927;
@@ -62,14 +62,85 @@
   }
 }
 
+/* ─── Manual dark theme override ─── */
+:root[data-theme="dark"] {
+  --background: #0c0f1a;
+  --foreground: #e2e8f0;
+  --surface: #151927;
+  --surface-hover: #1e2336;
+  --border: #1e293b;
+  --border-subtle: #1e293b;
+  --muted: #475569;
+  --muted-foreground: #94a3b8;
+  --accent: #60a5fa;
+  --accent-hover: #3b82f6;
+  --accent-foreground: #ffffff;
+  --danger: #f87171;
+  --danger-hover: #ef4444;
+  --warning: #fbbf24;
+  --warning-hover: #f59e0b;
+  --success: #34d399;
+  --purple: #a78bfa;
+  --purple-hover: #8b5cf6;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.2);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.2);
+  --shadow-xl: 0 16px 40px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* ─── Manual light theme override ─── */
+:root[data-theme="light"] {
+  --background: #f8f9fb;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+  --border: #e2e8f0;
+  --border-subtle: #f1f5f9;
+  --muted: #94a3b8;
+  --muted-foreground: #64748b;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-foreground: #ffffff;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --warning: #f59e0b;
+  --warning-hover: #d97706;
+  --success: #10b981;
+  --purple: #8b5cf6;
+  --purple-hover: #7c3aed;
+  --shadow-sm: 0 1px 2px rgba(15,23,42,0.04);
+  --shadow-md: 0 4px 12px rgba(15,23,42,0.06), 0 1px 3px rgba(15,23,42,0.04);
+  --shadow-lg: 0 8px 24px rgba(15,23,42,0.08), 0 2px 6px rgba(15,23,42,0.04);
+  --shadow-xl: 0 16px 40px rgba(15,23,42,0.10), 0 4px 12px rgba(15,23,42,0.06);
+}
+
 /* ─── Base Reset ─── */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scrollbar-width: thin;
-  scrollbar-color: var(--border) transparent;
+  scrollbar-color: rgba(0,0,0,0.15) transparent;
+  /* Smooth transitions for color/bg/border — NOT transform (breaks React Flow drag) */
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 }
+
+/* ─── Custom scrollbar (webkit) ─── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); }
+}
+:root[data-theme="dark"] ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); }
 
 *:focus-visible {
   outline: 2px solid var(--accent);
@@ -1564,5 +1635,57 @@ body {
     padding: 6px 12px;
     font-size: 10px;
     gap: 8px;
+  }
+}
+
+/* ─── Skeleton shimmer ─── */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--border) 0%,
+    var(--surface-hover) 40%,
+    var(--border) 80%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+/* ─── Toast slide animations ─── */
+@keyframes toast-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes toast-slide-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+}
+
+/* ─── Command palette entrance ─── */
+@keyframes palette-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }

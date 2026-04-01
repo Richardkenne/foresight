@@ -20,7 +20,9 @@ import ContextNodeComponent from './nodes/ContextNode';
 import AnimatedEdgeComponent from './edges/AnimatedEdge';
 import TopBar from './TopBar';
 import Dashboard from './Dashboard';
-import Spinner from './ui/Spinner';
+import CommandPalette from './CommandPalette';
+import { toast, ToastContainer } from './ui/Toast';
+import { GeneratingSkeleton } from './ui/Skeleton';
 import { createPersonSVG, type ParticleData } from './Particle';
 import { TEMPLATES, TEMPLATE_KEYWORDS, type TemplateNode, type TemplateEdge } from '@/lib/templates';
 import type { ContextTags } from '@/lib/context-tags';
@@ -34,6 +36,7 @@ import { SPD_BASE, SPEED_LEVELS, SPEED_LABELS, precomputeFates } from '@/lib/sim
 import { CutLineIndicator, ParticleLayer } from './SimOverlays';
 import { IdleToolbar, RunningToolbar, StatsBar, ReplayBar, StepModeBar, PathFilterBar, ResultsTab } from './SimToolbar';
 import { usePathFilter } from './usePathFilter';
+import { triggerConfetti } from './ui/Confetti';
 
 const nodeTypes = { simNode: SimNodeComponent, contextNode: ContextNodeComponent };
 const edgeTypes = { animated: AnimatedEdgeComponent };
@@ -59,15 +62,22 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
   const [saving, setSaving] = useState(false);
   const [shareUrl, setShareUrl] = useState('');
   const [lastFlowData, setLastFlowData] = useState<Record<string, unknown> | null>(null);
+  const [showCommandPalette, setShowCommandPalette] = useState(false);
+  const [openHistoryTrigger, setOpenHistoryTrigger] = useState(0);
+  const [openProfileTrigger, setOpenProfileTrigger] = useState(0);
 
   // Abort controller for cancelling generation
   const abortRef = useRef<AbortController | null>(null);
 
-  // Esc to cancel generation
+  // Keyboard shortcuts: Esc to cancel generation, Cmd+K for command palette
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && generating && abortRef.current) {
         abortRef.current.abort();
+      }
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setShowCommandPalette((v) => !v);
       }
     };
     window.addEventListener('keydown', handler);
@@ -487,6 +497,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         loadTemplate(best, true);
       } else {
         setErrorMsg('Could not generate scenario. Check your internet connection or pick a template.');
+        toast.error('Generation failed. Check your connection or pick a template.');
       }
     } finally {
       setGenerating(false);
@@ -1005,6 +1016,12 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     finishedCountRef.current = 0;
 
     if (statsRef.current.total > 0) {
+      // Trigger confetti if success rate > 50%
+      const _total = statsRef.current.total;
+      const _success = statsRef.current.success;
+      if (_total > 0 && _success / _total > 0.5) {
+        setTimeout(() => triggerConfetti(), 300);
+      }
       setTimeout(() => { setShowDashboard(true); setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100); }, 500);
     }
   }
@@ -1336,8 +1353,11 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       if (res.ok) {
         const saved = await res.json();
         setShareUrl(`${window.location.origin}/sim/${saved.id}`);
+        toast.success('Simulation saved.');
+      } else {
+        toast.error('Save failed.');
       }
-    } catch { /* silent */ }
+    } catch { toast.error('Save failed.'); }
     setSaving(false);
   }, [lastFlowData, scenario]);
 
@@ -1479,7 +1499,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
                   setTimeout(() => simulate(), 500);
                 }, 100);
               })
-              .catch(() => setErrorMsg('Could not generate scenario from photo.'))
+              .catch(() => { setErrorMsg('Could not generate scenario from photo.'); toast.error('Could not generate scenario from photo.'); })
               .finally(() => setGenerating(false));
           }, 50);
         }}
@@ -1492,6 +1512,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         onHistorySelect={handleHistorySelect}
         sacredMode={sacredMode}
         onSacredModeChange={setSacredMode}
+        openHistoryTrigger={openHistoryTrigger}
+        openProfileTrigger={openProfileTrigger}
       />
 
       {/* ========== ERROR MESSAGE ========== */}
@@ -1503,37 +1525,93 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
       {/* ========== GENERATING OVERLAY ========== */}
       {generating && (
-        <div className="absolute inset-0 top-[80px] z-30 flex items-center justify-center bg-[var(--background)]/60 backdrop-blur-[2px]">
-          <div className="flex flex-col items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center shadow-lg text-[var(--accent)]">
-              <Spinner size={20} />
+        <div className="absolute inset-0 top-[80px] z-30 flex items-center justify-center bg-[var(--background)]/70 backdrop-blur-[3px]">
+          <div
+            style={{
+              background: 'var(--surface)',
+              border: '1px solid var(--border)',
+              borderRadius: '20px',
+              padding: '32px 36px',
+              boxShadow: 'var(--shadow-xl)',
+              maxWidth: '480px',
+              width: '90%',
+            }}
+          >
+            <div style={{ marginBottom: '20px', textAlign: 'center' }}>
+              <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--foreground)', marginBottom: '4px' }}>
+                Building your simulation...
+              </div>
+              <div style={{ fontSize: '11px', color: 'var(--muted)' }}>
+                Analyzing scenario and sourcing real-world data
+              </div>
             </div>
-            <div className="text-[12px] text-[var(--muted)] font-medium">Analyzing scenario...</div>
-            <div className="flex gap-1">
-              {[0, 1, 2].map(i => (
-                <div
-                  key={i}
-                  className="w-1.5 h-1.5 rounded-full bg-blue-500/40"
-                  style={{
-                    animation: `pulse-dot 1.2s ease-in-out ${i * 0.2}s infinite`,
-                  }}
-                />
-              ))}
-            </div>
+            <GeneratingSkeleton />
           </div>
         </div>
       )}
 
       {/* ========== EMPTY STATE ========== */}
       {!hasNodes && !generating && (
-        <div className="absolute inset-0 top-[94px] z-20 flex items-center justify-center pointer-events-none">
-          <div className="flex flex-col items-center gap-2 opacity-40">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <div className="absolute inset-0 top-[94px] z-20 flex items-center justify-center">
+          <div className="flex flex-col items-center gap-6" style={{ maxWidth: 480 }}>
+            {/* Compass icon */}
+            <svg
+              width="52" height="52" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"
+              style={{ color: 'var(--border)' }}
+            >
               <circle cx="12" cy="12" r="10" />
-              <path d="M12 8v4l2.5 1.5" />
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
             </svg>
-            <div className="text-[12px] text-[var(--muted)] text-center leading-relaxed">
-              Type a scenario above or pick a template to begin
+
+            {/* Title + subtitle */}
+            <div className="flex flex-col items-center gap-2 text-center">
+              <div style={{ fontSize: 20, fontWeight: 600, color: 'var(--foreground)', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+                What do you want to simulate?
+              </div>
+              <div style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.6 }}>
+                Type a scenario, upload a photo, or record your voice
+              </div>
+            </div>
+
+            {/* Suggestion chips */}
+            <div className="flex flex-wrap justify-center gap-2">
+              {[
+                'Open a cafe in Bali',
+                'Go freelance on Upwork',
+                'Move to Europe',
+                'Launch a SaaS',
+              ].map((suggestion) => (
+                <button
+                  key={suggestion}
+                  onClick={() => {
+                    setScenario(suggestion);
+                    setTimeout(() => generateFlow(), 50);
+                  }}
+                  style={{
+                    padding: '8px 16px',
+                    borderRadius: 999,
+                    fontSize: 13,
+                    fontWeight: 500,
+                    color: 'var(--foreground)',
+                    background: 'var(--surface)',
+                    border: '1px solid var(--border)',
+                    cursor: 'pointer',
+                    transition: 'all 0.15s ease',
+                    boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLButtonElement).style.background = 'var(--surface-hover)';
+                    (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--muted)';
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLButtonElement).style.background = 'var(--surface)';
+                    (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--border)';
+                  }}
+                >
+                  {suggestion}
+                </button>
+              ))}
             </div>
           </div>
         </div>
@@ -1695,6 +1773,25 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
           <PathFilterBar pathFilter={pathFilter} onFilterChange={applyPathFilter} />
         </>
       )}
+
+      {/* ========== COMMAND PALETTE (Cmd+K) ========== */}
+      <CommandPalette
+        open={showCommandPalette}
+        onClose={() => setShowCommandPalette(false)}
+        onLoadTemplate={(key) => loadTemplate(key)}
+        onGenerate={generateFlow}
+        onOpenHistory={() => setOpenHistoryTrigger((v) => v + 1)}
+        onOpenProfile={() => setOpenProfileTrigger((v) => v + 1)}
+        onToggleSacredMode={() => {
+          const newMode = !sacredMode;
+          setSacredMode(newMode);
+          setNodes(prev => prev.map(n => ({ ...n, data: { ...n.data, sacredMode: newMode } })));
+        }}
+        sacredMode={sacredMode}
+      />
+
+      {/* ========== TOAST NOTIFICATIONS ========== */}
+      <ToastContainer />
 
     </div>
   );

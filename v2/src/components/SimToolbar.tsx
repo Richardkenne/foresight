@@ -1,7 +1,15 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import type { Node as RFNode } from '@xyflow/react';
 import { SPEED_LEVELS, SPEED_LABELS, SPD_BASE } from '@/lib/simulation-types';
+
+const TOOLBAR_VARIANTS = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: 20 },
+};
+const TOOLBAR_TRANSITION = { duration: 0.25, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] };
 
 interface IdleToolbarProps {
   replayMode: boolean;
@@ -30,7 +38,14 @@ export function IdleToolbar({
   onToggleReplayMode, onToggleSacredMode, onBacktest, onSave, onShare, onExportPNG, onClear,
 }: IdleToolbarProps) {
   return (
-    <div className="fixed bottom-6 right-6 z-50 animate-slide-up">
+    <motion.div
+      className="fixed bottom-6 right-6 z-50"
+      variants={TOOLBAR_VARIANTS}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={TOOLBAR_TRANSITION}
+    >
       <div
         className="rounded-full px-3 py-2 flex items-center gap-2"
         style={{
@@ -142,7 +157,7 @@ export function IdleToolbar({
           </svg>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -154,7 +169,14 @@ interface RunningToolbarProps {
 
 export function RunningToolbar({ simPaused, onTogglePause, onStop }: RunningToolbarProps) {
   return (
-    <div className="fixed bottom-6 right-6 z-50 animate-slide-up">
+    <motion.div
+      className="fixed bottom-6 right-6 z-50"
+      variants={TOOLBAR_VARIANTS}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={TOOLBAR_TRANSITION}
+    >
       <div
         className="rounded-full px-3 py-2 flex items-center gap-2"
         style={{
@@ -179,7 +201,7 @@ export function RunningToolbar({ simPaused, onTogglePause, onStop }: RunningTool
           </svg>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -195,7 +217,14 @@ interface StatsBarProps {
 
 export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, successRate, simPaused, onSpeedChange }: StatsBarProps) {
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 animate-slide-up">
+    <motion.div
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50"
+      variants={TOOLBAR_VARIANTS}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={TOOLBAR_TRANSITION}
+    >
       <div
         className="rounded-2xl px-8 py-4 flex items-center gap-5"
         style={{
@@ -287,7 +316,7 @@ export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, succes
           <kbd className="text-[10px] px-2.5 py-1 rounded-md" style={{ color: 'var(--muted)', background: 'var(--surface-hover)', fontFamily: 'var(--font-geist-mono)' }}>space</kbd>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -303,7 +332,14 @@ interface ReplayBarProps {
 export function ReplayBar({ cutNodeId, cutNodeLabel, cutReachCount, simRunning, onSimulateFromCut, onExitReplayMode }: ReplayBarProps) {
   if (simRunning) return null;
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 animate-slide-up">
+    <motion.div
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50"
+      variants={TOOLBAR_VARIANTS}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={TOOLBAR_TRANSITION}
+    >
       <div
         className="rounded-full px-6 py-2.5 flex items-center gap-3"
         style={{
@@ -353,7 +389,7 @@ export function ReplayBar({ cutNodeId, cutNodeLabel, cutReachCount, simRunning, 
           </svg>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -367,7 +403,14 @@ interface StepModeBarProps {
 
 export function StepModeBar({ stepIndex, totalSteps, onStepBack, onStepForward, onExitStepMode }: StepModeBarProps) {
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 animate-slide-up">
+    <motion.div
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50"
+      variants={TOOLBAR_VARIANTS}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={TOOLBAR_TRANSITION}
+    >
       <div
         className="rounded-full px-3 py-2 flex items-center gap-3"
         style={{
@@ -399,7 +442,7 @@ export function StepModeBar({ stepIndex, totalSteps, onStepBack, onStepForward, 
           </svg>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -410,7 +453,14 @@ interface PathFilterBarProps {
 
 export function PathFilterBar({ pathFilter, onFilterChange }: PathFilterBarProps) {
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+    <motion.div
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50"
+      variants={TOOLBAR_VARIANTS}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={TOOLBAR_TRANSITION}
+    >
       <div
         className="rounded-full px-1.5 py-1.5 flex items-center gap-1"
         style={{
@@ -430,7 +480,7 @@ export function PathFilterBar({ pathFilter, onFilterChange }: PathFilterBarProps
             className="px-3 py-1.5 rounded-full text-[10px] font-semibold transition-all cursor-pointer"
             style={{
               background: pathFilter === key ? color : 'transparent',
-              color: pathFilter === key ? (key === 'all' ? 'var(--surface)' : '#fff') : 'var(--muted)',
+              color: pathFilter === key ? 'var(--accent-foreground)' : 'var(--muted)',
               fontFamily: 'var(--font-geist-mono)',
               letterSpacing: '0.04em',
             }}
@@ -439,7 +489,7 @@ export function PathFilterBar({ pathFilter, onFilterChange }: PathFilterBarProps
           </button>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -451,7 +501,10 @@ export function ResultsTab({ onShowDashboard }: ResultsTabProps) {
   return (
     <button
       onClick={onShowDashboard}
-      className="fixed right-0 top-1/2 -translate-y-1/2 z-50 bg-white dark:bg-[#1a1a1a] border border-r-0 border-gray-200 dark:border-gray-700 rounded-l-lg px-2 py-4 shadow-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all cursor-pointer group"
+      className="fixed right-0 top-1/2 -translate-y-1/2 z-50 rounded-l-lg px-2 py-4 shadow-lg transition-all cursor-pointer group"
+      style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRight: 'none' }}
+      onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--surface-hover)'; }}
+      onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--surface)'; }}
     >
       <div className="flex flex-col items-center gap-1.5">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500 group-hover:text-blue-500 transition-colors">

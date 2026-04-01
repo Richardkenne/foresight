@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Could not extract content from URL' }, { status: 400 });
     }
 
-    // Ask Claude to generate scenario from page content
+    // Ask Claude to generate multiple simulation seeds from page content
     const context = [
       meta.title ? `Title: ${meta.title}` : '',
       meta.description ? `Description: ${meta.description}` : '',
@@ -83,26 +83,35 @@ export async function POST(request: NextRequest) {
 
     const body = JSON.stringify({
       model: 'claude-haiku-4-5-20251001',
-      max_tokens: 300,
+      max_tokens: 800,
       temperature: 0,
       messages: [{
         role: 'user',
-        content: `Analyze this webpage and generate a simulation scenario. The scenario should be a specific, actionable life/business situation that someone visiting this page would be considering.
+        content: `Analyze this webpage and generate 6 different simulation scenarios. Think about WHY someone would be looking at this page, and what they might want to simulate.
 
 ${context}
 
-Examples:
-- Job listing → "A developer applies for a senior React position at $150K in San Francisco"
-- Airbnb listing → "A couple books a $80/night villa in Bali for 30 days as digital nomads"
-- LinkedIn profile → "A marketing manager with 5 years experience switches to freelancing"
-- Business website → "A competitor analysis: how this SaaS achieves $10M ARR"
-- News article → "Impact of AI on freelance developers in 2025"
+Generate exactly 6 scenarios across these categories:
+1. INTENTION — Why is the person on this page? What are they considering doing?
+2. CONTENT — A specific simulation based on data/facts found on the page
+3. OPPORTUNITY — A business opportunity revealed by the page content
+4. RISK — What could go wrong if someone acts on this page's content?
+5. COMPETITOR — How to compete with or replicate what this page/site offers
+6. MARKET — The broader market/industry this page is about
 
-Return ONLY the scenario sentence, nothing else.`
+Return ONLY valid JSON array, no other text:
+[
+  {"category":"intention","icon":"target","scenario":"One specific sentence...","confidence":0.9},
+  {"category":"content","icon":"file-text","scenario":"One specific sentence...","confidence":0.8},
+  {"category":"opportunity","icon":"trending-up","scenario":"One specific sentence...","confidence":0.7},
+  {"category":"risk","icon":"alert-triangle","scenario":"One specific sentence...","confidence":0.8},
+  {"category":"competitor","icon":"users","scenario":"One specific sentence...","confidence":0.6},
+  {"category":"market","icon":"bar-chart","scenario":"One specific sentence...","confidence":0.7}
+]`
       }]
     });
 
-    const scenario = await new Promise<string>((resolve, reject) => {
+    const seeds = await new Promise<string>((resolve, reject) => {
       const req = https.request({
         hostname: 'api.anthropic.com', path: '/v1/messages', method: 'POST',
         headers: {
@@ -116,7 +125,7 @@ Return ONLY the scenario sentence, nothing else.`
           try {
             const j = JSON.parse(d);
             if (j.error) return reject(new Error(j.error.message));
-            resolve(j.content?.[0]?.text || '');
+            resolve(j.content?.[0]?.text || '[]');
           } catch (e) { reject(e); }
         });
       });
@@ -125,7 +134,16 @@ Return ONLY the scenario sentence, nothing else.`
       req.end();
     });
 
-    return NextResponse.json({ scenario: scenario.trim(), meta, url });
+    let parsedSeeds;
+    try {
+      const cleaned = seeds.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+      parsedSeeds = JSON.parse(cleaned);
+    } catch {
+      // Fallback: single scenario
+      parsedSeeds = [{ category: 'intention', icon: 'target', scenario: seeds.trim(), confidence: 0.8 }];
+    }
+
+    return NextResponse.json({ seeds: parsedSeeds, meta, url });
   } catch (e) {
     return NextResponse.json({ error: (e as Error).message }, { status: 500 });
   }
