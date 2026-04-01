@@ -20,6 +20,8 @@ import ContextNodeComponent from './nodes/ContextNode';
 import AnimatedEdgeComponent from './edges/AnimatedEdge';
 import TopBar from './TopBar';
 import Dashboard from './Dashboard';
+import CrashTestPanel from './CrashTestPanel';
+import type { CrashTestScenario } from '@/lib/crash-test';
 import CommandPalette from './CommandPalette';
 import { toast, ToastContainer } from './ui/Toast';
 import { GeneratingSkeleton } from './ui/Skeleton';
@@ -83,6 +85,13 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
   const [showCommandPalette, setShowCommandPalette] = useState(false);
   const [openHistoryTrigger, setOpenHistoryTrigger] = useState(0);
   const [openProfileTrigger, setOpenProfileTrigger] = useState(0);
+
+  // Crash Test
+  const [showCrashTest, setShowCrashTest] = useState(false);
+
+  // Reverse engineering: click outcome → show path back to root
+  const [reversePath, setReversePath] = useState<{ id: string; label: string; type: string; prob: number; edgeLabel: string }[] | null>(null);
+  const [reverseCompoundProb, setReverseCompoundProb] = useState(0);
 
   // Abort controller for cancelling generation
   const abortRef = useRef<AbortController | null>(null);
@@ -303,7 +312,101 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
   }, [setNodes, setEdges]);
 
   // Handle node click in replay mode — cut the graph
+  // Reverse engineering: BFS backward from an outcome node to root
+  const computeReversePath = useCallback((nodeId: string) => {
+    const allEdges = edgesRef.current;
+    const allNodes = nodesRef.current;
+
+    // BFS backward
+    const path: { id: string; label: string; type: string; prob: number; edgeLabel: string }[] = [];
+    let current = nodeId;
+    const visited = new Set<string>();
+
+    while (current && !visited.has(current)) {
+      visited.add(current);
+      const nd = allNodes.find(n => n.id === current);
+      if (!nd) break;
+      const d = nd.data as Record<string, unknown>;
+      // Find the edge that leads TO this node
+      const inEdge = allEdges.find(e => e.target === current && visited.has(e.source) === false);
+      const edgeLabel = inEdge ? (inEdge.label as string || '') : '';
+      path.unshift({
+        id: current,
+        label: (d.label as string) || '',
+        type: (d.nodeType as string) || nd.type || '',
+        prob: (d.prob as number) ?? 100,
+        edgeLabel,
+      });
+      // Find parent
+      const parentEdge = allEdges.find(e => e.target === current && !visited.has(e.source));
+      if (!parentEdge) break;
+      current = parentEdge.source;
+    }
+    // Add the root node
+    if (current && !visited.has(current)) {
+      const nd = allNodes.find(n => n.id === current);
+      if (nd) {
+        const d = nd.data as Record<string, unknown>;
+        path.unshift({ id: current, label: (d.label as string) || '', type: (d.nodeType as string) || nd.type || '', prob: (d.prob as number) ?? 100, edgeLabel: '' });
+      }
+    }
+
+    // Compound probability
+    const compound = path.reduce((acc, step) => {
+      const p = step.prob < 100 ? step.prob / 100 : 1;
+      return acc * p;
+    }, 1) * 100;
+
+    setReversePath(path);
+    setReverseCompoundProb(Math.round(compound * 10) / 10);
+
+    // Highlight the path on canvas
+    const pathIds = new Set(path.map(s => s.id));
+    setNodes(prev => prev.map(n => ({
+      ...n,
+      style: {
+        ...n.style,
+        opacity: pathIds.has(n.id) ? 1 : 0.15,
+        transition: 'opacity 0.4s ease',
+      },
+    })));
+    setEdges(prev => prev.map(e => ({
+      ...e,
+      style: {
+        ...e.style,
+        opacity: pathIds.has(e.source) && pathIds.has(e.target) ? 1 : 0.1,
+      },
+    })));
+  }, [setNodes, setEdges]);
+
+  const clearReversePath = useCallback(() => {
+    setReversePath(null);
+    setNodes(prev => prev.map(n => ({
+      ...n,
+      style: { ...n.style, opacity: 1, transition: 'opacity 0.4s ease' },
+    })));
+    setEdges(prev => prev.map(e => ({
+      ...e,
+      style: { ...e.style, opacity: 1 },
+    })));
+  }, [setNodes, setEdges]);
+
   const onNodeClickReplay = useCallback((_event: React.MouseEvent, node: RFNode) => {
+    // Reverse engineering: click any outcome node (when not in replay/sim)
+    if (!replayMode && !simRunningRef.current) {
+      const d = node.data as Record<string, unknown>;
+      const nodeType = (d.nodeType as string) || '';
+      if (nodeType === 'outcome-good' || nodeType === 'outcome-bad') {
+        computeReversePath(node.id);
+        return;
+      }
+      // Click non-outcome while reverse is shown → clear
+      if (reversePath) {
+        clearReversePath();
+        return;
+      }
+    }
+
     if (!replayMode || simRunningRef.current) return;
 
     const nodeId = node.id;
@@ -1755,6 +1858,38 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
                 </button>
               ))}
             </div>
+
+            {/* Crash Test shortcut */}
+            <button
+              onClick={() => setShowCrashTest(true)}
+              style={{
+                marginTop: 8,
+                padding: '10px 20px',
+                borderRadius: 12,
+                fontSize: 13,
+                fontWeight: 600,
+                color: '#ef4444',
+                background: 'rgba(239,68,68,0.06)',
+                border: '1px solid rgba(239,68,68,0.15)',
+                cursor: 'pointer',
+                fontFamily: 'Inter, system-ui',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 8,
+                transition: 'all 0.15s ease',
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.background = 'rgba(239,68,68,0.12)';
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.background = 'rgba(239,68,68,0.06)';
+              }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              Crash Test
+            </button>
           </div>
         </div>
       )}
@@ -1830,6 +1965,125 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
             onClose={() => { setShowDashboard(false); setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100); }}
           />
         )}
+
+        {/* ========== REVERSE ENGINEERING PANEL ========== */}
+        {reversePath && reversePath.length > 0 && (
+          <div
+            className="absolute top-[52px] left-4 z-30 overflow-y-auto"
+            style={{
+              maxHeight: 'calc(100vh - 160px)',
+              width: 320,
+              background: 'var(--surface)',
+              borderRadius: 16,
+              boxShadow: '0 0 0 1px var(--border), 0 8px 32px rgba(0,0,0,0.12)',
+              scrollbarWidth: 'thin',
+            }}
+          >
+            {/* Header */}
+            <div className="sticky top-0 z-10 px-4 pt-4 pb-3" style={{ background: 'var(--surface)', borderBottom: '1px solid var(--border)' }}>
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--muted)' }}>
+                    <path d="M9 14L4 9l5-5" /><path d="M20 20v-7a4 4 0 0 0-4-4H4" />
+                  </svg>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--foreground)', letterSpacing: '-0.01em' }}>Reverse Engineer</span>
+                </div>
+                <button
+                  onClick={clearReversePath}
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 4, color: 'var(--muted)' }}
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                </button>
+              </div>
+              <div style={{ fontSize: 11, color: 'var(--muted)' }}>
+                Path to reach this outcome
+              </div>
+              <div className="mt-2 px-3 py-2" style={{
+                background: reverseCompoundProb > 10 ? 'rgba(16,185,129,0.08)' : reverseCompoundProb > 3 ? 'rgba(245,158,11,0.08)' : 'rgba(239,68,68,0.08)',
+                borderRadius: 8,
+                border: `1px solid ${reverseCompoundProb > 10 ? 'rgba(16,185,129,0.2)' : reverseCompoundProb > 3 ? 'rgba(245,158,11,0.2)' : 'rgba(239,68,68,0.2)'}`,
+              }}>
+                <span style={{
+                  fontSize: 20, fontWeight: 800, letterSpacing: '-0.02em',
+                  color: reverseCompoundProb > 10 ? '#10b981' : reverseCompoundProb > 3 ? '#f59e0b' : '#ef4444',
+                }}>{reverseCompoundProb}%</span>
+                <span style={{ fontSize: 11, color: 'var(--muted)', marginLeft: 8 }}>compound probability</span>
+              </div>
+            </div>
+
+            {/* Steps */}
+            <div className="px-4 py-3">
+              {reversePath.map((step, i) => {
+                const isLast = i === reversePath.length - 1;
+                const isOutcome = step.type.startsWith('outcome');
+                const isGate = step.type === 'bottleneck' || step.type === 'gate' || step.type === 'decision';
+                return (
+                  <div key={step.id} className="relative">
+                    {/* Connector line */}
+                    {i > 0 && (
+                      <div style={{
+                        position: 'absolute', top: -12, left: 11, width: 1, height: 12,
+                        background: 'var(--border)',
+                      }} />
+                    )}
+                    {/* Edge label between steps */}
+                    {step.edgeLabel && (
+                      <div style={{
+                        fontSize: 9, fontWeight: 600, textTransform: 'uppercase',
+                        color: step.edgeLabel.toLowerCase().startsWith('yes') || step.edgeLabel.toLowerCase().startsWith('pass') ? '#10b981' : step.edgeLabel.toLowerCase().startsWith('no') || step.edgeLabel.toLowerCase().startsWith('fail') ? '#ef4444' : '#f59e0b',
+                        marginBottom: 4, marginLeft: 28, letterSpacing: '0.05em',
+                      }}>
+                        {step.edgeLabel}
+                      </div>
+                    )}
+                    {/* Step card */}
+                    <div className="flex items-start gap-3 mb-3">
+                      {/* Step number / dot */}
+                      <div style={{
+                        width: 24, height: 24, borderRadius: '50%', flexShrink: 0,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        fontSize: 10, fontWeight: 700,
+                        background: isOutcome
+                          ? (step.type === 'outcome-good' ? 'rgba(16,185,129,0.15)' : 'rgba(239,68,68,0.15)')
+                          : isGate ? 'rgba(245,158,11,0.12)' : 'rgba(100,116,139,0.1)',
+                        color: isOutcome
+                          ? (step.type === 'outcome-good' ? '#10b981' : '#ef4444')
+                          : isGate ? '#f59e0b' : 'var(--muted)',
+                      }}>
+                        {reversePath.length - i}
+                      </div>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{ fontSize: 9, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--muted)', marginBottom: 2 }}>
+                          {step.type.replace('-', ' ')}
+                        </div>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--foreground)', lineHeight: 1.3 }}>
+                          {step.label}
+                        </div>
+                        {isGate && step.prob < 100 && (
+                          <div className="mt-1 flex items-center gap-2">
+                            <div style={{ flex: 1, height: 3, background: 'var(--border)', borderRadius: 2, overflow: 'hidden' }}>
+                              <div style={{ width: `${step.prob}%`, height: '100%', background: step.prob > 50 ? '#10b981' : step.prob > 25 ? '#f59e0b' : '#ef4444', borderRadius: 2 }} />
+                            </div>
+                            <span style={{ fontSize: 10, fontWeight: 700, color: step.prob > 50 ? '#10b981' : step.prob > 25 ? '#f59e0b' : '#ef4444' }}>
+                              {step.prob}%
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                    {/* Vertical line to next */}
+                    {!isLast && (
+                      <div style={{
+                        marginLeft: 11, width: 1, height: 8,
+                        background: 'var(--border)',
+                      }} />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* ========== DECISION PRUNING MODAL ========== */}
@@ -1838,6 +2092,31 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
           onComplete={handlePruningComplete}
           onSkip={handlePruningSkip}
           questions={apiPruningQuestions.length > 0 ? apiPruningQuestions : undefined}
+        />
+      )}
+
+      {/* ========== CRASH TEST PANEL ========== */}
+      {showCrashTest && (
+        <CrashTestPanel
+          currentScenario={scenario}
+          profile={profileRef.current}
+          sacredMode={sacredMode}
+          onLoadScenario={(s: CrashTestScenario) => {
+            if (!s.flowData) return;
+            const { nodes: ln, edges: le } = templateToFlow(s.flowData.nodes, s.flowData.edges, undefined, layoutDirection);
+            setNodes(ln);
+            setEdges(le);
+            setScenario(s.name);
+            stopSim();
+            setShowDashboard(false);
+            particlesRef.current = [];
+            setParticles([]);
+            statsRef.current = { total: 0, success: 0, blocked: 0 };
+            setSimStats({ total: 0, success: 0, blocked: 0 });
+            undoPushState({ nodes: ln, edges: le });
+            setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100);
+          }}
+          onClose={() => setShowCrashTest(false)}
         />
       )}
 
@@ -1872,6 +2151,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
               .then(d => { if (d.message) alert(d.message + ' — check progress at /api/backtest'); })
               .catch(() => alert('Backtest failed to start'));
           }}
+          onCrashTest={() => setShowCrashTest(true)}
           onSave={handleSave}
           onShare={handleShare}
           onExportPNG={handleExportPNG}

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 
 // ─── Decision Pruning System ───
 // Based on Decision Tree Pruning: control the NODES (binary decisions),
@@ -141,13 +141,17 @@ export default function DecisionPruning({
   onSkip,
   questions,
 }: DecisionPruningProps) {
-  // No generic defaults — if Claude didn't generate scenario-specific questions, skip
-  if (!questions || questions.length === 0) {
-    onSkip();
-    return null;
-  }
   const [answers, setAnswers] = useState<Record<string, boolean>>({});
+
+  // No generic defaults — if Claude didn't generate scenario-specific questions, skip
+  const shouldSkip = !questions || questions.length === 0;
+  useEffect(() => {
+    if (shouldSkip) onSkip();
+  }, [shouldSkip, onSkip]);
+
   const [currentIdx, setCurrentIdx] = useState(0);
+
+  if (shouldSkip) return null;
 
   const currentQ = questions[currentIdx];
   const totalQuestions = questions.length;

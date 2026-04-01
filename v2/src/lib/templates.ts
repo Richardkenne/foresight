@@ -707,6 +707,37 @@ export const TEMPLATES: Record<string, Template> = {
       { from: 7, to: 8, label: 'pass' }, { from: 7, to: 9, label: 'fail' },
     ]
   },
+  want_to_win: {
+    title: 'I Want to Win',
+    input: 'I want to win',
+    nodes: [
+      { id: 1, type: 'state', label: 'Current position: not winning yet', x: 0, y: 160, prob: 100, desc: 'Most people feel they are losing or stuck — 67% of workers are disengaged, 77% experience burnout', source: 'Gallup State of Global Workplace 2024 | APA Work & Wellbeing Survey 2024', sacredRoots: ['SR-007', 'SR-005'] },
+      { id: 2, type: 'desire', label: 'Want to win — but win what?', x: 260, y: 160, prob: 100, desc: '"Winning" without a clear target is the #1 trap. 92% of people never define what winning looks like for them', source: 'Harvard Business Review 2024 | Gallup 2024', sacredRoots: ['SR-009', 'SR-013'] },
+      { id: 3, type: 'decision', label: 'Win for ego or win for purpose?', x: 520, y: 160, prob: 35, desc: 'Only 35% pursue goals aligned with intrinsic values — the rest chase status, approval, or money as the end goal', source: 'Self-Determination Theory (Deci & Ryan) | Journal of Personality 2024', time: 'identity question', sacredRoots: ['SR-009', 'SR-016'] },
+      { id: 4, type: 'trajectory', label: 'Path of ego: win to prove others wrong', x: 520, y: 360, prob: 100, desc: '"Pride goes before destruction." Ego-driven winners burn relationships, health, and integrity on the way up', source: 'Proverbs 16:18 | HBR: Why Leaders Fail 2024', sacredRoots: ['SR-009', 'SR-026'] },
+      { id: 5, type: 'outcome-bad', label: 'Won the game, lost yourself', x: 780, y: 440, prob: 100, desc: '73% of high-achievers report emptiness after reaching their goal. "Is this it?"', source: 'Tal Ben-Shahar (Harvard) | APA 2024', sacredRoots: ['SR-013', 'SR-005'] },
+      { id: 6, type: 'outcome-bad', label: 'Burned everyone on the way up', x: 780, y: 300, prob: 100, desc: '61% of executives report regret over sacrificed relationships. Lonely at the top.', source: 'HBR 2024 | RHR International Leadership Survey 2023', sacredRoots: ['SR-026', 'SR-020'] },
+      { id: 7, type: 'action', label: 'Define your game + pay the price daily', x: 780, y: 160, prob: 100, desc: 'Deliberate practice: 10,000 hours myth debunked, but 3-5 years of focused daily effort is real', source: 'Ericsson (Peak) 2024 | Cal Newport (Deep Work)', sacredRoots: ['SR-012', 'SR-008'] },
+      { id: 8, type: 'bottleneck', label: 'Can you sustain discipline for years?', x: 1040, y: 160, prob: 18, desc: 'Only 8-25% maintain new habits after 1 year. Discipline, not motivation, separates winners', source: 'European Journal of Social Psychology 2024 | BJ Fogg (Stanford)', time: '1-5 years', sacredRoots: ['SR-012', 'SR-010'] },
+      { id: 9, type: 'outcome-bad', label: 'Quit when it got hard', x: 1040, y: 360, prob: 100, desc: 'The "dip" kills 82% of ambitions. Most quit right before the breakthrough', source: 'Seth Godin (The Dip) | Grit by Angela Duckworth', sacredRoots: ['SR-008', 'SR-007'] },
+      { id: 10, type: 'gate', label: 'Do you adapt or stay rigid?', x: 1300, y: 160, prob: 40, desc: 'Winners pivot strategy while keeping the vision. 60% fail because they confuse tactics with identity', source: 'Carol Dweck (Mindset) | McKinsey Resilience Report 2024', time: 'continuous', sacredRoots: ['SR-017', 'SR-035'] },
+      { id: 11, type: 'outcome-bad', label: 'Stubborn: winning yesterday\'s game', x: 1300, y: 360, prob: 100, desc: 'Kodak, Blockbuster, Nokia — refused to adapt. Rigidity kills winners faster than competition', source: 'Clayton Christensen (Innovator\'s Dilemma) | McKinsey 2024', sacredRoots: ['SR-009', 'SR-017'] },
+      { id: 12, type: 'state', label: 'Winning but not yet won', x: 1300, y: 60, prob: 100, desc: 'Partial victory — progress is real but the game never ends. Sustainable winners know this.', source: 'James Clear (Atomic Habits) | Simon Sinek (Infinite Game)', sacredRoots: ['SR-010', 'SR-031'] },
+      { id: 13, type: 'decision', label: 'Hoard the win or serve with it?', x: 1560, y: 160, prob: 55, desc: '"Whoever wants to be great among you must be your servant." Winners who serve compound; hoarders plateau', source: 'Mark 10:43-45 | Adam Grant (Give and Take) 2024', time: 'legacy question', sacredRoots: ['SR-032', 'SR-024'] },
+      { id: 14, type: 'outcome-good', label: 'Win that compounds: purpose + impact', x: 1820, y: 80, prob: 100, desc: 'Givers who set boundaries are the top performers in every field — not takers, not matchers', source: 'Adam Grant (Give and Take) | Matthew 25:21', sacredRoots: ['SR-031', 'SR-032'] },
+      { id: 15, type: 'outcome-bad', label: 'Won once, never again — hoarding kills growth', x: 1820, y: 280, prob: 100, desc: '"Whoever has will be given more; whoever does not have, even what they have will be taken." One-time winners who hoard decline', source: 'Matthew 25:29 | Nassim Taleb (Antifragile)', sacredRoots: ['SR-013', 'SR-009'] },
+    ],
+    edges: [
+      { from: 1, to: 2 }, { from: 2, to: 3 },
+      { from: 3, to: 4, label: 'no' }, { from: 3, to: 7, label: 'yes' },
+      { from: 4, to: 5 }, { from: 4, to: 6 },
+      { from: 7, to: 8 },
+      { from: 8, to: 9, label: 'fail' }, { from: 8, to: 10, label: 'pass' },
+      { from: 10, to: 11, label: 'no' }, { from: 10, to: 12, label: 'partial' }, { from: 10, to: 13, label: 'yes' },
+      { from: 12, to: 13 },
+      { from: 13, to: 14, label: 'yes' }, { from: 13, to: 15, label: 'no' },
+    ]
+  },
   richard_leverage: {
     title: 'From Manual Labor to Leverage',
     input: 'Someone escapes trading time for money and builds leverage-based income',
@@ -760,4 +791,5 @@ export const TEMPLATE_KEYWORDS: Record<string, string[]> = {
   richard_provider: ['provider', 'provide', 'family', 'mantenere', 'provvedere', 'before 30'],
   richard_polymarket: ['polymarket', 'prediction market', 'bet', 'trading prediction'],
   richard_leverage: ['leverage', 'passive income', 'reddito passivo', 'leva', 'sleep money'],
+  want_to_win: ['win', 'winner', 'vincere', 'vittoria', 'success', 'achieve', 'competitive', 'champion', 'first place', 'voglio vincere'],
 };

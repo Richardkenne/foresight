@@ -31,6 +31,7 @@ interface IdleToolbarProps {
   onToggleReplayMode: () => void;
   onToggleSacredMode: () => void;
   onBacktest: () => void;
+  onCrashTest: () => void;
   onSave: () => void;
   onShare: () => void;
   onExportPNG: () => void;
@@ -41,7 +42,7 @@ export function IdleToolbar({
   replayMode, cutNodeId, hasStats, sacredMode, saving, shareUrl,
   canUndo, canRedo, onUndo, onRedo,
   onSimulate, onSimulateFromCut, onRestart, onEnterStepMode, onSimulateReverse,
-  onToggleReplayMode, onToggleSacredMode, onBacktest, onSave, onShare, onExportPNG, onClear,
+  onToggleReplayMode, onToggleSacredMode, onBacktest, onCrashTest, onSave, onShare, onExportPNG, onClear,
   viewMode = '2d',
 }: IdleToolbarProps) {
   const is3D = viewMode === '3d';
@@ -61,23 +62,23 @@ export function IdleToolbar({
           boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
         }}
       >
-        {/* Simulate (2D only) */}
+        {/* Simulate */}
         {!is3D && replayMode && cutNodeId ? (
           <button onClick={onSimulateFromCut} className="toolbar-btn toolbar-btn--primary" title="Replay from cut">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <polygon points="5 3 19 12 5 21 5 3" />
             </svg>
           </button>
-        ) : !is3D ? (
+        ) : (
           <button onClick={onSimulate} disabled={replayMode} className="toolbar-btn toolbar-btn--primary" title="Simulate">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <polygon points="5 3 19 12 5 21 5 3" />
             </svg>
           </button>
-        ) : null}
+        )}
 
         {/* Restart */}
-        {hasStats && !is3D && (
+        {hasStats && (
           <button onClick={onRestart} className="toolbar-btn" title="Restart simulation">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" /><path d="M21 3v5h-5" />
@@ -133,6 +134,13 @@ export function IdleToolbar({
         <button onClick={onBacktest} className="toolbar-btn" title="Backtest (test accuracy)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M9 3h6v2H9z" /><path d="M10 5v4l-2 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-7l-2-2V5" /><path d="M10 15h4" />
+          </svg>
+        </button>
+
+        {/* Crash Test */}
+        <button onClick={onCrashTest} className="toolbar-btn" title="Crash Test (compare paths)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
           </svg>
         </button>
 

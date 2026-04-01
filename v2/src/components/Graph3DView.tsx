@@ -186,10 +186,14 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
     const keysPressed = new Set<string>();
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
-      // Space = pause/resume walk
-      if (e.key === ' ' && isWalking) {
-        e.preventDefault();
-        walkPaused = !walkPaused;
+      // Space = pause/resume walk (only during walk, let global handler manage sim pause)
+      if (e.key === ' ') {
+        if (isWalking) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          walkPaused = !walkPaused;
+        }
+        // Don't add space to keysPressed — let SimulatorCanvas global handler deal with it
         return;
       }
       // Arrow Up / + = speed up, Arrow Down / - = slow down
@@ -747,8 +751,8 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
       if (keysPressed.has('s')) { camera.position.addScaledVector(forward, -moveSpeed); controls.target.addScaledVector(forward, -moveSpeed); }
       if (keysPressed.has('a')) { camera.position.addScaledVector(right, -moveSpeed); controls.target.addScaledVector(right, -moveSpeed); }
       if (keysPressed.has('d')) { camera.position.addScaledVector(right, moveSpeed); controls.target.addScaledVector(right, moveSpeed); }
-      if (keysPressed.has('q') || keysPressed.has(' ')) { camera.position.y += moveSpeed; controls.target.y += moveSpeed; }
-      if (keysPressed.has('e') || keysPressed.has('shift')) { camera.position.y = Math.max(5, camera.position.y - moveSpeed); controls.target.y = Math.max(0, controls.target.y - moveSpeed); }
+      if (keysPressed.has('q')) { camera.position.y += moveSpeed; controls.target.y += moveSpeed; }
+      if (keysPressed.has('e')) { camera.position.y = Math.max(5, camera.position.y - moveSpeed); controls.target.y = Math.max(0, controls.target.y - moveSpeed); }
 
       controls.update();
       renderer.render(scene, camera);
@@ -774,6 +778,9 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
         window.removeEventListener('keyup', onKeyUp);
         cancelAnimationFrame(animIdRef.current);
         renderer.dispose();
+        if (cssRenderer.domElement.parentNode) {
+          cssRenderer.domElement.parentNode.removeChild(cssRenderer.domElement);
+        }
         scene.clear();
         delete (window as any).__sim3d_startWalk;
         delete (window as any).__sim3d_setIsometric;
