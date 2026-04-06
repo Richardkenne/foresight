@@ -25,7 +25,7 @@ import type { CrashTestScenario } from '@/lib/crash-test';
 import CommandPalette from './CommandPalette';
 import { toast, ToastContainer } from './ui/Toast';
 import { GeneratingSkeleton } from './ui/Skeleton';
-import { createPersonSVG, type ParticleData } from './Particle';
+import { createPersonSVG, createYouSVG, type ParticleData } from './Particle';
 import { TEMPLATES, TEMPLATE_KEYWORDS, type TemplateNode, type TemplateEdge } from '@/lib/templates';
 import type { ContextTags } from '@/lib/context-tags';
 import { saveToHistory, createThumbnail, type HistoryEntry } from '@/lib/history';
@@ -33,20 +33,47 @@ import { SimulatorDataflow } from '@/lib/dataflow-engine';
 import { applyRealProbabilities } from '@/lib/probability-matcher';
 import DecisionPruning, { type PruningResult } from './DecisionPruning';
 import { type UserProfile, loadProfile, getProfilePromptModifier } from '@/lib/user-profile';
+import { analyzeProfile, type ProfileWarning } from '@/lib/profile-warnings';
+import WarningBanner from './WarningBanner';
 import { templateToFlow, getLayoutedElements } from '@/lib/graph-utils';
-import { SPD_BASE, SPEED_LEVELS, SPEED_LABELS, precomputeFates } from '@/lib/simulation-types';
+import { SPD_BASE, SPEED_LEVELS, SPEED_LABELS, precomputeFates, type SimSettings, type LaunchMode } from '@/lib/simulation-types';
 import { CutLineIndicator, ParticleLayer } from './SimOverlays';
 import { IdleToolbar, RunningToolbar, StatsBar, ReplayBar, StepModeBar, PathFilterBar, ResultsTab } from './SimToolbar';
 import { usePathFilter } from './usePathFilter';
+import AvatarReport from './AvatarReport';
+import type { PrecomputedFate } from '@/lib/simulation-types';
+import { extractEdgePaths, getPointOnEdge, type EdgePathInfo } from '@/lib/path-follower';
 import { triggerConfetti } from './ui/Confetti';
 import { useUndoRedo } from '@/hooks/useUndoRedo';
 import { sounds } from '@/lib/sounds';
+import { generateAgentPopulation, runMultiAgentSim } from '@/lib/multi-agent';
+import FeedbackForm from './FeedbackForm';
+import { recordSimulationDate, shouldShowReminder } from '@/lib/feedback';
 import dynamic from 'next/dynamic';
 
 const Graph3DView = dynamic(() => import('./Graph3DView'), { ssr: false });
+const MultiAgentResults = dynamic(() => import('./MultiAgentResults'), { ssr: false });
 
 const nodeTypes = { simNode: SimNodeComponent, contextNode: ContextNodeComponent };
 const edgeTypes = { animated: AnimatedEdgeComponent };
+
+// Recursive drill-down: each level stores the graph + context needed to restore it
+interface SimLevel {
+  nodes: RFNode[];
+  edges: RFEdge[];
+  scenario: string;
+  parentNodeLabel: string;
+  depth: number;
+  flowData: Record<string, unknown> | null;
+}
+
+// Background colors per drill-down depth (subtle distinction)
+const DEPTH_BG_COLORS = [
+  'var(--background)',          // depth 0 — top level
+  'color-mix(in srgb, var(--background) 96%, #6366f1 4%)',  // depth 1 — slight indigo tint
+  'color-mix(in srgb, var(--background) 92%, #8b5cf6 8%)',  // depth 2 — slight violet tint
+  'color-mix(in srgb, var(--background) 88%, #a855f7 12%)', // depth 3 — slight purple tint
+];
 
 function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<string, unknown> | null }) {
   const [nodes, setNodes, onNodesChange] = useNodesState<RFNode>([]);
@@ -73,10 +100,30 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     return '2d';
   });
 
+  // Simulation settings (persisted in localStorage)
+  const [simSettings, setSimSettings] = useState<SimSettings>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('sim-settings');
+      if (saved) try { return JSON.parse(saved) as SimSettings; } catch { /* ignore */ }
+    }
+    return { launchMode: 'wave', speedVariation: true, pathFollowing: true };
+  });
+  const simSettingsRef = useRef(simSettings);
+  useEffect(() => {
+    simSettingsRef.current = simSettings;
+    if (typeof window !== 'undefined') localStorage.setItem('sim-settings', JSON.stringify(simSettings));
+  }, [simSettings]);
+
+  // Edge path cache for SVG path following
+  const edgePathsRef = useRef<Map<string, EdgePathInfo>>(new Map());
+  const animFrameRef = useRef<number>(0);
+
   // Simulation state
   const [simRunning, setSimRunning] = useState(false);
   const [simPaused, setSimPaused] = useState(false);
   const [simStats, setSimStats] = useState({ total: 0, success: 0, blocked: 0 });
+  const [youOutcome, setYouOutcome] = useState<{ outcome: 'success' | 'blocked'; nodeLabel: string } | null>(null);
+  const youPathRef = useRef<Set<string>>(new Set());
   const [showDashboard, setShowDashboard] = useState(false);
   const [sacredMode, setSacredMode] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -86,8 +133,29 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
   const [openHistoryTrigger, setOpenHistoryTrigger] = useState(0);
   const [openProfileTrigger, setOpenProfileTrigger] = useState(0);
 
+  // Community Feedback
+  const [showFeedbackForm, setShowFeedbackForm] = useState(false);
+  const [showFeedbackReminder, setShowFeedbackReminder] = useState(false);
+
   // Crash Test
   const [showCrashTest, setShowCrashTest] = useState(false);
+
+  // Multi-Agent Simulation
+  const [multiAgentRunning, setMultiAgentRunning] = useState(false);
+  const [multiAgentResult, setMultiAgentResult] = useState<import('@/lib/multi-agent').MultiAgentResult | null>(null);
+
+  // Personal Report
+  const [showAvatarReport, setShowAvatarReport] = useState(false);
+  const storedFatesRef = useRef<PrecomputedFate[]>([]);
+
+  // Profile warnings
+  const [profileWarnings, setProfileWarnings] = useState<ProfileWarning[]>([]);
+
+  // Recursive drill-down state
+  const [simStack, setSimStack] = useState<SimLevel[]>([]);
+  const [drillLoading, setDrillLoading] = useState<string | null>(null); // node ID loading
+  const currentDepth = simStack.length;
+  const drillBackRef = useRef<() => void>(() => {});
 
   // Reverse engineering: click outcome → show path back to root
   const [reversePath, setReversePath] = useState<{ id: string; label: string; type: string; prob: number; edgeLabel: string }[] | null>(null);
@@ -229,6 +297,15 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       },
     })));
   }, [setNodes]);
+
+  // Community feedback reminder — check on mount
+  useEffect(() => {
+    if (shouldShowReminder()) {
+      // Gentle delay before showing reminder
+      const t = setTimeout(() => setShowFeedbackReminder(true), 5000);
+      return () => clearTimeout(t);
+    }
+  }, []);
 
   // Auto-dismiss error
   useEffect(() => {
@@ -452,6 +529,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     // Reset stats before stopSim so dashboard doesn't auto-open
     statsRef.current = { total: 0, success: 0, blocked: 0 };
     setSimStats({ total: 0, success: 0, blocked: 0 });
+    setYouOutcome(null);
+    youPathRef.current = new Set();
     stopSim();
     setShowDashboard(false);
     particlesRef.current = [];
@@ -638,6 +717,10 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       setEdges(le);
       undoPushState({ nodes: ln, edges: le });
 
+      // Analyze profile for warnings
+      const warnings = analyzeProfile(profileRef.current, input, contextTagsRef.current);
+      setProfileWarnings(warnings);
+
       // Save to history
       const historyEntry: Omit<HistoryEntry, 'id' | 'timestamp'> = {
         scenario: input,
@@ -702,6 +785,200 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     setParticles([...particlesRef.current]);
   }, []);
 
+  // Animate a particle along an SVG edge path using requestAnimationFrame
+  const animateAlongEdge = useCallback((
+    particle: ParticleData,
+    sourceNodeId: string,
+    targetNodeId: string,
+    duration: number,
+    onComplete: () => void,
+  ) => {
+    const pathKey = `${sourceNodeId}->${targetNodeId}`;
+    const pathInfo = edgePathsRef.current.get(pathKey);
+
+    // Fallback positions (node centers)
+    const sourceNode = nodesRef.current.find(n => n.id === sourceNodeId);
+    const targetNode = nodesRef.current.find(n => n.id === targetNodeId);
+    const fallbackSource = {
+      x: sourceNode ? sourceNode.position.x + 85 - 12 : particle.x,
+      y: sourceNode ? sourceNode.position.y + 50 - 16 : particle.y,
+    };
+    const fallbackTarget = {
+      x: targetNode ? targetNode.position.x + 85 - 12 : particle.x,
+      y: targetNode ? targetNode.position.y + 50 - 16 : particle.y,
+    };
+
+    let startTime: number | null = null;
+    let pauseOffset = 0;
+    let pauseStart: number | null = null;
+
+    const step = (now: number) => {
+      if (!simRunningRef.current) return;
+      if (simPausedRef.current) {
+        if (!pauseStart) pauseStart = now;
+        requestAnimationFrame(step);
+        return;
+      }
+      if (pauseStart) {
+        pauseOffset += now - pauseStart;
+        pauseStart = null;
+      }
+      if (!startTime) startTime = now;
+
+      const elapsed = now - startTime - pauseOffset;
+      const progress = Math.min(1, elapsed / duration);
+
+      // Ease out cubic for natural deceleration
+      const eased = 1 - Math.pow(1 - progress, 3);
+
+      const point = getPointOnEdge(pathInfo, eased, fallbackSource, fallbackTarget);
+      particle.x = point.x;
+      particle.y = point.y;
+      updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: point.x, y: point.y } : p));
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        onComplete();
+      }
+    };
+
+    requestAnimationFrame(step);
+  }, [updateParticles]);
+
+  // Route particle from a node to the next destination (extracted routing logic)
+  // moveTo is defined below and referenced via moveToRef to avoid circular dependency
+  const moveToRef = useRef<(particle: ParticleData, nodeId: string, cb: (r: 'success' | 'blocked') => void) => void>(() => {});
+
+  const routeFromNode = useCallback((particle: ParticleData, nodeId: string, cb: (r: 'success' | 'blocked') => void) => {
+    if (!simRunningRef.current) return;
+    const node = nodesRef.current.find(n => n.id === nodeId);
+    if (!node) { cb('blocked'); return; }
+
+    const data = node.data as Record<string, unknown>;
+    const nodeType = data.nodeType as string;
+    const prob = data.prob as number;
+    const isOutcome = nodeType === 'outcome-good' || nodeType === 'outcome-bad';
+
+    // Gate node: 3-way split
+    if (nodeType === 'gate' && typeof prob === 'number') {
+      const arrivalKey = `arrivals-${nodeId}`;
+      const arrivals = ((node.data as Record<string, unknown>)[arrivalKey] as number || 0) + 1;
+      setNodes(ns => ns.map(n => n.id === nodeId ? {
+        ...n, data: { ...n.data, [arrivalKey]: arrivals }
+      } : n));
+
+      const out = edgesRef.current.filter(e => e.source === nodeId);
+      const noEdge = out.find(e => e.label === 'no' || e.label === 'fail');
+      const partialEdge = out.find(e => ((e.label || '') as string).toLowerCase().startsWith('partial'));
+      const yesEdge = out.find(e => e.label === 'yes' || e.label === 'pass');
+
+      const partialPct = (partialEdge?.data as Record<string, unknown>)?.prob as number
+        ?? Math.min(25, Math.floor((100 - prob) / 2));
+      const noPct = 100 - prob - partialPct;
+
+      const shouldNo = Math.floor(arrivals * noPct / 100);
+      const shouldPartial = Math.floor(arrivals * (noPct + partialPct) / 100);
+      const prevNo = (node.data as Record<string, unknown>)[`routed-no-${nodeId}`] as number || 0;
+      const prevPartial = (node.data as Record<string, unknown>)[`routed-partial-${nodeId}`] as number || 0;
+
+      let route: 'no' | 'partial' | 'yes';
+      if (prevNo < shouldNo) route = 'no';
+      else if (prevPartial < (shouldPartial - shouldNo)) route = 'partial';
+      else route = 'yes';
+
+      const counterKey = `routed-${route}-${nodeId}`;
+      const prevCount = (node.data as Record<string, unknown>)[counterKey] as number || 0;
+      setNodes(ns => ns.map(n => n.id === nodeId ? {
+        ...n, data: { ...n.data, [counterKey]: prevCount + 1 }
+      } : n));
+
+      if (route === 'no' && noEdge) {
+        const deathKey = `deaths-${nodeId}`;
+        const prevDeaths = (node.data as Record<string, unknown>)[deathKey] as number || 0;
+        setNodes(ns => ns.map(n => n.id === nodeId ? { ...n, data: { ...n.data, [deathKey]: prevDeaths + 1 } } : n));
+        moveToRef.current(particle, noEdge.target, cb);
+        return;
+      } else if (route === 'partial' && partialEdge) {
+        moveToRef.current(particle, partialEdge.target, cb);
+        return;
+      } else if (route === 'yes' && yesEdge) {
+        moveToRef.current(particle, yesEdge.target, cb);
+        return;
+      }
+      if (out.length > 0) { moveToRef.current(particle, out[0].target, cb); return; }
+    }
+
+    const hasProb = !isOutcome && nodeType !== 'gate' && typeof prob === 'number' && prob < 100;
+    if (hasProb) {
+      const arrivalKey = `arrivals-${nodeId}`;
+      const passedKey = `passed-${nodeId}`;
+      const arrivals = ((node.data as Record<string, unknown>)[arrivalKey] as number || 0) + 1;
+      const passed = (node.data as Record<string, unknown>)[passedKey] as number || 0;
+      const shouldHavePassed = Math.floor(arrivals * prob / 100);
+      const pass = passed < shouldHavePassed;
+      setNodes(ns => ns.map(n => n.id === nodeId ? {
+        ...n, data: { ...n.data, [arrivalKey]: arrivals, [passedKey]: pass ? passed + 1 : passed }
+      } : n));
+      if (!pass) {
+        const deathKey = `deaths-${nodeId}`;
+        const prevDeaths = (node.data as Record<string, unknown>)[deathKey] as number || 0;
+        setNodes(ns => ns.map(n => n.id === nodeId ? { ...n, data: { ...n.data, [deathKey]: prevDeaths + 1 } } : n));
+        const failEdges = edgesRef.current.filter(e => e.source === nodeId);
+        const failE = failEdges.find(e => ((e.label || '') as string).toLowerCase().startsWith('fail') || ((e.label || '') as string).toLowerCase().startsWith('no'));
+        if (failE) {
+          moveToRef.current(particle, failE.target, cb);
+          return;
+        }
+        // No fail edge — die in place (deterministic scatter based on personId)
+        const scatterSeed = particle.personId;
+        const fallX = ((scatterSeed * 7) % 80) - 40;
+        const fallY = 30 + ((scatterSeed * 13) % 25);
+        particle.status = 'failing';
+        updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: p.x + fallX, y: p.y + fallY, status: 'failing' } : p));
+        finishedCountRef.current++;
+        cb('blocked');
+        return;
+      }
+    }
+
+    // Route passed particles through "pass"/"yes" edge
+    if (hasProb && (nodeType === 'bottleneck' || nodeType === 'decision')) {
+      const out = edgesRef.current.filter(e => e.source === nodeId);
+      const passE = out.find(e => ((e.label || '') as string).toLowerCase().startsWith('pass') || ((e.label || '') as string).toLowerCase().startsWith('yes'));
+      if (passE) {
+        moveToRef.current(particle, passE.target, cb);
+        return;
+      }
+    }
+
+    // Follow edges
+    const out = edgesRef.current.filter(e => e.source === nodeId);
+    if (out.length === 0) {
+      const isSuccess = nodeType === 'outcome-good';
+      // Deterministic scatter based on personId
+      const scatterSeed = particle.personId;
+      const ox = ((scatterSeed * 7) % 60) - 30;
+      const oy = ((scatterSeed * 13) % 40) - 20;
+      if (isSuccess) {
+        particle.status = 'success';
+        updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: p.x + ox, y: p.y + oy, status: 'success' } : p));
+      } else {
+        particle.status = 'failing';
+        updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: p.x + ox, y: p.y + oy, status: 'failing' } : p));
+      }
+      finishedCountRef.current++;
+      cb(isSuccess ? 'success' : 'blocked');
+      return;
+    }
+
+    // Apply edge strength to signal delta
+    const nextE = out[0];
+    const edgeStrength = (nextE.data as Record<string, unknown>)?.strength as number ?? 1;
+    particle.signalDelta = (particle.signalDelta ?? 0.33) * edgeStrength;
+    moveToRef.current(particle, nextE.target, cb);
+  }, [simTimeout, updateParticles, setNodes]); // eslint-disable-line react-hooks/exhaustive-deps
+
   const moveTo = useCallback((particle: ParticleData, nodeId: string, cb: (r: 'success' | 'blocked') => void) => {
     if (!simRunningRef.current) return;
 
@@ -714,166 +991,61 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     // Track unique reach
     if (!nodeReachRef.current[nodeId]) nodeReachRef.current[nodeId] = new Set();
     nodeReachRef.current[nodeId].add(particle.personId);
+
+    // Determine source node for edge path following
+    const prevNodeId = particle.visitedNodes.size > 0
+      ? Array.from(particle.visitedNodes).pop()
+      : undefined;
     particle.visitedNodes.add(nodeId);
 
-    // Move particle to node position (canvas coordinates)
+    // Target position (node center)
     const tx = node.position.x + 85 - 12;
     const ty = node.position.y + 50 - 16;
+
+    // Signal propagation
+    const signalDelta = particle.signalDelta ?? 0.33;
+    propagateSignal(nodeId, signalDelta);
+
+    const usePathFollow = simSettingsRef.current.pathFollowing && prevNodeId;
+    const spd = getSPD();
+    const moveDuration = Math.round(spd.move * (particle.speedMult || 1));
+
+    if (usePathFollow && prevNodeId) {
+      // SVG path following: animate along the actual edge bezier curve
+      animateAlongEdge(particle, prevNodeId, nodeId, moveDuration, () => {
+        // Snap to exact node center at end
+        particle.x = tx;
+        particle.y = ty;
+        updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: tx, y: ty } : p));
+        // Bottleneck/gate pause: 200ms delay before routing decision
+        const nodeData = node.data as Record<string, unknown>;
+        const nType = nodeData.nodeType as string;
+        const isBnOrGate = nType === 'bottleneck' || nType === 'decision' || nType === 'gate';
+        const pauseMs = isBnOrGate ? Math.round(200 / (SPEED_LEVELS[speedRef.current] || 1)) : 0;
+        if (pauseMs > 0) {
+          simTimeout(() => routeFromNode(particle, nodeId, cb), pauseMs);
+        } else {
+          routeFromNode(particle, nodeId, cb);
+        }
+      });
+      return;
+    }
+
+    // Legacy mode: instant position set, CSS transition handles animation
     particle.x = tx;
     particle.y = ty;
     updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: tx, y: ty } : p));
 
-    // Signal propagation: particle carries a delta value that modifies the node
-    const signalDelta = particle.signalDelta ?? 0.33;
-    propagateSignal(nodeId, signalDelta);
-
-    const spd = getSPD();
+    // Route from this node after wait delay
     simTimeout(() => {
-      if (!simRunningRef.current) return;
-      const data = node.data as Record<string, unknown>;
-      const nodeType = data.nodeType as string;
-      const prob = data.prob as number;
-
-      // Deterministic proportional filter: prob 70% → exactly 70 out of 100 pass
-      // No randomness. The observed reality IS the outcome.
-      // Outcome nodes never filter — they are terminal destinations
-      const isOutcome = nodeType === 'outcome-good' || nodeType === 'outcome-bad';
-
-      // Gate node: 3-way split (NO / PARTIAL / YES) based on edge labels
-      if (nodeType === 'gate' && typeof prob === 'number') {
-        const arrivalKey = `arrivals-${nodeId}`;
-        const arrivals = ((node.data as Record<string, unknown>)[arrivalKey] as number || 0) + 1;
-        setNodes(ns => ns.map(n => n.id === nodeId ? {
-          ...n, data: { ...n.data, [arrivalKey]: arrivals }
-        } : n));
-
-        const out = edgesRef.current.filter(e => e.source === nodeId);
-        const noEdge = out.find(e => e.label === 'no' || e.label === 'fail');
-        const partialEdge = out.find(e => ((e.label || '') as string).toLowerCase().startsWith('partial'));
-        const yesEdge = out.find(e => e.label === 'yes' || e.label === 'pass');
-
-        // prob = YES%, derive PARTIAL from edge data or default split
-        // NO% = 100 - prob - partial%. Default partial = middle ground
-        const partialPct = (partialEdge?.data as Record<string, unknown>)?.prob as number
-          ?? Math.min(25, Math.floor((100 - prob) / 2));
-        const noPct = 100 - prob - partialPct;
-
-        // Deterministic: which bucket does this arrival fall into?
-        const shouldNo = Math.floor(arrivals * noPct / 100);
-        const shouldPartial = Math.floor(arrivals * (noPct + partialPct) / 100);
-        const prevNo = (node.data as Record<string, unknown>)[`routed-no-${nodeId}`] as number || 0;
-        const prevPartial = (node.data as Record<string, unknown>)[`routed-partial-${nodeId}`] as number || 0;
-
-        let route: 'no' | 'partial' | 'yes';
-        if (prevNo < shouldNo) {
-          route = 'no';
-        } else if (prevPartial < (shouldPartial - shouldNo)) {
-          route = 'partial';
-        } else {
-          route = 'yes';
-        }
-
-        // Update counters
-        const counterKey = `routed-${route}-${nodeId}`;
-        const prevCount = (node.data as Record<string, unknown>)[counterKey] as number || 0;
-        setNodes(ns => ns.map(n => n.id === nodeId ? {
-          ...n, data: { ...n.data, [counterKey]: prevCount + 1 }
-        } : n));
-
-        if (route === 'no' && noEdge) {
-          const deathKey = `deaths-${nodeId}`;
-          const prevDeaths = (node.data as Record<string, unknown>)[deathKey] as number || 0;
-          setNodes(ns => ns.map(n => n.id === nodeId ? { ...n, data: { ...n.data, [deathKey]: prevDeaths + 1 } } : n));
-          moveTo(particle, noEdge.target, cb);
-          return;
-        } else if (route === 'partial' && partialEdge) {
-          moveTo(particle, partialEdge.target, cb);
-          return;
-        } else if (route === 'yes' && yesEdge) {
-          moveTo(particle, yesEdge.target, cb);
-          return;
-        }
-        // Fallback: follow first available edge
-        if (out.length > 0) { moveTo(particle, out[0].target, cb); return; }
-      }
-
-      const hasProb = !isOutcome && nodeType !== 'gate' && typeof prob === 'number' && prob < 100;
-      if (hasProb) {
-        // Track how many have arrived and how many should pass at this node
-        const arrivalKey = `arrivals-${nodeId}`;
-        const passedKey = `passed-${nodeId}`;
-        const arrivals = ((node.data as Record<string, unknown>)[arrivalKey] as number || 0) + 1;
-        const passed = (node.data as Record<string, unknown>)[passedKey] as number || 0;
-        // Deterministic: should this person pass based on the ratio so far?
-        const shouldHavePassed = Math.floor(arrivals * prob / 100);
-        const pass = passed < shouldHavePassed;
-        // Update counters
-        setNodes(ns => ns.map(n => n.id === nodeId ? {
-          ...n, data: { ...n.data, [arrivalKey]: arrivals, [passedKey]: pass ? passed + 1 : passed }
-        } : n));
-        if (!pass) {
-          // Track deaths per node for visual counter
-          const deathKey = `deaths-${nodeId}`;
-          const prevDeaths = (node.data as Record<string, unknown>)[deathKey] as number || 0;
-          setNodes(ns => ns.map(n => n.id === nodeId ? { ...n, data: { ...n.data, [deathKey]: prevDeaths + 1 } } : n));
-          // Route failed particle to outcome-bad via fail/no edge if available
-          const failEdges = edgesRef.current.filter(e => e.source === nodeId);
-          const failE = failEdges.find(e => ((e.label || '') as string).toLowerCase().startsWith('fail') || ((e.label || '') as string).toLowerCase().startsWith('no'));
-          if (failE) {
-            // Send to outcome-bad node (particle walks there, then dies)
-            moveTo(particle, failE.target, cb);
-            return;
-          }
-          // No fail edge — die in place
-          const fallX = (Math.random() - 0.5) * 80;
-          const fallY = 30 + Math.random() * 25;
-          particle.status = 'failing';
-          updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: p.x + fallX, y: p.y + fallY, status: 'failing' } : p));
-          finishedCountRef.current++;
-          cb('blocked');
-          return;
-        }
-      }
-
-      // Route passed particles through "pass"/"yes" edge if available
-      if (hasProb && (nodeType === 'bottleneck' || nodeType === 'decision')) {
-        const out = edgesRef.current.filter(e => e.source === nodeId);
-        const passE = out.find(e => ((e.label || '') as string).toLowerCase().startsWith('pass') || ((e.label || '') as string).toLowerCase().startsWith('yes'));
-        if (passE) {
-          moveTo(particle, passE.target, cb);
-          return;
-        }
-      }
-
-      // Follow edges
-      const out = edgesRef.current.filter(e => e.source === nodeId);
-      if (out.length === 0) {
-        const isSuccess = nodeType === 'outcome-good';
-        // Scatter around terminal node
-        const ox = (Math.random() - 0.5) * 60;
-        const oy = (Math.random() - 0.5) * 40;
-        if (isSuccess) {
-          particle.status = 'success';
-          updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: p.x + ox, y: p.y + oy, status: 'success' } : p));
-        } else {
-          // Trigger falling animation — they stay on the ground
-          particle.status = 'failing';
-          updateParticles(prev => prev.map(p => p.id === particle.id ? { ...p, x: p.x + ox, y: p.y + oy, status: 'failing' } : p));
-        }
-        finishedCountRef.current++;
-        cb(isSuccess ? 'success' : 'blocked');
-        return;
-      }
-
-      // Apply edge strength to signal delta
-      const nextE = out.length > 1
-        ? out[0]
-        : out[0];
-      const edgeStrength = (nextE.data as Record<string, unknown>)?.strength as number ?? 1;
-      particle.signalDelta = (particle.signalDelta ?? 0.33) * edgeStrength;
-      moveTo(particle, nextE.target, cb);
+      routeFromNode(particle, nodeId, cb);
     }, spd.wait);
-  }, [simTimeout, updateParticles, revealNode, propagateSignal, getSPD]);
+  }, [simTimeout, updateParticles, revealNode, propagateSignal, getSPD, animateAlongEdge, routeFromNode]);
+
+  // Keep moveToRef in sync for routeFromNode's recursive calls
+  moveToRef.current = moveTo;
+
+  // (Old inline routing logic removed — now lives in routeFromNode above)
 
   const launchPerson = useCallback((startNodeId: string) => {
     const pid = ++personIdRef.current;
@@ -881,15 +1053,20 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     const startNode = nodesRef.current.find(n => n.id === startNodeId);
     if (!startNode) return;
 
+    const isYou = pid === 1; // First person launched is always YOU
     const particle: ParticleData = {
       id: pId,
       personId: pid,
       x: startNode.position.x + 85 - 12,
       y: startNode.position.y + 50 - 16,
-      svg: createPersonSVG(),
+      svg: isYou ? createYouSVG() : createPersonSVG(),
       status: 'moving',
       visitedNodes: new Set(),
-      speedMult: 0.8 + Math.random() * 0.4, // 0.8–1.2x individual speed
+      // Deterministic speed variation based on person index (no Math.random)
+      speedMult: isYou ? 1.0 : (simSettingsRef.current.speedVariation
+        ? (0.7 + ((pid - 2) / Math.max(1, (SPD_BASE.waves * SPD_BASE.perWave) - 2)) * 0.6)
+        : 1.0),
+      isYou,
     };
 
     updateParticles(prev => [...prev, particle]);
@@ -898,6 +1075,15 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       if (result === 'success') statsRef.current.success++;
       else statsRef.current.blocked++;
       setSimStats({ ...statsRef.current });
+
+      // Track YOU outcome
+      if (isYou) {
+        const lastNodeId = Array.from(particle.visitedNodes).pop();
+        const lastNode = nodesRef.current.find(n => n.id === lastNodeId);
+        const label = (lastNode?.data as Record<string, unknown>)?.label as string || 'Unknown';
+        setYouOutcome({ outcome: result, nodeLabel: label });
+        youPathRef.current = new Set(particle.visitedNodes);
+      }
     });
   }, [moveTo, updateParticles]);
 
@@ -933,6 +1119,47 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     }
 
     simTimeout(() => launchWave(waveNum + 1, startNodeIds), spd.perWave * spd.launch + spd.wavePause);
+  }, [simTimeout, launchPerson, getSPD]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Simultaneous launch: all 100 people spawn at once with small deterministic stagger
+  const launchSimultaneous = useCallback((startNodeIds: string[]) => {
+    const totalPeople = SPD_BASE.waves * SPD_BASE.perWave; // 100
+    const spd = getSPD();
+
+    // Set wave display to show "All" mode
+    setCurrentWave(1);
+
+    for (let i = 0; i < totalPeople; i++) {
+      // Deterministic stagger: spread launch over ~500ms so they don't all overlap
+      const staggerMs = Math.round((i / totalPeople) * 500 / (SPEED_LEVELS[speedRef.current] || 1));
+      simTimeout(() => {
+        if (!simRunningRef.current) return;
+        statsRef.current.total++;
+        setSimStats({ ...statsRef.current });
+        const startId = startNodeIds[0];
+        launchPerson(startId);
+      }, staggerMs);
+    }
+
+    // Schedule end of simulation
+    const maxPathLength = 50; // safety max
+    const estimatedDuration = maxPathLength * spd.move + 2000;
+    simTimeout(() => {
+      if (simRunningRef.current) {
+        // Check if all particles have finished
+        const checkEnd = () => {
+          if (!simRunningRef.current) return;
+          const total = statsRef.current.total;
+          const finished = statsRef.current.success + statsRef.current.blocked;
+          if (finished >= total && total > 0) {
+            stopSim();
+          } else {
+            simTimeout(checkEnd, 500);
+          }
+        };
+        checkEnd();
+      }
+    }, estimatedDuration);
   }, [simTimeout, launchPerson, getSPD]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Simulate from cut point (replay mode)
@@ -1017,6 +1244,13 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
   const simulate = useCallback(() => {
     if (simRunningRef.current || nodesRef.current.length === 0) return;
 
+    // Track simulation date for feedback reminder + increment counter
+    recordSimulationDate();
+    try {
+      const prev = parseInt(localStorage.getItem('sim-total-count') || '0', 10);
+      localStorage.setItem('sim-total-count', String(prev + 1));
+    } catch { /* ignore */ }
+
     simRunningRef.current = true;
     simPausedRef.current = false;
     setSimRunning(true);
@@ -1035,6 +1269,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     setShowDashboard(false);
     setErrorMsg('');
     setPathFilter('all');
+    setYouOutcome(null);
+    youPathRef.current = new Set();
 
     // Reset node signal values
     nodeValuesRef.current = {};
@@ -1072,7 +1308,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     // ─── PRE-DETERMINED FATE SYSTEM ───
     // All paths computed BEFORE animation. The simulation is a replay.
     const totalPeople = SPD_BASE.waves * SPD_BASE.perWave; // 100
-    const fates = precomputeFates(totalPeople, startNodeIds[0], nodesRef.current, edgesRef.current);
+    const fates = precomputeFates(totalPeople, startNodeIds[0], nodesRef.current, edgesRef.current, profileRef.current?.sacredProfile);
+    storedFatesRef.current = fates;
     const spd = getSPD();
 
     // DEBUG: log pre-computed fates
@@ -1090,12 +1327,56 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       }
     }
 
-    // Use the proven wave-based system with real-time routing (moveTo)
-    launchWave(0, startNodeIds);
+    // Extract SVG edge paths for path-following mode
+    // Edges need to be visible briefly for DOM query — unhide, extract, re-hide
+    if (simSettingsRef.current.pathFollowing) {
+      // Temporarily show edges so SVG paths exist in DOM
+      setEdges(prev => prev.map(e => ({ ...e, hidden: false })));
+      // Use requestAnimationFrame to ensure DOM is painted before extracting paths
+      requestAnimationFrame(() => {
+        edgePathsRef.current = extractEdgePaths(
+          edgesRef.current.map(e => ({ id: e.id, source: e.source, target: e.target }))
+        );
+        console.log('[SIM] Edge paths extracted:', edgePathsRef.current.size);
+        // Re-hide edges for sequential reveal
+        setEdges(prev => prev.map(e => ({ ...e, hidden: true })));
+
+        // Launch based on mode
+        if (simSettingsRef.current.launchMode === 'simultaneous') {
+          launchSimultaneous(startNodeIds);
+        } else {
+          launchWave(0, startNodeIds);
+        }
+      });
+    } else {
+      edgePathsRef.current = new Map();
+      if (simSettingsRef.current.launchMode === 'simultaneous') {
+        launchSimultaneous(startNodeIds);
+      } else {
+        launchWave(0, startNodeIds);
+      }
+    }
   }, [launchWave, setNodes, setEdges]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Keep simulateRef in sync
   simulateRef.current = simulate;
+
+  // Multi-agent simulation (1000 agents, client-side, deterministic)
+  const handleMultiAgent = useCallback(() => {
+    if (nodesRef.current.length === 0 || multiAgentRunning) return;
+    setMultiAgentRunning(true);
+    setMultiAgentResult(null);
+
+    // Use requestAnimationFrame to allow UI to show loading state before heavy computation
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        const agents = generateAgentPopulation(1000, 42);
+        const result = runMultiAgentSim(agents, nodesRef.current, edgesRef.current);
+        setMultiAgentResult(result);
+        setMultiAgentRunning(false);
+      }, 50); // small delay to let loading spinner render
+    });
+  }, [multiAgentRunning]);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   function stopSim() {
@@ -1105,6 +1386,11 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     setSimPaused(false);
     timeoutsRef.current.forEach(id => clearTimeout(id));
     timeoutsRef.current = [];
+
+    // Clear edge path cache and offscreen SVG
+    edgePathsRef.current = new Map();
+    const offscreenSVG = document.getElementById('__sim-offscreen-svg');
+    if (offscreenSVG) offscreenSVG.innerHTML = '';
 
     // Restore original edges FIRST if we were in reverse mode
     // This must happen before setEdges so React Flow gets the correct edges
@@ -1147,31 +1433,43 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     }
 
     const hasKillers = topKillers.length > 0;
+    const youPath = youPathRef.current;
+    const hasYouPath = youPath.size > 0;
+
     setNodes(prev => prev.map(n => {
       const isKiller = killerNodeIds.has(n.id);
+      const isOnYouPath = hasYouPath && youPath.has(n.id);
       return {
         ...n,
         data: { ...n.data, isCutPoint: false },
         style: {
           ...n.style,
-          opacity: hasKillers ? (isKiller ? 1 : 0.4) : 1,
+          opacity: hasKillers ? (isKiller || isOnYouPath ? 1 : 0.4) : 1,
           transition: 'opacity 0.8s ease',
-          filter: hasKillers && !isKiller ? 'grayscale(0.3)' : 'none',
+          filter: hasKillers && !isKiller && !isOnYouPath ? 'grayscale(0.3)' : 'none',
+          // Gold outline for YOU path nodes
+          ...(isOnYouPath ? { boxShadow: '0 0 0 2px #fbbf24, 0 0 12px rgba(251,191,36,0.3)' } : {}),
         },
       };
     }));
 
-    // Also dim non-critical edges
-    if (hasKillers) {
-      setEdges(prev => prev.map(e => ({
-        ...e,
-        hidden: false,
-        style: {
-          ...e.style,
-          opacity: (killerNodeIds.has(e.source) || killerNodeIds.has(e.target)) ? 1 : 0.25,
-          transition: 'opacity 0.8s ease',
-        },
-      })));
+    // Also dim non-critical edges, but keep YOU's path bright
+    if (hasKillers || hasYouPath) {
+      setEdges(prev => prev.map(e => {
+        const isOnYouPath = hasYouPath && youPath.has(e.source) && youPath.has(e.target);
+        const isKillerEdge = killerNodeIds.has(e.source) || killerNodeIds.has(e.target);
+        return {
+          ...e,
+          hidden: false,
+          style: {
+            ...e.style,
+            opacity: isOnYouPath ? 1 : (isKillerEdge ? 1 : 0.25),
+            transition: 'opacity 0.8s ease',
+            // Thicker gold stroke for YOU path edges
+            ...(isOnYouPath ? { stroke: '#fbbf24', strokeWidth: 3 } : {}),
+          },
+        };
+      }));
     }
 
     // Keep particles in their final positions — don't clear them
@@ -1240,6 +1538,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     setSimPaused(false);
     statsRef.current = { total: 0, success: 0, blocked: 0 };
     setSimStats({ total: 0, success: 0, blocked: 0 });
+    setYouOutcome(null);
+    youPathRef.current = new Set();
     particlesRef.current = [];
     setParticles([]);
     setShowDashboard(false);
@@ -1385,6 +1685,13 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
           setShowDashboard(false);
           return;
         }
+      }
+
+      // Backspace to go back one drill-down level
+      if (e.key === 'Backspace' && !isInput && !simRunningRef.current) {
+        e.preventDefault();
+        drillBackRef.current();
+        return;
       }
 
       // Arrow keys for step mode
@@ -1635,8 +1942,174 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     }, 100);
   }, [setNodes, setEdges, fitView]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // ─── Recursive Drill-Down ───
+
+  // Drill into a node: push current state, generate sub-simulation
+  const drillIntoNode = useCallback(async (node: RFNode) => {
+    const d = node.data as Record<string, unknown>;
+    const nodeType = (d.nodeType as string) || '';
+    const drillableTypes = ['bottleneck', 'gate', 'action', 'state', 'decision', 'trajectory'];
+    if (!drillableTypes.includes(nodeType)) return;
+    if (currentDepth >= 3) {
+      toast.error('Maximum drill-down depth (3) reached.');
+      return;
+    }
+    if (simRunningRef.current) return;
+
+    const nodeLabel = (d.label as string) || 'Unknown step';
+    const nodeDesc = (d.desc as string) || '';
+    const nodeProb = (d.prob as number) ?? 100;
+
+    // Push current state to stack
+    const currentLevel: SimLevel = {
+      nodes: [...nodesRef.current],
+      edges: [...edgesRef.current],
+      scenario,
+      parentNodeLabel: nodeLabel,
+      depth: currentDepth,
+      flowData: lastFlowData,
+    };
+
+    setDrillLoading(node.id);
+    sounds.click();
+
+    try {
+      const parentScenario = simStack.length > 0
+        ? simStack[0].scenario  // always use the root scenario
+        : scenario;
+
+      const res = await fetch('/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          scenario: `${parentScenario} — specifically: ${nodeLabel}`,
+          tags: contextTagsRef.current,
+          profile: profileRef.current,
+          sacredMode,
+          parentContext: {
+            parentScenario,
+            parentNodeLabel: nodeLabel,
+            parentNodeDescription: nodeDesc,
+            parentNodeProb: nodeProb,
+            depth: currentDepth + 1,
+          },
+        }),
+      });
+
+      if (!res.ok) throw new Error('Server error');
+      const flow = await res.json();
+      if (!flow.nodes || !flow.edges) throw new Error('Invalid flow');
+
+      // Save stack
+      setSimStack(prev => [...prev, currentLevel]);
+
+      // Clear simulation state
+      statsRef.current = { total: 0, success: 0, blocked: 0 };
+      setSimStats({ total: 0, success: 0, blocked: 0 });
+      stopSim();
+      setShowDashboard(false);
+      particlesRef.current = [];
+      setParticles([]);
+
+      // Load sub-simulation
+      setLastFlowData(flow);
+      setScenario(`${nodeLabel}`);
+      const tNodes = flow.nodes.map((n: TemplateNode) => ({ ...n, source: n.source || 'Sub-simulation' }));
+      const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges, undefined, layoutDirection);
+      setNodes(ln);
+      setEdges(le);
+      sounds.whoosh();
+
+      setTimeout(() => {
+        fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 });
+        setTimeout(() => requestSimulate(), 500);
+      }, 100);
+    } catch {
+      toast.error('Could not generate sub-simulation.');
+    } finally {
+      setDrillLoading(null);
+    }
+  }, [currentDepth, scenario, simStack, lastFlowData, sacredMode, layoutDirection, setNodes, setEdges, fitView]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Go back one level in the drill-down stack
+  const drillBack = useCallback(() => {
+    if (simStack.length === 0) return;
+
+    const prev = simStack[simStack.length - 1];
+
+    // Restore previous state
+    statsRef.current = { total: 0, success: 0, blocked: 0 };
+    setSimStats({ total: 0, success: 0, blocked: 0 });
+    stopSim();
+    setShowDashboard(false);
+    particlesRef.current = [];
+    setParticles([]);
+
+    setNodes(prev.nodes);
+    setEdges(prev.edges);
+    setScenario(prev.scenario);
+    setLastFlowData(prev.flowData);
+    setSimStack(s => s.slice(0, -1));
+    sounds.click();
+
+    setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100);
+  }, [simStack, setNodes, setEdges, fitView]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Keep drillBackRef in sync
+  drillBackRef.current = drillBack;
+
+  // Go back to a specific level
+  const drillBackToLevel = useCallback((targetIndex: number) => {
+    if (targetIndex < 0 || targetIndex >= simStack.length) {
+      // Going to level 0 (root) — restore from first stack entry
+      if (simStack.length > 0) {
+        const root = simStack[0];
+        statsRef.current = { total: 0, success: 0, blocked: 0 };
+        setSimStats({ total: 0, success: 0, blocked: 0 });
+        stopSim();
+        setShowDashboard(false);
+        particlesRef.current = [];
+        setParticles([]);
+
+        setNodes(root.nodes);
+        setEdges(root.edges);
+        setScenario(root.scenario);
+        setLastFlowData(root.flowData);
+        setSimStack([]);
+        sounds.click();
+        setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100);
+      }
+      return;
+    }
+
+    // Restore to targetIndex+1 level
+    const target = simStack[targetIndex + 1];
+    if (!target) return;
+
+    statsRef.current = { total: 0, success: 0, blocked: 0 };
+    setSimStats({ total: 0, success: 0, blocked: 0 });
+    stopSim();
+    setShowDashboard(false);
+    particlesRef.current = [];
+    setParticles([]);
+
+    setNodes(target.nodes);
+    setEdges(target.edges);
+    setScenario(target.scenario);
+    setLastFlowData(target.flowData);
+    setSimStack(s => s.slice(0, targetIndex + 1));
+    sounds.click();
+    setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100);
+  }, [simStack, setNodes, setEdges, fitView]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Double-click handler for drill-down
+  const onNodeDoubleClick = useCallback((_event: React.MouseEvent, node: RFNode) => {
+    if (simRunningRef.current || generating || drillLoading) return;
+    drillIntoNode(node);
+  }, [drillIntoNode, generating, drillLoading]);
+
   return (
-    <div className="h-screen w-screen flex flex-col bg-[var(--background)]">
+    <div className="h-screen w-screen flex flex-col" style={{ background: DEPTH_BG_COLORS[currentDepth] || DEPTH_BG_COLORS[0], transition: 'background 0.4s ease' }}>
       {/* ========== TOP BAR + SCENARIO BAR ========== */}
       <TopBar
         scenario={scenario}
@@ -1673,7 +2146,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
             fetch('/api/generate', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ scenario: input, tags: contextTagsRef.current, profile: profileRef.current, sacredMode }),
+              body: JSON.stringify({ scenario: input, tags: contextTagsRef.current, profile: profileRef.current, sacredMode, fromPhoto: true }),
             })
               .then(res => { if (!res.ok) throw new Error('Server error'); return res.json(); })
               .then(flow => {
@@ -1768,6 +2241,14 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         </div>
       )}
 
+      {/* ========== PROFILE WARNINGS ========== */}
+      {!generating && profileWarnings.length > 0 && (
+        <WarningBanner
+          warnings={profileWarnings}
+          onDismiss={(id) => setProfileWarnings(prev => prev.filter(w => w.id !== id))}
+        />
+      )}
+
       {/* ========== GENERATING OVERLAY ========== */}
       {generating && (
         <div className="absolute inset-0 top-[80px] z-30 flex items-center justify-center bg-[var(--background)]/70 backdrop-blur-[3px]">
@@ -1797,8 +2278,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
       {/* ========== EMPTY STATE ========== */}
       {!hasNodes && !generating && viewMode === '2d' && (
-        <div className="absolute inset-0 top-[94px] z-20 flex items-center justify-center">
-          <div className="flex flex-col items-center gap-6" style={{ maxWidth: 480 }}>
+        <div className="absolute inset-0 top-[94px] z-20 flex items-center justify-center px-4">
+          <div className="flex flex-col items-center gap-4 sm:gap-6 w-full" style={{ maxWidth: 480 }}>
             {/* Compass icon */}
             <svg
               width="52" height="52" viewBox="0 0 24 24" fill="none"
@@ -1894,6 +2375,143 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         </div>
       )}
 
+      {/* ========== DRILL-DOWN BREADCRUMB ========== */}
+      {simStack.length > 0 && (
+        <div
+          className="relative z-40 flex items-center gap-1 px-4 py-2 overflow-x-auto"
+          style={{
+            background: 'var(--surface)',
+            borderBottom: '1px solid var(--border)',
+            scrollbarWidth: 'thin',
+          }}
+        >
+          {/* Back button */}
+          <button
+            onClick={drillBack}
+            style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              width: 28, height: 28, borderRadius: 8, flexShrink: 0,
+              background: 'transparent', border: '1px solid var(--border)',
+              cursor: 'pointer', color: 'var(--muted)',
+              transition: 'all 0.15s ease',
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--border)'; (e.currentTarget as HTMLButtonElement).style.color = 'var(--foreground)'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = 'transparent'; (e.currentTarget as HTMLButtonElement).style.color = 'var(--muted)'; }}
+            title="Back (Backspace)"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M19 12H5" /><path d="M12 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Root level */}
+          <button
+            onClick={() => drillBackToLevel(-1)}
+            className="truncate"
+            style={{
+              fontSize: 11, fontWeight: 600, color: 'var(--muted)',
+              background: 'transparent', border: 'none', cursor: 'pointer',
+              padding: '4px 8px', borderRadius: 6, maxWidth: 180,
+              transition: 'color 0.15s ease',
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--foreground)'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--muted)'; }}
+            title={simStack[0]?.scenario || 'Root'}
+          >
+            {simStack[0]?.scenario || 'Main'}
+          </button>
+
+          {/* Intermediate levels */}
+          {simStack.slice(1).map((level, i) => (
+            <div key={i} className="flex items-center gap-1 flex-shrink-0">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.5 }}>
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+              <button
+                onClick={() => drillBackToLevel(i)}
+                className="truncate"
+                style={{
+                  fontSize: 11, fontWeight: 600, color: 'var(--muted)',
+                  background: 'transparent', border: 'none', cursor: 'pointer',
+                  padding: '4px 8px', borderRadius: 6, maxWidth: 160,
+                  transition: 'color 0.15s ease',
+                }}
+                onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--foreground)'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--muted)'; }}
+                title={level.parentNodeLabel}
+              >
+                {level.parentNodeLabel}
+              </button>
+            </div>
+          ))}
+
+          {/* Current level label */}
+          <div className="flex items-center gap-1 flex-shrink-0">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.5 }}>
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+            <span
+              className="truncate"
+              style={{
+                fontSize: 11, fontWeight: 700, color: 'var(--foreground)',
+                padding: '4px 8px', maxWidth: 200,
+              }}
+            >
+              {scenario}
+            </span>
+          </div>
+
+          {/* Depth indicator */}
+          <div
+            style={{
+              marginLeft: 'auto', flexShrink: 0,
+              fontSize: 9, fontWeight: 700, textTransform: 'uppercase',
+              letterSpacing: '0.05em', color: 'var(--muted)',
+              padding: '3px 8px', borderRadius: 4,
+              background: 'var(--border)', opacity: 0.7,
+            }}
+          >
+            Depth {currentDepth}/3
+          </div>
+        </div>
+      )}
+
+      {/* ========== DRILL-DOWN LOADING OVERLAY ========== */}
+      {drillLoading && (
+        <div
+          className="absolute inset-0 z-50 flex items-center justify-center"
+          style={{ background: 'rgba(0,0,0,0.3)', backdropFilter: 'blur(2px)' }}
+        >
+          <div
+            style={{
+              background: 'var(--surface)',
+              border: '1px solid var(--border)',
+              borderRadius: 16,
+              padding: '24px 32px',
+              boxShadow: 'var(--shadow-xl)',
+              textAlign: 'center',
+            }}
+          >
+            <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--foreground)', marginBottom: 4 }}>
+              Drilling into step...
+            </div>
+            <div style={{ fontSize: 11, color: 'var(--muted)' }}>
+              Generating sub-simulation
+            </div>
+            <div className="mt-3" style={{ width: 140, height: 2, background: 'var(--border)', borderRadius: 1, overflow: 'hidden', margin: '12px auto 0' }}>
+              <div
+                style={{
+                  width: '60%', height: '100%',
+                  background: 'var(--foreground)',
+                  borderRadius: 1,
+                  animation: 'drill-loading 1.5s ease-in-out infinite',
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* ========== MAIN LAYOUT: Canvas + Results Panel ========== */}
       <div className="flex-1 flex relative overflow-hidden">
         {/* ========== CANVAS: 2D (React Flow) or 3D (Force Graph) ========== */}
@@ -1909,6 +2527,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
               onNodesChange={onNodesChange}
               onEdgesChange={onEdgesChange}
               onNodeClick={onNodeClickReplay}
+              onNodeDoubleClick={onNodeDoubleClick}
               nodeTypes={nodeTypes}
               edgeTypes={edgeTypes}
               fitView
@@ -1951,7 +2570,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
             {replayMode && <CutLineIndicator cutNodeId={cutNodeId} nodes={nodes} />}
 
             {/* ========== PARTICLE OVERLAY (inside React Flow viewport) ========== */}
-            <ParticleLayer particles={particles} moveDuration={getSPD().move} />
+            <ParticleLayer particles={particles} moveDuration={getSPD().move} pathFollowing={simSettings.pathFollowing} />
           </div>
         )}
 
@@ -1963,7 +2582,52 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
             nodeUniqueReach={nodeReachRef.current}
             edges={edgesRef.current.map(e => ({ source: e.source, target: e.target, label: e.label as string | undefined }))}
             onClose={() => { setShowDashboard(false); setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100); }}
+            onReportOutcome={() => setShowFeedbackForm(true)}
           />
+        )}
+
+        {/* ========== FEEDBACK FORM MODAL ========== */}
+        {showFeedbackForm && (
+          <FeedbackForm
+            scenario={scenario}
+            predictedProb={statsRef.current.total > 0 ? Math.round(statsRef.current.success / statsRef.current.total * 100) : 0}
+            onClose={() => setShowFeedbackForm(false)}
+          />
+        )}
+
+        {/* ========== FEEDBACK REMINDER BANNER ========== */}
+        {showFeedbackReminder && !simRunning && !showFeedbackForm && (
+          <div
+            className="absolute bottom-24 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3 px-5 py-3 rounded-2xl"
+            style={{
+              background: 'var(--surface)',
+              boxShadow: '0 0 0 1px var(--border), 0 8px 32px rgba(0,0,0,0.12)',
+              backdropFilter: 'blur(8px)',
+              maxWidth: '440px',
+            }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            <p className="text-[12px] leading-snug" style={{ color: 'var(--foreground)' }}>
+              How did it go? Share your outcome to help calibrate predictions.
+            </p>
+            <button
+              onClick={() => { setShowFeedbackReminder(false); setShowFeedbackForm(true); }}
+              className="shrink-0 px-3 py-1.5 rounded-lg text-[11px] font-medium cursor-pointer"
+              style={{ background: 'var(--foreground)', color: 'var(--background)' }}
+            >
+              Report
+            </button>
+            <button
+              onClick={() => setShowFeedbackReminder(false)}
+              className="shrink-0 w-6 h-6 flex items-center justify-center rounded-full text-[var(--muted)] hover:text-[var(--foreground)] cursor-pointer"
+            >
+              <svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <path d="M1 1l12 12M13 1L1 13" />
+              </svg>
+            </button>
+          </div>
         )}
 
         {/* ========== REVERSE ENGINEERING PANEL ========== */}
@@ -2120,6 +2784,14 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         />
       )}
 
+      {/* Multi-Agent Results */}
+      {multiAgentResult && (
+        <MultiAgentResults
+          result={multiAgentResult}
+          onClose={() => setMultiAgentResult(null)}
+        />
+      )}
+
       {/* ========== TOOLBARS (extracted components) ========== */}
       {hasNodes && !simRunning && (
         <IdleToolbar
@@ -2152,6 +2824,10 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
               .catch(() => alert('Backtest failed to start'));
           }}
           onCrashTest={() => setShowCrashTest(true)}
+          onMultiAgent={handleMultiAgent}
+          multiAgentRunning={multiAgentRunning}
+          simSettings={simSettings}
+          onSimSettingsChange={setSimSettings}
           onSave={handleSave}
           onShare={handleShare}
           onExportPNG={handleExportPNG}
@@ -2177,6 +2853,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
           successRate={successRate}
           simPaused={simPaused}
           onSpeedChange={(v) => { setSpeedLevel(v); speedRef.current = v; }}
+          youOutcome={youOutcome}
+          launchMode={simSettings.launchMode}
         />
       )}
 
@@ -2205,7 +2883,90 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         <>
           <ResultsTab onShowDashboard={() => { setShowDashboard(true); setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100); }} />
           <PathFilterBar pathFilter={pathFilter} onFilterChange={applyPathFilter} />
+          {/* YOU outcome badge — post-simulation */}
+          {youOutcome && (
+            <div
+              className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50"
+              style={{
+                background: 'var(--surface)',
+                boxShadow: '0 0 0 1px rgba(251,191,36,0.4), 0 4px 20px rgba(251,191,36,0.15), 0 4px 12px rgba(0,0,0,0.08)',
+                borderRadius: 12,
+                padding: '10px 20px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 10,
+              }}
+            >
+              <div style={{
+                width: 8,
+                height: 8,
+                borderRadius: '50%',
+                background: '#fbbf24',
+                boxShadow: '0 0 8px rgba(251,191,36,0.6)',
+              }} />
+              <span style={{
+                fontSize: 12,
+                fontWeight: 700,
+                color: '#fbbf24',
+                fontFamily: 'var(--font-geist-mono)',
+                letterSpacing: '0.05em',
+              }}>
+                YOU
+              </span>
+              <span style={{
+                fontSize: 12,
+                fontWeight: 500,
+                color: 'var(--muted)',
+              }}>
+                reached:
+              </span>
+              <span style={{
+                fontSize: 13,
+                fontWeight: 700,
+                color: youOutcome.outcome === 'success' ? '#059669' : '#dc2626',
+                fontFamily: 'var(--font-geist-mono)',
+              }}>
+                {youOutcome.nodeLabel}
+              </span>
+              {youOutcome.outcome === 'success' && (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              )}
+              {youOutcome.outcome === 'blocked' && (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              )}
+              {profileRef.current?.sacredProfile && Object.keys(profileRef.current.sacredProfile).length > 0 && storedFatesRef.current.length > 0 && (
+                <button
+                  onClick={() => setShowAvatarReport(true)}
+                  className="ml-2 text-[11px] font-medium px-3 py-1 rounded-lg cursor-pointer transition-all"
+                  style={{
+                    background: 'rgba(99,102,241,0.1)',
+                    color: '#6366f1',
+                    border: '1px solid rgba(99,102,241,0.2)',
+                  }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'rgba(99,102,241,0.2)'; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'rgba(99,102,241,0.1)'; }}
+                >
+                  Personal Report
+                </button>
+              )}
+            </div>
+          )}
         </>
+      )}
+
+      {/* ========== PERSONAL REPORT OVERLAY ========== */}
+      {showAvatarReport && storedFatesRef.current.length > 0 && profileRef.current?.sacredProfile && (
+        <AvatarReport
+          fates={storedFatesRef.current}
+          nodes={nodesRef.current}
+          edges={edgesRef.current}
+          sacredProfile={profileRef.current.sacredProfile}
+          onClose={() => setShowAvatarReport(false)}
+        />
       )}
 
       {/* ========== COMMAND PALETTE (Cmd+K) ========== */}

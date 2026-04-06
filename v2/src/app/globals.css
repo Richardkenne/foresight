@@ -848,6 +848,62 @@ body {
   filter: drop-shadow(0 0 8px rgba(16,185,129,0.6)) drop-shadow(0 0 2px rgba(16,185,129,0.3));
 }
 
+/* ─── YOU Avatar ─── */
+.particle-you {
+  filter: drop-shadow(0 0 10px rgba(251,191,36,0.7)) drop-shadow(0 0 4px rgba(251,191,36,0.4)) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  z-index: 100 !important;
+}
+
+@keyframes youPulse {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(251,191,36,0.7)) drop-shadow(0 0 4px rgba(251,191,36,0.4)); }
+  50% { filter: drop-shadow(0 0 16px rgba(251,191,36,0.9)) drop-shadow(0 0 8px rgba(251,191,36,0.6)); }
+}
+
+.particle-you.particle-walking {
+  animation: walkBounce 0.3s ease-in-out infinite, youPulse 2s ease-in-out infinite;
+}
+
+@keyframes youFail {
+  0% {
+    transform: scale(1.5) translateY(0) rotate(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba(251,191,36,0.7));
+  }
+  20% {
+    transform: scale(1.6) translateY(-8px) rotate(0deg);
+    filter: drop-shadow(0 0 16px rgba(239,68,68,0.8));
+  }
+  50% {
+    transform: scale(1.4) translateY(4px) rotate(-15deg);
+    opacity: 0.8;
+    filter: drop-shadow(0 0 12px rgba(239,68,68,0.6));
+  }
+  100% {
+    transform: scale(1.1) translateY(14px) rotate(25deg);
+    opacity: 0.5;
+    filter: drop-shadow(0 0 6px rgba(239,68,68,0.3)) grayscale(0.5);
+  }
+}
+
+.particle-you-failing {
+  animation: youFail 1s cubic-bezier(0.45, 0, 0.95, 0.4) forwards !important;
+  transition: none !important;
+  z-index: 100 !important;
+}
+
+@keyframes youCelebrate {
+  0% { filter: drop-shadow(0 0 10px rgba(251,191,36,0.7)); }
+  25% { filter: drop-shadow(0 0 20px rgba(16,185,129,0.9)) drop-shadow(0 0 10px rgba(251,191,36,0.8)); }
+  50% { filter: drop-shadow(0 0 24px rgba(251,191,36,1)) drop-shadow(0 0 12px rgba(16,185,129,0.7)); }
+  75% { filter: drop-shadow(0 0 20px rgba(16,185,129,0.9)) drop-shadow(0 0 8px rgba(251,191,36,0.8)); }
+  100% { filter: drop-shadow(0 0 14px rgba(16,185,129,0.7)) drop-shadow(0 0 6px rgba(251,191,36,0.5)); }
+}
+
+.particle-you-success {
+  animation: youCelebrate 1.5s ease-in-out forwards;
+  z-index: 100 !important;
+}
+
 /* ─── Stats Bar ─── */
 .stats-bar {
   position: fixed;
@@ -1944,6 +2000,12 @@ body:has(.landing-page) {
   to { opacity: 1; transform: scale(1); }
 }
 
+@keyframes drill-loading {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
 /* ─── Numbers bar ─── */
 .numbers-bar {
   display: flex;
@@ -2321,4 +2383,232 @@ body:has(.landing-page) {
   .data-grid { grid-template-columns: 1fr 1fr; }
   .vs-table-wrap { margin: 0 -24px; border-radius: 0; border-left: none; border-right: none; }
   .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
+}
+
+/* ─── 320px ultra-narrow (phones SE, Galaxy Fold, etc.) ─── */
+@media (max-width: 360px) {
+  /* SimNode cards */
+  .sim-node--card {
+    width: 140px;
+  }
+  .sim-node--bottleneck {
+    width: 120px;
+  }
+  .sim-node--gate,
+  .sim-node--state,
+  .sim-node--trajectory,
+  .sim-node--decision {
+    width: 140px;
+  }
+  .sim-node__body {
+    padding: 10px;
+    gap: 4px;
+  }
+  .sim-node__label {
+    font-size: 9px;
+  }
+  .sim-node__desc {
+    font-size: 8px;
+    padding-left: 0;
+    -webkit-line-clamp: 2;
+  }
+  .sim-node__prob {
+    font-size: 8px;
+    padding: 1px 4px;
+  }
+  .sim-node__footer {
+    gap: 4px;
+    padding-top: 4px;
+  }
+  .sim-node__source {
+    font-size: 7px;
+    max-width: 80px;
+  }
+  .sim-node__time {
+    font-size: 7px;
+  }
+  .sim-node__type-label {
+    font-size: 7px;
+    top: -14px;
+    left: 8px;
+  }
+  .sim-node--bottleneck .sim-node__body {
+    padding: 14px 28px;
+  }
+  .sim-node--decision .sim-node__body {
+    padding: 28px 20px;
+  }
+  .sim-node--state .sim-node__body {
+    padding: 10px 16px;
+  }
+  .sim-node__icon svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    padding: 4px 8px;
+    font-size: 9px;
+    gap: 4px;
+  }
+
+  /* Classic display mode override */
+  [data-display="classic"] .sim-node--card {
+    width: 160px;
+  }
+
+  /* Landing page — hero */
+  .hero {
+    padding: 100px 12px 40px;
+  }
+  .hero-sub {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .hero-input {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  .hero-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  .hero-meta {
+    font-size: 10px;
+    gap: 6px;
+    margin-bottom: 32px;
+  }
+  .hero-badge {
+    font-size: 10px;
+    padding: 3px 10px;
+  }
+
+  /* Landing — nav */
+  .nav-inner {
+    padding: 0 12px;
+    height: 48px;
+  }
+  .nav-brand {
+    font-size: 13px;
+    gap: 6px;
+  }
+  .nav-cta {
+    padding: 5px 12px !important;
+    font-size: 12px !important;
+  }
+
+  /* Landing — numbers */
+  .numbers-bar {
+    gap: 12px;
+    padding: 20px 12px;
+  }
+  .number-item {
+    min-width: 60px;
+  }
+  .number-value {
+    font-size: 22px;
+  }
+  .number-label {
+    font-size: 10px;
+  }
+
+  /* Landing — sections */
+  .section-problem,
+  .section-how,
+  .section-features,
+  .section-data,
+  .section-vs,
+  .section-emotion {
+    padding: 48px 12px;
+  }
+  .section-sub {
+    font-size: 13px;
+    margin-bottom: 28px;
+  }
+
+  /* Landing — cards */
+  .problem-card,
+  .step-card,
+  .feature-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+  .step-num {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  .step-title {
+    font-size: 14px;
+  }
+  .step-desc,
+  .problem-list li {
+    font-size: 12px;
+  }
+  .feature-card h3 {
+    font-size: 13px;
+  }
+  .feature-card p {
+    font-size: 11px;
+  }
+
+  /* Landing — data grid */
+  .data-grid {
+    grid-template-columns: 1fr;
+  }
+  .data-card {
+    padding: 14px;
+  }
+  .data-name {
+    font-size: 12px;
+  }
+  .data-desc {
+    font-size: 10px;
+  }
+
+  /* Landing — VS table */
+  .vs-table-wrap {
+    margin: 0 -12px;
+  }
+  .vs-table th,
+  .vs-table td {
+    padding: 8px 6px;
+    font-size: 10px;
+  }
+
+  /* Landing — CTA */
+  .section-cta {
+    padding: 48px 12px;
+  }
+  .cta-sub {
+    font-size: 13px;
+  }
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  /* Landing — footer */
+  .landing-footer {
+    padding: 20px 12px;
+  }
+
+  /* Hero graph */
+  .hero-graph {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  /* Pruning modal */
+  .pruning-modal {
+    padding: 16px;
+    gap: 12px;
+  }
+  .pruning-question-text {
+    font-size: 14px;
+  }
+  .pruning-btn {
+    padding: 10px 8px;
+    font-size: 11px;
+  }
 }

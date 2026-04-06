@@ -136,8 +136,8 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
       onClick={(e) => e.stopPropagation()}
       style={{
         top: '64px',
-        right: '24px',
-        left: '24px',
+        right: '8px',
+        left: '8px',
         maxWidth: '480px',
         marginLeft: 'auto',
         opacity: visible ? 1 : 0,
@@ -153,7 +153,7 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
         }}
       >
         {/* Search */}
-        <div className="p-7">
+        <div className="p-4 sm:p-7">
           <div className="relative">
             <svg className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <circle cx="11" cy="11" r="8" />
@@ -171,7 +171,7 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
         </div>
 
         {/* Category pills */}
-        <div className="px-7 pb-4 flex gap-2.5 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+        <div className="px-4 sm:px-7 pb-3 sm:pb-4 flex gap-2 sm:gap-2.5 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
           <button
             onClick={() => setActiveCategory(null)}
             className="shrink-0 px-3.5 py-1.5 rounded-lg text-[12px] font-medium transition-all cursor-pointer"
@@ -204,7 +204,7 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
         <div className="h-px bg-gray-100 dark:bg-gray-800/50" />
 
         {/* Template list */}
-        <div className="overflow-y-auto flex-1 py-2 px-3" style={{ scrollbarWidth: 'thin', maxHeight: 'calc(70vh - 160px)' }}>
+        <div className="overflow-y-auto flex-1 py-2 px-2 sm:px-3" style={{ scrollbarWidth: 'thin', maxHeight: 'calc(70vh - 160px)' }}>
           {displayTemplates.length === 0 && (
             <div className="py-8 text-center text-[13px] text-gray-400">
               No templates match your search.
@@ -213,7 +213,7 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
           {displayTemplates.map(({ key, title, desc }) => (
             <div
               key={key}
-              className="group px-5 py-3.5 rounded-xl cursor-pointer transition-all"
+              className="group px-3 sm:px-5 py-3 sm:py-3.5 rounded-xl cursor-pointer transition-all"
               onClick={() => { onSelect(key); onClose(); }}
               style={{ margin: '2px 0' }}
               onMouseEnter={(e) => {
@@ -238,7 +238,7 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
 
         {/* Footer count */}
         <div className="h-px bg-gray-100 dark:bg-gray-800/50" />
-        <div className="px-7 py-4 text-center">
+        <div className="px-4 sm:px-7 py-3 sm:py-4 text-center">
           <span className="text-[11px] text-gray-400">
             {!search.trim() && !activeCategory
               ? `Today's picks — ${displayTemplates.length} of ${ALL_TEMPLATES.length}`

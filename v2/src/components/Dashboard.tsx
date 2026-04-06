@@ -16,9 +16,10 @@ interface DashboardProps {
   nodeUniqueReach: Record<string, Set<number>>;
   edges: { source: string; target: string; label?: string }[];
   onClose: () => void;
+  onReportOutcome?: () => void;
 }
 
-export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClose }: DashboardProps) {
+export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClose, onReportOutcome }: DashboardProps) {
 
   const totalPeople = stats.total;
   const ordered = [...nodes].sort((a, b) => (a.position.x || 0) - (b.position.x || 0));
@@ -224,7 +225,22 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
       </div>
 
       {/* Footer */}
-      <div className="px-6 py-3 border-t" style={{ borderColor: 'var(--border)' }}>
+      <div className="px-6 py-3 border-t flex flex-col gap-2" style={{ borderColor: 'var(--border)' }}>
+        {onReportOutcome && (
+          <button
+            onClick={onReportOutcome}
+            className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-[12px] font-medium cursor-pointer transition-all hover:opacity-90"
+            style={{
+              background: 'var(--foreground)',
+              color: 'var(--background)',
+            }}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            Report Your Outcome
+          </button>
+        )}
         <p className="text-[9px] text-center" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>
           Unique reach, not visits
         </p>

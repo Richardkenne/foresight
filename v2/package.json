@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "index-data": "tsx scripts/index-data.ts"
+    "index-data": "tsx scripts/index-data.ts",
+    "update-data": "tsx scripts/update-pipeline.ts",
+    "reindex": "tsx scripts/reindex-missing.ts",
+    "verify-index": "tsx scripts/verify-index.ts",
+    "backtest": "tsx scripts/run-backtest.ts"
   },
   "dependencies": {
     "@types/dagre": "^0.7.54",

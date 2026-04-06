@@ -101,6 +101,7 @@ export function templateToFlow(
           prob: n.prob,
           probRange: (n as unknown as Record<string, unknown>).probRange as { optimistic: number; adverse: number } | undefined,
           time: merged?.time || n.time,
+          sacredRoots: n.sacredRoots || (merged as TemplateNode | undefined)?.sacredRoots,
         },
       };
     });

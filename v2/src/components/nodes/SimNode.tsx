@@ -1,8 +1,9 @@
 'use client';
 
-import { memo } from 'react';
+import { memo, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Handle, Position, type NodeProps } from '@xyflow/react';
+import { loadSacredProfile } from '@/lib/sacred-assessment';
 
 // Minimal palette: neutral for most nodes, green for success, red for fail
 const NODE_COLORS: Record<string, { accent: string; bg: string; bgDark: string; text: string }> = {
@@ -138,10 +139,13 @@ interface SimNodeData {
   sacredMode?: boolean;
   sacredRoots?: string[];
   isCutPoint?: boolean;
+  sacredProfile?: SacredProfile;
   [key: string]: unknown;
 }
 
 // 36 Sacred Roots — loaded from data, indexed by ID
+import { computePersonalProb, type PersonalProb } from '@/lib/sacred-modifier';
+import type { SacredProfile } from '@/lib/sacred-assessment';
 import sacredRootsData from '@/lib/sacred-roots.json';
 
 interface SacredRoot {
@@ -178,11 +182,27 @@ function SimNodeComponent({ data }: NodeProps) {
   const isStart = nodeType === 'start';
   const isSacred = d.sacredMode === true;
 
-  // Difficulty border removed — only outcome nodes get strong colors
-  const difficultyBorder: string | undefined = undefined;
   const sacredRoots = getSacredForNode(nodeType, d.sacredRoots as string[] | undefined);
   const primaryRoot = sacredRoots[0];
   const computedValue = d.computedValue;
+
+  // Personal probability from sacred profile (read from localStorage or data)
+  const personalProb: PersonalProb | null = useMemo(() => {
+    if (!hasProb || d.prob == null || !d.sacredRoots?.length) return null;
+    // Prefer sacredProfile passed via data, fallback to localStorage
+    const profile = (d.sacredProfile as SacredProfile | undefined) || loadSacredProfile();
+    if (!profile || Object.keys(profile).length === 0) return null;
+    return computePersonalProb(d.prob, d.sacredRoots as string[], profile);
+  }, [hasProb, d.prob, d.sacredRoots, d.sacredProfile]);
+
+  // Sacred profile color tint: green if personal > generic, red if lower, none if equal
+  const difficultyBorder: string | undefined = personalProb
+    ? personalProb.personal > personalProb.generic
+      ? 'rgba(16, 185, 129, 0.5)'  // green tint — above average
+      : personalProb.personal < personalProb.generic
+        ? 'rgba(239, 68, 68, 0.4)'   // red tint — below average
+        : undefined
+    : undefined;
   // Only show value bar if value is meaningful (> 0)
   const hasValue = typeof computedValue === 'number' && computedValue > 0.001;
   // Visual intensity: 0-1 scale, clamped
@@ -266,14 +286,50 @@ function SimNodeComponent({ data }: NodeProps) {
               <div className="sim-node__icon">{icon}</div>
               <div className="sim-node__label">{d.label}</div>
               {hasProb && d.prob != null && (
-                <div className="sim-node__prob">
-                  {d.prob}%
-                  {d.probRange && (
-                    <span style={{ fontSize: '7px', opacity: 0.5, display: 'block', fontWeight: 400, letterSpacing: '0.02em' }}>
-                      {d.probRange.adverse}-{d.probRange.optimistic}
+                personalProb ? (
+                  <div className="sim-node__prob-dual" title={personalProb.reason} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 1 }}>
+                    {/* Personal probability — prominent */}
+                    <span style={{
+                      fontSize: 13,
+                      fontWeight: 700,
+                      fontFamily: 'var(--font-geist-mono)',
+                      color: personalProb.personal > personalProb.generic
+                        ? '#10b981'
+                        : personalProb.personal < personalProb.generic
+                          ? '#ef4444'
+                          : 'var(--foreground)',
+                      lineHeight: 1,
+                    }}>
+                      YOUR: {personalProb.personal}%
                     </span>
-                  )}
-                </div>
+                    {/* Generic probability — smaller, muted */}
+                    <span style={{
+                      fontSize: 8,
+                      fontWeight: 500,
+                      fontFamily: 'var(--font-geist-mono)',
+                      color: 'var(--muted)',
+                      opacity: 0.6,
+                      lineHeight: 1,
+                      textDecoration: 'line-through',
+                    }}>
+                      {d.prob}%
+                    </span>
+                    {d.probRange && (
+                      <span style={{ fontSize: '7px', opacity: 0.4, fontWeight: 400, letterSpacing: '0.02em', lineHeight: 1 }}>
+                        {d.probRange.adverse}-{d.probRange.optimistic}
+                      </span>
+                    )}
+                  </div>
+                ) : (
+                  <div className="sim-node__prob">
+                    {d.prob}%
+                    {d.probRange && (
+                      <span style={{ fontSize: '7px', opacity: 0.5, display: 'block', fontWeight: 400, letterSpacing: '0.02em' }}>
+                        {d.probRange.adverse}-{d.probRange.optimistic}
+                      </span>
+                    )}
+                  </div>
+                )
               )}
             </div>
             {d.desc && (

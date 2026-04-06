@@ -143,6 +143,61 @@ function FeatureIcon({ type }: { type: 'data' | 'deterministic' | 'graph' | 'ai'
   return <div className="feature-icon">{icons[type]}</div>;
 }
 
+/* ─── Community flywheel bar ─── */
+function FlywheelBar() {
+  const [simCount, setSimCount] = useState(0);
+  const [feedbackCount, setFeedbackCount] = useState(0);
+  const [accuracy, setAccuracy] = useState(0);
+
+  useEffect(() => {
+    // Read from localStorage
+    const count = localStorage.getItem('sim-total-count');
+    setSimCount(count ? parseInt(count, 10) : 0);
+
+    // Try to load feedback data
+    try {
+      const raw = localStorage.getItem('sim-community-feedback');
+      const entries = raw ? JSON.parse(raw) : [];
+      setFeedbackCount(entries.length);
+      if (entries.length > 0) {
+        const avgPredicted = entries.reduce((s: number, e: { predictedProb: number }) => s + e.predictedProb, 0) / entries.length;
+        const avgActual = entries.reduce((s: number, e: { actualOutcome: string }) => {
+          if (e.actualOutcome === 'success') return s + 100;
+          if (e.actualOutcome === 'partial') return s + 50;
+          return s;
+        }, 0) / entries.length;
+        setAccuracy(Math.max(0, Math.round(100 - Math.abs(avgPredicted - avgActual))));
+      }
+    } catch { /* ignore */ }
+  }, []);
+
+  // Only show if there is at least some activity
+  if (simCount === 0 && feedbackCount === 0) return null;
+
+  return (
+    <section className="numbers-bar" style={{ borderTop: 'none', paddingTop: 0 }}>
+      {simCount > 0 && (
+        <div className="number-item">
+          <div className="number-value"><Counter target={simCount} /></div>
+          <div className="number-label">Simulations run</div>
+        </div>
+      )}
+      {feedbackCount > 0 && (
+        <div className="number-item">
+          <div className="number-value"><Counter target={feedbackCount} /></div>
+          <div className="number-label">Outcomes reported</div>
+        </div>
+      )}
+      {accuracy > 0 && (
+        <div className="number-item">
+          <div className="number-value"><Counter target={accuracy} suffix="%" /></div>
+          <div className="number-label">Prediction accuracy</div>
+        </div>
+      )}
+    </section>
+  );
+}
+
 /* ─── Main landing page ─── */
 export default function LandingPage() {
   const [query, setQuery] = useState('');
@@ -262,6 +317,9 @@ export default function LandingPage() {
           <div className="number-label">Scenario templates</div>
         </div>
       </section>
+
+      {/* ─── Community flywheel ─── */}
+      <FlywheelBar />
 
       {/* ─── Emotional hook ─── */}
       <section className="section-emotion">

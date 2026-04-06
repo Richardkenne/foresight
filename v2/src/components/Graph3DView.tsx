@@ -2,6 +2,8 @@
 
 import { useRef, useEffect, useState, useCallback } from 'react';
 import type { Node as RFNode, Edge as RFEdge } from '@xyflow/react';
+import { precomputeFates } from '@/lib/simulation-types';
+import { getShapePositions } from '@/lib/point-cloud-shapes';
 
 /* ── Node type colors ── */
 const NODE_COLORS: Record<string, number> = {
@@ -20,6 +22,17 @@ function getNodeColor(type: string): number {
   return NODE_COLORS[type] || NODE_COLORS.state;
 }
 
+/* ── Sacred Root domain color mapping ── */
+function getSacredRootColor(sacredRootId: string): number {
+  const num = parseInt(sacredRootId.replace('SR-', ''), 10);
+  if (num >= 1 && num <= 8)   return 0xfbbf24; // god domain - gold
+  if (num >= 9 && num <= 16)  return 0x60a5fa; // self domain - blue
+  if (num >= 17 && num <= 19) return 0xa78bfa; // epistemic domain - purple
+  if (num >= 20 && num <= 30) return 0x4ade80; // others domain - green
+  if (num >= 31 && num <= 36) return 0xf59e0b; // resources domain - amber
+  return 0xa78bfa; // fallback purple
+}
+
 /* ── Extract node data from RF format ── */
 interface NodeData {
   id: string;
@@ -29,6 +42,7 @@ interface NodeData {
   source?: string;
   time?: string;
   prob?: number;
+  sacredRoots?: string[];
   x: number;
   y: number;
 }
@@ -46,6 +60,7 @@ function extractNodes(rfNodes: RFNode[]): NodeData[] {
         source: typeof d.source === 'string' ? d.source : Array.isArray(d.source) ? d.source.map((s: any) => s.name || s).join(', ') : undefined,
         time: d.time,
         prob: d.prob,
+        sacredRoots: Array.isArray(d.sacredRoots) ? d.sacredRoots : undefined,
         x: n.position.x,
         y: n.position.y,
       };
@@ -121,6 +136,10 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
   const [walkProgress, setWalkProgress] = useState('');
   const [cameraMode, setCameraMode] = useState<'isometric' | 'follow'>('isometric');
   const cameraModeRef = useRef<'isometric' | 'follow'>('isometric');
+  const [flyThrough, setFlyThrough] = useState(false);
+  const flyThroughRef = useRef(false);
+  const [simulating, setSimulating] = useState(false);
+  const [simStats, setSimStats] = useState({ total: 0, walking: 0, succeeded: 0, failed: 0 });
 
   useEffect(() => { setMounted(true); return () => { cancelAnimationFrame(animIdRef.current); }; }, []);
 
@@ -144,6 +163,10 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
     // Import Three.js
     const THREE = require('three');
     const { OrbitControls } = require('three/examples/jsm/controls/OrbitControls');
+    const { EffectComposer } = require('three/examples/jsm/postprocessing/EffectComposer');
+    const { RenderPass } = require('three/examples/jsm/postprocessing/RenderPass');
+    const { UnrealBloomPass } = require('three/examples/jsm/postprocessing/UnrealBloomPass');
+    const { OutputPass } = require('three/examples/jsm/postprocessing/OutputPass');
 
     const container = containerRef.current;
     const width = container.clientWidth;
@@ -164,6 +187,20 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
     renderer.shadowMap.enabled = true;
     container.appendChild(renderer.domElement);
 
+    // Post-processing: UnrealBloomPass (subtle glow on emissive materials)
+    const composer = new EffectComposer(renderer);
+    const renderPass = new RenderPass(scene, camera);
+    composer.addPass(renderPass);
+    const bloomPass = new UnrealBloomPass(
+      new THREE.Vector2(width, height),
+      0.4,  // strength — subtle, not overwhelming
+      0.3,  // radius
+      0.8   // threshold — only bright emissive materials glow
+    );
+    composer.addPass(bloomPass);
+    const outputPass = new OutputPass();
+    composer.addPass(outputPass);
+
     // CSS2D Renderer (for HTML cards in 3D)
     const { CSS2DRenderer } = require('three/examples/jsm/renderers/CSS2DRenderer');
     const cssRenderer = new CSS2DRenderer();
@@ -181,6 +218,23 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
     controls.minDistance = 20;
     controls.maxPolarAngle = Math.PI / 2.1; // Cannot go below ground
     controls.minPolarAngle = 0.2; // Cannot go directly overhead
+
+    // Auto-orbit state: orbit slowly when user is idle for 3+ seconds
+    let lastInteractionTime = performance.now();
+    let autoOrbitActive = false;
+    const AUTO_ORBIT_DELAY = 3000; // 3 seconds idle before auto-orbit
+    const AUTO_ORBIT_SPEED = 0.1; // rad/s around Y axis
+
+    const markInteraction = () => {
+      lastInteractionTime = performance.now();
+      autoOrbitActive = false;
+    };
+
+    // Track mouse/touch interaction to pause auto-orbit
+    const interactionEvents = ['mousedown', 'mousemove', 'mouseup', 'wheel', 'touchstart', 'touchmove'] as const;
+    interactionEvents.forEach(evt => {
+      renderer.domElement.addEventListener(evt, markInteraction);
+    });
 
     // WASD keyboard movement
     const keysPressed = new Set<string>();
@@ -206,6 +260,7 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
         return;
       }
       keysPressed.add(e.key.toLowerCase());
+      if (['w','a','s','d','q','e'].includes(e.key.toLowerCase())) markInteraction();
     };
     const onKeyUp = (e: KeyboardEvent) => { keysPressed.delete(e.key.toLowerCase()); };
     window.addEventListener('keydown', onKeyDown);
@@ -493,32 +548,21 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
     }
     scene.add(personGroup);
 
-    // ── Point Cloud: Hourglass (SR-010 Patience/Sabr) ──
+    // ── Point Cloud: Dynamic Sacred Root Shapes ──
     const PARTICLE_COUNT = 800;
-    const hourglassTarget = new Float32Array(PARTICLE_COUNT * 3);
-    const hourglassRandom = new Float32Array(PARTICLE_COUNT * 3);
+    // Current shape target positions (updated dynamically per sacred root)
+    let shapeTarget = getShapePositions('SR-010', PARTICLE_COUNT); // default hourglass
+    const shapeRandom = new Float32Array(PARTICLE_COUNT * 3);
 
-    // Generate hourglass shape: two cones meeting at a point
+    // Generate random scattered positions
     for (let i = 0; i < PARTICLE_COUNT; i++) {
-      const t = Math.random(); // 0-1 along height
-      const angle = Math.random() * Math.PI * 2;
-
-      // Hourglass profile: radius = |t - 0.5| * 2 (narrow at middle, wide at ends)
-      const normalizedT = (t - 0.5) * 2; // -1 to 1
-      const radius = Math.abs(normalizedT) * 3.5 + 0.15; // min 0.15 at pinch, max 3.65 at ends
-      const height = normalizedT * 5; // -5 to 5
-
-      // Add slight noise for organic look
-      const noise = 0.3;
-      hourglassTarget[i * 3]     = Math.cos(angle) * radius + (Math.random() - 0.5) * noise;
-      hourglassTarget[i * 3 + 1] = height + (Math.random() - 0.5) * noise;
-      hourglassTarget[i * 3 + 2] = Math.sin(angle) * radius + (Math.random() - 0.5) * noise;
-
-      // Random starting positions (scattered sphere)
-      hourglassRandom[i * 3]     = (Math.random() - 0.5) * 30;
-      hourglassRandom[i * 3 + 1] = (Math.random() - 0.5) * 30;
-      hourglassRandom[i * 3 + 2] = (Math.random() - 0.5) * 30;
+      shapeRandom[i * 3]     = (Math.random() - 0.5) * 30;
+      shapeRandom[i * 3 + 1] = (Math.random() - 0.5) * 30;
+      shapeRandom[i * 3 + 2] = (Math.random() - 0.5) * 30;
     }
+
+    // Scale factor: point-cloud-shapes returns positions in [-1,1]^3, scale up to ~5 units
+    const PC_SCALE = 5;
 
     // Particle sizes (vary for depth)
     const sizes = new Float32Array(PARTICLE_COUNT);
@@ -528,8 +572,7 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
 
     const pcGeo = new THREE.BufferGeometry();
     const pcPositions = new Float32Array(PARTICLE_COUNT * 3);
-    // Start at random positions
-    pcPositions.set(hourglassRandom);
+    pcPositions.set(shapeRandom);
     pcGeo.setAttribute('position', new THREE.BufferAttribute(pcPositions, 3));
     pcGeo.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
 
@@ -553,7 +596,26 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
     let pcDissolving = false;
     let pcNodePos: any = null;
 
-    const triggerHourglass = (nodePos: any) => {
+    /** Update the point cloud shape and color for a given sacred root */
+    const updatePointCloudShape = (sacredRootId: string) => {
+      // Get new shape target positions
+      shapeTarget = getShapePositions(sacredRootId, PARTICLE_COUNT);
+      // Regenerate random scatter positions for fresh dissolve/assembly
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        shapeRandom[i * 3]     = (Math.random() - 0.5) * 30;
+        shapeRandom[i * 3 + 1] = (Math.random() - 0.5) * 30;
+        shapeRandom[i * 3 + 2] = (Math.random() - 0.5) * 30;
+      }
+      // Set domain color tint
+      const domainColor = getSacredRootColor(sacredRootId);
+      (pcMat as any).color.setHex(domainColor);
+    };
+
+    const triggerPointCloud = (nodePos: any, nd?: NodeData) => {
+      // Determine sacred root shape
+      const rootId = nd?.sacredRoots?.[0] || 'SR-010';
+      updatePointCloudShape(rootId);
+
       pcActive = true;
       pcDissolving = false;
       pcAssembleProgress = 0;
@@ -563,7 +625,7 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
       (pcMat as any).opacity = 0.8;
     };
 
-    const dissolveHourglass = () => {
+    const dissolvePointCloud = () => {
       pcDissolving = true;
     };
 
@@ -597,8 +659,221 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
       }
     };
 
+    // ── Fly-through state ──
+    let flyOrbitAngle = 0; // Accumulated orbit angle when character stops at a node
+    let flyLastWalkIndex = -1; // Track when character arrives at a new node
+
+    // ── 100-Person Wave Simulation ──
+    interface SimPerson {
+      id: number;
+      fate: { personId: number; path: string[]; outcome: 'success' | 'blocked'; speedMult: number; startDelay: number; deathNode?: string };
+      pathIndex: number;
+      t: number;
+      state: 'waiting' | 'walking' | 'succeeded' | 'failed';
+      mesh: any;
+      launched: boolean;
+    }
+
+    const simPersons: SimPerson[] = [];
+    let simRunning = false;
+    let simWaveTimers: ReturnType<typeof setTimeout>[] = [];
+    const SIM_EDGE_SPEED = 0.0006;
+
+    const createPersonMesh = (color: number) => {
+      const grp = new THREE.Group();
+      const capGeo = new THREE.CapsuleGeometry(0.1, 0.25, 4, 8);
+      const capMat = new THREE.MeshStandardMaterial({
+        color, emissive: color, emissiveIntensity: 0.4, roughness: 0.3, metalness: 0.5,
+      });
+      const cap = new THREE.Mesh(capGeo, capMat);
+      cap.position.y = 0.2;
+      grp.add(cap);
+      const hdGeo = new THREE.SphereGeometry(0.08, 8, 8);
+      const hdMat = new THREE.MeshStandardMaterial({ color, emissive: color, emissiveIntensity: 0.3 });
+      const hd = new THREE.Mesh(hdGeo, hdMat);
+      hd.position.y = 0.48;
+      grp.add(hd);
+      grp.visible = false;
+      return grp;
+    };
+
+    const cleanupSimulation = () => {
+      simRunning = false;
+      simWaveTimers.forEach(tmr => clearTimeout(tmr));
+      simWaveTimers = [];
+      simPersons.forEach(sp => {
+        scene.remove(sp.mesh);
+        sp.mesh.traverse((ch: any) => {
+          if (ch.geometry) ch.geometry.dispose();
+          if (ch.material) ch.material.dispose();
+        });
+      });
+      simPersons.length = 0;
+    };
+
+    const startSimulation = () => {
+      cleanupSimulation();
+      simRunning = true;
+      setSimulating(true);
+      setSimStats({ total: 0, walking: 0, succeeded: 0, failed: 0 });
+
+      const hasInc = new Set(edgeData.map(ed => ed.target));
+      const startId = nodeData.find(nd => !hasInc.has(nd.id))?.id || nodeData[0]?.id;
+      if (!startId) return;
+
+      const rfN = nodes.filter(nd => nd.type === 'simNode');
+      const fates = precomputeFates(100, startId, rfN, edges);
+
+      for (let i = 0; i < fates.length; i++) {
+        const fate = fates[i];
+        const mesh = createPersonMesh(0x94a3b8);
+        const oX = ((i % 10) - 4.5) * 0.25;
+        const oZ = (Math.floor(i / 10) % 3 - 1) * 0.2;
+        mesh.userData = { offsetX: oX, offsetZ: oZ };
+        scene.add(mesh);
+        simPersons.push({ id: i, fate, pathIndex: 0, t: 0, state: 'waiting', mesh, launched: false });
+      }
+
+      for (let wave = 0; wave < 10; wave++) {
+        const wTimer = setTimeout(() => {
+          if (!simRunning) return;
+          for (let jj = 0; jj < 10; jj++) {
+            const idx = wave * 10 + jj;
+            if (idx >= simPersons.length) break;
+            const sp = simPersons[idx];
+            const iTimer = setTimeout(() => {
+              if (!simRunning) return;
+              sp.state = 'walking';
+              sp.launched = true;
+              sp.mesh.visible = true;
+              const sPos = nodePositions[sp.fate.path[0]];
+              if (sPos) {
+                sp.mesh.position.set(sPos.x + sp.mesh.userData.offsetX, sPos.y - 2, sPos.z + sp.mesh.userData.offsetZ);
+              }
+            }, sp.fate.startDelay);
+            simWaveTimers.push(iTimer);
+          }
+        }, wave * 500);
+        simWaveTimers.push(wTimer);
+      }
+    };
+
+    const stopSimulation = () => {
+      cleanupSimulation();
+      setSimulating(false);
+      setSimStats({ total: 0, walking: 0, succeeded: 0, failed: 0 });
+    };
+
+    // Track which bottleneck/gate nodes have people arriving (for point cloud triggers during sim)
+    let simPcCooldown = 0; // cooldown timer to avoid rapid re-triggers
+    const simPcTriggeredNodes = new Set<string>();
+
+    const updateSimPersons = (dt: number, et: number) => {
+      if (!simRunning && simPersons.every(sp => sp.state !== 'walking' && sp.state !== 'failed')) return;
+
+      simPcCooldown = Math.max(0, simPcCooldown - dt);
+      let wlk = 0, suc = 0, fld = 0, tot = 0;
+
+      for (const sp of simPersons) {
+        if (!sp.launched) continue;
+        tot++;
+
+        if (sp.state === 'succeeded') { suc++; continue; }
+        if (sp.state === 'failed') {
+          fld++;
+          if (sp.mesh.position.y > -5) {
+            sp.mesh.position.y -= 0.06;
+            sp.mesh.traverse((ch: any) => {
+              if (ch.material && ch.material.opacity > 0.05) {
+                ch.material.transparent = true;
+                ch.material.opacity -= 0.015;
+              }
+            });
+          }
+          continue;
+        }
+        if (sp.state !== 'walking') continue;
+        wlk++;
+
+        const pIds = sp.fate.path;
+        if (sp.pathIndex >= pIds.length - 1) {
+          if (sp.fate.outcome === 'success') {
+            sp.state = 'succeeded';
+            sp.mesh.traverse((ch: any) => {
+              if (ch.material) { ch.material.color.setHex(0x10b981); ch.material.emissive.setHex(0x10b981); ch.material.emissiveIntensity = 1.0; }
+            });
+            setTimeout(() => { sp.mesh.traverse((ch: any) => { if (ch.material) ch.material.emissiveIntensity = 0.3; }); }, 600);
+            suc++;
+          } else {
+            sp.state = 'failed';
+            sp.mesh.traverse((ch: any) => {
+              if (ch.material) { ch.material.color.setHex(0xef4444); ch.material.emissive.setHex(0xef4444); ch.material.emissiveIntensity = 0.6; }
+            });
+            fld++;
+          }
+          wlk--;
+          continue;
+        }
+
+        const fId = pIds[sp.pathIndex];
+        const tId = pIds[sp.pathIndex + 1];
+        const fPos = nodePositions[fId];
+        const tPos = nodePositions[tId];
+
+        if (!fPos || !tPos) {
+          sp.state = 'failed';
+          sp.mesh.traverse((ch: any) => { if (ch.material) { ch.material.color.setHex(0xef4444); ch.material.emissive.setHex(0xef4444); } });
+          fld++; wlk--;
+          continue;
+        }
+
+        sp.t += SIM_EDGE_SPEED * sp.fate.speedMult * dt * 60;
+        if (sp.t >= 1) {
+          sp.t = 0;
+          sp.pathIndex++;
+          // Trigger point cloud when person arrives at a bottleneck/gate node
+          const arrivedId = pIds[sp.pathIndex];
+          if (arrivedId && simPcCooldown <= 0) {
+            const arrivedNode = nodeData.find(n => n.id === arrivedId);
+            if (arrivedNode && (arrivedNode.type === 'bottleneck' || arrivedNode.type === 'gate') && !simPcTriggeredNodes.has(arrivedId)) {
+              const nPos = nodePositions[arrivedId];
+              if (nPos) {
+                simPcTriggeredNodes.add(arrivedId);
+                triggerPointCloud(nPos, arrivedNode);
+                simPcCooldown = 3; // 3 second cooldown between triggers
+                setTimeout(() => {
+                  dissolvePointCloud();
+                  // Allow re-trigger after dissolve
+                  setTimeout(() => simPcTriggeredNodes.delete(arrivedId), 2000);
+                }, 2500);
+              }
+            }
+          }
+          continue;
+        }
+
+        const px = fPos.x + (tPos.x - fPos.x) * sp.t + sp.mesh.userData.offsetX;
+        const pz = fPos.z + (tPos.z - fPos.z) * sp.t + sp.mesh.userData.offsetZ;
+        const py = fPos.y + (tPos.y - fPos.y) * sp.t - 2;
+        const bob = Math.sin(et * 4 + sp.id * 0.7) * 0.08;
+        const arc = Math.sin(sp.t * Math.PI) * 1.5;
+        sp.mesh.position.set(px, py + arc + bob, pz);
+
+        const ddx = tPos.x - fPos.x;
+        const ddz = tPos.z - fPos.z;
+        if (Math.abs(ddx) > 0.01 || Math.abs(ddz) > 0.01) {
+          sp.mesh.lookAt(sp.mesh.position.x + ddx, sp.mesh.position.y, sp.mesh.position.z + ddz);
+        }
+      }
+
+      setSimStats({ total: tot, walking: wlk, succeeded: suc, failed: fld });
+      if (tot >= 100 && wlk === 0) simRunning = false;
+    };
+
     // Expose functions
     (window as any).__sim3d_startWalk = startWalk;
+    (window as any).__sim3d_startSimulation = startSimulation;
+    (window as any).__sim3d_stopSimulation = stopSimulation;
     (window as any).__sim3d_setIsometric = () => {
       // Reset to isometric view
       const center = path.length > 0 && nodePositions[path[Math.floor(path.length / 2)]]
@@ -606,6 +881,15 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
         : firstPos;
       camera.position.set(center.x - 30, 80, center.z + 100);
       controls.target.set(center.x + 50, 0, center.z);
+    };
+    (window as any).__sim3d_toggleFlyThrough = (active: boolean) => {
+      if (active) {
+        controls.enabled = false;
+        flyOrbitAngle = 0;
+        flyLastWalkIndex = -1;
+      } else {
+        controls.enabled = true;
+      }
     };
 
     // ── Render loop ──
@@ -625,28 +909,34 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
         mesh.position.y = 4 + Math.sin(time * 1.5 + i * 0.5) * 0.5;
       });
 
-      // Point cloud hourglass animation
+      // Point cloud sacred root shape animation
       if (pcActive) {
         const posAttr = pcGeo.getAttribute('position') as any;
         const arr = posAttr.array as Float32Array;
 
         if (!pcDissolving && pcAssembleProgress < 1) {
-          // Assemble: lerp from random to target
+          // Assemble: lerp from random to scaled target
           pcAssembleProgress = Math.min(1, pcAssembleProgress + 0.004); // Slow assembly
           const ease = pcAssembleProgress * pcAssembleProgress * (3 - 2 * pcAssembleProgress); // smoothstep
           for (let i = 0; i < PARTICLE_COUNT; i++) {
-            arr[i * 3]     = hourglassRandom[i * 3]     + (hourglassTarget[i * 3]     - hourglassRandom[i * 3])     * ease;
-            arr[i * 3 + 1] = hourglassRandom[i * 3 + 1] + (hourglassTarget[i * 3 + 1] - hourglassRandom[i * 3 + 1]) * ease;
-            arr[i * 3 + 2] = hourglassRandom[i * 3 + 2] + (hourglassTarget[i * 3 + 2] - hourglassRandom[i * 3 + 2]) * ease;
+            const tx = shapeTarget[i * 3]     * PC_SCALE;
+            const ty = shapeTarget[i * 3 + 1] * PC_SCALE;
+            const tz = shapeTarget[i * 3 + 2] * PC_SCALE;
+            arr[i * 3]     = shapeRandom[i * 3]     + (tx - shapeRandom[i * 3])     * ease;
+            arr[i * 3 + 1] = shapeRandom[i * 3 + 1] + (ty - shapeRandom[i * 3 + 1]) * ease;
+            arr[i * 3 + 2] = shapeRandom[i * 3 + 2] + (tz - shapeRandom[i * 3 + 2]) * ease;
           }
         } else if (pcDissolving) {
           // Dissolve: expand outward and fade
           pcAssembleProgress = Math.max(0, pcAssembleProgress - 0.015);
           const ease = pcAssembleProgress;
           for (let i = 0; i < PARTICLE_COUNT; i++) {
-            arr[i * 3]     = hourglassTarget[i * 3]     + (hourglassRandom[i * 3]     - hourglassTarget[i * 3])     * (1 - ease);
-            arr[i * 3 + 1] = hourglassTarget[i * 3 + 1] + (hourglassRandom[i * 3 + 1] - hourglassTarget[i * 3 + 1]) * (1 - ease);
-            arr[i * 3 + 2] = hourglassTarget[i * 3 + 2] + (hourglassRandom[i * 3 + 2] - hourglassTarget[i * 3 + 2]) * (1 - ease);
+            const tx = shapeTarget[i * 3]     * PC_SCALE;
+            const ty = shapeTarget[i * 3 + 1] * PC_SCALE;
+            const tz = shapeTarget[i * 3 + 2] * PC_SCALE;
+            arr[i * 3]     = tx + (shapeRandom[i * 3]     - tx) * (1 - ease);
+            arr[i * 3 + 1] = ty + (shapeRandom[i * 3 + 1] - ty) * (1 - ease);
+            arr[i * 3 + 2] = tz + (shapeRandom[i * 3 + 2] - tz) * (1 - ease);
           }
           (pcMat as any).opacity = ease * 0.8;
           if (pcAssembleProgress <= 0) {
@@ -685,8 +975,29 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
             personGroup.lookAt(personGroup.position.x + dir.x, personGroup.position.y, personGroup.position.z + dir.z);
           }
 
-          // Camera follows (only in follow mode)
-          if (cameraModeRef.current === 'follow') {
+          // Camera follows (only in follow mode OR fly-through mode)
+          if (flyThroughRef.current) {
+            // Fly-through: cinematic third-person with subtle sway
+            const behindDist = 4;
+            const aboveHeight = 2.5;
+            const camOffset = new THREE.Vector3(-dir.x * behindDist, aboveHeight, -dir.z * behindDist);
+            // Subtle organic sway using sin waves at different frequencies
+            const swayX = Math.sin(time * 0.7) * 0.15 + Math.sin(time * 1.3) * 0.08;
+            const swayY = Math.sin(time * 0.5) * 0.1;
+            camOffset.x += swayX;
+            camOffset.y += swayY;
+            const targetCamPos = personGroup.position.clone().add(camOffset);
+            camera.position.lerp(targetCamPos, 0.05);
+            // Look slightly ahead of the character
+            const lookTarget = personGroup.position.clone().add(new THREE.Vector3(dir.x * 3, 0.5, dir.z * 3));
+            const currentLook = new THREE.Vector3();
+            camera.getWorldDirection(currentLook);
+            const desiredLook = lookTarget.clone().sub(camera.position).normalize();
+            currentLook.lerp(desiredLook, 0.05);
+            camera.lookAt(lookTarget);
+            flyOrbitAngle = 0; // Reset orbit when moving
+            flyLastWalkIndex = walkIndex;
+          } else if (cameraModeRef.current === 'follow') {
             // Third-person: behind and slightly above the person
             const camOffset = new THREE.Vector3(-dir.x * 20, 12, -dir.z * 20);
             const targetCamPos = personGroup.position.clone().add(camOffset);
@@ -720,13 +1031,13 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
                 }, 500);
               }
 
-              // Trigger hourglass at bottleneck/gate nodes (Patience/Sabr SR-010)
+              // Trigger sacred root point cloud at bottleneck/gate nodes
               if (nd && (nd.type === 'bottleneck' || nd.type === 'gate')) {
                 const nPos = nodePositions[toId];
                 if (nPos) {
-                  triggerHourglass(nPos);
+                  triggerPointCloud(nPos, nd);
                   // Dissolve after 3 seconds
-                  setTimeout(() => dissolveHourglass(), 3000);
+                  setTimeout(() => dissolvePointCloud(), 3000);
                 }
               }
             }
@@ -740,22 +1051,79 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
         }
       }
 
-      // WASD movement
-      const moveSpeed = 0.8;
-      const forward = new THREE.Vector3();
-      camera.getWorldDirection(forward);
-      forward.y = 0;
-      forward.normalize();
-      const right = new THREE.Vector3().crossVectors(forward, new THREE.Vector3(0, 1, 0)).normalize();
-      if (keysPressed.has('w')) { camera.position.addScaledVector(forward, moveSpeed); controls.target.addScaledVector(forward, moveSpeed); }
-      if (keysPressed.has('s')) { camera.position.addScaledVector(forward, -moveSpeed); controls.target.addScaledVector(forward, -moveSpeed); }
-      if (keysPressed.has('a')) { camera.position.addScaledVector(right, -moveSpeed); controls.target.addScaledVector(right, -moveSpeed); }
-      if (keysPressed.has('d')) { camera.position.addScaledVector(right, moveSpeed); controls.target.addScaledVector(right, moveSpeed); }
-      if (keysPressed.has('q')) { camera.position.y += moveSpeed; controls.target.y += moveSpeed; }
-      if (keysPressed.has('e')) { camera.position.y = Math.max(5, camera.position.y - moveSpeed); controls.target.y = Math.max(0, controls.target.y - moveSpeed); }
+      // Fly-through: slow orbit around character when stopped at a node (paused or between moves)
+      if (flyThroughRef.current && isWalking && (walkPaused || walkT === 0)) {
+        flyOrbitAngle += delta * 0.3; // Slow orbit speed
+        const orbitRadius = 5;
+        const orbitHeight = 3;
+        const charPos = personGroup.position;
+        const orbitPos = new THREE.Vector3(
+          charPos.x + Math.cos(flyOrbitAngle) * orbitRadius,
+          charPos.y + orbitHeight + Math.sin(time * 0.4) * 0.15,
+          charPos.z + Math.sin(flyOrbitAngle) * orbitRadius
+        );
+        camera.position.lerp(orbitPos, 0.03);
+        camera.lookAt(charPos.x, charPos.y + 1, charPos.z);
+      }
+
+      // Fly-through: orbit at end of walk
+      if (flyThroughRef.current && !isWalking && path.length > 0) {
+        flyOrbitAngle += delta * 0.25;
+        const orbitRadius = 6;
+        const orbitHeight = 3;
+        const charPos = personGroup.position;
+        const orbitPos = new THREE.Vector3(
+          charPos.x + Math.cos(flyOrbitAngle) * orbitRadius,
+          charPos.y + orbitHeight,
+          charPos.z + Math.sin(flyOrbitAngle) * orbitRadius
+        );
+        camera.position.lerp(orbitPos, 0.03);
+        camera.lookAt(charPos.x, charPos.y + 1, charPos.z);
+      }
+
+      // WASD movement (disabled during fly-through)
+      if (!flyThroughRef.current) {
+        const moveSpeed = 0.8;
+        const forward = new THREE.Vector3();
+        camera.getWorldDirection(forward);
+        forward.y = 0;
+        forward.normalize();
+        const right = new THREE.Vector3().crossVectors(forward, new THREE.Vector3(0, 1, 0)).normalize();
+        if (keysPressed.has('w')) { camera.position.addScaledVector(forward, moveSpeed); controls.target.addScaledVector(forward, moveSpeed); }
+        if (keysPressed.has('s')) { camera.position.addScaledVector(forward, -moveSpeed); controls.target.addScaledVector(forward, -moveSpeed); }
+        if (keysPressed.has('a')) { camera.position.addScaledVector(right, -moveSpeed); controls.target.addScaledVector(right, -moveSpeed); }
+        if (keysPressed.has('d')) { camera.position.addScaledVector(right, moveSpeed); controls.target.addScaledVector(right, moveSpeed); }
+        if (keysPressed.has('q')) { camera.position.y += moveSpeed; controls.target.y += moveSpeed; }
+        if (keysPressed.has('e')) { camera.position.y = Math.max(5, camera.position.y - moveSpeed); controls.target.y = Math.max(0, controls.target.y - moveSpeed); }
+      }
+
+      // Auto-orbit when idle (not walking in follow mode, not pressing keys, not fly-through)
+      const now = performance.now();
+      const idle = now - lastInteractionTime > AUTO_ORBIT_DELAY;
+      if (idle && !isWalking && keysPressed.size === 0 && !flyThroughRef.current) {
+        autoOrbitActive = true;
+      }
+      if (autoOrbitActive && !flyThroughRef.current) {
+        // Rotate camera around the controls target on Y axis
+        const angle = AUTO_ORBIT_SPEED * delta;
+        const offset = camera.position.clone().sub(controls.target);
+        const cosA = Math.cos(angle);
+        const sinA = Math.sin(angle);
+        const newX = offset.x * cosA + offset.z * sinA;
+        const newZ = -offset.x * sinA + offset.z * cosA;
+        camera.position.set(
+          controls.target.x + newX,
+          camera.position.y,
+          controls.target.z + newZ
+        );
+      }
+
+      // Update 100-person simulation
+      updateSimPersons(delta, time);
 
       controls.update();
-      renderer.render(scene, camera);
+      // Render with bloom post-processing (does NOT affect CSS2D labels)
+      composer.render();
       cssRenderer.render(scene, camera);
     };
     animate();
@@ -767,6 +1135,7 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
       renderer.setSize(w, h);
+      composer.setSize(w, h);
       cssRenderer.setSize(w, h);
     };
     window.addEventListener('resize', onResize);
@@ -776,14 +1145,22 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
         window.removeEventListener('resize', onResize);
         window.removeEventListener('keydown', onKeyDown);
         window.removeEventListener('keyup', onKeyUp);
+        interactionEvents.forEach(evt => {
+          renderer.domElement.removeEventListener(evt, markInteraction);
+        });
         cancelAnimationFrame(animIdRef.current);
+        composer.dispose();
         renderer.dispose();
         if (cssRenderer.domElement.parentNode) {
           cssRenderer.domElement.parentNode.removeChild(cssRenderer.domElement);
         }
+        cleanupSimulation();
         scene.clear();
         delete (window as any).__sim3d_startWalk;
+        delete (window as any).__sim3d_startSimulation;
+        delete (window as any).__sim3d_stopSimulation;
         delete (window as any).__sim3d_setIsometric;
+        delete (window as any).__sim3d_toggleFlyThrough;
       },
     };
 
@@ -807,6 +1184,49 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
     }
   }, [cameraMode]);
 
+  const handleStartSimulation = useCallback(() => {
+    (window as any).__sim3d_startSimulation?.();
+  }, []);
+
+  const handleStopSimulation = useCallback(() => {
+    (window as any).__sim3d_stopSimulation?.();
+  }, []);
+
+  const handleFlyThroughToggle = useCallback(() => {
+    const next = !flyThrough;
+    setFlyThrough(next);
+    flyThroughRef.current = next;
+    (window as any).__sim3d_toggleFlyThrough?.(next);
+    // If enabling fly-through and not already walking, start the walk
+    if (next && !walking) {
+      setCameraMode('follow');
+      cameraModeRef.current = 'follow';
+      (window as any).__sim3d_startWalk?.();
+    }
+    // If disabling, restore isometric
+    if (!next) {
+      setCameraMode('isometric');
+      cameraModeRef.current = 'isometric';
+      (window as any).__sim3d_setIsometric?.();
+    }
+  }, [flyThrough, walking]);
+
+  // ESC to exit fly-through
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && flyThroughRef.current) {
+        setFlyThrough(false);
+        flyThroughRef.current = false;
+        (window as any).__sim3d_toggleFlyThrough?.(false);
+        setCameraMode('isometric');
+        cameraModeRef.current = 'isometric';
+        (window as any).__sim3d_setIsometric?.();
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, []);
+
   if (!mounted) return null;
 
   const simNodes = nodes.filter(n => n.type === 'simNode');
@@ -816,11 +1236,11 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
       <div ref={containerRef} style={{ width: '100%', height: '100%' }} />
 
       {/* Walk button */}
-      {simNodes.length > 0 && !walking && (
+      {simNodes.length > 0 && !walking && !simulating && (
         <button
           onClick={handleStartWalk}
           style={{
-            position: 'absolute', bottom: 80, left: '50%', transform: 'translateX(-50%)',
+            position: 'absolute', bottom: 80, left: 'calc(50% - 80px)', transform: 'translateX(-50%)',
             padding: '10px 24px', borderRadius: 12,
             background: 'linear-gradient(135deg, #fbbf24, #f59e0b)',
             color: '#1e293b', fontSize: 13, fontWeight: 700, border: 'none', cursor: 'pointer',
@@ -831,6 +1251,81 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/></svg>
           Walk through
         </button>
+      )}
+
+      {/* Simulate button (100 people) */}
+      {simNodes.length > 0 && !walking && !simulating && (
+        <button
+          onClick={handleStartSimulation}
+          style={{
+            position: 'absolute', bottom: 80, left: 'calc(50% + 80px)', transform: 'translateX(-50%)',
+            padding: '10px 24px', borderRadius: 12,
+            background: 'linear-gradient(135deg, #3b82f6, #6366f1)',
+            color: '#ffffff', fontSize: 13, fontWeight: 700, border: 'none', cursor: 'pointer',
+            fontFamily: 'Inter, system-ui', boxShadow: '0 4px 20px rgba(59,130,246,0.4)',
+            display: 'flex', alignItems: 'center', gap: 8,
+          }}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+          Simulate 100
+        </button>
+      )}
+
+      {/* Stop simulation button */}
+      {simulating && (
+        <button
+          onClick={handleStopSimulation}
+          style={{
+            position: 'absolute', bottom: 80, left: '50%', transform: 'translateX(-50%)',
+            padding: '10px 24px', borderRadius: 12,
+            background: 'linear-gradient(135deg, #ef4444, #dc2626)',
+            color: '#ffffff', fontSize: 13, fontWeight: 700, border: 'none', cursor: 'pointer',
+            fontFamily: 'Inter, system-ui', boxShadow: '0 4px 20px rgba(239,68,68,0.4)',
+            display: 'flex', alignItems: 'center', gap: 8,
+          }}
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>
+          Stop
+        </button>
+      )}
+
+      {/* Simulation stats overlay */}
+      {simulating && (
+        <div style={{
+          position: 'absolute', top: 20, left: '50%', transform: 'translateX(-50%)',
+          padding: '12px 24px', borderRadius: 12,
+          background: 'rgba(15, 23, 42, 0.9)', backdropFilter: 'blur(12px)',
+          border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+          fontFamily: 'Inter, system-ui', textAlign: 'center',
+          display: 'flex', gap: 20, alignItems: 'center',
+        }}>
+          <div>
+            <div style={{ fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#94a3b8', marginBottom: 2 }}>Launched</div>
+            <div style={{ fontSize: 18, fontWeight: 800, color: '#e2e8f0' }}>{simStats.total}</div>
+          </div>
+          <div>
+            <div style={{ fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#3b82f6', marginBottom: 2 }}>Walking</div>
+            <div style={{ fontSize: 18, fontWeight: 800, color: '#3b82f6' }}>{simStats.walking}</div>
+          </div>
+          <div>
+            <div style={{ fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#10b981', marginBottom: 2 }}>Passed</div>
+            <div style={{ fontSize: 18, fontWeight: 800, color: '#10b981' }}>{simStats.succeeded}</div>
+          </div>
+          <div>
+            <div style={{ fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#ef4444', marginBottom: 2 }}>Failed</div>
+            <div style={{ fontSize: 18, fontWeight: 800, color: '#ef4444' }}>{simStats.failed}</div>
+          </div>
+          {simStats.total >= 100 && simStats.walking === 0 && (
+            <div style={{
+              fontSize: 11, fontWeight: 700, color: '#fbbf24', padding: '4px 10px',
+              background: 'rgba(251,191,36,0.1)', borderRadius: 6, border: '1px solid rgba(251,191,36,0.3)',
+            }}>
+              COMPLETE
+            </div>
+          )}
+        </div>
       )}
 
       {/* Current node info (during walk) */}
@@ -877,6 +1372,48 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
           </svg>
           {cameraMode === 'isometric' ? 'Isometric' : 'Follow'}
         </button>
+      )}
+
+      {/* Fly-through toggle */}
+      {simNodes.length > 0 && (
+        <button
+          onClick={handleFlyThroughToggle}
+          style={{
+            position: 'absolute', bottom: 120, right: 20,
+            padding: '8px 14px', borderRadius: 10,
+            background: flyThrough ? 'rgba(251,191,36,0.15)' : 'rgba(255,255,255,0.08)',
+            backdropFilter: 'blur(8px)',
+            color: flyThrough ? '#fbbf24' : '#e2e8f0',
+            fontSize: 11, fontWeight: 600,
+            border: `1px solid ${flyThrough ? 'rgba(251,191,36,0.4)' : 'rgba(255,255,255,0.15)'}`,
+            cursor: 'pointer', fontFamily: 'Inter, system-ui',
+            display: 'flex', alignItems: 'center', gap: 6,
+          }}
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+          </svg>
+          Fly-through
+        </button>
+      )}
+
+      {/* Following YOU indicator */}
+      {flyThrough && (
+        <div style={{
+          position: 'absolute', top: 60, right: 20,
+          padding: '6px 14px', borderRadius: 8,
+          background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)',
+          fontFamily: 'Inter, system-ui', fontSize: 11, fontWeight: 600,
+          color: '#fbbf24', display: 'flex', alignItems: 'center', gap: 6,
+          animation: 'flyPulse 2s ease-in-out infinite',
+        }}>
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="12" r="5"/>
+          </svg>
+          Following YOU
+          <span style={{ fontSize: 9, color: 'rgba(251,191,36,0.5)', marginLeft: 4 }}>ESC to exit</span>
+          <style>{`@keyframes flyPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.7; } }`}</style>
+        </div>
       )}
 
       {/* Controls hint */}

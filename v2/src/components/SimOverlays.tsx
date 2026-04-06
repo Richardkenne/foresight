@@ -47,30 +47,79 @@ export function CutLineIndicator({ cutNodeId, nodes }: { cutNodeId: string | nul
 }
 
 // Particle layer that moves WITH the React Flow viewport (zoom/pan aware)
-export function ParticleLayer({ particles, moveDuration }: { particles: ParticleData[]; moveDuration: number }) {
+// Supports both CSS-transition mode (legacy) and SVG path-following mode
+export function ParticleLayer({
+  particles,
+  moveDuration,
+  pathFollowing = false,
+}: {
+  particles: ParticleData[];
+  moveDuration: number;
+  pathFollowing?: boolean;
+}) {
   const { x, y, zoom } = useViewport();
   if (particles.length === 0) return null;
+
+  // Sort: YOU particle rendered LAST so it's on top
+  const sorted = [...particles].sort((a, b) => (a.isYou ? 1 : 0) - (b.isYou ? 1 : 0));
 
   return (
     <div
       className="absolute inset-0 pointer-events-none z-[25]"
       style={{ transform: `translate(${x}px, ${y}px) scale(${zoom})`, transformOrigin: '0 0' }}
     >
-      {particles.map((p) => {
+      {sorted.map((p) => {
         const dur = Math.round(moveDuration * (p.speedMult || 1));
         const isActive = p.status === 'moving';
+        const youClass = p.isYou ? 'particle-you' : '';
+        const statusClass = p.status === 'blocked' ? 'particle-blocked'
+          : p.status === 'failing' ? (p.isYou ? 'particle-you-failing' : 'particle-failing')
+          : p.status === 'success' ? (p.isYou ? 'particle-you-success' : 'particle-success')
+          : '';
+
+        // When path following is active, particles are positioned by the animation loop
+        // directly setting x/y — no CSS transition needed, use will-change for perf
+        const transitionStyle = pathFollowing
+          ? { transition: 'opacity 0.5s ease' }
+          : { transition: `left ${dur}ms cubic-bezier(0.4, 0, 0.2, 1), top ${dur}ms cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease` };
+
         return (
           <div
             key={p.id}
-            className={`particle ${isActive ? 'particle-walking' : ''} ${p.status === 'blocked' ? 'particle-blocked' : p.status === 'failing' ? 'particle-failing' : p.status === 'success' ? 'particle-success' : ''}`}
+            className={`particle ${isActive ? 'particle-walking' : ''} ${youClass} ${statusClass}`}
             style={{
               position: 'absolute',
-              left: p.x,
-              top: p.y,
-              transition: `left ${dur}ms cubic-bezier(0.4, 0, 0.2, 1), top ${dur}ms cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease`,
+              left: p.isYou ? p.x - 5 : p.x,
+              top: p.isYou ? p.y - 8 : p.y,
+              ...transitionStyle,
+              zIndex: p.isYou ? 100 : 25,
+              transform: p.isYou ? 'scale(1.5)' : undefined,
+              transformOrigin: p.isYou ? 'center bottom' : undefined,
+              willChange: pathFollowing ? 'left, top' : undefined,
             }}
-            dangerouslySetInnerHTML={{ __html: p.svg }}
-          />
+          >
+            <div dangerouslySetInnerHTML={{ __html: p.svg }} />
+            {p.isYou && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: -14,
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  fontSize: 8,
+                  fontWeight: 800,
+                  color: '#fbbf24',
+                  textShadow: '0 1px 3px rgba(0,0,0,0.5)',
+                  letterSpacing: '0.08em',
+                  whiteSpace: 'nowrap',
+                  fontFamily: 'var(--font-geist-mono), monospace',
+                  textTransform: 'uppercase' as const,
+                }}
+              >
+                YOU
+              </div>
+            )}
+          </div>
         );
       })}
     </div>

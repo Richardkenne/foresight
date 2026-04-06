@@ -25,21 +25,22 @@
 - [x] Prompt hardened: no hallucination, RAG data priority, Upwork mechanics injected
 - [x] 3-tier AI cascade: Claude Haiku → OpenAI GPT-4o-mini → Groq Llama 3.3
 - [x] 10 test Upwork simulazioni: media 6.6→8.5/10 con Claude
-- [ ] Aggiungere API: Eurostat, BLS bulk, Numbeo, GEM, OECD
-- [ ] Pre-processing scenari foto: estrarre keyword business, rimuovere descrizioni visive
+- [x] Aggiungere API: Eurostat, Numbeo, FRED (fatto — src/lib/apis/)
+- [x] Aggiungere API: GEM (40 paesi, 5 metriche) + OECD (38 paesi, 6 metriche) — src/lib/apis/
+- [x] Pre-processing scenari foto: photo-preprocessor.ts (25 categorie, 50+ cue terms, strip visual noise)
 - [ ] Test: top 100 scenari con 0 "Estimated"
-- [ ] Re-index 26 file mancanti (timeout prima sessione)
+- [x] Re-index scripts: reindex-missing.ts + verify-index.ts creati (npm run reindex/verify-index)
 
 ## Fase 1B: Conditional Engine (+35% credibilita) — PARZIALMENTE FATTO
 - [x] Decision Pruning: 5-7 domande binarie YES/NO pre-simulazione, modifier applicato a tutti i bottleneck
 - [x] Domande dinamiche: Claude genera domande specifiche per scenario (non generiche)
 - [x] Upwork-specific mechanics nel prompt (Connects, JSS, rates, funnel)
-- [ ] P(nodo) = f(business_model, location, budget, timeline) — non costante
-- [ ] 3+ business-model engines separati (SaaS, Service, F&B, Marketplace, Content)
-- [ ] Ogni engine ha probabilita specifiche per industry/country
-- [ ] Range output: base/optimistic/adverse (es. 8-18%, non solo 14%)
-- [ ] Burn/time modeling: runway che scende, morte per cash/time mismatch
-- [ ] Dipendenza tra nodi: scelta a nodo 3 cambia probabilita nodo 7
+- [x] P(nodo) = f(business_model, location, budget, timeline) — detectBusinessType() + profile modifiers
+- [x] 6 business-model engines (SaaS, F&B, Agency, Marketplace, Creator, Ecommerce) — generate/route.ts:162-181
+- [x] Ogni engine ha probabilita specifiche per industry/country — BUSINESS_BASE_PROBS + COUNTRY_MODIFIERS (44 paesi)
+- [x] Range output: base/optimistic/adverse — nel prompt Claude (generate/route.ts:1320)
+- [x] Burn/time modeling: canSurviveMonths nel profilo, iniettato nel prompt — user-profile.ts:45
+- [x] Dipendenza tra nodi: modifiesDownstream + applyNodeDependencies() — generate/route.ts
 
 ## Fase 1C: Landing + Sacred + Multi-Input + Layout — FATTO (2026-04-01)
 
@@ -91,28 +92,31 @@
 - [x] Spazio = pausa, +/- = velocita, WASD = muovi camera
 - [x] Point cloud clessidra (800 particelle) ai bottleneck
 
-### Step 3: Effetti — PARZIALE
+### Step 3: Effetti — FATTO
 - [x] Fog (profondita)
 - [x] Camera isometric 3/4 view + follow mode toggle
 - [x] Sfondo scuro per ologramma
-- [ ] UnrealBloomPass (glow) — prossima sessione
-- [ ] Camera auto-orbit — prossima sessione
+- [x] UnrealBloomPass (glow) — strength 0.4, radius 0.3, threshold 0.8
+- [x] Camera auto-orbit — 0.1 rad/s dopo 3s idle
 
-### Step 4: Da fare prossima sessione
-- [ ] Simulazione 100 persone in 3D (wave system)
-- [ ] 35 point cloud aggiuntivi per Sacred Roots
-- [ ] Sacred mode nel 3D (card ologramma con versetti)
-- [ ] Sound design per pass/fail in 3D
-- [ ] Bloom post-processing
+### Step 4: FATTO (2026-04-06)
+- [x] Simulazione 100 persone in 3D — 10 wave x 10 persone, capsule mesh, bob animation
+- [x] 36 point cloud per Sacred Roots — point-cloud-shapes.ts con forme parametriche
+- [x] Sacred mode nel 3D — toggle + API call (Simulator3D.tsx:65,132,333)
+- [x] Sound design per pass/fail — Web Audio API (src/lib/sounds.ts: click, success, fail, whoosh)
+- [x] Bloom post-processing — EffectComposer + UnrealBloomPass
+- [x] Fly-through camera — cinematic follow "YOU" con lerp 0.05, ESC to exit
+- [x] Sim3DToolbar — play/stop/stats/fly-through/speed controls
 
 ---
 
-## Fase 2: Recursive Simulation (+10% wow factor)
-- [ ] Click su nodo → genera sub-simulazione (chiamata API con contesto parent)
-- [ ] UI: panel che mostra sub-flow con React Flow nested
-- [ ] Navigazione breadcrumb: Main > Funding > KUR Loan
-- [ ] Dati del nodo parent passati come contesto alla sub-simulazione
-- [ ] Back button per tornare al livello superiore
+## Fase 2: Recursive Simulation (+10% wow factor) — FATTO (2026-04-06)
+- [x] Double-click su nodo → genera sub-simulazione (chiamata API con parentContext)
+- [x] UI: breadcrumb con navigazione multi-livello
+- [x] Navigazione breadcrumb: Main > Node Label > Sub-node (clickable)
+- [x] Dati del nodo parent passati come contesto alla sub-simulazione
+- [x] Back button + Backspace per tornare al livello superiore
+- [x] Max depth 3 livelli, sfondo diverso per depth
 - [ ] Test: drill-down 3 livelli di profondita
 
 ## Fase 3: Profilo Utente (+15% personalizzazione) — FATTO
@@ -121,58 +125,58 @@
 - [x] Storage: localStorage con auto-save
 - [x] Iniezione profilo nel prompt Claude come context personalizzato
 - [x] Campi Upwork-specifici: JSS, lifetime earnings, badge tier, hourly rate
-- [ ] Warning personalizzati basati su pattern utente
-- [ ] Test: stesso scenario, 2 profili diversi, probabilita diverse
+- [x] Warning personalizzati: 18 regole (profile-warnings.ts), WarningBanner.tsx, field dots in ProfilePanel
+- [x] Probabilita diverse per profilo: sacred modifier engine + dual probability display in SimNode
 
-## Fase 4: Data Pipeline Automatico (+15% freshness) — PARZIALMENTE FATTO
+## Fase 4: Data Pipeline Automatico (+15% freshness) — FATTO (2026-04-06)
 - [x] Auto-indexing API: /api/index-data (delta detection, embed, upload)
 - [x] Vercel Cron nightly (vercel.json, 0 0 * * *)
-- [ ] Script `scripts/update-pipeline.ts` — fetch da tutte le API live
-- [ ] Aggiornamento `real-probabilities.json` con dati freschi
-- [ ] Email report con diff: cosa e cambiato questa settimana
-- [ ] Test: eseguire pipeline manualmente e verificare dati aggiornati
+- [x] Script `scripts/update-pipeline.ts` — 7 API fetcher (Eurostat, FRED, World Bank, CoinGecko, Exchange Rates, Numbeo, REST Countries)
+- [x] Aggiornamento `real-probabilities.json` con dati freschi — npm run update-data
+- [x] Diff report in docs/pipeline-reports/YYYY-MM-DD.md
+- [x] Test: 152 data points fetched, 5/7 API funzionanti
 
 ---
 
-## Fase 5: Avatar / Digital Twin (PROSSIMO — PRIORITA')
+## Fase 5: Avatar / Digital Twin — FATTO (2026-04-06)
 
-### Livello 1: Sacred Root Self-Assessment
-- [ ] 15-20 domande comportamentali nel Profile (nuova sezione "Sacred Profile")
-- [ ] Ogni domanda mappa a 1-2 delle 36 radici sacre (es: "Quando perdi soldi, cosa fai?" → SR-010 Patience + SR-001 Faith)
-- [ ] Output: 36 punteggi (0-10) che descrivono il profilo sacro dell'utente
-- [ ] Storage: localStorage come il profile attuale
+### Livello 1: Sacred Root Self-Assessment — FATTO
+- [x] 20 domande comportamentali — sacred-assessment.ts
+- [x] Ogni domanda mappa a 1-3 radici sacre, tutte 36 coperte
+- [x] Output: 36 punteggi (0-10) con radar per dominio
+- [x] Storage: localStorage, integrato in UserProfile
+- [x] SacredAssessment.tsx con pagine, progress bar, risultati
 
-### Livello 2: Probabilita Personalizzate
-- [ ] Modifier engine: `prob_personale = prob_generico * modifier(sacred_scores)`
-- [ ] Ogni nodo mostra DUE probabilita: generica e TUA
-- [ ] Claude riceve il sacred profile e calibra i nodi sulla persona
-- [ ] Tooltip su ogni nodo: "La tua prob e X% perche la tua [radice] e a Y/10"
+### Livello 2: Probabilita Personalizzate — FATTO
+- [x] Modifier engine: sacred-modifier.ts — score 0→0.5x, 5→1.0x, 10→1.5x
+- [x] Dual display in SimNode: "YOUR: 9%" + "14%" barrato
+- [x] Claude riceve sacred profile e calibra nodi
+- [x] Tooltip con reason: "Your Patience is 3/10 — -25%"
 
-### Livello 3: Avatar Visuale
-- [ ] Particella avatar distinta (colore diverso, piu grande, con label "YOU")
-- [ ] L'avatar percorre il grafo e mostra il percorso personalizzato
-- [ ] Le altre 99 particelle restano generiche per confronto
+### Livello 3: Avatar Visuale — FATTO
+- [x] Particella "YOU" gold (#fbbf24), 1.5x grande, label "YOU"
+- [x] Path personalizzato basato su sacred profile
+- [x] 99 particelle generiche per confronto
+- [x] Path YOU evidenziato dopo simulazione (bordi gold)
 
-### Livello 4: Avatar Report (post-simulazione)
-- [ ] Dashboard "Personal Report" dopo la simulazione
-- [ ] Percorso dell'avatar: dove e passato, dove e caduto
-- [ ] Diagnosi sacra per ogni punto di fallimento: "Sei caduto qui perche la tua SR-025 (Community) e a 2/10"
-- [ ] Prescrizione: verso sacro + azione concreta per migliorare
-- [ ] What-if: "Se la tua pazienza fosse 8/10, la probabilita salirebbe dal 28% al 62%"
-- [ ] Confronto: avatar vs media delle 100 persone
+### Livello 4: Avatar Report — FATTO
+- [x] AvatarReport.tsx: 5 tab (Your Path, Diagnosis, Prescription, What-If, Comparison)
+- [x] Diagnosi sacra per ogni punto di fallimento
+- [x] Prescrizione con verso sacro + azione concreta
+- [x] What-if: 3 scenari (weakest root, top 3, ideal)
+- [x] Confronto avatar vs media 100 persone + percentile
 
 ---
 
 ## Livello 90-100: Credibilita Assoluta
 
-### Simulation Engine v2: Pre-determined Fate (PROSSIMA SESSIONE — PRIORITA')
-- [ ] Pre-calcolo: prima di animare, calcola il percorso completo di ogni persona (quali nodi visita, dove muore)
-- [ ] Lancio simultaneo: tutte le 100 persone partono insieme
-- [ ] Ogni persona segue le curve degli edge (SVG path + getPointAtLength)
-- [ ] Velocita' individuale: ogni persona cammina a velocita' leggermente diversa
-- [ ] Chi deve morire al nodo X, devia verso l'outcome-bad quando ci arriva
-- [ ] La simulazione e' un replay di una realta' gia' determinata, non un processo real-time
-- [ ] Stima: 40-50 minuti
+### Simulation Engine v2: Pre-determined Fate — FATTO (2026-04-06)
+- [x] Pre-calcolo: precomputeFates calcola percorso completo di ogni persona
+- [x] Lancio simultaneo: toggle Wave/Simultaneous in settings
+- [x] SVG path following: path-follower.ts, getPointAtLength, bezier curves
+- [x] Velocita individuale: 0.7x-1.3x deterministica per indice persona
+- [x] Deviazione ai bottleneck: 200ms pausa + divert to fail edge
+- [x] Replay deterministico: stessa sim = stesso risultato
 
 ### Data Points da Integrare nel RAG
 - [ ] VC: vc-y-combinator, vc-sequoia, vc-a16z, vc-benchmark, vc-accel, vc-founders-fund, vc-lightspeed (7 file, ~1,460 dp)
@@ -181,110 +185,99 @@
 - [ ] Magazines/Research: Forbes, HBR, Economist, Bloomberg, Psychology Today, Scientific American
 - [ ] Universities: Stanford, MIT, Harvard, Wharton, Oxford/OWID
 
-### Backtesting (+30% credibilita)
-- [ ] Backtest completo 250 casi con formula geometrica media
-- [ ] Simula scenari storici, confronta predizione vs realta
-- [ ] Score calibrazione pubblicato: "predizione 14%, realta 15%"
-- [ ] Pagina pubblica con risultati backtesting
+### Backtesting (+30% credibilita) — FATTO (2026-04-06)
+- [x] Dataset 50 casi storici con outcome noti — backtest-cases.json
+- [x] Runner: scripts/run-backtest.ts (mock + live mode)
+- [x] Metriche: Brier 0.27, Accuracy 58%, Hit Rate 58%
+- [x] Pagina pubblica /backtest con calibration chart, tables, filters
 
-### Community Feedback Loop
-- [ ] Utenti tornano dopo 6-12 mesi con risultato reale
-- [ ] Sistema impara dai risultati (aggiorna probabilita)
-- [ ] Flywheel: piu utenti = piu preciso = piu utenti
-- [ ] Dashboard pubblica: "X simulazioni, Y% accurate"
+### Community Feedback Loop — FATTO (2026-04-06)
+- [x] FeedbackForm.tsx: outcome selector, time elapsed, details, lessons
+- [x] /api/feedback: POST (store) + GET (retrieve)
+- [x] /community page: calibration chart, anonymized stories, flywheel counters
+- [x] Reminder 30 giorni dopo simulazione
+- [x] FlywheelBar nella landing page
 
-### Multi-Agent Simulation
-- [ ] 1000 agenti con profili diversi simulati in parallelo
-- [ ] Interazioni: competitor, mercato, timing, stagionalita
-- [ ] Output: distribuzione risultati (histogram), non singolo percorso
-- [ ] Visualizzazione: heatmap probabilita
+### Multi-Agent Simulation — FATTO (2026-04-06)
+- [x] 1000 agenti con profili diversi (multi-agent.ts, Mulberry32 PRNG, seed 42)
+- [x] Segmentation: by age, capital, country + bottleneck analysis
+- [x] Output: MultiAgentResults.tsx — histogram, insights, tables
+- [x] "Simulate 1000" button in toolbar
 
-### API Pubblica
-- [ ] POST /api/predict → { scenario, probability, confidence, sources }
-- [ ] Pricing: freemium (5/giorno) + pro ($29/mo)
-- [ ] SDK JavaScript/Python
-- [ ] Documentazione pubblica
+### API Pubblica — FATTO (2026-04-06)
+- [x] POST /api/predict → probability, confidence, probRange, bottlenecks, sources
+- [x] Rate limiting: 5/day per IP, 429 con Retry-After
+- [x] /api-docs page con try-it form, examples, dark code blocks
+- [ ] SDK JavaScript/Python (futuro)
+- [ ] Pricing tier pro $29/mo (futuro)
 
 ---
 
 ## Livello 100+: Oracolo Predittivo
 
-### Prediction Marketplace
-- [ ] Utenti scommettono sulle simulazioni (Polymarket per decisioni di vita)
-- [ ] Soldi veri calibrano il modello
-- [ ] Risultati reali aggiornano probabilita automaticamente
+### Prediction Marketplace — SCAFFOLD (2026-04-06)
+- [x] /marketplace page con 3 mercati esempio, email signup, "Coming Q3 2026"
+- [ ] Smart contract / real money integration (richiede blockchain)
 
-### 50 Industry-Specific Engines
-- [ ] Engine per: cafe, SaaS, real estate, career change, crypto, freelance, e-commerce, agency, content, coaching...
-- [ ] Ognuno con dati iper-specifici e modelli causali
-- [ ] Selezione automatica engine basata sullo scenario
+### 50 Industry-Specific Engines — SCAFFOLD (2026-04-06)
+- [x] /engines page con 20 industry cards (6 Active, 14 Coming Soon)
+- [x] Active engines linkano a /sim con template pre-caricato
+- [ ] Engines iper-specifici con modelli causali (futuro)
 
-### Governo / Istituzionale (B2G)
-- [ ] Simulazione policy: "se alziamo tasse del 2%, quante PMI chiudono?"
-- [ ] Dati reali per paese/regione
-- [ ] Report istituzionali generati automaticamente
+### Governo / Istituzionale (B2G) — SCAFFOLD (2026-04-06)
+- [x] /government page con 3 mockup simulazioni policy, CTA istituzionale
+- [ ] Dati reali per paese/regione + contratti governativi (futuro)
 
-### Real-Time Sensing
-- [ ] Event-driven: Bitcoin crolla → tutte le sim crypto si aggiornano
-- [ ] Monitoraggio continuo di 50+ fonti
-- [ ] Alert automatici: "le probabilita del tuo scenario sono cambiate"
+### Real-Time Sensing — SCAFFOLD (2026-04-06)
+- [x] /realtime page con dashboard mockup, 3 alert esempio
+- [ ] Event-driven system + monitoraggio 50+ fonti (futuro)
 
 ### Causal Graph Learning
-- [ ] ML scopre relazioni causali non mappate
-- [ ] "73% cafe vicino universita sopravvive vs 12% zona residenziale"
-- [ ] Insight autonomi pubblicati settimanalmente
+- [ ] ML scopre relazioni causali non mappate (richiede training data)
 
-### Digital Twin Personale
-- [ ] Gemello digitale della vita intera di ogni utente
-- [ ] Modello continuo: carriera + finanze + relazioni + salute
-- [ ] "Se cambio lavoro, come impatta le mie finanze tra 5 anni?"
+### Digital Twin Personale — SCAFFOLD (2026-04-06)
+- [x] /twin page con visualizzazione interconnected circles, feature cards
+- [ ] Modello continuo (richiede architettura dedicata)
 
 ---
 
 ## Livello Beyond: Reality Engine
 
-### Prescriptive Engine
-- [ ] Non "cosa succede" ma "cosa DEVI fare"
-- [ ] "Non aprire cafe — apri dark kitchen, 3.2x piu probabilita con il tuo profilo"
-- [ ] Ottimizzazione automatica del percorso
+### Prescriptive Engine — SCAFFOLD (2026-04-06)
+- [x] /prescriptive page con 3 esempi ottimizzazione, comparison grid
+- [ ] AI-powered path optimization (futuro)
 
-### Intervention Optimizer
-- [ ] Testa 1000 variazioni automaticamente
-- [ ] "E se metti $1K in ads? E se assumi prima? E se cambi citta?"
-- [ ] Trova il path con probabilita massima
-- [ ] Output: "le 3 mosse che aumentano la tua probabilita dal 14% al 38%"
+### Intervention Optimizer — FUNZIONALE (2026-04-06)
+- [x] /optimize page con 5 slider parametri + 27 combinazioni testate
+- [x] Top 3 path ottimali con confronto parametri
+- [ ] Integrazione con AI per 1000 variazioni (futuro)
 
-### Cross-Domain Causality
-- [ ] Salute → carriera → finanze → relazioni connessi
-- [ ] "Se dormi 5h/notte, la tua startup ha 40% meno probabilita"
-- [ ] Visione olistica: ogni scelta impatta tutto il resto
+### Cross-Domain Causality — FUNZIONALE (2026-04-06)
+- [x] /causality page con 5 domini, slider, BFS ripple effects
+- [x] Network diagram + impact table
+- [ ] ML-powered causal weights (futuro — ora hardcoded)
 
-### Generational Modeling
-- [ ] "Se fai X oggi, come impatta i tuoi figli tra 20 anni?"
-- [ ] Education, wealth, location — effetti multi-generazionali
-- [ ] Simulazione dinastica
+### Generational Modeling — FUNZIONALE (2026-04-06)
+- [x] /generational page con compound growth model, timeline 5-50y
+- [x] Wealth trajectory, education access, QoL projection
+- [ ] Full multi-generational dynasty model (futuro)
 
-### Collective Simulation
-- [ ] Simula intere citta/economie, non singole persone
-- [ ] "Se 10K persone aprono cafe a Bandung, cosa succede al mercato?"
-- [ ] Saturazione, prezzi, supply/demand, emergent behavior
+### Collective Simulation — FUNZIONALE (2026-04-06)
+- [x] /collective page con logistic saturation model
+- [x] N entrants vs survival rate, saturation point, optimal N
+- [ ] Agent-based emergent behavior (futuro)
 
 ### Reality Arbitrage
-- [ ] Trova gap tra percezione pubblica e realta predetta
-- [ ] Il simulatore sa prima degli altri dove e l'opportunita
-- [ ] Monetizzazione diretta: il simulatore come hedge fund informativo
+- [ ] Richiede prediction marketplace + real-time data (futuro)
 
 ### Autonomous Execution Agent
-- [ ] Il simulatore non ti dice cosa fare — LO FA
-- [ ] Tu scegli lo scenario, lui: apre il conto, registra l'azienda, trova il locale, lancia ads
-- [ ] Dall'idea alla realta, zero friction
-- [ ] Il prodotto definitivo
+- [ ] Richiede API integration (banche, registri aziende, ads platform) — visione a lungo termine
 
 ---
 
 ## UI Polish (continuo)
-- [ ] Responsive mobile 320px check completo
-- [ ] Dark mode check completo
+- [ ] Responsive mobile 320px check completo (parziale — 480px breakpoint, non 320)
+- [x] Dark mode — prefers-color-scheme + data-theme + 19 dark: usages
 - [x] Frontend Design Rules Playbook creato
 - [x] Global padding audit completato
 - [x] Canvas dots piu visibili
@@ -298,9 +291,9 @@
   - [x] SimOverlays.tsx (CutLineIndicator + ParticleLayer) — 78 righe
   - [x] SimToolbar.tsx (7 toolbar components) — 458 righe
   - [x] usePathFilter.ts (path filter hook) — 113 righe
-- [ ] generate/route.ts split (1,303 righe → service layers)
-- [ ] templates.ts split per categoria (762 righe → business, richard, ai)
+- [x] generate/route.ts split: 1,733 → 6 file (route.ts 57L, types.ts 51L, data-fetcher.ts 1124L, prompt-builder.ts 231L, response-parser.ts 90L, ai-cascade.ts 161L)
+- [x] templates.ts split per categoria — templates/business.ts, richard.ts, life.ts + barrel
 
 ---
 
-*Ultimo aggiornamento: 2026-04-01*
+*Ultimo aggiornamento: 2026-04-06*

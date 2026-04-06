@@ -30,8 +30,10 @@
 
 ### Bulk Data Download
 - [x] **World Bank API** — 10 file, 247,460 data points scaricati (GDP, population, education, health, labor, business, poverty, environment, financial, gender)
-- [ ] **OECD API** — da fare prossima sessione (API SDMX complessa)
-- [ ] **BLS API** — da fare prossima sessione (unemployment, CPI, wages, productivity)
+- [x] **Eurostat API** — src/lib/apis/eurostat.ts (GDP, unemployment, business creation, education)
+- [x] **Numbeo API** — src/lib/apis/numbeo.ts (cost of living, 60+ cities)
+- [x] **FRED API** — src/lib/apis/fred.ts (CPI, unemployment, GDP, savings, Fed funds — sostituisce BLS)
+- [ ] **OECD API** — da fare (API SDMX complessa)
 - [x] **Life Probabilities Deep** — 312 data points: health/fitness, relationships, immigration/relocation. 20+ fonti (CDC, NIH, APA, Pew, IHRSA, FSI, NIAAA, etc.)
 - [x] **Education Probabilities Deep** — 283 data points, 20 sezioni (university acceptance/completion, dropout by field, student loans, ROI by degree, PhD rates, bootcamps, certifications, trade school, MOOC, gap year, 8 countries). 20+ fonti (NCES, NSF, BLS, NACE, AAMC, ABA, OECD, UNESCO, World Bank, CFA Institute, AICPA, PMI, etc.)
 - [x] **Tech/AI Deep Probabilities** — 236 data points, 21 sezioni
@@ -172,12 +174,12 @@
 - [ ] Scraping automatico report annuali (CB Insights, Statista, World Bank)
 - [ ] Sistema che diventa piu intelligente ogni settimana
 
-### Fase 1B — Conditional Engine (+35% credibilita)
-- [ ] P(nodo) = f(business_model, location, budget, timeline) — non costante
-- [ ] 3+ business-model engines separati (SaaS, Service, F&B, Marketplace, Content)
-- [ ] Ogni engine ha probabilita specifiche per industry/country
-- [ ] Range output: base case / optimistic / adverse (es. 8-18%, non solo 14%)
-- [ ] Burn/time modeling: runway che scende, morte per cash/time mismatch
+### Fase 1B — Conditional Engine (+35% credibilita) — PARZIALMENTE FATTO
+- [x] P(nodo) = f(business_model, location, budget, timeline) — detectBusinessType() + profile modifiers
+- [x] 6 business-model engines (SaaS, F&B, Agency, Marketplace, Creator, Ecommerce)
+- [ ] Probabilita specifiche per industry/country (keyword routing fatto, prob specifiche no)
+- [x] Range output: base/optimistic/adverse — nel prompt Claude
+- [x] Burn/time modeling: canSurviveMonths nel profilo
 
 ## Livello 90→100: Credibilita Assoluta
 
@@ -390,7 +392,8 @@ Priorita:
 - [ ] Simulazione 100 persone in 3D (wave system con precomputeFates)
 - [ ] Bloom/glow post-processing (UnrealBloomPass)
 - [ ] 35 point cloud aggiuntivi (cuore, albero, bilancia...) per le altre Sacred Roots
-- [ ] Sacred mode nel 3D (card ologramma mostrano versetti)
+- [x] Sacred mode nel 3D — toggle funzionante (Simulator3D.tsx)
+- [x] Sound design — Web Audio API (src/lib/sounds.ts: click, success, fail, whoosh)
 - [ ] Fly-through mode completo (camera segue particella "YOU")
 
 ## Problemi da Risolvere
@@ -437,4 +440,4 @@ Priorita:
 
 ---
 
-*Ultimo aggiornamento: 2026-04-01*
+*Ultimo aggiornamento: 2026-04-06*

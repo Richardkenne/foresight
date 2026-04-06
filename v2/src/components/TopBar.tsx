@@ -249,7 +249,7 @@ export default function TopBar({
   return (
     <div className="shrink-0 z-50 border-b border-[var(--border)]" style={{ background: 'var(--surface)' }}>
       {/* Main bar */}
-      <div className="h-[56px] flex items-center gap-3 px-6">
+      <div className="h-[56px] flex items-center gap-1.5 sm:gap-3 px-2 sm:px-6">
         {/* Hamburger menu */}
         <button
           onClick={() => setShowMenu(!showMenu)}
@@ -262,7 +262,7 @@ export default function TopBar({
           </svg>
         </button>
 
-        <div className="w-px h-7 bg-[var(--border)] shrink-0" />
+        <div className="w-px h-7 bg-[var(--border)] shrink-0 hidden sm:block" />
 
         <Logo />
 
@@ -277,7 +277,7 @@ export default function TopBar({
         {/* Scenario Input — click to expand as overlay */}
         <div className="flex-1 relative min-w-0 max-w-[520px]">
           <div
-            className="w-full px-3 py-2 rounded-lg text-[13px] text-[var(--foreground)] bg-transparent border border-transparent hover:border-[var(--border)] hover:bg-[var(--surface-hover)] cursor-text transition-all line-clamp-2"
+            className="w-full px-2 sm:px-3 py-2 rounded-lg text-[12px] sm:text-[13px] text-[var(--foreground)] bg-transparent border border-transparent hover:border-[var(--border)] hover:bg-[var(--surface-hover)] cursor-text transition-all line-clamp-1 sm:line-clamp-2"
             onClick={() => { if (!generating) setInputExpanded(true); }}
             title={scenario || 'Describe a scenario...'}
           >
@@ -289,7 +289,7 @@ export default function TopBar({
         {inputExpanded && (
           <>
             <div className="fixed inset-0 z-[250] bg-black/10" onClick={() => setInputExpanded(false)} />
-            <div className="fixed z-[251] left-6 right-6 max-w-[600px] mx-auto" style={{ top: '64px' }}>
+            <div className="fixed z-[251] left-3 right-3 sm:left-6 sm:right-6 max-w-[600px] mx-auto" style={{ top: '64px' }}>
               <textarea
                 ref={inputRef}
                 className="w-full px-4 py-3 rounded-xl text-[14px] text-[var(--foreground)] placeholder-[var(--muted)] border border-[var(--border)] outline-none resize-none shadow-lg"
@@ -316,7 +316,7 @@ export default function TopBar({
         )}
 
         {/* Actions */}
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-1 sm:gap-3 shrink-0">
           {/* Hidden file inputs for Others menu */}
           <input type="file" accept=".pdf,application/pdf" className="hidden" ref={(el) => { if (el) el.dataset.pdfInput = 'true'; }}
             onChange={async (e) => {
@@ -495,7 +495,7 @@ export default function TopBar({
           </div>
 
           {/* Photo upload */}
-          <div className="relative">
+          <div className="relative hidden sm:block">
             <button
               onClick={(e) => { e.stopPropagation(); setShowPhoto(!showPhoto); setShowTemplates(false); }}
               className="h-11 w-11 flex items-center justify-center text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-lg transition-colors cursor-pointer"
@@ -521,12 +521,12 @@ export default function TopBar({
           <div className="relative">
             <button
               onClick={(e) => { e.stopPropagation(); setShowTemplates(!showTemplates); setShowPhoto(false); }}
-              className="h-11 px-5 text-[14px] font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-[10px] transition-colors cursor-pointer flex items-center gap-2.5"
+              className="h-11 px-3 sm:px-5 text-[14px] font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-[10px] transition-colors cursor-pointer flex items-center gap-2.5"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" />
               </svg>
-              Templates
+              <span className="hidden sm:inline">Templates</span>
             </button>
             {showTemplates && (
               <TemplateSelector
@@ -618,13 +618,13 @@ export default function TopBar({
             </AnimatePresence>
           </div>
 
-          <div className="w-px h-7 bg-[var(--border)]" />
+          <div className="w-px h-7 bg-[var(--border)] hidden sm:block" />
 
-          {/* Sacred mode toggle */}
+          {/* Sacred mode toggle — hidden on narrow screens, visible via bottom bar */}
           {onSacredModeChange && (
             <button
               onClick={() => onSacredModeChange(!sacredMode)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] font-semibold transition-all"
+              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] font-semibold transition-all"
               style={{
                 background: sacredMode ? 'color-mix(in srgb, var(--purple) 15%, transparent)' : 'transparent',
                 color: sacredMode ? 'var(--purple)' : 'var(--muted)',
@@ -682,8 +682,8 @@ export default function TopBar({
 
       {/* ─── Attachment chips ─── */}
       {attachments.length > 0 && (
-        <div className="flex items-center gap-2 px-6 py-2 border-t border-[var(--border)]" style={{ background: 'var(--surface)' }}>
-          <span className="text-[11px] text-[var(--muted)] font-medium shrink-0">Sources:</span>
+        <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-6 py-2 border-t border-[var(--border)] overflow-x-auto" style={{ background: 'var(--surface)', scrollbarWidth: 'none' }}>
+          <span className="text-[10px] sm:text-[11px] text-[var(--muted)] font-medium shrink-0">Sources:</span>
           <div className="flex items-center gap-1.5 flex-wrap">
             {attachments.map((att) => (
               <div
@@ -740,7 +740,7 @@ export default function TopBar({
             transition={{ duration: 0.2 }}
           />
           <motion.div
-            className="fixed z-[201] left-6 right-6 max-w-[600px] mx-auto rounded-2xl border border-[var(--border)] shadow-2xl overflow-hidden"
+            className="fixed z-[201] left-3 right-3 sm:left-6 sm:right-6 max-w-[600px] mx-auto rounded-2xl border border-[var(--border)] shadow-2xl overflow-hidden"
             style={{ top: '80px', background: 'var(--surface)' }}
             initial={{ opacity: 0, y: -10, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -751,7 +751,7 @@ export default function TopBar({
               <div className="text-[14px] font-semibold text-[var(--foreground)]">{urlMeta.title || 'URL Analysis'}</div>
               {urlMeta.description && <div className="text-[11px] text-[var(--muted)] mt-1 line-clamp-2">{urlMeta.description}</div>}
             </div>
-            <div className="p-4 grid grid-cols-2 gap-2.5 max-h-[400px] overflow-y-auto">
+            <div className="p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[400px] overflow-y-auto">
               {urlSeeds.map((seed, i) => {
                 const catColors: Record<string, string> = { intention: '#3b82f6', content: '#8b5cf6', opportunity: '#10b981', risk: '#ef4444', competitor: '#f59e0b', market: '#06b6d4' };
                 const catLabels: Record<string, string> = { intention: 'Intention', content: 'Content', opportunity: 'Opportunity', risk: 'Risk', competitor: 'Competitor', market: 'Market' };
@@ -785,7 +785,7 @@ export default function TopBar({
       </AnimatePresence>
 
       {/* Sacred mode toggle row */}
-      <div className="h-[32px] flex items-center gap-1.5 px-6 border-t border-[var(--border)]">
+      <div className="h-[32px] flex items-center gap-1.5 px-2 sm:px-6 border-t border-[var(--border)] overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
         <button
           onClick={() => onSacredModeChange?.(!sacredMode)}
           className="flex items-center gap-1.5 h-[22px] px-2.5 rounded-md text-[10px] font-medium shrink-0 cursor-pointer transition-all"
@@ -817,7 +817,7 @@ export default function TopBar({
             transition={{ duration: 0.2 }}
           />
           <motion.div
-            className="fixed top-0 left-0 h-full w-[260px] z-[301] flex flex-col"
+            className="fixed top-0 left-0 h-full w-[260px] max-w-[100vw] z-[301] flex flex-col"
             style={{
               background: 'var(--surface)',
               borderRight: '1px solid var(--border)',
@@ -866,6 +866,7 @@ export default function TopBar({
                   { icon: 'M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z', label: 'Home', active: true, action: () => setShowMenu(false) },
                   { icon: 'M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z', label: 'History', active: false, action: () => setShowHistory(true) },
                   { icon: 'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2', label: 'Profile', active: false, extra: <circle cx="12" cy="7" r="4" />, action: () => setShowProfile(true) },
+                  { icon: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2', label: 'Community', active: false, extra: <><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>, action: () => { setShowMenu(false); window.location.href = '/community'; } },
                   { icon: 'M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z', label: 'Saved', active: false, action: undefined },
                 ].map((item) => (
                   <button

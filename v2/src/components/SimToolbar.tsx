@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion';
 import type { Node as RFNode } from '@xyflow/react';
-import { SPEED_LEVELS, SPEED_LABELS, SPD_BASE } from '@/lib/simulation-types';
+import { SPEED_LEVELS, SPEED_LABELS, SPD_BASE, type SimSettings, type LaunchMode } from '@/lib/simulation-types';
+import { useState } from 'react';
 
 const TOOLBAR_VARIANTS = {
   initial: { opacity: 0, y: 20 },
@@ -32,6 +33,10 @@ interface IdleToolbarProps {
   onToggleSacredMode: () => void;
   onBacktest: () => void;
   onCrashTest: () => void;
+  onMultiAgent: () => void;
+  multiAgentRunning: boolean;
+  simSettings: SimSettings;
+  onSimSettingsChange: (settings: SimSettings) => void;
   onSave: () => void;
   onShare: () => void;
   onExportPNG: () => void;
@@ -42,13 +47,16 @@ export function IdleToolbar({
   replayMode, cutNodeId, hasStats, sacredMode, saving, shareUrl,
   canUndo, canRedo, onUndo, onRedo,
   onSimulate, onSimulateFromCut, onRestart, onEnterStepMode, onSimulateReverse,
-  onToggleReplayMode, onToggleSacredMode, onBacktest, onCrashTest, onSave, onShare, onExportPNG, onClear,
+  onToggleReplayMode, onToggleSacredMode, onBacktest, onCrashTest, onMultiAgent, multiAgentRunning,
+  simSettings, onSimSettingsChange,
+  onSave, onShare, onExportPNG, onClear,
   viewMode = '2d',
 }: IdleToolbarProps) {
   const is3D = viewMode === '3d';
+  const [showSimSettings, setShowSimSettings] = useState(false);
   return (
     <motion.div
-      className="fixed bottom-6 right-6 z-50"
+      className="fixed bottom-6 right-3 sm:right-6 z-50 max-w-[calc(100vw-12px)]"
       variants={TOOLBAR_VARIANTS}
       initial="initial"
       animate="animate"
@@ -56,7 +64,7 @@ export function IdleToolbar({
       transition={TOOLBAR_TRANSITION}
     >
       <div
-        className="rounded-full px-3 py-2 flex items-center gap-2"
+        className="rounded-full px-2 sm:px-3 py-2 flex items-center gap-1.5 sm:gap-2 flex-wrap justify-center"
         style={{
           background: 'var(--surface)',
           boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
@@ -93,6 +101,103 @@ export function IdleToolbar({
               <polyline points="9 18 15 12 9 6" />
             </svg>
           </button>
+        )}
+
+        {/* Simulation Settings (2D only) */}
+        {!is3D && (
+          <div className="relative">
+            <button
+              onClick={() => setShowSimSettings(!showSimSettings)}
+              className={`toolbar-btn ${showSimSettings ? 'toolbar-btn--active' : ''}`}
+              title="Simulation settings"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </button>
+            {showSimSettings && (
+              <div
+                className="absolute bottom-full mb-2 right-0 rounded-xl p-3"
+                style={{
+                  background: 'var(--surface)',
+                  boxShadow: '0 0 0 1px var(--border), 0 8px 24px rgba(0,0,0,0.12)',
+                  minWidth: 220,
+                  zIndex: 100,
+                }}
+              >
+                <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--muted)', letterSpacing: '0.06em', textTransform: 'uppercase' as const, marginBottom: 8 }}>
+                  Simulation Engine
+                </div>
+                {/* Launch Mode */}
+                <div className="flex items-center justify-between mb-2">
+                  <span style={{ fontSize: 12, color: 'var(--foreground)' }}>Launch Mode</span>
+                  <div className="flex rounded-lg overflow-hidden" style={{ border: '1px solid var(--border)' }}>
+                    <button
+                      onClick={() => onSimSettingsChange({ ...simSettings, launchMode: 'wave' })}
+                      className="px-2 py-1"
+                      style={{
+                        fontSize: 10,
+                        fontWeight: 600,
+                        background: simSettings.launchMode === 'wave' ? 'var(--accent)' : 'transparent',
+                        color: simSettings.launchMode === 'wave' ? '#fff' : 'var(--muted)',
+                        border: 'none',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      Wave
+                    </button>
+                    <button
+                      onClick={() => onSimSettingsChange({ ...simSettings, launchMode: 'simultaneous' })}
+                      className="px-2 py-1"
+                      style={{
+                        fontSize: 10,
+                        fontWeight: 600,
+                        background: simSettings.launchMode === 'simultaneous' ? 'var(--accent)' : 'transparent',
+                        color: simSettings.launchMode === 'simultaneous' ? '#fff' : 'var(--muted)',
+                        border: 'none',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      Simultaneous
+                    </button>
+                  </div>
+                </div>
+                {/* Speed Variation */}
+                <label className="flex items-center justify-between mb-2 cursor-pointer">
+                  <span style={{ fontSize: 12, color: 'var(--foreground)' }}>Speed Variation</span>
+                  <div
+                    onClick={() => onSimSettingsChange({ ...simSettings, speedVariation: !simSettings.speedVariation })}
+                    className="relative w-8 h-[18px] rounded-full cursor-pointer transition-colors"
+                    style={{
+                      background: simSettings.speedVariation ? 'var(--accent)' : 'var(--border)',
+                    }}
+                  >
+                    <div
+                      className="absolute top-[2px] w-[14px] h-[14px] rounded-full bg-white transition-transform"
+                      style={{ left: simSettings.speedVariation ? 14 : 2 }}
+                    />
+                  </div>
+                </label>
+                {/* Path Following */}
+                <label className="flex items-center justify-between cursor-pointer">
+                  <span style={{ fontSize: 12, color: 'var(--foreground)' }}>Curve Following</span>
+                  <div
+                    onClick={() => onSimSettingsChange({ ...simSettings, pathFollowing: !simSettings.pathFollowing })}
+                    className="relative w-8 h-[18px] rounded-full cursor-pointer transition-colors"
+                    style={{
+                      background: simSettings.pathFollowing ? 'var(--accent)' : 'var(--border)',
+                    }}
+                  >
+                    <div
+                      className="absolute top-[2px] w-[14px] h-[14px] rounded-full bg-white transition-transform"
+                      style={{ left: simSettings.pathFollowing ? 14 : 2 }}
+                    />
+                  </div>
+                </label>
+              </div>
+            )}
+          </div>
         )}
 
         {/* Reverse (both modes) */}
@@ -143,6 +248,24 @@ export function IdleToolbar({
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
           </svg>
         </button>
+
+        {/* Multi-Agent 1000 (2D only) */}
+        {!is3D && (
+          <button onClick={onMultiAgent} disabled={multiAgentRunning} className="toolbar-btn" title="Simulate 1000 agents">
+            {multiAgentRunning ? (
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-spin">
+                <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+              </svg>
+            ) : (
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            )}
+          </button>
+        )}
 
         {/* Save */}
         <button onClick={onSave} disabled={saving} className="toolbar-btn" title="Save">
@@ -206,7 +329,7 @@ interface RunningToolbarProps {
 export function RunningToolbar({ simPaused, onTogglePause, onStop }: RunningToolbarProps) {
   return (
     <motion.div
-      className="fixed bottom-6 right-6 z-50"
+      className="fixed bottom-6 right-3 sm:right-6 z-50"
       variants={TOOLBAR_VARIANTS}
       initial="initial"
       animate="animate"
@@ -249,12 +372,14 @@ interface StatsBarProps {
   successRate: number;
   simPaused: boolean;
   onSpeedChange: (level: number) => void;
+  youOutcome?: { outcome: 'success' | 'blocked'; nodeLabel: string } | null;
+  launchMode?: LaunchMode;
 }
 
-export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, successRate, simPaused, onSpeedChange }: StatsBarProps) {
+export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, successRate, simPaused, onSpeedChange, youOutcome, launchMode = 'wave' }: StatsBarProps) {
   return (
     <motion.div
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50"
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 max-w-[calc(100vw-24px)]"
       variants={TOOLBAR_VARIANTS}
       initial="initial"
       animate="animate"
@@ -262,10 +387,11 @@ export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, succes
       transition={TOOLBAR_TRANSITION}
     >
       <div
-        className="rounded-2xl px-8 py-4 flex items-center gap-5"
+        className="rounded-2xl px-4 sm:px-8 py-3 sm:py-4 flex items-center gap-3 sm:gap-5 flex-wrap justify-center overflow-x-auto"
         style={{
           background: 'var(--surface)',
           boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
+          scrollbarWidth: 'none',
         }}
       >
         {/* Speed control */}
@@ -288,20 +414,36 @@ export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, succes
 
         <div className="w-px h-5" style={{ background: 'var(--border)' }} />
 
-        {/* Wave progress */}
+        {/* Wave progress / Simultaneous indicator */}
         <div className="flex items-center gap-3">
-          <div className="flex gap-[3px]">
-            {Array.from({ length: totalWaves }, (_, i) => (
-              <div
-                key={i}
-                className="w-[6px] h-[14px] rounded-[2px] transition-all duration-300"
-                style={{
-                  background: i < currentWave ? 'var(--accent)' : 'var(--border)',
-                }}
-              />
-            ))}
-          </div>
-          <span className="text-[11px] font-medium tabular-nums" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>{currentWave}/{totalWaves}</span>
+          {launchMode === 'simultaneous' ? (
+            <>
+              <div className="flex items-center gap-1.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+                <span className="text-[11px] font-semibold" style={{ color: 'var(--accent)', fontFamily: 'var(--font-geist-mono)' }}>ALL</span>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="flex gap-[3px]">
+                {Array.from({ length: totalWaves }, (_, i) => (
+                  <div
+                    key={i}
+                    className="w-[6px] h-[14px] rounded-[2px] transition-all duration-300"
+                    style={{
+                      background: i < currentWave ? 'var(--accent)' : 'var(--border)',
+                    }}
+                  />
+                ))}
+              </div>
+              <span className="text-[11px] font-medium tabular-nums" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>{currentWave}/{totalWaves}</span>
+            </>
+          )}
         </div>
 
         <div className="w-px h-5" style={{ background: 'var(--border)' }} />
@@ -342,6 +484,36 @@ export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, succes
           </span>
         </div>
 
+        {/* YOU outcome */}
+        {youOutcome && (
+          <>
+            <div className="w-px h-5" style={{ background: 'var(--border)' }} />
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg" style={{
+              background: youOutcome.outcome === 'success'
+                ? 'rgba(251,191,36,0.12)'
+                : 'rgba(251,191,36,0.08)',
+              border: '1px solid rgba(251,191,36,0.3)',
+            }}>
+              <div className="w-[7px] h-[7px] rounded-full" style={{
+                background: '#fbbf24',
+                boxShadow: '0 0 6px rgba(251,191,36,0.6)',
+              }} />
+              <span className="text-[11px] font-bold" style={{
+                color: youOutcome.outcome === 'success' ? '#059669' : '#dc2626',
+                fontFamily: 'var(--font-geist-mono)',
+              }}>
+                YOU:
+              </span>
+              <span className="text-[11px] font-medium max-w-[140px] truncate" style={{
+                color: 'var(--foreground)',
+                fontFamily: 'var(--font-geist-mono)',
+              }}>
+                {youOutcome.nodeLabel}
+              </span>
+            </div>
+          </>
+        )}
+
         {/* Status */}
         {simPaused ? (
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-full" style={{ background: 'rgba(245, 158, 11, 0.1)' }}>
@@ -369,7 +541,7 @@ export function ReplayBar({ cutNodeId, cutNodeLabel, cutReachCount, simRunning, 
   if (simRunning) return null;
   return (
     <motion.div
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50"
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 max-w-[calc(100vw-24px)]"
       variants={TOOLBAR_VARIANTS}
       initial="initial"
       animate="animate"
@@ -377,13 +549,13 @@ export function ReplayBar({ cutNodeId, cutNodeLabel, cutReachCount, simRunning, 
       transition={TOOLBAR_TRANSITION}
     >
       <div
-        className="rounded-full px-6 py-2.5 flex items-center gap-3"
+        className="rounded-full px-3 sm:px-6 py-2.5 flex items-center gap-2 sm:gap-3 flex-wrap justify-center"
         style={{
           background: 'var(--surface)',
           boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
         }}
       >
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
           <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
           <line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/>
           <line x1="8.12" y1="8.12" x2="12" y2="12"/>
@@ -391,7 +563,7 @@ export function ReplayBar({ cutNodeId, cutNodeLabel, cutReachCount, simRunning, 
 
         {cutNodeId ? (
           <>
-            <span className="text-[11px] font-medium" style={{ color: 'var(--muted-foreground)' }}>
+            <span className="text-[10px] sm:text-[11px] font-medium" style={{ color: 'var(--muted-foreground)' }}>
               Cut at <span className="font-semibold" style={{ color: 'var(--foreground)' }}>{cutNodeLabel}</span>
               {cutReachCount > 0 && (
                 <span style={{ color: 'var(--accent)' }} className="ml-1">({cutReachCount} people)</span>
@@ -440,7 +612,7 @@ interface StepModeBarProps {
 export function StepModeBar({ stepIndex, totalSteps, onStepBack, onStepForward, onExitStepMode }: StepModeBarProps) {
   return (
     <motion.div
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50"
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 max-w-[calc(100vw-24px)]"
       variants={TOOLBAR_VARIANTS}
       initial="initial"
       animate="animate"
@@ -490,7 +662,7 @@ interface PathFilterBarProps {
 export function PathFilterBar({ pathFilter, onFilterChange }: PathFilterBarProps) {
   return (
     <motion.div
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50"
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 max-w-[calc(100vw-24px)]"
       variants={TOOLBAR_VARIANTS}
       initial="initial"
       animate="animate"
@@ -524,6 +696,247 @@ export function PathFilterBar({ pathFilter, onFilterChange }: PathFilterBarProps
             {label}
           </button>
         ))}
+      </div>
+    </motion.div>
+  );
+}
+
+/* ── 3D Simulation Toolbar ── */
+
+interface Sim3DToolbarProps {
+  simRunning: boolean;
+  onStartSim: () => void;
+  onStopSim: () => void;
+  stats: { launched: number; walking: number; success: number; failed: number };
+  flyThrough: boolean;
+  onToggleFlyThrough: () => void;
+  speed: number;
+  onSpeedChange: (speed: number) => void;
+}
+
+export function Sim3DToolbar({
+  simRunning, onStartSim, onStopSim, stats, flyThrough, onToggleFlyThrough, speed, onSpeedChange,
+}: Sim3DToolbarProps) {
+  const total = stats.success + stats.failed;
+  const rate = total > 0 ? Math.round((stats.success / total) * 100) : 0;
+
+  return (
+    <motion.div
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 max-w-[calc(100vw-24px)]"
+      variants={TOOLBAR_VARIANTS}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={TOOLBAR_TRANSITION}
+    >
+      <div
+        className="rounded-2xl px-3 sm:px-5 py-2.5 sm:py-3 flex items-center gap-2 sm:gap-3 flex-wrap justify-center"
+        style={{
+          background: 'rgba(6, 8, 16, 0.85)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          boxShadow: '0 0 0 1px rgba(255,255,255,0.06), 0 4px 24px rgba(0,0,0,0.4)',
+          border: '1px solid rgba(255,255,255,0.06)',
+        }}
+      >
+        {/* Play / Stop */}
+        {!simRunning ? (
+          <button
+            onClick={onStartSim}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all cursor-pointer"
+            style={{
+              background: '#3b82f6',
+              color: '#fff',
+              fontSize: 12,
+              fontWeight: 600,
+              fontFamily: 'Inter, system-ui',
+              minWidth: 36,
+              minHeight: 36,
+              justifyContent: 'center',
+            }}
+            title="Simulate 100 people"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
+            <span className="hidden sm:inline">Simulate 100</span>
+          </button>
+        ) : (
+          <button
+            onClick={onStopSim}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all cursor-pointer"
+            style={{
+              background: 'rgba(239, 68, 68, 0.15)',
+              color: '#f87171',
+              fontSize: 12,
+              fontWeight: 600,
+              fontFamily: 'Inter, system-ui',
+              minWidth: 36,
+              minHeight: 36,
+              justifyContent: 'center',
+              border: '1px solid rgba(239, 68, 68, 0.2)',
+            }}
+            title="Stop simulation"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="6" y="6" width="12" height="12" rx="1" />
+            </svg>
+            <span className="hidden sm:inline">Stop</span>
+          </button>
+        )}
+
+        <div className="w-px h-5" style={{ background: 'rgba(255,255,255,0.08)' }} />
+
+        {/* Stats */}
+        <div className="flex items-center gap-3 sm:gap-4">
+          {/* Launched */}
+          <div className="flex items-center gap-1.5">
+            <div className="w-[7px] h-[7px] rounded-full" style={{ background: '#60a5fa' }} />
+            <span style={{
+              fontSize: 13, fontWeight: 700, color: '#e2e8f0',
+              fontFamily: 'var(--font-geist-mono, monospace)',
+              fontVariantNumeric: 'tabular-nums',
+            }}>{stats.launched}</span>
+            <span style={{ fontSize: 10, fontWeight: 500, color: '#64748b' }}>launched</span>
+          </div>
+
+          {/* Walking (in progress) */}
+          {stats.walking > 0 && (
+            <div className="flex items-center gap-1.5">
+              <div className="w-[7px] h-[7px] rounded-full" style={{ background: '#fbbf24' }} />
+              <span style={{
+                fontSize: 13, fontWeight: 700, color: '#fbbf24',
+                fontFamily: 'var(--font-geist-mono, monospace)',
+                fontVariantNumeric: 'tabular-nums',
+              }}>{stats.walking}</span>
+              <span style={{ fontSize: 10, fontWeight: 500, color: '#64748b' }}>walking</span>
+            </div>
+          )}
+
+          {/* Pass */}
+          <div className="flex items-center gap-1.5">
+            <div className="w-[7px] h-[7px] rounded-full" style={{ background: '#34d399' }} />
+            <span style={{
+              fontSize: 13, fontWeight: 700, color: '#34d399',
+              fontFamily: 'var(--font-geist-mono, monospace)',
+              fontVariantNumeric: 'tabular-nums',
+            }}>{stats.success}</span>
+            <span style={{ fontSize: 10, fontWeight: 500, color: '#64748b' }}>pass</span>
+          </div>
+
+          {/* Fail */}
+          <div className="flex items-center gap-1.5">
+            <div className="w-[7px] h-[7px] rounded-full" style={{ background: '#f87171' }} />
+            <span style={{
+              fontSize: 13, fontWeight: 700, color: '#f87171',
+              fontFamily: 'var(--font-geist-mono, monospace)',
+              fontVariantNumeric: 'tabular-nums',
+            }}>{stats.failed}</span>
+            <span style={{ fontSize: 10, fontWeight: 500, color: '#64748b' }}>fail</span>
+          </div>
+        </div>
+
+        {/* Rate badge */}
+        {total > 0 && (
+          <>
+            <div className="w-px h-5" style={{ background: 'rgba(255,255,255,0.08)' }} />
+            <div className="flex items-center gap-1.5 px-2 py-1 rounded-lg" style={{ background: 'rgba(255,255,255,0.04)' }}>
+              <span style={{
+                fontSize: 13, fontWeight: 800,
+                color: rate >= 50 ? '#34d399' : rate >= 25 ? '#fbbf24' : '#f87171',
+                fontFamily: 'var(--font-geist-mono, monospace)',
+                fontVariantNumeric: 'tabular-nums',
+              }}>{rate}%</span>
+              <span style={{ fontSize: 9, fontWeight: 500, color: '#475569' }}>survive</span>
+            </div>
+          </>
+        )}
+
+        <div className="w-px h-5" style={{ background: 'rgba(255,255,255,0.08)' }} />
+
+        {/* Fly-through toggle */}
+        <button
+          onClick={onToggleFlyThrough}
+          className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg transition-all cursor-pointer"
+          style={{
+            background: flyThrough ? 'rgba(59, 130, 246, 0.15)' : 'transparent',
+            color: flyThrough ? '#60a5fa' : '#64748b',
+            fontSize: 11,
+            fontWeight: 600,
+            fontFamily: 'Inter, system-ui',
+            minWidth: 36,
+            minHeight: 36,
+            justifyContent: 'center',
+            border: flyThrough ? '1px solid rgba(59, 130, 246, 0.2)' : '1px solid transparent',
+          }}
+          title={flyThrough ? 'Disable fly-through camera' : 'Enable fly-through camera'}
+        >
+          {flyThrough ? (
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" /><circle cx="12" cy="12" r="3" />
+            </svg>
+          ) : (
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
+              <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68" />
+              <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61" />
+              <line x1="2" x2="22" y1="2" y2="22" />
+            </svg>
+          )}
+          <span className="hidden sm:inline">Fly</span>
+        </button>
+
+        {/* Speed control */}
+        <div className="flex items-center gap-1.5">
+          <button
+            onClick={() => onSpeedChange(Math.max(0.25, speed - 0.25))}
+            className="flex items-center justify-center rounded-md transition-all cursor-pointer"
+            style={{
+              width: 28, height: 28,
+              background: 'rgba(255,255,255,0.04)',
+              color: '#64748b',
+              border: '1px solid rgba(255,255,255,0.06)',
+            }}
+            title="Slower"
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+          </button>
+          <span style={{
+            fontSize: 11, fontWeight: 700, color: '#94a3b8',
+            fontFamily: 'var(--font-geist-mono, monospace)',
+            fontVariantNumeric: 'tabular-nums',
+            width: 28, textAlign: 'center',
+          }}>{speed}x</span>
+          <button
+            onClick={() => onSpeedChange(Math.min(4, speed + 0.25))}
+            className="flex items-center justify-center rounded-md transition-all cursor-pointer"
+            style={{
+              width: 28, height: 28,
+              background: 'rgba(255,255,255,0.04)',
+              color: '#64748b',
+              border: '1px solid rgba(255,255,255,0.06)',
+            }}
+            title="Faster"
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Running indicator */}
+        {simRunning && (
+          <div className="flex items-center gap-1.5 px-2 py-1 rounded-full" style={{ background: 'rgba(59, 130, 246, 0.1)' }}>
+            <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#3b82f6' }} />
+            <span style={{
+              fontSize: 9, fontWeight: 700, color: '#60a5fa',
+              fontFamily: 'var(--font-geist-mono, monospace)',
+              letterSpacing: '0.06em', textTransform: 'uppercase' as const,
+            }}>Running</span>
+          </div>
+        )}
       </div>
     </motion.div>
   );

@@ -43,6 +43,9 @@ export interface UserProfile {
   // Risk profile
   riskTolerance?: 'conservative' | 'moderate' | 'aggressive';
   canSurviveMonths?: number;  // months of runway without income
+
+  // Sacred Root assessment scores (0-10 per root)
+  sacredProfile?: Record<string, number>;
 }
 
 const STORAGE_KEY = 'simulator-profile';

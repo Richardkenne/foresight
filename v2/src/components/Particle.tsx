@@ -119,4 +119,53 @@ export interface ParticleData {
   visitedNodes: Set<string>;
   signalDelta?: number;
   speedMult: number; // Per-person speed variation (0.8–1.2)
+  isYou?: boolean; // First particle = YOU avatar
+}
+
+/**
+ * Create the distinctive YOU avatar SVG — gold tones, larger, crown marker
+ */
+export function createYouSVG(): string {
+  const skin = '#F5D0A9';
+  const hair = '#1a1a1a';
+  const top = '#92400e'; // Dark gold/amber top
+  const bottom = '#1e293b';
+
+  const headR = 3.8;
+  const headCY = 7;
+  const neckW = 1.8;
+
+  const hairSVG = `<ellipse cx="12" cy="${headCY - 2}" rx="${headR + 0.5}" ry="${headR - 0.5}" fill="${hair}"/>
+    <path d="M${12 - headR} ${headCY - 3} Q${12 - 1} ${headCY - 4.5} ${12 + headR - 1} ${headCY - 2.5}" stroke="${hair}" stroke-width="1.2" fill="none"/>`;
+
+  const torsoTop = headCY + headR + 0.5;
+  const shoulderW = 8.5;
+  const torsoH = 9;
+  const waist = 7;
+  const armY1 = torsoTop + 1.5;
+  const armY2 = torsoTop + 5;
+  const elbowY = torsoTop + 3.5;
+  const leftArmX = 12 - shoulderW / 2;
+  const rightArmX = 12 + shoulderW / 2;
+  const legTop = torsoTop + torsoH;
+  const legH = 8;
+  const legSpread = 1.2;
+
+  return `<svg viewBox="0 0 24 34" width="22" height="30" xmlns="http://www.w3.org/2000/svg">
+    ${hairSVG}
+    <circle cx="12" cy="${headCY}" r="${headR}" fill="${skin}"/>
+    <circle cx="10.5" cy="${headCY - 0.5}" r="0.45" fill="#2a2a2a"/>
+    <circle cx="13.5" cy="${headCY - 0.5}" r="0.45" fill="#2a2a2a"/>
+    <path d="M11 ${headCY + 1.2} Q12 ${headCY + 1.8} 13 ${headCY + 1.2}" stroke="#2a2a2a" stroke-width="0.35" fill="none"/>
+    <rect x="${12 - neckW / 2}" y="${headCY + headR - 0.5}" width="${neckW}" height="2" fill="${skin}" rx="0.5"/>
+    <path d="M${12 - shoulderW / 2} ${torsoTop + 1} Q12 ${torsoTop - 0.5} ${12 + shoulderW / 2} ${torsoTop + 1} L${12 + waist / 2} ${torsoTop + torsoH} L${12 - waist / 2} ${torsoTop + torsoH} Z" fill="${top}" rx="1"/>
+    <path d="M${leftArmX} ${armY1} L${leftArmX - 1} ${elbowY} L${leftArmX - 0.5} ${armY2}" stroke="${top}" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <path d="M${rightArmX} ${armY1} L${rightArmX + 1} ${elbowY} L${rightArmX + 0.5} ${armY2}" stroke="${top}" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <circle cx="${leftArmX - 0.5}" cy="${armY2 + 0.3}" r="1" fill="${skin}"/>
+    <circle cx="${rightArmX + 0.5}" cy="${armY2 + 0.3}" r="1" fill="${skin}"/>
+    <rect x="${12 - legSpread - 1.2}" y="${legTop}" width="2.4" height="${legH}" rx="1" fill="${bottom}"/>
+    <rect x="${12 + legSpread - 1.2}" y="${legTop}" width="2.4" height="${legH}" rx="1" fill="${bottom}"/>
+    <ellipse cx="${12 - legSpread}" cy="${legTop + legH + 0.3}" rx="1.8" ry="0.9" fill="#333"/>
+    <ellipse cx="${12 + legSpread}" cy="${legTop + legH + 0.3}" rx="1.8" ry="0.9" fill="#333"/>
+  </svg>`;
 }
