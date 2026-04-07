@@ -1,0 +1,635 @@
+{
+  "_meta": {
+    "country": "SWE",
+    "country_name": "Sweden",
+    "created": "2026-04-07",
+    "categories": 11,
+    "sources": "SCB Sweden, Eurobarometer, OECD, Hofstede Insights, DataReportal, Pew Research, Gallup, WVS",
+    "filtered": "2026-04-07"
+  },
+  "dataPoints": 112,
+  "daily_routines": {
+    "avg_sleep_hours": {
+      "value": 7.5,
+      "source": "OECD Better Life Index 2024",
+      "year": 2024
+    },
+    "wake_time_weekday": {
+      "value": "06:45",
+      "source": "SCB Tidsstudie 2022",
+      "year": 2022
+    },
+    "commute_time_minutes": {
+      "value": 30,
+      "source": "SCB Pendling 2023",
+      "year": 2023
+    },
+    "cycling_commuters_pct": {
+      "value": 19,
+      "source": "Trafikanalys 2023",
+      "year": 2023
+    },
+    "working_hours_per_week_avg": {
+      "value": 36.9,
+      "source": "Eurostat LFS 2023",
+      "year": 2023
+    },
+    "part_time_workers_pct": {
+      "value": 23,
+      "source": "SCB AM 2023",
+      "year": 2023
+    },
+    "fika_breaks_per_day": {
+      "value": 2.1,
+      "source": "Sifo Research 2023",
+      "year": 2023,
+      "note": "Fika (coffee+pastry break) is non-negotiable cultural institution"
+    },
+    "lunch_break_minutes": {
+      "value": 30,
+      "source": "SCB Tidsstudie 2022",
+      "year": 2022
+    },
+    "dinner_time_avg": {
+      "value": "17:30",
+      "source": "SCB 2022",
+      "year": 2022,
+      "note": "Earliest dinner time in Europe; major cultural contrast vs Med"
+    },
+    "leisure_hours_per_day": {
+      "value": 4.5,
+      "source": "OECD Time Use 2023",
+      "year": 2023
+    },
+    "outdoor_nature_hours_per_week": {
+      "value": 4.8,
+      "source": "Naturvårdsverket 2023",
+      "year": 2023,
+      "note": "Allemansrätten: right to roam nature universally exercised"
+    },
+    "vacation_days_statutory": {
+      "value": 25,
+      "source": "Semesterlagen 2023",
+      "year": 2023
+    },
+    "summer_house_owners_pct": {
+      "value": 18,
+      "source": "SCB Fritidshus 2023",
+      "year": 2023
+    }
+  },
+  "spending": {
+    "monthly_household_income_sek": {
+      "value": 44800,
+      "source": "SCB Inkomster 2023",
+      "year": 2023
+    },
+    "food_at_home_sek": {
+      "value": 4100,
+      "source": "SCB HUT 2022",
+      "year": 2022
+    },
+    "food_out_sek": {
+      "value": 1850,
+      "source": "SCB HUT 2022",
+      "year": 2022
+    },
+    "housing_sek": {
+      "value": 9200,
+      "source": "SCB Boende 2023",
+      "year": 2023,
+      "note": "Stockholm 1BR avg: 13,000 SEK"
+    },
+    "transport_sek": {
+      "value": 3800,
+      "source": "SCB HUT 2022",
+      "year": 2022
+    },
+    "healthcare_oop_sek": {
+      "value": 800,
+      "source": "SKR Patientavgifter 2023",
+      "year": 2023,
+      "note": "Capped at 1,300 SEK/year outpatient; very low OOP"
+    },
+    "savings_rate_pct": {
+      "value": 15.3,
+      "source": "Riksbank 2023",
+      "year": 2023
+    },
+    "pension_contribution_pct": {
+      "value": 18.5,
+      "source": "Pensionsmyndigheten 2023",
+      "year": 2023,
+      "note": "Mandatory; ATP + PPM individual account"
+    },
+    "swish_transactions_per_capita": {
+      "value": 89,
+      "source": "Swish Årsrapport 2023",
+      "year": 2023,
+      "note": "Swish dominates payments; nearly cashless society"
+    }
+  },
+  "social_norms": {
+    "individualism_score": {
+      "value": 71,
+      "source": "Hofstede Insights 2024",
+      "year": 2024
+    },
+    "power_distance_score": {
+      "value": 31,
+      "source": "Hofstede Insights 2024",
+      "year": 2024,
+      "note": "Very flat; even PM takes public transport"
+    },
+    "uncertainty_avoidance": {
+      "value": 29,
+      "source": "Hofstede Insights 2024",
+      "year": 2024,
+      "note": "Low; comfortable with ambiguity"
+    },
+    "masculinity_score": {
+      "value": 5,
+      "source": "Hofstede Insights 2024",
+      "year": 2024,
+      "note": "Most feminine society in world (Hofstede)"
+    },
+    "long_term_orientation": {
+      "value": 53,
+      "source": "Hofstede Insights 2024",
+      "year": 2024
+    },
+    "indulgence_score": {
+      "value": 78,
+      "source": "Hofstede Insights 2024",
+      "year": 2024
+    },
+    "jantelagen_norm": {
+      "value": "strong",
+      "source": "WVS Wave 7 2023",
+      "year": 2023,
+      "note": "Law of Jante: don't think you're better than others; key social regulator"
+    },
+    "personal_space_norm_m": {
+      "value": 1.2,
+      "source": "J Cross-Cultural Psych 2022",
+      "year": 2022
+    },
+    "LGBTQ_acceptance_pct": {
+      "value": 91,
+      "source": "Eurobarometer 2023",
+      "year": 2023
+    },
+    "gender_equality_perception_pct": {
+      "value": 92,
+      "source": "Eurobarometer 2023",
+      "year": 2023
+    },
+    "trust_in_strangers_pct": {
+      "value": 64,
+      "source": "ESS 2023",
+      "year": 2023,
+      "note": "Very high social trust"
+    },
+    "environment_priority_pct": {
+      "value": 77,
+      "source": "Eurobarometer 2023",
+      "year": 2023
+    },
+    "collective_bargaining_coverage_pct": {
+      "value": 88,
+      "source": "Medlingsinstitutet 2023",
+      "year": 2023
+    }
+  },
+  "business_culture": {
+    "hierarchy_importance": {
+      "value": 2,
+      "source": "Hofstede 2023",
+      "year": 2023,
+      "note": "1-10; virtually flat; managers seen as facilitators"
+    },
+    "formality_level": {
+      "value": 2,
+      "source": "EF Business Culture 2023",
+      "year": 2023,
+      "note": "Du-reform since 1970s; all first names"
+    },
+    "consensus_building_style": {
+      "value": "mandatory",
+      "source": "Arbetsgivarverket 2023",
+      "year": 2023,
+      "note": "Decisions by consensus (samförstånd); can be slow"
+    },
+    "meeting_starts_on_time_pct": {
+      "value": 93,
+      "source": "Eurobarometer Business 2023",
+      "year": 2023
+    },
+    "corruption_perception_index": {
+      "value": 83,
+      "source": "TI 2023",
+      "year": 2023,
+      "note": "Rank 5/180"
+    },
+    "ease_of_doing_business_rank": {
+      "value": 10,
+      "source": "World Bank 2023",
+      "year": 2023
+    },
+    "time_to_start_business_days": {
+      "value": 5,
+      "source": "World Bank 2023",
+      "year": 2023
+    },
+    "gender_pay_gap_pct": {
+      "value": 10.5,
+      "source": "SCB Lön 2022",
+      "year": 2022
+    },
+    "parental_leave_days_total": {
+      "value": 480,
+      "source": "Försäkringskassan 2023",
+      "year": 2023,
+      "note": "480 days shared; 90 days reserved each parent"
+    },
+    "paternity_leave_uptake_pct": {
+      "value": 73,
+      "source": "Försäkringskassan 2023",
+      "year": 2023
+    },
+    "unicorns_per_million_capita": {
+      "value": 5.8,
+      "source": "Atomico State of European Tech 2023",
+      "year": 2023,
+      "note": "Stockholm: Spotify, Klarna, King, Mojang — highest density in EU"
+    }
+  },
+  "religion": {
+    "no_religion_pct": {
+      "value": 68,
+      "source": "Pew Research 2023",
+      "year": 2023,
+      "note": "Most secular country in world (WVS)"
+    },
+    "lutheran_pct": {
+      "value": 57,
+      "source": "Church of Sweden 2023",
+      "year": 2023,
+      "note": "Nominal membership; 57% members but <5% weekly"
+    },
+    "muslim_pct": {
+      "value": 8,
+      "source": "SCB 2023",
+      "year": 2023
+    },
+    "weekly_religious_attendance_pct": {
+      "value": 5,
+      "source": "Eurobarometer 2023",
+      "year": 2023,
+      "note": "Lowest in EU"
+    },
+    "religion_impact_daily_life": {
+      "value": 1.6,
+      "source": "WVS 7 2023",
+      "year": 2023,
+      "note": "1-10"
+    },
+    "church_tax_abolished": {
+      "value": 2000,
+      "source": "Church of Sweden",
+      "year": 2024,
+      "note": "Separated from state in 2000; membership declining 2%/year"
+    },
+    "religious_holidays_count": {
+      "value": 11,
+      "source": "Lag om allmänna helgdagar 2023",
+      "year": 2023
+    }
+  },
+  "digital_behavior": {
+    "internet_penetration_pct": {
+      "value": 97,
+      "source": "DataReportal 2024",
+      "year": 2024
+    },
+    "smartphone_ownership_pct": {
+      "value": 92,
+      "source": "SCB IKT 2023",
+      "year": 2023
+    },
+    "daily_social_media_hours": {
+      "value": 1.8,
+      "source": "DataReportal 2024",
+      "year": 2024
+    },
+    "top_platform_1": {
+      "value": "YouTube",
+      "source": "DataReportal 2024",
+      "year": 2024
+    },
+    "top_platform_2": {
+      "value": "Facebook",
+      "source": "DataReportal 2024",
+      "year": 2024
+    },
+    "swish_penetration_pct": {
+      "value": 82,
+      "source": "Swish 2024",
+      "year": 2024,
+      "note": "Swish (bank P2P app); cash usage <10%"
+    },
+    "ecommerce_adoption_pct": {
+      "value": 87,
+      "source": "PostNord E-barometer 2023",
+      "year": 2023
+    },
+    "online_banking_pct": {
+      "value": 95,
+      "source": "SCB 2023",
+      "year": 2023
+    },
+    "streaming_subscription_pct": {
+      "value": 82,
+      "source": "MMS Media 2024",
+      "year": 2024,
+      "note": "Spotify born in Stockholm"
+    },
+    "remote_work_pct": {
+      "value": 36,
+      "source": "SCB Arbete 2023",
+      "year": 2023
+    },
+    "bankid_users_millions": {
+      "value": 8.4,
+      "source": "BankID Årsrapport 2023",
+      "year": 2023,
+      "note": "8.4M of 10.5M pop use BankID for all digital auth"
+    }
+  },
+  "education": {
+    "literacy_rate_pct": {
+      "value": 99.3,
+      "source": "UNESCO 2023",
+      "year": 2023
+    },
+    "avg_years_schooling": {
+      "value": 12.8,
+      "source": "UNDP HDR 2023",
+      "year": 2023
+    },
+    "tertiary_enrollment_pct": {
+      "value": 73,
+      "source": "SCB Utbildning 2023",
+      "year": 2023
+    },
+    "pisa_score_avg": {
+      "value": 487,
+      "source": "OECD PISA 2022",
+      "year": 2022,
+      "note": "Declined from 509 in 2009; reforms ongoing"
+    },
+    "govt_education_spend_pct_gdp": {
+      "value": 6.7,
+      "source": "OECD EAG 2023",
+      "year": 2023
+    },
+    "university_tuition_fee": {
+      "value": 0,
+      "source": "UKÄ 2023",
+      "year": 2023,
+      "note": "Free for EU citizens; 80K-170K SEK/year for non-EU"
+    },
+    "student_allowance_sek_month": {
+      "value": 3226,
+      "source": "CSN 2024",
+      "year": 2024
+    },
+    "vocational_track_pct": {
+      "value": 37,
+      "source": "SCB 2023",
+      "year": 2023
+    },
+    "preschool_enrollment_1_5yo_pct": {
+      "value": 86,
+      "source": "Skolverket 2023",
+      "year": 2023
+    },
+    "teacher_shortage_vacancies": {
+      "value": 15000,
+      "source": "Lärarförbundet 2023",
+      "year": 2023
+    }
+  },
+  "housing": {
+    "homeownership_rate_pct": {
+      "value": 64,
+      "source": "SCB Bostäder 2023",
+      "year": 2023
+    },
+    "avg_household_size": {
+      "value": 2.1,
+      "source": "SCB 2023",
+      "year": 2023
+    },
+    "avg_rent_1br_stockholm_sek": {
+      "value": 13000,
+      "source": "Hyresmarknadskommittén 2024",
+      "year": 2024
+    },
+    "avg_rent_1br_gothenburg_sek": {
+      "value": 9500,
+      "source": "Boplats Göteborg 2024",
+      "year": 2024
+    },
+    "rent_control_system": {
+      "value": "bruksvärdessystemet",
+      "source": "Hyreslagen 2023",
+      "year": 2023,
+      "note": "Use-value system; rents set by negotiation, not market; creates severe shortage"
+    },
+    "housing_queue_stockholm_years": {
+      "value": 11,
+      "source": "Bostadsförmedlingen Stockholm 2024",
+      "year": 2024,
+      "note": "11-year queue for public rental in Stockholm"
+    },
+    "housing_price_to_income_ratio": {
+      "value": 8.1,
+      "source": "Numbeo 2024",
+      "year": 2024
+    },
+    "brf_cooperative_housing_pct": {
+      "value": 22,
+      "source": "SCB 2023",
+      "year": 2023,
+      "note": "Bostadsrättsförening: unique Swedish co-op ownership"
+    },
+    "avg_home_size_sqm": {
+      "value": 97,
+      "source": "SCB 2022",
+      "year": 2022
+    },
+    "housing_price_growth_yoy_pct": {
+      "value": -4.2,
+      "source": "Mäklarstatistik 2024",
+      "year": 2024,
+      "note": "Market correction after 2022 rate hikes"
+    }
+  },
+  "food_lifestyle": {
+    "eating_out_per_week": {
+      "value": 2.3,
+      "source": "SCB HUT 2022",
+      "year": 2022
+    },
+    "home_cooking_pct": {
+      "value": 74,
+      "source": "SCB 2022",
+      "year": 2022
+    },
+    "fast_food_visits_per_week": {
+      "value": 1.1,
+      "source": "Max Burgers / McDonald's SE 2023",
+      "year": 2023
+    },
+    "vegetarian_vegan_pct": {
+      "value": 12,
+      "source": "Naturskyddsföreningen 2023",
+      "year": 2023
+    },
+    "obesity_rate_pct": {
+      "value": 18.4,
+      "source": "OECD 2023",
+      "year": 2023
+    },
+    "alcohol_consumption_litres_per_capita": {
+      "value": 7.1,
+      "source": "CAN 2023",
+      "year": 2023,
+      "note": "Systembolaget monopoly; lower than EU avg"
+    },
+    "systembolaget_monopoly": {
+      "value": "state monopoly",
+      "source": "Systembolaget 2023",
+      "year": 2023,
+      "note": "Alcohol only from state stores; closed Sundays"
+    },
+    "coffee_consumption_kg_per_capita": {
+      "value": 8.2,
+      "source": "ICO 2023",
+      "year": 2023,
+      "note": "3rd highest globally; fika culture driver"
+    },
+    "organic_food_market_share_pct": {
+      "value": 11,
+      "source": "Ekoweb 2023",
+      "year": 2023
+    },
+    "food_delivery_app_pct": {
+      "value": 42,
+      "source": "Foodora/Wolt SE 2024",
+      "year": 2024
+    },
+    "surströmming_producers_annual_cans": {
+      "value": 2000000,
+      "source": "Swedish Food Agency 2023",
+      "year": 2023
+    }
+  },
+  "trust_governance": {
+    "trust_in_govt_pct": {
+      "value": 52,
+      "source": "Eurobarometer 2023",
+      "year": 2023
+    },
+    "trust_in_parliament_pct": {
+      "value": 48,
+      "source": "SOM Institute 2023",
+      "year": 2023
+    },
+    "trust_in_courts_pct": {
+      "value": 68,
+      "source": "Eurobarometer 2023",
+      "year": 2023
+    },
+    "trust_in_police_pct": {
+      "value": 71,
+      "source": "Eurobarometer 2023",
+      "year": 2023
+    },
+    "trust_in_media_pct": {
+      "value": 52,
+      "source": "Reuters 2024",
+      "year": 2024
+    },
+    "trust_in_strangers_pct": {
+      "value": 64,
+      "source": "ESS 2023",
+      "year": 2023
+    },
+    "corruption_perception_index": {
+      "value": 83,
+      "source": "TI 2023",
+      "year": 2023
+    },
+    "press_freedom_rank": {
+      "value": 4,
+      "source": "RSF 2024",
+      "year": 2024
+    },
+    "voter_turnout_pct": {
+      "value": 84.2,
+      "source": "Valmyndigheten 2022",
+      "year": 2022
+    },
+    "tax_revenue_pct_gdp": {
+      "value": 42.6,
+      "source": "OECD 2023",
+      "year": 2023,
+      "note": "Among highest in world; funds universal welfare"
+    },
+    "welfare_satisfaction_pct": {
+      "value": 71,
+      "source": "SOM Institute Välfärd 2023",
+      "year": 2023
+    }
+  },
+  "regional_variations": {
+    "stockholm_vs_norrland_income_ratio": {
+      "value": 1.48,
+      "source": "SCB Regional Statistik 2022",
+      "year": 2022,
+      "note": "Stockholm median income 48K SEK/month vs Norrbotten 32K"
+    },
+    "malmo_gang_crime_rate": {
+      "value": 1.9,
+      "source": "BRÅ 2023",
+      "year": 2023,
+      "note": "Malmö: 1.9 shootings per 100K/year; national debate on segregation"
+    },
+    "gothenburg_manufacturing_gdp_pct": {
+      "value": 31,
+      "source": "Business Region Göteborg 2023",
+      "year": 2023,
+      "note": "Volvo, SKF, AstraZeneca major employers"
+    },
+    "norrland_population_density": {
+      "value": 3.2,
+      "source": "SCB 2023",
+      "year": 2023,
+      "note": "3.2 people/km²; 60% of land, 12% of pop; Sami indigenous culture"
+    },
+    "gotland_tourism_seasonality": {
+      "value": 800,
+      "source": "Region Gotland 2023",
+      "year": 2023,
+      "note": "Population triples in summer (60K→180K); medieval Visby UNESCO"
+    },
+    "malardalen_tech_cluster": {
+      "value": "Stockholm-Uppsala-Västerås",
+      "source": "Tillväxtverket 2023",
+      "year": 2023,
+      "note": "Europe's top VC/startup density outside London"
+    }
+  }
+}

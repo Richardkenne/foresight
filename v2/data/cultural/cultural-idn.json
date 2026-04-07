@@ -3,163 +3,739 @@
     "country": "IDN",
     "country_name": "Indonesia",
     "created": "2026-04-07",
-    "categories": 11
+    "categories": 11,
+    "filtered": "2026-04-07"
   },
-  "dataPoints": 319,
+  "dataPoints": 141,
   "daily_routines": {
-    "avg_sleep_hours": { "value": 6.8, "source": "Philips Global Sleep Survey, 2023", "year": 2023, "note": "Indonesia ranks among lowest sleep hours in Asia" },
-    "wake_time_weekday": { "value": "05:00", "source": "BPS Survei Sosial Ekonomi Nasional (Susenas), 2023", "year": 2023, "note": "Early wake driven by Fajr prayer for Muslim majority" },
-    "commute_time_minutes": { "value": 59, "source": "TomTom Traffic Index Jakarta, 2024", "year": 2024, "note": "Jakarta commuters among longest in Southeast Asia" },
-    "working_hours_per_week": { "value": 40.7, "source": "BPS Labour Force Survey, 2024", "year": 2024 },
-    "lunch_break_minutes": { "value": 60, "source": "Manpower Regulation No. 13/2003; typical practice survey Jobstreet 2023", "year": 2023 },
-    "dinner_time_avg": { "value": "19:00", "source": "Nielsen Indonesia Consumer Survey, 2023", "year": 2023 },
-    "leisure_hours_per_day": { "value": 3.2, "source": "OECD Better Life Index Indonesia supplement, 2023", "year": 2023 },
-    "tv_hours_per_day": { "value": 4.5, "source": "Nielsen Television Audience Measurement Indonesia, 2023", "year": 2023 },
-    "weekend_family_time_hours": { "value": 6.0, "source": "BPS Susenas Time Use Module, 2022", "year": 2022 },
-    "nap_culture": { "value": "common", "source": "BPS Susenas Time Use Module, 2022", "year": 2022, "note": "Tidur siang (afternoon nap) culturally accepted, especially outside major cities" },
-    "overtime_culture": { "value": "moderate-high", "source": "Jobstreet Indonesia Employment Report, 2024", "year": 2024, "note": "Overtime common in Jakarta corporate sector; less so in regional cities" },
-    "prayer_time_breaks_per_day": { "value": 5, "source": "MUI (Indonesian Ulema Council) guidelines; widely observed in workplaces", "year": 2023, "note": "Five daily prayers; Friday midday prayer is major social pause" },
-    "morning_market_visits_per_week": { "value": 3.1, "source": "BPS Retail Trade Survey, 2023", "year": 2023, "note": "Pasar pagi (morning market) integral to daily rhythm especially outside Java" },
-    "social_media_hours_per_day": { "value": 3.3, "source": "DataReportal Digital 2024: Indonesia", "year": 2024 },
-    "weekend_religious_activity_hours": { "value": 2.5, "source": "Pew Research Center Global Religion, 2023", "year": 2023 }
+    "avg_sleep_hours": {
+      "value": 6.8,
+      "source": "Philips Global Sleep Survey, 2023",
+      "year": 2023,
+      "note": "Indonesia ranks among lowest sleep hours in Asia"
+    },
+    "wake_time_weekday": {
+      "value": "05:00",
+      "source": "BPS Survei Sosial Ekonomi Nasional (Susenas), 2023",
+      "year": 2023,
+      "note": "Early wake driven by Fajr prayer for Muslim majority"
+    },
+    "commute_time_minutes": {
+      "value": 59,
+      "source": "TomTom Traffic Index Jakarta, 2024",
+      "year": 2024,
+      "note": "Jakarta commuters among longest in Southeast Asia"
+    },
+    "working_hours_per_week": {
+      "value": 40.7,
+      "source": "BPS Labour Force Survey, 2024",
+      "year": 2024
+    },
+    "lunch_break_minutes": {
+      "value": 60,
+      "source": "Manpower Regulation No. 13/2003; typical practice survey Jobstreet 2023",
+      "year": 2023
+    },
+    "dinner_time_avg": {
+      "value": "19:00",
+      "source": "Nielsen Indonesia Consumer Survey, 2023",
+      "year": 2023
+    },
+    "leisure_hours_per_day": {
+      "value": 3.2,
+      "source": "OECD Better Life Index Indonesia supplement, 2023",
+      "year": 2023
+    },
+    "tv_hours_per_day": {
+      "value": 4.5,
+      "source": "Nielsen Television Audience Measurement Indonesia, 2023",
+      "year": 2023
+    },
+    "weekend_family_time_hours": {
+      "value": 6,
+      "source": "BPS Susenas Time Use Module, 2022",
+      "year": 2022
+    },
+    "nap_culture": {
+      "value": "common",
+      "source": "BPS Susenas Time Use Module, 2022",
+      "year": 2022,
+      "note": "Tidur siang (afternoon nap) culturally accepted, especially outside major cities"
+    },
+    "overtime_culture": {
+      "value": "moderate-high",
+      "source": "Jobstreet Indonesia Employment Report, 2024",
+      "year": 2024,
+      "note": "Overtime common in Jakarta corporate sector; less so in regional cities"
+    },
+    "prayer_time_breaks_per_day": {
+      "value": 5,
+      "source": "MUI (Indonesian Ulema Council) guidelines; widely observed in workplaces",
+      "year": 2023,
+      "note": "Five daily prayers; Friday midday prayer is major social pause"
+    },
+    "morning_market_visits_per_week": {
+      "value": 3.1,
+      "source": "BPS Retail Trade Survey, 2023",
+      "year": 2023,
+      "note": "Pasar pagi (morning market) integral to daily rhythm especially outside Java"
+    },
+    "social_media_hours_per_day": {
+      "value": 3.3,
+      "source": "DataReportal Digital 2024: Indonesia",
+      "year": 2024
+    },
+    "weekend_religious_activity_hours": {
+      "value": 2.5,
+      "source": "Pew Research Center Global Religion, 2023",
+      "year": 2023
+    }
   },
   "spending": {
-    "food_at_home_usd": { "value": 98, "source": "BPS Susenas 2023, household expenditure module; converted at IDR 15,600/USD", "year": 2023 },
-    "food_out_usd": { "value": 42, "source": "BPS Susenas 2023", "year": 2023, "note": "Warung and street food dominant; restaurants growing in urban areas" },
-    "housing_rent_or_mortgage_usd": { "value": 87, "source": "BPS Susenas 2023 national avg; urban areas significantly higher", "year": 2023 },
-    "transport_usd": { "value": 38, "source": "BPS Susenas 2023", "year": 2023 },
-    "education_usd": { "value": 29, "source": "BPS Susenas 2023", "year": 2023 },
-    "entertainment_usd": { "value": 14, "source": "BPS Susenas 2023", "year": 2023 },
-    "healthcare_usd": { "value": 18, "source": "WHO Global Health Expenditure Database 2023; BPS Susenas 2023", "year": 2023 },
-    "clothing_usd": { "value": 16, "source": "BPS Susenas 2023", "year": 2023 },
-    "savings_rate_pct": { "value": 36.2, "source": "World Bank Gross National Savings Indonesia, 2024", "year": 2024 },
-    "debt_to_income_ratio_pct": { "value": 17.4, "source": "Bank Indonesia Financial Stability Review, 2024", "year": 2024 },
-    "remittances_pct": { "value": 2.7, "source": "World Bank Remittances Data, 2024 — Indonesia receives ~USD 9.8B annually", "year": 2024 },
-    "mobile_payment_monthly_usd": { "value": 64, "source": "Bank Indonesia Digital Payment Statistics, 2024", "year": 2024, "note": "GoPay, OVO, Dana dominant platforms" },
-    "ecommerce_spend_monthly_usd": { "value": 31, "source": "Statista E-Commerce Indonesia Report, 2024", "year": 2024 }
+    "food_at_home_usd": {
+      "value": 98,
+      "source": "BPS Susenas 2023, household expenditure module; converted at IDR 15,600/USD",
+      "year": 2023
+    },
+    "food_out_usd": {
+      "value": 42,
+      "source": "BPS Susenas 2023",
+      "year": 2023,
+      "note": "Warung and street food dominant; restaurants growing in urban areas"
+    },
+    "housing_rent_or_mortgage_usd": {
+      "value": 87,
+      "source": "BPS Susenas 2023 national avg; urban areas significantly higher",
+      "year": 2023
+    },
+    "transport_usd": {
+      "value": 38,
+      "source": "BPS Susenas 2023",
+      "year": 2023
+    },
+    "education_usd": {
+      "value": 29,
+      "source": "BPS Susenas 2023",
+      "year": 2023
+    },
+    "entertainment_usd": {
+      "value": 14,
+      "source": "BPS Susenas 2023",
+      "year": 2023
+    },
+    "healthcare_usd": {
+      "value": 18,
+      "source": "WHO Global Health Expenditure Database 2023; BPS Susenas 2023",
+      "year": 2023
+    },
+    "clothing_usd": {
+      "value": 16,
+      "source": "BPS Susenas 2023",
+      "year": 2023
+    },
+    "savings_rate_pct": {
+      "value": 36.2,
+      "source": "World Bank Gross National Savings Indonesia, 2024",
+      "year": 2024
+    },
+    "debt_to_income_ratio_pct": {
+      "value": 17.4,
+      "source": "Bank Indonesia Financial Stability Review, 2024",
+      "year": 2024
+    },
+    "remittances_pct": {
+      "value": 2.7,
+      "source": "World Bank Remittances Data, 2024 — Indonesia receives ~USD 9.8B annually",
+      "year": 2024
+    },
+    "mobile_payment_monthly_usd": {
+      "value": 64,
+      "source": "Bank Indonesia Digital Payment Statistics, 2024",
+      "year": 2024,
+      "note": "GoPay, OVO, Dana dominant platforms"
+    },
+    "ecommerce_spend_monthly_usd": {
+      "value": 31,
+      "source": "Statista E-Commerce Indonesia Report, 2024",
+      "year": 2024
+    }
   },
   "social_norms": {
-    "individualism_score": { "value": 14, "source": "Hofstede Insights Country Comparison Tool, 2023", "year": 2023, "note": "Very collectivist; one of lowest IDV scores globally" },
-    "power_distance_score": { "value": 78, "source": "Hofstede Insights, 2023", "year": 2023 },
-    "uncertainty_avoidance": { "value": 48, "source": "Hofstede Insights, 2023", "year": 2023 },
-    "masculinity_score": { "value": 46, "source": "Hofstede Insights, 2023", "year": 2023 },
-    "long_term_orientation": { "value": 62, "source": "Hofstede Insights, 2023", "year": 2023 },
-    "indulgence_score": { "value": 38, "source": "Hofstede Insights, 2023", "year": 2023 },
-    "face_saving_importance": { "value": 9, "source": "World Values Survey Wave 7 Indonesia, 2022", "year": 2022, "note": "Menjaga muka (face-saving) deeply embedded in Javanese and Sundanese cultures" },
-    "personal_space_norm_m": { "value": 0.5, "source": "Cross-cultural proxemics research, Journal of Cross-Cultural Psychology, 2022", "year": 2022, "note": "Close contact norm in crowded urban environments" },
-    "eye_contact_norm": { "value": "moderate-indirect", "source": "Intercultural Communication Studies, 2023", "year": 2023, "note": "Sustained eye contact with elders considered disrespectful" },
-    "punctuality_culture": { "value": "flexible", "source": "World Values Survey Wave 7, 2022; concept of 'jam karet' (rubber time)", "year": 2022 },
-    "gift_giving_culture": { "value": "important", "source": "World Values Survey Wave 7, 2022", "year": 2022, "note": "Gifts expected at Lebaran, weddings, births; not opened immediately" },
-    "religion_in_public_life_pct": { "value": 95, "source": "Pew Research Center, Global Restrictions on Religion, 2024", "year": 2024 },
-    "greeting_custom": { "value": "salam (handshake among same gender) or slight bow", "source": "Ministry of Tourism Indonesia Cultural Guide, 2023", "year": 2023 },
-    "multigenerational_respect_score": { "value": 9.1, "source": "World Values Survey Wave 7 Indonesia, 2022", "year": 2022 },
-    "community_obligation_score": { "value": 8.5, "source": "World Values Survey Wave 7, 2022; concept of gotong royong", "year": 2022 }
+    "individualism_score": {
+      "value": 14,
+      "source": "Hofstede Insights Country Comparison Tool, 2023",
+      "year": 2023,
+      "note": "Very collectivist; one of lowest IDV scores globally"
+    },
+    "power_distance_score": {
+      "value": 78,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "uncertainty_avoidance": {
+      "value": 48,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "masculinity_score": {
+      "value": 46,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "long_term_orientation": {
+      "value": 62,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "indulgence_score": {
+      "value": 38,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "face_saving_importance": {
+      "value": 9,
+      "source": "World Values Survey Wave 7 Indonesia, 2022",
+      "year": 2022,
+      "note": "Menjaga muka (face-saving) deeply embedded in Javanese and Sundanese cultures"
+    },
+    "personal_space_norm_m": {
+      "value": 0.5,
+      "source": "Cross-cultural proxemics research, Journal of Cross-Cultural Psychology, 2022",
+      "year": 2022,
+      "note": "Close contact norm in crowded urban environments"
+    },
+    "eye_contact_norm": {
+      "value": "moderate-indirect",
+      "source": "Intercultural Communication Studies, 2023",
+      "year": 2023,
+      "note": "Sustained eye contact with elders considered disrespectful"
+    },
+    "punctuality_culture": {
+      "value": "flexible",
+      "source": "World Values Survey Wave 7, 2022; concept of 'jam karet' (rubber time)",
+      "year": 2022
+    },
+    "gift_giving_culture": {
+      "value": "important",
+      "source": "World Values Survey Wave 7, 2022",
+      "year": 2022,
+      "note": "Gifts expected at Lebaran, weddings, births; not opened immediately"
+    },
+    "religion_in_public_life_pct": {
+      "value": 95,
+      "source": "Pew Research Center, Global Restrictions on Religion, 2024",
+      "year": 2024
+    },
+    "greeting_custom": {
+      "value": "salam (handshake among same gender) or slight bow",
+      "source": "Ministry of Tourism Indonesia Cultural Guide, 2023",
+      "year": 2023
+    },
+    "multigenerational_respect_score": {
+      "value": 9.1,
+      "source": "World Values Survey Wave 7 Indonesia, 2022",
+      "year": 2022
+    },
+    "community_obligation_score": {
+      "value": 8.5,
+      "source": "World Values Survey Wave 7, 2022; concept of gotong royong",
+      "year": 2022
+    }
   },
   "business_culture": {
-    "hierarchy_importance": { "value": 9, "source": "Hofstede Insights; EIU Business Environment Rankings Indonesia, 2024", "year": 2024, "note": "Bapak/Ibu titles essential; juniors defer to seniors in all meetings" },
-    "formality_level": { "value": 7, "source": "EIU Business Environment Rankings, 2024", "year": 2024 },
-    "meeting_starts_on_time_pct": { "value": 45, "source": "Jobstreet Indonesia Workplace Culture Survey, 2023", "year": 2023, "note": "Jam karet culture prevalent; 15-30 min late common" },
-    "business_card_etiquette": { "value": "both hands, read carefully before putting away", "source": "Indonesia Investment Coordinating Board BKPM Business Guide, 2023", "year": 2023 },
-    "negotiation_rounds_typical": { "value": 4, "source": "AmCham Indonesia Business Environment Survey, 2023", "year": 2023 },
-    "corruption_perception_index": { "value": 34, "source": "Transparency International CPI 2024 (0=highly corrupt, 100=clean)", "year": 2024 },
-    "ease_of_doing_business_rank": { "value": 73, "source": "World Bank Doing Business (Regulatory Quality Proxy) 2023", "year": 2023 },
-    "time_to_start_business_days": { "value": 9.4, "source": "World Bank Business Ready Report, 2024", "year": 2024 },
-    "small_talk_before_business": { "value": "always", "source": "AmCham Indonesia, 2023", "year": 2023, "note": "Relationship building (silaturahmi) precedes all business" },
-    "contracts_vs_relationships": { "value": "relationships first", "source": "EIU Business Environment Rankings 2024; AmCham Survey 2023", "year": 2023 },
-    "women_in_management_pct": { "value": 36.5, "source": "ILO Women in Business and Management Indonesia, 2024", "year": 2024 },
-    "lunch_meeting_culture": { "value": "common", "source": "Jobstreet Indonesia, 2023", "year": 2023, "note": "Meals are key relationship-building opportunities" }
+    "hierarchy_importance": {
+      "value": 9,
+      "source": "Hofstede Insights; EIU Business Environment Rankings Indonesia, 2024",
+      "year": 2024,
+      "note": "Bapak/Ibu titles essential; juniors defer to seniors in all meetings"
+    },
+    "formality_level": {
+      "value": 7,
+      "source": "EIU Business Environment Rankings, 2024",
+      "year": 2024
+    },
+    "meeting_starts_on_time_pct": {
+      "value": 45,
+      "source": "Jobstreet Indonesia Workplace Culture Survey, 2023",
+      "year": 2023,
+      "note": "Jam karet culture prevalent; 15-30 min late common"
+    },
+    "business_card_etiquette": {
+      "value": "both hands, read carefully before putting away",
+      "source": "Indonesia Investment Coordinating Board BKPM Business Guide, 2023",
+      "year": 2023
+    },
+    "negotiation_rounds_typical": {
+      "value": 4,
+      "source": "AmCham Indonesia Business Environment Survey, 2023",
+      "year": 2023
+    },
+    "corruption_perception_index": {
+      "value": 34,
+      "source": "Transparency International CPI 2024 (0=highly corrupt, 100=clean)",
+      "year": 2024
+    },
+    "ease_of_doing_business_rank": {
+      "value": 73,
+      "source": "World Bank Doing Business (Regulatory Quality Proxy) 2023",
+      "year": 2023
+    },
+    "time_to_start_business_days": {
+      "value": 9.4,
+      "source": "World Bank Business Ready Report, 2024",
+      "year": 2024
+    },
+    "small_talk_before_business": {
+      "value": "always",
+      "source": "AmCham Indonesia, 2023",
+      "year": 2023,
+      "note": "Relationship building (silaturahmi) precedes all business"
+    },
+    "contracts_vs_relationships": {
+      "value": "relationships first",
+      "source": "EIU Business Environment Rankings 2024; AmCham Survey 2023",
+      "year": 2023
+    },
+    "women_in_management_pct": {
+      "value": 36.5,
+      "source": "ILO Women in Business and Management Indonesia, 2024",
+      "year": 2024
+    },
+    "lunch_meeting_culture": {
+      "value": "common",
+      "source": "Jobstreet Indonesia, 2023",
+      "year": 2023,
+      "note": "Meals are key relationship-building opportunities"
+    }
   },
   "religion": {
-    "major_religion": { "value": "Islam", "source": "BPS National Population Census 2020; interim 2023 survey", "year": 2023 },
-    "major_religion_pct": { "value": 86.7, "source": "BPS National Population Census 2020", "year": 2022 },
-    "second_religion_pct": { "value": 10.7, "source": "BPS 2020 Census; Christianity (Protestant + Catholic combined)", "year": 2022 },
-    "atheist_agnostic_pct": { "value": 0.4, "source": "Pew Research Center, 2023; official state ideology Pancasila requires belief in God", "year": 2023 },
-    "weekly_religious_attendance_pct": { "value": 82, "source": "Pew Research Center Global Religion Survey, 2023", "year": 2023 },
-    "religion_impact_daily_life": { "value": 9.5, "source": "World Values Survey Wave 7 Indonesia, 2022", "year": 2022 },
-    "halal_diet_pct": { "value": 87, "source": "BPJPH (Halal Product Assurance Agency) Indonesia, 2023", "year": 2023 },
-    "religious_holidays_count_per_year": { "value": 16, "source": "Government Regulation on National Holidays, 2024 calendar", "year": 2024, "note": "Includes Eid al-Fitr (2 days), Eid al-Adha, Nyepi, Waisak, Christmas, etc." },
-    "interfaith_marriage_acceptance_pct": { "value": 18, "source": "Saiful Mujani Research & Consulting (SMRC) Survey, 2023", "year": 2023, "note": "Religiously mixed marriages legally constrained; acceptance low especially in conservative regions" },
-    "mosque_attendance_friday_pct": { "value": 72, "source": "Ministry of Religious Affairs Indonesia, 2023", "year": 2023 },
-    "ramadan_fasting_observance_pct": { "value": 93, "source": "Pew Research Center, 2023", "year": 2023 },
-    "religious_education_in_schools_pct": { "value": 100, "source": "Ministry of Education and Culture Indonesia; mandatory subject all levels", "year": 2023 }
+    "major_religion": {
+      "value": "Islam",
+      "source": "BPS National Population Census 2020; interim 2023 survey",
+      "year": 2023
+    },
+    "major_religion_pct": {
+      "value": 86.7,
+      "source": "BPS National Population Census 2020",
+      "year": 2022
+    },
+    "second_religion_pct": {
+      "value": 10.7,
+      "source": "BPS 2020 Census; Christianity (Protestant + Catholic combined)",
+      "year": 2022
+    },
+    "atheist_agnostic_pct": {
+      "value": 0.4,
+      "source": "Pew Research Center, 2023; official state ideology Pancasila requires belief in God",
+      "year": 2023
+    },
+    "weekly_religious_attendance_pct": {
+      "value": 82,
+      "source": "Pew Research Center Global Religion Survey, 2023",
+      "year": 2023
+    },
+    "religion_impact_daily_life": {
+      "value": 9.5,
+      "source": "World Values Survey Wave 7 Indonesia, 2022",
+      "year": 2022
+    },
+    "halal_diet_pct": {
+      "value": 87,
+      "source": "BPJPH (Halal Product Assurance Agency) Indonesia, 2023",
+      "year": 2023
+    },
+    "religious_holidays_count_per_year": {
+      "value": 16,
+      "source": "Government Regulation on National Holidays, 2024 calendar",
+      "year": 2024,
+      "note": "Includes Eid al-Fitr (2 days), Eid al-Adha, Nyepi, Waisak, Christmas, etc."
+    },
+    "interfaith_marriage_acceptance_pct": {
+      "value": 18,
+      "source": "Saiful Mujani Research & Consulting (SMRC) Survey, 2023",
+      "year": 2023,
+      "note": "Religiously mixed marriages legally constrained; acceptance low especially in conservative regions"
+    },
+    "mosque_attendance_friday_pct": {
+      "value": 72,
+      "source": "Ministry of Religious Affairs Indonesia, 2023",
+      "year": 2023
+    },
+    "ramadan_fasting_observance_pct": {
+      "value": 93,
+      "source": "Pew Research Center, 2023",
+      "year": 2023
+    },
+    "religious_education_in_schools_pct": {
+      "value": 100,
+      "source": "Ministry of Education and Culture Indonesia; mandatory subject all levels",
+      "year": 2023
+    }
   },
   "digital_behavior": {
-    "internet_penetration_pct": { "value": 79.5, "source": "APJII (Association of Indonesian Internet Providers) Survey, 2024", "year": 2024 },
-    "smartphone_ownership_pct": { "value": 73.7, "source": "DataReportal Digital 2024: Indonesia", "year": 2024 },
-    "daily_social_media_hours": { "value": 3.3, "source": "DataReportal Digital 2024: Indonesia (Global avg 2h 23m)", "year": 2024 },
-    "top_platform_1": { "value": "YouTube", "source": "DataReportal Digital 2024: Indonesia", "year": 2024 },
-    "top_platform_1_users_pct": { "value": 75.4, "source": "DataReportal Digital 2024: Indonesia (% internet users)", "year": 2024 },
-    "top_platform_2": { "value": "WhatsApp", "source": "DataReportal Digital 2024: Indonesia", "year": 2024 },
-    "top_platform_2_users_pct": { "value": 73.3, "source": "DataReportal Digital 2024: Indonesia", "year": 2024 },
-    "ecommerce_adoption_pct": { "value": 63.5, "source": "Statista Indonesia E-Commerce Report 2024", "year": 2024, "note": "Tokopedia, Shopee, Lazada dominant" },
-    "mobile_payment_adoption_pct": { "value": 56.8, "source": "Bank Indonesia Digital Payment Statistics 2024", "year": 2024 },
-    "online_banking_pct": { "value": 48.3, "source": "OJK (Financial Services Authority) Digital Finance Report, 2024", "year": 2024 },
-    "cybersecurity_awareness_score": { "value": 3.8, "source": "National Cyber and Encryption Agency (BSSN) Indonesia, 2023 (scale 1-10)", "year": 2023 },
-    "streaming_subscription_pct": { "value": 38.2, "source": "Statista Indonesia OTT Report, 2024; Netflix, Disney+, Vidio", "year": 2024 },
-    "remote_work_pct": { "value": 14.2, "source": "BPS Labour Force Survey, 2024; significantly higher in Jakarta", "year": 2024 },
-    "tiktok_users_pct": { "value": 67.5, "source": "DataReportal Digital 2024; Indonesia is TikTok's 2nd largest market", "year": 2024 },
-    "digital_literacy_index": { "value": 3.54, "source": "Ministry of Communication and Information Technology Indonesia Digital Literacy Index, 2023 (scale 1-5)", "year": 2023 }
+    "internet_penetration_pct": {
+      "value": 79.5,
+      "source": "APJII (Association of Indonesian Internet Providers) Survey, 2024",
+      "year": 2024
+    },
+    "smartphone_ownership_pct": {
+      "value": 73.7,
+      "source": "DataReportal Digital 2024: Indonesia",
+      "year": 2024
+    },
+    "daily_social_media_hours": {
+      "value": 3.3,
+      "source": "DataReportal Digital 2024: Indonesia (Global avg 2h 23m)",
+      "year": 2024
+    },
+    "top_platform_1": {
+      "value": "YouTube",
+      "source": "DataReportal Digital 2024: Indonesia",
+      "year": 2024
+    },
+    "top_platform_1_users_pct": {
+      "value": 75.4,
+      "source": "DataReportal Digital 2024: Indonesia (% internet users)",
+      "year": 2024
+    },
+    "top_platform_2": {
+      "value": "WhatsApp",
+      "source": "DataReportal Digital 2024: Indonesia",
+      "year": 2024
+    },
+    "top_platform_2_users_pct": {
+      "value": 73.3,
+      "source": "DataReportal Digital 2024: Indonesia",
+      "year": 2024
+    },
+    "ecommerce_adoption_pct": {
+      "value": 63.5,
+      "source": "Statista Indonesia E-Commerce Report 2024",
+      "year": 2024,
+      "note": "Tokopedia, Shopee, Lazada dominant"
+    },
+    "mobile_payment_adoption_pct": {
+      "value": 56.8,
+      "source": "Bank Indonesia Digital Payment Statistics 2024",
+      "year": 2024
+    },
+    "online_banking_pct": {
+      "value": 48.3,
+      "source": "OJK (Financial Services Authority) Digital Finance Report, 2024",
+      "year": 2024
+    },
+    "cybersecurity_awareness_score": {
+      "value": 3.8,
+      "source": "National Cyber and Encryption Agency (BSSN) Indonesia, 2023 (scale 1-10)",
+      "year": 2023
+    },
+    "streaming_subscription_pct": {
+      "value": 38.2,
+      "source": "Statista Indonesia OTT Report, 2024; Netflix, Disney+, Vidio",
+      "year": 2024
+    },
+    "remote_work_pct": {
+      "value": 14.2,
+      "source": "BPS Labour Force Survey, 2024; significantly higher in Jakarta",
+      "year": 2024
+    },
+    "tiktok_users_pct": {
+      "value": 67.5,
+      "source": "DataReportal Digital 2024; Indonesia is TikTok's 2nd largest market",
+      "year": 2024
+    },
+    "digital_literacy_index": {
+      "value": 3.54,
+      "source": "Ministry of Communication and Information Technology Indonesia Digital Literacy Index, 2023 (scale 1-5)",
+      "year": 2023
+    }
   },
   "education": {
-    "literacy_rate_pct": { "value": 96.0, "source": "BPS National Socioeconomic Survey (Susenas), 2023", "year": 2023 },
-    "avg_years_schooling": { "value": 8.7, "source": "UNDP Human Development Report Indonesia, 2024", "year": 2024 },
-    "tertiary_enrollment_pct": { "value": 36.3, "source": "UNESCO Institute for Statistics, 2023", "year": 2023 },
-    "private_tutoring_prevalence_pct": { "value": 52.0, "source": "SMERU Research Institute Indonesia Education Survey, 2023", "year": 2023 },
-    "govt_education_spend_pct_gdp": { "value": 3.5, "source": "World Bank Education Expenditure Data Indonesia, 2023", "year": 2023, "note": "Constitutional mandate is 20% of state budget; equivalent to ~3.5% GDP" },
-    "university_acceptance_rate_pct": { "value": 22.0, "source": "LTMPT (State University Entrance Committee) 2024", "year": 2024, "note": "For state universities (PTN); private universities have higher acceptance" },
-    "student_loan_prevalence_pct": { "value": 8.5, "source": "OJK Education Finance Survey, 2023", "year": 2023, "note": "KIP Kuliah scholarship prevalent; formal student loans less common" },
-    "stem_graduates_pct": { "value": 29.4, "source": "Ministry of Education and Culture Indonesia, 2024 Graduate Statistics", "year": 2024 },
-    "vocational_track_pct": { "value": 37.8, "source": "Ministry of Education SMK enrollment data, 2024", "year": 2024, "note": "SMK (vocational high school) enrollment growing as government policy priority" },
-    "international_student_outflow_pct": { "value": 1.8, "source": "UNESCO Institute for Statistics, 2023; Malaysia and Australia top destinations", "year": 2023 },
-    "education_pressure_score": { "value": 7.2, "source": "World Values Survey Wave 7 Indonesia, 2022; PISA Indonesia 2022", "year": 2022 },
-    "pisa_math_score": { "value": 366, "source": "OECD PISA 2022 Results", "year": 2022, "note": "Below OECD average of 472; improving from 379 in 2018" },
-    "pisa_reading_score": { "value": 359, "source": "OECD PISA 2022 Results", "year": 2022 }
+    "literacy_rate_pct": {
+      "value": 96,
+      "source": "BPS National Socioeconomic Survey (Susenas), 2023",
+      "year": 2023
+    },
+    "avg_years_schooling": {
+      "value": 8.7,
+      "source": "UNDP Human Development Report Indonesia, 2024",
+      "year": 2024
+    },
+    "tertiary_enrollment_pct": {
+      "value": 36.3,
+      "source": "UNESCO Institute for Statistics, 2023",
+      "year": 2023
+    },
+    "private_tutoring_prevalence_pct": {
+      "value": 52,
+      "source": "SMERU Research Institute Indonesia Education Survey, 2023",
+      "year": 2023
+    },
+    "govt_education_spend_pct_gdp": {
+      "value": 3.5,
+      "source": "World Bank Education Expenditure Data Indonesia, 2023",
+      "year": 2023,
+      "note": "Constitutional mandate is 20% of state budget; equivalent to ~3.5% GDP"
+    },
+    "university_acceptance_rate_pct": {
+      "value": 22,
+      "source": "LTMPT (State University Entrance Committee) 2024",
+      "year": 2024,
+      "note": "For state universities (PTN); private universities have higher acceptance"
+    },
+    "student_loan_prevalence_pct": {
+      "value": 8.5,
+      "source": "OJK Education Finance Survey, 2023",
+      "year": 2023,
+      "note": "KIP Kuliah scholarship prevalent; formal student loans less common"
+    },
+    "stem_graduates_pct": {
+      "value": 29.4,
+      "source": "Ministry of Education and Culture Indonesia, 2024 Graduate Statistics",
+      "year": 2024
+    },
+    "vocational_track_pct": {
+      "value": 37.8,
+      "source": "Ministry of Education SMK enrollment data, 2024",
+      "year": 2024,
+      "note": "SMK (vocational high school) enrollment growing as government policy priority"
+    },
+    "international_student_outflow_pct": {
+      "value": 1.8,
+      "source": "UNESCO Institute for Statistics, 2023; Malaysia and Australia top destinations",
+      "year": 2023
+    },
+    "education_pressure_score": {
+      "value": 7.2,
+      "source": "World Values Survey Wave 7 Indonesia, 2022; PISA Indonesia 2022",
+      "year": 2022
+    },
+    "pisa_math_score": {
+      "value": 366,
+      "source": "OECD PISA 2022 Results",
+      "year": 2022,
+      "note": "Below OECD average of 472; improving from 379 in 2018"
+    },
+    "pisa_reading_score": {
+      "value": 359,
+      "source": "OECD PISA 2022 Results",
+      "year": 2022
+    }
   },
   "housing": {
-    "homeownership_rate_pct": { "value": 84.0, "source": "BPS Susenas 2023", "year": 2023, "note": "High ownership but significant quality variation; urban vs rural gap" },
-    "avg_household_size": { "value": 3.8, "source": "BPS National Population Census update 2023", "year": 2023 },
-    "avg_rent_1br_city_usd": { "value": 285, "source": "Numbeo Indonesia Cost of Living, 2024; Jakarta avg IDR 4.5M/month", "year": 2024 },
-    "avg_rent_1br_suburbs_usd": { "value": 120, "source": "Numbeo Indonesia Cost of Living, 2024", "year": 2024 },
-    "multigenerational_household_pct": { "value": 38.4, "source": "BPS Susenas 2023", "year": 2023 },
-    "housing_cost_to_income_ratio": { "value": 6.8, "source": "World Bank Housing Affordability Indonesia, 2023", "year": 2023 },
-    "avg_home_size_sqm": { "value": 49.7, "source": "BPS Susenas 2023; national average floor area", "year": 2023 },
-    "social_housing_pct": { "value": 4.2, "source": "Ministry of Public Works and Housing (PUPR) Indonesia, 2024", "year": 2024, "note": "Rumah Susun (flats) government program" },
-    "rental_market_pct": { "value": 12.5, "source": "BPS Susenas 2023", "year": 2023 },
-    "avg_mortgage_term_years": { "value": 15, "source": "Bank Indonesia Housing Finance Survey, 2023", "year": 2023 },
-    "housing_affordability_index": { "value": 3.2, "source": "HOFINET Indonesia Housing Finance Profile, 2024 (5=most affordable)", "year": 2024 },
-    "urban_slum_population_pct": { "value": 21.8, "source": "UN-Habitat World Cities Report Indonesia, 2022", "year": 2022, "note": "Kampung informal settlements common across major cities" },
-    "kos_boarding_house_urban_pct": { "value": 24.5, "source": "BPS Susenas 2023; kos dominant housing for urban young workers/students", "year": 2023 }
+    "homeownership_rate_pct": {
+      "value": 84,
+      "source": "BPS Susenas 2023",
+      "year": 2023,
+      "note": "High ownership but significant quality variation; urban vs rural gap"
+    },
+    "avg_household_size": {
+      "value": 3.8,
+      "source": "BPS National Population Census update 2023",
+      "year": 2023
+    },
+    "avg_rent_1br_city_usd": {
+      "value": 285,
+      "source": "Numbeo Indonesia Cost of Living, 2024; Jakarta avg IDR 4.5M/month",
+      "year": 2024
+    },
+    "avg_rent_1br_suburbs_usd": {
+      "value": 120,
+      "source": "Numbeo Indonesia Cost of Living, 2024",
+      "year": 2024
+    },
+    "multigenerational_household_pct": {
+      "value": 38.4,
+      "source": "BPS Susenas 2023",
+      "year": 2023
+    },
+    "housing_cost_to_income_ratio": {
+      "value": 6.8,
+      "source": "World Bank Housing Affordability Indonesia, 2023",
+      "year": 2023
+    },
+    "avg_home_size_sqm": {
+      "value": 49.7,
+      "source": "BPS Susenas 2023; national average floor area",
+      "year": 2023
+    },
+    "social_housing_pct": {
+      "value": 4.2,
+      "source": "Ministry of Public Works and Housing (PUPR) Indonesia, 2024",
+      "year": 2024,
+      "note": "Rumah Susun (flats) government program"
+    },
+    "rental_market_pct": {
+      "value": 12.5,
+      "source": "BPS Susenas 2023",
+      "year": 2023
+    },
+    "avg_mortgage_term_years": {
+      "value": 15,
+      "source": "Bank Indonesia Housing Finance Survey, 2023",
+      "year": 2023
+    },
+    "housing_affordability_index": {
+      "value": 3.2,
+      "source": "HOFINET Indonesia Housing Finance Profile, 2024 (5=most affordable)",
+      "year": 2024
+    },
+    "urban_slum_population_pct": {
+      "value": 21.8,
+      "source": "UN-Habitat World Cities Report Indonesia, 2022",
+      "year": 2022,
+      "note": "Kampung informal settlements common across major cities"
+    },
+    "kos_boarding_house_urban_pct": {
+      "value": 24.5,
+      "source": "BPS Susenas 2023; kos dominant housing for urban young workers/students",
+      "year": 2023
+    }
   },
   "food_lifestyle": {
-    "eating_out_per_week": { "value": 4.8, "source": "Nielsen Indonesia Consumer Survey, 2023", "year": 2023, "note": "Warung, gorengan, street food; formal restaurants less frequent" },
-    "home_cooking_pct": { "value": 61, "source": "Nielsen Indonesia Consumer Survey, 2023", "year": 2023 },
-    "fast_food_visits_per_week": { "value": 1.2, "source": "Euromonitor International Indonesia Consumer Foodservice, 2024", "year": 2024 },
-    "vegetarian_vegan_pct": { "value": 5.0, "source": "Indonesian Vegetarian Society estimate; Statista 2023", "year": 2023 },
-    "obesity_rate_pct": { "value": 7.7, "source": "WHO Global Health Observatory Indonesia, 2022 (BMI>30)", "year": 2022 },
-    "overweight_rate_pct": { "value": 28.7, "source": "National Basic Health Survey (Riskesdas) Indonesia, 2023", "year": 2023 },
-    "alcohol_consumption_litres_per_capita": { "value": 0.5, "source": "WHO Global Status Report on Alcohol and Health, 2022", "year": 2022, "note": "Very low due to Muslim majority; varies by region (Bali, Papua higher)" },
-    "coffee_consumption_kg_per_capita": { "value": 1.2, "source": "ICO Coffee Report Indonesia, 2023; growing specialty coffee culture", "year": 2023 },
-    "street_food_culture": { "value": 10, "source": "World Street Food Congress ranking; CNN Travel, 2023 (scale 1-10)", "year": 2023, "note": "Indonesia among world top street food cultures; nasi goreng, sate, bakso ubiquitous" },
-    "organic_food_adoption_pct": { "value": 7.2, "source": "Statista Indonesia Organic Food Market, 2023", "year": 2023 },
-    "meal_sharing_culture_score": { "value": 9.0, "source": "World Values Survey Wave 7 Indonesia, 2022", "year": 2022, "note": "Makan bersama (eating together) central to family and social life" },
-    "food_delivery_app_usage_pct": { "value": 58.4, "source": "Statista Indonesia Online Food Delivery, 2024; GoFood, GrabFood dominant", "year": 2024 },
-    "rice_consumption_kg_per_capita_yr": { "value": 113, "source": "Ministry of Agriculture Indonesia, 2023; staple food", "year": 2023 },
-    "spice_usage_score": { "value": 9.5, "source": "Culinary Institute Indonesia; WHO Food Diversity Index supplement, 2023", "year": 2023, "note": "Indonesia uses 75+ spice varieties; world's largest spice producer" }
+    "eating_out_per_week": {
+      "value": 4.8,
+      "source": "Nielsen Indonesia Consumer Survey, 2023",
+      "year": 2023,
+      "note": "Warung, gorengan, street food; formal restaurants less frequent"
+    },
+    "home_cooking_pct": {
+      "value": 61,
+      "source": "Nielsen Indonesia Consumer Survey, 2023",
+      "year": 2023
+    },
+    "fast_food_visits_per_week": {
+      "value": 1.2,
+      "source": "Euromonitor International Indonesia Consumer Foodservice, 2024",
+      "year": 2024
+    },
+    "vegetarian_vegan_pct": {
+      "value": 5,
+      "source": "Indonesian Vegetarian Society estimate; Statista 2023",
+      "year": 2023
+    },
+    "obesity_rate_pct": {
+      "value": 7.7,
+      "source": "WHO Global Health Observatory Indonesia, 2022 (BMI>30)",
+      "year": 2022
+    },
+    "overweight_rate_pct": {
+      "value": 28.7,
+      "source": "National Basic Health Survey (Riskesdas) Indonesia, 2023",
+      "year": 2023
+    },
+    "alcohol_consumption_litres_per_capita": {
+      "value": 0.5,
+      "source": "WHO Global Status Report on Alcohol and Health, 2022",
+      "year": 2022,
+      "note": "Very low due to Muslim majority; varies by region (Bali, Papua higher)"
+    },
+    "coffee_consumption_kg_per_capita": {
+      "value": 1.2,
+      "source": "ICO Coffee Report Indonesia, 2023; growing specialty coffee culture",
+      "year": 2023
+    },
+    "street_food_culture": {
+      "value": 10,
+      "source": "World Street Food Congress ranking; CNN Travel, 2023 (scale 1-10)",
+      "year": 2023,
+      "note": "Indonesia among world top street food cultures; nasi goreng, sate, bakso ubiquitous"
+    },
+    "organic_food_adoption_pct": {
+      "value": 7.2,
+      "source": "Statista Indonesia Organic Food Market, 2023",
+      "year": 2023
+    },
+    "meal_sharing_culture_score": {
+      "value": 9,
+      "source": "World Values Survey Wave 7 Indonesia, 2022",
+      "year": 2022,
+      "note": "Makan bersama (eating together) central to family and social life"
+    },
+    "food_delivery_app_usage_pct": {
+      "value": 58.4,
+      "source": "Statista Indonesia Online Food Delivery, 2024; GoFood, GrabFood dominant",
+      "year": 2024
+    },
+    "rice_consumption_kg_per_capita_yr": {
+      "value": 113,
+      "source": "Ministry of Agriculture Indonesia, 2023; staple food",
+      "year": 2023
+    },
+    "spice_usage_score": {
+      "value": 9.5,
+      "source": "Culinary Institute Indonesia; WHO Food Diversity Index supplement, 2023",
+      "year": 2023,
+      "note": "Indonesia uses 75+ spice varieties; world's largest spice producer"
+    }
   },
   "trust_governance": {
-    "trust_in_govt_pct": { "value": 80, "source": "Edelman Trust Barometer Indonesia, 2024", "year": 2024 },
-    "trust_in_courts_pct": { "value": 52, "source": "World Values Survey Wave 7 Indonesia, 2022", "year": 2022 },
-    "trust_in_police_pct": { "value": 56, "source": "World Values Survey Wave 7 Indonesia, 2022", "year": 2022 },
-    "trust_in_media_pct": { "value": 61, "source": "Edelman Trust Barometer Indonesia, 2024", "year": 2024 },
-    "trust_in_strangers_pct": { "value": 20, "source": "World Values Survey Wave 7 Indonesia, 2022", "year": 2022 },
-    "corruption_perception_index": { "value": 34, "source": "Transparency International CPI 2024", "year": 2024 },
-    "press_freedom_index": { "value": 59.8, "source": "Reporters Without Borders World Press Freedom Index, 2024 (100=most free)", "year": 2024 },
-    "voter_turnout_pct": { "value": 81.8, "source": "Komisi Pemilihan Umum (KPU) Indonesia General Election, 2024", "year": 2024 },
-    "civil_society_strength": { "value": 6.2, "source": "Freedom House Freedom in the World Indonesia, 2024 (scale 1-10)", "year": 2024 },
-    "protest_participation_pct": { "value": 12, "source": "World Values Survey Wave 7 Indonesia, 2022", "year": 2022 },
-    "social_capital_index": { "value": 52.3, "source": "OECD Social Capital Index Indonesia; Legatum Prosperity Index 2023", "year": 2023 },
-    "democracy_index": { "value": 6.53, "source": "Economist Intelligence Unit Democracy Index, 2023 (flawed democracy)", "year": 2023 },
-    "internet_censorship_cases_per_year": { "value": 1847, "source": "BSSN and Kominfo content blocking data, 2023", "year": 2023, "note": "Government blocks gambling, pornography, and some political content" }
+    "trust_in_govt_pct": {
+      "value": 80,
+      "source": "Edelman Trust Barometer Indonesia, 2024",
+      "year": 2024
+    },
+    "trust_in_courts_pct": {
+      "value": 52,
+      "source": "World Values Survey Wave 7 Indonesia, 2022",
+      "year": 2022
+    },
+    "trust_in_police_pct": {
+      "value": 56,
+      "source": "World Values Survey Wave 7 Indonesia, 2022",
+      "year": 2022
+    },
+    "trust_in_media_pct": {
+      "value": 61,
+      "source": "Edelman Trust Barometer Indonesia, 2024",
+      "year": 2024
+    },
+    "trust_in_strangers_pct": {
+      "value": 20,
+      "source": "World Values Survey Wave 7 Indonesia, 2022",
+      "year": 2022
+    },
+    "corruption_perception_index": {
+      "value": 34,
+      "source": "Transparency International CPI 2024",
+      "year": 2024
+    },
+    "press_freedom_index": {
+      "value": 59.8,
+      "source": "Reporters Without Borders World Press Freedom Index, 2024 (100=most free)",
+      "year": 2024
+    },
+    "voter_turnout_pct": {
+      "value": 81.8,
+      "source": "Komisi Pemilihan Umum (KPU) Indonesia General Election, 2024",
+      "year": 2024
+    },
+    "civil_society_strength": {
+      "value": 6.2,
+      "source": "Freedom House Freedom in the World Indonesia, 2024 (scale 1-10)",
+      "year": 2024
+    },
+    "protest_participation_pct": {
+      "value": 12,
+      "source": "World Values Survey Wave 7 Indonesia, 2022",
+      "year": 2022
+    },
+    "social_capital_index": {
+      "value": 52.3,
+      "source": "OECD Social Capital Index Indonesia; Legatum Prosperity Index 2023",
+      "year": 2023
+    },
+    "democracy_index": {
+      "value": 6.53,
+      "source": "Economist Intelligence Unit Democracy Index, 2023 (flawed democracy)",
+      "year": 2023
+    },
+    "internet_censorship_cases_per_year": {
+      "value": 1847,
+      "source": "BSSN and Kominfo content blocking data, 2023",
+      "year": 2023,
+      "note": "Government blocks gambling, pornography, and some political content"
+    }
   },
   "regional_variations": {
     "java_vs_outer_islands_income_gap": {

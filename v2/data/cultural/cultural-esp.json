@@ -3,157 +3,732 @@
     "country": "ESP",
     "country_name": "Spain",
     "created": "2026-04-07",
-    "categories": 11
+    "categories": 11,
+    "filtered": "2026-04-07"
   },
   "dataPoints": 128,
   "daily_routines": {
-    "avg_sleep_hours": { "value": 7.0, "source": "CIS Barómetro / SEPAR Estudio de Sueño, 2023", "year": 2023, "note": "Despite late schedule, siesta partially compensates" },
-    "wake_time_weekday": { "value": "7:30 AM", "source": "INE Encuesta de Empleo del Tiempo, 2022", "year": 2022 },
-    "commute_time_minutes": { "value": 27.0, "source": "INE Encuesta de Empleo del Tiempo, 2022", "year": 2022 },
-    "working_hours_per_week": { "value": 37.0, "source": "Eurostat Labour Force Survey, 2023", "year": 2023, "note": "Spain working hours higher than image suggests; long lunch extends workday to 7-8pm" },
-    "lunch_break_minutes": { "value": 78, "source": "INE Encuesta Empleo del Tiempo, 2022", "year": 2022, "note": "Longest in Europe; 2-hour lunch between 2-4pm traditional, declining in cities" },
-    "dinner_time_avg": { "value": "9:30 PM", "source": "INE Encuesta Empleo del Tiempo, 2022", "year": 2022, "note": "Latest dinner time in Europe; restaurants often don't open until 9pm" },
-    "leisure_hours_per_day": { "value": 5.3, "source": "INE Encuesta de Empleo del Tiempo, 2022", "year": 2022, "note": "High; socialising in bars/streets central" },
-    "tv_hours_per_day": { "value": 3.8, "source": "Barlovento Comunicación Informe TV, 2024", "year": 2024 },
-    "weekend_family_time_hours": { "value": 6.7, "source": "INE Encuesta Empleo del Tiempo, 2022", "year": 2022, "note": "Highest in study; multigenerational Sunday lunch central" },
-    "vacation_days_taken_per_year": { "value": 34, "source": "Expedia Vacation Deprivation Report, 2023", "year": 2023, "note": "Statutory 22 working days + 14 national/regional holidays" },
-    "overtime_culture": { "value": "low formal, culture of presentismo", "source": "CES Informe sobre Condiciones de Trabajo, 2023", "year": 2023, "note": "Staying late even unproductively (presentismo) a cultural norm" },
-    "siesta_prevalence_pct": { "value": 16, "source": "CIS Barómetro Sociológico, 2023", "year": 2023, "note": "Daily siesta now minority; urban decline; remains in rural areas and retirees" },
-    "social_media_check_morning_pct": { "value": 66, "source": "Reuters Institute Digital News Report Spain, 2024", "year": 2024 },
-    "exercise_days_per_week": { "value": 2.3, "source": "Eurobarometer Sport and Physical Activity, 2023", "year": 2023 },
-    "avg_daily_steps": { "value": 5936, "source": "JAMA Internal Medicine / Stanford study, 2022", "year": 2022 }
+    "avg_sleep_hours": {
+      "value": 7,
+      "source": "CIS Barómetro / SEPAR Estudio de Sueño, 2023",
+      "year": 2023,
+      "note": "Despite late schedule, siesta partially compensates"
+    },
+    "wake_time_weekday": {
+      "value": "7:30 AM",
+      "source": "INE Encuesta de Empleo del Tiempo, 2022",
+      "year": 2022
+    },
+    "commute_time_minutes": {
+      "value": 27,
+      "source": "INE Encuesta de Empleo del Tiempo, 2022",
+      "year": 2022
+    },
+    "working_hours_per_week": {
+      "value": 37,
+      "source": "Eurostat Labour Force Survey, 2023",
+      "year": 2023,
+      "note": "Spain working hours higher than image suggests; long lunch extends workday to 7-8pm"
+    },
+    "lunch_break_minutes": {
+      "value": 78,
+      "source": "INE Encuesta Empleo del Tiempo, 2022",
+      "year": 2022,
+      "note": "Longest in Europe; 2-hour lunch between 2-4pm traditional, declining in cities"
+    },
+    "dinner_time_avg": {
+      "value": "9:30 PM",
+      "source": "INE Encuesta Empleo del Tiempo, 2022",
+      "year": 2022,
+      "note": "Latest dinner time in Europe; restaurants often don't open until 9pm"
+    },
+    "leisure_hours_per_day": {
+      "value": 5.3,
+      "source": "INE Encuesta de Empleo del Tiempo, 2022",
+      "year": 2022,
+      "note": "High; socialising in bars/streets central"
+    },
+    "tv_hours_per_day": {
+      "value": 3.8,
+      "source": "Barlovento Comunicación Informe TV, 2024",
+      "year": 2024
+    },
+    "weekend_family_time_hours": {
+      "value": 6.7,
+      "source": "INE Encuesta Empleo del Tiempo, 2022",
+      "year": 2022,
+      "note": "Highest in study; multigenerational Sunday lunch central"
+    },
+    "vacation_days_taken_per_year": {
+      "value": 34,
+      "source": "Expedia Vacation Deprivation Report, 2023",
+      "year": 2023,
+      "note": "Statutory 22 working days + 14 national/regional holidays"
+    },
+    "overtime_culture": {
+      "value": "low formal, culture of presentismo",
+      "source": "CES Informe sobre Condiciones de Trabajo, 2023",
+      "year": 2023,
+      "note": "Staying late even unproductively (presentismo) a cultural norm"
+    },
+    "siesta_prevalence_pct": {
+      "value": 16,
+      "source": "CIS Barómetro Sociológico, 2023",
+      "year": 2023,
+      "note": "Daily siesta now minority; urban decline; remains in rural areas and retirees"
+    },
+    "social_media_check_morning_pct": {
+      "value": 66,
+      "source": "Reuters Institute Digital News Report Spain, 2024",
+      "year": 2024
+    },
+    "exercise_days_per_week": {
+      "value": 2.3,
+      "source": "Eurobarometer Sport and Physical Activity, 2023",
+      "year": 2023
+    },
+    "avg_daily_steps": {
+      "value": 5936,
+      "source": "JAMA Internal Medicine / Stanford study, 2022",
+      "year": 2022
+    }
   },
   "spending": {
-    "food_at_home_usd": { "value": 432, "source": "INE Encuesta de Presupuestos Familiares, 2023", "year": 2023, "note": "Converted at 1.08 USD/EUR; fresh food markets prevalent" },
-    "food_out_usd": { "value": 270, "source": "INE Encuesta Presupuestos Familiares, 2023", "year": 2023, "note": "Bar/café culture; menú del día at €10-14 accessible" },
-    "housing_rent_or_mortgage_usd": { "value": 972, "source": "Idealista / INE Estadística de Alquileres, 2024", "year": 2024, "note": "National median; Madrid ~€1,200, Barcelona ~€1,400; smaller cities €600-800" },
-    "transport_usd": { "value": 324, "source": "INE Presupuestos Familiares, 2023", "year": 2023 },
-    "education_usd": { "value": 97, "source": "INE Presupuestos Familiares, 2023", "year": 2023 },
-    "entertainment_usd": { "value": 189, "source": "INE Presupuestos Familiares, 2023", "year": 2023 },
-    "healthcare_usd": { "value": 135, "source": "INE Presupuestos Familiares, 2023", "year": 2023, "note": "Supplementary private on top of universal SNS" },
-    "clothing_usd": { "value": 140, "source": "INE Presupuestos Familiares, 2023", "year": 2023 },
-    "savings_rate_pct": { "value": 9.0, "source": "Banco de España / Eurostat, 2024", "year": 2024 },
-    "debt_to_income_ratio_pct": { "value": 88.1, "source": "Banco de España, 2024", "year": 2024 },
-    "luxury_goods_spend_pct": { "value": 3.1, "source": "Bain & Company, 2023", "year": 2023 },
-    "avg_monthly_subscription_spend_usd": { "value": 98, "source": "Statista Spain Digital Market, 2023", "year": 2023 },
-    "credit_card_debt_per_household_usd": { "value": 2430, "source": "Banco de España, 2023", "year": 2023 },
-    "avg_holiday_spend_usd": { "value": 1240, "source": "Statista Encuesta Turismo, 2023", "year": 2023 }
+    "food_at_home_usd": {
+      "value": 432,
+      "source": "INE Encuesta de Presupuestos Familiares, 2023",
+      "year": 2023,
+      "note": "Converted at 1.08 USD/EUR; fresh food markets prevalent"
+    },
+    "food_out_usd": {
+      "value": 270,
+      "source": "INE Encuesta Presupuestos Familiares, 2023",
+      "year": 2023,
+      "note": "Bar/café culture; menú del día at €10-14 accessible"
+    },
+    "housing_rent_or_mortgage_usd": {
+      "value": 972,
+      "source": "Idealista / INE Estadística de Alquileres, 2024",
+      "year": 2024,
+      "note": "National median; Madrid ~€1,200, Barcelona ~€1,400; smaller cities €600-800"
+    },
+    "transport_usd": {
+      "value": 324,
+      "source": "INE Presupuestos Familiares, 2023",
+      "year": 2023
+    },
+    "education_usd": {
+      "value": 97,
+      "source": "INE Presupuestos Familiares, 2023",
+      "year": 2023
+    },
+    "entertainment_usd": {
+      "value": 189,
+      "source": "INE Presupuestos Familiares, 2023",
+      "year": 2023
+    },
+    "healthcare_usd": {
+      "value": 135,
+      "source": "INE Presupuestos Familiares, 2023",
+      "year": 2023,
+      "note": "Supplementary private on top of universal SNS"
+    },
+    "clothing_usd": {
+      "value": 140,
+      "source": "INE Presupuestos Familiares, 2023",
+      "year": 2023
+    },
+    "savings_rate_pct": {
+      "value": 9,
+      "source": "Banco de España / Eurostat, 2024",
+      "year": 2024
+    },
+    "debt_to_income_ratio_pct": {
+      "value": 88.1,
+      "source": "Banco de España, 2024",
+      "year": 2024
+    },
+    "luxury_goods_spend_pct": {
+      "value": 3.1,
+      "source": "Bain & Company, 2023",
+      "year": 2023
+    },
+    "avg_monthly_subscription_spend_usd": {
+      "value": 98,
+      "source": "Statista Spain Digital Market, 2023",
+      "year": 2023
+    },
+    "credit_card_debt_per_household_usd": {
+      "value": 2430,
+      "source": "Banco de España, 2023",
+      "year": 2023
+    },
+    "avg_holiday_spend_usd": {
+      "value": 1240,
+      "source": "Statista Encuesta Turismo, 2023",
+      "year": 2023
+    }
   },
   "social_norms": {
-    "individualism_score": { "value": 51, "source": "Hofstede Insights Country Comparison, 2023", "year": 2023, "note": "Moderate; family collectivism strong but individualist personal identity" },
-    "power_distance_score": { "value": 57, "source": "Hofstede Insights, 2023", "year": 2023 },
-    "uncertainty_avoidance": { "value": 86, "source": "Hofstede Insights, 2023", "year": 2023, "note": "Very high; same as France; rule-seeking despite appearance of chaos" },
-    "masculinity_score": { "value": 42, "source": "Hofstede Insights, 2023", "year": 2023 },
-    "long_term_orientation": { "value": 48, "source": "Hofstede Insights, 2023", "year": 2023 },
-    "indulgence_score": { "value": 44, "source": "Hofstede Insights, 2023", "year": 2023 },
-    "personal_space_norm_m": { "value": 0.6, "source": "Proxemics research, 2022", "year": 2022, "note": "Close physical contact; kissing on both cheeks standard greeting" },
-    "eye_contact_norm": { "value": "direct, sustained", "source": "Eurobarometer Social Norms, 2023", "year": 2023 },
-    "punctuality_culture": { "value": "relaxed; tardiness 20-30 min normal socially", "source": "Eurobarometer, 2023", "year": 2023, "note": "Later in Southern Spain; business somewhat stricter but flexible" },
-    "gift_giving_culture": { "value": "generous, food and drink", "source": "INE Cultural Survey, 2023", "year": 2023 },
-    "small_talk_prevalence": { "value": "high", "source": "World Values Survey Wave 7, 2022", "year": 2022, "note": "Animated conversation; talking over each other normal" },
-    "tipping_culture": { "value": "modest, not obligatory", "source": "Statista Spain, 2023", "year": 2023, "note": "Round up or leave small change; 5-10% in nicer restaurants; not expected at bars" },
-    "lgbtq_acceptance_pct": { "value": 88, "source": "Eurobarometer LGBTQI Survey, 2023", "year": 2023, "note": "One of most accepting in EU; same-sex marriage since 2005" },
-    "interracial_marriage_approval_pct": { "value": 82, "source": "Eurobarometer, 2023", "year": 2023 },
-    "strangers_greeting_culture": { "value": "warm and open", "source": "World Values Survey Wave 7, 2022", "year": 2022 }
+    "individualism_score": {
+      "value": 51,
+      "source": "Hofstede Insights Country Comparison, 2023",
+      "year": 2023,
+      "note": "Moderate; family collectivism strong but individualist personal identity"
+    },
+    "power_distance_score": {
+      "value": 57,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "uncertainty_avoidance": {
+      "value": 86,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023,
+      "note": "Very high; same as France; rule-seeking despite appearance of chaos"
+    },
+    "masculinity_score": {
+      "value": 42,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "long_term_orientation": {
+      "value": 48,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "indulgence_score": {
+      "value": 44,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "personal_space_norm_m": {
+      "value": 0.6,
+      "source": "Proxemics research, 2022",
+      "year": 2022,
+      "note": "Close physical contact; kissing on both cheeks standard greeting"
+    },
+    "eye_contact_norm": {
+      "value": "direct, sustained",
+      "source": "Eurobarometer Social Norms, 2023",
+      "year": 2023
+    },
+    "punctuality_culture": {
+      "value": "relaxed; tardiness 20-30 min normal socially",
+      "source": "Eurobarometer, 2023",
+      "year": 2023,
+      "note": "Later in Southern Spain; business somewhat stricter but flexible"
+    },
+    "gift_giving_culture": {
+      "value": "generous, food and drink",
+      "source": "INE Cultural Survey, 2023",
+      "year": 2023
+    },
+    "small_talk_prevalence": {
+      "value": "high",
+      "source": "World Values Survey Wave 7, 2022",
+      "year": 2022,
+      "note": "Animated conversation; talking over each other normal"
+    },
+    "tipping_culture": {
+      "value": "modest, not obligatory",
+      "source": "Statista Spain, 2023",
+      "year": 2023,
+      "note": "Round up or leave small change; 5-10% in nicer restaurants; not expected at bars"
+    },
+    "lgbtq_acceptance_pct": {
+      "value": 88,
+      "source": "Eurobarometer LGBTQI Survey, 2023",
+      "year": 2023,
+      "note": "One of most accepting in EU; same-sex marriage since 2005"
+    },
+    "interracial_marriage_approval_pct": {
+      "value": 82,
+      "source": "Eurobarometer, 2023",
+      "year": 2023
+    },
+    "strangers_greeting_culture": {
+      "value": "warm and open",
+      "source": "World Values Survey Wave 7, 2022",
+      "year": 2022
+    }
   },
   "business_culture": {
-    "hierarchy_importance": { "value": 6, "source": "GLOBE Study / Hofstede, 2023", "year": 2023, "note": "Title and seniority matter; decisions concentrated at top" },
-    "formality_level": { "value": 6, "source": "GLOBE Cultural Study, 2023", "year": 2023, "note": "Initial formality gives way to warmth; relationship-based" },
-    "meeting_starts_on_time_pct": { "value": 58, "source": "Doodle State of Meetings Report, 2023", "year": 2023, "note": "Lowest punctuality for meetings among Western EU nations" },
-    "business_card_etiquette": { "value": "conventional, unremarkable", "source": "ICEX España Export, 2023", "year": 2023 },
-    "negotiation_style": { "value": "relationship-first, expressive, flexible", "source": "Harvard PON, 2023", "year": 2023, "note": "Trust building over meals/drinks precedes business; no to first offer expected" },
-    "corruption_perception_index": { "value": 60, "source": "Transparency International CPI, 2023", "year": 2023, "note": "Ranked 34th; political corruption scandals endemic" },
-    "ease_of_doing_business_rank": { "value": 30, "source": "World Bank / IMD, 2024", "year": 2024 },
-    "time_to_start_business_days": { "value": 12, "source": "World Bank, 2023", "year": 2023, "note": "Complex bureaucracy; regional variation" },
-    "work_life_balance_score": { "value": 7.6, "source": "OECD Better Life Index, 2024", "year": 2024 },
-    "gender_pay_gap_pct": { "value": 17.0, "source": "Eurostat Gender Pay Gap Statistics, 2023", "year": 2023 },
-    "parental_leave_weeks": { "value": 32, "source": "OECD Family Database, 2024", "year": 2024, "note": "16 weeks maternity; 16 weeks paternity (equal since 2021)" },
-    "unionization_rate_pct": { "value": 14.5, "source": "CCOO/UGT / OECD, 2023", "year": 2023 },
-    "remote_work_policy_adoption_pct": { "value": 38, "source": "Randstad Employer Brand Research Spain, 2024", "year": 2024 },
-    "avg_annual_salary_usd": { "value": 37080, "source": "INE Encuesta Anual de Estructura Salarial, 2023", "year": 2023 }
+    "hierarchy_importance": {
+      "value": 6,
+      "source": "GLOBE Study / Hofstede, 2023",
+      "year": 2023,
+      "note": "Title and seniority matter; decisions concentrated at top"
+    },
+    "formality_level": {
+      "value": 6,
+      "source": "GLOBE Cultural Study, 2023",
+      "year": 2023,
+      "note": "Initial formality gives way to warmth; relationship-based"
+    },
+    "meeting_starts_on_time_pct": {
+      "value": 58,
+      "source": "Doodle State of Meetings Report, 2023",
+      "year": 2023,
+      "note": "Lowest punctuality for meetings among Western EU nations"
+    },
+    "business_card_etiquette": {
+      "value": "conventional, unremarkable",
+      "source": "ICEX España Export, 2023",
+      "year": 2023
+    },
+    "negotiation_style": {
+      "value": "relationship-first, expressive, flexible",
+      "source": "Harvard PON, 2023",
+      "year": 2023,
+      "note": "Trust building over meals/drinks precedes business; no to first offer expected"
+    },
+    "corruption_perception_index": {
+      "value": 60,
+      "source": "Transparency International CPI, 2023",
+      "year": 2023,
+      "note": "Ranked 34th; political corruption scandals endemic"
+    },
+    "ease_of_doing_business_rank": {
+      "value": 30,
+      "source": "World Bank / IMD, 2024",
+      "year": 2024
+    },
+    "time_to_start_business_days": {
+      "value": 12,
+      "source": "World Bank, 2023",
+      "year": 2023,
+      "note": "Complex bureaucracy; regional variation"
+    },
+    "work_life_balance_score": {
+      "value": 7.6,
+      "source": "OECD Better Life Index, 2024",
+      "year": 2024
+    },
+    "gender_pay_gap_pct": {
+      "value": 17,
+      "source": "Eurostat Gender Pay Gap Statistics, 2023",
+      "year": 2023
+    },
+    "parental_leave_weeks": {
+      "value": 32,
+      "source": "OECD Family Database, 2024",
+      "year": 2024,
+      "note": "16 weeks maternity; 16 weeks paternity (equal since 2021)"
+    },
+    "unionization_rate_pct": {
+      "value": 14.5,
+      "source": "CCOO/UGT / OECD, 2023",
+      "year": 2023
+    },
+    "remote_work_policy_adoption_pct": {
+      "value": 38,
+      "source": "Randstad Employer Brand Research Spain, 2024",
+      "year": 2024
+    },
+    "avg_annual_salary_usd": {
+      "value": 37080,
+      "source": "INE Encuesta Anual de Estructura Salarial, 2023",
+      "year": 2023
+    }
   },
   "religion": {
-    "major_religion": { "value": "Christianity (Catholic)", "source": "Centro de Investigaciones Sociológicas (CIS), 2023", "year": 2023 },
-    "major_religion_pct": { "value": 60.5, "source": "CIS Barómetro Sociológico, 2023", "year": 2023, "note": "Self-identified; practising (weekly mass) ~14%" },
-    "second_religion_pct": { "value": 2.8, "source": "CIS, 2023", "year": 2023, "note": "Islam ~2.8%; growing with immigration from North Africa and Sub-Saharan Africa" },
-    "atheist_agnostic_pct": { "value": 31, "source": "CIS Barómetro, 2023", "year": 2023, "note": "Atheist 18%, agnostic 13%; rapid secularisation" },
-    "weekly_religious_attendance_pct": { "value": 14, "source": "CIS Barómetro Sociológico, 2023", "year": 2023, "note": "Higher in rural areas and older generations; Semana Santa culturally universal" },
-    "religion_impact_daily_life": { "value": 4.1, "source": "Eurobarometer, 2023", "year": 2023, "note": "Scale 1-10; Catholic culture permeates fiestas and family life even for non-believers" },
-    "religious_holidays_count_per_year": { "value": 14, "source": "Ministerio de Trabajo / BOE, 2024", "year": 2024, "note": "8 national + 2 autonomous community + 2 local + 2 regional variants" },
-    "interfaith_marriage_acceptance_pct": { "value": 79, "source": "Eurobarometer, 2023", "year": 2023 },
-    "religiosity_trend": { "value": "falling", "source": "CIS Barómetro, 2023", "year": 2023, "note": "Sharp decline in under-40s; but Semana Santa processions remain mass events" }
+    "major_religion": {
+      "value": "Christianity (Catholic)",
+      "source": "Centro de Investigaciones Sociológicas (CIS), 2023",
+      "year": 2023
+    },
+    "major_religion_pct": {
+      "value": 60.5,
+      "source": "CIS Barómetro Sociológico, 2023",
+      "year": 2023,
+      "note": "Self-identified; practising (weekly mass) ~14%"
+    },
+    "second_religion_pct": {
+      "value": 2.8,
+      "source": "CIS, 2023",
+      "year": 2023,
+      "note": "Islam ~2.8%; growing with immigration from North Africa and Sub-Saharan Africa"
+    },
+    "atheist_agnostic_pct": {
+      "value": 31,
+      "source": "CIS Barómetro, 2023",
+      "year": 2023,
+      "note": "Atheist 18%, agnostic 13%; rapid secularisation"
+    },
+    "weekly_religious_attendance_pct": {
+      "value": 14,
+      "source": "CIS Barómetro Sociológico, 2023",
+      "year": 2023,
+      "note": "Higher in rural areas and older generations; Semana Santa culturally universal"
+    },
+    "religion_impact_daily_life": {
+      "value": 4.1,
+      "source": "Eurobarometer, 2023",
+      "year": 2023,
+      "note": "Scale 1-10; Catholic culture permeates fiestas and family life even for non-believers"
+    },
+    "religious_holidays_count_per_year": {
+      "value": 14,
+      "source": "Ministerio de Trabajo / BOE, 2024",
+      "year": 2024,
+      "note": "8 national + 2 autonomous community + 2 local + 2 regional variants"
+    },
+    "interfaith_marriage_acceptance_pct": {
+      "value": 79,
+      "source": "Eurobarometer, 2023",
+      "year": 2023
+    },
+    "religiosity_trend": {
+      "value": "falling",
+      "source": "CIS Barómetro, 2023",
+      "year": 2023,
+      "note": "Sharp decline in under-40s; but Semana Santa processions remain mass events"
+    }
   },
   "digital_behavior": {
-    "internet_penetration_pct": { "value": 95.1, "source": "INE Encuesta sobre Equipamiento TIC, 2024", "year": 2024 },
-    "smartphone_ownership_pct": { "value": 93, "source": "INE Encuesta TIC Hogares, 2024", "year": 2024, "note": "Among highest in EU" },
-    "daily_social_media_hours": { "value": 2.1, "source": "DataReportal Digital 2024 Spain", "year": 2024, "note": "Above EU average; Instagram and TikTok dominant among youth" },
-    "top_platform_1": { "value": "YouTube", "source": "IAB Spain Estudio Redes Sociales, 2024", "year": 2024 },
-    "top_platform_1_users_pct": { "value": 87, "source": "IAB Spain, 2024", "year": 2024 },
-    "top_platform_2": { "value": "WhatsApp", "source": "IAB Spain Estudio Redes Sociales, 2024", "year": 2024, "note": "89% of Spanish internet users; dominant communications platform" },
-    "ecommerce_adoption_pct": { "value": 76, "source": "CNMC Informe e-Commerce, 2024", "year": 2024 },
-    "mobile_payment_adoption_pct": { "value": 56, "source": "Banco de España / Statista, 2023", "year": 2023 },
-    "online_banking_pct": { "value": 78, "source": "Statista / AEB, 2023", "year": 2023 },
-    "streaming_subscription_pct": { "value": 65, "source": "Statista Spain, 2024", "year": 2024 },
-    "remote_work_pct": { "value": 17, "source": "INE Encuesta Población Activa, 2024", "year": 2024, "note": "Lower than EU average; office culture and physical commuting norm" },
-    "ai_tool_adoption_pct": { "value": 32, "source": "Ipsos Spain Digital Tracker, 2024", "year": 2024 }
+    "internet_penetration_pct": {
+      "value": 95.1,
+      "source": "INE Encuesta sobre Equipamiento TIC, 2024",
+      "year": 2024
+    },
+    "smartphone_ownership_pct": {
+      "value": 93,
+      "source": "INE Encuesta TIC Hogares, 2024",
+      "year": 2024,
+      "note": "Among highest in EU"
+    },
+    "daily_social_media_hours": {
+      "value": 2.1,
+      "source": "DataReportal Digital 2024 Spain",
+      "year": 2024,
+      "note": "Above EU average; Instagram and TikTok dominant among youth"
+    },
+    "top_platform_1": {
+      "value": "YouTube",
+      "source": "IAB Spain Estudio Redes Sociales, 2024",
+      "year": 2024
+    },
+    "top_platform_1_users_pct": {
+      "value": 87,
+      "source": "IAB Spain, 2024",
+      "year": 2024
+    },
+    "top_platform_2": {
+      "value": "WhatsApp",
+      "source": "IAB Spain Estudio Redes Sociales, 2024",
+      "year": 2024,
+      "note": "89% of Spanish internet users; dominant communications platform"
+    },
+    "ecommerce_adoption_pct": {
+      "value": 76,
+      "source": "CNMC Informe e-Commerce, 2024",
+      "year": 2024
+    },
+    "mobile_payment_adoption_pct": {
+      "value": 56,
+      "source": "Banco de España / Statista, 2023",
+      "year": 2023
+    },
+    "online_banking_pct": {
+      "value": 78,
+      "source": "Statista / AEB, 2023",
+      "year": 2023
+    },
+    "streaming_subscription_pct": {
+      "value": 65,
+      "source": "Statista Spain, 2024",
+      "year": 2024
+    },
+    "remote_work_pct": {
+      "value": 17,
+      "source": "INE Encuesta Población Activa, 2024",
+      "year": 2024,
+      "note": "Lower than EU average; office culture and physical commuting norm"
+    },
+    "ai_tool_adoption_pct": {
+      "value": 32,
+      "source": "Ipsos Spain Digital Tracker, 2024",
+      "year": 2024
+    }
   },
   "education": {
-    "literacy_rate_pct": { "value": 98.6, "source": "UNESCO Institute for Statistics, 2023", "year": 2023 },
-    "avg_years_schooling": { "value": 11.8, "source": "UNDP Human Development Report, 2023", "year": 2023 },
-    "tertiary_enrollment_pct": { "value": 51, "source": "OECD Education at a Glance, 2023", "year": 2023 },
-    "private_tutoring_prevalence_pct": { "value": 38, "source": "Ministerio de Educación Estadísticas, 2023", "year": 2023, "note": "High due to high university entrance exam (Selectividad) stakes" },
-    "govt_education_spend_pct_gdp": { "value": 4.3, "source": "OECD Education at a Glance, 2023", "year": 2023 },
-    "university_acceptance_rate_pct": { "value": 73, "source": "Ministerio de Educación, 2023", "year": 2023, "note": "Selectividad (PAU) average pass rate ~90%; competitive degrees over-subscribed" },
-    "student_loan_prevalence_pct": { "value": 12, "source": "Ministerio de Educación Becas, 2023", "year": 2023, "note": "Low; family financial support common; beca grant system exists" },
-    "stem_graduates_pct": { "value": 25, "source": "INE Estadística de Enseñanza Universitaria, 2023", "year": 2023 },
-    "vocational_track_pct": { "value": 33, "source": "Ministerio de Educación FP Report, 2023", "year": 2023, "note": "Formación Profesional expanding rapidly; seen as status ladder" },
-    "pisa_score_avg": { "value": 473, "source": "OECD PISA 2022", "year": 2022, "note": "Math 473, Reading 474, Science 485; slightly below OECD average" },
-    "education_expenditure_per_student_usd": { "value": 9380, "source": "OECD Education at a Glance, 2023", "year": 2023 }
+    "literacy_rate_pct": {
+      "value": 98.6,
+      "source": "UNESCO Institute for Statistics, 2023",
+      "year": 2023
+    },
+    "avg_years_schooling": {
+      "value": 11.8,
+      "source": "UNDP Human Development Report, 2023",
+      "year": 2023
+    },
+    "tertiary_enrollment_pct": {
+      "value": 51,
+      "source": "OECD Education at a Glance, 2023",
+      "year": 2023
+    },
+    "private_tutoring_prevalence_pct": {
+      "value": 38,
+      "source": "Ministerio de Educación Estadísticas, 2023",
+      "year": 2023,
+      "note": "High due to high university entrance exam (Selectividad) stakes"
+    },
+    "govt_education_spend_pct_gdp": {
+      "value": 4.3,
+      "source": "OECD Education at a Glance, 2023",
+      "year": 2023
+    },
+    "university_acceptance_rate_pct": {
+      "value": 73,
+      "source": "Ministerio de Educación, 2023",
+      "year": 2023,
+      "note": "Selectividad (PAU) average pass rate ~90%; competitive degrees over-subscribed"
+    },
+    "student_loan_prevalence_pct": {
+      "value": 12,
+      "source": "Ministerio de Educación Becas, 2023",
+      "year": 2023,
+      "note": "Low; family financial support common; beca grant system exists"
+    },
+    "stem_graduates_pct": {
+      "value": 25,
+      "source": "INE Estadística de Enseñanza Universitaria, 2023",
+      "year": 2023
+    },
+    "vocational_track_pct": {
+      "value": 33,
+      "source": "Ministerio de Educación FP Report, 2023",
+      "year": 2023,
+      "note": "Formación Profesional expanding rapidly; seen as status ladder"
+    },
+    "pisa_score_avg": {
+      "value": 473,
+      "source": "OECD PISA 2022",
+      "year": 2022,
+      "note": "Math 473, Reading 474, Science 485; slightly below OECD average"
+    },
+    "education_expenditure_per_student_usd": {
+      "value": 9380,
+      "source": "OECD Education at a Glance, 2023",
+      "year": 2023
+    }
   },
   "housing": {
-    "homeownership_rate_pct": { "value": 75.1, "source": "INE Censo de Población y Viviendas, 2022", "year": 2022, "note": "One of highest in EU; cultural norm that renting = failure" },
-    "avg_household_size": { "value": 2.5, "source": "INE Padrón Municipal, 2023", "year": 2023 },
-    "avg_rent_1br_city_usd": { "value": 1101, "source": "Idealista Informe Mercado Alquiler, 2024", "year": 2024, "note": "Madrid €1,400, Barcelona €1,450, Valencia €900, Seville €850" },
-    "avg_rent_1br_suburbs_usd": { "value": 756, "source": "Idealista, 2024", "year": 2024 },
-    "multigenerational_household_pct": { "value": 14, "source": "INE Encuesta Continua de Hogares, 2023", "year": 2023, "note": "Children living with parents until late 20s-30s common; economic necessity" },
-    "housing_cost_to_income_ratio": { "value": 0.35, "source": "OECD Affordable Housing Database, 2024", "year": 2024 },
-    "avg_home_size_sqm": { "value": 99.5, "source": "Eurostat Housing Statistics, 2023", "year": 2023 },
-    "social_housing_pct": { "value": 2.5, "source": "Ministerio de Transportes Estadísticas, 2023", "year": 2023, "note": "VPO (Vivienda de Protección Oficial); very low; rental market underdeveloped" },
-    "avg_mortgage_term_years": { "value": 24, "source": "INE Estadística de Hipotecas, 2024", "year": 2024 },
-    "housing_price_to_income_ratio": { "value": 8.9, "source": "Demographia International Housing Affordability, 2024", "year": 2024 },
-    "avg_age_first_home_purchase": { "value": 41, "source": "Sociedad de Tasación, 2023", "year": 2023, "note": "Oldest among surveyed nations; housing crisis acute for millennials" }
+    "homeownership_rate_pct": {
+      "value": 75.1,
+      "source": "INE Censo de Población y Viviendas, 2022",
+      "year": 2022,
+      "note": "One of highest in EU; cultural norm that renting = failure"
+    },
+    "avg_household_size": {
+      "value": 2.5,
+      "source": "INE Padrón Municipal, 2023",
+      "year": 2023
+    },
+    "avg_rent_1br_city_usd": {
+      "value": 1101,
+      "source": "Idealista Informe Mercado Alquiler, 2024",
+      "year": 2024,
+      "note": "Madrid €1,400, Barcelona €1,450, Valencia €900, Seville €850"
+    },
+    "avg_rent_1br_suburbs_usd": {
+      "value": 756,
+      "source": "Idealista, 2024",
+      "year": 2024
+    },
+    "multigenerational_household_pct": {
+      "value": 14,
+      "source": "INE Encuesta Continua de Hogares, 2023",
+      "year": 2023,
+      "note": "Children living with parents until late 20s-30s common; economic necessity"
+    },
+    "housing_cost_to_income_ratio": {
+      "value": 0.35,
+      "source": "OECD Affordable Housing Database, 2024",
+      "year": 2024
+    },
+    "avg_home_size_sqm": {
+      "value": 99.5,
+      "source": "Eurostat Housing Statistics, 2023",
+      "year": 2023
+    },
+    "social_housing_pct": {
+      "value": 2.5,
+      "source": "Ministerio de Transportes Estadísticas, 2023",
+      "year": 2023,
+      "note": "VPO (Vivienda de Protección Oficial); very low; rental market underdeveloped"
+    },
+    "avg_mortgage_term_years": {
+      "value": 24,
+      "source": "INE Estadística de Hipotecas, 2024",
+      "year": 2024
+    },
+    "housing_price_to_income_ratio": {
+      "value": 8.9,
+      "source": "Demographia International Housing Affordability, 2024",
+      "year": 2024
+    },
+    "avg_age_first_home_purchase": {
+      "value": 41,
+      "source": "Sociedad de Tasación, 2023",
+      "year": 2023,
+      "note": "Oldest among surveyed nations; housing crisis acute for millennials"
+    }
   },
   "food_lifestyle": {
-    "eating_out_per_week": { "value": 3.6, "source": "Federación Española de Hostelería (FEHR), 2023", "year": 2023, "note": "Highest in EU; bar culture means even quick coffees count; 280,000+ bars in Spain" },
-    "home_cooking_pct": { "value": 62, "source": "MAPAMA / MERCASA Informe, 2023", "year": 2023 },
-    "fast_food_visits_per_week": { "value": 1.5, "source": "NPD Group Spain, 2023", "year": 2023 },
-    "vegetarian_vegan_pct": { "value": 8, "source": "Kantar / Lantern Informe Vegan, 2023", "year": 2023, "note": "Flexitarian 36%; plant-based rising but Mediterranean diet dominant" },
-    "obesity_rate_pct": { "value": 23.8, "source": "OECD Health Statistics / AESA, 2023", "year": 2023 },
-    "alcohol_consumption_litres_per_capita": { "value": 11.6, "source": "WHO Global Status Report, 2023", "year": 2023, "note": "Beer and wine primary; Mediterranean drinking culture with meals" },
-    "coffee_consumption_kg_per_capita": { "value": 4.5, "source": "ICO / Euromonitor, 2023", "year": 2023, "note": "Cortado and café con leche culture; multiple coffees per day normal" },
-    "organic_food_adoption_pct": { "value": 34, "source": "MAPA Estadística Agricultura Ecológica, 2023", "year": 2023, "note": "Spain largest organic producer in EU but domestic consumption lags" },
-    "meal_sharing_culture_score": { "value": 8.6, "source": "World Values Survey / INE, 2022", "year": 2022, "note": "Scale 1-10; highest of 5 countries; food is social bond; tapas sharing culture" },
-    "food_delivery_app_usage_pct": { "value": 37, "source": "Statista Spain, 2024", "year": 2024 },
-    "supermarket_shop_frequency_per_week": { "value": 2.8, "source": "Nielsen Spain, 2023", "year": 2023, "note": "Plus daily mercado/market visits in many areas" }
+    "eating_out_per_week": {
+      "value": 3.6,
+      "source": "Federación Española de Hostelería (FEHR), 2023",
+      "year": 2023,
+      "note": "Highest in EU; bar culture means even quick coffees count; 280,000+ bars in Spain"
+    },
+    "home_cooking_pct": {
+      "value": 62,
+      "source": "MAPAMA / MERCASA Informe, 2023",
+      "year": 2023
+    },
+    "fast_food_visits_per_week": {
+      "value": 1.5,
+      "source": "NPD Group Spain, 2023",
+      "year": 2023
+    },
+    "vegetarian_vegan_pct": {
+      "value": 8,
+      "source": "Kantar / Lantern Informe Vegan, 2023",
+      "year": 2023,
+      "note": "Flexitarian 36%; plant-based rising but Mediterranean diet dominant"
+    },
+    "obesity_rate_pct": {
+      "value": 23.8,
+      "source": "OECD Health Statistics / AESA, 2023",
+      "year": 2023
+    },
+    "alcohol_consumption_litres_per_capita": {
+      "value": 11.6,
+      "source": "WHO Global Status Report, 2023",
+      "year": 2023,
+      "note": "Beer and wine primary; Mediterranean drinking culture with meals"
+    },
+    "coffee_consumption_kg_per_capita": {
+      "value": 4.5,
+      "source": "ICO / Euromonitor, 2023",
+      "year": 2023,
+      "note": "Cortado and café con leche culture; multiple coffees per day normal"
+    },
+    "organic_food_adoption_pct": {
+      "value": 34,
+      "source": "MAPA Estadística Agricultura Ecológica, 2023",
+      "year": 2023,
+      "note": "Spain largest organic producer in EU but domestic consumption lags"
+    },
+    "meal_sharing_culture_score": {
+      "value": 8.6,
+      "source": "World Values Survey / INE, 2022",
+      "year": 2022,
+      "note": "Scale 1-10; highest of 5 countries; food is social bond; tapas sharing culture"
+    },
+    "food_delivery_app_usage_pct": {
+      "value": 37,
+      "source": "Statista Spain, 2024",
+      "year": 2024
+    },
+    "supermarket_shop_frequency_per_week": {
+      "value": 2.8,
+      "source": "Nielsen Spain, 2023",
+      "year": 2023,
+      "note": "Plus daily mercado/market visits in many areas"
+    }
   },
   "trust_governance": {
-    "trust_in_govt_pct": { "value": 25, "source": "Eurobarometer Standard Survey, 2024", "year": 2024, "note": "Low; corruption scandals affecting all major parties; territorial tensions" },
-    "trust_in_courts_pct": { "value": 43, "source": "Eurobarometer, 2024", "year": 2024 },
-    "trust_in_police_pct": { "value": 69, "source": "Eurobarometer, 2024", "year": 2024 },
-    "trust_in_media_pct": { "value": 34, "source": "Reuters Institute Digital News Report, 2024", "year": 2024 },
-    "trust_in_strangers_pct": { "value": 36, "source": "World Values Survey Wave 7, 2022", "year": 2022 },
-    "corruption_perception_index": { "value": 60, "source": "Transparency International CPI, 2023", "year": 2023 },
-    "press_freedom_index": { "value": 74.1, "source": "RSF World Press Freedom Index, 2024", "year": 2024, "note": "Ranked 26th" },
-    "voter_turnout_pct": { "value": 70.4, "source": "Ministerio del Interior, Elecciones Generales 2023", "year": 2023 },
-    "civil_society_strength": { "value": 6.8, "source": "V-Dem Civil Society Index, 2023", "year": 2023 },
-    "trade_union_membership_pct": { "value": 14.5, "source": "CCOO/UGT / OECD, 2023", "year": 2023 },
-    "social_capital_index": { "value": 54.1, "source": "OECD Social Capital Index, 2024", "year": 2024 }
+    "trust_in_govt_pct": {
+      "value": 25,
+      "source": "Eurobarometer Standard Survey, 2024",
+      "year": 2024,
+      "note": "Low; corruption scandals affecting all major parties; territorial tensions"
+    },
+    "trust_in_courts_pct": {
+      "value": 43,
+      "source": "Eurobarometer, 2024",
+      "year": 2024
+    },
+    "trust_in_police_pct": {
+      "value": 69,
+      "source": "Eurobarometer, 2024",
+      "year": 2024
+    },
+    "trust_in_media_pct": {
+      "value": 34,
+      "source": "Reuters Institute Digital News Report, 2024",
+      "year": 2024
+    },
+    "trust_in_strangers_pct": {
+      "value": 36,
+      "source": "World Values Survey Wave 7, 2022",
+      "year": 2022
+    },
+    "corruption_perception_index": {
+      "value": 60,
+      "source": "Transparency International CPI, 2023",
+      "year": 2023
+    },
+    "press_freedom_index": {
+      "value": 74.1,
+      "source": "RSF World Press Freedom Index, 2024",
+      "year": 2024,
+      "note": "Ranked 26th"
+    },
+    "voter_turnout_pct": {
+      "value": 70.4,
+      "source": "Ministerio del Interior, Elecciones Generales 2023",
+      "year": 2023
+    },
+    "civil_society_strength": {
+      "value": 6.8,
+      "source": "V-Dem Civil Society Index, 2023",
+      "year": 2023
+    },
+    "trade_union_membership_pct": {
+      "value": 14.5,
+      "source": "CCOO/UGT / OECD, 2023",
+      "year": 2023
+    },
+    "social_capital_index": {
+      "value": 54.1,
+      "source": "OECD Social Capital Index, 2024",
+      "year": 2024
+    }
   },
   "regional_variations": {
-    "catalonia_vs_extremadura_income": { "value": "Catalonia GDP per capita €34,800 vs Extremadura €17,600", "source": "INE Contabilidad Regional de España, 2023", "year": 2023, "note": "2:1 income ratio; Catalonia represents 19% of national GDP while having 16% of population" },
-    "basque_country_fiscal_autonomy": { "value": "Basque Country GDP per capita €37,200; independent tax collection (Concierto Económico)", "source": "Eustat / Ministerio de Hacienda, 2023", "year": 2023, "note": "Only region to collect own taxes; fuels independence and wealth disparity debates" },
-    "youth_unemployment_geography": { "value": "Andalucía youth unemployment 38.2% vs Madrid 18.1%", "source": "INE Encuesta Población Activa, 2024", "year": 2024, "note": "Spain youth unemployment highest in EU; regional gap between tourism-dependent south and service north" },
-    "madrid_barcelona_rivalry": { "value": "Madrid avg rent €1,400/month vs Barcelona €1,450; Madrid GDP growing faster (+4.1% vs +2.8% in 2023)", "source": "INE / Idealista, 2023-2024", "year": 2023, "note": "Capital competition intensified post-pandemic; Barcelona corporate exodus to Madrid" },
-    "canary_balearic_tourism_dependency": { "value": "Tourism accounts for 35% of Balearic Islands GDP vs 10% national average", "source": "INE / Exceltur, 2023", "year": 2023, "note": "Record 84M tourists in 2023; anti-tourism protests growing; housing unaffordable for locals" }
+    "catalonia_vs_extremadura_income": {
+      "value": "Catalonia GDP per capita €34,800 vs Extremadura €17,600",
+      "source": "INE Contabilidad Regional de España, 2023",
+      "year": 2023,
+      "note": "2:1 income ratio; Catalonia represents 19% of national GDP while having 16% of population"
+    },
+    "basque_country_fiscal_autonomy": {
+      "value": "Basque Country GDP per capita €37,200; independent tax collection (Concierto Económico)",
+      "source": "Eustat / Ministerio de Hacienda, 2023",
+      "year": 2023,
+      "note": "Only region to collect own taxes; fuels independence and wealth disparity debates"
+    },
+    "youth_unemployment_geography": {
+      "value": "Andalucía youth unemployment 38.2% vs Madrid 18.1%",
+      "source": "INE Encuesta Población Activa, 2024",
+      "year": 2024,
+      "note": "Spain youth unemployment highest in EU; regional gap between tourism-dependent south and service north"
+    },
+    "madrid_barcelona_rivalry": {
+      "value": "Madrid avg rent €1,400/month vs Barcelona €1,450; Madrid GDP growing faster (+4.1% vs +2.8% in 2023)",
+      "source": "INE / Idealista, 2023-2024",
+      "year": 2023,
+      "note": "Capital competition intensified post-pandemic; Barcelona corporate exodus to Madrid"
+    },
+    "canary_balearic_tourism_dependency": {
+      "value": "Tourism accounts for 35% of Balearic Islands GDP vs 10% national average",
+      "source": "INE / Exceltur, 2023",
+      "year": 2023,
+      "note": "Record 84M tourists in 2023; anti-tourism protests growing; housing unaffordable for locals"
+    }
   }
 }

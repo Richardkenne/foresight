@@ -132,6 +132,32 @@
 ### Backtesting Fix
 - [x] Formula fix: geometric mean invece di cascading multiplication
 
+## Completato (sessione 2026-04-07 — Cultural Data Pipeline)
+
+### Cultural Data Layer (Foresight v2 — obiettivo 2.5M dp)
+- [x] **data/cultural/** — nuova directory dati culturali (separata da dati economici)
+- [x] **20 paesi** coperti: IDN, AUS, ITA, SGP, MYS, USA, DEU, FRA, GBR, ESP, NLD, CHE, SWE, POL, BEL, AUT, NOR, DNK, IRL, PRT
+- [x] **11 categorie** per paese: daily_routines, spending, social_norms, business_culture, religion, digital_behavior, education, housing, food_lifestyle, trust_governance, regional_variations
+- [x] **2,542 data points** culturali (post-filtro qualità), tutti 2022-2025
+- [x] **Fonti reali**: Hofstede Insights, Pew Research, Eurobarometer, OECD Better Life, World Values Survey, DataReportal, national stats (CBS, SCB, GUS, BFS, INE, Statbel, etc.), Transparency International, RSF
+- [x] **scripts/worldbank-bulk.mjs** — bulk downloader 30 indicatori WB per 20 paesi (log: /tmp/worldbank-bulk.log)
+- [x] **scripts/filter-quality.mjs** — rimuove data points year < 2022 da data/cultural/ (rimosse 9 entry pre-2022)
+- [x] **scripts/enrich-cultural-data.mjs** — arricchisce con Claude Haiku le categorie mancanti (richiede ANTHROPIC_API_KEY in .env.local)
+- Conteggio totale progetto: ~374K esistente + 2,542 culturali = **~377K data points**
+- Target: **2.5M data points** (pipeline notturna + bulk sessions + cultural layer in espansione)
+
+### Highlights per paese
+- **IDN**: Ramadan/jam karet/gotong royong, Aceh Sharia, TikTok 2nd market
+- **SGP**: Kiasu culture, PayNow cashless, PISA math rank 2nd, HDB 78.7%
+- **MYS**: Hofstede PDI 100 (world highest), Bumiputera policy, Kelantan Sharia
+- **NLD**: Fietscultuur (0.9 trip/day), Polder model, LGBTQ+ 1st country 2001, 29% social housing
+- **CHE**: Highest private wealth/capita ($685K), direct democracy 4 referenda/year, 66% vocational
+- **SWE**: Jantelagen, Allemansrätten, Swish 82%, Systembolaget monopoly, Spotify/Klarna unicorns
+- **POL**: 88% homeownership, BLIK 16M users, Witcher/Cyberpunk gaming hub, 74% voter turnout 2023
+- **BEL**: 541-day govt record, Brussels 32% expat, Antwerp 85% world diamonds, compulsory voting 88%
+- **PRT**: Saudade, uncertainty avoidance 99 (W.Europe highest), 1B pastel de nata/yr, 189 Mbps broadband
+- **NOR**: Jante Law, Friluftsliv, Oil Fund, highest petrol tax
+
 ## Completato (sessione 2026-04-06/07 — MASSIVE)
 
 ### Tutte le fasi completate in 2 sessioni:
@@ -403,10 +429,10 @@ Priorita:
 - Deploy: v2-nine-jade.vercel.app
 - Stack: Next.js 16 + React 19 + TypeScript + React Flow + Tailwind CSS + Framer Motion → Vercel
 - AI: Claude Haiku 4.5 (primary) + OpenAI GPT-4o-mini (fallback) + Groq Llama 3.3 (fallback)
-- Dati: 179 file JSON + 374K+ data points + 7 API live + 15K+ sacred patterns + 36 sacred roots + 3,260+ probabilita deep
+- Dati: 179 file JSON + 374K+ data points + 20 cultural JSON (2,542 dp) + 7 API live + 15K+ sacred patterns + 36 sacred roots + 3,260+ probabilita deep
 - Input: 7 modalita (testo, audio/mic, foto, video, URL, PDF, template)
 - UX: Framer Motion, Cmd+K palette, dark mode, toasts, skeletons, confetti, sound design, undo/redo
-- Target: 1M+ data points (pipeline notturna + bulk sessions)
+- Target: **2.5M data points** (pipeline notturna + bulk sessions + cultural layer)
 - Pipeline: RAG Supabase pgvector (66K+ rows, 512 dim, HNSW) + keyword matching (fallback)
 - Supabase: progetto "Simulator" (rkkfwsmoqylctprzqhfj), ap-southeast-1, free tier
 - Re-index: `npm run index-data`
@@ -416,4 +442,4 @@ Priorita:
 
 ---
 
-*Ultimo aggiornamento: 2026-04-07*
+*Ultimo aggiornamento: 2026-04-07 (cultural pipeline)*

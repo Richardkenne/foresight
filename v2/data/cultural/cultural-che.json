@@ -1,0 +1,623 @@
+{
+  "_meta": {
+    "country": "CHE",
+    "country_name": "Switzerland",
+    "created": "2026-04-07",
+    "categories": 11,
+    "sources": "BFS Switzerland, Eurobarometer, OECD, Hofstede Insights, DataReportal, Swiss National Bank, EDA",
+    "filtered": "2026-04-07"
+  },
+  "dataPoints": 109,
+  "daily_routines": {
+    "avg_sleep_hours": {
+      "value": 7.4,
+      "source": "OECD Better Life Index 2024",
+      "year": 2024
+    },
+    "wake_time_weekday": {
+      "value": "06:45",
+      "source": "SFSO Zeitverwendung 2023",
+      "year": 2023
+    },
+    "commute_time_minutes": {
+      "value": 31,
+      "source": "BFS Pendlerstatistik 2023",
+      "year": 2023
+    },
+    "public_transport_commuters_pct": {
+      "value": 23,
+      "source": "BFS Mobilität 2023",
+      "year": 2023,
+      "note": "SBB among world's best; 92% on-time rate"
+    },
+    "working_hours_per_week_avg": {
+      "value": 41.7,
+      "source": "BFS Arbeit und Erwerb 2023",
+      "year": 2023,
+      "note": "Above EU avg; Swiss work ethic"
+    },
+    "lunch_break_minutes": {
+      "value": 45,
+      "source": "SECO Arbeitszeit 2022",
+      "year": 2022
+    },
+    "dinner_time_avg": {
+      "value": "19:00",
+      "source": "BFS Mahlzeiten 2022",
+      "year": 2022
+    },
+    "leisure_hours_per_day": {
+      "value": 3.9,
+      "source": "OECD Time Use 2023",
+      "year": 2023
+    },
+    "vacation_days_statutory": {
+      "value": 20,
+      "source": "Obligationenrecht Art. 329 2023",
+      "year": 2023
+    },
+    "outdoor_sports_pct_weekly": {
+      "value": 82,
+      "source": "SFSO Sport Schweiz 2023",
+      "year": 2023,
+      "note": "Alps culture: skiing, hiking, cycling"
+    },
+    "hiking_trail_km": {
+      "value": 65000,
+      "source": "SchweizMobil 2023",
+      "year": 2023,
+      "note": "65,000 km marked hiking trails"
+    },
+    "volunteering_hours_per_year": {
+      "value": 270,
+      "source": "BFS Freiwilligenarbeit 2022",
+      "year": 2022
+    }
+  },
+  "spending": {
+    "monthly_household_income_chf": {
+      "value": 8200,
+      "source": "BFS Haushaltsbudget 2022",
+      "year": 2022
+    },
+    "food_at_home_chf": {
+      "value": 620,
+      "source": "BFS Haushaltsbudget 2022",
+      "year": 2022,
+      "note": "Highest food prices in Europe"
+    },
+    "food_out_chf": {
+      "value": 310,
+      "source": "BFS 2022",
+      "year": 2022
+    },
+    "housing_chf": {
+      "value": 1890,
+      "source": "BFS Mietpreise 2023",
+      "year": 2023,
+      "note": "Zurich 1BR avg: 2,400 CHF; Geneva: 2,600 CHF"
+    },
+    "transport_chf": {
+      "value": 580,
+      "source": "BFS Ausgaben 2022",
+      "year": 2022
+    },
+    "health_insurance_chf": {
+      "value": 450,
+      "source": "BAG Prämienverbilligung 2024",
+      "year": 2024,
+      "note": "Mandatory Krankenkasse; individual premium avg"
+    },
+    "education_chf": {
+      "value": 120,
+      "source": "BFS 2022",
+      "year": 2022
+    },
+    "savings_rate_pct": {
+      "value": 19.8,
+      "source": "SNB Sparquote 2023",
+      "year": 2023,
+      "note": "Among highest in OECD"
+    },
+    "pillar3a_contribution_avg_chf": {
+      "value": 5400,
+      "source": "SNB 3a Säule 2023",
+      "year": 2023,
+      "note": "Annual voluntary pension top-up; max CHF 7,056"
+    },
+    "private_wealth_per_capita_usd": {
+      "value": 685230,
+      "source": "Credit Suisse/UBS Global Wealth 2023",
+      "year": 2023,
+      "note": "Highest in world"
+    }
+  },
+  "social_norms": {
+    "individualism_score": {
+      "value": 68,
+      "source": "Hofstede Insights 2024",
+      "year": 2024
+    },
+    "power_distance_score": {
+      "value": 34,
+      "source": "Hofstede Insights 2024",
+      "year": 2024
+    },
+    "uncertainty_avoidance": {
+      "value": 58,
+      "source": "Hofstede Insights 2024",
+      "year": 2024
+    },
+    "masculinity_score": {
+      "value": 70,
+      "source": "Hofstede Insights 2024",
+      "year": 2024,
+      "note": "Achievement, precision, punctuality valued"
+    },
+    "long_term_orientation": {
+      "value": 74,
+      "source": "Hofstede Insights 2024",
+      "year": 2024
+    },
+    "indulgence_score": {
+      "value": 66,
+      "source": "Hofstede Insights 2024",
+      "year": 2024
+    },
+    "punctuality_culture": {
+      "value": "very strict",
+      "source": "EF Business Culture 2023",
+      "year": 2023,
+      "note": "Trains at 00:00; social lateness unacceptable"
+    },
+    "personal_space_norm_m": {
+      "value": 1.2,
+      "source": "Journal Cross-Cultural Psychology 2022",
+      "year": 2022
+    },
+    "privacy_importance_score": {
+      "value": 9.1,
+      "source": "Eurobarometer Privacy Survey 2023",
+      "year": 2023,
+      "note": "1-10; Swiss banking secrecy legacy; GDPR+ nDSG"
+    },
+    "direct_democracy_participation": {
+      "value": 3.4,
+      "source": "Bundeskanzlei Volksabstimmungen 2023",
+      "year": 2023,
+      "note": "Avg 3-4 federal referenda per year; 10+ cantonal"
+    },
+    "trust_in_strangers_pct": {
+      "value": 58,
+      "source": "ESS 2023",
+      "year": 2023
+    },
+    "multilingual_daily_life_pct": {
+      "value": 62,
+      "source": "BFS Sprachen 2023",
+      "year": 2023,
+      "note": "62% use >1 language at work"
+    }
+  },
+  "business_culture": {
+    "hierarchy_importance": {
+      "value": 4,
+      "source": "Hofstede 2023",
+      "year": 2023,
+      "note": "1-10; moderate; titles used but decisions shared"
+    },
+    "formality_level": {
+      "value": 7,
+      "source": "EF Business Culture 2023",
+      "year": 2023,
+      "note": "Formal address (Sie/Vous/Lei); first names by invitation"
+    },
+    "meeting_starts_on_time_pct": {
+      "value": 97,
+      "source": "SECO 2023",
+      "year": 2023
+    },
+    "corruption_perception_index": {
+      "value": 82,
+      "source": "Transparency International 2023",
+      "year": 2023,
+      "note": "Rank 7/180"
+    },
+    "ease_of_doing_business_rank": {
+      "value": 36,
+      "source": "World Bank 2023",
+      "year": 2023
+    },
+    "time_to_start_business_days": {
+      "value": 10,
+      "source": "World Bank 2023",
+      "year": 2023
+    },
+    "gender_pay_gap_pct": {
+      "value": 18.4,
+      "source": "BFS Lohnunterschied 2022",
+      "year": 2022,
+      "note": "Higher than EU avg; paradox of wealthy/equal society"
+    },
+    "parental_leave_weeks_total": {
+      "value": 18,
+      "source": "OECD Family Database 2023",
+      "year": 2023,
+      "note": "Only 14 weeks maternity; no statutory paternity until 2021"
+    },
+    "bank_secrecy_index": {
+      "value": 76,
+      "source": "FSI Tax Justice Network 2022",
+      "year": 2022,
+      "note": "Declining but still major offshore hub"
+    },
+    "watch_exports_bn_chf": {
+      "value": 26.7,
+      "source": "FH Fédération Horlogère 2023",
+      "year": 2023
+    },
+    "pharma_gdp_contribution_pct": {
+      "value": 6.2,
+      "source": "Interpharma 2023",
+      "year": 2023,
+      "note": "Novartis, Roche, Lonza based in Basel"
+    }
+  },
+  "religion": {
+    "no_religion_pct": {
+      "value": 37,
+      "source": "BFS Religionen 2023",
+      "year": 2023
+    },
+    "catholic_pct": {
+      "value": 34,
+      "source": "BFS 2023",
+      "year": 2023
+    },
+    "reformed_protestant_pct": {
+      "value": 22,
+      "source": "BFS 2023",
+      "year": 2023
+    },
+    "muslim_pct": {
+      "value": 5.4,
+      "source": "BFS 2023",
+      "year": 2023
+    },
+    "weekly_religious_attendance_pct": {
+      "value": 14,
+      "source": "Eurobarometer 2023",
+      "year": 2023
+    },
+    "religion_impact_daily_life": {
+      "value": 2.8,
+      "source": "WVS 7 2023",
+      "year": 2023,
+      "note": "1-10"
+    },
+    "church_tax_system": {
+      "value": "cantonal",
+      "source": "ESTV 2023",
+      "year": 2023,
+      "note": "Church tax varies by canton; opt-out possible"
+    },
+    "calvinist_work_ethic_legacy": {
+      "value": "strong",
+      "source": "ISCTE Culture Study 2022",
+      "year": 2022,
+      "note": "Protestant work ethic embedded in Swiss German culture"
+    }
+  },
+  "digital_behavior": {
+    "internet_penetration_pct": {
+      "value": 97,
+      "source": "DataReportal 2024",
+      "year": 2024
+    },
+    "smartphone_ownership_pct": {
+      "value": 92,
+      "source": "BFS IKT 2023",
+      "year": 2023
+    },
+    "daily_social_media_hours": {
+      "value": 1.5,
+      "source": "DataReportal 2024",
+      "year": 2024,
+      "note": "Low; Swiss discretion"
+    },
+    "top_platform_1": {
+      "value": "YouTube",
+      "source": "DataReportal 2024",
+      "year": 2024
+    },
+    "top_platform_2": {
+      "value": "WhatsApp",
+      "source": "DataReportal 2024",
+      "year": 2024
+    },
+    "ecommerce_adoption_pct": {
+      "value": 81,
+      "source": "GFS.Bern 2023",
+      "year": 2023
+    },
+    "twint_users_millions": {
+      "value": 5.1,
+      "source": "TWINT AG 2024",
+      "year": 2024,
+      "note": "Swiss mobile payment app; dominant for P2P"
+    },
+    "online_banking_pct": {
+      "value": 90,
+      "source": "BFS 2023",
+      "year": 2023
+    },
+    "streaming_subscription_pct": {
+      "value": 73,
+      "source": "Media Pulse 2024",
+      "year": 2024
+    },
+    "remote_work_pct": {
+      "value": 35,
+      "source": "SECO Homeoffice Survey 2023",
+      "year": 2023
+    },
+    "e_voting_cantons_active": {
+      "value": 6,
+      "source": "Bundeskanzlei 2024",
+      "year": 2024,
+      "note": "E-voting restored in 6 cantons after 2019 hiatus"
+    }
+  },
+  "education": {
+    "literacy_rate_pct": {
+      "value": 99.4,
+      "source": "UNESCO 2023",
+      "year": 2023
+    },
+    "avg_years_schooling": {
+      "value": 13.4,
+      "source": "UNDP HDR 2023",
+      "year": 2023
+    },
+    "tertiary_enrollment_pct": {
+      "value": 59,
+      "source": "BFS Hochschulen 2023",
+      "year": 2023
+    },
+    "pisa_score_avg": {
+      "value": 508,
+      "source": "OECD PISA 2022",
+      "year": 2022,
+      "note": "Math 508, Reading 483, Science 503; top 10"
+    },
+    "vocational_track_pct": {
+      "value": 66,
+      "source": "SBBK 2023",
+      "year": 2023,
+      "note": "Famous dual apprenticeship (Lehre); CEOs often start this way"
+    },
+    "tuition_university_chf_year": {
+      "value": 1000,
+      "source": "swissuniversities 2023",
+      "year": 2023,
+      "note": "Extremely low for Swiss residents"
+    },
+    "eth_zurich_world_rank": {
+      "value": 7,
+      "source": "QS World Rankings 2024",
+      "year": 2024
+    },
+    "r_and_d_spend_pct_gdp": {
+      "value": 3.4,
+      "source": "BFS F&E 2023",
+      "year": 2023,
+      "note": "Among highest in world"
+    },
+    "nobel_prizes_per_million": {
+      "value": 11.2,
+      "source": "Nobel Foundation 2023",
+      "year": 2023
+    }
+  },
+  "housing": {
+    "homeownership_rate_pct": {
+      "value": 36,
+      "source": "BFS Wohnen 2023",
+      "year": 2023,
+      "note": "Lowest in Europe; renting is cultural norm"
+    },
+    "avg_household_size": {
+      "value": 2.2,
+      "source": "BFS 2023",
+      "year": 2023
+    },
+    "avg_rent_1br_zurich_chf": {
+      "value": 2400,
+      "source": "Homegate Q1 2024",
+      "year": 2024
+    },
+    "avg_rent_1br_geneva_chf": {
+      "value": 2600,
+      "source": "Immoscout24 Q1 2024",
+      "year": 2024
+    },
+    "avg_rent_1br_bern_chf": {
+      "value": 1650,
+      "source": "Comparis 2024",
+      "year": 2024
+    },
+    "housing_price_to_income_ratio": {
+      "value": 10.8,
+      "source": "Numbeo 2024",
+      "year": 2024
+    },
+    "social_housing_pct": {
+      "value": 4,
+      "source": "BFS Wohnungsmarkt 2023",
+      "year": 2023
+    },
+    "avg_home_size_sqm": {
+      "value": 102,
+      "source": "BFS 2022",
+      "year": 2022
+    },
+    "avg_mortgage_term_years": {
+      "value": 25,
+      "source": "SNB 2023",
+      "year": 2023
+    },
+    "avg_age_first_home_purchase": {
+      "value": 42,
+      "source": "Wüest Partner 2023",
+      "year": 2023,
+      "note": "Very high; most rent lifelong"
+    }
+  },
+  "food_lifestyle": {
+    "eating_out_per_week": {
+      "value": 2.4,
+      "source": "GastroSuisse 2023",
+      "year": 2023
+    },
+    "home_cooking_pct": {
+      "value": 73,
+      "source": "BFS Nahrungsmittelverbrauch 2022",
+      "year": 2022
+    },
+    "fast_food_visits_per_week": {
+      "value": 0.9,
+      "source": "Marketingclub Schweiz 2023",
+      "year": 2023
+    },
+    "vegetarian_vegan_pct": {
+      "value": 11,
+      "source": "Swissveg 2023",
+      "year": 2023
+    },
+    "obesity_rate_pct": {
+      "value": 11.3,
+      "source": "OECD Health 2023",
+      "year": 2023,
+      "note": "Lowest in continental Europe"
+    },
+    "alcohol_consumption_litres_per_capita": {
+      "value": 9.8,
+      "source": "WHO 2023",
+      "year": 2023
+    },
+    "chocolate_consumption_kg_per_capita": {
+      "value": 10.3,
+      "source": "Chocosuisse 2023",
+      "year": 2023,
+      "note": "Highest in world; Lindt, Nestlé, Toblerone HQ"
+    },
+    "cheese_consumption_kg_per_capita": {
+      "value": 22.8,
+      "source": "Fromarte 2023",
+      "year": 2023
+    },
+    "organic_food_market_share_pct": {
+      "value": 11,
+      "source": "FiBL Orgprints 2023",
+      "year": 2023
+    },
+    "restaurant_avg_meal_chf": {
+      "value": 28,
+      "source": "GastroSuisse 2023",
+      "year": 2023,
+      "note": "Most expensive in Europe"
+    }
+  },
+  "trust_governance": {
+    "trust_in_govt_pct": {
+      "value": 72,
+      "source": "OECD Government at a Glance 2023",
+      "year": 2023,
+      "note": "Highest in OECD"
+    },
+    "trust_in_parliament_pct": {
+      "value": 63,
+      "source": "Eurobarometer 2023",
+      "year": 2023
+    },
+    "trust_in_courts_pct": {
+      "value": 79,
+      "source": "Eurobarometer 2023",
+      "year": 2023
+    },
+    "trust_in_police_pct": {
+      "value": 86,
+      "source": "Eurobarometer 2023",
+      "year": 2023
+    },
+    "corruption_perception_index": {
+      "value": 82,
+      "source": "TI 2023",
+      "year": 2023
+    },
+    "press_freedom_rank": {
+      "value": 12,
+      "source": "RSF 2024",
+      "year": 2024
+    },
+    "voter_turnout_federal_pct": {
+      "value": 46,
+      "source": "Bundeskanzlei NR2023",
+      "year": 2023,
+      "note": "Low despite direct democracy; local elections lower"
+    },
+    "referenda_per_year_federal": {
+      "value": 4,
+      "source": "Bundeskanzlei 2023",
+      "year": 2023
+    },
+    "tax_revenue_pct_gdp": {
+      "value": 27.6,
+      "source": "OECD 2023",
+      "year": 2023,
+      "note": "Low for OECD; federal structure keeps taxes competitive"
+    },
+    "neutrality_foreign_policy": {
+      "value": "constitutionally enshrined",
+      "source": "Bundesverfassung Art. 173 2023",
+      "year": 2023
+    }
+  },
+  "regional_variations": {
+    "linguistic_regions": {
+      "value": "DE 63%, FR 23%, IT 8%, Romansh 0.5%",
+      "source": "BFS Sprachen 2023",
+      "year": 2023,
+      "note": "Röstigraben: cultural divide German/French speakers"
+    },
+    "zurich_vs_ticino_income_ratio": {
+      "value": 1.42,
+      "source": "BFS Kantone 2022",
+      "year": 2022,
+      "note": "Zurich median income ~78K CHF vs Ticino ~55K CHF"
+    },
+    "appenzell_innerrhoden_women_vote_year": {
+      "value": 1990,
+      "source": "Swiss Federal Archives",
+      "year": 2024,
+      "note": "Last canton to grant cantonal women's vote; only after federal court order"
+    },
+    "zug_canton_tax_rate_pct": {
+      "value": 11.9,
+      "source": "KPMG Zug 2023",
+      "year": 2023,
+      "note": "Lowest cantonal tax; crypto hub, 300+ blockchain companies"
+    },
+    "valais_vs_urban_canton_religiosity": {
+      "value": "Valais 45% weekly attendance vs Zurich 8%",
+      "source": "BFS Religionen 2022",
+      "year": 2022
+    },
+    "basel_pharma_cluster_companies": {
+      "value": 700,
+      "source": "Scienceindustries 2023",
+      "year": 2023,
+      "note": "Basel-Stadt: 700 life science companies; 38% of Swiss pharma exports"
+    }
+  }
+}

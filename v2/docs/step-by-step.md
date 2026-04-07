@@ -310,4 +310,40 @@
 - [x] Coverage: 100/100 scenari coperti, 18 gap file creati
 - [x] Card design restored: bordi colorati, badge probabilita cerchio, sacred purple theme
 
-*Ultimo aggiornamento: 2026-04-07*
+---
+
+## Fase 6: Cultural Data Layer — IN CORSO (2026-04-07)
+
+### Obiettivo: 2.5M data points totali | Attuale: ~377K
+
+### Step 1: Infrastruttura — FATTO
+- [x] `data/cultural/` directory creata
+- [x] `scripts/worldbank-bulk.mjs` — bulk downloader 30 indicatori WB × 20 paesi (log /tmp/worldbank-bulk.log)
+- [x] `scripts/filter-quality.mjs` — filtra data points year < 2022 da data/cultural/
+- [x] `scripts/enrich-cultural-data.mjs` — Claude Haiku colma categorie mancanti (ANTHROPIC_API_KEY in .env.local)
+
+### Step 2: 20 Paesi × 11 Categorie — FATTO
+- [x] **20 file JSON** in data/cultural/: IDN, AUS, ITA, SGP, MYS, USA, DEU, FRA, GBR, ESP, NLD, CHE, SWE, POL, BEL, AUT, NOR, DNK, IRL, PRT
+- [x] **11 categorie** per paese: daily_routines, spending, social_norms, business_culture, religion, digital_behavior, education, housing, food_lifestyle, trust_governance, regional_variations
+- [x] **2,542 dp** post-filtro (9 rimossi pre-2022); tutti da 2022-2025
+- [x] Fonti: Hofstede Insights, Pew Research, Eurobarometer, OECD, WVS, DataReportal, enti statistici nazionali
+
+### Step 3: Pipeline completamento — DA FARE
+- [ ] Aggiungere 30+ paesi mancanti (JPN, KOR, CHN, IND, BRA, ZAF, MEX, ARG, NGA, EGY, TUR, THA, VNM, PHL, PAK, BGD, etc.)
+- [ ] Run `node scripts/worldbank-bulk.mjs` in ambiente con accesso rete → +600 dp WB indicators
+- [ ] Run `node scripts/enrich-cultural-data.mjs` → +2,000-4,000 dp per paese da Haiku
+- [ ] Indicizzare data/cultural/ in Supabase RAG (npm run index-data, aggiornare pipeline)
+- [ ] Target cultural layer: **50,000 dp** (50 paesi × 11 cat × 90 dp avg)
+
+### Conteggio Progresso verso 2.5M
+| Fonte | Data points |
+|-------|------------|
+| Dati esistenti (179 JSON) | ~374,000 |
+| Cultural layer (20 paesi) | 2,542 |
+| **Totale attuale** | **~376,542** |
+| Pipeline notturna (stima) | +1,500/notte |
+| Obiettivo | **2,500,000** |
+| Gap | ~2,123,000 |
+| Stima completamento | ~3.9 anni (pipeline only) → accelerare con bulk sessions |
+
+*Ultimo aggiornamento: 2026-04-07 (cultural pipeline)*

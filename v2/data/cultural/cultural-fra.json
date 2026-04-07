@@ -3,157 +3,727 @@
     "country": "FRA",
     "country_name": "France",
     "created": "2026-04-07",
-    "categories": 11
+    "categories": 11,
+    "filtered": "2026-04-07"
   },
   "dataPoints": 128,
   "daily_routines": {
-    "avg_sleep_hours": { "value": 7.13, "source": "INSEE Enquête Emploi du Temps, 2022", "year": 2022, "note": "French adults; among highest in OECD" },
-    "wake_time_weekday": { "value": "7:00 AM", "source": "INSEE Enquête Emploi du Temps, 2022", "year": 2022 },
-    "commute_time_minutes": { "value": 24.8, "source": "INSEE, 2022", "year": 2022, "note": "One-way; Île-de-France residents average 42 min" },
-    "working_hours_per_week": { "value": 36.2, "source": "Eurostat Labour Force Survey, 2023", "year": 2023, "note": "Includes 35-hour work week law (loi Aubry)" },
-    "lunch_break_minutes": { "value": 53, "source": "Études & Résultats DARES, 2023", "year": 2023, "note": "Longest lunch break in Europe; sacred cultural institution" },
-    "dinner_time_avg": { "value": "7:45 PM", "source": "INSEE Emploi du Temps, 2022", "year": 2022, "note": "Dinner is late; starter-main-dessert structure maintained" },
-    "leisure_hours_per_day": { "value": 4.9, "source": "INSEE Enquête Emploi du Temps, 2022", "year": 2022 },
-    "tv_hours_per_day": { "value": 3.4, "source": "Médiamétrie, 2024", "year": 2024 },
-    "weekend_family_time_hours": { "value": 5.8, "source": "INSEE Emploi du Temps, 2022", "year": 2022, "note": "Family Sunday meals are deeply embedded" },
-    "vacation_days_taken_per_year": { "value": 30, "source": "Dares / Ministère du Travail, 2023", "year": 2023, "note": "Legal minimum 5 weeks (25 days); August virtually shut down" },
-    "overtime_culture": { "value": "low, legally restricted", "source": "DARES Enquête ACEMO, 2023", "year": 2023, "note": "35-hour law limits overtime; droit à la déconnexion (right to disconnect) 2017" },
-    "morning_routine_duration_minutes": { "value": 58, "source": "OpinionWay sondage habitudes matinales, 2023", "year": 2023 },
-    "social_media_check_morning_pct": { "value": 61, "source": "Reuters Institute Digital News Report France, 2024", "year": 2024 },
-    "exercise_days_per_week": { "value": 2.4, "source": "Eurobarometer Sport and Physical Activity, 2023", "year": 2023 },
-    "avg_daily_steps": { "value": 5141, "source": "JAMA Internal Medicine / Stanford study, 2022", "year": 2022 }
+    "avg_sleep_hours": {
+      "value": 7.13,
+      "source": "INSEE Enquête Emploi du Temps, 2022",
+      "year": 2022,
+      "note": "French adults; among highest in OECD"
+    },
+    "wake_time_weekday": {
+      "value": "7:00 AM",
+      "source": "INSEE Enquête Emploi du Temps, 2022",
+      "year": 2022
+    },
+    "commute_time_minutes": {
+      "value": 24.8,
+      "source": "INSEE, 2022",
+      "year": 2022,
+      "note": "One-way; Île-de-France residents average 42 min"
+    },
+    "working_hours_per_week": {
+      "value": 36.2,
+      "source": "Eurostat Labour Force Survey, 2023",
+      "year": 2023,
+      "note": "Includes 35-hour work week law (loi Aubry)"
+    },
+    "lunch_break_minutes": {
+      "value": 53,
+      "source": "Études & Résultats DARES, 2023",
+      "year": 2023,
+      "note": "Longest lunch break in Europe; sacred cultural institution"
+    },
+    "dinner_time_avg": {
+      "value": "7:45 PM",
+      "source": "INSEE Emploi du Temps, 2022",
+      "year": 2022,
+      "note": "Dinner is late; starter-main-dessert structure maintained"
+    },
+    "leisure_hours_per_day": {
+      "value": 4.9,
+      "source": "INSEE Enquête Emploi du Temps, 2022",
+      "year": 2022
+    },
+    "tv_hours_per_day": {
+      "value": 3.4,
+      "source": "Médiamétrie, 2024",
+      "year": 2024
+    },
+    "weekend_family_time_hours": {
+      "value": 5.8,
+      "source": "INSEE Emploi du Temps, 2022",
+      "year": 2022,
+      "note": "Family Sunday meals are deeply embedded"
+    },
+    "vacation_days_taken_per_year": {
+      "value": 30,
+      "source": "Dares / Ministère du Travail, 2023",
+      "year": 2023,
+      "note": "Legal minimum 5 weeks (25 days); August virtually shut down"
+    },
+    "overtime_culture": {
+      "value": "low, legally restricted",
+      "source": "DARES Enquête ACEMO, 2023",
+      "year": 2023,
+      "note": "35-hour law limits overtime; droit à la déconnexion (right to disconnect) 2017"
+    },
+    "morning_routine_duration_minutes": {
+      "value": 58,
+      "source": "OpinionWay sondage habitudes matinales, 2023",
+      "year": 2023
+    },
+    "social_media_check_morning_pct": {
+      "value": 61,
+      "source": "Reuters Institute Digital News Report France, 2024",
+      "year": 2024
+    },
+    "exercise_days_per_week": {
+      "value": 2.4,
+      "source": "Eurobarometer Sport and Physical Activity, 2023",
+      "year": 2023
+    },
+    "avg_daily_steps": {
+      "value": 5141,
+      "source": "JAMA Internal Medicine / Stanford study, 2022",
+      "year": 2022
+    }
   },
   "spending": {
-    "food_at_home_usd": { "value": 540, "source": "INSEE Enquête Budget de Famille, 2023", "year": 2023, "note": "Converted at 1.08 USD/EUR; high quality food spending" },
-    "food_out_usd": { "value": 281, "source": "INSEE Budget de Famille, 2023", "year": 2023 },
-    "housing_rent_or_mortgage_usd": { "value": 1131, "source": "Observatoire des Loyers / Clameur, 2024", "year": 2024, "note": "National median; Paris avg €1,500-2,000 for 1BR" },
-    "transport_usd": { "value": 421, "source": "INSEE Budget de Famille, 2023", "year": 2023 },
-    "education_usd": { "value": 86, "source": "INSEE Budget de Famille, 2023", "year": 2023, "note": "Low; universities largely free; private school minority" },
-    "entertainment_usd": { "value": 238, "source": "INSEE Budget de Famille, 2023", "year": 2023 },
-    "healthcare_usd": { "value": 189, "source": "INSEE Budget de Famille, 2023", "year": 2023, "note": "Out-of-pocket after Sécurité Sociale reimbursement; mutuelle supplements" },
-    "clothing_usd": { "value": 172, "source": "INSEE Budget de Famille, 2023", "year": 2023, "note": "Fashion-conscious; higher than European average" },
-    "savings_rate_pct": { "value": 17.8, "source": "Banque de France / INSEE, 2024", "year": 2024, "note": "Elevated post-pandemic; France has high precautionary savings" },
-    "debt_to_income_ratio_pct": { "value": 86.4, "source": "Banque de France, 2024", "year": 2024 },
-    "luxury_goods_spend_pct": { "value": 5.9, "source": "Bain & Company / Comité Colbert, 2023", "year": 2023 },
-    "avg_monthly_subscription_spend_usd": { "value": 133, "source": "Statista France Digital Market, 2023", "year": 2023 },
-    "credit_card_debt_per_household_usd": { "value": 2104, "source": "Banque de France, 2023", "year": 2023 },
-    "avg_holiday_spend_usd": { "value": 1743, "source": "DGCIS / Atout France, 2023", "year": 2023 }
+    "food_at_home_usd": {
+      "value": 540,
+      "source": "INSEE Enquête Budget de Famille, 2023",
+      "year": 2023,
+      "note": "Converted at 1.08 USD/EUR; high quality food spending"
+    },
+    "food_out_usd": {
+      "value": 281,
+      "source": "INSEE Budget de Famille, 2023",
+      "year": 2023
+    },
+    "housing_rent_or_mortgage_usd": {
+      "value": 1131,
+      "source": "Observatoire des Loyers / Clameur, 2024",
+      "year": 2024,
+      "note": "National median; Paris avg €1,500-2,000 for 1BR"
+    },
+    "transport_usd": {
+      "value": 421,
+      "source": "INSEE Budget de Famille, 2023",
+      "year": 2023
+    },
+    "education_usd": {
+      "value": 86,
+      "source": "INSEE Budget de Famille, 2023",
+      "year": 2023,
+      "note": "Low; universities largely free; private school minority"
+    },
+    "entertainment_usd": {
+      "value": 238,
+      "source": "INSEE Budget de Famille, 2023",
+      "year": 2023
+    },
+    "healthcare_usd": {
+      "value": 189,
+      "source": "INSEE Budget de Famille, 2023",
+      "year": 2023,
+      "note": "Out-of-pocket after Sécurité Sociale reimbursement; mutuelle supplements"
+    },
+    "clothing_usd": {
+      "value": 172,
+      "source": "INSEE Budget de Famille, 2023",
+      "year": 2023,
+      "note": "Fashion-conscious; higher than European average"
+    },
+    "savings_rate_pct": {
+      "value": 17.8,
+      "source": "Banque de France / INSEE, 2024",
+      "year": 2024,
+      "note": "Elevated post-pandemic; France has high precautionary savings"
+    },
+    "debt_to_income_ratio_pct": {
+      "value": 86.4,
+      "source": "Banque de France, 2024",
+      "year": 2024
+    },
+    "luxury_goods_spend_pct": {
+      "value": 5.9,
+      "source": "Bain & Company / Comité Colbert, 2023",
+      "year": 2023
+    },
+    "avg_monthly_subscription_spend_usd": {
+      "value": 133,
+      "source": "Statista France Digital Market, 2023",
+      "year": 2023
+    },
+    "credit_card_debt_per_household_usd": {
+      "value": 2104,
+      "source": "Banque de France, 2023",
+      "year": 2023
+    },
+    "avg_holiday_spend_usd": {
+      "value": 1743,
+      "source": "DGCIS / Atout France, 2023",
+      "year": 2023
+    }
   },
   "social_norms": {
-    "individualism_score": { "value": 71, "source": "Hofstede Insights Country Comparison, 2023", "year": 2023 },
-    "power_distance_score": { "value": 68, "source": "Hofstede Insights, 2023", "year": 2023, "note": "Relatively high; intellectual hierarchy, grandes écoles elite" },
-    "uncertainty_avoidance": { "value": 86, "source": "Hofstede Insights, 2023", "year": 2023, "note": "Very high; love of rules and clarity; bureaucratic society" },
-    "masculinity_score": { "value": 43, "source": "Hofstede Insights, 2023", "year": 2023 },
-    "long_term_orientation": { "value": 63, "source": "Hofstede Insights, 2023", "year": 2023 },
-    "indulgence_score": { "value": 48, "source": "Hofstede Insights, 2023", "year": 2023 },
-    "personal_space_norm_m": { "value": 0.7, "source": "Proxemics research, 2022", "year": 2022, "note": "Bises (cheek kisses) between acquaintances; close physical greeting" },
-    "eye_contact_norm": { "value": "expected, direct", "source": "Eurobarometer Social Norms, 2023", "year": 2023 },
-    "punctuality_culture": { "value": "moderate; quart d'heure de politesse", "source": "Eurobarometer, 2023", "year": 2023, "note": "Social lateness of 15 min acceptable; business more strict" },
-    "gift_giving_culture": { "value": "quality over quantity", "source": "INSEE Survey, 2023", "year": 2023, "note": "Wine, chocolates, flowers common; presentation matters" },
-    "small_talk_prevalence": { "value": "moderate", "source": "World Values Survey Wave 7, 2022", "year": 2022, "note": "Prefer substantive discussion; less weather-chat than Anglo cultures" },
-    "tipping_culture": { "value": "service compris, rounding common", "source": "Statista France, 2023", "year": 2023, "note": "Service charge legally included; extra €1-2 a polite gesture" },
-    "lgbtq_acceptance_pct": { "value": 86, "source": "Eurobarometer LGBTQI Survey, 2023", "year": 2023 },
-    "interracial_marriage_approval_pct": { "value": 83, "source": "Eurobarometer, 2023", "year": 2023 },
-    "strangers_greeting_culture": { "value": "reserved, formal", "source": "World Values Survey Wave 7, 2022", "year": 2022, "note": "Formal with strangers; warmer once introduced" }
+    "individualism_score": {
+      "value": 71,
+      "source": "Hofstede Insights Country Comparison, 2023",
+      "year": 2023
+    },
+    "power_distance_score": {
+      "value": 68,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023,
+      "note": "Relatively high; intellectual hierarchy, grandes écoles elite"
+    },
+    "uncertainty_avoidance": {
+      "value": 86,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023,
+      "note": "Very high; love of rules and clarity; bureaucratic society"
+    },
+    "masculinity_score": {
+      "value": 43,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "long_term_orientation": {
+      "value": 63,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "indulgence_score": {
+      "value": 48,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "personal_space_norm_m": {
+      "value": 0.7,
+      "source": "Proxemics research, 2022",
+      "year": 2022,
+      "note": "Bises (cheek kisses) between acquaintances; close physical greeting"
+    },
+    "eye_contact_norm": {
+      "value": "expected, direct",
+      "source": "Eurobarometer Social Norms, 2023",
+      "year": 2023
+    },
+    "punctuality_culture": {
+      "value": "moderate; quart d'heure de politesse",
+      "source": "Eurobarometer, 2023",
+      "year": 2023,
+      "note": "Social lateness of 15 min acceptable; business more strict"
+    },
+    "gift_giving_culture": {
+      "value": "quality over quantity",
+      "source": "INSEE Survey, 2023",
+      "year": 2023,
+      "note": "Wine, chocolates, flowers common; presentation matters"
+    },
+    "small_talk_prevalence": {
+      "value": "moderate",
+      "source": "World Values Survey Wave 7, 2022",
+      "year": 2022,
+      "note": "Prefer substantive discussion; less weather-chat than Anglo cultures"
+    },
+    "tipping_culture": {
+      "value": "service compris, rounding common",
+      "source": "Statista France, 2023",
+      "year": 2023,
+      "note": "Service charge legally included; extra €1-2 a polite gesture"
+    },
+    "lgbtq_acceptance_pct": {
+      "value": 86,
+      "source": "Eurobarometer LGBTQI Survey, 2023",
+      "year": 2023
+    },
+    "interracial_marriage_approval_pct": {
+      "value": 83,
+      "source": "Eurobarometer, 2023",
+      "year": 2023
+    },
+    "strangers_greeting_culture": {
+      "value": "reserved, formal",
+      "source": "World Values Survey Wave 7, 2022",
+      "year": 2022,
+      "note": "Formal with strangers; warmer once introduced"
+    }
   },
   "business_culture": {
-    "hierarchy_importance": { "value": 7, "source": "GLOBE Study / Hofstede, 2023", "year": 2023, "note": "Strong grande école elite; PDG (CEO) highly respected" },
-    "formality_level": { "value": 7, "source": "GLOBE Cultural Study, 2023", "year": 2023, "note": "Vouvoiement (formal 'you') used in professional settings" },
-    "meeting_starts_on_time_pct": { "value": 71, "source": "Doodle State of Meetings Report, 2023", "year": 2023 },
-    "business_card_etiquette": { "value": "formal, handed politely", "source": "CCIP Guide Interculturel, 2023", "year": 2023 },
-    "negotiation_style": { "value": "intellectual, adversarial, process-oriented", "source": "Harvard PON, 2023", "year": 2023, "note": "Debate and logic valued; disagreement is sport" },
-    "corruption_perception_index": { "value": 71, "source": "Transparency International CPI, 2023", "year": 2023, "note": "Ranked 20th globally" },
-    "ease_of_doing_business_rank": { "value": 32, "source": "World Bank / IMD, 2024", "year": 2024 },
-    "time_to_start_business_days": { "value": 4, "source": "World Bank, 2023", "year": 2023 },
-    "work_life_balance_score": { "value": 7.4, "source": "OECD Better Life Index, 2024", "year": 2024 },
-    "gender_pay_gap_pct": { "value": 16.8, "source": "INSEE Écarts de Salaires, 2023", "year": 2023 },
-    "parental_leave_weeks": { "value": 42, "source": "OECD Family Database, 2024", "year": 2024, "note": "Congé maternité 16 wks; congé paternité 28 days" },
-    "unionization_rate_pct": { "value": 10.3, "source": "DARES / OECD, 2023", "year": 2023, "note": "Low membership but high coverage via collective agreements (~98%)" },
-    "remote_work_policy_adoption_pct": { "value": 48, "source": "DARES Télétravail Survey, 2024", "year": 2024 },
-    "avg_annual_salary_usd": { "value": 53820, "source": "INSEE SIASP, 2023", "year": 2023 }
+    "hierarchy_importance": {
+      "value": 7,
+      "source": "GLOBE Study / Hofstede, 2023",
+      "year": 2023,
+      "note": "Strong grande école elite; PDG (CEO) highly respected"
+    },
+    "formality_level": {
+      "value": 7,
+      "source": "GLOBE Cultural Study, 2023",
+      "year": 2023,
+      "note": "Vouvoiement (formal 'you') used in professional settings"
+    },
+    "meeting_starts_on_time_pct": {
+      "value": 71,
+      "source": "Doodle State of Meetings Report, 2023",
+      "year": 2023
+    },
+    "business_card_etiquette": {
+      "value": "formal, handed politely",
+      "source": "CCIP Guide Interculturel, 2023",
+      "year": 2023
+    },
+    "negotiation_style": {
+      "value": "intellectual, adversarial, process-oriented",
+      "source": "Harvard PON, 2023",
+      "year": 2023,
+      "note": "Debate and logic valued; disagreement is sport"
+    },
+    "corruption_perception_index": {
+      "value": 71,
+      "source": "Transparency International CPI, 2023",
+      "year": 2023,
+      "note": "Ranked 20th globally"
+    },
+    "ease_of_doing_business_rank": {
+      "value": 32,
+      "source": "World Bank / IMD, 2024",
+      "year": 2024
+    },
+    "time_to_start_business_days": {
+      "value": 4,
+      "source": "World Bank, 2023",
+      "year": 2023
+    },
+    "work_life_balance_score": {
+      "value": 7.4,
+      "source": "OECD Better Life Index, 2024",
+      "year": 2024
+    },
+    "gender_pay_gap_pct": {
+      "value": 16.8,
+      "source": "INSEE Écarts de Salaires, 2023",
+      "year": 2023
+    },
+    "parental_leave_weeks": {
+      "value": 42,
+      "source": "OECD Family Database, 2024",
+      "year": 2024,
+      "note": "Congé maternité 16 wks; congé paternité 28 days"
+    },
+    "unionization_rate_pct": {
+      "value": 10.3,
+      "source": "DARES / OECD, 2023",
+      "year": 2023,
+      "note": "Low membership but high coverage via collective agreements (~98%)"
+    },
+    "remote_work_policy_adoption_pct": {
+      "value": 48,
+      "source": "DARES Télétravail Survey, 2024",
+      "year": 2024
+    },
+    "avg_annual_salary_usd": {
+      "value": 53820,
+      "source": "INSEE SIASP, 2023",
+      "year": 2023
+    }
   },
   "religion": {
-    "major_religion": { "value": "Christianity (Catholic)", "source": "IFOP Observatoire de l'irreligion, 2023", "year": 2023 },
-    "major_religion_pct": { "value": 47, "source": "IFOP, 2023", "year": 2023, "note": "Self-identified Catholic; practising weekly <5%" },
-    "second_religion_pct": { "value": 8, "source": "IFOP, 2023", "year": 2023, "note": "Islam ~8%, largest Muslim population in Western Europe" },
-    "atheist_agnostic_pct": { "value": 36, "source": "IFOP / WIN/Gallup International, 2023", "year": 2023, "note": "Self-declared atheist 29%; agnostic 7%" },
-    "weekly_religious_attendance_pct": { "value": 7, "source": "IFOP Baromètre de la pratique religieuse, 2023", "year": 2023 },
-    "religion_impact_daily_life": { "value": 3.4, "source": "Eurobarometer, 2023", "year": 2023, "note": "Laïcité (secularism) is constitutional principle; low religiosity public sphere" },
-    "religious_holidays_count_per_year": { "value": 11, "source": "Code du Travail / Légifrance, 2024", "year": 2024, "note": "Includes Catholic holidays despite laïcité; historical legacy" },
-    "interfaith_marriage_acceptance_pct": { "value": 79, "source": "Eurobarometer, 2023", "year": 2023 },
-    "religiosity_trend": { "value": "falling", "source": "IFOP, 2023", "year": 2023, "note": "Fastest secularization in Europe; Islam bucking trend" }
+    "major_religion": {
+      "value": "Christianity (Catholic)",
+      "source": "IFOP Observatoire de l'irreligion, 2023",
+      "year": 2023
+    },
+    "major_religion_pct": {
+      "value": 47,
+      "source": "IFOP, 2023",
+      "year": 2023,
+      "note": "Self-identified Catholic; practising weekly <5%"
+    },
+    "second_religion_pct": {
+      "value": 8,
+      "source": "IFOP, 2023",
+      "year": 2023,
+      "note": "Islam ~8%, largest Muslim population in Western Europe"
+    },
+    "atheist_agnostic_pct": {
+      "value": 36,
+      "source": "IFOP / WIN/Gallup International, 2023",
+      "year": 2023,
+      "note": "Self-declared atheist 29%; agnostic 7%"
+    },
+    "weekly_religious_attendance_pct": {
+      "value": 7,
+      "source": "IFOP Baromètre de la pratique religieuse, 2023",
+      "year": 2023
+    },
+    "religion_impact_daily_life": {
+      "value": 3.4,
+      "source": "Eurobarometer, 2023",
+      "year": 2023,
+      "note": "Laïcité (secularism) is constitutional principle; low religiosity public sphere"
+    },
+    "religious_holidays_count_per_year": {
+      "value": 11,
+      "source": "Code du Travail / Légifrance, 2024",
+      "year": 2024,
+      "note": "Includes Catholic holidays despite laïcité; historical legacy"
+    },
+    "interfaith_marriage_acceptance_pct": {
+      "value": 79,
+      "source": "Eurobarometer, 2023",
+      "year": 2023
+    },
+    "religiosity_trend": {
+      "value": "falling",
+      "source": "IFOP, 2023",
+      "year": 2023,
+      "note": "Fastest secularization in Europe; Islam bucking trend"
+    }
   },
   "digital_behavior": {
-    "internet_penetration_pct": { "value": 92.3, "source": "Arcep / ITU, 2024", "year": 2024 },
-    "smartphone_ownership_pct": { "value": 88, "source": "CREDOC Enquête Baromètre Numérique, 2024", "year": 2024 },
-    "daily_social_media_hours": { "value": 1.9, "source": "DataReportal Digital 2024 France", "year": 2024 },
-    "top_platform_1": { "value": "YouTube", "source": "Médiamétrie NetRatings, 2024", "year": 2024 },
-    "top_platform_1_users_pct": { "value": 81, "source": "Médiamétrie, 2024", "year": 2024 },
-    "top_platform_2": { "value": "Facebook", "source": "Médiamétrie, 2024", "year": 2024, "note": "55% of French adults; declining among youth" },
-    "ecommerce_adoption_pct": { "value": 81, "source": "FEVAD E-Commerce Report France, 2024", "year": 2024 },
-    "mobile_payment_adoption_pct": { "value": 47, "source": "Banque de France Rapport Statistiques, 2023", "year": 2023 },
-    "online_banking_pct": { "value": 77, "source": "Fédération Bancaire Française, 2023", "year": 2023 },
-    "streaming_subscription_pct": { "value": 68, "source": "CSA / Hadopi Digital Report, 2024", "year": 2024 },
-    "remote_work_pct": { "value": 26, "source": "DARES Synthèse Télétravail, 2024", "year": 2024 },
-    "ai_tool_adoption_pct": { "value": 28, "source": "IFOP Baromètre IA, 2024", "year": 2024 }
+    "internet_penetration_pct": {
+      "value": 92.3,
+      "source": "Arcep / ITU, 2024",
+      "year": 2024
+    },
+    "smartphone_ownership_pct": {
+      "value": 88,
+      "source": "CREDOC Enquête Baromètre Numérique, 2024",
+      "year": 2024
+    },
+    "daily_social_media_hours": {
+      "value": 1.9,
+      "source": "DataReportal Digital 2024 France",
+      "year": 2024
+    },
+    "top_platform_1": {
+      "value": "YouTube",
+      "source": "Médiamétrie NetRatings, 2024",
+      "year": 2024
+    },
+    "top_platform_1_users_pct": {
+      "value": 81,
+      "source": "Médiamétrie, 2024",
+      "year": 2024
+    },
+    "top_platform_2": {
+      "value": "Facebook",
+      "source": "Médiamétrie, 2024",
+      "year": 2024,
+      "note": "55% of French adults; declining among youth"
+    },
+    "ecommerce_adoption_pct": {
+      "value": 81,
+      "source": "FEVAD E-Commerce Report France, 2024",
+      "year": 2024
+    },
+    "mobile_payment_adoption_pct": {
+      "value": 47,
+      "source": "Banque de France Rapport Statistiques, 2023",
+      "year": 2023
+    },
+    "online_banking_pct": {
+      "value": 77,
+      "source": "Fédération Bancaire Française, 2023",
+      "year": 2023
+    },
+    "streaming_subscription_pct": {
+      "value": 68,
+      "source": "CSA / Hadopi Digital Report, 2024",
+      "year": 2024
+    },
+    "remote_work_pct": {
+      "value": 26,
+      "source": "DARES Synthèse Télétravail, 2024",
+      "year": 2024
+    },
+    "ai_tool_adoption_pct": {
+      "value": 28,
+      "source": "IFOP Baromètre IA, 2024",
+      "year": 2024
+    }
   },
   "education": {
-    "literacy_rate_pct": { "value": 99, "source": "UNESCO Institute for Statistics, 2023", "year": 2023 },
-    "avg_years_schooling": { "value": 12.8, "source": "UNDP Human Development Report, 2023", "year": 2023 },
-    "tertiary_enrollment_pct": { "value": 67, "source": "OECD Education at a Glance, 2023", "year": 2023 },
-    "private_tutoring_prevalence_pct": { "value": 32, "source": "DEPP / Ministère de l'Éducation, 2023", "year": 2023 },
-    "govt_education_spend_pct_gdp": { "value": 5.4, "source": "OECD Education at a Glance, 2023", "year": 2023 },
-    "university_acceptance_rate_pct": { "value": 70, "source": "Parcoursup Rapport, 2023", "year": 2023, "note": "Grandes Écoles < 5%; university entrance via Parcoursup generally accessible" },
-    "student_loan_prevalence_pct": { "value": 15, "source": "CNOUS, 2023", "year": 2023, "note": "Low; tuition fees €170-380/year; bourse grants cover many students" },
-    "stem_graduates_pct": { "value": 26, "source": "SIES Ministère de l'Enseignement Supérieur, 2023", "year": 2023 },
-    "vocational_track_pct": { "value": 31, "source": "Ministère de l'Éducation Nationale, 2023", "year": 2023, "note": "Lycée professionnel + apprentissage" },
-    "pisa_score_avg": { "value": 479, "source": "OECD PISA 2022", "year": 2022, "note": "Math 474, Reading 474, Science 487; below OECD average" },
-    "education_expenditure_per_student_usd": { "value": 12090, "source": "OECD Education at a Glance, 2023", "year": 2023 }
+    "literacy_rate_pct": {
+      "value": 99,
+      "source": "UNESCO Institute for Statistics, 2023",
+      "year": 2023
+    },
+    "avg_years_schooling": {
+      "value": 12.8,
+      "source": "UNDP Human Development Report, 2023",
+      "year": 2023
+    },
+    "tertiary_enrollment_pct": {
+      "value": 67,
+      "source": "OECD Education at a Glance, 2023",
+      "year": 2023
+    },
+    "private_tutoring_prevalence_pct": {
+      "value": 32,
+      "source": "DEPP / Ministère de l'Éducation, 2023",
+      "year": 2023
+    },
+    "govt_education_spend_pct_gdp": {
+      "value": 5.4,
+      "source": "OECD Education at a Glance, 2023",
+      "year": 2023
+    },
+    "university_acceptance_rate_pct": {
+      "value": 70,
+      "source": "Parcoursup Rapport, 2023",
+      "year": 2023,
+      "note": "Grandes Écoles < 5%; university entrance via Parcoursup generally accessible"
+    },
+    "student_loan_prevalence_pct": {
+      "value": 15,
+      "source": "CNOUS, 2023",
+      "year": 2023,
+      "note": "Low; tuition fees €170-380/year; bourse grants cover many students"
+    },
+    "stem_graduates_pct": {
+      "value": 26,
+      "source": "SIES Ministère de l'Enseignement Supérieur, 2023",
+      "year": 2023
+    },
+    "vocational_track_pct": {
+      "value": 31,
+      "source": "Ministère de l'Éducation Nationale, 2023",
+      "year": 2023,
+      "note": "Lycée professionnel + apprentissage"
+    },
+    "pisa_score_avg": {
+      "value": 479,
+      "source": "OECD PISA 2022",
+      "year": 2022,
+      "note": "Math 474, Reading 474, Science 487; below OECD average"
+    },
+    "education_expenditure_per_student_usd": {
+      "value": 12090,
+      "source": "OECD Education at a Glance, 2023",
+      "year": 2023
+    }
   },
   "housing": {
-    "homeownership_rate_pct": { "value": 57.2, "source": "INSEE Enquête Logement, 2022", "year": 2022 },
-    "avg_household_size": { "value": 2.2, "source": "INSEE Recensement, 2023", "year": 2023 },
-    "avg_rent_1br_city_usd": { "value": 1155, "source": "SeLoger / Observatoire Clameur, 2024", "year": 2024, "note": "Paris outlier at ~€1,500; Lyon ~€800; provincial cities €600-900" },
-    "avg_rent_1br_suburbs_usd": { "value": 864, "source": "SeLoger, 2024", "year": 2024 },
-    "multigenerational_household_pct": { "value": 8, "source": "INSEE Enquête Logement, 2022", "year": 2022 },
-    "housing_cost_to_income_ratio": { "value": 0.31, "source": "OECD Affordable Housing Database, 2024", "year": 2024 },
-    "avg_home_size_sqm": { "value": 91.0, "source": "Eurostat Housing Statistics, 2023", "year": 2023 },
-    "social_housing_pct": { "value": 17.0, "source": "USH (Union Sociale pour l'Habitat), 2023", "year": 2023, "note": "HLM sector; 5.4 million units; one of largest in Europe" },
-    "avg_mortgage_term_years": { "value": 22, "source": "Banque de France, 2024", "year": 2024 },
-    "housing_price_to_income_ratio": { "value": 9.7, "source": "Demographia International Housing Affordability, 2024", "year": 2024, "note": "Paris severely unaffordable at 15+" },
-    "avg_age_first_home_purchase": { "value": 35, "source": "Notaires de France, 2023", "year": 2023 }
+    "homeownership_rate_pct": {
+      "value": 57.2,
+      "source": "INSEE Enquête Logement, 2022",
+      "year": 2022
+    },
+    "avg_household_size": {
+      "value": 2.2,
+      "source": "INSEE Recensement, 2023",
+      "year": 2023
+    },
+    "avg_rent_1br_city_usd": {
+      "value": 1155,
+      "source": "SeLoger / Observatoire Clameur, 2024",
+      "year": 2024,
+      "note": "Paris outlier at ~€1,500; Lyon ~€800; provincial cities €600-900"
+    },
+    "avg_rent_1br_suburbs_usd": {
+      "value": 864,
+      "source": "SeLoger, 2024",
+      "year": 2024
+    },
+    "multigenerational_household_pct": {
+      "value": 8,
+      "source": "INSEE Enquête Logement, 2022",
+      "year": 2022
+    },
+    "housing_cost_to_income_ratio": {
+      "value": 0.31,
+      "source": "OECD Affordable Housing Database, 2024",
+      "year": 2024
+    },
+    "avg_home_size_sqm": {
+      "value": 91,
+      "source": "Eurostat Housing Statistics, 2023",
+      "year": 2023
+    },
+    "social_housing_pct": {
+      "value": 17,
+      "source": "USH (Union Sociale pour l'Habitat), 2023",
+      "year": 2023,
+      "note": "HLM sector; 5.4 million units; one of largest in Europe"
+    },
+    "avg_mortgage_term_years": {
+      "value": 22,
+      "source": "Banque de France, 2024",
+      "year": 2024
+    },
+    "housing_price_to_income_ratio": {
+      "value": 9.7,
+      "source": "Demographia International Housing Affordability, 2024",
+      "year": 2024,
+      "note": "Paris severely unaffordable at 15+"
+    },
+    "avg_age_first_home_purchase": {
+      "value": 35,
+      "source": "Notaires de France, 2023",
+      "year": 2023
+    }
   },
   "food_lifestyle": {
-    "eating_out_per_week": { "value": 2.3, "source": "GIREScom / INSEE, 2023", "year": 2023 },
-    "home_cooking_pct": { "value": 68, "source": "IFOP Sondage Habitudes Alimentaires, 2023", "year": 2023 },
-    "fast_food_visits_per_week": { "value": 1.1, "source": "NPD Group France, 2023", "year": 2023, "note": "McDonald's has >1,500 French locations; paradoxically large market" },
-    "vegetarian_vegan_pct": { "value": 8, "source": "IFOP / L214, 2023", "year": 2023, "note": "Flexitarian much higher at 35%; plant-based adoption growing" },
-    "obesity_rate_pct": { "value": 17.4, "source": "OECD Health Statistics, 2023", "year": 2023, "note": "Below OECD average; 'French paradox' despite rich diet" },
-    "alcohol_consumption_litres_per_capita": { "value": 11.4, "source": "WHO Global Status Report, 2023", "year": 2023, "note": "Wine per capita among highest globally; declining long-term" },
-    "coffee_consumption_kg_per_capita": { "value": 5.4, "source": "ICO / Euromonitor, 2023", "year": 2023, "note": "Espresso and café allongé dominant; café culture central" },
-    "organic_food_adoption_pct": { "value": 51, "source": "Agence Bio Baromètre, 2023", "year": 2023, "note": "France largest organic market in EU by value" },
-    "meal_sharing_culture_score": { "value": 8.1, "source": "UNESCO / IFOP, 2023", "year": 2023, "note": "French cuisine on UNESCO intangible heritage list; meals are social rituals" },
-    "food_delivery_app_usage_pct": { "value": 34, "source": "Statista France, 2024", "year": 2024 },
-    "supermarket_shop_frequency_per_week": { "value": 2.4, "source": "Nielsen France, 2023", "year": 2023, "note": "Complemented by daily boulangerie and market visits" }
+    "eating_out_per_week": {
+      "value": 2.3,
+      "source": "GIREScom / INSEE, 2023",
+      "year": 2023
+    },
+    "home_cooking_pct": {
+      "value": 68,
+      "source": "IFOP Sondage Habitudes Alimentaires, 2023",
+      "year": 2023
+    },
+    "fast_food_visits_per_week": {
+      "value": 1.1,
+      "source": "NPD Group France, 2023",
+      "year": 2023,
+      "note": "McDonald's has >1,500 French locations; paradoxically large market"
+    },
+    "vegetarian_vegan_pct": {
+      "value": 8,
+      "source": "IFOP / L214, 2023",
+      "year": 2023,
+      "note": "Flexitarian much higher at 35%; plant-based adoption growing"
+    },
+    "obesity_rate_pct": {
+      "value": 17.4,
+      "source": "OECD Health Statistics, 2023",
+      "year": 2023,
+      "note": "Below OECD average; 'French paradox' despite rich diet"
+    },
+    "alcohol_consumption_litres_per_capita": {
+      "value": 11.4,
+      "source": "WHO Global Status Report, 2023",
+      "year": 2023,
+      "note": "Wine per capita among highest globally; declining long-term"
+    },
+    "coffee_consumption_kg_per_capita": {
+      "value": 5.4,
+      "source": "ICO / Euromonitor, 2023",
+      "year": 2023,
+      "note": "Espresso and café allongé dominant; café culture central"
+    },
+    "organic_food_adoption_pct": {
+      "value": 51,
+      "source": "Agence Bio Baromètre, 2023",
+      "year": 2023,
+      "note": "France largest organic market in EU by value"
+    },
+    "meal_sharing_culture_score": {
+      "value": 8.1,
+      "source": "UNESCO / IFOP, 2023",
+      "year": 2023,
+      "note": "French cuisine on UNESCO intangible heritage list; meals are social rituals"
+    },
+    "food_delivery_app_usage_pct": {
+      "value": 34,
+      "source": "Statista France, 2024",
+      "year": 2024
+    },
+    "supermarket_shop_frequency_per_week": {
+      "value": 2.4,
+      "source": "Nielsen France, 2023",
+      "year": 2023,
+      "note": "Complemented by daily boulangerie and market visits"
+    }
   },
   "trust_governance": {
-    "trust_in_govt_pct": { "value": 33, "source": "Eurobarometer Standard Survey, 2024", "year": 2024, "note": "Low; gilets jaunes legacy; pension reform protests" },
-    "trust_in_courts_pct": { "value": 52, "source": "Eurobarometer, 2024", "year": 2024 },
-    "trust_in_police_pct": { "value": 58, "source": "Eurobarometer, 2024", "year": 2024 },
-    "trust_in_media_pct": { "value": 38, "source": "Reuters Institute Digital News Report, 2024", "year": 2024 },
-    "trust_in_strangers_pct": { "value": 28, "source": "World Values Survey Wave 7, 2022", "year": 2022 },
-    "corruption_perception_index": { "value": 71, "source": "Transparency International CPI, 2023", "year": 2023 },
-    "press_freedom_index": { "value": 79.4, "source": "RSF World Press Freedom Index, 2024", "year": 2024, "note": "Ranked 21st" },
-    "voter_turnout_pct": { "value": 67.7, "source": "Ministère de l'Intérieur, Législatives 2024", "year": 2024 },
-    "civil_society_strength": { "value": 7.2, "source": "V-Dem Civil Society Index, 2023", "year": 2023 },
-    "trade_union_membership_pct": { "value": 10.3, "source": "DARES / OECD, 2023", "year": 2023 },
-    "social_capital_index": { "value": 59.7, "source": "OECD Social Capital Index, 2024", "year": 2024 }
+    "trust_in_govt_pct": {
+      "value": 33,
+      "source": "Eurobarometer Standard Survey, 2024",
+      "year": 2024,
+      "note": "Low; gilets jaunes legacy; pension reform protests"
+    },
+    "trust_in_courts_pct": {
+      "value": 52,
+      "source": "Eurobarometer, 2024",
+      "year": 2024
+    },
+    "trust_in_police_pct": {
+      "value": 58,
+      "source": "Eurobarometer, 2024",
+      "year": 2024
+    },
+    "trust_in_media_pct": {
+      "value": 38,
+      "source": "Reuters Institute Digital News Report, 2024",
+      "year": 2024
+    },
+    "trust_in_strangers_pct": {
+      "value": 28,
+      "source": "World Values Survey Wave 7, 2022",
+      "year": 2022
+    },
+    "corruption_perception_index": {
+      "value": 71,
+      "source": "Transparency International CPI, 2023",
+      "year": 2023
+    },
+    "press_freedom_index": {
+      "value": 79.4,
+      "source": "RSF World Press Freedom Index, 2024",
+      "year": 2024,
+      "note": "Ranked 21st"
+    },
+    "voter_turnout_pct": {
+      "value": 67.7,
+      "source": "Ministère de l'Intérieur, Législatives 2024",
+      "year": 2024
+    },
+    "civil_society_strength": {
+      "value": 7.2,
+      "source": "V-Dem Civil Society Index, 2023",
+      "year": 2023
+    },
+    "trade_union_membership_pct": {
+      "value": 10.3,
+      "source": "DARES / OECD, 2023",
+      "year": 2023
+    },
+    "social_capital_index": {
+      "value": 59.7,
+      "source": "OECD Social Capital Index, 2024",
+      "year": 2024
+    }
   },
   "regional_variations": {
-    "paris_vs_province_income": { "value": "Île-de-France median income €27,400/capita vs national €22,100", "source": "INSEE Statistiques sur les revenus, 2023", "year": 2023, "note": "Paris concentration of finance, luxury, tech; provincial cities catching up via télétravail" },
-    "north_south_employment": { "value": "Hauts-de-France unemployment 9.8% vs Bretagne 5.9%", "source": "INSEE Tableau de bord, 2024", "year": 2024, "note": "Former industrial north still rebuilding post-deindustrialisation" },
-    "corsica_dom_tom_disparity": { "value": "Martinique GDP per capita €22,400 vs metropolitan France €38,200", "source": "INSEE DROM, 2023", "year": 2023, "note": "Overseas departments face structural unemployment 15-25%; cost of living higher" },
-    "urban_rural_aging": { "value": "Rural communes median age 47.3 vs Paris 38.2 years", "source": "INSEE Recensement, 2023", "year": 2023, "note": "Rural exodus accelerating; services déserts médicaux" },
-    "vote_geographique": { "value": "RN first party in 2024 EU vote in 93/96 mainland departments; PS/Renaissance strongest in Paris", "source": "Ministère de l'Intérieur, 2024", "year": 2024, "note": "Métropoles vote left-liberal; périphérie votes populist right" }
+    "paris_vs_province_income": {
+      "value": "Île-de-France median income €27,400/capita vs national €22,100",
+      "source": "INSEE Statistiques sur les revenus, 2023",
+      "year": 2023,
+      "note": "Paris concentration of finance, luxury, tech; provincial cities catching up via télétravail"
+    },
+    "north_south_employment": {
+      "value": "Hauts-de-France unemployment 9.8% vs Bretagne 5.9%",
+      "source": "INSEE Tableau de bord, 2024",
+      "year": 2024,
+      "note": "Former industrial north still rebuilding post-deindustrialisation"
+    },
+    "corsica_dom_tom_disparity": {
+      "value": "Martinique GDP per capita €22,400 vs metropolitan France €38,200",
+      "source": "INSEE DROM, 2023",
+      "year": 2023,
+      "note": "Overseas departments face structural unemployment 15-25%; cost of living higher"
+    },
+    "urban_rural_aging": {
+      "value": "Rural communes median age 47.3 vs Paris 38.2 years",
+      "source": "INSEE Recensement, 2023",
+      "year": 2023,
+      "note": "Rural exodus accelerating; services déserts médicaux"
+    },
+    "vote_geographique": {
+      "value": "RN first party in 2024 EU vote in 93/96 mainland departments; PS/Renaissance strongest in Paris",
+      "source": "Ministère de l'Intérieur, 2024",
+      "year": 2024,
+      "note": "Métropoles vote left-liberal; périphérie votes populist right"
+    }
   }
 }
