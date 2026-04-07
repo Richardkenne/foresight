@@ -28,8 +28,8 @@
 - [x] Aggiungere API: Eurostat, Numbeo, FRED (fatto — src/lib/apis/)
 - [x] Aggiungere API: GEM (40 paesi, 5 metriche) + OECD (38 paesi, 6 metriche) — src/lib/apis/
 - [x] Pre-processing scenari foto: photo-preprocessor.ts (25 categorie, 50+ cue terms, strip visual noise)
-- [ ] Test: top 100 scenari con 0 "Estimated"
-- [x] Re-index scripts: reindex-missing.ts + verify-index.ts creati (npm run reindex/verify-index)
+- [x] Test: 100/100 scenari coperti — coverage-report.md, 18 gap file creati, 19 keyword aggiunti
+- [x] Re-index: 209/210 file indicizzati, 88,650 rows in Supabase, 227 nuovi chunks
 
 ## Fase 1B: Conditional Engine (+35% credibilita) — PARZIALMENTE FATTO
 - [x] Decision Pruning: 5-7 domande binarie YES/NO pre-simulazione, modifier applicato a tutti i bottleneck
@@ -208,8 +208,9 @@
 - [x] POST /api/predict → probability, confidence, probRange, bottlenecks, sources
 - [x] Rate limiting: 5/day per IP, 429 con Retry-After
 - [x] /api-docs page con try-it form, examples, dark code blocks
-- [ ] SDK JavaScript/Python (futuro)
-- [ ] Pricing tier pro $29/mo (futuro)
+- [x] SDK JavaScript (@simulator/sdk) + Python (simulator-sdk) — sdk/ directory
+- [x] API docs aggiornati con SDK install + examples
+- [ ] Pricing tier pro $29/mo (futuro — richiede auth)
 
 ---
 
@@ -267,16 +268,22 @@
 - [x] N entrants vs survival rate, saturation point, optimal N
 - [ ] Agent-based emergent behavior (futuro)
 
-### Reality Arbitrage
-- [ ] Richiede prediction marketplace + real-time data (futuro)
+### Reality Arbitrage — FATTO (2026-04-07)
+- [x] reality-arbitrage.ts: 35 opportunita in 5 categorie (Business, Career, Investment, Lifestyle, Geography)
+- [x] /arbitrage page con filtri, search, sort, detail modal, "Simulate This" CTA
+- [x] Aggiunto a /explore hub + landing page nav
 
-### Autonomous Execution Agent
-- [ ] Richiede API integration (banche, registri aziende, ads platform) — visione a lungo termine
+### Autonomous Execution Agent — FUNZIONALE (2026-04-07)
+- [x] execution-planner.ts: 5 piani esecutivi (cafe, SaaS, freelance, ecommerce, generic)
+- [x] /execute page con timeline, step cards, platform links reali, cost/time estimates
+- [x] "Ready to Execute?" button nel Dashboard post-simulazione
+- [x] Country-aware (Indonesia, US, UK, Italy, Singapore, Australia)
+- [ ] Integrazione API reali (LegalZoom, Stripe, etc.) — futuro
 
 ---
 
 ## UI Polish (continuo)
-- [ ] Responsive mobile 320px check completo (parziale — 480px breakpoint, non 320)
+- [x] Responsive mobile 320px — audit completo + @media max-width:360px aggiunto
 - [x] Dark mode — prefers-color-scheme + data-theme + 19 dark: usages
 - [x] Frontend Design Rules Playbook creato
 - [x] Global padding audit completato

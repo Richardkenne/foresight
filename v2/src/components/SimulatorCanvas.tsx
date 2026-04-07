@@ -2583,6 +2583,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
             edges={edgesRef.current.map(e => ({ source: e.source, target: e.target, label: e.label as string | undefined }))}
             onClose={() => { setShowDashboard(false); setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100); }}
             onReportOutcome={() => setShowFeedbackForm(true)}
+            scenario={scenario}
           />
         )}
 

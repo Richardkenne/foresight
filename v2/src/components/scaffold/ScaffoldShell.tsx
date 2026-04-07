@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { href: '/government', label: 'Government' },
   { href: '/realtime', label: 'Real-Time' },
   { href: '/twin', label: 'Digital Twin' },
+  { href: '/execute', label: 'Execute' },
   { href: '/prescriptive', label: 'Prescriptive' },
 ];
 

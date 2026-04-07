@@ -17,9 +17,10 @@ interface DashboardProps {
   edges: { source: string; target: string; label?: string }[];
   onClose: () => void;
   onReportOutcome?: () => void;
+  scenario?: string;
 }
 
-export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClose, onReportOutcome }: DashboardProps) {
+export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClose, onReportOutcome, scenario }: DashboardProps) {
 
   const totalPeople = stats.total;
   const ordered = [...nodes].sort((a, b) => (a.position.x || 0) - (b.position.x || 0));
@@ -240,6 +241,25 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
             </svg>
             Report Your Outcome
           </button>
+        )}
+        {scenario && (
+          <a
+            href={`/execute?scenario=${encodeURIComponent(scenario)}`}
+            className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-[12px] font-medium transition-all hover:opacity-90"
+            style={{
+              border: '1px solid var(--accent)',
+              color: 'var(--accent)',
+              textDecoration: 'none',
+            }}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+            </svg>
+            Ready to Execute?
+          </a>
         )}
         <p className="text-[9px] text-center" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>
           Unique reach, not visits

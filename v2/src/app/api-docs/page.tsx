@@ -226,6 +226,124 @@ export default function ApiDocsPage() {
           )}
         </Section>
 
+        {/* SDKs */}
+        <Section title="SDKs">
+          <p className="text-sm text-white/60 leading-relaxed mb-6">
+            Official client libraries for JavaScript/TypeScript and Python. Both handle authentication, rate limits, error handling, and type safety out of the box.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="p-4 rounded-lg border border-white/[0.06] bg-white/[0.02]">
+              <div className="flex items-center gap-2 mb-3">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400">
+                  <path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25" />
+                  <path d="m9 17 3-3 3 3" />
+                  <path d="M12 14v7" />
+                </svg>
+                <span className="text-sm font-semibold text-white/80">JavaScript / TypeScript</span>
+              </div>
+              <code className="block text-xs font-mono text-white/50 bg-white/[0.03] rounded px-3 py-2 mb-3">npm install @simulator/sdk</code>
+              <pre className="text-xs font-mono text-white/60 leading-relaxed">{`import { SimulatorClient } from '@simulator/sdk';
+
+const client = new SimulatorClient();
+const result = await client.predict({
+  scenario: 'Open a coffee shop in Bandung',
+  country: 'Indonesia',
+  budget: 50000,
+  timeline: '12 months',
+});
+
+console.log(result.probability + '%');`}</pre>
+            </div>
+
+            <div className="p-4 rounded-lg border border-white/[0.06] bg-white/[0.02]">
+              <div className="flex items-center gap-2 mb-3">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400">
+                  <path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25" />
+                  <path d="m9 17 3-3 3 3" />
+                  <path d="M12 14v7" />
+                </svg>
+                <span className="text-sm font-semibold text-white/80">Python</span>
+              </div>
+              <code className="block text-xs font-mono text-white/50 bg-white/[0.03] rounded px-3 py-2 mb-3">pip install simulator-sdk</code>
+              <pre className="text-xs font-mono text-white/60 leading-relaxed">{`from simulator_sdk import SimulatorClient
+
+client = SimulatorClient()
+result = client.predict(
+    scenario="Open a coffee shop in Bandung",
+    country="Indonesia",
+    budget=50000,
+    timeline="12 months",
+)
+
+print(f"{result.probability}%")`}</pre>
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="text-sm font-medium text-white/70">Error Handling</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <CodeBlock title="TypeScript" language="ts">
+{`import { RateLimitError, ValidationError }
+  from '@simulator/sdk';
+
+try {
+  const r = await client.predict({ scenario });
+} catch (err) {
+  if (err instanceof RateLimitError) {
+    // err.retryAfter (seconds)
+    // err.resetAt (Date)
+  } else if (err instanceof ValidationError) {
+    // err.message
+  }
+}`}
+              </CodeBlock>
+              <CodeBlock title="Python" language="py">
+{`from simulator_sdk import (
+    RateLimitError, ValidationError
+)
+
+try:
+    r = client.predict(scenario=scenario)
+except RateLimitError as e:
+    # e.retry_after (seconds)
+    # e.reset_at (datetime)
+except ValidationError as e:
+    # str(e)`}
+              </CodeBlock>
+            </div>
+          </div>
+
+          <div className="mt-4 space-y-3">
+            <h3 className="text-sm font-medium text-white/70">Batch Predictions</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <CodeBlock title="TypeScript" language="ts">
+{`const results = await client.predictBatch([
+  { scenario: 'Start a food truck' },
+  { scenario: 'Launch a SaaS', budget: 100000 },
+]);
+
+for (const { result, error } of results) {
+  if (result) console.log(result.probability);
+  else console.error(error.message);
+}`}
+              </CodeBlock>
+              <CodeBlock title="Python" language="py">
+{`results = client.predict_batch([
+    {"scenario": "Start a food truck"},
+    {"scenario": "Launch a SaaS", "budget": 100000},
+])
+
+for item in results:
+    if item["result"]:
+        print(item["result"].probability)
+    else:
+        print(item["error"])`}
+              </CodeBlock>
+            </div>
+          </div>
+        </Section>
+
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-white/5 text-xs text-white/30">
           <p>Simulator Prediction API v1.0 -- Deterministic scenario analysis powered by 350K+ data points.</p>

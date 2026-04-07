@@ -1,0 +1,29 @@
+{
+  "name": "@simulator/sdk",
+  "version": "1.0.0",
+  "description": "JavaScript/TypeScript SDK for the Simulator Prediction API -- deterministic scenario analysis powered by 350K+ data points.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "index.ts"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "simulator",
+    "prediction",
+    "probability",
+    "scenario-analysis",
+    "api-client"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
