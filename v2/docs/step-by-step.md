@@ -4,7 +4,7 @@
 - [Fase 1: Data Foundation](#fase-1-data-foundation)
 - [Fase 1B: Conditional Engine](#fase-1b-conditional-engine)
 - [Fase 1C: Landing + Sacred + Multi-Input + Layout](#fase-1c-landing--sacred--multi-input--layout) ← DONE
-- [Fase 1D: 3D Force Graph Migration](#fase-1d-3d-force-graph-migration) ← NEXT
+- [Fase 1D: 3D Force Graph Migration](#fase-1d-3d-force-graph-migration) ← DONE
 - [Fase 2: Recursive Simulation](#fase-2-recursive-simulation)
 - [Fase 3: Profilo Utente](#fase-3-profilo-utente)
 - [Fase 4: Data Pipeline Automatico](#fase-4-data-pipeline-automatico)
@@ -31,7 +31,7 @@
 - [x] Test: 100/100 scenari coperti — coverage-report.md, 18 gap file creati, 19 keyword aggiunti
 - [x] Re-index: 209/210 file indicizzati, 88,650 rows in Supabase, 227 nuovi chunks
 
-## Fase 1B: Conditional Engine (+35% credibilita) — PARZIALMENTE FATTO
+## Fase 1B: Conditional Engine (+35% credibilita) — FATTO (2026-04-06)
 - [x] Decision Pruning: 5-7 domande binarie YES/NO pre-simulazione, modifier applicato a tutti i bottleneck
 - [x] Domande dinamiche: Claude genera domande specifiche per scenario (non generiche)
 - [x] Upwork-specific mechanics nel prompt (Connects, JSS, rates, funnel)
@@ -291,8 +291,8 @@
 - [x] Pass edges 3x piu spesse
 - [x] Bottleneck shape: esagono → rombo/diamond (4 lati, clip-path polygon)
 
-## Refactor (continuo)
-- [x] SimulatorCanvas split: 2,443 → 1,677 righe (-31%)
+## Refactor — FATTO
+- [x] SimulatorCanvas split: 3,002 → 650 righe (-78%) — 5 hooks estratti (useSimulation, useFlowGeneration, useDrillDown, useReplayMode, useStepMode)
   - [x] graph-utils.ts (dagre layout + templateToFlow) — 154 righe
   - [x] simulation-types.ts (speed config + PrecomputedFate + precomputeFates) — 130 righe
   - [x] SimOverlays.tsx (CutLineIndicator + ParticleLayer) — 78 righe
@@ -303,4 +303,11 @@
 
 ---
 
-*Ultimo aggiornamento: 2026-04-06*
+## Quality Assurance — FATTO (2026-04-07)
+- [x] 153 unit test (vitest): simulation, sacred modifier, assessment, profile warnings, multi-agent, photo preprocessor, point clouds, response parser, data fetcher, reality arbitrage, execution planner, feedback, path follower
+- [x] Prompt audit: 6.3/10 → fix applicati (15 industry baselines, 4 archetypes non-business, data priority order, country sector modifiers)
+- [x] RAG quality: 9.7/10 (19/20 queries good, 1 weak — gym)
+- [x] Coverage: 100/100 scenari coperti, 18 gap file creati
+- [x] Card design restored: bordi colorati, badge probabilita cerchio, sacred purple theme
+
+*Ultimo aggiornamento: 2026-04-07*
