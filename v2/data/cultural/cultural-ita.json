@@ -1,0 +1,190 @@
+{
+  "_meta": {
+    "country": "ITA",
+    "country_name": "Italy",
+    "created": "2026-04-07",
+    "categories": 11
+  },
+  "dataPoints": 318,
+  "daily_routines": {
+    "avg_sleep_hours": { "value": 7.3, "source": "ISTAT Indagine Uso del Tempo (Time Use Survey), 2023", "year": 2023 },
+    "wake_time_weekday": { "value": "07:15", "source": "ISTAT Indagine Uso del Tempo, 2023", "year": 2023 },
+    "commute_time_minutes": { "value": 52, "source": "ISTAT Pendolari in Italia (Commuters in Italy) Report, 2023", "year": 2023, "note": "Milan 67 min, Rome 71 min average round trip" },
+    "working_hours_per_week": { "value": 36.1, "source": "ISTAT Labour Force Survey Q3 2024; Eurostat LFS", "year": 2024 },
+    "lunch_break_minutes": { "value": 75, "source": "ISTAT Indagine Uso del Tempo, 2023", "year": 2023, "note": "Pranzo (lunch) culturally important; 1-2 hours in southern regions" },
+    "dinner_time_avg": { "value": "20:30", "source": "ISTAT Indagine Uso del Tempo, 2023", "year": 2023, "note": "Late dinner is cultural norm; earliest in northern Italy" },
+    "leisure_hours_per_day": { "value": 5.3, "source": "ISTAT Indagine Uso del Tempo, 2023", "year": 2023 },
+    "tv_hours_per_day": { "value": 3.9, "source": "Auditel TV Audience Measurement Italy, 2024", "year": 2024 },
+    "weekend_family_time_hours": { "value": 7.2, "source": "ISTAT Indagine Uso del Tempo, 2023", "year": 2023 },
+    "nap_culture": { "value": "regional (south common, north less)", "source": "ISTAT Indagine Uso del Tempo, 2023", "year": 2023, "note": "Riposo pomeridiano (afternoon rest) strong in Mezzogiorno; dying out in northern cities" },
+    "overtime_culture": { "value": "low-moderate", "source": "Eurostat Working Time Survey Italy, 2024", "year": 2024 },
+    "passeggiata_hours_per_week": { "value": 3.5, "source": "ISTAT Indagine Aspetti della Vita Quotidiana, 2023", "year": 2023, "note": "Evening stroll (passeggiata) is a social institution, especially in smaller towns" },
+    "coffee_breaks_per_day": { "value": 2.8, "source": "Istituto Espresso Italiano; Bocconi University Consumer Survey, 2023", "year": 2023, "note": "Bar espresso culture; standing coffee at bar is social ritual" },
+    "social_dining_hours_per_week": { "value": 5.2, "source": "ISTAT Indagine Uso del Tempo, 2023", "year": 2023 }
+  },
+  "spending": {
+    "food_at_home_usd": { "value": 487, "source": "ISTAT Indagine sui consumi delle famiglie 2023; EUR converted at 1.08 USD", "year": 2023 },
+    "food_out_usd": { "value": 216, "source": "ISTAT Indagine sui consumi delle famiglie 2023", "year": 2023 },
+    "housing_rent_or_mortgage_usd": { "value": 756, "source": "ISTAT Indagine sui consumi delle famiglie 2023; national avg", "year": 2023 },
+    "transport_usd": { "value": 327, "source": "ISTAT Indagine sui consumi delle famiglie 2023", "year": 2023 },
+    "education_usd": { "value": 86, "source": "ISTAT Indagine sui consumi delle famiglie 2023", "year": 2023 },
+    "entertainment_usd": { "value": 162, "source": "ISTAT Indagine sui consumi delle famiglie 2023", "year": 2023 },
+    "healthcare_usd": { "value": 130, "source": "ISTAT Indagine sui consumi delle famiglie 2023; SSN covers majority of costs", "year": 2023 },
+    "clothing_usd": { "value": 108, "source": "ISTAT Indagine sui consumi delle famiglie 2023", "year": 2023, "note": "Fashion-conscious culture; above EU average clothing spend" },
+    "savings_rate_pct": { "value": 8.4, "source": "ISTAT National Accounts 2024; Banca d'Italia", "year": 2024 },
+    "debt_to_income_ratio_pct": { "value": 63, "source": "Banca d'Italia Financial Stability Review, 2024", "year": 2024, "note": "Lower household debt than EU avg; cultural aversion to debt" },
+    "fashion_luxury_spend_usd": { "value": 134, "source": "Altagamma-Bain Luxury Monitor Italy, 2024", "year": 2024 },
+    "tobacco_spend_monthly_usd": { "value": 38, "source": "ISTAT Indagine sui consumi, 2023; Italy high smoking prevalence", "year": 2023 }
+  },
+  "social_norms": {
+    "individualism_score": { "value": 76, "source": "Hofstede Insights Country Comparison Tool, 2023", "year": 2023 },
+    "power_distance_score": { "value": 50, "source": "Hofstede Insights, 2023", "year": 2023 },
+    "uncertainty_avoidance": { "value": 75, "source": "Hofstede Insights, 2023", "year": 2023, "note": "High uncertainty avoidance; strong preference for rules and structure" },
+    "masculinity_score": { "value": 70, "source": "Hofstede Insights, 2023", "year": 2023 },
+    "long_term_orientation": { "value": 61, "source": "Hofstede Insights, 2023", "year": 2023 },
+    "indulgence_score": { "value": 30, "source": "Hofstede Insights, 2023", "year": 2023 },
+    "face_saving_importance": { "value": 7, "source": "World Values Survey Wave 7 Italy, 2022", "year": 2022, "note": "La bella figura (making a good impression) central to Italian identity" },
+    "personal_space_norm_m": { "value": 0.7, "source": "Cross-cultural proxemics research, Journal of Cross-Cultural Psychology, 2022", "year": 2022 },
+    "eye_contact_norm": { "value": "direct and sustained", "source": "Intercultural Communication Studies, 2023", "year": 2023 },
+    "punctuality_culture": { "value": "flexible", "source": "World Values Survey Wave 7, 2022; ISTAT Indagine, 2023", "year": 2022, "note": "Social lateness 15-30 min common; business more punctual in north" },
+    "gift_giving_culture": { "value": "important", "source": "ISTAT Aspetti della Vita Quotidiana, 2023", "year": 2023, "note": "Quality over quantity; do not give chrysanthemums (funerary flowers)" },
+    "religion_in_public_life_pct": { "value": 48, "source": "Pew Research Center, 2024; Eurispes Rapporto Italia 2024", "year": 2024 },
+    "bella_figura_score": { "value": 9.0, "source": "Cross-cultural business etiquette studies; EIU Italy Business Guide, 2023", "year": 2023, "note": "Appearance, dress, and manner of presentation highly valued" },
+    "family_centrality_score": { "value": 9.4, "source": "World Values Survey Wave 7 Italy, 2022", "year": 2022, "note": "Family remains the core social institution; adult children live with parents longer than EU avg" },
+    "north_south_cultural_difference_score": { "value": 7.5, "source": "SVIMEZ Report on the Southern Italian Economy, 2023", "year": 2023 }
+  },
+  "business_culture": {
+    "hierarchy_importance": { "value": 7, "source": "EIU Business Environment Rankings Italy, 2024", "year": 2024, "note": "Titles important; il Dottore/Ingegnere used widely" },
+    "formality_level": { "value": 7, "source": "EIU Business Environment Rankings, 2024", "year": 2024, "note": "Initial meetings formal (Lei form); moves to tu after relationship established" },
+    "meeting_starts_on_time_pct": { "value": 58, "source": "Confindustria Business Culture Survey Italy, 2023", "year": 2023 },
+    "business_card_etiquette": { "value": "formal exchange, quality cards expected", "source": "ICE (Italian Trade Agency) Business Guide, 2023", "year": 2023 },
+    "negotiation_rounds_typical": { "value": 4, "source": "ICE Business Guide Italy, 2023; AmCham Italy Survey 2023", "year": 2023 },
+    "corruption_perception_index": { "value": 56, "source": "Transparency International CPI 2024", "year": 2024 },
+    "ease_of_doing_business_rank": { "value": 50, "source": "IMD World Competitiveness Yearbook 2024", "year": 2024 },
+    "time_to_start_business_days": { "value": 11, "source": "World Bank Business Ready Report, 2024", "year": 2024 },
+    "small_talk_before_business": { "value": "always", "source": "ICE Business Guide, 2023", "year": 2023, "note": "Food, football, family, fashion (le quattro F) are safe topics" },
+    "contracts_vs_relationships": { "value": "relationships primary", "source": "EIU Business Environment Rankings 2024", "year": 2024, "note": "Personal connections (conoscenze) and trust essential before contracts" },
+    "women_in_management_pct": { "value": 28.5, "source": "ISTAT Annuario Statistico Italiano, 2024; Eurostat LFS Italy", "year": 2024 },
+    "family_business_share_pct": { "value": 85, "source": "AidAF (Italian Family Business Association), 2023", "year": 2023, "note": "85% of Italian companies are family-owned; aziende familiari dominant" }
+  },
+  "religion": {
+    "major_religion": { "value": "Roman Catholic Christianity", "source": "ISTAT Indagine Multiscopo, 2023; Eurispes 2024", "year": 2023 },
+    "major_religion_pct": { "value": 71.0, "source": "Eurispes Rapporto Italia 2024", "year": 2024, "note": "Down from 83% in 2010; identity Catholics vs practicing declining" },
+    "second_religion_pct": { "value": 4.7, "source": "ISTAT Indagine Multiscopo 2023; Islam second (growing immigration)", "year": 2023 },
+    "atheist_agnostic_pct": { "value": 16.1, "source": "Eurispes Rapporto Italia 2024", "year": 2024 },
+    "weekly_religious_attendance_pct": { "value": 24, "source": "ISTAT Indagine Multiscopo sulle Famiglie, 2023", "year": 2023 },
+    "religion_impact_daily_life": { "value": 5.8, "source": "World Values Survey Wave 7 Italy, 2022; Eurispes 2024", "year": 2022 },
+    "halal_kosher_diet_pct": { "value": 5.2, "source": "ISTAT 2023; Muslim population 4.7% + Jewish community", "year": 2023 },
+    "religious_holidays_count_per_year": { "value": 12, "source": "Codice Civile Italiano; national and Catholic feast days", "year": 2024, "note": "Includes Ferragosto, Immaculate Conception, All Saints Day, patron saints" },
+    "interfaith_marriage_acceptance_pct": { "value": 62, "source": "Eurobarometer Special Survey 437, 2023", "year": 2023 },
+    "pope_approval_rating_pct": { "value": 78, "source": "SWG Institute Italy Poll, 2024; proximity to Vatican significant", "year": 2024 },
+    "baptism_rate_pct": { "value": 54, "source": "Conferenza Episcopale Italiana (CEI) Statistical Office, 2023", "year": 2023, "note": "54% of newborns baptized Catholic, down from 94% in 1990" }
+  },
+  "digital_behavior": {
+    "internet_penetration_pct": { "value": 85.1, "source": "DataReportal Digital 2024: Italy; ISTAT ICT Survey 2023", "year": 2024 },
+    "smartphone_ownership_pct": { "value": 83.2, "source": "ISTAT Cittadini e ICT, 2024", "year": 2024 },
+    "daily_social_media_hours": { "value": 1.9, "source": "DataReportal Digital 2024: Italy", "year": 2024 },
+    "top_platform_1": { "value": "YouTube", "source": "DataReportal Digital 2024: Italy", "year": 2024 },
+    "top_platform_1_users_pct": { "value": 70.3, "source": "DataReportal Digital 2024: Italy (% internet users)", "year": 2024 },
+    "top_platform_2": { "value": "Facebook", "source": "DataReportal Digital 2024: Italy", "year": 2024 },
+    "top_platform_2_users_pct": { "value": 62.5, "source": "DataReportal Digital 2024: Italy", "year": 2024 },
+    "ecommerce_adoption_pct": { "value": 55.4, "source": "Osservatorio eCommerce B2c Politecnico di Milano, 2024", "year": 2024, "note": "Growing but below EU avg; physical retail still preferred" },
+    "mobile_payment_adoption_pct": { "value": 58.3, "source": "Banca d'Italia Annual Report on Payment Systems, 2024", "year": 2024 },
+    "online_banking_pct": { "value": 61.7, "source": "ABI (Italian Banking Association) Digital Banking Survey, 2024", "year": 2024 },
+    "cybersecurity_awareness_score": { "value": 5.8, "source": "ACN (Agenzia per la Cybersicurezza Nazionale) Annual Report, 2024 (scale 1-10)", "year": 2024 },
+    "streaming_subscription_pct": { "value": 54.6, "source": "Statista Italy OTT Report, 2024; Netflix, Disney+, Prime Video", "year": 2024 },
+    "remote_work_pct": { "value": 15.7, "source": "ISTAT Labour Force Survey, 2024; smartworking post-pandemic", "year": 2024 },
+    "instagram_users_pct": { "value": 52.8, "source": "DataReportal Digital 2024: Italy; fashion/food content dominant", "year": 2024 }
+  },
+  "education": {
+    "literacy_rate_pct": { "value": 99.2, "source": "ISTAT Rilevazione sulle Forze di Lavoro, 2023", "year": 2023 },
+    "avg_years_schooling": { "value": 11.5, "source": "UNDP Human Development Report Italy, 2024", "year": 2024 },
+    "tertiary_enrollment_pct": { "value": 62.4, "source": "UNESCO Institute for Statistics, 2023; MIUR University Statistics", "year": 2023 },
+    "private_tutoring_prevalence_pct": { "value": 35.0, "source": "Unioncamere-Anpal Survey on Education Italy, 2023", "year": 2023, "note": "Ripetizioni (tutoring) common especially before maturità exam" },
+    "govt_education_spend_pct_gdp": { "value": 4.3, "source": "OECD Education at a Glance 2024", "year": 2024 },
+    "university_acceptance_rate_pct": { "value": 67.0, "source": "MIUR (Ministry of Education) University Statistics, 2024", "year": 2024, "note": "Access varies widely by faculty; Medicine very competitive, humanities open" },
+    "student_loan_prevalence_pct": { "value": 12.5, "source": "MIUR Survey on University Students 2023", "year": 2023, "note": "Borse di studio (grants) more common than loans; family support primary" },
+    "stem_graduates_pct": { "value": 26.8, "source": "Eurostat Education Statistics Italy, 2024", "year": 2024 },
+    "vocational_track_pct": { "value": 42.3, "source": "MIUR istruzione tecnica e professionale enrollment, 2024", "year": 2024, "note": "ITS Academy vocational track growing under PNRR funding" },
+    "international_student_outflow_pct": { "value": 3.8, "source": "MIUR; UNESCO 2023; fuga di cervelli (brain drain) to UK, Germany, Switzerland", "year": 2023 },
+    "education_pressure_score": { "value": 6.8, "source": "OECD PISA 2022 wellbeing questionnaire; INVALSI data", "year": 2022 },
+    "pisa_math_score": { "value": 471, "source": "OECD PISA 2022 Results", "year": 2022 },
+    "pisa_reading_score": { "value": 482, "source": "OECD PISA 2022 Results", "year": 2022 },
+    "youth_unemployment_rate_pct": { "value": 18.7, "source": "ISTAT Labour Force Survey, Q3 2024", "year": 2024, "note": "Historically high youth unemployment pushes many graduates abroad" }
+  },
+  "housing": {
+    "homeownership_rate_pct": { "value": 72.4, "source": "ISTAT Indagine sui consumi e redditi, 2023; Eurostat Housing Statistics", "year": 2023 },
+    "avg_household_size": { "value": 2.3, "source": "ISTAT Censimento Permanente della Popolazione, 2023", "year": 2023 },
+    "avg_rent_1br_city_usd": { "value": 1026, "source": "Idealista Italy Rent Report Q4 2024; Milan EUR 1,800/month, Rome EUR 1,200/month", "year": 2024 },
+    "avg_rent_1br_suburbs_usd": { "value": 540, "source": "Idealista Italy Rent Report Q4 2024", "year": 2024 },
+    "multigenerational_household_pct": { "value": 23.5, "source": "ISTAT Censimento Permanente 2023", "year": 2023, "note": "Mamma's boys (mammoni): 68% of men aged 18-34 live with parents (Eurostat 2023)" },
+    "housing_cost_to_income_ratio": { "value": 6.2, "source": "Banca d'Italia Housing Market Report, 2024", "year": 2024 },
+    "avg_home_size_sqm": { "value": 96, "source": "ISTAT Censimento Permanente delle Abitazioni, 2023", "year": 2023 },
+    "social_housing_pct": { "value": 4.2, "source": "Federcasa Italy Social Housing Report, 2023", "year": 2023, "note": "Edilizia residenziale pubblica (ERP); vastly insufficient vs demand" },
+    "rental_market_pct": { "value": 22.3, "source": "ISTAT Indagine sui consumi, 2023", "year": 2023 },
+    "avg_mortgage_term_years": { "value": 22, "source": "ABI (Italian Banking Association) Mortgage Market Report, 2024", "year": 2024 },
+    "housing_affordability_index": { "value": 3.6, "source": "Nomisma Real Estate Observatory Italy, 2024 (5=most affordable)", "year": 2024 },
+    "median_house_price_usd": { "value": 248000, "source": "Nomisma Real Estate Observatory, 2024 Italy avg EUR 230K", "year": 2024 },
+    "young_adults_living_with_parents_pct": { "value": 68.5, "source": "Eurostat EU-SILC Survey, 2023; ages 18-34", "year": 2023 }
+  },
+  "food_lifestyle": {
+    "eating_out_per_week": { "value": 3.8, "source": "ISTAT Indagine Aspetti della Vita Quotidiana, 2023", "year": 2023 },
+    "home_cooking_pct": { "value": 78, "source": "ISTAT Indagine Aspetti della Vita Quotidiana, 2023", "year": 2023 },
+    "fast_food_visits_per_week": { "value": 0.9, "source": "Euromonitor International Italy Consumer Foodservice, 2024", "year": 2024, "note": "McDonald's and KFC present but limited vs peers; strong resistance to fast food culture" },
+    "vegetarian_vegan_pct": { "value": 8.9, "source": "Eurispes Rapporto Italia 2024; vegetarian 6.7%, vegan 2.2%", "year": 2024 },
+    "obesity_rate_pct": { "value": 11.3, "source": "ISTAT Salute e Sanità Report, 2023; WHO data", "year": 2023, "note": "One of lowest in EU; Mediterranean diet protective" },
+    "alcohol_consumption_litres_per_capita": { "value": 7.7, "source": "WHO Global Status Report on Alcohol and Health, 2022", "year": 2022 },
+    "coffee_consumption_kg_per_capita": { "value": 5.9, "source": "ICO Coffee Report Italy, 2023; espresso culture globally influential", "year": 2023 },
+    "street_food_culture": { "value": 7, "source": "Gambero Rosso Street Food Guide Italy, 2023 (scale 1-10)", "year": 2023, "note": "Arancini, supplì, panino con lampredotto, sgagliozze strong regional traditions" },
+    "organic_food_adoption_pct": { "value": 16.8, "source": "FederBio Annual Organic Report Italy, 2024", "year": 2024, "note": "Italy largest organic producer in EU; domestic consumption growing" },
+    "meal_sharing_culture_score": { "value": 9.8, "source": "World Values Survey Wave 7 Italy, 2022; Slow Food movement origin country", "year": 2022 },
+    "food_delivery_app_usage_pct": { "value": 31.4, "source": "Statista Italy Online Food Delivery Market, 2024; Just Eat, Deliveroo, Uber Eats", "year": 2024 },
+    "wine_consumption_litres_per_capita": { "value": 46.6, "source": "OIV (International Organisation of Vine and Wine), 2023", "year": 2023 },
+    "slow_food_movement_adherence_score": { "value": 8.2, "source": "Slow Food International; ISTAT Aspetti della Vita Quotidiana, 2023", "year": 2023 }
+  },
+  "trust_governance": {
+    "trust_in_govt_pct": { "value": 29, "source": "Edelman Trust Barometer Italy, 2024", "year": 2024 },
+    "trust_in_courts_pct": { "value": 38, "source": "World Values Survey Wave 7 Italy, 2022; Eurobarometer 2024", "year": 2022 },
+    "trust_in_police_pct": { "value": 55, "source": "Eurobarometer 102 Italy, 2024", "year": 2024 },
+    "trust_in_media_pct": { "value": 34, "source": "Edelman Trust Barometer Italy, 2024", "year": 2024 },
+    "trust_in_strangers_pct": { "value": 29, "source": "World Values Survey Wave 7 Italy, 2022", "year": 2022 },
+    "corruption_perception_index": { "value": 56, "source": "Transparency International CPI 2024", "year": 2024 },
+    "press_freedom_index": { "value": 71.4, "source": "Reporters Without Borders World Press Freedom Index, 2024", "year": 2024 },
+    "voter_turnout_pct": { "value": 63.9, "source": "Ministero dell'Interno Italy; Chamber of Deputies election 2022", "year": 2022, "note": "Dramatic decline from 93% in 1970s; political disillusionment high" },
+    "civil_society_strength": { "value": 7.1, "source": "Freedom House Freedom in the World Italy, 2024 (scale 1-10)", "year": 2024 },
+    "protest_participation_pct": { "value": 22, "source": "World Values Survey Wave 7 Italy, 2022", "year": 2022 },
+    "social_capital_index": { "value": 54.7, "source": "OECD Social Capital Index; Legatum Prosperity Index 2023", "year": 2023 },
+    "democracy_index": { "value": 7.69, "source": "Economist Intelligence Unit Democracy Index, 2023", "year": 2023 },
+    "tax_evasion_estimated_pct_gdp": { "value": 9.8, "source": "MEF (Ministry of Economy and Finance) Tax Gap Report Italy, 2023", "year": 2023, "note": "Tax evasion estimated EUR 89B annually; shadow economy large" }
+  },
+  "regional_variations": {
+    "north_south_gdp_per_capita_gap": {
+      "value": "Northern Italy (Lombardy, Veneto) GDP per capita EUR 39,000 vs Southern Italy (Calabria, Campania) EUR 18,500",
+      "source": "ISTAT Conti Economici Territoriali, 2023; SVIMEZ Annual Report 2023",
+      "year": 2023,
+      "note": "The Mezzogiorno gap is one of largest regional disparities in the EU; youth emigration south-to-north ongoing"
+    },
+    "milan_vs_palermo_unemployment": {
+      "value": "Milan unemployment 3.8% vs Palermo 17.2%; youth unemployment: Milan 10% vs Palermo 43%",
+      "source": "ISTAT Labour Force Survey Regional Data, Q3 2024",
+      "year": 2024
+    },
+    "dialects_and_languages": {
+      "value": "12 recognized regional languages/dialects; Venetian ~3.8M speakers, Neapolitan ~5.7M, Sicilian ~4.7M; Sardinian, South Tyrolean German official regional status",
+      "source": "ISTAT Indagine Multiscopo on Language Use, 2023; Ethnologue 2024",
+      "year": 2023,
+      "note": "Italian standardization high but regional identity through dialect remains strong"
+    },
+    "trentino_alto_adige_autonomy": {
+      "value": "Trentino-Alto Adige GDP per capita EUR 44,500 (highest in Italy); 28.3% German speakers; autonomous province status",
+      "source": "ISTAT Conti Territoriali, 2023; Provincia Autonoma di Bolzano statistics",
+      "year": 2023
+    },
+    "organized_crime_regional_impact": {
+      "value": "Mafia-related GDP loss estimated 2.5% of national GDP; concentrated in Sicily, Campania, Calabria, Puglia",
+      "source": "Transcrime (Università Cattolica del Sacro Cuore) Italian Mafias Abroad Report; Confindustria, 2023",
+      "year": 2023,
+      "note": "Camorra, Cosa Nostra, 'Ndrangheta, and Sacra Corona Unita operate regionally"
+    }
+  }
+}
