@@ -465,6 +465,27 @@ body {
   text-align: center;
 }
 
+/* Sacred mode: purple theme */
+.sim-node--sacred:not(.sim-node--bottleneck):not(.sim-node--decision):not(.sim-node--state):not(.sim-node--fail):not(.sim-node--success) {
+  border-left: 3px solid #a855f7 !important;
+  background: #faf5ff !important;
+  outline-color: #c084fc !important;
+}
+
+.sim-node--sacred .sim-node__type-label {
+  color: #a855f7 !important;
+}
+
+.sim-node--sacred.sim-node--bottleneck .sim-node__body,
+.sim-node--sacred.sim-node--decision .sim-node__body {
+  background: #faf5ff !important;
+}
+
+.sim-node--sacred.sim-node--state {
+  background: #faf5ff !important;
+  outline-color: #c084fc !important;
+}
+
 .sim-node--card:hover {
   outline-color: var(--muted);
   background: var(--surface-hover);
@@ -476,7 +497,7 @@ body {
   cursor: grabbing;
 }
 
-/* Type label above node */
+/* Type label above node — hidden by default, only shown on bottleneck/decision (clip-path shapes) */
 .sim-node__type-label {
   position: absolute;
   top: -18px;
@@ -488,6 +509,11 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   pointer-events: none;
+  display: none;
+}
+.sim-node--bottleneck .sim-node__type-label,
+.sim-node--decision .sim-node__type-label {
+  display: block;
 }
 
 /* Body */

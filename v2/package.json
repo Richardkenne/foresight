@@ -11,7 +11,9 @@
     "update-data": "tsx scripts/update-pipeline.ts",
     "reindex": "tsx scripts/reindex-missing.ts",
     "verify-index": "tsx scripts/verify-index.ts",
-    "backtest": "tsx scripts/run-backtest.ts"
+    "backtest": "tsx scripts/run-backtest.ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@types/dagre": "^0.7.54",
@@ -38,9 +40,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.0.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.2"
   }
 }

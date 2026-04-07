@@ -5,20 +5,23 @@ import { motion } from 'framer-motion';
 import { Handle, Position, type NodeProps } from '@xyflow/react';
 import { loadSacredProfile } from '@/lib/sacred-assessment';
 
-// Minimal palette: neutral for most nodes, green for success, red for fail
+// Color palette: colored accents per type (like the old design)
 const NODE_COLORS: Record<string, { accent: string; bg: string; bgDark: string; text: string }> = {
-  start:          { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
-  desire:         { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
-  action:         { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
+  start:          { accent: '#3b82f6', bg: '#eff6ff', bgDark: '#1e3a5f', text: '#2563eb' },
+  desire:         { accent: '#8b5cf6', bg: '#f5f3ff', bgDark: '#2d1a4e', text: '#7c3aed' },
+  action:         { accent: '#3b82f6', bg: '#eff6ff', bgDark: '#1e3a5f', text: '#2563eb' },
   state:          { accent: '#5f7d63', bg: '#d8ead8', bgDark: '#1a3a1e', text: '#3d5e41' },
-  bottleneck:     { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
+  bottleneck:     { accent: '#f59e0b', bg: '#fffbeb', bgDark: '#451a03', text: '#d97706' },
   trajectory:     { accent: '#7f5aa6', bg: '#efe2fb', bgDark: '#2d1a4e', text: '#6b3fa0' },
   gate:           { accent: '#d97706', bg: '#fffbeb', bgDark: '#451a03', text: '#b45309' },
-  decision:       { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
+  decision:       { accent: '#06b6d4', bg: '#ecfeff', bgDark: '#164e63', text: '#0891b2' },
   'outcome-good': { accent: '#10b981', bg: '#f0fdf4', bgDark: '#022c22', text: '#059669' },
   'outcome-bad':  { accent: '#ef4444', bg: '#fef2f2', bgDark: '#450a0a', text: '#dc2626' },
   loop:           { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
 };
+
+// Sacred purple palette
+const SACRED_COLORS = { accent: '#a855f7', bg: '#faf5ff', text: '#7c3aed', border: '#c084fc' };
 
 const ICONS: Record<string, React.ReactNode> = {
   start: (
@@ -241,10 +244,24 @@ function SimNodeComponent({ data }: NodeProps) {
     );
   }
 
+  // Determine accent color: sacred = purple, normal = type-based
+  const activeAccent = isSacred ? SACRED_COLORS.accent : colors.accent;
+  const activeBg = isSacred ? SACRED_COLORS.bg : colors.bg;
+
+  // Probability badge color: red if <40, amber if 40-60, green if >60
+  const probColor = d.prob != null
+    ? d.prob < 40 ? '#ef4444' : d.prob < 60 ? '#f59e0b' : '#10b981'
+    : colors.accent;
+
   return (
     <motion.div
-      className={`sim-node sim-node--card${nodeType === 'bottleneck' ? ' sim-node--bottleneck' : ''}${nodeType === 'gate' ? ' sim-node--gate' : ''}${nodeType === 'state' ? ' sim-node--state' : ''}${nodeType === 'trajectory' ? ' sim-node--trajectory' : ''}${nodeType === 'decision' ? ' sim-node--decision' : ''}${nodeType === 'outcome-bad' ? ' sim-node--fail' : nodeType === 'outcome-good' ? ' sim-node--success' : ''}${d.isCutPoint ? ' sim-node--cut' : ''}`}
-      style={difficultyBorder ? { outlineColor: difficultyBorder, outlineWidth: 2, outlineStyle: 'solid', '--node-accent': difficultyBorder } as React.CSSProperties : undefined}
+      className={`sim-node sim-node--card${nodeType === 'bottleneck' ? ' sim-node--bottleneck' : ''}${nodeType === 'gate' ? ' sim-node--gate' : ''}${nodeType === 'state' ? ' sim-node--state' : ''}${nodeType === 'trajectory' ? ' sim-node--trajectory' : ''}${nodeType === 'decision' ? ' sim-node--decision' : ''}${nodeType === 'outcome-bad' ? ' sim-node--fail' : nodeType === 'outcome-good' ? ' sim-node--success' : ''}${d.isCutPoint ? ' sim-node--cut' : ''}${isSacred ? ' sim-node--sacred' : ''}`}
+      style={{
+        borderLeft: (nodeType !== 'bottleneck' && nodeType !== 'decision' && nodeType !== 'state' && nodeType !== 'outcome-good' && nodeType !== 'outcome-bad')
+          ? `3px solid ${activeAccent}` : undefined,
+        background: (nodeType !== 'bottleneck' && nodeType !== 'decision') ? activeBg : undefined,
+        ...(difficultyBorder ? { outlineColor: difficultyBorder, outlineWidth: 2, outlineStyle: 'solid' as const } : {}),
+      }}
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
@@ -253,78 +270,75 @@ function SimNodeComponent({ data }: NodeProps) {
     >
       <Handle type="target" position={d.direction === 'TB' ? Position.Top : Position.Left} className="sim-handle" />
 
-      {/* Type label above node */}
-      <div className="sim-node__type-label">{NODE_TYPE_LABELS[nodeType] || 'NODE'}</div>
-
       {/* Content */}
       <div className="sim-node__body">
         {isSacred ? (
           <>
             {sacredRoots.map((root, idx) => (
-              <div key={root.id} style={idx > 0 ? { marginTop: 8, paddingTop: 6, borderTop: '1px solid rgba(168,85,247,0.1)' } : undefined}>
+              <div key={root.id} style={idx > 0 ? { marginTop: 8, paddingTop: 6, borderTop: `1px solid ${SACRED_COLORS.border}33` } : undefined}>
                 <div className="sim-node__header">
-                  <div className="sim-node__icon">{icon}</div>
-                  <div className="sim-node__label" style={{ color: '#a855f7' }}>{root.label_positive}</div>
+                  <div className="sim-node__icon" style={{ color: SACRED_COLORS.accent }}>{icon}</div>
+                  <div className="sim-node__label" style={{ color: SACRED_COLORS.text }}>{root.label_positive}</div>
                   {idx === 0 && hasProb && d.prob != null && (
-                    <div className="sim-node__prob">{d.prob}%</div>
+                    <div style={{
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      width: 36, height: 36, borderRadius: '50%',
+                      background: `${SACRED_COLORS.accent}18`, border: `2px solid ${SACRED_COLORS.accent}`,
+                      fontSize: 11, fontWeight: 700, fontFamily: 'var(--font-geist-mono)',
+                      color: SACRED_COLORS.accent, flexShrink: 0,
+                    }}>
+                      {d.prob}%
+                    </div>
                   )}
                 </div>
-                <div className="sim-node__desc sim-node__desc--sacred">
+                <div className="sim-node__desc" style={{ fontStyle: 'italic', color: SACRED_COLORS.text, opacity: 0.9, marginTop: 4 }}>
                   &ldquo;{root.bible_text}&rdquo;
                 </div>
-                <div style={{ fontSize: 7, color: '#a855f7', opacity: 0.6, marginTop: 1 }}>{root.bible_key}</div>
-                <div className="sim-node__desc sim-node__desc--sacred" style={{ marginTop: 3, opacity: 0.7 }}>
+                <div style={{ fontSize: 8, color: SACRED_COLORS.accent, opacity: 0.7, marginTop: 2, fontWeight: 600 }}>{root.bible_key}</div>
+                <div className="sim-node__desc" style={{ fontStyle: 'italic', color: SACRED_COLORS.text, opacity: 0.7, marginTop: 4 }}>
                   &ldquo;{root.quran_text}&rdquo;
                 </div>
-                <div style={{ fontSize: 7, color: '#a855f7', opacity: 0.6, marginTop: 1 }}>{root.quran_key}</div>
+                <div style={{ fontSize: 8, color: SACRED_COLORS.accent, opacity: 0.7, marginTop: 2, fontWeight: 600 }}>{root.quran_key}</div>
               </div>
             ))}
           </>
         ) : (
           <>
             <div className="sim-node__header">
-              <div className="sim-node__icon">{icon}</div>
+              <div className="sim-node__icon" style={{ color: activeAccent }}>{icon}</div>
               <div className="sim-node__label">{d.label}</div>
               {hasProb && d.prob != null && (
                 personalProb ? (
-                  <div className="sim-node__prob-dual" title={personalProb.reason} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 1 }}>
-                    {/* Personal probability — prominent */}
-                    <span style={{
-                      fontSize: 13,
-                      fontWeight: 700,
-                      fontFamily: 'var(--font-geist-mono)',
-                      color: personalProb.personal > personalProb.generic
-                        ? '#10b981'
-                        : personalProb.personal < personalProb.generic
-                          ? '#ef4444'
-                          : 'var(--foreground)',
-                      lineHeight: 1,
+                  <div title={personalProb.reason} style={{
+                    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2,
+                  }}>
+                    {/* Personal prob badge — colored circle */}
+                    <div style={{
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      width: 36, height: 36, borderRadius: '50%',
+                      background: `${personalProb.personal > personalProb.generic ? '#10b981' : personalProb.personal < personalProb.generic ? '#ef4444' : probColor}18`,
+                      border: `2px solid ${personalProb.personal > personalProb.generic ? '#10b981' : personalProb.personal < personalProb.generic ? '#ef4444' : probColor}`,
+                      fontSize: 11, fontWeight: 700, fontFamily: 'var(--font-geist-mono)',
+                      color: personalProb.personal > personalProb.generic ? '#10b981' : personalProb.personal < personalProb.generic ? '#ef4444' : probColor,
+                      flexShrink: 0,
                     }}>
-                      YOUR: {personalProb.personal}%
-                    </span>
-                    {/* Generic probability — smaller, muted */}
-                    <span style={{
-                      fontSize: 8,
-                      fontWeight: 500,
-                      fontFamily: 'var(--font-geist-mono)',
-                      color: 'var(--muted)',
-                      opacity: 0.6,
-                      lineHeight: 1,
-                      textDecoration: 'line-through',
-                    }}>
+                      {personalProb.personal}%
+                    </div>
+                    <span style={{ fontSize: 8, color: 'var(--muted)', textDecoration: 'line-through', fontFamily: 'var(--font-geist-mono)' }}>
                       {d.prob}%
                     </span>
-                    {d.probRange && (
-                      <span style={{ fontSize: '7px', opacity: 0.4, fontWeight: 400, letterSpacing: '0.02em', lineHeight: 1 }}>
-                        {d.probRange.adverse}-{d.probRange.optimistic}
-                      </span>
-                    )}
                   </div>
                 ) : (
-                  <div className="sim-node__prob">
+                  <div style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    width: 36, height: 36, borderRadius: '50%',
+                    background: `${probColor}18`, border: `2px solid ${probColor}`,
+                    fontSize: 11, fontWeight: 700, fontFamily: 'var(--font-geist-mono)',
+                    color: probColor, flexShrink: 0,
+                  }}>
                     {d.prob}%
                     {d.probRange && (
-                      <span style={{ fontSize: '7px', opacity: 0.5, display: 'block', fontWeight: 400, letterSpacing: '0.02em' }}>
+                      <span style={{ fontSize: '6px', opacity: 0.5, display: 'block', position: 'absolute', bottom: -10, fontWeight: 400 }}>
                         {d.probRange.adverse}-{d.probRange.optimistic}
                       </span>
                     )}

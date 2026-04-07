@@ -152,6 +152,14 @@ const BUSINESS_TYPE_KEYWORDS: Record<string, string[]> = {
   'creator-data': ['youtube', 'tiktok', 'podcast', 'newsletter', 'substack', 'patreon', 'content creator', 'influencer', 'creator economy', 'streaming'],
   'ecommerce-data': ['ecommerce', 'e-commerce', 'shopify', 'dropshipping', 'amazon fba', 'online store', 'dtc', 'direct to consumer', 'print on demand', 'toko online'],
   'upwork-data': ['upwork', 'freelance', 'freelancer', 'freelancing', 'proposal', 'connects', 'top rated', 'expert vetted', 'fiverr', 'gig', 'client acquisition', 'JSS', 'job success'],
+  'cleaning-service-business': ['cleaning', 'cleaning service', 'janitorial', 'maid service', 'housekeeping', 'pulizia', 'kebersihan'],
+  'gym-fitness-business': ['gym', 'fitness studio', 'personal training', 'crossfit', 'pilates', 'yoga studio', 'palestra', 'open a gym'],
+  'photography-business': ['photography', 'photographer', 'photo business', 'portrait', 'wedding photography', 'studio photo', 'fotografo'],
+  'salon-beauty-business': ['salon', 'hair salon', 'beauty salon', 'barbershop', 'barber', 'hairdresser', 'nail salon', 'spa', 'salone', 'parrucchiere'],
+  'franchise-business': ['franchise', 'franchising', 'brand license', 'waralaba', 'open a franchise', 'buy a franchise'],
+  'cafe-restaurant-business': ['restaurant', 'ristorante', 'open a restaurant', 'cafe business', 'food business', 'trattoria', 'osteria'],
+  'youtube-guru-funnel-data': ['coaching', 'life coach', 'business coach', 'online course', 'info product', 'mentorship', 'coaching business', 'corso online'],
+  'creator-podcast': ['podcast', 'podcasting', 'start a podcast', 'podcast monetize', 'audio show'],
 };
 
 export function detectBusinessType(scenario: string): string | null {
@@ -230,55 +238,137 @@ const BUSINESS_BASE_PROBS: Record<string, { label: string; probs: Record<string,
     },
     sources: 'Upwork SEC Filing 2024, Freelancer Union 2024',
   },
+  'cleaning-service-business': {
+    label: 'Cleaning Service',
+    probs: {
+      first_client: 0.70, survive_year1: 0.65, scale_team: 0.25, revenue_50k: 0.40,
+    },
+    sources: 'IBIS World 2024, SBA 2024, Cleaning Business Today 2024',
+  },
+  'gym-fitness-business': {
+    label: 'Gym / Fitness Studio',
+    probs: {
+      location: 0.55, survive_year1: 0.40, members_500: 0.30, profit_year2: 0.25,
+    },
+    sources: 'IHRSA 2024, Club Industry 2024, BLS 2024',
+  },
+  'photography-business': {
+    label: 'Photography',
+    probs: {
+      first_client: 0.60, full_time: 0.25, revenue_50k: 0.20, studio: 0.15,
+    },
+    sources: 'PPA 2024, BLS OES 2024, Photoshelter 2024',
+  },
+  'salon-beauty-business': {
+    label: 'Salon / Beauty',
+    probs: {
+      location: 0.60, survive_year1: 0.55, regular_clients: 0.45, profit_year1: 0.35,
+    },
+    sources: 'IBIS World 2024, BLS 2024, Professional Beauty Association 2024',
+  },
+  'franchise-business': {
+    label: 'Franchise',
+    probs: {
+      approval: 0.65, funding: 0.50, survive_year1: 0.85, roi_3years: 0.60,
+    },
+    sources: 'IFA 2024, FRANdata 2024, Franchise Business Review 2024',
+  },
+  'cafe-restaurant-business': {
+    label: 'Restaurant / Cafe',
+    probs: {
+      location: 0.55, survive_year1: 0.40, profit_year2: 0.25, expand: 0.10,
+    },
+    sources: 'BLS 2024, Restaurant Association 2024, Toast 2024',
+  },
+  'youtube-guru-funnel-data': {
+    label: 'Coaching / Info Products',
+    probs: {
+      first_client: 0.55, full_time: 0.20, revenue_100k: 0.12, scale: 0.08,
+    },
+    sources: 'Coaching Federation 2024, Kajabi 2024, Teachable 2024',
+  },
+  'creator-podcast': {
+    label: 'Podcast',
+    probs: {
+      launch: 0.80, reach_1000: 0.15, monetize: 0.08, full_time: 0.03,
+    },
+    sources: 'Edison Research 2024, Spotify 2024, Podcast Index 2024',
+  },
 };
 
 // ============ COUNTRY BUSINESS MODIFIERS ============
-const COUNTRY_MODIFIERS: Record<string, { modifier: number; label: string }> = {
+// Sector keys: fnb = food & beverage, tech = software/saas, services = agency/freelance/coaching
+interface CountryModifier {
+  modifier: number; // default multiplier (backward compat)
+  label: string;
+  sectors?: Partial<Record<string, number>>; // optional per-sector overrides
+}
+
+const COUNTRY_MODIFIERS: Record<string, CountryModifier> = {
   'united states': { modifier: 1.0, label: 'US (baseline)' },
   'usa': { modifier: 1.0, label: 'US (baseline)' },
   'united kingdom': { modifier: 0.95, label: 'UK' },
   'uk': { modifier: 0.95, label: 'UK' },
-  'germany': { modifier: 0.90, label: 'Germany' },
+  'germany': { modifier: 0.90, label: 'Germany', sectors: { fnb: 0.85, tech: 0.92, services: 0.90 } },
   'canada': { modifier: 0.95, label: 'Canada' },
-  'australia': { modifier: 0.92, label: 'Australia' },
-  'france': { modifier: 0.85, label: 'France' },
-  'italy': { modifier: 0.75, label: 'Italy' },
-  'spain': { modifier: 0.80, label: 'Spain' },
+  'australia': { modifier: 0.92, label: 'Australia', sectors: { fnb: 0.88, tech: 0.90, services: 0.93 } },
+  'france': { modifier: 0.85, label: 'France', sectors: { fnb: 0.90, tech: 0.80, services: 0.82 } },
+  'italy': { modifier: 0.75, label: 'Italy', sectors: { fnb: 0.85, tech: 0.65, services: 0.70 } },
+  'spain': { modifier: 0.80, label: 'Spain', sectors: { fnb: 0.85, tech: 0.72, services: 0.78 } },
   'netherlands': { modifier: 0.93, label: 'Netherlands' },
   'sweden': { modifier: 0.92, label: 'Sweden' },
   'norway': { modifier: 0.90, label: 'Norway' },
   'denmark': { modifier: 0.93, label: 'Denmark' },
   'switzerland': { modifier: 0.95, label: 'Switzerland' },
-  'ireland': { modifier: 0.93, label: 'Ireland' },
-  'singapore': { modifier: 0.98, label: 'Singapore' },
-  'japan': { modifier: 0.82, label: 'Japan' },
-  'south korea': { modifier: 0.88, label: 'South Korea' },
-  'china': { modifier: 0.75, label: 'China' },
-  'india': { modifier: 0.65, label: 'India' },
-  'indonesia': { modifier: 0.60, label: 'Indonesia' },
-  'thailand': { modifier: 0.65, label: 'Thailand' },
-  'vietnam': { modifier: 0.60, label: 'Vietnam' },
-  'philippines': { modifier: 0.58, label: 'Philippines' },
-  'malaysia': { modifier: 0.72, label: 'Malaysia' },
-  'brazil': { modifier: 0.62, label: 'Brazil' },
-  'mexico': { modifier: 0.65, label: 'Mexico' },
-  'argentina': { modifier: 0.55, label: 'Argentina' },
+  'ireland': { modifier: 0.93, label: 'Ireland', sectors: { tech: 0.96, services: 0.90 } },
+  'singapore': { modifier: 0.98, label: 'Singapore', sectors: { fnb: 0.92, tech: 1.0, services: 0.95 } },
+  'japan': { modifier: 0.82, label: 'Japan', sectors: { fnb: 0.88, tech: 0.85, services: 0.75 } },
+  'south korea': { modifier: 0.88, label: 'South Korea', sectors: { tech: 0.92, fnb: 0.82 } },
+  'china': { modifier: 0.75, label: 'China', sectors: { fnb: 0.80, tech: 0.82, services: 0.65 } },
+  'india': { modifier: 0.65, label: 'India', sectors: { fnb: 0.70, tech: 0.75, services: 0.60 } },
+  'indonesia': { modifier: 0.60, label: 'Indonesia', sectors: { fnb: 0.75, tech: 0.50, services: 0.65 } },
+  'thailand': { modifier: 0.65, label: 'Thailand', sectors: { fnb: 0.75, tech: 0.55, services: 0.62 } },
+  'vietnam': { modifier: 0.60, label: 'Vietnam', sectors: { fnb: 0.70, tech: 0.55, services: 0.58 } },
+  'philippines': { modifier: 0.58, label: 'Philippines', sectors: { fnb: 0.65, tech: 0.50, services: 0.62 } },
+  'malaysia': { modifier: 0.72, label: 'Malaysia', sectors: { fnb: 0.78, tech: 0.68, services: 0.72 } },
+  'brazil': { modifier: 0.62, label: 'Brazil', sectors: { fnb: 0.70, tech: 0.58, services: 0.60 } },
+  'mexico': { modifier: 0.65, label: 'Mexico', sectors: { fnb: 0.72, tech: 0.58, services: 0.62 } },
+  'argentina': { modifier: 0.55, label: 'Argentina', sectors: { fnb: 0.60, tech: 0.55, services: 0.52 } },
   'colombia': { modifier: 0.60, label: 'Colombia' },
   'chile': { modifier: 0.72, label: 'Chile' },
   'peru': { modifier: 0.58, label: 'Peru' },
-  'nigeria': { modifier: 0.45, label: 'Nigeria' },
+  'nigeria': { modifier: 0.45, label: 'Nigeria', sectors: { fnb: 0.55, tech: 0.40, services: 0.42 } },
   'south africa': { modifier: 0.60, label: 'South Africa' },
-  'kenya': { modifier: 0.52, label: 'Kenya' },
+  'kenya': { modifier: 0.52, label: 'Kenya', sectors: { tech: 0.58, fnb: 0.55, services: 0.48 } },
   'ghana': { modifier: 0.50, label: 'Ghana' },
   'egypt': { modifier: 0.55, label: 'Egypt' },
-  'turkey': { modifier: 0.62, label: 'Turkey' },
-  'poland': { modifier: 0.80, label: 'Poland' },
+  'turkey': { modifier: 0.62, label: 'Turkey', sectors: { fnb: 0.68, tech: 0.58, services: 0.60 } },
+  'poland': { modifier: 0.80, label: 'Poland', sectors: { tech: 0.85, services: 0.78 } },
   'portugal': { modifier: 0.82, label: 'Portugal' },
   'new zealand': { modifier: 0.90, label: 'New Zealand' },
-  'taiwan': { modifier: 0.88, label: 'Taiwan' },
+  'taiwan': { modifier: 0.88, label: 'Taiwan', sectors: { tech: 0.92, fnb: 0.82 } },
   'hong kong': { modifier: 0.90, label: 'Hong Kong' },
-  'united arab emirates': { modifier: 0.85, label: 'UAE' },
+  'united arab emirates': { modifier: 0.85, label: 'UAE', sectors: { fnb: 0.80, tech: 0.88, services: 0.82 } },
   'saudi arabia': { modifier: 0.70, label: 'Saudi Arabia' },
+};
+
+// Map business type keys to sector categories for country modifier lookup
+const BUSINESS_TYPE_TO_SECTOR: Record<string, string> = {
+  'fnb-data': 'fnb',
+  'cafe-restaurant-business': 'fnb',
+  'saas-data': 'tech',
+  'agency-data': 'services',
+  'upwork-data': 'services',
+  'cleaning-service-business': 'services',
+  'salon-beauty-business': 'services',
+  'photography-business': 'services',
+  'youtube-guru-funnel-data': 'services',
+  'ecommerce-data': 'tech',
+  'marketplace-data': 'tech',
+  'creator-data': 'services',
+  'creator-podcast': 'services',
+  'gym-fitness-business': 'services',
+  'franchise-business': 'fnb', // most franchises are F&B
 };
 
 export function buildIndustryCountryContext(
@@ -293,15 +383,21 @@ export function buildIndustryCountryContext(
 
   if (businessType && BUSINESS_BASE_PROBS[businessType]) {
     const bp = BUSINESS_BASE_PROBS[businessType];
-    const modifier = countryMod?.modifier ?? 1.0;
+    // Use sector-specific modifier if available, fall back to default
+    const sector = BUSINESS_TYPE_TO_SECTOR[businessType];
+    const sectorMod = sector ? countryMod?.sectors?.[sector] : undefined;
+    const sectorModifier: number = (typeof sectorMod === 'number' ? sectorMod : countryMod?.modifier) ?? 1.0;
     const adjustedProbs = Object.entries(bp.probs)
       .map(([k, v]) => {
-        const adjusted = Math.min(0.99, Math.max(0.01, v * modifier));
+        const adjusted = Math.min(0.99, Math.max(0.01, v * sectorModifier));
         return `  ${k.replace(/_/g, ' ')}: ${(adjusted * 100).toFixed(1)}%`;
       })
       .join('\n');
 
-    ctx += `\n\nINDUSTRY BASELINE PROBABILITIES (${bp.label}${countryMod ? ` in ${countryMod.label}, modifier ${countryMod.modifier}x` : ''}):\n${adjustedProbs}\nSources: ${bp.sources}`;
+    const modLabel = countryMod
+      ? ` in ${countryMod.label}, ${sector ? `sector "${sector}" ` : ''}modifier ${sectorModifier}x`
+      : '';
+    ctx += `\n\nINDUSTRY BASELINE PROBABILITIES (${bp.label}${modLabel}):\n${adjustedProbs}\nSources: ${bp.sources}`;
     ctx += `\nUSE THESE AS BASE RATES. Every bottleneck/gate probability should START from these numbers and adjust only if the specific scenario warrants it.`;
   }
 
