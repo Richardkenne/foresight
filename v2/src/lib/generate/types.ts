@@ -42,10 +42,19 @@ export interface ParentContext {
   depth: number;
 }
 
+export type DepthLevel = 'summary' | 'analysis' | 'full';
+
+export const DEPTH_NODE_COUNTS: Record<DepthLevel, { min: number; max: number; label: string }> = {
+  summary: { min: 5, max: 7, label: 'Summary' },
+  analysis: { min: 10, max: 14, label: 'Analysis' },
+  full: { min: 30, max: 45, label: 'Full Model' },
+};
+
 export interface GenerateRequest {
   scenario: string;
   tags?: import('@/lib/context-tags').ContextTags;
   profile?: Record<string, unknown>;
   sacredMode?: boolean;
   parentContext?: ParentContext;
+  depthLevel?: DepthLevel;
 }

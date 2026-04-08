@@ -7,9 +7,13 @@ import TemplateSelector from './TemplateSelector';
 import PhotoUpload from './PhotoUpload';
 import HistoryPanel from './HistoryPanel';
 import ProfilePanel from './ProfilePanel';
+import ModeSelector from './ModeSelector';
+import PersonalProfileInline from './PersonalProfileInline';
+import { type SimMode, MODE_CONFIG } from '@/lib/sim-modes';
 import type { ContextTags } from '@/lib/context-tags';
 import type { HistoryEntry } from '@/lib/history';
 import type { UserProfile } from '@/lib/user-profile';
+import { DEPTH_NODE_COUNTS, type DepthLevel } from '@/lib/generate/types';
 
 export interface Attachment {
   id: string;
@@ -40,11 +44,15 @@ interface TopBarProps {
   onAttachmentsChange?: (attachments: Attachment[]) => void;
   layoutDirection?: 'LR' | 'TB';
   onLayoutDirectionChange?: (dir: 'LR' | 'TB') => void;
-  viewMode?: '2d' | '3d';
-  onViewModeChange?: (mode: '2d' | '3d') => void;
+  viewMode?: '2d' | '3d' | 'flowchart';
+  onViewModeChange?: (mode: '2d' | '3d' | 'flowchart') => void;
   // Trigger counter props: increment to open the respective panel (used by CommandPalette)
   openHistoryTrigger?: number;
   openProfileTrigger?: number;
+  activeMode?: SimMode;
+  onModeChange?: (mode: SimMode) => void;
+  depthLevel?: DepthLevel;
+  onDepthLevelChange?: (level: DepthLevel) => void;
 }
 
 function Logo() {
@@ -57,7 +65,7 @@ function Logo() {
         <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
       <span className="text-[13px] font-semibold text-[var(--foreground)] tracking-[0.1em] hidden sm:block" style={{ fontFamily: 'var(--font-geist-mono), monospace' }}>
-        SIMULATOR
+        FORESIGHT
       </span>
     </div>
   );
@@ -101,6 +109,8 @@ export default function TopBar({
   scenario, onScenarioChange, hasNodes, generating,
   onGenerate, onRestart, onStop, onLoadTemplate, onPhotoScenario, onAudioScenario, onTagsChange, onHistorySelect, onProfileChange, photoPreview,
   sacredMode, onSacredModeChange, attachments = [], onAttachmentsChange, layoutDirection = 'LR', onLayoutDirectionChange, viewMode = '2d', onViewModeChange, openHistoryTrigger, openProfileTrigger,
+  activeMode, onModeChange,
+  depthLevel = 'analysis', onDepthLevelChange,
 }: TopBarProps) {
   const addAttachment = useCallback((att: Omit<Attachment, 'id'>) => {
     const newAtt: Attachment = { ...att, id: `${att.type}-${Date.now()}` };
@@ -275,18 +285,20 @@ export default function TopBar({
         )}
 
         {/* Scenario Input — click to expand as overlay */}
-        <div className="flex-1 relative min-w-0 max-w-[520px]">
-          <div
-            className="w-full px-2 sm:px-3 py-2 rounded-lg text-[12px] sm:text-[13px] text-[var(--foreground)] bg-transparent border border-transparent hover:border-[var(--border)] hover:bg-[var(--surface-hover)] cursor-text transition-all line-clamp-1 sm:line-clamp-2"
-            onClick={() => { if (!generating) setInputExpanded(true); }}
-            title={scenario || 'Describe a scenario...'}
-          >
-            {scenario || <span className="text-[var(--muted)]">Describe a scenario...</span>}
+        {MODE_CONFIG[activeMode || 'simulate'].showsPrompt && (
+          <div className="flex-1 relative min-w-0 max-w-[520px]">
+            <div
+              className="w-full px-2 sm:px-3 py-2 rounded-lg text-[12px] sm:text-[13px] text-[var(--foreground)] bg-transparent border border-transparent hover:border-[var(--border)] hover:bg-[var(--surface-hover)] cursor-text transition-all line-clamp-1 sm:line-clamp-2"
+              onClick={() => { if (!generating) setInputExpanded(true); }}
+              title={scenario || 'Describe a scenario...'}
+            >
+              {scenario || <span className="text-[var(--muted)]">Describe a scenario...</span>}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Expanded textarea overlay */}
-        {inputExpanded && (
+        {inputExpanded && MODE_CONFIG[activeMode || 'simulate'].showsPrompt && (
           <>
             <div className="fixed inset-0 z-[250] bg-black/10" onClick={() => setInputExpanded(false)} />
             <div className="fixed z-[251] left-3 right-3 sm:left-6 sm:right-6 max-w-[600px] mx-auto" style={{ top: '64px' }}>
@@ -662,6 +674,23 @@ export default function TopBar({
                   </svg>
                 </button>
               )}
+              {/* Depth level selector */}
+              <div className="flex items-center rounded-full border border-[var(--border)] overflow-hidden" style={{ background: 'var(--surface)' }}>
+                {(['summary', 'analysis', 'full'] as DepthLevel[]).map((level) => (
+                  <button
+                    key={level}
+                    onClick={() => onDepthLevelChange?.(level)}
+                    className="px-2.5 py-1.5 text-[11px] font-medium transition-all cursor-pointer"
+                    style={{
+                      background: depthLevel === level ? 'var(--foreground)' : 'transparent',
+                      color: depthLevel === level ? 'var(--surface)' : 'var(--muted)',
+                    }}
+                    title={`${DEPTH_NODE_COUNTS[level].label} (${DEPTH_NODE_COUNTS[level].min}-${DEPTH_NODE_COUNTS[level].max} nodes)`}
+                  >
+                    {DEPTH_NODE_COUNTS[level].label}
+                  </button>
+                ))}
+              </div>
               <Button
                 variant="primary"
                 size="md"
@@ -784,6 +813,18 @@ export default function TopBar({
       )}
       </AnimatePresence>
 
+      {/* Mode selector strip */}
+      <div className="flex justify-center py-1" style={{ borderBottom: '1px solid color-mix(in srgb, var(--foreground) 6%, transparent)' }}>
+        <ModeSelector activeMode={activeMode || 'simulate'} onModeChange={(m) => onModeChange?.(m)} hasNodes={hasNodes} />
+      </div>
+
+      {/* Personal mode profile inline */}
+      {activeMode === 'personal' && (
+        <div className="px-4 pt-2">
+          <PersonalProfileInline onProfileChange={onProfileChange} />
+        </div>
+      )}
+
       {/* Sacred mode toggle row */}
       <div className="h-[32px] flex items-center gap-1.5 px-2 sm:px-6 border-t border-[var(--border)] overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
         <button
@@ -831,7 +872,7 @@ export default function TopBar({
             {/* Menu header */}
             <div className="h-[56px] flex items-center justify-between px-5 border-b border-[var(--border)]">
               <span className="text-[16px] font-bold text-[var(--foreground)]" style={{ fontFamily: 'var(--font-geist-mono), monospace', letterSpacing: '0.08em' }}>
-                SIMULATOR
+                FORESIGHT
               </span>
               <button
                 onClick={() => { setShowMenu(false); setShowHistory(false); }}
@@ -1002,34 +1043,33 @@ export default function TopBar({
                   />
                 </div>
               </button>
-              {/* 3D mode toggle */}
-              <button
-                onClick={() => {
-                  const next = viewMode === '2d' ? '3d' : '2d';
-                  onViewModeChange?.(next);
-                }}
-                className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-[14px] transition-colors cursor-pointer hover:bg-[var(--surface-hover)]"
-                style={{ color: 'var(--foreground)' }}
-              >
-                <div className="flex items-center gap-3">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" />
-                    <path d="M12 12l8-4.5" />
-                    <path d="M12 12v9" />
-                    <path d="M12 12L4 7.5" />
-                  </svg>
-                  <span>3D Mode</span>
+              {/* View mode selector */}
+              <div className="px-4 py-2">
+                <div className="text-[10px] font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">View</div>
+                <div className="flex gap-1.5">
+                  {([
+                    { mode: '2d' as const, label: '2D', icon: 'M3 3h18v18H3V3z' },
+                    { mode: '3d' as const, label: '3D', icon: 'M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z' },
+                    { mode: 'flowchart' as const, label: 'Flow', icon: 'M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V15M9 21H5a2 2 0 0 1-2-2V15' },
+                  ]).map(({ mode, label, icon }) => (
+                    <button
+                      key={mode}
+                      onClick={() => onViewModeChange?.(mode)}
+                      className="flex-1 flex flex-col items-center gap-1 py-2 rounded-lg text-[11px] font-medium transition-all cursor-pointer"
+                      style={{
+                        background: viewMode === mode ? 'var(--foreground)' : 'transparent',
+                        color: viewMode === mode ? 'var(--surface)' : 'var(--muted)',
+                        border: viewMode === mode ? 'none' : '1px solid var(--border)',
+                      }}
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d={icon} />
+                      </svg>
+                      {label}
+                    </button>
+                  ))}
                 </div>
-                <div
-                  className="relative w-[44px] h-[24px] rounded-full transition-colors"
-                  style={{ background: viewMode === '3d' ? 'var(--accent)' : 'var(--border)' }}
-                >
-                  <div
-                    className="absolute top-[2px] w-[20px] h-[20px] rounded-full shadow transition-all"
-                    style={{ left: viewMode === '3d' ? '22px' : '2px', background: 'var(--surface)' }}
-                  />
-                </div>
-              </button>
+              </div>
             </div>
 
             {/* Shortcuts section */}
@@ -1088,7 +1128,7 @@ export default function TopBar({
             {/* Menu footer */}
             <div className="px-5 py-4 border-t border-[var(--border)]">
               <div className="text-[11px] text-[var(--muted)]">
-                Simulator v2
+                Foresight
               </div>
             </div>
           </motion.div>

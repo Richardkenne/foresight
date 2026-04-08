@@ -1,17 +1,25 @@
-# Simulator v2 — Step by Step
+# Foresight — Step by Step
 
 ## Index
-- [Fase 1: Data Foundation](#fase-1-data-foundation)
-- [Fase 1B: Conditional Engine](#fase-1b-conditional-engine)
-- [Fase 1C: Landing + Sacred + Multi-Input + Layout](#fase-1c-landing--sacred--multi-input--layout) ← DONE
-- [Fase 1D: 3D Force Graph Migration](#fase-1d-3d-force-graph-migration) ← DONE
-- [Fase 2: Recursive Simulation](#fase-2-recursive-simulation)
-- [Fase 3: Profilo Utente](#fase-3-profilo-utente)
-- [Fase 4: Data Pipeline Automatico](#fase-4-data-pipeline-automatico)
-- [Fase 5: Avatar / Digital Twin](#fase-5-avatar--digital-twin)
+- [Fase 1: Data Foundation](#fase-1-data-foundation) — DONE
+- [Fase 1B: Conditional Engine](#fase-1b-conditional-engine) — DONE
+- [Fase 1C: Landing + Sacred + Multi-Input + Layout](#fase-1c-landing--sacred--multi-input--layout) — DONE
+- [Fase 1D: 3D Force Graph Migration](#fase-1d-3d-force-graph-migration) — DONE
+- [Fase 2: Recursive Simulation](#fase-2-recursive-simulation) — DONE
+- [Fase 3: Profilo Utente](#fase-3-profilo-utente) — DONE
+- [Fase 4: Data Pipeline Automatico](#fase-4-data-pipeline-automatico) — DONE
+- [Fase 5: Avatar / Digital Twin](#fase-5-avatar--digital-twin) — DONE
+- [Fase 5B: 5-Mode System](#fase-5b-5-mode-system--fatto-2026-04-07) — DONE
+- [Fase 5C: DNA Comportamentale](#fase-5c-dna-comportamentale-34-dimensioni--ricerca-fatta-implementazione-parziale) — Ricerca DONE, impl. parziale
+- [Fase 6: Cultural Data — 5 paesi](#fase-6-cultural-behavioral-data--5-paesi-indonesia-australia-italia-singapore-malaysia) — ~290K dp
+- [Fase 7: Cultural Data — USA](#fase-7-cultural-data--usa-200k-dp) — ~200K dp
+- [Fase 8: Cultural Data — Europa](#fase-8-cultural-data--europa-29-paesi-17m-dp) — ~1.7M dp
+- [Fase 9: Cross-Cultural Comparative](#fase-9-cross-cultural-comparative-300k-dp) — ~300K dp
 - [Livello 90-100: Credibilita Assoluta](#livello-90-100-credibilita-assoluta)
 - [Livello 100+: Oracolo Predittivo](#livello-100-oracolo-predittivo)
 - [Livello Beyond: Reality Engine](#livello-beyond-reality-engine)
+- [Depth Variants](#depth-variants--3-modalita-per-template-summary--analysis--full-model) — IN CORSO (Upwork fatto, 31 restanti)
+- [Data Integrity System](#data-integrity-system--3-livelli) — TODO (3 livelli: freshness badge → source verification → auto-update agent)
 - [UI Polish](#ui-polish)
 
 ---
@@ -282,6 +290,65 @@
 
 ---
 
+## Fase 5B: 5-Mode System — FATTO (2026-04-07)
+- [x] Ricerca competitor: Palantir (15 superfici Foundry + 7 Gotham), Bloomberg (PORT scenarios), AnyLogic (3 paradigmi), Crystal Knows (DISC), Aaru ($1B, synthetic audiences), Stanford Generative Agents
+- [x] Architettura 5 modi: Explore (dati puri) | Simulate (attuale) | Personal (profilo psicologico) | What-if (modifica prob) | Stress Test (worst case)
+- [x] `src/lib/sim-modes.ts` — SimMode type, MODE_CONFIG, canActivateMode(), loadMode(), saveMode()
+- [x] `src/components/ModeSelector.tsx` — segmented control con sliding indicator framer-motion, 2 gruppi CREATE/ANALYZE, disabled state per modi che richiedono grafo
+- [x] `src/components/PersonalProfileInline.tsx` — 5 dimensioni psicologiche tutte chip-based: blocker, never-do, risk tolerance, decision style, under pressure. Valori Schwartz inferiti automaticamente dalle selezioni.
+- [x] TopBar.tsx — ModeSelector strip integrato, prompt condizionale (hidden in What-if/Stress), PersonalProfileInline in Personal mode
+- [x] SimulatorCanvas.tsx — activeMode state + localStorage, Explore blocca auto-sim, Stress applica probRange.adverse, What-if snapshot originalProb
+- [x] prompt-builder.ts — mode-aware: Explore = enciclopedico (min 2 fonti/bottleneck), Personal = profilo psicologico completo
+- [x] SimNode.tsx — delta badge verde/rosso (What-if), red pulse border (Stress), dashed border (What-if editable), originalProb tracking
+- [x] SimToolbar.tsx — label dinamici ("Test Changes" in What-if, "Run Stress Test" in Stress), hide Simulate in Explore
+- [x] SimOverlays.tsx — StressOverlay component (survival rate pill con icona zap)
+- [x] globals.css — stress-pulse keyframe, data-mode selectors, mode-selector/tab utility classes
+- [x] Build verificato: 0 errori TypeScript, 0 errori Next.js build
+
+## Fase 5C: DNA Comportamentale (34 dimensioni) — Ricerca FATTA, implementazione parziale
+- [x] Mappatura 20 dimensioni esistenti dai file ME. iCloud (Core Values 9, Purpose, Fear, Vision, Principles 9, Boundaries 6, Barrett Level, Order Thinking, Natural Role, Strengths, Weaknesses, Critical Patterns, Happiness, Shadow, 12 dim maturita, Stress Test)
+- [x] Identificate 14 dimensioni mancanti (Attachment Style, Locus of Control, Risk Tolerance, Time Orientation, Conflict Style, Decision Style, Stress Response, Energy Pattern, Grit, Need for Cognition, Tolerance for Ambiguity, Self-Determination, Emotional Regulation, Core Beliefs)
+- [x] PersonalProfileInline cattura 5 dimensioni chiave via chip e inferisce valori Schwartz
+- [ ] Espandere PersonalProfileInline con le 14 dimensioni mancanti (progressive disclosure)
+- [ ] Creare mapping completo dimensione → modifier probabilita (es. Grit alto → persistenza +40% ai bottleneck)
+
+---
+
+## Fase 6-9: Cultural & Statistical Data — FATTO (2026-04-08)
+
+### Dati statistici scaricati (3.2M+ dp da API reali)
+- [x] **Eurostat** — 71 dataset, 27 paesi EU, 3.06M dp (GDP, lavoro, educazione, salute, turismo, crimini, migrazione, housing, digital, R&D)
+- [x] **ILO** — 10 indicatori, 21 paesi, 138K dp (unemployment, earnings, hours, employment by sector)
+- [x] **World Bank** — 165+ indicatori, 21 paesi (core6 + extra + mega), 16K dp
+- [x] **UN Data** — SDG indicators, 21 paesi, 4K dp
+- [x] **REST Countries** — 21 paesi, 419 dp (demographics, languages, currencies)
+- [x] **CoinGecko** — top 20 crypto, 45 dp
+
+### Dati culturali comportamentali (629+ dp con fonte URL, 2024-2026)
+- [x] **Indonesia** — 157 dp: cafe/nongkrong culture, e-wallet 96%, halal market, GoFood/Grab, Gen Z behavior, religion impact
+- [x] **Italy** — 159 dp: espresso/bar culture, NEET 15.2%, brain drain, Partita IVA, North-South divide, tourism 458M notti
+- [x] **Australia** — 160 dp: flat white culture, BNPL/Afterpay, immigration, housing crisis, work-life balance, sports
+- [x] **USA** — 153 dp: Starbucks/specialty coffee, student debt, gig economy, tipping culture, regional differences
+- [ ] **Singapore** — in progress (hawker culture, HDB, tuition culture, COE, startup ecosystem)
+- [ ] **Malaysia** — da fare
+
+### Pipeline & Embedding
+- [x] 10 script API creati (worldbank ×3, eurostat ×3, oecd, ilo, un-data, fred)
+- [x] embed-chunked.mjs — chunked embedding (5-8 dp/chunk, ~145K chunks)
+- [x] Supabase Pro ($25/mo) — 8 GB DB limit
+- [x] Embedding in corso (145K chunks → Supabase pgvector)
+- [ ] Test retrieval culturale post-embedding
+- [ ] Embed file >50MB (9 file Eurostat/ILO skippati per OOM — servono streaming)
+
+### Fonti non ancora scaricate
+- [ ] Hofstede 6 dimensioni CSV (102 paesi) — geerthofstede.com
+- [ ] World Values Survey wave 7 (64 paesi) — worldvaluessurvey.org
+- [ ] DataReportal Digital 2026 (200+ paesi, digital behavior)
+
+**Totale: 3.2M+ dp statistici + 629 dp culturali comportamentali = 3.5M+ dp**
+
+---
+
 ## UI Polish (continuo)
 - [x] Responsive mobile 320px — audit completo + @media max-width:360px aggiunto
 - [x] Dark mode — prefers-color-scheme + data-theme + 19 dark: usages
@@ -310,4 +377,59 @@
 - [x] Coverage: 100/100 scenari coperti, 18 gap file creati
 - [x] Card design restored: bordi colorati, badge probabilita cerchio, sacred purple theme
 
-*Ultimo aggiornamento: 2026-04-07*
+## Depth Variants — 3 modalita per template (Summary / Analysis / Full Model)
+- [x] Sistema depth level: selettore UI nel TopBar (segmented control), prompt dinamico, API route, badge nodi
+- [x] Upwork Money Tree: Deep (34 nodi), Analysis/Mid (13 nodi), Summary/Min (7 nodi)
+- [x] Template selector: varianti Mid/Min nascoste, sub-picker con 3 opzioni al clic
+- [x] Source labels: 201 fonti sintetizzate → "(estimated, non-official)", 188 fonti reali intatte
+- [ ] Creare varianti Mid (10-14 nodi) + Min (5-7 nodi) per tutti i 32 template:
+  - [ ] business.ts (17): startup, money, cafe, content, saas, freelance, app, dropshipping, saas_scratch, side_hustle, buy_business, affiliate_blog, paid_community, crypto_journey, ai_agency, upwork_freelance, want_to_win (se in business)
+  - [ ] richard.ts (10): cafepedia, move_abroad, interfaith, break_pattern, first_million, perfectionism, faith_business, provider, polymarket, leverage
+  - [ ] life.ts (5): lend_money, lose_weight, learn_skill, youtube_guru, want_to_win
+- [ ] Naming convention: `{templateKey}Mid` (Analysis), `{templateKey}Min` (Summary), `{templateKey}` senza suffisso = Full Model
+- [x] Source URL: campo `sourceUrl` aggiunto a TemplateNode, panel dettagli mostra link cliccabile
+- [x] Upwork templates: 54 nodi con sourceUrl (Deep + Mid + Min)
+- [ ] Aggiungere `sourceUrl` a tutti gli altri template (fonti reali: link a report CB Insights, McKinsey, BLS, ecc.)
+
+## Data Integrity System — 3 livelli
+Obiettivo: garantire che ogni dato nel simulatore sia verificabile, aggiornato e trasparente. Questo e' il MOAT vs LLM generici.
+
+### Livello 1: Freshness Badge (visuale, priorita' ALTA)
+- [ ] Aggiungere campo `dataDate` a ogni dp nel JSON (data di quando il dato e' stato verificato)
+- [ ] Badge visuale sulle card: verde (<3 mesi), giallo (3-6 mesi), rosso (>6 mesi)
+- [ ] Mostrare freshness nel detail panel (panel a destra in step mode)
+- [ ] Script di audit: scansiona tutti i JSON e lista dp con data > 6 mesi
+
+### Livello 2: Source Verification (cron, priorita' MEDIA)
+- [ ] Cron job settimanale: fetch ogni `sourceUrl` nei JSON
+- [ ] Se URL ritorna 404 o redirect → flag "needs review" + notifica
+- [ ] Se contenuto della pagina e' cambiato significativamente → flag "content changed"
+- [ ] Dashboard interna: lista dp con problemi di freshness/URL rotti
+- [ ] Report automatico via email/Slack con dp da aggiornare
+
+### Livello 3: Auto-Update Agent (AI, priorita' BASSA — il vero moat)
+- [ ] Agente AI (cron mensile): per ogni sezione del JSON
+  - Cerca online numeri piu' recenti (web search)
+  - Confronta vecchio vs nuovo valore
+  - Se differenza >10% → propone update con fonte
+  - Salva proposta in `data/pending-updates.json`
+- [ ] UI di review: l'admin vede le proposte e approva/rifiuta con 1 clic
+- [ ] Log di ogni update: chi, quando, vecchio valore, nuovo valore, fonte
+- [ ] Obiettivo: ogni dp verificato almeno 1x ogni 3 mesi
+
+### Metriche di qualita' (target)
+- [ ] 100% dei dp con `sourceUrl` (ora: 80% template, 100% JSON Upwork)
+- [ ] 100% dei dp con `dataDate`
+- [ ] 0 URL rotti (404)
+- [ ] 0 dp piu' vecchi di 6 mesi senza flag
+- [ ] Tempo medio di aggiornamento dopo pubblicazione nuova fonte: <7 giorni
+
+## Flowchart View (ELK.js) — FATTO parziale (2026-04-08)
+- [x] FlowchartView.tsx con ELK.js layout engine (SVG puro)
+- [x] View selector 2D/3D/Flow nel menu settings
+- [x] Step mode compatibile con Flow view (opacity + edge hidden)
+- [ ] Modalita' ritaglio in Flow (cut line orizzontale)
+- [ ] Fit-to-screen automatico al primo load
+- [ ] Click su nodo → detail panel anche in Flow
+
+*Ultimo aggiornamento: 2026-04-08*

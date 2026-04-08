@@ -344,12 +344,13 @@ body {
   position: relative;
 }
 
-/* Bottleneck: hexagon shape with red drop-shadow border */
+/* Bottleneck: hexagon shape with drop-shadow border */
 .sim-node--bottleneck {
   width: 260px;
-  border-radius: 0;
+  border-radius: 0 !important;
   outline: none !important;
   background: transparent !important;
+  box-shadow: none !important;
   overflow: visible;
 }
 
@@ -432,15 +433,15 @@ body {
   background: var(--surface);
 }
 
-/* Outcome-bad: pill — red, "you failed" */
+/* Outcome-bad: pill — soft muted red */
 .sim-node--fail {
   border-radius: 9999px !important;
-  outline: 2.5px solid #dc2626 !important;
-  background: #fecaca !important;
+  outline: 2px solid #e8a0a0 !important;
+  background: #fef2f2 !important;
 }
 
 .sim-node--fail .sim-node__label {
-  color: #dc2626;
+  color: #b45555;
 }
 
 .sim-node--fail .sim-node__body {
@@ -453,11 +454,11 @@ body {
   outline: 2px solid rgba(239, 68, 68, 0.6);
 }
 
-/* Outcome-good: pill — green, "you made it" */
+/* Outcome-good: pill — soft muted green */
 .sim-node--success {
   border-radius: 9999px !important;
-  outline: 2.5px solid #059669 !important;
-  background: #a7f3d0 !important;
+  outline: 2px solid #8dc5a0 !important;
+  background: #f0faf4 !important;
 }
 
 .sim-node--success .sim-node__body {
@@ -497,7 +498,7 @@ body {
   cursor: grabbing;
 }
 
-/* Type label above node — hidden by default, only shown on bottleneck/decision (clip-path shapes) */
+/* Type label above node — shown on all node types */
 .sim-node__type-label {
   position: absolute;
   top: -18px;
@@ -509,10 +510,6 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   pointer-events: none;
-  display: none;
-}
-.sim-node--bottleneck .sim-node__type-label,
-.sim-node--decision .sim-node__type-label {
   display: block;
 }
 
@@ -579,9 +576,9 @@ body {
 /* Footer */
 .sim-node__footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  gap: 6px;
   padding-top: 8px;
   margin-top: 4px;
   border-top: 1px solid var(--border-subtle);
@@ -595,7 +592,9 @@ body {
   letter-spacing: 0.01em;
   white-space: normal;
   word-break: break-word;
-  max-width: 120px;
+  max-width: 100%;
+  text-align: center;
+  width: 100%;
 }
 
 .sim-node__time {
@@ -2401,14 +2400,19 @@ body:has(.landing-page) {
   .hero { padding: 120px 20px 60px; }
   .hero-search { flex-direction: column; border-radius: 12px; }
   .hero-btn { justify-content: center; border-radius: 0 0 11px 11px; }
-  .numbers-bar { flex-wrap: wrap; gap: 24px; padding: 32px 24px; }
-  .number-item { min-width: 120px; }
+  .hero-graph { display: none; }
+  .numbers-bar { flex-wrap: wrap; gap: 20px; padding: 32px 20px; }
+  .number-item { min-width: 70px; flex: 1; }
   .problem-grid { grid-template-columns: 1fr; }
   .steps-grid { grid-template-columns: 1fr; }
   .features-grid { grid-template-columns: 1fr; }
-  .data-grid { grid-template-columns: 1fr 1fr; }
-  .vs-table-wrap { margin: 0 -24px; border-radius: 0; border-left: none; border-right: none; }
+  .data-grid { grid-template-columns: 1fr; }
+  .vs-table-wrap { margin: 0 -20px; border-radius: 0; border-left: none; border-right: none; overflow-x: auto; }
+  .vs-table th, .vs-table td { font-size: 11px; padding: 10px 8px; white-space: nowrap; }
   .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
+  .section-problem, .section-how, .section-features, .section-data, .section-vs, .section-emotion, .section-cta { padding: 56px 20px; }
+  .section-heading { font-size: clamp(22px, 5vw, 32px); }
+  .emotion-quote { font-size: 16px; }
 }
 
 /* ─── 320px ultra-narrow (phones SE, Galaxy Fold, etc.) ─── */
@@ -2637,4 +2641,32 @@ body:has(.landing-page) {
     padding: 10px 8px;
     font-size: 11px;
   }
+}
+
+/* ─── Mode-specific styles ─── */
+@keyframes stress-pulse {
+  0%, 100% { box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3); }
+  50% { box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.6); }
+}
+
+[data-mode="explore"] .react-flow__node {
+  transition: opacity 0.3s ease;
+}
+
+[data-mode="stress"] .react-flow__edge path {
+  stroke-opacity: 0.6;
+}
+
+[data-mode="whatif"] .react-flow__node {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Mode selector component */
+.mode-selector {
+  position: relative;
+}
+
+.mode-tab {
+  user-select: none;
+  -webkit-user-select: none;
 }

@@ -136,8 +136,11 @@ export function applyRealProbabilities(
   nodes: Array<{ id: string | number; label: string; type: string; prob?: number; desc?: string; source?: string }>,
 ): Array<{ id: string | number; label: string; type: string; prob?: number; desc?: string; source?: string }> {
   return nodes.map(node => {
-    // Only override bottleneck/decision nodes (they have meaningful probabilities)
-    if (node.type !== 'bottleneck' && node.type !== 'decision') return node;
+    // Only override bottleneck/decision/gate nodes (they have meaningful probabilities)
+    if (node.type !== 'bottleneck' && node.type !== 'decision' && node.type !== 'gate') return node;
+
+    // If the node already has a specific probability (not 50 or 100), the template author set it intentionally — don't override
+    if (node.prob !== undefined && node.prob !== 50 && node.prob !== 100) return node;
 
     const match = matchRealProbability(node.label, node.desc);
     if (match) {

@@ -1,4 +1,5 @@
 import { getTagKeywords, getTagPromptModifier, type ContextTags } from '@/lib/context-tags';
+import { type SimMode } from '@/lib/sim-modes';
 import {
   detectBusinessType,
   buildIndustryCountryContext,
@@ -8,6 +9,7 @@ import {
   CURRENCY_MAP,
 } from './data-fetcher';
 import type { ParentContext } from './types';
+import { DEPTH_NODE_COUNTS, type DepthLevel } from './types';
 
 // ============ STATIC SYSTEM PROMPT (cached across requests) ============
 export const STATIC_PROMPT = `You are a life/business scenario simulator. Generate a realistic flowchart with nodes and edges.
@@ -18,7 +20,7 @@ CRITICAL RULES:
    2nd: RAG context data (specific numbers from the data points provided)
    3rd: Industry base rates (from INDUSTRY BASELINE PROBABILITIES section)
    4th: Sacred roots (if sacred mode is active)
-   5th: Your calibrated estimate — use the closest available data point and cite the source. If NO data exists at all, label as "Estimated" but provide your best calibrated guess with reasoning in the desc field.
+   5th: Your calibrated estimate — use the closest available data point and cite the source. If NO data exists at all, label as "Estimated (non-official)" but provide your best calibrated guess with reasoning in the desc field. For ANY source that is NOT a published report/paper (e.g. community data, forum insights, pattern analysis, platform behavior), append "(estimated by Foresight from public data — not an official source)" to the source string.
 2. DATA INTEGRITY: Every node MUST have a real source. Use the RAG data provided, your training knowledge, or well-known reports (BLS, World Bank, McKinsey, CB Insights, PitchBook, etc.). Format: "ReportName Year:value:tier". "No data" should be extremely rare — only for truly novel scenarios with zero comparable data.
 3. COMPLETE COVERAGE: The flow must cover the ENTIRE scenario from start to end. If the user says "move abroad and learn a language", cover BOTH — immigration steps AND language learning journey. Never stop halfway.
 4. EVERY STEP NEEDS A FAIL PATH: Every bottleneck/decision MUST have a fail/no edge leading to an outcome-bad node. This is non-negotiable. Real life has failure at every step.
@@ -27,7 +29,7 @@ CRITICAL RULES:
 7. NEVER HALLUCINATE PLATFORM FEATURES: Do NOT invent steps that don't exist on real platforms. Upwork has NO mandatory "skills test" or "AI developer test". Stick to real platform mechanics: profile creation, proposals (with Connects), interviews, contracts, JSS score, badges.
 8. USE RAG DATA FIRST: When the provided data includes a specific probability (e.g., "proposal_to_interview_new_pct: 2-5%"), use THAT number, not a higher one. The RAG data is verified.
 
-STRUCTURE: Return ONLY valid JSON. 10-14 nodes. Include success AND failure paths.
+STRUCTURE: Return ONLY valid JSON. Follow the NODE COUNT specified in the dynamic context. Include success AND failure paths.
 Node types: start, desire, action, state, trajectory, bottleneck, gate, decision, outcome-good, outcome-bad, loop.
 
 SIMULATION FLOW PATTERN (follow this):
@@ -48,7 +50,7 @@ PRUNING QUESTIONS MUST be scenario-specific. Example: for "friend asks to borrow
 prob = weighted average of all sources. Only bottleneck/decision need realistic prob (<100). Others = 100.
 For bottleneck/decision nodes, also include "probRange" with optimistic and adverse: {"prob":40,"probRange":{"optimistic":65,"adverse":15}}.
 NODE DEPENDENCY SYSTEM: For bottleneck and gate nodes, include a "modifiesDownstream" field: an array of objects {"targetNodeLabel": string, "modifier": number} where modifier is a multiplier applied to downstream node probabilities. Example: if "Land First Client" passes, it might boost "Get Referral" by 1.3x (30% more likely). If "Funding Secured" fails, downstream "Scale Team" drops by 0.5x. Use modifiers between 0.3-2.0. Only include when a real causal dependency exists between nodes — do not force dependencies on every node.
-desc MUST include a specific number/stat, not generic text.
+desc MUST include a specific number/stat, not generic text. Use rich text formatting in desc: **bold** for key numbers and critical terms, __underline__ for warnings or emphasis, and \\n for line breaks to structure the text into readable paragraphs. Never write a wall of text — break it into 2-3 short paragraphs with line breaks.
 SOURCE TRIANGULATION: For every bottleneck/decision prob, provide MULTIPLE sources when possible. Format: "SourceName Year:value:tier | SourceName Year:value:tier" where tier is 3=government(BLS,Census,WHO), 2=institutional(McKinsey,YC,PitchBook), 1=media(TechCrunch,Forbes). prob = weighted avg (tier3 x3, tier2 x2, tier1 x1). Example: "BLS 2024:70:3 | CB Insights 2024:65:2" → prob = (70*3+65*2)/5 = 68.
 
 UPWORK/FREELANCE PLATFORM MECHANICS (use when scenario involves Upwork or freelancing):
@@ -95,6 +97,8 @@ export interface DynamicPromptInput {
   tags?: ContextTags;
   profile?: Record<string, unknown>;
   sacredMode?: boolean;
+  mode?: SimMode;
+  depthLevel?: DepthLevel;
   detectedCountries: string[];
   liveData: {
     live: Record<string, Record<string, string>> | null;
@@ -108,10 +112,12 @@ export interface DynamicPromptInput {
 }
 
 export async function buildDynamicPrompt(input: DynamicPromptInput): Promise<string> {
-  const { scenario, enrichedScenario, tags, profile, sacredMode, detectedCountries, liveData } = input;
+  const { scenario, enrichedScenario, tags, profile, sacredMode, depthLevel = 'analysis', detectedCountries, liveData } = input;
   const { live, countryData, exchangeRates, laborData, wikiContext, cryptoData, cityData } = liveData;
 
-  let liveStr = '';
+  const depth = DEPTH_NODE_COUNTS[depthLevel];
+  let liveStr = `\nNODE COUNT: Generate exactly ${depth.min}-${depth.max} nodes. Depth level: ${depth.label}. ${depthLevel === 'summary' ? 'Show only the critical bottlenecks and outcomes — no intermediate states.' : depthLevel === 'full' ? 'Cover EVERY step, sub-decision, and edge case. Include intermediate states after every bottleneck. This is the most detailed analysis possible.' : 'Cover the main path with key bottlenecks and states.'}`;
+
   if (live?.gdp) liveStr = `\nLIVE DATA: GDP/capita: ${Object.entries(live.gdp).map(([k, v]) => `${k}: ${v}`).join(', ')}. Unemployment: ${Object.entries(live.unemp || {}).map(([k, v]) => `${k}: ${v}`).join(', ')}`;
   if (countryData) liveStr += `\nCOUNTRY DATA: ${countryData}`;
   if (exchangeRates && detectedCountries.length > 0) {
@@ -205,6 +211,50 @@ export async function buildDynamicPrompt(input: DynamicPromptInput): Promise<str
       console.log(`[API] Sacred Profile active: ${Object.keys(sacredProfile).length} roots scored`);
     }
   }
+
+  // Mode-specific instructions (appended last, after all other context)
+  if (input.mode === 'explore') {
+    liveStr += `
+
+=== EXPLORE MODE ===
+This is a DATA-ONLY exploration. Generate a purely data-driven graph:
+- Focus on statistical averages and documented outcomes for the general population
+- Do NOT personalize to any individual profile
+- Include MORE source citations than usual (minimum 2 sources per bottleneck)
+- Prioritize breadth: show all major paths and outcomes, not just the most likely
+- Every bottleneck/gate must have verifiable data sources
+- Tone: encyclopedic, objective, comprehensive
+`;
+  } else if (input.mode === 'personal') {
+    const personalSelections = input.profile?.personalSelections as Record<string, string> | undefined;
+    const inferredValues = input.profile?.inferredValues as string[] | undefined;
+
+    let personalContext = `
+
+=== PERSONAL MODE ===
+This simulation is for a SPECIFIC person. Adjust ALL probabilities based on their psychological profile:
+`;
+    if (personalSelections) {
+      if (personalSelections.blocker) personalContext += `- Main blocker: ${personalSelections.blocker}\n`;
+      if (personalSelections.neverDo) personalContext += `- Would never: ${personalSelections.neverDo}\n`;
+      if (personalSelections.riskTolerance) personalContext += `- Risk tolerance: ${personalSelections.riskTolerance}\n`;
+      if (personalSelections.decisionStyle) personalContext += `- Decision style: ${personalSelections.decisionStyle}\n`;
+      if (personalSelections.underPressure) personalContext += `- Under pressure: ${personalSelections.underPressure}\n`;
+    }
+    if (inferredValues?.length) {
+      personalContext += `- Core values (inferred): ${inferredValues.join(', ')}\n`;
+    }
+    personalContext += `
+Based on this profile:
+- Increase probabilities where their strengths align with the bottleneck
+- Decrease probabilities where their blockers/fears would sabotage them
+- Add state nodes after key bottlenecks showing HOW their profile affects the outcome
+- Be specific: "Your perfectionism adds +6 months to launch timeline" not generic statements
+`;
+    liveStr += personalContext;
+  }
+  // simulate mode = default behavior, no modifier needed
+  // whatif and stress modes don't generate new graphs, so no prompt modifier needed
 
   return liveStr ? liveStr.trim() : '';
 }

@@ -7,7 +7,7 @@ import type { GenerateRequest } from '@/lib/generate/types';
 
 export async function POST(request: NextRequest) {
   try {
-    const { scenario, tags, profile, sacredMode, parentContext } = await request.json() as GenerateRequest;
+    const { scenario, tags, profile, sacredMode, parentContext, depthLevel } = await request.json() as GenerateRequest;
     if (!scenario) return NextResponse.json({ error: 'Missing scenario' }, { status: 400 });
 
     // Recursive drill-down: max depth 3
@@ -32,6 +32,7 @@ export async function POST(request: NextRequest) {
       tags,
       profile,
       sacredMode,
+      depthLevel,
       detectedCountries,
       liveData,
     });

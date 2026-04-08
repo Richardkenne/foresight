@@ -1,4 +1,4 @@
-# Simulator v2 — ROADMAP
+# Foresight — ROADMAP
 
 ## Completato (sessione 2026-03-27)
 
@@ -135,7 +135,7 @@
 ## Completato (sessione 2026-04-06/07 — MASSIVE)
 
 ### Tutte le fasi completate in 2 sessioni:
-- [x] RAG: 209/210 file indicizzati, 88,650 rows, 100/100 scenari coperti
+- [x] RAG: 209/210 file indicizzati, 314,175 rows (223K culturali), 100/100 scenari coperti
 - [x] 9 API live (Eurostat, FRED, Numbeo, GEM, OECD, World Bank, CoinGecko, Exchange Rates, REST Countries)
 - [x] Photo preprocessing: 25 categorie, 50+ cue terms
 - [x] Conditional Engine: 15 industry baselines, 44 country modifiers con settori, node dependencies
@@ -157,6 +157,46 @@
 - [x] UI: 320px responsive, card design (bordi colorati, badge probabilita, sacred purple)
 - [x] QA: 153 unit test, prompt audit + fix, RAG quality 9.7/10, coverage 100/100
 
+## Completato (sessione 2026-04-08)
+
+### Depth Variants (Summary / Analysis / Full Model)
+- [x] Selettore 3 livelli nel TopBar (segmented control)
+- [x] Prompt dinamico: node count basato su depth level
+- [x] Upwork Money Tree: 3 varianti (Deep 34, Mid 13, Min 7 nodi)
+- [x] Create an App: 3 varianti (Full 32, Mid 14, Min 7 nodi)
+- [x] Template selector: sub-picker Summary/Analysis/Full Model al clic
+- [x] Badge nodi rinominato: Summary/Analysis/Full Model
+
+### Data Integrity & Source Tracking
+- [x] Source labels: disclaimer "estimated by Foresight from public data — not an official source"
+- [x] Campo `sourceUrl` aggiunto a TemplateNode — link cliccabile nel detail panel
+- [x] Upwork templates: 54 nodi con sourceUrl (12 URL unici specifici per card)
+- [x] Tutti i template: 329/409 nodi (80%) con sourceUrl reale
+- [x] upwork-data.json: 196 campi URL, 86 URL unici (da 5 iniziali)
+- [x] Anni aggiornati: tutte le fonti portate a 2025 dove disponibile
+- [x] Probability matcher fix: non sovrascrive piu' prob specifiche dei template
+
+### Step Mode & Detail Panel
+- [x] Keyboard shortcuts: Space/Right = next, Left/Backspace = prev, Esc = exit
+- [x] Node detail panel (clic su card in step mode): prob, range, desc, source con link, sacred roots con versetti, suggerimenti specifici
+- [x] Source nascosta per nodi action/desire/trajectory (no dato statistico)
+- [x] Source centrata nelle card
+
+### Flowchart View (ELK.js)
+- [x] FlowchartView.tsx: rendering SVG puro con ELK.js layout engine
+- [x] Nodi semplificati: solo label + shape (rect/diamond/rounded) + prob badge
+- [x] Frecce ortogonali con label pass/fail/yes/no
+- [x] Zoom infinito + pan (SVG nativo, qualita' perfetta a qualsiasi zoom)
+- [x] View selector: 2D / 3D / Flow (nel menu settings)
+- [x] Step mode compatibile con Flow view
+- [x] 17 repo flowchart/diagram salvati in deep-research.md (sezione 14)
+
+### In Corso / Prossimi Step
+- [ ] Creare varianti Mid + Min per restanti 30 template business/richard/life
+- [ ] Data Integrity System: freshness badge, source verification cron, auto-update agent
+- [ ] Flowchart view: modalita' ritaglio (cut line orizzontale)
+- [ ] 3D mode: debug caricamento
+
 ## Livello 90→100: Credibilita Assoluta
 
 ### Backtesting (+30% credibilita)
@@ -175,6 +215,28 @@
 - [ ] Interazioni: competitor, mercato, timing, stagionalita
 - [ ] Output: distribuzione risultati, non singolo percorso
 - [ ] Da "simulatore" a "motore predittivo"
+
+## Completato (sessione 2026-04-07)
+
+### Rebrand: Simulator → Foresight
+- [x] Nome progetto rinominato da "Simulator" a "Foresight" in tutto il branding visibile
+- [x] package.json: simulator-v2 → foresight
+- [x] Layout principale + 6 sub-route layouts (marketplace, prescriptive, twin, government, engines, realtime)
+- [x] Landing page: nav, hero, how it works, comparison table, CTA, footer
+- [x] TopBar: logo text + menu header + menu footer
+- [x] 3D mode: loading, header, empty state
+- [x] ScaffoldShell: nav links + brand
+- [x] Community, Backtest, API docs, Marketplace, force3d, reagraph pages
+- [x] Hydration error fix (stale .next cache con "350,000+" vs "400,000+")
+- [x] Nomi interni (funzioni, classi, variabili) NON rinominati — solo branding utente-facing
+
+### Project Audit
+- [x] Audit completo: 310K data points, 249 JSON files, 31 templates, 20+ pagine reali, 12 API routes, 9 node types
+- [x] Supabase Pro upgrade ($25/mo) — 8 GB DB, no storage limits
+- [x] Cultural data mega-download: 3.2M+ dp (Eurostat 3M, ILO 138K, WB 16K, UN 4K, REST Countries/CoinGecko 464)
+- [x] Behavioral cultural data: 629+ dp (Indonesia 157, Italy 159, Australia 160, USA 153) — real 2024-2026 sources with URLs
+- [x] 10 API pipeline scripts: worldbank-core6, worldbank-extra, worldbank-mega, eurostat-core, eurostat-retry, eurostat-extra, oecd, fred, un-data, ilo
+- [x] Chunked embedding pipeline: embed-chunked.mjs (5-8 dp/chunk, 145K chunks in progress)
 
 ### API Pubblica
 - [ ] "Qual e la probabilita di X?" come servizio
@@ -362,6 +424,82 @@
 - [x] Dagre centrato con spacing ottimizzato
 - [x] Toggle Vertical ri-dispone il grafo esistente istantaneamente
 
+## Completato (sessione 2026-04-07 sera)
+
+### 5-Mode System (Palantir-inspired)
+- [x] 5 modalita di analisi: Explore, Simulate, Personal, What-if, Stress Test
+- [x] `sim-modes.ts` — tipi, config, persistence localStorage
+- [x] `ModeSelector.tsx` — segmented control con sliding indicator (framer-motion), 2 gruppi (CREATE/ANALYZE)
+- [x] `PersonalProfileInline.tsx` — 5 dimensioni psicologiche chip-based (zero domande aperte), valori inferiti automaticamente
+- [x] TopBar integrato: mode strip, prompt condizionale, profilo inline in Personal mode
+- [x] SimulatorCanvas: state management, Explore non auto-simula, Stress applica prob adverse, What-if snapshot originalProb
+- [x] prompt-builder.ts: mode-aware (Explore = enciclopedico, Personal = profilo psicologico)
+- [x] SimNode.tsx: delta badge (What-if), red pulse (Stress), dashed border (What-if editable)
+- [x] SimToolbar.tsx: button label dinamici per mode, hide Simulate in Explore
+- [x] SimOverlays.tsx: StressOverlay component (survival rate)
+- [x] globals.css: stress-pulse animation, mode-specific styles
+- [x] Ricerca competitor: Palantir (15 superfici), Bloomberg (4 pannelli), AnyLogic (3 paradigmi), Crystal Knows (DISC), Aaru, Stanford Generative Agents
+- [x] Build: zero errori TypeScript, zero errori Next.js
+
+### Ricerca: DNA Comportamentale (34 dimensioni)
+- [x] Mappatura completa 20 dimensioni dai file ME. di Richard (Core Values, Purpose, Fear, Vision, Principles, Boundaries, Barrett Level, Order Thinking, Natural Role, Strengths, Weaknesses, Critical Patterns, Happiness Conditions, Shadow, 12 Dimensioni Maturita, Stress Test)
+- [x] Identificate 14 dimensioni mancanti dalla scienza comportamentale (Attachment Style, Locus of Control, Risk Tolerance, Time Orientation, Conflict Style, Decision Style, Stress Response, Energy Pattern, Grit, Need for Cognition, Tolerance for Ambiguity, Self-Determination, Emotional Regulation, Core Beliefs)
+- [x] Totale: 34 dimensioni = DNA comportamentale completo per simulazione personalizzata
+
+---
+
+## In Corso: Cultural Data Layer
+
+### Fase 6: Cultural Behavioral Data — Indonesia, Australia, Italia, Singapore, Malaysia
+- [ ] World Values Survey (WVS) — 5 paesi, ~50K data points
+- [ ] Hofstede Cultural Dimensions + GLOBE — 5 paesi, ~5K data points
+- [ ] OECD Time-Use Surveys — daily routines per eta/genere/regione, ~25K data points
+- [ ] Pew Research Global — trust, religion, social norms, ~15K data points
+- [ ] Government stats: BPS Indonesia, ABS Australia, ISTAT Italia, DOS Singapore, DOSM Malaysia — ~100K data points
+- [ ] Edelman Trust Barometer — 5 paesi, ~8K data points
+- [ ] GEM Entrepreneurship — 5 paesi, ~10K data points
+- [ ] We Are Social / Digital — comportamento digitale, ~3K data points
+- [ ] Numbeo / Expatistan — cost of living per citta, ~15K data points
+- [ ] Consumer spending patterns — per income/citta/categoria, ~40K data points
+- [ ] Business culture / etiquette — meeting style, negotiation, hierarchy, ~7.5K data points
+- [ ] Family / marriage / religion rhythms — ~10K data points
+- [ ] Regional sub-variations (province/regioni interne) — ~75K data points
+- [ ] Embedding + upload Supabase pgvector
+- **Target Fase 6: ~290K nuovi data points**
+
+### Fase 7: Cultural Data — USA
+- [ ] US Census + BLS + FRED detailed — per stato/contea, ~80K data points
+- [ ] Consumer behavior per stato — spending, trust, digital, ~40K data points
+- [ ] Cultural variations (Northeast vs South vs West vs Midwest) — ~30K data points
+- [ ] Business regulations per stato — ~20K data points
+- [ ] Immigration / visa / work patterns — ~15K data points
+- [ ] Time-use + daily routines per demographics — ~15K data points
+- **Target Fase 7: ~200K nuovi data points**
+
+### Fase 8: Cultural Data — Europa (28 paesi EU + UK)
+- [ ] Eurostat detailed — per paese/regione, ~500K data points
+- [ ] European Values Study — 29 paesi, ~200K data points
+- [ ] Per-country government stats (top 10 paesi: DE, FR, ES, NL, PT, PL, SE, CH, AT, IE) — ~500K data points
+- [ ] Business culture per paese — ~145K data points
+- [ ] Consumer behavior per paese — ~290K data points
+- [ ] Regional sub-variations — ~100K data points
+- **Target Fase 8: ~1.7M nuovi data points**
+
+### Fase 9: Cross-Cultural Comparative Data
+- [ ] WVS cross-cultural comparison tables — ~100K data points
+- [ ] OECD Better Life Index — 38 paesi, ~50K data points
+- [ ] Global Gender Gap Report — ~30K data points
+- [ ] Transparency International — ~20K data points
+- [ ] Migration flow data (UN, IOM) — ~50K data points
+- [ ] Cross-border business patterns — ~50K data points
+- **Target Fase 9: ~300K nuovi data points**
+
+**Totale Fasi 6-9: ~2.5M nuovi data points**
+**Totale progetto dopo Fasi 6-9: ~2.8M data points**
+**Infrastruttura: Supabase Pro ($25/mo), retrieval ~200-300ms, zero cambio architettura**
+
+---
+
 ## Prossima Sessione
 
 Priorita:
@@ -403,10 +541,11 @@ Priorita:
 - Deploy: v2-nine-jade.vercel.app
 - Stack: Next.js 16 + React 19 + TypeScript + React Flow + Tailwind CSS + Framer Motion → Vercel
 - AI: Claude Haiku 4.5 (primary) + OpenAI GPT-4o-mini (fallback) + Groq Llama 3.3 (fallback)
-- Dati: 179 file JSON + 374K+ data points + 7 API live + 15K+ sacred patterns + 36 sacred roots + 3,260+ probabilita deep
+- Dati: 249 file JSON + 310K+ data points + 9 API live + 15K+ sacred patterns + 36 sacred roots + 3,260+ probabilita deep
 - Input: 7 modalita (testo, audio/mic, foto, video, URL, PDF, template)
+- Analisi: 5 modi (Explore, Simulate, Personal, What-if, Stress Test)
 - UX: Framer Motion, Cmd+K palette, dark mode, toasts, skeletons, confetti, sound design, undo/redo
-- Target: 1M+ data points (pipeline notturna + bulk sessions)
+- Target: 2.8M data points (pipeline notturna + cultural data Fasi 6-9)
 - Pipeline: RAG Supabase pgvector (66K+ rows, 512 dim, HNSW) + keyword matching (fallback)
 - Supabase: progetto "Simulator" (rkkfwsmoqylctprzqhfj), ap-southeast-1, free tier
 - Re-index: `npm run index-data`
@@ -416,4 +555,31 @@ Priorita:
 
 ---
 
-*Ultimo aggiornamento: 2026-04-07*
+## Completato (sessione notturna 2026-04-07/08)
+
+### Cultural Data Pipeline — Fase 6 (parziale)
+- [x] 10 agenti ricerca: daily routines, spending, social norms, business culture, religion, digital, education, housing, food, trust (5 paesi × 10 categorie)
+- [x] World Bank bulk: 29,506 indicatori × 20 paesi (script in background, 466K+ dp scaricati pre-filtro)
+- [x] World Bank MEGA: 200 indicatori selezionati × 20 paesi × 2022-2024 (6,242 dp)
+- [x] Eurostat: 15 dataset × 15 paesi EU (210 dp)
+- [x] OECD + UN: Better Life Index, Labour Force, Education, Health, Time-Use, HDI (1,110 dp)
+- [x] USA cultural data: work culture, consumer, social norms, regional, digital (159 dp)
+- [x] Europa top 14: 25 metriche × 14 paesi (350 dp)
+- [x] Regional variations: 5 paesi con sub-regioni (302 dp)
+- [x] Quality filter: min year 2022, source required, no duplicati
+- [x] OpenAI embedding (512 dim) + Supabase upload: ~80K embeddings uploadati
+- [x] Enrichment Haiku script (scritto, rate limit da risolvere)
+- [x] Cron locale + trigger remoto per continuazione automatica
+- **Data points puliti (2022+): 86,507**
+- **World Bank bulk completato: 646,001 dp scaricati (29,506 indicatori × 20 paesi)**
+- **Embeddings su Supabase: ~220K** (88K esistenti + 80K round 1 + 51K round 2 + round 3 in corso)
+- Ondata 2 ricerca: EU detail (DE, FR, ES, UK, NL, SE, PL, CH, BE, AT, NO, DK, IE, PT) + Indonesia deep + Cross-cultural 20 paesi
+- Enrichment Haiku: script pronto ma bloccato da rate limit (10K output tokens/min) — serve upgrade piano Anthropic
+- Quality filter attivo: min year 2022, source required, no duplicati, slow-update exceptions
+- **Per raggiungere 2.5M**: serve enrichment Haiku (upgrade rate limit) + piu fonti API bulk (UN Data, WHO, UNESCO, ILO)
+
+- Ondata 3 ricerca completata: EU detail (DE/FR/ES/UK 203dp, NL/SE/PL/CH 200dp, BE/AT/NO/DK/IE/PT 150dp), Indonesia deep (212dp), Cross-cultural 20 paesi (400dp)
+- Embedding round 4 in corso: 92K dp → Supabase (upload con timeout intermittenti, ~50% success)
+- **Supabase embeddings stimati: ~220-250K** (88K vecchi + 131K culturali uploadati)
+
+*Ultimo aggiornamento: 2026-04-08 03:30*

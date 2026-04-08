@@ -5,6 +5,30 @@ import { motion } from 'framer-motion';
 import { Handle, Position, type NodeProps } from '@xyflow/react';
 import { loadSacredProfile } from '@/lib/sacred-assessment';
 
+// Rich text: parse **bold**, __underline__, and \n into React elements
+function renderRichText(text: string): React.ReactNode[] {
+  // Split by newlines first
+  const lines = text.split(/\\n|\n/);
+  const result: React.ReactNode[] = [];
+  lines.forEach((line, li) => {
+    if (li > 0) result.push(<br key={`br-${li}`} />);
+    // Parse **bold** and __underline__ within each line
+    const parts = line.split(/(\*\*[^*]+\*\*|__[^_]+__)/g);
+    parts.forEach((part, pi) => {
+      const boldMatch = part.match(/^\*\*(.+)\*\*$/);
+      const underlineMatch = part.match(/^__(.+)__$/);
+      if (boldMatch) {
+        result.push(<strong key={`${li}-${pi}`} style={{ fontWeight: 700 }}>{boldMatch[1]}</strong>);
+      } else if (underlineMatch) {
+        result.push(<span key={`${li}-${pi}`} style={{ textDecoration: 'underline' }}>{underlineMatch[1]}</span>);
+      } else if (part) {
+        result.push(part);
+      }
+    });
+  });
+  return result;
+}
+
 // Color palette: colored accents per type (like the old design)
 const NODE_COLORS: Record<string, { accent: string; bg: string; bgDark: string; text: string }> = {
   start:          { accent: '#3b82f6', bg: '#eff6ff', bgDark: '#1e3a5f', text: '#2563eb' },
@@ -15,8 +39,8 @@ const NODE_COLORS: Record<string, { accent: string; bg: string; bgDark: string; 
   trajectory:     { accent: '#7f5aa6', bg: '#efe2fb', bgDark: '#2d1a4e', text: '#6b3fa0' },
   gate:           { accent: '#d97706', bg: '#fffbeb', bgDark: '#451a03', text: '#b45309' },
   decision:       { accent: '#06b6d4', bg: '#ecfeff', bgDark: '#164e63', text: '#0891b2' },
-  'outcome-good': { accent: '#10b981', bg: '#f0fdf4', bgDark: '#022c22', text: '#059669' },
-  'outcome-bad':  { accent: '#ef4444', bg: '#fef2f2', bgDark: '#450a0a', text: '#dc2626' },
+  'outcome-good': { accent: '#6daa84', bg: '#f0faf4', bgDark: '#022c22', text: '#4a8a64' },
+  'outcome-bad':  { accent: '#c87e7e', bg: '#fef2f2', bgDark: '#450a0a', text: '#b45555' },
   loop:           { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
 };
 
@@ -134,6 +158,7 @@ interface SimNodeData {
   source?: string;
   sources?: SourceEntry[];
   prob?: number;
+  originalProb?: number;
   probRange?: { optimistic: number; adverse: number };
   time?: string;
   hidden?: boolean;
@@ -143,6 +168,7 @@ interface SimNodeData {
   sacredRoots?: string[];
   isCutPoint?: boolean;
   sacredProfile?: SacredProfile;
+  activeMode?: string; // SimMode
   [key: string]: unknown;
 }
 
@@ -182,7 +208,6 @@ function SimNodeComponent({ data }: NodeProps) {
   const colors = NODE_COLORS[nodeType] || NODE_COLORS.action;
   const icon = ICONS[nodeType];
   const hasProb = nodeType === 'bottleneck' || nodeType === 'decision' || nodeType === 'gate';
-  const isStart = nodeType === 'start';
   const isSacred = d.sacredMode === true;
 
   const sacredRoots = getSacredForNode(nodeType, d.sacredRoots as string[] | undefined);
@@ -210,7 +235,7 @@ function SimNodeComponent({ data }: NodeProps) {
   const hasValue = typeof computedValue === 'number' && computedValue > 0.001;
   // Visual intensity: 0-1 scale, clamped
   const intensity = hasValue ? Math.min(1, Math.max(0, computedValue)) : 0;
-  const isInteractive = isStart || hasProb;
+  const isInteractive = nodeType === 'start' || hasProb;
 
   // Death counter — find any deaths-* key in data
   const deathCount = Object.entries(d).reduce((sum, [k, v]) => k.startsWith('deaths-') ? sum + (v as number) : sum, 0);
@@ -223,26 +248,6 @@ function SimNodeComponent({ data }: NodeProps) {
     'outcome-good': 'OUTCOME', 'outcome-bad': 'OUTCOME',
     loop: 'LOOP',
   };
-
-  if (isStart) {
-    return (
-      <motion.div
-        className="sim-node sim-node--start"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        whileHover={{ scale: 1.02, y: -2 }}
-        layout={false}
-      >
-        <Handle type="target" position={d.direction === 'TB' ? Position.Top : Position.Left} className="sim-handle" />
-        <div className="sim-node__start-inner">
-          <span className="sim-node__start-icon">{icon}</span>
-          <span className="sim-node__start-label">{isSacred && primaryRoot ? primaryRoot.label_positive : d.label}</span>
-        </div>
-        <Handle type="source" position={d.direction === 'TB' ? Position.Bottom : Position.Right} className="sim-handle" />
-      </motion.div>
-    );
-  }
 
   // Determine accent color: sacred = purple, normal = type-based
   const activeAccent = isSacred ? SACRED_COLORS.accent : colors.accent;
@@ -261,6 +266,14 @@ function SimNodeComponent({ data }: NodeProps) {
           ? `3px solid ${activeAccent}` : undefined,
         background: (nodeType !== 'bottleneck' && nodeType !== 'decision') ? activeBg : undefined,
         ...(difficultyBorder ? { outlineColor: difficultyBorder, outlineWidth: 2, outlineStyle: 'solid' as const } : {}),
+        ...(d.activeMode === 'stress' && hasProb ? {
+          boxShadow: '0 0 0 2px rgba(239, 68, 68, 0.4)',
+          animation: 'stress-pulse 2s ease-in-out infinite',
+        } : {}),
+        ...(d.activeMode === 'whatif' && hasProb ? {
+          borderStyle: 'dashed',
+          cursor: 'pointer',
+        } : {}),
       }}
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -269,6 +282,11 @@ function SimNodeComponent({ data }: NodeProps) {
       layout={false}
     >
       <Handle type="target" position={d.direction === 'TB' ? Position.Top : Position.Left} className="sim-handle" />
+
+      {/* Type label above node */}
+      {NODE_TYPE_LABELS[nodeType] && (
+        <div className="sim-node__type-label">{NODE_TYPE_LABELS[nodeType]}</div>
+      )}
 
       {/* Content */}
       <div className="sim-node__body">
@@ -280,14 +298,29 @@ function SimNodeComponent({ data }: NodeProps) {
                   <div className="sim-node__icon" style={{ color: SACRED_COLORS.accent }}>{icon}</div>
                   <div className="sim-node__label" style={{ color: SACRED_COLORS.text }}>{root.label_positive}</div>
                   {idx === 0 && hasProb && d.prob != null && (
-                    <div style={{
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      width: 36, height: 36, borderRadius: '50%',
-                      background: `${SACRED_COLORS.accent}18`, border: `2px solid ${SACRED_COLORS.accent}`,
-                      fontSize: 11, fontWeight: 700, fontFamily: 'var(--font-geist-mono)',
-                      color: SACRED_COLORS.accent, flexShrink: 0,
-                    }}>
-                      {d.prob}%
+                    <div style={{ position: 'relative', flexShrink: 0 }}>
+                      <div style={{
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        width: 36, height: 36, borderRadius: '50%',
+                        background: `${SACRED_COLORS.accent}18`, border: `2px solid ${SACRED_COLORS.accent}`,
+                        fontSize: 11, fontWeight: 700, fontFamily: 'var(--font-geist-mono)',
+                        color: SACRED_COLORS.accent,
+                      }}>
+                        {d.prob}%
+                      </div>
+                      {d.originalProb != null && d.originalProb !== d.prob && (
+                        <div
+                          className="absolute -top-1 -right-1 flex items-center justify-center rounded-full text-[8px] font-bold"
+                          style={{
+                            width: 18, height: 18,
+                            background: (d.prob as number) > d.originalProb ? '#10b981' : '#ef4444',
+                            color: 'white',
+                            fontFamily: 'var(--font-geist-mono)',
+                          }}
+                        >
+                          {(d.prob as number) > d.originalProb ? '+' : ''}{(d.prob as number) - d.originalProb}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
@@ -329,25 +362,40 @@ function SimNodeComponent({ data }: NodeProps) {
                     </span>
                   </div>
                 ) : (
-                  <div style={{
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    width: 36, height: 36, borderRadius: '50%',
-                    background: `${probColor}18`, border: `2px solid ${probColor}`,
-                    fontSize: 11, fontWeight: 700, fontFamily: 'var(--font-geist-mono)',
-                    color: probColor, flexShrink: 0,
-                  }}>
-                    {d.prob}%
-                    {d.probRange && (
-                      <span style={{ fontSize: '6px', opacity: 0.5, display: 'block', position: 'absolute', bottom: -10, fontWeight: 400 }}>
-                        {d.probRange.adverse}-{d.probRange.optimistic}
-                      </span>
+                  <div style={{ position: 'relative', flexShrink: 0 }}>
+                    <div style={{
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      width: 36, height: 36, borderRadius: '50%',
+                      background: `${probColor}18`, border: `2px solid ${probColor}`,
+                      fontSize: 11, fontWeight: 700, fontFamily: 'var(--font-geist-mono)',
+                      color: probColor,
+                    }}>
+                      {d.prob}%
+                      {d.probRange && (
+                        <span style={{ fontSize: '6px', opacity: 0.5, display: 'block', position: 'absolute', bottom: -10, fontWeight: 400 }}>
+                          {d.probRange.adverse}-{d.probRange.optimistic}
+                        </span>
+                      )}
+                    </div>
+                    {d.originalProb != null && d.originalProb !== d.prob && (
+                      <div
+                        className="absolute -top-1 -right-1 flex items-center justify-center rounded-full text-[8px] font-bold"
+                        style={{
+                          width: 18, height: 18,
+                          background: (d.prob as number) > d.originalProb ? '#10b981' : '#ef4444',
+                          color: 'white',
+                          fontFamily: 'var(--font-geist-mono)',
+                        }}
+                      >
+                        {(d.prob as number) > d.originalProb ? '+' : ''}{(d.prob as number) - d.originalProb}
+                      </div>
                     )}
                   </div>
                 )
               )}
             </div>
             {d.desc && (
-              <div className="sim-node__desc">{d.desc}</div>
+              <div className="sim-node__desc">{renderRichText(String(d.desc))}</div>
             )}
             {(() => {
               // Multi-source triangulation (Palantir-style)
@@ -412,10 +460,12 @@ function SimNodeComponent({ data }: NodeProps) {
               }
 
               // Fallback: single source (legacy format)
-              if (d.source || d.time) {
+              // Hide source for action/desire/trajectory nodes (no statistical data)
+              const showSource = d.source && !['action', 'desire', 'trajectory'].includes(nodeType);
+              if (showSource || d.time) {
                 return (
                   <div className="sim-node__footer">
-                    {d.source && <span className="sim-node__source">{String(d.source)}</span>}
+                    {showSource && <span className="sim-node__source">{String(d.source)}</span>}
                     {d.time && (
                       <span className="sim-node__time">
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

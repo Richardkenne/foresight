@@ -13,9 +13,9 @@ export function getLayoutedElements(
   const isVertical = direction === 'TB';
   g.setGraph({
     rankdir: direction,
-    nodesep: isVertical ? 60 : 140,
-    ranksep: isVertical ? 100 : 250,
-    edgesep: isVertical ? 20 : 50,
+    nodesep: isVertical ? 120 : 140,
+    ranksep: isVertical ? 180 : 250,
+    edgesep: isVertical ? 40 : 50,
   });
 
   nodes.forEach((node) => {
@@ -53,6 +53,50 @@ export function getLayoutedElements(
   });
 
   return { nodes: layoutedNodes, edges };
+}
+
+// Remove orphan nodes: keep only nodes reachable from start nodes (BFS)
+function removeOrphanNodes(
+  nodes: RFNode[],
+  edges: RFEdge[]
+): { nodes: RFNode[]; edges: RFEdge[] } {
+  if (nodes.length === 0) return { nodes, edges };
+
+  // Build adjacency (undirected — we want connected components)
+  const adj = new Map<string, Set<string>>();
+  for (const n of nodes) adj.set(n.id, new Set());
+  for (const e of edges) {
+    adj.get(e.source)?.add(e.target);
+    adj.get(e.target)?.add(e.source);
+  }
+
+  // Find start nodes (no incoming edges)
+  const hasIncoming = new Set(edges.map(e => e.target));
+  const startNodes = nodes.filter(n => !hasIncoming.has(n.id));
+  // If no clear start, use first node
+  const seeds = startNodes.length > 0 ? startNodes : [nodes[0]];
+
+  // BFS from seeds
+  const visited = new Set<string>();
+  const queue = seeds.map(n => n.id);
+  for (const id of queue) visited.add(id);
+  while (queue.length > 0) {
+    const current = queue.shift()!;
+    const neighbors = adj.get(current);
+    if (!neighbors) continue;
+    for (const neighbor of Array.from(neighbors)) {
+      if (!visited.has(neighbor)) {
+        visited.add(neighbor);
+        queue.push(neighbor);
+      }
+    }
+  }
+
+  // Filter
+  const filteredNodes = nodes.filter(n => visited.has(n.id));
+  const filteredEdges = edges.filter(e => visited.has(e.source) && visited.has(e.target));
+
+  return { nodes: filteredNodes, edges: filteredEdges };
 }
 
 // Convert template data to React Flow format
@@ -102,6 +146,7 @@ export function templateToFlow(
           probRange: (n as unknown as Record<string, unknown>).probRange as { optimistic: number; adverse: number } | undefined,
           time: merged?.time || n.time,
           sacredRoots: n.sacredRoots || (merged as TemplateNode | undefined)?.sacredRoots,
+          sourceUrl: n.sourceUrl || (merged as TemplateNode | undefined)?.sourceUrl,
         },
       };
     });
@@ -175,5 +220,7 @@ export function templateToFlow(
     }
   }
 
-  return getLayoutedElements(rfNodes, rfEdges, direction);
+  // Remove orphan nodes before layout
+  const cleaned = removeOrphanNodes(rfNodes, rfEdges);
+  return getLayoutedElements(cleaned.nodes, cleaned.edges, direction);
 }

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mermaid Test</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <style>
+    body { font-family: Inter, system-ui, sans-serif; background: #fafafa; margin: 0; padding: 24px; }
+    h1 { font-size: 20px; font-weight: 700; }
+    .buttons { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+    .buttons button { padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; background: #e2e8f0; color: #475569; }
+    .buttons button.active { background: #3b82f6; color: #fff; }
+    .mermaid { background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0; }
+    .mermaid svg { width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+  <h1>Mermaid Vertical Test</h1>
+  <div class="buttons">
+    <button class="active" onclick="show('min')">Summary (7 nodes)</button>
+    <button onclick="show('mid')">Analysis (13 nodes)</button>
+    <button onclick="show('full')">Full Model (34 nodes)</button>
+  </div>
+
+  <div id="diagram" class="mermaid"></div>
+
+  <script>
+    const charts = {
+      min: `graph TD
+  N1[1000 Upwork signups]
+  N2{{Gets first interview? 5-15pct}}
+  N3[850-950 never earn]
+  N4{{Gets first hire? 2-4pct}}
+  N5{{Reaches 10k/year? 0.3-1pct}}
+  N6([3-10 of 1000 make it])
+  N7[Rest earn 2-5k/year]
+
+  N1 --> N2
+  N2 -->|fail 85-95pct| N3
+  N2 -->|pass| N4
+  N4 -->|fail| N3
+  N4 -->|pass| N5
+  N5 -->|pass| N6
+  N5 -->|fail| N7
+
+  style N1 fill:#d8ead8,stroke:#5f7d63,color:#2d4a32
+  style N2 fill:#fffbeb,stroke:#d97706,color:#92400e
+  style N3 fill:#fee2e2,stroke:#c87e7e,color:#7f1d1d
+  style N4 fill:#fffbeb,stroke:#d97706,color:#92400e
+  style N5 fill:#fffbeb,stroke:#d97706,color:#92400e
+  style N6 fill:#dcfce7,stroke:#6daa84,color:#14532d
+  style N7 fill:#fee2e2,stroke:#c87e7e,color:#7f1d1d`,
+
+      mid: `graph TD
+  N1[1000 people want to make money on Upwork]
+  N2[600-700 complete profile, 200-350 send proposals]
+  N3{{Gets first interview response?}}
+  N10[High-friction path: generic proposals]
+  N11[Never earns meaningful income or churns year 1]
+  N20[Gets interview but no hire yet]
+  N21{{Converts interview to hire?}}
+  N22[Stuck: low-trust pipeline]
+  N30[20-40 get first hire - 2-4pct of signups]
+  N31[Deliver, specialize, build repeat clients]
+  N32{{Reaches 10k/year by year 2?}}
+  N33([3-10 of 1000 reach 10k/year])
+  N34[Active but 2-5k/year]
+
+  N1 --> N2
+  N2 --> N3
+  N3 -->|no 70-85pct| N10
+  N10 --> N11
+  N3 -->|partial 10-20pct| N20
+  N20 --> N21
+  N21 -->|fail| N22
+  N21 -->|pass| N30
+  N3 -->|yes 5-15pct| N30
+  N30 --> N31
+  N31 --> N32
+  N32 -->|pass| N33
+  N32 -->|fail| N34
+
+  style N1 fill:#d8ead8,stroke:#5f7d63,color:#2d4a32
+  style N2 fill:#d8ead8,stroke:#5f7d63,color:#2d4a32
+  style N3 fill:#fffbeb,stroke:#d97706,color:#92400e
+  style N10 fill:#efe2fb,stroke:#7f5aa6,color:#3b1f6e
+  style N11 fill:#fee2e2,stroke:#c87e7e,color:#7f1d1d
+  style N20 fill:#d8ead8,stroke:#5f7d63,color:#2d4a32
+  style N21 fill:#fffbeb,stroke:#d97706,color:#92400e
+  style N22 fill:#fee2e2,stroke:#c87e7e,color:#7f1d1d
+  style N30 fill:#d8ead8,stroke:#5f7d63,color:#2d4a32
+  style N31 fill:#d8ead8,stroke:#5f7d63,color:#2d4a32
+  style N32 fill:#fffbeb,stroke:#d97706,color:#92400e
+  style N33 fill:#dcfce7,stroke:#6daa84,color:#14532d
+  style N34 fill:#fee2e2,stroke:#c87e7e,color:#7f1d1d`,
+
+      full: `graph TD
+  N1[1000 people want to make money on Upwork]
+  N2[Create account]
+  N3[600-700 complete profile]
+  N4[300-400 approved, 200-350 send first proposal]
+  N5{{Gets first interview response?}}
+  N10[No interview response after first proposal wave]
+  N11[High-friction new freelancer path]
+  N12[Keep sending generic proposals]
+  N13[Never earns meaningful income]
+  N14[Stop early / burn connects]
+  N15[Many churn within year 1]
+  N20[Gets interview but no hire yet]
+  N21[Early traction, no conversion]
+  N22[Compete on price / generic profile]
+  N23[Stays in low-trust pipeline]
+  N24[Improve niche, portfolio, speed]
+  N25{{Converts interview to hire?}}
+  N26[Stuck at interview stage]
+  N27[Moves into first-hire path]
+  N30[20-40 get first hire - 2-4pct of signups]
+  N31[Validated Upwork path]
+  N32[Deliver well, get review, refine proposals]
+  N33([15-30 earn 100+ in 90 days])
+  N34[Stay active for 1 year]
+  N35[5-15 remain active after year 1]
+  N36[Specialize and raise conversion]
+  N37[Specialists convert 10-20pct vs generalists 2-5pct]
+  N38[Build repeat clients]
+  N39[Repeat clients improve retention]
+  N40[Sustain path into year 2]
+  N41{{Reaches 10k/year by year 2?}}
+  N42([3-10 of 1000 reach 10k/year])
+  N43[Active but earning 2-5k/year]
+  N50([First real traction on Upwork])
+
+  N1 --> N2
+  N2 --> N3
+  N3 --> N4
+  N4 --> N5
+  N5 -->|no 70-85pct| N10
+  N5 -->|partial 10-20pct| N20
+  N5 -->|yes 5-15pct| N30
+  N10 --> N11
+  N11 --> N12
+  N12 --> N13
+  N11 --> N14
+  N14 --> N15
+  N20 --> N21
+  N21 -->|no| N22
+  N22 --> N23
+  N21 -->|yes| N24
+  N24 --> N25
+  N25 -->|fail| N26
+  N25 -->|pass| N27
+  N27 --> N30
+  N30 --> N31
+  N31 --> N32
+  N32 --> N33
+  N31 --> N34
+  N34 --> N35
+  N31 --> N36
+  N36 --> N37
+  N31 --> N38
+  N38 --> N39
+  N39 --> N40
+  N40 --> N41
+  N41 -->|pass| N42
+  N41 -->|fail| N43
+  N33 --> N50
+  N35 --> N50
+  N37 --> N50
+  N39 --> N50
+  N42 --> N50
+
+  style N1 fill:#d8ead8,stroke:#5f7d63,color:#2d4a32
+  style N2 fill:#eff6ff,stroke:#3b82f6,color:#1e40af
+  style N3 fill:#d8ead8,stroke:#5f7d63,color:#2d4a32
+  style N4 fill:#eff6ff,stroke:#3b82f6,color:#1e40af
+  style N5 fill:#fffbeb,stroke:#d97706,color:#92400e
+  style N10 fill:#d8ead8,stroke:#5f7d63,color:#2d4a32
+  style N11 fill:#efe2fb,stroke:#7f5aa6,color:#3b1f6e
+  style N12 fill:#eff6ff,stroke:#3b82f6,color:#1e40af
+  style N13 fill:#fee2e2,stroke:#c87e7e,color:#7f1d1d
+  style N14 fill:#eff6ff,stroke:#3b82f6,color:#1e40af
+  style N15 fill:#fee2e2,stroke:#c87e7e,color:#7f1d1d
+  style N20 fill:#d8ead8,stroke:#5f7d63,color:#2d4a32
+  style N21 fill:#efe2fb,stroke:#7f5aa6,color:#3b1f6e
+  style N22 fill:#eff6ff,stroke:#3b82f6,color:#1e40af
+  style N23 fill:#fee2e2,stroke:#c87e7e,color:#7f1d1d
+  style N24 fill:#eff6ff,stroke:#3b82f6,color:#1e40af
+  style N25 fill:#fffbeb,stroke:#d97706,color:#92400e
+  style N26 fill:#fee2e2,stroke:#c87e7e,color:#7f1d1d
+  style N27 fill:#d8ead8,stroke:#5f7d63,color:#2d4a32
+  style N30 fill:#d8ead8,stroke:#5f7d63,color:#2d4a32
+  style N31 fill:#efe2fb,stroke:#7f5aa6,color:#3b1f6e
+  style N32 fill:#eff6ff,stroke:#3b82f6,color:#1e40af
+  style N33 fill:#dcfce7,stroke:#6daa84,color:#14532d
+  style N34 fill:#eff6ff,stroke:#3b82f6,color:#1e40af
+  style N35 fill:#d8ead8,stroke:#5f7d63,color:#2d4a32
+  style N36 fill:#eff6ff,stroke:#3b82f6,color:#1e40af
+  style N37 fill:#d8ead8,stroke:#5f7d63,color:#2d4a32
+  style N38 fill:#eff6ff,stroke:#3b82f6,color:#1e40af
+  style N39 fill:#d8ead8,stroke:#5f7d63,color:#2d4a32
+  style N40 fill:#eff6ff,stroke:#3b82f6,color:#1e40af
+  style N41 fill:#fffbeb,stroke:#d97706,color:#92400e
+  style N42 fill:#dcfce7,stroke:#6daa84,color:#14532d
+  style N43 fill:#fee2e2,stroke:#c87e7e,color:#7f1d1d
+  style N50 fill:#dcfce7,stroke:#6daa84,color:#14532d`
+    };
+
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: 'neutral',
+      flowchart: { htmlLabels: true, curve: 'basis', nodeSpacing: 50, rankSpacing: 70 }
+    });
+
+    async function show(key) {
+      document.querySelectorAll('.buttons button').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      const el = document.getElementById('diagram');
+      el.innerHTML = '';
+      el.removeAttribute('data-processed');
+      const { svg } = await mermaid.render('mermaid-' + Date.now(), charts[key]);
+      el.innerHTML = svg;
+    }
+
+    // Initial render
+    window.addEventListener('load', () => {
+      mermaid.render('mermaid-init', charts.min).then(({ svg }) => {
+        document.getElementById('diagram').innerHTML = svg;
+      });
+    });
+  </script>
+</body>
+</html>

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import type { Node as RFNode } from '@xyflow/react';
 import { SPEED_LEVELS, SPEED_LABELS, SPD_BASE, type SimSettings, type LaunchMode } from '@/lib/simulation-types';
+import { type SimMode } from '@/lib/sim-modes';
 import { useState } from 'react';
 
 const TOOLBAR_VARIANTS = {
@@ -21,7 +22,7 @@ interface IdleToolbarProps {
   shareUrl: string;
   canUndo: boolean;
   canRedo: boolean;
-  viewMode?: '2d' | '3d';
+  viewMode?: '2d' | '3d' | 'flowchart';
   onUndo: () => void;
   onRedo: () => void;
   onSimulate: () => void;
@@ -41,6 +42,7 @@ interface IdleToolbarProps {
   onShare: () => void;
   onExportPNG: () => void;
   onClear: () => void;
+  activeMode?: SimMode;
 }
 
 export function IdleToolbar({
@@ -51,6 +53,7 @@ export function IdleToolbar({
   simSettings, onSimSettingsChange,
   onSave, onShare, onExportPNG, onClear,
   viewMode = '2d',
+  activeMode,
 }: IdleToolbarProps) {
   const is3D = viewMode === '3d';
   const [showSimSettings, setShowSimSettings] = useState(false);
@@ -71,18 +74,20 @@ export function IdleToolbar({
         }}
       >
         {/* Simulate */}
-        {!is3D && replayMode && cutNodeId ? (
-          <button onClick={onSimulateFromCut} className="toolbar-btn toolbar-btn--primary" title="Replay from cut">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <polygon points="5 3 19 12 5 21 5 3" />
-            </svg>
-          </button>
-        ) : (
-          <button onClick={onSimulate} disabled={replayMode} className="toolbar-btn toolbar-btn--primary" title="Simulate">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <polygon points="5 3 19 12 5 21 5 3" />
-            </svg>
-          </button>
+        {activeMode !== 'explore' && (
+          !is3D && replayMode && cutNodeId ? (
+            <button onClick={onSimulateFromCut} className="toolbar-btn toolbar-btn--primary" title="Replay from cut">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+            </button>
+          ) : (
+            <button onClick={onSimulate} disabled={replayMode} className="toolbar-btn toolbar-btn--primary" title={activeMode === 'whatif' ? 'Test Changes' : activeMode === 'stress' ? 'Run Stress Test' : 'Simulate'}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+            </button>
+          )
         )}
 
         {/* Restart */}

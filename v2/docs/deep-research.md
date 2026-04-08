@@ -14,8 +14,9 @@ si# Deep Research — Simulator v2
 - [10. React Flow Projects — Simulators, Workflow Engines, Scenario Tools](#10-react-flow-projects--simulators-workflow-engines-scenario-tools)
 - [11. Ricerche da completare](#11-ricerche-da-completare)
 - [12. Data Pipeline Architecture — Come i Top Player Iniettano Dati nei Modelli](#12-data-pipeline-architecture--come-i-top-player-iniettano-dati-nei-modelli)
+- [13. Behavioral & People Simulation — Modes & Architecture Analysis](#13-behavioral--people-simulation--modes--architecture-analysis)
 
-> 130+ repo analizzati in 12 categorie. Ricerca completata 2026-03-27.
+> 140+ repo analizzati in 13 categorie. Ricerca completata 2026-03-27. Aggiornato 2026-04-07.
 
 ---
 
@@ -456,3 +457,332 @@ La maggior parte dei dataset GitHub contiene dati aggregati paese/anno. Per prob
 
 *Ultimo aggiornamento: 2026-03-28*
 *Totale: 140+ repo analizzati in 13 categorie*
+
+---
+
+## 13. Behavioral & People Simulation — Modes & Architecture Analysis
+> Ricerca: 2026-04-07 | Domanda originale: come strutturano i loro "mode" i tool di simulazione comportamentale/umana?
+
+### Panoramica
+
+I tool che simulano comportamento umano, decisioni, o life outcomes convergono su un set ricorrente di **analysis modes** e fanno distinzioni chiare tra analisi **population-level** vs **individual-level**. Questa sezione mappa il pattern per uso diretto nel design dei mode di Foresight.
+
+---
+
+### A. Agent-Based Modeling (ABM) Tools
+
+#### NetLogo
+- **Tipo**: Educational ABM framework (open source, Northwestern University)
+- **Modes**:
+  - **Interactive mode**: drag-and-drop controllo parametri, visualizzazione real-time
+  - **BehaviorSpace mode**: esplora sistematicamente lo spazio parametrico — equivalente a "batch simulation" (migliaia di run in parallelo)
+  - **NetLogo Web**: browser-based, condivisione via link
+- **Population vs Individual**: entrambi — si può tracciare ogni agente singolarmente o guardare distribuzioni di popolazione
+- **Psychological profiling**: nativo — ogni "turtle" (agente) ha attributi custom (beliefs, traits, motivations)
+- **Pattern chiave**: la simulazione è sempre deterministicamente governata dai parametri — zero randomness ingiustificata
+
+#### AnyLogic
+- **Tipo**: Enterprise simulation platform (multi-method)
+- **Modes** (tre paradigmi distinti):
+  1. **Agent-Based Modeling (ABM)**: individui autonomi con stati, comportamenti, interazioni
+  2. **Discrete Event Simulation (DES)**: flusso di processi (code, attese, risorse)
+  3. **System Dynamics (SD)**: feedback loops, stock-and-flow (macro/popolazione)
+- **Sub-modes specializzati**:
+  - **Pedestrian Library**: simula flussi pedonali con social force model — ogni persona ha personalità, stato emotivo, decision-making individuale
+  - **Real-time mode**: esegue in tempo reale per training
+  - **Virtual-time mode**: corre il più veloce possibile (per analisi batch)
+  - **3D animation mode**: visualizzazione immersiva (2025)
+- **Population vs Individual**: ENTRAMBI — può tracciare ogni individuo o aggregate statistiche di popolazione
+- **Psychological profiling**: sì — attributi individuali configurabili: social distancing propensity, risk tolerance, urgency, compliance
+- **Pattern chiave**: la distinzione tra i 3 paradigmi è il modo in cui AnyLogic struttura i "mode" — non sono "view modes" ma paradigmi di modellazione fondamentalmente diversi
+
+#### Mesa (Python)
+- **Tipo**: Open-source ABM library (Python, scientifico)
+- **Modes** (Mesa 3, 2024-2025):
+  - **Batch run mode**: esecuzione parametrica automatizzata su migliaia di configurazioni
+  - **Visualization mode**: browser-based con visualizzazione live
+  - **Data collection mode**: DataCollector integrato per analisi post-run
+  - **Step mode**: avanza un tick alla volta (debug/analisi dettagliata)
+- **Population vs Individual**: entrambi — agent reporters (individual) + model reporters (population)
+- **Psychological profiling**: nativo via attributi agente; integrazione con pandas/numpy per analisi psicometrica
+- **Pattern chiave**: Mesa 3 introduce "AgentSet" — gruppi di agenti filtrabili per attributo (es. "tutti gli agenti con anxiety > 0.7")
+
+---
+
+### B. Digital Twin Platforms (People/Organizations)
+
+#### IBM (Maximo + AI Digital Twins)
+- **Tipo**: Enterprise asset + human behavior digital twin
+- **Modes**:
+  - **Monitoring mode**: real-time tracking di stato attuale
+  - **Predictive mode**: AI/ML predice comportamenti/guasti futuri
+  - **What-if mode**: simula overrides a condizioni modellate
+  - **Historical replay mode**: riproduce stati passati per analisi
+- **Population vs Individual**: principalmente individual (asset/persona specifica) — con analytics aggregate
+- **Psychological profiling**: sì (per people twins) — IBM + Stanford hanno creato "AI twins" di 1000+ persone che replicano personalità, scelte morali, decision-making con 85% accuracy
+- **Pattern chiave**: i mode sono organizzati per **temporalità** (passato/presente/futuro)
+
+#### Siemens (Xcelerator — xDT)
+- **Tipo**: Industrial digital twin (factory + product)
+- **Modes**:
+  - **Design mode**: costruzione del modello
+  - **Simulation mode**: test in ambiente virtuale
+  - **Executable Digital Twin (xDT)**: modello embedded in edge device — real-time closed-loop optimization
+  - **Predictive maintenance mode**: AI predice guasti
+- **Population vs Individual**: focus su asset individuali, ma gestisce flotte (population of assets)
+- **Psychological profiling**: no (focus industriale, non comportamentale umano)
+- **Pattern chiave**: xDT = digital twin che gira ON DEVICE in real-time — architettura interessante per Foresight (simulazione on-edge)
+
+---
+
+### C. Behavioral Prediction Platforms
+
+#### Crystal Knows
+- **Tipo**: Personality-based communication + behavioral prediction (B2B sales/HR)
+- **Modes**:
+  - **Profile mode**: genera profilo personalità DISC completo da dati pubblici (LinkedIn, job title, industry)
+  - **Prediction mode**: predice come la persona risponderà in diverse situazioni (email, negoziazione, conflitto)
+  - **Playbook mode**: raccomanda stile comunicativo ottimale per interagire con quella persona
+  - **Team dynamics mode**: analizza compatibilità e friction tra membri del team
+- **Population vs Individual**: principalmente individual — ma ha analytics team/population
+- **Psychological profiling**: CORE — usa DISC (Dominance, Influence, Steadiness, Conscientiousness); ogni persona ha blend dei 4 tratti
+- **Pattern chiave**: il profilo psicologico È il motore della simulazione — non un layer accessorio
+
+#### Receptiviti
+- **Tipo**: Language-to-psychology API (psycholinguistic analysis)
+- **Modes** (via API):
+  - **Emotion analysis mode**: misura 14 emozioni dal linguaggio
+  - **Personality analysis mode**: Big Five, motivazioni, stile decisionale
+  - **Leadership assessment mode**: identifica pattern di leadership da comunicazione scritta
+  - **Brand/audience mode**: analizza percezione brand da linguaggio dei clienti
+  - **Loquent Applied Insights** (2025): suite decision-ready — behavioral insight actionable per business
+- **Population vs Individual**: ENTRAMBI — analisi singolo individuo O aggregate su corpus testuale (audience behavior)
+- **Psychological profiling**: CORE — la piattaforma intera è costruita su psicometria validata scientificamente
+- **Pattern chiave**: psicologia estratta dal LINGUAGGIO — non da survey o test diretti. Scalabile e passivo.
+
+#### Behavox (Quantum + Falcon)
+- **Tipo**: Enterprise behavioral intelligence (compliance + HR risk)
+- **Modes**:
+  - **Conduct mode** (Quantum): sorveglianza comunicazioni per rilevare market abuse, insider trading, misconduct
+  - **Human risk mode** (Falcon): predice e previene comportamenti a rischio (flight risk, data exfiltration, credential sharing)
+  - **Compliance mode** (Pathfinder): AI chatbot per guidance compliance real-time
+- **Population vs Individual**: focus su individui specifici con flagging, ma analisi aggregate di pattern organizzativi
+- **Psychological profiling**: implicito — behavioural anomaly detection basato su baseline individuale (ogni persona ha il suo "normal")
+- **Pattern chiave**: baseline individuale + anomaly detection = simulazione implicita del "comportamento atteso" vs "comportamento osservato"
+
+---
+
+### D. Life Simulation / Life Course Tools
+
+#### SimPaths (University of Essex, CeMPA)
+- **Tipo**: Open-source microsimulation per life course analysis (accademico/policy)
+- **Modules** (11):
+  1. Ageing
+  2. Education
+  3. Health
+  4. Family composition
+  5. Social care
+  6. Investment income
+  7. Labour income
+  8. Disposable income
+  9. Consumption
+  10. Health (2)
+  11. Statistical display
+- **Modes**:
+  - **Projection mode**: simula life histories nel tempo
+  - **Policy simulation mode**: testa alternative tax/benefit systems
+  - **Sensitivity analysis mode**: varia parametri per testare robustezza del modello
+  - **Comparative mode**: confronta outcomes tra scenari alternativi
+- **Population vs Individual**: ENTRAMBI — genera storie individuali E distribuzioni di popolazione. Esplicitamente progettato per feedback dinamici tra i due livelli.
+- **Psychological profiling**: parziale — comportamento economico (lavoro/risparmio) dipende da preferenze individuali e incentivi fiscali; non include Big Five o DISC
+- **Pattern chiave**: i module sono i "domain" della vita; i mode sono i "what-if axes" (policy, sensitivity, comparison)
+
+#### LifeSim (RAND / UK Millennium Cohort)
+- **Tipo**: Microsimulation dinamica — segue coorti reali nel tempo
+- **Modes**:
+  - **Cohort tracking mode**: segue gli stessi individui nel tempo (longitudinal)
+  - **Cross-sectional mode**: snapshot di popolazione a un dato punto temporale
+  - **Policy counterfactual mode**: "cosa sarebbe successo senza questa policy?"
+- **Population vs Individual**: entrambi — specializzato nel collegare outcomes individuali a pattern di coorte
+- **Psychological profiling**: salute mentale inclusa come variabile (depressione, ansia) ma non come driver psicometrico primario
+
+---
+
+### E. Wargaming / Red Team Simulation
+
+#### JCATS (Joint Conflict and Tactical Simulation — LLNL)
+- **Tipo**: Military constructive simulation — entity-level battlefield
+- **Modes**:
+  - **Human-in-the-loop mode**: operatori umani controllano forze friendly/enemy via GUI
+  - **Automated behavior mode**: CGF (Computer Generated Forces) — AI controlla entità automaticamente
+  - **Training mode**: scenario con obiettivi di apprendimento definiti
+  - **Analysis mode**: post-exercise replay e AAR (After Action Review)
+  - **Rehearsal mode**: pratica tattica prima di operazioni reali
+- **Scale**: da singolo soldato a centinaia di migliaia di entità (joint task force)
+- **Population vs Individual**: ENTRAMBI — può tracciare ogni entità singola O analizzare pattern di forze
+- **Psychological profiling**: comportamento combattente individuale configurabile (aggression, morale, training level)
+- **Pattern chiave**: il livello di risoluzione è configurabile — puoi scendere al singolo soldato o salire al joint command
+
+#### OneSAF (US Army)
+- **Tipo**: Next-gen entity-level simulation (CGF + SAF)
+- **Modes**:
+  - **CGF mode** (Computer Generated Forces): AI governa tutte le forze
+  - **SAF mode** (Semi-Automated Forces): umano prende controllo selettivo di entità specifiche
+  - **Constructive mode**: pura simulazione (no hardware in loop)
+  - **Virtual mode**: integrazione con simulatori fisici (veicoli, aerei)
+- **Population vs Individual**: entrambi — brigade-level aggregate o singola entità
+- **Psychological profiling**: morale, training level, unit cohesion come variabili comportamentali
+
+#### DARPA Gamebreaker
+- **Tipo**: AI-powered wargame balance analysis
+- **Modes**:
+  - **Balance assessment mode**: AI quantifica bilanciamento del gioco
+  - **Exploit discovery mode**: trova "stati rotti" che danno vantaggio asimmetrico
+  - **Red team mode**: simula avversario che usa exploit trovati
+  - **Capability testing mode**: testa nuove tecnologie/tattiche in ambiente controllato
+- **Population vs Individual**: focus su dinamiche di gioco/sistema (population-level emergent behavior)
+- **Psychological profiling**: no — focus su game theory, non psicologia individuale
+
+#### Red Team / Blue Team (Cybersecurity wargaming)
+- **Platforms**: CrowdStrike, SimSpace, Booz Allen, MITRE
+- **Modes standard**:
+  - **Red Team mode**: attaccante simula avversario reale (APT, insider threat)
+  - **Blue Team mode**: defender risponde e mitiga
+  - **Purple Team mode**: red + blue collaborano per massimizzare learning
+  - **Tabletop exercise mode**: discussione scenari senza azioni tecniche reali
+  - **Full-scale live fire mode**: attacchi reali in ambiente isolato
+- **Population vs Individual**: focus su organizzazione come sistema (population of processes/people)
+- **Psychological profiling**: executive decision-making sotto attacco — testano come leaders reagiscono psicologicamente a crisi
+
+---
+
+### F. AI-Powered Behavioral Simulation (Research/Commercial Frontier)
+
+#### Aaru (fondata 2024 — valutazione $1B, Series A 2025)
+- **Tipo**: Population simulation platform per market research + policy prediction
+- **Modes**:
+  - **Synthetic audience mode**: genera audience con demographic + psychographic profiles
+  - **Scenario testing mode**: espone audience a stimoli (notizie, prodotti, campagne) e misura reazione
+  - **Policy simulation mode**: predice come popolazione risponderà a cambiamento di policy
+  - **Election prediction mode**: usato per predire elezioni US 2024 con margine <400 voti
+- **Population vs Individual**: POPOLAZIONE come unità primaria — ma costruita da individui sintetici dettagliati
+- **Psychological profiling**: CORE — ogni agente ha hundreds of traits (demografici, psicografici, media consumption, behavioral tendencies)
+- **Pattern chiave**: "synthetic research" come alternativa a survey e focus group — più veloce, scalabile, meno bias
+
+#### Stanford Generative Agents (Park et al., 2023-2024)
+- **Tipo**: Research — LLM-powered agent simulation di comportamento umano reale
+- **Modes**:
+  - **Interactive sandbox mode**: 25 agenti in ambiente The Sims-like — osservazione + intervento
+  - **Survey replication mode**: agenti replicano risposte GSS (General Social Survey) con 85% accuracy
+  - **Personality replication mode**: agenti replicano Big Five e outcomes sperimentali di individui reali
+  - **Social dynamics mode**: agenti formano relazioni, diffondono notizie, coordinano attività di gruppo
+- **Population vs Individual**: ENTRAMBI — può girare 1000 agenti individuali distinti O osservare pattern emergenti
+- **Psychological profiling**: CORE — ogni agente ha memoria episodica, riflessione, pianificazione — tre componenti dell'architettura
+
+#### Be.FM (Foundation Models for Human Behavior)
+- **Tipo**: Research — foundation model addestrato su behavioral economics experiments
+- **Modes**:
+  - **Individual prediction mode**: predice comportamento di un individuo dato contesto e condizioni
+  - **Population distribution mode**: predice distribuzione di comportamenti in una popolazione
+  - **Game theory mode**: predice strategie in giochi economici (prisoner's dilemma, ultimatum, trust game)
+- **Population vs Individual**: entrambi — esplicitamente progettato per operare a entrambi i livelli
+- **Psychological profiling**: implicito — trained su dati reali di 68,779 soggetti in 9 anni
+
+---
+
+### G. Pattern sintetici — Cosa emerge da tutti questi tool
+
+#### I "mode" ricorrenti in tutti i tool di simulazione comportamentale
+
+| Mode | Descrizione | Chi lo usa |
+|------|-------------|------------|
+| **Baseline / Current State** | Mostra lo stato attuale senza intervento | Tutti |
+| **What-if / Scenario** | Varia parametri e mostra outcome alternativo | Tutti |
+| **Prediction / Projection** | Estrapola nel futuro da stato attuale | SimPaths, Aaru, IBM, Receptiviti |
+| **Counterfactual** | "Cosa sarebbe successo senza X?" | LifeSim, SimPaths, policy tools |
+| **Sensitivity analysis** | Testa quanto cambiano gli outcome al variare di un parametro | AnyLogic, SimPaths, Mesa |
+| **Batch / Parameter sweep** | Gira migliaia di combinazioni parametriche automaticamente | AnyLogic, NetLogo BehaviorSpace, Mesa |
+| **Red team / Adversarial** | Simula avversario o scenario sfavorevole | JCATS, OneSAF, CrowdStrike |
+| **Replay / Post-mortem** | Riproduce simulazione passata per analisi | JCATS, IBM, AnyLogic |
+| **Step / Debug** | Avanza un tick alla volta | Mesa, AnyLogic |
+| **Training / Rehearsal** | Scenario con obiettivi didattici definiti | JCATS, OneSAF, wargaming tools |
+
+#### Population vs Individual — come i tool li distinguono
+
+| Approccio | Tool | Descrizione |
+|-----------|------|-------------|
+| **Individual-first** (aggrega dopo) | Generative Agents, Crystal, JCATS | Ogni agente è distinto; l'analisi di popolazione emerge dall'aggregazione |
+| **Population-first** (disaggrega se necessario) | Aaru, SimPaths, System Dynamics | La popolazione è l'unità primaria; l'individuo è un sample |
+| **Dual-level** (switch esplicito) | AnyLogic, Mesa, IBM, Be.FM | Il tool offre esplicitamente entrambi i livelli come mode separati |
+
+#### Dove il profilo psicologico è centrale vs accessorio
+
+| Ruolo della psicologia | Tool |
+|------------------------|------|
+| **Core engine** (senza psicologia non gira) | Crystal Knows, Receptiviti, Stanford Generative Agents |
+| **Layer configurabile** (si aggiunge se serve) | AnyLogic, Mesa, NetLogo, JCATS |
+| **Implicito** (baseline comportamentale senza label psicologiche) | Behavox, Be.FM |
+| **Assente** | Siemens xDT, DARPA Gamebreaker |
+
+---
+
+### H. Implicazioni per Foresight — Mode da aggiungere o ispirare
+
+Sulla base di questa ricerca, i mode che i competitor più sofisticati offrono e che Foresight potrebbe strutturare:
+
+1. **Simulation mode** (attuale) — run deterministica, visualizzazione particle flow. GIA' PRESENTE.
+2. **What-if mode** — freeze un nodo, cambia la probabilità, riesegui. Mostra diff vs baseline.
+3. **Sensitivity mode** — varia sistematicamente una probabilità e mostra come cambia l'outcome finale (grafico tornado).
+4. **Population mode** — mostra distribuzione di outcome su 1000 persone. Attuale particle system lo fa — renderlo più esplicito.
+5. **Individual mode** — traccia UN singolo percorso con storia completa (log di decisioni prese).
+6. **Adversarial / Red Team mode** — impostare "worst case" su ogni gate: tutti i bottleneck falliscono. Mostra il path of maximum destruction.
+7. **Counterfactual mode** — "Cosa sarebbe successo se fossi partito da uno stato diverso?". Confronta due run side by side.
+8. **Replay mode** — riproduci una simulazione salvata (già parzialmente presente con il replay button).
+9. **Batch mode** — lancia N simulazioni con parametri randomizzati entro range, mostra distribuzione outcomes.
+10. **Profile-driven mode** — carica un profilo psicologico (DISC o Big Five) e il simulatore aggiusta automaticamente le probabilità dei nodi comportamentali.
+
+---
+
+---
+
+## 14. Flowchart / Vertical Layout / Diagram Libraries (GitHub)
+
+Ricerca: 2026-04-08 — 10 agenti paralleli, obiettivo: trovare il miglior modo per renderizzare flowchart verticali puliti (stile Mermaid/Whimsical) nel Simulator.
+
+### TIER 1 — Best for our use case
+
+| # | Nome | URL | Stars | Stack | Perche' ci serve |
+|---|------|-----|-------|-------|-----------------|
+| 1 | **Flowchart Fun** | [github.com/tone-row/flowchart-fun](https://github.com/tone-row/flowchart-fun) | ~8K | Cytoscape.js | Testo → flowchart pulito verticale. Stile esattamente come lo vogliamo. Forkabile. |
+| 2 | **ELK.js** | [github.com/kieler/elkjs](https://github.com/kieler/elkjs) | ~1.5K | JS | Layout engine professionale, meglio di Dagre per verticale. Si integra con React Flow. |
+| 3 | **react-d3-tree** | [github.com/bkrem/react-d3-tree](https://github.com/bkrem/react-d3-tree) | ~1.2K | React/D3 | Albero verticale interattivo, click sui nodi. Leggero, pulito. |
+| 4 | **React Flow + ELK example** | [github.com/dipockdas/react-flow-elk-mixed-layout](https://github.com/dipockdas/react-flow-elk-mixed-layout) | ~200 | React Flow + ELK | Esempio pronto di React Flow con ELK.js per layout verticale/gerarchico. |
+| 5 | **react-decision-tree-flow** | [github.com/rjerue/react-decision-tree-flow](https://github.com/rjerue/react-decision-tree-flow) | ~500 | React/TS | Specializzato per decision tree/wizard. Branching yes/no/partial. |
+
+### TIER 2 — Mermaid ecosystem
+
+| # | Nome | URL | Stars | Stack | Note |
+|---|------|-----|-------|-------|------|
+| 6 | **Mermaid.js** | [github.com/mermaid-js/mermaid](https://github.com/mermaid-js/mermaid) | ~66K | JS | Standard de facto per diagrammi da testo. Gia' installato nel progetto. |
+| 7 | **Mermaid Live Editor** | [github.com/mermaid-js/mermaid-live-editor](https://github.com/mermaid-js/mermaid-live-editor) | ~6.4K | SvelteKit | Editor ufficiale. Forkabile ma SvelteKit (non Next.js). |
+| 8 | **Mermaid React Wrapper** | [github.com/mermaid-js/react-wrapper](https://github.com/mermaid-js/react-wrapper) | ~1.1K | React | Wrapper ufficiale React per Mermaid. |
+| 9 | **zoom-move-able-react-mermaid** | [github.com/mitate-gengaku/zoom-move-able-react-mermaid](https://github.com/mitate-gengaku/zoom-move-able-react-mermaid) | ~150 | React | Mermaid con zoom + pan built-in. |
+
+### TIER 3 — Alternative / ispirazione
+
+| # | Nome | URL | Stars | Stack | Note |
+|---|------|-----|-------|-------|------|
+| 10 | **D2 Language** | [github.com/terrastruct/d2](https://github.com/terrastruct/d2) | ~23K | Go | Linguaggio moderno per diagrammi (alternativa a Mermaid). Bellissimo output. |
+| 11 | **Markmap** | [github.com/markmap/markmap](https://github.com/markmap/markmap) | ~8K | Vue/D3 | Markdown → mindmap interattiva. Buono per vista gerarchica. |
+| 12 | **flowchart.js** | [github.com/adrai/flowchart.js](https://github.com/adrai/flowchart.js) | ~8.8K | Vanilla JS | DSL semplice → SVG. Zero dipendenze. |
+| 13 | **REAFLOW** | [github.com/reaviz/reaflow](https://github.com/reaviz/reaflow) | ~2.5K | React | Engine modulare per diagrammi. Buon design. |
+| 14 | **react-diagrams** | [github.com/projectstorm/react-diagrams](https://github.com/projectstorm/react-diagrams) | ~9.3K | React/TS | Libreria diagrammi no-nonsense. TypeScript, modulare. |
+| 15 | **DeepDiagram** | [github.com/twwch/DeepDiagram](https://github.com/twwch/DeepDiagram) | ~1.5K | LangGraph/React | Testo naturale → diagrammi (AI-powered). Multi-agente. |
+| 16 | **NextERD** | [github.com/vaxad/NextERD](https://github.com/vaxad/NextERD) | ~300 | Next.js/React Flow | Template Next.js + React Flow + shadcn/ui. Pattern UI da copiare. |
+| 17 | **decision-tree-maker** | [github.com/damienld22/decision-tree-maker](https://github.com/damienld22/decision-tree-maker) | — | React/D3 | Builder visuale per decision tree (basato su react-d3-tree). |
+
+### Decisione presa
+
+**Non forkare.** Soluzione scelta: in TB mode, semplificare i SimNode (solo label, no desc/source) e sostituire Dagre con **ELK.js** per layout verticale professionale. Cosi' si ottiene lo stile pulito tipo Mermaid/Whimsical senza perdere simulazione particelle, click nodi, e tutto il sistema esistente.
+
+*Aggiornato: 2026-04-08 — Ricerca: flowchart/vertical layout libraries (10 agenti paralleli)*

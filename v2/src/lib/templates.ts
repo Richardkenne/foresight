@@ -7,6 +7,7 @@ export interface TemplateNode {
   prob: number;
   desc: string;
   source: string;
+  sourceUrl?: string;
   time?: string;
   sacredRoots?: string[];
 }

@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import type { Node as RFNode, Edge as RFEdge } from '@xyflow/react';
 
 export interface UseStepModeParams {
@@ -112,6 +112,19 @@ export function useStepMode({
     setEdges(prev => prev.map(e => ({ ...e, hidden: false })));
     setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100);
   }, [setNodes, setEdges, fitView]);
+
+  // Keyboard shortcuts: Space/Right = next, Backspace/Left = prev, Esc = exit
+  useEffect(() => {
+    if (!stepMode) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (e.key === ' ' || e.key === 'ArrowRight') { e.preventDefault(); stepForward(); }
+      else if (e.key === 'Backspace' || e.key === 'ArrowLeft') { e.preventDefault(); stepBack(); }
+      else if (e.key === 'Escape') { e.preventDefault(); exitStepMode(); }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [stepMode, stepForward, stepBack, exitStepMode]);
 
   return {
     stepMode,

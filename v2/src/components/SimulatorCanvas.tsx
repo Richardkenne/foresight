@@ -32,6 +32,7 @@ import { type UserProfile, loadProfile } from '@/lib/user-profile';
 import WarningBanner from './WarningBanner';
 import { templateToFlow, getLayoutedElements } from '@/lib/graph-utils';
 import { SPD_BASE, type SimSettings } from '@/lib/simulation-types';
+import { type SimMode, loadMode, saveMode, MODE_CONFIG } from '@/lib/sim-modes';
 import { CutLineIndicator, ParticleLayer } from './SimOverlays';
 import { IdleToolbar, RunningToolbar, StatsBar, ReplayBar, StepModeBar, PathFilterBar, ResultsTab } from './SimToolbar';
 import { usePathFilter } from './usePathFilter';
@@ -51,6 +52,7 @@ import { useReplayMode } from './useReplayMode';
 import { useFlowGeneration } from './useFlowGeneration';
 
 const Graph3DView = dynamic(() => import('./Graph3DView'), { ssr: false });
+const FlowchartView = dynamic(() => import('./FlowchartView'), { ssr: false });
 const MultiAgentResults = dynamic(() => import('./MultiAgentResults'), { ssr: false });
 
 const nodeTypes = { simNode: SimNodeComponent, contextNode: ContextNodeComponent };
@@ -67,8 +69,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     if (typeof window !== 'undefined') return (localStorage.getItem('sim-layout-direction') as 'LR' | 'TB') || 'LR';
     return 'LR';
   });
-  const [viewMode, setViewMode] = useState<'2d' | '3d'>(() => {
-    if (typeof window !== 'undefined') return (localStorage.getItem('sim-view-mode') as '2d' | '3d') || '2d';
+  const [viewMode, setViewMode] = useState<'2d' | '3d' | 'flowchart'>(() => {
+    if (typeof window !== 'undefined') return (localStorage.getItem('sim-view-mode') as '2d' | '3d' | 'flowchart') || '2d';
     return '2d';
   });
 
@@ -94,6 +96,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
   const [showFeedbackForm, setShowFeedbackForm] = useState(false);
   const [showFeedbackReminder, setShowFeedbackReminder] = useState(false);
   const [showCrashTest, setShowCrashTest] = useState(false);
+  const [detailNode, setDetailNode] = useState<RFNode | null>(null);
   const [multiAgentRunning, setMultiAgentRunning] = useState(false);
   const [multiAgentResult, setMultiAgentResult] = useState<import('@/lib/multi-agent').MultiAgentResult | null>(null);
   const [showAvatarReport, setShowAvatarReport] = useState(false);
@@ -101,6 +104,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
   const pruningResultRef = useRef<PruningResult | null>(null);
   const [speedLevel, setSpeedLevel] = useState(0);
   const speedRef = useRef(0);
+
+  const [activeMode, setActiveMode] = useState<SimMode>(() => loadMode());
 
   const nodesRef = useRef<RFNode[]>([]);
   const edgesRef = useRef<RFEdge[]>([]);
@@ -120,13 +125,62 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
   const { pathFilter, setPathFilter, applyPathFilter } = usePathFilter(setNodes, setEdges, nodesRef, edgesRef);
 
+  // ─── MODE HANDLERS ───
+  const handleModeChange = useCallback((mode: SimMode) => {
+    setActiveMode(mode);
+    saveMode(mode);
+    document.documentElement.setAttribute('data-mode', mode);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-mode', activeMode);
+  }, [activeMode]);
+
+  // What-if mode: snapshot original probs when entering the mode
+  useEffect(() => {
+    if (activeMode === 'whatif') {
+      setNodes((nds) =>
+        nds.map((n) => ({
+          ...n,
+          data: { ...n.data, originalProb: (n.data as Record<string, unknown>).originalProb ?? (n.data as Record<string, unknown>).prob },
+        }))
+      );
+    }
+  }, [activeMode, setNodes]);
+
+  const applyStressProbs = useCallback(() => {
+    setNodes((nds) =>
+      nds.map((n) => {
+        const data = n.data as Record<string, unknown>;
+        if (data?.prob != null && (data.prob as number) < 100) {
+          const probRange = data?.probRange as Record<string, unknown> | undefined;
+          const adverse = probRange?.adverse as number | undefined;
+          return {
+            ...n,
+            data: {
+              ...data,
+              originalProb: data.originalProb ?? data.prob,
+              prob: adverse ?? Math.max(1, Math.round((data.prob as number) * 0.5)),
+            },
+          };
+        }
+        return n;
+      })
+    );
+  }, [setNodes]);
+
   const requestSimulate = useCallback(() => {
     if (sim.simRunningRef.current || nodesRef.current.length === 0) return;
+    if (activeMode === 'explore') return;
+    if (activeMode === 'stress') applyStressProbs();
     setShowPruning(true);
-  }, [sim.simRunningRef]);
+  }, [sim.simRunningRef, activeMode, applyStressProbs]);
 
   const simulateRef = useRef<() => void>(() => {});
-  const doSimulate = useCallback(() => { sim.simulate(setPathFilter); }, [sim, setPathFilter]); // eslint-disable-line react-hooks/exhaustive-deps
+  const doSimulate = useCallback(() => {
+    if (activeMode === 'explore') return;
+    sim.simulate(setPathFilter);
+  }, [sim, setPathFilter, activeMode]); // eslint-disable-line react-hooks/exhaustive-deps
   simulateRef.current = doSimulate;
 
   const handlePruningComplete = useCallback((result: PruningResult) => {
@@ -240,7 +294,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       }
       if (e.key === 'Enter' && !e.shiftKey && isInput && flow.scenario.trim()) { e.preventDefault(); flow.generateFlow(); return; }
       if (e.key === 'Escape') {
-        if (step.stepMode) { e.preventDefault(); step.exitStepMode(); return; }
+        if (step.stepMode) { e.preventDefault(); setDetailNode(null); step.exitStepMode(); return; }
         if (sim.simRunningRef.current) { e.preventDefault(); sim.stopSim(); return; }
         if (sim.showDashboard) { e.preventDefault(); sim.setShowDashboard(false); return; }
       }
@@ -331,6 +385,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         scenario={flow.scenario} onScenarioChange={flow.setScenario}
         hasNodes={hasNodes} generating={flow.generating}
         onGenerate={flow.generateFlow}
+        depthLevel={flow.depthLevel} onDepthLevelChange={flow.setDepthLevel}
         onRestart={() => {
           sim.stopSim(); sim.statsRef.current = { total: 0, success: 0, blocked: 0 }; sim.setSimStats({ total: 0, success: 0, blocked: 0 });
           sim.setShowDashboard(false); sim.particlesRef.current = []; sim.setParticles([]); flow.setErrorMsg('');
@@ -361,6 +416,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         viewMode={viewMode}
         onViewModeChange={(mode) => { setViewMode(mode); localStorage.setItem('sim-view-mode', mode); }}
         openHistoryTrigger={openHistoryTrigger} openProfileTrigger={openProfileTrigger}
+        activeMode={activeMode} onModeChange={handleModeChange}
       />
 
       {flow.errorMsg && (
@@ -460,20 +516,215 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       <div className="flex-1 flex relative overflow-hidden">
         {viewMode === '3d' ? (
           <div className="flex-1 relative"><Graph3DView nodes={nodes} edges={edges} layoutDirection={layoutDirection} /></div>
+        ) : viewMode === 'flowchart' ? (
+          <FlowchartView nodes={nodes} edges={edges} onNodeClick={(nodeId) => {
+            const node = nodes.find(n => n.id === nodeId);
+            if (node) setDetailNode(prev => prev?.id === node.id ? null : node);
+          }} />
         ) : (
           <div className={`flex-1 relative ${replay.replayMode && !sim.simRunning ? 'cursor-crosshair' : ''}`} ref={flowContainerRef}>
             <ReactFlow nodes={nodes} edges={edges} onNodesChange={onNodesChange} onEdgesChange={onEdgesChange}
-              onNodeClick={replay.onNodeClickReplay} onNodeDoubleClick={drill.onNodeDoubleClick}
+              onNodeClick={(e, node) => { if (step.stepMode) { setDetailNode(prev => prev?.id === node.id ? null : node); } else { replay.onNodeClickReplay(e, node); } }}
+              onNodeDoubleClick={drill.onNodeDoubleClick}
               nodeTypes={nodeTypes} edgeTypes={edgeTypes} fitView fitViewOptions={{ padding: 0.2 }}
               minZoom={0.3} maxZoom={2} defaultEdgeOptions={{ type: 'default', style: { stroke: '#d4d4d4', strokeWidth: 2 } }}>
               <Background variant={BackgroundVariant.Dots} gap={20} size={1.5} color="var(--muted)" style={{ opacity: 0.5 }} />
               <Controls position="bottom-left" showInteractive={false} className="!border-[var(--border)] !rounded-lg !shadow-sm !overflow-hidden !mb-6 !ml-6" />
+              {/* Node count badge */}
+              {nodes.length > 0 && (
+                <div
+                  className="absolute bottom-7 left-20 z-10 flex items-center gap-1.5 px-2.5 py-1 rounded-md"
+                  style={{
+                    background: 'color-mix(in srgb, var(--surface) 90%, transparent)',
+                    border: '1px solid var(--border)',
+                    fontFamily: 'var(--font-geist-mono), monospace',
+                  }}
+                >
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" />
+                  </svg>
+                  <span className="text-[10px] font-medium text-[var(--muted)]">
+                    {nodes.length} nodes
+                    <span className="ml-1 opacity-60">
+                      {nodes.length <= 10 ? 'Summary' : nodes.length <= 20 ? 'Analysis' : 'Full Model'}
+                    </span>
+                  </span>
+                </div>
+              )}
               <MiniMap position="bottom-right" pannable zoomable
                 nodeColor={(node) => { const t = (node.data as Record<string, unknown>).nodeType as string; if (t === 'outcome-good') return '#34d399'; if (t === 'outcome-bad') return '#f87171'; return '#cbd5e1'; }}
                 maskColor="rgba(0,0,0,0.08)" style={{ opacity: 0.7, width: 140, height: 90, marginBottom: 24, marginRight: 24 }} />
             </ReactFlow>
             {replay.replayMode && <CutLineIndicator cutNodeId={replay.cutNodeId} nodes={nodes} />}
             <ParticleLayer particles={sim.particles} moveDuration={sim.getSPD().move} pathFollowing={simSettings.pathFollowing} />
+
+            {/* Node Detail Panel (step mode) */}
+            {step.stepMode && detailNode && (() => {
+              const d = detailNode.data as Record<string, unknown>;
+              const nodeType = d.nodeType as string || 'action';
+              const prob = d.prob as number | undefined;
+              const probRange = d.probRange as { optimistic: number; adverse: number } | undefined;
+              const desc = d.desc as string || '';
+              const source = d.source as string || '';
+              const sourceUrl = d.sourceUrl as string || '';
+              const time = d.time as string || '';
+              const sacredRoots = d.sacredRoots as string[] || [];
+              const hasProb = nodeType === 'bottleneck' || nodeType === 'gate' || nodeType === 'decision';
+
+              // Contextual suggestions based on node label, desc, and prob
+              const suggestions: string[] = [];
+              const labelLower = (d.label as string || '').toLowerCase();
+              const descLower = desc.toLowerCase();
+              if (hasProb && prob !== undefined) {
+                if (probRange) {
+                  suggestions.push(`With preparation: ${probRange.optimistic}% success. Without: ${probRange.adverse}%. The gap is your leverage.`);
+                }
+                // Upwork-specific suggestions
+                if (labelLower.includes('interview') || labelLower.includes('response') || descLower.includes('proposal')) {
+                  suggestions.push('Customize every proposal to the client\'s specific problem. Generic proposals have 2-5% response rate vs 15-25% for tailored ones.');
+                  suggestions.push('Respond within 1-2 hours of job posting. First 5 proposals get 3x more views.');
+                  if (prob < 20) suggestions.push('Use Boosted Proposals on high-value jobs ($500+). Costs more Connects but 2-3x visibility.');
+                }
+                if (labelLower.includes('hire') || labelLower.includes('convert')) {
+                  suggestions.push('Include a Loom video walkthrough in your proposal. Freelancers who do this convert 3-5x more.');
+                  suggestions.push('Show relevant portfolio work. Clients hire proof, not promises.');
+                }
+                if (labelLower.includes('profile') || descLower.includes('profile')) {
+                  suggestions.push('100% profile completion = 2x more visibility. Fill every section including video intro.');
+                  suggestions.push('Get your first 5-star review within 30 days. JSS 90%+ = 2-3x higher hire rate.');
+                }
+                if (labelLower.includes('$10k') || labelLower.includes('income') || labelLower.includes('retain')) {
+                  suggestions.push('Repeat clients generate 75% of Upwork GSV. Focus on client retention over new proposals.');
+                  suggestions.push('Raise rates 10-15% after every 3 successful contracts. Specialists earn 3-5x more than generalists.');
+                }
+                if (labelLower.includes('speciali') || descLower.includes('niche')) {
+                  suggestions.push('Pick ONE niche (e.g. "AI automation for agencies"). Specialists convert 10-20% vs generalists at 2-5%.');
+                }
+                if (labelLower.includes('proposal') || descLower.includes('connect')) {
+                  suggestions.push('Budget $20-30/month in Connects minimum. Average cost before first hire: $9-27 in Connects.');
+                }
+                // Generic but data-backed fallbacks
+                if (suggestions.length === 0 && prob < 30) {
+                  suggestions.push(`Only ${prob}% pass this stage. Study the ${prob}% who made it -- what patterns do they share?`);
+                  suggestions.push('This is the hardest bottleneck in the flow. Solve this one first, everything else gets easier.');
+                }
+                if (suggestions.length === 0 && prob < 60) {
+                  suggestions.push(`${100 - prob}% fail here. Identify the top 3 reasons for failure and address each one before starting.`);
+                }
+              }
+
+              return (
+                <div
+                  className="absolute top-0 right-0 z-20 h-full w-[320px] border-l border-[var(--border)] overflow-y-auto"
+                  style={{ background: 'var(--surface)', boxShadow: '-4px 0 20px rgba(0,0,0,0.05)' }}
+                >
+                  {/* Header */}
+                  <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--border)]">
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--muted)]">{nodeType}</span>
+                    <button onClick={() => setDetailNode(null)} className="p-1 rounded hover:bg-[var(--surface-hover)] cursor-pointer">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" strokeWidth="2" strokeLinecap="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
+                    </button>
+                  </div>
+
+                  <div className="px-4 py-4 space-y-4">
+                    {/* Title */}
+                    <h3 className="text-[15px] font-bold text-[var(--foreground)] leading-snug">{d.label as string}</h3>
+
+                    {/* Probability */}
+                    {hasProb && prob !== undefined && (
+                      <div className="space-y-1.5">
+                        <div className="flex items-center gap-2">
+                          <span className="text-[11px] font-semibold text-[var(--muted)] uppercase tracking-wider">Probability</span>
+                          <span className="text-[18px] font-bold" style={{ color: prob < 30 ? '#ef4444' : prob < 60 ? '#f59e0b' : '#22c55e' }}>{prob}%</span>
+                        </div>
+                        {probRange && (
+                          <div className="flex gap-3 text-[11px]">
+                            <span className="text-green-500">Best: {probRange.optimistic}%</span>
+                            <span className="text-red-400">Worst: {probRange.adverse}%</span>
+                          </div>
+                        )}
+                        {/* Prob bar */}
+                        <div className="w-full h-1.5 rounded-full bg-gray-100 dark:bg-gray-800 overflow-hidden">
+                          <div className="h-full rounded-full transition-all" style={{
+                            width: `${prob}%`,
+                            background: prob < 30 ? '#ef4444' : prob < 60 ? '#f59e0b' : '#22c55e',
+                          }} />
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Description */}
+                    {desc && (
+                      <div>
+                        <span className="text-[10px] font-semibold text-[var(--muted)] uppercase tracking-wider">Details</span>
+                        <p className="text-[13px] text-[var(--foreground)] mt-1 leading-relaxed opacity-80">{desc}</p>
+                      </div>
+                    )}
+
+                    {/* Time */}
+                    {time && (
+                      <div className="flex items-center gap-2">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>
+                        <span className="text-[12px] text-[var(--muted)]">{time}</span>
+                      </div>
+                    )}
+
+                    {/* Source */}
+                    {source && (
+                      <div>
+                        <span className="text-[10px] font-semibold text-[var(--muted)] uppercase tracking-wider">Source</span>
+                        {sourceUrl ? (
+                          <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 mt-1 text-[11px] text-blue-500 hover:text-blue-600 font-mono transition-colors">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="shrink-0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+                            {source}
+                          </a>
+                        ) : (
+                          <p className="text-[11px] text-[var(--muted)] mt-1 font-mono opacity-70">{source}</p>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Sacred Roots with verses */}
+                    {sacredRoots.length > 0 && (
+                      <div>
+                        <span className="text-[10px] font-semibold text-[var(--muted)] uppercase tracking-wider">Behavioral Drivers</span>
+                        <div className="space-y-2 mt-1.5">
+                          {sacredRoots.map(r => {
+                            const root = (require('@/lib/sacred-roots.json') as Array<{id:string;label_positive:string;label_negative:string;description:string;bible_key:string;bible_text:string;quran_key:string;quran_text:string}>).find(sr => sr.id === r);
+                            if (!root) return <span key={r} className="text-[10px] text-[var(--muted)]">{r}</span>;
+                            return (
+                              <div key={r} className="px-2.5 py-2 rounded-md bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800/30">
+                                <div className="text-[11px] font-semibold text-purple-700 dark:text-purple-300">{root.label_positive} <span className="font-normal opacity-50">vs</span> {root.label_negative}</div>
+                                <div className="text-[10px] text-purple-500 dark:text-purple-400 mt-1 opacity-70">{root.description.slice(0, 120)}{root.description.length > 120 ? '...' : ''}</div>
+                                <div className="mt-1.5 pt-1.5 border-t border-purple-100 dark:border-purple-800/30 space-y-1">
+                                  <div className="text-[10px] italic text-purple-600 dark:text-purple-300 opacity-80">"{root.bible_text.slice(0, 100)}{root.bible_text.length > 100 ? '...' : ''}"</div>
+                                  <div className="text-[9px] text-purple-400 font-mono">{root.bible_key} | {root.quran_key}</div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Suggestions */}
+                    {suggestions.length > 0 && (
+                      <div>
+                        <span className="text-[10px] font-semibold text-[var(--muted)] uppercase tracking-wider">How to improve</span>
+                        <ul className="mt-1.5 space-y-1.5">
+                          {suggestions.map((s, i) => (
+                            <li key={i} className="flex gap-2 text-[12px] text-[var(--foreground)] opacity-80">
+                              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2.5" strokeLinecap="round" className="mt-0.5 shrink-0"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
+                              {s}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })()}
           </div>
         )}
 
@@ -602,7 +853,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
           onExitReplayMode={replay.exitReplayMode} />
       )}
 
-      {step.stepMode && viewMode === '2d' && <StepModeBar stepIndex={step.stepIndex} totalSteps={step.stepOrderRef.current.length} onStepBack={step.stepBack} onStepForward={step.stepForward} onExitStepMode={step.exitStepMode} />}
+      {step.stepMode && (viewMode === '2d' || viewMode === 'flowchart') && <StepModeBar stepIndex={step.stepIndex} totalSteps={step.stepOrderRef.current.length} onStepBack={step.stepBack} onStepForward={step.stepForward} onExitStepMode={step.exitStepMode} />}
 
       {!sim.simRunning && sim.statsRef.current.total > 0 && !sim.showDashboard && !step.stepMode && viewMode === '2d' && (
         <>

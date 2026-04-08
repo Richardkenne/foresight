@@ -10,6 +10,7 @@ import { analyzeProfile, type ProfileWarning } from '@/lib/profile-warnings';
 import { templateToFlow } from '@/lib/graph-utils';
 import { toast } from './ui/Toast';
 import { sounds } from '@/lib/sounds';
+import type { DepthLevel } from '@/lib/generate/types';
 
 export interface UseFlowGenerationParams {
   nodesRef: React.MutableRefObject<RFNode[]>;
@@ -67,6 +68,7 @@ export function useFlowGeneration({
   const [sacredMode, setSacredMode] = useState(false);
   const [profileWarnings, setProfileWarnings] = useState<ProfileWarning[]>([]);
   const [apiPruningQuestions, setApiPruningQuestions] = useState<Array<{id:string;question:string;section:string;yesModifier:number;noModifier:number;yesLabel:string;noLabel:string;insight:string}>>([]);
+  const [depthLevel, setDepthLevel] = useState<DepthLevel>('analysis');
 
   const abortRef = useRef<AbortController | null>(null);
 
@@ -91,7 +93,7 @@ export function useFlowGeneration({
       fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ scenario: t.input, tags: contextTagsRef.current, profile: profileRef.current, sacredMode: true }),
+        body: JSON.stringify({ scenario: t.input, tags: contextTagsRef.current, profile: profileRef.current, sacredMode: true, depthLevel }),
       })
         .then(res => { if (!res.ok) throw new Error('Server error'); return res.json(); })
         .then(flow => {
@@ -204,7 +206,7 @@ export function useFlowGeneration({
       const res = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ scenario: input, tags: contextTagsRef.current, profile: profileRef.current, sacredMode }),
+        body: JSON.stringify({ scenario: input, tags: contextTagsRef.current, profile: profileRef.current, sacredMode, depthLevel }),
         signal: abortRef.current.signal,
       });
       if (!res.ok) throw new Error('Server error');
@@ -380,6 +382,8 @@ export function useFlowGeneration({
     profileWarnings,
     setProfileWarnings,
     apiPruningQuestions,
+    depthLevel,
+    setDepthLevel,
     abortRef,
     loadTemplate,
     generateFlow,

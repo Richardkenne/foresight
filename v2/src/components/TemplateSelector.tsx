@@ -51,12 +51,24 @@ const CATEGORIES: CategoryDef[] = [
   },
 ];
 
-// Build full list with descriptions
-const ALL_TEMPLATES = Object.entries(TEMPLATES).map(([key, t]) => ({
-  key,
-  title: t.title,
-  desc: t.input,
-}));
+// Depth variant suffixes
+const DEPTH_SUFFIXES = ['Mid', 'Min'] as const;
+const DEPTH_VARIANTS: { suffix: string; label: string }[] = [
+  { suffix: 'Min', label: 'Summary' },
+  { suffix: 'Mid', label: 'Analysis' },
+  { suffix: '', label: 'Full Model' },
+];
+
+// Build full list, hiding depth variants (Mid/Min) from the main list
+const ALL_TEMPLATE_KEYS = Object.keys(TEMPLATES);
+const ALL_TEMPLATES = Object.entries(TEMPLATES)
+  .filter(([key]) => !DEPTH_SUFFIXES.some(s => key.endsWith(s)))
+  .map(([key, t]) => ({
+    key,
+    title: t.title,
+    desc: t.input,
+    hasVariants: DEPTH_SUFFIXES.some(s => ALL_TEMPLATE_KEYS.includes(key + s)),
+  }));
 
 // Daily rotation: deterministic shuffle based on today's date
 // Shows ~20 templates per day, different every day, cycles through all
@@ -76,6 +88,7 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
   const [search, setSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [visible, setVisible] = useState(false);
+  const [expandedKey, setExpandedKey] = useState<string | null>(null);
 
   useEffect(() => { requestAnimationFrame(() => setVisible(true)); }, []);
 
@@ -210,28 +223,64 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
               No templates match your search.
             </div>
           )}
-          {displayTemplates.map(({ key, title, desc }) => (
-            <div
-              key={key}
-              className="group px-3 sm:px-5 py-3 sm:py-3.5 rounded-xl cursor-pointer transition-all"
-              onClick={() => { onSelect(key); onClose(); }}
-              style={{ margin: '2px 0' }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(59,130,246,0.04)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'transparent';
-              }}
-            >
-              <div className="flex items-center justify-between">
-                <div className="text-[14px] font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  {title}
+          {displayTemplates.map(({ key, title, desc, hasVariants }) => (
+            <div key={key} style={{ margin: '2px 0' }}>
+              <div
+                className="group px-3 sm:px-5 py-3 sm:py-3.5 rounded-xl cursor-pointer transition-all"
+                onClick={() => {
+                  if (hasVariants) {
+                    setExpandedKey(expandedKey === key ? null : key);
+                  } else {
+                    onSelect(key); onClose();
+                  }
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(59,130,246,0.04)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = expandedKey === key ? 'rgba(59,130,246,0.04)' : 'transparent'; }}
+                style={{ background: expandedKey === key ? 'rgba(59,130,246,0.04)' : 'transparent' }}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="text-[14px] font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    {title}
+                  </div>
+                  {hasVariants ? (
+                    <svg className="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-blue-400 transition-all shrink-0 ml-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" style={{ transform: expandedKey === key ? 'rotate(90deg)' : 'none' }}>
+                      <path d="M9 18l6-6-6-6" />
+                    </svg>
+                  ) : (
+                    <svg className="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-blue-400 transition-colors shrink-0 ml-3 opacity-0 group-hover:opacity-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  )}
                 </div>
-                <svg className="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-blue-400 transition-colors shrink-0 ml-3 opacity-0 group-hover:opacity-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
+                <div className="text-[12px] text-gray-400 mt-1 line-clamp-1">{desc}</div>
               </div>
-              <div className="text-[12px] text-gray-400 mt-1 line-clamp-1">{desc}</div>
+              {/* Depth variant sub-picker */}
+              {hasVariants && expandedKey === key && (
+                <div className="ml-4 sm:ml-8 mr-2 mb-1 flex gap-2 mt-1">
+                  {DEPTH_VARIANTS.map(({ suffix, label }) => {
+                    const variantKey = key + suffix;
+                    const exists = ALL_TEMPLATE_KEYS.includes(variantKey);
+                    return (
+                      <button
+                        key={variantKey}
+                        onClick={() => { if (exists) { onSelect(variantKey); onClose(); } }}
+                        disabled={!exists}
+                        className="flex-1 px-3 py-2 rounded-lg text-[11px] font-medium transition-all cursor-pointer border"
+                        style={{
+                          background: exists ? 'rgba(59,130,246,0.06)' : 'transparent',
+                          borderColor: exists ? 'rgba(59,130,246,0.15)' : 'rgba(0,0,0,0.06)',
+                          color: exists ? '#3b82f6' : '#d1d5db',
+                        }}
+                        onMouseEnter={(e) => { if (exists) e.currentTarget.style.background = 'rgba(59,130,246,0.12)'; }}
+                        onMouseLeave={(e) => { if (exists) e.currentTarget.style.background = 'rgba(59,130,246,0.06)'; }}
+                      >
+                        {label}
+                        {!exists && <span className="block text-[9px] opacity-50 mt-0.5">coming soon</span>}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           ))}
         </div>
