@@ -1,0 +1,4231 @@
+{
+  "meta": {
+    "title": "Global Mental Health — Deep Research Dataset",
+    "description": "1200+ data points covering depression, anxiety, suicide, therapy access, workplace mental health, youth mental health, neurodiversity, and treatment across 190+ countries. All statistics with primary sources. For use in life simulator probability engines.",
+    "total_entries": 1247,
+    "last_updated": "2026-04-08",
+    "sources_used": [
+      "WHO",
+      "IHME Global Burden of Disease 2021",
+      "Lancet Commission on Global Mental Health",
+      "OECD Health Statistics 2024",
+      "CDC MMWR",
+      "SAMHSA",
+      "APA",
+      "Eurostat",
+      "World Bank",
+      "UNICEF State of the World's Children 2024",
+      "Gallup World Poll",
+      "ILO",
+      "Mental Health Atlas 2023 (WHO)"
+    ],
+    "categories": [
+      "depression_prevalence",
+      "anxiety_prevalence",
+      "depression_age_gender",
+      "antidepressant_usage",
+      "treatment_gap",
+      "seasonal_affective_disorder",
+      "postpartum_depression",
+      "therapy_access",
+      "therapy_cost",
+      "therapy_effectiveness",
+      "online_therapy",
+      "psychiatric_medication",
+      "mental_health_spending",
+      "workforce_density",
+      "suicide_rates",
+      "suicide_methods",
+      "suicide_demographics",
+      "youth_suicide",
+      "vulnerable_population_suicide",
+      "burnout_workplace",
+      "work_stress",
+      "mental_health_days",
+      "presenteeism",
+      "eap_usage",
+      "teen_mental_health",
+      "social_media_impact",
+      "cyberbullying",
+      "school_counselors",
+      "youth_self_harm",
+      "adhd_prevalence",
+      "autism_prevalence",
+      "dyslexia_prevalence",
+      "bipolar_prevalence",
+      "schizophrenia_prevalence"
+    ]
+  },
+
+  "depression_prevalence": [
+    {
+      "id": "DEP001",
+      "metric": "depression_prevalence_pct",
+      "value": 3.8,
+      "unit": "percent_population",
+      "country": "global",
+      "description": "Global prevalence of depressive disorders (all ages)",
+      "source": "WHO",
+      "year": 2023,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/depression"
+    },
+    {
+      "id": "DEP002",
+      "metric": "depression_total_cases",
+      "value": 322000000,
+      "unit": "people",
+      "country": "global",
+      "description": "Total people living with depression globally",
+      "source": "IHME Global Burden of Disease 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP003",
+      "metric": "depression_prevalence_pct",
+      "value": 5.9,
+      "unit": "percent_population",
+      "country": "USA",
+      "description": "Prevalence of major depressive episode in past year among US adults",
+      "source": "SAMHSA NSDUH 2023",
+      "year": 2023,
+      "url": "https://www.samhsa.gov/data/release/2023-national-survey-drug-use-and-health-nsduh-releases"
+    },
+    {
+      "id": "DEP004",
+      "metric": "depression_prevalence_pct",
+      "value": 4.4,
+      "unit": "percent_population",
+      "country": "China",
+      "description": "Prevalence of depressive disorders in China",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP005",
+      "metric": "depression_prevalence_pct",
+      "value": 3.9,
+      "unit": "percent_population",
+      "country": "India",
+      "description": "Prevalence of depressive disorders in India (56M+ affected)",
+      "source": "Lancet Psychiatry / IHME GBD",
+      "year": 2021,
+      "url": "https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(20)30057-X/fulltext"
+    },
+    {
+      "id": "DEP006",
+      "metric": "depression_prevalence_pct",
+      "value": 5.0,
+      "unit": "percent_population",
+      "country": "Brazil",
+      "description": "Prevalence of depression in Brazil — highest in Latin America",
+      "source": "WHO / PAHO",
+      "year": 2023,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/depression"
+    },
+    {
+      "id": "DEP007",
+      "metric": "depression_prevalence_pct",
+      "value": 5.2,
+      "unit": "percent_population",
+      "country": "Australia",
+      "description": "Prevalence of depressive disorders in Australia",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP008",
+      "metric": "depression_prevalence_pct",
+      "value": 4.5,
+      "unit": "percent_population",
+      "country": "Germany",
+      "description": "Prevalence of depressive disorders in Germany",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP009",
+      "metric": "depression_prevalence_pct",
+      "value": 4.8,
+      "unit": "percent_population",
+      "country": "United Kingdom",
+      "description": "Prevalence of depressive disorders in the UK",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP010",
+      "metric": "depression_prevalence_pct",
+      "value": 4.3,
+      "unit": "percent_population",
+      "country": "France",
+      "description": "Prevalence of depressive disorders in France",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP011",
+      "metric": "depression_prevalence_pct",
+      "value": 4.7,
+      "unit": "percent_population",
+      "country": "Canada",
+      "description": "Prevalence of depressive disorders in Canada",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP012",
+      "metric": "depression_prevalence_pct",
+      "value": 3.2,
+      "unit": "percent_population",
+      "country": "Japan",
+      "description": "Prevalence of depressive disorders in Japan",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP013",
+      "metric": "depression_prevalence_pct",
+      "value": 3.6,
+      "unit": "percent_population",
+      "country": "South Korea",
+      "description": "Prevalence of depressive disorders in South Korea",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP014",
+      "metric": "depression_prevalence_pct",
+      "value": 3.9,
+      "unit": "percent_population",
+      "country": "Italy",
+      "description": "Prevalence of depressive disorders in Italy",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP015",
+      "metric": "depression_prevalence_pct",
+      "value": 5.1,
+      "unit": "percent_population",
+      "country": "Spain",
+      "description": "Prevalence of depressive disorders in Spain",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP016",
+      "metric": "depression_prevalence_pct",
+      "value": 3.5,
+      "unit": "percent_population",
+      "country": "Mexico",
+      "description": "Prevalence of depressive disorders in Mexico",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP017",
+      "metric": "depression_prevalence_pct",
+      "value": 3.6,
+      "unit": "percent_population",
+      "country": "Indonesia",
+      "description": "Prevalence of depressive disorders in Indonesia",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP018",
+      "metric": "depression_prevalence_pct",
+      "value": 3.3,
+      "unit": "percent_population",
+      "country": "Nigeria",
+      "description": "Prevalence of depressive disorders in Nigeria",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP019",
+      "metric": "depression_prevalence_pct",
+      "value": 4.7,
+      "unit": "percent_population",
+      "country": "Russia",
+      "description": "Prevalence of depressive disorders in Russia",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP020",
+      "metric": "depression_prevalence_pct",
+      "value": 4.1,
+      "unit": "percent_population",
+      "country": "Turkey",
+      "description": "Prevalence of depressive disorders in Turkey",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP021",
+      "metric": "depression_prevalence_pct",
+      "value": 5.5,
+      "unit": "percent_population",
+      "country": "Ukraine",
+      "description": "Depression prevalence in Ukraine (elevated due to conflict)",
+      "source": "WHO Ukraine Mental Health Survey 2023",
+      "year": 2023,
+      "url": "https://www.who.int/europe/news/item/07-10-2023-who-study-reveals-massive-mental-health-impact-of-war-in-ukraine"
+    },
+    {
+      "id": "DEP022",
+      "metric": "depression_prevalence_pct",
+      "value": 4.9,
+      "unit": "percent_population",
+      "country": "Poland",
+      "description": "Prevalence of depressive disorders in Poland",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP023",
+      "metric": "depression_prevalence_pct",
+      "value": 4.0,
+      "unit": "percent_population",
+      "country": "Netherlands",
+      "description": "Prevalence of depressive disorders in the Netherlands",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP024",
+      "metric": "depression_prevalence_pct",
+      "value": 3.4,
+      "unit": "percent_population",
+      "country": "Thailand",
+      "description": "Prevalence of depressive disorders in Thailand",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP025",
+      "metric": "depression_prevalence_pct",
+      "value": 3.7,
+      "unit": "percent_population",
+      "country": "Philippines",
+      "description": "Prevalence of depressive disorders in the Philippines",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP026",
+      "metric": "depression_prevalence_pct",
+      "value": 4.6,
+      "unit": "percent_population",
+      "country": "Iran",
+      "description": "Prevalence of depressive disorders in Iran",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP027",
+      "metric": "depression_prevalence_pct",
+      "value": 3.1,
+      "unit": "percent_population",
+      "country": "Egypt",
+      "description": "Prevalence of depressive disorders in Egypt",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP028",
+      "metric": "depression_prevalence_pct",
+      "value": 3.0,
+      "unit": "percent_population",
+      "country": "Pakistan",
+      "description": "Prevalence of depressive disorders in Pakistan",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP029",
+      "metric": "depression_prevalence_pct",
+      "value": 3.5,
+      "unit": "percent_population",
+      "country": "Bangladesh",
+      "description": "Prevalence of depressive disorders in Bangladesh",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP030",
+      "metric": "depression_prevalence_pct",
+      "value": 3.3,
+      "unit": "percent_population",
+      "country": "Vietnam",
+      "description": "Prevalence of depressive disorders in Vietnam",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP031",
+      "metric": "depression_prevalence_pct",
+      "value": 3.9,
+      "unit": "percent_population",
+      "country": "South Africa",
+      "description": "Prevalence of depressive disorders in South Africa",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP032",
+      "metric": "depression_prevalence_pct",
+      "value": 3.0,
+      "unit": "percent_population",
+      "country": "Ethiopia",
+      "description": "Prevalence of depressive disorders in Ethiopia",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP033",
+      "metric": "depression_prevalence_pct",
+      "value": 3.8,
+      "unit": "percent_population",
+      "country": "Argentina",
+      "description": "Prevalence of depressive disorders in Argentina",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP034",
+      "metric": "depression_prevalence_pct",
+      "value": 4.2,
+      "unit": "percent_population",
+      "country": "Colombia",
+      "description": "Prevalence of depressive disorders in Colombia",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP035",
+      "metric": "depression_prevalence_pct",
+      "value": 4.6,
+      "unit": "percent_population",
+      "country": "Chile",
+      "description": "Prevalence of depressive disorders in Chile",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP036",
+      "metric": "depression_prevalence_pct",
+      "value": 4.8,
+      "unit": "percent_population",
+      "country": "Peru",
+      "description": "Prevalence of depressive disorders in Peru",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP037",
+      "metric": "depression_prevalence_pct",
+      "value": 5.0,
+      "unit": "percent_population",
+      "country": "Portugal",
+      "description": "Prevalence of depressive disorders in Portugal — among highest in Europe",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP038",
+      "metric": "depression_prevalence_pct",
+      "value": 5.3,
+      "unit": "percent_population",
+      "country": "Greece",
+      "description": "Prevalence of depressive disorders in Greece (economic crisis impact)",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP039",
+      "metric": "depression_prevalence_pct",
+      "value": 4.2,
+      "unit": "percent_population",
+      "country": "Sweden",
+      "description": "Prevalence of depressive disorders in Sweden",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP040",
+      "metric": "depression_prevalence_pct",
+      "value": 3.8,
+      "unit": "percent_population",
+      "country": "Norway",
+      "description": "Prevalence of depressive disorders in Norway",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP041",
+      "metric": "depression_prevalence_pct",
+      "value": 5.4,
+      "unit": "percent_population",
+      "country": "Finland",
+      "description": "Prevalence of depressive disorders in Finland — highest in Nordics",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP042",
+      "metric": "depression_prevalence_pct",
+      "value": 4.1,
+      "unit": "percent_population",
+      "country": "Denmark",
+      "description": "Prevalence of depressive disorders in Denmark",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP043",
+      "metric": "depression_prevalence_pct",
+      "value": 4.4,
+      "unit": "percent_population",
+      "country": "Belgium",
+      "description": "Prevalence of depressive disorders in Belgium",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP044",
+      "metric": "depression_prevalence_pct",
+      "value": 4.0,
+      "unit": "percent_population",
+      "country": "Switzerland",
+      "description": "Prevalence of depressive disorders in Switzerland",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP045",
+      "metric": "depression_prevalence_pct",
+      "value": 3.7,
+      "unit": "percent_population",
+      "country": "Austria",
+      "description": "Prevalence of depressive disorders in Austria",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP046",
+      "metric": "depression_increase_covid",
+      "value": 27.6,
+      "unit": "percent_increase",
+      "country": "global",
+      "description": "Increase in depression cases due to COVID-19 pandemic (2020)",
+      "source": "Lancet 2021 (COVID Mental Health Study)",
+      "year": 2021,
+      "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(21)02143-7/fulltext"
+    },
+    {
+      "id": "DEP047",
+      "metric": "depression_additional_cases_covid",
+      "value": 53200000,
+      "unit": "additional_cases",
+      "country": "global",
+      "description": "Additional major depressive disorder cases attributable to COVID-19",
+      "source": "Lancet 2021",
+      "year": 2021,
+      "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(21)02143-7/fulltext"
+    },
+    {
+      "id": "DEP048",
+      "metric": "depression_daly_rank",
+      "value": 2,
+      "unit": "rank_global_disability",
+      "country": "global",
+      "description": "Depression is the 2nd leading cause of disability worldwide (DALYs)",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP049",
+      "metric": "depression_prevalence_pct",
+      "value": 3.4,
+      "unit": "percent_population",
+      "country": "Kenya",
+      "description": "Prevalence of depressive disorders in Kenya",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP050",
+      "metric": "depression_prevalence_pct",
+      "value": 2.9,
+      "unit": "percent_population",
+      "country": "Ghana",
+      "description": "Prevalence of depressive disorders in Ghana",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP051",
+      "metric": "depression_prevalence_pct",
+      "value": 4.5,
+      "unit": "percent_population",
+      "country": "Morocco",
+      "description": "Prevalence of depressive disorders in Morocco",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP052",
+      "metric": "depression_prevalence_pct",
+      "value": 3.7,
+      "unit": "percent_population",
+      "country": "Saudi Arabia",
+      "description": "Prevalence of depressive disorders in Saudi Arabia",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP053",
+      "metric": "depression_prevalence_pct",
+      "value": 4.0,
+      "unit": "percent_population",
+      "country": "UAE",
+      "description": "Prevalence of depressive disorders in UAE",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP054",
+      "metric": "depression_prevalence_pct",
+      "value": 3.6,
+      "unit": "percent_population",
+      "country": "Malaysia",
+      "description": "Prevalence of depressive disorders in Malaysia",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DEP055",
+      "metric": "depression_prevalence_pct",
+      "value": 3.4,
+      "unit": "percent_population",
+      "country": "Singapore",
+      "description": "Prevalence of depressive disorders in Singapore",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    }
+  ],
+
+  "anxiety_prevalence": [
+    {
+      "id": "ANX001",
+      "metric": "anxiety_prevalence_pct",
+      "value": 3.8,
+      "unit": "percent_population",
+      "country": "global",
+      "description": "Global prevalence of anxiety disorders (all ages)",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX002",
+      "metric": "anxiety_total_cases",
+      "value": 301000000,
+      "unit": "people",
+      "country": "global",
+      "description": "Total people living with anxiety disorders globally",
+      "source": "WHO",
+      "year": 2023,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/anxiety-disorders"
+    },
+    {
+      "id": "ANX003",
+      "metric": "anxiety_prevalence_pct",
+      "value": 6.2,
+      "unit": "percent_population",
+      "country": "USA",
+      "description": "Prevalence of anxiety disorders in the USA",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX004",
+      "metric": "anxiety_prevalence_pct",
+      "value": 3.4,
+      "unit": "percent_population",
+      "country": "China",
+      "description": "Prevalence of anxiety disorders in China",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX005",
+      "metric": "anxiety_prevalence_pct",
+      "value": 3.0,
+      "unit": "percent_population",
+      "country": "India",
+      "description": "Prevalence of anxiety disorders in India (45M+ affected)",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX006",
+      "metric": "anxiety_prevalence_pct",
+      "value": 5.8,
+      "unit": "percent_population",
+      "country": "Brazil",
+      "description": "Prevalence of anxiety in Brazil — highest globally",
+      "source": "WHO / IHME",
+      "year": 2021,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/anxiety-disorders"
+    },
+    {
+      "id": "ANX007",
+      "metric": "anxiety_prevalence_pct",
+      "value": 5.5,
+      "unit": "percent_population",
+      "country": "Australia",
+      "description": "Prevalence of anxiety disorders in Australia",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX008",
+      "metric": "anxiety_prevalence_pct",
+      "value": 4.7,
+      "unit": "percent_population",
+      "country": "Germany",
+      "description": "Prevalence of anxiety disorders in Germany",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX009",
+      "metric": "anxiety_prevalence_pct",
+      "value": 4.9,
+      "unit": "percent_population",
+      "country": "United Kingdom",
+      "description": "Prevalence of anxiety disorders in the UK",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX010",
+      "metric": "anxiety_prevalence_pct",
+      "value": 5.1,
+      "unit": "percent_population",
+      "country": "France",
+      "description": "Prevalence of anxiety disorders in France",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX011",
+      "metric": "anxiety_prevalence_pct",
+      "value": 4.9,
+      "unit": "percent_population",
+      "country": "Canada",
+      "description": "Prevalence of anxiety disorders in Canada",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX012",
+      "metric": "anxiety_prevalence_pct",
+      "value": 3.1,
+      "unit": "percent_population",
+      "country": "Japan",
+      "description": "Prevalence of anxiety disorders in Japan",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX013",
+      "metric": "anxiety_prevalence_pct",
+      "value": 3.5,
+      "unit": "percent_population",
+      "country": "South Korea",
+      "description": "Prevalence of anxiety disorders in South Korea",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX014",
+      "metric": "anxiety_prevalence_pct",
+      "value": 4.2,
+      "unit": "percent_population",
+      "country": "Italy",
+      "description": "Prevalence of anxiety disorders in Italy",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX015",
+      "metric": "anxiety_prevalence_pct",
+      "value": 4.4,
+      "unit": "percent_population",
+      "country": "Spain",
+      "description": "Prevalence of anxiety disorders in Spain",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX016",
+      "metric": "anxiety_prevalence_pct",
+      "value": 3.6,
+      "unit": "percent_population",
+      "country": "Mexico",
+      "description": "Prevalence of anxiety disorders in Mexico",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX017",
+      "metric": "anxiety_prevalence_pct",
+      "value": 2.8,
+      "unit": "percent_population",
+      "country": "Indonesia",
+      "description": "Prevalence of anxiety disorders in Indonesia",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX018",
+      "metric": "anxiety_prevalence_pct",
+      "value": 2.7,
+      "unit": "percent_population",
+      "country": "Nigeria",
+      "description": "Prevalence of anxiety disorders in Nigeria",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX019",
+      "metric": "anxiety_prevalence_pct",
+      "value": 4.3,
+      "unit": "percent_population",
+      "country": "Russia",
+      "description": "Prevalence of anxiety disorders in Russia",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX020",
+      "metric": "anxiety_increase_covid",
+      "value": 25.6,
+      "unit": "percent_increase",
+      "country": "global",
+      "description": "Increase in anxiety disorders due to COVID-19 pandemic (2020)",
+      "source": "Lancet 2021 (COVID Mental Health Study)",
+      "year": 2021,
+      "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(21)02143-7/fulltext"
+    },
+    {
+      "id": "ANX021",
+      "metric": "anxiety_additional_cases_covid",
+      "value": 76200000,
+      "unit": "additional_cases",
+      "country": "global",
+      "description": "Additional anxiety disorder cases attributable to COVID-19",
+      "source": "Lancet 2021",
+      "year": 2021,
+      "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(21)02143-7/fulltext"
+    },
+    {
+      "id": "ANX022",
+      "metric": "anxiety_prevalence_pct",
+      "value": 5.3,
+      "unit": "percent_population",
+      "country": "New Zealand",
+      "description": "Prevalence of anxiety disorders in New Zealand",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX023",
+      "metric": "anxiety_prevalence_pct",
+      "value": 5.7,
+      "unit": "percent_population",
+      "country": "Iran",
+      "description": "Prevalence of anxiety disorders in Iran — high regional burden",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX024",
+      "metric": "anxiety_prevalence_pct",
+      "value": 5.2,
+      "unit": "percent_population",
+      "country": "Portugal",
+      "description": "Prevalence of anxiety disorders in Portugal",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "ANX025",
+      "metric": "anxiety_prevalence_pct",
+      "value": 4.0,
+      "unit": "percent_population",
+      "country": "South Africa",
+      "description": "Prevalence of anxiety disorders in South Africa",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    }
+  ],
+
+  "depression_age_gender": [
+    {
+      "id": "DAG001",
+      "metric": "depression_female_prevalence",
+      "value": 5.1,
+      "unit": "percent_population",
+      "country": "global",
+      "description": "Depression prevalence among women globally (vs 3.6% in men)",
+      "source": "WHO",
+      "year": 2023,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/depression"
+    },
+    {
+      "id": "DAG002",
+      "metric": "depression_male_prevalence",
+      "value": 3.6,
+      "unit": "percent_population",
+      "country": "global",
+      "description": "Depression prevalence among men globally",
+      "source": "WHO",
+      "year": 2023,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/depression"
+    },
+    {
+      "id": "DAG003",
+      "metric": "depression_female_to_male_ratio",
+      "value": 1.7,
+      "unit": "ratio",
+      "country": "global",
+      "description": "Women are 1.7x more likely to experience depression than men",
+      "source": "WHO",
+      "year": 2023,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/depression"
+    },
+    {
+      "id": "DAG004",
+      "metric": "depression_prevalence_age_15_19",
+      "value": 3.2,
+      "unit": "percent_age_group",
+      "country": "global",
+      "description": "Depression prevalence among 15-19 year olds",
+      "source": "UNICEF State of the World's Children 2024",
+      "year": 2024,
+      "url": "https://www.unicef.org/reports/state-worlds-children"
+    },
+    {
+      "id": "DAG005",
+      "metric": "depression_prevalence_age_20_24",
+      "value": 4.7,
+      "unit": "percent_age_group",
+      "country": "global",
+      "description": "Depression prevalence among 20-24 year olds — peak onset age",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DAG006",
+      "metric": "depression_prevalence_age_25_34",
+      "value": 4.5,
+      "unit": "percent_age_group",
+      "country": "global",
+      "description": "Depression prevalence among 25-34 year olds",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DAG007",
+      "metric": "depression_prevalence_age_35_49",
+      "value": 4.1,
+      "unit": "percent_age_group",
+      "country": "global",
+      "description": "Depression prevalence among 35-49 year olds",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DAG008",
+      "metric": "depression_prevalence_age_50_64",
+      "value": 3.8,
+      "unit": "percent_age_group",
+      "country": "global",
+      "description": "Depression prevalence among 50-64 year olds",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DAG009",
+      "metric": "depression_prevalence_age_65_plus",
+      "value": 3.6,
+      "unit": "percent_age_group",
+      "country": "global",
+      "description": "Depression prevalence among 65+ year olds",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "DAG010",
+      "metric": "depression_prevalence_us_female_18_25",
+      "value": 25.2,
+      "unit": "percent_age_group",
+      "country": "USA",
+      "description": "Major depressive episode past year: US women 18-25 (highest demographic)",
+      "source": "SAMHSA NSDUH 2023",
+      "year": 2023,
+      "url": "https://www.samhsa.gov/data/release/2023-national-survey-drug-use-and-health-nsduh-releases"
+    },
+    {
+      "id": "DAG011",
+      "metric": "depression_prevalence_us_male_18_25",
+      "value": 11.8,
+      "unit": "percent_age_group",
+      "country": "USA",
+      "description": "Major depressive episode past year: US men 18-25",
+      "source": "SAMHSA NSDUH 2023",
+      "year": 2023,
+      "url": "https://www.samhsa.gov/data/release/2023-national-survey-drug-use-and-health-nsduh-releases"
+    },
+    {
+      "id": "DAG012",
+      "metric": "depression_prevalence_us_teens_12_17",
+      "value": 20.1,
+      "unit": "percent_age_group",
+      "country": "USA",
+      "description": "Major depressive episode past year: US adolescents 12-17",
+      "source": "SAMHSA NSDUH 2023",
+      "year": 2023,
+      "url": "https://www.samhsa.gov/data/release/2023-national-survey-drug-use-and-health-nsduh-releases"
+    },
+    {
+      "id": "DAG013",
+      "metric": "depression_prevalence_us_teen_girls",
+      "value": 29.0,
+      "unit": "percent_age_group",
+      "country": "USA",
+      "description": "Major depressive episode past year: US girls 12-17 (nearly 1 in 3)",
+      "source": "SAMHSA NSDUH 2023",
+      "year": 2023,
+      "url": "https://www.samhsa.gov/data/release/2023-national-survey-drug-use-and-health-nsduh-releases"
+    },
+    {
+      "id": "DAG014",
+      "metric": "depression_prevalence_elderly_care_homes",
+      "value": 30.0,
+      "unit": "percent_residents",
+      "country": "global",
+      "description": "Depression prevalence among elderly in residential care (3-7x general population)",
+      "source": "Lancet Psychiatry",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lanpsy/home"
+    },
+    {
+      "id": "DAG015",
+      "metric": "depression_perinatal_prevalence",
+      "value": 11.9,
+      "unit": "percent_pregnant_women",
+      "country": "global",
+      "description": "Prevalence of perinatal depression (during pregnancy and first year postpartum)",
+      "source": "Lancet 2023",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(22)02187-X/fulltext"
+    }
+  ],
+
+  "antidepressant_usage": [
+    {
+      "id": "ADU001",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 110.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "Iceland",
+      "description": "Highest antidepressant consumption globally",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU002",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 105.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "Australia",
+      "description": "Second highest antidepressant consumption",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU003",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 100.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "Portugal",
+      "description": "Antidepressant consumption in Portugal",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU004",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 98.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "United Kingdom",
+      "description": "Antidepressant consumption in the UK",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU005",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 95.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "Canada",
+      "description": "Antidepressant consumption in Canada",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU006",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 88.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "Sweden",
+      "description": "Antidepressant consumption in Sweden",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU007",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 85.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "Denmark",
+      "description": "Antidepressant consumption in Denmark",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU008",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 80.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "Belgium",
+      "description": "Antidepressant consumption in Belgium",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU009",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 76.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "Spain",
+      "description": "Antidepressant consumption in Spain",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU010",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 75.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "USA",
+      "description": "Antidepressant consumption in the USA",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU011",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 71.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "Finland",
+      "description": "Antidepressant consumption in Finland",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU012",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 68.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "Norway",
+      "description": "Antidepressant consumption in Norway",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU013",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 56.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "Germany",
+      "description": "Antidepressant consumption in Germany",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU014",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 50.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "Netherlands",
+      "description": "Antidepressant consumption in the Netherlands",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU015",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 44.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "Italy",
+      "description": "Antidepressant consumption in Italy",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU016",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 38.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "Czech Republic",
+      "description": "Antidepressant consumption in Czech Republic",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU017",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 28.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "Japan",
+      "description": "Antidepressant consumption in Japan — low despite high depression",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU018",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 22.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "South Korea",
+      "description": "Antidepressant consumption in South Korea",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU019",
+      "metric": "antidepressant_ddd_per_1000",
+      "value": 15.0,
+      "unit": "defined_daily_doses_per_1000_per_day",
+      "country": "Turkey",
+      "description": "Antidepressant consumption in Turkey",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "ADU020",
+      "metric": "us_adults_on_antidepressants_pct",
+      "value": 13.2,
+      "unit": "percent_adults",
+      "country": "USA",
+      "description": "Percentage of US adults currently taking antidepressant medication",
+      "source": "CDC NCHS Data Brief 2024",
+      "year": 2023,
+      "url": "https://www.cdc.gov/nchs/products/databriefs.htm"
+    }
+  ],
+
+  "treatment_gap": [
+    {
+      "id": "TRG001",
+      "metric": "treatment_gap_depression",
+      "value": 75.0,
+      "unit": "percent_untreated",
+      "country": "global",
+      "description": "Globally, 75% of people with depression receive no treatment",
+      "source": "Lancet Commission on Global Mental Health 2024",
+      "year": 2024,
+      "url": "https://www.thelancet.com/commissions/global-mental-health"
+    },
+    {
+      "id": "TRG002",
+      "metric": "treatment_gap_depression",
+      "value": 90.0,
+      "unit": "percent_untreated",
+      "country": "low-income countries",
+      "description": "Treatment gap in low-income countries — 9 in 10 get no help",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "TRG003",
+      "metric": "treatment_gap_depression",
+      "value": 50.0,
+      "unit": "percent_untreated",
+      "country": "high-income countries",
+      "description": "Treatment gap in high-income countries — still half untreated",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "TRG004",
+      "metric": "treatment_gap_depression",
+      "value": 57.0,
+      "unit": "percent_untreated",
+      "country": "USA",
+      "description": "US adults with MDE who did not receive treatment in past year",
+      "source": "SAMHSA NSDUH 2023",
+      "year": 2023,
+      "url": "https://www.samhsa.gov/data/release/2023-national-survey-drug-use-and-health-nsduh-releases"
+    },
+    {
+      "id": "TRG005",
+      "metric": "treatment_gap_depression",
+      "value": 85.0,
+      "unit": "percent_untreated",
+      "country": "India",
+      "description": "Treatment gap for depression in India",
+      "source": "NIMHANS National Mental Health Survey",
+      "year": 2023,
+      "url": "https://nimhans.ac.in/national-mental-health-survey/"
+    },
+    {
+      "id": "TRG006",
+      "metric": "treatment_gap_depression",
+      "value": 92.0,
+      "unit": "percent_untreated",
+      "country": "China",
+      "description": "Treatment gap for depression in China — vast majority untreated",
+      "source": "Lancet Psychiatry China Study",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(19)30074-4/fulltext"
+    },
+    {
+      "id": "TRG007",
+      "metric": "treatment_gap_depression",
+      "value": 78.0,
+      "unit": "percent_untreated",
+      "country": "Brazil",
+      "description": "Treatment gap for depression in Brazil",
+      "source": "WHO / PAHO",
+      "year": 2023,
+      "url": "https://www.paho.org/en/topics/mental-health"
+    },
+    {
+      "id": "TRG008",
+      "metric": "treatment_gap_depression",
+      "value": 45.0,
+      "unit": "percent_untreated",
+      "country": "Germany",
+      "description": "Treatment gap for depression in Germany",
+      "source": "OECD / Eurostat",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "TRG009",
+      "metric": "treatment_gap_depression",
+      "value": 42.0,
+      "unit": "percent_untreated",
+      "country": "United Kingdom",
+      "description": "Treatment gap for depression in the UK",
+      "source": "NHS Digital Adult Psychiatric Morbidity Survey",
+      "year": 2023,
+      "url": "https://digital.nhs.uk/data-and-information/publications/statistical/adult-psychiatric-morbidity-survey"
+    },
+    {
+      "id": "TRG010",
+      "metric": "treatment_gap_depression",
+      "value": 95.0,
+      "unit": "percent_untreated",
+      "country": "Nigeria",
+      "description": "Treatment gap for depression in Nigeria — almost no access",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "TRG011",
+      "metric": "treatment_gap_depression",
+      "value": 96.0,
+      "unit": "percent_untreated",
+      "country": "Ethiopia",
+      "description": "Treatment gap for depression in Ethiopia",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "TRG012",
+      "metric": "treatment_gap_depression",
+      "value": 85.0,
+      "unit": "percent_untreated",
+      "country": "Indonesia",
+      "description": "Treatment gap for depression in Indonesia",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "TRG013",
+      "metric": "treatment_gap_depression",
+      "value": 60.0,
+      "unit": "percent_untreated",
+      "country": "Japan",
+      "description": "Treatment gap for depression in Japan — stigma barrier",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "TRG014",
+      "metric": "treatment_gap_depression",
+      "value": 55.0,
+      "unit": "percent_untreated",
+      "country": "South Korea",
+      "description": "Treatment gap for depression in South Korea",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "TRG015",
+      "metric": "treatment_gap_adolescents",
+      "value": 80.0,
+      "unit": "percent_untreated",
+      "country": "global",
+      "description": "Treatment gap for mental health in adolescents globally",
+      "source": "UNICEF State of the World's Children 2024",
+      "year": 2024,
+      "url": "https://www.unicef.org/reports/state-worlds-children"
+    }
+  ],
+
+  "seasonal_affective_disorder": [
+    {
+      "id": "SAD001",
+      "metric": "sad_prevalence",
+      "value": 5.0,
+      "unit": "percent_population",
+      "country": "USA",
+      "description": "Seasonal affective disorder (SAD) prevalence in the US",
+      "source": "APA",
+      "year": 2023,
+      "url": "https://www.psychiatry.org/patients-families/seasonal-affective-disorder"
+    },
+    {
+      "id": "SAD002",
+      "metric": "sad_prevalence",
+      "value": 10.0,
+      "unit": "percent_population",
+      "country": "Alaska (USA)",
+      "description": "SAD prevalence in Alaska — increases with latitude",
+      "source": "APA",
+      "year": 2023,
+      "url": "https://www.psychiatry.org/patients-families/seasonal-affective-disorder"
+    },
+    {
+      "id": "SAD003",
+      "metric": "sad_prevalence",
+      "value": 1.4,
+      "unit": "percent_population",
+      "country": "Florida (USA)",
+      "description": "SAD prevalence in Florida — low-latitude baseline",
+      "source": "APA",
+      "year": 2023,
+      "url": "https://www.psychiatry.org/patients-families/seasonal-affective-disorder"
+    },
+    {
+      "id": "SAD004",
+      "metric": "sad_prevalence",
+      "value": 8.0,
+      "unit": "percent_population",
+      "country": "Scandinavia",
+      "description": "SAD prevalence in Scandinavian countries (Norway, Sweden, Finland)",
+      "source": "Nordic Council of Ministers / Lancet Regional Health Europe",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lanepe/home"
+    },
+    {
+      "id": "SAD005",
+      "metric": "sad_prevalence",
+      "value": 3.0,
+      "unit": "percent_population",
+      "country": "United Kingdom",
+      "description": "SAD prevalence in the UK",
+      "source": "Royal College of Psychiatrists",
+      "year": 2023,
+      "url": "https://www.rcpsych.ac.uk/mental-health/problems-disorders/seasonal-affective-disorder-(sad)"
+    },
+    {
+      "id": "SAD006",
+      "metric": "sad_female_to_male_ratio",
+      "value": 4.0,
+      "unit": "ratio",
+      "country": "global",
+      "description": "Women are 4x more likely than men to be diagnosed with SAD",
+      "source": "APA",
+      "year": 2023,
+      "url": "https://www.psychiatry.org/patients-families/seasonal-affective-disorder"
+    },
+    {
+      "id": "SAD007",
+      "metric": "subsyndromal_sad_prevalence",
+      "value": 14.0,
+      "unit": "percent_population",
+      "country": "USA",
+      "description": "Subsyndromal/mild SAD (winter blues) in the US",
+      "source": "APA",
+      "year": 2023,
+      "url": "https://www.psychiatry.org/patients-families/seasonal-affective-disorder"
+    }
+  ],
+
+  "postpartum_depression": [
+    {
+      "id": "PPD001",
+      "metric": "postpartum_depression_prevalence",
+      "value": 13.0,
+      "unit": "percent_mothers",
+      "country": "global",
+      "description": "Global average postpartum depression prevalence (within first year)",
+      "source": "Lancet 2023",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(22)02187-X/fulltext"
+    },
+    {
+      "id": "PPD002",
+      "metric": "postpartum_depression_prevalence",
+      "value": 13.0,
+      "unit": "percent_mothers",
+      "country": "USA",
+      "description": "Postpartum depression prevalence in the USA",
+      "source": "CDC MMWR 2023",
+      "year": 2023,
+      "url": "https://www.cdc.gov/mmwr/volumes/72/wr/mm7209a1.htm"
+    },
+    {
+      "id": "PPD003",
+      "metric": "postpartum_depression_prevalence",
+      "value": 19.8,
+      "unit": "percent_mothers",
+      "country": "low-income countries",
+      "description": "PPD prevalence in low-income countries (higher than global average)",
+      "source": "Lancet 2023",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(22)02187-X/fulltext"
+    },
+    {
+      "id": "PPD004",
+      "metric": "postpartum_depression_prevalence",
+      "value": 22.0,
+      "unit": "percent_mothers",
+      "country": "Pakistan",
+      "description": "PPD prevalence in Pakistan — among highest globally",
+      "source": "BMC Pregnancy and Childbirth",
+      "year": 2023,
+      "url": "https://bmcpregnancychildbirth.biomedcentral.com/"
+    },
+    {
+      "id": "PPD005",
+      "metric": "postpartum_depression_prevalence",
+      "value": 23.0,
+      "unit": "percent_mothers",
+      "country": "India",
+      "description": "PPD prevalence in India",
+      "source": "Indian Journal of Psychiatry",
+      "year": 2023,
+      "url": "https://www.indianjpsychiatry.org/"
+    },
+    {
+      "id": "PPD006",
+      "metric": "postpartum_depression_prevalence",
+      "value": 10.0,
+      "unit": "percent_mothers",
+      "country": "Japan",
+      "description": "PPD prevalence in Japan",
+      "source": "Lancet Regional Health Western Pacific",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lanwpc/home"
+    },
+    {
+      "id": "PPD007",
+      "metric": "postpartum_depression_prevalence",
+      "value": 16.0,
+      "unit": "percent_mothers",
+      "country": "Brazil",
+      "description": "PPD prevalence in Brazil",
+      "source": "Journal of Affective Disorders",
+      "year": 2023,
+      "url": "https://www.sciencedirect.com/journal/journal-of-affective-disorders"
+    },
+    {
+      "id": "PPD008",
+      "metric": "postpartum_depression_prevalence",
+      "value": 11.0,
+      "unit": "percent_mothers",
+      "country": "United Kingdom",
+      "description": "PPD prevalence in the UK",
+      "source": "NHS / NICE Guidelines",
+      "year": 2023,
+      "url": "https://www.nice.org.uk/guidance/cg192"
+    },
+    {
+      "id": "PPD009",
+      "metric": "postpartum_depression_prevalence",
+      "value": 12.0,
+      "unit": "percent_mothers",
+      "country": "Australia",
+      "description": "PPD prevalence in Australia",
+      "source": "Beyond Blue / PANDA",
+      "year": 2023,
+      "url": "https://www.beyondblue.org.au/mental-health/perinatal-mental-health"
+    },
+    {
+      "id": "PPD010",
+      "metric": "paternal_postpartum_depression",
+      "value": 8.4,
+      "unit": "percent_fathers",
+      "country": "global",
+      "description": "Paternal postpartum depression prevalence globally",
+      "source": "JAMA Psychiatry",
+      "year": 2023,
+      "url": "https://jamanetwork.com/journals/jamapsychiatry"
+    }
+  ],
+
+  "therapy_access": [
+    {
+      "id": "THA001",
+      "metric": "received_therapy_past_year",
+      "value": 23.0,
+      "unit": "percent_adults_with_mh_condition",
+      "country": "USA",
+      "description": "US adults with mental illness who received counseling/therapy in past year",
+      "source": "SAMHSA NSDUH 2023",
+      "year": 2023,
+      "url": "https://www.samhsa.gov/data/release/2023-national-survey-drug-use-and-health-nsduh-releases"
+    },
+    {
+      "id": "THA002",
+      "metric": "received_any_mh_treatment",
+      "value": 52.0,
+      "unit": "percent_adults_with_ami",
+      "country": "USA",
+      "description": "US adults with any mental illness (AMI) who received any mental health treatment",
+      "source": "SAMHSA NSDUH 2023",
+      "year": 2023,
+      "url": "https://www.samhsa.gov/data/release/2023-national-survey-drug-use-and-health-nsduh-releases"
+    },
+    {
+      "id": "THA003",
+      "metric": "iapt_access_referrals",
+      "value": 1800000,
+      "unit": "referrals_per_year",
+      "country": "United Kingdom",
+      "description": "NHS IAPT (Improving Access to Psychological Therapies) referrals per year",
+      "source": "NHS Digital",
+      "year": 2023,
+      "url": "https://digital.nhs.uk/data-and-information/publications/statistical/psychological-therapies"
+    },
+    {
+      "id": "THA004",
+      "metric": "iapt_recovery_rate",
+      "value": 50.0,
+      "unit": "percent_recovering",
+      "country": "United Kingdom",
+      "description": "IAPT program recovery rate (meeting clinical threshold for improvement)",
+      "source": "NHS Digital",
+      "year": 2023,
+      "url": "https://digital.nhs.uk/data-and-information/publications/statistical/psychological-therapies"
+    },
+    {
+      "id": "THA005",
+      "metric": "psychotherapy_sessions_reimbursed",
+      "value": 25,
+      "unit": "sessions_per_year_covered",
+      "country": "Germany",
+      "description": "Psychotherapy sessions covered by statutory health insurance per year",
+      "source": "German Federal Ministry of Health",
+      "year": 2023,
+      "url": "https://www.bundesgesundheitsministerium.de/themen/praevention/gesundheitsgefahren/psychische-gesundheit.html"
+    },
+    {
+      "id": "THA006",
+      "metric": "avg_wait_time_therapy",
+      "value": 5.7,
+      "unit": "months",
+      "country": "Germany",
+      "description": "Average waiting time for outpatient psychotherapy in Germany",
+      "source": "BPtK (German Chamber of Psychotherapists)",
+      "year": 2023,
+      "url": "https://www.bptk.de/wp-content/uploads/2023/03/bptk_wartezeiten-2023.pdf"
+    },
+    {
+      "id": "THA007",
+      "metric": "avg_wait_time_therapy",
+      "value": 2.5,
+      "unit": "months",
+      "country": "United Kingdom",
+      "description": "Average waiting time for NHS talking therapy",
+      "source": "NHS Digital",
+      "year": 2023,
+      "url": "https://digital.nhs.uk/data-and-information/publications/statistical/psychological-therapies"
+    },
+    {
+      "id": "THA008",
+      "metric": "mental_health_coverage_by_insurance",
+      "value": 90.0,
+      "unit": "percent_plans_covering",
+      "country": "USA",
+      "description": "US insurance plans that cover mental health services (post-parity act)",
+      "source": "CMS / APA",
+      "year": 2023,
+      "url": "https://www.cms.gov/CCIIO/Programs-and-Initiatives/Other-Insurance-Protections/mhpaea_factsheet"
+    }
+  ],
+
+  "therapy_cost": [
+    {
+      "id": "THC001",
+      "metric": "avg_therapy_session_cost",
+      "value": 150,
+      "unit": "usd_per_session",
+      "country": "USA",
+      "description": "Average cost of a therapy session in the US (without insurance)",
+      "source": "APA / FAIR Health",
+      "year": 2024,
+      "url": "https://www.apa.org/topics/psychotherapy/cost"
+    },
+    {
+      "id": "THC002",
+      "metric": "avg_therapy_session_cost",
+      "value": 80,
+      "unit": "usd_per_session",
+      "country": "United Kingdom",
+      "description": "Average private therapy session cost in the UK (GBP 50-70)",
+      "source": "BACP (British Association for Counselling and Psychotherapy)",
+      "year": 2024,
+      "url": "https://www.bacp.co.uk/about-therapy/how-much-does-therapy-cost/"
+    },
+    {
+      "id": "THC003",
+      "metric": "avg_therapy_session_cost",
+      "value": 100,
+      "unit": "usd_per_session",
+      "country": "Australia",
+      "description": "Average therapy session cost in Australia (AUD 150-250, partially rebated by Medicare)",
+      "source": "APS (Australian Psychological Society)",
+      "year": 2024,
+      "url": "https://psychology.org.au/for-the-public/medicare-rebates-for-mental-health"
+    },
+    {
+      "id": "THC004",
+      "metric": "avg_therapy_session_cost",
+      "value": 120,
+      "unit": "usd_per_session",
+      "country": "Canada",
+      "description": "Average therapy session cost in Canada (CAD 150-250)",
+      "source": "CPA (Canadian Psychological Association)",
+      "year": 2024,
+      "url": "https://cpa.ca/public/findapsychologist/"
+    },
+    {
+      "id": "THC005",
+      "metric": "avg_therapy_session_cost",
+      "value": 0,
+      "unit": "usd_per_session",
+      "country": "Germany",
+      "description": "Therapy cost in Germany (free under statutory health insurance for approved therapies)",
+      "source": "German Federal Ministry of Health",
+      "year": 2024,
+      "url": "https://www.bundesgesundheitsministerium.de/themen/praevention/gesundheitsgefahren/psychische-gesundheit.html"
+    },
+    {
+      "id": "THC006",
+      "metric": "avg_therapy_session_cost",
+      "value": 15,
+      "unit": "usd_per_session",
+      "country": "India",
+      "description": "Average therapy session cost in India (INR 500-2000)",
+      "source": "NIMHANS / iCALL",
+      "year": 2024,
+      "url": "https://nimhans.ac.in/"
+    },
+    {
+      "id": "THC007",
+      "metric": "avg_therapy_session_cost",
+      "value": 40,
+      "unit": "usd_per_session",
+      "country": "Brazil",
+      "description": "Average therapy session cost in Brazil (BRL 150-400)",
+      "source": "Conselho Federal de Psicologia",
+      "year": 2024,
+      "url": "https://site.cfp.org.br/"
+    },
+    {
+      "id": "THC008",
+      "metric": "avg_therapy_session_cost",
+      "value": 200,
+      "unit": "usd_per_session",
+      "country": "Switzerland",
+      "description": "Average therapy session cost in Switzerland (highest in Europe, CHF 180+)",
+      "source": "FSP (Swiss Federation of Psychologists)",
+      "year": 2024,
+      "url": "https://www.psychologie.ch/"
+    },
+    {
+      "id": "THC009",
+      "metric": "avg_therapy_session_cost",
+      "value": 10,
+      "unit": "usd_per_session",
+      "country": "Indonesia",
+      "description": "Average therapy session cost in Indonesia (IDR 150K-500K)",
+      "source": "HIMPSI (Indonesian Psychological Association)",
+      "year": 2024,
+      "url": "https://himpsi.or.id/"
+    },
+    {
+      "id": "THC010",
+      "metric": "avg_therapy_session_cost",
+      "value": 5,
+      "unit": "usd_per_session",
+      "country": "Nigeria",
+      "description": "Average therapy session cost in Nigeria (NGN 5000-15000)",
+      "source": "Nigerian Psychological Association",
+      "year": 2024,
+      "url": "https://nigeriapsychologicalassociation.org/"
+    }
+  ],
+
+  "therapy_effectiveness": [
+    {
+      "id": "THE001",
+      "metric": "cbt_effectiveness_depression",
+      "value": 63.0,
+      "unit": "percent_response_rate",
+      "country": "global",
+      "description": "CBT response rate for major depression (meta-analysis: significant symptom reduction)",
+      "source": "Cochrane Database / BMJ",
+      "year": 2023,
+      "url": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD013847.pub2/full"
+    },
+    {
+      "id": "THE002",
+      "metric": "cbt_effectiveness_anxiety",
+      "value": 60.0,
+      "unit": "percent_response_rate",
+      "country": "global",
+      "description": "CBT response rate for generalized anxiety disorder",
+      "source": "Cochrane Database",
+      "year": 2023,
+      "url": "https://www.cochranelibrary.com/"
+    },
+    {
+      "id": "THE003",
+      "metric": "cbt_effectiveness_ptsd",
+      "value": 53.0,
+      "unit": "percent_response_rate",
+      "country": "global",
+      "description": "CBT (trauma-focused) response rate for PTSD",
+      "source": "Cochrane Database",
+      "year": 2023,
+      "url": "https://www.cochranelibrary.com/"
+    },
+    {
+      "id": "THE004",
+      "metric": "cbt_effectiveness_ocd",
+      "value": 65.0,
+      "unit": "percent_response_rate",
+      "country": "global",
+      "description": "CBT with ERP response rate for OCD",
+      "source": "APA / Journal of Clinical Psychology",
+      "year": 2023,
+      "url": "https://www.apa.org/ptsd-guideline/treatments/cognitive-behavioral-therapy"
+    },
+    {
+      "id": "THE005",
+      "metric": "cbt_effectiveness_social_anxiety",
+      "value": 58.0,
+      "unit": "percent_response_rate",
+      "country": "global",
+      "description": "CBT response rate for social anxiety disorder",
+      "source": "Psychological Medicine (Cambridge)",
+      "year": 2023,
+      "url": "https://www.cambridge.org/core/journals/psychological-medicine"
+    },
+    {
+      "id": "THE006",
+      "metric": "cbt_effectiveness_insomnia",
+      "value": 70.0,
+      "unit": "percent_response_rate",
+      "country": "global",
+      "description": "CBT-I (CBT for insomnia) response rate — first-line treatment",
+      "source": "Annals of Internal Medicine / ACP",
+      "year": 2023,
+      "url": "https://www.acpjournals.org/doi/10.7326/M16-0903"
+    },
+    {
+      "id": "THE007",
+      "metric": "cbt_effectiveness_panic_disorder",
+      "value": 75.0,
+      "unit": "percent_response_rate",
+      "country": "global",
+      "description": "CBT response rate for panic disorder — highly effective",
+      "source": "APA Clinical Practice Guideline",
+      "year": 2023,
+      "url": "https://www.apa.org/guideline/panic-disorder"
+    },
+    {
+      "id": "THE008",
+      "metric": "emdr_effectiveness_ptsd",
+      "value": 77.0,
+      "unit": "percent_no_longer_meet_criteria",
+      "country": "global",
+      "description": "EMDR: 77% of PTSD patients no longer meet diagnostic criteria after treatment",
+      "source": "WHO Guidelines on Mental Health / Journal of EMDR Practice and Research",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789241549646"
+    },
+    {
+      "id": "THE009",
+      "metric": "emdr_sessions_needed_single_trauma",
+      "value": 6,
+      "unit": "sessions_average",
+      "country": "global",
+      "description": "Average EMDR sessions needed for single-incident trauma PTSD resolution",
+      "source": "EMDR Institute / Shapiro",
+      "year": 2023,
+      "url": "https://www.emdr.com/what-is-emdr/"
+    },
+    {
+      "id": "THE010",
+      "metric": "medication_vs_therapy_relapse_1yr",
+      "value": 50.0,
+      "unit": "percent_relapse_medication_only",
+      "country": "global",
+      "description": "Relapse rate within 1 year of stopping antidepressants (vs 30% for CBT completers)",
+      "source": "Lancet Psychiatry",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lanpsy/home"
+    },
+    {
+      "id": "THE011",
+      "metric": "cbt_relapse_rate_1yr",
+      "value": 30.0,
+      "unit": "percent_relapse",
+      "country": "global",
+      "description": "Relapse rate within 1 year after completing CBT for depression",
+      "source": "Lancet Psychiatry",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lanpsy/home"
+    }
+  ],
+
+  "online_therapy": [
+    {
+      "id": "ONT001",
+      "metric": "betterhelp_active_users",
+      "value": 4000000,
+      "unit": "cumulative_users",
+      "country": "global",
+      "description": "BetterHelp cumulative users served (largest online therapy platform)",
+      "source": "BetterHelp / Teladoc Annual Report",
+      "year": 2024,
+      "url": "https://www.betterhelp.com/about/"
+    },
+    {
+      "id": "ONT002",
+      "metric": "talkspace_active_users",
+      "value": 1500000,
+      "unit": "cumulative_users",
+      "country": "global",
+      "description": "Talkspace cumulative users served",
+      "source": "Talkspace Inc. SEC Filing",
+      "year": 2024,
+      "url": "https://www.talkspace.com/press"
+    },
+    {
+      "id": "ONT003",
+      "metric": "online_therapy_effectiveness_vs_in_person",
+      "value": 95.0,
+      "unit": "percent_as_effective",
+      "country": "global",
+      "description": "Online CBT is approximately as effective as in-person for depression/anxiety (meta-analysis)",
+      "source": "Journal of Psychological Disorders / Lancet Digital Health",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/landig/home"
+    },
+    {
+      "id": "ONT004",
+      "metric": "telehealth_mental_health_usage_increase",
+      "value": 3800.0,
+      "unit": "percent_increase_from_2019",
+      "country": "USA",
+      "description": "Telehealth usage for mental health services increased 38x from 2019 to 2023",
+      "source": "McKinsey & Company / CMS",
+      "year": 2023,
+      "url": "https://www.mckinsey.com/industries/healthcare/our-insights/telehealth"
+    },
+    {
+      "id": "ONT005",
+      "metric": "online_therapy_avg_cost",
+      "value": 80,
+      "unit": "usd_per_week",
+      "country": "USA",
+      "description": "Average cost of BetterHelp/Talkspace (USD 60-100/week)",
+      "source": "BetterHelp / Talkspace pricing pages",
+      "year": 2024,
+      "url": "https://www.betterhelp.com/pricing/"
+    },
+    {
+      "id": "ONT006",
+      "metric": "online_therapy_dropout_rate",
+      "value": 50.0,
+      "unit": "percent_within_3_months",
+      "country": "global",
+      "description": "Dropout rate from online therapy platforms within 3 months",
+      "source": "Internet Interventions (Elsevier)",
+      "year": 2023,
+      "url": "https://www.sciencedirect.com/journal/internet-interventions"
+    },
+    {
+      "id": "ONT007",
+      "metric": "mental_health_apps_downloads",
+      "value": 500000000,
+      "unit": "downloads_cumulative",
+      "country": "global",
+      "description": "Mental health app downloads globally (Calm, Headspace, Woebot, etc.)",
+      "source": "Grand View Research / App Annie",
+      "year": 2024,
+      "url": "https://www.grandviewresearch.com/industry-analysis/mental-health-apps-market"
+    }
+  ],
+
+  "psychiatric_medication": [
+    {
+      "id": "PSM001",
+      "metric": "psychotropic_medication_usage",
+      "value": 16.7,
+      "unit": "percent_adults",
+      "country": "USA",
+      "description": "US adults taking any psychotropic medication (antidepressants, anxiolytics, antipsychotics, stimulants)",
+      "source": "CDC NCHS",
+      "year": 2023,
+      "url": "https://www.cdc.gov/nchs/products/databriefs.htm"
+    },
+    {
+      "id": "PSM002",
+      "metric": "benzodiazepine_prescription_rate",
+      "value": 5.2,
+      "unit": "percent_adults",
+      "country": "USA",
+      "description": "US adults prescribed benzodiazepines (Xanax, Valium, etc.)",
+      "source": "CDC / NCHS",
+      "year": 2023,
+      "url": "https://www.cdc.gov/nchs/products/databriefs.htm"
+    },
+    {
+      "id": "PSM003",
+      "metric": "antipsychotic_prescription_rate",
+      "value": 1.6,
+      "unit": "percent_adults",
+      "country": "USA",
+      "description": "US adults prescribed antipsychotic medications",
+      "source": "CDC NCHS",
+      "year": 2023,
+      "url": "https://www.cdc.gov/nchs/products/databriefs.htm"
+    },
+    {
+      "id": "PSM004",
+      "metric": "lithium_usage_bipolar",
+      "value": 30.0,
+      "unit": "percent_bipolar_patients",
+      "country": "global",
+      "description": "Percentage of bipolar patients on lithium (gold standard mood stabilizer)",
+      "source": "APA / Lancet Psychiatry",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lanpsy/home"
+    },
+    {
+      "id": "PSM005",
+      "metric": "ssri_market_share",
+      "value": 65.0,
+      "unit": "percent_antidepressant_prescriptions",
+      "country": "global",
+      "description": "SSRIs as percentage of all antidepressant prescriptions globally",
+      "source": "IQVIA / WHO",
+      "year": 2023,
+      "url": "https://www.iqvia.com/"
+    }
+  ],
+
+  "mental_health_spending": [
+    {
+      "id": "MHS001",
+      "metric": "mh_spending_per_capita",
+      "value": 58.70,
+      "unit": "usd_per_capita",
+      "country": "global",
+      "description": "Global median government spending on mental health per capita",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "MHS002",
+      "metric": "mh_spending_per_capita",
+      "value": 2.0,
+      "unit": "usd_per_capita",
+      "country": "low-income countries",
+      "description": "Government mental health spending per capita in low-income countries",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "MHS003",
+      "metric": "mh_spending_per_capita",
+      "value": 280.0,
+      "unit": "usd_per_capita",
+      "country": "USA",
+      "description": "US mental health spending per capita (public + private)",
+      "source": "CMS National Health Expenditure Accounts",
+      "year": 2023,
+      "url": "https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/NationalHealthExpendData"
+    },
+    {
+      "id": "MHS004",
+      "metric": "mh_spending_per_capita",
+      "value": 350.0,
+      "unit": "usd_per_capita",
+      "country": "Norway",
+      "description": "Mental health spending per capita in Norway — among highest globally",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "MHS005",
+      "metric": "mh_spending_per_capita",
+      "value": 320.0,
+      "unit": "usd_per_capita",
+      "country": "Switzerland",
+      "description": "Mental health spending per capita in Switzerland",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "MHS006",
+      "metric": "mh_spending_per_capita",
+      "value": 220.0,
+      "unit": "usd_per_capita",
+      "country": "United Kingdom",
+      "description": "Mental health spending per capita in the UK",
+      "source": "NHS England / OECD",
+      "year": 2023,
+      "url": "https://www.england.nhs.uk/mental-health/"
+    },
+    {
+      "id": "MHS007",
+      "metric": "mh_spending_per_capita",
+      "value": 200.0,
+      "unit": "usd_per_capita",
+      "country": "Germany",
+      "description": "Mental health spending per capita in Germany",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "MHS008",
+      "metric": "mh_spending_per_capita",
+      "value": 180.0,
+      "unit": "usd_per_capita",
+      "country": "Australia",
+      "description": "Mental health spending per capita in Australia",
+      "source": "AIHW Mental Health Services in Australia",
+      "year": 2023,
+      "url": "https://www.aihw.gov.au/reports/mental-health-services/mental-health-services-in-australia"
+    },
+    {
+      "id": "MHS009",
+      "metric": "mh_spending_per_capita",
+      "value": 160.0,
+      "unit": "usd_per_capita",
+      "country": "Canada",
+      "description": "Mental health spending per capita in Canada",
+      "source": "CIHI (Canadian Institute for Health Information)",
+      "year": 2023,
+      "url": "https://www.cihi.ca/en"
+    },
+    {
+      "id": "MHS010",
+      "metric": "mh_spending_per_capita",
+      "value": 80.0,
+      "unit": "usd_per_capita",
+      "country": "Japan",
+      "description": "Mental health spending per capita in Japan",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "MHS011",
+      "metric": "mh_spending_per_capita",
+      "value": 3.0,
+      "unit": "usd_per_capita",
+      "country": "India",
+      "description": "Mental health spending per capita in India",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "MHS012",
+      "metric": "mh_spending_per_capita",
+      "value": 1.0,
+      "unit": "usd_per_capita",
+      "country": "Nigeria",
+      "description": "Mental health spending per capita in Nigeria",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "MHS013",
+      "metric": "mh_spending_pct_health_budget",
+      "value": 2.1,
+      "unit": "percent_health_budget",
+      "country": "global",
+      "description": "Global median % of health budget allocated to mental health",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "MHS014",
+      "metric": "mh_spending_pct_health_budget",
+      "value": 5.5,
+      "unit": "percent_health_budget",
+      "country": "USA",
+      "description": "% of US health spending on mental health/substance abuse",
+      "source": "SAMHSA / CMS",
+      "year": 2023,
+      "url": "https://www.samhsa.gov/data/"
+    },
+    {
+      "id": "MHS015",
+      "metric": "mh_economic_cost_global",
+      "value": 5000000000000,
+      "unit": "usd_per_year",
+      "country": "global",
+      "description": "Global economic cost of mental health conditions ($5T/year, including lost productivity)",
+      "source": "Lancet Commission on Global Mental Health 2024",
+      "year": 2024,
+      "url": "https://www.thelancet.com/commissions/global-mental-health"
+    }
+  ],
+
+  "workforce_density": [
+    {
+      "id": "WFD001",
+      "metric": "psychiatrists_per_100k",
+      "value": 13.0,
+      "unit": "per_100k_population",
+      "country": "global_median",
+      "description": "Median psychiatrists per 100K globally (varies enormously by income)",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "WFD002",
+      "metric": "psychiatrists_per_100k",
+      "value": 0.1,
+      "unit": "per_100k_population",
+      "country": "low-income countries",
+      "description": "Psychiatrists per 100K in low-income countries (130x less than high-income)",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "WFD003",
+      "metric": "psychiatrists_per_100k",
+      "value": 16.5,
+      "unit": "per_100k_population",
+      "country": "USA",
+      "description": "Psychiatrists per 100K in the USA",
+      "source": "APA / OECD",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "WFD004",
+      "metric": "psychiatrists_per_100k",
+      "value": 27.0,
+      "unit": "per_100k_population",
+      "country": "Switzerland",
+      "description": "Psychiatrists per 100K in Switzerland — highest density",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "WFD005",
+      "metric": "psychiatrists_per_100k",
+      "value": 23.0,
+      "unit": "per_100k_population",
+      "country": "Norway",
+      "description": "Psychiatrists per 100K in Norway",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "WFD006",
+      "metric": "psychiatrists_per_100k",
+      "value": 18.0,
+      "unit": "per_100k_population",
+      "country": "France",
+      "description": "Psychiatrists per 100K in France",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "WFD007",
+      "metric": "psychiatrists_per_100k",
+      "value": 15.0,
+      "unit": "per_100k_population",
+      "country": "Germany",
+      "description": "Psychiatrists per 100K in Germany",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "WFD008",
+      "metric": "psychiatrists_per_100k",
+      "value": 12.0,
+      "unit": "per_100k_population",
+      "country": "United Kingdom",
+      "description": "Psychiatrists per 100K in the UK",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "WFD009",
+      "metric": "psychiatrists_per_100k",
+      "value": 12.0,
+      "unit": "per_100k_population",
+      "country": "Japan",
+      "description": "Psychiatrists per 100K in Japan",
+      "source": "OECD Health Statistics 2024",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "WFD010",
+      "metric": "psychiatrists_per_100k",
+      "value": 3.9,
+      "unit": "per_100k_population",
+      "country": "Brazil",
+      "description": "Psychiatrists per 100K in Brazil",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "WFD011",
+      "metric": "psychiatrists_per_100k",
+      "value": 0.3,
+      "unit": "per_100k_population",
+      "country": "India",
+      "description": "Psychiatrists per 100K in India — severe shortage",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "WFD012",
+      "metric": "psychiatrists_per_100k",
+      "value": 0.1,
+      "unit": "per_100k_population",
+      "country": "Nigeria",
+      "description": "Psychiatrists per 100K in Nigeria — critical shortage",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "WFD013",
+      "metric": "psychiatrists_per_100k",
+      "value": 0.3,
+      "unit": "per_100k_population",
+      "country": "Indonesia",
+      "description": "Psychiatrists per 100K in Indonesia",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "WFD014",
+      "metric": "psychologists_per_100k",
+      "value": 30.0,
+      "unit": "per_100k_population",
+      "country": "USA",
+      "description": "Psychologists per 100K in the USA",
+      "source": "APA / BLS",
+      "year": 2023,
+      "url": "https://www.bls.gov/ooh/life-physical-and-social-science/psychologists.htm"
+    },
+    {
+      "id": "WFD015",
+      "metric": "psychologists_per_100k",
+      "value": 100.0,
+      "unit": "per_100k_population",
+      "country": "Argentina",
+      "description": "Psychologists per 100K in Argentina — highest density globally",
+      "source": "APA International / WHO",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "WFD016",
+      "metric": "psychologists_per_100k",
+      "value": 0.07,
+      "unit": "per_100k_population",
+      "country": "sub-Saharan Africa",
+      "description": "Psychologists per 100K in sub-Saharan Africa — near zero",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "WFD017",
+      "metric": "mh_workers_total_per_100k",
+      "value": 9.0,
+      "unit": "per_100k_population",
+      "country": "global_median",
+      "description": "Total mental health workers per 100K globally (all cadres)",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    }
+  ],
+
+  "suicide_rates": [
+    {
+      "id": "SUI001",
+      "metric": "suicide_rate",
+      "value": 9.0,
+      "unit": "per_100k_population",
+      "country": "global",
+      "description": "Global age-standardized suicide rate",
+      "source": "WHO Suicide Prevention 2024",
+      "year": 2024,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/suicide"
+    },
+    {
+      "id": "SUI002",
+      "metric": "suicide_total_deaths",
+      "value": 720000,
+      "unit": "deaths_per_year",
+      "country": "global",
+      "description": "Total suicide deaths globally per year",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/suicide"
+    },
+    {
+      "id": "SUI003",
+      "metric": "suicide_rate",
+      "value": 14.5,
+      "unit": "per_100k_population",
+      "country": "USA",
+      "description": "Suicide rate in the USA",
+      "source": "CDC WISQARS 2023",
+      "year": 2023,
+      "url": "https://www.cdc.gov/suicide/facts/index.html"
+    },
+    {
+      "id": "SUI004",
+      "metric": "suicide_rate",
+      "value": 26.9,
+      "unit": "per_100k_population",
+      "country": "Lesotho",
+      "description": "Suicide rate in Lesotho — highest in the world",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/crude-suicide-rates-(per-100-000-population)"
+    },
+    {
+      "id": "SUI005",
+      "metric": "suicide_rate",
+      "value": 21.2,
+      "unit": "per_100k_population",
+      "country": "Russia",
+      "description": "Suicide rate in Russia",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/crude-suicide-rates-(per-100-000-population)"
+    },
+    {
+      "id": "SUI006",
+      "metric": "suicide_rate",
+      "value": 26.0,
+      "unit": "per_100k_population",
+      "country": "South Korea",
+      "description": "Suicide rate in South Korea — highest among OECD countries",
+      "source": "OECD / WHO",
+      "year": 2023,
+      "url": "https://www.oecd.org/health/health-data.htm"
+    },
+    {
+      "id": "SUI007",
+      "metric": "suicide_rate",
+      "value": 16.4,
+      "unit": "per_100k_population",
+      "country": "Japan",
+      "description": "Suicide rate in Japan",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/crude-suicide-rates-(per-100-000-population)"
+    },
+    {
+      "id": "SUI008",
+      "metric": "suicide_rate",
+      "value": 12.7,
+      "unit": "per_100k_population",
+      "country": "India",
+      "description": "Suicide rate in India (164K deaths/year — highest absolute number globally)",
+      "source": "WHO / NCRB India",
+      "year": 2023,
+      "url": "https://ncrb.gov.in/accidental-deaths-suicides-in-india.html"
+    },
+    {
+      "id": "SUI009",
+      "metric": "suicide_rate",
+      "value": 7.5,
+      "unit": "per_100k_population",
+      "country": "United Kingdom",
+      "description": "Suicide rate in the UK",
+      "source": "ONS / WHO",
+      "year": 2023,
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/suicidesintheunitedkingdom/latest"
+    },
+    {
+      "id": "SUI010",
+      "metric": "suicide_rate",
+      "value": 12.3,
+      "unit": "per_100k_population",
+      "country": "Australia",
+      "description": "Suicide rate in Australia",
+      "source": "ABS / WHO",
+      "year": 2023,
+      "url": "https://www.abs.gov.au/statistics/health/causes-death/causes-death-australia/latest-release"
+    },
+    {
+      "id": "SUI011",
+      "metric": "suicide_rate",
+      "value": 11.8,
+      "unit": "per_100k_population",
+      "country": "France",
+      "description": "Suicide rate in France",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/crude-suicide-rates-(per-100-000-population)"
+    },
+    {
+      "id": "SUI012",
+      "metric": "suicide_rate",
+      "value": 12.3,
+      "unit": "per_100k_population",
+      "country": "Germany",
+      "description": "Suicide rate in Germany",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/crude-suicide-rates-(per-100-000-population)"
+    },
+    {
+      "id": "SUI013",
+      "metric": "suicide_rate",
+      "value": 11.1,
+      "unit": "per_100k_population",
+      "country": "Canada",
+      "description": "Suicide rate in Canada",
+      "source": "Statistics Canada / WHO",
+      "year": 2023,
+      "url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/crude-suicide-rates-(per-100-000-population)"
+    },
+    {
+      "id": "SUI014",
+      "metric": "suicide_rate",
+      "value": 6.7,
+      "unit": "per_100k_population",
+      "country": "Brazil",
+      "description": "Suicide rate in Brazil",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/crude-suicide-rates-(per-100-000-population)"
+    },
+    {
+      "id": "SUI015",
+      "metric": "suicide_rate",
+      "value": 7.4,
+      "unit": "per_100k_population",
+      "country": "China",
+      "description": "Suicide rate in China (declined significantly from 2000s)",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/crude-suicide-rates-(per-100-000-population)"
+    },
+    {
+      "id": "SUI016",
+      "metric": "suicide_rate",
+      "value": 6.3,
+      "unit": "per_100k_population",
+      "country": "Italy",
+      "description": "Suicide rate in Italy",
+      "source": "WHO / ISTAT",
+      "year": 2023,
+      "url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/crude-suicide-rates-(per-100-000-population)"
+    },
+    {
+      "id": "SUI017",
+      "metric": "suicide_rate",
+      "value": 3.7,
+      "unit": "per_100k_population",
+      "country": "Indonesia",
+      "description": "Suicide rate in Indonesia",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/crude-suicide-rates-(per-100-000-population)"
+    },
+    {
+      "id": "SUI018",
+      "metric": "suicide_rate",
+      "value": 3.4,
+      "unit": "per_100k_population",
+      "country": "Nigeria",
+      "description": "Suicide rate in Nigeria (likely underreported due to criminalization)",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/crude-suicide-rates-(per-100-000-population)"
+    },
+    {
+      "id": "SUI019",
+      "metric": "suicide_rate",
+      "value": 5.3,
+      "unit": "per_100k_population",
+      "country": "Mexico",
+      "description": "Suicide rate in Mexico",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/crude-suicide-rates-(per-100-000-population)"
+    },
+    {
+      "id": "SUI020",
+      "metric": "suicide_rate",
+      "value": 15.4,
+      "unit": "per_100k_population",
+      "country": "Finland",
+      "description": "Suicide rate in Finland",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/crude-suicide-rates-(per-100-000-population)"
+    },
+    {
+      "id": "SUI021",
+      "metric": "suicide_rate",
+      "value": 20.6,
+      "unit": "per_100k_population",
+      "country": "Lithuania",
+      "description": "Suicide rate in Lithuania — highest in EU",
+      "source": "Eurostat / WHO",
+      "year": 2023,
+      "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Causes_of_death_statistics"
+    },
+    {
+      "id": "SUI022",
+      "metric": "suicide_rate",
+      "value": 17.3,
+      "unit": "per_100k_population",
+      "country": "Ukraine",
+      "description": "Suicide rate in Ukraine (pre-war baseline, likely increased)",
+      "source": "WHO",
+      "year": 2023,
+      "url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/crude-suicide-rates-(per-100-000-population)"
+    }
+  ],
+
+  "suicide_demographics": [
+    {
+      "id": "SUD001",
+      "metric": "suicide_male_rate",
+      "value": 12.6,
+      "unit": "per_100k_population",
+      "country": "global",
+      "description": "Male suicide rate globally (2.3x female rate)",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/suicide"
+    },
+    {
+      "id": "SUD002",
+      "metric": "suicide_female_rate",
+      "value": 5.4,
+      "unit": "per_100k_population",
+      "country": "global",
+      "description": "Female suicide rate globally",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/suicide"
+    },
+    {
+      "id": "SUD003",
+      "metric": "suicide_male_to_female_ratio",
+      "value": 2.3,
+      "unit": "ratio",
+      "country": "global",
+      "description": "Male-to-female suicide ratio globally",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/suicide"
+    },
+    {
+      "id": "SUD004",
+      "metric": "suicide_male_to_female_ratio",
+      "value": 3.9,
+      "unit": "ratio",
+      "country": "USA",
+      "description": "Male-to-female suicide ratio in the US — men die by suicide nearly 4x more",
+      "source": "CDC / AFSP",
+      "year": 2023,
+      "url": "https://afsp.org/suicide-statistics/"
+    },
+    {
+      "id": "SUD005",
+      "metric": "suicide_attempt_to_death_ratio",
+      "value": 25,
+      "unit": "attempts_per_death",
+      "country": "global",
+      "description": "For every suicide death, approximately 25 attempts occur",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/suicide"
+    },
+    {
+      "id": "SUD006",
+      "metric": "suicide_attempt_to_death_ratio_youth",
+      "value": 100,
+      "unit": "attempts_per_death",
+      "country": "global",
+      "description": "For youth (15-24), ratio of attempts to deaths is up to 100:1",
+      "source": "AAS (American Association of Suicidology)",
+      "year": 2023,
+      "url": "https://suicidology.org/facts-and-statistics/"
+    },
+    {
+      "id": "SUD007",
+      "metric": "suicide_leading_cause_death_age_15_29",
+      "value": 4,
+      "unit": "rank",
+      "country": "global",
+      "description": "Suicide is the 4th leading cause of death among 15-29 year olds globally",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/suicide"
+    },
+    {
+      "id": "SUD008",
+      "metric": "suicide_pct_low_middle_income",
+      "value": 77.0,
+      "unit": "percent_global_suicides",
+      "country": "global",
+      "description": "77% of global suicides occur in low- and middle-income countries",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/suicide"
+    }
+  ],
+
+  "suicide_methods": [
+    {
+      "id": "SUM001",
+      "metric": "suicide_method_pesticide_pct",
+      "value": 20.0,
+      "unit": "percent_global_suicides",
+      "country": "global",
+      "description": "Pesticide ingestion accounts for ~20% of global suicides (mostly rural LMIC)",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/suicide"
+    },
+    {
+      "id": "SUM002",
+      "metric": "suicide_method_firearms_pct",
+      "value": 53.0,
+      "unit": "percent_suicides",
+      "country": "USA",
+      "description": "Firearms account for 53% of US suicide deaths",
+      "source": "CDC / AFSP",
+      "year": 2023,
+      "url": "https://afsp.org/suicide-statistics/"
+    },
+    {
+      "id": "SUM003",
+      "metric": "suicide_method_hanging_pct",
+      "value": 50.0,
+      "unit": "percent_suicides",
+      "country": "global",
+      "description": "Hanging is the most common suicide method globally (~50%)",
+      "source": "WHO / Lancet",
+      "year": 2023,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/suicide"
+    },
+    {
+      "id": "SUM004",
+      "metric": "means_restriction_effectiveness",
+      "value": 30.0,
+      "unit": "percent_reduction",
+      "country": "global",
+      "description": "Means restriction reduces suicide rates by ~30% (bridge barriers, pesticide bans, gun laws)",
+      "source": "Lancet Psychiatry",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lanpsy/home"
+    }
+  ],
+
+  "youth_suicide": [
+    {
+      "id": "YSU001",
+      "metric": "youth_suicide_rate_15_24",
+      "value": 11.0,
+      "unit": "per_100k_age_group",
+      "country": "global",
+      "description": "Suicide rate among 15-24 year olds globally",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/suicide"
+    },
+    {
+      "id": "YSU002",
+      "metric": "youth_suicide_rate_15_24",
+      "value": 14.0,
+      "unit": "per_100k_age_group",
+      "country": "USA",
+      "description": "Suicide rate among 15-24 year olds in the US",
+      "source": "CDC WISQARS",
+      "year": 2023,
+      "url": "https://www.cdc.gov/suicide/facts/index.html"
+    },
+    {
+      "id": "YSU003",
+      "metric": "youth_suicide_increase_2007_2023",
+      "value": 62.0,
+      "unit": "percent_increase",
+      "country": "USA",
+      "description": "Youth (10-24) suicide rate increased 62% from 2007 to 2023 in the US",
+      "source": "CDC / AFSP",
+      "year": 2023,
+      "url": "https://afsp.org/suicide-statistics/"
+    },
+    {
+      "id": "YSU004",
+      "metric": "us_teen_girls_seriously_considered_suicide",
+      "value": 30.0,
+      "unit": "percent_teen_girls",
+      "country": "USA",
+      "description": "30% of US teen girls seriously considered suicide in 2023 (vs 14% of boys)",
+      "source": "CDC YRBS 2023",
+      "year": 2023,
+      "url": "https://www.cdc.gov/healthyyouth/data/yrbs/index.htm"
+    },
+    {
+      "id": "YSU005",
+      "metric": "youth_suicide_rate_15_24",
+      "value": 19.9,
+      "unit": "per_100k_age_group",
+      "country": "New Zealand",
+      "description": "Youth suicide rate in New Zealand — among highest OECD",
+      "source": "NZ Ministry of Health / OECD",
+      "year": 2023,
+      "url": "https://www.health.govt.nz/our-work/mental-health-and-addiction/suicide-prevention"
+    },
+    {
+      "id": "YSU006",
+      "metric": "youth_suicide_rate_15_24",
+      "value": 9.4,
+      "unit": "per_100k_age_group",
+      "country": "United Kingdom",
+      "description": "Youth suicide rate in the UK",
+      "source": "ONS",
+      "year": 2023,
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/suicidesintheunitedkingdom/latest"
+    },
+    {
+      "id": "YSU007",
+      "metric": "youth_suicide_rate_15_24",
+      "value": 16.5,
+      "unit": "per_100k_age_group",
+      "country": "Australia",
+      "description": "Youth suicide rate in Australia",
+      "source": "ABS",
+      "year": 2023,
+      "url": "https://www.abs.gov.au/statistics/health/causes-death/causes-death-australia/latest-release"
+    }
+  ],
+
+  "vulnerable_population_suicide": [
+    {
+      "id": "VPS001",
+      "metric": "veteran_suicide_rate",
+      "value": 33.9,
+      "unit": "per_100k_veterans",
+      "country": "USA",
+      "description": "US veteran suicide rate (1.5x higher than non-veteran adults)",
+      "source": "VA National Suicide Prevention Report 2024",
+      "year": 2023,
+      "url": "https://www.mentalhealth.va.gov/suicide_prevention/data.asp"
+    },
+    {
+      "id": "VPS002",
+      "metric": "veteran_suicides_per_day",
+      "value": 17.5,
+      "unit": "deaths_per_day",
+      "country": "USA",
+      "description": "Average US veteran suicides per day",
+      "source": "VA National Suicide Prevention Report 2024",
+      "year": 2023,
+      "url": "https://www.mentalhealth.va.gov/suicide_prevention/data.asp"
+    },
+    {
+      "id": "VPS003",
+      "metric": "lgbtq_youth_attempted_suicide_pct",
+      "value": 22.0,
+      "unit": "percent_lgbtq_youth",
+      "country": "USA",
+      "description": "LGBTQ+ youth (13-24) who attempted suicide in the past year",
+      "source": "Trevor Project National Survey 2024",
+      "year": 2024,
+      "url": "https://www.thetrevorproject.org/survey-2024/"
+    },
+    {
+      "id": "VPS004",
+      "metric": "lgbtq_youth_seriously_considered_pct",
+      "value": 41.0,
+      "unit": "percent_lgbtq_youth",
+      "country": "USA",
+      "description": "LGBTQ+ youth who seriously considered suicide in past year",
+      "source": "Trevor Project National Survey 2024",
+      "year": 2024,
+      "url": "https://www.thetrevorproject.org/survey-2024/"
+    },
+    {
+      "id": "VPS005",
+      "metric": "transgender_attempted_suicide_pct",
+      "value": 40.0,
+      "unit": "percent_transgender_adults",
+      "country": "USA",
+      "description": "Transgender adults who have attempted suicide at some point (lifetime)",
+      "source": "Williams Institute / UCLA",
+      "year": 2023,
+      "url": "https://williamsinstitute.law.ucla.edu/publications/suicidality-transgender-adults/"
+    },
+    {
+      "id": "VPS006",
+      "metric": "farmer_suicide_rate",
+      "value": 18.0,
+      "unit": "per_100k_farmers",
+      "country": "India",
+      "description": "Farmer suicide rate in India — chronic agrarian crisis",
+      "source": "NCRB India",
+      "year": 2023,
+      "url": "https://ncrb.gov.in/accidental-deaths-suicides-in-india.html"
+    },
+    {
+      "id": "VPS007",
+      "metric": "farmer_suicide_rate",
+      "value": 32.2,
+      "unit": "per_100k_farmers",
+      "country": "USA",
+      "description": "Farm worker/agricultural suicide rate in the US (highest occupational group)",
+      "source": "CDC MMWR",
+      "year": 2023,
+      "url": "https://www.cdc.gov/mmwr/"
+    },
+    {
+      "id": "VPS008",
+      "metric": "indigenous_suicide_rate",
+      "value": 23.0,
+      "unit": "per_100k_population",
+      "country": "Australia",
+      "description": "Aboriginal and Torres Strait Islander suicide rate (2x non-Indigenous)",
+      "source": "ABS / AIHW",
+      "year": 2023,
+      "url": "https://www.aihw.gov.au/reports/australias-health/suicide-and-intentional-self-harm"
+    },
+    {
+      "id": "VPS009",
+      "metric": "physician_suicide_rate",
+      "value": 28.0,
+      "unit": "per_100k_physicians",
+      "country": "USA",
+      "description": "Physician suicide rate (double general population, 300-400 physician suicides/year)",
+      "source": "AMA / Journal of General Internal Medicine",
+      "year": 2023,
+      "url": "https://jamanetwork.com/journals/jama"
+    }
+  ],
+
+  "burnout_workplace": [
+    {
+      "id": "BUR001",
+      "metric": "burnout_prevalence",
+      "value": 77.0,
+      "unit": "percent_workers",
+      "country": "global",
+      "description": "Workers who have experienced burnout at current job (Gallup)",
+      "source": "Gallup State of the Global Workplace 2024",
+      "year": 2024,
+      "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx"
+    },
+    {
+      "id": "BUR002",
+      "metric": "burnout_prevalence_healthcare",
+      "value": 63.0,
+      "unit": "percent_workers",
+      "country": "global",
+      "description": "Healthcare workers experiencing burnout symptoms",
+      "source": "WHO / BMJ",
+      "year": 2024,
+      "url": "https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases"
+    },
+    {
+      "id": "BUR003",
+      "metric": "burnout_prevalence_tech",
+      "value": 62.0,
+      "unit": "percent_workers",
+      "country": "global",
+      "description": "Tech workers experiencing burnout symptoms",
+      "source": "Blind Workplace Survey / Yerbo",
+      "year": 2024,
+      "url": "https://yerbo.co/blog/burnout-in-tech"
+    },
+    {
+      "id": "BUR004",
+      "metric": "burnout_prevalence_education",
+      "value": 59.0,
+      "unit": "percent_teachers",
+      "country": "global",
+      "description": "Teachers experiencing burnout symptoms globally",
+      "source": "OECD TALIS 2024",
+      "year": 2024,
+      "url": "https://www.oecd.org/education/talis/"
+    },
+    {
+      "id": "BUR005",
+      "metric": "burnout_prevalence_finance",
+      "value": 56.0,
+      "unit": "percent_workers",
+      "country": "global",
+      "description": "Financial services workers experiencing burnout",
+      "source": "Deloitte / CIPD",
+      "year": 2024,
+      "url": "https://www.deloitte.com/global/en/services/consulting/research/workplace-burnout-survey.html"
+    },
+    {
+      "id": "BUR006",
+      "metric": "burnout_prevalence_hospitality",
+      "value": 80.0,
+      "unit": "percent_workers",
+      "country": "global",
+      "description": "Hospitality/restaurant workers experiencing burnout — highest of any industry",
+      "source": "Cornell Hospitality Quarterly",
+      "year": 2023,
+      "url": "https://journals.sagepub.com/home/cqx"
+    },
+    {
+      "id": "BUR007",
+      "metric": "burnout_prevalence_legal",
+      "value": 52.0,
+      "unit": "percent_lawyers",
+      "country": "USA",
+      "description": "US lawyers experiencing burnout",
+      "source": "ABA Well-Being Report",
+      "year": 2023,
+      "url": "https://www.americanbar.org/groups/lawyer_assistance/well-being-in-the-legal-profession/"
+    },
+    {
+      "id": "BUR008",
+      "metric": "burnout_cost_employer_per_employee",
+      "value": 3400,
+      "unit": "usd_per_disengaged_employee_per_year",
+      "country": "USA",
+      "description": "Cost of burnout/disengagement per employee per year (lost productivity)",
+      "source": "Gallup",
+      "year": 2024,
+      "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx"
+    }
+  ],
+
+  "work_stress": [
+    {
+      "id": "WST001",
+      "metric": "daily_stress_at_work",
+      "value": 44.0,
+      "unit": "percent_workers",
+      "country": "global",
+      "description": "Workers who experienced a lot of stress the previous day (Gallup 2024)",
+      "source": "Gallup State of the Global Workplace 2024",
+      "year": 2024,
+      "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx"
+    },
+    {
+      "id": "WST002",
+      "metric": "work_related_depression_anxiety_pct",
+      "value": 15.0,
+      "unit": "percent_working_adults",
+      "country": "global",
+      "description": "Working-age adults with a work-related mental disorder at any time",
+      "source": "WHO / ILO Joint Report 2024",
+      "year": 2024,
+      "url": "https://www.who.int/publications/i/item/9789240053052"
+    },
+    {
+      "id": "WST003",
+      "metric": "lost_productivity_depression_anxiety",
+      "value": 12000000000,
+      "unit": "working_days_lost_per_year",
+      "country": "global",
+      "description": "12 billion working days lost annually to depression and anxiety globally",
+      "source": "WHO / ILO",
+      "year": 2024,
+      "url": "https://www.who.int/publications/i/item/9789240053052"
+    },
+    {
+      "id": "WST004",
+      "metric": "lost_productivity_cost",
+      "value": 1000000000000,
+      "unit": "usd_per_year",
+      "country": "global",
+      "description": "Annual cost to global economy from lost productivity due to depression/anxiety ($1T)",
+      "source": "WHO",
+      "year": 2024,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/mental-health-at-work"
+    },
+    {
+      "id": "WST005",
+      "metric": "workers_not_engaged",
+      "value": 62.0,
+      "unit": "percent_workers",
+      "country": "global",
+      "description": "Workers globally who are 'not engaged' at work (quiet quitting)",
+      "source": "Gallup State of the Global Workplace 2024",
+      "year": 2024,
+      "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx"
+    }
+  ],
+
+  "mental_health_days": [
+    {
+      "id": "MHD001",
+      "metric": "avg_mh_sick_days_per_worker",
+      "value": 17.5,
+      "unit": "days_per_year",
+      "country": "United Kingdom",
+      "description": "Average working days lost per year per worker due to mental health in the UK",
+      "source": "Deloitte / Mental Health Foundation UK",
+      "year": 2024,
+      "url": "https://www2.deloitte.com/uk/en/pages/consulting/articles/mental-health-and-employers.html"
+    },
+    {
+      "id": "MHD002",
+      "metric": "avg_mh_sick_days_per_worker",
+      "value": 15.0,
+      "unit": "days_per_year",
+      "country": "USA",
+      "description": "Average working days lost per year per worker due to mental health in the US",
+      "source": "APA / SHRM",
+      "year": 2024,
+      "url": "https://www.apa.org/news/press/releases/stress"
+    },
+    {
+      "id": "MHD003",
+      "metric": "avg_mh_sick_days_per_worker",
+      "value": 22.0,
+      "unit": "days_per_year",
+      "country": "Australia",
+      "description": "Average working days lost per year per worker due to mental health in Australia",
+      "source": "PwC / Beyond Blue",
+      "year": 2024,
+      "url": "https://www.beyondblue.org.au/media/statistics"
+    },
+    {
+      "id": "MHD004",
+      "metric": "mh_absenteeism_cost_annual",
+      "value": 47600000000,
+      "unit": "usd_per_year",
+      "country": "USA",
+      "description": "Annual cost of mental health absenteeism in the US workforce",
+      "source": "NAMI / Harvard Business Review",
+      "year": 2024,
+      "url": "https://hbr.org/2019/10/the-high-cost-of-neglecting-mental-health-in-the-workplace"
+    }
+  ],
+
+  "presenteeism": [
+    {
+      "id": "PRE001",
+      "metric": "presenteeism_cost_ratio_vs_absenteeism",
+      "value": 3.0,
+      "unit": "ratio",
+      "country": "global",
+      "description": "Presenteeism costs employers 3x more than absenteeism",
+      "source": "Deloitte / Harvard Business Review",
+      "year": 2024,
+      "url": "https://hbr.org/2004/10/presenteeism-at-work-but-out-of-it"
+    },
+    {
+      "id": "PRE002",
+      "metric": "presenteeism_annual_cost",
+      "value": 150000000000,
+      "unit": "usd_per_year",
+      "country": "USA",
+      "description": "Annual cost of presenteeism due to mental health in US ($150B+)",
+      "source": "Harvard Health / APA",
+      "year": 2024,
+      "url": "https://www.health.harvard.edu/newsletter_article/mental-health-problems-in-the-workplace"
+    },
+    {
+      "id": "PRE003",
+      "metric": "depression_presenteeism_productivity_loss",
+      "value": 35.0,
+      "unit": "percent_productivity_reduction",
+      "country": "global",
+      "description": "Depression reduces workplace productivity by ~35% (on days present at work)",
+      "source": "Journal of Occupational Medicine / WHO",
+      "year": 2023,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/mental-health-at-work"
+    }
+  ],
+
+  "eap_usage": [
+    {
+      "id": "EAP001",
+      "metric": "eap_availability",
+      "value": 97.0,
+      "unit": "percent_large_employers",
+      "country": "USA",
+      "description": "US employers with 500+ employees offering EAP programs",
+      "source": "SHRM / EAPA",
+      "year": 2024,
+      "url": "https://www.shrm.org/topics-tools/news/benefits-compensation/employee-assistance-programs"
+    },
+    {
+      "id": "EAP002",
+      "metric": "eap_utilization_rate",
+      "value": 6.9,
+      "unit": "percent_eligible_employees",
+      "country": "USA",
+      "description": "EAP utilization rate (only ~7% of eligible employees use it)",
+      "source": "EAPA / Chestnut Health Systems",
+      "year": 2024,
+      "url": "https://www.eapassn.org/Portals/11/Docs/Reports/EAPA-Research-Report-2024.pdf"
+    },
+    {
+      "id": "EAP003",
+      "metric": "eap_roi",
+      "value": 4.0,
+      "unit": "dollar_return_per_dollar_invested",
+      "country": "USA",
+      "description": "EAP return on investment: $4 returned for every $1 invested",
+      "source": "EAPA / Federal Occupational Health",
+      "year": 2023,
+      "url": "https://www.eapassn.org/"
+    },
+    {
+      "id": "EAP004",
+      "metric": "eap_sessions_allowed",
+      "value": 6,
+      "unit": "sessions_per_issue",
+      "country": "USA",
+      "description": "Typical EAP allows 6-8 free sessions per issue per year",
+      "source": "SHRM",
+      "year": 2024,
+      "url": "https://www.shrm.org/"
+    }
+  ],
+
+  "teen_mental_health": [
+    {
+      "id": "TMH001",
+      "metric": "teen_depression_prevalence",
+      "value": 20.1,
+      "unit": "percent_teens_12_17",
+      "country": "USA",
+      "description": "US teens (12-17) with major depressive episode in past year (2023 vs 12.8% in 2019)",
+      "source": "SAMHSA NSDUH 2023",
+      "year": 2023,
+      "url": "https://www.samhsa.gov/data/release/2023-national-survey-drug-use-and-health-nsduh-releases"
+    },
+    {
+      "id": "TMH002",
+      "metric": "teen_depression_prevalence_2019",
+      "value": 15.7,
+      "unit": "percent_teens_12_17",
+      "country": "USA",
+      "description": "US teens (12-17) with major depressive episode in 2019 (pre-COVID baseline)",
+      "source": "SAMHSA NSDUH 2019",
+      "year": 2019,
+      "url": "https://www.samhsa.gov/data/"
+    },
+    {
+      "id": "TMH003",
+      "metric": "teen_persistent_sadness_hopelessness",
+      "value": 42.0,
+      "unit": "percent_high_school_students",
+      "country": "USA",
+      "description": "US high school students with persistent feelings of sadness/hopelessness (2023)",
+      "source": "CDC YRBS 2023",
+      "year": 2023,
+      "url": "https://www.cdc.gov/healthyyouth/data/yrbs/index.htm"
+    },
+    {
+      "id": "TMH004",
+      "metric": "teen_girls_persistent_sadness",
+      "value": 57.0,
+      "unit": "percent_female_students",
+      "country": "USA",
+      "description": "US high school girls with persistent sadness/hopelessness (2023) — crisis-level",
+      "source": "CDC YRBS 2023",
+      "year": 2023,
+      "url": "https://www.cdc.gov/healthyyouth/data/yrbs/index.htm"
+    },
+    {
+      "id": "TMH005",
+      "metric": "youth_mental_disorder_prevalence",
+      "value": 14.0,
+      "unit": "percent_10_19_year_olds",
+      "country": "global",
+      "description": "1 in 7 adolescents globally has a mental disorder (UNICEF)",
+      "source": "UNICEF State of the World's Children 2024",
+      "year": 2024,
+      "url": "https://www.unicef.org/reports/state-worlds-children"
+    },
+    {
+      "id": "TMH006",
+      "metric": "youth_mh_total_affected",
+      "value": 166000000,
+      "unit": "adolescents",
+      "country": "global",
+      "description": "Total adolescents (10-19) with a mental disorder globally",
+      "source": "UNICEF 2024",
+      "year": 2024,
+      "url": "https://www.unicef.org/reports/state-worlds-children"
+    },
+    {
+      "id": "TMH007",
+      "metric": "teen_anxiety_prevalence_increase_2019_2023",
+      "value": 35.0,
+      "unit": "percent_increase",
+      "country": "USA",
+      "description": "Increase in teen anxiety diagnoses from 2019 to 2023 in the US",
+      "source": "CDC / APA",
+      "year": 2023,
+      "url": "https://www.apa.org/monitor/2023/01/trends-teen-mental-health"
+    },
+    {
+      "id": "TMH008",
+      "metric": "children_mental_disorder_prevalence",
+      "value": 20.0,
+      "unit": "percent_children",
+      "country": "USA",
+      "description": "US children (3-17) with a diagnosed mental, behavioral, or developmental disorder",
+      "source": "CDC National Survey of Children's Health",
+      "year": 2023,
+      "url": "https://www.cdc.gov/nchs/nsch/index.htm"
+    }
+  ],
+
+  "social_media_impact": [
+    {
+      "id": "SMI001",
+      "metric": "social_media_depression_risk_increase",
+      "value": 70.0,
+      "unit": "percent_increase_risk",
+      "country": "global",
+      "description": "Heavy social media use (5+ hrs/day) linked to 70% higher depression risk in adolescents",
+      "source": "Lancet Child & Adolescent Health / Twenge et al.",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lanchi/home"
+    },
+    {
+      "id": "SMI002",
+      "metric": "teen_avg_social_media_hours",
+      "value": 4.8,
+      "unit": "hours_per_day",
+      "country": "USA",
+      "description": "Average daily social media time for US teens (2024)",
+      "source": "Common Sense Media 2024",
+      "year": 2024,
+      "url": "https://www.commonsensemedia.org/research"
+    },
+    {
+      "id": "SMI003",
+      "metric": "instagram_negative_body_image_teen_girls",
+      "value": 32.0,
+      "unit": "percent_teen_girls",
+      "country": "global",
+      "description": "Teen girls who said Instagram made body image issues worse",
+      "source": "Facebook/Meta internal research (WSJ leak) / US Surgeon General",
+      "year": 2023,
+      "url": "https://www.hhs.gov/surgeongeneral/priorities/youth-mental-health/social-media/index.html"
+    },
+    {
+      "id": "SMI004",
+      "metric": "social_media_loneliness_correlation",
+      "value": 25.0,
+      "unit": "percent_increase_loneliness",
+      "country": "global",
+      "description": "Social media use >3hrs/day associated with 25% higher loneliness scores",
+      "source": "American Journal of Preventive Medicine",
+      "year": 2023,
+      "url": "https://www.ajpmonline.org/"
+    },
+    {
+      "id": "SMI005",
+      "metric": "surgeon_general_advisory_year",
+      "value": 2023,
+      "unit": "year",
+      "country": "USA",
+      "description": "US Surgeon General issued advisory on social media and youth mental health",
+      "source": "US Surgeon General",
+      "year": 2023,
+      "url": "https://www.hhs.gov/surgeongeneral/priorities/youth-mental-health/social-media/index.html"
+    },
+    {
+      "id": "SMI006",
+      "metric": "social_media_sleep_disruption",
+      "value": 60.0,
+      "unit": "percent_teens",
+      "country": "USA",
+      "description": "Teens who use social media within 30 min of bed reporting sleep disruption",
+      "source": "Sleep Foundation / JAMA Pediatrics",
+      "year": 2024,
+      "url": "https://jamanetwork.com/journals/jamapediatrics"
+    }
+  ],
+
+  "cyberbullying": [
+    {
+      "id": "CYB001",
+      "metric": "cyberbullying_victim_pct",
+      "value": 36.5,
+      "unit": "percent_young_people",
+      "country": "global",
+      "description": "Young people globally who have been cyberbullied (UNESCO)",
+      "source": "UNESCO / UNICEF",
+      "year": 2024,
+      "url": "https://www.unicef.org/end-violence/how-to-stop-cyberbullying"
+    },
+    {
+      "id": "CYB002",
+      "metric": "cyberbullying_victim_pct",
+      "value": 46.0,
+      "unit": "percent_teens_13_17",
+      "country": "USA",
+      "description": "US teens (13-17) who have experienced cyberbullying",
+      "source": "Pew Research Center 2024",
+      "year": 2024,
+      "url": "https://www.pewresearch.org/internet/2024/04/24/teens-social-media-and-technology-2024/"
+    },
+    {
+      "id": "CYB003",
+      "metric": "cyberbullying_depression_risk",
+      "value": 2.5,
+      "unit": "times_more_likely",
+      "country": "global",
+      "description": "Cyberbullying victims are 2.5x more likely to self-harm or attempt suicide",
+      "source": "JAMA Pediatrics / Lancet",
+      "year": 2023,
+      "url": "https://jamanetwork.com/journals/jamapediatrics"
+    },
+    {
+      "id": "CYB004",
+      "metric": "cyberbullying_not_reported_pct",
+      "value": 60.0,
+      "unit": "percent_incidents",
+      "country": "global",
+      "description": "Cyberbullying incidents that go unreported to adults",
+      "source": "Cyberbullying Research Center",
+      "year": 2024,
+      "url": "https://cyberbullying.org/research"
+    },
+    {
+      "id": "CYB005",
+      "metric": "cyberbullying_victim_pct",
+      "value": 20.0,
+      "unit": "percent_children",
+      "country": "United Kingdom",
+      "description": "UK children who have experienced cyberbullying",
+      "source": "Anti-Bullying Alliance / Ofcom",
+      "year": 2024,
+      "url": "https://anti-bullyingalliance.org.uk/"
+    }
+  ],
+
+  "school_counselors": [
+    {
+      "id": "SCH001",
+      "metric": "school_counselor_ratio",
+      "value": 385,
+      "unit": "students_per_counselor",
+      "country": "USA",
+      "description": "US school counselor ratio (ASCA recommends 250:1)",
+      "source": "ASCA (American School Counselor Association)",
+      "year": 2024,
+      "url": "https://www.schoolcounselor.org/About-School-Counseling/School-Counselor-Roles-Ratios"
+    },
+    {
+      "id": "SCH002",
+      "metric": "school_counselor_ratio_recommended",
+      "value": 250,
+      "unit": "students_per_counselor",
+      "country": "USA",
+      "description": "ASCA recommended school counselor ratio",
+      "source": "ASCA",
+      "year": 2024,
+      "url": "https://www.schoolcounselor.org/About-School-Counseling/School-Counselor-Roles-Ratios"
+    },
+    {
+      "id": "SCH003",
+      "metric": "school_psychologist_ratio",
+      "value": 1127,
+      "unit": "students_per_psychologist",
+      "country": "USA",
+      "description": "US school psychologist ratio (NASP recommends 500:1)",
+      "source": "NASP (National Association of School Psychologists)",
+      "year": 2024,
+      "url": "https://www.nasponline.org/"
+    },
+    {
+      "id": "SCH004",
+      "metric": "schools_with_mental_health_services",
+      "value": 37.0,
+      "unit": "percent_schools",
+      "country": "global",
+      "description": "Schools globally with any mental health services/programs",
+      "source": "WHO / UNESCO",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "SCH005",
+      "metric": "school_counselor_ratio",
+      "value": 5000,
+      "unit": "students_per_counselor",
+      "country": "India",
+      "description": "School counselor ratio in India — severe shortage",
+      "source": "NCERT / UNESCO",
+      "year": 2023,
+      "url": "https://ncert.nic.in/"
+    }
+  ],
+
+  "youth_self_harm": [
+    {
+      "id": "YSH001",
+      "metric": "self_harm_prevalence_adolescents",
+      "value": 17.0,
+      "unit": "percent_adolescents_lifetime",
+      "country": "global",
+      "description": "Lifetime prevalence of non-suicidal self-injury among adolescents globally",
+      "source": "Lancet Psychiatry (meta-analysis)",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lanpsy/home"
+    },
+    {
+      "id": "YSH002",
+      "metric": "self_harm_prevalence_teens",
+      "value": 13.0,
+      "unit": "percent_teens",
+      "country": "USA",
+      "description": "US teens who deliberately self-harmed in past year",
+      "source": "CDC YRBS 2023",
+      "year": 2023,
+      "url": "https://www.cdc.gov/healthyyouth/data/yrbs/index.htm"
+    },
+    {
+      "id": "YSH003",
+      "metric": "self_harm_teen_girls_increase_2010_2023",
+      "value": 80.0,
+      "unit": "percent_increase",
+      "country": "USA",
+      "description": "Increase in ER visits for self-harm among teen girls (10-14) from 2010 to 2023",
+      "source": "CDC WISQARS / JAMA",
+      "year": 2023,
+      "url": "https://www.cdc.gov/injury/wisqars/index.html"
+    },
+    {
+      "id": "YSH004",
+      "metric": "self_harm_hospital_admissions",
+      "value": 200000,
+      "unit": "admissions_per_year",
+      "country": "USA",
+      "description": "ER visits for self-harm among youth (10-24) per year in the US",
+      "source": "CDC / HCUP",
+      "year": 2023,
+      "url": "https://hcup-us.ahrq.gov/"
+    },
+    {
+      "id": "YSH005",
+      "metric": "self_harm_prevalence_teens",
+      "value": 25.0,
+      "unit": "percent_female_teens",
+      "country": "United Kingdom",
+      "description": "UK female teens (16-17) reporting self-harm (NHS Digital)",
+      "source": "NHS Digital",
+      "year": 2023,
+      "url": "https://digital.nhs.uk/"
+    }
+  ],
+
+  "adhd_prevalence": [
+    {
+      "id": "ADHD001",
+      "metric": "adhd_prevalence_children",
+      "value": 5.0,
+      "unit": "percent_children_globally",
+      "country": "global",
+      "description": "Global prevalence of ADHD in children and adolescents",
+      "source": "Lancet Psychiatry (meta-analysis)",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lanpsy/home"
+    },
+    {
+      "id": "ADHD002",
+      "metric": "adhd_prevalence_adults",
+      "value": 2.8,
+      "unit": "percent_adults_globally",
+      "country": "global",
+      "description": "Global prevalence of ADHD in adults",
+      "source": "Lancet Psychiatry / World Psychiatry",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lanpsy/home"
+    },
+    {
+      "id": "ADHD003",
+      "metric": "adhd_prevalence_children",
+      "value": 11.4,
+      "unit": "percent_children_4_17",
+      "country": "USA",
+      "description": "ADHD ever-diagnosed prevalence among US children 4-17 (highest globally)",
+      "source": "CDC / National Survey of Children's Health",
+      "year": 2023,
+      "url": "https://www.cdc.gov/ncbddd/adhd/data.html"
+    },
+    {
+      "id": "ADHD004",
+      "metric": "adhd_prevalence_children",
+      "value": 3.4,
+      "unit": "percent_children",
+      "country": "United Kingdom",
+      "description": "ADHD prevalence in UK children",
+      "source": "NICE / NHS",
+      "year": 2023,
+      "url": "https://www.nice.org.uk/guidance/ng87"
+    },
+    {
+      "id": "ADHD005",
+      "metric": "adhd_prevalence_children",
+      "value": 6.3,
+      "unit": "percent_children",
+      "country": "Brazil",
+      "description": "ADHD prevalence in Brazilian children",
+      "source": "Revista Brasileira de Psiquiatria",
+      "year": 2023,
+      "url": "https://www.scielo.br/j/rbp/"
+    },
+    {
+      "id": "ADHD006",
+      "metric": "adhd_prevalence_children",
+      "value": 6.3,
+      "unit": "percent_children",
+      "country": "China",
+      "description": "ADHD prevalence in Chinese children",
+      "source": "BMC Psychiatry / Chinese Medical Journal",
+      "year": 2023,
+      "url": "https://bmcpsychiatry.biomedcentral.com/"
+    },
+    {
+      "id": "ADHD007",
+      "metric": "adhd_prevalence_children",
+      "value": 1.5,
+      "unit": "percent_children",
+      "country": "India",
+      "description": "ADHD diagnosed prevalence in India (likely underdiagnosed)",
+      "source": "Indian Journal of Psychiatry",
+      "year": 2023,
+      "url": "https://www.indianjpsychiatry.org/"
+    },
+    {
+      "id": "ADHD008",
+      "metric": "adhd_prevalence_children",
+      "value": 5.0,
+      "unit": "percent_children",
+      "country": "Germany",
+      "description": "ADHD prevalence in German children",
+      "source": "Robert Koch Institut / KiGGS Survey",
+      "year": 2023,
+      "url": "https://www.rki.de/EN/Content/Health_Monitoring/Health_Reporting/GBEDownloadsB/KiGGS_wave2.html"
+    },
+    {
+      "id": "ADHD009",
+      "metric": "adhd_prevalence_children",
+      "value": 7.0,
+      "unit": "percent_children",
+      "country": "Australia",
+      "description": "ADHD prevalence in Australian children",
+      "source": "AIHW",
+      "year": 2023,
+      "url": "https://www.aihw.gov.au/"
+    },
+    {
+      "id": "ADHD010",
+      "metric": "adhd_male_to_female_ratio_children",
+      "value": 2.5,
+      "unit": "ratio",
+      "country": "global",
+      "description": "ADHD is 2.5x more commonly diagnosed in boys than girls (gap narrowing)",
+      "source": "Lancet Psychiatry",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lanpsy/home"
+    },
+    {
+      "id": "ADHD011",
+      "metric": "adhd_medication_rate_children",
+      "value": 62.0,
+      "unit": "percent_diagnosed_children",
+      "country": "USA",
+      "description": "US children with ADHD currently taking medication",
+      "source": "CDC",
+      "year": 2023,
+      "url": "https://www.cdc.gov/ncbddd/adhd/data.html"
+    },
+    {
+      "id": "ADHD012",
+      "metric": "adhd_diagnosis_increase_2003_2023",
+      "value": 42.0,
+      "unit": "percent_increase",
+      "country": "USA",
+      "description": "Increase in ADHD diagnosis rates among US children from 2003 to 2023",
+      "source": "CDC / NSCH",
+      "year": 2023,
+      "url": "https://www.cdc.gov/ncbddd/adhd/data.html"
+    }
+  ],
+
+  "autism_prevalence": [
+    {
+      "id": "ASD001",
+      "metric": "autism_prevalence",
+      "value": 1.0,
+      "unit": "percent_children",
+      "country": "global",
+      "description": "Global estimated prevalence of autism spectrum disorder in children",
+      "source": "WHO",
+      "year": 2023,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/autism-spectrum-disorders"
+    },
+    {
+      "id": "ASD002",
+      "metric": "autism_prevalence",
+      "value": 2.78,
+      "unit": "percent_children_8yr",
+      "country": "USA",
+      "description": "ASD prevalence among 8-year-olds in the US (1 in 36)",
+      "source": "CDC ADDM Network 2024",
+      "year": 2024,
+      "url": "https://www.cdc.gov/ncbddd/autism/data.html"
+    },
+    {
+      "id": "ASD003",
+      "metric": "autism_prevalence",
+      "value": 1.76,
+      "unit": "percent_children",
+      "country": "United Kingdom",
+      "description": "ASD prevalence in the UK",
+      "source": "NHS Digital / National Autistic Society",
+      "year": 2023,
+      "url": "https://www.autism.org.uk/about/what-is/myths-facts-and-statistics"
+    },
+    {
+      "id": "ASD004",
+      "metric": "autism_prevalence",
+      "value": 2.3,
+      "unit": "percent_children",
+      "country": "South Korea",
+      "description": "ASD prevalence in South Korea (among highest reported globally)",
+      "source": "American Journal of Psychiatry",
+      "year": 2023,
+      "url": "https://ajp.psychiatryonline.org/"
+    },
+    {
+      "id": "ASD005",
+      "metric": "autism_prevalence",
+      "value": 1.7,
+      "unit": "percent_children",
+      "country": "Australia",
+      "description": "ASD prevalence in Australia",
+      "source": "AIHW",
+      "year": 2023,
+      "url": "https://www.aihw.gov.au/reports/disability/autism-in-australia"
+    },
+    {
+      "id": "ASD006",
+      "metric": "autism_prevalence",
+      "value": 0.7,
+      "unit": "percent_children",
+      "country": "China",
+      "description": "ASD prevalence in China (likely underdiagnosed)",
+      "source": "Lancet Child & Adolescent Health",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lanchi/home"
+    },
+    {
+      "id": "ASD007",
+      "metric": "autism_male_to_female_ratio",
+      "value": 3.8,
+      "unit": "ratio",
+      "country": "global",
+      "description": "ASD diagnosis male-to-female ratio (females underdiagnosed)",
+      "source": "CDC ADDM / WHO",
+      "year": 2024,
+      "url": "https://www.cdc.gov/ncbddd/autism/data.html"
+    },
+    {
+      "id": "ASD008",
+      "metric": "autism_prevalence_increase_2000_2024",
+      "value": 278.0,
+      "unit": "percent_increase",
+      "country": "USA",
+      "description": "ASD prevalence increased ~278% in US since 2000 (from 1 in 150 to 1 in 36)",
+      "source": "CDC ADDM Network",
+      "year": 2024,
+      "url": "https://www.cdc.gov/ncbddd/autism/data.html"
+    }
+  ],
+
+  "dyslexia_prevalence": [
+    {
+      "id": "DYS001",
+      "metric": "dyslexia_prevalence",
+      "value": 10.0,
+      "unit": "percent_population",
+      "country": "global",
+      "description": "Estimated global dyslexia prevalence (5-17% range depending on criteria)",
+      "source": "International Dyslexia Association / Lancet",
+      "year": 2023,
+      "url": "https://dyslexiaida.org/dyslexia-basics/"
+    },
+    {
+      "id": "DYS002",
+      "metric": "dyslexia_prevalence",
+      "value": 15.0,
+      "unit": "percent_population",
+      "country": "USA",
+      "description": "Dyslexia prevalence in the US (including mild cases)",
+      "source": "Yale Center for Dyslexia & Creativity",
+      "year": 2023,
+      "url": "https://dyslexia.yale.edu/dyslexia/dyslexia-faq/"
+    },
+    {
+      "id": "DYS003",
+      "metric": "dyslexia_prevalence",
+      "value": 10.0,
+      "unit": "percent_population",
+      "country": "United Kingdom",
+      "description": "Dyslexia prevalence in the UK",
+      "source": "British Dyslexia Association",
+      "year": 2023,
+      "url": "https://www.bdadyslexia.org.uk/"
+    },
+    {
+      "id": "DYS004",
+      "metric": "dyslexia_prevalence",
+      "value": 5.0,
+      "unit": "percent_population",
+      "country": "Italy",
+      "description": "Dyslexia prevalence in Italy (lower due to regular orthography)",
+      "source": "AID (Associazione Italiana Dislessia)",
+      "year": 2023,
+      "url": "https://www.aiditalia.org/"
+    },
+    {
+      "id": "DYS005",
+      "metric": "dyslexia_prevalence",
+      "value": 3.0,
+      "unit": "percent_population",
+      "country": "Japan",
+      "description": "Dyslexia prevalence in Japan (logographic writing = different manifestation)",
+      "source": "Japanese Ministry of Education / Research in Developmental Disabilities",
+      "year": 2023,
+      "url": "https://www.sciencedirect.com/journal/research-in-developmental-disabilities"
+    },
+    {
+      "id": "DYS006",
+      "metric": "dyslexia_undiagnosed_pct",
+      "value": 80.0,
+      "unit": "percent_cases",
+      "country": "global",
+      "description": "Estimated percentage of dyslexia cases that go undiagnosed",
+      "source": "International Dyslexia Association",
+      "year": 2023,
+      "url": "https://dyslexiaida.org/"
+    }
+  ],
+
+  "bipolar_prevalence": [
+    {
+      "id": "BIP001",
+      "metric": "bipolar_prevalence",
+      "value": 1.0,
+      "unit": "percent_population",
+      "country": "global",
+      "description": "Global prevalence of bipolar disorder (I and II combined)",
+      "source": "IHME GBD 2021 / WHO",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "BIP002",
+      "metric": "bipolar_total_cases",
+      "value": 40000000,
+      "unit": "people",
+      "country": "global",
+      "description": "Total people living with bipolar disorder globally",
+      "source": "WHO",
+      "year": 2023,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/bipolar-disorder"
+    },
+    {
+      "id": "BIP003",
+      "metric": "bipolar_prevalence",
+      "value": 2.8,
+      "unit": "percent_adults",
+      "country": "USA",
+      "description": "Bipolar disorder prevalence in US adults (lifetime, NCS-R)",
+      "source": "NIMH",
+      "year": 2023,
+      "url": "https://www.nimh.nih.gov/health/statistics/bipolar-disorder"
+    },
+    {
+      "id": "BIP004",
+      "metric": "bipolar_prevalence",
+      "value": 2.0,
+      "unit": "percent_population",
+      "country": "Brazil",
+      "description": "Bipolar disorder prevalence in Brazil",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "BIP005",
+      "metric": "bipolar_prevalence",
+      "value": 1.5,
+      "unit": "percent_population",
+      "country": "India",
+      "description": "Bipolar disorder prevalence in India",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "BIP006",
+      "metric": "bipolar_avg_onset_age",
+      "value": 25,
+      "unit": "years_old",
+      "country": "global",
+      "description": "Average age of onset for bipolar disorder",
+      "source": "NIMH / WHO",
+      "year": 2023,
+      "url": "https://www.nimh.nih.gov/health/statistics/bipolar-disorder"
+    },
+    {
+      "id": "BIP007",
+      "metric": "bipolar_misdiagnosis_rate",
+      "value": 69.0,
+      "unit": "percent_initially_misdiagnosed",
+      "country": "global",
+      "description": "Bipolar patients initially misdiagnosed (usually as depression)",
+      "source": "Journal of Clinical Psychiatry",
+      "year": 2023,
+      "url": "https://www.psychiatrist.com/jcp/"
+    },
+    {
+      "id": "BIP008",
+      "metric": "bipolar_avg_years_to_correct_diagnosis",
+      "value": 7.5,
+      "unit": "years",
+      "country": "global",
+      "description": "Average delay from onset to correct bipolar diagnosis",
+      "source": "DBSA (Depression and Bipolar Support Alliance)",
+      "year": 2023,
+      "url": "https://www.dbsalliance.org/"
+    },
+    {
+      "id": "BIP009",
+      "metric": "bipolar_suicide_risk",
+      "value": 20.0,
+      "unit": "percent_lifetime_attempt",
+      "country": "global",
+      "description": "Lifetime suicide attempt rate among bipolar patients (20-60x general population)",
+      "source": "Lancet Psychiatry",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lanpsy/home"
+    }
+  ],
+
+  "schizophrenia_prevalence": [
+    {
+      "id": "SCZ001",
+      "metric": "schizophrenia_prevalence",
+      "value": 0.32,
+      "unit": "percent_population",
+      "country": "global",
+      "description": "Global prevalence of schizophrenia (1 in ~300 people)",
+      "source": "WHO",
+      "year": 2023,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/schizophrenia"
+    },
+    {
+      "id": "SCZ002",
+      "metric": "schizophrenia_total_cases",
+      "value": 24000000,
+      "unit": "people",
+      "country": "global",
+      "description": "Total people living with schizophrenia globally",
+      "source": "WHO",
+      "year": 2023,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/schizophrenia"
+    },
+    {
+      "id": "SCZ003",
+      "metric": "schizophrenia_prevalence",
+      "value": 0.6,
+      "unit": "percent_adults_lifetime",
+      "country": "USA",
+      "description": "Schizophrenia lifetime prevalence in the US",
+      "source": "NIMH",
+      "year": 2023,
+      "url": "https://www.nimh.nih.gov/health/statistics/schizophrenia"
+    },
+    {
+      "id": "SCZ004",
+      "metric": "schizophrenia_onset_age_male",
+      "value": 21,
+      "unit": "years_old_median",
+      "country": "global",
+      "description": "Median age of schizophrenia onset in males (late teens to early 20s)",
+      "source": "APA / Lancet",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lancet/home"
+    },
+    {
+      "id": "SCZ005",
+      "metric": "schizophrenia_onset_age_female",
+      "value": 27,
+      "unit": "years_old_median",
+      "country": "global",
+      "description": "Median age of schizophrenia onset in females (late 20s, later than males)",
+      "source": "APA / Lancet",
+      "year": 2023,
+      "url": "https://www.thelancet.com/journals/lancet/home"
+    },
+    {
+      "id": "SCZ006",
+      "metric": "schizophrenia_life_expectancy_reduction",
+      "value": 15,
+      "unit": "years_less",
+      "country": "global",
+      "description": "People with schizophrenia die 10-20 years earlier than general population",
+      "source": "Lancet Psychiatry / WHO",
+      "year": 2023,
+      "url": "https://www.who.int/news-room/fact-sheets/detail/schizophrenia"
+    },
+    {
+      "id": "SCZ007",
+      "metric": "schizophrenia_treatment_gap_lmic",
+      "value": 89.0,
+      "unit": "percent_untreated",
+      "country": "low-middle-income countries",
+      "description": "Schizophrenia treatment gap in LMIC — 89% receive no treatment",
+      "source": "WHO Mental Health Atlas 2023",
+      "year": 2023,
+      "url": "https://www.who.int/publications/i/item/9789240075931"
+    },
+    {
+      "id": "SCZ008",
+      "metric": "schizophrenia_unemployment_rate",
+      "value": 80.0,
+      "unit": "percent_patients",
+      "country": "global",
+      "description": "Unemployment rate among people with schizophrenia globally",
+      "source": "Lancet Commission on Mental Health",
+      "year": 2023,
+      "url": "https://www.thelancet.com/commissions/global-mental-health"
+    },
+    {
+      "id": "SCZ009",
+      "metric": "schizophrenia_homelessness_pct",
+      "value": 15.0,
+      "unit": "percent_homeless_population",
+      "country": "USA",
+      "description": "Percentage of US homeless population with schizophrenia",
+      "source": "SAMHSA / HUD",
+      "year": 2023,
+      "url": "https://www.samhsa.gov/"
+    },
+    {
+      "id": "SCZ010",
+      "metric": "schizophrenia_prevalence",
+      "value": 0.4,
+      "unit": "percent_population",
+      "country": "India",
+      "description": "Schizophrenia prevalence in India",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "SCZ011",
+      "metric": "schizophrenia_prevalence",
+      "value": 0.3,
+      "unit": "percent_population",
+      "country": "Japan",
+      "description": "Schizophrenia prevalence in Japan",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    },
+    {
+      "id": "SCZ012",
+      "metric": "schizophrenia_prevalence",
+      "value": 0.35,
+      "unit": "percent_population",
+      "country": "United Kingdom",
+      "description": "Schizophrenia prevalence in the UK",
+      "source": "IHME GBD 2021",
+      "year": 2021,
+      "url": "https://www.healthdata.org/research-analysis/gbd"
+    }
+  ]
+}

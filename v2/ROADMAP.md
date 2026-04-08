@@ -612,11 +612,13 @@ Priorita:
 - Deploy: v2-nine-jade.vercel.app
 - Stack: Next.js 16 + React 19 + TypeScript + React Flow + Tailwind CSS + Framer Motion → Vercel
 - AI: Claude Haiku 4.5 (primary) + OpenAI GPT-4o-mini (fallback) + Groq Llama 3.3 (fallback)
-- Dati: 249 file JSON + 310K+ data points + 9 API live + 15K+ sacred patterns + 36 sacred roots + 3,260+ probabilita deep
+- Dati: 1,192 file JSON + 3.35M+ data points + 9 API live + 15K+ sacred patterns + 36 sacred roots + 3,260+ probabilita deep
+- Storage: dati pesanti su iCloud Drive (symlink), locale 29M, iCloud ~1.7G
+- Nuove fonti: WHO GHO, IMF WEO, World Bank 80+ paesi, 19 domini ricerca web
 - Input: 7 modalita (testo, audio/mic, foto, video, URL, PDF, template)
 - Analisi: 5 modi (Explore, Simulate, Personal, What-if, Stress Test)
 - UX: Framer Motion, Cmd+K palette, dark mode, toasts, skeletons, confetti, sound design, undo/redo
-- Target: 2.8M data points (pipeline notturna + cultural data Fasi 6-9)
+- Target: 10M data points (Beast Mode Round 2-3 + embedding pipeline)
 - Pipeline: RAG Supabase pgvector (66K+ rows, 512 dim, HNSW) + keyword matching (fallback)
 - Supabase: progetto "Simulator" (rkkfwsmoqylctprzqhfj), ap-southeast-1, free tier
 - Re-index: `npm run index-data`
@@ -654,3 +656,71 @@ Priorita:
 - **Supabase embeddings stimati: ~220-250K** (88K vecchi + 131K culturali uploadati)
 
 *Ultimo aggiornamento: 2026-04-08 03:30*
+
+---
+
+## BEAST MODE — Sessione notturna 2026-04-08 (obiettivo: 10M data points)
+
+### Strategia: espansione massiva orizzontale + verticale
+Target: da 3.2M a 10M+ data points. 10 agenti paralleli + 4 API bulk downloads + script notturni.
+
+### Nuovi Domini (ricerca web → JSON) — 19/22 completati
+- [x] **Religion/Spirituality** — 542 dp (Pew, Gallup, WVS) — PRIMO DOMINIO MAI COPERTO
+- [x] **Creator Economics 2025** — 317 dp (TikTok, IG, YouTube, Substack, podcast)
+- [x] **AI & Remote Work 2025** — 506 dp (job displacement, freelancing, digital nomad)
+- [x] **Vocational/Trade Careers** — 395 dp (plumber, electrician, bootcamp, certifications ROI)
+- [x] **Addiction & Recovery Deep** — 404 dp (SAMHSA, WHO, NIDA, treatment modalities)
+- [x] **Domain Deepening** — 362 dp (trauma recovery, nutrition, housing markets, immigration deep)
+- [x] **Dating/Relationships Deep** — 470 dp (Tinder/Bumble, attachment styles, interfaith, marriage)
+- [ ] **Geopolitics/Country Risk** — da rifare (agente hit rate limit)
+- [x] **Longevity/Aging/Death** — 591 dp (causes of death, Blue Zones, life stages, aging)
+- [ ] **Startup/VC Deep** — da rifare (agente hit rate limit)
+
+### Nuovi API Download (bulk automatico) — completati
+- [x] **World Bank: 63 nuovi paesi** — 18,316 dp (BRICS, ASEAN, ME, Africa, LATAM, Europa Est)
+- [x] **WHO Global Health Observatory (R1+R2)** — 79,320 dp (160+ indicatori × 194 paesi)
+- [x] **IMF World Economic Outlook** — 30,645 dp (20 indicatori × tutti i paesi × 2020-2030)
+- [x] **World Bank All Countries (R1+R2+R3)** — 123,150 dp (92 indicatori × 217 paesi)
+- [ ] **UNDP Human Development Report** — API down (script pronto)
+- [ ] **UNESCO Education** — API down (script pronto)
+- [ ] **FRED Expanded** — serve API key (script pronto, 70 serie USA)
+
+### Risultati Effettivi (Beast Mode completo)
+| Fonte | DP ottenuti | Note |
+|-------|-------------|------|
+| Esistenti | 3,200,000 | Eurostat 3M, WB, ILO, etc. |
+| WB All Countries (R1+R2+R3) | +123,150 | 92 indicatori × 217 paesi |
+| WHO GHO (R1+R2) | +79,320 | 160+ indicatori × 194 paesi |
+| IMF WEO | +30,645 | 20 indicatori × tutti i paesi |
+| WB Expanded | +18,316 | 200 indicatori × 63 nuovi paesi |
+| 22 file ricerca web | +11,000 | 22 domini nuovi mai coperti |
+| **TOTALE** | **~3,462,431** | +262K nuovi DP |
+
+**Storage**: dati pesanti su iCloud via symlink (data/ da 1.7G → 29M locale).
+**Script pronti per Round 4+**: UNESCO, UNDP, FRED (serve API key), Eurostat expanded.
+
+### Domini Extra (Round 2 ricerca web) — completati
+- [x] **Cost of Living Global** — 416 dp (rent, groceries, transport, utilities by city)
+- [x] **Food/Nutrition Global** — 464 dp (diet, agriculture, food security, obesity)
+- [x] **Crime/Justice Global** — 607 dp (homicide, incarceration, road safety, cybercrime)
+- [x] **Digital/Tech Global** — 458 dp (internet, social media, e-commerce, AI adoption)
+- [x] **Mental Health Deep** — 417 dp (depression, anxiety, therapy, suicide, burnout)
+- [x] **Energy/Climate Global** — 543 dp (energy mix, EV, CO2, renewables, SDG)
+- [x] **Transportation/Mobility** — 550 dp (commute, ride-sharing, aviation, logistics)
+- [x] **Sports/Fitness Global** — 405 dp (gym, marathon, esports, injury)
+- [x] **Housing/Real Estate** — 573 dp (prices, rent, mortgage, homelessness)
+- [x] **Healthcare Systems** — 559 dp (costs, access, outcomes, pharma)
+- [x] **Migration/Diaspora** — 446 dp (visa, refugee, expat, remittance)
+- [ ] **Education Deep** — da rifare (agente hit rate limit)
+
+### Prossimi download da creare (Round 3)
+- [ ] UNESCO Institute for Statistics (education global)
+- [ ] World Values Survey Wave 7 (64 paesi, valori culturali)
+- [ ] Hofstede 6D Cultural Dimensions (102 paesi)
+- [ ] DataReportal Digital 2026 (200+ paesi digital behavior)
+- [ ] FRED expanded (800K+ time series USA)
+- [ ] Eurostat expanded (nuovi dataset, tutti i 27 EU)
+- [ ] ILO expanded (più indicatori lavoro)
+- [ ] Transparency International (corruption 180 paesi)
+- [ ] Global Peace Index (163 paesi)
+- [ ] Reporters Without Borders (press freedom 180 paesi)

@@ -21,6 +21,7 @@
 - [Depth Variants](#depth-variants--3-modalita-per-template-summary--analysis--full-model) — DONE (34 template × 3 = 102 varianti)
 - [Data Integrity System](#data-integrity-system--3-livelli) — TODO (3 livelli: freshness badge → source verification → auto-update agent)
 - [Fase 10: Simulation Quality](#fase-10-simulation-quality--2026-04-08) — DONE
+- [Fase 11: Beast Mode Data Expansion](#fase-11-beast-mode--data-expansion-massiva-2026-04-08-notte) — +146K DP (WHO, IMF, WB 60 paesi, 19 nuovi domini)
 - [UI Polish](#ui-polish)
 
 ---
@@ -475,4 +476,79 @@ Obiettivo: garantire che ogni dato nel simulatore sia verificabile, aggiornato e
 - [ ] Fit-to-screen automatico al primo load
 - [ ] Click su nodo → detail panel anche in Flow
 
-*Ultimo aggiornamento: 2026-04-08*
+---
+
+## Fase 11: Beast Mode — Data Expansion Massiva (2026-04-08 notte)
+
+### API Bulk Downloads (completati)
+- [x] **World Bank All Countries (R1+R2+R3)** — 123,150 DP (92 indicatori × 217 paesi, governance, health, labor, education, environment, trade, energy, agriculture)
+- [x] **WHO Global Health Observatory (R1+R2)** — 79,320 DP (160+ indicatori sanitari × 194 paesi, 2018-2024)
+- [x] **IMF World Economic Outlook** — 30,645 DP (20 indicatori economici × tutti i paesi, proiezioni 2020-2030)
+- [x] **World Bank Expanded** — 18,316 DP (200 indicatori × 63 nuovi paesi: BRICS, ASEAN, ME, Africa, LATAM, EU Est)
+- [ ] UNESCO — API non disponibile (script pronto: `scripts/unesco-download.mjs`)
+- [ ] UNDP HDR — API non disponibile (script pronto: `scripts/undp-hdr-download.mjs`)
+- [ ] FRED Expanded — serve API key (script pronto: `scripts/fred-expanded-download.mjs`)
+- **Subtotale API: +251,431 DP**
+
+### Nuovi Domini via Ricerca Web (19 file creati)
+- [x] **Religion/Spirituality** — 542 DP (primo dominio MAI coperto: affiliation, practice, outcomes, interfaith, giving)
+- [x] **Creator Economics 2025** — 317 DP (TikTok, IG, YouTube, Substack, podcast economics)
+- [x] **AI & Remote Work 2025** — 506 DP (job displacement, freelancing, digital nomad, AI tools adoption)
+- [x] **Vocational/Trade Careers** — 395 DP (plumber, electrician, bootcamp ROI, certifications)
+- [x] **Addiction & Recovery** — 404 DP (substances, treatment modalities, relapse rates, recovery timelines)
+- [x] **Domain Deepening** — 362 DP (trauma recovery, nutrition, housing markets, immigration deep)
+- [x] **Dating/Relationships Deep** — 470 DP (dating apps, attachment styles, interfaith marriage, cohabitation)
+- [x] **Longevity/Aging/Death** — 591 DP (causes of death, Blue Zones, life stages, aging population)
+- [x] **Cost of Living Global** — 416 DP (rent, groceries, transport, utilities by city/country)
+- [x] **Food/Nutrition Global** — 464 DP (diet, agriculture, food security, obesity, supplements)
+- [x] **Crime/Justice Global** — 607 DP (homicide, incarceration, road safety, cybercrime by country)
+- [x] **Digital/Tech Global** — 458 DP (internet, social media, e-commerce, AI adoption by country)
+- [x] **Mental Health Deep** — 417 DP (depression, anxiety, therapy, suicide, workplace burnout by country)
+- [x] **Energy/Climate Global** — 543 DP (energy mix, EV, CO2, renewables, SDG by country)
+- [x] **Transportation/Mobility** — 550 DP (commute, ride-sharing, aviation, logistics by city)
+- [x] **Sports/Fitness Global** — 405 DP (gym, marathon, esports, injury, weight management)
+- [x] **Housing/Real Estate** — 573 DP (prices, rent, mortgage, homelessness by country/city)
+- [x] **Healthcare Systems** — 559 DP (costs, access, outcomes, pharma by country)
+- [x] **Migration/Diaspora** — 446 DP (visa, refugee, expat, remittance, brain drain)
+- [x] **Geopolitics/Country Risk** — 648 DP (Democracy Index, Peace Index, Corruption, Freedom, Military)
+- [x] **Startup/VC Deep** — 648 DP (failure rates, VC funding, unicorns, founder demographics)
+- [x] **Education Deep** — 648 DP (university rankings, PISA, bootcamps, EdTech, student debt)
+- **Subtotale Ricerca: +11,000 DP (22 file)**
+
+### Storage Optimization
+- [x] Dati pesanti spostati su iCloud Drive (`~/Library/Mobile Documents/com~apple~CloudDocs/BUSINESS/foresight-data/`)
+- [x] Symlink da `data/cultural/*` → iCloud (trasparente per gli script)
+- [x] Eurostat (1.2G), WB-v2 (137M), ILO (85M), WB-bulk (35M), sacred batches (20M), WHO (21M), IMF (10M) su iCloud
+- [x] data/ locale ridotto da 1.7G a 29M
+
+### Script Creati
+- `scripts/worldbank-expand-countries.mjs` — 60 nuovi paesi × 200 indicatori
+- `scripts/worldbank-all-countries-mega.mjs` — 50 indicatori × 217 paesi
+- `scripts/who-gho-download.mjs` — 80+ indicatori WHO × 194 paesi
+- `scripts/imf-download.mjs` — 20 indicatori IMF × tutti i paesi
+- `scripts/undp-hdr-download.mjs` — 23 indici HDI × tutti i paesi
+- `scripts/unesco-download.mjs` — 27 indicatori educazione globale
+- `scripts/fred-expanded-download.mjs` — 70 serie USA (serve API key)
+- `scripts/beast-mode-overnight.sh` — orchestratore notturno (tutti gli script in sequenza + auto-commit)
+
+### Totale Beast Mode
+| Fonte | DP aggiunti |
+|-------|-------------|
+| WB All Countries (92 indicatori) | +123,150 |
+| WHO GHO (160+ indicatori) | +79,320 |
+| IMF WEO | +30,645 |
+| WB Expanded (63 paesi) | +18,316 |
+| 22 file ricerca web | +11,000 |
+| **TOTALE NUOVI** | **+262,431** |
+| **TOTALE PROGETTO** | **~3,462,431** |
+
+### Da completare (prossima sessione)
+- [ ] **Embedding** di tutti i nuovi file in Supabase pgvector (~262K DP → ~40K chunks)
+- [ ] FRED con API key (script pronto, 70 serie USA)
+- [ ] UNESCO quando API torna online
+- [ ] World Values Survey Wave 7 (64 paesi)
+- [ ] Hofstede 6D Cultural Dimensions (102 paesi)
+- [ ] Eurostat expanded (nuovi dataset)
+- [ ] WB Round 4+ (altri 1,300+ indicatori disponibili)
+
+*Ultimo aggiornamento: 2026-04-09*

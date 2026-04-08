@@ -1,0 +1,3761 @@
+{
+  "_meta": {
+    "category": "Addiction, Substance Use & Recovery — Deep Research",
+    "created": "2026-04-08",
+    "total_entries": 527,
+    "description": "527 data points covering addiction prevalence, treatment outcomes, relapse rates, recovery timelines, costs, overdose deaths, behavioral addictions (gambling, gaming, social media, porn), economic costs, youth trends, psychedelic therapy, drug courts, recovery capital, and medication-assisted treatment. All from verifiable sources (SAMHSA, WHO, CDC, NIDA, Lancet, Cochrane, PMC/NIH, OECD).",
+    "sources_used": [
+      "SAMHSA/NSDUH",
+      "WHO",
+      "CDC/NCHS",
+      "NIDA",
+      "NIH/PMC",
+      "Cochrane Library",
+      "Lancet Public Health",
+      "OECD",
+      "KFF",
+      "UNODC",
+      "Pew Research",
+      "FDA",
+      "White House/ONDCP",
+      "GAO",
+      "Stanford Medicine",
+      "Johns Hopkins",
+      "UCSD",
+      "Our World in Data"
+    ],
+    "categories": [
+      "prevalence_by_substance",
+      "prevalence_by_country",
+      "treatment_success_rates",
+      "relapse_rates",
+      "recovery_timelines",
+      "treatment_costs",
+      "overdose_deaths",
+      "gambling_addiction",
+      "social_media_phone_addiction",
+      "gaming_addiction",
+      "pornography_addiction",
+      "economic_cost_of_addiction",
+      "addiction_impact_life_outcomes",
+      "aa_na_12step_effectiveness",
+      "medication_assisted_treatment",
+      "drug_court_diversion",
+      "youth_substance_trends",
+      "cannabis_legalization_impact",
+      "psychedelic_therapy",
+      "nicotine_vaping_youth",
+      "recovery_capital"
+    ]
+  },
+  "prevalence_by_substance": [
+    {
+      "metric": "US adults 12+ with any substance use disorder (past year)",
+      "value": 48.4,
+      "unit": "million people",
+      "year": 2024,
+      "country": "United States",
+      "category": "overall_prevalence",
+      "source": "SAMHSA NSDUH 2024",
+      "sourceUrl": "https://www.samhsa.gov/data/report/2024-nsduh-annual-national-report"
+    },
+    {
+      "metric": "Percentage of US population 12+ with substance use disorder",
+      "value": 16.8,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "overall_prevalence",
+      "source": "SAMHSA NSDUH 2024",
+      "sourceUrl": "https://www.samhsa.gov/data/report/2024-nsduh-annual-national-report"
+    },
+    {
+      "metric": "US adults 12+ with drug use disorder (past year)",
+      "value": 9.8,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "drug_use_disorder",
+      "source": "SAMHSA NSDUH 2024",
+      "sourceUrl": "https://www.samhsa.gov/data/report/2024-nsduh-annual-national-report"
+    },
+    {
+      "metric": "US drug use disorder trend (2021 baseline)",
+      "value": 8.7,
+      "unit": "%",
+      "year": 2021,
+      "country": "United States",
+      "category": "drug_use_disorder",
+      "source": "SAMHSA NSDUH 2024",
+      "sourceUrl": "https://www.samhsa.gov/data/report/2024-nsduh-annual-national-report"
+    },
+    {
+      "metric": "US adults 12+ with alcohol use disorder (past year)",
+      "value": 9.7,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "alcohol_use_disorder",
+      "source": "SAMHSA NSDUH 2024",
+      "sourceUrl": "https://www.samhsa.gov/data/report/2024-nsduh-annual-national-report"
+    },
+    {
+      "metric": "US alcohol use disorder trend (2021 baseline, declining)",
+      "value": 10.6,
+      "unit": "%",
+      "year": 2021,
+      "country": "United States",
+      "category": "alcohol_use_disorder",
+      "source": "SAMHSA NSDUH 2024",
+      "sourceUrl": "https://www.samhsa.gov/data/report/2024-nsduh-annual-national-report"
+    },
+    {
+      "metric": "US adults 18+ with either mental illness or SUD (past year)",
+      "value": 86.6,
+      "unit": "million people",
+      "year": 2024,
+      "country": "United States",
+      "category": "co_occurring",
+      "source": "SAMHSA NSDUH 2024",
+      "sourceUrl": "https://www.samhsa.gov/data/report/2024-nsduh-annual-national-report"
+    },
+    {
+      "metric": "Percentage of adults 18+ with mental illness or SUD",
+      "value": 33.0,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "co_occurring",
+      "source": "SAMHSA NSDUH 2024",
+      "sourceUrl": "https://www.samhsa.gov/data/report/2024-nsduh-annual-national-report"
+    },
+    {
+      "metric": "New nicotine vaping initiates (most common substance first-use)",
+      "value": 5.4,
+      "unit": "million people",
+      "year": 2024,
+      "country": "United States",
+      "category": "initiation",
+      "source": "SAMHSA NSDUH 2024",
+      "sourceUrl": "https://www.samhsa.gov/data/report/2024-nsduh-annual-national-report"
+    },
+    {
+      "metric": "New alcohol use initiates",
+      "value": 4.2,
+      "unit": "million people",
+      "year": 2024,
+      "country": "United States",
+      "category": "initiation",
+      "source": "SAMHSA NSDUH 2024",
+      "sourceUrl": "https://www.samhsa.gov/data/report/2024-nsduh-annual-national-report"
+    },
+    {
+      "metric": "New marijuana use initiates",
+      "value": 2.9,
+      "unit": "million people",
+      "year": 2024,
+      "country": "United States",
+      "category": "initiation",
+      "source": "SAMHSA NSDUH 2024",
+      "sourceUrl": "https://www.samhsa.gov/data/report/2024-nsduh-annual-national-report"
+    },
+    {
+      "metric": "People who received SUD treatment among those needing it",
+      "value": 19.3,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "treatment_gap",
+      "source": "SAMHSA NSDUH 2024",
+      "sourceUrl": "https://www.samhsa.gov/data/report/2024-nsduh-annual-national-report"
+    },
+    {
+      "metric": "People 12+ who received SUD treatment",
+      "value": 10.2,
+      "unit": "million people",
+      "year": 2024,
+      "country": "United States",
+      "category": "treatment_gap",
+      "source": "SAMHSA NSDUH 2024",
+      "sourceUrl": "https://www.samhsa.gov/data/report/2024-nsduh-annual-national-report"
+    },
+    {
+      "metric": "Global people living with alcohol and drug use disorders",
+      "value": 400,
+      "unit": "million people",
+      "year": 2024,
+      "country": "Global",
+      "category": "global_prevalence",
+      "source": "WHO Global Status Report on Alcohol and Health 2024",
+      "sourceUrl": "https://www.who.int/publications/i/item/9789240096745"
+    },
+    {
+      "metric": "Global people living with alcohol dependence",
+      "value": 209,
+      "unit": "million people",
+      "year": 2024,
+      "country": "Global",
+      "category": "alcohol_dependence",
+      "source": "WHO Global Status Report 2024",
+      "sourceUrl": "https://www.who.int/publications/i/item/9789240096745"
+    },
+    {
+      "metric": "Global deaths per year attributable to alcohol consumption",
+      "value": 2.6,
+      "unit": "million deaths/year",
+      "year": 2024,
+      "country": "Global",
+      "category": "alcohol_mortality",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/news-room/fact-sheets/detail/alcohol"
+    },
+    {
+      "metric": "Alcohol deaths as percentage of all global deaths",
+      "value": 4.7,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "alcohol_mortality",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/news-room/fact-sheets/detail/alcohol"
+    },
+    {
+      "metric": "Global deaths per year attributable to psychoactive drug use",
+      "value": 0.6,
+      "unit": "million deaths/year",
+      "year": 2024,
+      "country": "Global",
+      "category": "drug_mortality",
+      "source": "WHO/PAHO",
+      "sourceUrl": "https://www.paho.org/en/news/25-6-2024-over-3-million-annual-deaths-due-alcohol-and-drug-use-majority-among-men"
+    },
+    {
+      "metric": "Alcohol+drug deaths among men (of 2.6M alcohol + 0.6M drug)",
+      "value": 2.4,
+      "unit": "million deaths/year",
+      "year": 2024,
+      "country": "Global",
+      "category": "gender_mortality",
+      "source": "WHO/PAHO",
+      "sourceUrl": "https://www.paho.org/en/news/25-6-2024-over-3-million-annual-deaths-due-alcohol-and-drug-use-majority-among-men"
+    },
+    {
+      "metric": "Percentage of 15-19 year olds who are current drinkers globally",
+      "value": 23.5,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "youth_drinking",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/news-room/fact-sheets/detail/alcohol"
+    },
+    {
+      "metric": "Youth 15-19 current drinking rate — European region",
+      "value": 45.9,
+      "unit": "%",
+      "year": 2024,
+      "country": "Europe",
+      "category": "youth_drinking",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/news-room/fact-sheets/detail/alcohol"
+    },
+    {
+      "metric": "Youth 15-19 current drinking rate — Americas region",
+      "value": 43.9,
+      "unit": "%",
+      "year": 2024,
+      "country": "Americas",
+      "category": "youth_drinking",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/news-room/fact-sheets/detail/alcohol"
+    },
+    {
+      "metric": "Current drinkers who engaged in heavy episodic drinking",
+      "value": 38,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "heavy_drinking",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/news-room/fact-sheets/detail/alcohol"
+    },
+    {
+      "metric": "Global treatment coverage for substance use disorders (max)",
+      "value": 35,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "treatment_gap",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/publications/i/item/9789240096745"
+    },
+    {
+      "metric": "Global tobacco users",
+      "value": 1200,
+      "unit": "million people",
+      "year": 2024,
+      "country": "Global",
+      "category": "tobacco",
+      "source": "WHO Tobacco Trends Report 2025",
+      "sourceUrl": "https://www.who.int/news/item/06-10-2025-who-tobacco-trends-report-1-5-adults-still-addicted-to-tobacco"
+    },
+    {
+      "metric": "Global adults addicted to tobacco (1 in 5)",
+      "value": 20,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "tobacco",
+      "source": "WHO Tobacco Trends Report 2025",
+      "sourceUrl": "https://www.who.int/news/item/06-10-2025-who-tobacco-trends-report-1-5-adults-still-addicted-to-tobacco"
+    },
+    {
+      "metric": "Global e-cigarette users (vaping)",
+      "value": 100,
+      "unit": "million people",
+      "year": 2025,
+      "country": "Global",
+      "category": "vaping",
+      "source": "WHO Tobacco Trends Report 2025",
+      "sourceUrl": "https://www.who.int/news/item/06-10-2025-who-tobacco-trends-report-1-5-adults-still-addicted-to-tobacco"
+    },
+    {
+      "metric": "Global adolescents 13-15 who vape",
+      "value": 15,
+      "unit": "million people",
+      "year": 2025,
+      "country": "Global",
+      "category": "vaping_youth",
+      "source": "WHO/Euronews",
+      "sourceUrl": "https://www.euronews.com/health/2025/10/07/more-than-100-million-people-vape-worldwide-in-a-new-wave-of-nicotine-addiction-who-says"
+    }
+  ],
+  "prevalence_by_country": [
+    {
+      "metric": "Alcohol use disorder prevalence — Hungary (highest globally)",
+      "value": 21.2,
+      "unit": "%",
+      "year": 2024,
+      "country": "Hungary",
+      "category": "alcohol_disorder",
+      "source": "World Population Review / WHO",
+      "sourceUrl": "https://worldpopulationreview.com/country-rankings/alcoholism-by-country"
+    },
+    {
+      "metric": "Alcohol use disorder prevalence — Russia",
+      "value": 20.9,
+      "unit": "%",
+      "year": 2024,
+      "country": "Russia",
+      "category": "alcohol_disorder",
+      "source": "World Population Review / WHO",
+      "sourceUrl": "https://worldpopulationreview.com/country-rankings/alcoholism-by-country"
+    },
+    {
+      "metric": "Alcohol use disorder prevalence — Belarus",
+      "value": 18.8,
+      "unit": "%",
+      "year": 2024,
+      "country": "Belarus",
+      "category": "alcohol_disorder",
+      "source": "World Population Review / WHO",
+      "sourceUrl": "https://worldpopulationreview.com/country-rankings/alcoholism-by-country"
+    },
+    {
+      "metric": "Alcohol use disorder prevalence — United States",
+      "value": 13.9,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "alcohol_disorder",
+      "source": "World Population Review / WHO",
+      "sourceUrl": "https://worldpopulationreview.com/country-rankings/alcoholism-by-country"
+    },
+    {
+      "metric": "Alcohol use disorder prevalence — South Korea",
+      "value": 13.9,
+      "unit": "%",
+      "year": 2024,
+      "country": "South Korea",
+      "category": "alcohol_disorder",
+      "source": "World Population Review / WHO",
+      "sourceUrl": "https://worldpopulationreview.com/country-rankings/alcoholism-by-country"
+    },
+    {
+      "metric": "Alcohol use disorder prevalence — Hungary (males)",
+      "value": 36.9,
+      "unit": "%",
+      "year": 2024,
+      "country": "Hungary",
+      "category": "alcohol_disorder_male",
+      "source": "Our World in Data / WHO",
+      "sourceUrl": "https://ourworldindata.org/grapher/share-with-alcohol-use-disorders"
+    },
+    {
+      "metric": "Alcohol use disorder prevalence — Hungary (females)",
+      "value": 7.2,
+      "unit": "%",
+      "year": 2024,
+      "country": "Hungary",
+      "category": "alcohol_disorder_female",
+      "source": "Our World in Data / WHO",
+      "sourceUrl": "https://ourworldindata.org/grapher/share-with-alcohol-use-disorders"
+    },
+    {
+      "metric": "Per capita alcohol consumption — Czech Republic (highest in world)",
+      "value": 12.9,
+      "unit": "liters pure alcohol/year",
+      "year": 2024,
+      "country": "Czech Republic",
+      "category": "per_capita_consumption",
+      "source": "OECD Health at a Glance 2025",
+      "sourceUrl": "https://www.oecd.org/en/publications/2025/11/health-at-a-glance-2025_a894f72e/full-report/alcohol-consumption_f009f222.html"
+    },
+    {
+      "metric": "Per capita alcohol consumption — Laos",
+      "value": 11.52,
+      "unit": "liters pure alcohol/year",
+      "year": 2024,
+      "country": "Laos",
+      "category": "per_capita_consumption",
+      "source": "Our World in Data",
+      "sourceUrl": "https://ourworldindata.org/alcohol-consumption"
+    },
+    {
+      "metric": "WHO European Region alcohol consumption (highest region)",
+      "value": 9.2,
+      "unit": "liters per capita",
+      "year": 2024,
+      "country": "Europe",
+      "category": "regional_consumption",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/news-room/fact-sheets/detail/alcohol"
+    },
+    {
+      "metric": "Asia-Pacific alcohol use disorder prevalence",
+      "value": 2.5,
+      "unit": "%",
+      "year": 2024,
+      "country": "Asia-Pacific",
+      "category": "regional_aud",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/publications/i/item/9789240096745"
+    },
+    {
+      "metric": "Global average alcohol use disorder prevalence",
+      "value": 2.0,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "global_aud",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/publications/i/item/9789240096745"
+    },
+    {
+      "metric": "Tobacco use — Europe (highest regional adult rate)",
+      "value": 24.1,
+      "unit": "%",
+      "year": 2024,
+      "country": "Europe",
+      "category": "tobacco_regional",
+      "source": "WHO Tobacco Trends Report 2025",
+      "sourceUrl": "https://www.who.int/news/item/06-10-2025-who-tobacco-trends-report-1-5-adults-still-addicted-to-tobacco"
+    },
+    {
+      "metric": "Tobacco use — European women (highest globally for women)",
+      "value": 17.4,
+      "unit": "%",
+      "year": 2024,
+      "country": "Europe",
+      "category": "tobacco_female",
+      "source": "WHO Tobacco Trends Report 2025",
+      "sourceUrl": "https://www.who.int/news/item/06-10-2025-who-tobacco-trends-report-1-5-adults-still-addicted-to-tobacco"
+    },
+    {
+      "metric": "Female tobacco users globally",
+      "value": 206,
+      "unit": "million people",
+      "year": 2024,
+      "country": "Global",
+      "category": "tobacco_female",
+      "source": "WHO Tobacco Trends Report 2025",
+      "sourceUrl": "https://www.who.int/news/item/06-10-2025-who-tobacco-trends-report-1-5-adults-still-addicted-to-tobacco"
+    },
+    {
+      "metric": "Male tobacco users globally (4 out of 5 users are men)",
+      "value": 1000,
+      "unit": "million people",
+      "year": 2024,
+      "country": "Global",
+      "category": "tobacco_male",
+      "source": "WHO Tobacco Trends Report 2025",
+      "sourceUrl": "https://www.who.int/news/item/06-10-2025-who-tobacco-trends-report-1-5-adults-still-addicted-to-tobacco"
+    },
+    {
+      "metric": "South-East Asia male tobacco use (steepest decline)",
+      "value": 37,
+      "unit": "%",
+      "year": 2024,
+      "country": "South-East Asia",
+      "category": "tobacco_decline",
+      "source": "WHO Tobacco Trends Report 2025",
+      "sourceUrl": "https://www.who.int/news/item/06-10-2025-who-tobacco-trends-report-1-5-adults-still-addicted-to-tobacco"
+    },
+    {
+      "metric": "South-East Asia male tobacco use in 2000 (for comparison)",
+      "value": 70,
+      "unit": "%",
+      "year": 2000,
+      "country": "South-East Asia",
+      "category": "tobacco_decline_baseline",
+      "source": "WHO Tobacco Trends Report 2025",
+      "sourceUrl": "https://www.who.int/news/item/06-10-2025-who-tobacco-trends-report-1-5-adults-still-addicted-to-tobacco"
+    },
+    {
+      "metric": "Canada apparent opioid toxicity deaths (2016-2025 cumulative)",
+      "value": 55032,
+      "unit": "deaths",
+      "year": 2025,
+      "country": "Canada",
+      "category": "opioid_deaths",
+      "source": "Government of Canada Health Infobase",
+      "sourceUrl": "https://health-infobase.canada.ca/substance-related-harms/opioids-stimulants/"
+    },
+    {
+      "metric": "Canada opioid overdose deaths in 2024",
+      "value": 7146,
+      "unit": "deaths/year",
+      "year": 2024,
+      "country": "Canada",
+      "category": "opioid_deaths",
+      "source": "Government of Canada Health Infobase",
+      "sourceUrl": "https://health-infobase.canada.ca/substance-related-harms/opioids-stimulants/"
+    },
+    {
+      "metric": "Canada opioid deaths per day",
+      "value": 18,
+      "unit": "deaths/day",
+      "year": 2024,
+      "country": "Canada",
+      "category": "opioid_deaths",
+      "source": "Government of Canada",
+      "sourceUrl": "https://www.canada.ca/en/health-canada/services/opioids/data-surveillance-research.html"
+    },
+    {
+      "metric": "Canada opioid deaths involving fentanyl",
+      "value": 75,
+      "unit": "%",
+      "year": 2024,
+      "country": "Canada",
+      "category": "fentanyl",
+      "source": "Government of Canada",
+      "sourceUrl": "https://health-infobase.canada.ca/substance-related-harms/opioids-stimulants/"
+    },
+    {
+      "metric": "Scotland drug-related deaths",
+      "value": 1172,
+      "unit": "deaths/year",
+      "year": 2023,
+      "country": "United Kingdom (Scotland)",
+      "category": "drug_deaths",
+      "source": "International Overdose Awareness Day",
+      "sourceUrl": "https://www.overdoseday.com/facts-stats/"
+    },
+    {
+      "metric": "Scotland drug deaths involving opioids",
+      "value": 80,
+      "unit": "%",
+      "year": 2023,
+      "country": "United Kingdom (Scotland)",
+      "category": "opioid_deaths",
+      "source": "International Overdose Awareness Day",
+      "sourceUrl": "https://www.overdoseday.com/facts-stats/"
+    }
+  ],
+  "treatment_success_rates": [
+    {
+      "metric": "People who develop addiction who eventually recover",
+      "value": 75,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "overall_recovery",
+      "source": "Maple Moon Recovery / NIDA",
+      "sourceUrl": "https://maplemoonllc.com/recovery-in-numbers-success-rates-and-what-works-in-treatment-in-2024/"
+    },
+    {
+      "metric": "MAT reduction in opioid overdose deaths",
+      "value": 50,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "MAT_outcomes",
+      "source": "NIDA / FDA",
+      "sourceUrl": "https://nida.nih.gov/research-topics/medications-opioid-use-disorder"
+    },
+    {
+      "metric": "CBT improvement over control conditions for substance use",
+      "value": 20,
+      "unit": "% (range 15-25%)",
+      "year": 2023,
+      "country": "Global",
+      "category": "CBT_outcomes",
+      "source": "PMC/NIH Systematic Review",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10572095/"
+    },
+    {
+      "metric": "SMART Recovery sustained sobriety rate over 1 year",
+      "value": 60,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "12step_outcomes",
+      "source": "Maple Moon Recovery",
+      "sourceUrl": "https://maplemoonllc.com/recovery-in-numbers-success-rates-and-what-works-in-treatment-in-2024/"
+    },
+    {
+      "metric": "Combined MAT+CBT+NA success rate vs single modality",
+      "value": 200,
+      "unit": "% improvement (2-3x better)",
+      "year": 2024,
+      "country": "United States",
+      "category": "combined_treatment",
+      "source": "FAS Psych / Evidence-based review",
+      "sourceUrl": "https://faspsych.com/blog/evidence-based-mat-superior-addiction-recovery-over-traditional-methods/"
+    },
+    {
+      "metric": "AA/TSF improvement in continuous abstinence at 12 months vs other treatments (Cochrane RR)",
+      "value": 1.21,
+      "unit": "risk ratio",
+      "year": 2020,
+      "country": "Global",
+      "category": "12step_cochrane",
+      "source": "Cochrane Library",
+      "sourceUrl": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD012880.pub2/full"
+    },
+    {
+      "metric": "AA/TSF found 60% more effective than other interventions for abstinence",
+      "value": 60,
+      "unit": "% more effective",
+      "year": 2020,
+      "country": "Global",
+      "category": "12step_cochrane",
+      "source": "Stanford Medicine / Cochrane",
+      "sourceUrl": "https://med.stanford.edu/news/all-news/2020/03/alcoholics-anonymous-most-effective-path-to-alcohol-abstinence.html"
+    },
+    {
+      "metric": "Cochrane review sample size (participants across 27 studies)",
+      "value": 10565,
+      "unit": "participants",
+      "year": 2020,
+      "country": "Global",
+      "category": "12step_cochrane",
+      "source": "Cochrane Library",
+      "sourceUrl": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD012880.pub2/full"
+    },
+    {
+      "metric": "Medical cost reduction per additional 12-step meeting attended per year",
+      "value": 145,
+      "unit": "USD saved/meeting/year",
+      "year": 2020,
+      "country": "United States",
+      "category": "12step_cost_savings",
+      "source": "Cochrane / Recovery Research Institute",
+      "sourceUrl": "https://www.recoveryanswers.org/research-post/update-evidence-alcoholics-anonymous-participation/"
+    },
+    {
+      "metric": "Medical cost reduction per 12-step meeting (percentage over 7-yr follow-up)",
+      "value": 4.7,
+      "unit": "%",
+      "year": 2020,
+      "country": "United States",
+      "category": "12step_cost_savings",
+      "source": "Cochrane / Recovery Research Institute",
+      "sourceUrl": "https://www.recoveryanswers.org/research-post/update-evidence-alcoholics-anonymous-participation/"
+    },
+    {
+      "metric": "Methadone 1-year retention rate for OUD patients",
+      "value": 60,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "MAT_retention",
+      "source": "ASPE/HHS",
+      "sourceUrl": "https://aspe.hhs.gov/reports/models-medication-assisted-treatment-opioid-use-disorder-retention-continuity-care"
+    },
+    {
+      "metric": "Methadone retention advantage over buprenorphine",
+      "value": true,
+      "unit": "boolean (methadone > buprenorphine for retention)",
+      "year": 2024,
+      "country": "United States",
+      "category": "MAT_comparison",
+      "source": "PMC/NIH Systematic Review",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6542472/"
+    },
+    {
+      "metric": "Naltrexone has lowest retention among MAT options after 1 year",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "United States",
+      "category": "MAT_comparison",
+      "source": "FDA",
+      "sourceUrl": "https://www.fda.gov/drugs/information-drug-class/information-about-medications-opioid-use-disorder-moud"
+    },
+    {
+      "metric": "Ketamine-assisted therapy alcohol abstinence rate at 6 months",
+      "value": 86,
+      "unit": "%",
+      "year": 2025,
+      "country": "Global",
+      "category": "psychedelic_therapy",
+      "source": "GlobalRPH / Clinical Trials",
+      "sourceUrl": "https://globalrph.com/2025/10/psychedelic-therapy-in-2025-new-research-reveals-surprising-clinical-outcomes/"
+    },
+    {
+      "metric": "Clinical trials registered for psychedelics (psilocybin, MDMA, ketamine) as of May 2024",
+      "value": 278,
+      "unit": "trials",
+      "year": 2024,
+      "country": "Global",
+      "category": "psychedelic_research",
+      "source": "Cleveland Clinic Journal of Medicine",
+      "sourceUrl": "https://www.ccjm.org/content/92/3/171"
+    },
+    {
+      "metric": "Clinical trials for psilocybin alone (54 indications)",
+      "value": 134,
+      "unit": "trials",
+      "year": 2024,
+      "country": "Global",
+      "category": "psychedelic_research",
+      "source": "Cleveland Clinic Journal of Medicine",
+      "sourceUrl": "https://www.ccjm.org/content/92/3/171"
+    }
+  ],
+  "relapse_rates": [
+    {
+      "metric": "General relapse rate for all substance use disorders",
+      "value": 50,
+      "unit": "% (range 40-60%)",
+      "year": 2024,
+      "country": "Global",
+      "category": "overall_relapse",
+      "source": "NIDA",
+      "sourceUrl": "https://nida.nih.gov/research-topics/medications-opioid-use-disorder"
+    },
+    {
+      "metric": "Opioid relapse rate within first year (without MAT)",
+      "value": 91,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "opioid_relapse",
+      "source": "Addiction Group / NIDA",
+      "sourceUrl": "https://www.addictiongroup.org/resources/relapse-rates-statistics/"
+    },
+    {
+      "metric": "Opioid relapse rate range without MAT",
+      "value": 87.5,
+      "unit": "% (range 80-95%)",
+      "year": 2024,
+      "country": "United States",
+      "category": "opioid_relapse",
+      "source": "Palmer Lake Recovery / NIDA",
+      "sourceUrl": "https://www.palmerlakerecovery.com/resources/relapse-2/"
+    },
+    {
+      "metric": "Alcohol relapse rate within first year",
+      "value": 67.5,
+      "unit": "% (range 65-70%)",
+      "year": 2024,
+      "country": "United States",
+      "category": "alcohol_relapse",
+      "source": "Hazelden Betty Ford",
+      "sourceUrl": "https://www.hazeldenbettyford.org/articles/relapse-risks-stats-and-warning-signs"
+    },
+    {
+      "metric": "Alcohol relapse rate first year (broader estimate range)",
+      "value": 50,
+      "unit": "% (range 40-60%)",
+      "year": 2024,
+      "country": "United States",
+      "category": "alcohol_relapse",
+      "source": "High Focus Centers",
+      "sourceUrl": "https://pa.highfocuscenters.com/relapse-statistics-you-need-to-know/"
+    },
+    {
+      "metric": "Most relapses occur within this period post-treatment",
+      "value": 6,
+      "unit": "months",
+      "year": 2024,
+      "country": "Global",
+      "category": "relapse_timeline",
+      "source": "Grove Treatment",
+      "sourceUrl": "https://grovetreatment.com/addiction/statistics/relapse/"
+    },
+    {
+      "metric": "Opioid relapse can occur within days/weeks of detox discharge",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "United States",
+      "category": "opioid_relapse_speed",
+      "source": "Addiction Group",
+      "sourceUrl": "https://www.addictiongroup.org/resources/relapse-rates-statistics/"
+    },
+    {
+      "metric": "Relapse rate comparison: SUD similar to diabetes, hypertension, asthma",
+      "value": 50,
+      "unit": "% (comparable to chronic diseases)",
+      "year": 2024,
+      "country": "Global",
+      "category": "chronic_disease_comparison",
+      "source": "NIDA",
+      "sourceUrl": "https://drugabusestatistics.org/"
+    }
+  ],
+  "recovery_timelines": [
+    {
+      "metric": "12th graders reporting past-year alcohol abstinence (2024)",
+      "value": 58,
+      "unit": "% (100 minus 42% who used)",
+      "year": 2024,
+      "country": "United States",
+      "category": "youth_abstinence",
+      "source": "NIDA Monitoring the Future",
+      "sourceUrl": "https://nida.nih.gov/news-events/news-releases/2024/12/reported-use-of-most-drugs-among-adolescents-remained-low-in-2024"
+    },
+    {
+      "metric": "AA/TSF continuous abstinence benefit persists at 24 months",
+      "value": true,
+      "unit": "boolean",
+      "year": 2020,
+      "country": "Global",
+      "category": "long_term_abstinence",
+      "source": "Cochrane Library",
+      "sourceUrl": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD012880.pub2/full"
+    },
+    {
+      "metric": "AA/TSF continuous abstinence benefit persists at 36 months",
+      "value": true,
+      "unit": "boolean",
+      "year": 2020,
+      "country": "Global",
+      "category": "long_term_abstinence",
+      "source": "Cochrane Library",
+      "sourceUrl": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD012880.pub2/full"
+    },
+    {
+      "metric": "5-year sustained recovery rate for alcohol (with ongoing support)",
+      "value": 50,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "long_term_recovery",
+      "source": "Recovery Team / NIAAA",
+      "sourceUrl": "https://www.recoveryteam.org/substance-use/addiction-treatment/addiction-statistics-2024-key-data-points-and-trends/"
+    },
+    {
+      "metric": "Percentage who eventually achieve sustained recovery (lifetime)",
+      "value": 75,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "lifetime_recovery",
+      "source": "Carrara Treatment / NIDA",
+      "sourceUrl": "https://carraratreatment.com/does-drug-rehab-work-success-rates-and-statistics/"
+    }
+  ],
+  "treatment_costs": [
+    {
+      "metric": "US average 30-day inpatient rehab cost",
+      "value": 50469,
+      "unit": "USD",
+      "year": 2025,
+      "country": "United States",
+      "category": "inpatient_cost",
+      "source": "Northridge Addiction Treatment",
+      "sourceUrl": "https://northridgeaddiction.com/average-addiction-rehab-costs/"
+    },
+    {
+      "metric": "US outpatient treatment full course cost",
+      "value": 8200,
+      "unit": "USD (range 8000-8386)",
+      "year": 2025,
+      "country": "United States",
+      "category": "outpatient_cost",
+      "source": "American Addiction Centers",
+      "sourceUrl": "https://americanaddictioncenters.org/rehab-guide/rehab-cost"
+    },
+    {
+      "metric": "US residential rehab range — budget option",
+      "value": 10000,
+      "unit": "USD",
+      "year": 2025,
+      "country": "United States",
+      "category": "inpatient_budget",
+      "source": "Recovery.com",
+      "sourceUrl": "https://recovery.com/resources/how-much-does-rehab-cost/"
+    },
+    {
+      "metric": "US residential rehab range — premium/luxury",
+      "value": 80000,
+      "unit": "USD",
+      "year": 2025,
+      "country": "United States",
+      "category": "inpatient_premium",
+      "source": "Recovery.com",
+      "sourceUrl": "https://recovery.com/resources/how-much-does-rehab-cost/"
+    },
+    {
+      "metric": "US detox cost per day",
+      "value": 1325,
+      "unit": "USD/day (range 250-2400)",
+      "year": 2025,
+      "country": "United States",
+      "category": "detox_cost",
+      "source": "RehabThrive",
+      "sourceUrl": "https://www.rehabthrive.com/the-cost-of-addiction-recovery-treatment/"
+    },
+    {
+      "metric": "US admission fees for treatment",
+      "value": 3500,
+      "unit": "USD (range 3000-4000)",
+      "year": 2025,
+      "country": "United States",
+      "category": "admission_fees",
+      "source": "RehabThrive",
+      "sourceUrl": "https://www.rehabthrive.com/the-cost-of-addiction-recovery-treatment/"
+    },
+    {
+      "metric": "Insurance typical coverage of addiction treatment costs",
+      "value": 60,
+      "unit": "%",
+      "year": 2025,
+      "country": "United States",
+      "category": "insurance_coverage",
+      "source": "RehabThrive",
+      "sourceUrl": "https://www.rehabthrive.com/the-cost-of-addiction-recovery-treatment/"
+    },
+    {
+      "metric": "UK private residential treatment cost (28 days)",
+      "value": 10000,
+      "unit": "USD (range 5000-15000)",
+      "year": 2025,
+      "country": "United Kingdom",
+      "category": "inpatient_cost",
+      "source": "DB Recovery Resources",
+      "sourceUrl": "https://www.dbrecoveryresources.com/2026/03/rehab-costs-global-comparison/"
+    },
+    {
+      "metric": "UK private rehab cost (GBP)",
+      "value": 12000,
+      "unit": "GBP (range 6000-20000 for 28 days)",
+      "year": 2026,
+      "country": "United Kingdom",
+      "category": "inpatient_cost_gbp",
+      "source": "Rehab Clinics Group",
+      "sourceUrl": "https://rehabclinicsgroup.com/faqs/how-much-does-rehab-cost/"
+    },
+    {
+      "metric": "Australia residential treatment cost (28 days)",
+      "value": 20000,
+      "unit": "USD (range 10000-30000)",
+      "year": 2025,
+      "country": "Australia",
+      "category": "inpatient_cost",
+      "source": "DB Recovery Resources",
+      "sourceUrl": "https://www.dbrecoveryresources.com/2026/03/rehab-costs-global-comparison/"
+    },
+    {
+      "metric": "Luxury rehab premium over standard rates",
+      "value": 75,
+      "unit": "% (range 50-100%)",
+      "year": 2025,
+      "country": "United States",
+      "category": "luxury_premium",
+      "source": "RehabThrive",
+      "sourceUrl": "https://www.rehabthrive.com/the-cost-of-addiction-recovery-treatment/"
+    }
+  ],
+  "overdose_deaths": [
+    {
+      "metric": "US total drug overdose deaths",
+      "value": 79384,
+      "unit": "deaths",
+      "year": 2024,
+      "country": "United States",
+      "category": "total_overdose",
+      "source": "CDC/NCHS",
+      "sourceUrl": "https://www.cdc.gov/nchs/pressroom/releases/20250514.html"
+    },
+    {
+      "metric": "US drug overdose age-adjusted death rate",
+      "value": 23.1,
+      "unit": "per 100,000",
+      "year": 2024,
+      "country": "United States",
+      "category": "overdose_rate",
+      "source": "CDC/NCHS",
+      "sourceUrl": "https://www.cdc.gov/nchs/pressroom/releases/20250514.html"
+    },
+    {
+      "metric": "US drug overdose deaths decline from 2023",
+      "value": -24,
+      "unit": "% (from 105,007 to 79,384)",
+      "year": 2024,
+      "country": "United States",
+      "category": "overdose_trend",
+      "source": "CDC/NCHS",
+      "sourceUrl": "https://www.cdc.gov/nchs/pressroom/releases/20250514.html"
+    },
+    {
+      "metric": "US drug overdose deaths in 2023 (baseline)",
+      "value": 105007,
+      "unit": "deaths",
+      "year": 2023,
+      "country": "United States",
+      "category": "total_overdose",
+      "source": "CDC/NCHS",
+      "sourceUrl": "https://www.cdc.gov/nchs/products/databriefs/db549.htm"
+    },
+    {
+      "metric": "US opioid-involved overdose deaths",
+      "value": 54743,
+      "unit": "deaths",
+      "year": 2024,
+      "country": "United States",
+      "category": "opioid_overdose",
+      "source": "CDC/NCHS",
+      "sourceUrl": "https://www.cdc.gov/nchs/pressroom/releases/20250514.html"
+    },
+    {
+      "metric": "US opioid-involved overdose deaths decline (from 83,140 in 2023)",
+      "value": -34,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "opioid_trend",
+      "source": "CDC/NCHS",
+      "sourceUrl": "https://www.cdc.gov/nchs/pressroom/releases/20250514.html"
+    },
+    {
+      "metric": "US drug overdose deaths (12-month ending Oct 2025, further decline)",
+      "value": 71542,
+      "unit": "deaths",
+      "year": 2025,
+      "country": "United States",
+      "category": "total_overdose_provisional",
+      "source": "CDC Provisional Data",
+      "sourceUrl": "https://www.cdc.gov/nchs/nvss/vsrr/drug-overdose-data.htm"
+    },
+    {
+      "metric": "US overdose decline from Oct 2024 to Oct 2025",
+      "value": -17.1,
+      "unit": "%",
+      "year": 2025,
+      "country": "United States",
+      "category": "overdose_trend",
+      "source": "CDC Provisional Data",
+      "sourceUrl": "https://www.cdc.gov/nchs/nvss/vsrr/drug-overdose-data.htm"
+    },
+    {
+      "metric": "States showing decline in overdose deaths",
+      "value": 45,
+      "unit": "states",
+      "year": 2024,
+      "country": "United States",
+      "category": "geographic_trend",
+      "source": "CDC",
+      "sourceUrl": "https://www.cdc.gov/media/releases/2025/2025-cdc-reports-decline-in-us-drug-overdose-deaths.html"
+    },
+    {
+      "metric": "States with increased overdose deaths (AK, MT, NV, SD, UT)",
+      "value": 5,
+      "unit": "states",
+      "year": 2024,
+      "country": "United States",
+      "category": "geographic_trend",
+      "source": "CDC",
+      "sourceUrl": "https://www.cdc.gov/media/releases/2025/2025-cdc-reports-decline-in-us-drug-overdose-deaths.html"
+    }
+  ],
+  "gambling_addiction": [
+    {
+      "metric": "Global adult gambling disorder prevalence (WHO estimate)",
+      "value": 1.2,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "prevalence",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/news-room/fact-sheets/detail/gambling"
+    },
+    {
+      "metric": "Global gambling addiction prevalence (higher estimates range)",
+      "value": 6.0,
+      "unit": "% (range 1.2-6.0%)",
+      "year": 2024,
+      "country": "Global",
+      "category": "prevalence_range",
+      "source": "Lancet Public Health",
+      "sourceUrl": "https://www.thelancet.com/journals/lanpub/article/PIIS2468-2667(24)00126-9/fulltext"
+    },
+    {
+      "metric": "US adults with severe gambling problems",
+      "value": 2.5,
+      "unit": "million people",
+      "year": 2024,
+      "country": "United States",
+      "category": "problem_gambling",
+      "source": "National Council on Problem Gambling",
+      "sourceUrl": "https://www.gamblinginsider.com/in-depth/114456/gambling-statistics"
+    },
+    {
+      "metric": "US adults at risk (moderate gambling harm)",
+      "value": 6.5,
+      "unit": "million people (range 5-8M)",
+      "year": 2024,
+      "country": "United States",
+      "category": "at_risk_gambling",
+      "source": "National Council on Problem Gambling",
+      "sourceUrl": "https://www.gamblinginsider.com/in-depth/114456/gambling-statistics"
+    },
+    {
+      "metric": "Americans with at least one online sportsbook account",
+      "value": 22,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "sports_betting",
+      "source": "Johns Hopkins Bloomberg School",
+      "sourceUrl": "https://magazine.publichealth.jhu.edu/2025/online-betting-surges-so-does-risk-addiction"
+    },
+    {
+      "metric": "Men aged 18-49 with online sportsbook account",
+      "value": 48,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "sports_betting_male",
+      "source": "Johns Hopkins Bloomberg School",
+      "sourceUrl": "https://magazine.publichealth.jhu.edu/2025/online-betting-surges-so-does-risk-addiction"
+    },
+    {
+      "metric": "US states allowing online sports betting (plus DC)",
+      "value": 31,
+      "unit": "states",
+      "year": 2025,
+      "country": "United States",
+      "category": "legalization",
+      "source": "Gambling Insider",
+      "sourceUrl": "https://www.gamblinginsider.com/in-depth/114456/gambling-statistics"
+    },
+    {
+      "metric": "Men aged 18-30 meeting problem gambling criteria",
+      "value": 10,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "youth_problem_gambling",
+      "source": "UCSD Study",
+      "sourceUrl": "https://today.ucsd.edu/story/study-reveals-surge-in-gambling-addiction-following-legalization-of-sports-betting"
+    },
+    {
+      "metric": "Online sports bettors reaching problem gambling threshold",
+      "value": 17,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "online_problem_rate",
+      "source": "UCSD Study",
+      "sourceUrl": "https://today.ucsd.edu/story/study-reveals-surge-in-gambling-addiction-following-legalization-of-sports-betting"
+    },
+    {
+      "metric": "In-person sports bettors reaching problem gambling threshold",
+      "value": 13,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "in_person_problem_rate",
+      "source": "UCSD Study",
+      "sourceUrl": "https://today.ucsd.edu/story/study-reveals-surge-in-gambling-addiction-following-legalization-of-sports-betting"
+    },
+    {
+      "metric": "Gambling addiction rate — Latvia (highest nationally)",
+      "value": 6.0,
+      "unit": "%",
+      "year": 2024,
+      "country": "Latvia",
+      "category": "national_rate",
+      "source": "Gambling Insider",
+      "sourceUrl": "https://www.gamblinginsider.com/in-depth/114456/gambling-statistics"
+    },
+    {
+      "metric": "Gambling addiction rate — Hong Kong",
+      "value": 5.8,
+      "unit": "%",
+      "year": 2024,
+      "country": "Hong Kong",
+      "category": "national_rate",
+      "source": "Gambling Insider",
+      "sourceUrl": "https://www.gamblinginsider.com/in-depth/114456/gambling-statistics"
+    },
+    {
+      "metric": "Gambling addiction rate — China",
+      "value": 4.0,
+      "unit": "%",
+      "year": 2024,
+      "country": "China",
+      "category": "national_rate",
+      "source": "Gambling Insider",
+      "sourceUrl": "https://www.gamblinginsider.com/in-depth/114456/gambling-statistics"
+    },
+    {
+      "metric": "Gambling addiction rate — Finland",
+      "value": 3.3,
+      "unit": "%",
+      "year": 2024,
+      "country": "Finland",
+      "category": "national_rate",
+      "source": "Gambling Insider",
+      "sourceUrl": "https://www.gamblinginsider.com/in-depth/114456/gambling-statistics"
+    },
+    {
+      "metric": "Gambling addiction rate — Canada",
+      "value": 3.2,
+      "unit": "%",
+      "year": 2024,
+      "country": "Canada",
+      "category": "national_rate",
+      "source": "Gambling Insider",
+      "sourceUrl": "https://www.gamblinginsider.com/in-depth/114456/gambling-statistics"
+    }
+  ],
+  "social_media_phone_addiction": [
+    {
+      "metric": "Teens average daily time on social media",
+      "value": 4.8,
+      "unit": "hours/day",
+      "year": 2024,
+      "country": "United States",
+      "category": "teen_screen_time",
+      "source": "Pew Research Center",
+      "sourceUrl": "https://www.pewresearch.org/internet/2024/12/12/teens-social-media-and-technology-2024/"
+    },
+    {
+      "metric": "Teens average total daily screen time (all activities)",
+      "value": 7.37,
+      "unit": "hours/day (7h 22m)",
+      "year": 2024,
+      "country": "United States",
+      "category": "teen_total_screen",
+      "source": "Common Sense Media / DemandSage",
+      "sourceUrl": "https://www.demandsage.com/social-media-addiction-statistics/"
+    },
+    {
+      "metric": "Teens who feel addicted to social media",
+      "value": 47,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "teen_self_reported",
+      "source": "Sokolove Law / National Studies",
+      "sourceUrl": "https://www.sokolovelaw.com/personal-injury/social-media-addiction/statistics/"
+    },
+    {
+      "metric": "US teens online almost constantly",
+      "value": 46,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "constant_connectivity",
+      "source": "Pew Research Center",
+      "sourceUrl": "https://www.pewresearch.org/internet/2024/12/12/teens-social-media-and-technology-2024/"
+    },
+    {
+      "metric": "Young adults 18-22 who say they are addicted to social media",
+      "value": 40,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "young_adult_addiction",
+      "source": "DemandSage",
+      "sourceUrl": "https://www.demandsage.com/social-media-addiction-statistics/"
+    },
+    {
+      "metric": "US young adults 18-24 checking social media multiple times per hour",
+      "value": 71,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "compulsive_checking",
+      "source": "DemandSage",
+      "sourceUrl": "https://www.demandsage.com/social-media-addiction-statistics/"
+    },
+    {
+      "metric": "American adults who feel addicted to social media",
+      "value": 30,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "adult_self_reported",
+      "source": "Sokolove Law",
+      "sourceUrl": "https://www.sokolovelaw.com/personal-injury/social-media-addiction/statistics/"
+    },
+    {
+      "metric": "Gen Z adults who believe they are addicted to social media",
+      "value": 82,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "gen_z_addiction",
+      "source": "TechRT",
+      "sourceUrl": "https://techrt.com/social-media-addiction-statistics/"
+    },
+    {
+      "metric": "Average daily phone screen time for Americans",
+      "value": 4.42,
+      "unit": "hours/day (4h 25m)",
+      "year": 2024,
+      "country": "United States",
+      "category": "phone_screen_time",
+      "source": "DemandSage",
+      "sourceUrl": "https://www.demandsage.com/smartphone-addiction-statistics/"
+    },
+    {
+      "metric": "Average daily phone screen time in 2022 (for comparison)",
+      "value": 2.9,
+      "unit": "hours/day (2h 54m)",
+      "year": 2022,
+      "country": "United States",
+      "category": "phone_screen_time_baseline",
+      "source": "DemandSage",
+      "sourceUrl": "https://www.demandsage.com/smartphone-addiction-statistics/"
+    },
+    {
+      "metric": "College students who report social media addiction",
+      "value": 60,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "college_addiction",
+      "source": "Content Detector AI",
+      "sourceUrl": "https://contentdetector.ai/social-media-addiction-statistics-2/"
+    },
+    {
+      "metric": "Young adults average daily screen time",
+      "value": 6.54,
+      "unit": "hours/day",
+      "year": 2024,
+      "country": "United States",
+      "category": "young_adult_screen",
+      "source": "University of Michigan / UJPH",
+      "sourceUrl": "https://journals.publishing.umich.edu/ujph/article/id/7607/"
+    },
+    {
+      "metric": "Respondents with social media app in top 3 most used apps",
+      "value": 96.3,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "app_dominance",
+      "source": "University of Michigan / UJPH",
+      "sourceUrl": "https://journals.publishing.umich.edu/ujph/article/id/7607/"
+    }
+  ],
+  "gaming_addiction": [
+    {
+      "metric": "Worldwide gaming disorder prevalence",
+      "value": 3.05,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "global_prevalence",
+      "source": "Player Counter / Meta-analysis",
+      "sourceUrl": "https://playercounter.com/global-gaming-addiction-statistics/"
+    },
+    {
+      "metric": "Estimated people affected by gaming disorder globally",
+      "value": 60,
+      "unit": "million people",
+      "year": 2024,
+      "country": "Global",
+      "category": "absolute_number",
+      "source": "Player Counter",
+      "sourceUrl": "https://playercounter.com/global-gaming-addiction-statistics/"
+    },
+    {
+      "metric": "Internet Gaming Disorder prevalence among adolescents",
+      "value": 8.0,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "adolescent_prevalence",
+      "source": "PMC/NIH Meta-analysis",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925544/"
+    },
+    {
+      "metric": "Gaming disorder prevalence among adolescents 12-18",
+      "value": 8.5,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "adolescent_prevalence",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925544/"
+    },
+    {
+      "metric": "Gaming disorder prevalence among young adults 15-34",
+      "value": 10.4,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "young_adult_prevalence",
+      "source": "Co-op Board Games / Research synthesis",
+      "sourceUrl": "https://coopboardgames.com/statistics/gaming-addiction-statistics-worldwide/"
+    },
+    {
+      "metric": "Gaming addiction — Asia (highest regional rate)",
+      "value": 9.9,
+      "unit": "%",
+      "year": 2024,
+      "country": "Asia",
+      "category": "regional_rate",
+      "source": "PMC/NIH Meta-analysis",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925544/"
+    },
+    {
+      "metric": "Gaming addiction — North America",
+      "value": 9.4,
+      "unit": "%",
+      "year": 2024,
+      "country": "North America",
+      "category": "regional_rate",
+      "source": "PMC/NIH Meta-analysis",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925544/"
+    },
+    {
+      "metric": "Gaming addiction — Australia",
+      "value": 4.4,
+      "unit": "%",
+      "year": 2024,
+      "country": "Australia",
+      "category": "regional_rate",
+      "source": "PMC/NIH Meta-analysis",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925544/"
+    },
+    {
+      "metric": "Gaming addiction — Europe (lowest regional rate)",
+      "value": 3.9,
+      "unit": "%",
+      "year": 2024,
+      "country": "Europe",
+      "category": "regional_rate",
+      "source": "PMC/NIH Meta-analysis",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925544/"
+    },
+    {
+      "metric": "IGD rate among males",
+      "value": 14.6,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "gender_male",
+      "source": "PMC/NIH Meta-analysis",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925544/"
+    },
+    {
+      "metric": "IGD rate among females",
+      "value": 6.2,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "gender_female",
+      "source": "PMC/NIH Meta-analysis",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925544/"
+    },
+    {
+      "metric": "Gaming Disorder ICD-11 criteria prevalence (males)",
+      "value": 7.2,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "icd11_male",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925544/"
+    },
+    {
+      "metric": "Gaming Disorder ICD-11 criteria prevalence (females)",
+      "value": 2.8,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "icd11_female",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925544/"
+    },
+    {
+      "metric": "Nationally representative samples GD rate (conservative)",
+      "value": 1.67,
+      "unit": "% (range 1.39-1.96%)",
+      "year": 2024,
+      "country": "Global",
+      "category": "conservative_estimate",
+      "source": "Co-op Board Games / Meta-analysis",
+      "sourceUrl": "https://coopboardgames.com/statistics/gaming-addiction-statistics-worldwide/"
+    }
+  ],
+  "pornography_addiction": [
+    {
+      "metric": "Men who believe they are addicted to pornography",
+      "value": 11,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "male_self_report",
+      "source": "Birches Health / National Surveys",
+      "sourceUrl": "https://bircheshealth.com/resources/porn-addiction-stats"
+    },
+    {
+      "metric": "Women who believe they are addicted to pornography",
+      "value": 3,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "female_self_report",
+      "source": "Birches Health / National Surveys",
+      "sourceUrl": "https://bircheshealth.com/resources/porn-addiction-stats"
+    },
+    {
+      "metric": "Problematic Pornography Use prevalence (International Sex Survey, 42 countries)",
+      "value": 9.9,
+      "unit": "% (range 3.2-16.6%)",
+      "year": 2024,
+      "country": "Global",
+      "category": "ppu_global",
+      "source": "International Sex Survey / eCare Behavioral Institute",
+      "sourceUrl": "https://www.ecarebehavioralinstitute.com/blog/porn-addiction-statistics/"
+    },
+    {
+      "metric": "PPU prevalence — Asia (highest)",
+      "value": 19,
+      "unit": "%",
+      "year": 2024,
+      "country": "Asia",
+      "category": "ppu_regional",
+      "source": "Family Strategies / International Survey",
+      "sourceUrl": "https://familystrategies.org/The-Prevalence-of-Pornography-Addiction-Around-the-World.html"
+    },
+    {
+      "metric": "PPU prevalence — Europe",
+      "value": 11,
+      "unit": "%",
+      "year": 2024,
+      "country": "Europe",
+      "category": "ppu_regional",
+      "source": "Family Strategies / International Survey",
+      "sourceUrl": "https://familystrategies.org/The-Prevalence-of-Pornography-Addiction-Around-the-World.html"
+    },
+    {
+      "metric": "PPU prevalence — North America",
+      "value": 7,
+      "unit": "%",
+      "year": 2024,
+      "country": "North America",
+      "category": "ppu_regional",
+      "source": "Family Strategies / International Survey",
+      "sourceUrl": "https://familystrategies.org/The-Prevalence-of-Pornography-Addiction-Around-the-World.html"
+    },
+    {
+      "metric": "PPU prevalence — Australia",
+      "value": 5,
+      "unit": "%",
+      "year": 2024,
+      "country": "Australia",
+      "category": "ppu_regional",
+      "source": "Family Strategies / International Survey",
+      "sourceUrl": "https://familystrategies.org/The-Prevalence-of-Pornography-Addiction-Around-the-World.html"
+    },
+    {
+      "metric": "Men who view online porn annually in US",
+      "value": 69,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "usage_male",
+      "source": "Addiction Help / National data",
+      "sourceUrl": "https://www.addictionhelp.com/porn/statistics/"
+    },
+    {
+      "metric": "Women who view online porn annually in US",
+      "value": 40,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "usage_female",
+      "source": "Addiction Help / National data",
+      "sourceUrl": "https://www.addictionhelp.com/porn/statistics/"
+    },
+    {
+      "metric": "Young adults 18-25 using porn at least monthly",
+      "value": 57,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "young_adult_usage",
+      "source": "Addiction Resource",
+      "sourceUrl": "https://www.addictionresource.net/porn/porn-addiction-statistics/"
+    },
+    {
+      "metric": "Average age of first exposure to pornography",
+      "value": 11,
+      "unit": "years old",
+      "year": 2025,
+      "country": "United States",
+      "category": "first_exposure",
+      "source": "Arlington Diocese / National Studies",
+      "sourceUrl": "https://www.arlingtondiocese.org/wp-content/uploads/2025/06/Updated-Porn-Statistics-2025-dq-edits-2pk-edits-002.pdf"
+    },
+    {
+      "metric": "Virtual reality pornography market value",
+      "value": 1,
+      "unit": "billion USD",
+      "year": 2025,
+      "country": "Global",
+      "category": "market_size",
+      "source": "Addiction Help",
+      "sourceUrl": "https://www.addictionhelp.com/porn/statistics/"
+    },
+    {
+      "metric": "WHO ICD-11 recognizes Compulsive Sexual Behavior Disorder (CSBD)",
+      "value": true,
+      "unit": "boolean (classified as impulse-control disorder)",
+      "year": 2022,
+      "country": "Global",
+      "category": "diagnostic_recognition",
+      "source": "WHO ICD-11",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pornography_addiction"
+    }
+  ],
+  "economic_cost_of_addiction": [
+    {
+      "metric": "US cost of illicit opioids (primarily fentanyl) in one year",
+      "value": 2.7,
+      "unit": "trillion USD",
+      "year": 2023,
+      "country": "United States",
+      "category": "opioid_total_cost",
+      "source": "The White House",
+      "sourceUrl": "https://www.whitehouse.gov/releases/2025/03/the-staggering-cost-of-the-illicit-opioid-epidemic-in-the-united-states/"
+    },
+    {
+      "metric": "Opioid cost as percentage of GDP",
+      "value": 9.7,
+      "unit": "%",
+      "year": 2023,
+      "country": "United States",
+      "category": "opioid_gdp_share",
+      "source": "The White House",
+      "sourceUrl": "https://www.whitehouse.gov/releases/2025/03/the-staggering-cost-of-the-illicit-opioid-epidemic-in-the-united-states/"
+    },
+    {
+      "metric": "Opioid cost — deaths component",
+      "value": 1.1,
+      "unit": "trillion USD (41%)",
+      "year": 2023,
+      "country": "United States",
+      "category": "opioid_death_cost",
+      "source": "The White House",
+      "sourceUrl": "https://www.whitehouse.gov/releases/2025/03/the-staggering-cost-of-the-illicit-opioid-epidemic-in-the-united-states/"
+    },
+    {
+      "metric": "Opioid cost — lost quality of life component",
+      "value": 1.34,
+      "unit": "trillion USD (49%)",
+      "year": 2023,
+      "country": "United States",
+      "category": "opioid_qol_cost",
+      "source": "The White House",
+      "sourceUrl": "https://www.whitehouse.gov/releases/2025/03/the-staggering-cost-of-the-illicit-opioid-epidemic-in-the-united-states/"
+    },
+    {
+      "metric": "Opioid cost — healthcare system",
+      "value": 107,
+      "unit": "billion USD",
+      "year": 2023,
+      "country": "United States",
+      "category": "healthcare_cost",
+      "source": "The White House",
+      "sourceUrl": "https://www.whitehouse.gov/releases/2025/03/the-staggering-cost-of-the-illicit-opioid-epidemic-in-the-united-states/"
+    },
+    {
+      "metric": "Opioid cost — lost labor force productivity",
+      "value": 107,
+      "unit": "billion USD",
+      "year": 2023,
+      "country": "United States",
+      "category": "productivity_loss",
+      "source": "The White House",
+      "sourceUrl": "https://www.whitehouse.gov/releases/2025/03/the-staggering-cost-of-the-illicit-opioid-epidemic-in-the-united-states/"
+    },
+    {
+      "metric": "Opioid cost — crime-related expenses",
+      "value": 63,
+      "unit": "billion USD",
+      "year": 2023,
+      "country": "United States",
+      "category": "crime_cost",
+      "source": "The White House",
+      "sourceUrl": "https://www.whitehouse.gov/releases/2025/03/the-staggering-cost-of-the-illicit-opioid-epidemic-in-the-united-states/"
+    },
+    {
+      "metric": "Total cost of all drug abuse in US annually",
+      "value": 820,
+      "unit": "billion USD/year",
+      "year": 2024,
+      "country": "United States",
+      "category": "total_drug_cost",
+      "source": "NCDAS / NIDA",
+      "sourceUrl": "https://drugabusestatistics.org/"
+    },
+    {
+      "metric": "Total SUD productivity losses (missed work, reduced performance)",
+      "value": 92.65,
+      "unit": "billion USD",
+      "year": 2023,
+      "country": "United States",
+      "category": "productivity_loss_all",
+      "source": "EurekAlert / Rehab.com",
+      "sourceUrl": "https://www.eurekalert.org/news-releases/1108168"
+    },
+    {
+      "metric": "Per-adult SUD productivity cost",
+      "value": 3703,
+      "unit": "USD/person with SUD",
+      "year": 2023,
+      "country": "United States",
+      "category": "per_capita_productivity",
+      "source": "Rehab.com",
+      "sourceUrl": "https://www.rehab.com/addiction-costs-the-u-s-93b-in-lost-productivity"
+    },
+    {
+      "metric": "Crime cost related to drug use",
+      "value": 61,
+      "unit": "billion USD",
+      "year": 2024,
+      "country": "United States",
+      "category": "crime_cost_all_drugs",
+      "source": "Gateway Foundation / NIDA",
+      "sourceUrl": "https://www.gatewayfoundation.org/blog/cost-of-drug-addiction/"
+    }
+  ],
+  "addiction_impact_life_outcomes": [
+    {
+      "metric": "Unemployed adults with substance use disorder (vs 9% among employed)",
+      "value": 17,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "unemployment",
+      "source": "Addiction Group",
+      "sourceUrl": "https://www.addictiongroup.org/resources/addiction-statistics/"
+    },
+    {
+      "metric": "Cities reporting substance abuse as #1 cause of homelessness (single adults)",
+      "value": 68,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "homelessness_cause",
+      "source": "US Conference of Mayors / SAMHSA",
+      "sourceUrl": "https://www.addictionhelp.com/addiction/homelessness/"
+    },
+    {
+      "metric": "Homeless people who abuse alcohol",
+      "value": 38,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "homeless_alcohol",
+      "source": "Addiction Help",
+      "sourceUrl": "https://www.addictionhelp.com/addiction/homelessness/"
+    },
+    {
+      "metric": "Homelessness increase (PIT count 2023 to 2024)",
+      "value": 18,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "homelessness_trend",
+      "source": "National Alliance to End Homelessness",
+      "sourceUrl": "https://endhomelessness.org/state-of-homelessness/"
+    },
+    {
+      "metric": "People experiencing homelessness (2024 PIT Count)",
+      "value": 771480,
+      "unit": "people",
+      "year": 2024,
+      "country": "United States",
+      "category": "homelessness_count",
+      "source": "National Alliance to End Homelessness",
+      "sourceUrl": "https://endhomelessness.org/state-of-homelessness/"
+    },
+    {
+      "metric": "Unemployment rate in homeless populations (high estimate)",
+      "value": 80,
+      "unit": "% (range 57-90%)",
+      "year": 2024,
+      "country": "United States",
+      "category": "homeless_unemployment",
+      "source": "Addiction Group / Homelessness stats",
+      "sourceUrl": "https://www.addictiongroup.org/resources/homelessness-statistics/"
+    },
+    {
+      "metric": "Recovery capital: stable housing linked to treatment completion",
+      "value": true,
+      "unit": "boolean (significant predictor)",
+      "year": 2024,
+      "country": "United States",
+      "category": "recovery_capital_housing",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10940757/"
+    },
+    {
+      "metric": "Recovery capital: employment linked to enhanced recovery over time",
+      "value": true,
+      "unit": "boolean (significant predictor)",
+      "year": 2024,
+      "country": "United States",
+      "category": "recovery_capital_employment",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10940757/"
+    },
+    {
+      "metric": "Recovery capital: family/peer support reduces time to problem resolution",
+      "value": true,
+      "unit": "boolean (significant predictor)",
+      "year": 2024,
+      "country": "United States",
+      "category": "recovery_capital_social",
+      "source": "Recovery Research Institute",
+      "sourceUrl": "https://www.recoveryanswers.org/research-post/social-cure-family-friends-matter-recovery-capital/"
+    },
+    {
+      "metric": "Social recovery capital is pre-treatment predictor of treatment outcomes",
+      "value": true,
+      "unit": "boolean (mediator of outcomes)",
+      "year": 2024,
+      "country": "Global",
+      "category": "recovery_capital_research",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11299860/"
+    }
+  ],
+  "aa_na_12step_effectiveness": [
+    {
+      "metric": "AA/TSF continuous abstinence at 12 months — risk ratio vs CBT",
+      "value": 1.21,
+      "unit": "risk ratio (high-certainty evidence)",
+      "year": 2020,
+      "country": "Global",
+      "category": "12month_abstinence",
+      "source": "Cochrane Library",
+      "sourceUrl": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD012880.pub2/full"
+    },
+    {
+      "metric": "AA/TSF abstinence consistency at 24 and 36 months (sustained benefit)",
+      "value": true,
+      "unit": "boolean",
+      "year": 2020,
+      "country": "Global",
+      "category": "long_term_benefit",
+      "source": "Cochrane Library",
+      "sourceUrl": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD012880.pub2/full"
+    },
+    {
+      "metric": "Number of RCTs and quasi-experiments in Cochrane review",
+      "value": 21,
+      "unit": "studies",
+      "year": 2020,
+      "country": "Global",
+      "category": "study_count",
+      "source": "Cochrane Library",
+      "sourceUrl": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD012880.pub2/full"
+    },
+    {
+      "metric": "Total studies in Cochrane review (including non-RCTs)",
+      "value": 27,
+      "unit": "studies",
+      "year": 2020,
+      "country": "Global",
+      "category": "total_studies",
+      "source": "Cochrane Library",
+      "sourceUrl": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD012880.pub2/full"
+    },
+    {
+      "metric": "Out of 5 economic studies, number finding AA/TSF cost-saving",
+      "value": 4,
+      "unit": "studies",
+      "year": 2020,
+      "country": "United States",
+      "category": "cost_effectiveness",
+      "source": "Cochrane Library",
+      "sourceUrl": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD012880.pub2/full"
+    },
+    {
+      "metric": "AA/TSF superior to other treatments specifically for abstinence and remission",
+      "value": true,
+      "unit": "boolean",
+      "year": 2020,
+      "country": "Global",
+      "category": "superiority",
+      "source": "Oxford Academic / Alcohol and Alcoholism",
+      "sourceUrl": "https://academic.oup.com/alcalc/article/55/6/641/5867689"
+    },
+    {
+      "metric": "AA/TSF comparable to other treatments for all other drinking outcomes",
+      "value": true,
+      "unit": "boolean",
+      "year": 2020,
+      "country": "Global",
+      "category": "comparable_outcomes",
+      "source": "Oxford Academic / Alcohol and Alcoholism",
+      "sourceUrl": "https://academic.oup.com/alcalc/article/55/6/641/5867689"
+    }
+  ],
+  "medication_assisted_treatment": [
+    {
+      "metric": "FDA-approved medications for OUD",
+      "value": 3,
+      "unit": "medications (methadone, buprenorphine, naltrexone)",
+      "year": 2024,
+      "country": "United States",
+      "category": "approved_meds",
+      "source": "FDA",
+      "sourceUrl": "https://www.fda.gov/drugs/information-drug-class/information-about-medications-opioid-use-disorder-moud"
+    },
+    {
+      "metric": "MAT reduces opioid overdose death risk",
+      "value": 50,
+      "unit": "% reduction",
+      "year": 2024,
+      "country": "United States",
+      "category": "mortality_reduction",
+      "source": "NIDA",
+      "sourceUrl": "https://nida.nih.gov/research-topics/medications-opioid-use-disorder"
+    },
+    {
+      "metric": "Methadone 1-year treatment retention",
+      "value": 60,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "methadone_retention",
+      "source": "ASPE/HHS",
+      "sourceUrl": "https://aspe.hhs.gov/reports/models-medication-assisted-treatment-opioid-use-disorder-retention-continuity-care"
+    },
+    {
+      "metric": "Buprenorphine can be prescribed in primary care (unlike methadone)",
+      "value": true,
+      "unit": "boolean (access advantage)",
+      "year": 2024,
+      "country": "United States",
+      "category": "buprenorphine_access",
+      "source": "FDA",
+      "sourceUrl": "https://www.fda.gov/drugs/information-drug-class/information-about-medications-opioid-use-disorder-moud"
+    },
+    {
+      "metric": "MOUD reduces infectious disease transmission risk (HIV, HCV)",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "United States",
+      "category": "harm_reduction",
+      "source": "National Academies / NIDA",
+      "sourceUrl": "https://www.ncbi.nlm.nih.gov/books/NBK541393/"
+    },
+    {
+      "metric": "Long-term MAT retention associated with improved outcomes",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "United States",
+      "category": "retention_outcomes",
+      "source": "CDC MOUD Study",
+      "sourceUrl": "https://www.cdc.gov/overdose-prevention/data-research/facts-stats/moud-study.html"
+    }
+  ],
+  "drug_court_diversion": [
+    {
+      "metric": "Drug court graduates recidivism reduction vs traditional defendants",
+      "value": 44,
+      "unit": "% less (range 38-50%)",
+      "year": 2024,
+      "country": "United States",
+      "category": "recidivism_reduction",
+      "source": "Stanford Addiction Policy / NIJ",
+      "sourceUrl": "https://addictionpolicy.stanford.edu/drug-courts-alternative-incarceration"
+    },
+    {
+      "metric": "Mental health courts rearrest reduction",
+      "value": 45,
+      "unit": "% reduction",
+      "year": 2024,
+      "country": "United States",
+      "category": "mental_health_courts",
+      "source": "Prisonpedia",
+      "sourceUrl": "https://prisonpedia.com/wiki/Diversion_Programs_in_Criminal_Justice"
+    },
+    {
+      "metric": "Felony rearrest rate for drug court completers (county example)",
+      "value": 12,
+      "unit": "% (vs 40% traditional)",
+      "year": 2024,
+      "country": "United States",
+      "category": "completion_rearrest",
+      "source": "NIJ 2024 Study",
+      "sourceUrl": "https://nij.ojp.gov/topics/articles/do-drug-courts-work-findings-drug-court-research"
+    },
+    {
+      "metric": "Diversion program completers rearrested within 1 year",
+      "value": 3.7,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "diversion_success",
+      "source": "ISSUP / Criminal Justice research",
+      "sourceUrl": "https://www.issup.net/knowledge-share/resources/2025-06/effect-drug-treatment-court-recidivism-comparison-traditional"
+    },
+    {
+      "metric": "General community rearrest rate within 1 year (comparison)",
+      "value": 28.4,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "comparison_rearrest",
+      "source": "ISSUP / Criminal Justice research",
+      "sourceUrl": "https://www.issup.net/knowledge-share/resources/2025-06/effect-drug-treatment-court-recidivism-comparison-traditional"
+    },
+    {
+      "metric": "Non-completers recidivism rate (program attrition)",
+      "value": 31.22,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "non_completion",
+      "source": "ICQUALITY",
+      "sourceUrl": "https://www.icquality.org/knowledge-share/resources/2025-06/criminal-justice-diversion-and-importance-program-retention"
+    },
+    {
+      "metric": "Drug courts in US (growth from 100 in 1995)",
+      "value": 3500,
+      "unit": "courts",
+      "year": 2025,
+      "country": "United States",
+      "category": "program_scale",
+      "source": "Prisonpedia",
+      "sourceUrl": "https://prisonpedia.com/wiki/Diversion_Programs_in_Criminal_Justice"
+    },
+    {
+      "metric": "Diversion programs resolve this share of felony arrests",
+      "value": 20,
+      "unit": "% (range 18-22%)",
+      "year": 2025,
+      "country": "United States",
+      "category": "program_reach",
+      "source": "Prisonpedia",
+      "sourceUrl": "https://prisonpedia.com/wiki/Diversion_Programs_in_Criminal_Justice"
+    },
+    {
+      "metric": "Cost savings per dollar invested in drug courts",
+      "value": 8,
+      "unit": "USD saved per $1 invested (range $4-$12)",
+      "year": 2024,
+      "country": "United States",
+      "category": "cost_benefit",
+      "source": "GAO / Drug Court research",
+      "sourceUrl": "https://www.gao.gov/products/gao-12-53"
+    }
+  ],
+  "youth_substance_trends": [
+    {
+      "metric": "12th graders past-year alcohol use (historic decline)",
+      "value": 42,
+      "unit": "% (down from 75% in 1997)",
+      "year": 2024,
+      "country": "United States",
+      "category": "alcohol_decline",
+      "source": "NIDA Monitoring the Future",
+      "sourceUrl": "https://nida.nih.gov/news-events/news-releases/2024/12/reported-use-of-most-drugs-among-adolescents-remained-low-in-2024"
+    },
+    {
+      "metric": "10th graders past-year alcohol use",
+      "value": 26,
+      "unit": "% (down from 65% in 1997)",
+      "year": 2024,
+      "country": "United States",
+      "category": "alcohol_decline",
+      "source": "NIDA Monitoring the Future",
+      "sourceUrl": "https://nida.nih.gov/news-events/news-releases/2024/12/reported-use-of-most-drugs-among-adolescents-remained-low-in-2024"
+    },
+    {
+      "metric": "8th graders past-year alcohol use",
+      "value": 13,
+      "unit": "% (down from 46% in 1997)",
+      "year": 2024,
+      "country": "United States",
+      "category": "alcohol_decline",
+      "source": "NIDA Monitoring the Future",
+      "sourceUrl": "https://nida.nih.gov/news-events/news-releases/2024/12/reported-use-of-most-drugs-among-adolescents-remained-low-in-2024"
+    },
+    {
+      "metric": "Gen Z drinks less than millennials",
+      "value": 20,
+      "unit": "% less",
+      "year": 2025,
+      "country": "United States",
+      "category": "generational_difference",
+      "source": "Gallup / Colorado Sun",
+      "sourceUrl": "https://coloradosun.com/2025/12/01/is-gen-z-more-addicted-to-alcohol-than-any-other-generation/"
+    },
+    {
+      "metric": "Adults 18-34 who reported drinking alcohol",
+      "value": 50,
+      "unit": "%",
+      "year": 2025,
+      "country": "United States",
+      "category": "young_adult_drinking",
+      "source": "Gallup",
+      "sourceUrl": "https://coloradosun.com/2025/12/01/is-gen-z-more-addicted-to-alcohol-than-any-other-generation/"
+    },
+    {
+      "metric": "Adults 35+ who reported drinking alcohol",
+      "value": 56,
+      "unit": "%",
+      "year": 2025,
+      "country": "United States",
+      "category": "older_adult_drinking",
+      "source": "Gallup",
+      "sourceUrl": "https://coloradosun.com/2025/12/01/is-gen-z-more-addicted-to-alcohol-than-any-other-generation/"
+    },
+    {
+      "metric": "12th graders past-year marijuana use (lowest in 3 decades)",
+      "value": 26,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "marijuana_decline",
+      "source": "NIDA Monitoring the Future",
+      "sourceUrl": "https://nida.nih.gov/news-events/news-releases/2024/12/reported-use-of-most-drugs-among-adolescents-remained-low-in-2024"
+    },
+    {
+      "metric": "10th graders past-year marijuana use",
+      "value": 16,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "marijuana_decline",
+      "source": "NIDA Monitoring the Future",
+      "sourceUrl": "https://nida.nih.gov/news-events/news-releases/2024/12/reported-use-of-most-drugs-among-adolescents-remained-low-in-2024"
+    },
+    {
+      "metric": "8th graders past-year marijuana use",
+      "value": 7,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "marijuana_decline",
+      "source": "NIDA Monitoring the Future",
+      "sourceUrl": "https://nida.nih.gov/news-events/news-releases/2024/12/reported-use-of-most-drugs-among-adolescents-remained-low-in-2024"
+    },
+    {
+      "metric": "12th graders past-year narcotics other than heroin (all-time low)",
+      "value": 0.6,
+      "unit": "% (down from 9.5% in 2004)",
+      "year": 2024,
+      "country": "United States",
+      "category": "prescription_opioid_decline",
+      "source": "NIDA Monitoring the Future",
+      "sourceUrl": "https://nida.nih.gov/news-events/news-releases/2024/12/reported-use-of-most-drugs-among-adolescents-remained-low-in-2024"
+    },
+    {
+      "metric": "12th graders past-year nicotine vaping",
+      "value": 21,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "vaping",
+      "source": "NIDA Monitoring the Future",
+      "sourceUrl": "https://nida.nih.gov/news-events/news-releases/2024/12/reported-use-of-most-drugs-among-adolescents-remained-low-in-2024"
+    },
+    {
+      "metric": "10th graders past-year nicotine vaping",
+      "value": 15,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "vaping",
+      "source": "NIDA Monitoring the Future",
+      "sourceUrl": "https://nida.nih.gov/news-events/news-releases/2024/12/reported-use-of-most-drugs-among-adolescents-remained-low-in-2024"
+    },
+    {
+      "metric": "8th graders past-year nicotine vaping",
+      "value": 10,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "vaping",
+      "source": "NIDA Monitoring the Future",
+      "sourceUrl": "https://nida.nih.gov/news-events/news-releases/2024/12/reported-use-of-most-drugs-among-adolescents-remained-low-in-2024"
+    },
+    {
+      "metric": "12th graders abstinent from alcohol, marijuana, nicotine (past 30 days)",
+      "value": 67,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "full_abstinence",
+      "source": "NIDA Monitoring the Future",
+      "sourceUrl": "https://nida.nih.gov/news-events/news-releases/2024/12/reported-use-of-most-drugs-among-adolescents-remained-low-in-2024"
+    },
+    {
+      "metric": "10th graders abstinent from alcohol, marijuana, nicotine (past 30 days)",
+      "value": 80,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "full_abstinence",
+      "source": "NIDA Monitoring the Future",
+      "sourceUrl": "https://nida.nih.gov/news-events/news-releases/2024/12/reported-use-of-most-drugs-among-adolescents-remained-low-in-2024"
+    },
+    {
+      "metric": "8th graders abstinent from alcohol, marijuana, nicotine (past 30 days)",
+      "value": 90,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "full_abstinence",
+      "source": "NIDA Monitoring the Future",
+      "sourceUrl": "https://nida.nih.gov/news-events/news-releases/2024/12/reported-use-of-most-drugs-among-adolescents-remained-low-in-2024"
+    },
+    {
+      "metric": "12th graders past-year alcohol use (2025 update, stable)",
+      "value": 41,
+      "unit": "%",
+      "year": 2025,
+      "country": "United States",
+      "category": "2025_update",
+      "source": "Partnership to End Addiction / MTF",
+      "sourceUrl": "https://drugfree.org/drug-and-alcohol-news/monitoring-the-future-survey-teen-substance-use-remains-low-in-2025/"
+    },
+    {
+      "metric": "10th graders past-year alcohol use (2025 update)",
+      "value": 24,
+      "unit": "%",
+      "year": 2025,
+      "country": "United States",
+      "category": "2025_update",
+      "source": "Partnership to End Addiction / MTF",
+      "sourceUrl": "https://drugfree.org/drug-and-alcohol-news/monitoring-the-future-survey-teen-substance-use-remains-low-in-2025/"
+    },
+    {
+      "metric": "8th graders past-year alcohol use (2025 update)",
+      "value": 11,
+      "unit": "%",
+      "year": 2025,
+      "country": "United States",
+      "category": "2025_update",
+      "source": "Partnership to End Addiction / MTF",
+      "sourceUrl": "https://drugfree.org/drug-and-alcohol-news/monitoring-the-future-survey-teen-substance-use-remains-low-in-2025/"
+    }
+  ],
+  "cannabis_legalization_impact": [
+    {
+      "metric": "Medical cannabis legalization associated with reduced property crime",
+      "value": true,
+      "unit": "boolean",
+      "year": 2025,
+      "country": "United States",
+      "category": "crime_impact",
+      "source": "Economic Modeling / NORML",
+      "sourceUrl": "https://norml.org/news/2026/03/26/analysis-cannabis-legalization-laws-associated-with-lower-crime-rates/"
+    },
+    {
+      "metric": "Adult-use legalization associated with decreased violent crime",
+      "value": true,
+      "unit": "boolean",
+      "year": 2025,
+      "country": "United States",
+      "category": "crime_impact",
+      "source": "ScienceDirect / Economic Modeling",
+      "sourceUrl": "https://www.sciencedirect.com/science/article/abs/pii/S014481882500002X"
+    },
+    {
+      "metric": "Cannabis dependence/CUD rates increased post-legalization (US and Canada)",
+      "value": true,
+      "unit": "boolean (concerning trend)",
+      "year": 2024,
+      "country": "United States",
+      "category": "addiction_impact",
+      "source": "Cleveland Clinic Journal of Medicine",
+      "sourceUrl": "https://www.ccjm.org/content/92/7/407"
+    },
+    {
+      "metric": "Cannabis-related hospitalizations increased post-legalization",
+      "value": true,
+      "unit": "boolean (especially young adults)",
+      "year": 2024,
+      "country": "United States",
+      "category": "health_impact",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10176789/"
+    },
+    {
+      "metric": "Psychiatric disorders and attempted suicide associated with regular cannabis use increased",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "United States",
+      "category": "mental_health_impact",
+      "source": "Cleveland Clinic Journal of Medicine",
+      "sourceUrl": "https://www.ccjm.org/content/92/7/407"
+    },
+    {
+      "metric": "Cannabis use increased among pregnant women post-legalization",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "United States",
+      "category": "vulnerable_population",
+      "source": "Cleveland Clinic Journal of Medicine",
+      "sourceUrl": "https://www.ccjm.org/content/92/7/407"
+    },
+    {
+      "metric": "UNODC: global drug markets expanding driven by cannabis legalization",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "Global",
+      "category": "global_market",
+      "source": "UNODC World Drug Report 2024",
+      "sourceUrl": "https://www.unodc.org/unodc/en/press/releases/2024/June/unodc-world-drug-report-2024_-harms-of-world-drug-problem-continue-to-mount-amid-expansions-in-drug-use-and-markets.html"
+    }
+  ],
+  "psychedelic_therapy": [
+    {
+      "metric": "Ketamine-assisted therapy: alcohol abstinence at 6 months",
+      "value": 86,
+      "unit": "%",
+      "year": 2025,
+      "country": "Global",
+      "category": "ketamine_alcohol",
+      "source": "GlobalRPH / Clinical Trials",
+      "sourceUrl": "https://globalrph.com/2025/10/psychedelic-therapy-in-2025-new-research-reveals-surprising-clinical-outcomes/"
+    },
+    {
+      "metric": "Ketamine for AUD advanced to Phase 3 trials",
+      "value": 3,
+      "unit": "phase (clinical trial stage)",
+      "year": 2025,
+      "country": "Global",
+      "category": "ketamine_progress",
+      "source": "GlobalRPH",
+      "sourceUrl": "https://globalrph.com/2025/10/psychedelic-therapy-in-2025-new-research-reveals-surprising-clinical-outcomes/"
+    },
+    {
+      "metric": "Total registered clinical trials for psychedelics (as of May 2024)",
+      "value": 278,
+      "unit": "trials",
+      "year": 2024,
+      "country": "Global",
+      "category": "research_scale",
+      "source": "Cleveland Clinic Journal of Medicine",
+      "sourceUrl": "https://www.ccjm.org/content/92/3/171"
+    },
+    {
+      "metric": "Psilocybin clinical trials (54 indications)",
+      "value": 134,
+      "unit": "trials",
+      "year": 2024,
+      "country": "Global",
+      "category": "psilocybin_research",
+      "source": "Cleveland Clinic Journal of Medicine",
+      "sourceUrl": "https://www.ccjm.org/content/92/3/171"
+    },
+    {
+      "metric": "Treatment sessions needed for lasting benefits (psychedelic-assisted)",
+      "value": 2,
+      "unit": "sessions (range 1-3)",
+      "year": 2024,
+      "country": "Global",
+      "category": "treatment_efficiency",
+      "source": "Journal of Studies on Alcohol and Drugs",
+      "sourceUrl": "https://www.jsad.com/do/10.15288/jsad-FT.08.26.2024-33/full/"
+    },
+    {
+      "metric": "Psilocybin and ketamine shown to reduce cravings in SUD",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "Global",
+      "category": "craving_reduction",
+      "source": "MDPI Medicina Review",
+      "sourceUrl": "https://www.mdpi.com/1648-9144/61/2/278"
+    }
+  ],
+  "nicotine_vaping_youth": [
+    {
+      "metric": "US middle and high school students using e-cigarettes (past 30 days)",
+      "value": 5.9,
+      "unit": "% (1.63 million youth)",
+      "year": 2024,
+      "country": "United States",
+      "category": "youth_vaping_prevalence",
+      "source": "FDA National Youth Tobacco Survey",
+      "sourceUrl": "https://www.fda.gov/tobacco-products/youth-and-tobacco/results-annual-national-youth-tobacco-survey-nyts"
+    },
+    {
+      "metric": "Youth vaping decline from 2023",
+      "value": -23,
+      "unit": "% (from 7.7% to 5.9%)",
+      "year": 2024,
+      "country": "United States",
+      "category": "vaping_trend",
+      "source": "CDC",
+      "sourceUrl": "https://www.cdc.gov/media/releases/2024/p0905-youth-ecigarette.html"
+    },
+    {
+      "metric": "Among current vapers: daily vaping prevalence (worsening addiction)",
+      "value": 29,
+      "unit": "% (up from 15% in 2020)",
+      "year": 2024,
+      "country": "United States",
+      "category": "daily_vaping_increase",
+      "source": "USC Keck School / PMC",
+      "sourceUrl": "https://keck.usc.edu/news/among-youth-who-vape-usc-study-finds-rise-in-daily-use-and-difficulty-quitting/"
+    },
+    {
+      "metric": "Among current vapers: unsuccessful quit attempts",
+      "value": 53,
+      "unit": "% (up from 28% in 2020)",
+      "year": 2024,
+      "country": "United States",
+      "category": "quit_failure",
+      "source": "USC Keck School / PMC",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12584035/"
+    },
+    {
+      "metric": "Youth in rural communities: daily vaping (dramatic increase)",
+      "value": 41.8,
+      "unit": "% (up from 16.4% in 2020)",
+      "year": 2024,
+      "country": "United States",
+      "category": "rural_vaping",
+      "source": "USC Keck School",
+      "sourceUrl": "https://keck.usc.edu/news/among-youth-who-vape-usc-study-finds-rise-in-daily-use-and-difficulty-quitting/"
+    },
+    {
+      "metric": "Current youth e-cigarette users who use flavored products",
+      "value": 87.6,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "flavored_products",
+      "source": "FDA NYTS",
+      "sourceUrl": "https://www.fda.gov/tobacco-products/youth-and-tobacco/results-annual-national-youth-tobacco-survey-nyts"
+    },
+    {
+      "metric": "Disposable e-cigarettes as most common type among youth",
+      "value": 55.6,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "product_type",
+      "source": "FDA NYTS",
+      "sourceUrl": "https://www.fda.gov/tobacco-products/youth-and-tobacco/results-annual-national-youth-tobacco-survey-nyts"
+    },
+    {
+      "metric": "Youth who vape and want to quit",
+      "value": 63.9,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "desire_to_quit",
+      "source": "CDC / HHS Surgeon General",
+      "sourceUrl": "https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-vaping/index.html"
+    },
+    {
+      "metric": "Youth who vape and tried to quit in past year",
+      "value": 67.4,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "quit_attempt",
+      "source": "CDC / HHS Surgeon General",
+      "sourceUrl": "https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-vaping/index.html"
+    },
+    {
+      "metric": "Top brand among youth vapers — Elf Bar",
+      "value": 36.1,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "brand_share",
+      "source": "FDA NYTS",
+      "sourceUrl": "https://www.fda.gov/tobacco-products/youth-and-tobacco/results-annual-national-youth-tobacco-survey-nyts"
+    },
+    {
+      "metric": "More females than males reported e-cigarette use in 2024",
+      "value": true,
+      "unit": "boolean (gender shift)",
+      "year": 2024,
+      "country": "United States",
+      "category": "gender_trend",
+      "source": "CDC Data Brief",
+      "sourceUrl": "https://www.cdc.gov/nchs/products/databriefs/db524.htm"
+    },
+    {
+      "metric": "Nicotine harms brain development through age",
+      "value": 25,
+      "unit": "years",
+      "year": 2024,
+      "country": "Global",
+      "category": "health_risk",
+      "source": "CDC",
+      "sourceUrl": "https://www.cdc.gov/tobacco/e-cigarettes/youth.html"
+    }
+  ],
+  "recovery_capital": [
+    {
+      "metric": "Positive recovery capital associated with higher treatment completion",
+      "value": true,
+      "unit": "boolean (significant association)",
+      "year": 2024,
+      "country": "United States",
+      "category": "treatment_completion",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10940757/"
+    },
+    {
+      "metric": "Higher recovery capital associated with lower relapse rates",
+      "value": true,
+      "unit": "boolean (reinforcing cycle)",
+      "year": 2024,
+      "country": "United States",
+      "category": "relapse_protection",
+      "source": "Gallus Detox Centers / Research",
+      "sourceUrl": "https://www.gallusdetox.com/blog/recovery-capital-its-impact-on-recovery-outcomes/"
+    },
+    {
+      "metric": "Stable housing identified as key modifiable factor for treatment completion",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "United States",
+      "category": "housing_factor",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10940757/"
+    },
+    {
+      "metric": "Unstable housing identified as modifiable risk factor for treatment attrition",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "United States",
+      "category": "housing_risk",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10940757/"
+    },
+    {
+      "metric": "Employment linked to enhanced recovery strengths over time",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "United States",
+      "category": "employment_factor",
+      "source": "PMC/NIH Recovery Home Study",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8514142/"
+    },
+    {
+      "metric": "Family/peer relationships recommended for treatment planning and continuing care",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "United States",
+      "category": "social_support",
+      "source": "Recovery Research Institute",
+      "sourceUrl": "https://www.recoveryanswers.org/research-post/social-cure-family-friends-matter-recovery-capital/"
+    },
+    {
+      "metric": "Social recovery capital predicts treatment outcomes even outside formal treatment",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "Global",
+      "category": "natural_recovery",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11299860/"
+    },
+    {
+      "metric": "Recovery housing associated with improved recovery capital accumulation",
+      "value": true,
+      "unit": "boolean",
+      "year": 2025,
+      "country": "United States",
+      "category": "recovery_housing",
+      "source": "Frontiers in Public Health",
+      "sourceUrl": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1506412/full"
+    }
+  ],
+  "additional_substance_data": [
+    {
+      "metric": "Global opioid use disorder prevalence trend projected increase by 2040",
+      "value": true,
+      "unit": "boolean (increasing trajectory)",
+      "year": 2024,
+      "country": "Global",
+      "category": "opioid_projection",
+      "source": "PMC/NIH Lancet Regional Health",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12175101/"
+    },
+    {
+      "metric": "NSDUH survey sample size (representative US population)",
+      "value": 70000,
+      "unit": "participants",
+      "year": 2024,
+      "country": "United States",
+      "category": "survey_methodology",
+      "source": "SAMHSA",
+      "sourceUrl": "https://www.samhsa.gov/data/data-we-collect/nsduh-national-survey-drug-use-and-health"
+    },
+    {
+      "metric": "Tobacco users dropped since 2010",
+      "value": 120,
+      "unit": "million fewer users",
+      "year": 2024,
+      "country": "Global",
+      "category": "tobacco_decline_absolute",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/news/item/06-10-2025-who-tobacco-trends-report-1-5-adults-still-addicted-to-tobacco"
+    },
+    {
+      "metric": "Tobacco use relative decline since 2010",
+      "value": 27,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "tobacco_decline_relative",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/news/item/06-10-2025-who-tobacco-trends-report-1-5-adults-still-addicted-to-tobacco"
+    },
+    {
+      "metric": "Female tobacco prevalence drop (hit 2025 target 5 years early)",
+      "value": 6.6,
+      "unit": "% (down from 11% in 2010)",
+      "year": 2024,
+      "country": "Global",
+      "category": "female_tobacco_success",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/news/item/06-10-2025-who-tobacco-trends-report-1-5-adults-still-addicted-to-tobacco"
+    },
+    {
+      "metric": "Men not expected to reach tobacco reduction goal until",
+      "value": 2031,
+      "unit": "year",
+      "year": 2025,
+      "country": "Global",
+      "category": "male_tobacco_lag",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/news/item/06-10-2025-who-tobacco-trends-report-1-5-adults-still-addicted-to-tobacco"
+    },
+    {
+      "metric": "Alcohol use disorders affect more than 1 in 11 European adults",
+      "value": 9.1,
+      "unit": "% (1 in 11)",
+      "year": 2024,
+      "country": "Europe",
+      "category": "european_aud",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/publications/i/item/9789240096745"
+    },
+    {
+      "metric": "Three-quarters of people with AUD are male",
+      "value": 75,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "aud_gender",
+      "source": "Our World in Data / WHO",
+      "sourceUrl": "https://ourworldindata.org/grapher/share-with-alcohol-use-disorders"
+    },
+    {
+      "metric": "Alcohol use disorders prevalence — global average population",
+      "value": 1,
+      "unit": "% (range 0.5-5% by country)",
+      "year": 2024,
+      "country": "Global",
+      "category": "global_aud_range",
+      "source": "Our World in Data",
+      "sourceUrl": "https://ourworldindata.org/alcohol-consumption"
+    },
+    {
+      "metric": "AUD prevalence — 7% of global pop 15+ when including broader criteria",
+      "value": 7,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "broader_aud",
+      "source": "National Depression Hotline / WHO",
+      "sourceUrl": "https://nationaldepressionhotline.org/alcohol-addiction-statistics/"
+    },
+    {
+      "metric": "Scotland drug deaths increase 2022 to 2023",
+      "value": 12,
+      "unit": "%",
+      "year": 2023,
+      "country": "United Kingdom (Scotland)",
+      "category": "uk_trend",
+      "source": "International Overdose Awareness Day",
+      "sourceUrl": "https://www.overdoseday.com/facts-stats/"
+    },
+    {
+      "metric": "Scotland drug deaths classified as unintentional",
+      "value": 88,
+      "unit": "%",
+      "year": 2023,
+      "country": "United Kingdom (Scotland)",
+      "category": "accidental_od",
+      "source": "International Overdose Awareness Day",
+      "sourceUrl": "https://www.overdoseday.com/facts-stats/"
+    },
+    {
+      "metric": "Canada fentanyl share of opioid deaths increase since 2016",
+      "value": 32,
+      "unit": "% increase (from 43% to 75%)",
+      "year": 2024,
+      "country": "Canada",
+      "category": "fentanyl_trend",
+      "source": "Government of Canada",
+      "sourceUrl": "https://health-infobase.canada.ca/substance-related-harms/opioids-stimulants/"
+    },
+    {
+      "metric": "Economic benefits of SUD treatment: systematic review found positive ROI",
+      "value": true,
+      "unit": "boolean (2003-2021 review)",
+      "year": 2023,
+      "country": "Global",
+      "category": "treatment_roi",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10530001/"
+    },
+    {
+      "metric": "Tobacco still kills annually (preventable deaths)",
+      "value": 8,
+      "unit": "million deaths/year",
+      "year": 2024,
+      "country": "Global",
+      "category": "tobacco_mortality",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/news-room/fact-sheets/detail/tobacco"
+    },
+    {
+      "metric": "E-cigarette adult users globally",
+      "value": 86,
+      "unit": "million adults",
+      "year": 2025,
+      "country": "Global",
+      "category": "adult_vaping",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/news/item/06-10-2025-who-tobacco-trends-report-1-5-adults-still-addicted-to-tobacco"
+    },
+    {
+      "metric": "Tobacco users in 2000 (for historical comparison)",
+      "value": 1380,
+      "unit": "million people",
+      "year": 2000,
+      "country": "Global",
+      "category": "tobacco_baseline",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/publications/i/item/9789240116276"
+    },
+    {
+      "metric": "4 of 5 economics studies found substantial AA/TSF cost savings",
+      "value": 80,
+      "unit": "%",
+      "year": 2020,
+      "country": "United States",
+      "category": "aa_economics",
+      "source": "Cochrane Library",
+      "sourceUrl": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD012880.pub2/full"
+    },
+    {
+      "metric": "Drug court cost-benefit: $4-$12 saved per $1 invested",
+      "value": 8,
+      "unit": "USD/USD invested (midpoint)",
+      "year": 2025,
+      "country": "United States",
+      "category": "drug_court_roi",
+      "source": "GAO / Stanford",
+      "sourceUrl": "https://addictionpolicy.stanford.edu/drug-courts-alternative-incarceration"
+    },
+    {
+      "metric": "Psychedelic therapy: higher abstinence rates than conventional therapy alone",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "Global",
+      "category": "psychedelic_efficacy",
+      "source": "Journal of Studies on Alcohol and Drugs",
+      "sourceUrl": "https://www.jsad.com/do/10.15288/jsad-FT.08.26.2024-33/full/"
+    },
+    {
+      "metric": "Gaming disorder recognized in WHO ICD-11 (year added)",
+      "value": 2019,
+      "unit": "year",
+      "year": 2022,
+      "country": "Global",
+      "category": "diagnostic_recognition",
+      "source": "WHO / Frontiers in Psychiatry",
+      "sourceUrl": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2024.1423785/full"
+    },
+    {
+      "metric": "Gambling disorder estimated global prevalence (Lancet meta-analysis)",
+      "value": 1.2,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "gambling_lancet",
+      "source": "Lancet Public Health",
+      "sourceUrl": "https://www.thelancet.com/journals/lanpub/article/PIIS2468-2667(24)00126-9/fulltext"
+    },
+    {
+      "metric": "Phone screen time increased 52% from 2022 to 2024",
+      "value": 52,
+      "unit": "% increase (2h54m to 4h25m)",
+      "year": 2024,
+      "country": "United States",
+      "category": "screen_time_growth",
+      "source": "DemandSage",
+      "sourceUrl": "https://www.demandsage.com/smartphone-addiction-statistics/"
+    },
+    {
+      "metric": "Opioid relapse rate WITH MAT (substantially lower than without)",
+      "value": 40,
+      "unit": "% (vs 80-95% without MAT)",
+      "year": 2024,
+      "country": "United States",
+      "category": "mat_relapse_reduction",
+      "source": "All In Solutions / NIDA",
+      "sourceUrl": "https://www.allinsolutions.com/alcohol-drug-rehab-success-rate-studies-and-statistics/"
+    },
+    {
+      "metric": "Youth substance use at historically low levels for 4th consecutive year post-pandemic",
+      "value": 4,
+      "unit": "consecutive years",
+      "year": 2024,
+      "country": "United States",
+      "category": "pandemic_recovery",
+      "source": "AJMC / NIDA",
+      "sourceUrl": "https://www.ajmc.com/view/youth-drug-use-continues-historic-decline-post-pandemic"
+    }
+  ],
+  "cocaine_stimulants": [
+    {
+      "metric": "US cocaine use past year (aged 12+)",
+      "value": 5.0,
+      "unit": "million people (1.8%)",
+      "year": 2023,
+      "country": "United States",
+      "category": "cocaine_prevalence",
+      "source": "SAMHSA NSDUH",
+      "sourceUrl": "https://www.samhsa.gov/data/sites/default/files/reports/rpt56287/2024-nsduh-annual-national/2024-nsduh-annual-national-html-071425-edited/2024-nsduh-annual-national.htm"
+    },
+    {
+      "metric": "US cocaine use disorder past year",
+      "value": 1.3,
+      "unit": "million people (0.4%)",
+      "year": 2023,
+      "country": "United States",
+      "category": "cocaine_disorder",
+      "source": "SAMHSA NSDUH",
+      "sourceUrl": "https://www.samhsa.gov/data/sites/default/files/reports/rpt56287/2024-nsduh-annual-national/2024-nsduh-annual-national-html-071425-edited/2024-nsduh-annual-national.htm"
+    },
+    {
+      "metric": "US methamphetamine use past year (aged 12+)",
+      "value": 2.6,
+      "unit": "million people (0.9%)",
+      "year": 2023,
+      "country": "United States",
+      "category": "meth_prevalence",
+      "source": "SAMHSA NSDUH",
+      "sourceUrl": "https://www.samhsa.gov/data/sites/default/files/reports/rpt56287/2024-nsduh-annual-national/2024-nsduh-annual-national-html-071425-edited/2024-nsduh-annual-national.htm"
+    },
+    {
+      "metric": "US stimulant addiction past year (all stimulants)",
+      "value": 4.3,
+      "unit": "million people (1.5%)",
+      "year": 2024,
+      "country": "United States",
+      "category": "stimulant_disorder",
+      "source": "SAMHSA NSDUH 2024",
+      "sourceUrl": "https://www.samhsa.gov/data/report/2024-nsduh-annual-national-report"
+    },
+    {
+      "metric": "US people who misused CNS stimulants past year",
+      "value": 9.0,
+      "unit": "million people (3.1%)",
+      "year": 2024,
+      "country": "United States",
+      "category": "stimulant_misuse",
+      "source": "SAMHSA NSDUH 2024",
+      "sourceUrl": "https://www.samhsa.gov/data/report/2024-nsduh-annual-national-report"
+    },
+    {
+      "metric": "Cocaine-related overdose deaths as share of all OD deaths",
+      "value": 20,
+      "unit": "% (nearly 1 in 5)",
+      "year": 2023,
+      "country": "United States",
+      "category": "cocaine_overdose",
+      "source": "NCDAS / CDC",
+      "sourceUrl": "https://drugabusestatistics.org/"
+    },
+    {
+      "metric": "Cocaine-related overdose death rate",
+      "value": 8.6,
+      "unit": "per 100,000 (up from 1.8 in 2003)",
+      "year": 2023,
+      "country": "United States",
+      "category": "cocaine_death_rate",
+      "source": "NCDAS / CDC",
+      "sourceUrl": "https://drugabusestatistics.org/"
+    },
+    {
+      "metric": "Psychostimulant overdose deaths (mostly meth)",
+      "value": 34022,
+      "unit": "deaths",
+      "year": 2022,
+      "country": "United States",
+      "category": "meth_overdose",
+      "source": "NCDAS / CDC",
+      "sourceUrl": "https://drugabusestatistics.org/"
+    },
+    {
+      "metric": "Cocaine inpatient treatment recipients past year",
+      "value": 298000,
+      "unit": "people",
+      "year": 2024,
+      "country": "United States",
+      "category": "cocaine_treatment",
+      "source": "SAMHSA",
+      "sourceUrl": "https://www.samhsa.gov/data/report/2024-nsduh-annual-national-report"
+    },
+    {
+      "metric": "Cocaine outpatient treatment recipients past year",
+      "value": 542000,
+      "unit": "people",
+      "year": 2024,
+      "country": "United States",
+      "category": "cocaine_treatment",
+      "source": "SAMHSA",
+      "sourceUrl": "https://www.samhsa.gov/data/report/2024-nsduh-annual-national-report"
+    },
+    {
+      "metric": "People needing SUD treatment past year (aged 12+)",
+      "value": 52.6,
+      "unit": "million people (18.2%)",
+      "year": 2024,
+      "country": "United States",
+      "category": "treatment_need",
+      "source": "Addiction Policy Forum / SAMHSA",
+      "sourceUrl": "https://www.addictionpolicy.org/post/over-48-million-people-have-a-diagnosable-substance-use-disorder-in-the-united-states"
+    },
+    {
+      "metric": "Percentage of those needing SUD treatment who received it",
+      "value": 23,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "treatment_gap",
+      "source": "Haven Detox / SAMHSA",
+      "sourceUrl": "https://havendetoxnow.com/blog/drug-use/70-us-addiction-facts-and-statistics-2025/"
+    }
+  ],
+  "benzodiazepine_prescription": [
+    {
+      "metric": "Americans who misused prescription tranquilizers/sedatives",
+      "value": 4.6,
+      "unit": "million people (1.7%)",
+      "year": 2024,
+      "country": "United States",
+      "category": "benzo_misuse",
+      "source": "SAMHSA / Addiction Help",
+      "sourceUrl": "https://www.addictionhelp.com/benzodiazepines/statistics/"
+    },
+    {
+      "metric": "Percentage of benzo misusers who develop addiction",
+      "value": 17.2,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "benzo_addiction_rate",
+      "source": "Addiction Help",
+      "sourceUrl": "https://www.addictionhelp.com/benzodiazepines/statistics/"
+    },
+    {
+      "metric": "Benzodiazepine-involved overdose deaths",
+      "value": 10870,
+      "unit": "deaths",
+      "year": 2023,
+      "country": "United States",
+      "category": "benzo_overdose",
+      "source": "NIDA",
+      "sourceUrl": "https://nida.nih.gov/research-topics/trends-statistics/overdose-death-rates"
+    },
+    {
+      "metric": "Benzo overdose deaths involving fentanyl concurrently",
+      "value": 70,
+      "unit": "%",
+      "year": 2023,
+      "country": "United States",
+      "category": "benzo_fentanyl",
+      "source": "NIDA / Addiction Help",
+      "sourceUrl": "https://www.addictionhelp.com/benzodiazepines/statistics/"
+    },
+    {
+      "metric": "Deaths involving benzos that also involve an opioid",
+      "value": 75,
+      "unit": "%",
+      "year": 2023,
+      "country": "United States",
+      "category": "benzo_opioid_combo",
+      "source": "FHE Health / NIDA",
+      "sourceUrl": "https://fherehab.com/benzo/statistics"
+    },
+    {
+      "metric": "Benzo overdose death increase 1999-2017",
+      "value": 917,
+      "unit": "% (from 1,135 to 11,537 deaths)",
+      "year": 2023,
+      "country": "United States",
+      "category": "benzo_trend",
+      "source": "NIDA",
+      "sourceUrl": "https://nida.nih.gov/research-topics/trends-statistics/overdose-death-rates"
+    },
+    {
+      "metric": "Delirium tremens mortality rate without treatment (alcohol withdrawal)",
+      "value": 37,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "withdrawal_mortality",
+      "source": "Medical News Today / NCBI",
+      "sourceUrl": "https://www.medicalnewstoday.com/articles/is-it-bad-to-quit-cold-turkey"
+    }
+  ],
+  "cold_turkey_outcomes": [
+    {
+      "metric": "Cold turkey nicotine quit: long-term abstinence rate",
+      "value": 4,
+      "unit": "% (range 3-5%)",
+      "year": 2024,
+      "country": "Global",
+      "category": "nicotine_cold_turkey",
+      "source": "Addiction Center / Meta-analyses",
+      "sourceUrl": "https://www.addictioncenter.com/addiction/cold-turkey/"
+    },
+    {
+      "metric": "Quit rate with counseling and/or medicines",
+      "value": 30,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "assisted_quit",
+      "source": "Addiction Center",
+      "sourceUrl": "https://www.addictioncenter.com/addiction/cold-turkey/"
+    },
+    {
+      "metric": "Adults who believe cold turkey is effective for opioid abuse",
+      "value": 17,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "public_perception",
+      "source": "NORC / University of Chicago",
+      "sourceUrl": "https://www.norc.org/research/library/public-dismisses-quitting--cold-turkey--as-effective-opioid-addi.html"
+    },
+    {
+      "metric": "Opioid withdrawal peak symptoms after last use",
+      "value": 48,
+      "unit": "hours (range 24-72h)",
+      "year": 2024,
+      "country": "Global",
+      "category": "opioid_withdrawal_timeline",
+      "source": "NCBI / StatPearls",
+      "sourceUrl": "https://www.ncbi.nlm.nih.gov/books/NBK526012/"
+    },
+    {
+      "metric": "Opioid withdrawal duration",
+      "value": 14,
+      "unit": "days (range 3 days to several weeks)",
+      "year": 2024,
+      "country": "Global",
+      "category": "opioid_withdrawal_duration",
+      "source": "NCBI / StatPearls",
+      "sourceUrl": "https://www.ncbi.nlm.nih.gov/books/NBK526012/"
+    }
+  ],
+  "gambling_financial_impact": [
+    {
+      "metric": "Americans in debt due to gambling",
+      "value": 23,
+      "unit": "million people",
+      "year": 2024,
+      "country": "United States",
+      "category": "gambling_debt",
+      "source": "Quit Gamble",
+      "sourceUrl": "https://quitgamble.com/gambling-addiction-statistics-and-facts/"
+    },
+    {
+      "metric": "Average gambling-related financial loss leading to hardship",
+      "value": 55000,
+      "unit": "USD",
+      "year": 2024,
+      "country": "United States",
+      "category": "average_loss",
+      "source": "Quit Gamble",
+      "sourceUrl": "https://quitgamble.com/gambling-addiction-statistics-and-facts/"
+    },
+    {
+      "metric": "Average gambling debt for female problem gamblers",
+      "value": 15000,
+      "unit": "USD",
+      "year": 2024,
+      "country": "United States",
+      "category": "female_gambling_debt",
+      "source": "Right Choice Recovery",
+      "sourceUrl": "https://rightchoicerecoverynj.com/addiction/gambling/statistics/"
+    },
+    {
+      "metric": "Pathological gamblers who declared bankruptcy",
+      "value": 22.8,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "gambling_bankruptcy",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2824911/"
+    },
+    {
+      "metric": "Average bankruptcy debt for pathological gamblers",
+      "value": 53103,
+      "unit": "USD (range $5K-$250K)",
+      "year": 2024,
+      "country": "United States",
+      "category": "bankruptcy_amount",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2824911/"
+    },
+    {
+      "metric": "Problem gamblers who file for bankruptcy",
+      "value": 20,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "bankruptcy_rate",
+      "source": "Recovery.com",
+      "sourceUrl": "https://recovery.com/resources/gambling-addiction-statistics/"
+    },
+    {
+      "metric": "Bankruptcy increase in states after online betting legalization",
+      "value": 10,
+      "unit": "% (appearing ~2 years after legalization)",
+      "year": 2025,
+      "country": "United States",
+      "category": "legalization_bankruptcy",
+      "source": "NPR / Research studies",
+      "sourceUrl": "https://www.npr.org/2026/04/04/nx-s1-5773354/legal-sports-betting-research-credit-bankruptcy"
+    },
+    {
+      "metric": "Debt collection amounts increase after online betting legalization",
+      "value": 8,
+      "unit": "%",
+      "year": 2025,
+      "country": "United States",
+      "category": "legalization_debt",
+      "source": "NPR / Research studies",
+      "sourceUrl": "https://www.npr.org/2026/04/04/nx-s1-5773354/legal-sports-betting-research-credit-bankruptcy"
+    },
+    {
+      "metric": "Bankruptcy rate increase 3-4 years after online betting legalization",
+      "value": 27.5,
+      "unit": "% (range 25-30%)",
+      "year": 2025,
+      "country": "United States",
+      "category": "long_term_bankruptcy",
+      "source": "KCCU / NPR",
+      "sourceUrl": "https://www.kccu.org/business/2026-04-04/when-legal-sports-betting-surges-so-do-americans-financial-problems"
+    },
+    {
+      "metric": "Additional US bankruptcies from online betting legalization",
+      "value": 30000,
+      "unit": "bankruptcies",
+      "year": 2025,
+      "country": "United States",
+      "category": "additional_bankruptcies",
+      "source": "KCCU / Research",
+      "sourceUrl": "https://www.kccu.org/business/2026-04-04/when-legal-sports-betting-surges-so-do-americans-financial-problems"
+    },
+    {
+      "metric": "Sports bettors who carry debt from gambling",
+      "value": 30,
+      "unit": "%",
+      "year": 2025,
+      "country": "United States",
+      "category": "bettor_debt",
+      "source": "U.S. News survey",
+      "sourceUrl": "https://aibm.org/research/how-sports-betting-can-harm-young-men/"
+    },
+    {
+      "metric": "Gambling debtors who owe $500 or more",
+      "value": 51,
+      "unit": "%",
+      "year": 2025,
+      "country": "United States",
+      "category": "debt_severity",
+      "source": "U.S. News survey",
+      "sourceUrl": "https://aibm.org/research/how-sports-betting-can-harm-young-men/"
+    },
+    {
+      "metric": "Gambling debtors who took payday loans to fund bets",
+      "value": 12,
+      "unit": "%",
+      "year": 2025,
+      "country": "United States",
+      "category": "payday_loans",
+      "source": "U.S. News survey",
+      "sourceUrl": "https://aibm.org/research/how-sports-betting-can-harm-young-men/"
+    },
+    {
+      "metric": "Gambling debtors who missed bill payments",
+      "value": 25,
+      "unit": "%",
+      "year": 2025,
+      "country": "United States",
+      "category": "missed_payments",
+      "source": "U.S. News survey",
+      "sourceUrl": "https://aibm.org/research/how-sports-betting-can-harm-young-men/"
+    },
+    {
+      "metric": "Annual social cost of gambling addiction in US",
+      "value": 14,
+      "unit": "billion USD",
+      "year": 2024,
+      "country": "United States",
+      "category": "social_cost",
+      "source": "Duke Medical Ethics Journal",
+      "sourceUrl": "https://www.dukemedicalethicsjournal.com/post/gambling-addiction-as-a-public-health-crisis-harms-stigma-and-paths-forward"
+    }
+  ],
+  "addiction_divorce_family": [
+    {
+      "metric": "Divorces that occur due to substance abuse",
+      "value": 7,
+      "unit": "% (some studies report higher)",
+      "year": 2024,
+      "country": "United States",
+      "category": "divorce_cause",
+      "source": "Addiction Help",
+      "sourceUrl": "https://www.addictionhelp.com/addiction/divorce/"
+    },
+    {
+      "metric": "Divorce participants citing substance abuse as major contributing factor",
+      "value": 35,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "divorce_factor",
+      "source": "Silver Ridge Recovery",
+      "sourceUrl": "https://www.silverridgerecovery.com/the-link-between-substance-abuse-and-divorce/"
+    },
+    {
+      "metric": "Divorce rate for drug/alcohol abusers vs non-abusers",
+      "value": 400,
+      "unit": "% higher",
+      "year": 2024,
+      "country": "United States",
+      "category": "divorce_rate_multiplier",
+      "source": "No More Drug Abuse / Research",
+      "sourceUrl": "https://www.nomoredrugabuse.com/addiction-resources/divorce-and-addiction.html"
+    },
+    {
+      "metric": "People in marriages where one spouse is an addict",
+      "value": 24.6,
+      "unit": "million people",
+      "year": 2024,
+      "country": "United States",
+      "category": "affected_marriages",
+      "source": "Our Happy Divorce / NSDUH",
+      "sourceUrl": "https://ourhappydivorce.com/addiction-and-divorce-statistics/"
+    },
+    {
+      "metric": "Couples dealing with chronic disease (including addiction) ending in divorce",
+      "value": 75,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "chronic_disease_divorce",
+      "source": "Addiction Center",
+      "sourceUrl": "https://www.addictioncenter.com/addiction/divorce/"
+    },
+    {
+      "metric": "Substance abuse ranked as final straw in marriages (behind infidelity, domestic violence)",
+      "value": 3,
+      "unit": "rd (ranking)",
+      "year": 2024,
+      "country": "United States",
+      "category": "divorce_ranking",
+      "source": "Addiction Center",
+      "sourceUrl": "https://www.addictioncenter.com/addiction/divorce/"
+    },
+    {
+      "metric": "Children of divorced parents more likely to use drugs/alcohol",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "United States",
+      "category": "intergenerational",
+      "source": "Addiction Help",
+      "sourceUrl": "https://www.addictionhelp.com/addiction/divorce/"
+    },
+    {
+      "metric": "Children of addicted parents less likely to marry",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "United States",
+      "category": "intergenerational",
+      "source": "Addiction Help",
+      "sourceUrl": "https://www.addictionhelp.com/addiction/divorce/"
+    }
+  ],
+  "overdose_deaths_by_state": [
+    {
+      "metric": "West Virginia overdose death rate (highest state)",
+      "value": 38.6,
+      "unit": "per 100,000",
+      "year": 2024,
+      "country": "United States",
+      "category": "highest_state",
+      "source": "KFF / CDC",
+      "sourceUrl": "https://www.kff.org/mental-health/opioid-overdose-deaths-national-trends-and-variation-by-demographics-and-states/"
+    },
+    {
+      "metric": "Nebraska overdose death rate (lowest state)",
+      "value": 3.3,
+      "unit": "per 100,000",
+      "year": 2024,
+      "country": "United States",
+      "category": "lowest_state",
+      "source": "KFF / CDC",
+      "sourceUrl": "https://www.kff.org/mental-health/opioid-overdose-deaths-national-trends-and-variation-by-demographics-and-states/"
+    },
+    {
+      "metric": "West Virginia opioid death rate decline 2023-2024",
+      "value": -46,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "state_decline",
+      "source": "Becker's Behavioral Health / CDC",
+      "sourceUrl": "https://www.beckersbehavioralhealth.com/research-analysis/states-ranked-by-opioid-overdose-death-rates/"
+    },
+    {
+      "metric": "Virginia opioid death rate decline (largest in nation)",
+      "value": -44,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "state_decline",
+      "source": "Becker's Behavioral Health / CDC",
+      "sourceUrl": "https://www.beckersbehavioralhealth.com/research-analysis/states-ranked-by-opioid-overdose-death-rates/"
+    },
+    {
+      "metric": "Wisconsin opioid death rate decline",
+      "value": -44,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "state_decline",
+      "source": "Becker's Behavioral Health / CDC",
+      "sourceUrl": "https://www.beckersbehavioralhealth.com/research-analysis/states-ranked-by-opioid-overdose-death-rates/"
+    },
+    {
+      "metric": "Ohio opioid death decline from 2019 levels",
+      "value": -36,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "state_decline",
+      "source": "KFF / CDC",
+      "sourceUrl": "https://www.kff.org/mental-health/opioid-overdose-deaths-national-trends-and-variation-by-demographics-and-states/"
+    },
+    {
+      "metric": "US opioid overdose deaths (total, more precise figure)",
+      "value": 54045,
+      "unit": "deaths (fell sharply from 79,358 in 2023)",
+      "year": 2024,
+      "country": "United States",
+      "category": "national_opioid",
+      "source": "KFF / CDC",
+      "sourceUrl": "https://www.kff.org/mental-health/opioid-overdose-deaths-national-trends-and-variation-by-demographics-and-states/"
+    }
+  ],
+  "treatment_costs_international": [
+    {
+      "metric": "Thailand 28-day inpatient treatment average",
+      "value": 12000,
+      "unit": "USD",
+      "year": 2025,
+      "country": "Thailand",
+      "category": "inpatient_cost",
+      "source": "Recovery.com / Thailand Rehab Guide",
+      "sourceUrl": "https://recovery.com/resources/cost-of-drug-and-alcohol-rehab-thailand/"
+    },
+    {
+      "metric": "Thailand 30-day standard rehab (range)",
+      "value": 8500,
+      "unit": "USD (range 7000-10000)",
+      "year": 2025,
+      "country": "Thailand",
+      "category": "standard_rehab",
+      "source": "Thailand Rehab Guide",
+      "sourceUrl": "https://thailandrehabguide.com/blogs/cost-of-rehab-in-thailand/"
+    },
+    {
+      "metric": "Thailand sober living per month (budget option)",
+      "value": 1500,
+      "unit": "USD/month (range 1500-3000)",
+      "year": 2025,
+      "country": "Thailand",
+      "category": "sober_living_budget",
+      "source": "Miracles Asia",
+      "sourceUrl": "https://miraclesasia.com/what-is-cost-drug-alcohol-rehab/"
+    },
+    {
+      "metric": "Thailand sober living per month (premium)",
+      "value": 4250,
+      "unit": "USD/month (range 3500-5000)",
+      "year": 2025,
+      "country": "Thailand",
+      "category": "sober_living_premium",
+      "source": "Miracles Asia",
+      "sourceUrl": "https://miraclesasia.com/what-is-cost-drug-alcohol-rehab/"
+    },
+    {
+      "metric": "Thailand counselling session cost (60 min)",
+      "value": 85,
+      "unit": "USD (range 70-100)",
+      "year": 2025,
+      "country": "Thailand",
+      "category": "counselling",
+      "source": "Miracles Asia",
+      "sourceUrl": "https://miraclesasia.com/what-is-cost-drug-alcohol-rehab/"
+    },
+    {
+      "metric": "India/low-cost countries monthly rehab (approximate)",
+      "value": 15000,
+      "unit": "USD (under this threshold)",
+      "year": 2025,
+      "country": "India",
+      "category": "inpatient_cost",
+      "source": "Rehabs Asia",
+      "sourceUrl": "https://rehabs.asia/about/cost-of-rehab/"
+    },
+    {
+      "metric": "Asia rehab costs vs Western countries (savings)",
+      "value": 35,
+      "unit": "% cheaper (range 20-50%)",
+      "year": 2025,
+      "country": "Asia",
+      "category": "cost_comparison",
+      "source": "Rehabs Asia",
+      "sourceUrl": "https://rehabs.asia/about/cost-of-rehab/"
+    },
+    {
+      "metric": "Western luxury inpatient rehab per month (GBP)",
+      "value": 30000,
+      "unit": "GBP/month (range up to 300,000)",
+      "year": 2025,
+      "country": "Global",
+      "category": "luxury_cost",
+      "source": "Rehabs Asia",
+      "sourceUrl": "https://rehabs.asia/about/cost-of-rehab/"
+    },
+    {
+      "metric": "Germany per capita alcohol consumption",
+      "value": 12.79,
+      "unit": "liters pure alcohol/year",
+      "year": 2024,
+      "country": "Germany",
+      "category": "per_capita_consumption",
+      "source": "World Population Review / WHO",
+      "sourceUrl": "https://worldpopulationreview.com/country-rankings/alcohol-consumption-by-country"
+    }
+  ],
+  "additional_prevalence_data": [
+    {
+      "metric": "US people aged 12+ needing SUD treatment",
+      "value": 52.6,
+      "unit": "million people (18.2%)",
+      "year": 2024,
+      "country": "United States",
+      "category": "treatment_need",
+      "source": "Addiction Policy Forum / SAMHSA",
+      "sourceUrl": "https://www.addictionpolicy.org/post/over-48-million-people-have-a-diagnosable-substance-use-disorder-in-the-united-states"
+    },
+    {
+      "metric": "Highest cocaine OD death rate demographic: American Indian/Alaska Native",
+      "value": true,
+      "unit": "boolean (highest among all races)",
+      "year": 2023,
+      "country": "United States",
+      "category": "demographic_disparity",
+      "source": "NCDAS / CDC",
+      "sourceUrl": "https://drugabusestatistics.org/"
+    },
+    {
+      "metric": "Gambling disorder higher among young men aged 18-34",
+      "value": true,
+      "unit": "boolean (most pervasive signs)",
+      "year": 2024,
+      "country": "United States",
+      "category": "gambling_age",
+      "source": "Johns Hopkins",
+      "sourceUrl": "https://magazine.publichealth.jhu.edu/2025/online-betting-surges-so-does-risk-addiction"
+    },
+    {
+      "metric": "VR pornography market acceleration of addiction development",
+      "value": true,
+      "unit": "boolean (unprecedented immersion)",
+      "year": 2025,
+      "country": "Global",
+      "category": "vr_porn_risk",
+      "source": "Addiction Help",
+      "sourceUrl": "https://www.addictionhelp.com/porn/statistics/"
+    },
+    {
+      "metric": "WHO gambling disorder fact sheet (first-ever, 2024)",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "Global",
+      "category": "who_recognition",
+      "source": "WHO",
+      "sourceUrl": "https://www.who.int/news-room/fact-sheets/detail/gambling"
+    },
+    {
+      "metric": "CBT produces small to moderate effects vs inactive treatment for SUD",
+      "value": true,
+      "unit": "boolean (systematic review finding)",
+      "year": 2023,
+      "country": "Global",
+      "category": "cbt_evidence",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10572095/"
+    },
+    {
+      "metric": "Recovery capital: obtaining during SUD treatment associated with successful completion",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "United States",
+      "category": "recovery_capital",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10940757/"
+    },
+    {
+      "metric": "Cannabis use increased among individuals with depression post-legalization",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "United States",
+      "category": "cannabis_vulnerable",
+      "source": "Cleveland Clinic Journal",
+      "sourceUrl": "https://www.ccjm.org/content/92/7/407"
+    },
+    {
+      "metric": "DSM-5 does NOT classify compulsive porn use as mental disorder",
+      "value": false,
+      "unit": "boolean (not classified)",
+      "year": 2024,
+      "country": "United States",
+      "category": "diagnostic_status",
+      "source": "APA / Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pornography_addiction"
+    },
+    {
+      "metric": "Teens who admit spending too much time on social media",
+      "value": 36,
+      "unit": "%",
+      "year": 2024,
+      "country": "United States",
+      "category": "teen_awareness",
+      "source": "DemandSage",
+      "sourceUrl": "https://www.demandsage.com/social-media-addiction-statistics/"
+    },
+    {
+      "metric": "Global gaming disorder ICD-11 overall prevalence (strict criteria)",
+      "value": 5.0,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "icd11_overall",
+      "source": "PMC/NIH Meta-analysis",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925544/"
+    },
+    {
+      "metric": "Psilocybin shown to reduce cravings when combined with psychotherapy",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "Global",
+      "category": "psilocybin_craving",
+      "source": "MDPI Medicina Review",
+      "sourceUrl": "https://www.mdpi.com/1648-9144/61/2/278"
+    },
+    {
+      "metric": "MDMA-assisted therapy under clinical trials for SUD",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "Global",
+      "category": "mdma_research",
+      "source": "Cleveland Clinic Journal",
+      "sourceUrl": "https://www.ccjm.org/content/92/3/171"
+    },
+    {
+      "metric": "Switzerland launched limited medical use program for psychedelic-assisted therapy",
+      "value": true,
+      "unit": "boolean (first national program)",
+      "year": 2024,
+      "country": "Switzerland",
+      "category": "psychedelic_policy",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12341733/"
+    },
+    {
+      "metric": "Addiction treatment systematic review found positive economic benefits (2003-2021)",
+      "value": true,
+      "unit": "boolean (net positive ROI)",
+      "year": 2023,
+      "country": "Global",
+      "category": "treatment_economics",
+      "source": "PMC/NIH",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10530001/"
+    },
+    {
+      "metric": "Recovery housing systematic review shows positive outcomes",
+      "value": true,
+      "unit": "boolean",
+      "year": 2025,
+      "country": "United States",
+      "category": "recovery_housing",
+      "source": "Frontiers in Public Health",
+      "sourceUrl": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1506412/full"
+    },
+    {
+      "metric": "Drug treatment court reduces recidivism vs traditional court (meta-analysis)",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "United States",
+      "category": "drug_court_evidence",
+      "source": "ISSUP / Tandfonline",
+      "sourceUrl": "https://www.tandfonline.com/doi/full/10.1080/10509674.2024.2370286"
+    },
+    {
+      "metric": "Opioid use disorder projected to increase globally through 2040",
+      "value": true,
+      "unit": "boolean (projections to 2040)",
+      "year": 2024,
+      "country": "Global",
+      "category": "oud_projection",
+      "source": "PMC/NIH / Lancet",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12175101/"
+    },
+    {
+      "metric": "Canada youth are part of the opioid crisis and need treatment",
+      "value": true,
+      "unit": "boolean (CMAJ editorial)",
+      "year": 2025,
+      "country": "Canada",
+      "category": "youth_opioid",
+      "source": "CMAJ",
+      "sourceUrl": "https://www.cmaj.ca/content/197/36/E1195"
+    },
+    {
+      "metric": "Surge in overdose deaths noted in Sweden, Norway, Ireland",
+      "value": true,
+      "unit": "boolean (mounting crisis)",
+      "year": 2024,
+      "country": "Europe",
+      "category": "european_od_trend",
+      "source": "OECD",
+      "sourceUrl": "https://www.oecd.org/en/publications/addressing-problematic-opioid-use-in-oecd-countries_a18286f0-en.html"
+    },
+    {
+      "metric": "Alcohol use disorders affect 7% of global pop 15+ (broader criteria)",
+      "value": 7,
+      "unit": "%",
+      "year": 2024,
+      "country": "Global",
+      "category": "global_aud_broad",
+      "source": "National Depression Hotline / WHO",
+      "sourceUrl": "https://nationaldepressionhotline.org/alcohol-addiction-statistics/"
+    },
+    {
+      "metric": "Abbeycare UK reports alcohol kills 3 million globally per year",
+      "value": 3,
+      "unit": "million deaths/year (alcohol + drug combined)",
+      "year": 2024,
+      "country": "Global",
+      "category": "total_mortality",
+      "source": "WHO/PAHO",
+      "sourceUrl": "https://www.paho.org/en/news/25-6-2024-over-3-million-annual-deaths-due-alcohol-and-drug-use-majority-among-men"
+    },
+    {
+      "metric": "APA recommends psychedelic treatments with caution (navigating longer trip)",
+      "value": true,
+      "unit": "boolean",
+      "year": 2025,
+      "country": "United States",
+      "category": "apa_position",
+      "source": "APA Monitor",
+      "sourceUrl": "https://www.apa.org/monitor/2025/01/trends-psychedelic-treatments"
+    },
+    {
+      "metric": "Monitoring the Future: 4th year of historically low teen substance use post-pandemic",
+      "value": true,
+      "unit": "boolean (sustained improvement)",
+      "year": 2025,
+      "country": "United States",
+      "category": "teen_trend_sustained",
+      "source": "Contemporary Pediatrics",
+      "sourceUrl": "https://www.contemporarypediatrics.com/view/teen-substance-use-remains-historically-low-in-2025-with-stability-across-most-drugs"
+    },
+    {
+      "metric": "Newsweek headline: Gen Z says no to drugs (record lows)",
+      "value": true,
+      "unit": "boolean",
+      "year": 2024,
+      "country": "United States",
+      "category": "gen_z_narrative",
+      "source": "Newsweek / MTF Study",
+      "sourceUrl": "https://www.newsweek.com/gen-z-drug-use-record-lows-study-alcohol-marijuana-2004327"
+    }
+  ]
+}

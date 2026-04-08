@@ -26,7 +26,9 @@
 - React Flow (@xyflow/react) for node graph
 - Dagre for auto-layout
 - Claude Haiku 4.5 for AI generation (fallback: OpenAI, Groq)
-- Supabase Pro pgvector for RAG (3.2M+ dp, 145K+ chunked embeddings in progress, 512 dim, HNSW, $25/mo)
+- Supabase Pro pgvector for RAG (3.35M+ dp, 145K+ chunked embeddings, 512 dim, HNSW, $25/mo)
+- Data storage: heavy files on iCloud Drive (symlink), 1,192 JSON files across 30+ domains
+- New sources (Beast Mode 2026-04-08): WHO GHO, IMF WEO, WB 80+ countries, 19 research domains
 - OpenAI Whisper for audio/video transcription
 - Web Audio API for sound design
 
@@ -72,6 +74,7 @@ Key rule: ALWAYS include state nodes after bottlenecks to show transformation.
 - **MAI usare dati più vecchi di 2-3 anni** — ogni data point deve essere 2023+ (salvo dati storici ancora validi: testi sacri, tabelle mortalità, serie storiche in corso).
 - Quando aggiungi dati, verifica l'anno. Se la fonte è pre-2022 → cerca una versione aggiornata o segnala "outdated".
 - Eccezioni: Bibbia, Corano, leggi fisiche, dati storici dichiarati come tali (es. "S&P 500 dal 1871").
+- **OGNI data point DEVE avere un sourceUrl** — nessuna eccezione. Dati senza URL non vengono accettati. Quando scarichi da API, includi sempre l'URL della fonte in ogni record (es. `"sourceUrl": "https://api.worldbank.org/v2/..."`). Prima di embeddare in Supabase, verifica che ogni record abbia sourceUrl.
 
 ## Localhost Rules (NON-NEGOTIABLE)
 - **MAI dare un URL localhost senza prima verificare** — avvia il server (`npm run dev`), aspetta il boot, verifica con `curl` che risponda 200, e SOLO ALLORA dì all'utente di aprirlo.
