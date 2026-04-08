@@ -247,6 +247,14 @@
   - Banner viola "Scenario A saved" durante generazione B
 - [x] **LiveInsights tema bianco + performance fix**: sfondo var(--surface), rimossa AnimatePresence dalla lista, refs stabili per interval
 
+### Completato (sessione 2026-04-08)
+- [x] **Component architecture refactor**: TopBar (1140 righe) splittato in 13 sub-component modulari
+- [x] **Sidebar composita**: SidebarHeader + SidebarNav/NavItem + SidebarSettings/ToggleItem + SidebarViewSelector + SidebarShortcuts/ShortcutItem + SidebarFooter
+- [x] **TopBar sub-components**: AttachmentChips, ModeStrip estratti
+- [x] **Triple-layer padding system**: drawer (p-3) > sidebar (p-6) > sections (px-8 py-6) > items (px-4 py-5)
+- [x] **BottleneckCard**: primo componente card UI per Dashboard
+- [x] **Playground HTML**: layout.html per sperimentazione CSS/HTML puro (tema chiaro, resize panels)
+
 ### In Corso / Prossimi Step
 - [ ] Creare varianti Mid + Min per restanti 30 template business/richard/life
 - [ ] Data Integrity System: freshness badge, source verification cron, auto-update agent

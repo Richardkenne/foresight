@@ -257,7 +257,20 @@ src/lib/dataflow-engine.ts
 | `src/components/Dashboard.tsx` | Pannello risultati laterale dx (400px), stats | ~226 |
 | `src/components/Particle.tsx` | Generatore SVG persone animate, status 'failing' con caduta | ~122 |
 | `src/components/TemplateSelector.tsx` | Picker template con categorie e ricerca | ~252 |
-| `src/components/TopBar.tsx` | Barra superiore: Logo + Input + 7 input modes + Templates + Others + Generate/Stop + Sacred toggle | ~650 |
+| `src/components/TopBar.tsx` | Barra superiore: Logo + Input + 7 input modes + Templates + Others + Generate/Stop. Orchestrator, delegates to sub-components | ~650 |
+| `src/components/Sidebar.tsx` | Sidebar menu shell: composes SidebarNav, SidebarSettings, SidebarViewSelector, SidebarShortcuts, SidebarFooter | ~90 |
+| `src/components/sidebar/SidebarHeader.tsx` | Sidebar header: FORESIGHT logo + close button | ~40 |
+| `src/components/sidebar/SidebarNav.tsx` | Nav section: Home, History, Profile, Community, Saved | ~45 |
+| `src/components/sidebar/NavItem.tsx` | Single nav row: icon + label + hover + active state | ~55 |
+| `src/components/sidebar/SidebarSettings.tsx` | Settings section: Minimal, Dark mode, Horizontal toggles | ~80 |
+| `src/components/sidebar/ToggleItem.tsx` | Single toggle row: icon + label + toggle switch | ~50 |
+| `src/components/sidebar/SidebarViewSelector.tsx` | View mode selector: 2D, 3D, Flow buttons | ~50 |
+| `src/components/sidebar/SidebarShortcuts.tsx` | Shortcuts section: Cmd+K, Enter, Esc, Cmd+Z | ~35 |
+| `src/components/sidebar/ShortcutItem.tsx` | Single shortcut row: label + kbd keys | ~40 |
+| `src/components/sidebar/SidebarFooter.tsx` | Sidebar footer text | ~15 |
+| `src/components/topbar/AttachmentChips.tsx` | Source chips: audio, photo, url, pdf, video with remove/clear | ~80 |
+| `src/components/topbar/ModeStrip.tsx` | Mode selector strip + sacred mode toggle + personal profile | ~65 |
+| `src/components/cards/BottleneckCard.tsx` | Dashboard card: deadliest bottlenecks with actual vs expected rates | ~65 |
 | `src/components/PhotoUpload.tsx` | Photo upload: drag/drop, HEIC, EXIF, Claude Vision seeds | ~464 |
 | `src/components/ProfilePanel.tsx` | User profile panel: Context + Identity + Financial + Professional + Network + Upwork | ~260 |
 | `src/components/DecisionPruning.tsx` | Modal pre-simulazione: 5-7 domande binarie YES/NO, modifier live, dynamic questions da API | ~318 |

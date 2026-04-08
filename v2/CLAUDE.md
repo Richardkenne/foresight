@@ -1,6 +1,6 @@
 @AGENTS.md
 
-# Simulator v2 — Project Rules
+# Foresight (Simulator v2) — Project Rules
 
 ## Design Rules (NON-NEGOTIABLE)
 - **NO EMOJI** — Never use emoji characters anywhere (UI, code, data, templates). Use Lucide SVG icons or inline SVG instead. Emoji = cheap, icons = professional.
@@ -26,7 +26,7 @@
 - React Flow (@xyflow/react) for node graph
 - Dagre for auto-layout
 - Claude Haiku 4.5 for AI generation (fallback: OpenAI, Groq)
-- Supabase pgvector for RAG (66K+ embeddings, 512 dim, HNSW)
+- Supabase Pro pgvector for RAG (3.2M+ dp, 145K+ chunked embeddings in progress, 512 dim, HNSW, $25/mo)
 - OpenAI Whisper for audio/video transcription
 - Web Audio API for sound design
 
@@ -58,8 +58,13 @@ The simulation follows this pattern:
 Entry points: state (initial condition) → desire (goal) → action (first step)
 Key rule: ALWAYS include state nodes after bottlenecks to show transformation.
 - `src/components/Dashboard.tsx` — results modal
+- `src/components/cards/BottleneckCard.tsx` — bottleneck card for Dashboard
 - `src/components/Particle.tsx` — SVG person generator
 - `src/components/TemplateSelector.tsx` — template picker
+- `src/components/TopBar.tsx` — top bar orchestrator (delegates to sub-components)
+- `src/components/Sidebar.tsx` — sidebar shell (composes sub-components)
+- `src/components/sidebar/` — SidebarHeader, SidebarNav, NavItem, SidebarSettings, ToggleItem, SidebarViewSelector, SidebarShortcuts, ShortcutItem, SidebarFooter
+- `src/components/topbar/` — AttachmentChips, ModeStrip
 - `src/lib/templates.ts` — all template data
 - `src/app/api/generate/route.ts` — Claude API endpoint
 
