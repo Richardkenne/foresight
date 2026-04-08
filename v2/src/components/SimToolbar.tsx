@@ -26,6 +26,7 @@ interface IdleToolbarProps {
   onUndo: () => void;
   onRedo: () => void;
   onSimulate: () => void;
+  onSimulateLive: () => void;
   onSimulateFromCut: () => void;
   onRestart: () => void;
   onEnterStepMode: () => void;
@@ -48,7 +49,7 @@ interface IdleToolbarProps {
 export function IdleToolbar({
   replayMode, cutNodeId, hasStats, sacredMode, saving, shareUrl,
   canUndo, canRedo, onUndo, onRedo,
-  onSimulate, onSimulateFromCut, onRestart, onEnterStepMode, onSimulateReverse,
+  onSimulate, onSimulateLive, onSimulateFromCut, onRestart, onEnterStepMode, onSimulateReverse,
   onToggleReplayMode, onToggleSacredMode, onBacktest, onCrashTest, onMultiAgent, multiAgentRunning,
   simSettings, onSimSettingsChange,
   onSave, onShare, onExportPNG, onClear,
@@ -88,6 +89,19 @@ export function IdleToolbar({
               </svg>
             </button>
           )
+        )}
+
+        {/* Live Mode */}
+        {activeMode !== 'explore' && !is3D && (
+          <button onClick={onSimulateLive} disabled={replayMode} className="toolbar-btn" title="Live mode — continuous real-time flow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="3" fill="currentColor" />
+              <path d="M16.24 7.76a6 6 0 0 1 0 8.49" />
+              <path d="M7.76 16.24a6 6 0 0 1 0-8.49" />
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+              <path d="M4.93 19.07a10 10 0 0 1 0-14.14" />
+            </svg>
+          </button>
         )}
 
         {/* Restart */}
@@ -327,11 +341,12 @@ export function IdleToolbar({
 
 interface RunningToolbarProps {
   simPaused: boolean;
+  liveMode?: boolean;
   onTogglePause: () => void;
   onStop: () => void;
 }
 
-export function RunningToolbar({ simPaused, onTogglePause, onStop }: RunningToolbarProps) {
+export function RunningToolbar({ simPaused, liveMode, onTogglePause, onStop }: RunningToolbarProps) {
   return (
     <motion.div
       className="fixed bottom-6 right-3 sm:right-6 z-50"
@@ -348,6 +363,12 @@ export function RunningToolbar({ simPaused, onTogglePause, onStop }: RunningTool
           boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
         }}
       >
+        {liveMode && (
+          <div className="flex items-center gap-1.5 px-2">
+            <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#ef4444' }} />
+            <span style={{ fontSize: 10, fontWeight: 700, color: '#ef4444', letterSpacing: '0.08em', fontFamily: 'var(--font-geist-mono, monospace)' }}>LIVE</span>
+          </div>
+        )}
         <button onClick={onTogglePause} className="toolbar-btn toolbar-btn--primary" title={simPaused ? 'Resume' : 'Pause'}>
           {simPaused ? (
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

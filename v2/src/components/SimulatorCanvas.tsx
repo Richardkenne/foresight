@@ -20,6 +20,7 @@ import ContextNodeComponent from './nodes/ContextNode';
 import AnimatedEdgeComponent from './edges/AnimatedEdge';
 import TopBar from './TopBar';
 import Dashboard from './Dashboard';
+import LiveInsights from './LiveInsights';
 import CrashTestPanel from './CrashTestPanel';
 import type { CrashTestScenario } from '@/lib/crash-test';
 import CommandPalette from './CommandPalette';
@@ -57,6 +58,36 @@ const MultiAgentResults = dynamic(() => import('./MultiAgentResults'), { ssr: fa
 
 const nodeTypes = { simNode: SimNodeComponent, contextNode: ContextNodeComponent };
 const edgeTypes = { animated: AnimatedEdgeComponent };
+
+function LiveTimer() {
+  const [elapsed, setElapsed] = useState(0);
+  const [startTime] = useState(() => new Date());
+  useEffect(() => {
+    const id = setInterval(() => setElapsed(e => e + 1), 1000);
+    return () => clearInterval(id);
+  }, []);
+  const hrs = Math.floor(elapsed / 3600);
+  const mins = Math.floor((elapsed % 3600) / 60);
+  const secs = elapsed % 60;
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return (
+    <div className="fixed top-20 right-4 z-40 flex items-center gap-2 px-3 py-1.5 rounded-lg" style={{
+      background: 'rgba(6, 8, 16, 0.75)', backdropFilter: 'blur(12px)',
+      border: '1px solid rgba(239, 68, 68, 0.2)',
+    }}>
+      <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#ef4444' }} />
+      <span style={{ fontSize: 11, fontWeight: 700, color: '#ef4444', letterSpacing: '0.08em', fontFamily: 'var(--font-geist-mono, monospace)' }}>LIVE</span>
+      <div className="w-px h-3" style={{ background: 'rgba(255,255,255,0.15)' }} />
+      <span style={{ fontSize: 12, fontWeight: 600, color: '#e2e8f0', fontFamily: 'var(--font-geist-mono, monospace)', fontVariantNumeric: 'tabular-nums' }}>
+        {hrs > 0 ? `${pad(hrs)}:` : ''}{pad(mins)}:{pad(secs)}
+      </span>
+      <div className="w-px h-3" style={{ background: 'rgba(255,255,255,0.15)' }} />
+      <span style={{ fontSize: 10, color: '#64748b', fontFamily: 'var(--font-geist-mono, monospace)' }}>
+        {pad(startTime.getHours())}:{pad(startTime.getMinutes())}
+      </span>
+    </div>
+  );
+}
 
 function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<string, unknown> | null }) {
   const [nodes, setNodes, onNodesChange] = useNodesState<RFNode>([]);
@@ -110,6 +141,17 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
   const nodesRef = useRef<RFNode[]>([]);
   const edgesRef = useRef<RFEdge[]>([]);
   const flowContainerRef = useRef<HTMLDivElement>(null);
+
+  // Prevent browser pinch-to-zoom on the React Flow canvas (let RF handle it)
+  useEffect(() => {
+    const el = flowContainerRef.current;
+    if (!el) return;
+    const prevent = (e: WheelEvent) => { if (e.ctrlKey || e.metaKey) e.preventDefault(); };
+    const preventTouch = (e: TouchEvent) => { if (e.touches.length > 1) e.preventDefault(); };
+    el.addEventListener('wheel', prevent, { passive: false });
+    el.addEventListener('touchmove', preventTouch, { passive: false });
+    return () => { el.removeEventListener('wheel', prevent); el.removeEventListener('touchmove', preventTouch); };
+  }, []);
 
   useEffect(() => { nodesRef.current = nodes; }, [nodes]);
   useEffect(() => { edgesRef.current = edges; }, [edges]);
@@ -527,7 +569,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
               onNodeClick={(e, node) => { if (step.stepMode) { setDetailNode(prev => prev?.id === node.id ? null : node); } else { replay.onNodeClickReplay(e, node); } }}
               onNodeDoubleClick={drill.onNodeDoubleClick}
               nodeTypes={nodeTypes} edgeTypes={edgeTypes} fitView fitViewOptions={{ padding: 0.2 }}
-              minZoom={0.3} maxZoom={2} defaultEdgeOptions={{ type: 'default', style: { stroke: '#d4d4d4', strokeWidth: 2 } }}>
+              minZoom={0.3} maxZoom={2} defaultEdgeOptions={{ type: 'animated', style: { stroke: '#d4d4d4', strokeWidth: 2 } }}>
               <Background variant={BackgroundVariant.Dots} gap={20} size={1.5} color="var(--muted)" style={{ opacity: 0.5 }} />
               <Controls position="bottom-left" showInteractive={false} className="!border-[var(--border)] !rounded-lg !shadow-sm !overflow-hidden !mb-6 !ml-6" />
               {/* Node count badge */}
@@ -735,6 +777,17 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
             onReportOutcome={() => setShowFeedbackForm(true)} scenario={flow.scenario} />
         )}
 
+        {sim.liveMode && sim.simRunning && (
+          <LiveInsights
+            simStats={sim.simStats}
+            nodes={nodesRef.current}
+            nodeReachRef={sim.nodeReachRef}
+            edges={edgesRef.current.map(e => ({ source: e.source, target: e.target, label: e.label as string | undefined }))}
+            scenario={flow.scenario}
+            onClose={sim.stopSim}
+          />
+        )}
+
         {showFeedbackForm && <FeedbackForm scenario={flow.scenario} predictedProb={sim.simStats.total > 0 ? Math.round(sim.simStats.success / sim.simStats.total * 100) : 0} onClose={() => setShowFeedbackForm(false)} />}
 
         {showFeedbackReminder && !sim.simRunning && !showFeedbackForm && (
@@ -824,6 +877,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
           replayMode={replay.replayMode} cutNodeId={replay.cutNodeId} hasStats={sim.statsRef.current.total > 0}
           sacredMode={flow.sacredMode} saving={saving} shareUrl={shareUrl}
           onSimulate={requestSimulate}
+          onSimulateLive={() => sim.simulateLive()}
           onSimulateFromCut={() => sim.simulateFromCut(replay.cutNodeId!, replay.cutDownstreamRef, replay.cutReachCountRef)}
           onRestart={() => { sim.stopSim(); setTimeout(() => requestSimulate(), 200); }}
           onEnterStepMode={step.enterStepMode} onSimulateReverse={sim.simulateReverse}
@@ -837,7 +891,9 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
           viewMode={viewMode} />
       )}
 
-      {sim.simRunning && viewMode === '2d' && <RunningToolbar simPaused={sim.simPaused} onTogglePause={sim.togglePause} onStop={sim.stopSim} />}
+      {sim.simRunning && viewMode === '2d' && <RunningToolbar simPaused={sim.simPaused} liveMode={sim.liveMode} onTogglePause={sim.togglePause} onStop={sim.stopSim} />}
+
+      {sim.liveMode && sim.simRunning && viewMode === '2d' && <LiveTimer />}
 
       {sim.simRunning && viewMode === '2d' && (
         <StatsBar speedLevel={speedLevel} currentWave={sim.currentWave} totalWaves={sim.replayOverrideRef.current?.waves ?? SPD_BASE.waves}

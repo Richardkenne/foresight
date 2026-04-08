@@ -18,7 +18,7 @@
 - [Livello 90-100: Credibilita Assoluta](#livello-90-100-credibilita-assoluta)
 - [Livello 100+: Oracolo Predittivo](#livello-100-oracolo-predittivo)
 - [Livello Beyond: Reality Engine](#livello-beyond-reality-engine)
-- [Depth Variants](#depth-variants--3-modalita-per-template-summary--analysis--full-model) — IN CORSO (Upwork fatto, 31 restanti)
+- [Depth Variants](#depth-variants--3-modalita-per-template-summary--analysis--full-model) — DONE (34 template × 3 = 102 varianti)
 - [Data Integrity System](#data-integrity-system--3-livelli) — TODO (3 livelli: freshness badge → source verification → auto-update agent)
 - [UI Polish](#ui-polish)
 
@@ -349,6 +349,39 @@
 
 ---
 
+## Sessione 2026-04-08 pomeriggio — Engine Fixes + Live Mode + Web Search
+
+### Simulation Engine Fixes
+- [x] Gate edge matching: exact → startsWith (fix particelle perse)
+- [x] Math.floor → Math.round (fix 0 MADE IT)
+- [x] Fallback edge per particelle senza match
+- [x] Fix applicato sia precompute che runtime
+
+### Anti-Hallucination
+- [x] Prompt: no decimali, range obbligatori, reality check
+- [x] Sanitizer post-AI: prob arrotondate al 5%, probRange auto-generato
+
+### Tavily Web Search
+- [x] fetchWebSearch() — dati freschi 2025-2026 per ogni scenario
+- [x] Priorita #1 nel prompt (sopra RAG e training data)
+- [x] Sacred mode: no Tavily. Normal mode: si Tavily.
+- [x] /api/live-facts — "RIGHT NOW IN THE WORLD" real-time facts
+- [x] /api/refresh-probs — aggiorna prob template in background
+
+### Live Mode
+- [x] Simulazione infinita, particelle auto-cleanup
+- [x] LiveTimer (elapsed + orario inizio)
+- [x] LiveInsights pannello dx (world facts + simulation insights)
+
+### Template
+- [x] Template carica istantaneo (no API call) + Tavily refresh background
+- [x] Unicorn Startup template (3 varianti: 8/16/26 nodi)
+
+### Layout
+- [x] Dagre TB: altezza reale nodi → no overlap
+
+---
+
 ## UI Polish (continuo)
 - [x] Responsive mobile 320px — audit completo + @media max-width:360px aggiunto
 - [x] Dark mode — prefers-color-scheme + data-theme + 19 dark: usages
@@ -382,14 +415,15 @@
 - [x] Upwork Money Tree: Deep (34 nodi), Analysis/Mid (13 nodi), Summary/Min (7 nodi)
 - [x] Template selector: varianti Mid/Min nascoste, sub-picker con 3 opzioni al clic
 - [x] Source labels: 201 fonti sintetizzate → "(estimated, non-official)", 188 fonti reali intatte
-- [ ] Creare varianti Mid (10-14 nodi) + Min (5-7 nodi) per tutti i 32 template:
-  - [ ] business.ts (17): startup, money, cafe, content, saas, freelance, app, dropshipping, saas_scratch, side_hustle, buy_business, affiliate_blog, paid_community, crypto_journey, ai_agency, upwork_freelance, want_to_win (se in business)
-  - [ ] richard.ts (10): cafepedia, move_abroad, interfaith, break_pattern, first_million, perfectionism, faith_business, provider, polymarket, leverage
-  - [ ] life.ts (5): lend_money, lose_weight, learn_skill, youtube_guru, want_to_win
-- [ ] Naming convention: `{templateKey}Mid` (Analysis), `{templateKey}Min` (Summary), `{templateKey}` senza suffisso = Full Model
-- [x] Source URL: campo `sourceUrl` aggiunto a TemplateNode, panel dettagli mostra link cliccabile
-- [x] Upwork templates: 54 nodi con sourceUrl (Deep + Mid + Min)
-- [ ] Aggiungere `sourceUrl` a tutti gli altri template (fonti reali: link a report CB Insights, McKinsey, BLS, ecc.)
+- [x] Creato Full Model (30-45 nodi) + Mid/Analysis (10-14) + Min/Summary (5-7) per TUTTI i template (2026-04-08):
+  - [x] business.ts (17): startup(35), money(37), cafe(32), content(30), saas(40), freelance(31), app(32), dropshipping(33), saas_scratch(29), side_hustle(31), buy_business(29), affiliate_blog(29), paid_community(29), crypto_journey(29), ai_agency(26), upwork_freelance(30), upworkMoneyTree(34)
+  - [x] richard.ts (10): cafepedia(30), move_abroad(25), interfaith(19), break_pattern(26), first_million(22), perfectionism(31), faith_business(31), provider(32), polymarket(30), leverage(30)
+  - [x] life.ts (7): lend_money(36), lose_weight(29), learn_skill(29), youtube_guru(31), want_to_win(33), career_change(39), buy_house(39)
+- [x] 2 nuovi template aggiunti: career_change (Cambiare carriera a 30+), buy_house (Comprare casa)
+- [x] Naming convention: `{key}` = Full Model, `{key}Mid` = Analysis, `{key}Min` = Summary
+- [x] Source URL: campo `sourceUrl` su tutti i nodi con fonti reali 2023-2026
+- [x] Ricerca approfondita: 10 agenti paralleli con web search per statistiche reali
+- [x] Totale: 34 template × 3 profondita = 102 varianti, ~2,800+ nodi con dati verificati
 
 ## Data Integrity System — 3 livelli
 Obiettivo: garantire che ogni dato nel simulatore sia verificabile, aggiornato e trasparente. Questo e' il MOAT vs LLM generici.

@@ -271,6 +271,10 @@ src/lib/dataflow-engine.ts
 | `src/app/api/analyze-video/route.ts` | Video → frame extraction + Whisper + GPS metadata → Claude Vision → scenario | ~140 |
 | `src/app/api/analyze-url/route.ts` | URL → scrape page → Claude → 6 simulation seeds (intention, content, opportunity, risk, competitor, market) | ~120 |
 | `src/app/api/analyze-pdf/route.ts` | PDF → Claude native PDF reading → scenario | ~70 |
+| `src/app/api/refresh-probs/route.ts` | Background: Tavily web search + Haiku → aggiorna prob nodi in-place | ~95 |
+| `src/app/api/live-facts/route.ts` | Tavily + Haiku → "RIGHT NOW IN THE WORLD" real-time facts per live mode | ~75 |
+| `src/components/LiveInsights.tsx` | Pannello dx live mode: world facts ticker + simulation insights feed | ~240 |
+| `src/lib/generate/response-parser.ts` | JSON repair + node dependencies + probability sanitizer (round 5%, probRange) | ~120 |
 
 ---
 
@@ -326,7 +330,7 @@ AI Generation flow:
 - **66,672 vector entries** from 141 files indexed with OpenAI text-embedding-3-small (512 dimensions)
 - **HNSW index** (m=16, ef_construction=64) for <50ms cosine similarity search
 - **Embedding dimensions**: 512 (MRL-optimized, 98.6% quality of 1536, 3x less storage)
-- **Supabase project**: "Simulator" (rkkfwsmoqylctprzqhfj, ap-southeast-1, free tier)
+- **Supabase project**: "Simulator" (rkkfwsmoqylctprzqhfj, ap-southeast-1, Pro plan $25/mo — 314K embeddings, 1.6 GB, limit 8 GB)
 - **Re-index**: `npm run index-data`
 - **Fallback**: keyword matching (112 keyword entries, 114 files)
 

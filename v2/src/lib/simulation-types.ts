@@ -92,9 +92,9 @@ export function precomputeFates(
         const effectiveProb = isYou ? computePersonalProb(prob, sacredProfile) : prob;
 
         const out = edges.filter(e => e.source === currentNodeId);
-        const noEdge = out.find(e => e.label === 'no' || e.label === 'fail');
+        const noEdge = out.find(e => { const l = ((e.label || '') as string).toLowerCase(); return l === 'no' || l === 'fail' || l.startsWith('no ') || l.startsWith('no(') || l.startsWith('fail ') || l.startsWith('fail('); });
         const partialEdge = out.find(e => ((e.label || '') as string).toLowerCase().startsWith('partial'));
-        const yesEdge = out.find(e => e.label === 'yes' || e.label === 'pass');
+        const yesEdge = out.find(e => { const l = ((e.label || '') as string).toLowerCase(); return l === 'yes' || l === 'pass' || l.startsWith('yes ') || l.startsWith('yes(') || l.startsWith('pass ') || l.startsWith('pass('); });
 
         const partialPct = (partialEdge?.data as Record<string, unknown>)?.prob as number
           ?? Math.min(25, Math.floor((100 - effectiveProb) / 2));
@@ -108,24 +108,26 @@ export function precomputeFates(
           else if (effectiveProb >= noPct) route = 'partial';
           else route = 'no';
 
-          if (route === 'no') { cnt.routedNo++; deathNode = currentNodeId; currentNodeId = noEdge?.target || ''; }
-          else if (route === 'partial') { cnt.routedPartial++; currentNodeId = partialEdge?.target || ''; }
-          else { cnt.routedYes++; currentNodeId = yesEdge?.target || ''; }
+          const fallback = out[0]?.target || '';
+          if (route === 'no') { cnt.routedNo++; deathNode = currentNodeId; currentNodeId = noEdge?.target || fallback; }
+          else if (route === 'partial') { cnt.routedPartial++; currentNodeId = partialEdge?.target || fallback; }
+          else { cnt.routedYes++; currentNodeId = yesEdge?.target || fallback; }
           if (!currentNodeId) break;
           continue;
         }
 
-        const shouldNo = Math.floor(cnt.arrivals * noPct / 100);
-        const shouldPartial = Math.floor(cnt.arrivals * (noPct + partialPct) / 100);
+        const shouldNo = Math.round(cnt.arrivals * noPct / 100);
+        const shouldPartial = Math.round(cnt.arrivals * (noPct + partialPct) / 100);
 
         let route: 'no' | 'partial' | 'yes';
         if (cnt.routedNo < shouldNo) route = 'no';
         else if (cnt.routedPartial < (shouldPartial - shouldNo)) route = 'partial';
         else route = 'yes';
 
-        if (route === 'no') { cnt.routedNo++; deathNode = currentNodeId; currentNodeId = noEdge?.target || ''; }
-        else if (route === 'partial') { cnt.routedPartial++; currentNodeId = partialEdge?.target || ''; }
-        else { cnt.routedYes++; currentNodeId = yesEdge?.target || ''; }
+        const fallbackTarget = out[0]?.target || '';
+        if (route === 'no') { cnt.routedNo++; deathNode = currentNodeId; currentNodeId = noEdge?.target || fallbackTarget; }
+        else if (route === 'partial') { cnt.routedPartial++; currentNodeId = partialEdge?.target || fallbackTarget; }
+        else { cnt.routedYes++; currentNodeId = yesEdge?.target || fallbackTarget; }
 
         if (!currentNodeId) break;
         continue;
@@ -149,6 +151,7 @@ export function precomputeFates(
             deathNode = currentNodeId;
             const failE = edges.find(e => e.source === currentNodeId && (((e.label || '') as string).toLowerCase().startsWith('fail') || ((e.label || '') as string).toLowerCase().startsWith('no')));
             if (failE) { path.push(failE.target); outcomeNodeId = failE.target; }
+            else { outcomeNodeId = currentNodeId; }
             outcome = 'blocked';
             break;
           }
@@ -158,14 +161,15 @@ export function precomputeFates(
             if (passE) { currentNodeId = passE.target; continue; }
           }
         } else {
-          const shouldHavePassed = Math.floor(cnt.arrivals * prob / 100);
+          const shouldHavePassed = Math.round(cnt.arrivals * prob / 100);
           const pass = cnt.passed < shouldHavePassed;
           if (pass) cnt.passed++;
 
           if (!pass) {
             deathNode = currentNodeId;
             const failE = edges.find(e => e.source === currentNodeId && (((e.label || '') as string).toLowerCase().startsWith('fail') || ((e.label || '') as string).toLowerCase().startsWith('no')));
-            if (failE) path.push(failE.target);
+            if (failE) { path.push(failE.target); outcomeNodeId = failE.target; }
+            else { outcomeNodeId = currentNodeId; }
             outcome = 'blocked';
             break;
           }

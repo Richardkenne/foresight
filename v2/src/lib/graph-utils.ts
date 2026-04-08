@@ -13,22 +13,22 @@ export function getLayoutedElements(
   const isVertical = direction === 'TB';
   g.setGraph({
     rankdir: direction,
-    nodesep: isVertical ? 120 : 140,
-    ranksep: isVertical ? 180 : 250,
-    edgesep: isVertical ? 40 : 50,
+    nodesep: isVertical ? 60 : 140,
+    ranksep: isVertical ? 120 : 250,
+    edgesep: isVertical ? 30 : 50,
   });
 
   nodes.forEach((node) => {
     const isContext = node.type === 'contextNode';
     const data = node.data as Record<string, unknown>;
-    // Estimate height based on content: sources add ~120px, desc adds ~40px
+    // Estimate height based on content
     const hasSource = data.source && String(data.source).includes(':');
     const hasDesc = !!data.desc;
     const baseH = 100;
     const h = isContext ? 180 : baseH + (hasDesc ? 40 : 0) + (hasSource ? 120 : 0);
-    // In vertical mode, use fixed width so dagre centers children properly
-    const w = isContext ? 220 : (isVertical ? 240 : 210);
-    g.setNode(node.id, { width: w, height: isVertical ? 80 : h });
+    // In vertical mode, use real height for proper spacing (prevents overlap)
+    const w = isContext ? 220 : (isVertical ? 220 : 210);
+    g.setNode(node.id, { width: w, height: isVertical ? h : h });
   });
 
   edges.forEach((edge) => {

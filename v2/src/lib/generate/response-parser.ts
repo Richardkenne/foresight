@@ -39,6 +39,37 @@ export function repairJSON(raw: string): string {
   return s;
 }
 
+// ============ PROBABILITY SANITIZER ============
+// Rounds probs to nearest 5%, ensures probRange exists, clamps unrealistic values
+export function sanitizeProbabilities(flow: Record<string, unknown>): void {
+  const nodes = flow.nodes as FlowNode[] | undefined;
+  if (!nodes || !Array.isArray(nodes)) return;
+
+  for (const node of nodes) {
+    if (typeof node.prob !== 'number' || node.prob >= 100) continue;
+    const t = node.type;
+    if (t !== 'bottleneck' && t !== 'decision' && t !== 'gate') continue;
+
+    // Round to nearest 5%
+    node.prob = Math.round(node.prob / 5) * 5;
+    node.prob = Math.max(5, Math.min(95, node.prob));
+
+    // Ensure probRange exists
+    const pr = node.probRange as { optimistic: number; adverse: number } | undefined;
+    if (!pr) {
+      (node as Record<string, unknown>).probRange = {
+        optimistic: Math.min(95, node.prob + 15),
+        adverse: Math.max(5, node.prob - 15),
+      };
+    } else {
+      pr.optimistic = Math.round(pr.optimistic / 5) * 5;
+      pr.adverse = Math.round(pr.adverse / 5) * 5;
+      pr.optimistic = Math.max(pr.adverse + 5, Math.min(95, pr.optimistic));
+      pr.adverse = Math.max(5, Math.min(pr.optimistic - 5, pr.adverse));
+    }
+  }
+}
+
 // ============ NODE DEPENDENCY POST-PROCESSING ============
 // After Claude returns the graph, apply modifiesDownstream modifiers to target node probs
 export function applyNodeDependencies(flow: Record<string, unknown>): void {

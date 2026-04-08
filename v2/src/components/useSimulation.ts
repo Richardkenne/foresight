@@ -51,6 +51,8 @@ export function useSimulation({
   const [particles, setParticles] = useState<ParticleData[]>([]);
   const [currentWave, setCurrentWave] = useState(0);
   const [showDashboard, setShowDashboard] = useState(false);
+  const [liveMode, setLiveMode] = useState(false);
+  const liveModeRef = useRef(false);
 
   // Node values — signal delta propagation (inspired by Loopy)
   const [nodeValues, setNodeValues] = useState<Record<string, number>>({});
@@ -258,16 +260,16 @@ export function useSimulation({
       } : n));
 
       const out = edgesRef.current.filter(e => e.source === nodeId);
-      const noEdge = out.find(e => e.label === 'no' || e.label === 'fail');
+      const noEdge = out.find(e => { const l = ((e.label || '') as string).toLowerCase(); return l === 'no' || l === 'fail' || l.startsWith('no ') || l.startsWith('no(') || l.startsWith('fail ') || l.startsWith('fail('); });
       const partialEdge = out.find(e => ((e.label || '') as string).toLowerCase().startsWith('partial'));
-      const yesEdge = out.find(e => e.label === 'yes' || e.label === 'pass');
+      const yesEdge = out.find(e => { const l = ((e.label || '') as string).toLowerCase(); return l === 'yes' || l === 'pass' || l.startsWith('yes ') || l.startsWith('yes(') || l.startsWith('pass ') || l.startsWith('pass('); });
 
       const partialPct = (partialEdge?.data as Record<string, unknown>)?.prob as number
         ?? Math.min(25, Math.floor((100 - prob) / 2));
       const noPct = 100 - prob - partialPct;
 
-      const shouldNo = Math.floor(arrivals * noPct / 100);
-      const shouldPartial = Math.floor(arrivals * (noPct + partialPct) / 100);
+      const shouldNo = Math.round(arrivals * noPct / 100);
+      const shouldPartial = Math.round(arrivals * (noPct + partialPct) / 100);
       const prevNo = (node.data as Record<string, unknown>)[`routed-no-${nodeId}`] as number || 0;
       const prevPartial = (node.data as Record<string, unknown>)[`routed-partial-${nodeId}`] as number || 0;
 
@@ -304,7 +306,7 @@ export function useSimulation({
       const passedKey = `passed-${nodeId}`;
       const arrivals = ((node.data as Record<string, unknown>)[arrivalKey] as number || 0) + 1;
       const passed = (node.data as Record<string, unknown>)[passedKey] as number || 0;
-      const shouldHavePassed = Math.floor(arrivals * prob / 100);
+      const shouldHavePassed = Math.round(arrivals * prob / 100);
       const pass = passed < shouldHavePassed;
       setNodes(ns => ns.map(n => n.id === nodeId ? {
         ...n, data: { ...n.data, [arrivalKey]: arrivals, [passedKey]: pass ? passed + 1 : passed }
@@ -457,6 +459,14 @@ export function useSimulation({
         setYouOutcome({ outcome: result, nodeLabel: label });
         youPathRef.current = new Set(particle.visitedNodes);
       }
+
+      // Live mode: remove finished particles after fade delay to prevent memory leak
+      if (liveModeRef.current) {
+        const spd = getSPD();
+        simTimeout(() => {
+          updateParticles(prev => prev.filter(p => p.id !== particle.id));
+        }, spd.move * 2);
+      }
     });
   }, [moveTo, updateParticles, nodesRef, simSettingsRef]);
 
@@ -467,15 +477,17 @@ export function useSimulation({
     const peoplePerWave = override ? override.perWave : spd.perWave;
 
     if (waveNum >= totalWaves || !simRunningRef.current) {
-      if (waveNum >= totalWaves) {
+      if (waveNum >= totalWaves && !liveModeRef.current) {
         simTimeout(() => {
           if (simRunningRef.current) {
             replayOverrideRef.current = null;
             stopSim();
           }
         }, spd.move + spd.wait * 3);
+        return;
       }
-      return;
+      if (!liveModeRef.current) return;
+      // Live mode: keep going — don't stop, just continue launching waves
     }
 
     waveRef.current = waveNum;
@@ -550,8 +562,10 @@ export function useSimulation({
   function stopSim() {
     simRunningRef.current = false;
     simPausedRef.current = false;
+    liveModeRef.current = false;
     setSimRunning(false);
     setSimPaused(false);
+    setLiveMode(false);
     timeoutsRef.current.forEach(id => clearTimeout(id));
     timeoutsRef.current = [];
 
@@ -626,6 +640,10 @@ export function useSimulation({
         };
       }));
     }
+
+    // Clear all particles when simulation ends
+    particlesRef.current = [];
+    setParticles([]);
 
     waveRef.current = 0;
     setCurrentWave(0);
@@ -746,6 +764,24 @@ export function useSimulation({
       }
     }
   }, [launchWave, launchSimultaneous, setNodes, setEdges, nodesRef, edgesRef, profileRef, simSettingsRef, getSPD]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Live simulation — infinite continuous flow
+  const simulateLive = useCallback((setPathFilter?: (v: 'all' | 'success' | 'partial' | 'fail') => void) => {
+    if (simRunningRef.current || nodesRef.current.length === 0) return;
+
+    liveModeRef.current = true;
+    setLiveMode(true);
+
+    // Reveal all nodes immediately in live mode
+    setNodes(prev => prev.map(n => ({
+      ...n,
+      style: { ...n.style, opacity: 1, transition: 'opacity 0.5s ease' },
+    })));
+    setEdges(prev => prev.map(e => ({ ...e, hidden: false })));
+
+    // Reuse simulate but with live mode flag set
+    simulate(setPathFilter);
+  }, [simulate, setNodes, setEdges, nodesRef]);
 
   // Simulate reverse (right-to-left reveal)
   const simulateReverse = useCallback(() => {
@@ -898,13 +934,13 @@ export function useSimulation({
     setSimPaused(simPausedRef.current);
   }
 
-  // Auto-show dashboard when simulation ends naturally
+  // Auto-show dashboard when simulation ends naturally (not in live mode)
   useEffect(() => {
-    if (simRunning && statsRef.current.total > 0) {
+    if (simRunning && !liveModeRef.current && statsRef.current.total > 0) {
       const done = statsRef.current.success + statsRef.current.blocked;
       if (done >= statsRef.current.total && waveRef.current >= (replayOverrideRef.current?.waves ?? SPD_BASE.waves)) {
         setTimeout(() => {
-          if (simRunningRef.current) {
+          if (simRunningRef.current && !liveModeRef.current) {
             stopSim();
           }
         }, 2000);
@@ -943,8 +979,13 @@ export function useSimulation({
     setYouOutcome,
     setNodeValues,
 
+    // Live mode
+    liveMode,
+    liveModeRef,
+
     // Functions
     simulate,
+    simulateLive,
     stopSim,
     togglePause,
     simulateReverse,

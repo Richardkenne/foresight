@@ -191,6 +191,46 @@
 - [x] Step mode compatibile con Flow view
 - [x] 17 repo flowchart/diagram salvati in deep-research.md (sezione 14)
 
+### Simulation Engine Fixes (sessione 2026-04-08 pomeriggio)
+- [x] Gate edge matching fix: `===` → `startsWith` per label tipo `'no (70-80%)'`
+- [x] Math.floor → Math.round: evita 0 passers all'ultimo bottleneck con pochi arrivi
+- [x] Fallback particelle: mai piu' particelle perse (7/100 missing → 0/100)
+- [x] Fix applicato sia in precomputeFates (simulation-types.ts) che in runtime (useSimulation.ts)
+
+### Anti-Hallucination System
+- [x] Prompt rules: MAI decimali (79.6% → 80%), SEMPRE range, reality check vs base rates noti
+- [x] Post-processing sanitizer: arrotonda prob al 5%, genera probRange se mancante
+- [x] Label bottleneck DEVONO mostrare range: "Reach $1M ARR? (10-20%)" non "(79.6%)"
+
+### Tavily Web Search Integration
+- [x] `fetchWebSearch()` in data-fetcher.ts — cerca dati freschi 2025-2026 per ogni scenario
+- [x] Iniettato come PRIORITA #1 nel prompt (sopra RAG, real-probs, industry baselines)
+- [x] Sacred mode: NO Tavily (testi eterni). Normal mode: SI Tavily (dati cambiano)
+- [x] API key: TAVILY_API_KEY in .env.local (free tier: 1000 searches/month)
+
+### Live Mode
+- [x] Simulazione infinita continua (wave dopo wave, mai si ferma)
+- [x] Particelle finite scompaiono dopo fade delay (no memory leak)
+- [x] Badge "LIVE" rosso pulsante nella RunningToolbar
+- [x] LiveTimer in alto a destra: elapsed time + orario inizio
+- [x] LiveInsights pannello destro: "RIGHT NOW IN THE WORLD" facts (Tavily + Haiku)
+- [x] Simulation insights ogni 30s: survival rate, deadliest bottleneck, milestones
+- [x] Real-time world facts: ticker rotante con dati al secondo/minuto (es. "1 startup fails every second")
+
+### Template Istantaneo + Background Refresh
+- [x] Template hardcoded carica a 0 secondi (no API call, anche con Sacred ON)
+- [x] /api/refresh-probs: Tavily + Haiku aggiornano prob in background silenziosamente
+- [x] Nessun "Building your simulation..." per template esistenti
+
+### Template Unicorn Startup
+- [x] 3 varianti: Summary (8 nodi), Analysis (16 nodi), Full Model (26 nodi)
+- [x] Percorso: Founder → Seed (10-15%) → PMF (20%) → Series A (25-35%) → $10M ARR (25-40%) → $1B (5-10%)
+- [x] Fonti: CB Insights, PitchBook, Startup Genome, Carta, Bessemer, Y Combinator
+- [x] Key stat: ~0.07% delle startup funded diventano unicorni (~1,500 globali)
+
+### Layout Fix
+- [x] Dagre TB mode: usa altezza reale nodi (non 80px fisso) → no overlap
+
 ### In Corso / Prossimi Step
 - [ ] Creare varianti Mid + Min per restanti 30 template business/richard/life
 - [ ] Data Integrity System: freshness badge, source verification cron, auto-update agent
@@ -230,8 +270,15 @@
 - [x] Hydration error fix (stale .next cache con "350,000+" vs "400,000+")
 - [x] Nomi interni (funzioni, classi, variabili) NON rinominati — solo branding utente-facing
 
+### Depth Variants — 102 Template Variants (2026-04-08)
+- [x] Creato 3 profondita (Summary 5-7, Analysis 10-14, Full Model 30-45) per TUTTI i 34 template
+- [x] 10 agenti paralleli con web research per statistiche reali 2023-2026
+- [x] 2 nuovi template: career_change (Cambiare carriera a 30+), buy_house (Comprare casa)
+- [x] Totale: 34 template × 3 = 102 varianti, ~2,800+ nodi con fonti verificate
+- [x] Fix pinch-to-zoom: browser zoom bloccato sul canvas ReactFlow
+
 ### Project Audit
-- [x] Audit completo: 310K data points, 249 JSON files, 31 templates, 20+ pagine reali, 12 API routes, 9 node types
+- [x] Audit completo: 310K data points, 249 JSON files, 34 templates (102 varianti), 20+ pagine reali, 12 API routes, 9 node types
 - [x] Supabase Pro upgrade ($25/mo) — 8 GB DB, no storage limits
 - [x] Cultural data mega-download: 3.2M+ dp (Eurostat 3M, ILO 138K, WB 16K, UN 4K, REST Countries/CoinGecko 464)
 - [x] Behavioral cultural data: 629+ dp (Indonesia 157, Italy 159, Australia 160, USA 153) — real 2024-2026 sources with URLs

@@ -1208,18 +1208,78 @@ export async function fetchRAGContext(enrichedScenario: string): Promise<{ kbCon
   return { kbContext, dataSource };
 }
 
+// ============ WEB SEARCH (Tavily) ============
+// Fetches fresh statistics from the web for the given scenario
+// Requires TAVILY_API_KEY in .env.local (free: 1000 searches/month at tavily.com)
+export async function fetchWebSearch(scenario: string): Promise<string> {
+  const apiKey = process.env.TAVILY_API_KEY;
+  if (!apiKey) return '';
+
+  try {
+    // Extract key topics for search
+    const searchQuery = `${scenario} statistics data 2025 2026 success rate failure rate`;
+
+    const res = await fetch('https://api.tavily.com/search', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        api_key: apiKey,
+        query: searchQuery,
+        search_depth: 'basic',
+        max_results: 5,
+        include_answer: true,
+        include_raw_content: false,
+      }),
+      signal: AbortSignal.timeout(8000),
+    });
+
+    if (!res.ok) {
+      console.warn(`[WEB SEARCH] Tavily returned ${res.status}`);
+      return '';
+    }
+
+    const data = await res.json();
+    const parts: string[] = [];
+
+    // Include Tavily's AI-generated answer summary
+    if (data.answer) {
+      parts.push(`SUMMARY: ${data.answer}`);
+    }
+
+    // Include top results with titles, URLs, and content snippets
+    if (data.results && Array.isArray(data.results)) {
+      for (const r of data.results.slice(0, 5)) {
+        const snippet = (r.content || '').slice(0, 300);
+        if (snippet) {
+          parts.push(`[${r.title}] (${r.url})\n${snippet}`);
+        }
+      }
+    }
+
+    const result = parts.join('\n\n');
+    if (result) {
+      console.log(`[WEB SEARCH] Found ${data.results?.length || 0} results, ${result.length} chars`);
+    }
+    return result;
+  } catch (err) {
+    console.warn('[WEB SEARCH] Failed:', (err as Error).message);
+    return '';
+  }
+}
+
 // ============ FETCH ALL LIVE DATA ============
-export async function fetchAllLiveData(scenario: string, detectedCountries: string[]) {
-  const [live, countryData, exchangeRates, laborData, wikiContext, cryptoData, cityData] = await Promise.all([
+export async function fetchAllLiveData(scenario: string, detectedCountries: string[], enableWebSearch = true) {
+  const [live, countryData, exchangeRates, laborData, wikiContext, cryptoData, cityData, webSearch] = await Promise.all([
     getLiveData(),
     getCountryData(detectedCountries),
     getExchangeRates(),
     getLaborData(),
     getWikipediaContext(scenario),
     getCryptoData(scenario),
-    getCityData(scenario)
+    getCityData(scenario),
+    enableWebSearch ? fetchWebSearch(scenario) : Promise.resolve(''),
   ]);
-  return { live, countryData, exchangeRates, laborData, wikiContext, cryptoData, cityData };
+  return { live, countryData, exchangeRates, laborData, wikiContext, cryptoData, cityData, webSearch };
 }
 
 // ============ CURRENCY MAP (for exchange rate formatting) ============

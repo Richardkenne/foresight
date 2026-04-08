@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { detectCountries, fetchRAGContext, fetchAllLiveData } from '@/lib/generate/data-fetcher';
 import { STATIC_PROMPT, buildDynamicPrompt, buildUserMessage, enrichScenarioWithTags } from '@/lib/generate/prompt-builder';
-import { applyNodeDependencies } from '@/lib/generate/response-parser';
+import { applyNodeDependencies, sanitizeProbabilities } from '@/lib/generate/response-parser';
 import { callAICascade } from '@/lib/generate/ai-cascade';
 import type { GenerateRequest } from '@/lib/generate/types';
 
@@ -20,9 +20,11 @@ export async function POST(request: NextRequest) {
     const detectedCountries = detectCountries(enrichedScenario);
 
     // Fetch RAG/KB context + all live data in parallel
+    // Sacred mode = eternal texts (Bible, Quran) — no web search needed
+    // Normal mode = real-world data — web search for fresh statistics
     const [{ kbContext, dataSource }, liveData] = await Promise.all([
       fetchRAGContext(enrichedScenario),
-      fetchAllLiveData(scenario, detectedCountries),
+      fetchAllLiveData(scenario, detectedCountries, !sacredMode),
     ]);
 
     // Build dynamic prompt (live data + sacred + industry + profile + tags)
@@ -45,11 +47,12 @@ export async function POST(request: NextRequest) {
 
     // Metadata
     flow._provider = provider;
-    flow._live_data = !!(liveData.live?.gdp || liveData.countryData || liveData.exchangeRates || liveData.laborData || liveData.cryptoData || liveData.cityData);
+    flow._live_data = !!(liveData.live?.gdp || liveData.countryData || liveData.exchangeRates || liveData.laborData || liveData.cryptoData || liveData.cityData || liveData.webSearch);
     flow._data_source = dataSource;
 
-    // POST-PROCESSING: Apply node dependency modifiers
+    // POST-PROCESSING: Apply node dependency modifiers, then sanitize probabilities
     applyNodeDependencies(flow);
+    sanitizeProbabilities(flow);
 
     return NextResponse.json(flow);
   } catch (e) {

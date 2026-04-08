@@ -16,11 +16,12 @@ export const STATIC_PROMPT = `You are a life/business scenario simulator. Genera
 
 CRITICAL RULES:
 1. DATA PRIORITY ORDER (follow this strictly):
-   1st: Injected real probabilities (from VERIFIED REAL PROBABILITIES section)
-   2nd: RAG context data (specific numbers from the data points provided)
-   3rd: Industry base rates (from INDUSTRY BASELINE PROBABILITIES section)
-   4th: Sacred roots (if sacred mode is active)
-   5th: Your calibrated estimate — use the closest available data point and cite the source. If NO data exists at all, label as "Estimated (non-official)" but provide your best calibrated guess with reasoning in the desc field. For ANY source that is NOT a published report/paper (e.g. community data, forum insights, pattern analysis, platform behavior), append "(estimated by Foresight from public data — not an official source)" to the source string.
+   1st: FRESH WEB SEARCH DATA (searched today — most current, always prefer over training data)
+   2nd: Injected real probabilities (from VERIFIED REAL PROBABILITIES section)
+   3rd: RAG context data (specific numbers from the data points provided)
+   4th: Industry base rates (from INDUSTRY BASELINE PROBABILITIES section)
+   5th: Sacred roots (if sacred mode is active)
+   6th: Your calibrated estimate — use the closest available data point and cite the source. If NO data exists at all, label as "Estimated (non-official)" but provide your best calibrated guess with reasoning in the desc field. For ANY source that is NOT a published report/paper (e.g. community data, forum insights, pattern analysis, platform behavior), append "(estimated by Foresight from public data — not an official source)" to the source string.
 2. DATA INTEGRITY: Every node MUST have a real source. Use the RAG data provided, your training knowledge, or well-known reports (BLS, World Bank, McKinsey, CB Insights, PitchBook, etc.). Format: "ReportName Year:value:tier". "No data" should be extremely rare — only for truly novel scenarios with zero comparable data.
 3. COMPLETE COVERAGE: The flow must cover the ENTIRE scenario from start to end. If the user says "move abroad and learn a language", cover BOTH — immigration steps AND language learning journey. Never stop halfway.
 4. EVERY STEP NEEDS A FAIL PATH: Every bottleneck/decision MUST have a fail/no edge leading to an outcome-bad node. This is non-negotiable. Real life has failure at every step.
@@ -28,6 +29,18 @@ CRITICAL RULES:
 6. If section data points are provided, use those specific numbers and CITE the source.
 7. NEVER HALLUCINATE PLATFORM FEATURES: Do NOT invent steps that don't exist on real platforms. Upwork has NO mandatory "skills test" or "AI developer test". Stick to real platform mechanics: profile creation, proposals (with Connects), interviews, contracts, JSS score, badges.
 8. USE RAG DATA FIRST: When the provided data includes a specific probability (e.g., "proposal_to_interview_new_pct: 2-5%"), use THAT number, not a higher one. The RAG data is verified.
+9. PROBABILITY INTEGRITY (NON-NEGOTIABLE):
+   - NEVER use decimal probabilities (no 79.6%, 23.4%). Round to nearest 5% (e.g., 80%, 25%, 15%).
+   - ALWAYS include "probRange" with optimistic/adverse for bottleneck/decision/gate nodes. The range communicates uncertainty honestly.
+   - REALITY CHECK before assigning prob: Does this number pass a smell test? Well-known base rates:
+     * Startups reaching $1M ARR: 10-20% (NOT 79.6%). Source: Startup Genome, CB Insights.
+     * Startup survival past year 5: ~50%. Past year 10: ~30%.
+     * VC-funded startups returning capital: ~25-35%.
+     * Restaurant survival year 1: ~60%. Year 5: ~20%.
+     * Freelancer earning >$50K/year: ~5-15%.
+   - If your generated prob contradicts well-known base rates by >2x, you are hallucinating. Use the base rate instead.
+   - When uncertain, bias LOW (conservative). It is better to show "15%" and be pleasantly surprised than "80%" and be crushed.
+   - The label should reflect the range, not a false point estimate. Use "10-20%" in labels, not "15.3%".
 
 STRUCTURE: Return ONLY valid JSON. Follow the NODE COUNT specified in the dynamic context. Include success AND failure paths.
 Node types: start, desire, action, state, trajectory, bottleneck, gate, decision, outcome-good, outcome-bad, loop.
@@ -47,8 +60,9 @@ Position: x increases by ~260, failures below (y+200). Min 260px horizontal spac
 JSON format: {"title":"...","nodes":[{"id":1,"type":"desire","label":"...","x":0,"y":120,"prob":68,"desc":"Real stat","source":"BLS 2024:70:3 | CB Insights 2024:65:2","time":"30-90 days","sacredRoots":["SR-009","SR-031"]}],"edges":[{"from":1,"to":2,"label":""}],"pruning_questions":[{"id":"q1","question":"Binary YES/NO question SPECIFIC to this exact scenario — NOT generic business questions","sacredRoot":"SR-031","yesModifier":1.8,"noModifier":0.35,"yesLabel":"Yes, short","noLabel":"No, short","insight":"Data-backed reason why this matters (stat + source)"}]}
 For each node, include "sacredRoots": an array of 1-3 sacred root IDs (from the 36) that determine the outcome at that node. This connects every simulation step to its irreducible behavioral atoms.
 PRUNING QUESTIONS MUST be scenario-specific. Example: for "friend asks to borrow money" → "Do you have a written agreement?" NOT "Do you have a mentor?". For "open a restaurant" → "Do you have restaurant experience?" NOT "Are you committed for 3+ years?". Generate 5-7 questions that ONLY make sense for THIS specific scenario.
-prob = weighted average of all sources. Only bottleneck/decision need realistic prob (<100). Others = 100.
-For bottleneck/decision nodes, also include "probRange" with optimistic and adverse: {"prob":40,"probRange":{"optimistic":65,"adverse":15}}.
+prob = weighted average of all sources, rounded to nearest 5%. Only bottleneck/decision/gate need realistic prob (<100). Others = 100.
+For bottleneck/decision/gate nodes, ALWAYS include "probRange" with optimistic and adverse: {"prob":40,"probRange":{"optimistic":65,"adverse":15}}.
+Node labels for bottleneck/decision/gate MUST show a range in parentheses, e.g., "Reach $1M ARR? (10-20%)" — NEVER a single precise number like "(79.6%)".
 NODE DEPENDENCY SYSTEM: For bottleneck and gate nodes, include a "modifiesDownstream" field: an array of objects {"targetNodeLabel": string, "modifier": number} where modifier is a multiplier applied to downstream node probabilities. Example: if "Land First Client" passes, it might boost "Get Referral" by 1.3x (30% more likely). If "Funding Secured" fails, downstream "Scale Team" drops by 0.5x. Use modifiers between 0.3-2.0. Only include when a real causal dependency exists between nodes — do not force dependencies on every node.
 desc MUST include a specific number/stat, not generic text. Use rich text formatting in desc: **bold** for key numbers and critical terms, __underline__ for warnings or emphasis, and \\n for line breaks to structure the text into readable paragraphs. Never write a wall of text — break it into 2-3 short paragraphs with line breaks.
 SOURCE TRIANGULATION: For every bottleneck/decision prob, provide MULTIPLE sources when possible. Format: "SourceName Year:value:tier | SourceName Year:value:tier" where tier is 3=government(BLS,Census,WHO), 2=institutional(McKinsey,YC,PitchBook), 1=media(TechCrunch,Forbes). prob = weighted avg (tier3 x3, tier2 x2, tier1 x1). Example: "BLS 2024:70:3 | CB Insights 2024:65:2" → prob = (70*3+65*2)/5 = 68.
@@ -108,12 +122,13 @@ export interface DynamicPromptInput {
     wikiContext: string | null;
     cryptoData: string | null;
     cityData: string | null;
+    webSearch?: string | null;
   };
 }
 
 export async function buildDynamicPrompt(input: DynamicPromptInput): Promise<string> {
   const { scenario, enrichedScenario, tags, profile, sacredMode, depthLevel = 'analysis', detectedCountries, liveData } = input;
-  const { live, countryData, exchangeRates, laborData, wikiContext, cryptoData, cityData } = liveData;
+  const { live, countryData, exchangeRates, laborData, wikiContext, cryptoData, cityData, webSearch } = liveData;
 
   const depth = DEPTH_NODE_COUNTS[depthLevel];
   let liveStr = `\nNODE COUNT: Generate exactly ${depth.min}-${depth.max} nodes. Depth level: ${depth.label}. ${depthLevel === 'summary' ? 'Show only the critical bottlenecks and outcomes — no intermediate states.' : depthLevel === 'full' ? 'Cover EVERY step, sub-decision, and edge case. Include intermediate states after every bottleneck. This is the most detailed analysis possible.' : 'Cover the main path with key bottlenecks and states.'}`;
@@ -134,6 +149,12 @@ export async function buildDynamicPrompt(input: DynamicPromptInput): Promise<str
   if (wikiContext) liveStr += `\nWIKIPEDIA CONTEXT: ${wikiContext}`;
   if (cryptoData) liveStr += `\nCRYPTO MARKET DATA: ${cryptoData}`;
   if (cityData) liveStr += `\nCITY QUALITY OF LIFE: ${cityData}`;
+
+  // FRESH WEB SEARCH DATA (highest priority for current statistics)
+  if (webSearch) {
+    liveStr += `\n\nFRESH WEB SEARCH DATA (searched today — USE THESE NUMBERS as primary source, they are more current than your training data):\n${webSearch}`;
+    console.log(`[API] Web search data injected (${webSearch.length} chars)`);
+  }
 
   // BUSINESS TYPE DETECTION
   const businessType = detectBusinessType(scenario);

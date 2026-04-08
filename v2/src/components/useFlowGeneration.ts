@@ -87,37 +87,7 @@ export function useFlowGeneration({
     sim.setParticles([]);
     setScenario(t.input);
 
-    if (sacredMode) {
-      setGenerating(true);
-      setErrorMsg('');
-      fetch('/api/generate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ scenario: t.input, tags: contextTagsRef.current, profile: profileRef.current, sacredMode: true, depthLevel }),
-      })
-        .then(res => { if (!res.ok) throw new Error('Server error'); return res.json(); })
-        .then(flow => {
-          if (!flow.nodes || !flow.edges) throw new Error('Invalid flow');
-          setLastFlowData(flow);
-          if (flow.pruning_questions && Array.isArray(flow.pruning_questions)) {
-            setApiPruningQuestions(flow.pruning_questions);
-          }
-          const tNodes = flow.nodes.map((n: TemplateNode) => ({ ...n, source: n.source || 'Sacred text' }));
-          const { nodes: ln, edges: le } = templateToFlow(tNodes, flow.edges, undefined, layoutDirection);
-          setNodes(ln);
-          setEdges(le);
-          sounds.whoosh();
-          undoPushState({ nodes: ln, edges: le });
-          saveToHistory({ scenario: t.input, flowData: { nodes: flow.nodes, edges: flow.edges } });
-          setTimeout(() => {
-            fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 });
-            setTimeout(() => doSimulate(), 500);
-          }, 100);
-        })
-        .catch(() => { setErrorMsg('Sacred generation failed.'); })
-        .finally(() => setGenerating(false));
-      return;
-    }
+    // ALWAYS load hardcoded template instantly (0 seconds, no API call)
     const enrichedNodes = applyRealProbabilities(t.nodes) as typeof t.nodes;
     const { nodes: ln, edges: le } = templateToFlow(enrichedNodes, t.edges, undefined, layoutDirection);
     setNodes(ln);
@@ -150,6 +120,36 @@ export function useFlowGeneration({
       fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 });
       if (autoSim) setTimeout(() => doSimulate(), 500);
     }, 100);
+
+    // Background refresh: Tavily fetches fresh data and updates probabilities in-place
+    // No loading spinner, no regeneration — just silently updates numbers
+    fetch('/api/refresh-probs', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ scenario: t.input, nodes: t.nodes }),
+    })
+      .then(res => res.ok ? res.json() : null)
+      .then(data => {
+        if (!data?.updates || data.updates.length === 0) return;
+        // Apply fresh probabilities to existing nodes
+        setNodes(prev => prev.map(n => {
+          const update = data.updates.find((u: { id: string; prob: number; source: string; probRange?: { optimistic: number; adverse: number } }) => String(u.id) === n.id);
+          if (!update) return n;
+          return {
+            ...n,
+            data: {
+              ...n.data,
+              prob: update.prob,
+              probRange: update.probRange || (n.data as Record<string, unknown>).probRange,
+              source: update.source || (n.data as Record<string, unknown>).source,
+              freshData: true, // flag to show "updated" indicator
+            },
+          };
+        }));
+        console.log(`[REFRESH] Updated ${data.updates.length} node probabilities from web search`);
+      })
+      .catch(() => { /* silent fail — hardcoded data is already loaded */ });
+
   }, [setNodes, setEdges, fitView, sacredMode, layoutDirection, undoPushState, doSimulate, sim, contextTagsRef, profileRef]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Generate from AI
