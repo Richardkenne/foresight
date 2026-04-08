@@ -970,25 +970,47 @@ export function Sim3DToolbar({
 
 interface ResultsTabProps {
   onShowDashboard: () => void;
+  onCompare?: () => void;
+  comparisonMode?: boolean;
 }
 
-export function ResultsTab({ onShowDashboard }: ResultsTabProps) {
+export function ResultsTab({ onShowDashboard, onCompare, comparisonMode }: ResultsTabProps) {
   return (
-    <button
-      onClick={onShowDashboard}
-      className="fixed right-0 top-1/2 -translate-y-1/2 z-50 rounded-l-lg px-2 py-4 shadow-lg transition-all cursor-pointer group"
-      style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRight: 'none' }}
-      onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--surface-hover)'; }}
-      onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--surface)'; }}
-    >
-      <div className="flex flex-col items-center gap-1.5">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500 group-hover:text-blue-500 transition-colors">
-          <path d="M3 3v18h18" /><path d="M18 17V9" /><path d="M13 17V5" /><path d="M8 17v-3" />
-        </svg>
-        <span className="text-[9px] font-semibold text-gray-400 group-hover:text-blue-500 transition-colors" style={{ writingMode: 'vertical-lr' }}>
-          Results
-        </span>
-      </div>
-    </button>
+    <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1">
+      <button
+        onClick={onShowDashboard}
+        className="rounded-l-lg px-2 py-4 shadow-lg transition-all cursor-pointer group"
+        style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRight: 'none' }}
+        onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--surface-hover)'; }}
+        onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--surface)'; }}
+      >
+        <div className="flex flex-col items-center gap-1.5">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500 group-hover:text-blue-500 transition-colors">
+            <path d="M3 3v18h18" /><path d="M18 17V9" /><path d="M13 17V5" /><path d="M8 17v-3" />
+          </svg>
+          <span className="text-[9px] font-semibold text-gray-400 group-hover:text-blue-500 transition-colors" style={{ writingMode: 'vertical-lr' }}>
+            Results
+          </span>
+        </div>
+      </button>
+      {onCompare && !comparisonMode && (
+        <button
+          onClick={onCompare}
+          className="rounded-l-lg px-2 py-4 shadow-lg transition-all cursor-pointer group"
+          style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRight: 'none' }}
+          onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--surface-hover)'; }}
+          onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--surface)'; }}
+        >
+          <div className="flex flex-col items-center gap-1.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500 group-hover:text-indigo-500 transition-colors">
+              <path d="M16 3h5v5" /><path d="M8 3H3v5" /><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" /><path d="m15 9 6-6" />
+            </svg>
+            <span className="text-[9px] font-semibold text-gray-400 group-hover:text-indigo-500 transition-colors" style={{ writingMode: 'vertical-lr' }}>
+              Compare
+            </span>
+          </div>
+        </button>
+      )}
+    </div>
   );
 }

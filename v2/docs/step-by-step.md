@@ -20,7 +20,16 @@
 - [Livello Beyond: Reality Engine](#livello-beyond-reality-engine)
 - [Depth Variants](#depth-variants--3-modalita-per-template-summary--analysis--full-model) — DONE (34 template × 3 = 102 varianti)
 - [Data Integrity System](#data-integrity-system--3-livelli) — TODO (3 livelli: freshness badge → source verification → auto-update agent)
+- [Fase 10: Simulation Quality](#fase-10-simulation-quality--2026-04-08) — DONE
 - [UI Polish](#ui-polish)
+
+---
+
+## Fase 10: Simulation Quality (2026-04-08)
+- [x] YOU routing graduale: `shouldYouPass()` + `youGateRoute()` con soglia dinamica basata su sacred profile
+- [x] Prompt optimization ~25-30%: Upwork/archetipi condizionali, real probs filtrate, sacred roots top 3
+- [x] A vs B Comparison: ComparisonDashboard, bottone nel Dashboard, banner comparison mode
+- [x] LiveInsights: tema bianco (var(--surface)), no AnimatePresence lag, refs stabili
 
 ---
 

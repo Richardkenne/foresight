@@ -55,6 +55,7 @@ import { useFlowGeneration } from './useFlowGeneration';
 const Graph3DView = dynamic(() => import('./Graph3DView'), { ssr: false });
 const FlowchartView = dynamic(() => import('./FlowchartView'), { ssr: false });
 const MultiAgentResults = dynamic(() => import('./MultiAgentResults'), { ssr: false });
+const ComparisonDashboard = dynamic(() => import('./ComparisonDashboard'), { ssr: false });
 
 const nodeTypes = { simNode: SimNodeComponent, contextNode: ContextNodeComponent };
 const edgeTypes = { animated: AnimatedEdgeComponent };
@@ -137,6 +138,18 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
   const speedRef = useRef(0);
 
   const [activeMode, setActiveMode] = useState<SimMode>(() => loadMode());
+
+  // ─── A vs B COMPARISON ───
+  const [comparisonMode, setComparisonMode] = useState(false);
+  const [showComparison, setShowComparison] = useState(false);
+  const scenarioARef = useRef<{
+    scenario: string;
+    stats: { total: number; success: number; blocked: number };
+    bottlenecks: { label: string; actualRate: number; expectedRate: number }[];
+    nodes: RFNode[];
+    edges: RFEdge[];
+    nodeReach: Record<string, Set<number>>;
+  } | null>(null);
 
   const nodesRef = useRef<RFNode[]>([]);
   const edgesRef = useRef<RFEdge[]>([]);
@@ -289,6 +302,79 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
     statsRef: sim.statsRef, setSimStats: sim.setSimStats,
     simRunningRef: sim.simRunningRef, requestSimulate,
   });
+
+  // ─── A vs B COMPARISON HANDLERS ───
+  const extractBottlenecks = useCallback((nds: RFNode[], reach: Record<string, Set<number>>, edgs: RFEdge[]) => {
+    return nds
+      .filter(n => {
+        const t = (n.data as Record<string, unknown>).nodeType;
+        const p = (n.data as Record<string, unknown>).prob as number;
+        return (t === 'bottleneck' || t === 'decision' || t === 'gate') && p < 100;
+      })
+      .map(n => {
+        const reached = reach[n.id] ? reach[n.id].size : 0;
+        const outEdges = edgs.filter(e => e.source === n.id && (e.label === 'pass' || e.label === 'yes'));
+        let passed = 0;
+        if (outEdges.length > 0) passed = reach[outEdges[0].target] ? reach[outEdges[0].target].size : 0;
+        return {
+          label: (n.data as Record<string, unknown>).label as string,
+          actualRate: reached > 0 ? Math.round(passed / reached * 100) : 0,
+          expectedRate: (n.data as Record<string, unknown>).prob as number,
+        };
+      })
+      .filter(b => b.actualRate > 0 || b.expectedRate > 0)
+      .sort((a, b) => a.actualRate - b.actualRate);
+  }, []);
+
+  const handleCompare = useCallback(() => {
+    // Save current scenario as Scenario A (refs only, no state updates)
+    scenarioARef.current = {
+      scenario: flow.scenario,
+      stats: { ...sim.statsRef.current },
+      bottlenecks: extractBottlenecks(nodesRef.current, sim.nodeReachRef.current, edgesRef.current),
+      nodes: [...nodesRef.current],
+      edges: [...edgesRef.current],
+      nodeReach: { ...sim.nodeReachRef.current },
+    };
+
+    // Stop simulation + clear refs first
+    sim.stopSim();
+    sim.particlesRef.current = [];
+    sim.statsRef.current = { total: 0, success: 0, blocked: 0 };
+
+    // Batch all state updates together in one tick
+    requestAnimationFrame(() => {
+      setComparisonMode(true);
+      sim.setShowDashboard(false);
+      sim.setParticles([]);
+      sim.setSimStats({ total: 0, success: 0, blocked: 0 });
+      setNodes([]);
+      setEdges([]);
+      flow.setScenario('');
+      flow.setErrorMsg('');
+    });
+  }, [flow, sim, setNodes, setEdges, extractBottlenecks]);
+
+  const handleShowComparison = useCallback(() => {
+    if (!scenarioARef.current || sim.statsRef.current.total === 0) return;
+    setShowComparison(true);
+    sim.setShowDashboard(false);
+  }, [sim]);
+
+  const handleExitComparison = useCallback(() => {
+    setShowComparison(false);
+    setComparisonMode(false);
+    scenarioARef.current = null;
+  }, []);
+
+  // Auto-show comparison dashboard when Scenario B simulation finishes
+  useEffect(() => {
+    if (comparisonMode && !sim.simRunning && sim.statsRef.current.total > 0 && scenarioARef.current) {
+      // Small delay to let stats settle
+      const t = setTimeout(() => setShowComparison(true), 600);
+      return () => clearTimeout(t);
+    }
+  }, [comparisonMode, sim.simRunning, sim.simStats]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ─── EFFECTS ───
   useEffect(() => {
@@ -460,6 +546,26 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         openHistoryTrigger={openHistoryTrigger} openProfileTrigger={openProfileTrigger}
         activeMode={activeMode} onModeChange={handleModeChange}
       />
+
+      {/* Comparison mode banner */}
+      {comparisonMode && !showComparison && nodesRef.current.length === 0 && (
+        <div className="absolute top-[96px] left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-5 py-3 rounded-xl backdrop-blur-sm animate-fade-in"
+          style={{ background: 'rgba(99, 102, 241, 0.08)', border: '1px solid rgba(99, 102, 241, 0.2)' }}>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full" style={{ background: '#6366f1' }} />
+            <span className="text-[11px] font-medium" style={{ color: '#6366f1' }}>Scenario A saved</span>
+          </div>
+          <div className="w-px h-4" style={{ background: 'rgba(99, 102, 241, 0.2)' }} />
+          <span className="text-[11px]" style={{ color: 'var(--muted-foreground)' }}>Now generate Scenario B to compare</span>
+          <button
+            onClick={handleExitComparison}
+            className="text-[10px] px-2 py-0.5 rounded-md cursor-pointer transition-all hover:opacity-80"
+            style={{ background: 'rgba(99, 102, 241, 0.1)', color: '#6366f1' }}
+          >
+            Cancel
+          </button>
+        </div>
+      )}
 
       {flow.errorMsg && (
         <div className="absolute top-[96px] left-1/2 -translate-x-1/2 z-50 bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 text-[11px] px-6 py-2.5 rounded-lg backdrop-blur-sm animate-fade-in">
@@ -770,11 +876,40 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
           </div>
         )}
 
-        {sim.showDashboard && (
+        {sim.showDashboard && !showComparison && (
           <Dashboard stats={sim.statsRef.current} nodes={nodesRef.current} nodeUniqueReach={sim.nodeReachRef.current}
             edges={edgesRef.current.map(e => ({ source: e.source, target: e.target, label: e.label as string | undefined }))}
             onClose={() => { sim.setShowDashboard(false); setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100); }}
+            onCompare={handleCompare}
             onReportOutcome={() => setShowFeedbackForm(true)} scenario={flow.scenario} />
+        )}
+
+        {showComparison && scenarioARef.current && (
+          <ComparisonDashboard
+            scenarioA={{
+              scenario: scenarioARef.current.scenario,
+              stats: scenarioARef.current.stats,
+              bottlenecks: scenarioARef.current.bottlenecks,
+            }}
+            scenarioB={{
+              scenario: flow.scenario,
+              stats: sim.statsRef.current,
+              bottlenecks: extractBottlenecks(nodesRef.current, sim.nodeReachRef.current, edgesRef.current),
+            }}
+            onClose={() => { setShowComparison(false); setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100); }}
+            onViewA={() => {
+              // Restore Scenario A on canvas
+              if (!scenarioARef.current) return;
+              setNodes(scenarioARef.current.nodes);
+              setEdges(scenarioARef.current.edges);
+              setShowComparison(false);
+              setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100);
+            }}
+            onViewB={() => {
+              setShowComparison(false);
+              setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100);
+            }}
+          />
         )}
 
         {sim.liveMode && sim.simRunning && (
@@ -913,7 +1048,18 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
 
       {!sim.simRunning && sim.statsRef.current.total > 0 && !sim.showDashboard && !step.stepMode && viewMode === '2d' && (
         <>
-          <ResultsTab onShowDashboard={() => { sim.setShowDashboard(true); setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100); }} />
+          <ResultsTab
+            onShowDashboard={() => {
+              if (showComparison || (comparisonMode && scenarioARef.current && sim.statsRef.current.total > 0)) {
+                setShowComparison(true);
+              } else {
+                sim.setShowDashboard(true);
+              }
+              setTimeout(() => fitView({ padding: 0.3, duration: 400, maxZoom: 0.85 }), 100);
+            }}
+            onCompare={handleCompare}
+            comparisonMode={comparisonMode}
+          />
           <PathFilterBar pathFilter={pathFilter} onFilterChange={applyPathFilter} />
           {sim.youOutcome && (
             <div className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50" style={{ background: 'var(--surface)', boxShadow: '0 0 0 1px rgba(251,191,36,0.4), 0 4px 20px rgba(251,191,36,0.15), 0 4px 12px rgba(0,0,0,0.08)', borderRadius: 12, padding: '10px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>

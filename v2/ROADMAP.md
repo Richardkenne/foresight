@@ -231,6 +231,22 @@
 ### Layout Fix
 - [x] Dagre TB mode: usa altezza reale nodi (non 80px fisso) → no overlap
 
+### A vs B Comparison + Routing Fix + Prompt Optimization (sessione 2026-04-08 sera)
+- [x] **YOU routing graduale**: soglia dinamica 40-60 basata su sacred profile (non piu cutoff fisso 50%)
+  - `shouldYouPass()`: sacred profile forte (8/10) → threshold 44, debole (2/10) → threshold 56
+  - `youGateRoute()`: routing 3-way con bonus sacro per gates
+- [x] **Prompt optimization ~25-30% token savings**:
+  - Upwork mechanics: da STATIC a DYNAMIC (solo per scenari freelance) → -800 token per 95% richieste
+  - 4 archetipi non-business: iniezione condizionale per tipo scenario → -525 token per 85% richieste
+  - Real probabilities: filtrate per categorie rilevanti (max 3 cat, top 15 entries) → -300 token
+  - Sacred roots: ridotti da top 5 a top 3 con minScore 3 → -200 token
+- [x] **A vs B Comparison**: confronta 2 scenari side-by-side
+  - Bottone "Compare with another scenario" nel Dashboard footer
+  - Salva Scenario A → resetta canvas → genera Scenario B
+  - ComparisonDashboard: success rate delta, verdict, bottleneck comparison, View A/B
+  - Banner viola "Scenario A saved" durante generazione B
+- [x] **LiveInsights tema bianco + performance fix**: sfondo var(--surface), rimossa AnimatePresence dalla lista, refs stabili per interval
+
 ### In Corso / Prossimi Step
 - [ ] Creare varianti Mid + Min per restanti 30 template business/richard/life
 - [ ] Data Integrity System: freshness badge, source verification cron, auto-update agent
@@ -570,7 +586,7 @@ Priorita:
 - [x] Bottleneck shape: esagono (6 lati) → rombo/diamond (4 lati) come nel codex
 
 ## Backlog (feature secondarie)
-- [ ] Confronto scenari A vs B — side-by-side dashboard
+- [x] ~~Confronto scenari A vs B — side-by-side dashboard~~ (fatto 2026-04-08)
 - [ ] Interactive sliders — muovi parametro, grafo si ricalcola live
 - [ ] Fork tree counterfactual — "cosa sarebbe cambiato se..."
 - [x] ~~Code decomposition — SimulatorCanvas 1200+ righe → moduli separati~~ (fatto 2026-03-31)

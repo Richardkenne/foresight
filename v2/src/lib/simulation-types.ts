@@ -43,6 +43,71 @@ export function computePersonalProb(
   return Math.max(1, Math.min(99, Math.round(genericProb + modifier)));
 }
 
+/**
+ * Determine if the YOU particle passes a bottleneck/gate.
+ * Uses a dynamic threshold instead of a fixed 50% cutoff.
+ *
+ * How it works:
+ * - Base threshold is 50%
+ * - Sacred profile shifts it: strong profile (avg 7-10) lowers threshold (easier to pass),
+ *   weak profile (avg 0-3) raises it (harder to pass)
+ * - Shift range: ±10 points (threshold can be 40-60)
+ * - Clamped to 20-80 so extreme probs always behave correctly
+ *
+ * Examples with avg sacred score 8/10 (threshold = 44):
+ *   prob 45% → pass (45 >= 44)  — previously would FAIL at 50 cutoff
+ *   prob 43% → fail (43 < 44)
+ * Examples with avg sacred score 2/10 (threshold = 56):
+ *   prob 55% → fail (55 < 56)   — previously would PASS at 50 cutoff
+ *   prob 57% → pass (57 >= 56)
+ */
+export function shouldYouPass(
+  prob: number,
+  sacredProfile?: Record<string, number> | null,
+): boolean {
+  const personalProb = computePersonalProb(prob, sacredProfile);
+  if (!sacredProfile || Object.keys(sacredProfile).length === 0) {
+    return personalProb >= 50;
+  }
+  const scores = Object.values(sacredProfile);
+  const avg = scores.reduce((s, v) => s + v, 0) / scores.length;
+  // avg 5 = no shift, avg 10 = threshold drops to 40, avg 0 = threshold rises to 60
+  const thresholdShift = (5 - avg) * 2;
+  const threshold = Math.max(20, Math.min(80, 50 + thresholdShift));
+  return personalProb >= threshold;
+}
+
+/**
+ * Determine the YOU particle's gate route (3-way: no/partial/yes).
+ * Uses proportional boundaries based on personalized prob + sacred threshold.
+ */
+export function youGateRoute(
+  prob: number,
+  partialPct: number,
+  sacredProfile?: Record<string, number> | null,
+): 'no' | 'partial' | 'yes' {
+  const personalProb = computePersonalProb(prob, sacredProfile);
+  const noPct = 100 - personalProb - partialPct;
+
+  if (!sacredProfile || Object.keys(sacredProfile).length === 0) {
+    if (personalProb >= 50) return 'yes';
+    if (personalProb >= noPct) return 'partial';
+    return 'no';
+  }
+
+  const scores = Object.values(sacredProfile);
+  const avg = scores.reduce((s, v) => s + v, 0) / scores.length;
+  // Sacred bonus: shifts the yes/partial/no boundaries
+  // Strong profile (avg 8) = +6 bonus to effective prob for routing
+  // Weak profile (avg 2) = -6 penalty
+  const sacredBonus = (avg - 5) * 2;
+  const effectiveForRouting = personalProb + sacredBonus;
+
+  if (effectiveForRouting >= 50) return 'yes';
+  if (effectiveForRouting >= noPct) return 'partial';
+  return 'no';
+}
+
 // Pre-compute all fates deterministically before animation
 export function precomputeFates(
   totalPeople: number,
@@ -100,13 +165,9 @@ export function precomputeFates(
           ?? Math.min(25, Math.floor((100 - effectiveProb) / 2));
         const noPct = 100 - effectiveProb - partialPct;
 
-        // For YOU: use personal prob to determine route directly (not counter-based)
+        // For YOU: use dynamic threshold routing (not fixed 50% cutoff)
         if (isYou) {
-          // Deterministic: if personalProb >= 50, route YES; if >= noPct, route PARTIAL; else NO
-          let route: 'no' | 'partial' | 'yes';
-          if (effectiveProb >= 50) route = 'yes';
-          else if (effectiveProb >= noPct) route = 'partial';
-          else route = 'no';
+          const route = youGateRoute(prob, partialPct, sacredProfile);
 
           const fallback = out[0]?.target || '';
           if (route === 'no') { cnt.routedNo++; deathNode = currentNodeId; currentNodeId = noEdge?.target || fallback; }
@@ -140,11 +201,9 @@ export function precomputeFates(
       if (hasProb) {
         cnt.arrivals++;
 
-        // YOU uses personalized probability at bottlenecks
+        // YOU uses dynamic threshold routing at bottlenecks (not fixed 50% cutoff)
         if (isYou) {
-          const personalProb = computePersonalProb(prob, sacredProfile);
-          // Deterministic: pass if personalProb >= 50
-          const pass = personalProb >= 50;
+          const pass = shouldYouPass(prob, sacredProfile);
           if (pass) cnt.passed++;
 
           if (!pass) {

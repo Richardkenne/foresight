@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Node as RFNode } from '@xyflow/react';
 import type { SimStats } from './useSimulation';
@@ -39,7 +39,6 @@ function computeInsights(
 
   const total = stats.total;
   const success = stats.success;
-  const blocked = stats.blocked;
   const rate = total > 0 ? Math.round((success / total) * 100) : 0;
 
   // Survival rate
@@ -100,8 +99,7 @@ function computeInsights(
     }
   }
 
-  // Outcome nodes insight
-  const outcomeGood = nodes.filter(n => (n.data as Record<string, unknown>).nodeType === 'outcome-good');
+  // Worst outcome
   const outcomeBad = nodes.filter(n => (n.data as Record<string, unknown>).nodeType === 'outcome-bad');
   if (outcomeBad.length > 0 && total >= 20) {
     let worstOutcome = { label: '', count: 0 };
@@ -119,6 +117,8 @@ function computeInsights(
     }
   }
 
+  // Best outcome
+  const outcomeGood = nodes.filter(n => (n.data as Record<string, unknown>).nodeType === 'outcome-good');
   if (outcomeGood.length > 0 && success > 0) {
     let bestOutcome = { label: '', count: 0 };
     for (const n of outcomeGood) {
@@ -138,29 +138,41 @@ function computeInsights(
   return insights;
 }
 
+const TYPE_STYLES: Record<string, { color: string; icon: string }> = {
+  stat: { color: '#3b82f6', icon: '#' },
+  alert: { color: '#f59e0b', icon: '!' },
+  pattern: { color: '#8b5cf6', icon: '~' },
+  ai: { color: '#10b981', icon: '*' },
+};
+
 export default function LiveInsights({ simStats, nodes, nodeReachRef, edges, scenario, onClose }: LiveInsightsProps) {
   const [insights, setInsights] = useState<Insight[]>([]);
   const [realTimeFacts, setRealTimeFacts] = useState<string[]>([]);
   const [currentFactIdx, setCurrentFactIdx] = useState(0);
   const prevStatsRef = useRef<SimStats | null>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
+  // Stable refs to avoid recreating the interval callback
+  const statsRef = useRef(simStats);
+  const nodesRef = useRef(nodes);
+  const edgesRef = useRef(edges);
+  statsRef.current = simStats;
+  nodesRef.current = nodes;
+  edgesRef.current = edges;
 
-  const addInsights = useCallback(() => {
-    const newInsights = computeInsights(simStats, nodes, nodeReachRef.current, edges, prevStatsRef.current);
-    if (newInsights.length > 0) {
-      setInsights(prev => [...newInsights, ...prev].slice(0, 50));
-    }
-    prevStatsRef.current = { ...simStats };
-  }, [simStats, nodes, nodeReachRef, edges]);
-
-  // Compute insights every 30 seconds
+  // Compute insights every 5 seconds (stable interval, no dependency on simStats)
   useEffect(() => {
-    addInsights();
-    const id = setInterval(addInsights, 30000);
+    const tick = () => {
+      const newInsights = computeInsights(statsRef.current, nodesRef.current, nodeReachRef.current, edgesRef.current, prevStatsRef.current);
+      if (newInsights.length > 0) {
+        setInsights(prev => [...newInsights, ...prev].slice(0, 30));
+      }
+      prevStatsRef.current = { ...statsRef.current };
+    };
+    tick();
+    const id = setInterval(tick, 5000);
     return () => clearInterval(id);
-  }, [addInsights]);
+  }, [nodeReachRef]);
 
-  // Fetch real-time world facts on mount (Tavily + Haiku)
+  // Fetch real-time world facts on mount
   useEffect(() => {
     if (!scenario) return;
     fetch('/api/live-facts', {
@@ -169,35 +181,24 @@ export default function LiveInsights({ simStats, nodes, nodeReachRef, edges, sce
       body: JSON.stringify({ scenario }),
     })
       .then(r => r.ok ? r.json() : { facts: [] })
-      .then(d => {
-        if (d.facts?.length > 0) setRealTimeFacts(d.facts);
-      })
+      .then(d => { if (d.facts?.length > 0) setRealTimeFacts(d.facts); })
       .catch(() => {});
   }, [scenario]);
 
   // Rotate real-time facts every 8 seconds
   useEffect(() => {
     if (realTimeFacts.length === 0) return;
-    const id = setInterval(() => {
-      setCurrentFactIdx(prev => (prev + 1) % realTimeFacts.length);
-    }, 8000);
+    const id = setInterval(() => setCurrentFactIdx(prev => (prev + 1) % realTimeFacts.length), 8000);
     return () => clearInterval(id);
   }, [realTimeFacts]);
-
-  const typeStyles: Record<string, { color: string; icon: string }> = {
-    stat: { color: '#60a5fa', icon: '#' },
-    alert: { color: '#fbbf24', icon: '!' },
-    pattern: { color: '#a78bfa', icon: '~' },
-    ai: { color: '#34d399', icon: '*' },
-  };
 
   return (
     <motion.div
       className="w-full sm:w-[320px] shrink-0 h-full flex flex-col overflow-hidden"
       style={{
-        background: 'rgba(6, 8, 16, 0.92)',
+        background: 'var(--surface)',
         backdropFilter: 'blur(20px)',
-        borderLeft: '1px solid rgba(255,255,255,0.06)',
+        borderLeft: '1px solid var(--border)',
       }}
       initial={{ x: 320, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
@@ -205,15 +206,15 @@ export default function LiveInsights({ simStats, nodes, nodeReachRef, edges, sce
       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
     >
       {/* Header */}
-      <div className="flex justify-between items-center px-4 pt-4 pb-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <div className="flex justify-between items-center px-4 pt-4 pb-3" style={{ borderBottom: '1px solid var(--border)' }}>
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#ef4444' }} />
           <span style={{ fontSize: 11, fontWeight: 700, color: '#ef4444', letterSpacing: '0.1em', fontFamily: 'var(--font-geist-mono, monospace)' }}>LIVE INSIGHTS</span>
         </div>
         <button
           onClick={onClose}
-          className="w-6 h-6 flex items-center justify-center rounded-full hover:bg-white/10 transition-all cursor-pointer"
-          style={{ color: '#64748b' }}
+          className="w-6 h-6 flex items-center justify-center rounded-full transition-all cursor-pointer"
+          style={{ color: 'var(--muted)' }}
         >
           <svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             <path d="M1 1l12 12M13 1L1 13" />
@@ -223,7 +224,7 @@ export default function LiveInsights({ simStats, nodes, nodeReachRef, edges, sce
 
       {/* Real-time world ticker */}
       {realTimeFacts.length > 0 && (
-        <div className="px-4 py-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: 'rgba(239, 68, 68, 0.04)' }}>
+        <div className="px-4 py-3" style={{ borderBottom: '1px solid var(--border)', background: 'rgba(239, 68, 68, 0.04)' }}>
           <div className="flex items-center gap-1.5 mb-1.5">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
@@ -237,58 +238,52 @@ export default function LiveInsights({ simStats, nodes, nodeReachRef, edges, sce
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.4 }}
-              style={{ fontSize: 11, color: '#e2e8f0', lineHeight: 1.6 }}
+              style={{ fontSize: 11, color: 'var(--foreground)', lineHeight: 1.6 }}
             >
               {realTimeFacts[currentFactIdx]}
             </motion.p>
           </AnimatePresence>
           <div className="flex gap-0.5 mt-2">
             {realTimeFacts.map((_, i) => (
-              <div key={i} className="h-[2px] flex-1 rounded-full transition-all duration-300" style={{ background: i === currentFactIdx ? '#ef4444' : 'rgba(255,255,255,0.08)' }} />
+              <div key={i} className="h-[2px] flex-1 rounded-full transition-all duration-300" style={{ background: i === currentFactIdx ? '#ef4444' : 'var(--border)' }} />
             ))}
           </div>
         </div>
       )}
 
       {/* Insights feed */}
-      <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-3 space-y-2">
-        <AnimatePresence initial={false}>
-          {insights.length === 0 && realTimeFacts.length === 0 && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ color: '#475569', fontSize: 12, textAlign: 'center', paddingTop: 40 }}>
-              Connecting to real-time data...
-              <br />
-              <span style={{ fontSize: 10, color: '#334155' }}>Loading world facts + simulation insights</span>
-            </motion.div>
-          )}
-          {insights.map((insight) => {
-            const style = typeStyles[insight.type] || typeStyles.stat;
-            return (
-              <motion.div
-                key={insight.id}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.2 }}
-                className="rounded-lg px-3 py-2.5"
-                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.04)' }}
-              >
-                <div className="flex items-start gap-2">
-                  <span style={{
-                    fontSize: 10, fontWeight: 800, color: style.color,
-                    fontFamily: 'var(--font-geist-mono, monospace)',
-                    width: 14, textAlign: 'center', flexShrink: 0, marginTop: 1,
-                  }}>
-                    {style.icon}
-                  </span>
-                  <div className="flex-1 min-w-0">
-                    <p style={{ fontSize: 11, color: '#cbd5e1', lineHeight: 1.5 }}>{insight.text}</p>
-                    <span style={{ fontSize: 9, color: '#475569', fontFamily: 'var(--font-geist-mono, monospace)' }}>{insight.time}</span>
-                  </div>
+      <div className="flex-1 overflow-y-auto px-4 py-3 space-y-1.5">
+        {insights.length === 0 && realTimeFacts.length === 0 && (
+          <div style={{ color: 'var(--muted)', fontSize: 12, textAlign: 'center', paddingTop: 40 }}>
+            Connecting to real-time data...
+            <br />
+            <span style={{ fontSize: 10 }}>Loading world facts + simulation insights</span>
+          </div>
+        )}
+        {insights.map((insight) => {
+          const s = TYPE_STYLES[insight.type] || TYPE_STYLES.stat;
+          return (
+            <div
+              key={insight.id}
+              className="rounded-lg px-3 py-2"
+              style={{ background: 'var(--surface-hover)', border: '1px solid var(--border)' }}
+            >
+              <div className="flex items-start gap-2">
+                <span style={{
+                  fontSize: 10, fontWeight: 800, color: s.color,
+                  fontFamily: 'var(--font-geist-mono, monospace)',
+                  width: 14, textAlign: 'center', flexShrink: 0, marginTop: 1,
+                }}>
+                  {s.icon}
+                </span>
+                <div className="flex-1 min-w-0">
+                  <p style={{ fontSize: 11, color: 'var(--foreground)', lineHeight: 1.5 }}>{insight.text}</p>
+                  <span style={{ fontSize: 9, color: 'var(--muted)', fontFamily: 'var(--font-geist-mono, monospace)' }}>{insight.time}</span>
                 </div>
-              </motion.div>
-            );
-          })}
-        </AnimatePresence>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </motion.div>
   );

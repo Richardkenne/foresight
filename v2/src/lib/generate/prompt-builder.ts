@@ -5,11 +5,68 @@ import {
   buildIndustryCountryContext,
   findSacredPatterns,
   matchSacredRoots,
-  loadRealProbabilities,
+  loadRelevantProbabilities,
   CURRENCY_MAP,
 } from './data-fetcher';
 import type { ParentContext } from './types';
 import { DEPTH_NODE_COUNTS, type DepthLevel } from './types';
+
+// ============ CONDITIONAL PROMPT SECTIONS (injected only when relevant) ============
+
+const UPWORK_MECHANICS = `
+UPWORK/FREELANCE PLATFORM MECHANICS:
+- Profile approval: ~50-60% of submissions approved (Upwork tightened screening 2023)
+- Connects: $0.15 each, 2-16 per proposal. Average $9-27 spent before first hire.
+- Proposal-to-interview rate: 2-5% for new freelancers, 15-25% for established, 30-50% for Top Rated Plus
+- Proposals before first hire: 15-30 (median 20)
+- Time to first dollar: 1-3 months
+- 60-70% of new freelancers quit within year 1
+- Only 2.5% of signups get their first job. Only 0.8% still active after 1 year.
+- Income: median active freelancer earns $2-5K/year. Top 1% earns $150-500K/year.
+- JSS (Job Success Score) 90%+ = 2-3x higher hire rate. Top Rated = 3-5x more invites.
+- Expert-Vetted acceptance: 1%. Rates: $150-300/hr.
+- Repeat hire rate: 60%. 75% of GSV from returning clients.
+- Hourly-to-retainer conversion: 30-40% for 3+ month relationships.
+- Solo-to-agency transition: 5-7% overall, 15-20% of high earners. Takes 3-5 years.
+- Geographic rates: US $75-150/hr dev, India $15-40/hr, Indonesia $10-30/hr, Philippines $10-30/hr.
+- AI category: demand 2-3x supply, rates $75-150/hr median, +1400% YoY growth.`;
+
+const ARCHETYPE_SKELETONS: Record<string, string> = {
+  career: `
+NON-BUSINESS ARCHETYPE — CAREER CHANGE:
+state("Current job, unhappy") → desire("Want new career") → action("Skill assessment") → bottleneck("Skills transferable?") → action("Training/upskilling") → state("New skills acquired") → action("Networking in new field") → bottleneck("Get interviews?") → action("Interview process") → bottleneck("Job offer?") → state("New role, adaptation period") → outcome
+Adapt node count and specifics to the actual scenario. Always include state nodes showing transformation.`,
+  immigration: `
+NON-BUSINESS ARCHETYPE — IMMIGRATION:
+state("Living in country A") → desire("Move to country B") → action("Research visa options") → bottleneck("Eligible for visa?") → action("Document preparation") → bottleneck("Visa approved?") → action("Relocation logistics") → state("Arrived, settling in") → bottleneck("Find housing/work?") → state("Integrated in new country") → outcome
+Adapt node count and specifics to the actual scenario. Always include state nodes showing transformation.`,
+  education: `
+NON-BUSINESS ARCHETYPE — EDUCATION:
+state("Current education level") → desire("Higher degree/new skill") → action("Research programs") → bottleneck("Accepted?") → action("Enrollment + funding") → bottleneck("Afford it?") → state("Studying") → bottleneck("Graduate?") → action("Job search with new credential") → bottleneck("Land role?") → outcome
+Adapt node count and specifics to the actual scenario. Always include state nodes showing transformation.`,
+  fitness: `
+NON-BUSINESS ARCHETYPE — PERSONAL GOAL:
+state("Current condition") → desire("Goal defined") → action("Create plan") → bottleneck("Stick to plan week 1-4?") → state("Habit forming") → bottleneck("Survive obstacles?") → state("Consistent for 3+ months") → bottleneck("Hit milestone?") → outcome
+Adapt node count and specifics to the actual scenario. Always include state nodes showing transformation.`,
+};
+
+const SCENARIO_TYPE_KEYWORDS: Record<string, string[]> = {
+  career: ['job', 'career', 'interview', 'salary', 'promotion', 'resign', 'quit job', 'new role', 'hire', 'employment'],
+  immigration: ['visa', 'move abroad', 'immigrate', 'emigrate', 'relocate', 'expat', 'country', 'passport', 'citizenship'],
+  education: ['degree', 'university', 'college', 'bootcamp', 'certificate', 'study', 'masters', 'phd', 'school', 'course'],
+  fitness: ['gym', 'fitness', 'diet', 'weight', 'exercise', 'health', 'run', 'marathon', 'muscle', 'body'],
+};
+
+function detectScenarioType(scenario: string): string | null {
+  const lower = scenario.toLowerCase();
+  let bestType: string | null = null;
+  let bestScore = 0;
+  for (const [type, keywords] of Object.entries(SCENARIO_TYPE_KEYWORDS)) {
+    const score = keywords.filter(kw => lower.includes(kw)).length;
+    if (score > bestScore) { bestScore = score; bestType = type; }
+  }
+  return bestScore >= 1 ? bestType : null;
+}
 
 // ============ STATIC SYSTEM PROMPT (cached across requests) ============
 export const STATIC_PROMPT = `You are a life/business scenario simulator. Generate a realistic flowchart with nodes and edges.
@@ -66,30 +123,6 @@ Node labels for bottleneck/decision/gate MUST show a range in parentheses, e.g.,
 NODE DEPENDENCY SYSTEM: For bottleneck and gate nodes, include a "modifiesDownstream" field: an array of objects {"targetNodeLabel": string, "modifier": number} where modifier is a multiplier applied to downstream node probabilities. Example: if "Land First Client" passes, it might boost "Get Referral" by 1.3x (30% more likely). If "Funding Secured" fails, downstream "Scale Team" drops by 0.5x. Use modifiers between 0.3-2.0. Only include when a real causal dependency exists between nodes — do not force dependencies on every node.
 desc MUST include a specific number/stat, not generic text. Use rich text formatting in desc: **bold** for key numbers and critical terms, __underline__ for warnings or emphasis, and \\n for line breaks to structure the text into readable paragraphs. Never write a wall of text — break it into 2-3 short paragraphs with line breaks.
 SOURCE TRIANGULATION: For every bottleneck/decision prob, provide MULTIPLE sources when possible. Format: "SourceName Year:value:tier | SourceName Year:value:tier" where tier is 3=government(BLS,Census,WHO), 2=institutional(McKinsey,YC,PitchBook), 1=media(TechCrunch,Forbes). prob = weighted avg (tier3 x3, tier2 x2, tier1 x1). Example: "BLS 2024:70:3 | CB Insights 2024:65:2" → prob = (70*3+65*2)/5 = 68.
-
-UPWORK/FREELANCE PLATFORM MECHANICS (use when scenario involves Upwork or freelancing):
-- Profile approval: ~50-60% of submissions approved (Upwork tightened screening 2023)
-- Connects: $0.15 each, 2-16 per proposal. Average $9-27 spent before first hire.
-- Proposal-to-interview rate: 2-5% for new freelancers, 15-25% for established, 30-50% for Top Rated Plus
-- Proposals before first hire: 15-30 (median 20)
-- Time to first dollar: 1-3 months
-- 60-70% of new freelancers quit within year 1
-- Only 2.5% of signups get their first job. Only 0.8% still active after 1 year.
-- Income: median active freelancer earns $2-5K/year. Top 1% earns $150-500K/year.
-- JSS (Job Success Score) 90%+ = 2-3x higher hire rate. Top Rated = 3-5x more invites.
-- Expert-Vetted acceptance: 1%. Rates: $150-300/hr.
-- Repeat hire rate: 60%. 75% of GSV from returning clients.
-- Hourly-to-retainer conversion: 30-40% for 3+ month relationships.
-- Solo-to-agency transition: 5-7% overall, 15-20% of high earners. Takes 3-5 years.
-- Geographic rates: US $75-150/hr dev, India $15-40/hr, Indonesia $10-30/hr, Philippines $10-30/hr.
-- AI category: demand 2-3x supply, rates $75-150/hr median, +1400% YoY growth.
-
-NON-BUSINESS SCENARIO ARCHETYPES (use these flow patterns when the scenario is NOT a business):
-- CAREER CHANGE: state("Current job, unhappy") → desire("Want new career") → action("Skill assessment") → bottleneck("Skills transferable?") → action("Training/upskilling") → state("New skills acquired") → action("Networking in new field") → bottleneck("Get interviews?") → action("Interview process") → bottleneck("Job offer?") → state("New role, adaptation period") → outcome
-- IMMIGRATION: state("Living in country A") → desire("Move to country B") → action("Research visa options") → bottleneck("Eligible for visa?") → action("Document preparation") → bottleneck("Visa approved?") → action("Relocation logistics") → state("Arrived, settling in") → bottleneck("Find housing/work?") → state("Integrated in new country") → outcome
-- EDUCATION: state("Current education level") → desire("Higher degree/new skill") → action("Research programs") → bottleneck("Accepted?") → action("Enrollment + funding") → bottleneck("Afford it?") → state("Studying") → bottleneck("Graduate?") → action("Job search with new credential") → bottleneck("Land role?") → outcome
-- PERSONAL GOAL (fitness, habit, skill): state("Current condition") → desire("Goal defined") → action("Create plan") → bottleneck("Stick to plan week 1-4?") → state("Habit forming") → bottleneck("Survive obstacles?") → state("Consistent for 3+ months") → bottleneck("Hit milestone?") → outcome
-These are SKELETONS — adapt node count and specifics to the actual scenario. Always include state nodes showing transformation.
 
 DECISION PRUNING QUESTIONS: Generate exactly 5-7 binary YES/NO questions that determine success/failure for THIS specific scenario. Each question must:
 - Be a simple YES/NO binary decision the person makes BEFORE starting
@@ -162,6 +195,19 @@ export async function buildDynamicPrompt(input: DynamicPromptInput): Promise<str
     console.log(`[API] Business type detected: ${businessType}`);
   }
 
+  // CONDITIONAL: Upwork mechanics (only for freelance/upwork scenarios)
+  if (businessType === 'upwork-data' || scenario.toLowerCase().includes('upwork') || scenario.toLowerCase().includes('freelanc')) {
+    liveStr += UPWORK_MECHANICS;
+    console.log('[API] Upwork mechanics injected (conditional)');
+  }
+
+  // CONDITIONAL: Non-business archetype skeleton (only when scenario matches)
+  const scenarioType = detectScenarioType(scenario);
+  if (scenarioType && ARCHETYPE_SKELETONS[scenarioType]) {
+    liveStr += ARCHETYPE_SKELETONS[scenarioType];
+    console.log(`[API] Archetype skeleton injected: ${scenarioType}`);
+  }
+
   // INDUSTRY + COUNTRY baseline probabilities
   const profileCountry = (profile as Record<string, unknown> | undefined)?.country as string | undefined;
   const industryCountryCtx = buildIndustryCountryContext(businessType, detectedCountries, profileCountry);
@@ -176,8 +222,8 @@ export async function buildDynamicPrompt(input: DynamicPromptInput): Promise<str
     liveStr += `\n\n${sacredContext}`;
   }
 
-  // LAYER 0.5: Sacred Roots
-  const sacredRootsContext = matchSacredRoots(scenario);
+  // LAYER 0.5: Sacred Roots (top 3 with min score 3 — reduced from top 5 for token efficiency)
+  const sacredRootsContext = matchSacredRoots(scenario, 3);
   if (sacredRootsContext) {
     liveStr += sacredRootsContext;
   }
@@ -196,9 +242,9 @@ export async function buildDynamicPrompt(input: DynamicPromptInput): Promise<str
     console.log('[API] Sacred mode active');
   }
 
-  // LAYER 2: Real probabilities (skip in sacred mode)
+  // LAYER 2: Real probabilities — filtered to relevant categories only (skip in sacred mode)
   if (!sacredMode) {
-    const realProbs = loadRealProbabilities();
+    const realProbs = loadRelevantProbabilities(businessType, scenario);
     if (realProbs) {
       liveStr += `\n\nVERIFIED REAL PROBABILITIES (confirms the sacred patterns above — use these exact numbers):\n${realProbs}`;
     }

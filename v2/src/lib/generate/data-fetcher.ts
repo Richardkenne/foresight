@@ -9,21 +9,95 @@ import type {
 } from './types';
 
 // ============ REAL PROBABILITIES LOOKUP ============
-export function loadRealProbabilities(): string {
+
+// Category keywords for filtering relevant probabilities
+const PROB_CATEGORY_KEYWORDS: Record<string, string[]> = {
+  business: ['business', 'startup', 'company', 'revenue', 'saas', 'ecommerce', 'shop', 'store', 'restaurant', 'cafe'],
+  freelance: ['freelance', 'upwork', 'fiverr', 'gig', 'contract', 'client'],
+  career: ['job', 'career', 'salary', 'interview', 'hire', 'employment', 'promotion', 'work'],
+  education: ['degree', 'university', 'college', 'school', 'study', 'bootcamp', 'course', 'learn'],
+  health: ['health', 'fitness', 'diet', 'exercise', 'weight', 'mental', 'therapy'],
+  finance: ['invest', 'stock', 'crypto', 'save', 'debt', 'mortgage', 'loan', 'money'],
+  immigration: ['visa', 'immigrate', 'move', 'relocate', 'abroad', 'country', 'expat'],
+  relationship: ['marriage', 'divorce', 'relationship', 'dating', 'partner'],
+};
+
+function detectRelevantCategories(scenario: string, businessType: string | null): string[] {
+  const lower = scenario.toLowerCase();
+  const matched: { category: string; score: number }[] = [];
+
+  for (const [category, keywords] of Object.entries(PROB_CATEGORY_KEYWORDS)) {
+    const score = keywords.filter(kw => lower.includes(kw)).length;
+    if (score > 0) matched.push({ category, score });
+  }
+
+  // Always include business if a businessType was detected
+  if (businessType && !matched.some(m => m.category === 'business')) {
+    matched.push({ category: 'business', score: 1 });
+  }
+
+  matched.sort((a, b) => b.score - a.score);
+  // Return top 3 categories, or all if fewer
+  return matched.slice(0, 3).map(m => m.category);
+}
+
+let cachedRealProbs: Record<string, Record<string, { prob: number; source: string; year?: number }>> | null = null;
+
+function loadRealProbsRaw(): Record<string, Record<string, { prob: number; source: string; year?: number }>> {
+  if (cachedRealProbs) return cachedRealProbs;
   const filePath = path.join(process.cwd(), 'data', 'real-probabilities.json');
   try {
-    const raw = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    cachedRealProbs = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    return cachedRealProbs!;
+  } catch {
+    return {};
+  }
+}
+
+// Original: sends ALL 390 entries. Kept for backwards compatibility.
+export function loadRealProbabilities(): string {
+  return loadRelevantProbabilities(null, '');
+}
+
+// Optimized: sends only relevant categories (max 3, top 15 entries each)
+export function loadRelevantProbabilities(businessType: string | null, scenario: string): string {
+  const raw = loadRealProbsRaw();
+  if (Object.keys(raw).length === 0) return '';
+
+  const relevantCategories = detectRelevantCategories(scenario, businessType);
+
+  // If no categories matched, send a compact "always useful" subset
+  if (relevantCategories.length === 0) {
     const lines: string[] = [];
     for (const [category, entries] of Object.entries(raw)) {
-      for (const [key, data] of Object.entries(entries as Record<string, { prob: number; source: string; year?: number }>)) {
+      let count = 0;
+      for (const [key, data] of Object.entries(entries)) {
+        if (count >= 5) break; // max 5 per category when no filter
         const label = key.replace(/_/g, ' ');
         lines.push(`${category}/${label}: ${data.prob}% (${data.source}${data.year ? ` ${data.year}` : ''})`);
+        count++;
       }
     }
     return lines.join('\n');
-  } catch {
-    return '';
   }
+
+  const lines: string[] = [];
+  for (const category of relevantCategories) {
+    // Find matching categories in the raw data (fuzzy: "business" matches "business", "business_startup", etc.)
+    for (const [rawCategory, entries] of Object.entries(raw)) {
+      if (rawCategory.toLowerCase().includes(category) || category.includes(rawCategory.toLowerCase())) {
+        let count = 0;
+        for (const [key, data] of Object.entries(entries)) {
+          if (count >= 15) break;
+          const label = key.replace(/_/g, ' ');
+          lines.push(`${rawCategory}/${label}: ${data.prob}% (${data.source}${data.year ? ` ${data.year}` : ''})`);
+          count++;
+        }
+      }
+    }
+  }
+
+  return lines.join('\n');
 }
 
 // ============ SACRED PATTERNS LOOKUP ============
@@ -48,7 +122,7 @@ function loadSacredRoots(): SacredRoot[] | null {
   } catch { return null; }
 }
 
-export function matchSacredRoots(scenario: string, limit = 5): string {
+export function matchSacredRoots(scenario: string, limit = 3, minScore = 3): string {
   const roots = loadSacredRoots();
   if (!roots) return '';
 
@@ -71,7 +145,7 @@ export function matchSacredRoots(scenario: string, limit = 5): string {
       const overlap = words.filter(w => exWords.some(ew => ew.includes(w))).length;
       score += overlap;
     }
-    if (score > 0) scores.push({ root, score });
+    if (score >= minScore) scores.push({ root, score });
   }
 
   scores.sort((a, b) => b.score - a.score);
