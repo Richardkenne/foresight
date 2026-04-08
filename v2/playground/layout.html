@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout Playground</title>
+  <style>
+    /* ========================================
+       RESET
+       ======================================== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ========================================
+       LAYOUT PRINCIPALE
+       Struttura:
+       ┌──────────────────────────────────┐
+       │          TOP BAR                 │
+       ├─────┬──────────────────┬─────────┤
+       │     │                  │         │
+       │ SX  │    CENTRO        │   DX    │
+       │     │                  │         │
+       ├─────┴──────────────────┴─────────┤
+       │          BOTTOM                  │
+       └──────────────────────────────────┘
+       ======================================== */
+    .app {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* ========================================
+       TOP BAR — altezza fissa
+       ======================================== */
+    .topbar {
+      height: 44px;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+    .topbar-item {
+      padding: 6px 12px;
+      font-size: 13px;
+      color: #6b7280;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .topbar-item:hover { color: #1a1a1a; background: #f3f4f6; }
+    .topbar-item.active { color: #2962ff; }
+
+    /* ========================================
+       AREA CENTRALE — flex row
+       ======================================== */
+    .middle {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ========================================
+       SIDEBAR SINISTRA
+       SPERIMENTA: width, background, padding
+       ======================================== */
+    .sidebar-left {
+      width: 48px;
+      background: #f8f9fa;
+      border-right: 1px solid #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px 0;
+      gap: 2px;
+      flex-shrink: 0;
+    }
+    .sidebar-icon {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #6b7280;
+      font-size: 15px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .sidebar-icon:hover { background: #e8e8e8; color: #1a1a1a; }
+    .sidebar-icon.active { color: #2962ff; }
+
+    /* ========================================
+       CENTRO — prende tutto lo spazio
+       ======================================== */
+    .center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .center-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    /* ========================================
+       RESIZE HANDLE — divisore trascinabile
+       ======================================== */
+    .resize-handle {
+      width: 4px;
+      cursor: col-resize;
+      background: transparent;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .resize-handle:hover,
+    .resize-handle.active {
+      background: #2962ff;
+    }
+    .resize-handle-h {
+      height: 4px;
+      width: 100%;
+      cursor: row-resize;
+      background: transparent;
+      flex-shrink: 0;
+    }
+    .resize-handle-h:hover,
+    .resize-handle-h.active {
+      background: #2962ff;
+    }
+
+    /* ========================================
+       PANEL DESTRO
+       SPERIMENTA: width, padding, contenuto
+       ======================================== */
+    .panel-right {
+      width: 320px;
+      background: #ffffff;
+      border-left: 1px solid #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .panel-header {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a1a1a;
+      letter-spacing: -0.01em;
+    }
+    .panel-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 4px 8px;
+    }
+
+    /* ========================================
+       WATCHLIST ITEM — esempio card dentro panel
+       SPERIMENTA: padding, colori, font-size
+       ======================================== */
+    .watchlist-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .watchlist-item:hover { background: #f3f4f6; }
+    .watchlist-symbol {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+      letter-spacing: -0.01em;
+    }
+    .watchlist-price {
+      font-size: 13px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-variant-numeric: tabular-nums;
+    }
+    .watchlist-price.up { color: #26a69a; }
+    .watchlist-price.down { color: #ef5350; }
+
+    /* ========================================
+       BOTTOM BAR
+       SPERIMENTA: height, tabs, contenuto
+       ======================================== */
+    .bottombar {
+      height: 180px;
+      background: #f8f9fa;
+      border-top: 1px solid #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+    .bottombar-tabs {
+      display: flex;
+      height: 36px;
+      align-items: center;
+      padding: 0 12px;
+      gap: 2px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .bottombar-tab {
+      padding: 6px 12px;
+      font-size: 12px;
+      color: #6b7280;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .bottombar-tab:hover { color: #1a1a1a; background: #f3f4f6; }
+    .bottombar-tab.active { color: #1a1a1a; background: #e5e7eb; }
+    .bottombar-content {
+      flex: 1;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: #6b7280;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============ TOP BAR ============ -->
+  <div class="topbar">
+    <div class="topbar-item active">1D</div>
+    <div class="topbar-item">1W</div>
+    <div class="topbar-item">1M</div>
+    <div class="topbar-item" style="margin-left: 16px;">Indicators</div>
+    <div class="topbar-item">Strategy</div>
+    <div class="topbar-item">Alert</div>
+    <div class="topbar-item" style="margin-left: auto;">Settings</div>
+  </div>
+
+  <!-- ============ MIDDLE (sidebar + center + panel) ============ -->
+  <div class="middle">
+
+    <!-- Sidebar sinistra -->
+    <div class="sidebar-left">
+      <div class="sidebar-icon active">+</div>
+      <div class="sidebar-icon">T</div>
+      <div class="sidebar-icon">/</div>
+      <div class="sidebar-icon">~</div>
+      <div class="sidebar-icon">@</div>
+    </div>
+
+    <!-- Centro -->
+    <div class="center">
+      <div class="center-content">
+        Canvas area — il grafico va qui
+      </div>
+    </div>
+
+    <!-- Resize handle (trascinabile) -->
+    <div class="resize-handle" id="resizeRight"></div>
+
+    <!-- Panel destro -->
+    <div class="panel-right" id="panelRight">
+      <div class="panel-header">Watchlist</div>
+      <div class="panel-body">
+        <div class="watchlist-item">
+          <span class="watchlist-symbol">AAPL</span>
+          <span class="watchlist-price up">192.53</span>
+        </div>
+        <div class="watchlist-item">
+          <span class="watchlist-symbol">TSLA</span>
+          <span class="watchlist-price down">248.42</span>
+        </div>
+        <div class="watchlist-item">
+          <span class="watchlist-symbol">NVDA</span>
+          <span class="watchlist-price up">881.86</span>
+        </div>
+        <div class="watchlist-item">
+          <span class="watchlist-symbol">MSFT</span>
+          <span class="watchlist-price up">425.22</span>
+        </div>
+        <div class="watchlist-item">
+          <span class="watchlist-symbol">BTC/USD</span>
+          <span class="watchlist-price down">67,420</span>
+        </div>
+        <div class="watchlist-item">
+          <span class="watchlist-symbol">ETH/USD</span>
+          <span class="watchlist-price up">3,521</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Resize handle orizzontale -->
+  <div class="resize-handle-h" id="resizeBottom"></div>
+
+  <!-- ============ BOTTOM BAR ============ -->
+  <div class="bottombar" id="bottomBar">
+    <div class="bottombar-tabs">
+      <div class="bottombar-tab active">Orders</div>
+      <div class="bottombar-tab">Alerts</div>
+      <div class="bottombar-tab">Log</div>
+      <div class="bottombar-tab">Strategy</div>
+    </div>
+    <div class="bottombar-content">
+      No open orders — click here to place one
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ RESIZE LOGIC ============ -->
+<script>
+  // Panel destro — resize orizzontale
+  const resizeRight = document.getElementById('resizeRight');
+  const panelRight = document.getElementById('panelRight');
+  let isResizingRight = false;
+
+  resizeRight.addEventListener('mousedown', () => {
+    isResizingRight = true;
+    resizeRight.classList.add('active');
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+  });
+
+  // Bottom bar — resize verticale
+  const resizeBottom = document.getElementById('resizeBottom');
+  const bottomBar = document.getElementById('bottomBar');
+  let isResizingBottom = false;
+
+  resizeBottom.addEventListener('mousedown', () => {
+    isResizingBottom = true;
+    resizeBottom.classList.add('active');
+    document.body.style.cursor = 'row-resize';
+    document.body.style.userSelect = 'none';
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (isResizingRight) {
+      const newWidth = window.innerWidth - e.clientX;
+      if (newWidth > 100 && newWidth < 600) {
+        panelRight.style.width = newWidth + 'px';
+      }
+    }
+    if (isResizingBottom) {
+      const newHeight = window.innerHeight - e.clientY;
+      if (newHeight > 60 && newHeight < 500) {
+        bottomBar.style.height = newHeight + 'px';
+      }
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+    isResizingRight = false;
+    isResizingBottom = false;
+    resizeRight.classList.remove('active');
+    resizeBottom.classList.remove('active');
+    document.body.style.cursor = '';
+    document.body.style.userSelect = '';
+  });
+</script>
+
+</body>
+</html>

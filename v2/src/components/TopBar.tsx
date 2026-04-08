@@ -9,6 +9,10 @@ import HistoryPanel from './HistoryPanel';
 import ProfilePanel from './ProfilePanel';
 import ModeSelector from './ModeSelector';
 import PersonalProfileInline from './PersonalProfileInline';
+import Sidebar from './Sidebar';
+import SidebarHeader from './sidebar/SidebarHeader';
+import AttachmentChips from './topbar/AttachmentChips';
+import ModeStrip from './topbar/ModeStrip';
 import { type SimMode, MODE_CONFIG } from '@/lib/sim-modes';
 import type { ContextTags } from '@/lib/context-tags';
 import type { HistoryEntry } from '@/lib/history';
@@ -710,51 +714,11 @@ export default function TopBar({
       </div>
 
       {/* ─── Attachment chips ─── */}
-      {attachments.length > 0 && (
-        <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-6 py-2 border-t border-[var(--border)] overflow-x-auto" style={{ background: 'var(--surface)', scrollbarWidth: 'none' }}>
-          <span className="text-[10px] sm:text-[11px] text-[var(--muted)] font-medium shrink-0">Sources:</span>
-          <div className="flex items-center gap-1.5 flex-wrap">
-            {attachments.map((att) => (
-              <div
-                key={att.id}
-                className="flex items-center gap-1.5 pl-2 pr-1 py-0.5 rounded-md text-[11px] font-medium border"
-                style={{
-                  background: 'color-mix(in srgb, var(--accent) 8%, transparent)',
-                  borderColor: 'color-mix(in srgb, var(--accent) 20%, transparent)',
-                  color: 'var(--accent)',
-                }}
-              >
-                {att.type === 'photo' && att.preview && (
-                  <img src={att.preview} alt="" className="w-4 h-4 rounded object-cover shrink-0" />
-                )}
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
-                  {att.type === 'audio' && <><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" /><path d="M19 10v2a7 7 0 0 1-14 0v-2" /></>}
-                  {att.type === 'photo' && <><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="M21 15l-5-5L5 21" /></>}
-                  {att.type === 'url' && <><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></>}
-                  {att.type === 'pdf' && <><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /></>}
-                  {att.type === 'video' && <><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M10 9l5 3-5 3V9z" /></>}
-                </svg>
-                <span className="max-w-[120px] truncate">{att.label}</span>
-                <button
-                  onClick={() => removeAttachment(att.id)}
-                  className="w-4 h-4 flex items-center justify-center rounded hover:bg-black/10 shrink-0"
-                  title="Remove"
-                >
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                    <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
-                </button>
-              </div>
-            ))}
-            <button
-              onClick={() => onAttachmentsChange?.([])}
-              className="text-[10px] text-[var(--muted)] hover:text-[var(--foreground)] px-1"
-            >
-              Clear all
-            </button>
-          </div>
-        </div>
-      )}
+      <AttachmentChips
+        attachments={attachments}
+        onRemove={removeAttachment}
+        onClearAll={() => onAttachmentsChange?.([])}
+      />
 
       {/* URL Seeds popup */}
       <AnimatePresence>
@@ -813,37 +777,15 @@ export default function TopBar({
       )}
       </AnimatePresence>
 
-      {/* Mode selector strip */}
-      <div className="flex justify-center py-1" style={{ borderBottom: '1px solid color-mix(in srgb, var(--foreground) 6%, transparent)' }}>
-        <ModeSelector activeMode={activeMode || 'simulate'} onModeChange={(m) => onModeChange?.(m)} hasNodes={hasNodes} />
-      </div>
-
-      {/* Personal mode profile inline */}
-      {activeMode === 'personal' && (
-        <div className="px-4 pt-2">
-          <PersonalProfileInline onProfileChange={onProfileChange} />
-        </div>
-      )}
-
-      {/* Sacred mode toggle row */}
-      <div className="h-[32px] flex items-center gap-1.5 px-2 sm:px-6 border-t border-[var(--border)] overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
-        <button
-          onClick={() => onSacredModeChange?.(!sacredMode)}
-          className="flex items-center gap-1.5 h-[22px] px-2.5 rounded-md text-[10px] font-medium shrink-0 cursor-pointer transition-all"
-          style={{
-            background: sacredMode ? 'rgba(168,85,247,0.12)' : 'transparent',
-            color: sacredMode ? '#a855f7' : 'var(--muted)',
-            border: sacredMode ? '1px solid rgba(168,85,247,0.25)' : '1px dashed rgba(0,0,0,0.1)',
-          }}
-          title={sacredMode ? 'Switch to Data mode' : 'Switch to Sacred mode (Bible + Quran)'}
-        >
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-          </svg>
-          {sacredMode ? 'Sacred' : 'Sacred'}
-        </button>
-      </div>
+      {/* Mode selector + sacred toggle */}
+      <ModeStrip
+        activeMode={activeMode || 'simulate'}
+        onModeChange={(m) => onModeChange?.(m)}
+        hasNodes={hasNodes}
+        sacredMode={sacredMode}
+        onSacredModeChange={onSacredModeChange}
+        onProfileChange={onProfileChange}
+      />
 
       {/* Sidebar menu drawer */}
       <AnimatePresence>
@@ -858,31 +800,18 @@ export default function TopBar({
             transition={{ duration: 0.2 }}
           />
           <motion.div
-            className="fixed top-0 left-0 h-full w-[260px] max-w-[100vw] z-[301] flex flex-col"
+            className="fixed top-0 left-0 h-full w-[360px] max-w-[100vw] z-[301] flex flex-col p-3"
             style={{
               background: 'var(--surface)',
               borderRight: '1px solid var(--border)',
               boxShadow: '4px 0 24px rgba(0,0,0,0.08)',
             }}
-            initial={{ x: -260 }}
+            initial={{ x: -360 }}
             animate={{ x: 0 }}
-            exit={{ x: -260 }}
+            exit={{ x: -360 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Menu header */}
-            <div className="h-[56px] flex items-center justify-between px-5 border-b border-[var(--border)]">
-              <span className="text-[16px] font-bold text-[var(--foreground)]" style={{ fontFamily: 'var(--font-geist-mono), monospace', letterSpacing: '0.08em' }}>
-                FORESIGHT
-              </span>
-              <button
-                onClick={() => { setShowMenu(false); setShowHistory(false); }}
-                className="h-10 w-10 flex items-center justify-center text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-lg transition-colors cursor-pointer"
-              >
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
-                  <path d="M18 6L6 18M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
+            <SidebarHeader onClose={() => { setShowMenu(false); setShowHistory(false); }} />
 
             {/* Menu content — nav items, history panel, or profile panel */}
             {showHistory ? (
@@ -902,235 +831,24 @@ export default function TopBar({
                 onTagsChange={(t) => { setTags(t); if (onTagsChange) onTagsChange(t); }}
               />
             ) : (
-              <nav className="flex-1 py-3 px-3">
-                {[
-                  { icon: 'M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z', label: 'Home', active: true, action: () => setShowMenu(false) },
-                  { icon: 'M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z', label: 'History', active: false, action: () => setShowHistory(true) },
-                  { icon: 'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2', label: 'Profile', active: false, extra: <circle cx="12" cy="7" r="4" />, action: () => setShowProfile(true) },
-                  { icon: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2', label: 'Community', active: false, extra: <><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>, action: () => { setShowMenu(false); window.location.href = '/community'; } },
-                  { icon: 'M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z', label: 'Saved', active: false, action: undefined },
-                ].map((item) => (
-                  <button
-                    key={item.label}
-                    className="w-full flex items-center gap-4 px-4 py-3.5 rounded-xl text-[15px] transition-colors cursor-pointer"
-                    style={{
-                      color: item.active ? 'var(--foreground)' : 'var(--muted-foreground)',
-                      background: item.active ? 'var(--surface-hover)' : 'transparent',
-                      fontWeight: item.active ? 600 : 400,
-                    }}
-                    onMouseEnter={(e) => { if (!item.active) e.currentTarget.style.background = 'var(--surface-hover)'; }}
-                    onMouseLeave={(e) => { if (!item.active) e.currentTarget.style.background = 'transparent'; }}
-                    onClick={() => { if (item.action) item.action(); else setShowMenu(false); }}
-                  >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d={item.icon} />
-                      {item.extra}
-                    </svg>
-                    {item.label}
-                    {!item.active && !item.action && (
-                      <span className="ml-auto text-[10px] text-[var(--muted)] bg-[var(--border)] px-2 py-1 rounded-md">Soon</span>
-                    )}
-                  </button>
-                ))}
-              </nav>
+              <Sidebar
+                onClose={() => setShowMenu(false)}
+                onShowHistory={() => setShowHistory(true)}
+                onShowProfile={() => setShowProfile(true)}
+                onNavigateCommunity={() => { setShowMenu(false); window.location.href = '/community'; }}
+                displayMode={displayMode}
+                onToggleDisplayMode={toggleDisplayMode}
+                darkMode={(() => {
+                  if (darkMode === null) return typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  return darkMode;
+                })()}
+                onToggleDarkMode={toggleDarkMode}
+                layoutDirection={layoutDirection}
+                onToggleLayoutDirection={() => onLayoutDirectionChange?.(layoutDirection === 'LR' ? 'TB' : 'LR')}
+                viewMode={viewMode || '2d'}
+                onViewModeChange={(mode) => onViewModeChange?.(mode)}
+              />
             )}
-
-            {/* Settings */}
-            <div className="px-3 py-3 border-t border-[var(--border)]">
-              <div className="text-[10px] font-semibold text-[var(--muted)] uppercase tracking-wider px-4 mb-2">Settings</div>
-              <button
-                onClick={toggleDisplayMode}
-                className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-[14px] transition-colors cursor-pointer hover:bg-[var(--surface-hover)]"
-                style={{ color: 'var(--foreground)' }}
-              >
-                <div className="flex items-center gap-3">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <path d="M3 9h18" />
-                    <path d="M9 21V9" />
-                  </svg>
-                  <span>{displayMode === 'classic' ? 'Classic' : 'Minimal'}</span>
-                </div>
-                {/* Toggle switch */}
-                <div
-                  className="relative w-[44px] h-[24px] rounded-full transition-colors"
-                  style={{ background: displayMode === 'classic' ? '#f59e0b' : 'var(--border)' }}
-                >
-                  <div
-                    className="absolute top-[2px] w-[20px] h-[20px] rounded-full shadow transition-all"
-                    style={{ left: displayMode === 'classic' ? '22px' : '2px', background: 'var(--surface)' }}
-                  />
-                </div>
-              </button>
-              {/* Dark mode toggle */}
-              <button
-                onClick={toggleDarkMode}
-                className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-[14px] transition-colors cursor-pointer hover:bg-[var(--surface-hover)]"
-                style={{ color: 'var(--foreground)' }}
-              >
-                <div className="flex items-center gap-3">
-                  {(() => {
-                    const isDark = darkMode === null
-                      ? (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
-                      : darkMode;
-                    return isDark ? (
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-                      </svg>
-                    ) : (
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                      </svg>
-                    );
-                  })()}
-                  <span>{(() => {
-                    const isDark = darkMode === null
-                      ? (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
-                      : darkMode;
-                    return isDark ? 'Light mode' : 'Dark mode';
-                  })()}</span>
-                </div>
-                {/* Toggle switch */}
-                <div
-                  className="relative w-[44px] h-[24px] rounded-full transition-colors"
-                  style={{ background: (() => {
-                    const isDark = darkMode === null
-                      ? (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
-                      : darkMode;
-                    return isDark ? 'var(--accent)' : 'var(--border)';
-                  })() }}
-                >
-                  <div
-                    className="absolute top-[2px] w-[20px] h-[20px] rounded-full shadow transition-all"
-                    style={{
-                      left: (() => {
-                        const isDark = darkMode === null
-                          ? (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
-                          : darkMode;
-                        return isDark ? '22px' : '2px';
-                      })(),
-                      background: 'var(--surface)',
-                    }}
-                  />
-                </div>
-              </button>
-              {/* Vertical layout toggle */}
-              <button
-                onClick={() => {
-                  const next = layoutDirection === 'LR' ? 'TB' : 'LR';
-                  onLayoutDirectionChange?.(next);
-                }}
-                className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-[14px] transition-colors cursor-pointer hover:bg-[var(--surface-hover)]"
-                style={{ color: 'var(--foreground)' }}
-              >
-                <div className="flex items-center gap-3">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    {layoutDirection === 'TB' ? (
-                      <><line x1="12" y1="2" x2="12" y2="22" /><polyline points="8 6 12 2 16 6" /><polyline points="8 18 12 22 16 18" /></>
-                    ) : (
-                      <><line x1="2" y1="12" x2="22" y2="12" /><polyline points="6 8 2 12 6 16" /><polyline points="18 8 22 12 18 16" /></>
-                    )}
-                  </svg>
-                  <span>{layoutDirection === 'TB' ? 'Vertical' : 'Horizontal'}</span>
-                </div>
-                <div
-                  className="relative w-[44px] h-[24px] rounded-full transition-colors"
-                  style={{ background: layoutDirection === 'TB' ? 'var(--purple)' : 'var(--border)' }}
-                >
-                  <div
-                    className="absolute top-[2px] w-[20px] h-[20px] rounded-full shadow transition-all"
-                    style={{ left: layoutDirection === 'TB' ? '22px' : '2px', background: 'var(--surface)' }}
-                  />
-                </div>
-              </button>
-              {/* View mode selector */}
-              <div className="px-4 py-2">
-                <div className="text-[10px] font-semibold text-[var(--muted)] uppercase tracking-wider mb-2">View</div>
-                <div className="flex gap-1.5">
-                  {([
-                    { mode: '2d' as const, label: '2D', icon: 'M3 3h18v18H3V3z' },
-                    { mode: '3d' as const, label: '3D', icon: 'M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z' },
-                    { mode: 'flowchart' as const, label: 'Flow', icon: 'M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V15M9 21H5a2 2 0 0 1-2-2V15' },
-                  ]).map(({ mode, label, icon }) => (
-                    <button
-                      key={mode}
-                      onClick={() => onViewModeChange?.(mode)}
-                      className="flex-1 flex flex-col items-center gap-1 py-2 rounded-lg text-[11px] font-medium transition-all cursor-pointer"
-                      style={{
-                        background: viewMode === mode ? 'var(--foreground)' : 'transparent',
-                        color: viewMode === mode ? 'var(--surface)' : 'var(--muted)',
-                        border: viewMode === mode ? 'none' : '1px solid var(--border)',
-                      }}
-                    >
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d={icon} />
-                      </svg>
-                      {label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Shortcuts section */}
-            <div className="px-3 py-3 border-t border-[var(--border)]">
-              <div className="text-[10px] font-semibold text-[var(--muted)] uppercase tracking-wider px-4 mb-2">Shortcuts</div>
-              {[
-                { label: 'Command palette', keys: ['Cmd', 'K'] },
-                { label: 'Generate', keys: ['Enter'] },
-                { label: 'Stop / Cancel', keys: ['Esc'] },
-                { label: 'Undo', keys: ['Cmd', 'Z'], soon: true },
-              ].map((s) => (
-                <div
-                  key={s.label}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: '6px 16px',
-                    borderRadius: '8px',
-                  }}
-                >
-                  <span style={{ fontSize: '12px', color: 'var(--muted-foreground)' }}>
-                    {s.label}
-                    {s.soon && (
-                      <span style={{ marginLeft: '6px', fontSize: '9px', color: 'var(--muted)', background: 'var(--border)', padding: '1px 5px', borderRadius: '4px' }}>
-                        soon
-                      </span>
-                    )}
-                  </span>
-                  <span style={{ display: 'flex', gap: '3px' }}>
-                    {s.keys.map((k, i) => (
-                      <kbd
-                        key={i}
-                        style={{
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          padding: '2px 5px',
-                          borderRadius: '4px',
-                          fontSize: '10px',
-                          fontFamily: 'var(--font-geist-mono), monospace',
-                          fontWeight: 500,
-                          color: 'var(--muted-foreground)',
-                          background: 'var(--surface-hover)',
-                          border: '1px solid var(--border)',
-                          lineHeight: 1.4,
-                        }}
-                      >
-                        {k}
-                      </kbd>
-                    ))}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            {/* Menu footer */}
-            <div className="px-5 py-4 border-t border-[var(--border)]">
-              <div className="text-[11px] text-[var(--muted)]">
-                Foresight
-              </div>
-            </div>
           </motion.div>
         </>
       )}
