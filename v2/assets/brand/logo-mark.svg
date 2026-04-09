@@ -1,0 +1,33 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="prism-top" x1="256" y1="64" x2="256" y2="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="prism-mid" x1="256" y1="200" x2="256" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="prism-bot" x1="256" y1="320" x2="256" y2="448" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Layer 3 (bottom) — deepest blue -->
+  <path d="M96 368L256 448L416 368" stroke="url(#prism-bot)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Layer 2 (middle) -->
+  <path d="M96 296L256 376L416 296" stroke="url(#prism-mid)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Layer 1 (top) — prism shape with fill -->
+  <path d="M256 64L96 192L256 280L416 192Z" fill="url(#prism-top)" fill-opacity="0.12"/>
+  <path d="M256 64L96 192L256 280L416 192Z" stroke="url(#prism-top)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#glow)"/>
+
+  <!-- Center highlight dot -->
+  <circle cx="256" cy="192" r="6" fill="#60a5fa" opacity="0.8"/>
+</svg>
