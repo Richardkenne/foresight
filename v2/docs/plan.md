@@ -58,9 +58,34 @@ Applicare pattern da:
 
 ---
 
+## Phase 5: Design System (2026-04-09)
+> Priorita: ALTA | Foundation per tutto il futuro UI work
+
+Costruire un design system a 5 livelli per eliminare inconsistenza visiva e accelerare lo sviluppo UI.
+
+**Completato (2026-04-09)**:
+- **Layer 1: Tokens** — 85+ CSS variables (colors, spacing 4px grid, radius, shadows, typography, animation, z-index) in globals.css + design-tokens.ts per accesso JS
+- **Layer 2: Primitives** — 8 componenti (Button, Badge, Card, Text, IconButton, Spinner, Skeleton, Toast) tutti token-based, sm/md/lg sizes
+- **Layer 3: Compositions** — 5 compositions (Dashboard, SimToolbar, TopBar, TemplateSelector, Sidebar) migrati a usare primitives
+- **Full migration audit** — 816 valori hardcoded ridotti a 223 (residui solo SVG/WebGL), 52 violazioni 4px grid fixate in 43 file
+- **Brand assets** — logo mark, full logo (light+dark), OG image, apple-touch-icon, favicon in assets/brand/
+
+**Da fare**:
+- Layer 4: Layout System (page grid 12-col, breakpoints, containers)
+- Layer 5: Interaction System (hover/focus/active/disabled, animation tokens, focus ring)
+
+**Outcome**: ogni nuovo componente si costruisce in meta' tempo usando primitives + tokens. Zero inconsistenza visiva. Codebase mantenibile.
+
+---
+
 ## Decision Log
 | Data | Decisione | Motivo |
 |------|-----------|--------|
+| 2026-04-09 | Design System 5-layer architecture | Eliminare 816 valori hardcoded, creare foundation scalabile per UI |
+| 2026-04-09 | 4px spacing grid enforcement | Consistenza visiva Linear/Vercel-level, no arbitrary values |
+| 2026-04-09 | 8 primitives (Button, Badge, Card, Text, IconButton, Spinner, Skeleton, Toast) | Componenti riusabili token-based per tutte le compositions |
+| 2026-04-09 | Brand assets in assets/brand/ | Centralizzare logo, OG, favicon — single source of truth |
+| 2026-04-09 | design-tokens.ts for JS access | Tokens accessibili sia da CSS (globals.css) che da JS/TS |
 | 2026-03-27 | v3 folder per research demos | Tenere v2 stabile, sperimentare in v3 |
 | 2026-03-27 | ncase/loopy features first | Public domain, 3 feature ad alto impatto, bassa complessita |
 | 2026-03-27 | scottfr/simulation come engine base | JS nativo, browser-compatible, NPM-ready |

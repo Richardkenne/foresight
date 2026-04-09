@@ -264,7 +264,20 @@
 - [x] **15 nuovi download script** pronti per future sessioni
 - [x] **Storage optimization**: dati pesanti su iCloud Drive con symlink (1.7G → 29M locale)
 
+### Completato (sessione 2026-04-09 — DESIGN SYSTEM)
+
+#### Design System Foundation (5-layer architecture)
+- [x] **Token System**: 85+ CSS variables in globals.css + design-tokens.ts (10 colors, 8 spacing, 5 radius, 4 shadows, typography scale, animation tokens, z-index)
+- [x] **8 Primitives**: Button, Badge, Card, Text, IconButton, Spinner, Skeleton, Toast — all token-based, sm/md/lg sizes, no hardcoded values
+- [x] **Full project migration**: 816 hardcoded values reduced to 223 (residual SVG/WebGL only)
+- [x] **4px spacing grid enforcement**: 52 violations fixed across 43 files, all spacing now on 4px grid (4, 8, 12, 16, 24, 32, 40, 48)
+- [x] **5 compositions migrated**: Dashboard, SimToolbar, TopBar, TemplateSelector, Sidebar — all use primitives instead of raw divs
+- [x] **Brand visual assets**: logo mark SVG, full logo (light+dark), OG image 1200x630, apple touch icon 180x180, refined favicon — all in assets/brand/
+- [x] **Design system learning course**: bilingual EN/IT guide for frontend design
+
 ### In Corso / Prossimi Step
+- [ ] **Design System Layer 4**: Layout System (page grid, breakpoints, containers)
+- [ ] **Design System Layer 5**: Interaction System (hover/focus/active/disabled states, animation tokens)
 - [ ] **5 agenti mancanti** Round 3: Entrepreneurship Psychology, Faith/Religion Outcomes, Content Monetization, Social Skills/Networking, Fitness/Health Science
 - [ ] **Embedding** tutti i nuovi file in Supabase pgvector (~270K DP → ~45K chunks)
 - [ ] Data Integrity System: freshness badge, source verification cron, auto-update agent

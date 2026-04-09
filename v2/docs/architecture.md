@@ -8,6 +8,7 @@
 - [Data Flow](#data-flow)
 - [Data Layer](#data-layer)
 - [External Dependencies](#external-dependencies)
+- [Design System Architecture](#design-system-architecture-2026-04-09)
 
 ---
 
@@ -434,4 +435,68 @@ Format in source field:
 
 ---
 
-*Ultimo aggiornamento: 2026-04-01*
+---
+
+## Design System Architecture (2026-04-09)
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    DESIGN SYSTEM (5 Layers)                  │
+│                                                              │
+│  Layer 5: INTERACTIONS (TODO)                                │
+│  ┌─────────────────────────────────────────────────────────┐ │
+│  │ Hover/Focus/Active/Disabled states, animation tokens,   │ │
+│  │ focus rings, reduced motion support                     │ │
+│  └─────────────────────────────────────────────────────────┘ │
+│                          ▲                                   │
+│  Layer 4: LAYOUTS (TODO)                                     │
+│  ┌─────────────────────────────────────────────────────────┐ │
+│  │ Page grid (12-col), breakpoints, containers, responsive │ │
+│  └─────────────────────────────────────────────────────────┘ │
+│                          ▲                                   │
+│  Layer 3: COMPOSITIONS (DONE)                                │
+│  ┌─────────────────────────────────────────────────────────┐ │
+│  │ Dashboard, SimToolbar, TopBar, TemplateSelector, Sidebar│ │
+│  │ Built ENTIRELY from Layer 2 primitives                  │ │
+│  └─────────────────────────────────────────────────────────┘ │
+│                          ▲                                   │
+│  Layer 2: PRIMITIVES (DONE — 8 components)                   │
+│  ┌─────────────────────────────────────────────────────────┐ │
+│  │ Button | Badge | Card | Text | IconButton               │ │
+│  │ Spinner | Skeleton | Toast                              │ │
+│  │ Location: src/components/ui/                            │ │
+│  │ All token-based, sm/md/lg sizes, zero hardcoded values  │ │
+│  └─────────────────────────────────────────────────────────┘ │
+│                          ▲                                   │
+│  Layer 1: TOKENS (DONE — 85+ variables)                      │
+│  ┌─────────────────────────────────────────────────────────┐ │
+│  │ CSS: src/app/globals.css (:root variables)              │ │
+│  │ JS:  src/lib/design-tokens.ts (programmatic access)     │ │
+│  │                                                         │ │
+│  │ Colors (10): bg, surface, border, text-primary/secondary│ │
+│  │              /muted, accent, danger, warning, success    │ │
+│  │ Spacing (8): 4px grid — 4, 8, 12, 16, 24, 32, 40, 48  │ │
+│  │ Radius (5): sm(4), md(8), lg(12), xl(16), full(9999)   │ │
+│  │ Shadows (4): xs, sm, md, lg                             │ │
+│  │ Typography: 7 sizes, 4 weights, Inter font              │ │
+│  │ Animation: 3 durations, 2 easings                       │ │
+│  │ Z-index: 5 layers (base→modal)                          │ │
+│  └─────────────────────────────────────────────────────────┘ │
+│                                                              │
+│  Brand Assets: assets/brand/                                 │
+│  ┌─────────────────────────────────────────────────────────┐ │
+│  │ logo-mark.svg | logo-full-light.svg | logo-full-dark.svg│ │
+│  │ og-image.png (1200x630) | apple-touch-icon.png (180x180)│ │
+│  │ favicon.svg                                             │ │
+│  └─────────────────────────────────────────────────────────┘ │
+│                                                              │
+│  Migration Status:                                           │
+│  Colors: 816 hardcoded → 223 remaining (SVG/WebGL only)     │
+│  Spacing: 158 hardcoded → 0 remaining (full 4px grid)       │
+│  Violations fixed: 52 across 43 files                        │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+*Ultimo aggiornamento: 2026-04-09*

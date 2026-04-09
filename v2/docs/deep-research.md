@@ -15,8 +15,9 @@ si# Deep Research — Simulator v2
 - [11. Ricerche da completare](#11-ricerche-da-completare)
 - [12. Data Pipeline Architecture — Come i Top Player Iniettano Dati nei Modelli](#12-data-pipeline-architecture--come-i-top-player-iniettano-dati-nei-modelli)
 - [13. Behavioral & People Simulation — Modes & Architecture Analysis](#13-behavioral--people-simulation--modes--architecture-analysis)
+- [14. Design System Research (2026-04-09)](#14-design-system-research-2026-04-09)
 
-> 140+ repo analizzati in 13 categorie. Ricerca completata 2026-03-27. Aggiornato 2026-04-07.
+> 140+ repo analizzati in 14 categorie. Ricerca completata 2026-03-27. Aggiornato 2026-04-09.
 
 ---
 
@@ -786,3 +787,62 @@ Ricerca: 2026-04-08 — 10 agenti paralleli, obiettivo: trovare il miglior modo 
 **Non forkare.** Soluzione scelta: in TB mode, semplificare i SimNode (solo label, no desc/source) e sostituire Dagre con **ELK.js** per layout verticale professionale. Cosi' si ottiene lo stile pulito tipo Mermaid/Whimsical senza perdere simulazione particelle, click nodi, e tutto il sistema esistente.
 
 *Aggiornato: 2026-04-08 — Ricerca: flowchart/vertical layout libraries (10 agenti paralleli)*
+
+---
+
+## 14. Design System Research (2026-04-09)
+> Ricerca: 2026-04-09 | Metodo: analisi comparativa design system di 6 prodotti top-tier (Linear, Stripe, Palantir Blueprint, Atlassian, TradingView, Vercel) + letteratura EightShapes
+
+### Domanda originale
+Come strutturano i top player i loro design system? Quanti token, quante taglie per componente, quale architettura? Obiettivo: definire il design system di Foresight con decisioni basate su dati reali, non opinioni.
+
+### Metodologia
+1. Analisi documentazione ufficiale di 6 design system (Palantir Blueprint, Atlassian, Stripe Apps, TradingView, Linear, Vercel)
+2. Letteratura di settore (Nathan Curtis / EightShapes su component sizing)
+3. Confronto quantitativo: numero token, valori spacing, taglie componenti
+4. Estrazione pattern architetturali comuni
+
+### Key Findings
+
+**1. Spacing tokens: 4px grid e il nuovo standard**
+- Palantir ha migrato da 10px a 4px grid (Agosto 2025) — conferma il trend
+- I valori piu comuni sono 8: 4, 8, 12, 16, 20, 24, 32, 48
+- Atlassian usa base 8px ma ha eccezioni sotto-griglia (2px, 4px)
+- Stripe usa frazioni (1/2, 1/3, 1/4) del base 4px — approccio diverso ma stesso risultato
+- Foresight allineato con Palantir: 4px base, 8 valori
+
+**2. Component sizing: 2-3 taglie massimo**
+- Nathan Curtis (EightShapes): "A component library likely requires two or (at most) three sizes. Avoid greater complexity."
+- Regola pratica emersa: **data-dense app senza landing = 2 taglie** (Palantir, TradingView, Linear), **app con landing page = 3 taglie** (Stripe, Vercel)
+- Foresight ha landing + app → 3 taglie (sm/md/lg) e la scelta corretta
+
+**3. Design system architecture: 5 layer universali**
+- Tokens → Primitives → Compositions → Layouts → Interactions
+- Linear formalizza ogni layer pesantemente; indie devs fanno lo stesso piu leggero
+- La struttura e identica ovunque — cambia il livello di formalizzazione
+- Primitivi standard: 6-10 componenti (Button, Badge, Card, Text, Input, Tooltip, Divider, IconButton)
+
+**4. Color tokens: minimalismo**
+- Linear: ~12 colori base
+- TradingView: ~18 CSS tokens (widget-oriented)
+- Foresight: 10 colori base — in linea con l'industria
+
+### Decisioni prese per Foresight
+- Grid: 4px (confermato da migrazione Palantir)
+- Spacing values: 8 (4, 8, 12, 16, 20, 24, 32, 48)
+- Taglie componenti: 3 (sm, md, lg) — perche abbiamo landing + app
+- Colori base: 10
+- Architettura: 5-layer stack (Tokens → Primitives → Compositions → Layouts → Interactions)
+
+### Fonti
+
+| # | Fonte | URL | Tipo | Valore |
+|---|-------|-----|------|--------|
+| 1 | Nathan Curtis — Size in Design Systems | https://medium.com/eightshapes-llc/size-in-design-systems-64f234aec519 | Articolo | Regola 2-3 taglie max per componente |
+| 2 | Palantir Blueprint — Spacing Migration | https://github.com/palantir/blueprint/wiki/Spacing-System-Migration:-10px-to-4px | Wiki GitHub | Dettagli migrazione da 10px a 4px grid |
+| 3 | Atlassian — Spacing Foundation | https://atlassian.design/foundations/spacing/ | Docs ufficiali | Valori spacing e rationale |
+| 4 | Stripe Apps — Style Guide | https://docs.stripe.com/stripe-apps/style | Docs ufficiali | Token e styling Stripe Apps |
+| 5 | TradingView — Styling & Themes | https://www.tradingview.com/widget-docs/tutorials/web-components/styling-and-themes/ | Docs ufficiali | CSS tokens per widget TradingView |
+| 6 | Linear Design (LogRocket) | https://blog.logrocket.com/ux-design/linear-design/ | Articolo | Analisi design system Linear |
+
+*Aggiornato: 2026-04-09 — Ricerca: design system comparison (6 prodotti, 6 fonti)*

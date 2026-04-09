@@ -24,6 +24,7 @@
 - [Fase 11: Beast Mode Data Expansion](#fase-11-beast-mode--data-expansion-massiva-2026-04-08-notte) — +270K DP totali
 - [Fase 11B: Deep Web Research Round 2](#fase-11b-deep-web-research-round-2-2026-04-09) — +7,308 DP (10 domini qualitativi)
 - [Fase 11C: Deep Web Research Round 3](#fase-11c-deep-web-research-round-3-2026-04-09) — +2,148 DP (5/10 completati)
+- [Fase 12: Design System](#fase-12-design-system-2026-04-09) — 5-layer architecture, 85+ tokens, 8 primitives, full migration
 - [UI Polish](#ui-polish)
 
 ---
@@ -609,5 +610,66 @@ Strategia: ricerca qualitativa profonda > API bulk. Ogni DP vale 10x un numero W
 3. [ ] **Nuovi domini Round 4** (suggerimenti: Sleep Science, Divorce Recovery, Negotiation for Beginners, Country-Specific: Italy Life Deep, Australia Life Deep, Ghana Life Deep)
 4. [ ] FRED con API key
 5. [ ] World Values Survey Wave 7
+
+---
+
+## Fase 12: Design System (2026-04-09)
+
+### Layer 1: Token System — FATTO
+- [x] 85+ CSS variables in globals.css (10 colors, 8 spacing, 5 radius, 4 shadows, typography, animation, z-index)
+- [x] design-tokens.ts — JS export of all tokens for programmatic use
+- [x] Color palette: --color-bg, --color-surface, --color-border, --color-text-*, --color-accent, --color-danger, --color-warning, --color-success, --color-sacred
+- [x] Spacing: --space-1 (4px) through --space-8 (48px), strict 4px grid
+- [x] Typography: --font-size-xs through --font-size-2xl, --font-weight-normal/medium/semibold/bold
+- [x] Shadows: --shadow-xs through --shadow-lg
+- [x] Radius: --radius-sm through --radius-full
+- [x] Animation: --duration-fast/normal/slow, --ease-default/spring
+
+### Layer 2: Primitives (8 components) — FATTO
+- [x] Button — 6 variants (primary, secondary, ghost, danger, sacred, outline), sm/md/lg sizes
+- [x] Badge — status badges, sm/md/lg, color variants
+- [x] Card — container component, sm/md/lg padding, hover states
+- [x] Text — typography component, semantic variants (h1-h6, body, caption, label)
+- [x] IconButton — icon-only button, sm/md/lg, all Button variants
+- [x] Spinner — animated SVG loader
+- [x] Skeleton — loading placeholder, pulse animation
+- [x] Toast — notification system, success/error/warning/info
+- All in src/components/ui/, all token-based (zero hardcoded values)
+
+### Layer 3: Composition Migration — FATTO
+- [x] Dashboard — uses Card, Text, Badge, Button primitives
+- [x] SimToolbar — uses Button, IconButton, Badge, Text primitives
+- [x] TopBar — uses Button, IconButton, Text primitives
+- [x] TemplateSelector — uses Card, Badge, Text primitives
+- [x] Sidebar — uses Button, Text, IconButton primitives
+
+### Full Migration Audit — FATTO
+- [x] Color migration: 816 hardcoded hex/rgb values → 223 remaining (SVG/WebGL only)
+- [x] Spacing migration: 158 hardcoded px values → 0 remaining (all on 4px grid)
+- [x] 4px grid enforcement: 52 violations fixed across 43 files
+- [x] Zero arbitrary spacing values in component code
+
+### Brand Assets — FATTO
+- [x] Logo mark SVG (icon only)
+- [x] Full logo light + dark variants
+- [x] OG image 1200x630
+- [x] Apple touch icon 180x180
+- [x] Refined favicon
+- [x] All assets in assets/brand/
+
+### Design System Learning Course — FATTO
+- [x] Bilingual guide (EN/IT) for Richard to learn design system concepts hands-on
+
+### Layer 4: Layout System — TODO
+- [ ] Page grid system (12-column, responsive)
+- [ ] Breakpoint tokens (sm/md/lg/xl/2xl)
+- [ ] Container component with max-width variants
+- [ ] Responsive utilities
+
+### Layer 5: Interaction System — TODO
+- [ ] Hover/focus/active/disabled state tokens
+- [ ] Animation tokens for enter/exit/hover transitions
+- [ ] Focus ring system (accessibility)
+- [ ] Reduced motion support
 
 *Ultimo aggiornamento: 2026-04-09*

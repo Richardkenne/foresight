@@ -91,6 +91,16 @@ Key rule: ALWAYS include state nodes after bottlenecks to show transformation.
 - Se per errore stai per fare push → FERMATI e chiedi conferma.
 - Questa regola vale fino a che l'utente non la rimuove esplicitamente.
 
+## Design System Rules (NON-NEGOTIABLE)
+- **Tokens first** — All new components MUST use CSS token variables (e.g. `var(--color-accent)`, `var(--space-4)`). NEVER hardcode hex colors, px spacing, or font sizes.
+- **Use primitives** — Use existing primitives (Button, Badge, Card, Text, IconButton, Spinner, Skeleton, Toast) from `src/components/ui/` instead of raw `<div>` or `<button>` elements.
+- **Spacing: 4px grid only** — Only values: 4, 8, 12, 16, 24, 32, 40, 48. Use `var(--space-1)` through `var(--space-8)`. No arbitrary spacing.
+- **Sizes: sm/md/lg** — Button, Card, Badge all support sm/md/lg size variants. Use these consistently.
+- **Brand assets** — Logo, OG image, favicon, apple-touch-icon are in `assets/brand/`. Never recreate them.
+- **Design tokens JS** — When you need tokens in JS/TS, import from `@/lib/design-tokens` (not from globals.css).
+- **5-layer architecture** — Layer 1: Tokens (globals.css + design-tokens.ts) → Layer 2: Primitives (src/components/ui/) → Layer 3: Compositions (Dashboard, SimToolbar, TopBar, TemplateSelector, Sidebar) → Layer 4: Layouts (pending) → Layer 5: Interactions (pending).
+- **Migration status** — 816→223 hardcoded values (residual = SVG/WebGL only). Do NOT add new hardcoded values.
+
 ## Simulation Flow
 - Nodes hidden (opacity 0) when simulation starts
 - Revealed one by one as particles reach them (opacity transition)

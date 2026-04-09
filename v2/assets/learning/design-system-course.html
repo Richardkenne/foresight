@@ -166,6 +166,23 @@
   .grid-area-main { background:rgba(16,185,129,0.05); border:1px solid rgba(16,185,129,0.15); border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:10px; font-family:'JetBrains Mono',monospace; color:#059669; }
   .grid-area-footer { grid-column:1/-1; background:rgba(239,68,68,0.05); border:1px solid rgba(239,68,68,0.15); border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:10px; font-family:'JetBrains Mono',monospace; color:#dc2626; }
 
+  /* --- Spacing Scale Demo --- */
+  .spacing-scale { display:flex; flex-direction:column; gap:8px; width:100%; }
+  .spacing-row { display:flex; align-items:center; gap:12px; }
+  .spacing-bar { height:20px; border-radius:4px; background:rgba(59,130,246,0.12); border:1px solid rgba(59,130,246,0.2); }
+  .spacing-label { font-size:10px; font-family:'JetBrains Mono',monospace; color:var(--text-dim); min-width:100px; }
+  .spacing-value { font-size:10px; font-family:'JetBrains Mono',monospace; color:var(--accent); font-weight:600; }
+
+  /* --- Breakpoint Demo --- */
+  .breakpoint-strip { display:flex; width:100%; height:40px; border-radius:8px; overflow:hidden; position:relative; }
+  .bp-zone { display:flex; align-items:center; justify-content:center; font-size:9px; font-family:'JetBrains Mono',monospace; font-weight:600; border-right:2px dashed rgba(255,255,255,0.5); }
+  .bp-zone:last-child { border-right:none; }
+  .bp-zone-mobile { flex:320; background:rgba(239,68,68,0.12); color:#dc2626; }
+  .bp-zone-tablet { flex:448; background:rgba(245,158,11,0.12); color:#d97706; }
+  .bp-zone-desktop { flex:256; background:rgba(16,185,129,0.12); color:#059669; }
+  .bp-zone-wide { flex:416; background:rgba(139,92,246,0.12); color:#7c3aed; }
+  .bp-markers { display:flex; justify-content:space-between; font-size:9px; font-family:'JetBrains Mono',monospace; color:var(--text-dim); margin-top:4px; padding:0 2px; }
+
   /* --- Interaction Demo --- */
   .interaction-box { width:200px; padding:16px; border-radius:12px; background:var(--surface); border:1px solid var(--border); text-align:center; font-size:12px; font-weight:500; color:var(--text-muted); cursor:pointer; transition:all 0.2s cubic-bezier(0.4,0,0.2,1); }
   .interaction-box:hover { background:var(--surface-2); border-color:var(--accent); color:var(--text); transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.08); }
@@ -178,6 +195,29 @@
   .state-active { background:var(--accent-dim); border:1px solid var(--accent); color:var(--accent); transform:scale(0.97); }
   .state-disabled { background:var(--surface); border:1px solid var(--border); color:var(--text-dim); opacity:0.4; }
   .state-focus { background:var(--surface); border:1px solid var(--accent); color:var(--text); box-shadow:0 0 0 3px rgba(59,130,246,0.2); }
+
+  /* --- Animation Token Demo --- */
+  .anim-token-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; width:100%; }
+  .anim-token-card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px; }
+  .anim-token-name { font-size:10px; font-family:'JetBrains Mono',monospace; color:var(--accent); font-weight:600; margin-bottom:4px; }
+  .anim-token-value { font-size:11px; color:var(--text-dim); margin-bottom:8px; }
+  .anim-token-bar { height:6px; border-radius:3px; background:var(--accent); }
+  .anim-token-bar.bar-fast { width:25%; }
+  .anim-token-bar.bar-normal { width:50%; }
+  .anim-token-bar.bar-slow { width:75%; }
+  .anim-token-bar.bar-enter { width:100%; }
+
+  /* --- Multi-interaction Demo --- */
+  .multi-demo-row { display:flex; gap:16px; flex-wrap:wrap; align-items:center; }
+  .demo-interactive-btn { padding:10px 22px; border-radius:10px; font-size:12px; font-weight:600; font-family:'Inter',sans-serif; border:1px solid var(--border); background:var(--surface); color:var(--text-muted); cursor:pointer; transition:all 0.15s cubic-bezier(0.4,0,0.2,1); outline:none; }
+  .demo-interactive-btn:hover { background:var(--surface-2); border-color:var(--accent); color:var(--text); transform:translateY(-1px); box-shadow:0 4px 12px rgba(0,0,0,0.06); }
+  .demo-interactive-btn:active { transform:scale(0.97); box-shadow:none; }
+  .demo-interactive-btn:focus-visible { box-shadow:0 0 0 3px rgba(59,130,246,0.25); border-color:var(--accent); }
+  .demo-interactive-btn.disabled { opacity:0.4; cursor:not-allowed; pointer-events:none; }
+
+  @media (max-width:640px) {
+    .anim-token-grid { grid-template-columns:1fr; }
+  }
 
   /* --- Quiz --- */
   .quiz { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:28px; margin:32px 0; }
@@ -651,14 +691,32 @@
   <p class="section-desc"><span class="en">How things are arranged on the page. Grid, spacing, responsive breakpoints.</span><span class="it">Come le cose sono disposte nella pagina. Griglia, spaziatura, breakpoint responsive.</span></p>
 
   <h3><span class="en">12-column grid</span><span class="it">Griglia a 12 colonne</span></h3>
-  <p><span class="en">12 divides by 2, 3, 4, and 6 &mdash; maximum flexibility.</span><span class="it">12 si divide per 2, 3, 4 e 6 &mdash; massima flessibilita'.</span></p>
+  <p><span class="en">12 divides by 2, 3, 4, and 6 &mdash; maximum flexibility. You can split a page into halves (6+6), thirds (4+4+4), quarters (3+3+3+3), or asymmetric layouts like sidebar+content (3+9).</span><span class="it">12 si divide per 2, 3, 4 e 6 &mdash; massima flessibilita'. Puoi dividere una pagina in meta' (6+6), terzi (4+4+4), quarti (3+3+3+3), o layout asimmetrici come sidebar+contenuto (3+9).</span></p>
   <div class="visual-example"><span class="example-label">12-column grid</span>
     <div class="grid-demo grid-demo-12">
       <div class="grid-cell">1</div><div class="grid-cell">2</div><div class="grid-cell">3</div><div class="grid-cell">4</div><div class="grid-cell">5</div><div class="grid-cell">6</div><div class="grid-cell">7</div><div class="grid-cell">8</div><div class="grid-cell">9</div><div class="grid-cell">10</div><div class="grid-cell">11</div><div class="grid-cell">12</div>
     </div>
   </div>
 
+  <div class="code-block"><span class="lang-label">CSS Grid</span>
+<pre>
+<span class="hl-comment">/* 12-column grid container */</span>
+.<span class="hl-fn">grid-container</span> {
+  <span class="hl-key">display</span>: grid;
+  <span class="hl-key">grid-template-columns</span>: <span class="hl-fn">repeat</span>(<span class="hl-str">12</span>, <span class="hl-str">1fr</span>);
+  <span class="hl-key">gap</span>: <span class="hl-fn">var</span>(<span class="hl-str">--space-4</span>);  <span class="hl-comment">/* 16px */</span>
+}
+
+<span class="hl-comment">/* Spanning columns */</span>
+.<span class="hl-fn">col-6</span>  { <span class="hl-key">grid-column</span>: <span class="hl-fn">span</span> <span class="hl-str">6</span>; }   <span class="hl-comment">/* half */</span>
+.<span class="hl-fn">col-4</span>  { <span class="hl-key">grid-column</span>: <span class="hl-fn">span</span> <span class="hl-str">4</span>; }   <span class="hl-comment">/* third */</span>
+.<span class="hl-fn">col-3</span>  { <span class="hl-key">grid-column</span>: <span class="hl-fn">span</span> <span class="hl-str">3</span>; }   <span class="hl-comment">/* quarter */</span>
+.<span class="hl-fn">col-12</span> { <span class="hl-key">grid-column</span>: <span class="hl-str">1 / -1</span>; } <span class="hl-comment">/* full width */</span>
+</pre>
+  </div>
+
   <h3><span class="en">Foresight layout</span><span class="it">Layout Foresight</span></h3>
+  <p><span class="en">Foresight uses a fixed app shell: TopBar spans the full width, Sidebar is a fixed 240px column, Canvas fills the remaining space. This is NOT a 12-col grid &mdash; it's a dedicated app layout using CSS Grid with fixed + flexible tracks.</span><span class="it">Foresight usa un app shell fisso: TopBar occupa tutta la larghezza, Sidebar e' una colonna fissa di 240px, Canvas riempie lo spazio rimanente. Questo NON e' una griglia a 12 colonne &mdash; e' un layout app dedicato con CSS Grid e tracce fisse + flessibili.</span></p>
   <div class="visual-example"><span class="example-label">TopBar + Sidebar + Canvas</span>
     <div class="grid-demo grid-demo-layout" style="width:100%;">
       <div class="grid-area-nav">TopBar (full width)</div>
@@ -668,9 +726,102 @@
     </div>
   </div>
 
+  <div class="code-block"><span class="lang-label">Foresight App Shell</span>
+<pre>
+<span class="hl-comment">/* The actual Foresight layout */</span>
+.<span class="hl-fn">app-shell</span> {
+  <span class="hl-key">display</span>: grid;
+  <span class="hl-key">grid-template-columns</span>: <span class="hl-str">240px</span> <span class="hl-str">1fr</span>;
+  <span class="hl-key">grid-template-rows</span>: <span class="hl-str">48px</span> <span class="hl-str">1fr</span> <span class="hl-str">32px</span>;
+  <span class="hl-key">height</span>: <span class="hl-str">100vh</span>;
+}
+
+.<span class="hl-fn">topbar</span>   { <span class="hl-key">grid-column</span>: <span class="hl-str">1 / -1</span>; }  <span class="hl-comment">/* spans all columns */</span>
+.<span class="hl-fn">sidebar</span>  { <span class="hl-key">grid-row</span>: <span class="hl-str">2</span>; }            <span class="hl-comment">/* fixed 240px */</span>
+.<span class="hl-fn">canvas</span>   { <span class="hl-key">grid-row</span>: <span class="hl-str">2</span>; <span class="hl-key">overflow</span>: <span class="hl-str">auto</span>; } <span class="hl-comment">/* fills rest */</span>
+.<span class="hl-fn">statusbar</span>{ <span class="hl-key">grid-column</span>: <span class="hl-str">1 / -1</span>; }  <span class="hl-comment">/* spans all columns */</span>
+</pre>
+  </div>
+
+  <div class="callout callout-key"><span class="icon">*</span><div><span class="en"><strong>Key insight:</strong> The 12-col grid is for <em>content layout</em> (cards, forms, dashboards). The app shell uses a separate fixed grid. Don't confuse the two.</span><span class="it"><strong>Insight chiave:</strong> La griglia a 12 colonne e' per il <em>layout del contenuto</em> (card, form, dashboard). L'app shell usa una griglia fissa separata. Non confondere i due.</span></div></div>
+
+  <h3><span class="en">4px spacing grid</span><span class="it">Griglia di spaziatura 4px</span></h3>
+  <p><span class="en">Every margin, padding, and gap must be a multiple of 4px. This creates visual rhythm &mdash; elements feel aligned even when they're different sizes. Foresight defines 8 spacing tokens:</span><span class="it">Ogni margin, padding e gap deve essere un multiplo di 4px. Questo crea ritmo visivo &mdash; gli elementi sembrano allineati anche quando hanno dimensioni diverse. Foresight definisce 8 token di spaziatura:</span></p>
+
+  <div class="visual-example"><span class="example-label"><span class="en">Spacing scale (4px base)</span><span class="it">Scala spaziatura (base 4px)</span></span>
+    <div class="spacing-scale">
+      <div class="spacing-row"><div class="spacing-label">--space-1</div><div class="spacing-bar" style="width:4px;"></div><div class="spacing-value">4px</div></div>
+      <div class="spacing-row"><div class="spacing-label">--space-2</div><div class="spacing-bar" style="width:8px;"></div><div class="spacing-value">8px</div></div>
+      <div class="spacing-row"><div class="spacing-label">--space-3</div><div class="spacing-bar" style="width:12px;"></div><div class="spacing-value">12px</div></div>
+      <div class="spacing-row"><div class="spacing-label">--space-4</div><div class="spacing-bar" style="width:16px;"></div><div class="spacing-value">16px</div></div>
+      <div class="spacing-row"><div class="spacing-label">--space-5</div><div class="spacing-bar" style="width:20px;"></div><div class="spacing-value">20px</div></div>
+      <div class="spacing-row"><div class="spacing-label">--space-6</div><div class="spacing-bar" style="width:24px;"></div><div class="spacing-value">24px</div></div>
+      <div class="spacing-row"><div class="spacing-label">--space-8</div><div class="spacing-bar" style="width:32px;"></div><div class="spacing-value">32px</div></div>
+      <div class="spacing-row"><div class="spacing-label">--space-10</div><div class="spacing-bar" style="width:40px;"></div><div class="spacing-value">40px</div></div>
+      <div class="spacing-row"><div class="spacing-label">--space-12</div><div class="spacing-bar" style="width:48px;"></div><div class="spacing-value">48px</div></div>
+    </div>
+  </div>
+
+  <div class="code-block"><span class="lang-label">Spacing Usage</span>
+<pre>
+<span class="hl-comment">/* CORRECT: multiples of 4 */</span>
+.<span class="hl-fn">card</span> {
+  <span class="hl-key">padding</span>: <span class="hl-fn">var</span>(<span class="hl-str">--space-4</span>);       <span class="hl-comment">/* 16px */</span>
+  <span class="hl-key">margin-bottom</span>: <span class="hl-fn">var</span>(<span class="hl-str">--space-6</span>); <span class="hl-comment">/* 24px */</span>
+  <span class="hl-key">gap</span>: <span class="hl-fn">var</span>(<span class="hl-str">--space-2</span>);            <span class="hl-comment">/* 8px */</span>
+}
+
+<span class="hl-comment">/* WRONG: arbitrary values */</span>
+.<span class="hl-fn">card</span> {
+  <span class="hl-key">padding</span>: <span class="hl-str">13px</span>;     <span class="hl-comment">/* not on grid! */</span>
+  <span class="hl-key">margin-bottom</span>: <span class="hl-str">18px</span>; <span class="hl-comment">/* not on grid! */</span>
+  <span class="hl-key">gap</span>: <span class="hl-str">7px</span>;          <span class="hl-comment">/* not on grid! */</span>
+}
+</pre>
+  </div>
+
+  <div class="callout callout-warning"><span class="icon">!</span><div><span class="en"><strong>Rule:</strong> If a value isn't a multiple of 4, it doesn't belong in Foresight. Snap to the nearest token. The only exception is 1px borders.</span><span class="it"><strong>Regola:</strong> Se un valore non e' un multiplo di 4, non appartiene a Foresight. Arrotonda al token piu' vicino. L'unica eccezione sono i bordi da 1px.</span></div></div>
+
+  <h3><span class="en">Responsive breakpoints</span><span class="it">Breakpoint responsive</span></h3>
+  <p><span class="en">Foresight targets 4 breakpoints. Mobile-first means: base CSS = mobile, then <code>min-width</code> queries add complexity for larger screens.</span><span class="it">Foresight ha 4 breakpoint. Mobile-first significa: CSS base = mobile, poi query <code>min-width</code> aggiungono complessita' per schermi piu' grandi.</span></p>
+
+  <div class="visual-example"><span class="example-label"><span class="en">Breakpoint zones</span><span class="it">Zone breakpoint</span></span>
+    <div class="breakpoint-strip">
+      <div class="bp-zone bp-zone-mobile">Mobile<br/>320px+</div>
+      <div class="bp-zone bp-zone-tablet">Tablet<br/>768px+</div>
+      <div class="bp-zone bp-zone-desktop">Desktop<br/>1024px+</div>
+      <div class="bp-zone bp-zone-wide">Wide<br/>1440px+</div>
+    </div>
+    <div class="bp-markers">
+      <span>320</span><span>768</span><span>1024</span><span>1440</span>
+    </div>
+  </div>
+
+  <div class="code-block"><span class="lang-label">Responsive (Tailwind)</span>
+<pre>
+<span class="hl-comment">/* Tailwind breakpoint prefixes */</span>
+<span class="hl-comment">/* Default = mobile (no prefix) */</span>
+<span class="hl-comment">/* sm: = 640px+  (large phone)   */</span>
+<span class="hl-comment">/* md: = 768px+  (tablet)        */</span>
+<span class="hl-comment">/* lg: = 1024px+ (desktop)       */</span>
+<span class="hl-comment">/* xl: = 1440px+ (wide desktop)  */</span>
+
+<span class="hl-comment">&lt;!-- Mobile: stack, Tablet: 2-col, Desktop: 3-col --&gt;</span>
+&lt;<span class="hl-key">div</span> <span class="hl-fn">class</span>=<span class="hl-str">"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"</span>&gt;
+
+<span class="hl-comment">&lt;!-- Sidebar: hidden on mobile, visible on desktop --&gt;</span>
+&lt;<span class="hl-key">aside</span> <span class="hl-fn">class</span>=<span class="hl-str">"hidden lg:block w-[240px]"</span>&gt;
+
+<span class="hl-comment">&lt;!-- Padding: tighter on mobile, wider on desktop --&gt;</span>
+&lt;<span class="hl-key">div</span> <span class="hl-fn">class</span>=<span class="hl-str">"p-4 md:p-6 lg:p-8"</span>&gt;
+</pre>
+  </div>
+
+  <div class="callout callout-key"><span class="icon">*</span><div><span class="en"><strong>Foresight rule:</strong> On mobile (below 1024px), the sidebar collapses to an overlay. The canvas always fills 100% of available width. TopBar stays fixed.</span><span class="it"><strong>Regola Foresight:</strong> Su mobile (sotto 1024px), la sidebar diventa un overlay. Il canvas riempie sempre il 100% della larghezza disponibile. TopBar resta fissa.</span></div></div>
+
   <!-- QUIZ 4 -->
   <div class="quiz" id="quiz-4">
-    <div class="quiz-header"><div class="quiz-icon">?</div><div><div class="quiz-title">Layout Test</div><div class="quiz-subtitle"><span class="en">Pass: 3/4</span><span class="it">Supera: 3/4</span></div></div></div>
+    <div class="quiz-header"><div class="quiz-icon">?</div><div><div class="quiz-title">Layout Test</div><div class="quiz-subtitle"><span class="en">Pass: 4/6</span><span class="it">Supera: 4/6</span></div></div></div>
     <div class="question" data-correct="c">
       <div class="q-number">Q1</div>
       <div class="q-text"><span class="en">Why 12-column grid?</span><span class="it">Perche' griglia a 12 colonne?</span></div>
@@ -719,7 +870,31 @@
       <div class="explanation correct-exp"><span class="en">Correct! Start simple (mobile), add complexity with min-width breakpoints.</span><span class="it">Corretto! Parti semplice (mobile), aggiungi complessita' con breakpoint min-width.</span></div>
       <div class="explanation wrong-exp"><span class="en">Mobile first: default = mobile. Use min-width to progressively enhance.</span><span class="it">Mobile first: default = mobile. Usa min-width per migliorare progressivamente.</span></div>
     </div>
-    <button class="quiz-submit" onclick="checkQuiz('quiz-4',3)"><span class="en">Check Answers</span><span class="it">Verifica</span></button>
+    <div class="question" data-correct="c">
+      <div class="q-number">Q5</div>
+      <div class="q-text"><span class="en">A designer asks for 22px padding on a card. What do you do?</span><span class="it">Un designer chiede 22px di padding su una card. Cosa fai?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en">Use 22px &mdash; the designer knows best</span><span class="it">Usa 22px &mdash; il designer sa meglio</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en">Use 16px &mdash; always round down</span><span class="it">Usa 16px &mdash; arrotonda sempre per difetto</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">Use 20px or 24px &mdash; nearest values on the 4px grid</span><span class="it">Usa 20px o 24px &mdash; valori piu' vicini sulla griglia 4px</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">Add a new --space-5.5 token</span><span class="it">Aggiungi un nuovo token --space-5.5</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! Snap to the nearest grid value. 20px (--space-5) or 24px (--space-6). Talk to the designer about the grid.</span><span class="it">Corretto! Arrotonda al valore griglia piu' vicino. 20px (--space-5) o 24px (--space-6). Parla col designer della griglia.</span></div>
+      <div class="explanation wrong-exp"><span class="en">22px is not on the 4px grid. Use --space-5 (20px) or --space-6 (24px).</span><span class="it">22px non e' sulla griglia 4px. Usa --space-5 (20px) o --space-6 (24px).</span></div>
+    </div>
+    <div class="question" data-correct="b">
+      <div class="q-number">Q6</div>
+      <div class="q-text"><span class="en">What happens to the Foresight sidebar on a 600px screen?</span><span class="it">Cosa succede alla sidebar di Foresight su uno schermo di 600px?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en">It shrinks to 120px</span><span class="it">Si restringe a 120px</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en">It collapses to an overlay &mdash; canvas takes 100% width</span><span class="it">Diventa un overlay &mdash; il canvas prende 100% larghezza</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">It disappears permanently</span><span class="it">Scompare permanentemente</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">It moves to the bottom</span><span class="it">Si sposta in basso</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! Below 1024px the sidebar becomes an overlay. The canvas always fills available width.</span><span class="it">Corretto! Sotto 1024px la sidebar diventa un overlay. Il canvas riempie sempre la larghezza disponibile.</span></div>
+      <div class="explanation wrong-exp"><span class="en">On mobile, sidebar = overlay. Canvas = 100% width. TopBar stays fixed.</span><span class="it">Su mobile, sidebar = overlay. Canvas = 100% larghezza. TopBar resta fissa.</span></div>
+    </div>
+    <button class="quiz-submit" onclick="checkQuiz('quiz-4',4)"><span class="en">Check Answers</span><span class="it">Verifica</span></button>
     <div class="quiz-score" id="quiz-4-score"></div>
   </div>
 </div>
@@ -733,6 +908,7 @@
   <p class="section-desc"><span class="en">How things FEEL. Hover, focus, transitions, micro-animations. The difference between "works" and "feels alive."</span><span class="it">Come le cose si SENTONO. Hover, focus, transizioni, micro-animazioni. La differenza tra "funziona" e "sembra vivo."</span></p>
 
   <h3><span class="en">5 states every interactive element needs</span><span class="it">5 stati che ogni elemento interattivo deve avere</span></h3>
+  <p><span class="en">Every button, link, card, and input MUST define all 5 states. Missing even one makes the UI feel broken. Here's what each state communicates:</span><span class="it">Ogni bottone, link, card e input DEVE definire tutti e 5 gli stati. Mancarne anche solo uno fa sembrare la UI rotta. Ecco cosa comunica ogni stato:</span></p>
   <div class="visual-example"><span class="example-label"><span class="en">Element states</span><span class="it">Stati elemento</span></span>
     <div class="state-demo">
       <div class="state-box state-default">Default</div>
@@ -743,14 +919,125 @@
     </div>
   </div>
 
-  <h3><span class="en">Try it: hover this</span><span class="it">Prova: passa il mouse qui</span></h3>
-  <div class="visual-example"><span class="example-label">Interactive demo</span>
-    <div class="interaction-box"><span class="en">Hover me &rarr; lift, border, shadow</span><span class="it">Hover &rarr; si alza, bordo, ombra</span></div>
+  <div class="code-block"><span class="lang-label">5 States in CSS</span>
+<pre>
+.<span class="hl-fn">btn</span> {
+  <span class="hl-key">background</span>: <span class="hl-fn">var</span>(<span class="hl-str">--surface</span>);
+  <span class="hl-key">border</span>: <span class="hl-str">1px solid</span> <span class="hl-fn">var</span>(<span class="hl-str">--border</span>);
+  <span class="hl-key">color</span>: <span class="hl-fn">var</span>(<span class="hl-str">--text-muted</span>);
+  <span class="hl-key">transition</span>: <span class="hl-str">all 0.15s</span> <span class="hl-fn">cubic-bezier</span>(<span class="hl-str">0.4, 0, 0.2, 1</span>);
+}
+
+<span class="hl-comment">/* 1. DEFAULT: resting state (defined above) */</span>
+
+<span class="hl-comment">/* 2. HOVER: "you can click me" */</span>
+.<span class="hl-fn">btn</span>:<span class="hl-key">hover</span> {
+  <span class="hl-key">background</span>: <span class="hl-fn">var</span>(<span class="hl-str">--surface-2</span>);
+  <span class="hl-key">border-color</span>: <span class="hl-fn">var</span>(<span class="hl-str">--accent</span>);
+  <span class="hl-key">color</span>: <span class="hl-fn">var</span>(<span class="hl-str">--text</span>);
+  <span class="hl-key">transform</span>: <span class="hl-fn">translateY</span>(<span class="hl-str">-1px</span>);  <span class="hl-comment">/* subtle lift */</span>
+}
+
+<span class="hl-comment">/* 3. ACTIVE: "I'm being pressed" */</span>
+.<span class="hl-fn">btn</span>:<span class="hl-key">active</span> {
+  <span class="hl-key">transform</span>: <span class="hl-fn">scale</span>(<span class="hl-str">0.97</span>);        <span class="hl-comment">/* press feedback */</span>
+  <span class="hl-key">box-shadow</span>: <span class="hl-str">none</span>;
+}
+
+<span class="hl-comment">/* 4. FOCUS: "keyboard is here" (accessibility!) */</span>
+.<span class="hl-fn">btn</span>:<span class="hl-key">focus-visible</span> {
+  <span class="hl-key">box-shadow</span>: <span class="hl-str">0 0 0 3px</span> <span class="hl-fn">rgba</span>(<span class="hl-str">59,130,246,0.25</span>);
+  <span class="hl-key">border-color</span>: <span class="hl-fn">var</span>(<span class="hl-str">--accent</span>);
+  <span class="hl-key">outline</span>: <span class="hl-str">none</span>;
+}
+
+<span class="hl-comment">/* 5. DISABLED: "can't use this now" */</span>
+.<span class="hl-fn">btn</span>:<span class="hl-key">disabled</span> {
+  <span class="hl-key">opacity</span>: <span class="hl-str">0.4</span>;
+  <span class="hl-key">cursor</span>: <span class="hl-str">not-allowed</span>;
+  <span class="hl-key">pointer-events</span>: <span class="hl-str">none</span>;
+}
+</pre>
   </div>
+
+  <div class="callout callout-key"><span class="icon">*</span><div><span class="en"><strong>Why <code>:focus-visible</code> instead of <code>:focus</code>?</strong> <code>:focus</code> shows the ring on mouse click too (ugly). <code>:focus-visible</code> only shows it for keyboard navigation (Tab key). Best of both worlds.</span><span class="it"><strong>Perche' <code>:focus-visible</code> e non <code>:focus</code>?</strong> <code>:focus</code> mostra il ring anche al click del mouse (brutto). <code>:focus-visible</code> lo mostra solo per navigazione da tastiera (Tab). Il meglio di entrambi.</span></div></div>
+
+  <h3><span class="en">Animation tokens</span><span class="it">Token di animazione</span></h3>
+  <p><span class="en">Just like colors and spacing, animation timing uses tokens. This ensures every hover, every transition, every entrance feels consistent across the entire app.</span><span class="it">Come i colori e la spaziatura, il timing delle animazioni usa token. Questo garantisce che ogni hover, ogni transizione, ogni entrata sia coerente in tutta l'app.</span></p>
+
+  <div class="visual-example"><span class="example-label"><span class="en">Duration tokens</span><span class="it">Token di durata</span></span>
+    <div class="anim-token-grid">
+      <div class="anim-token-card">
+        <div class="anim-token-name">--duration-fast</div>
+        <div class="anim-token-value">100ms &mdash; <span class="en">micro-feedback (active press, toggle)</span><span class="it">micro-feedback (pressione, toggle)</span></div>
+        <div class="anim-token-bar bar-fast"></div>
+      </div>
+      <div class="anim-token-card">
+        <div class="anim-token-name">--duration-normal</div>
+        <div class="anim-token-value">150ms &mdash; <span class="en">hover states, color changes</span><span class="it">stati hover, cambi colore</span></div>
+        <div class="anim-token-bar bar-normal"></div>
+      </div>
+      <div class="anim-token-card">
+        <div class="anim-token-name">--duration-slow</div>
+        <div class="anim-token-value">250ms &mdash; <span class="en">layout shifts, panel open/close</span><span class="it">spostamenti layout, apertura/chiusura pannelli</span></div>
+        <div class="anim-token-bar bar-slow"></div>
+      </div>
+      <div class="anim-token-card">
+        <div class="anim-token-name">--duration-enter</div>
+        <div class="anim-token-value">350ms &mdash; <span class="en">page transitions, modal entrance</span><span class="it">transizioni pagina, entrata modale</span></div>
+        <div class="anim-token-bar bar-enter"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="code-block"><span class="lang-label">Easing Functions</span>
+<pre>
+<span class="hl-comment">/* Foresight easing tokens */</span>
+:<span class="hl-fn">root</span> {
+  <span class="hl-key">--ease-out</span>:    <span class="hl-fn">cubic-bezier</span>(<span class="hl-str">0.0, 0, 0.2, 1</span>);  <span class="hl-comment">/* enters fast, settles */</span>
+  <span class="hl-key">--ease-in-out</span>: <span class="hl-fn">cubic-bezier</span>(<span class="hl-str">0.4, 0, 0.2, 1</span>);  <span class="hl-comment">/* smooth both ways */</span>
+  <span class="hl-key">--ease-spring</span>: <span class="hl-fn">cubic-bezier</span>(<span class="hl-str">0.34, 1.56, 0.64, 1</span>); <span class="hl-comment">/* overshoot bounce */</span>
+}
+
+<span class="hl-comment">/* When to use which: */</span>
+<span class="hl-comment">/* ease-out     -> hover, tooltips (appear fast) */</span>
+<span class="hl-comment">/* ease-in-out  -> transitions, slides (smooth) */</span>
+<span class="hl-comment">/* ease-spring  -> playful UI, toasts, badges   */</span>
+</pre>
+  </div>
+
+  <h3><span class="en">Micro-interactions: the 3 pillars</span><span class="it">Micro-interazioni: i 3 pilastri</span></h3>
+  <p><span class="en">Every premium UI uses these 3 micro-interactions consistently. They make the difference between "functional" and "feels alive":</span><span class="it">Ogni UI premium usa queste 3 micro-interazioni in modo coerente. Fanno la differenza tra "funzionale" e "sembra vivo":</span></p>
+
+  <div class="callout callout-key"><span class="icon">*</span><div>
+    <span class="en"><strong>1. Press feedback</strong> &mdash; <code>active:scale(0.97)</code>. Simulates physical pressing. Your brain reads "I pushed something." Every clickable element needs this.</span>
+    <span class="it"><strong>1. Feedback di pressione</strong> &mdash; <code>active:scale(0.97)</code>. Simula la pressione fisica. Il cervello legge "ho premuto qualcosa." Ogni elemento cliccabile ne ha bisogno.</span>
+  </div></div>
+  <div class="callout callout-key"><span class="icon">*</span><div>
+    <span class="en"><strong>2. Lift on hover</strong> &mdash; <code>hover:translateY(-2px) + box-shadow</code>. Card rises toward you. Creates depth hierarchy: "this element is interactive."</span>
+    <span class="it"><strong>2. Sollevamento al hover</strong> &mdash; <code>hover:translateY(-2px) + box-shadow</code>. La card si alza verso di te. Crea gerarchia di profondita': "questo elemento e' interattivo."</span>
+  </div></div>
+  <div class="callout callout-key"><span class="icon">*</span><div>
+    <span class="en"><strong>3. Focus ring</strong> &mdash; <code>focus-visible:box-shadow(0 0 0 3px accent/25%)</code>. 3px outline around focused element. Required for accessibility (WCAG). Never remove <code>outline</code> without adding a visible alternative.</span>
+    <span class="it"><strong>3. Focus ring</strong> &mdash; <code>focus-visible:box-shadow(0 0 0 3px accent/25%)</code>. Contorno 3px attorno all'elemento selezionato. Richiesto per accessibilita' (WCAG). Mai rimuovere <code>outline</code> senza aggiungere un'alternativa visibile.</span>
+  </div></div>
+
+  <h3><span class="en">Try it: interact with these</span><span class="it">Prova: interagisci con questi</span></h3>
+  <p><span class="en">Hover, click, and Tab through these elements. Notice how each state feels different:</span><span class="it">Fai hover, click e Tab tra questi elementi. Nota come ogni stato ha una sensazione diversa:</span></p>
+  <div class="visual-example"><span class="example-label"><span class="en">Interactive demo &mdash; try hover, click, Tab</span><span class="it">Demo interattiva &mdash; prova hover, click, Tab</span></span>
+    <div class="multi-demo-row">
+      <button class="demo-interactive-btn"><span class="en">Normal button</span><span class="it">Bottone normale</span></button>
+      <button class="demo-interactive-btn"><span class="en">Another one</span><span class="it">Un altro</span></button>
+      <button class="demo-interactive-btn disabled" disabled><span class="en">Disabled</span><span class="it">Disabilitato</span></button>
+      <div class="interaction-box"><span class="en">Card with lift</span><span class="it">Card con sollevamento</span></div>
+    </div>
+  </div>
+
+  <div class="callout callout-warning"><span class="icon">!</span><div><span class="en"><strong>Performance rule:</strong> Only animate <code>transform</code> and <code>opacity</code>. These use the GPU compositor (no layout recalculation). Animating <code>width</code>, <code>height</code>, <code>top</code>, <code>left</code>, or <code>margin</code> causes layout thrashing &mdash; janky and slow.</span><span class="it"><strong>Regola performance:</strong> Anima solo <code>transform</code> e <code>opacity</code>. Usano il compositor GPU (nessun ricalcolo del layout). Animare <code>width</code>, <code>height</code>, <code>top</code>, <code>left</code>, o <code>margin</code> causa layout thrashing &mdash; scattoso e lento.</span></div></div>
 
   <!-- QUIZ 5 -->
   <div class="quiz" id="quiz-5">
-    <div class="quiz-header"><div class="quiz-icon">?</div><div><div class="quiz-title">Interactions Test</div><div class="quiz-subtitle"><span class="en">Pass: 3/4</span><span class="it">Supera: 3/4</span></div></div></div>
+    <div class="quiz-header"><div class="quiz-icon">?</div><div><div class="quiz-title">Interactions Test</div><div class="quiz-subtitle"><span class="en">Pass: 4/6</span><span class="it">Supera: 4/6</span></div></div></div>
     <div class="question" data-correct="b">
       <div class="q-number">Q1</div>
       <div class="q-text"><span class="en">How many states should every interactive element define?</span><span class="it">Quanti stati deve definire ogni elemento interattivo?</span></div>
@@ -799,7 +1086,31 @@
       <div class="explanation correct-exp"><span class="en">Correct! Focus rings = accessibility requirement for keyboard navigation.</span><span class="it">Corretto! Focus ring = requisito di accessibilita' per navigazione da tastiera.</span></div>
       <div class="explanation wrong-exp"><span class="en">Focus rings are for <strong>accessibility</strong>. Keyboard users need to see the focused element.</span><span class="it">I focus ring sono per l'<strong>accessibilita'</strong>. Gli utenti da tastiera devono vedere l'elemento selezionato.</span></div>
     </div>
-    <button class="quiz-submit" onclick="checkQuiz('quiz-5',3)"><span class="en">Check Answers</span><span class="it">Verifica</span></button>
+    <div class="question" data-correct="b">
+      <div class="q-number">Q5</div>
+      <div class="q-text"><span class="en">You want to animate a sidebar sliding in. Which CSS property should you use?</span><span class="it">Vuoi animare una sidebar che entra. Quale proprieta' CSS dovresti usare?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><code>left: -240px</code> &rarr; <code>left: 0</code></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><code>transform: translateX(-100%)</code> &rarr; <code>transform: translateX(0)</code></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><code>margin-left: -240px</code> &rarr; <code>margin-left: 0</code></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><code>width: 0</code> &rarr; <code>width: 240px</code></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! <code>transform</code> uses the GPU compositor &mdash; no layout recalculation, smooth 60fps. All other options cause layout thrashing.</span><span class="it">Corretto! <code>transform</code> usa il compositor GPU &mdash; nessun ricalcolo layout, 60fps fluidi. Tutte le altre opzioni causano layout thrashing.</span></div>
+      <div class="explanation wrong-exp"><span class="en">Always use <code>transform</code> for position animations. <code>left</code>, <code>margin</code>, <code>width</code> all trigger layout recalculation = janky animation.</span><span class="it">Usa sempre <code>transform</code> per animazioni di posizione. <code>left</code>, <code>margin</code>, <code>width</code> scatenano tutti ricalcolo del layout = animazione scattosa.</span></div>
+    </div>
+    <div class="question" data-correct="a">
+      <div class="q-number">Q6</div>
+      <div class="q-text"><span class="en">Why <code>:focus-visible</code> instead of <code>:focus</code>?</span><span class="it">Perche' <code>:focus-visible</code> invece di <code>:focus</code>?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en"><code>:focus</code> shows the ring on mouse click too; <code>:focus-visible</code> only shows it for keyboard navigation</span><span class="it"><code>:focus</code> mostra il ring anche al click del mouse; <code>:focus-visible</code> lo mostra solo per navigazione da tastiera</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en"><code>:focus-visible</code> is faster to render</span><span class="it"><code>:focus-visible</code> e' piu' veloce da renderizzare</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">They're the same thing</span><span class="it">Sono la stessa cosa</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en"><code>:focus-visible</code> works on all browsers, <code>:focus</code> doesn't</span><span class="it"><code>:focus-visible</code> funziona su tutti i browser, <code>:focus</code> no</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! <code>:focus-visible</code> = keyboard only. No ugly rings on mouse click. Best UX for both mouse and keyboard users.</span><span class="it">Corretto! <code>:focus-visible</code> = solo tastiera. Niente ring brutti al click del mouse. Miglior UX per utenti mouse e tastiera.</span></div>
+      <div class="explanation wrong-exp"><span class="en"><code>:focus</code> fires on ANY focus (mouse too). <code>:focus-visible</code> only fires when the browser detects keyboard navigation.</span><span class="it"><code>:focus</code> si attiva per QUALSIASI focus (anche mouse). <code>:focus-visible</code> si attiva solo quando il browser rileva navigazione da tastiera.</span></div>
+    </div>
+    <button class="quiz-submit" onclick="checkQuiz('quiz-5',4)"><span class="en">Check Answers</span><span class="it">Verifica</span></button>
     <div class="quiz-score" id="quiz-5-score"></div>
   </div>
 </div>

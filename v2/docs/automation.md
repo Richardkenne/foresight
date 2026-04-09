@@ -21,6 +21,13 @@
 - **Disattivare**: `launchctl unload ~/Library/LaunchAgents/com.simulator.overnight-pipeline.plist`
 - **Test manuale**: `export $(grep -v '^#' .env.local | xargs) && npx tsx scripts/overnight-pipeline.ts`
 
+### Supabase Pro Plan
+- **Attivo dal**: 2026-04-07
+- **Costo**: $25/mo
+- **Limiti**: 8 GB database, 250 GB bandwidth, 100 GB file storage
+- **Stato attuale**: 1.6 GB usati (314K embeddings), headroom fino a 8 GB (~1.5M embeddings)
+- **Progetto**: Simulator (rkkfwsmoqylctprzqhfj)
+
 ## Pianificate (non ancora attive)
 
 ### Weekly Full Re-Index (Fase 4, Day 35+)
