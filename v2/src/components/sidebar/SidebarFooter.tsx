@@ -14,7 +14,7 @@ import Text from '@/components/ui/Text';
 export default function SidebarFooter() {
   return (
     <div className="px-8 py-6 border-t border-[var(--border)]">
-      <Text variant="caption" as="div" style={{ fontSize: '11px' }}>Foresight</Text>
+      <Text variant="caption" as="div">Foresight</Text>
     </div>
   );
 }

@@ -24,7 +24,7 @@ interface ShortcutItemProps {
 export default function ShortcutItem({ label, keys, soon }: ShortcutItemProps) {
   return (
     <div className="flex items-center justify-between px-4 py-4 rounded-lg">
-      <Text variant="caption" style={{ fontSize: '13px', color: 'var(--muted-foreground)' }}>
+      <Text variant="caption" style={{ fontSize: 'var(--text-base)', color: 'var(--muted-foreground)' }}>
         {label}
         {soon && (
           <span className="ml-2">
@@ -36,7 +36,7 @@ export default function ShortcutItem({ label, keys, soon }: ShortcutItemProps) {
         {keys.map((k, i) => (
           <kbd
             key={i}
-            className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium"
+            className="inline-flex items-center px-2 py-0.5 rounded text-[var(--text-xs)] font-medium"
             style={{
               fontFamily: 'var(--font-geist-mono), monospace',
               color: 'var(--muted-foreground)',

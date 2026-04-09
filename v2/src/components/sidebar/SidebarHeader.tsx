@@ -21,7 +21,7 @@ interface SidebarHeaderProps {
 export default function SidebarHeader({ onClose }: SidebarHeaderProps) {
   return (
     <div className="h-[var(--topbar-height)] flex items-center justify-between px-8 border-b border-[var(--border)]">
-      <Text variant="mono" style={{ fontSize: '16px', fontWeight: 700, letterSpacing: '0.08em' }}>
+      <Text variant="mono" style={{ fontSize: 'var(--text-lg)', fontWeight: 'var(--font-bold)' as unknown as number, letterSpacing: '0.08em' }}>
         FORESIGHT
       </Text>
       <IconButton variant="ghost" size="md" onClick={onClose} aria-label="Close sidebar">

@@ -4,9 +4,9 @@
  * ToggleItem — singola riga con icona + label + toggle switch
  *
  * SPERIMENTA QUI:
- * - padding (px-5 py-4, px-6 py-5)
+ * - padding (px-4 py-4, px-5 py-5, px-6 py-5)
  * - gap icona-testo (gap-3, gap-4, gap-5)
- * - font-size (text-[14px], text-[15px], text-[16px])
+ * - font-size (var(--text-md), var(--text-lg), var(--text-xl))
  * - border-radius (rounded-lg, rounded-xl)
  * - dimensione icona (width="18", width="20", width="22")
  * - dimensione toggle (w-[44px] h-[24px], w-[48px] h-[26px])
@@ -27,7 +27,7 @@ export default function ToggleItem({ icon, label, active, activeColor = 'var(--a
   return (
     <button
       onClick={onClick}
-      className="w-full flex items-center justify-between px-4 py-5 rounded-xl text-[15px] transition-colors cursor-pointer hover:bg-[var(--surface-hover)] active:scale-95"
+      className="w-full flex items-center justify-between px-4 py-4 rounded-xl text-[var(--text-lg)] transition-colors cursor-pointer hover:bg-[var(--surface-hover)] active:scale-95"
       style={{ color: 'var(--foreground)' }}
     >
       <div className="flex items-center gap-4">
