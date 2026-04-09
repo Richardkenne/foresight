@@ -1,0 +1,753 @@
+{
+  "_meta": {
+    "country": "USA",
+    "country_name": "United States",
+    "created": "2026-04-07",
+    "categories": 11,
+    "filtered": "2026-04-07"
+  },
+  "dataPoints": 128,
+  "daily_routines": {
+    "avg_sleep_hours": {
+      "value": 6.8,
+      "source": "CDC National Health Interview Survey, 2023",
+      "year": 2023,
+      "note": "Adults 18+; ~35% sleep fewer than 7 hours"
+    },
+    "wake_time_weekday": {
+      "value": "6:32 AM",
+      "source": "American Time Use Survey, BLS, 2023",
+      "year": 2023,
+      "note": "Median weekday wake time"
+    },
+    "commute_time_minutes": {
+      "value": 27.6,
+      "source": "U.S. Census Bureau American Community Survey, 2023",
+      "year": 2023,
+      "note": "One-way commute; up slightly from 26.6 pre-pandemic"
+    },
+    "working_hours_per_week": {
+      "value": 38.7,
+      "source": "BLS Current Population Survey, 2023",
+      "year": 2023,
+      "note": "Average across all employed workers including part-time"
+    },
+    "lunch_break_minutes": {
+      "value": 36,
+      "source": "Tork Workplace Survey, 2023",
+      "year": 2023,
+      "note": "Most workers take 30-40 min; 20% eat at their desk"
+    },
+    "dinner_time_avg": {
+      "value": "6:22 PM",
+      "source": "American Time Use Survey, BLS, 2023",
+      "year": 2023
+    },
+    "leisure_hours_per_day": {
+      "value": 5.1,
+      "source": "American Time Use Survey, BLS, 2023",
+      "year": 2023,
+      "note": "Includes TV, sports, socializing; men average 5.6h, women 4.7h"
+    },
+    "tv_hours_per_day": {
+      "value": 2.9,
+      "source": "Nielsen Total Audience Report, 2024",
+      "year": 2024,
+      "note": "Linear + streaming; adults 18+; declines in younger cohorts"
+    },
+    "weekend_family_time_hours": {
+      "value": 4.2,
+      "source": "American Time Use Survey, BLS, 2023",
+      "year": 2023,
+      "note": "Household socializing on weekend days"
+    },
+    "vacation_days_taken_per_year": {
+      "value": 17.2,
+      "source": "U.S. Travel Association, 2023",
+      "year": 2023,
+      "note": "Average available 19.8 days; ~$66B in unused vacation"
+    },
+    "overtime_culture": {
+      "value": "high",
+      "source": "Gallup State of the American Workplace, 2023",
+      "year": 2023,
+      "note": "43% of full-time workers say they work more than 45h/week"
+    },
+    "morning_routine_duration_minutes": {
+      "value": 46,
+      "source": "OnePoll Survey via NY Post, 2023",
+      "year": 2023
+    },
+    "social_media_check_morning_pct": {
+      "value": 69,
+      "source": "Pew Research Center Digital News Survey, 2024",
+      "year": 2024,
+      "note": "Check phone within 30 min of waking"
+    },
+    "exercise_days_per_week": {
+      "value": 2.5,
+      "source": "CDC BRFSS, 2023",
+      "year": 2023,
+      "note": "Adults meeting aerobic physical activity guidelines: 53%"
+    },
+    "avg_daily_steps": {
+      "value": 4774,
+      "source": "JAMA Internal Medicine / Stanford study, 2022",
+      "year": 2022,
+      "note": "US ranks low globally despite fitness culture"
+    }
+  },
+  "spending": {
+    "food_at_home_usd": {
+      "value": 579,
+      "source": "BLS Consumer Expenditure Survey, 2023",
+      "year": 2023,
+      "note": "Monthly average per household"
+    },
+    "food_out_usd": {
+      "value": 339,
+      "source": "BLS Consumer Expenditure Survey, 2023",
+      "year": 2023,
+      "note": "Restaurants and fast food combined"
+    },
+    "housing_rent_or_mortgage_usd": {
+      "value": 1956,
+      "source": "BLS Consumer Expenditure Survey / Zillow Rent Index, 2024",
+      "year": 2024,
+      "note": "National median rent 1BR ~$1,500; mortgage payments avg higher"
+    },
+    "transport_usd": {
+      "value": 1025,
+      "source": "BLS Consumer Expenditure Survey, 2023",
+      "year": 2023,
+      "note": "Includes car payments, insurance, gas, transit"
+    },
+    "education_usd": {
+      "value": 142,
+      "source": "BLS Consumer Expenditure Survey, 2023",
+      "year": 2023,
+      "note": "Household average; skewed by families with college students"
+    },
+    "entertainment_usd": {
+      "value": 271,
+      "source": "BLS Consumer Expenditure Survey, 2023",
+      "year": 2023
+    },
+    "healthcare_usd": {
+      "value": 496,
+      "source": "BLS Consumer Expenditure Survey, 2023",
+      "year": 2023,
+      "note": "Out-of-pocket + premiums; doesn't include employer contributions"
+    },
+    "clothing_usd": {
+      "value": 162,
+      "source": "BLS Consumer Expenditure Survey, 2023",
+      "year": 2023
+    },
+    "savings_rate_pct": {
+      "value": 4.1,
+      "source": "U.S. Bureau of Economic Analysis, 2024",
+      "year": 2024,
+      "note": "Personal saving rate; fell from pandemic high of 33% in 2020"
+    },
+    "debt_to_income_ratio_pct": {
+      "value": 96.5,
+      "source": "Federal Reserve / New York Fed Consumer Credit Panel, 2024",
+      "year": 2024,
+      "note": "Total household debt to disposable personal income"
+    },
+    "luxury_goods_spend_pct": {
+      "value": 3.8,
+      "source": "Bain & Company Luxury Study, 2023",
+      "year": 2023,
+      "note": "Share of discretionary spending on premium/luxury"
+    },
+    "avg_monthly_subscription_spend_usd": {
+      "value": 219,
+      "source": "Waterstone Management Group / C+R Research, 2023",
+      "year": 2023,
+      "note": "Streaming, software, gym, etc."
+    },
+    "credit_card_debt_per_household_usd": {
+      "value": 7951,
+      "source": "Federal Reserve Bank of New York, 2024",
+      "year": 2024
+    },
+    "avg_holiday_spend_usd": {
+      "value": 875,
+      "source": "NRF Holiday Consumer Survey, 2023",
+      "year": 2023
+    }
+  },
+  "social_norms": {
+    "individualism_score": {
+      "value": 91,
+      "source": "Hofstede Insights Country Comparison, 2023",
+      "year": 2023,
+      "note": "Highest individualism score in the world"
+    },
+    "power_distance_score": {
+      "value": 40,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023,
+      "note": "Relatively low; egalitarian norms in workplace"
+    },
+    "uncertainty_avoidance": {
+      "value": 46,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "masculinity_score": {
+      "value": 62,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023,
+      "note": "Achievement and competition emphasized"
+    },
+    "long_term_orientation": {
+      "value": 26,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023,
+      "note": "Short-term orientation; quarterly earnings culture"
+    },
+    "indulgence_score": {
+      "value": 68,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "personal_space_norm_m": {
+      "value": 0.9,
+      "source": "Proxemics research / Hall's cultural model, applied 2022",
+      "year": 2022,
+      "note": "Social distance ~0.6-1.2m; more in South"
+    },
+    "eye_contact_norm": {
+      "value": "direct and expected",
+      "source": "Cultural Etiquette Institute, 2023",
+      "year": 2023
+    },
+    "punctuality_culture": {
+      "value": "high in business, relaxed socially",
+      "source": "World Values Survey Wave 7, 2022",
+      "year": 2022
+    },
+    "gift_giving_culture": {
+      "value": "moderate",
+      "source": "Gallup Cultural Practices Survey, 2023",
+      "year": 2023,
+      "note": "Holidays and birthdays primary occasions"
+    },
+    "small_talk_prevalence": {
+      "value": "very high",
+      "source": "Pew Research Social Interaction Survey, 2023",
+      "year": 2023
+    },
+    "tipping_culture": {
+      "value": "strong/expected",
+      "source": "Pew Research Center, 2023",
+      "year": 2023,
+      "note": "72% say tipping expected at restaurants; tip inflation to 18-20% standard"
+    },
+    "lgbtq_acceptance_pct": {
+      "value": 72,
+      "source": "Gallup Poll, 2024",
+      "year": 2024,
+      "note": "Support for same-sex marriage"
+    },
+    "interracial_marriage_approval_pct": {
+      "value": 94,
+      "source": "Gallup Poll, 2023",
+      "year": 2023
+    },
+    "strangers_greeting_culture": {
+      "value": "high",
+      "source": "World Values Survey Wave 7, 2022",
+      "year": 2022
+    }
+  },
+  "business_culture": {
+    "hierarchy_importance": {
+      "value": 4,
+      "source": "Hofstede Insights / GLOBE Study, 2023",
+      "year": 2023,
+      "note": "Scale 1-10; flatter structure preferred; 'can call boss by first name'"
+    },
+    "formality_level": {
+      "value": 4,
+      "source": "GLOBE Project Cultural Dimensions, 2022",
+      "year": 2022
+    },
+    "meeting_starts_on_time_pct": {
+      "value": 82,
+      "source": "Doodle State of Meetings Report, 2023",
+      "year": 2023
+    },
+    "business_card_etiquette": {
+      "value": "informal, digital preferred",
+      "source": "LinkedIn Workforce Survey, 2023",
+      "year": 2023
+    },
+    "negotiation_style": {
+      "value": "direct, win-oriented",
+      "source": "Harvard PON / Cultural Intelligence Center, 2023",
+      "year": 2023
+    },
+    "corruption_perception_index": {
+      "value": 69,
+      "source": "Transparency International CPI, 2023",
+      "year": 2023,
+      "note": "Score 0-100; higher = less corrupt; ranked 24th globally"
+    },
+    "ease_of_doing_business_rank": {
+      "value": 55,
+      "source": "World Bank Doing Business / BCI, 2023",
+      "year": 2023
+    },
+    "time_to_start_business_days": {
+      "value": 4,
+      "source": "World Bank Business Ready, 2024",
+      "year": 2024
+    },
+    "work_life_balance_score": {
+      "value": 6.5,
+      "source": "OECD Better Life Index, 2024",
+      "year": 2024,
+      "note": "Scale 1-10; ranks poorly among OECD nations"
+    },
+    "gender_pay_gap_pct": {
+      "value": 17.1,
+      "source": "U.S. Census Bureau / BLS, 2023",
+      "year": 2023,
+      "note": "Women earn 82.9 cents per dollar; unadjusted gap"
+    },
+    "parental_leave_weeks": {
+      "value": 0,
+      "source": "U.S. Department of Labor, 2024",
+      "year": 2024,
+      "note": "No federal paid parental leave; FMLA provides 12 wks unpaid"
+    },
+    "unionization_rate_pct": {
+      "value": 10,
+      "source": "BLS Union Members Summary, 2024",
+      "year": 2024
+    },
+    "remote_work_policy_adoption_pct": {
+      "value": 58,
+      "source": "Gallup Work-from-Home Survey, 2024",
+      "year": 2024,
+      "note": "Firms offering hybrid or remote options"
+    },
+    "avg_annual_salary_usd": {
+      "value": 65470,
+      "source": "BLS Occupational Employment Statistics, 2023",
+      "year": 2023
+    }
+  },
+  "religion": {
+    "major_religion": {
+      "value": "Christianity",
+      "source": "Pew Research Center Religious Landscape Study, 2023",
+      "year": 2023
+    },
+    "major_religion_pct": {
+      "value": 63,
+      "source": "Pew Research Center, 2023",
+      "year": 2023,
+      "note": "Down from 75% in 2015; Protestant 40%, Catholic 19%"
+    },
+    "second_religion_pct": {
+      "value": 2,
+      "source": "Pew Research Center, 2023",
+      "year": 2023,
+      "note": "Judaism ~2%; Islam ~1%; Buddhism ~1%"
+    },
+    "atheist_agnostic_pct": {
+      "value": 28,
+      "source": "Pew Research Center, 2023",
+      "year": 2023,
+      "note": "'Nones' (unaffiliated): 28%; rising rapidly"
+    },
+    "weekly_religious_attendance_pct": {
+      "value": 22,
+      "source": "Gallup Poll, 2024",
+      "year": 2024,
+      "note": "Self-reported weekly church attendance; actual may be lower"
+    },
+    "religion_impact_daily_life": {
+      "value": 5.3,
+      "source": "Pew Research Center, 2023",
+      "year": 2023,
+      "note": "Scale 1-10; 45% say religion very important in their life"
+    },
+    "religious_holidays_count_per_year": {
+      "value": 2,
+      "source": "U.S. Federal Holidays / OPM, 2024",
+      "year": 2024,
+      "note": "Thanksgiving and Christmas; but Sunday culturally protected"
+    },
+    "interfaith_marriage_acceptance_pct": {
+      "value": 68,
+      "source": "Pew Research Center, 2023",
+      "year": 2023
+    },
+    "religiosity_trend": {
+      "value": "falling",
+      "source": "Pew Research Center, 2023",
+      "year": 2023,
+      "note": "Particularly among Gen Z; 'nones' projected to become plurality"
+    }
+  },
+  "digital_behavior": {
+    "internet_penetration_pct": {
+      "value": 92.7,
+      "source": "ITU / Pew Research, 2024",
+      "year": 2024
+    },
+    "smartphone_ownership_pct": {
+      "value": 91,
+      "source": "Pew Research Center, 2024",
+      "year": 2024
+    },
+    "daily_social_media_hours": {
+      "value": 2.3,
+      "source": "DataReportal Digital 2024 Report",
+      "year": 2024
+    },
+    "top_platform_1": {
+      "value": "YouTube",
+      "source": "Pew Research Center Social Media Use, 2024",
+      "year": 2024
+    },
+    "top_platform_1_users_pct": {
+      "value": 83,
+      "source": "Pew Research Center, 2024",
+      "year": 2024
+    },
+    "top_platform_2": {
+      "value": "Facebook",
+      "source": "Pew Research Center, 2024",
+      "year": 2024,
+      "note": "68% of US adults; aging demographics"
+    },
+    "ecommerce_adoption_pct": {
+      "value": 79,
+      "source": "U.S. Census Bureau E-Stats / Statista, 2024",
+      "year": 2024
+    },
+    "mobile_payment_adoption_pct": {
+      "value": 53,
+      "source": "Federal Reserve Diary of Consumer Payment Choice, 2023",
+      "year": 2023,
+      "note": "Apple Pay, Google Pay, Venmo; below EU/China levels"
+    },
+    "online_banking_pct": {
+      "value": 78,
+      "source": "FDIC National Survey of Unbanked and Underbanked, 2023",
+      "year": 2023
+    },
+    "streaming_subscription_pct": {
+      "value": 87,
+      "source": "Leichtman Research Group, 2024",
+      "year": 2024,
+      "note": "Households with at least one streaming service"
+    },
+    "remote_work_pct": {
+      "value": 29,
+      "source": "BLS American Time Use Survey, 2024",
+      "year": 2024,
+      "note": "Workers who telework some or all days"
+    },
+    "ai_tool_adoption_pct": {
+      "value": 39,
+      "source": "Pew Research Center, 2024",
+      "year": 2024,
+      "note": "Adults who have used ChatGPT or similar; 23% use regularly"
+    }
+  },
+  "education": {
+    "literacy_rate_pct": {
+      "value": 99,
+      "source": "UNESCO Institute for Statistics, 2023",
+      "year": 2023,
+      "note": "Adult literacy; functional literacy lower at ~54%"
+    },
+    "avg_years_schooling": {
+      "value": 13.7,
+      "source": "UNDP Human Development Report, 2023",
+      "year": 2023
+    },
+    "tertiary_enrollment_pct": {
+      "value": 62,
+      "source": "OECD Education at a Glance, 2023",
+      "year": 2023
+    },
+    "private_tutoring_prevalence_pct": {
+      "value": 34,
+      "source": "Education Research Alliance / Statista, 2023",
+      "year": 2023
+    },
+    "govt_education_spend_pct_gdp": {
+      "value": 5,
+      "source": "OECD Education at a Glance, 2023",
+      "year": 2023
+    },
+    "university_acceptance_rate_pct": {
+      "value": 68,
+      "source": "NCES Digest of Education Statistics, 2023",
+      "year": 2023,
+      "note": "Average across all 4-year institutions; Ivy League < 5%"
+    },
+    "student_loan_prevalence_pct": {
+      "value": 43,
+      "source": "Federal Student Aid Portfolio Summary, 2024",
+      "year": 2024,
+      "note": "Percentage of college students borrowing; total debt $1.77T"
+    },
+    "stem_graduates_pct": {
+      "value": 22,
+      "source": "NCES, 2023",
+      "year": 2023,
+      "note": "STEM as share of bachelor's degrees conferred"
+    },
+    "vocational_track_pct": {
+      "value": 8,
+      "source": "NCES Career and Technical Education, 2023",
+      "year": 2023,
+      "note": "Share choosing vocational/CTE pathway post-high school"
+    },
+    "pisa_score_avg": {
+      "value": 498,
+      "source": "OECD PISA 2022",
+      "year": 2022,
+      "note": "Average of reading (504), math (465), science (499); below OECD avg in math"
+    },
+    "education_expenditure_per_student_usd": {
+      "value": 17790,
+      "source": "OECD Education at a Glance, 2023",
+      "year": 2023,
+      "note": "K-12 annual; highest among OECD nations"
+    }
+  },
+  "housing": {
+    "homeownership_rate_pct": {
+      "value": 65.7,
+      "source": "U.S. Census Bureau Housing Vacancies Survey, Q4 2024",
+      "year": 2024
+    },
+    "avg_household_size": {
+      "value": 2.53,
+      "source": "U.S. Census Bureau ACS, 2023",
+      "year": 2023
+    },
+    "avg_rent_1br_city_usd": {
+      "value": 1850,
+      "source": "Zillow Observed Rent Index, 2024",
+      "year": 2024,
+      "note": "Median across major cities; NYC ~$3,200, Midwest ~$900"
+    },
+    "avg_rent_1br_suburbs_usd": {
+      "value": 1290,
+      "source": "Zillow Observed Rent Index, 2024",
+      "year": 2024
+    },
+    "multigenerational_household_pct": {
+      "value": 18,
+      "source": "Pew Research Center, 2022",
+      "year": 2022,
+      "note": "Rising; driven by housing costs and immigration"
+    },
+    "housing_cost_to_income_ratio": {
+      "value": 0.33,
+      "source": "Harvard Joint Center for Housing Studies, 2024",
+      "year": 2024,
+      "note": "Cost-burdened (>30% income): 30%+ of renters"
+    },
+    "avg_home_size_sqm": {
+      "value": 214,
+      "source": "U.S. Census Bureau New Residential Construction, 2023",
+      "year": 2023,
+      "note": "Largest in the world; median new home ~232 sqm"
+    },
+    "social_housing_pct": {
+      "value": 1.2,
+      "source": "HUD Annual Report, 2023",
+      "year": 2023,
+      "note": "Public housing as share of stock; very low by OECD standards"
+    },
+    "avg_mortgage_term_years": {
+      "value": 30,
+      "source": "CFPB Mortgage Market Activity, 2024",
+      "year": 2024,
+      "note": "30-year fixed dominant; 15-year secondary"
+    },
+    "housing_price_to_income_ratio": {
+      "value": 7.5,
+      "source": "Demographia International Housing Affordability, 2024",
+      "year": 2024,
+      "note": "National median; severely unaffordable in coastal cities (>10)"
+    },
+    "avg_age_first_home_purchase": {
+      "value": 36,
+      "source": "National Association of Realtors Profile of Buyers, 2023",
+      "year": 2023,
+      "note": "All-time high; driven by affordability crisis"
+    }
+  },
+  "food_lifestyle": {
+    "eating_out_per_week": {
+      "value": 3.1,
+      "source": "National Restaurant Association, 2024",
+      "year": 2024
+    },
+    "home_cooking_pct": {
+      "value": 59,
+      "source": "USDA Economic Research Service, 2023",
+      "year": 2023,
+      "note": "Meals prepared at home as share of total meals"
+    },
+    "fast_food_visits_per_week": {
+      "value": 2.3,
+      "source": "Gallup / Technomic Consumer Survey, 2023",
+      "year": 2023
+    },
+    "vegetarian_vegan_pct": {
+      "value": 6,
+      "source": "Gallup Consumption Habits Poll, 2023",
+      "year": 2023,
+      "note": "Vegetarian 4%, vegan 2%; plant-based trend growing"
+    },
+    "obesity_rate_pct": {
+      "value": 41.9,
+      "source": "CDC NHANES, 2023",
+      "year": 2023,
+      "note": "Adults with BMI ≥ 30; highest in developed world"
+    },
+    "alcohol_consumption_litres_per_capita": {
+      "value": 9.3,
+      "source": "NIAAA / WHO Global Status Report, 2023",
+      "year": 2023
+    },
+    "coffee_consumption_kg_per_capita": {
+      "value": 4.4,
+      "source": "ICO / Statista, 2023",
+      "year": 2023
+    },
+    "organic_food_adoption_pct": {
+      "value": 58,
+      "source": "Organic Trade Association, 2023",
+      "year": 2023,
+      "note": "Households that purchase organic at least occasionally"
+    },
+    "meal_sharing_culture_score": {
+      "value": 5.2,
+      "source": "World Values Survey / Harris Poll, 2022",
+      "year": 2022,
+      "note": "Scale 1-10; individualistic meals common, but holidays communal"
+    },
+    "food_delivery_app_usage_pct": {
+      "value": 53,
+      "source": "Statista / Second Measure, 2024",
+      "year": 2024,
+      "note": "Adults who ordered food via app in past month"
+    },
+    "supermarket_shop_frequency_per_week": {
+      "value": 1.6,
+      "source": "FMI Power of Our Customers, 2023",
+      "year": 2023
+    }
+  },
+  "trust_governance": {
+    "trust_in_govt_pct": {
+      "value": 22,
+      "source": "Gallup, 2024",
+      "year": 2024,
+      "note": "Trust in federal government to do right; near historic low"
+    },
+    "trust_in_courts_pct": {
+      "value": 42,
+      "source": "Gallup Confidence in Institutions Poll, 2024",
+      "year": 2024
+    },
+    "trust_in_police_pct": {
+      "value": 51,
+      "source": "Gallup Confidence in Institutions Poll, 2024",
+      "year": 2024
+    },
+    "trust_in_media_pct": {
+      "value": 31,
+      "source": "Gallup/Knight Foundation Media Survey, 2024",
+      "year": 2024,
+      "note": "Trust in mass media to report fully, accurately, fairly"
+    },
+    "trust_in_strangers_pct": {
+      "value": 34,
+      "source": "World Values Survey Wave 7, 2022",
+      "year": 2022,
+      "note": "Say most people can be trusted"
+    },
+    "corruption_perception_index": {
+      "value": 69,
+      "source": "Transparency International CPI, 2023",
+      "year": 2023
+    },
+    "press_freedom_index": {
+      "value": 45,
+      "source": "RSF World Press Freedom Index, 2024",
+      "year": 2024,
+      "note": "Ranked 55th globally; score out of 100, higher = freer"
+    },
+    "voter_turnout_pct": {
+      "value": 65.4,
+      "source": "U.S. Election Project, 2024",
+      "year": 2024,
+      "note": "2024 presidential election; VAP turnout"
+    },
+    "civil_society_strength": {
+      "value": 7.1,
+      "source": "V-Dem Civil Society Index, 2023",
+      "year": 2023,
+      "note": "Scale 1-10"
+    },
+    "trade_union_membership_pct": {
+      "value": 10,
+      "source": "BLS Union Members Summary, 2024",
+      "year": 2024
+    },
+    "social_capital_index": {
+      "value": 60.4,
+      "source": "OECD Social Capital Index, 2024",
+      "year": 2024
+    }
+  },
+  "regional_variations": {
+    "northeast_vs_south_income_gap": {
+      "value": "Northeast median household income $78,400 vs South $62,100",
+      "source": "U.S. Census Bureau ACS 1-Year Estimates, 2023",
+      "year": 2023,
+      "note": "New England and Mid-Atlantic consistently highest; Mississippi lowest at $52,900"
+    },
+    "coastal_vs_heartland_housing_cost": {
+      "value": "San Francisco metro median home price $1.27M vs Midwest $265,000",
+      "source": "Zillow / NAR Metro Area Reports, 2024",
+      "year": 2024,
+      "note": "Coastal premium driven by tech/finance labor markets and zoning restrictions"
+    },
+    "blue_red_state_political_divide": {
+      "value": "Democrat states average $74,200 household income vs Republican $65,400",
+      "source": "U.S. Census ACS 2023 / MIT Election Data Lab",
+      "year": 2023,
+      "note": "Income gap partly reflects urban/rural distribution within states"
+    },
+    "urban_rural_obesity_gap": {
+      "value": "Rural obesity rate 34.2% vs Urban 28.7%",
+      "source": "CDC BRFSS State Data, 2023",
+      "year": 2023,
+      "note": "Rural areas also have less healthcare access; Appalachian rates exceed 40%"
+    },
+    "sunbelt_population_growth": {
+      "value": "Texas +470K, Florida +365K net domestic migration in 2023",
+      "source": "U.S. Census Bureau Population Estimates, 2024",
+      "year": 2024,
+      "note": "Major shift from Northeast/Midwest; driven by cost, climate, no income tax"
+    }
+  }
+}

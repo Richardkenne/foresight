@@ -1,395 +1,134 @@
+#!/usr/bin/env node
 /**
- * Haiku Enrichment Pipeline
- * -------------------------
- * Reads all JSON files from data/cultural/ (recursively),
- * groups data points by country, then sends batches of 20
- * raw data points to Claude Haiku to generate ~100 enriched
- * data points per batch. Saves results to data/cultural/enriched/.
- *
- * Usage: node scripts/enrich-cultural-data.mjs
- * Env:   ANTHROPIC_API_KEY in .env.local
+ * enrich-cultural-data.mjs
+ * Uses Anthropic Claude API to fill gaps in cultural data files.
+ * Reads all JSON in data/cultural/, identifies missing categories,
+ * generates data points, writes back.
+ * Requires: ANTHROPIC_API_KEY in .env.local or environment.
  */
 
-import fs from 'fs';
-import path from 'path';
+import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'fs';
+import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
-// ---------------------------------------------------------------------------
-// Config
-// ---------------------------------------------------------------------------
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT = path.resolve(__dirname, '..');
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const DATA_DIR = join(__dirname, '..', 'data', 'cultural');
 
-const CULTURAL_DIR   = path.join(ROOT, 'data', 'cultural');
-const ENRICHED_DIR   = path.join(ROOT, 'data', 'cultural', 'enriched');
-const ENV_FILE       = path.join(ROOT, '.env.local');
-
-const BATCH_SIZE     = 10;     // raw data points per Haiku call (smaller = less tokens)
-const CONCURRENCY    = 1;      // sequential to avoid rate limits (10K output tokens/min)
-const BATCH_DELAY_MS = 8000;   // 8s between calls to stay under rate limit
-const LOG_EVERY      = 10;     // log progress every N batches
-
-// Haiku pricing (USD per 1M tokens) — update if Anthropic changes rates
-const COST_INPUT_PER_M  = 0.80;
-const COST_OUTPUT_PER_M = 4.00;
-
-// ---------------------------------------------------------------------------
-// Load ANTHROPIC_API_KEY from .env.local
-// ---------------------------------------------------------------------------
-function loadEnv(envPath) {
-  if (!fs.existsSync(envPath)) {
-    throw new Error(`.env.local not found at ${envPath}`);
-  }
-  const lines = fs.readFileSync(envPath, 'utf8').split('\n');
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (!trimmed || trimmed.startsWith('#')) continue;
-    const eqIdx = trimmed.indexOf('=');
-    if (eqIdx === -1) continue;
-    const key   = trimmed.slice(0, eqIdx).trim();
-    const value = trimmed.slice(eqIdx + 1).trim().replace(/^["']|["']$/g, '');
-    if (key && !(key in process.env)) {
-      process.env[key] = value;
-    }
+// Load env
+const envPath = join(__dirname, '..', '.env.local');
+if (existsSync(envPath)) {
+  for (const line of readFileSync(envPath, 'utf8').split('\n')) {
+    const m = line.match(/^([A-Z_]+)=(.+)$/);
+    if (m) process.env[m[1]] = m[2].trim().replace(/^["']|["']$/g,'');
   }
 }
 
-// ---------------------------------------------------------------------------
-// Recursively collect all JSON files under a directory
-// (skips the enriched/ output directory and _INDEX files)
-// ---------------------------------------------------------------------------
-function collectJsonFiles(dir, files = []) {
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) {
-      // Skip the enriched output dir to avoid re-processing our own output
-      if (entry.name === 'enriched') continue;
-      collectJsonFiles(full, files);
-    } else if (
-      entry.isFile() &&
-      entry.name.endsWith('.json') &&
-      !entry.name.startsWith('_')
-    ) {
-      files.push(full);
-    }
-  }
-  return files;
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+if (!ANTHROPIC_API_KEY) {
+  console.error('ERROR: ANTHROPIC_API_KEY not set. Add it to .env.local');
+  process.exit(1);
 }
 
-// ---------------------------------------------------------------------------
-// Extract data points from a JSON file
-// Handles both { dataPoints: [...] } and top-level array shapes
-// ---------------------------------------------------------------------------
-function extractDataPoints(filePath) {
-  try {
-    const raw = fs.readFileSync(filePath, 'utf8');
-    const parsed = JSON.parse(raw);
+const CATEGORIES = [
+  'daily_routines','spending','social_norms','business_culture',
+  'religion','digital_behavior','education','housing',
+  'food_lifestyle','trust_governance','regional_variations'
+];
 
-    if (Array.isArray(parsed)) return parsed;
-    if (Array.isArray(parsed.dataPoints)) return parsed.dataPoints;
-    if (Array.isArray(parsed.data)) return parsed.data;
-
-    // Some files nest under a key that is an array
-    for (const val of Object.values(parsed)) {
-      if (Array.isArray(val) && val.length > 0 && val[0].country) return val;
-    }
-    return [];
-  } catch {
-    return [];
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Group data points by country
-// ---------------------------------------------------------------------------
-function groupByCountry(allPoints) {
-  const map = new Map();
-  for (const point of allPoints) {
-    const country = (point.country || 'Unknown').trim();
-    if (!map.has(country)) map.set(country, []);
-    map.get(country).push(point);
-  }
-  return map;
-}
-
-// ---------------------------------------------------------------------------
-// Build batches of BATCH_SIZE from an array
-// ---------------------------------------------------------------------------
-function* chunked(arr, size) {
-  for (let i = 0; i < arr.length; i += size) {
-    yield arr.slice(i, i + size);
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Call Claude Haiku to enrich one batch
-// Returns { enriched: [], inputTokens: N, outputTokens: N }
-// ---------------------------------------------------------------------------
-async function enrichBatch(country, batch, batchIndex, apiKey) {
-  const prompt = `You are a cultural data enrichment engine for a life/career/business simulator.
-
-Given these ${batch.length} raw data points about ${country}, generate exactly 5 enriched data points. Keep each point very SHORT (max 15 words context).
-
-Rules for each enriched point:
-1. GROUNDED — must derive from one or more of the provided raw data points (cite their IDs in derivedFrom)
-2. ADDITIVE — must add comparative, behavioral, or scenario-relevant context not already in the raw data
-3. NUMERIC — must include a specific numeric value (not a range, not vague)
-4. SIMULATION-USEFUL — must be useful for simulating life, career, or business decisions in ${country}
-5. HONEST — do not invent statistics; derive or interpolate from the data provided
-
-Preferred enrichment types (distribute across all 100):
-- Cross-country comparison: "Indonesia's X is 3x lower than Australia's Y" (compare to other countries in the raw data if present)
-- Behavioral implication: "With X% income on food, discretionary spending for startups is limited to Y%"
-- Scenario insight: "High trust in personal recommendations (X%) means word-of-mouth is Nx more effective than digital ads"
-- Temporal trend: "Metric grew from X to Y over Z years — annualized rate of N%"
-- Demographic intersection: "Urban youth 18-25 in ${country} show X vs Y for rural same age group"
-- Business implication: "At GDP per capita of $X, average months to break-even for a cafe is N"
-- Risk factor: "N% probability of [negative outcome] given [condition] in ${country}"
-
-Raw data:
-${JSON.stringify(batch, null, 2)}
-
-Output ONLY a valid JSON array — no markdown, no explanation, no preamble:
-[
-  {
-    "id": "EN-${country.replace(/\s+/g, '_').toUpperCase()}-${String(batchIndex).padStart(3, '0')}-001",
-    "country": "${country}",
-    "metric": "short_snake_case_metric_name",
-    "value": 0,
-    "unit": "unit string",
-    "context": "Full sentence explaining the insight with the numeric value embedded.",
-    "enrichmentType": "comparison|behavioral|scenario|trend|demographic|business|risk",
-    "derivedFrom": ["ID-OF-RAW-POINT-1", "ID-OF-RAW-POINT-2"],
-    "source": "Derived from [Source Name] [Year] + [Source Name] [Year]",
-    "year": 2023
-  }
-]`;
-
-  const body = {
-    model: 'claude-haiku-4-5-20251001',
-    max_tokens: 1000,
-    temperature: 0,
-    messages: [{ role: 'user', content: prompt }],
-  };
-
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
+async function callClaude(prompt) {
+  const resp = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey,
+      'x-api-key': ANTHROPIC_API_KEY,
       'anthropic-version': '2023-06-01',
+      'content-type': 'application/json',
     },
-    body: JSON.stringify(body),
+    body: JSON.stringify({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 4096,
+      messages: [{ role: 'user', content: prompt }],
+    }),
   });
-
-  if (!response.ok) {
-    const errText = await response.text();
-    throw new Error(`Haiku API error ${response.status}: ${errText}`);
-  }
-
-  const data = await response.json();
-  const usage = data.usage || {};
-  const inputTokens  = usage.input_tokens  || 0;
-  const outputTokens = usage.output_tokens || 0;
-
-  // Parse the JSON array from the response text
-  const rawText = data.content?.[0]?.text || '[]';
-
-  let enriched = [];
-  try {
-    // Strip any accidental markdown fencing
-    const cleaned = rawText
-      .replace(/^```json\s*/i, '')
-      .replace(/^```\s*/i, '')
-      .replace(/```\s*$/i, '')
-      .trim();
-    enriched = JSON.parse(cleaned);
-    if (!Array.isArray(enriched)) enriched = [];
-  } catch (parseErr) {
-    console.warn(`    [WARN] JSON parse failed for ${country} batch ${batchIndex}: ${parseErr.message}`);
-    enriched = [];
-  }
-
-  return { enriched, inputTokens, outputTokens };
+  if (!resp.ok) throw new Error(`Claude API error: ${resp.status} ${await resp.text()}`);
+  const data = await resp.json();
+  return data.content[0].text;
 }
 
-// ---------------------------------------------------------------------------
-// Run N promises with max CONCURRENCY in parallel
-// ---------------------------------------------------------------------------
-async function runConcurrent(tasks, concurrency) {
-  const results = [];
-  let i = 0;
-
-  async function worker() {
-    while (i < tasks.length) {
-      const idx = i++;
-      results[idx] = await tasks[idx]();
-    }
+function collectMissingCategories(obj) {
+  const missing = [];
+  for (const cat of CATEGORIES) {
+    if (!obj[cat] || Object.keys(obj[cat]).length === 0) missing.push(cat);
   }
-
-  const workers = Array.from({ length: Math.min(concurrency, tasks.length) }, worker);
-  await Promise.all(workers);
-  return results;
+  return missing;
 }
 
-// ---------------------------------------------------------------------------
-// Sleep helper
-// ---------------------------------------------------------------------------
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
-// ---------------------------------------------------------------------------
-// Main
-// ---------------------------------------------------------------------------
-async function main() {
-  console.log('=== Haiku Enrichment Pipeline ===\n');
-
-  // Load env
-  loadEnv(ENV_FILE);
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) throw new Error('ANTHROPIC_API_KEY not found in .env.local');
-
-  // Ensure output directory exists
-  fs.mkdirSync(ENRICHED_DIR, { recursive: true });
-
-  // Collect all JSON files
-  console.log(`Scanning ${CULTURAL_DIR} ...`);
-  const jsonFiles = collectJsonFiles(CULTURAL_DIR);
-  console.log(`Found ${jsonFiles.length} JSON files.\n`);
-
-  // Extract and merge all data points
-  let allPoints = [];
-  for (const file of jsonFiles) {
-    const points = extractDataPoints(file);
-    allPoints = allPoints.concat(points);
+async function enrichCountry(filePath) {
+  const raw = JSON.parse(readFileSync(filePath, 'utf8'));
+  const country = raw._meta?.country || filePath.split('/').pop().replace('.json','');
+  const missing = collectMissingCategories(raw);
+  if (missing.length === 0) {
+    console.log(`  ${country}: all categories present, skip`);
+    return 0;
   }
-  console.log(`Total raw data points: ${allPoints.length}\n`);
+  console.log(`  ${country}: enriching ${missing.join(', ')}`);
 
-  // Group by country
-  const byCountry = groupByCountry(allPoints);
-  console.log(`Countries found: ${byCountry.size}`);
-  for (const [country, pts] of byCountry) {
-    console.log(`  ${country}: ${pts.length} data points`);
-  }
-  console.log('');
+  const prompt = `You are a cultural data researcher. Generate structured JSON data points for ${country} covering these categories: ${missing.join(', ')}.
 
-  // Build all batch tasks
-  const allBatches = []; // { country, batch, batchIndex }
-  for (const [country, points] of byCountry) {
-    let batchIndex = 0;
-    for (const batch of chunked(points, BATCH_SIZE)) {
-      allBatches.push({ country, batch, batchIndex: ++batchIndex });
-    }
-  }
-  console.log(`Total batches to process: ${allBatches.length}\n`);
+Categories to cover:
+- daily_routines: sleep patterns, commute times, meal times, leisure hours, working hours norms
+- spending: monthly household spend by category (food, housing, transport, entertainment, education)
+- social_norms: concepts like collectivism/individualism score, trust in strangers, face-saving importance, punctuality norms
+- business_culture: meeting etiquette, hierarchy level, negotiation style, corruption perception index, business formality
+- religion: major religion %, religiosity index, impact on daily life, key religious observances
+- digital_behavior: social media penetration %, top platforms, e-commerce adoption %, avg daily screen time, mobile payment adoption
+- education: literacy rate, avg years schooling, private tutoring prevalence, education spend per household, university entrance rate
+- housing: homeownership rate %, avg household size, avg rent (USD/month), multigenerational household %, housing cost/income ratio
+- food_lifestyle: eating out frequency/week, home cooking %, fast food penetration, diet type distribution, alcohol consumption
+- trust_governance: institutional trust %, political party trust, media trust, civil society participation, WGI scores
+- regional_variations: 3-5 key differences between major regions/cities
 
-  // Track totals
-  let totalEnriched = 0;
-  let totalInputTokens  = 0;
-  let totalOutputTokens = 0;
-  let totalErrors = 0;
-  let batchesDone = 0;
+For each data point use this format:
+{ "value": <number or string>, "source": "<org/survey year>", "year": <2022-2025>, "note": "<optional>" }
 
-  // Accumulate enriched points per country for saving
-  const enrichedByCountry = new Map();
-
-  // Process in groups of CONCURRENCY with BATCH_DELAY_MS between groups
-  for (let groupStart = 0; groupStart < allBatches.length; groupStart += CONCURRENCY) {
-    const group = allBatches.slice(groupStart, groupStart + CONCURRENCY);
-
-    const tasks = group.map(({ country, batch, batchIndex }) => async () => {
-      try {
-        const result = await enrichBatch(country, batch, batchIndex, apiKey);
-        return { country, batchIndex, ...result, error: null };
-      } catch (err) {
-        console.error(`  [ERROR] ${country} batch ${batchIndex}: ${err.message}`);
-        return { country, batchIndex, enriched: [], inputTokens: 0, outputTokens: 0, error: err.message };
-      }
-    });
-
-    const results = await runConcurrent(tasks, CONCURRENCY);
-
-    for (const result of results) {
-      if (result.error) {
-        totalErrors++;
-      } else {
-        totalEnriched     += result.enriched.length;
-        totalInputTokens  += result.inputTokens;
-        totalOutputTokens += result.outputTokens;
-
-        if (!enrichedByCountry.has(result.country)) {
-          enrichedByCountry.set(result.country, []);
-        }
-        enrichedByCountry.get(result.country).push(...result.enriched);
-      }
-      batchesDone++;
-    }
-
-    // Progress log every LOG_EVERY batches
-    if (batchesDone % LOG_EVERY === 0 || batchesDone === allBatches.length) {
-      const pct = ((batchesDone / allBatches.length) * 100).toFixed(1);
-      const costSoFar = (
-        (totalInputTokens  / 1_000_000) * COST_INPUT_PER_M +
-        (totalOutputTokens / 1_000_000) * COST_OUTPUT_PER_M
-      ).toFixed(4);
-      console.log(
-        `[${batchesDone}/${allBatches.length}] ${pct}% — ` +
-        `${totalEnriched} enriched — ` +
-        `${totalErrors} errors — ` +
-        `$${costSoFar} est. cost`
-      );
-    }
-
-    // Delay between groups to stay under rate limits
-    if (groupStart + CONCURRENCY < allBatches.length) {
-      await sleep(BATCH_DELAY_MS);
-    }
-  }
-
-  // ---------------------------------------------------------------------------
-  // Save enriched data per country
-  // ---------------------------------------------------------------------------
-  console.log('\nSaving enriched data...');
-
-  for (const [country, points] of enrichedByCountry) {
-    const safeCountry = country.replace(/[^a-zA-Z0-9_-]/g, '_').toLowerCase();
-    const outPath = path.join(ENRICHED_DIR, `${safeCountry}.json`);
-
-    const output = {
-      metadata: {
-        country,
-        generatedAt: new Date().toISOString(),
-        totalEnrichedPoints: points.length,
-        pipeline: 'haiku-enrichment-pipeline v1',
-        model: 'claude-haiku-4-5-20251001',
-        batchSize: BATCH_SIZE,
-      },
-      dataPoints: points,
-    };
-
-    fs.writeFileSync(outPath, JSON.stringify(output, null, 2), 'utf8');
-    console.log(`  Saved ${points.length} points → ${path.relative(ROOT, outPath)}`);
-  }
-
-  // ---------------------------------------------------------------------------
-  // Final summary
-  // ---------------------------------------------------------------------------
-  const totalCost = (
-    (totalInputTokens  / 1_000_000) * COST_INPUT_PER_M +
-    (totalOutputTokens / 1_000_000) * COST_OUTPUT_PER_M
-  ).toFixed(4);
-
-  console.log('\n=== Pipeline Complete ===');
-  console.log(`Raw data points read   : ${allPoints.length}`);
-  console.log(`Enriched points saved  : ${totalEnriched}`);
-  console.log(`Batches processed      : ${batchesDone}`);
-  console.log(`Errors (skipped)       : ${totalErrors}`);
-  console.log(`Input tokens used      : ${totalInputTokens.toLocaleString()}`);
-  console.log(`Output tokens used     : ${totalOutputTokens.toLocaleString()}`);
-  console.log(`Estimated cost         : $${totalCost}`);
-  console.log(`Output directory       : ${ENRICHED_DIR}`);
+Return ONLY valid JSON with this structure:
+{
+  ${missing.map(c => `"${c}": { "<metric_name>": { "value": ..., "source": "...", "year": ... } }`).join(',\n  ')}
 }
 
-main().catch((err) => {
-  console.error('\n[FATAL]', err.message);
-  process.exit(1);
-});
+Use real, sourced data. Minimum 15 data points per category. Sources: World Values Survey, Eurobarometer, Pew Research, OECD, Statista, national statistics offices, etc.`;
+
+  let text;
+  try { text = await callClaude(prompt); }
+  catch (e) { console.error(`  ${country}: Claude error — ${e.message}`); return 0; }
+
+  // Extract JSON from response
+  const match = text.match(/\{[\s\S]*\}/);
+  if (!match) { console.error(`  ${country}: could not parse JSON from Claude response`); return 0; }
+  let enriched;
+  try { enriched = JSON.parse(match[0]); }
+  catch (e) { console.error(`  ${country}: JSON parse error — ${e.message}`); return 0; }
+
+  // Merge into existing file
+  let added = 0;
+  for (const [cat, data] of Object.entries(enriched)) {
+    if (!raw[cat]) raw[cat] = {};
+    for (const [k, v] of Object.entries(data)) {
+      if (!raw[cat][k]) { raw[cat][k] = v; added++; }
+    }
+  }
+  raw.dataPoints = (raw.dataPoints || 0) + added;
+  raw._meta = { ...raw._meta, enriched: new Date().toISOString().slice(0,10) };
+  writeFileSync(filePath, JSON.stringify(raw, null, 2));
+  console.log(`  ${country}: +${added} data points`);
+  return added;
+}
+
+console.log('=== enrich-cultural-data.mjs START ===');
+let totalAdded = 0;
+for (const f of readdirSync(DATA_DIR)) {
+  if (!f.endsWith('.json')) continue;
+  const full = join(DATA_DIR, f);
+  totalAdded += await enrichCountry(full);
+  await new Promise(r => setTimeout(r, 500)); // rate limit
+}
+console.log(`=== COMPLETE — total added: ${totalAdded} data points ===`);

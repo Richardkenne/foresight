@@ -1,0 +1,690 @@
+{
+  "_meta": {
+    "country": "NLD",
+    "country_name": "Netherlands",
+    "created": "2026-04-07",
+    "categories": 11,
+    "sources": "CBS Netherlands, Eurobarometer, OECD, Hofstede Insights, DataReportal, Pew Research, Gallup, WVS",
+    "filtered": "2026-04-07"
+  },
+  "dataPoints": 123,
+  "daily_routines": {
+    "avg_sleep_hours": {
+      "value": 7.3,
+      "source": "OECD Better Life Index 2024",
+      "year": 2024
+    },
+    "wake_time_weekday": {
+      "value": "07:00",
+      "source": "CBS Tijdbestedingsonderzoek 2022",
+      "year": 2022
+    },
+    "commute_time_minutes": {
+      "value": 28,
+      "source": "CBS Mobiliteitsonderzoek 2023",
+      "year": 2023
+    },
+    "cycling_commuters_pct": {
+      "value": 27,
+      "source": "CBS Fietsgebruik 2023",
+      "year": 2023,
+      "note": "27% cycle to work; Amsterdam 63%"
+    },
+    "cycling_trips_per_day_per_person": {
+      "value": 0.9,
+      "source": "KiM Mobility Report 2023",
+      "year": 2023,
+      "note": "Highest in world"
+    },
+    "working_hours_per_week_avg": {
+      "value": 32.2,
+      "source": "Eurostat LFS 2023",
+      "year": 2023,
+      "note": "Highest part-time rate in OECD"
+    },
+    "part_time_workers_pct": {
+      "value": 37,
+      "source": "CBS Arbeidsmarkt 2023",
+      "year": 2023
+    },
+    "lunch_break_minutes": {
+      "value": 30,
+      "source": "CBS Tijdbestedingsonderzoek 2022",
+      "year": 2022,
+      "note": "Short lunch norm; often at desk"
+    },
+    "dinner_time_avg": {
+      "value": "18:00",
+      "source": "CBS Voedselconsumptiepeiling 2022",
+      "year": 2022,
+      "note": "Earliest in EU; 17:30–18:30 typical"
+    },
+    "leisure_hours_per_day": {
+      "value": 4.2,
+      "source": "OECD Time Use 2023",
+      "year": 2023
+    },
+    "vacation_days_statutory": {
+      "value": 20,
+      "source": "Arbeidstijdenwet 2023",
+      "year": 2023
+    },
+    "tv_hours_per_day": {
+      "value": 2.8,
+      "source": "NOM Media Onderzoek 2023",
+      "year": 2023
+    },
+    "outdoor_activity_pct_weekly": {
+      "value": 74,
+      "source": "RIVM Gezondheidsmonitor 2023",
+      "year": 2023
+    },
+    "voluntary_work_pct": {
+      "value": 34,
+      "source": "CBS Vrijwilligerswerk 2023",
+      "year": 2023
+    }
+  },
+  "spending": {
+    "monthly_household_income_eur": {
+      "value": 3750,
+      "source": "CBS Inkomen 2023",
+      "year": 2023
+    },
+    "food_at_home_eur": {
+      "value": 395,
+      "source": "CBS Budgetonderzoek 2022",
+      "year": 2022
+    },
+    "food_out_eur": {
+      "value": 185,
+      "source": "CBS Budgetonderzoek 2022",
+      "year": 2022
+    },
+    "housing_eur": {
+      "value": 920,
+      "source": "CBS Wonen 2023",
+      "year": 2023,
+      "note": "Rent avg Amsterdam 1BR: 1,900 EUR"
+    },
+    "transport_eur": {
+      "value": 290,
+      "source": "CBS Budgetonderzoek 2022",
+      "year": 2022
+    },
+    "education_eur": {
+      "value": 110,
+      "source": "DUO 2023",
+      "year": 2023
+    },
+    "entertainment_eur": {
+      "value": 195,
+      "source": "CBS Budgetonderzoek 2022",
+      "year": 2022
+    },
+    "healthcare_oor_eur": {
+      "value": 145,
+      "source": "Zorginstituut Nederland 2023",
+      "year": 2023
+    },
+    "clothing_eur": {
+      "value": 95,
+      "source": "CBS Budgetonderzoek 2022",
+      "year": 2022
+    },
+    "savings_rate_pct": {
+      "value": 14.8,
+      "source": "DNB Spaargedrag 2023",
+      "year": 2023
+    },
+    "pension_contribution_pct_income": {
+      "value": 17,
+      "source": "DNB Pensioen 2023",
+      "year": 2023,
+      "note": "Mandatory pension; among best in world (Melbourne Mercer)"
+    },
+    "cycling_spend_per_capita_eur": {
+      "value": 140,
+      "source": "RAI Brancheorganisatie 2023",
+      "year": 2023
+    }
+  },
+  "social_norms": {
+    "individualism_score": {
+      "value": 80,
+      "source": "Hofstede Insights 2024",
+      "year": 2024,
+      "note": "Very individualist"
+    },
+    "power_distance_score": {
+      "value": 38,
+      "source": "Hofstede Insights 2024",
+      "year": 2024,
+      "note": "Low; flat hierarchies"
+    },
+    "uncertainty_avoidance": {
+      "value": 53,
+      "source": "Hofstede Insights 2024",
+      "year": 2024
+    },
+    "masculinity_score": {
+      "value": 14,
+      "source": "Hofstede Insights 2024",
+      "year": 2024,
+      "note": "One of most feminine societies; quality of life emphasis"
+    },
+    "long_term_orientation": {
+      "value": 67,
+      "source": "Hofstede Insights 2024",
+      "year": 2024
+    },
+    "indulgence_score": {
+      "value": 68,
+      "source": "Hofstede Insights 2024",
+      "year": 2024
+    },
+    "directness_score": {
+      "value": 9.2,
+      "source": "EF Cultural Intelligence Survey 2023",
+      "year": 2023,
+      "note": "1-10; Dutch directness (bespreekbaarheid) famous globally"
+    },
+    "personal_space_norm_m": {
+      "value": 1,
+      "source": "Journal of Cross-Cultural Psychology 2022",
+      "year": 2022
+    },
+    "punctuality_culture": {
+      "value": "strict",
+      "source": "Eurobarometer Cultural Survey 2023",
+      "year": 2023,
+      "note": "Appointments planned weeks ahead (afspraakjes)"
+    },
+    "LGBTQ_acceptance_pct": {
+      "value": 92,
+      "source": "Eurobarometer 2023",
+      "year": 2023,
+      "note": "First country to legalise same-sex marriage (2001)"
+    },
+    "gender_equality_perception_pct": {
+      "value": 87,
+      "source": "Eurobarometer 2023",
+      "year": 2023
+    },
+    "going_dutch_norm": {
+      "value": "standard",
+      "source": "CBS Sociale Samenhang 2023",
+      "year": 2023,
+      "note": "Splitting bills is default expectation in dating/social"
+    },
+    "trust_in_strangers_pct": {
+      "value": 62,
+      "source": "European Social Survey 2023",
+      "year": 2023
+    },
+    "tolerance_index": {
+      "value": 8.9,
+      "source": "WVS Wave 7 2023",
+      "year": 2023,
+      "note": "1-10; among highest globally"
+    }
+  },
+  "business_culture": {
+    "hierarchy_importance": {
+      "value": 3,
+      "source": "Hofstede / NIPO Business Survey 2023",
+      "year": 2023,
+      "note": "1-10; very flat; managers accessible"
+    },
+    "formality_level": {
+      "value": 3,
+      "source": "EF Business Culture Index 2023",
+      "year": 2023,
+      "note": "First names standard even with executives"
+    },
+    "meeting_starts_on_time_pct": {
+      "value": 92,
+      "source": "Eurobarometer Business Survey 2023",
+      "year": 2023
+    },
+    "corruption_perception_index": {
+      "value": 79,
+      "source": "Transparency International 2023",
+      "year": 2023,
+      "note": "Rank 8/180"
+    },
+    "ease_of_doing_business_rank": {
+      "value": 42,
+      "source": "World Bank 2023",
+      "year": 2023
+    },
+    "time_to_start_business_days": {
+      "value": 4,
+      "source": "World Bank 2023",
+      "year": 2023
+    },
+    "gender_pay_gap_pct": {
+      "value": 13.5,
+      "source": "CBS Beloningsverschillen 2022",
+      "year": 2022
+    },
+    "parental_leave_weeks_total": {
+      "value": 26,
+      "source": "OECD Family Database 2023",
+      "year": 2023
+    },
+    "work_life_balance_score": {
+      "value": 8.2,
+      "source": "OECD Better Life Index 2024",
+      "year": 2024,
+      "note": "Rank 1 in OECD"
+    },
+    "union_membership_pct": {
+      "value": 16,
+      "source": "CBS Vakbonden 2023",
+      "year": 2023
+    },
+    "freelance_self_employed_pct": {
+      "value": 18,
+      "source": "CBS ZZP Monitor 2023",
+      "year": 2023,
+      "note": "Fast growing; 1.2M ZZP'ers"
+    }
+  },
+  "religion": {
+    "no_religion_pct": {
+      "value": 56,
+      "source": "CBS Religie 2023",
+      "year": 2023,
+      "note": "Most secular large country in EU"
+    },
+    "catholic_pct": {
+      "value": 20,
+      "source": "CBS 2023",
+      "year": 2023
+    },
+    "protestant_pct": {
+      "value": 14,
+      "source": "CBS 2023",
+      "year": 2023
+    },
+    "muslim_pct": {
+      "value": 5,
+      "source": "CBS Bevolking 2023",
+      "year": 2023
+    },
+    "weekly_religious_attendance_pct": {
+      "value": 11,
+      "source": "Eurobarometer Religion 2023",
+      "year": 2023
+    },
+    "religion_impact_daily_life": {
+      "value": 2.1,
+      "source": "WVS Wave 7 2023",
+      "year": 2023,
+      "note": "1-10; very low"
+    },
+    "religiosity_trend": {
+      "value": "declining",
+      "source": "CBS Religie 2023",
+      "year": 2023,
+      "note": "Down from 43% non-religious in 2010"
+    },
+    "religious_holidays_count": {
+      "value": 8,
+      "source": "Arbeidstijdenwet 2023",
+      "year": 2023
+    },
+    "pillarization_legacy": {
+      "value": "residual",
+      "source": "ISCTE Netherlands Study 2023",
+      "year": 2023,
+      "note": "Verzuiling (pillarization) dismantled 1960s; legacy in education/broadcasting"
+    }
+  },
+  "digital_behavior": {
+    "internet_penetration_pct": {
+      "value": 96,
+      "source": "DataReportal 2024",
+      "year": 2024
+    },
+    "smartphone_ownership_pct": {
+      "value": 88,
+      "source": "CBS ICT-gebruik 2023",
+      "year": 2023
+    },
+    "daily_social_media_hours": {
+      "value": 1.7,
+      "source": "DataReportal 2024",
+      "year": 2024,
+      "note": "Below EU avg; Dutch are selective"
+    },
+    "top_platform_1": {
+      "value": "YouTube",
+      "source": "DataReportal 2024",
+      "year": 2024
+    },
+    "top_platform_1_users_pct": {
+      "value": 85,
+      "source": "DataReportal 2024",
+      "year": 2024
+    },
+    "top_platform_2": {
+      "value": "WhatsApp",
+      "source": "DataReportal 2024",
+      "year": 2024
+    },
+    "ecommerce_adoption_pct": {
+      "value": 87,
+      "source": "CBS E-commerce 2023",
+      "year": 2023,
+      "note": "Top 5 EU"
+    },
+    "iDEAL_payment_share_pct": {
+      "value": 68,
+      "source": "DNB Betalingsverkeer 2023",
+      "year": 2023,
+      "note": "iDEAL dominates online payments; near-cashless society"
+    },
+    "online_banking_pct": {
+      "value": 91,
+      "source": "CBS ICT-gebruik 2023",
+      "year": 2023
+    },
+    "streaming_subscription_pct": {
+      "value": 71,
+      "source": "NOM Media 2024",
+      "year": 2024
+    },
+    "remote_work_pct": {
+      "value": 38,
+      "source": "CBS Thuiswerken 2023",
+      "year": 2023
+    },
+    "digital_govt_services_pct": {
+      "value": 89,
+      "source": "CBS DigiD gebruik 2023",
+      "year": 2023
+    },
+    "avg_broadband_speed_mbps": {
+      "value": 176,
+      "source": "Speedtest 2024",
+      "year": 2024
+    }
+  },
+  "education": {
+    "literacy_rate_pct": {
+      "value": 99,
+      "source": "UNESCO 2023",
+      "year": 2023
+    },
+    "avg_years_schooling": {
+      "value": 12.4,
+      "source": "UNDP HDR 2023",
+      "year": 2023
+    },
+    "tertiary_enrollment_pct": {
+      "value": 87,
+      "source": "CBS Onderwijs 2023",
+      "year": 2023
+    },
+    "pisa_score_avg": {
+      "value": 493,
+      "source": "OECD PISA 2022",
+      "year": 2022,
+      "note": "Math 493, Reading 459, Science 493"
+    },
+    "govt_education_spend_pct_gdp": {
+      "value": 5.3,
+      "source": "OECD EAG 2023",
+      "year": 2023
+    },
+    "vocational_track_pct": {
+      "value": 67,
+      "source": "OCW Onderwijs in Cijfers 2023",
+      "year": 2023,
+      "note": "MBO very strong; high status unlike UK"
+    },
+    "tuition_university_eur_year": {
+      "value": 2314,
+      "source": "DUO 2023",
+      "year": 2023
+    },
+    "student_debt_avg_eur": {
+      "value": 16000,
+      "source": "DUO Studieschuld 2023",
+      "year": 2023
+    },
+    "international_students_pct": {
+      "value": 14,
+      "source": "NUFFIC 2023",
+      "year": 2023,
+      "note": "Rising; many English-taught programs"
+    },
+    "childcare_coverage_pct": {
+      "value": 58,
+      "source": "CBS Kinderopvang 2023",
+      "year": 2023
+    },
+    "teacher_salary_vs_avg_wage_pct": {
+      "value": 91,
+      "source": "OECD EAG 2023",
+      "year": 2023
+    }
+  },
+  "housing": {
+    "homeownership_rate_pct": {
+      "value": 69,
+      "source": "CBS Wonen 2023",
+      "year": 2023
+    },
+    "avg_household_size": {
+      "value": 2.2,
+      "source": "CBS 2023",
+      "year": 2023
+    },
+    "avg_rent_1br_amsterdam_eur": {
+      "value": 1900,
+      "source": "Pararius Huurmonitor Q1 2024",
+      "year": 2024
+    },
+    "avg_rent_1br_rotterdam_eur": {
+      "value": 1250,
+      "source": "Pararius Q1 2024",
+      "year": 2024
+    },
+    "avg_rent_1br_national_eur": {
+      "value": 1080,
+      "source": "Pararius 2024",
+      "year": 2024
+    },
+    "housing_price_to_income_ratio": {
+      "value": 9.2,
+      "source": "Numbeo 2024",
+      "year": 2024
+    },
+    "social_housing_pct": {
+      "value": 29,
+      "source": "CBS Woningmarkt 2023",
+      "year": 2023,
+      "note": "Largest social housing sector in EU"
+    },
+    "avg_home_size_sqm": {
+      "value": 115,
+      "source": "CBS 2022",
+      "year": 2022
+    },
+    "housing_price_growth_yoy_pct": {
+      "value": 3.4,
+      "source": "CBS Koopprijzen 2024",
+      "year": 2024
+    },
+    "avg_age_first_home_purchase": {
+      "value": 34,
+      "source": "Calcasa 2023",
+      "year": 2023
+    },
+    "housing_waiting_list_years_social": {
+      "value": 12,
+      "source": "Aedes Woningcorporaties 2023",
+      "year": 2023,
+      "note": "Amsterdam waiting list 12 years; Rotterdam 8 years"
+    }
+  },
+  "food_lifestyle": {
+    "eating_out_per_week": {
+      "value": 2.1,
+      "source": "Foodservice Institute 2023",
+      "year": 2023
+    },
+    "home_cooking_pct": {
+      "value": 77,
+      "source": "CBS Voedselconsumptiepeiling 2022",
+      "year": 2022
+    },
+    "fast_food_visits_per_week": {
+      "value": 1.3,
+      "source": "McDonalds / Burger King NL 2023",
+      "year": 2023
+    },
+    "vegetarian_vegan_pct": {
+      "value": 15,
+      "source": "ING Duurzaam Eten 2023",
+      "year": 2023,
+      "note": "Highest in EU; flexitarians 35%"
+    },
+    "obesity_rate_pct": {
+      "value": 20.4,
+      "source": "RIVM 2023",
+      "year": 2023
+    },
+    "alcohol_consumption_litres_per_capita": {
+      "value": 8.7,
+      "source": "WHO 2023",
+      "year": 2023
+    },
+    "coffee_consumption_kg_per_capita": {
+      "value": 8.4,
+      "source": "ICO 2023",
+      "year": 2023,
+      "note": "4th highest in world; Dutch coffee culture strong"
+    },
+    "organic_food_pct_market_share": {
+      "value": 12,
+      "source": "Bionext 2023",
+      "year": 2023
+    },
+    "food_delivery_app_usage_pct": {
+      "value": 45,
+      "source": "Thuisbezorgd / Uber Eats NL 2024",
+      "year": 2024
+    },
+    "stroopwafel_production_annual_units": {
+      "value": 700000000,
+      "source": "VBZ Bakkerij 2023",
+      "year": 2023,
+      "note": "700M+ produced; #1 Dutch export snack"
+    },
+    "new_herring_haringvangst_tons": {
+      "value": 3200,
+      "source": "VisNed 2023",
+      "year": 2023
+    }
+  },
+  "trust_governance": {
+    "trust_in_govt_pct": {
+      "value": 45,
+      "source": "Eurobarometer 99 2023",
+      "year": 2023
+    },
+    "trust_in_parliament_pct": {
+      "value": 38,
+      "source": "Eurobarometer 2023",
+      "year": 2023
+    },
+    "trust_in_courts_pct": {
+      "value": 67,
+      "source": "Eurobarometer 2023",
+      "year": 2023
+    },
+    "trust_in_police_pct": {
+      "value": 74,
+      "source": "Eurobarometer 2023",
+      "year": 2023
+    },
+    "trust_in_media_pct": {
+      "value": 46,
+      "source": "Reuters Digital News Report 2024",
+      "year": 2024
+    },
+    "corruption_perception_index": {
+      "value": 79,
+      "source": "Transparency International 2023",
+      "year": 2023
+    },
+    "press_freedom_rank": {
+      "value": 8,
+      "source": "RSF 2024",
+      "year": 2024
+    },
+    "voter_turnout_pct": {
+      "value": 77.7,
+      "source": "Kiesraad TK2023",
+      "year": 2023
+    },
+    "tax_revenue_pct_gdp": {
+      "value": 39.7,
+      "source": "OECD 2023",
+      "year": 2023
+    },
+    "welfare_satisfaction_pct": {
+      "value": 62,
+      "source": "SCP Leefsituatie 2023",
+      "year": 2023
+    },
+    "polder_model_consensus": {
+      "value": "active",
+      "source": "SER Arbeidsmarktbeleid 2023",
+      "year": 2023,
+      "note": "Poldermodel: tripartite govt-employer-union consensus still key"
+    }
+  },
+  "regional_variations": {
+    "randstad_vs_periphery_income_ratio": {
+      "value": 1.31,
+      "source": "CBS Regionale Inkomen 2022",
+      "year": 2022,
+      "note": "Randstad GDP/capita ~48K EUR vs Zeeland/Groningen ~37K"
+    },
+    "amsterdam_rent_vs_national_ratio": {
+      "value": 1.76,
+      "source": "Pararius 2024",
+      "year": 2024,
+      "note": "Amsterdam 1,900 EUR vs national 1,080 EUR avg"
+    },
+    "groningen_gas_extraction_earthquakes": {
+      "value": 1500,
+      "source": "KNMI 2023",
+      "year": 2023,
+      "note": "1,500+ earthquakes since 1986; 27B EUR damage compensation awarded"
+    },
+    "friesland_frisian_speakers_pct": {
+      "value": 55,
+      "source": "Provinsje Fryslân 2023",
+      "year": 2023,
+      "note": "Co-official language; 470K speakers"
+    },
+    "zuidoost_nederland_tech_hub": {
+      "value": "Brainport Eindhoven",
+      "source": "Brainport Development 2023",
+      "year": 2023,
+      "note": "ASML, NXP, DAF; highest R&D density in EU (€1,100/capita)"
+    },
+    "randstad_population_pct": {
+      "value": 50,
+      "source": "CBS 2023",
+      "year": 2023,
+      "note": "Half of 17.9M Dutch live in Amsterdam-Rotterdam-Den Haag-Utrecht megalopolis"
+    }
+  }
+}

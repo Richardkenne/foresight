@@ -1,0 +1,758 @@
+{
+  "_meta": {
+    "country": "AUS",
+    "country_name": "Australia",
+    "created": "2026-04-07",
+    "categories": 11,
+    "filtered": "2026-04-07"
+  },
+  "dataPoints": 138,
+  "daily_routines": {
+    "avg_sleep_hours": {
+      "value": 7.1,
+      "source": "Sleep Health Foundation Australia National Sleep Survey, 2023",
+      "year": 2023
+    },
+    "wake_time_weekday": {
+      "value": "06:45",
+      "source": "ABS Time Use Survey Australia, 2022",
+      "year": 2022
+    },
+    "commute_time_minutes": {
+      "value": 66,
+      "source": "Infrastructure Australia Urban Transport Crowding & Congestion Report, 2023",
+      "year": 2023,
+      "note": "Sydney 77 min, Melbourne 71 min, Perth 55 min average round trip"
+    },
+    "working_hours_per_week": {
+      "value": 33.9,
+      "source": "ABS Labour Force Survey, November 2024",
+      "year": 2024,
+      "note": "Average actual hours; full-time workers avg 40.2 hrs"
+    },
+    "lunch_break_minutes": {
+      "value": 37,
+      "source": "ABS Time Use Survey, 2022",
+      "year": 2022,
+      "note": "Desk lunch common in corporate culture; alfresco popular in summer"
+    },
+    "dinner_time_avg": {
+      "value": "18:30",
+      "source": "ABS Time Use Survey, 2022",
+      "year": 2022
+    },
+    "leisure_hours_per_day": {
+      "value": 5.8,
+      "source": "ABS Time Use Survey, 2022",
+      "year": 2022
+    },
+    "tv_hours_per_day": {
+      "value": 3.2,
+      "source": "Nielsen Australian Multi-Screen Report, 2023",
+      "year": 2023
+    },
+    "weekend_family_time_hours": {
+      "value": 5.5,
+      "source": "ABS Time Use Survey, 2022",
+      "year": 2022
+    },
+    "nap_culture": {
+      "value": "uncommon",
+      "source": "Sleep Health Foundation Australia, 2023",
+      "year": 2023
+    },
+    "overtime_culture": {
+      "value": "moderate",
+      "source": "ABS Working Arrangements Survey, 2024; Fair Work Commission data",
+      "year": 2024,
+      "note": "2.4 million Australians work unpaid overtime regularly"
+    },
+    "outdoor_activity_hours_per_week": {
+      "value": 4.2,
+      "source": "Australian Institute of Health and Welfare (AIHW) Physical Activity Report, 2023",
+      "year": 2023
+    },
+    "bbq_social_events_per_month": {
+      "value": 2.1,
+      "source": "Roy Morgan Research Australian Lifestyle Survey, 2023",
+      "year": 2023,
+      "note": "Backyard BBQ central to Australian social life"
+    },
+    "coffee_shop_visits_per_week": {
+      "value": 3.4,
+      "source": "Allegra World Coffee Portal Australia Report, 2024",
+      "year": 2024
+    },
+    "sports_participation_hours_per_week": {
+      "value": 2.8,
+      "source": "AusPlay Sports Participation Survey, 2024",
+      "year": 2024
+    }
+  },
+  "spending": {
+    "food_at_home_usd": {
+      "value": 512,
+      "source": "ABS Household Expenditure Survey 2022-23; AUD converted at 0.65",
+      "year": 2023
+    },
+    "food_out_usd": {
+      "value": 260,
+      "source": "ABS Household Expenditure Survey 2022-23",
+      "year": 2023
+    },
+    "housing_rent_or_mortgage_usd": {
+      "value": 1456,
+      "source": "ABS Household Expenditure Survey 2022-23; national avg mortgage+rent",
+      "year": 2023,
+      "note": "Sydney avg rent 2BR AUD 3,200/month; Melbourne AUD 2,400/month"
+    },
+    "transport_usd": {
+      "value": 390,
+      "source": "ABS Household Expenditure Survey 2022-23",
+      "year": 2023
+    },
+    "education_usd": {
+      "value": 195,
+      "source": "ABS Household Expenditure Survey 2022-23",
+      "year": 2023
+    },
+    "entertainment_usd": {
+      "value": 260,
+      "source": "ABS Household Expenditure Survey 2022-23",
+      "year": 2023
+    },
+    "healthcare_usd": {
+      "value": 260,
+      "source": "ABS Household Expenditure Survey 2022-23",
+      "year": 2023,
+      "note": "Medicare covers ~80% of GP visits; out-of-pocket growing"
+    },
+    "clothing_usd": {
+      "value": 130,
+      "source": "ABS Household Expenditure Survey 2022-23",
+      "year": 2023
+    },
+    "savings_rate_pct": {
+      "value": 3.6,
+      "source": "ABS National Accounts: Finance and Wealth, Q3 2024",
+      "year": 2024,
+      "note": "Dropped from pandemic high of 22%; cost-of-living pressure"
+    },
+    "debt_to_income_ratio_pct": {
+      "value": 188,
+      "source": "Reserve Bank of Australia Financial Stability Review, 2024",
+      "year": 2024,
+      "note": "One of highest household debt ratios globally; driven by mortgages"
+    },
+    "superannuation_contribution_pct": {
+      "value": 11.5,
+      "source": "ATO Superannuation Statistics, 2024; mandatory employer contribution rate",
+      "year": 2024
+    },
+    "mortgage_repayment_pct_income": {
+      "value": 47.3,
+      "source": "ANZ-CoreLogic Housing Affordability Report, 2024; Sydney households",
+      "year": 2024
+    }
+  },
+  "social_norms": {
+    "individualism_score": {
+      "value": 90,
+      "source": "Hofstede Insights Country Comparison Tool, 2023",
+      "year": 2023,
+      "note": "One of the highest individualism scores globally"
+    },
+    "power_distance_score": {
+      "value": 36,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023,
+      "note": "Low power distance; egalitarianism ('tall poppy syndrome')"
+    },
+    "uncertainty_avoidance": {
+      "value": 51,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "masculinity_score": {
+      "value": 61,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "long_term_orientation": {
+      "value": 21,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "indulgence_score": {
+      "value": 71,
+      "source": "Hofstede Insights, 2023",
+      "year": 2023
+    },
+    "face_saving_importance": {
+      "value": 3,
+      "source": "World Values Survey Wave 7 Australia, 2022",
+      "year": 2022
+    },
+    "personal_space_norm_m": {
+      "value": 1,
+      "source": "Cross-cultural proxemics research, Journal of Cross-Cultural Psychology, 2022",
+      "year": 2022
+    },
+    "eye_contact_norm": {
+      "value": "direct",
+      "source": "Intercultural Communication Studies, 2023",
+      "year": 2023
+    },
+    "punctuality_culture": {
+      "value": "moderate-strict",
+      "source": "World Values Survey Wave 7, 2022",
+      "year": 2022,
+      "note": "Business: strict; social: 10-15 min late acceptable"
+    },
+    "gift_giving_culture": {
+      "value": "casual",
+      "source": "Roy Morgan Research, 2023",
+      "year": 2023,
+      "note": "Bring a bottle of wine or beer; gifts often opened immediately"
+    },
+    "religion_in_public_life_pct": {
+      "value": 29,
+      "source": "Pew Research Center, 2024; McCrindle Faith and Belief Study Australia, 2023",
+      "year": 2023
+    },
+    "mateship_culture_score": {
+      "value": 8.8,
+      "source": "Australia Institute Social Cohesion Survey, 2023",
+      "year": 2023,
+      "note": "Mateship (loyalty, equality among friends) core Australian value"
+    },
+    "multiculturalism_acceptance_pct": {
+      "value": 86,
+      "source": "Scanlon Foundation Mapping Social Cohesion Survey, 2024",
+      "year": 2024
+    },
+    "tall_poppy_syndrome_observed_pct": {
+      "value": 64,
+      "source": "Australian Institute Management Survey, 2023",
+      "year": 2023,
+      "note": "64% observe colleagues cutting down successful peers"
+    }
+  },
+  "business_culture": {
+    "hierarchy_importance": {
+      "value": 4,
+      "source": "EIU Business Environment Rankings Australia, 2024; Hofstede power distance 36",
+      "year": 2024,
+      "note": "First-name basis with CEO common; flat structures valued"
+    },
+    "formality_level": {
+      "value": 4,
+      "source": "EIU Business Environment Rankings, 2024",
+      "year": 2024
+    },
+    "meeting_starts_on_time_pct": {
+      "value": 82,
+      "source": "KPMG Australia Business Culture Survey, 2023",
+      "year": 2023
+    },
+    "business_card_etiquette": {
+      "value": "casual, not ceremonial",
+      "source": "Australian Trade and Investment Commission (Austrade), 2023",
+      "year": 2023
+    },
+    "negotiation_rounds_typical": {
+      "value": 2,
+      "source": "Austrade Business Guide, 2023",
+      "year": 2023
+    },
+    "corruption_perception_index": {
+      "value": 79,
+      "source": "Transparency International CPI 2024",
+      "year": 2024
+    },
+    "ease_of_doing_business_rank": {
+      "value": 14,
+      "source": "World Bank Doing Business 2023 equivalent; IMD World Competitiveness, 2024",
+      "year": 2024
+    },
+    "time_to_start_business_days": {
+      "value": 1.5,
+      "source": "World Bank Business Ready Report, 2024",
+      "year": 2024
+    },
+    "small_talk_before_business": {
+      "value": "yes",
+      "source": "Austrade Business Culture Guide, 2023",
+      "year": 2023,
+      "note": "Sport (cricket, AFL) and weekend activities are common openers"
+    },
+    "contracts_vs_relationships": {
+      "value": "contracts primary",
+      "source": "EIU Business Environment Rankings 2024",
+      "year": 2024
+    },
+    "workplace_flexibility_pct": {
+      "value": 68,
+      "source": "Flex and the City: Australian Workplace Flexibility Survey, 2024",
+      "year": 2024,
+      "note": "Hybrid work widely adopted post-COVID"
+    },
+    "women_in_management_pct": {
+      "value": 42.3,
+      "source": "Workplace Gender Equality Agency (WGEA) Australia, 2024",
+      "year": 2024
+    }
+  },
+  "religion": {
+    "major_religion": {
+      "value": "Christianity",
+      "source": "ABS Australian Census of Population and Housing, 2021 (latest)",
+      "year": 2022
+    },
+    "major_religion_pct": {
+      "value": 43.9,
+      "source": "ABS Census 2021",
+      "year": 2022,
+      "note": "Down from 52.1% in 2016; fastest-declining in developed world"
+    },
+    "second_religion_pct": {
+      "value": 3.2,
+      "source": "ABS Census 2021; Islam second largest",
+      "year": 2022
+    },
+    "atheist_agnostic_pct": {
+      "value": 38.9,
+      "source": "ABS Census 2021; 'No religion' category",
+      "year": 2022
+    },
+    "weekly_religious_attendance_pct": {
+      "value": 16,
+      "source": "McCrindle Faith and Belief Study Australia, 2023",
+      "year": 2023
+    },
+    "religion_impact_daily_life": {
+      "value": 3.1,
+      "source": "World Values Survey Wave 7 Australia; McCrindle 2023",
+      "year": 2023
+    },
+    "halal_kosher_diet_pct": {
+      "value": 3.8,
+      "source": "ABS Census 2021 Muslim + Jewish population proxy",
+      "year": 2022
+    },
+    "religious_holidays_count_per_year": {
+      "value": 4,
+      "source": "Fair Work Act 2009 National Employment Standards; Good Friday, Easter Monday, Christmas, Boxing Day",
+      "year": 2024
+    },
+    "interfaith_marriage_acceptance_pct": {
+      "value": 78,
+      "source": "Scanlon Foundation Mapping Social Cohesion, 2023",
+      "year": 2023
+    },
+    "belief_in_god_or_higher_power_pct": {
+      "value": 54,
+      "source": "McCrindle Faith and Belief Study Australia, 2023",
+      "year": 2023
+    },
+    "religion_should_influence_law_pct": {
+      "value": 15,
+      "source": "Lowy Institute Poll 2024",
+      "year": 2024
+    }
+  },
+  "digital_behavior": {
+    "internet_penetration_pct": {
+      "value": 96.2,
+      "source": "DataReportal Digital 2024: Australia",
+      "year": 2024
+    },
+    "smartphone_ownership_pct": {
+      "value": 91.5,
+      "source": "Deloitte Mobile Consumer Survey Australia, 2024",
+      "year": 2024
+    },
+    "daily_social_media_hours": {
+      "value": 1.8,
+      "source": "DataReportal Digital 2024: Australia",
+      "year": 2024
+    },
+    "top_platform_1": {
+      "value": "Facebook",
+      "source": "DataReportal Digital 2024: Australia",
+      "year": 2024
+    },
+    "top_platform_1_users_pct": {
+      "value": 68.4,
+      "source": "DataReportal Digital 2024: Australia (% internet users)",
+      "year": 2024
+    },
+    "top_platform_2": {
+      "value": "YouTube",
+      "source": "DataReportal Digital 2024: Australia",
+      "year": 2024
+    },
+    "top_platform_2_users_pct": {
+      "value": 74.1,
+      "source": "DataReportal Digital 2024: Australia",
+      "year": 2024
+    },
+    "ecommerce_adoption_pct": {
+      "value": 82.5,
+      "source": "Australia Post Inside Australian Online Shopping Report, 2024",
+      "year": 2024
+    },
+    "mobile_payment_adoption_pct": {
+      "value": 72.3,
+      "source": "Reserve Bank of Australia Consumer Payments Survey, 2024",
+      "year": 2024,
+      "note": "Tap-and-go contactless payments extremely high; cash usage declining"
+    },
+    "online_banking_pct": {
+      "value": 88.5,
+      "source": "Australian Banking Association Digital Banking Report, 2024",
+      "year": 2024
+    },
+    "cybersecurity_awareness_score": {
+      "value": 7.1,
+      "source": "Australian Cyber Security Centre (ACSC) Annual Cyber Threat Report, 2024 (scale 1-10)",
+      "year": 2024
+    },
+    "streaming_subscription_pct": {
+      "value": 74.8,
+      "source": "Telsyte Australian Streaming Video Survey, 2024; Netflix, Stan, Disney+, Prime",
+      "year": 2024
+    },
+    "remote_work_pct": {
+      "value": 37.2,
+      "source": "ABS Working Arrangements Survey, August 2024",
+      "year": 2024,
+      "note": "Hybrid work became standard post-COVID in professional sectors"
+    },
+    "buy_now_pay_later_usage_pct": {
+      "value": 28.5,
+      "source": "Reserve Bank of Australia BNPL Survey, 2024; Afterpay/Zip dominant",
+      "year": 2024
+    }
+  },
+  "education": {
+    "literacy_rate_pct": {
+      "value": 99,
+      "source": "UNESCO Institute for Statistics, 2023; ABS PIAAC Survey",
+      "year": 2023
+    },
+    "avg_years_schooling": {
+      "value": 13,
+      "source": "UNDP Human Development Report Australia, 2024",
+      "year": 2024
+    },
+    "tertiary_enrollment_pct": {
+      "value": 110,
+      "source": "UNESCO Institute for Statistics, 2023",
+      "year": 2023,
+      "note": "Over 100% includes international students enrolled in Australian institutions"
+    },
+    "private_tutoring_prevalence_pct": {
+      "value": 40,
+      "source": "Grattan Institute Education in Australia Survey, 2023",
+      "year": 2023
+    },
+    "govt_education_spend_pct_gdp": {
+      "value": 5.3,
+      "source": "OECD Education at a Glance 2024",
+      "year": 2024
+    },
+    "university_acceptance_rate_pct": {
+      "value": 72,
+      "source": "Universities Australia Data, 2024; ATAR-based selection",
+      "year": 2024
+    },
+    "student_loan_prevalence_pct": {
+      "value": 45,
+      "source": "ATO HECS-HELP data, 2024; income-contingent loans",
+      "year": 2024,
+      "note": "HECS-HELP system: repaid through tax once income exceeds AUD 54,435"
+    },
+    "stem_graduates_pct": {
+      "value": 31.8,
+      "source": "Australian Government Education Statistics, 2024",
+      "year": 2024
+    },
+    "vocational_track_pct": {
+      "value": 25.3,
+      "source": "National Centre for Vocational Education Research (NCVER), 2024",
+      "year": 2024,
+      "note": "TAFE (Technical and Further Education) widely used pathway"
+    },
+    "international_student_outflow_pct": {
+      "value": 2.1,
+      "source": "UNESCO Institute for Statistics, 2023",
+      "year": 2023
+    },
+    "education_pressure_score": {
+      "value": 6.2,
+      "source": "OECD PISA 2022 wellbeing questionnaire; ACARA data",
+      "year": 2022
+    },
+    "pisa_math_score": {
+      "value": 487,
+      "source": "OECD PISA 2022 Results",
+      "year": 2022
+    },
+    "pisa_reading_score": {
+      "value": 498,
+      "source": "OECD PISA 2022 Results",
+      "year": 2022
+    },
+    "international_students_hosted_thousands": {
+      "value": 619,
+      "source": "Department of Education Australia International Student Data, 2024",
+      "year": 2024,
+      "note": "3rd largest international student destination globally"
+    }
+  },
+  "housing": {
+    "homeownership_rate_pct": {
+      "value": 66,
+      "source": "ABS Housing Occupancy and Costs 2021-22",
+      "year": 2022,
+      "note": "Lowest since 1960s; declining among under-40s"
+    },
+    "avg_household_size": {
+      "value": 2.5,
+      "source": "ABS Census 2021",
+      "year": 2022
+    },
+    "avg_rent_1br_city_usd": {
+      "value": 1690,
+      "source": "CoreLogic Rental Review Q4 2024; Sydney avg AUD 2,600/month",
+      "year": 2024
+    },
+    "avg_rent_1br_suburbs_usd": {
+      "value": 1105,
+      "source": "CoreLogic Rental Review Q4 2024; national suburban avg",
+      "year": 2024
+    },
+    "multigenerational_household_pct": {
+      "value": 14.5,
+      "source": "ABS Census 2021; growing among migrant communities",
+      "year": 2022
+    },
+    "housing_cost_to_income_ratio": {
+      "value": 13.8,
+      "source": "Demographia International Housing Affordability 2024; Sydney 15.3, Melbourne 11.4",
+      "year": 2024,
+      "note": "Sydney is 2nd least affordable city in the world"
+    },
+    "avg_home_size_sqm": {
+      "value": 186,
+      "source": "CommSec State of the States Report, 2023",
+      "year": 2023,
+      "note": "Largest average new home size in the world historically; declining"
+    },
+    "social_housing_pct": {
+      "value": 4.1,
+      "source": "AIHW Housing Assistance in Australia, 2024",
+      "year": 2024
+    },
+    "rental_market_pct": {
+      "value": 30.8,
+      "source": "ABS Housing Occupancy and Costs 2022",
+      "year": 2022
+    },
+    "avg_mortgage_term_years": {
+      "value": 25,
+      "source": "Australian Banking Association Mortgage Data, 2024",
+      "year": 2024
+    },
+    "housing_affordability_index": {
+      "value": 1.8,
+      "source": "Demographia International Housing Affordability 2024 (5=most affordable)",
+      "year": 2024
+    },
+    "median_house_price_usd": {
+      "value": 574000,
+      "source": "CoreLogic Home Value Index, December 2024; AUD 882K converted",
+      "year": 2024
+    },
+    "negative_gearing_investors_pct": {
+      "value": 19.2,
+      "source": "ATO Taxation Statistics 2023; investors deducting rental losses",
+      "year": 2023
+    }
+  },
+  "food_lifestyle": {
+    "eating_out_per_week": {
+      "value": 3.2,
+      "source": "Roy Morgan Research Restaurant Dining Survey, 2024",
+      "year": 2024
+    },
+    "home_cooking_pct": {
+      "value": 72,
+      "source": "CSIRO Healthy Diet Score Australia, 2023",
+      "year": 2023
+    },
+    "fast_food_visits_per_week": {
+      "value": 1.6,
+      "source": "Roy Morgan Research Fast Food Report, 2024",
+      "year": 2024,
+      "note": "McDonald's, KFC, Hungry Jack's dominant; café culture strong"
+    },
+    "vegetarian_vegan_pct": {
+      "value": 11.2,
+      "source": "Roy Morgan Research Plant-based Diet Survey, 2024",
+      "year": 2024,
+      "note": "One of highest vegan growth rates in the world"
+    },
+    "obesity_rate_pct": {
+      "value": 31.3,
+      "source": "AIHW Overweight and Obesity Report, 2023 (BMI>30)",
+      "year": 2023
+    },
+    "alcohol_consumption_litres_per_capita": {
+      "value": 9.3,
+      "source": "WHO Global Status Report on Alcohol and Health, 2022",
+      "year": 2022
+    },
+    "coffee_consumption_kg_per_capita": {
+      "value": 2.1,
+      "source": "ICO Coffee Report Australia, 2023; third-wave coffee culture",
+      "year": 2023
+    },
+    "street_food_culture": {
+      "value": 4,
+      "source": "World Street Food Congress; Lonely Planet Australia, 2023 (scale 1-10)",
+      "year": 2023,
+      "note": "Food trucks and markets growing but not street-food culture like Asia"
+    },
+    "organic_food_adoption_pct": {
+      "value": 22.5,
+      "source": "Australian Organic Market Report, 2024",
+      "year": 2024
+    },
+    "meal_sharing_culture_score": {
+      "value": 6.5,
+      "source": "Roy Morgan Research Australian Lifestyle Survey, 2023",
+      "year": 2023
+    },
+    "food_delivery_app_usage_pct": {
+      "value": 46.3,
+      "source": "Statista Australia Online Food Delivery Market, 2024; Uber Eats, Menulog dominant",
+      "year": 2024
+    },
+    "brunch_culture_score": {
+      "value": 9.2,
+      "source": "Hospitality Magazine Australia; Allegra World Coffee Portal, 2024 (scale 1-10)",
+      "year": 2024,
+      "note": "Australian café brunch culture internationally recognized"
+    },
+    "multicultural_cuisine_diversity_score": {
+      "value": 8.5,
+      "source": "CSIRO Food and Nutrition Analysis, 2023; 200+ cuisine types in major cities",
+      "year": 2023
+    }
+  },
+  "trust_governance": {
+    "trust_in_govt_pct": {
+      "value": 47,
+      "source": "Edelman Trust Barometer Australia, 2024",
+      "year": 2024
+    },
+    "trust_in_courts_pct": {
+      "value": 52,
+      "source": "World Values Survey Wave 7 Australia, 2022",
+      "year": 2022
+    },
+    "trust_in_police_pct": {
+      "value": 59,
+      "source": "Australian Institute of Criminology Survey, 2024",
+      "year": 2024
+    },
+    "trust_in_media_pct": {
+      "value": 43,
+      "source": "Edelman Trust Barometer Australia, 2024",
+      "year": 2024
+    },
+    "trust_in_strangers_pct": {
+      "value": 48,
+      "source": "World Values Survey Wave 7 Australia, 2022",
+      "year": 2022
+    },
+    "corruption_perception_index": {
+      "value": 79,
+      "source": "Transparency International CPI 2024",
+      "year": 2024
+    },
+    "press_freedom_index": {
+      "value": 74.6,
+      "source": "Reporters Without Borders World Press Freedom Index, 2024",
+      "year": 2024
+    },
+    "voter_turnout_pct": {
+      "value": 89.1,
+      "source": "Australian Electoral Commission 2022 Federal Election; voting is compulsory",
+      "year": 2022
+    },
+    "civil_society_strength": {
+      "value": 8.1,
+      "source": "Freedom House Freedom in the World Australia, 2024 (scale 1-10)",
+      "year": 2024
+    },
+    "protest_participation_pct": {
+      "value": 19,
+      "source": "World Values Survey Wave 7 Australia, 2022",
+      "year": 2022
+    },
+    "social_capital_index": {
+      "value": 72.4,
+      "source": "OECD Social Capital Index; Legatum Prosperity Index 2023",
+      "year": 2023
+    },
+    "democracy_index": {
+      "value": 9.09,
+      "source": "Economist Intelligence Unit Democracy Index, 2023 (full democracy)",
+      "year": 2023
+    },
+    "trust_in_scientists_pct": {
+      "value": 71,
+      "source": "Wellcome Global Monitor Australia, 2023",
+      "year": 2023
+    }
+  },
+  "regional_variations": {
+    "sydney_vs_perth_house_price": {
+      "value": "Sydney median AUD 1,177,000 vs Perth AUD 680,000 (Dec 2024)",
+      "source": "CoreLogic Home Value Index, December 2024",
+      "year": 2024,
+      "note": "Perth fastest-growing market 2023-2024 due to mining boom; Sydney unaffordability driving interstate migration"
+    },
+    "rural_remote_health_inequality": {
+      "value": "Remote Australians 2.1x higher preventable mortality rate vs major cities",
+      "source": "AIHW Rural and Remote Health Report, 2023",
+      "year": 2023,
+      "note": "Life expectancy 10 years lower for Aboriginal and Torres Strait Islander peoples in remote areas"
+    },
+    "queensland_vs_victoria_lifestyle": {
+      "value": "Queensland outdoor activity hours/week: 5.6 vs Victoria 3.9; Queensland population growth 2.8% vs Victoria 2.1%",
+      "source": "ABS Regional Population Growth 2024; AusPlay 2024",
+      "year": 2024,
+      "note": "Queensland experiencing rapid migration from southern states; lifestyle and cost factors"
+    },
+    "indigenous_socioeconomic_gap": {
+      "value": "Aboriginal/Torres Strait Islander median income AUD 39,000 vs national AUD 60,800; unemployment 3x national rate",
+      "source": "ABS Census 2021; AIHW Indigenous Health Report 2023",
+      "year": 2022,
+      "note": "19% of Aboriginal population lives in remote areas with very limited services"
+    },
+    "northern_territory_unique_demographics": {
+      "value": "NT 25.5% Aboriginal population (highest in any state/territory); Darwin GDP growth 4.8% driven by defence spending",
+      "source": "ABS Census 2021; NT Treasury Budget Papers 2024",
+      "year": 2024
+    },
+    "melbourne_sydney_rivalry": {
+      "value": "Melbourne café density 7.3/1000 people vs Sydney 5.8/1000; Sydney finance GDP contribution 37% vs Melbourne 24%",
+      "source": "IBISWorld Australia Industry Reports, 2024; City of Melbourne data",
+      "year": 2024
+    }
+  }
+}
