@@ -12,6 +12,9 @@
  * - gap tra keys (gap-1, gap-1.5)
  */
 
+import Text from '@/components/ui/Text';
+import Badge from '@/components/ui/Badge';
+
 interface ShortcutItemProps {
   label: string;
   keys: string[];
@@ -21,14 +24,14 @@ interface ShortcutItemProps {
 export default function ShortcutItem({ label, keys, soon }: ShortcutItemProps) {
   return (
     <div className="flex items-center justify-between px-4 py-4 rounded-lg">
-      <span className="text-[13px]" style={{ color: 'var(--muted-foreground)' }}>
+      <Text variant="caption" style={{ fontSize: '13px', color: 'var(--muted-foreground)' }}>
         {label}
         {soon && (
-          <span className="ml-2 text-[9px] text-[var(--muted)] bg-[var(--border)] px-1.5 py-0.5 rounded">
-            soon
+          <span className="ml-2">
+            <Badge variant="neutral" size="sm">soon</Badge>
           </span>
         )}
-      </span>
+      </Text>
       <span className="flex gap-1">
         {keys.map((k, i) => (
           <kbd

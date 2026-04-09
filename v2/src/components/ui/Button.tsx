@@ -14,7 +14,7 @@ const STYLES: Record<Variant, string> = {
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant;
-  size?: 'sm' | 'md';
+  size?: 'sm' | 'md' | 'lg';
   loading?: boolean;
 }
 
@@ -27,7 +27,11 @@ export default function Button({
   className = '',
   ...props
 }: ButtonProps) {
-  const sizeClass = size === 'sm' ? 'px-4 py-2 text-[var(--text-base)]' : 'px-5 py-2.5 text-[var(--text-md)]';
+  const sizeClass = size === 'sm'
+    ? 'px-4 py-2 text-[var(--text-base)]'
+    : size === 'lg'
+      ? 'px-6 py-3 text-[var(--text-lg)]'
+      : 'px-5 py-2.5 text-[var(--text-md)]';
 
   return (
     <button
@@ -44,7 +48,7 @@ export default function Button({
     >
       {loading ? (
         <span className="flex items-center gap-2">
-          <Spinner size={size === 'sm' ? 14 : 16} />
+          <Spinner size={size === 'sm' ? 14 : size === 'lg' ? 18 : 16} />
           {children}
         </span>
       ) : children}

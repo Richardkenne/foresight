@@ -4,6 +4,10 @@ import 'react';
 import { motion } from 'framer-motion';
 import { type Node as RFNode } from '@xyflow/react';
 import { tokens } from '@/lib/design-tokens';
+import Card from '@/components/ui/Card';
+import Badge from '@/components/ui/Badge';
+import Text from '@/components/ui/Text';
+import IconButton from '@/components/ui/IconButton';
 
 interface SimStats {
   total: number;
@@ -90,17 +94,14 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
       {/* Header */}
       <div className="flex justify-between items-center px-6 pt-6 pb-4">
         <div>
-          <h2 className="text-[15px] font-semibold text-[var(--foreground)] tracking-tight">Results</h2>
-          <p className="text-[11px] mt-0.5" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>{totalPeople} simulated</p>
+          <Text variant="subheading" as="h2">Results</Text>
+          <Text variant="mono" as="p" muted style={{ fontSize: '11px', marginTop: '2px' }}>{totalPeople} simulated</Text>
         </div>
-        <button
-          onClick={onClose}
-          className="w-7 h-7 flex items-center justify-center rounded-full text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-all cursor-pointer"
-        >
+        <IconButton variant="ghost" size="sm" onClick={onClose} style={{ borderRadius: 'var(--radius-full)' }}>
           <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             <path d="M1 1l12 12M13 1L1 13" />
           </svg>
-        </button>
+        </IconButton>
       </div>
 
       {/* Scrollable content */}
@@ -108,23 +109,23 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
 
         {/* Summary row */}
         <div className="flex gap-2 mb-6">
-          <div className="flex-1 rounded-xl p-3" style={{ outline: '1px solid var(--border)' }}>
-            <div className="text-[22px] font-semibold text-emerald-600 tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)' }}>{stats.success}</div>
-            <div className="text-[9px] font-medium uppercase tracking-[0.08em]" style={{ color: 'var(--muted)' }}>Made it</div>
-          </div>
-          <div className="flex-1 rounded-xl p-3" style={{ outline: '1px solid var(--border)' }}>
-            <div className="text-[22px] font-semibold text-red-500 tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)' }}>{stats.blocked}</div>
-            <div className="text-[9px] font-medium uppercase tracking-[0.08em]" style={{ color: 'var(--muted)' }}>Stopped</div>
-          </div>
-          <div className="flex-1 rounded-xl p-3" style={{ outline: '1px solid var(--border)' }}>
-            <div className="text-[22px] font-semibold tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)', color: successRate >= 50 ? tokens.successHover : successRate >= 25 ? tokens.warningHover : tokens.dangerHover }}>{successRate}%</div>
-            <div className="text-[9px] font-medium uppercase tracking-[0.08em]" style={{ color: 'var(--muted)' }}>Rate</div>
-          </div>
+          <Card variant="default" padding="sm" className="flex-1" style={{ boxShadow: 'none' }}>
+            <Text variant="mono" as="div" style={{ fontSize: 'var(--text-2xl)', color: tokens.successHover }} className="tabular-nums">{stats.success}</Text>
+            <Text variant="caption" as="div" style={{ fontSize: '9px', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.08em' }}>Made it</Text>
+          </Card>
+          <Card variant="default" padding="sm" className="flex-1" style={{ boxShadow: 'none' }}>
+            <Text variant="mono" as="div" style={{ fontSize: 'var(--text-2xl)', color: tokens.dangerHover }} className="tabular-nums">{stats.blocked}</Text>
+            <Text variant="caption" as="div" style={{ fontSize: '9px', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.08em' }}>Stopped</Text>
+          </Card>
+          <Card variant="default" padding="sm" className="flex-1" style={{ boxShadow: 'none' }}>
+            <Text variant="mono" as="div" style={{ fontSize: 'var(--text-2xl)', color: successRate >= 50 ? tokens.successHover : successRate >= 25 ? tokens.warningHover : tokens.dangerHover }} className="tabular-nums">{successRate}%</Text>
+            <Text variant="caption" as="div" style={{ fontSize: '9px', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.08em' }}>Rate</Text>
+          </Card>
         </div>
 
         {/* Survival funnel */}
         <div className="mb-6">
-          <h3 className="text-[10px] uppercase tracking-[0.1em] font-medium mb-3" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>Survival Funnel</h3>
+          <Text variant="label" as="h3" style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-geist-mono)', marginBottom: '12px', display: 'block' }}>Survival Funnel</Text>
           <div className="space-y-1">
             {rows.slice(0, 14).map((r, i) => {
               const barW = Math.max(4, Math.round(r.unique / maxReach * 100));
@@ -156,8 +157,8 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
         {/* Deadliest bottlenecks */}
         {bottlenecks.length > 0 && (
           <div className="mb-4">
-            <h3 className="text-[10px] uppercase tracking-[0.1em] font-medium mb-3" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>Deadliest Bottlenecks</h3>
-            <div className="rounded-xl overflow-hidden" style={{ outline: '1px solid var(--border)' }}>
+            <Text variant="label" as="h3" style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-geist-mono)', marginBottom: '12px', display: 'block' }}>Deadliest Bottlenecks</Text>
+            <Card variant="default" padding="sm" style={{ padding: 0, overflow: 'hidden', boxShadow: 'none' }}>
               {bottlenecks.slice(0, 6).map((b, i) => {
                 const isWorse = b.actualRate < b.expectedRate;
                 const diff = b.actualRate - b.expectedRate;
@@ -181,29 +182,22 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
                       <span className="text-[11px] tabular-nums" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>
                         {b.expectedRate}%
                       </span>
-                      <span
-                        className="text-[9px] font-medium px-1.5 py-0.5 rounded-full tabular-nums"
-                        style={{
-                          background: isWorse ? tokens.dangerMuted : tokens.successMuted,
-                          color: isWorse ? tokens.dangerHover : tokens.successHover,
-                          fontFamily: 'var(--font-geist-mono)',
-                        }}
-                      >
+                      <Badge variant={isWorse ? 'danger' : 'success'} size="sm" className="tabular-nums">
                         {diff > 0 ? '+' : ''}{diff}%
-                      </span>
+                      </Badge>
                     </div>
                   </div>
                 );
               })}
-            </div>
+            </Card>
           </div>
         )}
 
         {/* Data Sources */}
         {dataSources.length > 0 && (
           <div className="mb-4">
-            <h3 className="text-[10px] uppercase tracking-[0.1em] font-medium mb-3" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>Data Sources</h3>
-            <div className="rounded-xl overflow-hidden" style={{ outline: '1px solid var(--border)' }}>
+            <Text variant="label" as="h3" style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-geist-mono)', marginBottom: '12px', display: 'block' }}>Data Sources</Text>
+            <Card variant="default" padding="sm" style={{ padding: 0, overflow: 'hidden', boxShadow: 'none' }}>
               {dataSources.map((ds, i) => (
                 <div
                   key={i}
@@ -222,7 +216,7 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
                   </div>
                 </div>
               ))}
-            </div>
+            </Card>
           </div>
         )}
       </div>
@@ -279,9 +273,9 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
             Ready to Execute?
           </a>
         )}
-        <p className="text-[9px] text-center" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>
+        <Text variant="caption" as="p" muted style={{ fontSize: '9px', fontFamily: 'var(--font-geist-mono)', textAlign: 'center' }}>
           Unique reach, not visits
-        </p>
+        </Text>
       </div>
     </motion.div>
   );

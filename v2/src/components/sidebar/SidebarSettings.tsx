@@ -9,6 +9,7 @@
  * - spacing label "Settings" (mb-3, mb-4)
  */
 
+import Text from '@/components/ui/Text';
 import ToggleItem from './ToggleItem';
 
 interface SidebarSettingsProps {
@@ -30,9 +31,9 @@ export default function SidebarSettings({
 }: SidebarSettingsProps) {
   return (
     <div className="px-8 py-6 border-t border-[var(--border)]">
-      <div className="text-[10px] font-semibold text-[var(--muted)] uppercase tracking-wider px-4 mb-4">
+      <Text variant="label" as="div" className="px-4 mb-4">
         Settings
-      </div>
+      </Text>
       <div className="flex flex-col gap-1">
         <ToggleItem
           icon={

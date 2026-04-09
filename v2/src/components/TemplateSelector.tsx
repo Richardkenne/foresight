@@ -2,6 +2,9 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { TEMPLATES } from '@/lib/templates';
+import Card from '@/components/ui/Card';
+import Text from '@/components/ui/Text';
+import Badge from '@/components/ui/Badge';
 
 interface TemplateSelectorProps {
   onSelect: (key: string) => void;
@@ -158,11 +161,14 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
         transition: 'all 0.2s cubic-bezier(0.16,1,0.3,1)',
       }}
     >
-      <div
-        className="bg-white dark:bg-[#141414] rounded-2xl overflow-hidden w-full max-h-[70vh] flex flex-col"
+      <Card
+        variant="elevated"
+        padding="sm"
+        className="overflow-hidden w-full max-h-[70vh] flex flex-col"
         style={{
+          padding: 0,
+          borderRadius: 'var(--radius)',
           boxShadow: '0 20px 60px rgba(0,0,0,0.15), 0 4px 16px rgba(0,0,0,0.08)',
-          border: '1px solid rgba(0,0,0,0.08)',
         }}
       >
         {/* Search */}
@@ -219,8 +225,8 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
         {/* Template list */}
         <div className="overflow-y-auto flex-1 py-2 px-2 sm:px-3" style={{ scrollbarWidth: 'thin', maxHeight: 'calc(70vh - 160px)' }}>
           {displayTemplates.length === 0 && (
-            <div className="py-8 text-center text-[13px] text-gray-400">
-              No templates match your search.
+            <div className="py-8 text-center">
+              <Text variant="caption" muted>No templates match your search.</Text>
             </div>
           )}
           {displayTemplates.map(({ key, title, desc, hasVariants }) => (
@@ -239,9 +245,14 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
                 style={{ background: expandedKey === key ? 'rgba(59,130,246,0.04)' : 'transparent' }}
               >
                 <div className="flex items-center justify-between">
-                  <div className="text-[14px] font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <Text
+                    variant="body"
+                    as="span"
+                    className="group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
+                    style={{ fontSize: '14px', fontWeight: 600 }}
+                  >
                     {title}
-                  </div>
+                  </Text>
                   {hasVariants ? (
                     <svg className="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-blue-400 transition-all shrink-0 ml-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" style={{ transform: expandedKey === key ? 'rotate(90deg)' : 'none' }}>
                       <path d="M9 18l6-6-6-6" />
@@ -252,7 +263,7 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
                     </svg>
                   )}
                 </div>
-                <div className="text-[12px] text-gray-400 mt-1 line-clamp-1">{desc}</div>
+                <Text variant="caption" as="div" className="mt-1 line-clamp-1">{desc}</Text>
               </div>
               {/* Depth variant sub-picker */}
               {hasVariants && expandedKey === key && (
@@ -275,7 +286,7 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
                         onMouseLeave={(e) => { if (exists) e.currentTarget.style.background = 'rgba(59,130,246,0.06)'; }}
                       >
                         {label}
-                        {!exists && <span className="block text-[9px] opacity-50 mt-0.5">coming soon</span>}
+                        {!exists && <Badge variant="neutral" size="sm" style={{ display: 'block', marginTop: 2, opacity: 0.5 }}>coming soon</Badge>}
                       </button>
                     );
                   })}
@@ -288,14 +299,14 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
         {/* Footer count */}
         <div className="h-px bg-gray-100 dark:bg-gray-800/50" />
         <div className="px-4 sm:px-7 py-3 sm:py-4 text-center">
-          <span className="text-[11px] text-gray-400">
+          <Text variant="caption" muted>
             {!search.trim() && !activeCategory
               ? `Today's picks — ${displayTemplates.length} of ${ALL_TEMPLATES.length}`
               : `${displayTemplates.length} of ${ALL_TEMPLATES.length} templates`
             }
-          </span>
+          </Text>
         </div>
-      </div>
+      </Card>
     </div>
   );
 }

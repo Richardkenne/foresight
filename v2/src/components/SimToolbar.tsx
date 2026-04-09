@@ -6,6 +6,10 @@ import { SPEED_LEVELS, SPEED_LABELS, SPD_BASE, type SimSettings, type LaunchMode
 import { type SimMode } from '@/lib/sim-modes';
 import { useState } from 'react';
 import { tokens, probColor } from '@/lib/design-tokens';
+import Button from '@/components/ui/Button';
+import Badge from '@/components/ui/Badge';
+import Text from '@/components/ui/Text';
+import IconButton from '@/components/ui/IconButton';
 
 const TOOLBAR_VARIANTS = {
   initial: { opacity: 0, y: 20 },
@@ -146,46 +150,34 @@ export function IdleToolbar({
                   zIndex: 100,
                 }}
               >
-                <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--muted)', letterSpacing: '0.06em', textTransform: 'uppercase' as const, marginBottom: 8 }}>
+                <Text variant="label" as="div" style={{ marginBottom: 8 }}>
                   Simulation Engine
-                </div>
+                </Text>
                 {/* Launch Mode */}
                 <div className="flex items-center justify-between mb-2">
-                  <span style={{ fontSize: 12, color: 'var(--foreground)' }}>Launch Mode</span>
+                  <Text variant="body" as="span">Launch Mode</Text>
                   <div className="flex rounded-lg overflow-hidden" style={{ border: '1px solid var(--border)' }}>
-                    <button
+                    <Button
+                      variant={simSettings.launchMode === 'wave' ? 'primary' : 'ghost'}
+                      size="sm"
                       onClick={() => onSimSettingsChange({ ...simSettings, launchMode: 'wave' })}
-                      className="px-2 py-1"
-                      style={{
-                        fontSize: 10,
-                        fontWeight: 600,
-                        background: simSettings.launchMode === 'wave' ? 'var(--accent)' : 'transparent',
-                        color: simSettings.launchMode === 'wave' ? tokens.accentForeground : 'var(--muted)',
-                        border: 'none',
-                        cursor: 'pointer',
-                      }}
+                      className="!px-2 !py-1 !text-[10px] !rounded-none"
                     >
                       Wave
-                    </button>
-                    <button
+                    </Button>
+                    <Button
+                      variant={simSettings.launchMode === 'simultaneous' ? 'primary' : 'ghost'}
+                      size="sm"
                       onClick={() => onSimSettingsChange({ ...simSettings, launchMode: 'simultaneous' })}
-                      className="px-2 py-1"
-                      style={{
-                        fontSize: 10,
-                        fontWeight: 600,
-                        background: simSettings.launchMode === 'simultaneous' ? 'var(--accent)' : 'transparent',
-                        color: simSettings.launchMode === 'simultaneous' ? tokens.accentForeground : 'var(--muted)',
-                        border: 'none',
-                        cursor: 'pointer',
-                      }}
+                      className="!px-2 !py-1 !text-[10px] !rounded-none"
                     >
                       Simultaneous
-                    </button>
+                    </Button>
                   </div>
                 </div>
                 {/* Speed Variation */}
                 <label className="flex items-center justify-between mb-2 cursor-pointer">
-                  <span style={{ fontSize: 12, color: 'var(--foreground)' }}>Speed Variation</span>
+                  <Text variant="body" as="span">Speed Variation</Text>
                   <div
                     onClick={() => onSimSettingsChange({ ...simSettings, speedVariation: !simSettings.speedVariation })}
                     className="relative w-8 h-[18px] rounded-full cursor-pointer transition-colors"
@@ -201,7 +193,7 @@ export function IdleToolbar({
                 </label>
                 {/* Path Following */}
                 <label className="flex items-center justify-between cursor-pointer">
-                  <span style={{ fontSize: 12, color: 'var(--foreground)' }}>Curve Following</span>
+                  <Text variant="body" as="span">Curve Following</Text>
                   <div
                     onClick={() => onSimSettingsChange({ ...simSettings, pathFollowing: !simSettings.pathFollowing })}
                     className="relative w-8 h-[18px] rounded-full cursor-pointer transition-colors"
@@ -365,10 +357,10 @@ export function RunningToolbar({ simPaused, liveMode, onTogglePause, onStop }: R
         }}
       >
         {liveMode && (
-          <div className="flex items-center gap-1.5 px-2">
+          <Badge variant="danger" size="sm">
             <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: tokens.danger }} />
-            <span style={{ fontSize: 10, fontWeight: 700, color: tokens.danger, letterSpacing: '0.08em', fontFamily: 'var(--font-geist-mono, monospace)' }}>LIVE</span>
-          </div>
+            LIVE
+          </Badge>
         )}
         <button onClick={onTogglePause} className="toolbar-btn toolbar-btn--primary" title={simPaused ? 'Resume' : 'Pause'}>
           {simPaused ? (
@@ -436,7 +428,7 @@ export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, succes
             className="w-20 h-1 appearance-none rounded-full cursor-pointer"
             style={{ accentColor: 'var(--accent)', background: 'var(--border)' }}
           />
-          <span className="text-[11px] font-semibold tabular-nums w-7 text-center" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>{SPEED_LABELS[speedLevel]}</span>
+          <Text variant="mono" as="span" muted style={{ width: 28, textAlign: 'center', fontSize: 'var(--text-xs)' }}>{SPEED_LABELS[speedLevel]}</Text>
         </div>
 
         <div className="w-px h-5" style={{ background: 'var(--border)' }} />
@@ -452,7 +444,7 @@ export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, succes
                   <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
                   <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                 </svg>
-                <span className="text-[11px] font-semibold" style={{ color: 'var(--accent)', fontFamily: 'var(--font-geist-mono)' }}>ALL</span>
+                <Badge variant="info" size="sm">ALL</Badge>
               </div>
             </>
           ) : (
@@ -468,7 +460,7 @@ export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, succes
                   />
                 ))}
               </div>
-              <span className="text-[11px] font-medium tabular-nums" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>{currentWave}/{totalWaves}</span>
+              <Text variant="mono" as="span" muted style={{ fontSize: 'var(--text-xs)', fontVariantNumeric: 'tabular-nums' }}>{currentWave}/{totalWaves}</Text>
             </>
           )}
         </div>
@@ -479,37 +471,29 @@ export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, succes
         <div className="flex items-center gap-5">
           <div className="flex items-center gap-2">
             <div className="w-[7px] h-[7px] rounded-full" style={{ background: 'var(--accent)' }} />
-            <span className="text-[13px] font-bold tabular-nums" style={{ color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>{simStats.total}</span>
-            <span className="text-[11px] font-medium" style={{ color: 'var(--muted)' }}>people</span>
+            <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>{simStats.total}</Text>
+            <Text variant="caption" as="span">people</Text>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-[7px] h-[7px] rounded-full" style={{ background: tokens.success }} />
-            <span className="text-[13px] font-bold tabular-nums" style={{ color: tokens.success, fontFamily: 'var(--font-geist-mono)' }}>{simStats.success}</span>
-            <span className="text-[11px] font-medium" style={{ color: 'var(--muted)' }}>made it</span>
+            <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.success }}>{simStats.success}</Text>
+            <Text variant="caption" as="span">made it</Text>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-[7px] h-[7px] rounded-full" style={{ background: tokens.danger }} />
-            <span className="text-[13px] font-bold tabular-nums" style={{ color: tokens.danger, fontFamily: 'var(--font-geist-mono)' }}>{simStats.blocked}</span>
-            <span className="text-[11px] font-medium" style={{ color: 'var(--muted)' }}>stopped</span>
+            <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.danger }}>{simStats.blocked}</Text>
+            <Text variant="caption" as="span">stopped</Text>
           </div>
         </div>
 
         {/* Rate — clear label */}
-        <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg" style={{ background: 'var(--surface-hover)' }}>
-          <span className="text-[14px] font-bold tabular-nums" style={{
-            color: successRate >= 50 ? tokens.success : successRate >= 25 ? tokens.warning : tokens.danger,
-            fontFamily: 'var(--font-geist-mono)',
-          }}>
-            {simStats.success}/{simStats.total}
-          </span>
-          <span className="text-[10px] font-medium" style={{ color: 'var(--muted)' }}>survive</span>
-          <span className="text-[11px] font-bold tabular-nums" style={{
-            color: successRate >= 50 ? tokens.success : successRate >= 25 ? tokens.warning : tokens.danger,
-            fontFamily: 'var(--font-geist-mono)',
-          }}>
-            ({successRate}%)
-          </span>
-        </div>
+        <Badge
+          variant={successRate >= 50 ? 'success' : successRate >= 25 ? 'warning' : 'danger'}
+          size="md"
+          style={{ gap: 'var(--space-2)' }}
+        >
+          {simStats.success}/{simStats.total} survive ({successRate}%)
+        </Badge>
 
         {/* YOU outcome */}
         {youOutcome && (
@@ -525,30 +509,27 @@ export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, succes
                 background: tokens.warning,
                 boxShadow: `0 0 6px color-mix(in srgb, var(--warning) 60%, transparent)`,
               }} />
-              <span className="text-[11px] font-bold" style={{
+              <Text variant="mono" as="span" style={{
+                fontSize: 11, fontWeight: 700,
                 color: youOutcome.outcome === 'success' ? tokens.success : tokens.danger,
-                fontFamily: 'var(--font-geist-mono)',
               }}>
                 YOU:
-              </span>
-              <span className="text-[11px] font-medium max-w-[140px] truncate" style={{
-                color: 'var(--foreground)',
-                fontFamily: 'var(--font-geist-mono)',
-              }}>
+              </Text>
+              <Text variant="mono" as="span" style={{ fontSize: 11, maxWidth: 140 }} className="truncate">
                 {youOutcome.nodeLabel}
-              </span>
+              </Text>
             </div>
           </>
         )}
 
         {/* Status */}
         {simPaused ? (
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full" style={{ background: tokens.warningMuted }}>
+          <Badge variant="warning" size="sm">
             <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: tokens.warning }} />
-            <span className="text-[10px] font-semibold uppercase tracking-wider" style={{ color: tokens.warningHover, fontFamily: 'var(--font-geist-mono)' }}>Paused</span>
-          </div>
+            Paused
+          </Badge>
         ) : (
-          <kbd className="text-[10px] px-2.5 py-1 rounded-md" style={{ color: 'var(--muted)', background: 'var(--surface-hover)', fontFamily: 'var(--font-geist-mono)' }}>space</kbd>
+          <Badge variant="neutral" size="sm">space</Badge>
         )}
       </div>
     </motion.div>
@@ -590,39 +571,36 @@ export function ReplayBar({ cutNodeId, cutNodeLabel, cutReachCount, simRunning, 
 
         {cutNodeId ? (
           <>
-            <span className="text-[10px] sm:text-[11px] font-medium" style={{ color: 'var(--muted-foreground)' }}>
-              Cut at <span className="font-semibold" style={{ color: 'var(--foreground)' }}>{cutNodeLabel}</span>
+            <Text variant="caption" as="span" style={{ color: 'var(--muted-foreground)', fontSize: 'var(--text-xs)' }}>
+              Cut at <Text variant="mono" as="span" style={{ fontSize: 'inherit' }}>{cutNodeLabel}</Text>
               {cutReachCount > 0 && (
-                <span style={{ color: 'var(--accent)' }} className="ml-1">({cutReachCount} people)</span>
+                <Badge variant="info" size="sm" className="ml-1">{cutReachCount} people</Badge>
               )}
-            </span>
+            </Text>
             <div className="w-px h-4" style={{ background: 'var(--border)' }} />
-            <button
+            <Button
+              variant="primary"
+              size="sm"
               onClick={onSimulateFromCut}
-              className="flex items-center gap-1.5 px-3 py-1 rounded-full hover:opacity-80 transition-opacity cursor-pointer"
-              style={{ background: 'var(--accent)', color: 'white' }}
+              className="!px-3 !py-1 !rounded-full !text-[10px]"
             >
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="5 3 19 12 5 21 5 3" />
               </svg>
-              <span className="text-[10px] font-semibold">Replay</span>
-            </button>
+              Replay
+            </Button>
           </>
         ) : (
-          <span className="text-[11px] font-medium" style={{ color: 'var(--muted)' }}>Click a node to set the cut point</span>
+          <Text variant="caption" as="span">Click a node to set the cut point</Text>
         )}
 
         <div className="w-px h-4" style={{ background: 'var(--border)' }} />
 
-        <button
-          onClick={onExitReplayMode}
-          className="flex items-center justify-center w-6 h-6 rounded-full transition-colors cursor-pointer"
-          style={{ color: 'var(--muted)' }}
-        >
+        <IconButton variant="ghost" size="sm" onClick={onExitReplayMode} title="Exit replay mode">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M18 6L6 18M6 6l12 12" />
           </svg>
-        </button>
+        </IconButton>
       </div>
     </motion.div>
   );
@@ -659,9 +637,9 @@ export function StepModeBar({ stepIndex, totalSteps, onStepBack, onStepForward, 
           </svg>
         </button>
 
-        <span className="text-[11px] font-semibold tabular-nums px-2" style={{ color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>
+        <Text variant="mono" as="span" style={{ fontSize: 11, fontWeight: 600, fontVariantNumeric: 'tabular-nums', padding: '0 8px' }}>
           {stepIndex} / {totalSteps}
-        </span>
+        </Text>
 
         <button onClick={onStepForward} disabled={stepIndex >= totalSteps} className="toolbar-btn toolbar-btn--primary" title="Next (Right arrow)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -704,15 +682,17 @@ export function PathFilterBar({ pathFilter, onFilterChange }: PathFilterBarProps
         }}
       >
         {([
-          { key: 'all', label: 'All', color: 'var(--foreground)' },
-          { key: 'success', label: 'Success', color: 'var(--success)' },
-          { key: 'partial', label: 'Partial', color: 'var(--warning)' },
-          { key: 'fail', label: 'Fail', color: 'var(--danger)' },
-        ] as const).map(({ key, label, color }) => (
-          <button
+          { key: 'all', label: 'All', color: 'var(--foreground)', badgeVariant: 'neutral' as const },
+          { key: 'success', label: 'Success', color: 'var(--success)', badgeVariant: 'success' as const },
+          { key: 'partial', label: 'Partial', color: 'var(--warning)', badgeVariant: 'warning' as const },
+          { key: 'fail', label: 'Fail', color: 'var(--danger)', badgeVariant: 'danger' as const },
+        ] as const).map(({ key, label, color, badgeVariant }) => (
+          <Button
             key={key}
+            variant="ghost"
+            size="sm"
             onClick={() => onFilterChange(key)}
-            className="px-3 py-1.5 rounded-full text-[10px] font-semibold transition-all cursor-pointer"
+            className="!px-3 !py-1.5 !rounded-full !text-[10px]"
             style={{
               background: pathFilter === key ? color : 'transparent',
               color: pathFilter === key ? 'var(--accent-foreground)' : 'var(--muted)',
@@ -721,7 +701,7 @@ export function PathFilterBar({ pathFilter, onFilterChange }: PathFilterBarProps
             }}
           >
             {label}
-          </button>
+          </Button>
         ))}
       </div>
     </motion.div>
@@ -768,48 +748,33 @@ export function Sim3DToolbar({
       >
         {/* Play / Stop */}
         {!simRunning ? (
-          <button
+          <Button
+            variant="primary"
+            size="sm"
             onClick={onStartSim}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all cursor-pointer"
-            style={{
-              background: tokens.accent,
-              color: tokens.accentForeground,
-              fontSize: 12,
-              fontWeight: 600,
-              fontFamily: 'Inter, system-ui',
-              minWidth: 36,
-              minHeight: 36,
-              justifyContent: 'center',
-            }}
             title="Simulate 100 people"
+            className="!gap-1.5"
+            style={{ minWidth: 36, minHeight: 36 }}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <polygon points="5 3 19 12 5 21 5 3" />
             </svg>
             <span className="hidden sm:inline">Simulate 100</span>
-          </button>
+          </Button>
         ) : (
-          <button
+          <Button
+            variant="danger"
+            size="sm"
             onClick={onStopSim}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all cursor-pointer"
-            style={{
-              background: tokens.dangerMuted,
-              color: tokens.danger,
-              fontSize: 12,
-              fontWeight: 600,
-              fontFamily: 'Inter, system-ui',
-              minWidth: 36,
-              minHeight: 36,
-              justifyContent: 'center',
-              border: `1px solid color-mix(in srgb, var(--danger) 20%, transparent)`,
-            }}
             title="Stop simulation"
+            className="!gap-1.5"
+            style={{ minWidth: 36, minHeight: 36 }}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <rect x="6" y="6" width="12" height="12" rx="1" />
             </svg>
             <span className="hidden sm:inline">Stop</span>
-          </button>
+          </Button>
         )}
 
         <div className="w-px h-5" style={{ background: 'rgba(255,255,255,0.08)' }} />
@@ -819,47 +784,31 @@ export function Sim3DToolbar({
           {/* Launched */}
           <div className="flex items-center gap-1.5">
             <div className="w-[7px] h-[7px] rounded-full" style={{ background: tokens.accent }} />
-            <span style={{
-              fontSize: 13, fontWeight: 700, color: tokens.foreground,
-              fontFamily: 'var(--font-geist-mono, monospace)',
-              fontVariantNumeric: 'tabular-nums',
-            }}>{stats.launched}</span>
-            <span style={{ fontSize: 10, fontWeight: 500, color: tokens.muted }}>launched</span>
+            <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>{stats.launched}</Text>
+            <Text variant="caption" as="span">launched</Text>
           </div>
 
           {/* Walking (in progress) */}
           {stats.walking > 0 && (
             <div className="flex items-center gap-1.5">
               <div className="w-[7px] h-[7px] rounded-full" style={{ background: tokens.warning }} />
-              <span style={{
-                fontSize: 13, fontWeight: 700, color: tokens.warning,
-                fontFamily: 'var(--font-geist-mono, monospace)',
-                fontVariantNumeric: 'tabular-nums',
-              }}>{stats.walking}</span>
-              <span style={{ fontSize: 10, fontWeight: 500, color: tokens.muted }}>walking</span>
+              <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.warning }}>{stats.walking}</Text>
+              <Text variant="caption" as="span">walking</Text>
             </div>
           )}
 
           {/* Pass */}
           <div className="flex items-center gap-1.5">
             <div className="w-[7px] h-[7px] rounded-full" style={{ background: tokens.success }} />
-            <span style={{
-              fontSize: 13, fontWeight: 700, color: tokens.success,
-              fontFamily: 'var(--font-geist-mono, monospace)',
-              fontVariantNumeric: 'tabular-nums',
-            }}>{stats.success}</span>
-            <span style={{ fontSize: 10, fontWeight: 500, color: tokens.muted }}>pass</span>
+            <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.success }}>{stats.success}</Text>
+            <Text variant="caption" as="span">pass</Text>
           </div>
 
           {/* Fail */}
           <div className="flex items-center gap-1.5">
             <div className="w-[7px] h-[7px] rounded-full" style={{ background: tokens.danger }} />
-            <span style={{
-              fontSize: 13, fontWeight: 700, color: tokens.danger,
-              fontFamily: 'var(--font-geist-mono, monospace)',
-              fontVariantNumeric: 'tabular-nums',
-            }}>{stats.failed}</span>
-            <span style={{ fontSize: 10, fontWeight: 500, color: tokens.muted }}>fail</span>
+            <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.danger }}>{stats.failed}</Text>
+            <Text variant="caption" as="span">fail</Text>
           </div>
         </div>
 
@@ -867,36 +816,31 @@ export function Sim3DToolbar({
         {total > 0 && (
           <>
             <div className="w-px h-5" style={{ background: 'rgba(255,255,255,0.08)' }} />
-            <div className="flex items-center gap-1.5 px-2 py-1 rounded-lg" style={{ background: 'rgba(255,255,255,0.04)' }}>
-              <span style={{
-                fontSize: 13, fontWeight: 800,
-                color: rate >= 50 ? tokens.success : rate >= 25 ? tokens.warning : tokens.danger,
-                fontFamily: 'var(--font-geist-mono, monospace)',
-                fontVariantNumeric: 'tabular-nums',
-              }}>{rate}%</span>
-              <span style={{ fontSize: 9, fontWeight: 500, color: tokens.muted }}>survive</span>
-            </div>
+            <Badge
+              variant={rate >= 50 ? 'success' : rate >= 25 ? 'warning' : 'danger'}
+              size="md"
+            >
+              {rate}% survive
+            </Badge>
           </>
         )}
 
         <div className="w-px h-5" style={{ background: 'rgba(255,255,255,0.08)' }} />
 
         {/* Fly-through toggle */}
-        <button
+        <Button
+          variant={flyThrough ? 'secondary' : 'ghost'}
+          size="sm"
           onClick={onToggleFlyThrough}
-          className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg transition-all cursor-pointer"
+          title={flyThrough ? 'Disable fly-through camera' : 'Enable fly-through camera'}
+          className="!gap-1.5 !px-2.5 !py-1.5"
           style={{
-            background: flyThrough ? tokens.accentHover : 'transparent',
-            color: flyThrough ? tokens.accent : tokens.muted,
-            fontSize: 11,
-            fontWeight: 600,
-            fontFamily: 'Inter, system-ui',
             minWidth: 36,
             minHeight: 36,
-            justifyContent: 'center',
+            background: flyThrough ? tokens.accentHover : 'transparent',
+            color: flyThrough ? tokens.accent : tokens.muted,
             border: flyThrough ? `1px solid color-mix(in srgb, var(--accent) 20%, transparent)` : '1px solid transparent',
           }}
-          title={flyThrough ? 'Disable fly-through camera' : 'Enable fly-through camera'}
         >
           {flyThrough ? (
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -911,58 +855,53 @@ export function Sim3DToolbar({
             </svg>
           )}
           <span className="hidden sm:inline">Fly</span>
-        </button>
+        </Button>
 
         {/* Speed control */}
         <div className="flex items-center gap-1.5">
-          <button
+          <IconButton
+            variant="subtle"
+            size="sm"
             onClick={() => onSpeedChange(Math.max(0.25, speed - 0.25))}
-            className="flex items-center justify-center rounded-md transition-all cursor-pointer"
+            title="Slower"
             style={{
-              width: 28, height: 28,
               background: 'rgba(255,255,255,0.04)',
               color: tokens.muted,
               border: '1px solid rgba(255,255,255,0.06)',
             }}
-            title="Slower"
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12" />
             </svg>
-          </button>
-          <span style={{
+          </IconButton>
+          <Text variant="mono" as="span" style={{
             fontSize: 11, fontWeight: 700, color: tokens.mutedForeground,
-            fontFamily: 'var(--font-geist-mono, monospace)',
             fontVariantNumeric: 'tabular-nums',
             width: 28, textAlign: 'center',
-          }}>{speed}x</span>
-          <button
+          }}>{speed}x</Text>
+          <IconButton
+            variant="subtle"
+            size="sm"
             onClick={() => onSpeedChange(Math.min(4, speed + 0.25))}
-            className="flex items-center justify-center rounded-md transition-all cursor-pointer"
+            title="Faster"
             style={{
-              width: 28, height: 28,
               background: 'rgba(255,255,255,0.04)',
               color: tokens.muted,
               border: '1px solid rgba(255,255,255,0.06)',
             }}
-            title="Faster"
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
             </svg>
-          </button>
+          </IconButton>
         </div>
 
         {/* Running indicator */}
         {simRunning && (
-          <div className="flex items-center gap-1.5 px-2 py-1 rounded-full" style={{ background: `color-mix(in srgb, var(--accent) 10%, transparent)` }}>
+          <Badge variant="info" size="sm">
             <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: tokens.accent }} />
-            <span style={{
-              fontSize: 9, fontWeight: 700, color: tokens.accent,
-              fontFamily: 'var(--font-geist-mono, monospace)',
-              letterSpacing: '0.06em', textTransform: 'uppercase' as const,
-            }}>Running</span>
-          </div>
+            Running
+          </Badge>
         )}
       </div>
     </motion.div>
@@ -989,9 +928,9 @@ export function ResultsTab({ onShowDashboard, onCompare, comparisonMode }: Resul
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--muted)' }} className="group-hover:!text-[var(--accent)] transition-colors">
             <path d="M3 3v18h18" /><path d="M18 17V9" /><path d="M13 17V5" /><path d="M8 17v-3" />
           </svg>
-          <span className="text-[9px] font-semibold transition-colors" style={{ writingMode: 'vertical-lr', color: 'var(--muted)' }}>
+          <Text variant="label" as="span" style={{ writingMode: 'vertical-lr', fontSize: 9 }} className="transition-colors">
             Results
-          </span>
+          </Text>
         </div>
       </button>
       {onCompare && !comparisonMode && (
@@ -1006,9 +945,9 @@ export function ResultsTab({ onShowDashboard, onCompare, comparisonMode }: Resul
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--muted)' }} className="group-hover:!text-[var(--purple)] transition-colors">
               <path d="M16 3h5v5" /><path d="M8 3H3v5" /><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" /><path d="m15 9 6-6" />
             </svg>
-            <span className="text-[9px] font-semibold transition-colors" style={{ writingMode: 'vertical-lr', color: 'var(--muted)' }}>
+            <Text variant="label" as="span" style={{ writingMode: 'vertical-lr', fontSize: 9 }} className="transition-colors">
               Compare
-            </span>
+            </Text>
           </div>
         </button>
       )}

@@ -9,6 +9,8 @@
  * - border-radius (rounded-lg, rounded-xl)
  */
 
+import Text from '@/components/ui/Text';
+
 const VIEW_MODES: { mode: '2d' | '3d' | 'flowchart'; label: string; icon: string }[] = [
   { mode: '2d', label: '2D', icon: 'M3 3h18v18H3V3z' },
   { mode: '3d', label: '3D', icon: 'M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z' },
@@ -23,9 +25,9 @@ interface SidebarViewSelectorProps {
 export default function SidebarViewSelector({ viewMode, onViewModeChange }: SidebarViewSelectorProps) {
   return (
     <div className="px-8 py-6 border-t border-[var(--border)]">
-      <div className="text-[10px] font-semibold text-[var(--muted)] uppercase tracking-wider px-4 mb-4">
+      <Text variant="label" as="div" className="px-4 mb-4">
         View
-      </div>
+      </Text>
       <div className="flex gap-3 px-4">
         {VIEW_MODES.map(({ mode, label, icon }) => (
           <button

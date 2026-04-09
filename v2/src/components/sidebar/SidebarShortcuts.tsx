@@ -8,6 +8,7 @@
  * - spacing label "Shortcuts" (mb-3, mb-4)
  */
 
+import Text from '@/components/ui/Text';
 import ShortcutItem from './ShortcutItem';
 
 const SHORTCUTS = [
@@ -20,9 +21,9 @@ const SHORTCUTS = [
 export default function SidebarShortcuts() {
   return (
     <div className="px-8 py-6 border-t border-[var(--border)]">
-      <div className="text-[10px] font-semibold text-[var(--muted)] uppercase tracking-wider px-4 mb-4">
+      <Text variant="label" as="div" className="px-4 mb-4">
         Shortcuts
-      </div>
+      </Text>
       {SHORTCUTS.map((s) => (
         <ShortcutItem
           key={s.label}

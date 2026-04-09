@@ -13,7 +13,7 @@ const STYLES: Record<Variant, React.CSSProperties> = {
 
 interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   variant?: Variant;
-  size?: 'sm' | 'md';
+  size?: 'sm' | 'md' | 'lg';
 }
 
 export default function Badge({
@@ -25,7 +25,9 @@ export default function Badge({
 }: BadgeProps) {
   const sizeStyles: React.CSSProperties = size === 'sm'
     ? { fontSize: 'var(--text-xs)', padding: '1px var(--space-2)' }
-    : { fontSize: 'var(--text-sm)', padding: '2px var(--space-2)' };
+    : size === 'lg'
+      ? { fontSize: 'var(--text-base)', padding: 'var(--space-1) var(--space-3)' }
+      : { fontSize: 'var(--text-sm)', padding: '2px var(--space-2)' };
 
   return (
     <span

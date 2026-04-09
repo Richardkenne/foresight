@@ -9,10 +9,12 @@
  * - colore (var(--muted))
  */
 
+import Text from '@/components/ui/Text';
+
 export default function SidebarFooter() {
   return (
     <div className="px-8 py-6 border-t border-[var(--border)]">
-      <div className="text-[11px] text-[var(--muted)]">Foresight</div>
+      <Text variant="caption" as="div" style={{ fontSize: '11px' }}>Foresight</Text>
     </div>
   );
 }

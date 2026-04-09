@@ -13,6 +13,7 @@
  */
 
 import type { ReactNode } from 'react';
+import Badge from '@/components/ui/Badge';
 
 interface NavItemProps {
   icon: string;
@@ -45,8 +46,8 @@ export default function NavItem({ icon, extra, label, active, disabled, soon, on
       </svg>
       {label}
       {soon && (
-        <span className="ml-auto text-[10px] text-[var(--muted)] bg-[var(--border)] px-2 py-1 rounded-md">
-          Soon
+        <span className="ml-auto">
+          <Badge variant="neutral" size="sm">Soon</Badge>
         </span>
       )}
     </button>

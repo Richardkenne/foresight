@@ -3,6 +3,9 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './ui/Button';
+import IconButton from './ui/IconButton';
+import Text from './ui/Text';
+import Badge from './ui/Badge';
 import TemplateSelector from './TemplateSelector';
 import PhotoUpload from './PhotoUpload';
 import HistoryPanel from './HistoryPanel';
@@ -68,9 +71,9 @@ function Logo() {
         <path d="M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
-      <span className="text-[13px] font-semibold text-[var(--foreground)] tracking-[0.1em] hidden sm:block" style={{ fontFamily: 'var(--font-geist-mono), monospace' }}>
+      <Text variant="mono" as="span" className="hidden sm:block" style={{ fontSize: 13, letterSpacing: '0.1em' }}>
         FORESIGHT
-      </span>
+      </Text>
     </div>
   );
 }
@@ -265,16 +268,18 @@ export default function TopBar({
       {/* Main bar */}
       <div className="h-[56px] flex items-center gap-1.5 sm:gap-3 px-2 sm:px-6">
         {/* Hamburger menu */}
-        <button
+        <IconButton
+          variant="ghost"
+          size="md"
           onClick={() => setShowMenu(!showMenu)}
-          className="h-11 w-11 flex items-center justify-center text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-lg transition-colors cursor-pointer shrink-0"
+          style={{ width: 44, height: 44, borderRadius: 'var(--radius)' }}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
             <line x1="4" y1="6" x2="20" y2="6" />
             <line x1="4" y1="12" x2="20" y2="12" />
             <line x1="4" y1="18" x2="20" y2="18" />
           </svg>
-        </button>
+        </IconButton>
 
         <div className="w-px h-7 bg-[var(--border)] shrink-0 hidden sm:block" />
 
@@ -324,9 +329,9 @@ export default function TopBar({
                 }}
                 autoFocus
               />
-              <div className="mt-2 text-[11px] text-[var(--muted)] text-right">
+              <Text variant="caption" as="div" style={{ marginTop: 8, textAlign: 'right' }}>
                 Enter to generate / Esc to close
-              </div>
+              </Text>
             </div>
           </>
         )}
@@ -424,7 +429,9 @@ export default function TopBar({
                 e.target.value = '';
               }}
             />
-            <button
+            <IconButton
+              variant="ghost"
+              size="md"
               onClick={async () => {
                 if (audioProcessing) return;
 
@@ -482,8 +489,10 @@ export default function TopBar({
                 audioInputRef.current?.click();
               }}
               disabled={audioProcessing}
-              className="h-11 w-11 flex items-center justify-center rounded-lg transition-colors cursor-pointer"
               style={{
+                width: 44,
+                height: 44,
+                borderRadius: 'var(--radius)',
                 color: isRecording ? '#ef4444' : audioProcessing ? 'var(--muted)' : 'var(--muted-foreground)',
                 background: isRecording ? 'rgba(239, 68, 68, 0.1)' : 'transparent',
                 outline: isRecording ? '2px solid rgba(239, 68, 68, 0.4)' : 'none',
@@ -507,14 +516,16 @@ export default function TopBar({
                   <line x1="8" y1="23" x2="16" y2="23" />
                 </svg>
               )}
-            </button>
+            </IconButton>
           </div>
 
           {/* Photo upload */}
           <div className="relative hidden sm:block">
-            <button
+            <IconButton
+              variant="ghost"
+              size="md"
               onClick={(e) => { e.stopPropagation(); setShowPhoto(!showPhoto); setShowTemplates(false); }}
-              className="h-11 w-11 flex items-center justify-center text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-lg transition-colors cursor-pointer"
+              style={{ width: 44, height: 44, borderRadius: 'var(--radius)' }}
               title="Photo to Simulation"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -522,7 +533,7 @@ export default function TopBar({
                 <circle cx="8.5" cy="8.5" r="1.5" />
                 <path d="M21 15l-5-5L5 21" />
               </svg>
-            </button>
+            </IconButton>
             {showPhoto && (
               <PhotoUpload
                 onSeedSelect={(s, preview) => {
@@ -638,21 +649,19 @@ export default function TopBar({
 
           {/* Sacred mode toggle — hidden on narrow screens, visible via bottom bar */}
           {onSacredModeChange && (
-            <button
+            <Badge
+              variant={sacredMode ? 'purple' : 'neutral'}
+              size="md"
               onClick={() => onSacredModeChange(!sacredMode)}
-              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] font-semibold transition-all"
-              style={{
-                background: sacredMode ? 'color-mix(in srgb, var(--purple) 15%, transparent)' : 'transparent',
-                color: sacredMode ? 'var(--purple)' : 'var(--muted)',
-                border: `1px solid ${sacredMode ? 'var(--purple)' : 'var(--border)'}`,
-              }}
+              className="hidden sm:inline-flex"
+              style={{ cursor: 'pointer', transition: 'all 150ms' }}
               title={sacredMode ? 'Switch to data mode' : 'Switch to sacred mode (Bible + Quran only)'}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
               </svg>
               Sacred
-            </button>
+            </Badge>
           )}
 
           {generating ? (
@@ -667,16 +676,17 @@ export default function TopBar({
           ) : (
             <>
               {hasNodes && (
-                <button
+                <IconButton
+                  variant="subtle"
+                  size="md"
                   onClick={() => onRestart?.()}
                   title="Restart — clear simulation state"
-                  className="flex items-center justify-center w-[36px] h-[36px] rounded-full transition-colors cursor-pointer hover:bg-[var(--surface-hover)]"
-                  style={{ color: 'var(--muted)', border: '1px solid var(--border)' }}
+                  style={{ width: 36, height: 36, borderRadius: 'var(--radius-full)' }}
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" /><path d="M21 3v5h-5" />
                   </svg>
-                </button>
+                </IconButton>
               )}
               {/* Depth level selector */}
               <div className="flex items-center rounded-full border border-[var(--border)] overflow-hidden" style={{ background: 'var(--surface)' }}>
@@ -741,8 +751,8 @@ export default function TopBar({
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="px-5 py-4 border-b border-[var(--border)]">
-              <div className="text-[14px] font-semibold text-[var(--foreground)]">{urlMeta.title || 'URL Analysis'}</div>
-              {urlMeta.description && <div className="text-[11px] text-[var(--muted)] mt-1 line-clamp-2">{urlMeta.description}</div>}
+              <Text variant="subheading" as="div" style={{ fontSize: 14 }}>{urlMeta.title || 'URL Analysis'}</Text>
+              {urlMeta.description && <Text variant="caption" as="div" style={{ marginTop: 4 }} className="line-clamp-2">{urlMeta.description}</Text>}
             </div>
             <div className="p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[400px] overflow-y-auto">
               {urlSeeds.map((seed, i) => {
@@ -761,10 +771,10 @@ export default function TopBar({
                     style={{ background: 'var(--background)' }}
                   >
                     <div className="flex items-center gap-2 mb-1.5">
-                      <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ background: color + '15', color }}>{catLabels[seed.category] || seed.category}</span>
-                      <span className="text-[9px] text-[var(--muted)] ml-auto" style={{ fontFamily: 'var(--font-geist-mono)' }}>{Math.round(seed.confidence * 100)}%</span>
+                      <Badge variant="neutral" size="sm" style={{ background: color + '15', color, border: 'none', fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{catLabels[seed.category] || seed.category}</Badge>
+                      <Text variant="mono" as="span" muted style={{ fontSize: 9, marginLeft: 'auto' }}>{Math.round(seed.confidence * 100)}%</Text>
                     </div>
-                    <div className="text-[12px] text-[var(--foreground)] leading-snug line-clamp-3">{seed.scenario}</div>
+                    <Text variant="body" as="div" style={{ fontSize: 12, lineHeight: 1.4 }} className="line-clamp-3">{seed.scenario}</Text>
                   </button>
                 );
               })}
