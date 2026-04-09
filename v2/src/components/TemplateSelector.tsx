@@ -151,7 +151,7 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
       className="fixed z-[200]"
       onClick={(e) => e.stopPropagation()}
       style={{
-        top: '64px',
+        top: 'var(--topbar-height)',
         right: '8px',
         left: '8px',
         maxWidth: '480px',

@@ -146,6 +146,19 @@
   --z-overlay: 30;
   --z-modal: 40;
   --z-toast: 50;
+
+  /* --- Layout --- */
+  --topbar-height: 64px;
+  --sidebar-width: 360px;
+  --sidebar-width-compact: 280px;
+  --content-max-width: 1200px;
+  --canvas-min-width: 480px;
+
+  /* --- Breakpoints (reference only — use in @media) --- */
+  /* --bp-mobile: 320px;   */
+  /* --bp-tablet: 768px;   */
+  /* --bp-desktop: 1024px; */
+  /* --bp-wide: 1440px;    */
 }
 
 @theme inline {
@@ -1702,7 +1715,7 @@ body {
 .pruning-modal {
   width: 440px;
   max-width: calc(100vw - 32px);
-  max-height: calc(100vh - 64px);
+  max-height: calc(100vh - var(--topbar-height));
   overflow-y: auto;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -1998,6 +2011,16 @@ body {
     font-size: 12px;
   }
 }
+
+/* ─── Responsive Breakpoints ───
+ * Desktop-first (max-width):
+ *   1440px — wide screens
+ *   1024px — standard desktop
+ *    768px — tablet
+ *    480px — mobile
+ *    360px — ultra-narrow (SE, Fold)
+ *    320px — minimum supported
+ */
 
 /* ─── Responsive ─── */
 @media (max-width: 768px) {

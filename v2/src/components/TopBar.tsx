@@ -310,7 +310,7 @@ export default function TopBar({
         {inputExpanded && MODE_CONFIG[activeMode || 'simulate'].showsPrompt && (
           <>
             <div className="fixed inset-0 z-[250] bg-black/10" onClick={() => setInputExpanded(false)} />
-            <div className="fixed z-[251] left-3 right-3 sm:left-6 sm:right-6 max-w-[600px] mx-auto" style={{ top: '64px' }}>
+            <div className="fixed z-[251] left-3 right-3 sm:left-6 sm:right-6 max-w-[600px] mx-auto" style={{ top: 'var(--topbar-height)' }}>
               <textarea
                 ref={inputRef}
                 className="w-full px-4 py-3 rounded-xl text-[14px] text-[var(--foreground)] placeholder-[var(--muted)] border border-[var(--border)] outline-none resize-none shadow-lg"
@@ -810,7 +810,7 @@ export default function TopBar({
             transition={{ duration: 0.2 }}
           />
           <motion.div
-            className="fixed top-0 left-0 h-full w-[360px] max-w-[100vw] z-[301] flex flex-col p-3"
+            className="fixed top-0 left-0 h-full w-[var(--sidebar-width)] max-w-[100vw] z-[301] flex flex-col p-3"
             style={{
               background: 'var(--surface)',
               borderRight: '1px solid var(--border)',

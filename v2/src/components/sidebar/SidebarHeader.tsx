@@ -20,7 +20,7 @@ interface SidebarHeaderProps {
 
 export default function SidebarHeader({ onClose }: SidebarHeaderProps) {
   return (
-    <div className="h-[80px] flex items-center justify-between px-8 border-b border-[var(--border)]">
+    <div className="h-[var(--topbar-height)] flex items-center justify-between px-8 border-b border-[var(--border)]">
       <Text variant="mono" style={{ fontSize: '16px', fontWeight: 700, letterSpacing: '0.08em' }}>
         FORESIGHT
       </Text>

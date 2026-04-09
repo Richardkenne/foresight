@@ -417,7 +417,7 @@ export default function BacktestPage() {
       overflowY: 'auto',
       padding: '40px 24px',
     }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <div style={{ maxWidth: 'var(--content-max-width)', margin: '0 auto' }}>
         {/* Header */}
         <div style={{ marginBottom: '32px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>

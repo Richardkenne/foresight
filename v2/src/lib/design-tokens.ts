@@ -178,4 +178,11 @@ export const tokens = {
   zOverlay:  'var(--z-overlay)',
   zModal:    'var(--z-modal)',
   zToast:    'var(--z-toast)',
+
+  // Layout
+  topbarHeight:       'var(--topbar-height)',
+  sidebarWidth:       'var(--sidebar-width)',
+  sidebarWidthCompact: 'var(--sidebar-width-compact)',
+  contentMaxWidth:    'var(--content-max-width)',
+  canvasMinWidth:     'var(--canvas-min-width)',
 } as const;

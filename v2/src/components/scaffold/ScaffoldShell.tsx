@@ -212,7 +212,7 @@ function ScaffoldNav({ current }: { current: string }) {
       WebkitBackdropFilter: 'blur(12px)',
     }}>
       <div style={{
-        maxWidth: 1200,
+        maxWidth: 'var(--content-max-width)',
         margin: '0 auto',
         padding: '0 var(--space-6)',
         height: 56,
@@ -267,7 +267,7 @@ function ScaffoldFooter() {
       marginTop: 80,
     }}>
       <div style={{
-        maxWidth: 1200,
+        maxWidth: 'var(--content-max-width)',
         margin: '0 auto',
         display: 'flex',
         flexDirection: 'column',
