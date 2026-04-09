@@ -88,7 +88,7 @@ export default function HistoryPanel({ onSelect, onBack }: HistoryPanelProps) {
               onMouseEnter={() => setHoveredId(entry.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
-              <div className="flex items-start gap-2.5">
+              <div className="flex items-start gap-3">
                 {/* Thumbnail */}
                 {entry.photoThumbnail ? (
                   <div className="shrink-0 w-[36px] h-[36px] rounded-md overflow-hidden border border-[var(--border)]">
@@ -123,11 +123,11 @@ export default function HistoryPanel({ onSelect, onBack }: HistoryPanelProps) {
 
                   {/* Tags */}
                   {entry.tags && Object.values(entry.tags).some(Boolean) && (
-                    <div className="flex flex-wrap gap-1 mt-1.5">
+                    <div className="flex flex-wrap gap-1 mt-2">
                       {Object.entries(entry.tags).filter(([, v]) => v).map(([k, v]) => (
                         <span
                           key={k}
-                          className="text-[9px] font-medium px-1.5 py-0.5 rounded"
+                          className="text-[9px] font-medium px-2 py-0.5 rounded"
                           style={{
                             background: 'color-mix(in srgb, var(--accent) 8%, transparent)',
                             color: 'var(--accent)',
@@ -161,7 +161,7 @@ export default function HistoryPanel({ onSelect, onBack }: HistoryPanelProps) {
         <div className="shrink-0 px-5 py-3 border-t border-[var(--border)]">
           <button
             onClick={handleClear}
-            className="w-full text-center text-[11px] text-[var(--muted)] hover:text-red-500 transition-colors cursor-pointer py-1.5 rounded-md hover:bg-red-500/5"
+            className="w-full text-center text-[11px] text-[var(--muted)] hover:text-red-500 transition-colors cursor-pointer py-2 rounded-md hover:bg-red-500/5"
           >
             Clear all history
           </button>

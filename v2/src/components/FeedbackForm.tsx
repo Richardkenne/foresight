@@ -134,7 +134,7 @@ export default function FeedbackForm({ scenario, predictedProb, simulationId, on
               </p>
               <button
                 onClick={onClose}
-                className="px-6 py-2.5 rounded-xl text-[13px] font-medium cursor-pointer transition-colors"
+                className="px-6 py-3 rounded-xl text-[13px] font-medium cursor-pointer transition-colors"
                 style={{
                   background: 'var(--foreground)',
                   color: 'var(--background)',
@@ -169,11 +169,11 @@ export default function FeedbackForm({ scenario, predictedProb, simulationId, on
               <div className="px-6 pb-6 overflow-y-auto" style={{ maxHeight: 'calc(90vh - 80px)' }}>
                 {/* Scenario (pre-filled, read-only) */}
                 <div className="mb-4">
-                  <label className="text-[10px] uppercase tracking-[0.1em] font-medium mb-1.5 block" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>
+                  <label className="text-[10px] uppercase tracking-[0.1em] font-medium mb-2 block" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>
                     Scenario
                   </label>
                   <div
-                    className="text-[13px] px-3 py-2.5 rounded-xl"
+                    className="text-[13px] px-3 py-3 rounded-xl"
                     style={{
                       background: 'var(--surface-hover)',
                       color: 'var(--foreground)',
@@ -186,7 +186,7 @@ export default function FeedbackForm({ scenario, predictedProb, simulationId, on
 
                 {/* Predicted probability (pre-filled) */}
                 <div className="mb-5">
-                  <label className="text-[10px] uppercase tracking-[0.1em] font-medium mb-1.5 block" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>
+                  <label className="text-[10px] uppercase tracking-[0.1em] font-medium mb-2 block" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>
                     Predicted success rate
                   </label>
                   <div
@@ -235,12 +235,12 @@ export default function FeedbackForm({ scenario, predictedProb, simulationId, on
                   <label className="text-[10px] uppercase tracking-[0.1em] font-medium mb-2 block" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>
                     Time since simulation
                   </label>
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap gap-2">
                     {TIME_OPTIONS.map((t) => (
                       <button
                         key={t}
                         onClick={() => setTimeElapsed(t)}
-                        className="px-3 py-1.5 rounded-lg text-[11px] font-medium cursor-pointer transition-all"
+                        className="px-3 py-2 rounded-lg text-[11px] font-medium cursor-pointer transition-all"
                         style={{
                           background: timeElapsed === t ? 'var(--foreground)' : 'transparent',
                           color: timeElapsed === t ? 'var(--background)' : 'var(--muted-foreground)',
@@ -255,7 +255,7 @@ export default function FeedbackForm({ scenario, predictedProb, simulationId, on
 
                 {/* Details (optional) */}
                 <div className="mb-4">
-                  <label className="text-[10px] uppercase tracking-[0.1em] font-medium mb-1.5 block" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>
+                  <label className="text-[10px] uppercase tracking-[0.1em] font-medium mb-2 block" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>
                     What happened? <span style={{ color: 'var(--muted)', opacity: 0.6 }}>(optional)</span>
                   </label>
                   <textarea
@@ -263,7 +263,7 @@ export default function FeedbackForm({ scenario, predictedProb, simulationId, on
                     onChange={(e) => setDetails(e.target.value)}
                     placeholder="Share your experience..."
                     rows={3}
-                    className="w-full px-3 py-2.5 rounded-xl text-[13px] resize-none focus:outline-none"
+                    className="w-full px-3 py-3 rounded-xl text-[13px] resize-none focus:outline-none"
                     style={{
                       background: 'var(--surface-hover)',
                       color: 'var(--foreground)',
@@ -275,7 +275,7 @@ export default function FeedbackForm({ scenario, predictedProb, simulationId, on
 
                 {/* Lessons (optional) */}
                 <div className="mb-6">
-                  <label className="text-[10px] uppercase tracking-[0.1em] font-medium mb-1.5 block" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>
+                  <label className="text-[10px] uppercase tracking-[0.1em] font-medium mb-2 block" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>
                     What did you learn? <span style={{ color: 'var(--muted)', opacity: 0.6 }}>(optional)</span>
                   </label>
                   <textarea
@@ -283,7 +283,7 @@ export default function FeedbackForm({ scenario, predictedProb, simulationId, on
                     onChange={(e) => setLessons(e.target.value)}
                     placeholder="Any insights for others facing the same decision..."
                     rows={3}
-                    className="w-full px-3 py-2.5 rounded-xl text-[13px] resize-none focus:outline-none"
+                    className="w-full px-3 py-3 rounded-xl text-[13px] resize-none focus:outline-none"
                     style={{
                       background: 'var(--surface-hover)',
                       color: 'var(--foreground)',

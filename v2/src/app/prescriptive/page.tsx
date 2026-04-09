@@ -69,7 +69,7 @@ export default function PrescriptivePage() {
         padding: '0 24px 40px',
         display: 'flex',
         flexDirection: 'column',
-        gap: 20,
+        gap: 'var(--space-6)',
       }}>
         {optimizations.map((opt, i) => (
           <div key={i} style={{
@@ -86,7 +86,7 @@ export default function PrescriptivePage() {
             }}>
               {/* Bad option */}
               <div style={{
-                padding: '16px 20px',
+                padding: 'var(--space-4) var(--space-6)',
                 background: 'color-mix(in srgb, var(--danger) 5%, transparent)',
                 borderBottom: '1px solid var(--border)',
               }}>
@@ -110,7 +110,7 @@ export default function PrescriptivePage() {
 
               {/* Good option */}
               <div style={{
-                padding: '16px 20px',
+                padding: 'var(--space-4) var(--space-6)',
                 background: 'color-mix(in srgb, var(--success) 5%, transparent)',
                 borderBottom: '1px solid var(--border)',
               }}>
@@ -122,7 +122,7 @@ export default function PrescriptivePage() {
             </div>
 
             {/* Explanation */}
-            <div style={{ padding: '16px 20px', display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+            <div style={{ padding: 'var(--space-4) var(--space-6)', display: 'flex', gap: 12, alignItems: 'flex-start' }}>
               <span style={{
                 fontSize: 20,
                 fontWeight: 800,
@@ -163,7 +163,7 @@ export default function PrescriptivePage() {
           gap: 16,
         }}>
           <div style={{
-            padding: 20,
+            padding: 'var(--space-6)',
             borderRadius: 10,
             border: '1px solid var(--border)',
             background: 'var(--surface)',
@@ -179,7 +179,7 @@ export default function PrescriptivePage() {
             </ul>
           </div>
           <div style={{
-            padding: 20,
+            padding: 'var(--space-6)',
             borderRadius: 10,
             border: '1px solid var(--accent)',
             background: 'color-mix(in srgb, var(--accent) 3%, var(--surface))',

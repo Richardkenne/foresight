@@ -73,7 +73,7 @@ export function IdleToolbar({
       transition={TOOLBAR_TRANSITION}
     >
       <div
-        className="rounded-full px-2 sm:px-3 py-2 flex items-center gap-1.5 sm:gap-2 flex-wrap justify-center"
+        className="rounded-full px-2 sm:px-3 py-2 flex items-center gap-2 sm:gap-2 flex-wrap justify-center"
         style={{
           background: 'var(--surface)',
           boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
@@ -437,7 +437,7 @@ export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, succes
         <div className="flex items-center gap-3">
           {launchMode === 'simultaneous' ? (
             <>
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-2">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                   <circle cx="9" cy="7" r="4" />
@@ -499,7 +499,7 @@ export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, succes
         {youOutcome && (
           <>
             <div className="w-px h-5" style={{ background: 'var(--border)' }} />
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg" style={{
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg" style={{
               background: youOutcome.outcome === 'success'
                 ? tokens.warningMuted
                 : 'color-mix(in srgb, var(--warning) 8%, transparent)',
@@ -557,7 +557,7 @@ export function ReplayBar({ cutNodeId, cutNodeLabel, cutReachCount, simRunning, 
       transition={TOOLBAR_TRANSITION}
     >
       <div
-        className="rounded-full px-3 sm:px-6 py-2.5 flex items-center gap-2 sm:gap-3 flex-wrap justify-center"
+        className="rounded-full px-3 sm:px-6 py-3 flex items-center gap-2 sm:gap-3 flex-wrap justify-center"
         style={{
           background: 'var(--surface)',
           boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
@@ -675,7 +675,7 @@ export function PathFilterBar({ pathFilter, onFilterChange }: PathFilterBarProps
       transition={TOOLBAR_TRANSITION}
     >
       <div
-        className="rounded-full px-1.5 py-1.5 flex items-center gap-1"
+        className="rounded-full px-2 py-2 flex items-center gap-1"
         style={{
           background: 'var(--surface)',
           boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
@@ -692,7 +692,7 @@ export function PathFilterBar({ pathFilter, onFilterChange }: PathFilterBarProps
             variant="ghost"
             size="sm"
             onClick={() => onFilterChange(key)}
-            className="!px-3 !py-1.5 !rounded-full !text-[10px]"
+            className="!px-3 !py-2 !rounded-full !text-[10px]"
             style={{
               background: pathFilter === key ? color : 'transparent',
               color: pathFilter === key ? 'var(--accent-foreground)' : 'var(--muted)',
@@ -737,7 +737,7 @@ export function Sim3DToolbar({
       transition={TOOLBAR_TRANSITION}
     >
       <div
-        className="rounded-2xl px-3 sm:px-5 py-2.5 sm:py-3 flex items-center gap-2 sm:gap-3 flex-wrap justify-center"
+        className="rounded-2xl px-3 sm:px-5 py-3 sm:py-3 flex items-center gap-2 sm:gap-3 flex-wrap justify-center"
         style={{
           background: 'rgba(6, 8, 16, 0.85)',
           backdropFilter: 'blur(20px)',
@@ -753,7 +753,7 @@ export function Sim3DToolbar({
             size="sm"
             onClick={onStartSim}
             title="Simulate 100 people"
-            className="!gap-1.5"
+            className="!gap-2"
             style={{ minWidth: 36, minHeight: 36 }}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -767,7 +767,7 @@ export function Sim3DToolbar({
             size="sm"
             onClick={onStopSim}
             title="Stop simulation"
-            className="!gap-1.5"
+            className="!gap-2"
             style={{ minWidth: 36, minHeight: 36 }}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -782,7 +782,7 @@ export function Sim3DToolbar({
         {/* Stats */}
         <div className="flex items-center gap-3 sm:gap-4">
           {/* Launched */}
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-2">
             <div className="w-[7px] h-[7px] rounded-full" style={{ background: tokens.accent }} />
             <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>{stats.launched}</Text>
             <Text variant="caption" as="span">launched</Text>
@@ -790,7 +790,7 @@ export function Sim3DToolbar({
 
           {/* Walking (in progress) */}
           {stats.walking > 0 && (
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-2">
               <div className="w-[7px] h-[7px] rounded-full" style={{ background: tokens.warning }} />
               <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.warning }}>{stats.walking}</Text>
               <Text variant="caption" as="span">walking</Text>
@@ -798,14 +798,14 @@ export function Sim3DToolbar({
           )}
 
           {/* Pass */}
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-2">
             <div className="w-[7px] h-[7px] rounded-full" style={{ background: tokens.success }} />
             <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.success }}>{stats.success}</Text>
             <Text variant="caption" as="span">pass</Text>
           </div>
 
           {/* Fail */}
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-2">
             <div className="w-[7px] h-[7px] rounded-full" style={{ background: tokens.danger }} />
             <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.danger }}>{stats.failed}</Text>
             <Text variant="caption" as="span">fail</Text>
@@ -833,7 +833,7 @@ export function Sim3DToolbar({
           size="sm"
           onClick={onToggleFlyThrough}
           title={flyThrough ? 'Disable fly-through camera' : 'Enable fly-through camera'}
-          className="!gap-1.5 !px-2.5 !py-1.5"
+          className="!gap-2 !px-3 !py-2"
           style={{
             minWidth: 36,
             minHeight: 36,
@@ -858,7 +858,7 @@ export function Sim3DToolbar({
         </Button>
 
         {/* Speed control */}
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-2">
           <IconButton
             variant="subtle"
             size="sm"
@@ -924,7 +924,7 @@ export function ResultsTab({ onShowDashboard, onCompare, comparisonMode }: Resul
         onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--surface-hover)'; }}
         onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--surface)'; }}
       >
-        <div className="flex flex-col items-center gap-1.5">
+        <div className="flex flex-col items-center gap-2">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--muted)' }} className="group-hover:!text-[var(--accent)] transition-colors">
             <path d="M3 3v18h18" /><path d="M18 17V9" /><path d="M13 17V5" /><path d="M8 17v-3" />
           </svg>
@@ -941,7 +941,7 @@ export function ResultsTab({ onShowDashboard, onCompare, comparisonMode }: Resul
           onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--surface-hover)'; }}
           onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--surface)'; }}
         >
-          <div className="flex flex-col items-center gap-1.5">
+          <div className="flex flex-col items-center gap-2">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--muted)' }} className="group-hover:!text-[var(--purple)] transition-colors">
               <path d="M16 3h5v5" /><path d="M8 3H3v5" /><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" /><path d="m15 9 6-6" />
             </svg>

@@ -155,7 +155,7 @@ export default function TwinPage() {
       }}>
         {features.map((f, i) => (
           <div key={i} style={{
-            padding: 20,
+            padding: 'var(--space-6)',
             borderRadius: 10,
             border: '1px solid var(--border)',
             background: 'var(--surface)',

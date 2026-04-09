@@ -80,7 +80,7 @@ function SacredIcon() {
 
 function ShortcutBadge({ keys }: { keys: string[] }) {
   return (
-    <span style={{ display: 'flex', alignItems: 'center', gap: 3, flexShrink: 0 }}>
+    <span style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-1)', flexShrink: 0 }}>
       {keys.map((k, i) => (
         <kbd
           key={i}
@@ -88,7 +88,7 @@ function ShortcutBadge({ keys }: { keys: string[] }) {
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '2px 5px',
+            padding: '2px var(--space-1)',
             borderRadius: '4px',
             fontSize: 'var(--text-xs)',
             fontFamily: 'var(--font-geist-mono), monospace',
@@ -332,7 +332,7 @@ export default function CommandPalette({
             />
             <kbd
               style={{
-                padding: '2px 6px',
+                padding: '2px var(--space-2)',
                 borderRadius: '5px',
                 fontSize: 'var(--text-xs)',
                 fontFamily: 'var(--font-geist-mono), monospace',

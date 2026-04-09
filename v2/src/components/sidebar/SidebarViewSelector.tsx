@@ -5,7 +5,7 @@
  *
  * SPERIMENTA QUI:
  * - gap tra bottoni (gap-2, gap-3)
- * - padding bottoni (py-2.5, py-3)
+ * - padding bottoni (py-3, py-3)
  * - border-radius (rounded-lg, rounded-xl)
  */
 
@@ -33,7 +33,7 @@ export default function SidebarViewSelector({ viewMode, onViewModeChange }: Side
           <button
             key={mode}
             onClick={() => onViewModeChange(mode)}
-            className="flex-1 flex flex-col items-center gap-1 py-2.5 rounded-lg text-[11px] font-medium transition-all cursor-pointer"
+            className="flex-1 flex flex-col items-center gap-1 py-3 rounded-lg text-[11px] font-medium transition-all cursor-pointer"
             style={{
               background: viewMode === mode ? 'var(--foreground)' : 'transparent',
               color: viewMode === mode ? 'var(--surface)' : 'var(--muted)',

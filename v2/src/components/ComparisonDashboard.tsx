@@ -74,7 +74,7 @@ export default function ComparisonDashboard({ scenarioA, scenarioB, onClose, onV
         <div className="grid grid-cols-2 gap-3 mb-5">
           {/* Scenario A */}
           <div className="rounded-xl p-3" style={{ outline: '1px solid var(--border)', background: winner === 'A' ? 'color-mix(in srgb, var(--indigo) 4%, transparent)' : 'transparent' }}>
-            <div className="flex items-center gap-1.5 mb-2">
+            <div className="flex items-center gap-2 mb-2">
               <div className="w-2 h-2 rounded-full" style={{ background: 'var(--indigo)' }} />
               <span className="text-[9px] uppercase tracking-[0.1em] font-semibold" style={{ color: 'var(--indigo)', fontFamily: 'var(--font-geist-mono)' }}>Scenario A</span>
             </div>
@@ -99,7 +99,7 @@ export default function ComparisonDashboard({ scenarioA, scenarioB, onClose, onV
 
           {/* Scenario B */}
           <div className="rounded-xl p-3" style={{ outline: '1px solid var(--border)', background: winner === 'B' ? 'color-mix(in srgb, var(--sky) 4%, transparent)' : 'transparent' }}>
-            <div className="flex items-center gap-1.5 mb-2">
+            <div className="flex items-center gap-2 mb-2">
               <div className="w-2 h-2 rounded-full" style={{ background: 'var(--sky)' }} />
               <span className="text-[9px] uppercase tracking-[0.1em] font-semibold" style={{ color: 'var(--sky)', fontFamily: 'var(--font-geist-mono)' }}>Scenario B</span>
             </div>
@@ -166,7 +166,7 @@ export default function ComparisonDashboard({ scenarioA, scenarioB, onClose, onV
 
             {scenarioA.bottlenecks.length > 0 && (
               <div className="mb-3">
-                <div className="flex items-center gap-1.5 mb-1.5">
+                <div className="flex items-center gap-2 mb-2">
                   <div className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--indigo)' }} />
                   <span className="text-[9px] font-medium" style={{ color: 'var(--indigo)' }}>Scenario A</span>
                 </div>
@@ -185,7 +185,7 @@ export default function ComparisonDashboard({ scenarioA, scenarioB, onClose, onV
 
             {scenarioB.bottlenecks.length > 0 && (
               <div>
-                <div className="flex items-center gap-1.5 mb-1.5">
+                <div className="flex items-center gap-2 mb-2">
                   <div className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--sky)' }} />
                   <span className="text-[9px] font-medium" style={{ color: 'var(--sky)' }}>Scenario B</span>
                 </div>
@@ -210,7 +210,7 @@ export default function ComparisonDashboard({ scenarioA, scenarioB, onClose, onV
         {onViewA && (
           <button
             onClick={onViewA}
-            className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-[11px] font-medium cursor-pointer transition-all hover:opacity-80"
+            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-[11px] font-medium cursor-pointer transition-all hover:opacity-80"
             style={{ outline: '1px solid var(--indigo)', color: 'var(--indigo)' }}
           >
             <div className="w-2 h-2 rounded-full" style={{ background: 'var(--indigo)' }} />
@@ -220,7 +220,7 @@ export default function ComparisonDashboard({ scenarioA, scenarioB, onClose, onV
         {onViewB && (
           <button
             onClick={onViewB}
-            className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-[11px] font-medium cursor-pointer transition-all hover:opacity-80"
+            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-[11px] font-medium cursor-pointer transition-all hover:opacity-80"
             style={{ outline: '1px solid var(--sky)', color: 'var(--sky)' }}
           >
             <div className="w-2 h-2 rounded-full" style={{ background: 'var(--sky)' }} />

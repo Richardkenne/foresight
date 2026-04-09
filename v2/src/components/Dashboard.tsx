@@ -158,14 +158,14 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
         {bottlenecks.length > 0 && (
           <div className="mb-4">
             <Text variant="label" as="h3" style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-geist-mono)', marginBottom: '12px', display: 'block' }}>Deadliest Bottlenecks</Text>
-            <Card variant="default" padding="sm" style={{ padding: 0, overflow: 'hidden', boxShadow: 'none' }}>
+            <Card variant="default" padding="none" style={{ overflow: 'hidden', boxShadow: 'none' }}>
               {bottlenecks.slice(0, 6).map((b, i) => {
                 const isWorse = b.actualRate < b.expectedRate;
                 const diff = b.actualRate - b.expectedRate;
                 return (
                   <div
                     key={i}
-                    className="flex items-center justify-between px-3 py-2.5"
+                    className="flex items-center justify-between px-3 py-3"
                     style={{ borderBottom: i < Math.min(bottlenecks.length, 6) - 1 ? '1px solid var(--border-subtle)' : 'none' }}
                   >
                     <div className="flex items-center gap-2 flex-1 min-w-0">
@@ -174,7 +174,7 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
                       </span>
                       <span className="text-[11px] truncate" style={{ color: 'var(--foreground)' }}>{b.label}</span>
                     </div>
-                    <div className="flex items-center gap-2.5 shrink-0 ml-2">
+                    <div className="flex items-center gap-3 shrink-0 ml-2">
                       <span className="text-[11px] font-semibold tabular-nums" style={{ color: isWorse ? tokens.dangerHover : tokens.successHover, fontFamily: 'var(--font-geist-mono)' }}>
                         {b.actualRate}%
                       </span>
@@ -197,7 +197,7 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
         {dataSources.length > 0 && (
           <div className="mb-4">
             <Text variant="label" as="h3" style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-geist-mono)', marginBottom: '12px', display: 'block' }}>Data Sources</Text>
-            <Card variant="default" padding="sm" style={{ padding: 0, overflow: 'hidden', boxShadow: 'none' }}>
+            <Card variant="default" padding="none" style={{ overflow: 'hidden', boxShadow: 'none' }}>
               {dataSources.map((ds, i) => (
                 <div
                   key={i}
@@ -226,7 +226,7 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
         {onCompare && (
           <button
             onClick={onCompare}
-            className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-[12px] font-medium cursor-pointer transition-all hover:opacity-90"
+            className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-[12px] font-medium cursor-pointer transition-all hover:opacity-90"
             style={{
               border: '1px solid var(--border)',
               background: 'var(--surface)',
@@ -242,7 +242,7 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
         {onReportOutcome && (
           <button
             onClick={onReportOutcome}
-            className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-[12px] font-medium cursor-pointer transition-all hover:opacity-90"
+            className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-[12px] font-medium cursor-pointer transition-all hover:opacity-90"
             style={{
               background: 'var(--foreground)',
               color: 'var(--background)',
@@ -257,7 +257,7 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
         {scenario && (
           <a
             href={`/execute?scenario=${encodeURIComponent(scenario)}`}
-            className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-[12px] font-medium transition-all hover:opacity-90"
+            className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-[12px] font-medium transition-all hover:opacity-90"
             style={{
               border: '1px solid var(--accent)',
               color: 'var(--accent)',

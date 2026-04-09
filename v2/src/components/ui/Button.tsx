@@ -31,7 +31,7 @@ export default function Button({
     ? 'px-4 py-2 text-[var(--text-base)]'
     : size === 'lg'
       ? 'px-6 py-3 text-[var(--text-lg)]'
-      : 'px-5 py-2.5 text-[var(--text-md)]';
+      : 'px-5 py-3 text-[var(--text-md)]';
 
   return (
     <button

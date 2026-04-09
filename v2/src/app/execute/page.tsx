@@ -161,7 +161,7 @@ function StepCard({ step, isLast }: { step: ExecutionStep; isLast: boolean }) {
         style={{
           flex: 1,
           marginBottom: isLast ? 0 : 8,
-          padding: '16px 20px',
+          padding: 'var(--space-4) var(--space-6)',
           borderRadius: 12,
           border: '1px solid var(--border)',
           background: 'var(--surface)',
@@ -284,7 +284,7 @@ function StepCard({ step, isLast }: { step: ExecutionStep; isLast: boolean }) {
               fontSize: 'var(--text-xs)',
               color: 'var(--purple-hover)',
               background: 'color-mix(in srgb, var(--purple-hover) 8%, transparent)',
-              padding: '1px 6px',
+              padding: '1px var(--space-2)',
               borderRadius: 4,
             }}>
               <BotIcon />
@@ -299,7 +299,7 @@ function StepCard({ step, isLast }: { step: ExecutionStep; isLast: boolean }) {
               fontSize: 'var(--text-xs)',
               color: 'var(--accent-hover)',
               background: 'color-mix(in srgb, var(--accent-hover) 8%, transparent)',
-              padding: '1px 6px',
+              padding: '1px var(--space-2)',
               borderRadius: 4,
             }}>
               <ApiIcon />
@@ -342,7 +342,7 @@ function StepCard({ step, isLast }: { step: ExecutionStep; isLast: boolean }) {
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: 6,
+                  gap: 'var(--space-2)',
                   marginTop: 12,
                   padding: '8px 16px',
                   borderRadius: 8,
@@ -512,7 +512,7 @@ function ExecuteContent() {
       <div style={{ maxWidth: 800, margin: '0 auto', padding: '40px 24px 80px' }}>
         {/* Header */}
         <div style={{ marginBottom: 40 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 8 }}>
             <div style={{
               width: 36,
               height: 36,
@@ -543,7 +543,7 @@ function ExecuteContent() {
           marginBottom: 32,
         }}>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: 'var(--muted-foreground)', marginBottom: 6, textTransform: 'uppercase' as const, letterSpacing: '0.06em' }}>
+            <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: 'var(--muted-foreground)', marginBottom: 'var(--space-2)', textTransform: 'uppercase' as const, letterSpacing: '0.06em' }}>
               Scenario
             </label>
             <input
@@ -566,9 +566,9 @@ function ExecuteContent() {
             />
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 'var(--space-6)' }}>
             <div>
-              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: 'var(--muted-foreground)', marginBottom: 6, textTransform: 'uppercase' as const, letterSpacing: '0.06em' }}>
+              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: 'var(--muted-foreground)', marginBottom: 'var(--space-2)', textTransform: 'uppercase' as const, letterSpacing: '0.06em' }}>
                 Country
               </label>
               <select
@@ -576,7 +576,7 @@ function ExecuteContent() {
                 onChange={e => setCountry(e.target.value)}
                 style={{
                   width: '100%',
-                  padding: '10px 16px',
+                  padding: 'var(--space-3) var(--space-4)',
                   borderRadius: 10,
                   border: '1px solid var(--border)',
                   background: 'var(--background)',
@@ -597,7 +597,7 @@ function ExecuteContent() {
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: 'var(--muted-foreground)', marginBottom: 6, textTransform: 'uppercase' as const, letterSpacing: '0.06em' }}>
+              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: 'var(--muted-foreground)', marginBottom: 'var(--space-2)', textTransform: 'uppercase' as const, letterSpacing: '0.06em' }}>
                 Budget (USD)
               </label>
               <input
@@ -607,7 +607,7 @@ function ExecuteContent() {
                 placeholder="10000"
                 style={{
                   width: '100%',
-                  padding: '10px 16px',
+                  padding: 'var(--space-3) var(--space-4)',
                   borderRadius: 10,
                   border: '1px solid var(--border)',
                   background: 'var(--background)',
@@ -648,8 +648,8 @@ function ExecuteContent() {
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: 6,
-                padding: '12px 20px',
+                gap: 'var(--space-2)',
+                padding: 'var(--space-3) var(--space-6)',
                 borderRadius: 10,
                 border: '1px solid var(--border)',
                 background: 'transparent',
@@ -694,14 +694,14 @@ function ExecuteContent() {
             {/* Phase filter tabs */}
             <div style={{
               display: 'flex',
-              gap: 6,
+              gap: 'var(--space-2)',
               marginBottom: 24,
               flexWrap: 'wrap',
             }}>
               <button
                 onClick={() => setActivePhase(null)}
                 style={{
-                  padding: '6px 14px',
+                  padding: 'var(--space-2) var(--space-4)',
                   borderRadius: 8,
                   border: '1px solid var(--border)',
                   background: !activePhase ? 'var(--foreground)' : 'transparent',
@@ -722,7 +722,7 @@ function ExecuteContent() {
                     key={p}
                     onClick={() => setActivePhase(activePhase === p ? null : p)}
                     style={{
-                      padding: '6px 14px',
+                      padding: 'var(--space-2) var(--space-4)',
                       borderRadius: 8,
                       border: `1px solid ${activePhase === p ? config.color : 'var(--border)'}`,
                       background: activePhase === p ? config.bg : 'transparent',
@@ -768,8 +768,8 @@ function ExecuteContent() {
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: 6,
-                    padding: '10px 20px',
+                    gap: 'var(--space-2)',
+                    padding: 'var(--space-3) var(--space-6)',
                     borderRadius: 10,
                     border: '1px solid var(--border)',
                     background: 'transparent',
@@ -787,8 +787,8 @@ function ExecuteContent() {
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: 6,
-                    padding: '10px 20px',
+                    gap: 'var(--space-2)',
+                    padding: 'var(--space-3) var(--space-6)',
                     borderRadius: 10,
                     border: '1px solid var(--border)',
                     background: 'transparent',

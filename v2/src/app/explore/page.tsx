@@ -301,7 +301,7 @@ export default function ExplorePage() {
       {/* Header */}
       <header className="sticky top-0 z-10 border-b" style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
         <div className="mx-auto max-w-6xl px-4 py-4 flex items-center gap-3">
-          <a href="/" className="p-1.5 rounded-lg transition-colors" style={{ color: 'var(--muted-foreground)' }}
+          <a href="/" className="p-2 rounded-lg transition-colors" style={{ color: 'var(--muted-foreground)' }}
             onMouseEnter={e => (e.currentTarget.style.background = 'var(--surface-hover)')}
             onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}>
             <ArrowLeftIcon />

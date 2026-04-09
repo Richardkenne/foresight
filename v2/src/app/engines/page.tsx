@@ -114,7 +114,7 @@ export default function EnginesPage() {
               display: 'flex',
               flexDirection: 'column',
               gap: 12,
-              padding: 20,
+              padding: 'var(--space-6)',
               borderRadius: 10,
               border: '1px solid var(--border)',
               background: 'var(--surface)',

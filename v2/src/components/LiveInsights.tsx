@@ -225,7 +225,7 @@ export default function LiveInsights({ simStats, nodes, nodeReachRef, edges, sce
       {/* Real-time world ticker */}
       {realTimeFacts.length > 0 && (
         <div className="px-4 py-3" style={{ borderBottom: '1px solid var(--border)', background: 'color-mix(in srgb, var(--danger) 4%, transparent)' }}>
-          <div className="flex items-center gap-1.5 mb-1.5">
+          <div className="flex items-center gap-2 mb-2">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
             </svg>
@@ -252,7 +252,7 @@ export default function LiveInsights({ simStats, nodes, nodeReachRef, edges, sce
       )}
 
       {/* Insights feed */}
-      <div className="flex-1 overflow-y-auto px-4 py-3 space-y-1.5">
+      <div className="flex-1 overflow-y-auto px-4 py-3 space-y-2">
         {insights.length === 0 && realTimeFacts.length === 0 && (
           <div style={{ color: 'var(--muted)', fontSize: 'var(--text-sm)', textAlign: 'center', paddingTop: 40 }}>
             Connecting to real-time data...

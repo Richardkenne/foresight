@@ -50,7 +50,7 @@ export default function BottleneckCard({ bottlenecks }: { bottlenecks: Bottlenec
                 <span className="text-[11px] tabular-nums" style={{ color: 'var(--muted)' }}>
                   {b.expectedRate}%
                 </span>
-                <span className="text-[9px] font-medium px-1.5 py-0.5 rounded-full tabular-nums"
+                <span className="text-[9px] font-medium px-2 py-0.5 rounded-full tabular-nums"
                       style={{
                         background: isWorse ? 'var(--danger-muted)' : 'var(--success-muted)',
                         color: isWorse ? 'var(--danger-hover)' : 'var(--success-hover)',

@@ -5,7 +5,7 @@
  *
  * SPERIMENTA QUI:
  * - padding container (px-2 sm:px-6 py-2)
- * - gap tra chips (gap-1.5, gap-2)
+ * - gap tra chips (gap-2, gap-2)
  * - dimensione chip (text-[11px], text-[12px])
  * - border-radius chip (rounded-md, rounded-lg, rounded-full)
  * - max-width label (max-w-[120px], max-w-[160px])
@@ -34,17 +34,17 @@ export default function AttachmentChips({ attachments, onRemove, onClearAll }: A
 
   return (
     <div
-      className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-6 py-2 border-t border-[var(--border)] overflow-x-auto"
+      className="flex items-center gap-2 sm:gap-2 px-2 sm:px-6 py-2 border-t border-[var(--border)] overflow-x-auto"
       style={{ background: 'var(--surface)', scrollbarWidth: 'none' }}
     >
       <span className="text-[10px] sm:text-[11px] text-[var(--muted)] font-medium shrink-0">
         Sources:
       </span>
-      <div className="flex items-center gap-1.5 flex-wrap">
+      <div className="flex items-center gap-2 flex-wrap">
         {attachments.map((att) => (
           <div
             key={att.id}
-            className="flex items-center gap-1.5 pl-2 pr-1 py-0.5 rounded-md text-[11px] font-medium border"
+            className="flex items-center gap-2 pl-2 pr-1 py-0.5 rounded-md text-[11px] font-medium border"
             style={{
               background: 'color-mix(in srgb, var(--accent) 8%, transparent)',
               borderColor: 'color-mix(in srgb, var(--accent) 20%, transparent)',

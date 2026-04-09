@@ -309,7 +309,7 @@ export default function CommunityPage() {
             </p>
             <Link
               href="/sim"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[13px] font-medium transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-[13px] font-medium transition-colors"
               style={{
                 background: 'var(--foreground)',
                 color: 'var(--background)',

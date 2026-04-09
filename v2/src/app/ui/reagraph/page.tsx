@@ -167,7 +167,7 @@ export default function ReagraphPage() {
         display: 'flex', gap: 16, fontFamily: 'system-ui', fontSize: 11,
       }}>
         {Object.entries(COLORS).map(([type, color]) => (
-          <div key={type} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+          <div key={type} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
             <div style={{ width: 10, height: 10, borderRadius: '50%', background: color }} />
             <span style={{ color: 'var(--muted)' }}>{type}</span>
           </div>
@@ -180,11 +180,11 @@ export default function ReagraphPage() {
         display: 'flex', gap: 8, fontFamily: 'system-ui',
       }}>
         <a href="/ui/force3d" style={{
-          padding: '6px 16px', background: 'var(--foreground)', color: 'var(--muted)', borderRadius: 8,
+          padding: 'var(--space-2) var(--space-4)', background: 'var(--foreground)', color: 'var(--muted)', borderRadius: 8,
           fontSize: 'var(--text-sm)', textDecoration: 'none', border: '1px solid var(--muted-foreground)',
         }}>3D Force Graph</a>
         <span style={{
-          padding: '6px 16px', background: 'color-mix(in srgb, var(--accent) 12%, transparent)', color: 'var(--accent)', borderRadius: 8,
+          padding: 'var(--space-2) var(--space-4)', background: 'color-mix(in srgb, var(--accent) 12%, transparent)', color: 'var(--accent)', borderRadius: 8,
           fontSize: 'var(--text-sm)', border: '1px solid color-mix(in srgb, var(--accent) 25%, transparent)',
         }}>Reagraph</span>
       </div>

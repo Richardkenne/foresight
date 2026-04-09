@@ -163,16 +163,15 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
     >
       <Card
         variant="elevated"
-        padding="sm"
+        padding="none"
         className="overflow-hidden w-full max-h-[70vh] flex flex-col"
         style={{
-          padding: 0,
           borderRadius: 'var(--radius)',
           boxShadow: '0 20px 60px rgba(0,0,0,0.15), 0 4px 16px rgba(0,0,0,0.08)',
         }}
       >
         {/* Search */}
-        <div className="p-4 sm:p-7">
+        <div className="p-4 sm:p-6">
           <div className="relative">
             <svg className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <circle cx="11" cy="11" r="8" />
@@ -190,10 +189,10 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
         </div>
 
         {/* Category pills */}
-        <div className="px-4 sm:px-7 pb-3 sm:pb-4 flex gap-2 sm:gap-2.5 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+        <div className="px-4 sm:px-6 pb-3 sm:pb-4 flex gap-2 sm:gap-3 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
           <button
             onClick={() => setActiveCategory(null)}
-            className="shrink-0 px-3.5 py-1.5 rounded-lg text-[12px] font-medium transition-all cursor-pointer"
+            className="shrink-0 px-4 py-2 rounded-lg text-[12px] font-medium transition-all cursor-pointer"
             style={{
               background: !activeCategory ? 'var(--accent-dim, rgba(59,130,246,0.1))' : 'transparent',
               color: !activeCategory ? 'var(--accent)' : 'var(--muted)',
@@ -206,14 +205,14 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
             <button
               key={cat.label}
               onClick={() => setActiveCategory(activeCategory === cat.label ? null : cat.label)}
-              className="shrink-0 px-3.5 py-1.5 rounded-lg text-[12px] font-medium transition-all cursor-pointer whitespace-nowrap"
+              className="shrink-0 px-4 py-2 rounded-lg text-[12px] font-medium transition-all cursor-pointer whitespace-nowrap"
               style={{
                 background: activeCategory === cat.label ? 'var(--accent-dim, rgba(59,130,246,0.1))' : 'transparent',
                 color: activeCategory === cat.label ? 'var(--accent)' : 'var(--muted)',
                 border: activeCategory === cat.label ? '1px solid var(--accent)' : '1px solid transparent',
               }}
             >
-              <span className="mr-1.5">{cat.icon}</span>
+              <span className="mr-2">{cat.icon}</span>
               {cat.label}
             </button>
           ))}
@@ -232,7 +231,7 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
           {displayTemplates.map(({ key, title, desc, hasVariants }) => (
             <div key={key} style={{ margin: '2px 0' }}>
               <div
-                className="group px-3 sm:px-5 py-3 sm:py-3.5 rounded-xl cursor-pointer transition-all"
+                className="group px-3 sm:px-6 py-3 sm:py-4 rounded-xl cursor-pointer transition-all"
                 onClick={() => {
                   if (hasVariants) {
                     setExpandedKey(expandedKey === key ? null : key);
@@ -298,7 +297,7 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
 
         {/* Footer count */}
         <div className="h-px bg-gray-100 dark:bg-gray-800/50" />
-        <div className="px-4 sm:px-7 py-3 sm:py-4 text-center">
+        <div className="px-4 sm:px-6 py-3 sm:py-4 text-center">
           <Text variant="caption" muted>
             {!search.trim() && !activeCategory
               ? `Today's picks — ${displayTemplates.length} of ${ALL_TEMPLATES.length}`

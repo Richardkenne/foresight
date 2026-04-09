@@ -320,7 +320,7 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className="flex items-center gap-1.5 px-3 py-2.5 text-[11px] font-medium transition-all cursor-pointer rounded-t-lg"
+                className="flex items-center gap-2 px-3 py-3 text-[11px] font-medium transition-all cursor-pointer rounded-t-lg"
                 style={{
                   color: activeTab === tab.id ? 'var(--foreground)' : 'var(--muted)',
                   background: activeTab === tab.id ? 'var(--surface-hover)' : 'transparent',
@@ -351,7 +351,7 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                       {/* Timeline line */}
                       <div className="flex flex-col items-center" style={{ width: 20 }}>
                         <div
-                          className="w-3 h-3 rounded-full shrink-0 mt-1.5"
+                          className="w-3 h-3 rounded-full shrink-0 mt-2"
                           style={{
                             background: isFailPoint ? 'var(--danger-hover)'
                               : isSuccess ? 'var(--success-hover)'
@@ -376,7 +376,7 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                           </span>
                           {isGate && node.prob != null && (
                             <span
-                              className="text-[9px] px-1.5 py-0.5 rounded-full font-medium tabular-nums"
+                              className="text-[9px] px-2 py-0.5 rounded-full font-medium tabular-nums"
                               style={{
                                 background: isFailPoint ? 'color-mix(in srgb, var(--danger-hover) 8%, transparent)' : 'color-mix(in srgb, var(--success-hover) 8%, transparent)',
                                 color: isFailPoint ? 'var(--danger-hover)' : 'var(--success-hover)',
@@ -440,13 +440,13 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                       {/* Probability comparison */}
                       {failurePersonalProb && (
                         <div className="flex gap-3 mb-3">
-                          <div className="flex-1 rounded-lg p-2.5" style={{ background: 'var(--surface)' }}>
+                          <div className="flex-1 rounded-lg p-3" style={{ background: 'var(--surface)' }}>
                             <div className="text-[9px] uppercase tracking-wider mb-1" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>Generic</div>
                             <div className="text-[18px] font-semibold tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)', color: 'var(--foreground)' }}>
                               {failurePersonalProb.generic}%
                             </div>
                           </div>
-                          <div className="flex-1 rounded-lg p-2.5" style={{ background: 'var(--surface)' }}>
+                          <div className="flex-1 rounded-lg p-3" style={{ background: 'var(--surface)' }}>
                             <div className="text-[9px] uppercase tracking-wider mb-1" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>Your Prob</div>
                             <div
                               className="text-[18px] font-semibold tabular-nums"
@@ -458,7 +458,7 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                               {failurePersonalProb.personal}%
                             </div>
                           </div>
-                          <div className="flex-1 rounded-lg p-2.5" style={{ background: 'var(--surface)' }}>
+                          <div className="flex-1 rounded-lg p-3" style={{ background: 'var(--surface)' }}>
                             <div className="text-[9px] uppercase tracking-wider mb-1" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>Modifier</div>
                             <div
                               className="text-[18px] font-semibold tabular-nums"
@@ -600,7 +600,7 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
 
                             {/* Impact projection */}
                             {affectedNodes.length > 0 && (
-                              <div className="rounded-lg p-2.5 mt-2" style={{ background: 'var(--surface-hover)' }}>
+                              <div className="rounded-lg p-3 mt-2" style={{ background: 'var(--surface-hover)' }}>
                                 <p className="text-[9px] font-medium" style={{ color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>
                                   If your {root.label_positive} were {improvedScore}/10:
                                 </p>
@@ -748,7 +748,7 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                           return (
                             <span
                               key={`my-${i}`}
-                              className="text-[8px] px-1.5 py-0.5 rounded"
+                              className="text-[8px] px-2 py-0.5 rounded"
                               style={{
                                 background: type === 'outcome-good' ? 'var(--success-muted)' :
                                   type === 'outcome-bad' ? 'var(--danger-muted)' : 'var(--surface-hover)',
@@ -777,7 +777,7 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                           return (
                             <span
                               key={`common-${i}`}
-                              className="text-[8px] px-1.5 py-0.5 rounded"
+                              className="text-[8px] px-2 py-0.5 rounded"
                               style={{
                                 background: type === 'outcome-good' ? 'var(--success-muted)' :
                                   type === 'outcome-bad' ? 'var(--danger-muted)' : 'var(--surface-hover)',
@@ -848,7 +848,7 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
             </p>
             <button
               onClick={onClose}
-              className="text-[11px] font-medium px-3 py-1.5 rounded-lg transition-all cursor-pointer"
+              className="text-[11px] font-medium px-3 py-2 rounded-lg transition-all cursor-pointer"
               style={{ background: 'var(--surface-hover)', color: 'var(--foreground)' }}
             >
               Close

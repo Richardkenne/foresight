@@ -30,7 +30,7 @@ function ModeTooltip({ mode }: { mode: SimMode }) {
       style={{ width: 260 }}
     >
       <div
-        className="rounded-lg px-3 py-2.5 text-left"
+        className="rounded-lg px-3 py-3 text-left"
         style={{
           background: 'var(--surface)',
           border: '1px solid color-mix(in srgb, var(--foreground) 12%, transparent)',
@@ -43,7 +43,7 @@ function ModeTooltip({ mode }: { mode: SimMode }) {
         >
           {cfg.label}
         </div>
-        <div className="text-[10px] leading-[1.5] text-[var(--muted-foreground)] mb-1.5">
+        <div className="text-[10px] leading-[1.5] text-[var(--muted-foreground)] mb-2">
           {cfg.description}
         </div>
         <div
@@ -92,7 +92,7 @@ export default function ModeSelector({ activeMode, onModeChange, hasNodes }: Mod
             onMouseLeave={() => setHoveredMode(null)}
             disabled={disabled}
             className={`
-              mode-tab relative z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-md
+              mode-tab relative z-10 flex items-center gap-2 px-3 py-2 rounded-md
               text-[11px] font-medium uppercase tracking-[0.08em] whitespace-nowrap
               transition-colors duration-150
               ${active ? 'text-[var(--foreground)]' : 'text-[var(--muted-foreground)]'}
@@ -129,8 +129,8 @@ export default function ModeSelector({ activeMode, onModeChange, hasNodes }: Mod
         style={{
           width: 1,
           background: 'color-mix(in srgb, var(--foreground) 10%, transparent)',
-          marginTop: 6,
-          marginBottom: 6,
+          marginTop: 'var(--space-2)',
+          marginBottom: 'var(--space-2)',
         }}
       />
 

@@ -120,7 +120,7 @@ export default function MermaidTest() {
             key={k}
             onClick={() => setSelected(k)}
             style={{
-              padding: '6px 12px', borderRadius: 8, fontSize: 'var(--text-sm)', fontWeight: 600, cursor: 'pointer',
+              padding: 'var(--space-2) var(--space-3)', borderRadius: 8, fontSize: 'var(--text-sm)', fontWeight: 600, cursor: 'pointer',
               background: selected === k ? 'var(--accent)' : 'var(--border)',
               color: selected === k ? 'var(--accent-foreground)' : 'var(--muted-foreground)',
               border: 'none',

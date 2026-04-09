@@ -37,7 +37,7 @@ export default function GovernmentPage() {
           display: 'inline-flex',
           alignItems: 'center',
           gap: 8,
-          padding: '6px 16px',
+          padding: 'var(--space-2) var(--space-4)',
           borderRadius: 20,
           fontSize: 12,
           fontWeight: 600,
@@ -160,7 +160,7 @@ export default function GovernmentPage() {
             { icon: Icons.target, title: 'Risk assessment', desc: 'Second and third-order effects. What breaks when you change one variable.' },
           ].map((cap, i) => (
             <div key={i} style={{
-              padding: 20,
+              padding: 'var(--space-6)',
               borderRadius: 10,
               border: '1px solid var(--border)',
               background: 'var(--surface)',
@@ -200,7 +200,7 @@ export default function GovernmentPage() {
           display: 'inline-flex',
           alignItems: 'center',
           gap: 8,
-          padding: '12px 28px',
+          padding: 'var(--space-3) var(--space-8)',
           borderRadius: 8,
           background: 'var(--foreground)',
           color: 'var(--background)',

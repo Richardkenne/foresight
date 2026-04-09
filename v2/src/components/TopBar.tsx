@@ -64,7 +64,7 @@ interface TopBarProps {
 
 function Logo() {
   return (
-    <div className="flex items-center gap-2.5 shrink-0 select-none">
+    <div className="flex items-center gap-3 shrink-0 select-none">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-[var(--foreground)]">
         <path d="M12 2L2 7l10 5 10-5-10-5z" fill="currentColor" opacity="0.15" />
         <path d="M2 17l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -266,7 +266,7 @@ export default function TopBar({
   return (
     <div className="shrink-0 z-50 border-b border-[var(--border)]" style={{ background: 'var(--surface)' }}>
       {/* Main bar */}
-      <div className="h-[56px] flex items-center gap-1.5 sm:gap-3 px-2 sm:px-6">
+      <div className="h-[56px] flex items-center gap-2 sm:gap-3 px-2 sm:px-6">
         {/* Hamburger menu */}
         <IconButton
           variant="ghost"
@@ -548,7 +548,7 @@ export default function TopBar({
           <div className="relative">
             <button
               onClick={(e) => { e.stopPropagation(); setShowTemplates(!showTemplates); setShowPhoto(false); }}
-              className="h-11 px-3 sm:px-5 text-[14px] font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-[10px] transition-colors cursor-pointer flex items-center gap-2.5"
+              className="h-11 px-3 sm:px-5 text-[14px] font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-[10px] transition-colors cursor-pointer flex items-center gap-3"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" />
@@ -567,7 +567,7 @@ export default function TopBar({
           <div className="relative">
             <button
               onClick={(e) => { e.stopPropagation(); setShowAudio(!showAudio); setShowTemplates(false); setShowPhoto(false); }}
-              className="h-11 px-3 text-[13px] font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-lg transition-colors cursor-pointer flex items-center gap-1.5"
+              className="h-11 px-3 text-[13px] font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-lg transition-colors cursor-pointer flex items-center gap-2"
               title="More input types"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -669,7 +669,7 @@ export default function TopBar({
               variant="primary"
               size="md"
               onClick={() => onStop?.()}
-              className="!px-6 !py-2.5 !text-[14px] !rounded-full !bg-red-500 hover:!bg-red-600"
+              className="!px-6 !py-3 !text-[14px] !rounded-full !bg-red-500 hover:!bg-red-600"
             >
               Stop
             </Button>
@@ -694,7 +694,7 @@ export default function TopBar({
                   <button
                     key={level}
                     onClick={() => onDepthLevelChange?.(level)}
-                    className="px-2.5 py-1.5 text-[11px] font-medium transition-all cursor-pointer"
+                    className="px-3 py-2 text-[11px] font-medium transition-all cursor-pointer"
                     style={{
                       background: depthLevel === level ? 'var(--foreground)' : 'transparent',
                       color: depthLevel === level ? 'var(--surface)' : 'var(--muted)',
@@ -710,7 +710,7 @@ export default function TopBar({
                 size="md"
                 onClick={onGenerate}
                 disabled={!scenario.trim() && attachments.length === 0}
-                className="!px-6 !py-2.5 !text-[14px] !rounded-full"
+                className="!px-6 !py-3 !text-[14px] !rounded-full"
               >
                 Generate
               </Button>
@@ -754,7 +754,7 @@ export default function TopBar({
               <Text variant="subheading" as="div" style={{ fontSize: 14 }}>{urlMeta.title || 'URL Analysis'}</Text>
               {urlMeta.description && <Text variant="caption" as="div" style={{ marginTop: 4 }} className="line-clamp-2">{urlMeta.description}</Text>}
             </div>
-            <div className="p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[400px] overflow-y-auto">
+            <div className="p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[400px] overflow-y-auto">
               {urlSeeds.map((seed, i) => {
                 const catColors: Record<string, string> = { intention: 'var(--accent)', content: 'var(--purple)', opportunity: 'var(--success)', risk: 'var(--danger)', competitor: 'var(--warning)', market: 'var(--node-decision-accent)' };
                 const catLabels: Record<string, string> = { intention: 'Intention', content: 'Content', opportunity: 'Opportunity', risk: 'Risk', competitor: 'Competitor', market: 'Market' };
@@ -770,7 +770,7 @@ export default function TopBar({
                     className="text-left p-3 rounded-xl border border-[var(--border)] hover:border-[var(--foreground)] transition-all cursor-pointer"
                     style={{ background: 'var(--background)' }}
                   >
-                    <div className="flex items-center gap-2 mb-1.5">
+                    <div className="flex items-center gap-2 mb-2">
                       <Badge variant="neutral" size="sm" style={{ background: color + '15', color, border: 'none', fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{catLabels[seed.category] || seed.category}</Badge>
                       <Text variant="mono" as="span" muted style={{ fontSize: 9, marginLeft: 'auto' }}>{Math.round(seed.confidence * 100)}%</Text>
                     </div>

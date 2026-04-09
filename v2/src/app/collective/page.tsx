@@ -116,7 +116,7 @@ export default function CollectivePage() {
       {/* Header */}
       <header className="sticky top-0 z-10 border-b" style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
         <div className="mx-auto max-w-5xl px-4 py-4 flex items-center gap-3">
-          <a href="/explore" className="p-1.5 rounded-lg transition-colors" style={{ color: 'var(--muted-foreground)' }}
+          <a href="/explore" className="p-2 rounded-lg transition-colors" style={{ color: 'var(--muted-foreground)' }}
             onMouseEnter={e => (e.currentTarget.style.background = 'var(--surface-hover)')}
             onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}>
             <ArrowLeftIcon />
@@ -134,17 +134,17 @@ export default function CollectivePage() {
         <div className="rounded-xl border p-5 space-y-4" style={{ background: 'var(--surface)', borderColor: 'var(--border)', boxShadow: 'var(--shadow-sm)' }}>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-[12px] font-medium uppercase tracking-wider mb-1.5 block" style={{ color: 'var(--muted-foreground)' }}>Scenario</label>
+              <label className="text-[12px] font-medium uppercase tracking-wider mb-2 block" style={{ color: 'var(--muted-foreground)' }}>Scenario</label>
               <input type="text" value={scenario} onChange={e => setScenario(e.target.value)}
                 placeholder="e.g. Open a cafe"
-                className="w-full rounded-lg border px-3 py-2.5 text-[13px] outline-none"
+                className="w-full rounded-lg border px-3 py-3 text-[13px] outline-none"
                 style={{ background: 'var(--background)', borderColor: 'var(--border)', color: 'var(--foreground)' }} />
             </div>
             <div>
-              <label className="text-[12px] font-medium uppercase tracking-wider mb-1.5 block" style={{ color: 'var(--muted-foreground)' }}>Location</label>
+              <label className="text-[12px] font-medium uppercase tracking-wider mb-2 block" style={{ color: 'var(--muted-foreground)' }}>Location</label>
               <input type="text" value={location} onChange={e => setLocation(e.target.value)}
                 placeholder="e.g. Bandung, Indonesia"
-                className="w-full rounded-lg border px-3 py-2.5 text-[13px] outline-none"
+                className="w-full rounded-lg border px-3 py-3 text-[13px] outline-none"
                 style={{ background: 'var(--background)', borderColor: 'var(--border)', color: 'var(--foreground)' }} />
             </div>
           </div>
@@ -253,7 +253,7 @@ export default function CollectivePage() {
                       </div>
                     </div>
                     {dp.n === result.currentN && (
-                      <span className="text-[9px] px-1.5 py-0.5 rounded-full" style={{ background: 'var(--accent)', color: '#fff' }}>you</span>
+                      <span className="text-[9px] px-2 py-0.5 rounded-full" style={{ background: 'var(--accent)', color: '#fff' }}>you</span>
                     )}
                   </div>
                 ))}
@@ -267,10 +267,10 @@ export default function CollectivePage() {
                 <table className="w-full text-[12px]">
                   <thead>
                     <tr style={{ color: 'var(--muted-foreground)' }}>
-                      <th className="text-right py-1.5 pr-4 font-medium">Entrants</th>
-                      <th className="text-right py-1.5 pr-4 font-medium">Survival Rate</th>
-                      <th className="text-right py-1.5 pr-4 font-medium">Rev/Unit</th>
-                      <th className="text-right py-1.5 font-medium">Saturation Index</th>
+                      <th className="text-right py-2 pr-4 font-medium">Entrants</th>
+                      <th className="text-right py-2 pr-4 font-medium">Survival Rate</th>
+                      <th className="text-right py-2 pr-4 font-medium">Rev/Unit</th>
+                      <th className="text-right py-2 font-medium">Saturation Index</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -279,14 +279,14 @@ export default function CollectivePage() {
                         borderTop: '1px solid var(--border-subtle)',
                         background: dp.n === result.currentN ? 'rgba(59,130,246,0.05)' : undefined,
                       }}>
-                        <td className="py-1.5 pr-4 text-right font-mono font-medium">{formatN(dp.n)}</td>
-                        <td className="py-1.5 pr-4 text-right font-mono" style={{
+                        <td className="py-2 pr-4 text-right font-mono font-medium">{formatN(dp.n)}</td>
+                        <td className="py-2 pr-4 text-right font-mono" style={{
                           color: dp.survivalRate > 60 ? 'var(--success)' : dp.survivalRate > 30 ? 'var(--warning)' : 'var(--danger)',
                         }}>
                           {dp.survivalRate}%
                         </td>
-                        <td className="py-1.5 pr-4 text-right font-mono">${(dp.revenuePerUnit / 1000).toFixed(0)}K</td>
-                        <td className="py-1.5 text-right font-mono" style={{
+                        <td className="py-2 pr-4 text-right font-mono">${(dp.revenuePerUnit / 1000).toFixed(0)}K</td>
+                        <td className="py-2 text-right font-mono" style={{
                           color: dp.saturationIndex > 0.8 ? 'var(--danger)' : dp.saturationIndex > 0.4 ? 'var(--warning)' : 'var(--success)',
                         }}>
                           {dp.saturationIndex}x

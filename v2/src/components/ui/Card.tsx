@@ -2,10 +2,11 @@ import { type HTMLAttributes } from 'react';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   variant?: 'default' | 'elevated' | 'ghost';
-  padding?: 'sm' | 'md' | 'lg';
+  padding?: 'none' | 'sm' | 'md' | 'lg';
 }
 
 const PADDING = {
+  none: '0',
   sm: 'var(--space-3)',
   md: 'var(--space-4)',
   lg: 'var(--space-6)',

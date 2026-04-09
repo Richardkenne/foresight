@@ -148,7 +148,7 @@ export default function CausalityPage() {
       {/* Header */}
       <header className="sticky top-0 z-10 border-b" style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
         <div className="mx-auto max-w-5xl px-4 py-4 flex items-center gap-3">
-          <a href="/explore" className="p-1.5 rounded-lg transition-colors" style={{ color: 'var(--muted-foreground)' }}
+          <a href="/explore" className="p-2 rounded-lg transition-colors" style={{ color: 'var(--muted-foreground)' }}
             onMouseEnter={e => (e.currentTarget.style.background = 'var(--surface-hover)')}
             onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}>
             <ArrowLeftIcon />
@@ -172,7 +172,7 @@ export default function CausalityPage() {
               <button
                 key={d.id}
                 onClick={() => toggleDomain(d.id)}
-                className="px-3 py-1.5 rounded-lg text-[12px] font-medium border transition-all"
+                className="px-3 py-2 rounded-lg text-[12px] font-medium border transition-all"
                 style={{
                   borderColor: d.selected ? d.color : 'var(--border)',
                   background: d.selected ? `${d.color}15` : 'transparent',
@@ -277,7 +277,7 @@ export default function CausalityPage() {
                         </span>
                       )}
                       {d.id === changedDomain && (
-                        <span className="text-[9px] px-1.5 py-0.5 rounded-full font-medium" style={{ background: 'var(--accent)', color: 'var(--accent-foreground)' }}>
+                        <span className="text-[9px] px-2 py-0.5 rounded-full font-medium" style={{ background: 'var(--accent)', color: 'var(--accent-foreground)' }}>
                           changed
                         </span>
                       )}
@@ -324,23 +324,23 @@ export default function CausalityPage() {
                 <table className="w-full text-[12px]">
                   <thead>
                     <tr style={{ color: 'var(--muted-foreground)' }}>
-                      <th className="text-left py-1.5 pr-4 font-medium">Domain</th>
-                      <th className="text-right py-1.5 pr-4 font-medium">Current</th>
-                      <th className="text-right py-1.5 pr-4 font-medium">Projected</th>
-                      <th className="text-right py-1.5 pr-4 font-medium">Impact</th>
-                      <th className="text-left py-1.5 font-medium">Chain</th>
+                      <th className="text-left py-2 pr-4 font-medium">Domain</th>
+                      <th className="text-right py-2 pr-4 font-medium">Current</th>
+                      <th className="text-right py-2 pr-4 font-medium">Projected</th>
+                      <th className="text-right py-2 pr-4 font-medium">Impact</th>
+                      <th className="text-left py-2 font-medium">Chain</th>
                     </tr>
                   </thead>
                   <tbody>
                     {ripples.map(r => (
                       <tr key={r.domain} style={{ borderTop: '1px solid var(--border-subtle)' }}>
-                        <td className="py-1.5 pr-4 font-medium">{r.domain}</td>
-                        <td className="py-1.5 pr-4 text-right font-mono">{r.current}/10</td>
-                        <td className="py-1.5 pr-4 text-right font-mono font-medium" style={{ color: 'var(--accent)' }}>{r.projected}/10</td>
-                        <td className="py-1.5 pr-4 text-right font-mono" style={{ color: r.delta > 0 ? 'var(--success)' : 'var(--danger)' }}>
+                        <td className="py-2 pr-4 font-medium">{r.domain}</td>
+                        <td className="py-2 pr-4 text-right font-mono">{r.current}/10</td>
+                        <td className="py-2 pr-4 text-right font-mono font-medium" style={{ color: 'var(--accent)' }}>{r.projected}/10</td>
+                        <td className="py-2 pr-4 text-right font-mono" style={{ color: r.delta > 0 ? 'var(--success)' : 'var(--danger)' }}>
                           {r.delta > 0 ? '+' : ''}{r.delta}
                         </td>
-                        <td className="py-1.5 text-[10px]" style={{ color: 'var(--muted)' }}>
+                        <td className="py-2 text-[10px]" style={{ color: 'var(--muted)' }}>
                           {r.chain.join(' -> ')}
                         </td>
                       </tr>

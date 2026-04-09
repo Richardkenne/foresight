@@ -167,7 +167,7 @@ export default function Force3DPage() {
       background: ${cfg.color};
       border: 1.5px solid ${cfg.border};
       border-radius: 10px;
-      padding: 10px 14px;
+      padding: var(--space-3) var(--space-4);
       min-width: 180px;
       max-width: 220px;
       font-family: system-ui, -apple-system, sans-serif;
@@ -329,13 +329,13 @@ export default function Force3DPage() {
         </div>
         <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
           <a href="/sim" style={{
-            padding: '6px 14px', background: 'var(--foreground)', color: 'var(--muted)', borderRadius: 8,
+            padding: 'var(--space-2) var(--space-4)', background: 'var(--foreground)', color: 'var(--muted)', borderRadius: 8,
             fontSize: 'var(--text-sm)', textDecoration: 'none', border: '1px solid var(--muted-foreground)',
           }}>
             2D Mode
           </a>
           <span style={{
-            padding: '6px 14px', background: 'color-mix(in srgb, var(--accent) 8%, transparent)', color: 'var(--accent)', borderRadius: 8,
+            padding: 'var(--space-2) var(--space-4)', background: 'color-mix(in srgb, var(--accent) 8%, transparent)', color: 'var(--accent)', borderRadius: 8,
             fontSize: 'var(--text-sm)', border: '1px solid color-mix(in srgb, var(--accent) 19%, transparent)',
           }}>
             3D Mode
@@ -346,7 +346,7 @@ export default function Force3DPage() {
       {/* Controls hint */}
       <div style={{
         position: 'absolute', bottom: 20, left: '50%', transform: 'translateX(-50%)', zIndex: 10,
-        display: 'flex', gap: 20, fontFamily: 'system-ui', fontSize: 'var(--text-xs)', color: 'var(--muted-foreground)',
+        display: 'flex', gap: 'var(--space-6)', fontFamily: 'system-ui', fontSize: 'var(--text-xs)', color: 'var(--muted-foreground)',
       }}>
         <span>Drag to rotate</span>
         <span>Scroll to zoom</span>

@@ -113,7 +113,7 @@ export default function GenerationalPage() {
       {/* Header */}
       <header className="sticky top-0 z-10 border-b" style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
         <div className="mx-auto max-w-5xl px-4 py-4 flex items-center gap-3">
-          <a href="/explore" className="p-1.5 rounded-lg transition-colors" style={{ color: 'var(--muted-foreground)' }}
+          <a href="/explore" className="p-2 rounded-lg transition-colors" style={{ color: 'var(--muted-foreground)' }}
             onMouseEnter={e => (e.currentTarget.style.background = 'var(--surface-hover)')}
             onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}>
             <ArrowLeftIcon />
@@ -137,7 +137,7 @@ export default function GenerationalPage() {
             value={scenario}
             onChange={e => setScenario(e.target.value)}
             placeholder="e.g. Software engineer in Bandung, building side projects"
-            className="w-full rounded-lg border px-3 py-2.5 text-[13px] outline-none"
+            className="w-full rounded-lg border px-3 py-3 text-[13px] outline-none"
             style={{ background: 'var(--background)', borderColor: 'var(--border)', color: 'var(--foreground)' }}
           />
         </div>
@@ -184,7 +184,7 @@ export default function GenerationalPage() {
             <div className="flex gap-2">
               {[5, 10, 20, 50].map(h => (
                 <button key={h} onClick={() => setHorizon(h)}
-                  className="flex-1 py-1.5 rounded-lg text-[12px] font-medium border transition-all"
+                  className="flex-1 py-2 rounded-lg text-[12px] font-medium border transition-all"
                   style={{
                     borderColor: horizon === h ? 'var(--accent)' : 'var(--border)',
                     background: horizon === h ? 'var(--accent)' : 'transparent',
@@ -247,7 +247,7 @@ export default function GenerationalPage() {
                       </div>
                     </div>
                     {m.label && (
-                      <span className="text-[9px] px-1.5 py-0.5 rounded-full whitespace-nowrap"
+                      <span className="text-[9px] px-2 py-0.5 rounded-full whitespace-nowrap"
                         style={{ background: 'var(--surface-hover)', color: 'var(--muted-foreground)' }}>
                         {m.label}
                       </span>
@@ -264,30 +264,30 @@ export default function GenerationalPage() {
                 <table className="w-full text-[12px]">
                   <thead>
                     <tr style={{ color: 'var(--muted-foreground)' }}>
-                      <th className="text-left py-1.5 pr-3 font-medium">Year</th>
-                      <th className="text-right py-1.5 pr-3 font-medium">Wealth</th>
-                      <th className="text-right py-1.5 pr-3 font-medium">Income %ile</th>
-                      <th className="text-left py-1.5 pr-3 font-medium">Education Access</th>
-                      <th className="text-right py-1.5 font-medium">QoL</th>
+                      <th className="text-left py-2 pr-3 font-medium">Year</th>
+                      <th className="text-right py-2 pr-3 font-medium">Wealth</th>
+                      <th className="text-right py-2 pr-3 font-medium">Income %ile</th>
+                      <th className="text-left py-2 pr-3 font-medium">Education Access</th>
+                      <th className="text-right py-2 font-medium">QoL</th>
                     </tr>
                   </thead>
                   <tbody>
                     {milestones.map(m => (
                       <tr key={m.year} style={{ borderTop: '1px solid var(--border-subtle)' }}>
-                        <td className="py-1.5 pr-3 font-mono">{m.year}</td>
-                        <td className="py-1.5 pr-3 text-right font-mono font-medium" style={{ color: 'var(--success)' }}>
+                        <td className="py-2 pr-3 font-mono">{m.year}</td>
+                        <td className="py-2 pr-3 text-right font-mono font-medium" style={{ color: 'var(--success)' }}>
                           {formatCurrency(m.wealth)}
                         </td>
-                        <td className="py-1.5 pr-3 text-right font-mono">
-                          <span className="px-1.5 py-0.5 rounded text-[10px]" style={{
+                        <td className="py-2 pr-3 text-right font-mono">
+                          <span className="px-2 py-0.5 rounded text-[10px]" style={{
                             background: m.incomePercentile > 70 ? 'rgba(16,185,129,0.1)' : m.incomePercentile > 40 ? 'rgba(59,130,246,0.1)' : 'rgba(239,68,68,0.1)',
                             color: m.incomePercentile > 70 ? 'var(--success)' : m.incomePercentile > 40 ? 'var(--accent)' : 'var(--danger)',
                           }}>
                             P{m.incomePercentile}
                           </span>
                         </td>
-                        <td className="py-1.5 pr-3 text-[11px]">{m.educationAccess}</td>
-                        <td className="py-1.5 text-right font-mono">{m.locationQoL}/10</td>
+                        <td className="py-2 pr-3 text-[11px]">{m.educationAccess}</td>
+                        <td className="py-2 text-right font-mono">{m.locationQoL}/10</td>
                       </tr>
                     ))}
                   </tbody>

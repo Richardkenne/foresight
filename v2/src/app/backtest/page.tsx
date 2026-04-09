@@ -63,7 +63,7 @@ function MetricCard({ label, value, subtitle }: { label: string; value: string; 
       background: 'var(--surface)',
       border: '1px solid var(--border)',
       borderRadius: '8px',
-      padding: '20px',
+      padding: 'var(--space-6)',
       minWidth: '160px',
     }}>
       <div style={{ fontSize: '11px', fontWeight: 500, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -161,7 +161,7 @@ function CategoryTable({ breakdown }: { breakdown: CategoryBreakdown[] }) {
       borderRadius: '8px',
       overflow: 'hidden',
     }}>
-      <div style={{ padding: '16px 20px', borderBottom: '1px solid var(--border)' }}>
+      <div style={{ padding: 'var(--space-4) var(--space-6)', borderBottom: '1px solid var(--border)' }}>
         <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--foreground)' }}>
           Performance by Category
         </h3>
@@ -171,7 +171,7 @@ function CategoryTable({ breakdown }: { breakdown: CategoryBreakdown[] }) {
           <tr style={{ borderBottom: '1px solid var(--border)' }}>
             {['Category', 'Cases', 'Correct', 'Accuracy', 'Brier', 'Avg Pred (Success)', 'Avg Pred (Failure)'].map(h => (
               <th key={h} style={{
-                padding: '10px 16px',
+                padding: 'var(--space-3) var(--space-4)',
                 textAlign: 'left',
                 fontWeight: 500,
                 fontSize: '11px',
@@ -187,10 +187,10 @@ function CategoryTable({ breakdown }: { breakdown: CategoryBreakdown[] }) {
         <tbody>
           {breakdown.map(c => (
             <tr key={c.category} style={{ borderBottom: '1px solid var(--border-subtle)' }}>
-              <td style={{ padding: '10px 16px', fontWeight: 500 }}>{c.category}</td>
-              <td style={{ padding: '10px 16px', fontVariantNumeric: 'tabular-nums' }}>{c.total}</td>
-              <td style={{ padding: '10px 16px', fontVariantNumeric: 'tabular-nums' }}>{c.correct}/{c.total}</td>
-              <td style={{ padding: '10px 16px', fontVariantNumeric: 'tabular-nums' }}>
+              <td style={{ padding: 'var(--space-3) var(--space-4)', fontWeight: 500 }}>{c.category}</td>
+              <td style={{ padding: 'var(--space-3) var(--space-4)', fontVariantNumeric: 'tabular-nums' }}>{c.total}</td>
+              <td style={{ padding: 'var(--space-3) var(--space-4)', fontVariantNumeric: 'tabular-nums' }}>{c.correct}/{c.total}</td>
+              <td style={{ padding: 'var(--space-3) var(--space-4)', fontVariantNumeric: 'tabular-nums' }}>
                 <span style={{
                   padding: '2px 8px',
                   borderRadius: '4px',
@@ -202,9 +202,9 @@ function CategoryTable({ breakdown }: { breakdown: CategoryBreakdown[] }) {
                   {c.accuracy}%
                 </span>
               </td>
-              <td style={{ padding: '10px 16px', fontVariantNumeric: 'tabular-nums' }}>{c.brierScore.toFixed(4)}</td>
-              <td style={{ padding: '10px 16px', fontVariantNumeric: 'tabular-nums' }}>{c.avgPredictedForSuccess}%</td>
-              <td style={{ padding: '10px 16px', fontVariantNumeric: 'tabular-nums' }}>{c.avgPredictedForFailure}%</td>
+              <td style={{ padding: 'var(--space-3) var(--space-4)', fontVariantNumeric: 'tabular-nums' }}>{c.brierScore.toFixed(4)}</td>
+              <td style={{ padding: 'var(--space-3) var(--space-4)', fontVariantNumeric: 'tabular-nums' }}>{c.avgPredictedForSuccess}%</td>
+              <td style={{ padding: 'var(--space-3) var(--space-4)', fontVariantNumeric: 'tabular-nums' }}>{c.avgPredictedForFailure}%</td>
             </tr>
           ))}
         </tbody>
@@ -238,7 +238,7 @@ function ResultsTable({ results }: { results: CaseResult[] }) {
       borderRadius: '8px',
       overflow: 'hidden',
     }}>
-      <div style={{ padding: '16px 20px', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div style={{ padding: 'var(--space-4) var(--space-6)', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--foreground)' }}>
           All Test Cases ({filtered.length})
         </h3>
@@ -280,7 +280,7 @@ function ResultsTable({ results }: { results: CaseResult[] }) {
                   key={`${h.key}-${i}`}
                   onClick={() => setSortKey(h.key as typeof sortKey)}
                   style={{
-                    padding: '10px 12px',
+                    padding: 'var(--space-3) var(--space-3)',
                     textAlign: 'left',
                     fontWeight: 500,
                     fontSize: '11px',
@@ -305,7 +305,7 @@ function ResultsTable({ results }: { results: CaseResult[] }) {
                 <td style={{ padding: '8px 12px', fontVariantNumeric: 'tabular-nums', fontFamily: 'var(--font-geist-mono)', fontSize: '11px', color: 'var(--muted-foreground)' }}>{r.id}</td>
                 <td style={{ padding: '8px 12px' }}>
                   <span style={{
-                    padding: '2px 6px',
+                    padding: '2px var(--space-2)',
                     borderRadius: '3px',
                     fontSize: '11px',
                     fontWeight: 500,
@@ -403,7 +403,7 @@ export default function BacktestPage() {
         gap: '8px',
       }}>
         <div>No backtest report found.</div>
-        <div style={{ fontSize: '12px' }}>Run <code style={{ fontFamily: 'var(--font-geist-mono)', padding: '2px 6px', background: 'var(--surface)', borderRadius: '4px', border: '1px solid var(--border)' }}>npm run backtest</code> to generate results.</div>
+        <div style={{ fontSize: '12px' }}>Run <code style={{ fontFamily: 'var(--font-geist-mono)', padding: '2px var(--space-2)', background: 'var(--surface)', borderRadius: '4px', border: '1px solid var(--border)' }}>npm run backtest</code> to generate results.</div>
       </div>
     );
   }
@@ -442,7 +442,7 @@ export default function BacktestPage() {
           background: 'var(--surface)',
           border: '1px solid var(--border)',
           borderRadius: '8px',
-          padding: '16px 20px',
+          padding: 'var(--space-4) var(--space-6)',
           marginBottom: '24px',
           fontSize: '13px',
           color: 'var(--foreground)',

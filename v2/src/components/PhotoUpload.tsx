@@ -308,7 +308,7 @@ export default function PhotoUpload({ onSeedSelect, onClose }: PhotoUploadProps)
                   </svg>
                   <span className="text-[12px] text-gray-500">Analyzing scene...</span>
                 </div>
-                <div className="mt-3 space-y-1.5">
+                <div className="mt-3 space-y-2">
                   {['Detecting objects & activities', 'Reading economic signals', 'Identifying location & time', 'Generating simulation seeds'].map((step, i) => (
                     <div key={i} className="text-[10px] text-gray-400 animate-pulse" style={{ animationDelay: `${i * 0.3}s` }}>
                       {step}
@@ -337,7 +337,7 @@ export default function PhotoUpload({ onSeedSelect, onClose }: PhotoUploadProps)
         {seeds && seeds.length > 0 && (
           <>
             <div className="h-px bg-gray-100 dark:bg-gray-800/50" />
-            <div className="px-4 pt-3 pb-1.5">
+            <div className="px-4 pt-3 pb-2">
               <span className="text-[10px] font-medium text-gray-400 uppercase tracking-wider">
                 Simulation options
               </span>
@@ -351,7 +351,7 @@ export default function PhotoUpload({ onSeedSelect, onClose }: PhotoUploadProps)
                   onMouseEnter={(e) => { e.currentTarget.style.background = 'color-mix(in srgb, var(--accent) 4%, transparent)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}
                 >
-                  <div className="flex items-start gap-2.5">
+                  <div className="flex items-start gap-3">
                     <div
                       className="mt-0.5 shrink-0 w-7 h-7 rounded-lg flex items-center justify-center"
                       style={{
@@ -367,7 +367,7 @@ export default function PhotoUpload({ onSeedSelect, onClose }: PhotoUploadProps)
                           {seed.title}
                         </span>
                         <span
-                          className="text-[9px] font-medium px-1.5 py-0.5 rounded-full shrink-0"
+                          className="text-[9px] font-medium px-2 py-0.5 rounded-full shrink-0"
                           style={{
                             background: `color-mix(in srgb, ${CATEGORY_COLORS[seed.category] || 'var(--muted-foreground)'} 8%, transparent)`,
                             color: CATEGORY_COLORS[seed.category] || 'var(--muted-foreground)',
@@ -380,7 +380,7 @@ export default function PhotoUpload({ onSeedSelect, onClose }: PhotoUploadProps)
                         {seed.scenario}
                       </p>
                       {/* Confidence bar */}
-                      <div className="flex items-center gap-2 mt-1.5">
+                      <div className="flex items-center gap-2 mt-2">
                         <div className="flex-1 h-1 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
                           <div
                             className="h-full rounded-full transition-all"
@@ -408,11 +408,11 @@ export default function PhotoUpload({ onSeedSelect, onClose }: PhotoUploadProps)
             {context && (
               <>
                 <div className="h-px bg-gray-100 dark:bg-gray-800/50" />
-                <details className="px-4 py-2.5">
+                <details className="px-4 py-3">
                   <summary className="text-[10px] text-gray-400 cursor-pointer hover:text-gray-600 select-none">
                     Scene analysis details
                   </summary>
-                  <div className="mt-2 space-y-1.5 pb-1">
+                  <div className="mt-2 space-y-2 pb-1">
                     {context.objects.length > 0 && (
                       <div className="text-[10px]">
                         <span className="text-gray-500 font-medium">Objects: </span>

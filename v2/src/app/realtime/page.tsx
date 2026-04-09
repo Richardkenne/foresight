@@ -122,7 +122,7 @@ export default function RealtimePage() {
         <div style={{
           borderRadius: 12,
           border: '1px solid var(--border)',
-          padding: 20,
+          padding: 'var(--space-6)',
           background: 'var(--surface)',
         }}>
           <div style={{
@@ -167,7 +167,7 @@ export default function RealtimePage() {
             <div key={i} style={{
               display: 'flex',
               gap: 16,
-              padding: 20,
+              padding: 'var(--space-6)',
               borderRadius: 10,
               border: '1px solid var(--border)',
               background: 'var(--surface)',

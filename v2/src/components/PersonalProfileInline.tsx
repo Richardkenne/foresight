@@ -151,7 +151,7 @@ export default function PersonalProfileInline({ onProfileChange }: PersonalProfi
             {DIMENSIONS.map((dim) => (
               <div key={dim.key}>
                 <div className="text-[11px] text-[var(--muted-foreground)] mb-1">{dim.label}</div>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-2">
                   {dim.options.map((opt) => {
                     const selected = selections[dim.key] === opt;
                     return (
@@ -159,7 +159,7 @@ export default function PersonalProfileInline({ onProfileChange }: PersonalProfi
                         key={opt}
                         onClick={() => select(dim.key, opt)}
                         className={`
-                          px-2.5 py-1 rounded-md text-[10px] font-medium transition-all duration-150
+                          px-3 py-1 rounded-md text-[10px] font-medium transition-all duration-150
                           ${selected
                             ? 'bg-[var(--foreground)] text-[var(--background)]'
                             : 'text-[var(--muted-foreground)] hover:text-[var(--foreground)]'
@@ -190,7 +190,7 @@ export default function PersonalProfileInline({ onProfileChange }: PersonalProfi
               {inferredValues.map((v) => (
                 <span
                   key={v}
-                  className="inline-block px-2 py-0.5 rounded-full text-[9px] font-medium mr-1.5 mb-0.5"
+                  className="inline-block px-2 py-0.5 rounded-full text-[9px] font-medium mr-2 mb-0.5"
                   style={{
                     background: 'color-mix(in srgb, var(--foreground) 8%, transparent)',
                     color: 'var(--foreground)',

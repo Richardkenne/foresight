@@ -92,7 +92,7 @@ export default function ApiDocsPage() {
         {/* Endpoint */}
         <Section title="Endpoint">
           <div className="flex items-center gap-3 mb-2">
-            <span className="px-2.5 py-1 bg-emerald-500/15 text-emerald-400 text-xs font-semibold rounded tracking-wide">POST</span>
+            <span className="px-3 py-1 bg-emerald-500/15 text-emerald-400 text-xs font-semibold rounded tracking-wide">POST</span>
             <code className="text-sm font-mono text-white/90">/api/predict</code>
           </div>
           <p className="text-sm text-white/50 mt-2">Content-Type: application/json</p>
@@ -164,7 +164,7 @@ export default function ApiDocsPage() {
         <Section title="Try It">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-xs text-white/40 mb-1.5 uppercase tracking-wide">Scenario *</label>
+              <label className="block text-xs text-white/40 mb-2 uppercase tracking-wide">Scenario *</label>
               <textarea
                 value={scenario}
                 onChange={(e) => setScenario(e.target.value)}
@@ -176,7 +176,7 @@ export default function ApiDocsPage() {
             </div>
             <div className="grid grid-cols-3 gap-3">
               <div>
-                <label className="block text-xs text-white/40 mb-1.5 uppercase tracking-wide">Country</label>
+                <label className="block text-xs text-white/40 mb-2 uppercase tracking-wide">Country</label>
                 <input
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
@@ -185,7 +185,7 @@ export default function ApiDocsPage() {
                 />
               </div>
               <div>
-                <label className="block text-xs text-white/40 mb-1.5 uppercase tracking-wide">Budget (USD)</label>
+                <label className="block text-xs text-white/40 mb-2 uppercase tracking-wide">Budget (USD)</label>
                 <input
                   type="number"
                   value={budget}
@@ -195,7 +195,7 @@ export default function ApiDocsPage() {
                 />
               </div>
               <div>
-                <label className="block text-xs text-white/40 mb-1.5 uppercase tracking-wide">Timeline</label>
+                <label className="block text-xs text-white/40 mb-2 uppercase tracking-wide">Timeline</label>
                 <input
                   value={timeline}
                   onChange={(e) => setTimeline(e.target.value)}
@@ -207,7 +207,7 @@ export default function ApiDocsPage() {
             <button
               type="submit"
               disabled={loading || !scenario.trim()}
-              className="px-5 py-2.5 bg-white text-black text-sm font-medium rounded-lg hover:bg-white/90 disabled:opacity-30 disabled:cursor-not-allowed transition-opacity"
+              className="px-5 py-3 bg-white text-black text-sm font-medium rounded-lg hover:bg-white/90 disabled:opacity-30 disabled:cursor-not-allowed transition-opacity"
             >
               {loading ? 'Predicting...' : 'Send Request'}
             </button>

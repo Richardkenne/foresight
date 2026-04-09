@@ -81,7 +81,7 @@ export default function MultiAgentResults({ result, onClose }: MultiAgentResults
             {result.keyInsights.length > 0 && (
               <section>
                 <SectionTitle>Key Insights</SectionTitle>
-                <div className="space-y-1.5">
+                <div className="space-y-2">
                   {result.keyInsights.map((insight, i) => (
                     <div
                       key={i}
@@ -106,23 +106,23 @@ export default function MultiAgentResults({ result, onClose }: MultiAgentResults
                   <table className="w-full text-[11px]" style={{ fontFamily: 'var(--font-geist-mono)' }}>
                     <thead>
                       <tr style={{ color: 'var(--muted)' }}>
-                        <th className="text-left py-1.5 px-2 font-medium">Node</th>
-                        <th className="text-right py-1.5 px-2 font-medium">Pass Rate</th>
-                        <th className="text-right py-1.5 px-2 font-medium">Avg Capital (passers)</th>
-                        <th className="text-left py-1.5 px-2 font-medium w-32">Distribution</th>
+                        <th className="text-left py-2 px-2 font-medium">Node</th>
+                        <th className="text-right py-2 px-2 font-medium">Pass Rate</th>
+                        <th className="text-right py-2 px-2 font-medium">Avg Capital (passers)</th>
+                        <th className="text-left py-2 px-2 font-medium w-32">Distribution</th>
                       </tr>
                     </thead>
                     <tbody>
                       {result.bottleneckAnalysis.map((bn, i) => (
                         <tr key={i} style={{ borderTop: '1px solid var(--border)' }}>
-                          <td className="py-1.5 px-2 font-medium" style={{ color: 'var(--foreground)' }}>{bn.nodeLabel}</td>
-                          <td className="py-1.5 px-2 text-right" style={{ color: bn.passRate < 30 ? 'var(--danger)' : bn.passRate < 60 ? 'var(--warning)' : 'var(--success)' }}>
+                          <td className="py-2 px-2 font-medium" style={{ color: 'var(--foreground)' }}>{bn.nodeLabel}</td>
+                          <td className="py-2 px-2 text-right" style={{ color: bn.passRate < 30 ? 'var(--danger)' : bn.passRate < 60 ? 'var(--warning)' : 'var(--success)' }}>
                             {bn.passRate}%
                           </td>
-                          <td className="py-1.5 px-2 text-right" style={{ color: 'var(--muted-foreground)' }}>
+                          <td className="py-2 px-2 text-right" style={{ color: 'var(--muted-foreground)' }}>
                             ${bn.avgCapitalOfPassers.toLocaleString()}
                           </td>
-                          <td className="py-1.5 px-2">
+                          <td className="py-2 px-2">
                             <Bar value={bn.passRate} max={100} color={bn.passRate < 30 ? 'var(--danger)' : bn.passRate < 60 ? 'var(--warning)' : 'var(--success)'} />
                           </td>
                         </tr>
@@ -173,7 +173,7 @@ export default function MultiAgentResults({ result, onClose }: MultiAgentResults
 
 function StatCard({ label, value, accent }: { label: string; value: string; accent?: string }) {
   return (
-    <div className="rounded-lg px-3 py-2.5" style={{ background: 'var(--surface-hover)' }}>
+    <div className="rounded-lg px-3 py-3" style={{ background: 'var(--surface-hover)' }}>
       <div className="text-[10px] font-medium uppercase tracking-wider" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>{label}</div>
       <div className="text-lg font-semibold mt-0.5" style={{ color: accent || 'var(--foreground)', letterSpacing: '-0.02em' }}>{value}</div>
     </div>

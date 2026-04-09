@@ -181,7 +181,7 @@ export default function MarketplacePage() {
             { num: '03', title: 'Calibrate truth', desc: 'Collective bets create the most accurate probability model ever built.' },
           ].map((s) => (
             <div key={s.num} style={{
-              padding: 20,
+              padding: 'var(--space-6)',
               borderRadius: 10,
               border: '1px solid var(--border)',
               background: 'var(--surface)',

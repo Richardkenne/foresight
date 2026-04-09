@@ -134,7 +134,7 @@ export default function OptimizePage() {
       {/* Header */}
       <header className="sticky top-0 z-10 border-b" style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
         <div className="mx-auto max-w-5xl px-4 py-4 flex items-center gap-3">
-          <a href="/explore" className="p-1.5 rounded-lg transition-colors" style={{ color: 'var(--muted-foreground)' }}
+          <a href="/explore" className="p-2 rounded-lg transition-colors" style={{ color: 'var(--muted-foreground)' }}
             onMouseEnter={e => (e.currentTarget.style.background = 'var(--surface-hover)')}
             onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}>
             <ArrowLeftIcon />
@@ -158,7 +158,7 @@ export default function OptimizePage() {
             value={scenario}
             onChange={e => setScenario(e.target.value)}
             placeholder="e.g. Open a coffee shop in Bandung, Indonesia"
-            className="w-full rounded-lg border px-3 py-2.5 text-[13px] outline-none transition-colors"
+            className="w-full rounded-lg border px-3 py-3 text-[13px] outline-none transition-colors"
             style={{ background: 'var(--background)', borderColor: 'var(--border)', color: 'var(--foreground)' }}
           />
         </div>
@@ -173,7 +173,7 @@ export default function OptimizePage() {
           </div>
 
           {parameters.map(p => (
-            <div key={p.key} className="space-y-1.5">
+            <div key={p.key} className="space-y-2">
               <div className="flex items-center justify-between">
                 <label className="text-[12px] font-medium" style={{ color: 'var(--foreground)' }}>{p.label}</label>
                 <span className="text-[12px] font-mono font-medium" style={{ color: 'var(--accent)' }}>
@@ -283,10 +283,10 @@ export default function OptimizePage() {
                   <table className="w-full text-[12px]">
                     <thead>
                       <tr style={{ color: 'var(--muted-foreground)' }}>
-                        <th className="text-left py-1.5 pr-4 font-medium">Parameter</th>
-                        <th className="text-right py-1.5 pr-4 font-medium">Current</th>
-                        <th className="text-right py-1.5 pr-4 font-medium">Optimal</th>
-                        <th className="text-right py-1.5 font-medium">Impact</th>
+                        <th className="text-left py-2 pr-4 font-medium">Parameter</th>
+                        <th className="text-right py-2 pr-4 font-medium">Current</th>
+                        <th className="text-right py-2 pr-4 font-medium">Optimal</th>
+                        <th className="text-right py-2 font-medium">Impact</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -296,14 +296,14 @@ export default function OptimizePage() {
                         const changed = current !== optimal;
                         return (
                           <tr key={p.key} style={{ borderTop: '1px solid var(--border-subtle)' }}>
-                            <td className="py-1.5 pr-4 font-medium">{p.label}</td>
-                            <td className="py-1.5 pr-4 text-right font-mono" style={{ color: 'var(--muted-foreground)' }}>
+                            <td className="py-2 pr-4 font-medium">{p.label}</td>
+                            <td className="py-2 pr-4 text-right font-mono" style={{ color: 'var(--muted-foreground)' }}>
                               {formatValue(p.key, current)}
                             </td>
-                            <td className="py-1.5 pr-4 text-right font-mono" style={{ color: changed ? 'var(--accent)' : 'var(--muted-foreground)', fontWeight: changed ? 600 : 400 }}>
+                            <td className="py-2 pr-4 text-right font-mono" style={{ color: changed ? 'var(--accent)' : 'var(--muted-foreground)', fontWeight: changed ? 600 : 400 }}>
                               {formatValue(p.key, optimal)}
                             </td>
-                            <td className="py-1.5 text-right font-mono" style={{ color: changed ? 'var(--success)' : 'var(--muted)' }}>
+                            <td className="py-2 text-right font-mono" style={{ color: changed ? 'var(--success)' : 'var(--muted)' }}>
                               {changed ? `${((optimal - current) / current * 100).toFixed(0)}%` : '--'}
                             </td>
                           </tr>

@@ -162,7 +162,7 @@ function OpportunityCard({
 
       {/* Perception vs Reality */}
       <div className="space-y-2 mb-3">
-        <div className="rounded-lg p-2.5" style={{ background: 'color-mix(in srgb, var(--danger) 6%, transparent)', border: '1px solid color-mix(in srgb, var(--danger) 10%, transparent)' }}>
+        <div className="rounded-lg p-3" style={{ background: 'color-mix(in srgb, var(--danger) 6%, transparent)', border: '1px solid color-mix(in srgb, var(--danger) 10%, transparent)' }}>
           <div className="text-[9px] font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--danger)' }}>
             Public Perception
           </div>
@@ -170,7 +170,7 @@ function OpportunityCard({
             {opp.publicPerception}
           </p>
         </div>
-        <div className="rounded-lg p-2.5" style={{ background: 'color-mix(in srgb, var(--success) 6%, transparent)', border: '1px solid color-mix(in srgb, var(--success) 10%, transparent)' }}>
+        <div className="rounded-lg p-3" style={{ background: 'color-mix(in srgb, var(--success) 6%, transparent)', border: '1px solid color-mix(in srgb, var(--success) 10%, transparent)' }}>
           <div className="text-[9px] font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--success)' }}>
             Data Reality
           </div>
@@ -183,7 +183,7 @@ function OpportunityCard({
       {/* Footer */}
       <div className="flex items-center justify-between pt-2" style={{ borderTop: '1px solid var(--border-subtle)' }}>
         <button
-          className="flex items-center gap-1.5 text-[11px] font-medium transition-colors"
+          className="flex items-center gap-2 text-[11px] font-medium transition-colors"
           style={{ color: 'var(--muted-foreground)' }}
           onClick={(e) => {
             e.stopPropagation();
@@ -195,7 +195,7 @@ function OpportunityCard({
         </button>
         <a
           href={`/sim?scenario=${encodeURIComponent(opp.simulateScenario)}`}
-          className="flex items-center gap-1.5 text-[11px] font-semibold px-3 py-1.5 rounded-lg transition-all"
+          className="flex items-center gap-2 text-[11px] font-semibold px-3 py-2 rounded-lg transition-all"
           style={{
             background: 'var(--accent)',
             color: 'var(--accent-foreground)',
@@ -250,7 +250,7 @@ function DetailModal({
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg transition-colors"
+            className="p-2 rounded-lg transition-colors"
             style={{ color: 'var(--muted-foreground)' }}
             onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--surface-hover)')}
             onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
@@ -295,13 +295,13 @@ function DetailModal({
 
         {/* Evidence */}
         <div className="mb-5">
-          <div className="flex items-center gap-1.5 mb-2">
+          <div className="flex items-center gap-2 mb-2">
             <BookOpenIcon />
             <span className="text-[10px] font-semibold uppercase tracking-wider" style={{ color: 'var(--muted-foreground)' }}>
               Evidence Sources
             </span>
           </div>
-          <ul className="space-y-1.5">
+          <ul className="space-y-2">
             {opp.evidence.map((e, i) => (
               <li
                 key={i}
@@ -382,7 +382,7 @@ export default function ArbitragePage() {
         <div className="mx-auto max-w-6xl px-4 py-4 flex items-center gap-3">
           <a
             href="/explore"
-            className="p-1.5 rounded-lg transition-colors"
+            className="p-2 rounded-lg transition-colors"
             style={{ color: 'var(--muted-foreground)' }}
             onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--surface-hover)')}
             onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
@@ -390,7 +390,7 @@ export default function ArbitragePage() {
             <ArrowLeftIcon />
           </a>
           <div className="flex items-center gap-2">
-            <div className="p-1.5 rounded-lg" style={{ background: 'var(--danger-muted)', color: 'var(--danger)' }}>
+            <div className="p-2 rounded-lg" style={{ background: 'var(--danger-muted)', color: 'var(--danger)' }}>
               <ScaleIcon />
             </div>
             <div>
@@ -478,7 +478,7 @@ export default function ArbitragePage() {
         <div className="flex flex-wrap gap-2 mb-5">
           <button
             onClick={() => setActiveCategory(null)}
-            className="text-[11px] font-medium px-3 py-1.5 rounded-full border transition-all"
+            className="text-[11px] font-medium px-3 py-2 rounded-full border transition-all"
             style={{
               background: !activeCategory ? 'var(--foreground)' : 'var(--surface)',
               color: !activeCategory ? 'var(--background)' : 'var(--muted-foreground)',
@@ -494,7 +494,7 @@ export default function ArbitragePage() {
               <button
                 key={cat.name}
                 onClick={() => setActiveCategory(isActive ? null : cat.name)}
-                className="text-[11px] font-medium px-3 py-1.5 rounded-full border transition-all"
+                className="text-[11px] font-medium px-3 py-2 rounded-full border transition-all"
                 style={{
                   background: isActive ? `${meta.color}20` : 'var(--surface)',
                   color: isActive ? meta.color : 'var(--muted-foreground)',
