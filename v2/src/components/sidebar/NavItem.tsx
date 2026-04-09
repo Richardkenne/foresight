@@ -28,7 +28,7 @@ interface NavItemProps {
 export default function NavItem({ icon, extra, label, active, disabled, soon, onClick }: NavItemProps) {
   return (
     <button
-      className="w-full flex items-center gap-5 px-4 py-5 rounded-xl text-[15px] transition-colors cursor-pointer"
+      className="w-full flex items-center gap-5 px-4 py-5 rounded-xl text-[15px] transition-colors cursor-pointer active:scale-95"
       style={{
         color: active ? 'var(--foreground)' : 'var(--muted-foreground)',
         background: active ? 'var(--surface-hover)' : 'transparent',

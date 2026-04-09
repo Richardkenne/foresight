@@ -61,7 +61,7 @@ export default function AttachmentChips({ attachments, onRemove, onClearAll }: A
             <span className="max-w-[120px] truncate">{att.label}</span>
             <button
               onClick={() => onRemove(att.id)}
-              className="w-4 h-4 flex items-center justify-center rounded hover:bg-black/10 shrink-0"
+              className="w-4 h-4 flex items-center justify-center rounded hover:bg-black/10 active:scale-90 shrink-0"
               title="Remove"
             >
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -72,7 +72,7 @@ export default function AttachmentChips({ attachments, onRemove, onClearAll }: A
         ))}
         <button
           onClick={onClearAll}
-          className="text-[10px] text-[var(--muted)] hover:text-[var(--foreground)] px-1"
+          className="text-[10px] text-[var(--muted)] hover:text-[var(--foreground)] active:scale-95 px-1"
         >
           Clear all
         </button>

@@ -57,7 +57,7 @@ export default function ModeStrip({
       >
         <button
           onClick={() => onSacredModeChange?.(!sacredMode)}
-          className="flex items-center gap-2 h-[22px] px-3 rounded-md text-[10px] font-medium shrink-0 cursor-pointer transition-all"
+          className="flex items-center gap-2 h-[22px] px-3 rounded-md text-[10px] font-medium shrink-0 cursor-pointer transition-all hover:bg-[var(--surface-hover)] active:scale-95"
           style={{
             background: sacredMode ? 'var(--purple-muted)' : 'transparent',
             color: sacredMode ? 'var(--sacred-accent)' : 'var(--muted)',

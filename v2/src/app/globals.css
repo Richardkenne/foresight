@@ -434,6 +434,15 @@ button, a, input, textarea, select, [role="button"] {
   transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
 }
 
+/* #10b — Baseline active press feedback & disabled state for all buttons */
+button:active:not(:disabled), [role="button"]:active:not(:disabled) {
+  transform: scale(0.97);
+}
+button:disabled, [role="button"][aria-disabled="true"] {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
 /* ─── Custom scrollbar (webkit) ─── */
 ::-webkit-scrollbar {
   width: 6px;
@@ -1042,9 +1051,13 @@ body {
   background: var(--surface-hover);
   color: var(--foreground);
 }
+.toolbar-btn:active {
+  transform: scale(0.9);
+}
 .toolbar-btn:disabled {
   opacity: 0.3;
   cursor: not-allowed;
+  pointer-events: none;
 }
 .toolbar-btn--primary {
   background: var(--accent);

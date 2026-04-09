@@ -230,8 +230,9 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
           )}
           {displayTemplates.map(({ key, title, desc, hasVariants }) => (
             <div key={key} style={{ margin: '2px 0' }}>
-              <div
-                className="group px-3 sm:px-6 py-3 sm:py-4 rounded-xl cursor-pointer transition-all"
+              <button
+                type="button"
+                className="group w-full text-left px-3 sm:px-6 py-3 sm:py-4 rounded-xl transition-all"
                 onClick={() => {
                   if (hasVariants) {
                     setExpandedKey(expandedKey === key ? null : key);
@@ -241,7 +242,7 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(59,130,246,0.04)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.background = expandedKey === key ? 'rgba(59,130,246,0.04)' : 'transparent'; }}
-                style={{ background: expandedKey === key ? 'rgba(59,130,246,0.04)' : 'transparent' }}
+                style={{ background: expandedKey === key ? 'rgba(59,130,246,0.04)' : 'transparent', border: 'none', font: 'inherit', color: 'inherit' }}
               >
                 <div className="flex items-center justify-between">
                   <Text
@@ -263,7 +264,7 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
                   )}
                 </div>
                 <Text variant="caption" as="div" className="mt-1 line-clamp-1">{desc}</Text>
-              </div>
+              </button>
               {/* Depth variant sub-picker */}
               {hasVariants && expandedKey === key && (
                 <div className="ml-4 sm:ml-8 mr-2 mb-1 flex gap-2 mt-1">

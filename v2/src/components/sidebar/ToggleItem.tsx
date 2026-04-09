@@ -27,7 +27,7 @@ export default function ToggleItem({ icon, label, active, activeColor = 'var(--a
   return (
     <button
       onClick={onClick}
-      className="w-full flex items-center justify-between px-4 py-5 rounded-xl text-[15px] transition-colors cursor-pointer hover:bg-[var(--surface-hover)]"
+      className="w-full flex items-center justify-between px-4 py-5 rounded-xl text-[15px] transition-colors cursor-pointer hover:bg-[var(--surface-hover)] active:scale-95"
       style={{ color: 'var(--foreground)' }}
     >
       <div className="flex items-center gap-4">

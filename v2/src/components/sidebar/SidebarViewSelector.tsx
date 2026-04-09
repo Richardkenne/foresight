@@ -33,7 +33,7 @@ export default function SidebarViewSelector({ viewMode, onViewModeChange }: Side
           <button
             key={mode}
             onClick={() => onViewModeChange(mode)}
-            className="flex-1 flex flex-col items-center gap-1 py-3 rounded-lg text-[11px] font-medium transition-all cursor-pointer"
+            className="flex-1 flex flex-col items-center gap-1 py-3 rounded-lg text-[11px] font-medium transition-all cursor-pointer hover:bg-[var(--surface-hover)] active:scale-95"
             style={{
               background: viewMode === mode ? 'var(--foreground)' : 'transparent',
               color: viewMode === mode ? 'var(--surface)' : 'var(--muted)',

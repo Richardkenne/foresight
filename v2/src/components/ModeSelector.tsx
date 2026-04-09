@@ -94,9 +94,9 @@ export default function ModeSelector({ activeMode, onModeChange, hasNodes }: Mod
             className={`
               mode-tab relative z-10 flex items-center gap-2 px-3 py-2 rounded-md
               text-[11px] font-medium uppercase tracking-[0.08em] whitespace-nowrap
-              transition-colors duration-150
+              transition-all duration-150
               ${active ? 'text-[var(--foreground)]' : 'text-[var(--muted-foreground)]'}
-              ${disabled ? 'opacity-30 cursor-not-allowed' : 'cursor-pointer hover:text-[var(--foreground)]'}
+              ${disabled ? 'opacity-30 cursor-not-allowed' : 'cursor-pointer hover:text-[var(--foreground)] active:scale-95'}
             `}
             style={{ fontFamily: 'var(--font-geist-mono), monospace' }}
           >

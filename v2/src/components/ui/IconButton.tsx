@@ -7,57 +7,47 @@ interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'sm' | 'md';
 }
 
-const SIZE = {
-  sm: { width: 28, height: 28, fontSize: 14 },
-  md: { width: 34, height: 34, fontSize: 16 },
+const SIZE_CLASSES = {
+  sm: 'w-7 h-7 text-sm',
+  md: 'w-[34px] h-[34px] text-base',
 } as const;
 
-const VARIANT_STYLES: Record<Variant, React.CSSProperties> = {
-  ghost: {
-    background: 'transparent',
-    color: 'var(--muted)',
-    border: 'none',
-  },
-  subtle: {
-    background: 'var(--surface-hover)',
-    color: 'var(--muted-foreground)',
-    border: '1px solid var(--border-subtle)',
-  },
-  solid: {
-    background: 'var(--surface)',
-    color: 'var(--foreground)',
-    border: '1px solid var(--border)',
-    boxShadow: 'var(--shadow-sm)',
-  },
+const VARIANT_CLASSES: Record<Variant, string> = {
+  ghost: [
+    'bg-transparent text-[var(--muted)] border-none',
+    'hover:bg-[var(--surface-hover)] hover:text-[var(--foreground)]',
+  ].join(' '),
+  subtle: [
+    'bg-[var(--surface-hover)] text-[var(--muted-foreground)] border border-[var(--border-subtle)]',
+    'hover:bg-[var(--surface-hover)] hover:border-[var(--border)]',
+  ].join(' '),
+  solid: [
+    'bg-[var(--surface)] text-[var(--foreground)] border border-[var(--border)] shadow-[var(--shadow-sm)]',
+    'hover:bg-[var(--surface-hover)]',
+  ].join(' '),
 };
 
 export default function IconButton({
   variant = 'ghost',
   size = 'md',
   children,
-  style,
   className = '',
+  disabled,
   ...props
 }: IconButtonProps) {
-  const s = SIZE[size];
-
   return (
     <button
-      className={className}
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: s.width,
-        height: s.height,
-        fontSize: s.fontSize,
-        borderRadius: 'var(--radius-sm)',
-        cursor: 'pointer',
-        transition: 'background var(--duration-fast), color var(--duration-fast)',
-        flexShrink: 0,
-        ...VARIANT_STYLES[variant],
-        ...style,
-      }}
+      disabled={disabled}
+      className={`
+        inline-flex items-center justify-center shrink-0
+        rounded-[var(--radius-sm)] cursor-pointer
+        transition-all duration-150
+        active:scale-90
+        disabled:opacity-30 disabled:cursor-not-allowed disabled:pointer-events-none
+        ${SIZE_CLASSES[size]}
+        ${VARIANT_CLASSES[variant]}
+        ${className}
+      `.trim()}
       {...props}
     >
       {children}
