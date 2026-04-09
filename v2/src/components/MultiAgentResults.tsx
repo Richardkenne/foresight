@@ -40,7 +40,7 @@ export default function MultiAgentResults({ result, onClose }: MultiAgentResults
           className="relative w-[90vw] max-w-[900px] max-h-[85vh] overflow-y-auto rounded-xl"
           style={{
             background: 'var(--surface)',
-            boxShadow: '0 0 0 1px var(--border), 0 24px 48px rgba(0,0,0,0.2)',
+            boxShadow: '0 0 0 1px var(--border), 0 24px 48px color-mix(in srgb, var(--foreground) 20%, transparent)',
           }}
           initial={{ scale: 0.95, y: 20 }}
           animate={{ scale: 1, y: 0 }}
@@ -72,8 +72,8 @@ export default function MultiAgentResults({ result, onClose }: MultiAgentResults
             {/* ─── Overview ─── */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               <StatCard label="Total" value={result.totalAgents.toLocaleString()} />
-              <StatCard label="Success rate" value={`${result.successRate}%`} accent="var(--success, #22c55e)" />
-              <StatCard label="Failure rate" value={`${result.failureRate}%`} accent="var(--danger, #ef4444)" />
+              <StatCard label="Success rate" value={`${result.successRate}%`} accent="var(--success)" />
+              <StatCard label="Failure rate" value={`${result.failureRate}%`} accent="var(--danger)" />
               <StatCard label="Bottlenecks" value={String(result.bottleneckAnalysis.length)} />
             </div>
 
@@ -88,7 +88,7 @@ export default function MultiAgentResults({ result, onClose }: MultiAgentResults
                       className="flex items-start gap-2 px-3 py-2 rounded-lg text-[12px]"
                       style={{ background: 'var(--surface-hover)', color: 'var(--foreground)' }}
                     >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent, #6366f1)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-px">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-px">
                         <circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" />
                       </svg>
                       <span>{insight}</span>
@@ -116,14 +116,14 @@ export default function MultiAgentResults({ result, onClose }: MultiAgentResults
                       {result.bottleneckAnalysis.map((bn, i) => (
                         <tr key={i} style={{ borderTop: '1px solid var(--border)' }}>
                           <td className="py-1.5 px-2 font-medium" style={{ color: 'var(--foreground)' }}>{bn.nodeLabel}</td>
-                          <td className="py-1.5 px-2 text-right" style={{ color: bn.passRate < 30 ? 'var(--danger, #ef4444)' : bn.passRate < 60 ? 'var(--warning, #f59e0b)' : 'var(--success, #22c55e)' }}>
+                          <td className="py-1.5 px-2 text-right" style={{ color: bn.passRate < 30 ? 'var(--danger)' : bn.passRate < 60 ? 'var(--warning)' : 'var(--success)' }}>
                             {bn.passRate}%
                           </td>
                           <td className="py-1.5 px-2 text-right" style={{ color: 'var(--muted-foreground)' }}>
                             ${bn.avgCapitalOfPassers.toLocaleString()}
                           </td>
                           <td className="py-1.5 px-2">
-                            <Bar value={bn.passRate} max={100} color={bn.passRate < 30 ? 'var(--danger, #ef4444)' : bn.passRate < 60 ? 'var(--warning, #f59e0b)' : 'var(--success, #22c55e)'} />
+                            <Bar value={bn.passRate} max={100} color={bn.passRate < 30 ? 'var(--danger)' : bn.passRate < 60 ? 'var(--warning)' : 'var(--success)'} />
                           </td>
                         </tr>
                       ))}
@@ -192,11 +192,11 @@ function SegRow({ label, successRate, count, maxCount }: { label: string; succes
   return (
     <div className="flex items-center gap-2 text-[11px]" style={{ fontFamily: 'var(--font-geist-mono)' }}>
       <span className="w-24 shrink-0 truncate" style={{ color: 'var(--foreground)' }}>{label}</span>
-      <span className="w-12 text-right shrink-0" style={{ color: successRate > 30 ? 'var(--success, #22c55e)' : successRate > 10 ? 'var(--warning, #f59e0b)' : 'var(--danger, #ef4444)' }}>
+      <span className="w-12 text-right shrink-0" style={{ color: successRate > 30 ? 'var(--success)' : successRate > 10 ? 'var(--warning)' : 'var(--danger)' }}>
         {successRate}%
       </span>
       <div className="flex-1">
-        <Bar value={count} max={maxCount} color="var(--accent, #6366f1)" />
+        <Bar value={count} max={maxCount} color="var(--accent)" />
       </div>
       <span className="w-10 text-right shrink-0" style={{ color: 'var(--muted)' }}>{count}</span>
     </div>

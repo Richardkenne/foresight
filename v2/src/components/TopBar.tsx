@@ -493,8 +493,8 @@ export default function TopBar({
                 width: 44,
                 height: 44,
                 borderRadius: 'var(--radius)',
-                color: isRecording ? '#ef4444' : audioProcessing ? 'var(--muted)' : 'var(--muted-foreground)',
-                background: isRecording ? 'rgba(239, 68, 68, 0.1)' : 'transparent',
+                color: isRecording ? 'var(--danger)' : audioProcessing ? 'var(--muted)' : 'var(--muted-foreground)',
+                background: isRecording ? 'var(--danger-muted)' : 'transparent',
                 outline: isRecording ? '2px solid rgba(239, 68, 68, 0.4)' : 'none',
                 animation: isRecording ? 'pulse 1.5s infinite' : 'none',
               }}
@@ -756,9 +756,9 @@ export default function TopBar({
             </div>
             <div className="p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[400px] overflow-y-auto">
               {urlSeeds.map((seed, i) => {
-                const catColors: Record<string, string> = { intention: '#3b82f6', content: '#8b5cf6', opportunity: '#10b981', risk: '#ef4444', competitor: '#f59e0b', market: '#06b6d4' };
+                const catColors: Record<string, string> = { intention: 'var(--accent)', content: 'var(--purple)', opportunity: 'var(--success)', risk: 'var(--danger)', competitor: 'var(--warning)', market: 'var(--node-decision-accent)' };
                 const catLabels: Record<string, string> = { intention: 'Intention', content: 'Content', opportunity: 'Opportunity', risk: 'Risk', competitor: 'Competitor', market: 'Market' };
-                const color = catColors[seed.category] || '#64748b';
+                const color = catColors[seed.category] || 'var(--muted)';
                 return (
                   <button
                     key={i}

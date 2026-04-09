@@ -43,7 +43,7 @@ export default function SidebarSettings({
           }
           label={displayMode === 'classic' ? 'Classic' : 'Minimal'}
           active={displayMode === 'classic'}
-          activeColor="#f59e0b"
+          activeColor="var(--warning)"
           onClick={onToggleDisplayMode}
         />
         <ToggleItem

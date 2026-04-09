@@ -10,12 +10,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Simulator — Life & Business Scenario Simulator",
-  description: "Simulate any life or business scenario with real data. See who makes it and who doesn't.",
+  title: "Foresight — Life & Career Decision Engine",
+  description: "See the outcome of any life or career decision before you make it. Real data, zero guesswork.",
   icons: { icon: '/favicon.svg' },
   openGraph: {
-    title: "Simulator",
-    description: "Simulate any life or business scenario with real data.",
+    title: "Foresight",
+    description: "See the outcome of any life or career decision before you make it.",
     type: "website",
   },
 };

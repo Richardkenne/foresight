@@ -195,9 +195,9 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
             onClick={() => setActiveCategory(null)}
             className="shrink-0 px-3.5 py-1.5 rounded-lg text-[12px] font-medium transition-all cursor-pointer"
             style={{
-              background: !activeCategory ? 'rgba(59,130,246,0.1)' : 'transparent',
-              color: !activeCategory ? '#3b82f6' : '#9ca3af',
-              border: !activeCategory ? '1px solid rgba(59,130,246,0.2)' : '1px solid transparent',
+              background: !activeCategory ? 'var(--accent-dim, rgba(59,130,246,0.1))' : 'transparent',
+              color: !activeCategory ? 'var(--accent)' : 'var(--muted)',
+              border: !activeCategory ? '1px solid var(--accent)' : '1px solid transparent',
             }}
           >
             All
@@ -208,9 +208,9 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
               onClick={() => setActiveCategory(activeCategory === cat.label ? null : cat.label)}
               className="shrink-0 px-3.5 py-1.5 rounded-lg text-[12px] font-medium transition-all cursor-pointer whitespace-nowrap"
               style={{
-                background: activeCategory === cat.label ? 'rgba(59,130,246,0.1)' : 'transparent',
-                color: activeCategory === cat.label ? '#3b82f6' : '#9ca3af',
-                border: activeCategory === cat.label ? '1px solid rgba(59,130,246,0.2)' : '1px solid transparent',
+                background: activeCategory === cat.label ? 'var(--accent-dim, rgba(59,130,246,0.1))' : 'transparent',
+                color: activeCategory === cat.label ? 'var(--accent)' : 'var(--muted)',
+                border: activeCategory === cat.label ? '1px solid var(--accent)' : '1px solid transparent',
               }}
             >
               <span className="mr-1.5">{cat.icon}</span>
@@ -280,7 +280,7 @@ export default function TemplateSelector({ onSelect, onClose }: TemplateSelector
                         style={{
                           background: exists ? 'rgba(59,130,246,0.06)' : 'transparent',
                           borderColor: exists ? 'rgba(59,130,246,0.15)' : 'rgba(0,0,0,0.06)',
-                          color: exists ? '#3b82f6' : '#d1d5db',
+                          color: exists ? 'var(--accent)' : 'var(--border)',
                         }}
                         onMouseEnter={(e) => { if (exists) e.currentTarget.style.background = 'rgba(59,130,246,0.12)'; }}
                         onMouseLeave={(e) => { if (exists) e.currentTarget.style.background = 'rgba(59,130,246,0.06)'; }}

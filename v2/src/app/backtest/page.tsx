@@ -421,7 +421,7 @@ export default function BacktestPage() {
         {/* Header */}
         <div style={{ marginBottom: '32px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-            <a href="/" style={{ fontSize: '12px', color: 'var(--muted-foreground)', textDecoration: 'none' }}>Simulator</a>
+            <a href="/" style={{ fontSize: '12px', color: 'var(--muted-foreground)', textDecoration: 'none' }}>Foresight</a>
             <span style={{ fontSize: '12px', color: 'var(--muted)' }}>/</span>
             <span style={{ fontSize: '12px', color: 'var(--foreground)', fontWeight: 500 }}>Backtest</span>
           </div>
@@ -497,7 +497,7 @@ export default function BacktestPage() {
 
         {/* Footer */}
         <div style={{ textAlign: 'center', padding: '24px 0', fontSize: '11px', color: 'var(--muted)' }}>
-          Simulator Backtesting Framework | Data sources: CB Insights, Startup Genome, BLS, NRA, Indie Hackers
+          Foresight Backtesting Framework | Data sources: CB Insights, Startup Genome, BLS, NRA, Indie Hackers
         </div>
       </div>
     </div>

@@ -43,7 +43,7 @@ function AnimatedEdgeComponent({
 
       {/* Animated dot on pass/yes edges */}
       {isPass && (
-        <circle r="3.5" fill="#10b981" opacity="0.8">
+        <circle r="3.5" fill="var(--success)" opacity="0.8">
           <animateMotion dur="2.5s" repeatCount="indefinite" path={edgePath} />
         </circle>
       )}
@@ -57,7 +57,7 @@ function AnimatedEdgeComponent({
             width={String(label).length * 7 + 16}
             height={16}
             rx={4}
-            fill="var(--background, #ffffff)"
+            fill="var(--background)"
             opacity={0.9}
           />
           <text

@@ -55,7 +55,7 @@ function CalibrationBar({ predicted, actual, label }: { predicted: number; actua
         />
         <div
           className="absolute top-0 left-0 h-full rounded-full transition-all duration-700"
-          style={{ width: `${actual}%`, background: actual > predicted ? '#059669' : '#d97706' }}
+          style={{ width: `${actual}%`, background: actual > predicted ? 'var(--success-hover)' : 'var(--warning-hover)' }}
         />
       </div>
     </div>
@@ -65,9 +65,9 @@ function CalibrationBar({ predicted, actual, label }: { predicted: number; actua
 /* ─── Story card (anonymized) ─── */
 function StoryCard({ entry }: { entry: FeedbackEntry }) {
   const outcomeColors: Record<string, string> = {
-    success: '#059669',
-    partial: '#d97706',
-    failure: '#6b7280',
+    success: 'var(--success-hover)',
+    partial: 'var(--warning-hover)',
+    failure: 'var(--muted-foreground)',
   };
   const outcomeLabels: Record<string, string> = {
     success: 'Succeeded',
@@ -167,11 +167,11 @@ export default function CommunityPage() {
             <circle cx="5" cy="6" r="2" /><circle cx="12" cy="18" r="2" /><circle cx="19" cy="6" r="2" />
             <path d="M5 8v1a4 4 0 004 4h6a4 4 0 004-4V8" /><line x1="12" y1="13" x2="12" y2="16" />
           </svg>
-          Simulator
+          Foresight
         </Link>
         <div className="flex items-center gap-4">
           <Link href="/sim" className="text-[13px] font-medium px-4 py-2 rounded-lg transition-colors cursor-pointer" style={{ background: 'var(--foreground)', color: 'var(--background)', textDecoration: 'none' }}>
-            Open Simulator
+            Open Foresight
           </Link>
         </div>
       </nav>
@@ -209,7 +209,7 @@ export default function CommunityPage() {
             </div>
           </div>
           <div className="text-center">
-            <div className="text-[28px] font-semibold tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)', color: hasData ? (agg.calibrationScore >= 70 ? '#059669' : agg.calibrationScore >= 40 ? '#d97706' : '#dc2626') : 'var(--muted)' }}>
+            <div className="text-[28px] font-semibold tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)', color: hasData ? (agg.calibrationScore >= 70 ? 'var(--success-hover)' : agg.calibrationScore >= 40 ? 'var(--warning-hover)' : 'var(--danger-hover)') : 'var(--muted)' }}>
               {hasData ? <Counter target={agg.calibrationScore} suffix="%" /> : '--'}
             </div>
             <div className="text-[10px] uppercase tracking-[0.08em] font-medium mt-1" style={{ color: 'var(--muted)' }}>
@@ -236,27 +236,27 @@ export default function CommunityPage() {
                 />
 
                 <div className="grid grid-cols-3 gap-3 mt-5">
-                  <div className="text-center py-3 rounded-xl" style={{ background: 'rgba(5, 150, 105, 0.06)' }}>
-                    <div className="text-[18px] font-semibold tabular-nums" style={{ color: '#059669', fontFamily: 'var(--font-geist-mono)' }}>
+                  <div className="text-center py-3 rounded-xl" style={{ background: 'color-mix(in srgb, var(--success-hover) 6%, transparent)' }}>
+                    <div className="text-[18px] font-semibold tabular-nums" style={{ color: 'var(--success-hover)', fontFamily: 'var(--font-geist-mono)' }}>
                       {agg.successCount}
                     </div>
-                    <div className="text-[9px] uppercase tracking-wider font-medium mt-0.5" style={{ color: '#059669', opacity: 0.7 }}>
+                    <div className="text-[9px] uppercase tracking-wider font-medium mt-0.5" style={{ color: 'var(--success-hover)', opacity: 0.7 }}>
                       Succeeded
                     </div>
                   </div>
-                  <div className="text-center py-3 rounded-xl" style={{ background: 'rgba(217, 119, 6, 0.06)' }}>
-                    <div className="text-[18px] font-semibold tabular-nums" style={{ color: '#d97706', fontFamily: 'var(--font-geist-mono)' }}>
+                  <div className="text-center py-3 rounded-xl" style={{ background: 'color-mix(in srgb, var(--warning-hover) 6%, transparent)' }}>
+                    <div className="text-[18px] font-semibold tabular-nums" style={{ color: 'var(--warning-hover)', fontFamily: 'var(--font-geist-mono)' }}>
                       {agg.partialCount}
                     </div>
-                    <div className="text-[9px] uppercase tracking-wider font-medium mt-0.5" style={{ color: '#d97706', opacity: 0.7 }}>
+                    <div className="text-[9px] uppercase tracking-wider font-medium mt-0.5" style={{ color: 'var(--warning-hover)', opacity: 0.7 }}>
                       Partial
                     </div>
                   </div>
-                  <div className="text-center py-3 rounded-xl" style={{ background: 'rgba(107, 114, 128, 0.06)' }}>
-                    <div className="text-[18px] font-semibold tabular-nums" style={{ color: '#6b7280', fontFamily: 'var(--font-geist-mono)' }}>
+                  <div className="text-center py-3 rounded-xl" style={{ background: 'color-mix(in srgb, var(--muted-foreground) 6%, transparent)' }}>
+                    <div className="text-[18px] font-semibold tabular-nums" style={{ color: 'var(--muted-foreground)', fontFamily: 'var(--font-geist-mono)' }}>
                       {agg.failureCount}
                     </div>
-                    <div className="text-[9px] uppercase tracking-wider font-medium mt-0.5" style={{ color: '#6b7280', opacity: 0.7 }}>
+                    <div className="text-[9px] uppercase tracking-wider font-medium mt-0.5" style={{ color: 'var(--muted-foreground)', opacity: 0.7 }}>
                       Didn&apos;t work out
                     </div>
                   </div>

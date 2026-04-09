@@ -129,9 +129,9 @@ export default function HistoryPanel({ onSelect, onBack }: HistoryPanelProps) {
                           key={k}
                           className="text-[9px] font-medium px-1.5 py-0.5 rounded"
                           style={{
-                            background: 'rgba(59,130,246,0.08)',
-                            color: '#3b82f6',
-                            border: '1px solid rgba(59,130,246,0.12)',
+                            background: 'color-mix(in srgb, var(--accent) 8%, transparent)',
+                            color: 'var(--accent)',
+                            border: '1px solid color-mix(in srgb, var(--accent) 12%, transparent)',
                           }}
                         >
                           {v}

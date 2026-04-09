@@ -59,9 +59,9 @@ export default function ModeStrip({
           onClick={() => onSacredModeChange?.(!sacredMode)}
           className="flex items-center gap-1.5 h-[22px] px-2.5 rounded-md text-[10px] font-medium shrink-0 cursor-pointer transition-all"
           style={{
-            background: sacredMode ? 'rgba(168,85,247,0.12)' : 'transparent',
-            color: sacredMode ? '#a855f7' : 'var(--muted)',
-            border: sacredMode ? '1px solid rgba(168,85,247,0.25)' : '1px dashed rgba(0,0,0,0.1)',
+            background: sacredMode ? 'var(--purple-muted)' : 'transparent',
+            color: sacredMode ? 'var(--sacred-accent)' : 'var(--muted)',
+            border: sacredMode ? '1px solid color-mix(in srgb, var(--sacred-accent) 25%, transparent)' : '1px dashed color-mix(in srgb, var(--foreground) 10%, transparent)',
           }}
           title={sacredMode ? 'Switch to Data mode' : 'Switch to Sacred mode (Bible + Quran)'}
         >

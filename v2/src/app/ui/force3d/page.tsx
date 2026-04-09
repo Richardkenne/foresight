@@ -171,7 +171,7 @@ export default function Force3DPage() {
       min-width: 180px;
       max-width: 220px;
       font-family: system-ui, -apple-system, sans-serif;
-      color: #e2e8f0;
+      color: var(--border);
       pointer-events: auto;
       cursor: pointer;
       backdrop-filter: blur(8px);
@@ -198,14 +198,14 @@ export default function Force3DPage() {
 
     // Label
     const label = document.createElement('div');
-    label.style.cssText = 'font-size:12px;font-weight:700;line-height:1.3;margin-bottom:4px;color:#f1f5f9;';
+    label.style.cssText = 'font-size:12px;font-weight:700;line-height:1.3;margin-bottom:4px;color:var(--surface-hover);';
     label.textContent = node.label;
     el.appendChild(label);
 
     // Description
     if (node.desc) {
       const desc = document.createElement('div');
-      desc.style.cssText = 'font-size:10px;line-height:1.4;color:#94a3b8;margin-bottom:4px;';
+      desc.style.cssText = 'font-size:10px;line-height:1.4;color:var(--muted);margin-bottom:4px;';
       desc.textContent = node.desc;
       el.appendChild(desc);
     }
@@ -216,13 +216,13 @@ export default function Force3DPage() {
 
     if (node.source) {
       const src = document.createElement('span');
-      src.style.cssText = 'font-size:8px;color:#64748b;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
+      src.style.cssText = 'font-size:8px;color:var(--muted-foreground);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
       src.textContent = node.source;
       footer.appendChild(src);
     }
     if (node.time) {
       const time = document.createElement('span');
-      time.style.cssText = 'font-size:8px;color:#475569;white-space:nowrap;';
+      time.style.cssText = 'font-size:8px;color:var(--muted-foreground);white-space:nowrap;';
       time.textContent = node.time;
       footer.appendChild(time);
     }
@@ -303,8 +303,8 @@ export default function Force3DPage() {
 
   if (!mounted) {
     return (
-      <div style={{ width: '100vw', height: '100vh', background: '#060810', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#334155', fontFamily: 'system-ui' }}>
-        Loading 3D Simulator...
+      <div style={{ width: '100vw', height: '100vh', background: '#060810', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--muted-foreground)', fontFamily: 'system-ui' }}>
+        Loading 3D Foresight...
       </div>
     );
   }
@@ -320,23 +320,23 @@ export default function Force3DPage() {
         fontFamily: 'system-ui',
       }}>
         <div>
-          <h1 style={{ fontSize: 16, fontWeight: 700, color: '#e2e8f0', letterSpacing: '-0.02em', margin: 0 }}>
-            Simulator — 3D Mode
+          <h1 style={{ fontSize: 16, fontWeight: 700, color: 'var(--border)', letterSpacing: '-0.02em', margin: 0 }}>
+            Foresight — 3D Mode
           </h1>
-          <p style={{ fontSize: 11, color: '#475569', margin: '2px 0 0' }}>
+          <p style={{ fontSize: 11, color: 'var(--muted-foreground)', margin: '2px 0 0' }}>
             Open a Cafe in Bandung — 21 nodes, full decision tree with sources
           </p>
         </div>
         <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
           <a href="/sim" style={{
-            padding: '6px 14px', background: '#1e293b', color: '#94a3b8', borderRadius: 8,
-            fontSize: 12, textDecoration: 'none', border: '1px solid #334155',
+            padding: '6px 14px', background: 'var(--foreground)', color: 'var(--muted)', borderRadius: 8,
+            fontSize: 'var(--text-sm)', textDecoration: 'none', border: '1px solid var(--muted-foreground)',
           }}>
             2D Mode
           </a>
           <span style={{
-            padding: '6px 14px', background: '#3b82f615', color: '#60a5fa', borderRadius: 8,
-            fontSize: 12, border: '1px solid #3b82f630',
+            padding: '6px 14px', background: 'color-mix(in srgb, var(--accent) 8%, transparent)', color: 'var(--accent)', borderRadius: 8,
+            fontSize: 'var(--text-sm)', border: '1px solid color-mix(in srgb, var(--accent) 19%, transparent)',
           }}>
             3D Mode
           </span>
@@ -346,7 +346,7 @@ export default function Force3DPage() {
       {/* Controls hint */}
       <div style={{
         position: 'absolute', bottom: 20, left: '50%', transform: 'translateX(-50%)', zIndex: 10,
-        display: 'flex', gap: 20, fontFamily: 'system-ui', fontSize: 10, color: '#475569',
+        display: 'flex', gap: 20, fontFamily: 'system-ui', fontSize: 'var(--text-xs)', color: 'var(--muted-foreground)',
       }}>
         <span>Drag to rotate</span>
         <span>Scroll to zoom</span>
@@ -357,7 +357,7 @@ export default function Force3DPage() {
       {/* Stats */}
       <div style={{
         position: 'absolute', bottom: 20, right: 24, zIndex: 10,
-        fontFamily: 'system-ui', fontSize: 10, color: '#334155',
+        fontFamily: 'system-ui', fontSize: 'var(--text-xs)', color: 'var(--muted-foreground)',
       }}>
         21 nodes / 20 edges / 350K+ data points
       </div>
@@ -400,7 +400,7 @@ export default function Force3DPage() {
           return '#60a5fa';
         }}
         // Link labels
-        linkLabel={(link: any) => link.label ? `<span style="color:#94a3b8;font-size:11px;font-family:system-ui;background:#0f172a;padding:2px 8px;border-radius:4px">${link.label}</span>` : ''} // eslint-disable-line @typescript-eslint/no-explicit-any
+        linkLabel={(link: any) => link.label ? `<span style="color:var(--muted);font-size:11px;font-family:system-ui;background:var(--foreground);padding:2px 8px;border-radius:4px">${link.label}</span>` : ''} // eslint-disable-line @typescript-eslint/no-explicit-any
         // Interaction
         onNodeClick={handleNodeClick}
         // Performance

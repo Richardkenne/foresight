@@ -346,9 +346,9 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
       if (d.scenario) {
         const { CSS2DObject } = require('three/examples/jsm/renderers/CSS2DRenderer');
         const ctxCard = document.createElement('div');
-        ctxCard.style.cssText = 'background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);border-radius:8px;padding:var(--space-2) var(--space-3);max-width:180px;font-family:Inter,system-ui;';
+        ctxCard.style.cssText = 'background:color-mix(in srgb, var(--accent) 10%, transparent);border:1px solid color-mix(in srgb, var(--accent) 30%, transparent);border-radius:8px;padding:var(--space-2) var(--space-3);max-width:180px;font-family:Inter,system-ui;';
         const ctxText = document.createElement('div');
-        ctxText.style.cssText = 'font-size:10px;color:rgba(255,255,255,0.7);line-height:1.3;';
+        ctxText.style.cssText = 'font-size:var(--text-xs);color:color-mix(in srgb, var(--surface) 70%, transparent);line-height:1.3;';
         ctxText.textContent = d.scenario.length > 60 ? d.scenario.slice(0, 60) + '...' : d.scenario;
         ctxCard.appendChild(ctxText);
         const ctxObj = new CSS2DObject(ctxCard);
@@ -411,7 +411,7 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
       const colorHex = `#${color.toString(16).padStart(6, '0')}`;
       const card = document.createElement('div');
       card.style.cssText = `
-        background: rgba(255,255,255,0.06);
+        background: color-mix(in srgb, var(--surface) 6%, transparent);
         border: 1px solid ${colorHex}35;
         border-radius: 6px;
         padding: var(--space-1) var(--space-2);
@@ -430,12 +430,12 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
       const row = document.createElement('div');
       row.style.cssText = 'display:flex;align-items:center;gap:var(--space-1);';
       const badge = document.createElement('span');
-      badge.style.cssText = `font-size:7px;font-weight:700;padding:1px var(--space-1);border-radius:2px;background:${colorHex}20;color:${colorHex};text-transform:uppercase;letter-spacing:0.04em;`;
+      badge.style.cssText = `font-size:var(--text-xs);font-weight:700;padding:1px var(--space-1);border-radius:2px;background:${colorHex}20;color:${colorHex};text-transform:uppercase;letter-spacing:0.04em;`;
       badge.textContent = n.type.replace('outcome-', '');
       row.appendChild(badge);
       if (n.prob && n.prob < 100) {
         const probEl = document.createElement('span');
-        probEl.style.cssText = `font-size:10px;font-weight:800;color:${colorHex};text-shadow:0 0 8px ${colorHex}60;margin-left:auto;`;
+        probEl.style.cssText = `font-size:var(--text-xs);font-weight:800;color:${colorHex};text-shadow:0 0 8px ${colorHex}60;margin-left:auto;`;
         probEl.textContent = `${n.prob}%`;
         row.appendChild(probEl);
       }
@@ -443,21 +443,21 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
 
       // Label (compact)
       const labelEl = document.createElement('div');
-      labelEl.style.cssText = 'font-size:11px;font-weight:600;line-height:1.3;color:rgba(255,255,255,0.9);margin-top:3px;white-space:normal;';
+      labelEl.style.cssText = 'font-size:var(--text-xs);font-weight:600;line-height:1.3;color:color-mix(in srgb, var(--surface) 90%, transparent);margin-top:3px;white-space:normal;';
       labelEl.textContent = n.label;
       card.appendChild(labelEl);
 
       // Description (always visible)
       if (n.desc) {
         const descEl = document.createElement('div');
-        descEl.style.cssText = 'font-size:9px;line-height:1.3;color:rgba(255,255,255,0.45);margin-top:3px;';
+        descEl.style.cssText = 'font-size:var(--text-xs);line-height:1.3;color:color-mix(in srgb, var(--surface) 45%, transparent);margin-top:3px;';
         descEl.textContent = n.desc.length > 60 ? n.desc.slice(0, 60) + '...' : n.desc;
         card.appendChild(descEl);
       }
       // Source (always visible)
       if (n.source) {
         const srcEl = document.createElement('div');
-        srcEl.style.cssText = 'font-size:7px;color:rgba(255,255,255,0.25);margin-top:2px;';
+        srcEl.style.cssText = 'font-size:var(--text-xs);color:color-mix(in srgb, var(--surface) 25%, transparent);margin-top:2px;';
         srcEl.textContent = n.source.length > 35 ? n.source.slice(0, 35) + '...' : n.source;
         card.appendChild(srcEl);
       }
@@ -1232,7 +1232,7 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
   const simNodes = nodes.filter(n => n.type === 'simNode');
 
   return (
-    <div style={{ width: '100%', height: '100%', position: 'relative', background: '#080c14' }}>
+    <div style={{ width: '100%', height: '100%', position: 'relative', background: 'var(--foreground)' }}>
       <div ref={containerRef} style={{ width: '100%', height: '100%' }} />
 
       {/* Walk button */}
@@ -1242,9 +1242,9 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
           style={{
             position: 'absolute', bottom: 80, left: 'calc(50% - 80px)', transform: 'translateX(-50%)',
             padding: 'var(--space-3) var(--space-6)', borderRadius: 12,
-            background: 'linear-gradient(135deg, #fbbf24, #f59e0b)',
-            color: '#1e293b', fontSize: 13, fontWeight: 700, border: 'none', cursor: 'pointer',
-            fontFamily: 'Inter, system-ui', boxShadow: '0 4px 20px rgba(251,191,36,0.4)',
+            background: 'linear-gradient(135deg, var(--warning), var(--warning))',
+            color: 'var(--border)', fontSize: 'var(--text-base)', fontWeight: 700, border: 'none', cursor: 'pointer',
+            fontFamily: 'Inter, system-ui', boxShadow: '0 4px 20px color-mix(in srgb, var(--warning) 40%, transparent)',
             display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
           }}
         >
@@ -1260,9 +1260,9 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
           style={{
             position: 'absolute', bottom: 80, left: 'calc(50% + 80px)', transform: 'translateX(-50%)',
             padding: 'var(--space-3) var(--space-6)', borderRadius: 12,
-            background: 'linear-gradient(135deg, #3b82f6, #6366f1)',
-            color: '#ffffff', fontSize: 13, fontWeight: 700, border: 'none', cursor: 'pointer',
-            fontFamily: 'Inter, system-ui', boxShadow: '0 4px 20px rgba(59,130,246,0.4)',
+            background: 'linear-gradient(135deg, var(--accent), var(--purple))',
+            color: 'var(--surface)', fontSize: 'var(--text-base)', fontWeight: 700, border: 'none', cursor: 'pointer',
+            fontFamily: 'Inter, system-ui', boxShadow: '0 4px 20px color-mix(in srgb, var(--accent) 40%, transparent)',
             display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
           }}
         >
@@ -1280,9 +1280,9 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
           style={{
             position: 'absolute', bottom: 80, left: '50%', transform: 'translateX(-50%)',
             padding: 'var(--space-3) var(--space-6)', borderRadius: 12,
-            background: 'linear-gradient(135deg, #ef4444, #dc2626)',
-            color: '#ffffff', fontSize: 13, fontWeight: 700, border: 'none', cursor: 'pointer',
-            fontFamily: 'Inter, system-ui', boxShadow: '0 4px 20px rgba(239,68,68,0.4)',
+            background: 'linear-gradient(135deg, var(--danger), var(--danger))',
+            color: 'var(--surface)', fontSize: 'var(--text-base)', fontWeight: 700, border: 'none', cursor: 'pointer',
+            fontFamily: 'Inter, system-ui', boxShadow: '0 4px 20px color-mix(in srgb, var(--danger) 40%, transparent)',
             display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
           }}
         >
@@ -1296,31 +1296,31 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
         <div style={{
           position: 'absolute', top: 20, left: '50%', transform: 'translateX(-50%)',
           padding: 'var(--space-3) var(--space-6)', borderRadius: 12,
-          background: 'rgba(15, 23, 42, 0.9)', backdropFilter: 'blur(12px)',
-          border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+          background: 'color-mix(in srgb, var(--foreground) 90%, transparent)', backdropFilter: 'blur(12px)',
+          border: '1px solid color-mix(in srgb, var(--surface) 10%, transparent)', boxShadow: '0 4px 20px color-mix(in srgb, black 30%, transparent)',
           fontFamily: 'Inter, system-ui', textAlign: 'center',
           display: 'flex', gap: 'var(--space-6)', alignItems: 'center',
         }}>
           <div>
-            <div style={{ fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#94a3b8', marginBottom: 2 }}>Launched</div>
-            <div style={{ fontSize: 18, fontWeight: 800, color: '#e2e8f0' }}>{simStats.total}</div>
+            <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted)', marginBottom: 2 }}>Launched</div>
+            <div style={{ fontSize: 'var(--text-xl)', fontWeight: 800, color: 'var(--border)' }}>{simStats.total}</div>
           </div>
           <div>
-            <div style={{ fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#3b82f6', marginBottom: 2 }}>Walking</div>
-            <div style={{ fontSize: 18, fontWeight: 800, color: '#3b82f6' }}>{simStats.walking}</div>
+            <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--accent)', marginBottom: 2 }}>Walking</div>
+            <div style={{ fontSize: 'var(--text-xl)', fontWeight: 800, color: 'var(--accent)' }}>{simStats.walking}</div>
           </div>
           <div>
-            <div style={{ fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#10b981', marginBottom: 2 }}>Passed</div>
-            <div style={{ fontSize: 18, fontWeight: 800, color: '#10b981' }}>{simStats.succeeded}</div>
+            <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--success)', marginBottom: 2 }}>Passed</div>
+            <div style={{ fontSize: 'var(--text-xl)', fontWeight: 800, color: 'var(--success)' }}>{simStats.succeeded}</div>
           </div>
           <div>
-            <div style={{ fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#ef4444', marginBottom: 2 }}>Failed</div>
-            <div style={{ fontSize: 18, fontWeight: 800, color: '#ef4444' }}>{simStats.failed}</div>
+            <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--danger)', marginBottom: 2 }}>Failed</div>
+            <div style={{ fontSize: 'var(--text-xl)', fontWeight: 800, color: 'var(--danger)' }}>{simStats.failed}</div>
           </div>
           {simStats.total >= 100 && simStats.walking === 0 && (
             <div style={{
-              fontSize: 11, fontWeight: 700, color: '#fbbf24', padding: 'var(--space-1) var(--space-3)',
-              background: 'rgba(251,191,36,0.1)', borderRadius: 6, border: '1px solid rgba(251,191,36,0.3)',
+              fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--warning)', padding: 'var(--space-1) var(--space-3)',
+              background: 'color-mix(in srgb, var(--warning) 10%, transparent)', borderRadius: 6, border: '1px solid color-mix(in srgb, var(--warning) 30%, transparent)',
             }}>
               COMPLETE
             </div>
@@ -1333,20 +1333,20 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
         <div style={{
           position: 'absolute', top: 20, left: '50%', transform: 'translateX(-50%)',
           padding: 'var(--space-3) var(--space-6)', borderRadius: 12,
-          background: 'rgba(255, 255, 255, 0.95)', backdropFilter: 'blur(12px)',
-          border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+          background: 'color-mix(in srgb, var(--surface) 95%, transparent)', backdropFilter: 'blur(12px)',
+          border: '1px solid var(--border)', boxShadow: '0 4px 20px color-mix(in srgb, black 8%, transparent)',
           fontFamily: 'Inter, system-ui', textAlign: 'center',
           maxWidth: 400,
         }}>
-          <div style={{ fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em',
+          <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em',
             color: `#${(NODE_COLORS[currentType] || 0x3b82f6).toString(16).padStart(6, '0')}`,
             marginBottom: 'var(--space-1)',
           }}>{currentType}</div>
-          <div style={{ fontSize: 14, fontWeight: 700, color: '#1e293b', marginBottom: 2 }}>{currentLabel}</div>
+          <div style={{ fontSize: 'var(--text-md)', fontWeight: 700, color: 'var(--border)', marginBottom: 2 }}>{currentLabel}</div>
           {currentProb !== null && currentProb < 100 && (
-            <div style={{ fontSize: 12, color: '#fbbf24', fontWeight: 600 }}>{currentProb}%</div>
+            <div style={{ fontSize: 'var(--text-sm)', color: 'var(--warning)', fontWeight: 600 }}>{currentProb}%</div>
           )}
-          <div style={{ fontSize: 10, color: '#475569', marginTop: 'var(--space-1)' }}>Step {walkProgress}</div>
+          <div style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)', marginTop: 'var(--space-1)' }}>Step {walkProgress}</div>
         </div>
       )}
 
@@ -1357,8 +1357,8 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
           style={{
             position: 'absolute', bottom: 80, right: 20,
             padding: 'var(--space-2) var(--space-4)', borderRadius: 10,
-            background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(8px)',
-            color: '#e2e8f0', fontSize: 11, fontWeight: 600, border: '1px solid rgba(255,255,255,0.15)',
+            background: 'color-mix(in srgb, var(--surface) 8%, transparent)', backdropFilter: 'blur(8px)',
+            color: 'var(--border)', fontSize: 'var(--text-xs)', fontWeight: 600, border: '1px solid color-mix(in srgb, var(--surface) 15%, transparent)',
             cursor: 'pointer', fontFamily: 'Inter, system-ui',
             display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
           }}
@@ -1381,11 +1381,11 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
           style={{
             position: 'absolute', bottom: 120, right: 20,
             padding: 'var(--space-2) var(--space-4)', borderRadius: 10,
-            background: flyThrough ? 'rgba(251,191,36,0.15)' : 'rgba(255,255,255,0.08)',
+            background: flyThrough ? 'color-mix(in srgb, var(--warning) 15%, transparent)' : 'color-mix(in srgb, var(--surface) 8%, transparent)',
             backdropFilter: 'blur(8px)',
-            color: flyThrough ? '#fbbf24' : '#e2e8f0',
-            fontSize: 11, fontWeight: 600,
-            border: `1px solid ${flyThrough ? 'rgba(251,191,36,0.4)' : 'rgba(255,255,255,0.15)'}`,
+            color: flyThrough ? 'var(--warning)' : 'var(--border)',
+            fontSize: 'var(--text-xs)', fontWeight: 600,
+            border: `1px solid ${flyThrough ? 'color-mix(in srgb, var(--warning) 40%, transparent)' : 'color-mix(in srgb, var(--surface) 15%, transparent)'}`,
             cursor: 'pointer', fontFamily: 'Inter, system-ui',
             display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
           }}
@@ -1402,16 +1402,16 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
         <div style={{
           position: 'absolute', top: 60, right: 20,
           padding: 'var(--space-2) var(--space-4)', borderRadius: 8,
-          background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)',
-          fontFamily: 'Inter, system-ui', fontSize: 11, fontWeight: 600,
-          color: '#fbbf24', display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
+          background: 'color-mix(in srgb, var(--warning) 12%, transparent)', border: '1px solid color-mix(in srgb, var(--warning) 30%, transparent)',
+          fontFamily: 'Inter, system-ui', fontSize: 'var(--text-xs)', fontWeight: 600,
+          color: 'var(--warning)', display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
           animation: 'flyPulse 2s ease-in-out infinite',
         }}>
           <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
             <circle cx="12" cy="12" r="5"/>
           </svg>
           Following YOU
-          <span style={{ fontSize: 9, color: 'rgba(251,191,36,0.5)', marginLeft: 'var(--space-1)' }}>ESC to exit</span>
+          <span style={{ fontSize: 'var(--text-xs)', color: 'color-mix(in srgb, var(--warning) 50%, transparent)', marginLeft: 'var(--space-1)' }}>ESC to exit</span>
           <style>{`@keyframes flyPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.7; } }`}</style>
         </div>
       )}
@@ -1419,7 +1419,7 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
       {/* Controls hint */}
       <div style={{
         position: 'absolute', bottom: 16, left: '50%', transform: 'translateX(-50%)',
-        display: 'flex', gap: 'var(--space-4)', fontSize: 10, color: 'rgba(255,255,255,0.25)', fontFamily: 'Inter, system-ui',
+        display: 'flex', gap: 'var(--space-4)', fontSize: 'var(--text-xs)', color: 'color-mix(in srgb, var(--surface) 25%, transparent)', fontFamily: 'Inter, system-ui',
         pointerEvents: 'none',
       }}>
         <span>WASD move</span>

@@ -73,17 +73,17 @@ function LiveTimer() {
   const pad = (n: number) => String(n).padStart(2, '0');
   return (
     <div className="fixed top-20 right-4 z-40 flex items-center gap-2 px-3 py-1.5 rounded-lg" style={{
-      background: 'rgba(6, 8, 16, 0.75)', backdropFilter: 'blur(12px)',
-      border: '1px solid rgba(239, 68, 68, 0.2)',
+      background: 'color-mix(in srgb, var(--foreground) 75%, transparent)', backdropFilter: 'blur(12px)',
+      border: '1px solid var(--danger-muted)',
     }}>
-      <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#ef4444' }} />
-      <span style={{ fontSize: 11, fontWeight: 700, color: '#ef4444', letterSpacing: '0.08em', fontFamily: 'var(--font-geist-mono, monospace)' }}>LIVE</span>
-      <div className="w-px h-3" style={{ background: 'rgba(255,255,255,0.15)' }} />
-      <span style={{ fontSize: 12, fontWeight: 600, color: '#e2e8f0', fontFamily: 'var(--font-geist-mono, monospace)', fontVariantNumeric: 'tabular-nums' }}>
+      <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: 'var(--danger)' }} />
+      <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--danger)', letterSpacing: '0.08em', fontFamily: 'var(--font-geist-mono, monospace)' }}>LIVE</span>
+      <div className="w-px h-3" style={{ background: 'color-mix(in srgb, var(--surface) 15%, transparent)' }} />
+      <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--border)', fontFamily: 'var(--font-geist-mono, monospace)', fontVariantNumeric: 'tabular-nums' }}>
         {hrs > 0 ? `${pad(hrs)}:` : ''}{pad(mins)}:{pad(secs)}
       </span>
-      <div className="w-px h-3" style={{ background: 'rgba(255,255,255,0.15)' }} />
-      <span style={{ fontSize: 10, color: '#64748b', fontFamily: 'var(--font-geist-mono, monospace)' }}>
+      <div className="w-px h-3" style={{ background: 'color-mix(in srgb, var(--surface) 15%, transparent)' }} />
+      <span style={{ fontSize: 'var(--text-xs)', color: 'var(--muted-foreground)', fontFamily: 'var(--font-geist-mono, monospace)' }}>
         {pad(startTime.getHours())}:{pad(startTime.getMinutes())}
       </span>
     </div>
@@ -550,17 +550,17 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
       {/* Comparison mode banner */}
       {comparisonMode && !showComparison && nodesRef.current.length === 0 && (
         <div className="absolute top-[96px] left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-5 py-3 rounded-xl backdrop-blur-sm animate-fade-in"
-          style={{ background: 'rgba(99, 102, 241, 0.08)', border: '1px solid rgba(99, 102, 241, 0.2)' }}>
+          style={{ background: 'var(--purple-muted)', border: '1px solid color-mix(in srgb, var(--purple) 20%, transparent)' }}>
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full" style={{ background: '#6366f1' }} />
-            <span className="text-[11px] font-medium" style={{ color: '#6366f1' }}>Scenario A saved</span>
+            <div className="w-2 h-2 rounded-full" style={{ background: 'var(--purple)' }} />
+            <span className="text-[11px] font-medium" style={{ color: 'var(--purple)' }}>Scenario A saved</span>
           </div>
-          <div className="w-px h-4" style={{ background: 'rgba(99, 102, 241, 0.2)' }} />
+          <div className="w-px h-4" style={{ background: 'color-mix(in srgb, var(--purple) 20%, transparent)' }} />
           <span className="text-[11px]" style={{ color: 'var(--muted-foreground)' }}>Now generate Scenario B to compare</span>
           <button
             onClick={handleExitComparison}
             className="text-[10px] px-2 py-0.5 rounded-md cursor-pointer transition-all hover:opacity-80"
-            style={{ background: 'rgba(99, 102, 241, 0.1)', color: '#6366f1' }}
+            style={{ background: 'var(--purple-muted)', color: 'var(--purple)' }}
           >
             Cancel
           </button>
@@ -581,8 +581,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         <div className="absolute inset-0 top-[80px] z-30 flex items-center justify-center bg-[var(--background)]/70 backdrop-blur-[3px]">
           <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '20px', padding: 'var(--space-8) var(--space-8)', boxShadow: 'var(--shadow-xl)', maxWidth: '480px', width: '90%' }}>
             <div style={{ marginBottom: 'var(--space-6)', textAlign: 'center' }}>
-              <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--foreground)', marginBottom: 'var(--space-1)' }}>Building your simulation...</div>
-              <div style={{ fontSize: '11px', color: 'var(--muted)' }}>Analyzing scenario and sourcing real-world data</div>
+              <div style={{ fontSize: 'var(--text-base)', fontWeight: 600, color: 'var(--foreground)', marginBottom: 'var(--space-1)' }}>Building your simulation...</div>
+              <div style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)' }}>Analyzing scenario and sourcing real-world data</div>
             </div>
             <GeneratingSkeleton />
           </div>
@@ -596,22 +596,22 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
               <circle cx="12" cy="12" r="10" /><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
             </svg>
             <div className="flex flex-col items-center gap-2 text-center">
-              <div style={{ fontSize: 20, fontWeight: 600, color: 'var(--foreground)', letterSpacing: '-0.02em', lineHeight: 1.2 }}>What do you want to simulate?</div>
-              <div style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.6 }}>Type a scenario, upload a photo, or record your voice</div>
+              <div style={{ fontSize: 'var(--text-xl)', fontWeight: 600, color: 'var(--foreground)', letterSpacing: '-0.02em', lineHeight: 1.2 }}>What do you want to simulate?</div>
+              <div style={{ fontSize: 'var(--text-base)', color: 'var(--muted)', lineHeight: 1.6 }}>Type a scenario, upload a photo, or record your voice</div>
             </div>
             <div className="flex flex-wrap justify-center gap-2">
               {['Open a cafe in Bali', 'Go freelance on Upwork', 'Move to Europe', 'Launch a SaaS'].map((suggestion) => (
                 <button key={suggestion} onClick={() => { flow.setScenario(suggestion); setTimeout(() => flow.generateFlow(), 50); }}
-                  style={{ padding: 'var(--space-2) var(--space-4)', borderRadius: 999, fontSize: 13, fontWeight: 500, color: 'var(--foreground)', background: 'var(--surface)', border: '1px solid var(--border)', cursor: 'pointer', transition: 'all 0.15s ease', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
+                  style={{ padding: 'var(--space-2) var(--space-4)', borderRadius: 999, fontSize: 'var(--text-base)', fontWeight: 500, color: 'var(--foreground)', background: 'var(--surface)', border: '1px solid var(--border)', cursor: 'pointer', transition: 'all 0.15s ease', boxShadow: '0 1px 3px color-mix(in srgb, var(--foreground) 4%, transparent)' }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--surface-hover)'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--muted)'; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--surface)'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--border)'; }}
                 >{suggestion}</button>
               ))}
             </div>
             <button onClick={() => setShowCrashTest(true)}
-              style={{ marginTop: 'var(--space-2)', padding: 'var(--space-3) var(--space-6)', borderRadius: 12, fontSize: 13, fontWeight: 600, color: '#ef4444', background: 'rgba(239,68,68,0.06)', border: '1px solid rgba(239,68,68,0.15)', cursor: 'pointer', fontFamily: 'Inter, system-ui', display: 'flex', alignItems: 'center', gap: 'var(--space-2)', transition: 'all 0.15s ease' }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'rgba(239,68,68,0.12)'; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'rgba(239,68,68,0.06)'; }}
+              style={{ marginTop: 'var(--space-2)', padding: 'var(--space-3) var(--space-6)', borderRadius: 12, fontSize: 'var(--text-base)', fontWeight: 600, color: 'var(--danger)', background: 'var(--danger-muted)', border: '1px solid color-mix(in srgb, var(--danger) 15%, transparent)', cursor: 'pointer', fontFamily: 'Inter, system-ui', display: 'flex', alignItems: 'center', gap: 'var(--space-2)', transition: 'all 0.15s ease' }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'color-mix(in srgb, var(--danger) 12%, transparent)'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--danger-muted)'; }}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
               Crash Test
@@ -628,14 +628,14 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
             title="Back (Backspace)">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5" /><path d="M12 19l-7-7 7-7" /></svg>
           </button>
-          <button onClick={() => drill.drillBackToLevel(-1)} className="truncate" style={{ fontSize: 11, fontWeight: 600, color: 'var(--muted)', background: 'transparent', border: 'none', cursor: 'pointer', padding: 'var(--space-1) var(--space-2)', borderRadius: 6, maxWidth: 180, transition: 'color 0.15s ease' }}
+          <button onClick={() => drill.drillBackToLevel(-1)} className="truncate" style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--muted)', background: 'transparent', border: 'none', cursor: 'pointer', padding: 'var(--space-1) var(--space-2)', borderRadius: 6, maxWidth: 180, transition: 'color 0.15s ease' }}
             onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--foreground)'; }}
             onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--muted)'; }}
             title={drill.simStack[0]?.scenario || 'Root'}>{drill.simStack[0]?.scenario || 'Main'}</button>
           {drill.simStack.slice(1).map((level, i) => (
             <div key={i} className="flex items-center gap-1 flex-shrink-0">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.5 }}><path d="M9 18l6-6-6-6" /></svg>
-              <button onClick={() => drill.drillBackToLevel(i)} className="truncate" style={{ fontSize: 11, fontWeight: 600, color: 'var(--muted)', background: 'transparent', border: 'none', cursor: 'pointer', padding: 'var(--space-1) var(--space-2)', borderRadius: 6, maxWidth: 160, transition: 'color 0.15s ease' }}
+              <button onClick={() => drill.drillBackToLevel(i)} className="truncate" style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--muted)', background: 'transparent', border: 'none', cursor: 'pointer', padding: 'var(--space-1) var(--space-2)', borderRadius: 6, maxWidth: 160, transition: 'color 0.15s ease' }}
                 onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--foreground)'; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--muted)'; }}
                 title={level.parentNodeLabel}>{level.parentNodeLabel}</button>
@@ -643,17 +643,17 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
           ))}
           <div className="flex items-center gap-1 flex-shrink-0">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.5 }}><path d="M9 18l6-6-6-6" /></svg>
-            <span className="truncate" style={{ fontSize: 11, fontWeight: 700, color: 'var(--foreground)', padding: 'var(--space-1) var(--space-2)', maxWidth: 200 }}>{flow.scenario}</span>
+            <span className="truncate" style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--foreground)', padding: 'var(--space-1) var(--space-2)', maxWidth: 200 }}>{flow.scenario}</span>
           </div>
-          <div style={{ marginLeft: 'auto', flexShrink: 0, fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted)', padding: '3px var(--space-2)', borderRadius: 4, background: 'var(--border)', opacity: 0.7 }}>Depth {drill.currentDepth}/3</div>
+          <div style={{ marginLeft: 'auto', flexShrink: 0, fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted)', padding: '3px var(--space-2)', borderRadius: 4, background: 'var(--border)', opacity: 0.7 }}>Depth {drill.currentDepth}/3</div>
         </div>
       )}
 
       {drill.drillLoading && (
-        <div className="absolute inset-0 z-50 flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.3)', backdropFilter: 'blur(2px)' }}>
+        <div className="absolute inset-0 z-50 flex items-center justify-center" style={{ background: 'color-mix(in srgb, var(--foreground) 30%, transparent)', backdropFilter: 'blur(2px)' }}>
           <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 'var(--space-6) var(--space-8)', boxShadow: 'var(--shadow-xl)', textAlign: 'center' }}>
-            <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--foreground)', marginBottom: 'var(--space-1)' }}>Drilling into step...</div>
-            <div style={{ fontSize: 11, color: 'var(--muted)' }}>Generating sub-simulation</div>
+            <div style={{ fontSize: 'var(--text-base)', fontWeight: 600, color: 'var(--foreground)', marginBottom: 'var(--space-1)' }}>Drilling into step...</div>
+            <div style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)' }}>Generating sub-simulation</div>
             <div className="mt-3" style={{ width: 140, height: 2, background: 'var(--border)', borderRadius: 1, overflow: 'hidden', margin: 'var(--space-3) auto 0' }}>
               <div style={{ width: '60%', height: '100%', background: 'var(--foreground)', borderRadius: 1, animation: 'drill-loading 1.5s ease-in-out infinite' }} />
             </div>
@@ -675,7 +675,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
               onNodeClick={(e, node) => { if (step.stepMode) { setDetailNode(prev => prev?.id === node.id ? null : node); } else { replay.onNodeClickReplay(e, node); } }}
               onNodeDoubleClick={drill.onNodeDoubleClick}
               nodeTypes={nodeTypes} edgeTypes={edgeTypes} fitView fitViewOptions={{ padding: 0.2 }}
-              minZoom={0.3} maxZoom={2} defaultEdgeOptions={{ type: 'animated', style: { stroke: '#d4d4d4', strokeWidth: 2 } }}>
+              minZoom={0.3} maxZoom={2} defaultEdgeOptions={{ type: 'animated', style: { stroke: 'var(--border)', strokeWidth: 2 } }}>
               <Background variant={BackgroundVariant.Dots} gap={20} size={1.5} color="var(--muted)" style={{ opacity: 0.5 }} />
               <Controls position="bottom-left" showInteractive={false} className="!border-[var(--border)] !rounded-lg !shadow-sm !overflow-hidden !mb-6 !ml-6" />
               {/* Node count badge */}
@@ -700,8 +700,8 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
                 </div>
               )}
               <MiniMap position="bottom-right" pannable zoomable
-                nodeColor={(node) => { const t = (node.data as Record<string, unknown>).nodeType as string; if (t === 'outcome-good') return '#34d399'; if (t === 'outcome-bad') return '#f87171'; return '#cbd5e1'; }}
-                maskColor="rgba(0,0,0,0.08)" style={{ opacity: 0.7, width: 140, height: 90, marginBottom: 'var(--space-6)', marginRight: 'var(--space-6)' }} />
+                nodeColor={(node) => { const t = (node.data as Record<string, unknown>).nodeType as string; if (t === 'outcome-good') return 'var(--success)'; if (t === 'outcome-bad') return 'var(--danger)'; return 'var(--border)'; }}
+                maskColor="color-mix(in srgb, var(--foreground) 8%, transparent)" style={{ opacity: 0.7, width: 140, height: 90, marginBottom: 'var(--space-6)', marginRight: 'var(--space-6)' }} />
             </ReactFlow>
             {replay.replayMode && <CutLineIndicator cutNodeId={replay.cutNodeId} nodes={nodes} />}
             <ParticleLayer particles={sim.particles} moveDuration={sim.getSPD().move} pathFollowing={simSettings.pathFollowing} />
@@ -764,7 +764,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
               return (
                 <div
                   className="absolute top-0 right-0 z-20 h-full w-[320px] border-l border-[var(--border)] overflow-y-auto"
-                  style={{ background: 'var(--surface)', boxShadow: '-4px 0 20px rgba(0,0,0,0.05)' }}
+                  style={{ background: 'var(--surface)', boxShadow: '-4px 0 20px color-mix(in srgb, var(--foreground) 5%, transparent)' }}
                 >
                   {/* Header */}
                   <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--border)]">
@@ -783,7 +783,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
                       <div className="space-y-1.5">
                         <div className="flex items-center gap-2">
                           <span className="text-[11px] font-semibold text-[var(--muted)] uppercase tracking-wider">Probability</span>
-                          <span className="text-[18px] font-bold" style={{ color: prob < 30 ? '#ef4444' : prob < 60 ? '#f59e0b' : '#22c55e' }}>{prob}%</span>
+                          <span className="text-[18px] font-bold" style={{ color: prob < 30 ? 'var(--danger)' : prob < 60 ? 'var(--warning)' : 'var(--success)' }}>{prob}%</span>
                         </div>
                         {probRange && (
                           <div className="flex gap-3 text-[11px]">
@@ -795,7 +795,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
                         <div className="w-full h-1.5 rounded-full bg-gray-100 dark:bg-gray-800 overflow-hidden">
                           <div className="h-full rounded-full transition-all" style={{
                             width: `${prob}%`,
-                            background: prob < 30 ? '#ef4444' : prob < 60 ? '#f59e0b' : '#22c55e',
+                            background: prob < 30 ? 'var(--danger)' : prob < 60 ? 'var(--warning)' : 'var(--success)',
                           }} />
                         </div>
                       </div>
@@ -862,7 +862,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
                         <ul className="mt-1.5 space-y-1.5">
                           {suggestions.map((s, i) => (
                             <li key={i} className="flex gap-2 text-[12px] text-[var(--foreground)] opacity-80">
-                              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2.5" strokeLinecap="round" className="mt-0.5 shrink-0"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
+                              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round" className="mt-0.5 shrink-0"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
                               {s}
                             </li>
                           ))}
@@ -926,7 +926,7 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         {showFeedbackForm && <FeedbackForm scenario={flow.scenario} predictedProb={sim.simStats.total > 0 ? Math.round(sim.simStats.success / sim.simStats.total * 100) : 0} onClose={() => setShowFeedbackForm(false)} />}
 
         {showFeedbackReminder && !sim.simRunning && !showFeedbackForm && (
-          <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3 px-5 py-3 rounded-2xl" style={{ background: 'var(--surface)', boxShadow: '0 0 0 1px var(--border), 0 8px 32px rgba(0,0,0,0.12)', backdropFilter: 'blur(8px)', maxWidth: '440px' }}>
+          <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3 px-5 py-3 rounded-2xl" style={{ background: 'var(--surface)', boxShadow: '0 0 0 1px var(--border), 0 8px 32px color-mix(in srgb, var(--foreground) 12%, transparent)', backdropFilter: 'blur(8px)', maxWidth: '440px' }}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
             <p className="text-[12px] leading-snug" style={{ color: 'var(--foreground)' }}>How did it go? Share your outcome to help calibrate predictions.</p>
             <button onClick={() => { setShowFeedbackReminder(false); setShowFeedbackForm(true); }} className="shrink-0 px-3 py-1.5 rounded-lg text-[11px] font-medium cursor-pointer" style={{ background: 'var(--foreground)', color: 'var(--background)' }}>Report</button>
@@ -937,21 +937,21 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
         )}
 
         {replay.reversePath && replay.reversePath.length > 0 && (
-          <div className="absolute top-[52px] left-4 z-30 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 160px)', width: 320, background: 'var(--surface)', borderRadius: 16, boxShadow: '0 0 0 1px var(--border), 0 8px 32px rgba(0,0,0,0.12)', scrollbarWidth: 'thin' }}>
+          <div className="absolute top-[52px] left-4 z-30 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 160px)', width: 320, background: 'var(--surface)', borderRadius: 16, boxShadow: '0 0 0 1px var(--border), 0 8px 32px color-mix(in srgb, var(--foreground) 12%, transparent)', scrollbarWidth: 'thin' }}>
             <div className="sticky top-0 z-10 px-4 pt-4 pb-3" style={{ background: 'var(--surface)', borderBottom: '1px solid var(--border)' }}>
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--muted)' }}><path d="M9 14L4 9l5-5" /><path d="M20 20v-7a4 4 0 0 0-4-4H4" /></svg>
-                  <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--foreground)', letterSpacing: '-0.01em' }}>Reverse Engineer</span>
+                  <span style={{ fontSize: 'var(--text-base)', fontWeight: 700, color: 'var(--foreground)', letterSpacing: '-0.01em' }}>Reverse Engineer</span>
                 </div>
                 <button onClick={replay.clearReversePath} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 'var(--space-1)', color: 'var(--muted)' }}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
                 </button>
               </div>
-              <div style={{ fontSize: 11, color: 'var(--muted)' }}>Path to reach this outcome</div>
-              <div className="mt-2 px-3 py-2" style={{ background: replay.reverseCompoundProb > 10 ? 'rgba(16,185,129,0.08)' : replay.reverseCompoundProb > 3 ? 'rgba(245,158,11,0.08)' : 'rgba(239,68,68,0.08)', borderRadius: 8, border: `1px solid ${replay.reverseCompoundProb > 10 ? 'rgba(16,185,129,0.2)' : replay.reverseCompoundProb > 3 ? 'rgba(245,158,11,0.2)' : 'rgba(239,68,68,0.2)'}` }}>
-                <span style={{ fontSize: 20, fontWeight: 800, letterSpacing: '-0.02em', color: replay.reverseCompoundProb > 10 ? '#10b981' : replay.reverseCompoundProb > 3 ? '#f59e0b' : '#ef4444' }}>{replay.reverseCompoundProb}%</span>
-                <span style={{ fontSize: 11, color: 'var(--muted)', marginLeft: 'var(--space-2)' }}>compound probability</span>
+              <div style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)' }}>Path to reach this outcome</div>
+              <div className="mt-2 px-3 py-2" style={{ background: replay.reverseCompoundProb > 10 ? 'var(--success-muted)' : replay.reverseCompoundProb > 3 ? 'var(--warning-muted)' : 'var(--danger-muted)', borderRadius: 8, border: `1px solid color-mix(in srgb, ${replay.reverseCompoundProb > 10 ? 'var(--success)' : replay.reverseCompoundProb > 3 ? 'var(--warning)' : 'var(--danger)'} 20%, transparent)` }}>
+                <span style={{ fontSize: 'var(--text-xl)', fontWeight: 800, letterSpacing: '-0.02em', color: replay.reverseCompoundProb > 10 ? 'var(--success)' : replay.reverseCompoundProb > 3 ? 'var(--warning)' : 'var(--danger)' }}>{replay.reverseCompoundProb}%</span>
+                <span style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)', marginLeft: 'var(--space-2)' }}>compound probability</span>
               </div>
             </div>
             <div className="px-4 py-3">
@@ -963,17 +963,17 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
                   <div key={s.id} className="relative">
                     {i > 0 && <div style={{ position: 'absolute', top: -12, left: 11, width: 1, height: 12, background: 'var(--border)' }} />}
                     {s.edgeLabel && (
-                      <div style={{ fontSize: 9, fontWeight: 600, textTransform: 'uppercase', color: s.edgeLabel.toLowerCase().startsWith('yes') || s.edgeLabel.toLowerCase().startsWith('pass') ? '#10b981' : s.edgeLabel.toLowerCase().startsWith('no') || s.edgeLabel.toLowerCase().startsWith('fail') ? '#ef4444' : '#f59e0b', marginBottom: 'var(--space-1)', marginLeft: 28, letterSpacing: '0.05em' }}>{s.edgeLabel}</div>
+                      <div style={{ fontSize: 'var(--text-xs)', fontWeight: 600, textTransform: 'uppercase', color: s.edgeLabel.toLowerCase().startsWith('yes') || s.edgeLabel.toLowerCase().startsWith('pass') ? 'var(--success)' : s.edgeLabel.toLowerCase().startsWith('no') || s.edgeLabel.toLowerCase().startsWith('fail') ? 'var(--danger)' : 'var(--warning)', marginBottom: 'var(--space-1)', marginLeft: 28, letterSpacing: '0.05em' }}>{s.edgeLabel}</div>
                     )}
                     <div className="flex items-start gap-3 mb-3">
-                      <div style={{ width: 24, height: 24, borderRadius: '50%', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, fontWeight: 700, background: isOutcome ? (s.type === 'outcome-good' ? 'rgba(16,185,129,0.15)' : 'rgba(239,68,68,0.15)') : isGate ? 'rgba(245,158,11,0.12)' : 'rgba(100,116,139,0.1)', color: isOutcome ? (s.type === 'outcome-good' ? '#10b981' : '#ef4444') : isGate ? '#f59e0b' : 'var(--muted)' }}>{replay.reversePath!.length - i}</div>
+                      <div style={{ width: 24, height: 24, borderRadius: '50%', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--text-xs)', fontWeight: 700, background: isOutcome ? (s.type === 'outcome-good' ? 'var(--success-muted)' : 'var(--danger-muted)') : isGate ? 'var(--warning-muted)' : 'color-mix(in srgb, var(--muted-foreground) 10%, transparent)', color: isOutcome ? (s.type === 'outcome-good' ? 'var(--success)' : 'var(--danger)') : isGate ? 'var(--warning)' : 'var(--muted)' }}>{replay.reversePath!.length - i}</div>
                       <div style={{ flex: 1, minWidth: 0 }}>
-                        <div style={{ fontSize: 9, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--muted)', marginBottom: 2 }}>{s.type.replace('-', ' ')}</div>
-                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--foreground)', lineHeight: 1.3 }}>{s.label}</div>
+                        <div style={{ fontSize: 'var(--text-xs)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--muted)', marginBottom: 2 }}>{s.type.replace('-', ' ')}</div>
+                        <div style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--foreground)', lineHeight: 1.3 }}>{s.label}</div>
                         {isGate && s.prob < 100 && (
                           <div className="mt-1 flex items-center gap-2">
-                            <div style={{ flex: 1, height: 3, background: 'var(--border)', borderRadius: 2, overflow: 'hidden' }}><div style={{ width: `${s.prob}%`, height: '100%', background: s.prob > 50 ? '#10b981' : s.prob > 25 ? '#f59e0b' : '#ef4444', borderRadius: 2 }} /></div>
-                            <span style={{ fontSize: 10, fontWeight: 700, color: s.prob > 50 ? '#10b981' : s.prob > 25 ? '#f59e0b' : '#ef4444' }}>{s.prob}%</span>
+                            <div style={{ flex: 1, height: 3, background: 'var(--border)', borderRadius: 2, overflow: 'hidden' }}><div style={{ width: `${s.prob}%`, height: '100%', background: s.prob > 50 ? 'var(--success)' : s.prob > 25 ? 'var(--warning)' : 'var(--danger)', borderRadius: 2 }} /></div>
+                            <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: s.prob > 50 ? 'var(--success)' : s.prob > 25 ? 'var(--warning)' : 'var(--danger)' }}>{s.prob}%</span>
                           </div>
                         )}
                       </div>
@@ -1062,17 +1062,17 @@ function SimulatorCanvasInner({ sharedSimulation }: { sharedSimulation?: Record<
           />
           <PathFilterBar pathFilter={pathFilter} onFilterChange={applyPathFilter} />
           {sim.youOutcome && (
-            <div className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50" style={{ background: 'var(--surface)', boxShadow: '0 0 0 1px rgba(251,191,36,0.4), 0 4px 20px rgba(251,191,36,0.15), 0 4px 12px rgba(0,0,0,0.08)', borderRadius: 12, padding: 'var(--space-3) var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-              <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#fbbf24', boxShadow: '0 0 8px rgba(251,191,36,0.6)' }} />
-              <span style={{ fontSize: 12, fontWeight: 700, color: '#fbbf24', fontFamily: 'var(--font-geist-mono)', letterSpacing: '0.05em' }}>YOU</span>
-              <span style={{ fontSize: 12, fontWeight: 500, color: 'var(--muted)' }}>reached:</span>
-              <span style={{ fontSize: 13, fontWeight: 700, color: sim.youOutcome.outcome === 'success' ? '#059669' : '#dc2626', fontFamily: 'var(--font-geist-mono)' }}>{sim.youOutcome.nodeLabel}</span>
-              {sim.youOutcome.outcome === 'success' && <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>}
-              {sim.youOutcome.outcome === 'blocked' && <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>}
+            <div className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50" style={{ background: 'var(--surface)', boxShadow: '0 0 0 1px color-mix(in srgb, var(--warning) 40%, transparent), 0 4px 20px color-mix(in srgb, var(--warning) 15%, transparent), 0 4px 12px color-mix(in srgb, var(--foreground) 8%, transparent)', borderRadius: 12, padding: 'var(--space-3) var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+              <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--warning)', boxShadow: '0 0 8px color-mix(in srgb, var(--warning) 60%, transparent)' }} />
+              <span style={{ fontSize: 'var(--text-sm)', fontWeight: 700, color: 'var(--warning)', fontFamily: 'var(--font-geist-mono)', letterSpacing: '0.05em' }}>YOU</span>
+              <span style={{ fontSize: 'var(--text-sm)', fontWeight: 500, color: 'var(--muted)' }}>reached:</span>
+              <span style={{ fontSize: 'var(--text-base)', fontWeight: 700, color: sim.youOutcome.outcome === 'success' ? 'var(--success-hover)' : 'var(--danger-hover)', fontFamily: 'var(--font-geist-mono)' }}>{sim.youOutcome.nodeLabel}</span>
+              {sim.youOutcome.outcome === 'success' && <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--success-hover)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>}
+              {sim.youOutcome.outcome === 'blocked' && <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--danger-hover)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>}
               {profileRef.current?.sacredProfile && Object.keys(profileRef.current.sacredProfile).length > 0 && sim.storedFatesRef.current.length > 0 && (
-                <button onClick={() => setShowAvatarReport(true)} className="ml-2 text-[11px] font-medium px-3 py-1 rounded-lg cursor-pointer transition-all" style={{ background: 'rgba(99,102,241,0.1)', color: '#6366f1', border: '1px solid rgba(99,102,241,0.2)' }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'rgba(99,102,241,0.2)'; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'rgba(99,102,241,0.1)'; }}>Personal Report</button>
+                <button onClick={() => setShowAvatarReport(true)} className="ml-2 text-[11px] font-medium px-3 py-1 rounded-lg cursor-pointer transition-all" style={{ background: 'var(--purple-muted)', color: 'var(--purple)', border: '1px solid color-mix(in srgb, var(--purple) 20%, transparent)' }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'color-mix(in srgb, var(--purple) 20%, transparent)'; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--purple-muted)'; }}>Personal Report</button>
               )}
             </div>
           )}

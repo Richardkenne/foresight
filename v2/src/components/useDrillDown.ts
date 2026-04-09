@@ -20,9 +20,9 @@ export interface SimLevel {
 // Background colors per drill-down depth
 export const DEPTH_BG_COLORS = [
   'var(--background)',
-  'color-mix(in srgb, var(--background) 96%, #6366f1 4%)',
-  'color-mix(in srgb, var(--background) 92%, #8b5cf6 8%)',
-  'color-mix(in srgb, var(--background) 88%, #a855f7 12%)',
+  'color-mix(in srgb, var(--background) 96%, var(--accent) 4%)',
+  'color-mix(in srgb, var(--background) 92%, var(--purple) 8%)',
+  'color-mix(in srgb, var(--background) 88%, var(--sacred-accent) 12%)',
 ];
 
 export interface UseDrillDownParams {

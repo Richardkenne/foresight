@@ -47,10 +47,10 @@ const ICON_PATHS: Record<string, string> = {
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
-  'business': '#3b82f6',
-  'money': '#10b981',
-  'career': '#8b5cf6',
-  'life': '#f59e0b',
+  'business': 'var(--accent)',
+  'money': 'var(--success)',
+  'career': 'var(--purple)',
+  'life': 'var(--warning)',
   'urban': '#6366f1',
   'social': '#ec4899',
 };
@@ -197,10 +197,11 @@ export default function PhotoUpload({ onSeedSelect, onClose }: PhotoUploadProps)
       onClick={(e) => e.stopPropagation()}
     >
       <div
-        className="bg-white dark:bg-[#141414] rounded-xl overflow-hidden w-[95vw] sm:min-w-[400px] max-w-[440px] flex flex-col"
+        className="rounded-xl overflow-hidden w-[95vw] sm:min-w-[400px] max-w-[440px] flex flex-col"
         style={{
-          boxShadow: '0 20px 60px rgba(0,0,0,0.15), 0 4px 16px rgba(0,0,0,0.08)',
-          border: '1px solid rgba(0,0,0,0.08)',
+          background: 'var(--surface)',
+          boxShadow: '0 20px 60px color-mix(in srgb, var(--foreground) 15%, transparent), 0 4px 16px color-mix(in srgb, var(--foreground) 8%, transparent)',
+          border: '1px solid color-mix(in srgb, var(--foreground) 8%, transparent)',
         }}
       >
         {/* Header */}
@@ -238,8 +239,8 @@ export default function PhotoUpload({ onSeedSelect, onClose }: PhotoUploadProps)
             <div
               className="border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-all"
               style={{
-                borderColor: dragOver ? '#3b82f6' : 'rgba(0,0,0,0.1)',
-                background: dragOver ? 'rgba(59,130,246,0.04)' : 'transparent',
+                borderColor: dragOver ? 'var(--accent)' : 'color-mix(in srgb, var(--foreground) 10%, transparent)',
+                background: dragOver ? 'color-mix(in srgb, var(--accent) 4%, transparent)' : 'transparent',
               }}
               onClick={() => fileRef.current?.click()}
             >
@@ -276,7 +277,7 @@ export default function PhotoUpload({ onSeedSelect, onClose }: PhotoUploadProps)
               />
               {/* Context overlay */}
               {context && (
-                <div className="absolute bottom-0 left-0 right-0 px-3 py-2" style={{ background: 'linear-gradient(transparent, rgba(0,0,0,0.7))' }}>
+                <div className="absolute bottom-0 left-0 right-0 px-3 py-2" style={{ background: 'linear-gradient(transparent, color-mix(in srgb, var(--foreground) 70%, transparent))' }}>
                   <div className="flex items-center gap-2 flex-wrap">
                     {context.location && (
                       <span className="text-[10px] text-white/90 bg-white/15 px-2 py-0.5 rounded-full backdrop-blur-sm">
@@ -347,15 +348,15 @@ export default function PhotoUpload({ onSeedSelect, onClose }: PhotoUploadProps)
                   key={seed.id}
                   className="group mx-1 px-3 py-3 rounded-lg cursor-pointer transition-all"
                   onClick={() => handleSeedClick(seed)}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(59,130,246,0.04)'; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = 'color-mix(in srgb, var(--accent) 4%, transparent)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}
                 >
                   <div className="flex items-start gap-2.5">
                     <div
                       className="mt-0.5 shrink-0 w-7 h-7 rounded-lg flex items-center justify-center"
                       style={{
-                        background: `${CATEGORY_COLORS[seed.category] || '#6b7280'}15`,
-                        color: CATEGORY_COLORS[seed.category] || '#6b7280',
+                        background: `color-mix(in srgb, ${CATEGORY_COLORS[seed.category] || 'var(--muted-foreground)'} 8%, transparent)`,
+                        color: CATEGORY_COLORS[seed.category] || 'var(--muted-foreground)',
                       }}
                     >
                       <SeedIcon name={seed.icon} />
@@ -368,8 +369,8 @@ export default function PhotoUpload({ onSeedSelect, onClose }: PhotoUploadProps)
                         <span
                           className="text-[9px] font-medium px-1.5 py-0.5 rounded-full shrink-0"
                           style={{
-                            background: `${CATEGORY_COLORS[seed.category] || '#6b7280'}15`,
-                            color: CATEGORY_COLORS[seed.category] || '#6b7280',
+                            background: `color-mix(in srgb, ${CATEGORY_COLORS[seed.category] || 'var(--muted-foreground)'} 8%, transparent)`,
+                            color: CATEGORY_COLORS[seed.category] || 'var(--muted-foreground)',
                           }}
                         >
                           {seed.category}
@@ -385,7 +386,7 @@ export default function PhotoUpload({ onSeedSelect, onClose }: PhotoUploadProps)
                             className="h-full rounded-full transition-all"
                             style={{
                               width: `${seed.confidence}%`,
-                              background: CATEGORY_COLORS[seed.category] || '#6b7280',
+                              background: CATEGORY_COLORS[seed.category] || 'var(--muted-foreground)',
                               opacity: 0.6,
                             }}
                           />

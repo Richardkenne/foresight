@@ -489,7 +489,7 @@ function SimNodeComponent({ data }: NodeProps) {
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M18 6L6 18M6 6l12 12" />
           </svg>
-          <span style={{ fontSize: 9, fontWeight: 600, color: 'var(--danger)', fontFamily: 'var(--font-geist-mono)' }}>
+          <span style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--danger)', fontFamily: 'var(--font-geist-mono)' }}>
             {deathCount} dropped
           </span>
         </div>

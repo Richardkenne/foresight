@@ -290,8 +290,8 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                 className="w-9 h-9 rounded-full flex items-center justify-center"
                 style={{
                   background: myFate.outcome === 'success'
-                    ? 'rgba(5,150,105,0.1)'
-                    : 'rgba(220,38,38,0.1)',
+                    ? 'var(--success-muted)'
+                    : 'var(--danger-muted)',
                 }}
               >
                 <IconTarget size={18} />
@@ -353,9 +353,9 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                         <div
                           className="w-3 h-3 rounded-full shrink-0 mt-1.5"
                           style={{
-                            background: isFailPoint ? '#dc2626'
-                              : isSuccess ? '#059669'
-                              : isBad ? '#dc2626'
+                            background: isFailPoint ? 'var(--danger-hover)'
+                              : isSuccess ? 'var(--success-hover)'
+                              : isBad ? 'var(--danger-hover)'
                               : isGate ? 'var(--foreground)' : 'var(--muted)',
                             opacity: isGate ? 0.7 : 1,
                           }}
@@ -370,7 +370,7 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                         <div className="flex items-center gap-2">
                           <span
                             className="text-[12px] font-medium"
-                            style={{ color: isFailPoint ? '#dc2626' : isSuccess ? '#059669' : 'var(--foreground)' }}
+                            style={{ color: isFailPoint ? 'var(--danger-hover)' : isSuccess ? 'var(--success-hover)' : 'var(--foreground)' }}
                           >
                             {node.label}
                           </span>
@@ -378,8 +378,8 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                             <span
                               className="text-[9px] px-1.5 py-0.5 rounded-full font-medium tabular-nums"
                               style={{
-                                background: isFailPoint ? 'rgba(220,38,38,0.08)' : 'rgba(5,150,105,0.08)',
-                                color: isFailPoint ? '#dc2626' : '#059669',
+                                background: isFailPoint ? 'color-mix(in srgb, var(--danger-hover) 8%, transparent)' : 'color-mix(in srgb, var(--success-hover) 8%, transparent)',
+                                color: isFailPoint ? 'var(--danger-hover)' : 'var(--success-hover)',
                                 fontFamily: 'var(--font-geist-mono)',
                               }}
                             >
@@ -409,10 +409,10 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
             {activeTab === 'diagnosis' && (
               <div>
                 {myFate.outcome === 'success' ? (
-                  <div className="rounded-xl p-4" style={{ background: 'rgba(5,150,105,0.06)', border: '1px solid rgba(5,150,105,0.15)' }}>
+                  <div className="rounded-xl p-4" style={{ background: 'color-mix(in srgb, var(--success-hover) 6%, transparent)', border: '1px solid color-mix(in srgb, var(--success-hover) 15%, transparent)' }}>
                     <div className="flex items-center gap-2 mb-2">
                       <IconCheck size={16} />
-                      <span className="text-[13px] font-semibold" style={{ color: '#059669' }}>You succeeded</span>
+                      <span className="text-[13px] font-semibold" style={{ color: 'var(--success-hover)' }}>You succeeded</span>
                     </div>
                     <p className="text-[11px] leading-relaxed" style={{ color: 'var(--muted)' }}>
                       You passed every bottleneck in the simulation. Your sacred root profile was strong enough to navigate this path.
@@ -421,10 +421,10 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                 ) : failureNode && failureData ? (
                   <div className="space-y-4">
                     {/* Failure point */}
-                    <div className="rounded-xl p-4" style={{ background: 'rgba(220,38,38,0.04)', border: '1px solid rgba(220,38,38,0.12)' }}>
+                    <div className="rounded-xl p-4" style={{ background: 'color-mix(in srgb, var(--danger-hover) 4%, transparent)', border: '1px solid color-mix(in srgb, var(--danger-hover) 12%, transparent)' }}>
                       <div className="flex items-center gap-2 mb-2">
                         <IconAlertTriangle size={16} />
-                        <span className="text-[13px] font-semibold" style={{ color: '#dc2626' }}>
+                        <span className="text-[13px] font-semibold" style={{ color: 'var(--danger-hover)' }}>
                           Where You Fell
                         </span>
                       </div>
@@ -452,7 +452,7 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                               className="text-[18px] font-semibold tabular-nums"
                               style={{
                                 fontFamily: 'var(--font-geist-mono)',
-                                color: failurePersonalProb.personal < failurePersonalProb.generic ? '#dc2626' : '#059669',
+                                color: failurePersonalProb.personal < failurePersonalProb.generic ? 'var(--danger-hover)' : 'var(--success-hover)',
                               }}
                             >
                               {failurePersonalProb.personal}%
@@ -464,7 +464,7 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                               className="text-[18px] font-semibold tabular-nums"
                               style={{
                                 fontFamily: 'var(--font-geist-mono)',
-                                color: failurePersonalProb.modifier < 1 ? '#dc2626' : '#059669',
+                                color: failurePersonalProb.modifier < 1 ? 'var(--danger-hover)' : 'var(--success-hover)',
                               }}
                             >
                               {failurePersonalProb.modifier}x
@@ -491,8 +491,8 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                                   className="text-[11px] font-semibold tabular-nums px-2 py-0.5 rounded-full"
                                   style={{
                                     fontFamily: 'var(--font-geist-mono)',
-                                    background: score <= 4 ? 'rgba(220,38,38,0.08)' : score <= 6 ? 'rgba(217,119,6,0.08)' : 'rgba(5,150,105,0.08)',
-                                    color: score <= 4 ? '#dc2626' : score <= 6 ? '#d97706' : '#059669',
+                                    background: score <= 4 ? 'color-mix(in srgb, var(--danger-hover) 8%, transparent)' : score <= 6 ? 'var(--warning-muted)' : 'color-mix(in srgb, var(--success-hover) 8%, transparent)',
+                                    color: score <= 4 ? 'var(--danger-hover)' : score <= 6 ? 'var(--warning-hover)' : 'var(--success-hover)',
                                   }}
                                 >
                                   {score}/10
@@ -508,7 +508,7 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                                   className="h-full rounded-full transition-all"
                                   style={{
                                     width: `${score * 10}%`,
-                                    background: score <= 4 ? '#dc2626' : score <= 6 ? '#d97706' : '#059669',
+                                    background: score <= 4 ? 'var(--danger-hover)' : score <= 6 ? 'var(--warning-hover)' : 'var(--success-hover)',
                                   }}
                                 />
                               </div>
@@ -540,8 +540,8 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
             {activeTab === 'prescription' && (
               <div className="space-y-4">
                 {myFate.outcome === 'success' && (
-                  <div className="rounded-xl p-4" style={{ background: 'rgba(5,150,105,0.06)', border: '1px solid rgba(5,150,105,0.15)' }}>
-                    <p className="text-[11px]" style={{ color: '#059669' }}>
+                  <div className="rounded-xl p-4" style={{ background: 'color-mix(in srgb, var(--success-hover) 6%, transparent)', border: '1px solid color-mix(in srgb, var(--success-hover) 15%, transparent)' }}>
+                    <p className="text-[11px]" style={{ color: 'var(--success-hover)' }}>
                       You passed all bottlenecks. Focus on strengthening your weakest roots to maintain resilience.
                     </p>
                   </div>
@@ -568,8 +568,8 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                               <span
                                 className="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0"
                                 style={{
-                                  background: idx === 0 ? 'rgba(220,38,38,0.1)' : 'rgba(217,119,6,0.1)',
-                                  color: idx === 0 ? '#dc2626' : '#d97706',
+                                  background: idx === 0 ? 'var(--danger-muted)' : 'var(--warning-muted)',
+                                  color: idx === 0 ? 'var(--danger-hover)' : 'var(--warning-hover)',
                                   fontFamily: 'var(--font-geist-mono)',
                                 }}
                               >
@@ -673,7 +673,7 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                         </div>
                         <div
                           className="text-[20px] font-semibold tabular-nums"
-                          style={{ fontFamily: 'var(--font-geist-mono)', color: sc.prob > currentCompound ? '#059669' : 'var(--foreground)' }}
+                          style={{ fontFamily: 'var(--font-geist-mono)', color: sc.prob > currentCompound ? 'var(--success-hover)' : 'var(--foreground)' }}
                         >
                           {sc.prob}%
                         </div>
@@ -683,8 +683,8 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                           className="text-[11px] font-medium tabular-nums px-2 py-0.5 rounded-full mb-1"
                           style={{
                             fontFamily: 'var(--font-geist-mono)',
-                            background: sc.delta > 0 ? 'rgba(5,150,105,0.08)' : 'rgba(220,38,38,0.08)',
-                            color: sc.delta > 0 ? '#059669' : '#dc2626',
+                            background: sc.delta > 0 ? 'color-mix(in srgb, var(--success-hover) 8%, transparent)' : 'color-mix(in srgb, var(--danger-hover) 8%, transparent)',
+                            color: sc.delta > 0 ? 'var(--success-hover)' : 'var(--danger-hover)',
                           }}
                         >
                           {sc.delta > 0 ? '+' : ''}{sc.delta}%
@@ -707,7 +707,7 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                     </div>
                     <div
                       className="text-[16px] font-semibold"
-                      style={{ color: myFate.outcome === 'success' ? '#059669' : '#dc2626' }}
+                      style={{ color: myFate.outcome === 'success' ? 'var(--success-hover)' : 'var(--danger-hover)' }}
                     >
                       {myFate.outcome === 'success' ? 'Succeeded' : 'Blocked'}
                     </div>
@@ -750,10 +750,10 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                               key={`my-${i}`}
                               className="text-[8px] px-1.5 py-0.5 rounded"
                               style={{
-                                background: type === 'outcome-good' ? 'rgba(5,150,105,0.1)' :
-                                  type === 'outcome-bad' ? 'rgba(220,38,38,0.1)' : 'var(--surface-hover)',
-                                color: type === 'outcome-good' ? '#059669' :
-                                  type === 'outcome-bad' ? '#dc2626' : 'var(--muted-foreground)',
+                                background: type === 'outcome-good' ? 'var(--success-muted)' :
+                                  type === 'outcome-bad' ? 'var(--danger-muted)' : 'var(--surface-hover)',
+                                color: type === 'outcome-good' ? 'var(--success-hover)' :
+                                  type === 'outcome-bad' ? 'var(--danger-hover)' : 'var(--muted-foreground)',
                                 fontFamily: 'var(--font-geist-mono)',
                               }}
                             >
@@ -779,10 +779,10 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                               key={`common-${i}`}
                               className="text-[8px] px-1.5 py-0.5 rounded"
                               style={{
-                                background: type === 'outcome-good' ? 'rgba(5,150,105,0.1)' :
-                                  type === 'outcome-bad' ? 'rgba(220,38,38,0.1)' : 'var(--surface-hover)',
-                                color: type === 'outcome-good' ? '#059669' :
-                                  type === 'outcome-bad' ? '#dc2626' : 'var(--muted-foreground)',
+                                background: type === 'outcome-good' ? 'var(--success-muted)' :
+                                  type === 'outcome-bad' ? 'var(--danger-muted)' : 'var(--surface-hover)',
+                                color: type === 'outcome-good' ? 'var(--success-hover)' :
+                                  type === 'outcome-bad' ? 'var(--danger-hover)' : 'var(--muted-foreground)',
                                 fontFamily: 'var(--font-geist-mono)',
                               }}
                             >
@@ -820,18 +820,18 @@ export default function AvatarReport({ fates, nodes, edges, sacredProfile, onClo
                     <div className="h-4 rounded-full overflow-hidden flex" style={{ background: 'var(--surface-hover)' }}>
                       <div
                         className="h-full"
-                        style={{ width: `${successRate}%`, background: '#059669', opacity: 0.3 }}
+                        style={{ width: `${successRate}%`, background: 'var(--success-hover)', opacity: 0.3 }}
                       />
                       <div
                         className="h-full"
-                        style={{ width: `${100 - successRate}%`, background: '#dc2626', opacity: 0.3 }}
+                        style={{ width: `${100 - successRate}%`, background: 'var(--danger-hover)', opacity: 0.3 }}
                       />
                     </div>
                     <div className="flex justify-between mt-1">
-                      <span className="text-[8px] tabular-nums" style={{ color: '#059669', fontFamily: 'var(--font-geist-mono)' }}>
+                      <span className="text-[8px] tabular-nums" style={{ color: 'var(--success-hover)', fontFamily: 'var(--font-geist-mono)' }}>
                         {successRate}% succeeded
                       </span>
-                      <span className="text-[8px] tabular-nums" style={{ color: '#dc2626', fontFamily: 'var(--font-geist-mono)' }}>
+                      <span className="text-[8px] tabular-nums" style={{ color: 'var(--danger-hover)', fontFamily: 'var(--font-geist-mono)' }}>
                         {100 - successRate}% blocked
                       </span>
                     </div>

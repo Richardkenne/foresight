@@ -81,7 +81,7 @@ export default function ApiDocsPage() {
                 <path d="M2 12l10 5 10-5" />
               </svg>
             </div>
-            <span className="text-sm font-medium text-white/50 tracking-wide uppercase">Simulator API</span>
+            <span className="text-sm font-medium text-white/50 tracking-wide uppercase">Foresight API</span>
           </div>
           <h1 className="text-4xl font-semibold text-white tracking-tight mb-3">Prediction API</h1>
           <p className="text-lg text-white/60 leading-relaxed max-w-[640px]">
@@ -346,7 +346,7 @@ for item in results:
 
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-white/5 text-xs text-white/30">
-          <p>Simulator Prediction API v1.0 -- Deterministic scenario analysis powered by 350K+ data points.</p>
+          <p>Foresight Prediction API v1.0 -- Deterministic scenario analysis powered by 350K+ data points.</p>
         </div>
       </div>
     </div>

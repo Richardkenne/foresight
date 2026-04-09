@@ -76,13 +76,13 @@ export function usePathFilter(
     }
 
     // Apply opacity + color tint per path type
-    const tintColor = filter === 'success' ? 'rgba(16, 185, 129, 0.08)'
-      : filter === 'fail' ? 'rgba(239, 68, 68, 0.08)'
-      : filter === 'partial' ? 'rgba(120, 120, 120, 0.12)'
+    const tintColor = filter === 'success' ? 'var(--success-muted)'
+      : filter === 'fail' ? 'var(--danger-muted)'
+      : filter === 'partial' ? 'color-mix(in srgb, var(--muted-foreground) 12%, transparent)'
       : 'transparent';
-    const borderColor = filter === 'success' ? 'rgba(16, 185, 129, 0.4)'
-      : filter === 'fail' ? 'rgba(239, 68, 68, 0.4)'
-      : filter === 'partial' ? 'rgba(120, 120, 120, 0.5)'
+    const borderColor = filter === 'success' ? 'color-mix(in srgb, var(--success) 40%, transparent)'
+      : filter === 'fail' ? 'color-mix(in srgb, var(--danger) 40%, transparent)'
+      : filter === 'partial' ? 'color-mix(in srgb, var(--muted-foreground) 50%, transparent)'
       : undefined;
 
     setNodes(prev => prev.map(n => {

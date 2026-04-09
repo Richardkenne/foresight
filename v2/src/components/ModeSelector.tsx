@@ -34,7 +34,7 @@ function ModeTooltip({ mode }: { mode: SimMode }) {
         style={{
           background: 'var(--surface)',
           border: '1px solid color-mix(in srgb, var(--foreground) 12%, transparent)',
-          boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
+          boxShadow: '0 8px 24px color-mix(in srgb, var(--foreground) 15%, transparent)',
         }}
       >
         <div

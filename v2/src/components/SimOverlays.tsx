@@ -26,7 +26,7 @@ export function CutLineIndicator({ cutNodeId, nodes }: { cutNodeId: string | nul
           top: -3000,
           width: 2,
           height: 8000,
-          background: 'repeating-linear-gradient(to bottom, #ef4444 0, #ef4444 8px, transparent 8px, transparent 16px)',
+          background: 'repeating-linear-gradient(to bottom, var(--danger) 0, var(--danger) 8px, transparent 8px, transparent 16px)',
           opacity: 0.5,
         }}
       />
@@ -37,7 +37,7 @@ export function CutLineIndicator({ cutNodeId, nodes }: { cutNodeId: string | nul
           top: nodeY - 10,
         }}
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
           <line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/>
           <line x1="8.12" y1="8.12" x2="12" y2="12"/>
@@ -55,16 +55,16 @@ export function StressOverlay({ survivalRate }: { survivalRate: number }) {
       animate={{ opacity: 1, y: 0 }}
       className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-lg"
       style={{
-        background: survivalRate > 50 ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)',
-        border: `1px solid ${survivalRate > 50 ? 'rgba(16, 185, 129, 0.3)' : 'rgba(239, 68, 68, 0.3)'}`,
+        background: survivalRate > 50 ? 'color-mix(in srgb, var(--success) 15%, transparent)' : 'color-mix(in srgb, var(--danger) 15%, transparent)',
+        border: `1px solid ${survivalRate > 50 ? 'color-mix(in srgb, var(--success) 30%, transparent)' : 'color-mix(in srgb, var(--danger) 30%, transparent)'}`,
         backdropFilter: 'blur(8px)',
       }}
     >
       <div className="flex items-center gap-3">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={survivalRate > 50 ? '#10b981' : '#ef4444'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={survivalRate > 50 ? 'var(--success)' : 'var(--danger)'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
         </svg>
-        <span className="text-[12px] font-medium" style={{ color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>
+        <span className="text-[var(--text-sm)] font-medium" style={{ color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>
           Stress Test: {survivalRate}% survive worst case
         </span>
       </div>
@@ -134,8 +134,8 @@ export function ParticleLayer({
                   transform: 'translateX(-50%)',
                   fontSize: 8,
                   fontWeight: 800,
-                  color: '#fbbf24',
-                  textShadow: '0 1px 3px rgba(0,0,0,0.5)',
+                  color: 'var(--warning)',
+                  textShadow: '0 1px 3px color-mix(in srgb, var(--foreground) 50%, transparent)',
                   letterSpacing: '0.08em',
                   whiteSpace: 'nowrap',
                   fontFamily: 'var(--font-geist-mono), monospace',

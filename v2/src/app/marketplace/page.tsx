@@ -176,7 +176,7 @@ export default function MarketplacePage() {
           gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
         }}>
           {[
-            { num: '01', title: 'Pick a scenario', desc: 'Browse life and business scenarios from the Simulator.' },
+            { num: '01', title: 'Pick a scenario', desc: 'Browse life and business scenarios from Foresight.' },
             { num: '02', title: 'Place your bet', desc: 'Bet YES or NO on the outcome. Real money, real conviction.' },
             { num: '03', title: 'Calibrate truth', desc: 'Collective bets create the most accurate probability model ever built.' },
           ].map((s) => (

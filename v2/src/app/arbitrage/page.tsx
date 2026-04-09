@@ -100,10 +100,10 @@ type SortMode = 'gap-desc' | 'gap-asc' | 'category';
 
 function GapBadge({ score }: { score: number }) {
   const getColor = (s: number) => {
-    if (s >= 9) return { bg: 'rgba(239,68,68,0.12)', text: '#ef4444', border: 'rgba(239,68,68,0.25)' };
-    if (s >= 7) return { bg: 'rgba(245,158,11,0.12)', text: '#f59e0b', border: 'rgba(245,158,11,0.25)' };
-    if (s >= 5) return { bg: 'rgba(16,185,129,0.12)', text: '#10b981', border: 'rgba(16,185,129,0.25)' };
-    return { bg: 'rgba(148,163,184,0.12)', text: '#94a3b8', border: 'rgba(148,163,184,0.25)' };
+    if (s >= 9) return { bg: 'var(--danger-muted)', text: 'var(--danger)', border: 'color-mix(in srgb, var(--danger) 25%, transparent)' };
+    if (s >= 7) return { bg: 'var(--warning-muted)', text: 'var(--warning)', border: 'color-mix(in srgb, var(--warning) 25%, transparent)' };
+    if (s >= 5) return { bg: 'var(--success-muted)', text: 'var(--success)', border: 'color-mix(in srgb, var(--success) 25%, transparent)' };
+    return { bg: 'color-mix(in srgb, var(--muted) 12%, transparent)', text: 'var(--muted)', border: 'color-mix(in srgb, var(--muted) 25%, transparent)' };
   };
   const c = getColor(score);
   return (
@@ -162,16 +162,16 @@ function OpportunityCard({
 
       {/* Perception vs Reality */}
       <div className="space-y-2 mb-3">
-        <div className="rounded-lg p-2.5" style={{ background: 'rgba(239,68,68,0.06)', border: '1px solid rgba(239,68,68,0.1)' }}>
-          <div className="text-[9px] font-semibold uppercase tracking-wider mb-1" style={{ color: '#ef4444' }}>
+        <div className="rounded-lg p-2.5" style={{ background: 'color-mix(in srgb, var(--danger) 6%, transparent)', border: '1px solid color-mix(in srgb, var(--danger) 10%, transparent)' }}>
+          <div className="text-[9px] font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--danger)' }}>
             Public Perception
           </div>
           <p className="text-[11px] leading-relaxed" style={{ color: 'var(--foreground)', opacity: 0.85 }}>
             {opp.publicPerception}
           </p>
         </div>
-        <div className="rounded-lg p-2.5" style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.1)' }}>
-          <div className="text-[9px] font-semibold uppercase tracking-wider mb-1" style={{ color: '#10b981' }}>
+        <div className="rounded-lg p-2.5" style={{ background: 'color-mix(in srgb, var(--success) 6%, transparent)', border: '1px solid color-mix(in srgb, var(--success) 10%, transparent)' }}>
+          <div className="text-[9px] font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--success)' }}>
             Data Reality
           </div>
           <p className="text-[11px] leading-relaxed" style={{ color: 'var(--foreground)', opacity: 0.85 }}>
@@ -263,14 +263,14 @@ function DetailModal({
 
         {/* Perception vs Reality */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
-          <div className="rounded-xl p-4" style={{ background: 'rgba(239,68,68,0.06)', border: '1px solid rgba(239,68,68,0.12)' }}>
-            <div className="text-[10px] font-semibold uppercase tracking-wider mb-2" style={{ color: '#ef4444' }}>
+          <div className="rounded-xl p-4" style={{ background: 'color-mix(in srgb, var(--danger) 6%, transparent)', border: '1px solid color-mix(in srgb, var(--danger) 12%, transparent)' }}>
+            <div className="text-[10px] font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--danger)' }}>
               Public Perception
             </div>
             <p className="text-[12px] leading-relaxed">{opp.publicPerception}</p>
           </div>
-          <div className="rounded-xl p-4" style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.12)' }}>
-            <div className="text-[10px] font-semibold uppercase tracking-wider mb-2" style={{ color: '#10b981' }}>
+          <div className="rounded-xl p-4" style={{ background: 'color-mix(in srgb, var(--success) 6%, transparent)', border: '1px solid color-mix(in srgb, var(--success) 12%, transparent)' }}>
+            <div className="text-[10px] font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--success)' }}>
               Data Reality
             </div>
             <p className="text-[12px] leading-relaxed">{opp.dataReality}</p>
@@ -286,7 +286,7 @@ function DetailModal({
         </div>
 
         {/* Opportunity */}
-        <div className="rounded-xl p-4 mb-5" style={{ background: 'rgba(139,92,246,0.06)', border: '1px solid rgba(139,92,246,0.12)' }}>
+        <div className="rounded-xl p-4 mb-5" style={{ background: 'var(--purple-muted)', border: '1px solid color-mix(in srgb, var(--purple) 12%, transparent)' }}>
           <div className="text-[10px] font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--purple)' }}>
             The Opportunity
           </div>
@@ -390,7 +390,7 @@ export default function ArbitragePage() {
             <ArrowLeftIcon />
           </a>
           <div className="flex items-center gap-2">
-            <div className="p-1.5 rounded-lg" style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444' }}>
+            <div className="p-1.5 rounded-lg" style={{ background: 'var(--danger-muted)', color: 'var(--danger)' }}>
               <ScaleIcon />
             </div>
             <div>

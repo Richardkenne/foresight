@@ -105,7 +105,7 @@ export function ComingSoonBadge({ date }: { date: string }) {
       gap: 'var(--space-2)',
       padding: 'var(--space-1) var(--space-3)',
       borderRadius: 20,
-      fontSize: 12,
+      fontSize: 'var(--text-sm)',
       fontWeight: 600,
       letterSpacing: '0.02em',
       color: 'var(--purple)',
@@ -143,7 +143,7 @@ export function EmailSignup({ storageKey }: { storageKey: string }) {
         borderRadius: 8,
         background: 'color-mix(in srgb, var(--success) 10%, transparent)',
         color: 'var(--success)',
-        fontSize: 13,
+        fontSize: 'var(--text-base)',
         fontWeight: 500,
       }}>
         {Icons.check}
@@ -172,7 +172,7 @@ export function EmailSignup({ storageKey }: { storageKey: string }) {
           border: '1px solid var(--border)',
           background: 'var(--surface)',
           color: 'var(--foreground)',
-          fontSize: 13,
+          fontSize: 'var(--text-base)',
           outline: 'none',
         }}
       />
@@ -185,7 +185,7 @@ export function EmailSignup({ storageKey }: { storageKey: string }) {
         border: 'none',
         background: 'var(--accent)',
         color: 'var(--accent-foreground)',
-        fontSize: 13,
+        fontSize: 'var(--text-base)',
         fontWeight: 600,
         cursor: 'pointer',
         whiteSpace: 'nowrap',
@@ -227,7 +227,7 @@ function ScaffoldNav({ current }: { current: string }) {
           textDecoration: 'none',
           color: 'var(--foreground)',
           fontWeight: 600,
-          fontSize: 14,
+          fontSize: 'var(--text-md)',
         }}>
           {Icons.graph}
           <span>Foresight</span>
@@ -242,7 +242,7 @@ function ScaffoldNav({ current }: { current: string }) {
             <Link key={link.href} href={link.href} style={{
               padding: 'var(--space-2) var(--space-3)',
               borderRadius: 6,
-              fontSize: 12,
+              fontSize: 'var(--text-sm)',
               fontWeight: 500,
               textDecoration: 'none',
               whiteSpace: 'nowrap',
@@ -281,7 +281,7 @@ function ScaffoldFooter() {
         }}>
           {NAV_LINKS.map((link) => (
             <Link key={link.href} href={link.href} style={{
-              fontSize: 12,
+              fontSize: 'var(--text-sm)',
               color: 'var(--muted-foreground)',
               textDecoration: 'none',
             }}>
@@ -291,7 +291,7 @@ function ScaffoldFooter() {
         </div>
         <p style={{
           textAlign: 'center',
-          fontSize: 11,
+          fontSize: 'var(--text-xs)',
           color: 'var(--muted)',
         }}>
           Deterministic life simulation. Built with real data.

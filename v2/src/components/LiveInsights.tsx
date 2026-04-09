@@ -139,10 +139,10 @@ function computeInsights(
 }
 
 const TYPE_STYLES: Record<string, { color: string; icon: string }> = {
-  stat: { color: '#3b82f6', icon: '#' },
-  alert: { color: '#f59e0b', icon: '!' },
-  pattern: { color: '#8b5cf6', icon: '~' },
-  ai: { color: '#10b981', icon: '*' },
+  stat: { color: 'var(--accent)', icon: '#' },
+  alert: { color: 'var(--warning)', icon: '!' },
+  pattern: { color: 'var(--purple)', icon: '~' },
+  ai: { color: 'var(--success)', icon: '*' },
 };
 
 export default function LiveInsights({ simStats, nodes, nodeReachRef, edges, scenario, onClose }: LiveInsightsProps) {
@@ -208,8 +208,8 @@ export default function LiveInsights({ simStats, nodes, nodeReachRef, edges, sce
       {/* Header */}
       <div className="flex justify-between items-center px-4 pt-4 pb-3" style={{ borderBottom: '1px solid var(--border)' }}>
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#ef4444' }} />
-          <span style={{ fontSize: 11, fontWeight: 700, color: '#ef4444', letterSpacing: '0.1em', fontFamily: 'var(--font-geist-mono, monospace)' }}>LIVE INSIGHTS</span>
+          <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: 'var(--danger)' }} />
+          <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--danger)', letterSpacing: '0.1em', fontFamily: 'var(--font-geist-mono, monospace)' }}>LIVE INSIGHTS</span>
         </div>
         <button
           onClick={onClose}
@@ -224,12 +224,12 @@ export default function LiveInsights({ simStats, nodes, nodeReachRef, edges, sce
 
       {/* Real-time world ticker */}
       {realTimeFacts.length > 0 && (
-        <div className="px-4 py-3" style={{ borderBottom: '1px solid var(--border)', background: 'rgba(239, 68, 68, 0.04)' }}>
+        <div className="px-4 py-3" style={{ borderBottom: '1px solid var(--border)', background: 'color-mix(in srgb, var(--danger) 4%, transparent)' }}>
           <div className="flex items-center gap-1.5 mb-1.5">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
             </svg>
-            <span style={{ fontSize: 9, fontWeight: 700, color: '#ef4444', letterSpacing: '0.1em', fontFamily: 'var(--font-geist-mono, monospace)' }}>RIGHT NOW IN THE WORLD</span>
+            <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--danger)', letterSpacing: '0.1em', fontFamily: 'var(--font-geist-mono, monospace)' }}>RIGHT NOW IN THE WORLD</span>
           </div>
           <AnimatePresence mode="wait">
             <motion.p
@@ -238,14 +238,14 @@ export default function LiveInsights({ simStats, nodes, nodeReachRef, edges, sce
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.4 }}
-              style={{ fontSize: 11, color: 'var(--foreground)', lineHeight: 1.6 }}
+              style={{ fontSize: 'var(--text-xs)', color: 'var(--foreground)', lineHeight: 1.6 }}
             >
               {realTimeFacts[currentFactIdx]}
             </motion.p>
           </AnimatePresence>
           <div className="flex gap-0.5 mt-2">
             {realTimeFacts.map((_, i) => (
-              <div key={i} className="h-[2px] flex-1 rounded-full transition-all duration-300" style={{ background: i === currentFactIdx ? '#ef4444' : 'var(--border)' }} />
+              <div key={i} className="h-[2px] flex-1 rounded-full transition-all duration-300" style={{ background: i === currentFactIdx ? 'var(--danger)' : 'var(--border)' }} />
             ))}
           </div>
         </div>
@@ -254,10 +254,10 @@ export default function LiveInsights({ simStats, nodes, nodeReachRef, edges, sce
       {/* Insights feed */}
       <div className="flex-1 overflow-y-auto px-4 py-3 space-y-1.5">
         {insights.length === 0 && realTimeFacts.length === 0 && (
-          <div style={{ color: 'var(--muted)', fontSize: 12, textAlign: 'center', paddingTop: 40 }}>
+          <div style={{ color: 'var(--muted)', fontSize: 'var(--text-sm)', textAlign: 'center', paddingTop: 40 }}>
             Connecting to real-time data...
             <br />
-            <span style={{ fontSize: 10 }}>Loading world facts + simulation insights</span>
+            <span style={{ fontSize: 'var(--text-xs)' }}>Loading world facts + simulation insights</span>
           </div>
         )}
         {insights.map((insight) => {
@@ -270,15 +270,15 @@ export default function LiveInsights({ simStats, nodes, nodeReachRef, edges, sce
             >
               <div className="flex items-start gap-2">
                 <span style={{
-                  fontSize: 10, fontWeight: 800, color: s.color,
+                  fontSize: 'var(--text-xs)', fontWeight: 800, color: s.color,
                   fontFamily: 'var(--font-geist-mono, monospace)',
                   width: 14, textAlign: 'center', flexShrink: 0, marginTop: 1,
                 }}>
                   {s.icon}
                 </span>
                 <div className="flex-1 min-w-0">
-                  <p style={{ fontSize: 11, color: 'var(--foreground)', lineHeight: 1.5 }}>{insight.text}</p>
-                  <span style={{ fontSize: 9, color: 'var(--muted)', fontFamily: 'var(--font-geist-mono, monospace)' }}>{insight.time}</span>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--foreground)', lineHeight: 1.5 }}>{insight.text}</p>
+                  <span style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)', fontFamily: 'var(--font-geist-mono, monospace)' }}>{insight.time}</span>
                 </div>
               </div>
             </div>

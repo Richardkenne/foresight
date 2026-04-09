@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Prediction Marketplace — Simulator',
+  title: 'Prediction Marketplace — Foresight',
   description: 'Like Polymarket for real life. Bet on whether scenarios succeed or fail. Real money calibrates the model.',
 };
 

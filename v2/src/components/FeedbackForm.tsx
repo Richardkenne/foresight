@@ -23,22 +23,22 @@ const OUTCOME_OPTIONS: { value: FeedbackEntry['actualOutcome']; label: string; c
   {
     value: 'success',
     label: 'I succeeded',
-    color: '#059669',
-    bgColor: 'rgba(5, 150, 105, 0.08)',
+    color: 'var(--success-hover)',
+    bgColor: 'var(--success-muted)',
     icon: 'M20 6L9 17l-5-5',
   },
   {
     value: 'partial',
     label: 'Partially',
-    color: '#d97706',
-    bgColor: 'rgba(217, 119, 6, 0.08)',
+    color: 'var(--warning-hover)',
+    bgColor: 'var(--warning-muted)',
     icon: 'M5 12h14',
   },
   {
     value: 'failure',
     label: "It didn't work out",
-    color: '#6b7280',
-    bgColor: 'rgba(107, 114, 128, 0.08)',
+    color: 'var(--muted-foreground)',
+    bgColor: 'color-mix(in srgb, var(--muted-foreground) 8%, transparent)',
     icon: 'M18 6L6 18M6 6l12 12',
   },
 ];
@@ -98,7 +98,7 @@ export default function FeedbackForm({ scenario, predictedProb, simulationId, on
         {/* Backdrop */}
         <div
           className="absolute inset-0"
-          style={{ background: 'rgba(0, 0, 0, 0.5)', backdropFilter: 'blur(4px)' }}
+          style={{ background: 'color-mix(in srgb, var(--foreground) 50%, transparent)', backdropFilter: 'blur(4px)' }}
           onClick={onClose}
         />
 
@@ -107,7 +107,7 @@ export default function FeedbackForm({ scenario, predictedProb, simulationId, on
           className="relative w-full max-w-[480px] mx-4 rounded-2xl overflow-hidden"
           style={{
             background: 'var(--surface)',
-            boxShadow: '0 0 0 1px var(--border), 0 24px 64px rgba(0, 0, 0, 0.2)',
+            boxShadow: '0 0 0 1px var(--border), 0 24px 64px color-mix(in srgb, var(--foreground) 20%, transparent)',
             maxHeight: '90vh',
           }}
           initial={{ scale: 0.95, y: 20 }}
@@ -120,13 +120,13 @@ export default function FeedbackForm({ scenario, predictedProb, simulationId, on
             <div className="p-8 text-center">
               <div
                 className="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center"
-                style={{ background: 'rgba(5, 150, 105, 0.1)' }}
+                style={{ background: 'var(--success-muted)' }}
               >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--success-hover)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20 6L9 17l-5-5" />
                 </svg>
               </div>
-              <h2 className="text-[17px] font-semibold mb-2" style={{ color: 'var(--foreground)' }}>
+              <h2 className="text-[var(--text-xl)] font-semibold mb-2" style={{ color: 'var(--foreground)' }}>
                 Thank you
               </h2>
               <p className="text-[13px] mb-6" style={{ color: 'var(--muted-foreground)' }}>

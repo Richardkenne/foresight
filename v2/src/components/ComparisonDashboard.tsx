@@ -59,7 +59,7 @@ export default function ComparisonDashboard({ scenarioA, scenarioB, onClose, onV
       <div className="overflow-y-auto px-6 pb-6 flex-1">
 
         {/* Verdict */}
-        <div className="rounded-xl p-4 mb-5" style={{ background: winner ? (winner === 'A' ? 'rgba(99, 102, 241, 0.06)' : 'rgba(14, 165, 233, 0.06)') : 'var(--surface-hover)', outline: '1px solid var(--border)' }}>
+        <div className="rounded-xl p-4 mb-5" style={{ background: winner ? (winner === 'A' ? 'color-mix(in srgb, var(--indigo) 6%, transparent)' : 'color-mix(in srgb, var(--sky) 6%, transparent)') : 'var(--surface-hover)', outline: '1px solid var(--border)' }}>
           <div className="text-[11px] uppercase tracking-[0.1em] font-medium mb-2" style={{ color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)' }}>
             Verdict
           </div>
@@ -73,15 +73,15 @@ export default function ComparisonDashboard({ scenarioA, scenarioB, onClose, onV
         {/* Side-by-side metrics */}
         <div className="grid grid-cols-2 gap-3 mb-5">
           {/* Scenario A */}
-          <div className="rounded-xl p-3" style={{ outline: '1px solid var(--border)', background: winner === 'A' ? 'rgba(99, 102, 241, 0.04)' : 'transparent' }}>
+          <div className="rounded-xl p-3" style={{ outline: '1px solid var(--border)', background: winner === 'A' ? 'color-mix(in srgb, var(--indigo) 4%, transparent)' : 'transparent' }}>
             <div className="flex items-center gap-1.5 mb-2">
-              <div className="w-2 h-2 rounded-full" style={{ background: '#6366f1' }} />
-              <span className="text-[9px] uppercase tracking-[0.1em] font-semibold" style={{ color: '#6366f1', fontFamily: 'var(--font-geist-mono)' }}>Scenario A</span>
+              <div className="w-2 h-2 rounded-full" style={{ background: 'var(--indigo)' }} />
+              <span className="text-[9px] uppercase tracking-[0.1em] font-semibold" style={{ color: 'var(--indigo)', fontFamily: 'var(--font-geist-mono)' }}>Scenario A</span>
             </div>
             <div className="text-[10px] mb-3 line-clamp-2" style={{ color: 'var(--muted-foreground)' }}>{scenarioA.scenario}</div>
             <div className="space-y-2">
               <div>
-                <div className="text-[22px] font-semibold tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)', color: rateA >= 50 ? '#059669' : rateA >= 25 ? '#d97706' : '#dc2626' }}>{rateA}%</div>
+                <div className="text-[22px] font-semibold tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)', color: rateA >= 50 ? 'var(--success-hover)' : rateA >= 25 ? 'var(--warning-hover)' : 'var(--danger-hover)' }}>{rateA}%</div>
                 <div className="text-[9px] uppercase tracking-[0.08em]" style={{ color: 'var(--muted)' }}>Success rate</div>
               </div>
               <div className="flex gap-3">
@@ -98,15 +98,15 @@ export default function ComparisonDashboard({ scenarioA, scenarioB, onClose, onV
           </div>
 
           {/* Scenario B */}
-          <div className="rounded-xl p-3" style={{ outline: '1px solid var(--border)', background: winner === 'B' ? 'rgba(14, 165, 233, 0.04)' : 'transparent' }}>
+          <div className="rounded-xl p-3" style={{ outline: '1px solid var(--border)', background: winner === 'B' ? 'color-mix(in srgb, var(--sky) 4%, transparent)' : 'transparent' }}>
             <div className="flex items-center gap-1.5 mb-2">
-              <div className="w-2 h-2 rounded-full" style={{ background: '#0ea5e9' }} />
-              <span className="text-[9px] uppercase tracking-[0.1em] font-semibold" style={{ color: '#0ea5e9', fontFamily: 'var(--font-geist-mono)' }}>Scenario B</span>
+              <div className="w-2 h-2 rounded-full" style={{ background: 'var(--sky)' }} />
+              <span className="text-[9px] uppercase tracking-[0.1em] font-semibold" style={{ color: 'var(--sky)', fontFamily: 'var(--font-geist-mono)' }}>Scenario B</span>
             </div>
             <div className="text-[10px] mb-3 line-clamp-2" style={{ color: 'var(--muted-foreground)' }}>{scenarioB.scenario}</div>
             <div className="space-y-2">
               <div>
-                <div className="text-[22px] font-semibold tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)', color: rateB >= 50 ? '#059669' : rateB >= 25 ? '#d97706' : '#dc2626' }}>{rateB}%</div>
+                <div className="text-[22px] font-semibold tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)', color: rateB >= 50 ? 'var(--success-hover)' : rateB >= 25 ? 'var(--warning-hover)' : 'var(--danger-hover)' }}>{rateB}%</div>
                 <div className="text-[9px] uppercase tracking-[0.08em]" style={{ color: 'var(--muted)' }}>Success rate</div>
               </div>
               <div className="flex gap-3">
@@ -139,21 +139,21 @@ export default function ComparisonDashboard({ scenarioA, scenarioB, onClose, onV
                   style={{
                     left: delta > 0 ? '50%' : `${50 + delta / 2}%`,
                     width: `${Math.abs(delta) / 2}%`,
-                    background: delta > 0 ? '#0ea5e9' : '#6366f1',
+                    background: delta > 0 ? 'var(--sky)' : 'var(--indigo)',
                   }}
                 />
               )}
             </div>
             <span className="text-[12px] font-semibold tabular-nums shrink-0" style={{
-              color: delta > 0 ? '#0ea5e9' : delta < 0 ? '#6366f1' : 'var(--muted)',
+              color: delta > 0 ? 'var(--sky)' : delta < 0 ? 'var(--indigo)' : 'var(--muted)',
               fontFamily: 'var(--font-geist-mono)',
             }}>
               {delta > 0 ? '+' : ''}{delta}%
             </span>
           </div>
           <div className="flex justify-between mt-1">
-            <span className="text-[8px]" style={{ color: '#6366f1' }}>A better</span>
-            <span className="text-[8px]" style={{ color: '#0ea5e9' }}>B better</span>
+            <span className="text-[8px]" style={{ color: 'var(--indigo)' }}>A better</span>
+            <span className="text-[8px]" style={{ color: 'var(--sky)' }}>B better</span>
           </div>
         </div>
 
@@ -167,14 +167,14 @@ export default function ComparisonDashboard({ scenarioA, scenarioB, onClose, onV
             {scenarioA.bottlenecks.length > 0 && (
               <div className="mb-3">
                 <div className="flex items-center gap-1.5 mb-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#6366f1' }} />
-                  <span className="text-[9px] font-medium" style={{ color: '#6366f1' }}>Scenario A</span>
+                  <div className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--indigo)' }} />
+                  <span className="text-[9px] font-medium" style={{ color: 'var(--indigo)' }}>Scenario A</span>
                 </div>
                 <div className="rounded-lg overflow-hidden" style={{ outline: '1px solid var(--border)' }}>
                   {scenarioA.bottlenecks.slice(0, 3).map((b, i) => (
                     <div key={i} className="flex items-center justify-between px-3 py-2" style={{ borderBottom: i < Math.min(scenarioA.bottlenecks.length, 3) - 1 ? '1px solid var(--border-subtle)' : 'none' }}>
                       <span className="text-[10px] truncate flex-1" style={{ color: 'var(--foreground)' }}>{b.label}</span>
-                      <span className="text-[10px] font-semibold tabular-nums ml-2" style={{ color: b.actualRate < b.expectedRate ? '#dc2626' : '#059669', fontFamily: 'var(--font-geist-mono)' }}>
+                      <span className="text-[10px] font-semibold tabular-nums ml-2" style={{ color: b.actualRate < b.expectedRate ? 'var(--danger-hover)' : 'var(--success-hover)', fontFamily: 'var(--font-geist-mono)' }}>
                         {b.actualRate}%
                       </span>
                     </div>
@@ -186,14 +186,14 @@ export default function ComparisonDashboard({ scenarioA, scenarioB, onClose, onV
             {scenarioB.bottlenecks.length > 0 && (
               <div>
                 <div className="flex items-center gap-1.5 mb-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#0ea5e9' }} />
-                  <span className="text-[9px] font-medium" style={{ color: '#0ea5e9' }}>Scenario B</span>
+                  <div className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--sky)' }} />
+                  <span className="text-[9px] font-medium" style={{ color: 'var(--sky)' }}>Scenario B</span>
                 </div>
                 <div className="rounded-lg overflow-hidden" style={{ outline: '1px solid var(--border)' }}>
                   {scenarioB.bottlenecks.slice(0, 3).map((b, i) => (
                     <div key={i} className="flex items-center justify-between px-3 py-2" style={{ borderBottom: i < Math.min(scenarioB.bottlenecks.length, 3) - 1 ? '1px solid var(--border-subtle)' : 'none' }}>
                       <span className="text-[10px] truncate flex-1" style={{ color: 'var(--foreground)' }}>{b.label}</span>
-                      <span className="text-[10px] font-semibold tabular-nums ml-2" style={{ color: b.actualRate < b.expectedRate ? '#dc2626' : '#059669', fontFamily: 'var(--font-geist-mono)' }}>
+                      <span className="text-[10px] font-semibold tabular-nums ml-2" style={{ color: b.actualRate < b.expectedRate ? 'var(--danger-hover)' : 'var(--success-hover)', fontFamily: 'var(--font-geist-mono)' }}>
                         {b.actualRate}%
                       </span>
                     </div>
@@ -211,9 +211,9 @@ export default function ComparisonDashboard({ scenarioA, scenarioB, onClose, onV
           <button
             onClick={onViewA}
             className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-[11px] font-medium cursor-pointer transition-all hover:opacity-80"
-            style={{ outline: '1px solid #6366f1', color: '#6366f1' }}
+            style={{ outline: '1px solid var(--indigo)', color: 'var(--indigo)' }}
           >
-            <div className="w-2 h-2 rounded-full" style={{ background: '#6366f1' }} />
+            <div className="w-2 h-2 rounded-full" style={{ background: 'var(--indigo)' }} />
             View A
           </button>
         )}
@@ -221,9 +221,9 @@ export default function ComparisonDashboard({ scenarioA, scenarioB, onClose, onV
           <button
             onClick={onViewB}
             className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-[11px] font-medium cursor-pointer transition-all hover:opacity-80"
-            style={{ outline: '1px solid #0ea5e9', color: '#0ea5e9' }}
+            style={{ outline: '1px solid var(--sky)', color: 'var(--sky)' }}
           >
-            <div className="w-2 h-2 rounded-full" style={{ background: '#0ea5e9' }} />
+            <div className="w-2 h-2 rounded-full" style={{ background: 'var(--sky)' }} />
             View B
           </button>
         )}

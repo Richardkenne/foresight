@@ -73,17 +73,17 @@ function ReagraphCanvas() {
 
   if (error) {
     return (
-      <div style={{ color: '#f87171', padding: 40, fontFamily: 'system-ui', fontSize: 14 }}>
+      <div style={{ color: 'var(--danger)', padding: 40, fontFamily: 'system-ui', fontSize: 'var(--text-md)' }}>
         <h2 style={{ marginBottom: 8 }}>Reagraph failed to load</h2>
-        <p style={{ color: '#94a3b8' }}>{error}</p>
-        <p style={{ color: '#64748b', marginTop: 16 }}>This is a Three.js version conflict. The 3D Force Graph variant works — try that instead.</p>
-        <a href="/ui/force3d" style={{ color: '#60a5fa', marginTop: 8, display: 'inline-block' }}>Open 3D Force Graph</a>
+        <p style={{ color: 'var(--muted)' }}>{error}</p>
+        <p style={{ color: 'var(--muted-foreground)', marginTop: 16 }}>This is a Three.js version conflict. The 3D Force Graph variant works — try that instead.</p>
+        <a href="/ui/force3d" style={{ color: 'var(--accent)', marginTop: 8, display: 'inline-block' }}>Open 3D Force Graph</a>
       </div>
     );
   }
 
   if (!GraphCanvas) {
-    return <div style={{ color: '#64748b', padding: 40 }}>Loading Reagraph...</div>;
+    return <div style={{ color: 'var(--muted-foreground)', padding: 40 }}>Loading Reagraph...</div>;
   }
 
   return (
@@ -144,7 +144,7 @@ export default function ReagraphPage() {
 
   if (!mounted) {
     return (
-      <div style={{ width: '100vw', height: '100vh', background: '#0a0a12', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#666' }}>
+      <div style={{ width: '100vw', height: '100vh', background: '#0a0a12', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--muted-foreground)' }}>
         Loading...
       </div>
     );
@@ -155,10 +155,10 @@ export default function ReagraphPage() {
       {/* Title */}
       <div style={{
         position: 'absolute', top: 24, left: 24, zIndex: 10,
-        color: '#e2e8f0', fontFamily: 'system-ui',
+        color: 'var(--border)', fontFamily: 'system-ui',
       }}>
         <h1 style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>Reagraph (React Three Fiber)</h1>
-        <p style={{ fontSize: 12, color: '#64748b' }}>Cafe Business Simulation — drag to rotate, scroll to zoom</p>
+        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--muted-foreground)' }}>Cafe Business Simulation — drag to rotate, scroll to zoom</p>
       </div>
 
       {/* Legend */}
@@ -169,7 +169,7 @@ export default function ReagraphPage() {
         {Object.entries(COLORS).map(([type, color]) => (
           <div key={type} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
             <div style={{ width: 10, height: 10, borderRadius: '50%', background: color }} />
-            <span style={{ color: '#94a3b8' }}>{type}</span>
+            <span style={{ color: 'var(--muted)' }}>{type}</span>
           </div>
         ))}
       </div>
@@ -180,24 +180,24 @@ export default function ReagraphPage() {
         display: 'flex', gap: 8, fontFamily: 'system-ui',
       }}>
         <a href="/ui/force3d" style={{
-          padding: '6px 16px', background: '#1e293b', color: '#94a3b8', borderRadius: 8,
-          fontSize: 12, textDecoration: 'none', border: '1px solid #334155',
+          padding: '6px 16px', background: 'var(--foreground)', color: 'var(--muted)', borderRadius: 8,
+          fontSize: 'var(--text-sm)', textDecoration: 'none', border: '1px solid var(--muted-foreground)',
         }}>3D Force Graph</a>
         <span style={{
-          padding: '6px 16px', background: '#3b82f620', color: '#60a5fa', borderRadius: 8,
-          fontSize: 12, border: '1px solid #3b82f640',
+          padding: '6px 16px', background: 'color-mix(in srgb, var(--accent) 12%, transparent)', color: 'var(--accent)', borderRadius: 8,
+          fontSize: 'var(--text-sm)', border: '1px solid color-mix(in srgb, var(--accent) 25%, transparent)',
         }}>Reagraph</span>
       </div>
 
       {/* Back link */}
       <a href="/sim" style={{
         position: 'absolute', top: 24, right: 24, zIndex: 10,
-        color: '#60a5fa', fontSize: 13, fontFamily: 'system-ui', textDecoration: 'none',
+        color: 'var(--accent)', fontSize: 'var(--text-base)', fontFamily: 'system-ui', textDecoration: 'none',
       }}>
-        Back to Simulator
+        Back to Foresight
       </a>
 
-      <Suspense fallback={<div style={{ color: '#666', padding: 40 }}>Loading 3D...</div>}>
+      <Suspense fallback={<div style={{ color: 'var(--muted-foreground)', padding: 40 }}>Loading 3D...</div>}>
         <ReagraphCanvas />
       </Suspense>
     </div>

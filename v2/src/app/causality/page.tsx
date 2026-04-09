@@ -109,11 +109,11 @@ function ArrowLeftIcon() {
 // ── Component ──
 
 const DOMAIN_COLORS: Record<string, string> = {
-  health: '#10b981',
-  career: '#3b82f6',
-  finance: '#f59e0b',
-  relationships: '#ec4899',
-  education: '#8b5cf6',
+  health: 'var(--success)',
+  career: 'var(--accent)',
+  finance: 'var(--warning)',
+  relationships: 'var(--danger)',
+  education: 'var(--purple)',
 };
 
 export default function CausalityPage() {
@@ -235,7 +235,7 @@ export default function CausalityPage() {
         <button
           onClick={analyze}
           className="w-full py-3 rounded-xl text-[13px] font-semibold transition-all flex items-center justify-center gap-2"
-          style={{ background: 'var(--purple)', color: '#fff', boxShadow: 'var(--shadow-md)', cursor: 'pointer' }}
+          style={{ background: 'var(--purple)', color: 'var(--surface)', boxShadow: 'var(--shadow-md)', cursor: 'pointer' }}
         >
           <NetworkIcon />
           Analyze Ripple Effects
@@ -277,7 +277,7 @@ export default function CausalityPage() {
                         </span>
                       )}
                       {d.id === changedDomain && (
-                        <span className="text-[9px] px-1.5 py-0.5 rounded-full font-medium" style={{ background: 'var(--accent)', color: '#fff' }}>
+                        <span className="text-[9px] px-1.5 py-0.5 rounded-full font-medium" style={{ background: 'var(--accent)', color: 'var(--accent-foreground)' }}>
                           changed
                         </span>
                       )}

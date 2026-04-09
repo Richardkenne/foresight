@@ -13,15 +13,15 @@ const ForceGraph3D = dynamic(() => import('react-force-graph-3d'), { ssr: false 
 
 /* ── Type config ── */
 const TYPE_CONFIG: Record<string, { color: string; border: string }> = {
-  'state':        { color: '#0f1d2e', border: '#3b82f6' },
-  'desire':       { color: '#1a1a2e', border: '#8b5cf6' },
-  'action':       { color: '#1a1a2e', border: '#64748b' },
-  'bottleneck':   { color: '#1e1028', border: '#a78bfa' },
-  'gate':         { color: '#2a2008', border: '#fbbf24' },
-  'decision':     { color: '#1a1a2e', border: '#64748b' },
-  'trajectory':   { color: '#1a1a2e', border: '#475569' },
-  'outcome-good': { color: '#0a2e1e', border: '#34d399' },
-  'outcome-bad':  { color: '#2e0a0a', border: '#f87171' },
+  'state':        { color: 'color-mix(in srgb, var(--accent) 12%, transparent)', border: 'var(--accent)' },
+  'desire':       { color: 'color-mix(in srgb, var(--purple) 12%, transparent)', border: 'var(--purple)' },
+  'action':       { color: 'color-mix(in srgb, var(--muted-foreground) 12%, transparent)', border: 'var(--muted-foreground)' },
+  'bottleneck':   { color: 'color-mix(in srgb, var(--purple) 15%, transparent)', border: 'var(--purple)' },
+  'gate':         { color: 'color-mix(in srgb, var(--warning) 15%, transparent)', border: 'var(--warning)' },
+  'decision':     { color: 'color-mix(in srgb, var(--muted-foreground) 12%, transparent)', border: 'var(--muted-foreground)' },
+  'trajectory':   { color: 'color-mix(in srgb, var(--muted) 12%, transparent)', border: 'var(--muted)' },
+  'outcome-good': { color: 'color-mix(in srgb, var(--success) 12%, transparent)', border: 'var(--success)' },
+  'outcome-bad':  { color: 'color-mix(in srgb, var(--danger) 12%, transparent)', border: 'var(--danger)' },
 };
 
 function getCfg(type: string) {
@@ -634,11 +634,11 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
       min-width: 180px;
       max-width: 240px;
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      color: #e2e8f0;
+      color: var(--border);
       pointer-events: auto;
       cursor: pointer;
       backdrop-filter: blur(8px);
-      box-shadow: 0 0 20px ${cfg.border}30;
+      box-shadow: 0 0 20px color-mix(in srgb, ${cfg.border} 19%, transparent);
       transition: box-shadow 0.2s, transform 0.2s;
     `;
 
@@ -646,12 +646,12 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
     const header = document.createElement('div');
     header.style.cssText = 'display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-2);';
     const badge = document.createElement('span');
-    badge.style.cssText = `font-size:9px;font-weight:700;padding:2px var(--space-2);border-radius:4px;background:${cfg.border}20;color:${cfg.border};text-transform:uppercase;letter-spacing:0.05em;`;
+    badge.style.cssText = `font-size:var(--text-xs);font-weight:700;padding:2px var(--space-2);border-radius:4px;background:color-mix(in srgb, ${cfg.border} 13%, transparent);color:${cfg.border};text-transform:uppercase;letter-spacing:0.05em;`;
     badge.textContent = node.type;
     header.appendChild(badge);
     if (node.prob && node.prob < 100) {
       const prob = document.createElement('span');
-      prob.style.cssText = `font-size:13px;font-weight:800;color:${cfg.border};`;
+      prob.style.cssText = `font-size:var(--text-base);font-weight:800;color:${cfg.border};`;
       prob.textContent = `${node.prob}%`;
       header.appendChild(prob);
     }
@@ -659,14 +659,14 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
 
     // Label
     const label = document.createElement('div');
-    label.style.cssText = 'font-size:12px;font-weight:700;line-height:1.3;margin-bottom:var(--space-1);color:#f1f5f9;';
+    label.style.cssText = 'font-size:var(--text-sm);font-weight:700;line-height:1.3;margin-bottom:var(--space-1);color:var(--surface);';
     label.textContent = node.label || '';
     el.appendChild(label);
 
     // Description (truncated)
     if (node.desc) {
       const desc = document.createElement('div');
-      desc.style.cssText = 'font-size:10px;line-height:1.4;color:#94a3b8;margin-bottom:var(--space-1);';
+      desc.style.cssText = 'font-size:var(--text-xs);line-height:1.4;color:var(--muted);margin-bottom:var(--space-1);';
       desc.textContent = node.desc.length > 100 ? node.desc.slice(0, 100) + '...' : node.desc;
       el.appendChild(desc);
     }
@@ -676,13 +676,13 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
     footer.style.cssText = 'display:flex;justify-content:space-between;align-items:center;gap:var(--space-2);';
     if (node.source) {
       const src = document.createElement('span');
-      src.style.cssText = 'font-size:8px;color:#64748b;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
+      src.style.cssText = 'font-size:var(--text-xs);color:var(--muted-foreground);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
       src.textContent = node.source;
       footer.appendChild(src);
     }
     if (node.time) {
       const time = document.createElement('span');
-      time.style.cssText = 'font-size:8px;color:#475569;white-space:nowrap;';
+      time.style.cssText = 'font-size:var(--text-xs);color:var(--muted);white-space:nowrap;';
       time.textContent = node.time;
       footer.appendChild(time);
     }
@@ -690,11 +690,11 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
 
     // Hover glow
     el.addEventListener('mouseenter', () => {
-      el.style.boxShadow = `0 0 40px ${cfg.border}60`;
+      el.style.boxShadow = `0 0 40px color-mix(in srgb, ${cfg.border} 38%, transparent)`;
       el.style.transform = 'scale(1.05)';
     });
     el.addEventListener('mouseleave', () => {
-      el.style.boxShadow = `0 0 20px ${cfg.border}30`;
+      el.style.boxShadow = `0 0 20px color-mix(in srgb, ${cfg.border} 19%, transparent)`;
       el.style.transform = 'scale(1)';
     });
 
@@ -740,47 +740,47 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
 
   if (!mounted) {
     return (
-      <div style={{ width: '100vw', height: '100vh', background: '#060810', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#475569', fontFamily: 'Inter, system-ui' }}>
+      <div style={{ width: '100vw', height: '100vh', background: 'var(--foreground)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--muted)', fontFamily: 'Inter, system-ui' }}>
         Loading 3D Foresight...
       </div>
     );
   }
 
   return (
-    <div style={{ width: '100vw', height: '100vh', background: '#060810', position: 'relative', overflow: 'hidden' }}>
+    <div style={{ width: '100vw', height: '100vh', background: 'var(--foreground)', position: 'relative', overflow: 'hidden' }}>
 
       {/* ── TOP BAR ── */}
       <div style={{
         position: 'absolute', top: 0, left: 0, right: 0, zIndex: 20,
         padding: 'var(--space-3) var(--space-6)',
-        background: 'linear-gradient(180deg, #060810 0%, #060810ee 60%, #06081000 100%)',
+        background: 'linear-gradient(180deg, var(--foreground) 0%, color-mix(in srgb, var(--foreground) 93%, transparent) 60%, transparent 100%)',
         display: 'flex', flexDirection: 'column', gap: 'var(--space-3)',
         pointerEvents: 'auto',
       }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e2e8f0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--border)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10" /><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
             </svg>
-            <span style={{ fontSize: 14, fontWeight: 700, color: '#e2e8f0', letterSpacing: '-0.02em', fontFamily: 'Inter, system-ui' }}>
+            <span style={{ fontSize: 'var(--text-md)', fontWeight: 700, color: 'var(--border)', letterSpacing: '-0.02em', fontFamily: 'Inter, system-ui' }}>
               Foresight
             </span>
           </div>
           <div style={{ display: 'flex', gap: 'var(--space-1)', alignItems: 'center' }}>
             <button onClick={onSwitchTo2D} style={{
-              padding: 'var(--space-1) var(--space-3)', background: '#1e293b', color: '#94a3b8', borderRadius: 6,
-              fontSize: 11, fontWeight: 600, border: '1px solid #334155', cursor: 'pointer', fontFamily: 'Inter, system-ui',
+              padding: 'var(--space-1) var(--space-3)', background: 'var(--border)', color: 'var(--muted)', borderRadius: 6,
+              fontSize: 'var(--text-xs)', fontWeight: 600, border: '1px solid color-mix(in srgb, var(--muted) 40%, transparent)', cursor: 'pointer', fontFamily: 'Inter, system-ui',
             }}>2D</button>
             <span style={{
-              padding: 'var(--space-1) var(--space-3)', background: '#3b82f615', color: '#60a5fa', borderRadius: 6,
-              fontSize: 11, fontWeight: 600, border: '1px solid #3b82f630', fontFamily: 'Inter, system-ui',
+              padding: 'var(--space-1) var(--space-3)', background: 'color-mix(in srgb, var(--accent) 8%, transparent)', color: 'var(--accent)', borderRadius: 6,
+              fontSize: 'var(--text-xs)', fontWeight: 600, border: '1px solid color-mix(in srgb, var(--accent) 19%, transparent)', fontFamily: 'Inter, system-ui',
             }}>3D</span>
             <button onClick={() => setSacredMode(!sacredMode)} style={{
               padding: 'var(--space-1) var(--space-3)', marginLeft: 'var(--space-2)',
-              background: sacredMode ? '#7c3aed20' : '#1e293b',
-              color: sacredMode ? '#a78bfa' : '#64748b',
-              borderRadius: 6, fontSize: 11, fontWeight: 600,
-              border: `1px solid ${sacredMode ? '#7c3aed40' : '#334155'}`,
+              background: sacredMode ? 'color-mix(in srgb, var(--purple) 13%, transparent)' : 'var(--border)',
+              color: sacredMode ? 'var(--purple)' : 'var(--muted-foreground)',
+              borderRadius: 6, fontSize: 'var(--text-xs)', fontWeight: 600,
+              border: `1px solid ${sacredMode ? 'color-mix(in srgb, var(--purple) 25%, transparent)' : 'color-mix(in srgb, var(--muted) 40%, transparent)'}`,
               cursor: 'pointer', fontFamily: 'Inter, system-ui',
             }}>Sacred</button>
             {hasGraph && (
@@ -788,10 +788,10 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
                 onClick={() => simRunning ? stopSimulation() : startSimulation()}
                 style={{
                   padding: 'var(--space-1) var(--space-3)', marginLeft: 'var(--space-1)',
-                  background: simRunning ? '#dc262620' : '#0f766e20',
-                  color: simRunning ? '#f87171' : '#2dd4bf',
-                  borderRadius: 6, fontSize: 11, fontWeight: 600,
-                  border: `1px solid ${simRunning ? '#dc262640' : '#0f766e40'}`,
+                  background: simRunning ? 'color-mix(in srgb, var(--danger) 13%, transparent)' : 'color-mix(in srgb, var(--success) 13%, transparent)',
+                  color: simRunning ? 'var(--danger)' : 'var(--success)',
+                  borderRadius: 6, fontSize: 'var(--text-xs)', fontWeight: 600,
+                  border: `1px solid ${simRunning ? 'color-mix(in srgb, var(--danger) 25%, transparent)' : 'color-mix(in srgb, var(--success) 25%, transparent)'}`,
                   cursor: 'pointer', fontFamily: 'Inter, system-ui',
                 }}
               >{simRunning ? 'Stop Sim' : 'Simulate'}</button>
@@ -809,10 +809,10 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
                 }}
                 style={{
                   padding: 'var(--space-1) var(--space-3)', marginLeft: 'var(--space-1)',
-                  background: flyThrough ? 'rgba(251,191,36,0.15)' : '#1e293b',
-                  color: flyThrough ? '#fbbf24' : '#94a3b8',
-                  borderRadius: 6, fontSize: 11, fontWeight: 600,
-                  border: `1px solid ${flyThrough ? 'rgba(251,191,36,0.4)' : '#334155'}`,
+                  background: flyThrough ? 'color-mix(in srgb, var(--warning) 15%, transparent)' : 'var(--border)',
+                  color: flyThrough ? 'var(--warning)' : 'var(--muted)',
+                  borderRadius: 6, fontSize: 'var(--text-xs)', fontWeight: 600,
+                  border: `1px solid ${flyThrough ? 'color-mix(in srgb, var(--warning) 40%, transparent)' : 'color-mix(in srgb, var(--muted) 40%, transparent)'}`,
                   cursor: 'pointer', fontFamily: 'Inter, system-ui',
                   display: 'flex', alignItems: 'center', gap: 'var(--space-1)',
                 }}
@@ -833,20 +833,20 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
             placeholder="What do you want to simulate?"
             style={{
               flex: 1, padding: 'var(--space-3) var(--space-4)', borderRadius: 10,
-              background: '#0f172a', border: '1px solid #1e293b',
-              color: '#e2e8f0', fontSize: 13, fontFamily: 'Inter, system-ui', outline: 'none',
+              background: 'var(--foreground)', border: '1px solid var(--border)',
+              color: 'var(--border)', fontSize: 'var(--text-base)', fontFamily: 'Inter, system-ui', outline: 'none',
             }}
-            onFocus={(e) => { e.currentTarget.style.borderColor = '#3b82f6'; }}
-            onBlur={(e) => { e.currentTarget.style.borderColor = '#1e293b'; }}
+            onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--accent)'; }}
+            onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; }}
           />
           <button
             onClick={() => generating ? abortRef.current?.abort() : generateFlow()}
             disabled={!scenario.trim() && !generating}
             style={{
               padding: 'var(--space-3) var(--space-6)', borderRadius: 10,
-              background: generating ? '#dc262620' : '#3b82f6',
-              color: generating ? '#f87171' : '#fff',
-              fontSize: 13, fontWeight: 600, border: 'none', cursor: 'pointer',
+              background: generating ? 'color-mix(in srgb, var(--danger) 13%, transparent)' : 'var(--accent)',
+              color: generating ? 'var(--danger)' : 'var(--surface)',
+              fontSize: 'var(--text-base)', fontWeight: 600, border: 'none', cursor: 'pointer',
               fontFamily: 'Inter, system-ui',
               opacity: !scenario.trim() && !generating ? 0.4 : 1,
             }}
@@ -858,8 +858,8 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
       {errorMsg && (
         <div style={{
           position: 'absolute', top: 100, left: '50%', transform: 'translateX(-50%)', zIndex: 30,
-          background: '#dc262620', border: '1px solid #dc262640', color: '#f87171',
-          padding: 'var(--space-2) var(--space-6)', borderRadius: 8, fontSize: 12, fontFamily: 'Inter, system-ui',
+          background: 'var(--danger-muted)', border: '1px solid color-mix(in srgb, var(--danger) 25%, transparent)', color: 'var(--danger)',
+          padding: 'var(--space-2) var(--space-6)', borderRadius: 8, fontSize: 'var(--text-sm)', fontFamily: 'Inter, system-ui',
         }}>{errorMsg}</div>
       )}
 
@@ -870,10 +870,10 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
           display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--space-3)',
         }}>
           <div style={{
-            width: 40, height: 40, border: '3px solid #1e293b', borderTopColor: '#3b82f6',
+            width: 40, height: 40, border: '3px solid var(--border)', borderTopColor: 'var(--accent)',
             borderRadius: '50%', animation: 'spin 1s linear infinite',
           }} />
-          <span style={{ fontSize: 13, color: '#64748b', fontFamily: 'Inter, system-ui' }}>Building simulation...</span>
+          <span style={{ fontSize: 'var(--text-base)', color: 'var(--muted-foreground)', fontFamily: 'Inter, system-ui' }}>Building simulation...</span>
           <style>{`@keyframes spin { to { transform: rotate(360deg) } }`}</style>
         </div>
       )}
@@ -885,12 +885,12 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
           display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--space-6)', textAlign: 'center',
           maxWidth: 600, width: '90%',
         }}>
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#334155" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="color-mix(in srgb, var(--muted) 40%, transparent)" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="12" cy="12" r="10" /><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
           </svg>
           <div>
-            <div style={{ fontSize: 18, fontWeight: 600, color: '#e2e8f0', letterSpacing: '-0.02em', marginBottom: 'var(--space-2)', fontFamily: 'Inter, system-ui' }}>3D Foresight</div>
-            <div style={{ fontSize: 12, color: '#475569', fontFamily: 'Inter, system-ui' }}>Type a scenario or pick a template</div>
+            <div style={{ fontSize: 'var(--text-xl)', fontWeight: 600, color: 'var(--border)', letterSpacing: '-0.02em', marginBottom: 'var(--space-2)', fontFamily: 'Inter, system-ui' }}>3D Foresight</div>
+            <div style={{ fontSize: 'var(--text-sm)', color: 'var(--muted)', fontFamily: 'Inter, system-ui' }}>Type a scenario or pick a template</div>
           </div>
 
           {/* Quick suggestions */}
@@ -898,12 +898,12 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
             {suggestions.map(s => (
               <button key={s} onClick={() => { setScenario(s); setTimeout(() => generateFlow(s), 50); }}
                 style={{
-                  padding: 'var(--space-2) var(--space-4)', borderRadius: 999, fontSize: 12, fontWeight: 500,
-                  color: '#94a3b8', background: '#0f172a', border: '1px solid #1e293b',
+                  padding: 'var(--space-2) var(--space-4)', borderRadius: 999, fontSize: 'var(--text-sm)', fontWeight: 500,
+                  color: 'var(--muted)', background: 'var(--foreground)', border: '1px solid var(--border)',
                   cursor: 'pointer', fontFamily: 'Inter, system-ui', transition: 'all 0.15s',
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#334155'; e.currentTarget.style.color = '#e2e8f0'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#1e293b'; e.currentTarget.style.color = '#94a3b8'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'color-mix(in srgb, var(--muted) 40%, transparent)'; e.currentTarget.style.color = 'var(--border)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--muted)'; }}
               >{s}</button>
             ))}
           </div>
@@ -913,13 +913,13 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
             {Object.entries(TEMPLATES).map(([key, t]) => (
               <button key={key} onClick={() => loadTemplate(key)}
                 style={{
-                  padding: 'var(--space-3) var(--space-3)', borderRadius: 8, fontSize: 11, fontWeight: 500,
-                  color: '#94a3b8', background: '#0f172a', border: '1px solid #1e293b',
+                  padding: 'var(--space-3) var(--space-3)', borderRadius: 8, fontSize: 'var(--text-xs)', fontWeight: 500,
+                  color: 'var(--muted)', background: 'var(--foreground)', border: '1px solid var(--border)',
                   cursor: 'pointer', fontFamily: 'Inter, system-ui', transition: 'all 0.15s',
                   textAlign: 'left', lineHeight: 1.3,
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#3b82f640'; e.currentTarget.style.color = '#e2e8f0'; e.currentTarget.style.background = '#0f172acc'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#1e293b'; e.currentTarget.style.color = '#94a3b8'; e.currentTarget.style.background = '#0f172a'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'color-mix(in srgb, var(--accent) 25%, transparent)'; e.currentTarget.style.color = 'var(--border)'; e.currentTarget.style.background = 'color-mix(in srgb, var(--foreground) 80%, transparent)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--muted)'; e.currentTarget.style.background = 'var(--foreground)'; }}
               >{t.title}</button>
             ))}
           </div>
@@ -929,7 +929,7 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
       {/* ── CONTROLS HINT ── */}
       <div style={{
         position: 'absolute', bottom: 16, left: '50%', transform: 'translateX(-50%)', zIndex: 10,
-        display: 'flex', gap: 'var(--space-4)', fontFamily: 'Inter, system-ui', fontSize: 10, color: '#334155',
+        display: 'flex', gap: 'var(--space-4)', fontFamily: 'Inter, system-ui', fontSize: 'var(--text-xs)', color: 'color-mix(in srgb, var(--muted) 40%, transparent)',
       }}>
         <span>Drag to rotate</span>
         <span>Scroll to zoom</span>
@@ -941,7 +941,7 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
       {hasGraph && !simRunning && (
         <div style={{
           position: 'absolute', bottom: 16, right: 20, zIndex: 10,
-          fontFamily: 'Inter, system-ui', fontSize: 10, color: '#334155',
+          fontFamily: 'Inter, system-ui', fontSize: 'var(--text-xs)', color: 'color-mix(in srgb, var(--muted) 40%, transparent)',
         }}>{graphData.nodes.length} nodes / {graphData.links.length} edges</div>
       )}
 
@@ -950,20 +950,20 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
         <div style={{
           position: 'absolute', bottom: 20, left: '50%', transform: 'translateX(-50%)', zIndex: 20,
           display: 'flex', gap: 'var(--space-4)', alignItems: 'center',
-          background: '#0f172acc', backdropFilter: 'blur(12px)',
-          border: '1px solid #1e293b', borderRadius: 10,
+          background: 'color-mix(in srgb, var(--foreground) 80%, transparent)', backdropFilter: 'blur(12px)',
+          border: '1px solid var(--border)', borderRadius: 10,
           padding: 'var(--space-2) var(--space-6)', fontFamily: 'Inter, system-ui',
         }}>
-          <span style={{ fontSize: 12, fontWeight: 700, color: '#e2e8f0' }}>
+          <span style={{ fontSize: 'var(--text-sm)', fontWeight: 700, color: 'var(--border)' }}>
             {simStats.launched}/{SIM_TOTAL}
           </span>
-          <span style={{ fontSize: 11, color: '#60a5fa' }}>
+          <span style={{ fontSize: 'var(--text-xs)', color: 'var(--accent)' }}>
             {simStats.walking} walking
           </span>
-          <span style={{ fontSize: 11, color: '#34d399' }}>
+          <span style={{ fontSize: 'var(--text-xs)', color: 'var(--success)' }}>
             {simStats.success} success
           </span>
-          <span style={{ fontSize: 11, color: '#f87171' }}>
+          <span style={{ fontSize: 'var(--text-xs)', color: 'var(--danger)' }}>
             {simStats.fail} failed
           </span>
         </div>
@@ -974,16 +974,16 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
         <div style={{
           position: 'absolute', top: 100, right: 20, zIndex: 25,
           padding: 'var(--space-2) var(--space-4)', borderRadius: 8,
-          background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)',
-          fontFamily: 'Inter, system-ui', fontSize: 11, fontWeight: 600,
-          color: '#fbbf24', display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
+          background: 'color-mix(in srgb, var(--warning) 12%, transparent)', border: '1px solid color-mix(in srgb, var(--warning) 30%, transparent)',
+          fontFamily: 'Inter, system-ui', fontSize: 'var(--text-xs)', fontWeight: 600,
+          color: 'var(--warning)', display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
           animation: 'flyPulse3d 2s ease-in-out infinite',
         }}>
           <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
             <circle cx="12" cy="12" r="5"/>
           </svg>
           Following YOU
-          <span style={{ fontSize: 9, color: 'rgba(251,191,36,0.5)', marginLeft: 'var(--space-1)' }}>ESC to exit</span>
+          <span style={{ fontSize: 'var(--text-xs)', color: 'color-mix(in srgb, var(--warning) 50%, transparent)', marginLeft: 'var(--space-1)' }}>ESC to exit</span>
           <style>{`@keyframes flyPulse3d { 0%,100% { opacity: 1; } 50% { opacity: 0.7; } }`}</style>
         </div>
       )}
@@ -1023,7 +1023,7 @@ export default function Simulator3D({ onSwitchTo2D }: { onSwitchTo2D: () => void
           if (lbl.startsWith('pass') || lbl.startsWith('yes')) return '#34d399';
           return '#60a5fa';
         }}
-        linkLabel={(link: any) => link.label ? `<span style="color:#94a3b8;font-size:11px;font-family:Inter,system-ui;background:#0f172a;padding:2px var(--space-2);border-radius:4px">${link.label}</span>` : ''}
+        linkLabel={(link: any) => link.label ? `<span style="color:var(--muted);font-size:var(--text-xs);font-family:Inter,system-ui;background:var(--foreground);padding:2px var(--space-2);border-radius:4px">${link.label}</span>` : ''}
         onNodeClick={handleNodeClick}
         warmupTicks={100}
         cooldownTicks={0}

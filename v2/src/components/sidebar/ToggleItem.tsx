@@ -10,7 +10,7 @@
  * - border-radius (rounded-lg, rounded-xl)
  * - dimensione icona (width="18", width="20", width="22")
  * - dimensione toggle (w-[44px] h-[24px], w-[48px] h-[26px])
- * - colore toggle attivo (var(--accent), #f59e0b, var(--purple))
+ * - colore toggle attivo (var(--accent), var(--warning), var(--purple))
  */
 
 import type { ReactNode } from 'react';

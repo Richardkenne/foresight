@@ -8,16 +8,16 @@ const elk = new ELK();
 
 // Node type → visual config
 const NODE_STYLES: Record<string, { bg: string; border: string; shape: 'rect' | 'diamond' | 'rounded' | 'pill' }> = {
-  state:          { bg: '#d8ead8', border: '#5f7d63', shape: 'rect' },
-  action:         { bg: '#eff6ff', border: '#3b82f6', shape: 'rect' },
-  desire:         { bg: '#f5f3ff', border: '#8b5cf6', shape: 'rect' },
-  bottleneck:     { bg: '#fffbeb', border: '#f59e0b', shape: 'diamond' },
-  gate:           { bg: '#fffbeb', border: '#d97706', shape: 'diamond' },
-  decision:       { bg: '#ecfeff', border: '#06b6d4', shape: 'diamond' },
-  trajectory:     { bg: '#efe2fb', border: '#7f5aa6', shape: 'rect' },
-  'outcome-good': { bg: '#dcfce7', border: '#22c55e', shape: 'rounded' },
-  'outcome-bad':  { bg: '#fee2e2', border: '#ef4444', shape: 'rounded' },
-  loop:           { bg: '#f1f5f9', border: '#64748b', shape: 'rect' },
+  state:          { bg: 'var(--node-state-bg, #d8ead8)', border: 'var(--node-state-accent, #5f7d63)', shape: 'rect' },
+  action:         { bg: 'var(--node-action-bg, #eff6ff)', border: 'var(--accent)', shape: 'rect' },
+  desire:         { bg: 'var(--node-desire-bg, #f5f3ff)', border: 'var(--purple)', shape: 'rect' },
+  bottleneck:     { bg: 'var(--node-bottleneck-bg, #fffbeb)', border: 'var(--warning)', shape: 'diamond' },
+  gate:           { bg: 'var(--node-gate-bg, #fffbeb)', border: 'var(--warning-hover, #d97706)', shape: 'diamond' },
+  decision:       { bg: 'var(--node-decision-bg)', border: 'var(--node-decision-accent)', shape: 'diamond' },
+  trajectory:     { bg: 'var(--node-trajectory-bg, #efe2fb)', border: 'var(--node-trajectory-accent, #7f5aa6)', shape: 'rect' },
+  'outcome-good': { bg: 'var(--node-good-bg, #dcfce7)', border: 'var(--success)', shape: 'rounded' },
+  'outcome-bad':  { bg: 'var(--node-bad-bg, #fee2e2)', border: 'var(--danger)', shape: 'rounded' },
+  loop:           { bg: 'var(--surface-hover)', border: 'var(--muted-foreground)', shape: 'rect' },
 };
 
 interface LayoutNode {
@@ -190,7 +190,7 @@ export default function FlowchartView({ nodes, edges, onNodeClick }: FlowchartVi
           x={cx} y={cy}
           textAnchor="middle" dominantBaseline="central"
           fontSize={11} fontWeight={600} fontFamily="Inter, system-ui, sans-serif"
-          fill="#1e293b"
+          fill="var(--foreground)"
         >
           {n.label.length > 30 ? (
             <>
@@ -201,8 +201,8 @@ export default function FlowchartView({ nodes, edges, onNodeClick }: FlowchartVi
         </text>
         {hasProb && n.prob !== undefined && (
           <g>
-            <circle cx={n.x + n.width - 5} cy={n.y + 5} r={14} fill={n.prob < 30 ? '#ef4444' : n.prob < 60 ? '#f59e0b' : '#22c55e'} opacity={0.9} />
-            <text x={n.x + n.width - 5} y={n.y + 5} textAnchor="middle" dominantBaseline="central" fontSize={9} fontWeight={700} fill="#fff" fontFamily="Inter, system-ui, sans-serif">
+            <circle cx={n.x + n.width - 5} cy={n.y + 5} r={14} fill={n.prob < 30 ? 'var(--danger)' : n.prob < 60 ? 'var(--warning)' : 'var(--success)'} opacity={0.9} />
+            <text x={n.x + n.width - 5} y={n.y + 5} textAnchor="middle" dominantBaseline="central" fontSize={9} fontWeight={700} fill="var(--surface)" fontFamily="Inter, system-ui, sans-serif">
               {n.prob}%
             </text>
           </g>
@@ -222,13 +222,13 @@ export default function FlowchartView({ nodes, edges, onNodeClick }: FlowchartVi
 
     return (
       <g key={e.id}>
-        <path d={d} fill="none" stroke="#94a3b8" strokeWidth={1.5} markerEnd="url(#arrowhead)" />
+        <path d={d} fill="none" stroke="var(--muted)" strokeWidth={1.5} markerEnd="url(#arrowhead)" />
         {e.label && (() => {
           const mid = points[Math.floor(points.length / 2)];
           return (
             <g>
-              <rect x={mid.x - 30} y={mid.y - 9} width={60} height={18} rx={4} fill="#fff" stroke="#e2e8f0" strokeWidth={0.5} />
-              <text x={mid.x} y={mid.y} textAnchor="middle" dominantBaseline="central" fontSize={9} fontWeight={500} fill="#64748b" fontFamily="Inter, system-ui, sans-serif">
+              <rect x={mid.x - 30} y={mid.y - 9} width={60} height={18} rx={4} fill="var(--surface)" stroke="var(--border)" strokeWidth={0.5} />
+              <text x={mid.x} y={mid.y} textAnchor="middle" dominantBaseline="central" fontSize={9} fontWeight={500} fill="var(--muted-foreground)" fontFamily="Inter, system-ui, sans-serif">
                 {String(e.label).replace(/%/g, 'pct').substring(0, 15)}
               </text>
             </g>
@@ -263,7 +263,7 @@ export default function FlowchartView({ nodes, edges, onNodeClick }: FlowchartVi
       >
         <defs>
           <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8" />
+            <polygon points="0 0, 10 3.5, 0 7" fill="var(--muted)" />
           </marker>
         </defs>
         {layoutEdges.map(renderEdge)}

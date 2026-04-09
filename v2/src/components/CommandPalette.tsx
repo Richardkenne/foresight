@@ -90,7 +90,7 @@ function ShortcutBadge({ keys }: { keys: string[] }) {
             justifyContent: 'center',
             padding: '2px 5px',
             borderRadius: '4px',
-            fontSize: '10px',
+            fontSize: 'var(--text-xs)',
             fontFamily: 'var(--font-geist-mono), monospace',
             fontWeight: 500,
             color: 'var(--muted-foreground)',
@@ -113,7 +113,7 @@ function GroupLabel({ label }: { label: string }) {
     <div
       style={{
         padding: 'var(--space-2) var(--space-3) var(--space-1)',
-        fontSize: '10px',
+        fontSize: 'var(--text-xs)',
         fontWeight: 600,
         textTransform: 'uppercase',
         letterSpacing: '0.08em',
@@ -267,7 +267,7 @@ export default function CommandPalette({
           position: 'fixed',
           inset: 0,
           zIndex: 2000,
-          background: 'rgba(0,0,0,0.35)',
+          background: 'color-mix(in srgb, var(--foreground) 35%, transparent)',
           backdropFilter: 'blur(3px)',
           WebkitBackdropFilter: 'blur(3px)',
         }}
@@ -292,7 +292,7 @@ export default function CommandPalette({
             borderRadius: '16px',
             border: '1px solid var(--border)',
             background: 'var(--surface)',
-            boxShadow: '0 24px 64px rgba(0,0,0,0.16), 0 4px 16px rgba(0,0,0,0.08)',
+            boxShadow: '0 24px 64px color-mix(in srgb, var(--foreground) 16%, transparent), 0 4px 16px color-mix(in srgb, var(--foreground) 8%, transparent)',
             overflow: 'hidden',
             animation: 'palette-in 0.15s cubic-bezier(0.16,1,0.3,1)',
           }}
@@ -323,7 +323,7 @@ export default function CommandPalette({
                 border: 'none',
                 outline: 'none',
                 background: 'transparent',
-                fontSize: '14px',
+                fontSize: 'var(--text-md)',
                 color: 'var(--foreground)',
                 fontFamily: 'inherit',
               }}
@@ -334,7 +334,7 @@ export default function CommandPalette({
               style={{
                 padding: '2px 6px',
                 borderRadius: '5px',
-                fontSize: '10px',
+                fontSize: 'var(--text-xs)',
                 fontFamily: 'var(--font-geist-mono), monospace',
                 color: 'var(--muted)',
                 background: 'var(--surface-hover)',
@@ -360,7 +360,7 @@ export default function CommandPalette({
                 style={{
                   padding: 'var(--space-6) var(--space-4)',
                   textAlign: 'center',
-                  fontSize: '13px',
+                  fontSize: 'var(--text-base)',
                   color: 'var(--muted)',
                 }}
               >
@@ -415,7 +415,7 @@ export default function CommandPalette({
                           <div style={{ flex: 1, minWidth: 0 }}>
                             <div
                               style={{
-                                fontSize: '13px',
+                                fontSize: 'var(--text-base)',
                                 fontWeight: 500,
                                 color: isActive ? 'var(--foreground)' : 'var(--foreground)',
                                 lineHeight: 1.3,
@@ -426,7 +426,7 @@ export default function CommandPalette({
                             {cmd.description && (
                               <div
                                 style={{
-                                  fontSize: '11px',
+                                  fontSize: 'var(--text-sm)',
                                   color: 'var(--muted)',
                                   marginTop: '1px',
                                   overflow: 'hidden',
@@ -462,11 +462,11 @@ export default function CommandPalette({
               gap: 'var(--space-3)',
             }}
           >
-            <span style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-1)', fontSize: '10px', color: 'var(--muted)' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-1)', fontSize: 'var(--text-xs)', color: 'var(--muted)' }}>
               <ShortcutBadge keys={['↑', '↓']} />
               navigate
             </span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-1)', fontSize: '10px', color: 'var(--muted)' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-1)', fontSize: 'var(--text-xs)', color: 'var(--muted)' }}>
               <ShortcutBadge keys={['Enter']} />
               select
             </span>

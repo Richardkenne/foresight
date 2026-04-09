@@ -32,7 +32,7 @@ export default function BottleneckCard({ bottlenecks }: { bottlenecks: Bottlenec
               {/* Sinistra: numero + label */}
               <div className="flex items-center gap-2 min-w-0 flex-1">
                 <span className="text-[11px] font-semibold tabular-nums w-4 shrink-0"
-                      style={{ color: isWorse ? '#dc2626' : '#059669' }}>
+                      style={{ color: isWorse ? 'var(--danger-hover)' : 'var(--success-hover)' }}>
                   {i + 1}
                 </span>
                 <span className="text-[12px] truncate" style={{ color: 'var(--foreground)' }}>
@@ -43,7 +43,7 @@ export default function BottleneckCard({ bottlenecks }: { bottlenecks: Bottlenec
               {/* Destra: actual% / expected% + diff badge */}
               <div className="flex items-center gap-2 shrink-0 ml-2">
                 <span className="text-[12px] font-semibold tabular-nums"
-                      style={{ color: isWorse ? '#dc2626' : '#059669' }}>
+                      style={{ color: isWorse ? 'var(--danger-hover)' : 'var(--success-hover)' }}>
                   {b.actualRate}%
                 </span>
                 <span className="text-[10px]" style={{ color: 'var(--muted)' }}>/</span>
@@ -52,8 +52,8 @@ export default function BottleneckCard({ bottlenecks }: { bottlenecks: Bottlenec
                 </span>
                 <span className="text-[9px] font-medium px-1.5 py-0.5 rounded-full tabular-nums"
                       style={{
-                        background: isWorse ? 'rgba(220, 38, 38, 0.08)' : 'rgba(5, 150, 105, 0.08)',
-                        color: isWorse ? '#dc2626' : '#059669',
+                        background: isWorse ? 'var(--danger-muted)' : 'var(--success-muted)',
+                        color: isWorse ? 'var(--danger-hover)' : 'var(--success-hover)',
                       }}>
                   {diff > 0 ? '+' : ''}{diff}%
                 </span>

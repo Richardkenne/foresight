@@ -21,15 +21,15 @@ function genId() {
 }
 
 function getRateColor(rate: number): string {
-  if (rate >= 30) return '#10b981';
-  if (rate >= 10) return '#f59e0b';
-  return '#ef4444';
+  if (rate >= 30) return 'var(--success)';
+  if (rate >= 10) return 'var(--warning)';
+  return 'var(--danger)';
 }
 
 function getRateBg(rate: number): string {
-  if (rate >= 30) return 'rgba(16,185,129,0.08)';
-  if (rate >= 10) return 'rgba(245,158,11,0.08)';
-  return 'rgba(239,68,68,0.08)';
+  if (rate >= 30) return 'var(--success-muted)';
+  if (rate >= 10) return 'var(--warning-muted)';
+  return 'var(--danger-muted)';
 }
 
 export default function CrashTestPanel({
@@ -137,18 +137,18 @@ export default function CrashTestPanel({
             <div className="flex items-center gap-2.5">
               <div style={{
                 width: 28, height: 28, borderRadius: 8,
-                background: 'rgba(239,68,68,0.08)',
+                background: 'var(--danger-muted)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
               }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
               </div>
               <div>
-                <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--foreground)', letterSpacing: '-0.02em' }}>
+                <div style={{ fontSize: 'var(--text-md)', fontWeight: 700, color: 'var(--foreground)', letterSpacing: '-0.02em' }}>
                   Crash Test
                 </div>
-                <div style={{ fontSize: 11, color: 'var(--muted)' }}>
+                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)' }}>
                   {phase === 'input' ? 'Compare alternative paths' : `${scenarios.filter(s => s.status === 'done').length}/${scenarios.length} complete`}
                 </div>
               </div>
@@ -175,7 +175,7 @@ export default function CrashTestPanel({
                 exit={{ opacity: 0 }}
                 className="px-5 py-4"
               >
-                <div style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 'var(--space-4)' }}>
+                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)', marginBottom: 'var(--space-4)' }}>
                   Enter 2-5 alternative scenarios. Same person, different choices. The simulator runs 100 people through each and shows who survives.
                 </div>
 
@@ -185,8 +185,8 @@ export default function CrashTestPanel({
                       <div style={{
                         width: 22, height: 22, borderRadius: '50%', flexShrink: 0,
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        fontSize: 10, fontWeight: 700,
-                        background: 'rgba(100,116,139,0.08)', color: 'var(--muted)',
+                        fontSize: 'var(--text-xs)', fontWeight: 700,
+                        background: 'color-mix(in srgb, var(--muted-foreground) 10%, transparent)', color: 'var(--muted)',
                       }}>
                         {i + 1}
                       </div>
@@ -201,12 +201,12 @@ export default function CrashTestPanel({
                           borderRadius: 10,
                           border: '1px solid var(--border)',
                           background: 'transparent',
-                          fontSize: 13,
+                          fontSize: 'var(--text-base)',
                           color: 'var(--foreground)',
                           outline: 'none',
                           fontFamily: 'Inter, system-ui',
                         }}
-                        onFocus={(e) => { e.currentTarget.style.borderColor = '#3b82f6'; }}
+                        onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--accent)'; }}
                         onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; }}
                         onKeyDown={(e) => { if (e.key === 'Enter') handleRun(); }}
                       />
@@ -230,7 +230,7 @@ export default function CrashTestPanel({
                     style={{
                       marginTop: 'var(--space-3)', padding: 'var(--space-2) var(--space-4)', borderRadius: 8,
                       border: '1px dashed var(--border)', background: 'transparent',
-                      fontSize: 12, color: 'var(--muted)', cursor: 'pointer',
+                      fontSize: 'var(--text-sm)', color: 'var(--muted)', cursor: 'pointer',
                       fontFamily: 'Inter, system-ui', width: '100%',
                       display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-2)',
                     }}
@@ -248,13 +248,13 @@ export default function CrashTestPanel({
                   style={{
                     marginTop: 'var(--space-6)', padding: 'var(--space-3) var(--space-6)', borderRadius: 12, width: '100%',
                     background: inputs.filter(i => i.value.trim()).length >= 2
-                      ? 'linear-gradient(135deg, #ef4444, #dc2626)'
+                      ? 'linear-gradient(135deg, var(--danger), var(--danger-hover))'
                       : 'var(--border)',
-                    color: inputs.filter(i => i.value.trim()).length >= 2 ? '#fff' : 'var(--muted)',
-                    fontSize: 13, fontWeight: 700, border: 'none', cursor: 'pointer',
+                    color: inputs.filter(i => i.value.trim()).length >= 2 ? 'var(--accent-foreground)' : 'var(--muted)',
+                    fontSize: 'var(--text-base)', fontWeight: 700, border: 'none', cursor: 'pointer',
                     fontFamily: 'Inter, system-ui',
                     boxShadow: inputs.filter(i => i.value.trim()).length >= 2
-                      ? '0 4px 16px rgba(239,68,68,0.3)'
+                      ? '0 4px 16px color-mix(in srgb, var(--danger) 30%, transparent)'
                       : 'none',
                     display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-2)',
                   }}
@@ -286,8 +286,8 @@ export default function CrashTestPanel({
                         key={s.id}
                         style={{
                           borderRadius: 12,
-                          border: `1px solid ${isBest ? 'rgba(16,185,129,0.3)' : 'var(--border)'}`,
-                          background: isBest ? 'rgba(16,185,129,0.04)' : 'transparent',
+                          border: `1px solid ${isBest ? 'color-mix(in srgb, var(--success) 30%, transparent)' : 'var(--border)'}`,
+                          background: isBest ? 'color-mix(in srgb, var(--success) 4%, transparent)' : 'transparent',
                           overflow: 'hidden',
                           transition: 'all 0.3s ease',
                         }}
@@ -298,25 +298,25 @@ export default function CrashTestPanel({
                             <div style={{
                               width: 22, height: 22, borderRadius: '50%', flexShrink: 0, marginTop: 1,
                               display: 'flex', alignItems: 'center', justifyContent: 'center',
-                              fontSize: 10, fontWeight: 700,
-                              background: isDone ? getRateBg(rate) : 'rgba(100,116,139,0.08)',
+                              fontSize: 'var(--text-xs)', fontWeight: 700,
+                              background: isDone ? getRateBg(rate) : 'color-mix(in srgb, var(--muted-foreground) 10%, transparent)',
                               color: isDone ? getRateColor(rate) : 'var(--muted)',
                             }}>
                               {i + 1}
                             </div>
                             <div className="flex-1 min-w-0">
-                              <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--foreground)', lineHeight: 1.3 }}>
+                              <div style={{ fontSize: 'var(--text-base)', fontWeight: 600, color: 'var(--foreground)', lineHeight: 1.3 }}>
                                 {s.name}
                               </div>
                               {isError && (
-                                <div style={{ fontSize: 11, color: '#ef4444', marginTop: 'var(--space-1)' }}>{s.error}</div>
+                                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--danger)', marginTop: 'var(--space-1)' }}>{s.error}</div>
                               )}
                             </div>
                           </div>
 
                           {/* Status / Rate */}
                           {!isDone && !isError && (
-                            <div className="flex items-center gap-1.5" style={{ fontSize: 10, color: 'var(--muted)' }}>
+                            <div className="flex items-center gap-1.5" style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)' }}>
                               <svg className="animate-spin" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M21 12a9 9 0 1 1-6.219-8.56" />
                               </svg>
@@ -325,7 +325,7 @@ export default function CrashTestPanel({
                           )}
                           {isDone && (
                             <div style={{
-                              fontSize: 22, fontWeight: 800, letterSpacing: '-0.03em',
+                              fontSize: 'var(--text-2xl)', fontWeight: 800, letterSpacing: '-0.03em',
                               color: getRateColor(rate),
                               fontVariantNumeric: 'tabular-nums',
                               lineHeight: 1,
@@ -349,7 +349,7 @@ export default function CrashTestPanel({
                             </div>
 
                             {/* Compound + survivors */}
-                            <div className="flex items-center gap-4 mb-2" style={{ fontSize: 11 }}>
+                            <div className="flex items-center gap-4 mb-2" style={{ fontSize: 'var(--text-xs)' }}>
                               <div>
                                 <span style={{ color: 'var(--muted)' }}>Compound: </span>
                                 <span style={{ fontWeight: 700, color: getRateColor(s.stats.compoundProbability), fontVariantNumeric: 'tabular-nums' }}>
@@ -374,16 +374,16 @@ export default function CrashTestPanel({
                             {s.stats.fatalGate && (
                               <div style={{
                                 padding: 'var(--space-2) var(--space-3)', borderRadius: 8,
-                                background: 'rgba(239,68,68,0.06)',
-                                border: '1px solid rgba(239,68,68,0.1)',
+                                background: 'color-mix(in srgb, var(--danger) 6%, transparent)',
+                                border: '1px solid color-mix(in srgb, var(--danger) 10%, transparent)',
                               }}>
-                                <div style={{ fontSize: 9, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', color: '#ef4444', marginBottom: 3 }}>
+                                <div style={{ fontSize: 'var(--text-xs)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--danger)', marginBottom: 3 }}>
                                   #1 killer
                                 </div>
-                                <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--foreground)', lineHeight: 1.3 }}>
+                                <div style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--foreground)', lineHeight: 1.3 }}>
                                   {s.stats.fatalGate.label}
                                 </div>
-                                <div style={{ fontSize: 10, color: 'var(--muted)', marginTop: 2 }}>
+                                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)', marginTop: 2 }}>
                                   {s.stats.fatalGate.deaths} of {s.stats.totalPeople} died here ({s.stats.fatalGate.prob}% pass rate)
                                 </div>
                               </div>
@@ -393,7 +393,7 @@ export default function CrashTestPanel({
                             {s.stats.topKillers.length > 1 && (
                               <div className="mt-2 space-y-1">
                                 {s.stats.topKillers.slice(1, 3).map(k => (
-                                  <div key={k.nodeId} className="flex items-center justify-between" style={{ fontSize: 10, color: 'var(--muted)' }}>
+                                  <div key={k.nodeId} className="flex items-center justify-between" style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)' }}>
                                     <span>{k.label}</span>
                                     <span style={{ fontVariantNumeric: 'tabular-nums' }}>{k.deaths} died</span>
                                   </div>
@@ -407,7 +407,7 @@ export default function CrashTestPanel({
                               style={{
                                 marginTop: 'var(--space-3)', padding: 'var(--space-2) var(--space-4)', borderRadius: 8, width: '100%',
                                 border: '1px solid var(--border)', background: 'transparent',
-                                fontSize: 11, fontWeight: 600, color: 'var(--foreground)',
+                                fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--foreground)',
                                 cursor: 'pointer', fontFamily: 'Inter, system-ui',
                                 display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-2)',
                               }}
@@ -431,8 +431,8 @@ export default function CrashTestPanel({
                       onClick={handleStop}
                       style={{
                         flex: 1, padding: 'var(--space-3) var(--space-4)', borderRadius: 10,
-                        border: '1px solid rgba(239,68,68,0.3)', background: 'rgba(239,68,68,0.06)',
-                        fontSize: 12, fontWeight: 600, color: '#ef4444',
+                        border: '1px solid color-mix(in srgb, var(--danger) 30%, transparent)', background: 'color-mix(in srgb, var(--danger) 6%, transparent)',
+                        fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--danger)',
                         cursor: 'pointer', fontFamily: 'Inter, system-ui',
                       }}
                     >
@@ -445,7 +445,7 @@ export default function CrashTestPanel({
                         style={{
                           flex: 1, padding: 'var(--space-3) var(--space-4)', borderRadius: 10,
                           border: '1px solid var(--border)', background: 'transparent',
-                          fontSize: 12, fontWeight: 600, color: 'var(--foreground)',
+                          fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--foreground)',
                           cursor: 'pointer', fontFamily: 'Inter, system-ui',
                         }}
                       >
@@ -455,10 +455,10 @@ export default function CrashTestPanel({
                         onClick={handleRun}
                         style={{
                           flex: 1, padding: 'var(--space-3) var(--space-4)', borderRadius: 10,
-                          border: 'none', background: 'linear-gradient(135deg, #ef4444, #dc2626)',
-                          fontSize: 12, fontWeight: 600, color: '#fff',
+                          border: 'none', background: 'linear-gradient(135deg, var(--danger), var(--danger-hover))',
+                          fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--accent-foreground)',
                           cursor: 'pointer', fontFamily: 'Inter, system-ui',
-                          boxShadow: '0 4px 12px rgba(239,68,68,0.2)',
+                          boxShadow: '0 4px 12px color-mix(in srgb, var(--danger) 20%, transparent)',
                         }}
                       >
                         Run again

@@ -619,7 +619,7 @@ export function useSimulation({
           opacity: hasKillers ? (isKiller || isOnYouPath ? 1 : 0.4) : 1,
           transition: 'opacity 0.8s ease',
           filter: hasKillers && !isKiller && !isOnYouPath ? 'grayscale(0.3)' : 'none',
-          ...(isOnYouPath ? { boxShadow: '0 0 0 2px #fbbf24, 0 0 12px rgba(251,191,36,0.3)' } : {}),
+          ...(isOnYouPath ? { boxShadow: '0 0 0 2px var(--warning), 0 0 12px color-mix(in srgb, var(--warning) 30%, transparent)' } : {}),
         },
       };
     }));
@@ -635,7 +635,7 @@ export function useSimulation({
             ...e.style,
             opacity: isOnYouPath ? 1 : (isKillerEdge ? 1 : 0.25),
             transition: 'opacity 0.8s ease',
-            ...(isOnYouPath ? { stroke: '#fbbf24', strokeWidth: 3 } : {}),
+            ...(isOnYouPath ? { stroke: 'var(--warning)', strokeWidth: 3 } : {}),
           },
         };
       }));

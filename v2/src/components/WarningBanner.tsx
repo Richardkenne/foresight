@@ -19,25 +19,25 @@ const ICON_PATHS = {
 
 const SEVERITY_CONFIG = {
   critical: {
-    bg: 'rgba(239,68,68,0.06)',
-    border: 'rgba(239,68,68,0.15)',
-    color: '#ef4444',
+    bg: 'var(--danger-muted)',
+    border: 'color-mix(in srgb, var(--danger) 15%, transparent)',
+    color: 'var(--danger)',
     icon: 'alert-circle' as const,
-    dotColor: '#ef4444',
+    dotColor: 'var(--danger)',
   },
   warning: {
-    bg: 'rgba(245,158,11,0.06)',
-    border: 'rgba(245,158,11,0.15)',
-    color: '#f59e0b',
+    bg: 'var(--warning-muted)',
+    border: 'color-mix(in srgb, var(--warning) 15%, transparent)',
+    color: 'var(--warning)',
     icon: 'alert-triangle' as const,
-    dotColor: '#f59e0b',
+    dotColor: 'var(--warning)',
   },
   info: {
-    bg: 'rgba(59,130,246,0.06)',
-    border: 'rgba(59,130,246,0.15)',
-    color: '#3b82f6',
+    bg: 'color-mix(in srgb, var(--accent) 6%, transparent)',
+    border: 'color-mix(in srgb, var(--accent) 15%, transparent)',
+    color: 'var(--accent)',
     icon: 'info' as const,
-    dotColor: '#3b82f6',
+    dotColor: 'var(--accent)',
   },
 };
 
@@ -113,22 +113,22 @@ export default function WarningBanner({ warnings, onDismiss }: WarningBannerProp
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
           <SvgIcon name={config.icon} size={14} color={config.color} />
-          <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--foreground)', letterSpacing: '-0.01em' }}>
+          <span style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--foreground)', letterSpacing: '-0.01em' }}>
             {visible.length} warning{visible.length !== 1 ? 's' : ''} found
           </span>
           <div style={{ display: 'flex', gap: 'var(--space-1)' }}>
             {criticalCount > 0 && (
-              <span style={{ fontSize: '9px', fontWeight: 700, padding: '1px var(--space-2)', borderRadius: '4px', background: 'rgba(239,68,68,0.12)', color: '#ef4444', fontFamily: 'var(--font-geist-mono), monospace' }}>
+              <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, padding: '1px var(--space-2)', borderRadius: '4px', background: 'color-mix(in srgb, var(--danger) 12%, transparent)', color: 'var(--danger)', fontFamily: 'var(--font-geist-mono), monospace' }}>
                 {criticalCount} CRITICAL
               </span>
             )}
             {warningCount > 0 && (
-              <span style={{ fontSize: '9px', fontWeight: 700, padding: '1px var(--space-2)', borderRadius: '4px', background: 'rgba(245,158,11,0.12)', color: '#f59e0b', fontFamily: 'var(--font-geist-mono), monospace' }}>
+              <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, padding: '1px var(--space-2)', borderRadius: '4px', background: 'color-mix(in srgb, var(--warning) 12%, transparent)', color: 'var(--warning)', fontFamily: 'var(--font-geist-mono), monospace' }}>
                 {warningCount} WARNING
               </span>
             )}
             {infoCount > 0 && (
-              <span style={{ fontSize: '9px', fontWeight: 700, padding: '1px var(--space-2)', borderRadius: '4px', background: 'rgba(59,130,246,0.12)', color: '#3b82f6', fontFamily: 'var(--font-geist-mono), monospace' }}>
+              <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, padding: '1px var(--space-2)', borderRadius: '4px', background: 'color-mix(in srgb, var(--accent) 12%, transparent)', color: 'var(--accent)', fontFamily: 'var(--font-geist-mono), monospace' }}>
                 {infoCount} INFO
               </span>
             )}
@@ -169,10 +169,10 @@ export default function WarningBanner({ warnings, onDismiss }: WarningBannerProp
                   <SvgIcon name={wConfig.icon} size={13} color={wConfig.color} />
                 </div>
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--foreground)', marginBottom: '2px', lineHeight: 1.3 }}>
+                  <div style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--foreground)', marginBottom: '2px', lineHeight: 1.3 }}>
                     {w.title}
                   </div>
-                  <div style={{ fontSize: '10px', color: 'var(--muted-foreground)', lineHeight: 1.45 }}>
+                  <div style={{ fontSize: 'var(--text-xs)', color: 'var(--muted-foreground)', lineHeight: 1.45 }}>
                     {w.message}
                   </div>
                 </div>
@@ -208,7 +208,7 @@ export default function WarningBanner({ warnings, onDismiss }: WarningBannerProp
  * Small warning dot for ProfilePanel field indicators
  */
 export function FieldWarningDot({ severity, tooltip }: { severity: 'critical' | 'warning'; tooltip?: string }) {
-  const color = severity === 'critical' ? '#ef4444' : '#f59e0b';
+  const color = severity === 'critical' ? 'var(--danger)' : 'var(--warning)';
   return (
     <span
       title={tooltip}

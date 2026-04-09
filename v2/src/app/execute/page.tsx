@@ -105,17 +105,17 @@ function PlayIcon() {
 // ── Phase colors and icons ──
 
 const PHASE_CONFIG: Record<string, { color: string; bg: string }> = {
-  Legal: { color: '#7c3aed', bg: 'rgba(124, 58, 237, 0.08)' },
-  Financial: { color: '#059669', bg: 'rgba(5, 150, 105, 0.08)' },
-  Operations: { color: '#2563eb', bg: 'rgba(37, 99, 235, 0.08)' },
-  Marketing: { color: '#d97706', bg: 'rgba(217, 119, 6, 0.08)' },
-  Launch: { color: '#dc2626', bg: 'rgba(220, 38, 38, 0.08)' },
+  Legal: { color: 'var(--purple-hover)', bg: 'color-mix(in srgb, var(--purple-hover) 8%, transparent)' },
+  Financial: { color: 'var(--success-hover)', bg: 'color-mix(in srgb, var(--success-hover) 8%, transparent)' },
+  Operations: { color: 'var(--accent-hover)', bg: 'color-mix(in srgb, var(--accent-hover) 8%, transparent)' },
+  Marketing: { color: 'var(--warning-hover)', bg: 'color-mix(in srgb, var(--warning-hover) 8%, transparent)' },
+  Launch: { color: 'var(--danger-hover)', bg: 'color-mix(in srgb, var(--danger-hover) 8%, transparent)' },
 };
 
 const STATUS_CONFIG: Record<string, { color: string; bg: string; label: string; icon: React.ReactNode }> = {
-  ready: { color: '#059669', bg: 'rgba(5, 150, 105, 0.1)', label: 'Ready', icon: <CheckCircleIcon /> },
-  'needs-human': { color: '#d97706', bg: 'rgba(217, 119, 6, 0.1)', label: 'Needs Human', icon: <UserIcon /> },
-  'coming-soon': { color: '#6b7280', bg: 'rgba(107, 114, 128, 0.1)', label: 'Coming Soon', icon: <ClockIcon /> },
+  ready: { color: 'var(--success-hover)', bg: 'color-mix(in srgb, var(--success-hover) 10%, transparent)', label: 'Ready', icon: <CheckCircleIcon /> },
+  'needs-human': { color: 'var(--warning-hover)', bg: 'color-mix(in srgb, var(--warning-hover) 10%, transparent)', label: 'Needs Human', icon: <UserIcon /> },
+  'coming-soon': { color: 'var(--muted-foreground)', bg: 'color-mix(in srgb, var(--muted-foreground) 10%, transparent)', label: 'Coming Soon', icon: <ClockIcon /> },
 };
 
 // ── Step Card ──
@@ -138,7 +138,7 @@ function StepCard({ step, isLast }: { step: ExecutionStep; isLast: boolean }) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontSize: 10,
+          fontSize: 'var(--text-xs)',
           fontWeight: 700,
           color: phase.color,
           fontFamily: 'var(--font-geist-mono)',
@@ -210,7 +210,7 @@ function StepCard({ step, isLast }: { step: ExecutionStep; isLast: boolean }) {
               </span>
             </div>
             <h3 style={{
-              fontSize: 14,
+              fontSize: 'var(--text-md)',
               fontWeight: 600,
               color: 'var(--foreground)',
               margin: 0,
@@ -264,7 +264,7 @@ function StepCard({ step, isLast }: { step: ExecutionStep; isLast: boolean }) {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 4,
-                fontSize: 12,
+                fontSize: 'var(--text-sm)',
                 color: 'var(--accent)',
                 textDecoration: 'none',
                 fontWeight: 500,
@@ -274,16 +274,16 @@ function StepCard({ step, isLast }: { step: ExecutionStep; isLast: boolean }) {
               <ExternalLinkIcon />
             </a>
           ) : (
-            <span style={{ fontSize: 12, color: 'var(--muted-foreground)' }}>{step.platform}</span>
+            <span style={{ fontSize: 'var(--text-sm)', color: 'var(--muted-foreground)' }}>{step.platform}</span>
           )}
           {step.automatable && (
             <span style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: 3,
-              fontSize: 10,
-              color: '#7c3aed',
-              background: 'rgba(124, 58, 237, 0.08)',
+              fontSize: 'var(--text-xs)',
+              color: 'var(--purple-hover)',
+              background: 'color-mix(in srgb, var(--purple-hover) 8%, transparent)',
               padding: '1px 6px',
               borderRadius: 4,
             }}>
@@ -296,9 +296,9 @@ function StepCard({ step, isLast }: { step: ExecutionStep; isLast: boolean }) {
               display: 'inline-flex',
               alignItems: 'center',
               gap: 3,
-              fontSize: 10,
-              color: '#2563eb',
-              background: 'rgba(37, 99, 235, 0.08)',
+              fontSize: 'var(--text-xs)',
+              color: 'var(--accent-hover)',
+              background: 'color-mix(in srgb, var(--accent-hover) 8%, transparent)',
               padding: '1px 6px',
               borderRadius: 4,
             }}>
@@ -316,7 +316,7 @@ function StepCard({ step, isLast }: { step: ExecutionStep; isLast: boolean }) {
             borderTop: '1px solid var(--border)',
           }}>
             <p style={{
-              fontSize: 12,
+              fontSize: 'var(--text-sm)',
               lineHeight: 1.6,
               color: 'var(--muted-foreground)',
               margin: 0,
@@ -325,7 +325,7 @@ function StepCard({ step, isLast }: { step: ExecutionStep; isLast: boolean }) {
             </p>
             {step.dependencies.length > 0 && (
               <p style={{
-                fontSize: 10,
+                fontSize: 'var(--text-xs)',
                 color: 'var(--muted)',
                 marginTop: 8,
                 fontFamily: 'var(--font-geist-mono)',
@@ -348,7 +348,7 @@ function StepCard({ step, isLast }: { step: ExecutionStep; isLast: boolean }) {
                   borderRadius: 8,
                   background: 'var(--foreground)',
                   color: 'var(--background)',
-                  fontSize: 12,
+                  fontSize: 'var(--text-sm)',
                   fontWeight: 600,
                   textDecoration: 'none',
                   transition: 'opacity 0.15s',
@@ -398,10 +398,10 @@ function SummaryCard({ plan }: { plan: ExecutionPlan }) {
         border: '1px solid var(--border)',
         background: 'var(--surface)',
       }}>
-        <div style={{ fontSize: 22, fontWeight: 700, color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>
+        <div style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>
           ${plan.totalEstimatedCost.min.toLocaleString()}-${plan.totalEstimatedCost.max.toLocaleString()}
         </div>
-        <div style={{ fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase' as const, letterSpacing: '0.08em', marginTop: 4, fontWeight: 600 }}>
+        <div style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)', textTransform: 'uppercase' as const, letterSpacing: '0.08em', marginTop: 4, fontWeight: 600 }}>
           Estimated Cost
         </div>
       </div>
@@ -411,10 +411,10 @@ function SummaryCard({ plan }: { plan: ExecutionPlan }) {
         border: '1px solid var(--border)',
         background: 'var(--surface)',
       }}>
-        <div style={{ fontSize: 22, fontWeight: 700, color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>
+        <div style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>
           {plan.totalEstimatedWeeks.min}-{plan.totalEstimatedWeeks.max}w
         </div>
-        <div style={{ fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase' as const, letterSpacing: '0.08em', marginTop: 4, fontWeight: 600 }}>
+        <div style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)', textTransform: 'uppercase' as const, letterSpacing: '0.08em', marginTop: 4, fontWeight: 600 }}>
           Estimated Time
         </div>
       </div>
@@ -424,10 +424,10 @@ function SummaryCard({ plan }: { plan: ExecutionPlan }) {
         border: '1px solid var(--border)',
         background: 'var(--surface)',
       }}>
-        <div style={{ fontSize: 22, fontWeight: 700, color: '#059669', fontFamily: 'var(--font-geist-mono)' }}>
+        <div style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--success-hover)', fontFamily: 'var(--font-geist-mono)' }}>
           {readyCount}/{plan.steps.length}
         </div>
-        <div style={{ fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase' as const, letterSpacing: '0.08em', marginTop: 4, fontWeight: 600 }}>
+        <div style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)', textTransform: 'uppercase' as const, letterSpacing: '0.08em', marginTop: 4, fontWeight: 600 }}>
           Ready Now
         </div>
       </div>
@@ -437,10 +437,10 @@ function SummaryCard({ plan }: { plan: ExecutionPlan }) {
         border: '1px solid var(--border)',
         background: 'var(--surface)',
       }}>
-        <div style={{ fontSize: 22, fontWeight: 700, color: '#d97706', fontFamily: 'var(--font-geist-mono)' }}>
+        <div style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--warning-hover)', fontFamily: 'var(--font-geist-mono)' }}>
           {humanCount}
         </div>
-        <div style={{ fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase' as const, letterSpacing: '0.08em', marginTop: 4, fontWeight: 600 }}>
+        <div style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)', textTransform: 'uppercase' as const, letterSpacing: '0.08em', marginTop: 4, fontWeight: 600 }}>
           Need Human
         </div>
       </div>
@@ -450,10 +450,10 @@ function SummaryCard({ plan }: { plan: ExecutionPlan }) {
         border: '1px solid var(--border)',
         background: 'var(--surface)',
       }}>
-        <div style={{ fontSize: 22, fontWeight: 700, color: '#7c3aed', fontFamily: 'var(--font-geist-mono)' }}>
+        <div style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--purple-hover)', fontFamily: 'var(--font-geist-mono)' }}>
           {automatableCount}
         </div>
-        <div style={{ fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase' as const, letterSpacing: '0.08em', marginTop: 4, fontWeight: 600 }}>
+        <div style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)', textTransform: 'uppercase' as const, letterSpacing: '0.08em', marginTop: 4, fontWeight: 600 }}>
           Automatable
         </div>
       </div>
@@ -463,10 +463,10 @@ function SummaryCard({ plan }: { plan: ExecutionPlan }) {
         border: '1px solid var(--border)',
         background: 'var(--surface)',
       }}>
-        <div style={{ fontSize: 22, fontWeight: 700, color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>
+        <div style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>
           {phases.length}
         </div>
-        <div style={{ fontSize: 10, color: 'var(--muted)', textTransform: 'uppercase' as const, letterSpacing: '0.08em', marginTop: 4, fontWeight: 600 }}>
+        <div style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)', textTransform: 'uppercase' as const, letterSpacing: '0.08em', marginTop: 4, fontWeight: 600 }}>
           Phases
         </div>
       </div>
@@ -529,7 +529,7 @@ function ExecuteContent() {
               Execution Agent
             </h1>
           </div>
-          <p style={{ fontSize: 13, color: 'var(--muted-foreground)', lineHeight: 1.6, maxWidth: 560 }}>
+          <p style={{ fontSize: 'var(--text-base)', color: 'var(--muted-foreground)', lineHeight: 1.6, maxWidth: 560 }}>
             From simulation to action. Generate a step-by-step execution plan with real platforms, realistic costs, and honest status on what can be automated today.
           </p>
         </div>
@@ -559,7 +559,7 @@ function ExecuteContent() {
                 border: '1px solid var(--border)',
                 background: 'var(--background)',
                 color: 'var(--foreground)',
-                fontSize: 14,
+                fontSize: 'var(--text-md)',
                 outline: 'none',
                 boxSizing: 'border-box',
               }}
@@ -581,7 +581,7 @@ function ExecuteContent() {
                   border: '1px solid var(--border)',
                   background: 'var(--background)',
                   color: 'var(--foreground)',
-                  fontSize: 13,
+                  fontSize: 'var(--text-base)',
                   outline: 'none',
                   boxSizing: 'border-box',
                   cursor: 'pointer',
@@ -612,7 +612,7 @@ function ExecuteContent() {
                   border: '1px solid var(--border)',
                   background: 'var(--background)',
                   color: 'var(--foreground)',
-                  fontSize: 13,
+                  fontSize: 'var(--text-base)',
                   outline: 'none',
                   fontFamily: 'var(--font-geist-mono)',
                   boxSizing: 'border-box',
@@ -634,7 +634,7 @@ function ExecuteContent() {
                 border: 'none',
                 background: scenario.trim() ? 'var(--foreground)' : 'var(--border)',
                 color: scenario.trim() ? 'var(--background)' : 'var(--muted)',
-                fontSize: 13,
+                fontSize: 'var(--text-base)',
                 fontWeight: 600,
                 cursor: scenario.trim() ? 'pointer' : 'default',
                 transition: 'opacity 0.15s',
@@ -654,7 +654,7 @@ function ExecuteContent() {
                 border: '1px solid var(--border)',
                 background: 'transparent',
                 color: 'var(--muted-foreground)',
-                fontSize: 13,
+                fontSize: 'var(--text-base)',
                 fontWeight: 500,
                 textDecoration: 'none',
                 transition: 'border-color 0.15s',
@@ -683,7 +683,7 @@ function ExecuteContent() {
               }}>
                 {plan.type} Plan
               </span>
-              <span style={{ fontSize: 12, color: 'var(--muted-foreground)' }}>
+              <span style={{ fontSize: 'var(--text-sm)', color: 'var(--muted-foreground)' }}>
                 {plan.steps.length} steps across {phases.length} phases
               </span>
             </div>
@@ -706,7 +706,7 @@ function ExecuteContent() {
                   border: '1px solid var(--border)',
                   background: !activePhase ? 'var(--foreground)' : 'transparent',
                   color: !activePhase ? 'var(--background)' : 'var(--muted-foreground)',
-                  fontSize: 12,
+                  fontSize: 'var(--text-sm)',
                   fontWeight: 500,
                   cursor: 'pointer',
                   transition: 'all 0.15s',
@@ -727,7 +727,7 @@ function ExecuteContent() {
                       border: `1px solid ${activePhase === p ? config.color : 'var(--border)'}`,
                       background: activePhase === p ? config.bg : 'transparent',
                       color: activePhase === p ? config.color : 'var(--muted-foreground)',
-                      fontSize: 12,
+                      fontSize: 'var(--text-sm)',
                       fontWeight: 500,
                       cursor: 'pointer',
                       transition: 'all 0.15s',
@@ -755,7 +755,7 @@ function ExecuteContent() {
               background: 'var(--surface)',
               textAlign: 'center',
             }}>
-              <p style={{ fontSize: 13, fontWeight: 600, color: 'var(--foreground)', marginBottom: 4 }}>
+              <p style={{ fontSize: 'var(--text-base)', fontWeight: 600, color: 'var(--foreground)', marginBottom: 4 }}>
                 Total: ${plan.totalEstimatedCost.min.toLocaleString()}-${plan.totalEstimatedCost.max.toLocaleString()} over {plan.totalEstimatedWeeks.min}-{plan.totalEstimatedWeeks.max} weeks
               </p>
               <p style={{ fontSize: 11, color: 'var(--muted-foreground)', marginBottom: 16 }}>
@@ -774,7 +774,7 @@ function ExecuteContent() {
                     border: '1px solid var(--border)',
                     background: 'transparent',
                     color: 'var(--muted-foreground)',
-                    fontSize: 12,
+                    fontSize: 'var(--text-sm)',
                     fontWeight: 500,
                     textDecoration: 'none',
                   }}
@@ -793,7 +793,7 @@ function ExecuteContent() {
                     border: '1px solid var(--border)',
                     background: 'transparent',
                     color: 'var(--muted-foreground)',
-                    fontSize: 12,
+                    fontSize: 'var(--text-sm)',
                     fontWeight: 500,
                     textDecoration: 'none',
                   }}

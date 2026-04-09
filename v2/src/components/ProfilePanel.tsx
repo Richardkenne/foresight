@@ -85,13 +85,13 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', overflow: 'hidden' }}>
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: 'var(--space-4) var(--space-4)', borderBottom: '1px solid var(--border)' }}>
-        <button onClick={onBack} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', background: 'none', border: 'none', color: 'var(--foreground)', fontSize: '13px', fontWeight: 600, cursor: 'pointer', padding: 0 }}>
+        <button onClick={onBack} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', background: 'none', border: 'none', color: 'var(--foreground)', fontSize: 'var(--text-base)', fontWeight: 600, cursor: 'pointer', padding: 0 }}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5" /><path d="M12 19l-7-7 7-7" /></svg>
           Profile
         </button>
         <span style={{
-          fontSize: '9px', fontWeight: 700, padding: '2px var(--space-2)', borderRadius: '10px', letterSpacing: '0.06em', fontFamily: 'var(--font-geist-mono), monospace',
-          background: complete ? 'rgba(16,185,129,0.1)' : 'var(--surface-hover)',
+          fontSize: 'var(--text-xs)', fontWeight: 700, padding: '2px var(--space-2)', borderRadius: '10px', letterSpacing: '0.06em', fontFamily: 'var(--font-geist-mono), monospace',
+          background: complete ? 'var(--success-muted)' : 'var(--surface-hover)',
           color: complete ? 'var(--success)' : 'var(--muted)',
         }}>
           {complete ? 'ACTIVE' : `${filledCount} FIELDS`}
@@ -105,7 +105,7 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
             key={s.id}
             onClick={() => setActiveSection(activeSection === s.id ? null : s.id)}
             style={{
-              display: 'flex', alignItems: 'center', gap: 'var(--space-1)', padding: 'var(--space-1) var(--space-2)', borderRadius: '6px', border: 'none', cursor: 'pointer', fontSize: '10px', fontWeight: 500, whiteSpace: 'nowrap', transition: 'all 0.1s',
+              display: 'flex', alignItems: 'center', gap: 'var(--space-1)', padding: 'var(--space-1) var(--space-2)', borderRadius: '6px', border: 'none', cursor: 'pointer', fontSize: 'var(--text-xs)', fontWeight: 500, whiteSpace: 'nowrap', transition: 'all 0.1s',
               background: activeSection === s.id ? 'var(--foreground)' : 'transparent',
               color: activeSection === s.id ? 'var(--background)' : 'var(--muted-foreground)',
             }}
@@ -115,6 +115,7 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
           </button>
         ))}
       </div>
+
 
       {/* Content */}
       <div style={{ flex: 1, overflowY: 'auto', padding: 'var(--space-3) var(--space-4)' }}>
@@ -178,7 +179,7 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
 
         {activeSection === 'sacred' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-            <div style={{ fontSize: '10px', color: 'var(--muted)', lineHeight: 1.6 }}>
+            <div style={{ fontSize: 'var(--text-xs)', color: 'var(--muted)', lineHeight: 1.6 }}>
               Measure your alignment with 36 universal principles across 5 domains. Results personalize simulation probabilities.
             </div>
             {sacredProfile ? (
@@ -191,19 +192,19 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
                   return (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <span style={{ fontSize: '9px', fontWeight: 700, color: 'var(--muted)', letterSpacing: '0.06em', fontFamily: 'var(--font-geist-mono, monospace)' }}>OVERALL SCORE</span>
-                        <span style={{ fontSize: '13px', fontWeight: 700, color: avg >= 7 ? 'var(--success)' : avg >= 4 ? 'var(--accent)' : 'var(--danger)', fontFamily: 'var(--font-geist-mono, monospace)' }}>{avg.toFixed(1)}</span>
+                        <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--muted)', letterSpacing: '0.06em', fontFamily: 'var(--font-geist-mono, monospace)' }}>OVERALL SCORE</span>
+                        <span style={{ fontSize: 'var(--text-base)', fontWeight: 700, color: avg >= 7 ? 'var(--success)' : avg >= 4 ? 'var(--accent)' : 'var(--danger)', fontFamily: 'var(--font-geist-mono, monospace)' }}>{avg.toFixed(1)}</span>
                       </div>
                       <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
                         {top.map(([id, score]) => (
-                          <span key={id} style={{ fontSize: '9px', padding: '2px var(--space-2)', borderRadius: '4px', background: 'rgba(16,185,129,0.1)', color: 'var(--success)', fontFamily: 'var(--font-geist-mono, monospace)' }}>
+                          <span key={id} style={{ fontSize: 'var(--text-xs)', padding: '2px var(--space-2)', borderRadius: '4px', background: 'var(--success-muted)', color: 'var(--success)', fontFamily: 'var(--font-geist-mono, monospace)' }}>
                             {id.replace('SR-0', '')} {score.toFixed(1)}
                           </span>
                         ))}
                       </div>
                       <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
                         {bottom.map(([id, score]) => (
-                          <span key={id} style={{ fontSize: '9px', padding: '2px var(--space-2)', borderRadius: '4px', background: 'rgba(239,68,68,0.1)', color: 'var(--danger)', fontFamily: 'var(--font-geist-mono, monospace)' }}>
+                          <span key={id} style={{ fontSize: 'var(--text-xs)', padding: '2px var(--space-2)', borderRadius: '4px', background: 'var(--danger-muted)', color: 'var(--danger)', fontFamily: 'var(--font-geist-mono, monospace)' }}>
                             {id.replace('SR-0', '')} {score.toFixed(1)}
                           </span>
                         ))}
@@ -215,7 +216,7 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
                   onClick={() => setShowSacredAssessment(true)}
                   style={{
                     padding: 'var(--space-2)', border: '1px solid var(--border)', borderRadius: '6px',
-                    background: 'none', color: 'var(--foreground)', fontSize: '11px', fontWeight: 500, cursor: 'pointer',
+                    background: 'none', color: 'var(--foreground)', fontSize: 'var(--text-sm)', fontWeight: 500, cursor: 'pointer',
                     display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-2)',
                   }}
                 >
@@ -228,7 +229,7 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
                 onClick={() => setShowSacredAssessment(true)}
                 style={{
                   padding: 'var(--space-3)', border: 'none', borderRadius: '6px',
-                  background: 'var(--foreground)', color: 'var(--background)', fontSize: '11px', fontWeight: 600, cursor: 'pointer',
+                  background: 'var(--foreground)', color: 'var(--background)', fontSize: 'var(--text-sm)', fontWeight: 600, cursor: 'pointer',
                   display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-2)',
                 }}
               >
@@ -267,7 +268,7 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
       <div style={{ padding: 'var(--space-3) var(--space-4)', borderTop: '1px solid var(--border)' }}>
         <button
           onClick={() => { setProfile({}); saveProfile({}); onProfileChange?.({}); }}
-          style={{ width: '100%', padding: 'var(--space-2)', border: 'none', borderRadius: '6px', background: 'none', color: 'var(--muted)', fontSize: '10px', cursor: 'pointer', transition: 'color 0.15s' }}
+          style={{ width: '100%', padding: 'var(--space-2)', border: 'none', borderRadius: '6px', background: 'none', color: 'var(--muted)', fontSize: 'var(--text-xs)', cursor: 'pointer', transition: 'color 0.15s' }}
           onMouseEnter={e => { e.currentTarget.style.color = 'var(--danger)'; }}
           onMouseLeave={e => { e.currentTarget.style.color = 'var(--muted)'; }}
         >
@@ -289,7 +290,7 @@ function FieldRow({ label, value, type = 'text', placeholder, onChange, warning 
   };
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-      <label style={{ display: 'flex', alignItems: 'center', fontSize: '9px', fontWeight: 700, color: 'var(--muted)', letterSpacing: '0.06em', textTransform: 'uppercase' as const, fontFamily: 'var(--font-geist-mono), monospace' }}>
+      <label style={{ display: 'flex', alignItems: 'center', fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--muted)', letterSpacing: '0.06em', textTransform: 'uppercase' as const, fontFamily: 'var(--font-geist-mono), monospace' }}>
         {label}
         {warning && <FieldWarningDot severity={warning} tooltip={tooltips[warning]} />}
       </label>
@@ -300,7 +301,7 @@ function FieldRow({ label, value, type = 'text', placeholder, onChange, warning 
         onChange={e => onChange(e.target.value)}
         style={{
           width: '100%', padding: 'var(--space-2) var(--space-2)', border: '1px solid var(--border)', borderRadius: '6px',
-          background: 'var(--surface)', color: 'var(--foreground)', fontSize: '12px', fontFamily: 'inherit',
+          background: 'var(--surface)', color: 'var(--foreground)', fontSize: 'var(--text-sm)', fontFamily: 'inherit',
           outline: 'none', transition: 'border-color 0.15s',
         }}
         onFocus={e => { e.currentTarget.style.borderColor = 'var(--accent)'; }}
@@ -319,7 +320,7 @@ function ChipField({ label, options, selected, onToggle, warning }: {
   };
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-1)' }}>
-      <label style={{ display: 'flex', alignItems: 'center', fontSize: '9px', fontWeight: 700, color: 'var(--muted)', letterSpacing: '0.06em', textTransform: 'uppercase' as const, fontFamily: 'var(--font-geist-mono), monospace' }}>
+      <label style={{ display: 'flex', alignItems: 'center', fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--muted)', letterSpacing: '0.06em', textTransform: 'uppercase' as const, fontFamily: 'var(--font-geist-mono), monospace' }}>
         {label}
         {warning && <FieldWarningDot severity={warning} tooltip={tooltips[warning]} />}
       </label>
@@ -331,7 +332,7 @@ function ChipField({ label, options, selected, onToggle, warning }: {
               key={opt}
               onClick={() => onToggle(opt)}
               style={{
-                padding: '3px var(--space-2)', borderRadius: '5px', fontSize: '10px', fontWeight: 500, cursor: 'pointer', transition: 'all 0.1s',
+                padding: '3px var(--space-2)', borderRadius: '5px', fontSize: 'var(--text-xs)', fontWeight: 500, cursor: 'pointer', transition: 'all 0.1s',
                 border: `1px solid ${active ? 'var(--foreground)' : 'var(--border)'}`,
                 background: active ? 'var(--foreground)' : 'var(--surface)',
                 color: active ? 'var(--background)' : 'var(--muted-foreground)',
@@ -355,7 +356,7 @@ function ToggleField({ label, value, onChange }: {
       style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%',
         padding: 'var(--space-2) 0', background: 'none', border: 'none', color: 'var(--foreground)',
-        fontSize: '11px', cursor: 'pointer', textAlign: 'left' as const,
+        fontSize: 'var(--text-sm)', cursor: 'pointer', textAlign: 'left' as const,
       }}
     >
       <span>{label}</span>
@@ -364,7 +365,7 @@ function ToggleField({ label, value, onChange }: {
         background: value ? 'var(--success)' : 'var(--border)',
       }}>
         <div style={{
-          width: '12px', height: '12px', borderRadius: '6px', background: 'white',
+          width: '12px', height: '12px', borderRadius: '6px', background: 'var(--background)',
           position: 'absolute' as const, top: '2px', left: '2px',
           transition: 'transform 0.2s', transform: value ? 'translateX(12px)' : 'none',
         }} />

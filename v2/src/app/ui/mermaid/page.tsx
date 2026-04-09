@@ -72,7 +72,7 @@ export default function MermaidTest() {
   const [error, setError] = useState('');
   const renderCount = useRef(0);
 
-  const templates = ['upworkMoneyTreeMin', 'upworkMoneyTreeMid', 'upworkMoneyTree', 'appMin', 'appMid', 'app', 'startup', 'cafe'];
+  const templates = ['upworkMoneyTreeMin', 'upworkMoneyTreeMid', 'upworkMoneyTree', 'appMin', 'appMid', 'app', 'startup', 'cafe', 'youtube_guruMin', 'youtube_guruMid', 'youtube_guru', 'want_to_winMin', 'want_to_winMid', 'want_to_win'];
 
   useEffect(() => {
     const mermaidCode = templateToMermaid(selected);
@@ -111,7 +111,7 @@ export default function MermaidTest() {
   }, [selected]);
 
   return (
-    <div style={{ padding: 24, fontFamily: 'Inter, system-ui, sans-serif', background: '#fafafa', minHeight: '100vh', overflow: 'auto' }}>
+    <div style={{ padding: 24, fontFamily: 'Inter, system-ui, sans-serif', background: 'var(--background)', minHeight: '100vh', overflow: 'auto' }}>
       <h1 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>Mermaid.js Vertical Test</h1>
 
       <div style={{ marginBottom: 16, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -120,9 +120,9 @@ export default function MermaidTest() {
             key={k}
             onClick={() => setSelected(k)}
             style={{
-              padding: '6px 12px', borderRadius: 8, fontSize: 12, fontWeight: 600, cursor: 'pointer',
-              background: selected === k ? '#3b82f6' : '#e2e8f0',
-              color: selected === k ? '#fff' : '#475569',
+              padding: '6px 12px', borderRadius: 8, fontSize: 'var(--text-sm)', fontWeight: 600, cursor: 'pointer',
+              background: selected === k ? 'var(--accent)' : 'var(--border)',
+              color: selected === k ? 'var(--accent-foreground)' : 'var(--muted-foreground)',
               border: 'none',
             }}
           >
@@ -135,14 +135,14 @@ export default function MermaidTest() {
         ref={containerRef}
         className="mermaid-container"
         style={{
-          background: '#fff', borderRadius: 12, padding: 24,
-          border: '1px solid #e2e8f0',
+          background: 'var(--surface)', borderRadius: 12, padding: 24,
+          border: '1px solid var(--border)',
         }}
       />
 
       <details style={{ marginTop: 16 }}>
-        <summary style={{ fontSize: 12, color: '#64748b', cursor: 'pointer' }}>Mermaid code</summary>
-        <pre style={{ fontSize: 11, background: '#1e293b', color: '#e2e8f0', padding: 16, borderRadius: 8, overflow: 'auto', marginTop: 8, whiteSpace: 'pre-wrap' }}>
+        <summary style={{ fontSize: 'var(--text-sm)', color: 'var(--muted-foreground)', cursor: 'pointer' }}>Mermaid code</summary>
+        <pre style={{ fontSize: 11, background: 'var(--foreground)', color: 'var(--border)', padding: 16, borderRadius: 8, overflow: 'auto', marginTop: 8, whiteSpace: 'pre-wrap' }}>
           {code}
         </pre>
       </details>

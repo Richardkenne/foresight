@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Prescriptive Engine — Simulator',
+  title: 'Prescriptive Engine — Foresight',
   description: 'Don\'t simulate. Optimize. We don\'t tell you what happens — we tell you what to DO.',
 };
 
