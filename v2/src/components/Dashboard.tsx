@@ -3,6 +3,7 @@
 import 'react';
 import { motion } from 'framer-motion';
 import { type Node as RFNode } from '@xyflow/react';
+import { tokens } from '@/lib/design-tokens';
 
 interface SimStats {
   total: number;
@@ -116,7 +117,7 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
             <div className="text-[9px] font-medium uppercase tracking-[0.08em]" style={{ color: 'var(--muted)' }}>Stopped</div>
           </div>
           <div className="flex-1 rounded-xl p-3" style={{ outline: '1px solid var(--border)' }}>
-            <div className="text-[22px] font-semibold tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)', color: successRate >= 50 ? '#059669' : successRate >= 25 ? '#d97706' : '#dc2626' }}>{successRate}%</div>
+            <div className="text-[22px] font-semibold tabular-nums" style={{ fontFamily: 'var(--font-geist-mono)', color: successRate >= 50 ? tokens.successHover : successRate >= 25 ? tokens.warningHover : tokens.dangerHover }}>{successRate}%</div>
             <div className="text-[9px] font-medium uppercase tracking-[0.08em]" style={{ color: 'var(--muted)' }}>Rate</div>
           </div>
         </div>
@@ -167,13 +168,13 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
                     style={{ borderBottom: i < Math.min(bottlenecks.length, 6) - 1 ? '1px solid var(--border-subtle)' : 'none' }}
                   >
                     <div className="flex items-center gap-2 flex-1 min-w-0">
-                      <span className="text-[10px] font-medium tabular-nums w-4 shrink-0" style={{ color: isWorse ? '#dc2626' : '#059669', fontFamily: 'var(--font-geist-mono)' }}>
+                      <span className="text-[10px] font-medium tabular-nums w-4 shrink-0" style={{ color: isWorse ? tokens.dangerHover : tokens.successHover, fontFamily: 'var(--font-geist-mono)' }}>
                         {i + 1}
                       </span>
                       <span className="text-[11px] truncate" style={{ color: 'var(--foreground)' }}>{b.label}</span>
                     </div>
                     <div className="flex items-center gap-2.5 shrink-0 ml-2">
-                      <span className="text-[11px] font-semibold tabular-nums" style={{ color: isWorse ? '#dc2626' : '#059669', fontFamily: 'var(--font-geist-mono)' }}>
+                      <span className="text-[11px] font-semibold tabular-nums" style={{ color: isWorse ? tokens.dangerHover : tokens.successHover, fontFamily: 'var(--font-geist-mono)' }}>
                         {b.actualRate}%
                       </span>
                       <span className="text-[9px]" style={{ color: 'var(--muted)' }}>/</span>
@@ -183,8 +184,8 @@ export default function Dashboard({ stats, nodes, nodeUniqueReach, edges, onClos
                       <span
                         className="text-[9px] font-medium px-1.5 py-0.5 rounded-full tabular-nums"
                         style={{
-                          background: isWorse ? 'rgba(220, 38, 38, 0.08)' : 'rgba(5, 150, 105, 0.08)',
-                          color: isWorse ? '#dc2626' : '#059669',
+                          background: isWorse ? tokens.dangerMuted : tokens.successMuted,
+                          color: isWorse ? tokens.dangerHover : tokens.successHover,
                           fontFamily: 'var(--font-geist-mono)',
                         }}
                       >

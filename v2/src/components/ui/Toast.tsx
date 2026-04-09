@@ -78,52 +78,30 @@ function InfoIcon() {
 
 // ─── Toast item component ────────────────────────────────────────────────────
 
+// Colors via CSS variables — auto-adapt to light/dark theme
 const COLORS: Record<ToastType, { bg: string; border: string; icon: string; text: string }> = {
   success: {
-    bg: '#f0fdf4',
-    border: '#bbf7d0',
-    icon: '#16a34a',
-    text: '#15803d',
+    bg: 'var(--success-muted)',
+    border: 'var(--success)',
+    icon: 'var(--success)',
+    text: 'var(--success-hover)',
   },
   error: {
-    bg: '#fef2f2',
-    border: '#fecaca',
-    icon: '#dc2626',
-    text: '#b91c1c',
+    bg: 'var(--danger-muted)',
+    border: 'var(--danger)',
+    icon: 'var(--danger)',
+    text: 'var(--danger-hover)',
   },
   info: {
-    bg: '#eff6ff',
-    border: '#bfdbfe',
-    icon: '#2563eb',
-    text: '#1d4ed8',
-  },
-};
-
-// Dark mode colors (used when data-theme="dark" or prefers-color-scheme: dark)
-const DARK_COLORS: Record<ToastType, { bg: string; border: string; icon: string; text: string }> = {
-  success: {
-    bg: '#052e16',
-    border: '#166534',
-    icon: '#4ade80',
-    text: '#86efac',
-  },
-  error: {
-    bg: '#2d0a0a',
-    border: '#7f1d1d',
-    icon: '#f87171',
-    text: '#fca5a5',
-  },
-  info: {
-    bg: '#0c1a3d',
-    border: '#1e3a8a',
-    icon: '#60a5fa',
-    text: '#93c5fd',
+    bg: 'color-mix(in srgb, var(--accent) 10%, transparent)',
+    border: 'var(--accent)',
+    icon: 'var(--accent)',
+    text: 'var(--accent-hover)',
   },
 };
 
 function ToastItemComponent({ item, onDismiss }: { item: ToastItem; onDismiss: (id: number) => void }) {
   const colors = COLORS[item.type];
-  const darkColors = DARK_COLORS[item.type];
 
   const style: React.CSSProperties = {
     display: 'flex',
@@ -135,7 +113,7 @@ function ToastItemComponent({ item, onDismiss }: { item: ToastItem; onDismiss: (
     borderRadius: '12px',
     border: `1px solid ${colors.border}`,
     background: colors.bg,
-    boxShadow: '0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04)',
+    boxShadow: 'var(--shadow-lg)',
     cursor: 'pointer',
     userSelect: 'none' as const,
     animation: item.exiting
@@ -204,7 +182,7 @@ export function ToastContainer() {
         position: 'fixed',
         bottom: '24px',
         right: '24px',
-        zIndex: 9999,
+        zIndex: 50, /* var(--z-toast) */
         display: 'flex',
         flexDirection: 'column',
         gap: '8px',

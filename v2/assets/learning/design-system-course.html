@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System Masterclass - Foresight</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #ffffff;
+    --surface: #f8f9fb;
+    --surface-2: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --text-muted: #64748b;
+    --text-dim: #94a3b8;
+    --accent: #3b82f6;
+    --accent-dim: rgba(59,130,246,0.08);
+    --success: #10b981;
+    --success-dim: rgba(16,185,129,0.08);
+    --danger: #ef4444;
+    --danger-dim: rgba(239,68,68,0.08);
+    --warning: #f59e0b;
+    --warning-dim: rgba(245,158,11,0.08);
+    --purple: #8b5cf6;
+    --purple-dim: rgba(139,92,246,0.08);
+  }
+
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, sans-serif; line-height: 1.7; }
+
+  /* --- Lang toggle --- */
+  .lang-toggle { position:fixed; top:16px; right:16px; z-index:200; display:flex; gap:4px; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:3px; }
+  .lang-btn { padding:4px 10px; border:none; border-radius:6px; font-size:11px; font-weight:600; font-family:'JetBrains Mono',monospace; cursor:pointer; background:transparent; color:var(--text-muted); transition:all 0.15s; }
+  .lang-btn.active { background:var(--accent); color:white; }
+  .it { display: none; }
+  body.lang-it .it { display: inline; }
+  body.lang-it .en { display: none; }
+  body:not(.lang-it) .en { display: inline; }
+  body:not(.lang-it) .it { display: none; }
+  /* Block-level bilingual */
+  .bl-it { display: none; }
+  .bl-en { display: block; }
+  body.lang-it .bl-it { display: block; }
+  body.lang-it .bl-en { display: none; }
+
+  /* --- Hero --- */
+  .hero { text-align:center; padding:80px 24px 60px; background:linear-gradient(180deg, rgba(59,130,246,0.04) 0%, transparent 100%); border-bottom:1px solid var(--border); }
+  .hero h1 { font-size:42px; font-weight:800; letter-spacing:-0.03em; margin-bottom:12px; color:var(--text); }
+  .hero .subtitle { font-size:16px; color:var(--text-muted); max-width:600px; margin:0 auto 32px; }
+  .progress-bar { max-width:500px; margin:0 auto; display:flex; gap:6px; }
+  .progress-bar .step { flex:1; height:4px; border-radius:2px; background:var(--border); transition:background 0.3s; }
+  .progress-bar .step.active { background:var(--accent); }
+  .progress-bar .step.done { background:var(--success); }
+  .progress-labels { max-width:500px; margin:8px auto 0; display:flex; justify-content:space-between; font-size:9px; font-family:'JetBrains Mono',monospace; color:var(--text-dim); letter-spacing:0.05em; text-transform:uppercase; }
+
+  .content { max-width:780px; margin:0 auto; padding:0 24px 120px; }
+
+  /* --- Pages --- */
+  .page { display:none; }
+  .page.active { display:block; }
+
+  /* --- Sections --- */
+  .section { margin-top:48px; }
+  .section-number { font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px; }
+  .section h2 { font-size:28px; font-weight:700; letter-spacing:-0.02em; margin-bottom:8px; }
+  .section .section-desc { font-size:15px; color:var(--text-muted); margin-bottom:32px; line-height:1.7; }
+  h3 { font-size:18px; font-weight:600; margin:32px 0 12px; }
+  h4 { font-size:13px; font-weight:600; margin:24px 0 8px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em; font-family:'JetBrains Mono',monospace; }
+  p, li { font-size:14px; color:var(--text-muted); line-height:1.8; }
+  ul { list-style:none; padding-left:0; margin:12px 0; }
+  ul li { padding-left:20px; position:relative; margin-bottom:6px; }
+  ul li::before { content:''; position:absolute; left:0; top:10px; width:6px; height:6px; border-radius:50%; background:var(--accent); }
+  strong { color:var(--text); font-weight:600; }
+  code { background:var(--surface); border:1px solid var(--border); border-radius:4px; padding:1px 5px; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--accent); }
+
+  /* --- Callout --- */
+  .callout { border-radius:12px; padding:16px 20px; margin:20px 0; font-size:13px; line-height:1.7; display:flex; gap:12px; }
+  .callout .icon { flex-shrink:0; font-size:18px; line-height:1.4; }
+  .callout-info { background:var(--accent-dim); border:1px solid rgba(59,130,246,0.15); color:#1e40af; }
+  .callout-warning { background:var(--warning-dim); border:1px solid rgba(245,158,11,0.15); color:#92400e; }
+  .callout-key { background:var(--purple-dim); border:1px solid rgba(139,92,246,0.15); color:#5b21b6; }
+  .callout-success { background:var(--success-dim); border:1px solid rgba(16,185,129,0.15); color:#065f46; }
+
+  /* --- Code --- */
+  .code-block { background:#fafbfc; border:1px solid var(--border); border-radius:10px; padding:20px; margin:16px 0; overflow-x:auto; position:relative; }
+  .code-block .lang-label { position:absolute; top:8px; right:12px; font-size:9px; font-family:'JetBrains Mono',monospace; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.1em; }
+  pre { font-family:'JetBrains Mono',monospace; font-size:12px; line-height:1.8; color:#1e293b; white-space:pre; tab-size:2; }
+  .hl-key { color:#059669; }
+  .hl-val { color:#2563eb; }
+  .hl-str { color:#2563eb; }
+  .hl-comment { color:#94a3b8; font-style:italic; }
+  .hl-fn { color:#7c3aed; }
+  .hl-tag { color:#dc2626; }
+  .hl-attr { color:#0284c7; }
+  .hl-num { color:#d97706; }
+
+  /* --- Visual Example --- */
+  .visual-example { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:32px 24px; margin:20px 0; display:flex; flex-direction:column; align-items:center; gap:16px; }
+  .visual-example .example-label { font-size:9px; font-family:'JetBrains Mono',monospace; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.1em; align-self:flex-start; }
+
+  /* --- Table --- */
+  .comparison { width:100%; border-collapse:collapse; margin:20px 0; font-size:13px; }
+  .comparison th { text-align:left; padding:10px 14px; background:var(--surface); border:1px solid var(--border); font-weight:600; color:var(--text); font-size:11px; text-transform:uppercase; letter-spacing:0.05em; font-family:'JetBrains Mono',monospace; }
+  .comparison td { padding:10px 14px; border:1px solid var(--border); color:var(--text-muted); }
+
+  /* --- Pyramid --- */
+  .pyramid { display:flex; flex-direction:column; align-items:center; gap:4px; margin:24px 0; }
+  .pyramid .level { display:flex; align-items:center; justify-content:center; text-align:center; font-size:12px; font-weight:600; font-family:'JetBrains Mono',monospace; letter-spacing:0.03em; border-radius:8px; padding:12px; border:1px solid; }
+  .pyramid .level:nth-child(1) { width:50%; background:rgba(139,92,246,0.06); border-color:rgba(139,92,246,0.2); color:#7c3aed; }
+  .pyramid .level:nth-child(2) { width:60%; background:rgba(59,130,246,0.06); border-color:rgba(59,130,246,0.2); color:#2563eb; }
+  .pyramid .level:nth-child(3) { width:70%; background:rgba(16,185,129,0.06); border-color:rgba(16,185,129,0.2); color:#059669; }
+  .pyramid .level:nth-child(4) { width:80%; background:rgba(245,158,11,0.06); border-color:rgba(245,158,11,0.2); color:#d97706; }
+  .pyramid .level:nth-child(5) { width:90%; background:rgba(239,68,68,0.06); border-color:rgba(239,68,68,0.2); color:#dc2626; }
+  .pyramid .arrow { font-size:10px; color:var(--text-dim); }
+
+  /* --- Swatches --- */
+  .swatches { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:8px; margin:16px 0; }
+  .swatch { border-radius:8px; padding:12px; border:1px solid var(--border); font-size:10px; font-family:'JetBrains Mono',monospace; }
+  .swatch .swatch-name { font-weight:600; margin-bottom:4px; font-size:11px; }
+  .swatch .swatch-val { color:var(--text-dim); }
+
+  /* --- Spacing Demo --- */
+  .spacing-demo { display:flex; flex-direction:column; gap:6px; margin:16px 0; }
+  .spacing-row { display:flex; align-items:center; gap:12px; }
+  .spacing-label { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-dim); width:80px; text-align:right; flex-shrink:0; }
+  .spacing-bar { height:20px; border-radius:4px; background:linear-gradient(90deg, rgba(59,130,246,0.2), rgba(59,130,246,0.08)); border:1px solid rgba(59,130,246,0.2); }
+  .spacing-val { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-muted); width:30px; flex-shrink:0; }
+
+  /* --- Demo components --- */
+  .button-row { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  .demo-btn { display:inline-flex; align-items:center; gap:6px; padding:8px 18px; border-radius:10px; font-size:13px; font-weight:600; font-family:'Inter',sans-serif; cursor:pointer; border:none; transition:all 0.15s; }
+  .demo-btn:active { transform:scale(0.97); }
+  .demo-btn-primary { background:var(--accent); color:white; }
+  .demo-btn-secondary { background:var(--surface-2); color:var(--text-muted); border:1px solid var(--border); }
+  .demo-btn-danger { background:var(--danger); color:white; }
+  .demo-btn-ghost { background:transparent; color:var(--text-muted); }
+  .demo-btn-ghost:hover { background:var(--surface-2); color:var(--text); }
+
+  .badge-row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .demo-badge { display:inline-flex; align-items:center; gap:4px; padding:2px 8px; border-radius:999px; font-size:10px; font-weight:600; font-family:'JetBrains Mono',monospace; letter-spacing:0.02em; border:1px solid; }
+  .demo-badge-success { background:var(--success-dim); color:#059669; border-color:rgba(16,185,129,0.3); }
+  .demo-badge-warning { background:var(--warning-dim); color:#d97706; border-color:rgba(245,158,11,0.3); }
+  .demo-badge-danger { background:var(--danger-dim); color:#dc2626; border-color:rgba(239,68,68,0.3); }
+  .demo-badge-info { background:var(--accent-dim); color:#2563eb; border-color:rgba(59,130,246,0.3); }
+  .demo-badge-neutral { background:var(--surface-2); color:var(--text-muted); border-color:var(--border); }
+
+  .demo-card { background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:20px; width:100%; max-width:320px; }
+  .demo-card-title { font-size:14px; font-weight:600; color:var(--text); margin-bottom:6px; }
+  .demo-card-desc { font-size:12px; color:var(--text-muted); margin-bottom:12px; line-height:1.6; }
+
+  .comp-demo { background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:16px; display:flex; align-items:center; gap:12px; width:100%; max-width:400px; }
+  .comp-avatar { width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg,var(--accent),var(--purple)); flex-shrink:0; display:flex; align-items:center; justify-content:center; color:white; font-size:16px; font-weight:700; }
+  .comp-info { flex:1; }
+  .comp-info .name { font-size:13px; font-weight:600; color:var(--text); }
+  .comp-info .role { font-size:11px; color:var(--text-dim); margin-top:2px; }
+
+  /* --- Grid Demo --- */
+  .grid-demo { display:grid; gap:8px; width:100%; }
+  .grid-demo-12 { grid-template-columns:repeat(12,1fr); }
+  .grid-cell { background:rgba(59,130,246,0.06); border:1px solid rgba(59,130,246,0.15); border-radius:4px; height:32px; display:flex; align-items:center; justify-content:center; font-size:9px; font-family:'JetBrains Mono',monospace; color:#2563eb; }
+  .grid-demo-layout { grid-template-columns:240px 1fr; grid-template-rows:48px 1fr 32px; height:200px; }
+  .grid-area-nav { grid-column:1/-1; background:rgba(139,92,246,0.05); border:1px solid rgba(139,92,246,0.15); border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:10px; font-family:'JetBrains Mono',monospace; color:#7c3aed; }
+  .grid-area-sidebar { background:rgba(245,158,11,0.05); border:1px solid rgba(245,158,11,0.15); border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:10px; font-family:'JetBrains Mono',monospace; color:#d97706; }
+  .grid-area-main { background:rgba(16,185,129,0.05); border:1px solid rgba(16,185,129,0.15); border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:10px; font-family:'JetBrains Mono',monospace; color:#059669; }
+  .grid-area-footer { grid-column:1/-1; background:rgba(239,68,68,0.05); border:1px solid rgba(239,68,68,0.15); border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:10px; font-family:'JetBrains Mono',monospace; color:#dc2626; }
+
+  /* --- Interaction Demo --- */
+  .interaction-box { width:200px; padding:16px; border-radius:12px; background:var(--surface); border:1px solid var(--border); text-align:center; font-size:12px; font-weight:500; color:var(--text-muted); cursor:pointer; transition:all 0.2s cubic-bezier(0.4,0,0.2,1); }
+  .interaction-box:hover { background:var(--surface-2); border-color:var(--accent); color:var(--text); transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+  .interaction-box:active { transform:scale(0.97); }
+
+  .state-demo { display:flex; gap:12px; flex-wrap:wrap; }
+  .state-box { padding:10px 16px; border-radius:8px; font-size:11px; font-weight:600; font-family:'JetBrains Mono',monospace; }
+  .state-default { background:var(--surface); border:1px solid var(--border); color:var(--text-muted); }
+  .state-hover { background:var(--surface-2); border:1px solid var(--accent); color:var(--text); }
+  .state-active { background:var(--accent-dim); border:1px solid var(--accent); color:var(--accent); transform:scale(0.97); }
+  .state-disabled { background:var(--surface); border:1px solid var(--border); color:var(--text-dim); opacity:0.4; }
+  .state-focus { background:var(--surface); border:1px solid var(--accent); color:var(--text); box-shadow:0 0 0 3px rgba(59,130,246,0.2); }
+
+  /* --- Quiz --- */
+  .quiz { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:28px; margin:32px 0; }
+  .quiz-header { display:flex; align-items:center; gap:10px; margin-bottom:20px; }
+  .quiz-icon { width:32px; height:32px; border-radius:8px; background:var(--accent-dim); display:flex; align-items:center; justify-content:center; font-size:16px; color:var(--accent); }
+  .quiz-title { font-size:16px; font-weight:700; }
+  .quiz-subtitle { font-size:11px; color:var(--text-dim); }
+  .question { margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid var(--border); }
+  .question:last-of-type { border-bottom:none; margin-bottom:16px; padding-bottom:0; }
+  .q-number { font-size:10px; font-family:'JetBrains Mono',monospace; color:var(--accent); font-weight:600; letter-spacing:0.1em; margin-bottom:6px; }
+  .q-text { font-size:14px; color:var(--text); font-weight:500; margin-bottom:12px; line-height:1.6; }
+  .options { display:flex; flex-direction:column; gap:6px; }
+  .option { display:flex; align-items:center; gap:10px; padding:10px 14px; border-radius:8px; background:var(--bg); border:1px solid var(--border); cursor:pointer; transition:all 0.15s; font-size:13px; color:var(--text-muted); }
+  .option:hover { border-color:var(--accent); color:var(--text); background:var(--surface-2); }
+  .option.selected { border-color:var(--accent); background:var(--accent-dim); color:var(--accent); }
+  .option.correct { border-color:var(--success); background:var(--success-dim); color:#059669; }
+  .option.wrong { border-color:var(--danger); background:var(--danger-dim); color:#dc2626; }
+  .option-letter { width:22px; height:22px; border-radius:6px; background:var(--surface-2); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:600; font-family:'JetBrains Mono',monospace; flex-shrink:0; }
+  .option.correct .option-letter { background:var(--success); color:white; }
+  .option.wrong .option-letter { background:var(--danger); color:white; }
+  .explanation { margin-top:10px; padding:12px 16px; border-radius:8px; font-size:12px; line-height:1.7; display:none; }
+  .explanation.visible { display:block; }
+  .explanation.correct-exp { background:var(--success-dim); border:1px solid rgba(16,185,129,0.15); color:#065f46; }
+  .explanation.wrong-exp { background:var(--danger-dim); border:1px solid rgba(239,68,68,0.15); color:#991b1b; }
+  .quiz-submit { display:inline-flex; align-items:center; gap:8px; padding:10px 24px; border-radius:10px; background:var(--accent); color:white; font-size:13px; font-weight:600; border:none; cursor:pointer; transition:all 0.15s; margin-top:8px; }
+  .quiz-submit:hover { background:#2563eb; }
+  .quiz-submit:active { transform:scale(0.97); }
+  .quiz-score { margin-top:16px; padding:16px 20px; border-radius:10px; font-size:14px; font-weight:600; display:none; text-align:center; }
+  .quiz-score.visible { display:block; }
+  .quiz-score.pass { background:var(--success-dim); border:1px solid rgba(16,185,129,0.15); color:#065f46; }
+  .quiz-score.fail { background:var(--danger-dim); border:1px solid rgba(239,68,68,0.15); color:#991b1b; }
+
+  /* --- Bottom Nav --- */
+  .page-nav { position:fixed; bottom:0; left:0; right:0; background:rgba(255,255,255,0.92); backdrop-filter:blur(16px); border-top:1px solid var(--border); padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:100; }
+  .page-nav-btn { display:inline-flex; align-items:center; gap:6px; padding:8px 20px; border-radius:10px; font-size:13px; font-weight:600; font-family:'Inter',sans-serif; cursor:pointer; border:none; transition:all 0.15s; }
+  .page-nav-btn:active { transform:scale(0.97); }
+  .page-nav-btn.primary { background:var(--accent); color:white; }
+  .page-nav-btn.primary:hover { background:#2563eb; }
+  .page-nav-btn.secondary { background:var(--surface-2); color:var(--text-muted); border:1px solid var(--border); }
+  .page-nav-btn.secondary:hover { color:var(--text); }
+  .page-nav-btn.locked { background:var(--surface-2); color:var(--text-dim); border:1px solid var(--border); cursor:not-allowed; opacity:0.5; }
+  .page-nav-center { font-size:11px; font-family:'JetBrains Mono',monospace; color:var(--text-dim); letter-spacing:0.05em; }
+
+  @keyframes shake { 0%,100%{transform:translateX(0)} 20%,60%{transform:translateX(-4px)} 40%,80%{transform:translateX(4px)} }
+
+  @media (max-width:640px) {
+    .hero h1 { font-size:28px; }
+    .content { padding:0 16px 100px; }
+    .swatches { grid-template-columns:repeat(3,1fr); }
+    .grid-demo-12 { grid-template-columns:repeat(6,1fr); }
+    .grid-demo-layout { grid-template-columns:1fr; }
+    .pyramid .level { width:100% !important; }
+    .page-nav-btn { padding:8px 12px; font-size:11px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LANG TOGGLE -->
+<div class="lang-toggle">
+  <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" id="btn-it" onclick="setLang('it')">IT</button>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Design System Masterclass</h1>
+  <p class="subtitle">
+    <span class="en">The 5-layer architecture behind every world-class UI. Linear, Vercel, Stripe, Palantir &mdash; they all follow this exact stack.</span>
+    <span class="it">L'architettura a 5 livelli dietro ogni UI di livello mondiale. Linear, Vercel, Stripe, Palantir &mdash; tutti seguono questo schema esatto.</span>
+  </p>
+  <div class="progress-bar" id="progress">
+    <div class="step" id="prog-1"></div>
+    <div class="step" id="prog-2"></div>
+    <div class="step" id="prog-3"></div>
+    <div class="step" id="prog-4"></div>
+    <div class="step" id="prog-5"></div>
+  </div>
+  <div class="progress-labels"><span>Tokens</span><span>Primitives</span><span>Compositions</span><span>Layouts</span><span>Interactions</span></div>
+</div>
+
+<div class="content">
+
+<!-- ═══════════════ PAGE 0: OVERVIEW ═══════════════ -->
+<div class="page active" id="page-0">
+<div class="section">
+  <div class="section-number">Overview</div>
+  <h2><span class="en">The Design System Pyramid</span><span class="it">La Piramide del Design System</span></h2>
+  <p class="section-desc">
+    <span class="en">Every professional UI is built in layers, bottom to top. Each layer depends on the one below it. Skip a layer, and the whole thing collapses.</span>
+    <span class="it">Ogni UI professionale si costruisce a livelli, dal basso verso l'alto. Ogni livello dipende da quello sotto. Salti un livello, crolla tutto.</span>
+  </p>
+  <div class="pyramid">
+    <div class="level">5. Interactions</div>
+    <div class="arrow">&darr;</div>
+    <div class="level">4. Layouts</div>
+    <div class="arrow">&darr;</div>
+    <div class="level">3. Compositions</div>
+    <div class="arrow">&darr;</div>
+    <div class="level">2. Primitives</div>
+    <div class="arrow">&darr;</div>
+    <div class="level">1. Tokens</div>
+  </div>
+  <div class="callout callout-key">
+    <span class="icon">*</span>
+    <div>
+      <span class="en"><strong>The Golden Rule:</strong> Each layer ONLY uses the layer directly below it. A Composition never uses raw hex colors (tokens) &mdash; it uses Primitives, which use Tokens. This creates a chain of abstraction that makes the entire UI changeable from one place.</span>
+      <span class="it"><strong>La Regola d'Oro:</strong> Ogni livello usa SOLO il livello direttamente sotto. Una Composition non usa mai colori hex raw (token) &mdash; usa Primitives, che usano Tokens. Questo crea una catena di astrazione che rende tutta la UI modificabile da un unico punto.</span>
+    </div>
+  </div>
+  <table class="comparison">
+    <thead><tr><th>Layer</th><th><span class="en">What it is</span><span class="it">Cos'e'</span></th><th><span class="en">Real example</span><span class="it">Esempio reale</span></th><th><span class="en">Changes affect</span><span class="it">Cambiamenti toccano</span></th></tr></thead>
+    <tbody>
+      <tr><td><strong>Tokens</strong></td><td><span class="en">Raw design values</span><span class="it">Valori di design grezzi</span></td><td><code>--accent: #3b82f6</code></td><td><span class="en">Everything</span><span class="it">Tutto</span></td></tr>
+      <tr><td><strong>Primitives</strong></td><td><span class="en">Single-purpose components</span><span class="it">Componenti a scopo singolo</span></td><td><code>&lt;Button&gt;</code>, <code>&lt;Badge&gt;</code></td><td><span class="en">All compositions using them</span><span class="it">Tutte le composition che li usano</span></td></tr>
+      <tr><td><strong>Compositions</strong></td><td><span class="en">Combined primitives</span><span class="it">Primitives combinati</span></td><td>Toolbar, NodeCard</td><td><span class="en">Specific features</span><span class="it">Feature specifiche</span></td></tr>
+      <tr><td><strong>Layouts</strong></td><td><span class="en">Page structure</span><span class="it">Struttura pagina</span></td><td>Grid, sidebar, responsive</td><td><span class="en">Page arrangement</span><span class="it">Disposizione pagina</span></td></tr>
+      <tr><td><strong>Interactions</strong></td><td><span class="en">Motion & states</span><span class="it">Movimento & stati</span></td><td>Hover, focus, transitions</td><td><span class="en">Feel & polish</span><span class="it">Sensazione & finitura</span></td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!-- ═══════════════ PAGE 1: TOKENS ═══════════════ -->
+<div class="page" id="page-1">
+<div class="section" id="section-tokens">
+  <div class="section-number">Layer 01</div>
+  <h2>Design Tokens</h2>
+  <p class="section-desc">
+    <span class="en">Tokens are the DNA of your UI. Named variables that store every design decision: colors, spacing, typography, shadows, radius, animation timing. <strong>Nothing in your UI should use a raw value.</strong></span>
+    <span class="it">I token sono il DNA della tua UI. Variabili con nome che memorizzano ogni decisione di design: colori, spaziatura, tipografia, ombre, radius, tempi di animazione. <strong>Nulla nella UI deve usare un valore grezzo.</strong></span>
+  </p>
+
+  <h3><span class="en">Why tokens exist</span><span class="it">Perche' esistono i token</span></h3>
+  <p><span class="en">Imagine you hardcode <code>#3b82f6</code> in 47 places. Now the designer says "make it darker." You must find and change all 47. Miss one? Inconsistency. With tokens: change <code>--accent</code> in ONE place. All 47 update instantly.</span><span class="it">Immagina di scrivere <code>#3b82f6</code> in 47 posti. Il designer dice "rendilo piu' scuro." Devi trovare e cambiare tutti e 47. Ne dimentichi uno? Incoerenza. Con i token: cambi <code>--accent</code> in UN posto. Tutti e 47 si aggiornano.</span></p>
+
+  <div class="callout callout-info">
+    <span class="icon">i</span>
+    <div><span class="en"><strong>Real world:</strong> Linear uses ~12 base colors. Palantir Blueprint uses 8 spacing values. The entire product comes from these few variables.</span><span class="it"><strong>Mondo reale:</strong> Linear usa ~12 colori base. Palantir Blueprint usa 8 valori di spaziatura. L'intero prodotto nasce da queste poche variabili.</span></div>
+  </div>
+
+  <h4><span class="en">Colors (our 10 base colors)</span><span class="it">Colori (i nostri 10 colori base)</span></h4>
+  <div class="swatches">
+    <div class="swatch" style="background:#f8f9fb;"><div class="swatch-name">background</div><div class="swatch-val">#f8f9fb</div></div>
+    <div class="swatch" style="background:#ffffff; border-color:#e2e8f0;"><div class="swatch-name">surface</div><div class="swatch-val">#ffffff</div></div>
+    <div class="swatch" style="background:#f1f5f9;"><div class="swatch-name">border</div><div class="swatch-val">#e2e8f0</div></div>
+    <div class="swatch" style="background:#f8f9fb;"><div class="swatch-name" style="color:#64748b;">muted</div><div class="swatch-val">#94a3b8</div></div>
+    <div class="swatch" style="background:rgba(59,130,246,0.08);"><div class="swatch-name" style="color:#2563eb;">accent</div><div class="swatch-val">#3b82f6</div></div>
+    <div class="swatch" style="background:rgba(16,185,129,0.08);"><div class="swatch-name" style="color:#059669;">success</div><div class="swatch-val">#10b981</div></div>
+    <div class="swatch" style="background:rgba(239,68,68,0.08);"><div class="swatch-name" style="color:#dc2626;">danger</div><div class="swatch-val">#ef4444</div></div>
+    <div class="swatch" style="background:rgba(245,158,11,0.08);"><div class="swatch-name" style="color:#d97706;">warning</div><div class="swatch-val">#f59e0b</div></div>
+    <div class="swatch" style="background:rgba(139,92,246,0.08);"><div class="swatch-name" style="color:#7c3aed;">purple</div><div class="swatch-val">#8b5cf6</div></div>
+    <div class="swatch" style="background:#f8f9fb;"><div class="swatch-name">foreground</div><div class="swatch-val">#0f172a</div></div>
+  </div>
+
+  <h4><span class="en">Spacing (4px grid &mdash; 8 values, like Palantir)</span><span class="it">Spaziatura (griglia 4px &mdash; 8 valori, come Palantir)</span></h4>
+  <div class="spacing-demo">
+    <div class="spacing-row"><span class="spacing-label">--space-1</span><div class="spacing-bar" style="width:4px;"></div><span class="spacing-val">4px</span></div>
+    <div class="spacing-row"><span class="spacing-label">--space-2</span><div class="spacing-bar" style="width:8px;"></div><span class="spacing-val">8px</span></div>
+    <div class="spacing-row"><span class="spacing-label">--space-3</span><div class="spacing-bar" style="width:12px;"></div><span class="spacing-val">12px</span></div>
+    <div class="spacing-row"><span class="spacing-label">--space-4</span><div class="spacing-bar" style="width:16px;"></div><span class="spacing-val">16px</span></div>
+    <div class="spacing-row"><span class="spacing-label">--space-6</span><div class="spacing-bar" style="width:24px;"></div><span class="spacing-val">24px</span></div>
+    <div class="spacing-row"><span class="spacing-label">--space-8</span><div class="spacing-bar" style="width:32px;"></div><span class="spacing-val">32px</span></div>
+    <div class="spacing-row"><span class="spacing-label">--space-10</span><div class="spacing-bar" style="width:40px;"></div><span class="spacing-val">40px</span></div>
+    <div class="spacing-row"><span class="spacing-label">--space-12</span><div class="spacing-bar" style="width:48px;"></div><span class="spacing-val">48px</span></div>
+  </div>
+
+  <h4><span class="en">Code: right vs wrong</span><span class="it">Codice: giusto vs sbagliato</span></h4>
+  <div class="code-block"><span class="lang-label">TSX</span>
+<pre><span class="hl-comment">// WRONG - hardcoded values / SBAGLIATO - valori fissi</span>
+&lt;<span class="hl-tag">div</span> <span class="hl-attr">style</span>={{ <span class="hl-key">color</span>: <span class="hl-str">'#ef4444'</span>, <span class="hl-key">padding</span>: <span class="hl-str">'13px'</span> }}&gt;
+
+<span class="hl-comment">// CORRECT - token references / CORRETTO - riferimenti token</span>
+&lt;<span class="hl-tag">div</span> <span class="hl-attr">style</span>={{ <span class="hl-key">color</span>: <span class="hl-str">'var(--danger)'</span>, <span class="hl-key">padding</span>: <span class="hl-str">'var(--space-3)'</span> }}&gt;</pre>
+  </div>
+
+  <div class="callout callout-warning">
+    <span class="icon">!</span>
+    <div><span class="en"><strong>Rule #1:</strong> If you write a hex color (<code>#ef4444</code>) or a pixel value (<code>13px</code>) directly in a component, you're breaking the token system.</span><span class="it"><strong>Regola #1:</strong> Se scrivi un colore hex (<code>#ef4444</code>) o un valore in pixel (<code>13px</code>) direttamente in un componente, stai rompendo il sistema token.</span></div>
+  </div>
+
+  <!-- QUIZ 1 -->
+  <div class="quiz" id="quiz-1">
+    <div class="quiz-header">
+      <div class="quiz-icon">?</div>
+      <div><div class="quiz-title">Token Test</div><div class="quiz-subtitle"><span class="en">Pass: 4/5 correct</span><span class="it">Supera: 4/5 corrette</span></div></div>
+    </div>
+    <div class="question" data-correct="b">
+      <div class="q-number">Q1</div>
+      <div class="q-text"><span class="en">What is a design token?</span><span class="it">Cos'e' un design token?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en">A CSS class like .btn-primary</span><span class="it">Una classe CSS come .btn-primary</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en">A named variable storing a design decision (color, spacing, etc.)</span><span class="it">Una variabile con nome che memorizza una decisione di design (colore, spaziatura, ecc.)</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">A JavaScript constant with a hex value</span><span class="it">Una costante JavaScript con un valore hex</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">A Figma component</span><span class="it">Un componente Figma</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! A token is a named CSS variable like <code>--accent: #3b82f6</code>. The single source of truth.</span><span class="it">Corretto! Un token e' una variabile CSS con nome come <code>--accent: #3b82f6</code>. L'unica fonte di verita'.</span></div>
+      <div class="explanation wrong-exp"><span class="en">A token is a <strong>named variable</strong> storing a design decision. Example: <code>--accent: #3b82f6</code>.</span><span class="it">Un token e' una <strong>variabile con nome</strong> che memorizza una decisione di design. Esempio: <code>--accent: #3b82f6</code>.</span></div>
+    </div>
+    <div class="question" data-correct="c">
+      <div class="q-number">Q2</div>
+      <div class="q-text"><span class="en">Why is <code>padding: 13px</code> wrong?</span><span class="it">Perche' <code>padding: 13px</code> e' sbagliato?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en">13 is odd</span><span class="it">13 e' dispari</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en">Should be rem</span><span class="it">Dovrebbe essere rem</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">13 is not on the 4px grid &mdash; use a spacing token</span><span class="it">13 non e' sulla griglia 4px &mdash; usa un token di spaziatura</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">Padding should always be 16px</span><span class="it">Il padding deve essere sempre 16px</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! Use <code>var(--space-3)</code> (12px) or <code>var(--space-4)</code> (16px).</span><span class="it">Corretto! Usa <code>var(--space-3)</code> (12px) o <code>var(--space-4)</code> (16px).</span></div>
+      <div class="explanation wrong-exp"><span class="en">13px isn't on the 4px grid (4, 8, 12, 16...). Use the closest token.</span><span class="it">13px non e' sulla griglia 4px (4, 8, 12, 16...). Usa il token piu' vicino.</span></div>
+    </div>
+    <div class="question" data-correct="a">
+      <div class="q-number">Q3</div>
+      <div class="q-text"><span class="en">Red for an error &mdash; which is correct?</span><span class="it">Rosso per un errore &mdash; quale e' corretto?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><code>var(--danger)</code></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><code>#ef4444</code></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><code>red</code></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><code>var(--red-500)</code></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! Semantic token adapts to themes and changes globally.</span><span class="it">Corretto! Il token semantico si adatta ai temi e si cambia globalmente.</span></div>
+      <div class="explanation wrong-exp"><span class="en">Use semantic token: <code>var(--danger)</code>. Never hardcode hex values.</span><span class="it">Usa il token semantico: <code>var(--danger)</code>. Mai scrivere valori hex.</span></div>
+    </div>
+    <div class="question" data-correct="d">
+      <div class="q-number">Q4</div>
+      <div class="q-text"><span class="en">Linear uses ~12 colors for everything. Why so few?</span><span class="it">Linear usa ~12 colori per tutto. Perche' cosi' pochi?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en">They're lazy</span><span class="it">Sono pigri</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en">More colors = better</span><span class="it">Piu' colori = meglio</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">Tailwind generates the rest</span><span class="it">Tailwind genera il resto</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">Constraint creates consistency &mdash; variants derive from the base set</span><span class="it">Il vincolo crea coerenza &mdash; le varianti derivano dal set base</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! Few base + systematic derivation = infinite consistency.</span><span class="it">Corretto! Pochi base + derivazione sistematica = coerenza infinita.</span></div>
+      <div class="explanation wrong-exp"><span class="en">Fewer base colors + systematic variants (hover, muted) = consistency at scale.</span><span class="it">Meno colori base + varianti sistematiche (hover, muted) = coerenza su larga scala.</span></div>
+    </div>
+    <div class="question" data-correct="b">
+      <div class="q-number">Q5</div>
+      <div class="q-text"><span class="en">How does dark mode work with tokens?</span><span class="it">Come funziona il dark mode con i token?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en">Separate CSS files</span><span class="it">File CSS separati</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en">Same token names, different values under a theme selector</span><span class="it">Stessi nomi token, valori diversi sotto un selettore tema</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">dark: prefix on every class</span><span class="it">Prefisso dark: su ogni classe</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">JavaScript swaps colors at runtime</span><span class="it">JavaScript scambia colori a runtime</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! Components always use <code>var(--background)</code>. The theme selector changes what it resolves to.</span><span class="it">Corretto! I componenti usano sempre <code>var(--background)</code>. Il selettore tema cambia a cosa si risolve.</span></div>
+      <div class="explanation wrong-exp"><span class="en">Same names, different values: <code>[data-theme="dark"] { --background: #0c0f1a }</code>. Components don't change.</span><span class="it">Stessi nomi, valori diversi: <code>[data-theme="dark"] { --background: #0c0f1a }</code>. I componenti non cambiano.</span></div>
+    </div>
+    <button class="quiz-submit" onclick="checkQuiz('quiz-1',4)"><span class="en">Check Answers</span><span class="it">Verifica</span></button>
+    <div class="quiz-score" id="quiz-1-score"></div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════ PAGE 2: PRIMITIVES ═══════════════ -->
+<div class="page" id="page-2">
+<div class="section">
+  <div class="section-number">Layer 02</div>
+  <h2>Primitives</h2>
+  <p class="section-desc"><span class="en">Atomic building blocks. Each does ONE thing, uses ONLY tokens, reused everywhere. Like LEGO bricks.</span><span class="it">Mattoni atomici. Ognuno fa UNA cosa, usa SOLO token, riusato ovunque. Come pezzi LEGO.</span></p>
+
+  <div class="callout callout-key"><span class="icon">*</span><div><span class="en"><strong>Rule:</strong> A primitive NEVER contains another primitive. If it has Button + Badge, it's a Composition.</span><span class="it"><strong>Regola:</strong> Un primitive NON contiene mai un altro primitive. Se ha Button + Badge, e' una Composition.</span></div></div>
+
+  <h4>Button</h4>
+  <div class="visual-example"><span class="example-label"><span class="en">Button variants</span><span class="it">Varianti Button</span></span>
+    <div class="button-row">
+      <button class="demo-btn demo-btn-primary">Primary</button>
+      <button class="demo-btn demo-btn-secondary">Secondary</button>
+      <button class="demo-btn demo-btn-danger">Danger</button>
+      <button class="demo-btn demo-btn-ghost">Ghost</button>
+    </div>
+  </div>
+
+  <h4>Badge</h4>
+  <div class="visual-example"><span class="example-label"><span class="en">Badge variants</span><span class="it">Varianti Badge</span></span>
+    <div class="badge-row">
+      <span class="demo-badge demo-badge-success">72% Pass</span>
+      <span class="demo-badge demo-badge-warning">Medium</span>
+      <span class="demo-badge demo-badge-danger">Failed</span>
+      <span class="demo-badge demo-badge-info">3 sources</span>
+      <span class="demo-badge demo-badge-neutral">Draft</span>
+    </div>
+  </div>
+
+  <h4>Card</h4>
+  <div class="visual-example"><span class="example-label">Card</span>
+    <div class="demo-card">
+      <div class="demo-card-title">Career: Software Engineer</div>
+      <div class="demo-card-desc"><span class="en">Starting salary $85K, 72% placement rate. Remote-friendly.</span><span class="it">Stipendio iniziale $85K, tasso di piazzamento 72%. Remote-friendly.</span></div>
+      <div class="badge-row">
+        <span class="demo-badge demo-badge-success">72%</span>
+        <span class="demo-badge demo-badge-info">BLS 2024</span>
+      </div>
+    </div>
+  </div>
+
+  <h4>Text</h4>
+  <div class="visual-example"><span class="example-label"><span class="en">Text variants</span><span class="it">Varianti Text</span></span>
+    <div style="width:100%; display:flex; flex-direction:column; gap:10px;">
+      <div style="font-size:18px; font-weight:600; letter-spacing:-0.02em;">Heading</div>
+      <div style="font-size:15px; font-weight:500;">Subheading</div>
+      <div style="font-size:13px; color:var(--text-muted);">Body</div>
+      <div style="font-size:10px; color:var(--text-dim);">Caption</div>
+      <div style="font-size:12px; font-family:'JetBrains Mono';">Mono</div>
+      <div style="font-size:10px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:var(--text-dim);">LABEL</div>
+    </div>
+  </div>
+
+  <h4><span class="en">+ IconButton, Spinner, Skeleton, Toast</span><span class="it">+ IconButton, Spinner, Skeleton, Toast</span></h4>
+  <p><span class="en">8 total primitives. All token-based. Zero hardcoded values.</span><span class="it">8 primitive totali. Tutti basati su token. Zero valori hardcoded.</span></p>
+
+  <!-- QUIZ 2 -->
+  <div class="quiz" id="quiz-2">
+    <div class="quiz-header"><div class="quiz-icon">?</div><div><div class="quiz-title">Primitives Test</div><div class="quiz-subtitle"><span class="en">Pass: 4/5</span><span class="it">Supera: 4/5</span></div></div></div>
+    <div class="question" data-correct="c">
+      <div class="q-number">Q1</div>
+      <div class="q-text"><span class="en">A <code>&lt;StatusCard&gt;</code> contains Card + Badge + Text. What is it?</span><span class="it">Una <code>&lt;StatusCard&gt;</code> contiene Card + Badge + Text. Cos'e'?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span>Primitive</div>
+        <div class="option" data-value="b"><span class="option-letter">B</span>Token</div>
+        <div class="option" data-value="c"><span class="option-letter">C</span>Composition</div>
+        <div class="option" data-value="d"><span class="option-letter">D</span>Layout</div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! Multiple primitives combined = composition.</span><span class="it">Corretto! Piu' primitive combinati = composition.</span></div>
+      <div class="explanation wrong-exp"><span class="en">It combines primitives, so it's a <strong>composition</strong>.</span><span class="it">Combina primitive, quindi e' una <strong>composition</strong>.</span></div>
+    </div>
+    <div class="question" data-correct="b">
+      <div class="q-number">Q2</div>
+      <div class="q-text"><span class="en">Inside Button: <code>background: '#3b82f6'</code>. What's wrong?</span><span class="it">Dentro Button: <code>background: '#3b82f6'</code>. Cosa c'e' di sbagliato?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en">Nothing</span><span class="it">Niente</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en">Should be <code>var(--accent)</code> &mdash; primitives use only tokens</span><span class="it">Dovrebbe essere <code>var(--accent)</code> &mdash; i primitive usano solo token</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">Should be a Tailwind class</span><span class="it">Dovrebbe essere una classe Tailwind</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">Wrong quotes</span><span class="it">Virgolette sbagliate</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! Primitives ONLY use tokens.</span><span class="it">Corretto! I primitive usano SOLO token.</span></div>
+      <div class="explanation wrong-exp"><span class="en">Use <code>var(--accent)</code>. Hardcoded hex breaks theming.</span><span class="it">Usa <code>var(--accent)</code>. Hex hardcoded rompe il theming.</span></div>
+    </div>
+    <div class="question" data-correct="a">
+      <div class="q-number">Q3</div>
+      <div class="q-text"><span class="en">What determines a Badge's color?</span><span class="it">Cosa determina il colore di un Badge?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en">The variant prop, mapping to semantic tokens</span><span class="it">La prop variant, che mappa a token semantici</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en">A color prop with hex</span><span class="it">Una prop color con hex</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">Manual CSS classes</span><span class="it">Classi CSS manuali</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">The parent decides</span><span class="it">Il parent decide</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! <code>variant="success"</code> maps to <code>var(--success)</code> internally.</span><span class="it">Corretto! <code>variant="success"</code> mappa a <code>var(--success)</code> internamente.</span></div>
+      <div class="explanation wrong-exp"><span class="en">The <code>variant</code> prop maps to tokens. Consumer never touches colors.</span><span class="it">La prop <code>variant</code> mappa ai token. Chi usa il componente non tocca mai i colori.</span></div>
+    </div>
+    <div class="question" data-correct="d">
+      <div class="q-number">Q4</div>
+      <div class="q-text"><span class="en">"BLS 2024" as a data source. Which primitive?</span><span class="it">"BLS 2024" come fonte dati. Quale primitive?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><code>Text variant="heading"</code></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><code>Text variant="body"</code></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><code>Badge variant="info"</code></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">Either <code>Text mono</code> or <code>Badge info</code> depending on context</span><span class="it">O <code>Text mono</code> o <code>Badge info</code> a seconda del contesto</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! Context determines: inline = mono text, standalone = info badge.</span><span class="it">Corretto! Il contesto determina: inline = mono text, standalone = info badge.</span></div>
+      <div class="explanation wrong-exp"><span class="en">Both <code>Text mono</code> and <code>Badge info</code> work. Context decides.</span><span class="it">Sia <code>Text mono</code> che <code>Badge info</code> funzionano. Il contesto decide.</span></div>
+    </div>
+    <div class="question" data-correct="b">
+      <div class="q-number">Q5</div>
+      <div class="q-text"><span class="en">How many primitives does a design system need?</span><span class="it">Quanti primitive servono a un design system?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span>3-4</div>
+        <div class="option" data-value="b"><span class="option-letter">B</span>6-10</div>
+        <div class="option" data-value="c"><span class="option-letter">C</span>20-30</div>
+        <div class="option" data-value="d"><span class="option-letter">D</span>50+</div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! 6-10 covers 95% of needs.</span><span class="it">Corretto! 6-10 copre il 95% dei bisogni.</span></div>
+      <div class="explanation wrong-exp"><span class="en">6-10 is the sweet spot. More = compositions disguised as primitives.</span><span class="it">6-10 e' il punto ideale. Di piu' = composition mascherate da primitive.</span></div>
+    </div>
+    <button class="quiz-submit" onclick="checkQuiz('quiz-2',4)"><span class="en">Check Answers</span><span class="it">Verifica</span></button>
+    <div class="quiz-score" id="quiz-2-score"></div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════ PAGE 3: COMPOSITIONS ═══════════════ -->
+<div class="page" id="page-3">
+<div class="section">
+  <div class="section-number">Layer 03</div>
+  <h2>Compositions</h2>
+  <p class="section-desc"><span class="en">Compositions combine primitives into feature-specific components. This is WHERE your product becomes unique.</span><span class="it">Le composition combinano primitive in componenti specifici per feature. E' QUI che il tuo prodotto diventa unico.</span></p>
+
+  <div class="visual-example"><span class="example-label"><span class="en">Primitives &rarr; Composition</span><span class="it">Primitive &rarr; Composition</span></span>
+    <div style="display:flex; gap:24px; align-items:center; flex-wrap:wrap; width:100%;">
+      <div style="display:flex; flex-direction:column; gap:8px; min-width:100px;">
+        <div style="font-size:9px; font-family:'JetBrains Mono'; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.1em;">Primitives</div>
+        <div class="demo-card" style="padding:10px; max-width:120px;"><span style="font-size:11px; color:var(--text-dim);">Card</span></div>
+        <span class="demo-badge demo-badge-success" style="align-self:flex-start;">Badge</span>
+        <span style="font-size:13px;">Text</span>
+      </div>
+      <div style="font-size:24px; color:var(--text-dim); padding-top:40px;">&rarr;</div>
+      <div style="flex:1; min-width:240px;">
+        <div style="font-size:9px; font-family:'JetBrains Mono'; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">Composition: UserCard</div>
+        <div class="comp-demo">
+          <div class="comp-avatar">R</div>
+          <div class="comp-info"><div class="name">Richard Kennedy</div><div class="role">Founder / Systems Architect</div></div>
+          <span class="demo-badge demo-badge-success" style="font-size:9px;">Active</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-success"><span class="icon">+</span><div><span class="en"><strong>The power:</strong> Change Card's border-radius once &rarr; SimNode, Dashboard, TemplateSelector all update. Zero code changes.</span><span class="it"><strong>Il potere:</strong> Cambia il border-radius di Card una volta &rarr; SimNode, Dashboard, TemplateSelector si aggiornano tutti. Zero modifiche al codice.</span></div></div>
+
+  <!-- QUIZ 3 -->
+  <div class="quiz" id="quiz-3">
+    <div class="quiz-header"><div class="quiz-icon">?</div><div><div class="quiz-title">Compositions Test</div><div class="quiz-subtitle"><span class="en">Pass: 3/4</span><span class="it">Supera: 3/4</span></div></div></div>
+    <div class="question" data-correct="c">
+      <div class="q-number">Q1</div>
+      <div class="q-text"><span class="en">Composition needs a new color not in the token system. What do you do?</span><span class="it">Una composition ha bisogno di un colore non nel sistema token. Che fai?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en">Hardcode the hex</span><span class="it">Scrivi l'hex direttamente</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en">Use the closest token</span><span class="it">Usa il token piu' vicino</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">Add the color as a token in globals.css first, then reference it</span><span class="it">Aggiungi il colore come token in globals.css prima, poi referenzialo</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">Create a local CSS variable</span><span class="it">Crea una variabile CSS locale</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! New colors go into the token system first. Always.</span><span class="it">Corretto! Nuovi colori vanno prima nel sistema token. Sempre.</span></div>
+      <div class="explanation wrong-exp"><span class="en">Add to <code>globals.css</code> first, then reference with <code>var(--new-token)</code>.</span><span class="it">Aggiungi a <code>globals.css</code> prima, poi referenzia con <code>var(--new-token)</code>.</span></div>
+    </div>
+    <div class="question" data-correct="b">
+      <div class="q-number">Q2</div>
+      <div class="q-text"><span class="en">Difference between Button (primitive) and Toolbar (composition)?</span><span class="it">Differenza tra Button (primitive) e Toolbar (composition)?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en">Size</span><span class="it">Dimensione</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en">Button is atomic; Toolbar combines multiple primitives</span><span class="it">Button e' atomico; Toolbar combina piu' primitive</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">Position</span><span class="it">Posizione</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">No difference</span><span class="it">Nessuna differenza</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! Primitive = one thing. Composition = multiple primitives.</span><span class="it">Corretto! Primitive = una cosa. Composition = piu' primitive.</span></div>
+      <div class="explanation wrong-exp"><span class="en">Primitive = atomic (one thing). Composition = combined (multiple primitives).</span><span class="it">Primitive = atomico (una cosa). Composition = combinato (piu' primitive).</span></div>
+    </div>
+    <div class="question" data-correct="d">
+      <div class="q-number">Q3</div>
+      <div class="q-text"><span class="en">You change Badge's border-radius. What happens?</span><span class="it">Cambi il border-radius del Badge. Cosa succede?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en">Only new badges change</span><span class="it">Solo i nuovi badge cambiano</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en">Must update every composition</span><span class="it">Devi aggiornare ogni composition</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">Nothing, compositions override</span><span class="it">Niente, le composition sovrascrivono</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">Every badge everywhere updates automatically</span><span class="it">Ogni badge ovunque si aggiorna automaticamente</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! Change once at primitive level, propagate everywhere.</span><span class="it">Corretto! Cambia una volta al livello primitive, propaga ovunque.</span></div>
+      <div class="explanation wrong-exp"><span class="en">Primitives propagate to all compositions. That's the point.</span><span class="it">I primitive si propagano a tutte le composition. Questo e' il punto.</span></div>
+    </div>
+    <div class="question" data-correct="a">
+      <div class="q-number">Q4</div>
+      <div class="q-text"><span class="en">Add "confidence level" to SimNode. What do you add?</span><span class="it">Aggiungere "livello di confidenza" a SimNode. Cosa aggiungi?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en">Badge with success/warning/danger variant</span><span class="it">Badge con variante success/warning/danger</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en">New ConfidenceIndicator primitive</span><span class="it">Nuovo primitive ConfidenceIndicator</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">Hardcoded colored dot</span><span class="it">Pallino colorato hardcoded</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">Tailwind class on a div</span><span class="it">Classe Tailwind su un div</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! Use existing primitives first. Badge already does this.</span><span class="it">Corretto! Usa prima i primitive esistenti. Badge fa gia' questo lavoro.</span></div>
+      <div class="explanation wrong-exp"><span class="en">Reuse existing primitives! Badge with the right variant already communicates confidence.</span><span class="it">Riusa i primitive esistenti! Badge con la variante giusta comunica gia' la confidenza.</span></div>
+    </div>
+    <button class="quiz-submit" onclick="checkQuiz('quiz-3',3)"><span class="en">Check Answers</span><span class="it">Verifica</span></button>
+    <div class="quiz-score" id="quiz-3-score"></div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════ PAGE 4: LAYOUTS ═══════════════ -->
+<div class="page" id="page-4">
+<div class="section">
+  <div class="section-number">Layer 04</div>
+  <h2>Layout System</h2>
+  <p class="section-desc"><span class="en">How things are arranged on the page. Grid, spacing, responsive breakpoints.</span><span class="it">Come le cose sono disposte nella pagina. Griglia, spaziatura, breakpoint responsive.</span></p>
+
+  <h3><span class="en">12-column grid</span><span class="it">Griglia a 12 colonne</span></h3>
+  <p><span class="en">12 divides by 2, 3, 4, and 6 &mdash; maximum flexibility.</span><span class="it">12 si divide per 2, 3, 4 e 6 &mdash; massima flessibilita'.</span></p>
+  <div class="visual-example"><span class="example-label">12-column grid</span>
+    <div class="grid-demo grid-demo-12">
+      <div class="grid-cell">1</div><div class="grid-cell">2</div><div class="grid-cell">3</div><div class="grid-cell">4</div><div class="grid-cell">5</div><div class="grid-cell">6</div><div class="grid-cell">7</div><div class="grid-cell">8</div><div class="grid-cell">9</div><div class="grid-cell">10</div><div class="grid-cell">11</div><div class="grid-cell">12</div>
+    </div>
+  </div>
+
+  <h3><span class="en">Foresight layout</span><span class="it">Layout Foresight</span></h3>
+  <div class="visual-example"><span class="example-label">TopBar + Sidebar + Canvas</span>
+    <div class="grid-demo grid-demo-layout" style="width:100%;">
+      <div class="grid-area-nav">TopBar (full width)</div>
+      <div class="grid-area-sidebar">Sidebar (240px)</div>
+      <div class="grid-area-main">Canvas (flex: 1)</div>
+      <div class="grid-area-footer">Status bar</div>
+    </div>
+  </div>
+
+  <!-- QUIZ 4 -->
+  <div class="quiz" id="quiz-4">
+    <div class="quiz-header"><div class="quiz-icon">?</div><div><div class="quiz-title">Layout Test</div><div class="quiz-subtitle"><span class="en">Pass: 3/4</span><span class="it">Supera: 3/4</span></div></div></div>
+    <div class="question" data-correct="c">
+      <div class="q-number">Q1</div>
+      <div class="q-text"><span class="en">Why 12-column grid?</span><span class="it">Perche' griglia a 12 colonne?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en">Browser standard</span><span class="it">Standard browser</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en">12 looks nice</span><span class="it">12 e' bello</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">12 divides by 2, 3, 4, 6 &mdash; max flexibility</span><span class="it">12 si divide per 2, 3, 4, 6 &mdash; max flessibilita'</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">Bootstrap invented it</span><span class="it">L'ha inventato Bootstrap</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! High divisibility = maximum layout combinations.</span><span class="it">Corretto! Alta divisibilita' = massime combinazioni di layout.</span></div>
+      <div class="explanation wrong-exp"><span class="en">12 divides by 2, 3, 4, 6. Maximum flexibility for any layout.</span><span class="it">12 si divide per 2, 3, 4, 6. Massima flessibilita' per qualsiasi layout.</span></div>
+    </div>
+    <div class="question" data-correct="b">
+      <div class="q-number">Q2</div>
+      <div class="q-text"><span class="en">Need 14px gap. What do you use?</span><span class="it">Serve gap di 14px. Cosa usi?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><code>gap: 14px</code></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><code>var(--space-3)</code> (12px) <span class="en">or</span><span class="it">o</span> <code>var(--space-4)</code> (16px)</div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><code>gap: 1rem</code></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">Create --space-3.5</span><span class="it">Crea --space-3.5</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! 14px isn't on the grid. Use 12px or 16px.</span><span class="it">Corretto! 14px non e' sulla griglia. Usa 12px o 16px.</span></div>
+      <div class="explanation wrong-exp"><span class="en">14px isn't on the 4px grid. Choose the nearest: 12 or 16.</span><span class="it">14px non e' sulla griglia 4px. Scegli il piu' vicino: 12 o 16.</span></div>
+    </div>
+    <div class="question" data-correct="a">
+      <div class="q-number">Q3</div>
+      <div class="q-text"><span class="en">Sidebar 240px fixed + canvas fills rest. CSS?</span><span class="it">Sidebar 240px fissa + canvas prende il resto. CSS?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><code>grid-template-columns: 240px 1fr</code></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><code>display: flex; width: 50%</code></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><code>float: left</code></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><code>position: absolute</code></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! CSS Grid: fixed sidebar + <code>1fr</code> for remaining space.</span><span class="it">Corretto! CSS Grid: sidebar fissa + <code>1fr</code> per lo spazio rimanente.</span></div>
+      <div class="explanation wrong-exp"><span class="en"><code>grid-template-columns: 240px 1fr</code> &mdash; clean, responsive, no hacks.</span><span class="it"><code>grid-template-columns: 240px 1fr</code> &mdash; pulito, responsive, niente hack.</span></div>
+    </div>
+    <div class="question" data-correct="d">
+      <div class="q-number">Q4</div>
+      <div class="q-text"><span class="en">What is "mobile first"?</span><span class="it">Cos'e' "mobile first"?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en">Design only for mobile</span><span class="it">Progetta solo per mobile</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en">Separate m.site</span><span class="it">Sito m. separato</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">Desktop styles first, override for mobile</span><span class="it">Stili desktop prima, sovrascrivi per mobile</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">Default CSS = mobile; min-width queries add complexity for larger screens</span><span class="it">CSS default = mobile; query min-width aggiungono complessita' per schermi grandi</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! Start simple (mobile), add complexity with min-width breakpoints.</span><span class="it">Corretto! Parti semplice (mobile), aggiungi complessita' con breakpoint min-width.</span></div>
+      <div class="explanation wrong-exp"><span class="en">Mobile first: default = mobile. Use min-width to progressively enhance.</span><span class="it">Mobile first: default = mobile. Usa min-width per migliorare progressivamente.</span></div>
+    </div>
+    <button class="quiz-submit" onclick="checkQuiz('quiz-4',3)"><span class="en">Check Answers</span><span class="it">Verifica</span></button>
+    <div class="quiz-score" id="quiz-4-score"></div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════ PAGE 5: INTERACTIONS ═══════════════ -->
+<div class="page" id="page-5">
+<div class="section">
+  <div class="section-number">Layer 05</div>
+  <h2>Interactions</h2>
+  <p class="section-desc"><span class="en">How things FEEL. Hover, focus, transitions, micro-animations. The difference between "works" and "feels alive."</span><span class="it">Come le cose si SENTONO. Hover, focus, transizioni, micro-animazioni. La differenza tra "funziona" e "sembra vivo."</span></p>
+
+  <h3><span class="en">5 states every interactive element needs</span><span class="it">5 stati che ogni elemento interattivo deve avere</span></h3>
+  <div class="visual-example"><span class="example-label"><span class="en">Element states</span><span class="it">Stati elemento</span></span>
+    <div class="state-demo">
+      <div class="state-box state-default">Default</div>
+      <div class="state-box state-hover">Hover</div>
+      <div class="state-box state-active">Active</div>
+      <div class="state-box state-focus">Focus</div>
+      <div class="state-box state-disabled">Disabled</div>
+    </div>
+  </div>
+
+  <h3><span class="en">Try it: hover this</span><span class="it">Prova: passa il mouse qui</span></h3>
+  <div class="visual-example"><span class="example-label">Interactive demo</span>
+    <div class="interaction-box"><span class="en">Hover me &rarr; lift, border, shadow</span><span class="it">Hover &rarr; si alza, bordo, ombra</span></div>
+  </div>
+
+  <!-- QUIZ 5 -->
+  <div class="quiz" id="quiz-5">
+    <div class="quiz-header"><div class="quiz-icon">?</div><div><div class="quiz-title">Interactions Test</div><div class="quiz-subtitle"><span class="en">Pass: 3/4</span><span class="it">Supera: 3/4</span></div></div></div>
+    <div class="question" data-correct="b">
+      <div class="q-number">Q1</div>
+      <div class="q-text"><span class="en">How many states should every interactive element define?</span><span class="it">Quanti stati deve definire ogni elemento interattivo?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span>2</div>
+        <div class="option" data-value="b"><span class="option-letter">B</span>5 (default, hover, active, focus, disabled)</div>
+        <div class="option" data-value="c"><span class="option-letter">C</span>3</div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">Depends</span><span class="it">Dipende</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! All 5 for consistency and accessibility.</span><span class="it">Corretto! Tutti e 5 per coerenza e accessibilita'.</span></div>
+      <div class="explanation wrong-exp"><span class="en">Every element: default, hover, active, focus, disabled. 5 states.</span><span class="it">Ogni elemento: default, hover, active, focus, disabled. 5 stati.</span></div>
+    </div>
+    <div class="question" data-correct="c">
+      <div class="q-number">Q2</div>
+      <div class="q-text"><span class="en">Card hover = 300ms, buttons = 100ms. What's wrong?</span><span class="it">Card hover = 300ms, bottoni = 100ms. Cosa c'e' di sbagliato?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en">Nothing</span><span class="it">Niente</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en">Cards should be faster</span><span class="it">Le card dovrebbero essere piu' veloci</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">Both should use the same duration token for consistency</span><span class="it">Entrambi dovrebbero usare lo stesso token di durata per coerenza</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">300ms is too slow</span><span class="it">300ms e' troppo lento</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! Same interaction type = same duration token.</span><span class="it">Corretto! Stesso tipo di interazione = stesso token di durata.</span></div>
+      <div class="explanation wrong-exp"><span class="en">Same interaction types share a duration token. Consistency = polish.</span><span class="it">Stessi tipi di interazione condividono un token di durata. Coerenza = finitura.</span></div>
+    </div>
+    <div class="question" data-correct="a">
+      <div class="q-number">Q3</div>
+      <div class="q-text"><span class="en">Why does <code>active:scale(0.97)</code> feel good?</span><span class="it">Perche' <code>active:scale(0.97)</code> da' una bella sensazione?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en">Simulates physical press feedback</span><span class="it">Simula il feedback di pressione fisica</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en">Makes button smaller to click</span><span class="it">Rende il bottone piu' piccolo da cliccare</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">Performance optimization</span><span class="it">Ottimizzazione performance</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">Just a trend</span><span class="it">Solo una moda</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! Tactile illusion &mdash; your brain reads "I pressed something."</span><span class="it">Corretto! Illusione tattile &mdash; il cervello legge "ho premuto qualcosa."</span></div>
+      <div class="explanation wrong-exp"><span class="en">Scale(0.97) = tactile illusion of pressing a real button.</span><span class="it">Scale(0.97) = illusione tattile di premere un bottone reale.</span></div>
+    </div>
+    <div class="question" data-correct="d">
+      <div class="q-number">Q4</div>
+      <div class="q-text"><span class="en">What is the focus ring for?</span><span class="it">A cosa serve il focus ring?</span></div>
+      <div class="options">
+        <div class="option" data-value="a"><span class="option-letter">A</span><span class="en">Decoration</span><span class="it">Decorazione</span></div>
+        <div class="option" data-value="b"><span class="option-letter">B</span><span class="en">Shows hover</span><span class="it">Mostra hover</span></div>
+        <div class="option" data-value="c"><span class="option-letter">C</span><span class="en">Loading state</span><span class="it">Stato di caricamento</span></div>
+        <div class="option" data-value="d"><span class="option-letter">D</span><span class="en">Accessibility &mdash; keyboard users see which element is focused</span><span class="it">Accessibilita' &mdash; utenti da tastiera vedono quale elemento e' selezionato</span></div>
+      </div>
+      <div class="explanation correct-exp"><span class="en">Correct! Focus rings = accessibility requirement for keyboard navigation.</span><span class="it">Corretto! Focus ring = requisito di accessibilita' per navigazione da tastiera.</span></div>
+      <div class="explanation wrong-exp"><span class="en">Focus rings are for <strong>accessibility</strong>. Keyboard users need to see the focused element.</span><span class="it">I focus ring sono per l'<strong>accessibilita'</strong>. Gli utenti da tastiera devono vedere l'elemento selezionato.</span></div>
+    </div>
+    <button class="quiz-submit" onclick="checkQuiz('quiz-5',3)"><span class="en">Check Answers</span><span class="it">Verifica</span></button>
+    <div class="quiz-score" id="quiz-5-score"></div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════ PAGE 6: SUMMARY ═══════════════ -->
+<div class="page" id="page-6">
+<div class="section">
+  <div class="section-number">Summary</div>
+  <h2><span class="en">The Complete Stack</span><span class="it">Lo Stack Completo</span></h2>
+  <div class="code-block"><span class="lang-label">Architecture</span>
+<pre>
+  <span class="hl-comment">Layer 5: INTERACTIONS</span>  hover, focus, active, transitions
+       <span class="hl-fn">|</span>
+  <span class="hl-comment">Layer 4: LAYOUTS</span>       grid, responsive, page structure
+       <span class="hl-fn">|</span>
+  <span class="hl-comment">Layer 3: COMPOSITIONS</span>  SimNode, Toolbar, Dashboard
+       <span class="hl-fn">|</span>
+  <span class="hl-comment">Layer 2: PRIMITIVES</span>    Button, Badge, Card, Text (8 total)
+       <span class="hl-fn">|</span>
+  <span class="hl-comment">Layer 1: TOKENS</span>        10 colors, 8 spacing, 5 radius, 4 shadows
+</pre>
+  </div>
+
+  <div class="callout callout-success"><span class="icon">+</span><div>
+    <span class="en"><strong>What we built for Foresight:</strong> 85+ CSS variables, 8 primitives, 3 components migrated (0 hardcoded hex). Ready for Layer 3-5.</span>
+    <span class="it"><strong>Cosa abbiamo costruito per Foresight:</strong> 85+ variabili CSS, 8 primitive, 3 componenti migrati (0 hex hardcoded). Pronti per Layer 3-5.</span>
+  </div></div>
+
+  <div id="final-score" style="text-align:center; margin-top:48px; padding:32px; border-radius:16px; background:var(--surface); border:1px solid var(--border); display:none;">
+    <div style="font-size:11px; font-family:'JetBrains Mono'; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">Final Score</div>
+    <div id="final-score-text" style="font-size:36px; font-weight:800; margin-bottom:8px;"></div>
+    <div id="final-score-msg" style="font-size:14px; color:var(--text-muted);"></div>
+  </div>
+</div>
+</div>
+
+</div><!-- end content -->
+
+<!-- BOTTOM NAV -->
+<div class="page-nav">
+  <button class="page-nav-btn secondary" id="nav-prev" onclick="navigate(-1)">&larr; Back</button>
+  <span class="page-nav-center" id="nav-label">0 / 6</span>
+  <button class="page-nav-btn primary" id="nav-next" onclick="navigate(1)">Next &rarr;</button>
+</div>
+
+<script>
+// Lang
+function setLang(lang) {
+  document.body.classList.toggle('lang-it', lang === 'it');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+}
+
+// Pages
+const PAGE_NAMES = ['Overview','Tokens','Primitives','Compositions','Layouts','Interactions','Summary'];
+const TOTAL_PAGES = 7;
+let currentPage = 0;
+const quizPassed = {1:false,2:false,3:false,4:false,5:false};
+
+function navigate(dir) {
+  const next = currentPage + dir;
+  if (next < 0 || next >= TOTAL_PAGES) return;
+  if (dir > 0 && currentPage >= 1 && currentPage <= 5 && !quizPassed[currentPage]) {
+    const btn = document.getElementById('nav-next');
+    btn.style.animation = 'none'; btn.offsetHeight;
+    btn.style.animation = 'shake 0.4s ease';
+    return;
+  }
+  goToPage(next);
+}
+
+function goToPage(n) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + n).classList.add('active');
+  currentPage = n;
+  updateNav();
+  window.scrollTo(0, 0);
+}
+
+function updateNav() {
+  document.getElementById('nav-label').textContent = `${PAGE_NAMES[currentPage]} (${currentPage}/${TOTAL_PAGES-1})`;
+  const prev = document.getElementById('nav-prev');
+  const next = document.getElementById('nav-next');
+  prev.style.visibility = currentPage === 0 ? 'hidden' : 'visible';
+  if (currentPage === TOTAL_PAGES - 1) {
+    next.style.visibility = 'hidden';
+  } else if (currentPage >= 1 && currentPage <= 5 && !quizPassed[currentPage]) {
+    next.className = 'page-nav-btn locked';
+    next.innerHTML = '<span class="en">Pass test to continue &rarr;</span><span class="it">Supera il test per continuare &rarr;</span>';
+    next.style.visibility = 'visible';
+  } else {
+    next.className = 'page-nav-btn primary';
+    next.innerHTML = 'Next &rarr;';
+    next.style.visibility = 'visible';
+  }
+  for (let i = 1; i <= 5; i++) {
+    const el = document.getElementById('prog-' + i);
+    if (quizPassed[i]) { el.classList.add('done'); el.classList.remove('active'); }
+    else if (i === currentPage) { el.classList.add('active'); }
+  }
+}
+updateNav();
+
+// Quiz
+function checkQuiz(quizId, passThreshold) {
+  const quiz = document.getElementById(quizId);
+  const questions = quiz.querySelectorAll('.question');
+  let correct = 0;
+  questions.forEach(q => {
+    const ca = q.dataset.correct;
+    const sel = q.querySelector('.option.selected');
+    q.querySelectorAll('.option').forEach(o => o.classList.remove('correct','wrong'));
+    q.querySelectorAll('.explanation').forEach(e => e.classList.remove('visible'));
+    if (sel) {
+      if (sel.dataset.value === ca) { sel.classList.add('correct'); correct++; q.querySelector('.correct-exp').classList.add('visible'); }
+      else { sel.classList.add('wrong'); q.querySelectorAll('.option').forEach(o => { if(o.dataset.value===ca) o.classList.add('correct'); }); q.querySelector('.wrong-exp').classList.add('visible'); }
+    } else { q.querySelectorAll('.option').forEach(o => { if(o.dataset.value===ca) o.classList.add('correct'); }); q.querySelector('.wrong-exp').classList.add('visible'); }
+  });
+  const passed = correct >= passThreshold;
+  const scoreEl = document.getElementById(quizId+'-score');
+  scoreEl.textContent = `${correct}/${questions.length} ${passed ? '- PASSED' : '- NOT PASSED (need '+passThreshold+')'}`;
+  scoreEl.className = `quiz-score visible ${passed ? 'pass' : 'fail'}`;
+  const qn = parseInt(quizId.split('-')[1]);
+  if (passed) quizPassed[qn] = true;
+  updateNav();
+  updateFinalScore();
+}
+
+function updateFinalScore() {
+  const scores = document.querySelectorAll('.quiz-score.visible');
+  if (scores.length < 5) return;
+  let tc=0, tq=0, allP=true;
+  scores.forEach(s => { const m=s.textContent.match(/(\d+)\/(\d+)/); if(m){tc+=parseInt(m[1]);tq+=parseInt(m[2]);} if(s.classList.contains('fail'))allP=false; });
+  const f=document.getElementById('final-score'); f.style.display='block';
+  const t=document.getElementById('final-score-text'); t.textContent=`${tc}/${tq}`;
+  const msg=document.getElementById('final-score-msg');
+  if(allP){t.style.color='var(--success)';msg.textContent='ALL TESTS PASSED';f.style.borderColor='var(--success)';}
+  else{t.style.color='var(--danger)';msg.textContent='Some tests not passed. Review and retry.';f.style.borderColor='var(--danger)';}
+}
+
+document.querySelectorAll('.option').forEach(opt => {
+  opt.addEventListener('click', function() {
+    this.parentElement.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+    this.classList.add('selected');
+  });
+});
+</script>
+</body>
+</html>

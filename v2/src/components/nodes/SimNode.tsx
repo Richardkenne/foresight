@@ -4,6 +4,7 @@ import { memo, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Handle, Position, type NodeProps } from '@xyflow/react';
 import { loadSacredProfile } from '@/lib/sacred-assessment';
+import { nodeColors, sacred, probColor as getProbColor, probBgColor, tierColor, tokens } from '@/lib/design-tokens';
 
 // Rich text: parse **bold**, __underline__, and \n into React elements
 function renderRichText(text: string): React.ReactNode[] {
@@ -29,23 +30,8 @@ function renderRichText(text: string): React.ReactNode[] {
   return result;
 }
 
-// Color palette: colored accents per type (like the old design)
-const NODE_COLORS: Record<string, { accent: string; bg: string; bgDark: string; text: string }> = {
-  start:          { accent: '#3b82f6', bg: '#eff6ff', bgDark: '#1e3a5f', text: '#2563eb' },
-  desire:         { accent: '#8b5cf6', bg: '#f5f3ff', bgDark: '#2d1a4e', text: '#7c3aed' },
-  action:         { accent: '#3b82f6', bg: '#eff6ff', bgDark: '#1e3a5f', text: '#2563eb' },
-  state:          { accent: '#5f7d63', bg: '#d8ead8', bgDark: '#1a3a1e', text: '#3d5e41' },
-  bottleneck:     { accent: '#f59e0b', bg: '#fffbeb', bgDark: '#451a03', text: '#d97706' },
-  trajectory:     { accent: '#7f5aa6', bg: '#efe2fb', bgDark: '#2d1a4e', text: '#6b3fa0' },
-  gate:           { accent: '#d97706', bg: '#fffbeb', bgDark: '#451a03', text: '#b45309' },
-  decision:       { accent: '#06b6d4', bg: '#ecfeff', bgDark: '#164e63', text: '#0891b2' },
-  'outcome-good': { accent: '#6daa84', bg: '#f0faf4', bgDark: '#022c22', text: '#4a8a64' },
-  'outcome-bad':  { accent: '#c87e7e', bg: '#fef2f2', bgDark: '#450a0a', text: '#b45555' },
-  loop:           { accent: '#64748b', bg: '#f8fafc', bgDark: '#1e293b', text: '#475569' },
-};
-
-// Sacred purple palette
-const SACRED_COLORS = { accent: '#a855f7', bg: '#faf5ff', text: '#7c3aed', border: '#c084fc' };
+// Colors now come from CSS variables via design-tokens.ts
+// NODE_COLORS → nodeColors(type), SACRED_COLORS → sacred
 
 const ICONS: Record<string, React.ReactNode> = {
   start: (
@@ -115,7 +101,7 @@ interface SourceEntry {
 // Source tier weights for weighted average
 const TIER_WEIGHTS: Record<number, number> = { 3: 3, 2: 2, 1: 1 };
 const TIER_LABELS: Record<number, string> = { 3: 'GOV', 2: 'INST', 1: 'MEDIA' };
-const TIER_COLORS: Record<number, string> = { 3: '#3b82f6', 2: '#8b5cf6', 1: '#94a3b8' };
+// TIER_COLORS now from design-tokens: tierColor(tier)
 
 function parseSourcesFromString(source: string): SourceEntry[] | null {
   // Parse format: "BLS 2024:70:3 | CB Insights 2024:65:2"
@@ -205,7 +191,7 @@ function getSacredForNode(nodeType: string, sacredRootIds?: string[]): SacredRoo
 function SimNodeComponent({ data }: NodeProps) {
   const d = data as SimNodeData;
   const nodeType = d.nodeType || 'action';
-  const colors = NODE_COLORS[nodeType] || NODE_COLORS.action;
+  const colors = nodeColors(nodeType);
   const icon = ICONS[nodeType];
   const hasProb = nodeType === 'bottleneck' || nodeType === 'decision' || nodeType === 'gate';
   const isSacred = d.sacredMode === true;
@@ -226,9 +212,9 @@ function SimNodeComponent({ data }: NodeProps) {
   // Sacred profile color tint: green if personal > generic, red if lower, none if equal
   const difficultyBorder: string | undefined = personalProb
     ? personalProb.personal > personalProb.generic
-      ? 'rgba(16, 185, 129, 0.5)'  // green tint — above average
+      ? 'var(--success)'
       : personalProb.personal < personalProb.generic
-        ? 'rgba(239, 68, 68, 0.4)'   // red tint — below average
+        ? 'var(--danger)'
         : undefined
     : undefined;
   // Only show value bar if value is meaningful (> 0)
@@ -250,12 +236,12 @@ function SimNodeComponent({ data }: NodeProps) {
   };
 
   // Determine accent color: sacred = purple, normal = type-based
-  const activeAccent = isSacred ? SACRED_COLORS.accent : colors.accent;
-  const activeBg = isSacred ? SACRED_COLORS.bg : colors.bg;
+  const activeAccent = isSacred ? sacred.accent : colors.accent;
+  const activeBg = isSacred ? sacred.bg : colors.bg;
 
   // Probability badge color: red if <40, amber if 40-60, green if >60
-  const probColor = d.prob != null
-    ? d.prob < 40 ? '#ef4444' : d.prob < 60 ? '#f59e0b' : '#10b981'
+  const probBadgeColor = d.prob != null
+    ? getProbColor(d.prob)
     : colors.accent;
 
   return (
@@ -267,7 +253,7 @@ function SimNodeComponent({ data }: NodeProps) {
         background: (nodeType !== 'bottleneck' && nodeType !== 'decision') ? activeBg : undefined,
         ...(difficultyBorder ? { outlineColor: difficultyBorder, outlineWidth: 2, outlineStyle: 'solid' as const } : {}),
         ...(d.activeMode === 'stress' && hasProb ? {
-          boxShadow: '0 0 0 2px rgba(239, 68, 68, 0.4)',
+          boxShadow: '0 0 0 2px var(--danger)',
           animation: 'stress-pulse 2s ease-in-out infinite',
         } : {}),
         ...(d.activeMode === 'whatif' && hasProb ? {
@@ -293,18 +279,18 @@ function SimNodeComponent({ data }: NodeProps) {
         {isSacred ? (
           <>
             {sacredRoots.map((root, idx) => (
-              <div key={root.id} style={idx > 0 ? { marginTop: 8, paddingTop: 6, borderTop: `1px solid ${SACRED_COLORS.border}33` } : undefined}>
+              <div key={root.id} style={idx > 0 ? { marginTop: 8, paddingTop: 6, borderTop: `1px solid ${sacred.border}33` } : undefined}>
                 <div className="sim-node__header">
-                  <div className="sim-node__icon" style={{ color: SACRED_COLORS.accent }}>{icon}</div>
-                  <div className="sim-node__label" style={{ color: SACRED_COLORS.text }}>{root.label_positive}</div>
+                  <div className="sim-node__icon" style={{ color: sacred.accent }}>{icon}</div>
+                  <div className="sim-node__label" style={{ color: sacred.text }}>{root.label_positive}</div>
                   {idx === 0 && hasProb && d.prob != null && (
                     <div style={{ position: 'relative', flexShrink: 0 }}>
                       <div style={{
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                         width: 36, height: 36, borderRadius: '50%',
-                        background: `${SACRED_COLORS.accent}18`, border: `2px solid ${SACRED_COLORS.accent}`,
+                        background: 'var(--purple-muted)', border: '2px solid var(--sacred-accent)',
                         fontSize: 11, fontWeight: 700, fontFamily: 'var(--font-geist-mono)',
-                        color: SACRED_COLORS.accent,
+                        color: sacred.accent,
                       }}>
                         {d.prob}%
                       </div>
@@ -313,7 +299,7 @@ function SimNodeComponent({ data }: NodeProps) {
                           className="absolute -top-1 -right-1 flex items-center justify-center rounded-full text-[8px] font-bold"
                           style={{
                             width: 18, height: 18,
-                            background: (d.prob as number) > d.originalProb ? '#10b981' : '#ef4444',
+                            background: (d.prob as number) > d.originalProb ? 'var(--success)' : 'var(--danger)',
                             color: 'white',
                             fontFamily: 'var(--font-geist-mono)',
                           }}
@@ -324,14 +310,14 @@ function SimNodeComponent({ data }: NodeProps) {
                     </div>
                   )}
                 </div>
-                <div className="sim-node__desc" style={{ fontStyle: 'italic', color: SACRED_COLORS.text, opacity: 0.9, marginTop: 4 }}>
+                <div className="sim-node__desc" style={{ fontStyle: 'italic', color: sacred.text, opacity: 0.9, marginTop: 4 }}>
                   &ldquo;{root.bible_text}&rdquo;
                 </div>
-                <div style={{ fontSize: 8, color: SACRED_COLORS.accent, opacity: 0.7, marginTop: 2, fontWeight: 600 }}>{root.bible_key}</div>
-                <div className="sim-node__desc" style={{ fontStyle: 'italic', color: SACRED_COLORS.text, opacity: 0.7, marginTop: 4 }}>
+                <div style={{ fontSize: 8, color: sacred.accent, opacity: 0.7, marginTop: 2, fontWeight: 600 }}>{root.bible_key}</div>
+                <div className="sim-node__desc" style={{ fontStyle: 'italic', color: sacred.text, opacity: 0.7, marginTop: 4 }}>
                   &ldquo;{root.quran_text}&rdquo;
                 </div>
-                <div style={{ fontSize: 8, color: SACRED_COLORS.accent, opacity: 0.7, marginTop: 2, fontWeight: 600 }}>{root.quran_key}</div>
+                <div style={{ fontSize: 8, color: sacred.accent, opacity: 0.7, marginTop: 2, fontWeight: 600 }}>{root.quran_key}</div>
               </div>
             ))}
           </>
@@ -349,10 +335,10 @@ function SimNodeComponent({ data }: NodeProps) {
                     <div style={{
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       width: 36, height: 36, borderRadius: '50%',
-                      background: `${personalProb.personal > personalProb.generic ? '#10b981' : personalProb.personal < personalProb.generic ? '#ef4444' : probColor}18`,
-                      border: `2px solid ${personalProb.personal > personalProb.generic ? '#10b981' : personalProb.personal < personalProb.generic ? '#ef4444' : probColor}`,
+                      background: personalProb.personal > personalProb.generic ? 'var(--success-muted)' : personalProb.personal < personalProb.generic ? 'var(--danger-muted)' : probBgColor(d.prob as number),
+                      border: `2px solid ${personalProb.personal > personalProb.generic ? 'var(--success)' : personalProb.personal < personalProb.generic ? 'var(--danger)' : probBadgeColor}`,
                       fontSize: 11, fontWeight: 700, fontFamily: 'var(--font-geist-mono)',
-                      color: personalProb.personal > personalProb.generic ? '#10b981' : personalProb.personal < personalProb.generic ? '#ef4444' : probColor,
+                      color: personalProb.personal > personalProb.generic ? 'var(--success)' : personalProb.personal < personalProb.generic ? 'var(--danger)' : probBadgeColor,
                       flexShrink: 0,
                     }}>
                       {personalProb.personal}%
@@ -366,9 +352,9 @@ function SimNodeComponent({ data }: NodeProps) {
                     <div style={{
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       width: 36, height: 36, borderRadius: '50%',
-                      background: `${probColor}18`, border: `2px solid ${probColor}`,
+                      background: probBgColor(d.prob as number), border: `2px solid ${probBadgeColor}`,
                       fontSize: 11, fontWeight: 700, fontFamily: 'var(--font-geist-mono)',
-                      color: probColor,
+                      color: probBadgeColor,
                     }}>
                       {d.prob}%
                       {d.probRange && (
@@ -382,7 +368,7 @@ function SimNodeComponent({ data }: NodeProps) {
                         className="absolute -top-1 -right-1 flex items-center justify-center rounded-full text-[8px] font-bold"
                         style={{
                           width: 18, height: 18,
-                          background: (d.prob as number) > d.originalProb ? '#10b981' : '#ef4444',
+                          background: (d.prob as number) > d.originalProb ? 'var(--success)' : 'var(--danger)',
                           color: 'white',
                           fontFamily: 'var(--font-geist-mono)',
                         }}
@@ -412,7 +398,7 @@ function SimNodeComponent({ data }: NodeProps) {
                         {Array.from({ length: 4 }, (_, i) => (
                           <div key={i} style={{
                             width: 5, height: 5, borderRadius: '50%',
-                            background: i < conf.dots ? (conf.dots >= 4 ? '#10b981' : conf.dots >= 3 ? '#f59e0b' : '#ef4444') : 'var(--border)',
+                            background: i < conf.dots ? (conf.dots >= 4 ? 'var(--success)' : conf.dots >= 3 ? 'var(--warning)' : 'var(--danger)') : 'var(--border)',
                           }} />
                         ))}
                       </div>
@@ -424,7 +410,7 @@ function SimNodeComponent({ data }: NodeProps) {
                     {sources.map((s, i) => (
                       <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
                         <span style={{
-                          fontSize: 7, fontWeight: 700, color: TIER_COLORS[s.tier],
+                          fontSize: 7, fontWeight: 700, color: tierColor(s.tier),
                           fontFamily: 'var(--font-geist-mono)', minWidth: 28, maxWidth: 80, flexShrink: 0, letterSpacing: '0.03em',
                           overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
                         }}>
@@ -433,7 +419,7 @@ function SimNodeComponent({ data }: NodeProps) {
                         <div style={{ flex: 1, height: 4, borderRadius: 2, background: 'var(--border)', overflow: 'hidden' }}>
                           <div style={{
                             width: `${(s.value / maxVal) * 100}%`, height: '100%', borderRadius: 2,
-                            background: TIER_COLORS[s.tier], opacity: 0.7,
+                            background: tierColor(s.tier), opacity: 0.7,
                           }} />
                         </div>
                         <span style={{ fontSize: 8, fontWeight: 600, color: 'var(--muted)', fontFamily: 'var(--font-geist-mono)', width: 24, textAlign: 'right', flexShrink: 0 }}>
@@ -494,16 +480,16 @@ function SimNodeComponent({ data }: NodeProps) {
           display: 'flex',
           alignItems: 'center',
           gap: 3,
-          background: 'rgba(239, 68, 68, 0.1)',
-          border: '1px solid rgba(239, 68, 68, 0.25)',
+          background: 'var(--danger-muted)',
+          border: '1px solid var(--danger)',
           borderRadius: 10,
           padding: '1px 7px',
           whiteSpace: 'nowrap',
         }}>
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M18 6L6 18M6 6l12 12" />
           </svg>
-          <span style={{ fontSize: 9, fontWeight: 600, color: '#ef4444', fontFamily: 'var(--font-geist-mono)' }}>
+          <span style={{ fontSize: 9, fontWeight: 600, color: 'var(--danger)', fontFamily: 'var(--font-geist-mono)' }}>
             {deathCount} dropped
           </span>
         </div>
