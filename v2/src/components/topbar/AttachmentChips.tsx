@@ -37,14 +37,14 @@ export default function AttachmentChips({ attachments, onRemove, onClearAll }: A
       className="flex items-center gap-2 sm:gap-2 px-2 sm:px-6 py-2 border-t border-[var(--border)] overflow-x-auto"
       style={{ background: 'var(--surface)', scrollbarWidth: 'none' }}
     >
-      <span className="text-[10px] sm:text-[11px] text-[var(--muted)] font-medium shrink-0">
+      <span className="text-[var(--text-xs)] sm:text-[var(--text-sm)] text-[var(--muted)] font-medium shrink-0">
         Sources:
       </span>
       <div className="flex items-center gap-2 flex-wrap">
         {attachments.map((att) => (
           <div
             key={att.id}
-            className="flex items-center gap-2 pl-2 pr-1 py-0.5 rounded-md text-[11px] font-medium border"
+            className="flex items-center gap-2 pl-2 pr-1 py-0.5 rounded-md text-[var(--text-sm)] font-medium border"
             style={{
               background: 'color-mix(in srgb, var(--accent) 8%, transparent)',
               borderColor: 'color-mix(in srgb, var(--accent) 20%, transparent)',
@@ -61,7 +61,7 @@ export default function AttachmentChips({ attachments, onRemove, onClearAll }: A
             <span className="max-w-[120px] truncate">{att.label}</span>
             <button
               onClick={() => onRemove(att.id)}
-              className="w-4 h-4 flex items-center justify-center rounded hover:bg-black/10 active:scale-90 shrink-0"
+              className="w-4 h-4 flex items-center justify-center rounded hover:bg-[var(--surface-hover)] active:scale-90 shrink-0"
               title="Remove"
             >
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -72,7 +72,7 @@ export default function AttachmentChips({ attachments, onRemove, onClearAll }: A
         ))}
         <button
           onClick={onClearAll}
-          className="text-[10px] text-[var(--muted)] hover:text-[var(--foreground)] active:scale-95 px-1"
+          className="text-[var(--text-xs)] text-[var(--muted)] hover:text-[var(--foreground)] active:scale-95 px-1"
         >
           Clear all
         </button>

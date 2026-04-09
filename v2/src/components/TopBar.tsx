@@ -71,7 +71,7 @@ function Logo() {
         <path d="M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
-      <Text variant="mono" as="span" className="hidden sm:block" style={{ fontSize: 13, letterSpacing: '0.1em' }}>
+      <Text variant="mono" as="span" className="hidden sm:block" style={{ fontSize: 'var(--text-base)', letterSpacing: '0.1em' }}>
         FORESIGHT
       </Text>
     </div>
@@ -297,7 +297,7 @@ export default function TopBar({
         {MODE_CONFIG[activeMode || 'simulate'].showsPrompt && (
           <div className="flex-1 relative min-w-0 max-w-[520px]">
             <div
-              className="w-full px-2 sm:px-3 py-2 rounded-lg text-[12px] sm:text-[13px] text-[var(--foreground)] bg-transparent border border-transparent hover:border-[var(--border)] hover:bg-[var(--surface-hover)] cursor-text transition-all line-clamp-1 sm:line-clamp-2"
+              className="w-full px-2 sm:px-3 py-2 rounded-lg text-[var(--text-sm)] sm:text-[var(--text-base)] text-[var(--foreground)] bg-transparent border border-transparent hover:border-[var(--border)] hover:bg-[var(--surface-hover)] cursor-text transition-all line-clamp-1 sm:line-clamp-2"
               onClick={() => { if (!generating) setInputExpanded(true); }}
               title={scenario || 'Describe a scenario...'}
             >
@@ -313,7 +313,7 @@ export default function TopBar({
             <div className="fixed z-[251] left-3 right-3 sm:left-6 sm:right-6 max-w-[600px] mx-auto" style={{ top: 'var(--topbar-height)' }}>
               <textarea
                 ref={inputRef}
-                className="w-full px-4 py-3 rounded-xl text-[14px] text-[var(--foreground)] placeholder-[var(--muted)] border border-[var(--border)] outline-none resize-none shadow-lg"
+                className="w-full px-4 py-3 rounded-xl text-[var(--text-md)] text-[var(--foreground)] placeholder-[var(--muted)] border border-[var(--border)] outline-none resize-none shadow-lg"
                 style={{ minHeight: '80px', maxHeight: '200px', background: 'var(--surface)' }}
                 placeholder="Describe a scenario..."
                 value={scenario}
@@ -329,7 +329,7 @@ export default function TopBar({
                 }}
                 autoFocus
               />
-              <Text variant="caption" as="div" style={{ marginTop: 8, textAlign: 'right' }}>
+              <Text variant="caption" as="div" style={{ marginTop: 'var(--space-2)', textAlign: 'right' }}>
                 Enter to generate / Esc to close
               </Text>
             </div>
@@ -495,7 +495,7 @@ export default function TopBar({
                 borderRadius: 'var(--radius)',
                 color: isRecording ? 'var(--danger)' : audioProcessing ? 'var(--muted)' : 'var(--muted-foreground)',
                 background: isRecording ? 'var(--danger-muted)' : 'transparent',
-                outline: isRecording ? '2px solid rgba(239, 68, 68, 0.4)' : 'none',
+                outline: isRecording ? '2px solid var(--danger-muted)' : 'none',
                 animation: isRecording ? 'pulse 1.5s infinite' : 'none',
               }}
               title={isRecording ? 'Click to stop recording' : audioProcessing ? 'Transcribing...' : 'Click to record / Right-click to upload audio'}
@@ -548,7 +548,7 @@ export default function TopBar({
           <div className="relative">
             <button
               onClick={(e) => { e.stopPropagation(); setShowTemplates(!showTemplates); setShowPhoto(false); }}
-              className="h-11 px-3 sm:px-5 text-[14px] font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-[10px] transition-colors cursor-pointer flex items-center gap-3"
+              className="h-11 px-3 sm:px-6 text-[var(--text-md)] font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-[10px] transition-colors cursor-pointer flex items-center gap-3"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" />
@@ -567,7 +567,7 @@ export default function TopBar({
           <div className="relative">
             <button
               onClick={(e) => { e.stopPropagation(); setShowAudio(!showAudio); setShowTemplates(false); setShowPhoto(false); }}
-              className="h-11 px-3 text-[13px] font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-lg transition-colors cursor-pointer flex items-center gap-2"
+              className="h-11 px-3 text-[var(--text-base)] font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-lg transition-colors cursor-pointer flex items-center gap-2"
               title="More input types"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -609,7 +609,7 @@ export default function TopBar({
                       } catch (err) { console.error('URL error:', err); }
                       setAudioProcessing(false);
                     }}
-                    className="w-full flex items-center gap-3 px-4 py-3 text-[13px] text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors cursor-pointer"
+                    className="w-full flex items-center gap-3 px-4 py-3 text-[var(--text-base)] text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors cursor-pointer"
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
@@ -619,7 +619,7 @@ export default function TopBar({
                   </button>
                   <button
                     onClick={() => { setShowAudio(false); (document.querySelector('input[data-pdf-input]') as HTMLInputElement)?.click(); }}
-                    className="w-full flex items-center gap-3 px-4 py-3 text-[13px] text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors cursor-pointer"
+                    className="w-full flex items-center gap-3 px-4 py-3 text-[var(--text-base)] text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors cursor-pointer"
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -631,7 +631,7 @@ export default function TopBar({
                   </button>
                   <button
                     onClick={() => { setShowAudio(false); (document.querySelector('input[data-video-input]') as HTMLInputElement)?.click(); }}
-                    className="w-full flex items-center gap-3 px-4 py-3 text-[13px] text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors cursor-pointer"
+                    className="w-full flex items-center gap-3 px-4 py-3 text-[var(--text-base)] text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors cursor-pointer"
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
                       <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -669,7 +669,7 @@ export default function TopBar({
               variant="primary"
               size="md"
               onClick={() => onStop?.()}
-              className="!px-6 !py-3 !text-[14px] !rounded-full !bg-red-500 hover:!bg-red-600"
+              className="!px-6 !py-3 !text-[var(--text-md)] !rounded-full !bg-red-500 hover:!bg-red-600"
             >
               Stop
             </Button>
@@ -694,7 +694,7 @@ export default function TopBar({
                   <button
                     key={level}
                     onClick={() => onDepthLevelChange?.(level)}
-                    className="px-3 py-2 text-[11px] font-medium transition-all cursor-pointer"
+                    className="px-3 py-2 text-[var(--text-xs)] font-medium transition-all cursor-pointer"
                     style={{
                       background: depthLevel === level ? 'var(--foreground)' : 'transparent',
                       color: depthLevel === level ? 'var(--surface)' : 'var(--muted)',
@@ -710,7 +710,7 @@ export default function TopBar({
                 size="md"
                 onClick={onGenerate}
                 disabled={!scenario.trim() && attachments.length === 0}
-                className="!px-6 !py-3 !text-[14px] !rounded-full"
+                className="!px-6 !py-3 !text-[var(--text-md)] !rounded-full"
               >
                 Generate
               </Button>
@@ -751,8 +751,8 @@ export default function TopBar({
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="px-5 py-4 border-b border-[var(--border)]">
-              <Text variant="subheading" as="div" style={{ fontSize: 14 }}>{urlMeta.title || 'URL Analysis'}</Text>
-              {urlMeta.description && <Text variant="caption" as="div" style={{ marginTop: 4 }} className="line-clamp-2">{urlMeta.description}</Text>}
+              <Text variant="subheading" as="div" style={{ fontSize: 'var(--text-md)' }}>{urlMeta.title || 'URL Analysis'}</Text>
+              {urlMeta.description && <Text variant="caption" as="div" style={{ marginTop: 'var(--space-1)' }} className="line-clamp-2">{urlMeta.description}</Text>}
             </div>
             <div className="p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[400px] overflow-y-auto">
               {urlSeeds.map((seed, i) => {
@@ -771,16 +771,16 @@ export default function TopBar({
                     style={{ background: 'var(--background)' }}
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <Badge variant="neutral" size="sm" style={{ background: color + '15', color, border: 'none', fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{catLabels[seed.category] || seed.category}</Badge>
-                      <Text variant="mono" as="span" muted style={{ fontSize: 9, marginLeft: 'auto' }}>{Math.round(seed.confidence * 100)}%</Text>
+                      <Badge variant="neutral" size="sm" style={{ background: color + '15', color, border: 'none', fontSize: 'var(--text-xs)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{catLabels[seed.category] || seed.category}</Badge>
+                      <Text variant="mono" as="span" muted style={{ fontSize: 'var(--text-xs)', marginLeft: 'auto' }}>{Math.round(seed.confidence * 100)}%</Text>
                     </div>
-                    <Text variant="body" as="div" style={{ fontSize: 12, lineHeight: 1.4 }} className="line-clamp-3">{seed.scenario}</Text>
+                    <Text variant="body" as="div" style={{ fontSize: 'var(--text-sm)', lineHeight: 1.4 }} className="line-clamp-3">{seed.scenario}</Text>
                   </button>
                 );
               })}
             </div>
             <div className="px-5 py-3 border-t border-[var(--border)] text-center">
-              <button onClick={() => setUrlSeeds(null)} className="text-[11px] text-[var(--muted)] hover:text-[var(--foreground)] cursor-pointer">Close</button>
+              <button onClick={() => setUrlSeeds(null)} className="text-[var(--text-xs)] text-[var(--muted)] hover:text-[var(--foreground)] cursor-pointer">Close</button>
             </div>
           </motion.div>
         </>

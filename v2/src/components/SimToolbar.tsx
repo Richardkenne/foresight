@@ -76,7 +76,7 @@ export function IdleToolbar({
         className="rounded-full px-2 sm:px-3 py-2 flex items-center gap-2 sm:gap-2 flex-wrap justify-center"
         style={{
           background: 'var(--surface)',
-          boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
+          boxShadow: '0 0 0 1px var(--border), var(--shadow-md)',
         }}
       >
         {/* Simulate */}
@@ -161,7 +161,7 @@ export function IdleToolbar({
                       variant={simSettings.launchMode === 'wave' ? 'primary' : 'ghost'}
                       size="sm"
                       onClick={() => onSimSettingsChange({ ...simSettings, launchMode: 'wave' })}
-                      className="!px-2 !py-1 !text-[10px] !rounded-none"
+                      className="!px-2 !py-1 !text-[var(--text-xs)] !rounded-none"
                     >
                       Wave
                     </Button>
@@ -169,7 +169,7 @@ export function IdleToolbar({
                       variant={simSettings.launchMode === 'simultaneous' ? 'primary' : 'ghost'}
                       size="sm"
                       onClick={() => onSimSettingsChange({ ...simSettings, launchMode: 'simultaneous' })}
-                      className="!px-2 !py-1 !text-[10px] !rounded-none"
+                      className="!px-2 !py-1 !text-[var(--text-xs)] !rounded-none"
                     >
                       Simultaneous
                     </Button>
@@ -234,7 +234,7 @@ export function IdleToolbar({
           </button>
         )}
 
-        <div className="w-px h-5 bg-[var(--border)] mx-0.5" />
+        <div className="w-px h-5 bg-[var(--border)] mx-px" />
 
         {/* Sacred mode */}
         <button
@@ -303,7 +303,7 @@ export function IdleToolbar({
           </svg>
         </button>
 
-        <div className="w-px h-5 bg-[var(--border)] mx-0.5" />
+        <div className="w-px h-5 bg-[var(--border)] mx-px" />
 
         {/* Undo */}
         <button onClick={onUndo} disabled={!canUndo} className="toolbar-btn" title="Undo (Cmd+Z)">
@@ -319,7 +319,7 @@ export function IdleToolbar({
           </svg>
         </button>
 
-        <div className="w-px h-5 bg-[var(--border)] mx-0.5" />
+        <div className="w-px h-5 bg-[var(--border)] mx-px" />
 
         {/* Clear */}
         <button onClick={onClear} className="toolbar-btn" title="Clear">
@@ -353,7 +353,7 @@ export function RunningToolbar({ simPaused, liveMode, onTogglePause, onStop }: R
         className="rounded-full px-3 py-2 flex items-center gap-2"
         style={{
           background: 'var(--surface)',
-          boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
+          boxShadow: '0 0 0 1px var(--border), var(--shadow-md)',
         }}
       >
         {liveMode && (
@@ -409,7 +409,7 @@ export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, succes
         className="rounded-2xl px-4 sm:px-8 py-3 sm:py-4 flex items-center gap-3 sm:gap-5 flex-wrap justify-center overflow-x-auto"
         style={{
           background: 'var(--surface)',
-          boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
+          boxShadow: '0 0 0 1px var(--border), var(--shadow-md)',
           scrollbarWidth: 'none',
         }}
       >
@@ -449,7 +449,7 @@ export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, succes
             </>
           ) : (
             <>
-              <div className="flex gap-[3px]">
+              <div className="flex gap-1">
                 {Array.from({ length: totalWaves }, (_, i) => (
                   <div
                     key={i}
@@ -471,17 +471,17 @@ export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, succes
         <div className="flex items-center gap-5">
           <div className="flex items-center gap-2">
             <div className="w-[7px] h-[7px] rounded-full" style={{ background: 'var(--accent)' }} />
-            <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>{simStats.total}</Text>
+            <Text variant="mono" as="span" style={{ fontSize: 'var(--text-base)', fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>{simStats.total}</Text>
             <Text variant="caption" as="span">people</Text>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-[7px] h-[7px] rounded-full" style={{ background: tokens.success }} />
-            <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.success }}>{simStats.success}</Text>
+            <Text variant="mono" as="span" style={{ fontSize: 'var(--text-base)', fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.success }}>{simStats.success}</Text>
             <Text variant="caption" as="span">made it</Text>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-[7px] h-[7px] rounded-full" style={{ background: tokens.danger }} />
-            <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.danger }}>{simStats.blocked}</Text>
+            <Text variant="mono" as="span" style={{ fontSize: 'var(--text-base)', fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.danger }}>{simStats.blocked}</Text>
             <Text variant="caption" as="span">stopped</Text>
           </div>
         </div>
@@ -510,12 +510,12 @@ export function StatsBar({ speedLevel, currentWave, totalWaves, simStats, succes
                 boxShadow: `0 0 6px color-mix(in srgb, var(--warning) 60%, transparent)`,
               }} />
               <Text variant="mono" as="span" style={{
-                fontSize: 11, fontWeight: 700,
+                fontSize: 'var(--text-sm)', fontWeight: 700,
                 color: youOutcome.outcome === 'success' ? tokens.success : tokens.danger,
               }}>
                 YOU:
               </Text>
-              <Text variant="mono" as="span" style={{ fontSize: 11, maxWidth: 140 }} className="truncate">
+              <Text variant="mono" as="span" style={{ fontSize: 'var(--text-sm)', maxWidth: 140 }} className="truncate">
                 {youOutcome.nodeLabel}
               </Text>
             </div>
@@ -560,7 +560,7 @@ export function ReplayBar({ cutNodeId, cutNodeLabel, cutReachCount, simRunning, 
         className="rounded-full px-3 sm:px-6 py-3 flex items-center gap-2 sm:gap-3 flex-wrap justify-center"
         style={{
           background: 'var(--surface)',
-          boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
+          boxShadow: '0 0 0 1px var(--border), var(--shadow-md)',
         }}
       >
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
@@ -582,7 +582,7 @@ export function ReplayBar({ cutNodeId, cutNodeLabel, cutReachCount, simRunning, 
               variant="primary"
               size="sm"
               onClick={onSimulateFromCut}
-              className="!px-3 !py-1 !rounded-full !text-[10px]"
+              className="!px-3 !py-1 !rounded-full !text-[var(--text-xs)]"
             >
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="5 3 19 12 5 21 5 3" />
@@ -628,7 +628,7 @@ export function StepModeBar({ stepIndex, totalSteps, onStepBack, onStepForward, 
         className="rounded-full px-3 py-2 flex items-center gap-3"
         style={{
           background: 'var(--surface)',
-          boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
+          boxShadow: '0 0 0 1px var(--border), var(--shadow-md)',
         }}
       >
         <button onClick={onStepBack} disabled={stepIndex === 0} className="toolbar-btn" title="Previous (Left arrow)">
@@ -637,7 +637,7 @@ export function StepModeBar({ stepIndex, totalSteps, onStepBack, onStepForward, 
           </svg>
         </button>
 
-        <Text variant="mono" as="span" style={{ fontSize: 11, fontWeight: 600, fontVariantNumeric: 'tabular-nums', padding: '0 8px' }}>
+        <Text variant="mono" as="span" style={{ fontSize: 'var(--text-sm)', fontWeight: 600, fontVariantNumeric: 'tabular-nums', padding: '0 8px' }}>
           {stepIndex} / {totalSteps}
         </Text>
 
@@ -678,7 +678,7 @@ export function PathFilterBar({ pathFilter, onFilterChange }: PathFilterBarProps
         className="rounded-full px-2 py-2 flex items-center gap-1"
         style={{
           background: 'var(--surface)',
-          boxShadow: '0 0 0 1px var(--border), 0 4px 16px rgba(0,0,0,0.08)',
+          boxShadow: '0 0 0 1px var(--border), var(--shadow-md)',
         }}
       >
         {([
@@ -692,7 +692,7 @@ export function PathFilterBar({ pathFilter, onFilterChange }: PathFilterBarProps
             variant="ghost"
             size="sm"
             onClick={() => onFilterChange(key)}
-            className="!px-3 !py-2 !rounded-full !text-[10px]"
+            className="!px-3 !py-2 !rounded-full !text-[var(--text-xs)]"
             style={{
               background: pathFilter === key ? color : 'transparent',
               color: pathFilter === key ? 'var(--accent-foreground)' : 'var(--muted)',
@@ -784,7 +784,7 @@ export function Sim3DToolbar({
           {/* Launched */}
           <div className="flex items-center gap-2">
             <div className="w-[7px] h-[7px] rounded-full" style={{ background: tokens.accent }} />
-            <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>{stats.launched}</Text>
+            <Text variant="mono" as="span" style={{ fontSize: 'var(--text-base)', fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>{stats.launched}</Text>
             <Text variant="caption" as="span">launched</Text>
           </div>
 
@@ -792,7 +792,7 @@ export function Sim3DToolbar({
           {stats.walking > 0 && (
             <div className="flex items-center gap-2">
               <div className="w-[7px] h-[7px] rounded-full" style={{ background: tokens.warning }} />
-              <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.warning }}>{stats.walking}</Text>
+              <Text variant="mono" as="span" style={{ fontSize: 'var(--text-base)', fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.warning }}>{stats.walking}</Text>
               <Text variant="caption" as="span">walking</Text>
             </div>
           )}
@@ -800,14 +800,14 @@ export function Sim3DToolbar({
           {/* Pass */}
           <div className="flex items-center gap-2">
             <div className="w-[7px] h-[7px] rounded-full" style={{ background: tokens.success }} />
-            <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.success }}>{stats.success}</Text>
+            <Text variant="mono" as="span" style={{ fontSize: 'var(--text-base)', fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.success }}>{stats.success}</Text>
             <Text variant="caption" as="span">pass</Text>
           </div>
 
           {/* Fail */}
           <div className="flex items-center gap-2">
             <div className="w-[7px] h-[7px] rounded-full" style={{ background: tokens.danger }} />
-            <Text variant="mono" as="span" style={{ fontSize: 13, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.danger }}>{stats.failed}</Text>
+            <Text variant="mono" as="span" style={{ fontSize: 'var(--text-base)', fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: tokens.danger }}>{stats.failed}</Text>
             <Text variant="caption" as="span">fail</Text>
           </div>
         </div>
@@ -875,7 +875,7 @@ export function Sim3DToolbar({
             </svg>
           </IconButton>
           <Text variant="mono" as="span" style={{
-            fontSize: 11, fontWeight: 700, color: tokens.mutedForeground,
+            fontSize: 'var(--text-sm)', fontWeight: 700, color: tokens.mutedForeground,
             fontVariantNumeric: 'tabular-nums',
             width: 28, textAlign: 'center',
           }}>{speed}x</Text>
@@ -928,7 +928,7 @@ export function ResultsTab({ onShowDashboard, onCompare, comparisonMode }: Resul
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--muted)' }} className="group-hover:!text-[var(--accent)] transition-colors">
             <path d="M3 3v18h18" /><path d="M18 17V9" /><path d="M13 17V5" /><path d="M8 17v-3" />
           </svg>
-          <Text variant="label" as="span" style={{ writingMode: 'vertical-lr', fontSize: 9 }} className="transition-colors">
+          <Text variant="label" as="span" style={{ writingMode: 'vertical-lr', fontSize: 'var(--text-xs)' }} className="transition-colors">
             Results
           </Text>
         </div>
@@ -945,7 +945,7 @@ export function ResultsTab({ onShowDashboard, onCompare, comparisonMode }: Resul
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--muted)' }} className="group-hover:!text-[var(--purple)] transition-colors">
               <path d="M16 3h5v5" /><path d="M8 3H3v5" /><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" /><path d="m15 9 6-6" />
             </svg>
-            <Text variant="label" as="span" style={{ writingMode: 'vertical-lr', fontSize: 9 }} className="transition-colors">
+            <Text variant="label" as="span" style={{ writingMode: 'vertical-lr', fontSize: 'var(--text-xs)' }} className="transition-colors">
               Compare
             </Text>
           </div>
