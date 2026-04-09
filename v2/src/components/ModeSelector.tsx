@@ -92,8 +92,8 @@ export default function ModeSelector({ activeMode, onModeChange, hasNodes }: Mod
             onMouseLeave={() => setHoveredMode(null)}
             disabled={disabled}
             className={`
-              mode-tab relative z-10 flex items-center gap-2 px-3 py-2 rounded-md
-              text-[11px] font-medium uppercase tracking-[0.08em] whitespace-nowrap
+              mode-tab relative z-10 flex items-center gap-2 px-4 py-2 rounded-md
+              text-[var(--text-sm)] font-medium uppercase tracking-[0.08em] whitespace-nowrap
               transition-all duration-150
               ${active ? 'text-[var(--foreground)]' : 'text-[var(--muted-foreground)]'}
               ${disabled ? 'opacity-30 cursor-not-allowed' : 'cursor-pointer hover:text-[var(--foreground)] active:scale-95'}
@@ -112,11 +112,11 @@ export default function ModeSelector({ activeMode, onModeChange, hasNodes }: Mod
 
   return (
     <div
-      className="mode-selector flex items-center gap-0.5 px-1 py-0.5 rounded-lg"
+      className="mode-selector flex items-center gap-1 px-1 py-1 rounded-lg"
       style={{
         background: 'var(--surface)',
         border: '1px solid color-mix(in srgb, var(--foreground) 8%, transparent)',
-        height: 34,
+        height: 40,
       }}
       ref={containerRef}
     >
@@ -143,7 +143,7 @@ export default function ModeSelector({ activeMode, onModeChange, hasNodes }: Mod
           className="absolute rounded-md"
           style={{
             background: 'color-mix(in srgb, var(--foreground) 6%, transparent)',
-            height: 28,
+            height: 32,
             zIndex: 0,
           }}
           animate={{ left: indicator.left, width: indicator.width }}

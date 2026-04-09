@@ -37,7 +37,7 @@ export default function ModeStrip({
     <>
       {/* Mode selector */}
       <div
-        className="flex justify-center py-1"
+        className="flex justify-center py-2"
         style={{ borderBottom: '1px solid color-mix(in srgb, var(--foreground) 6%, transparent)' }}
       >
         <ModeSelector activeMode={activeMode} onModeChange={onModeChange} hasNodes={hasNodes} />
@@ -52,7 +52,7 @@ export default function ModeStrip({
 
       {/* Sacred mode toggle row */}
       <div
-        className="h-[32px] flex items-center gap-2 px-2 sm:px-6 border-t border-[var(--border)] overflow-x-auto"
+        className="h-[40px] flex items-center gap-3 px-3 sm:px-6 border-t border-[var(--border)] overflow-x-auto"
         style={{ scrollbarWidth: 'none' }}
       >
         <button

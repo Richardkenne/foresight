@@ -266,7 +266,7 @@ export default function TopBar({
   return (
     <div className="shrink-0 z-50 border-b border-[var(--border)]" style={{ background: 'var(--surface)' }}>
       {/* Main bar */}
-      <div className="h-[56px] flex items-center gap-2 sm:gap-3 px-2 sm:px-6">
+      <div className="h-[var(--topbar-height)] flex items-center gap-3 sm:gap-4 px-3 sm:px-6">
         {/* Hamburger menu */}
         <IconButton
           variant="ghost"
@@ -548,7 +548,7 @@ export default function TopBar({
           <div className="relative">
             <button
               onClick={(e) => { e.stopPropagation(); setShowTemplates(!showTemplates); setShowPhoto(false); }}
-              className="h-11 px-3 sm:px-6 text-[var(--text-md)] font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-[10px] transition-colors cursor-pointer flex items-center gap-3"
+              className="h-11 px-4 sm:px-6 text-[var(--text-md)] font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-hover)] rounded-[var(--radius)] transition-colors cursor-pointer flex items-center gap-3 active:scale-95"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" />
