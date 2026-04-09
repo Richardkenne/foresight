@@ -694,10 +694,11 @@ export default function TopBar({
                   <button
                     key={level}
                     onClick={() => onDepthLevelChange?.(level)}
-                    className="px-3 py-2 text-[var(--text-xs)] font-medium transition-all cursor-pointer"
+                    className="px-4 py-2 text-[var(--text-sm)] font-medium transition-all cursor-pointer active:scale-95"
                     style={{
                       background: depthLevel === level ? 'var(--foreground)' : 'transparent',
                       color: depthLevel === level ? 'var(--surface)' : 'var(--muted)',
+                      borderRadius: 'var(--radius-full)',
                     }}
                     title={`${DEPTH_NODE_COUNTS[level].label} (${DEPTH_NODE_COUNTS[level].min}-${DEPTH_NODE_COUNTS[level].max} nodes)`}
                   >
