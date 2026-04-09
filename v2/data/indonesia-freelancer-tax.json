@@ -1,0 +1,882 @@
+{
+  "metadata": {
+    "title": "Indonesia Freelancer Tax & Financial Guide",
+    "description": "Comprehensive data for Indonesian-based freelancers covering tax, registration, payments, deductions, social security, visas, banking, cost of living, and geographic arbitrage",
+    "last_updated": "2026-04",
+    "data_points": 127,
+    "currency_note": "IDR values at ~16,900 IDR/USD unless stated otherwise",
+    "applies_to": "Freelancers, independent workers, digital nomads based in Indonesia"
+  },
+
+  "income_tax": {
+    "description": "Indonesia progressive income tax (PPh 21/PPh 25) brackets and rules for individuals",
+    "entries": [
+      {
+        "metric": "bracket_1",
+        "value": "5%",
+        "description": "Annual taxable income IDR 0 - 60,000,000 (approx USD 0 - 3,550)",
+        "source": "UU HPP No. 7/2021, Art. 17",
+        "year": 2025
+      },
+      {
+        "metric": "bracket_2",
+        "value": "15%",
+        "description": "Annual taxable income IDR 60,000,001 - 250,000,000 (approx USD 3,550 - 14,790)",
+        "source": "UU HPP No. 7/2021, Art. 17",
+        "year": 2025
+      },
+      {
+        "metric": "bracket_3",
+        "value": "25%",
+        "description": "Annual taxable income IDR 250,000,001 - 500,000,000 (approx USD 14,790 - 29,585)",
+        "source": "UU HPP No. 7/2021, Art. 17",
+        "year": 2025
+      },
+      {
+        "metric": "bracket_4",
+        "value": "30%",
+        "description": "Annual taxable income IDR 500,000,001 - 5,000,000,000 (approx USD 29,585 - 295,858)",
+        "source": "UU HPP No. 7/2021, Art. 17",
+        "year": 2025
+      },
+      {
+        "metric": "bracket_5",
+        "value": "35%",
+        "description": "Annual taxable income above IDR 5,000,000,000 (approx USD 295,858+)",
+        "source": "UU HPP No. 7/2021, Art. 17",
+        "year": 2025
+      },
+      {
+        "metric": "ptkp_single",
+        "value": "IDR 54,000,000/year",
+        "description": "Non-taxable income threshold (PTKP) for single individual, approx USD 3,195/year",
+        "source": "PMK 101/PMK.010/2016",
+        "year": 2025
+      },
+      {
+        "metric": "ptkp_married",
+        "value": "IDR 58,500,000/year",
+        "description": "PTKP for married individual (additional IDR 4,500,000 for spouse)",
+        "source": "PMK 101/PMK.010/2016",
+        "year": 2025
+      },
+      {
+        "metric": "ptkp_per_dependent",
+        "value": "IDR 4,500,000/year per dependent",
+        "description": "Additional PTKP per dependent child, max 3 dependents",
+        "source": "PMK 101/PMK.010/2016",
+        "year": 2025
+      },
+      {
+        "metric": "npwp_requirement",
+        "value": "Mandatory",
+        "description": "NPWP (tax ID) required for all individuals earning above PTKP. Register via Coretax DJP online system. Without NPWP, withholding tax rate increases by 20%",
+        "source": "DJP Coretax System",
+        "year": 2025
+      },
+      {
+        "metric": "annual_filing_deadline",
+        "value": "March 31",
+        "description": "Annual SPT (tax return) due by March 31 for individuals. Use form SPT 1770 for freelancers",
+        "source": "DJP regulations",
+        "year": 2025
+      },
+      {
+        "metric": "quarterly_installments",
+        "value": "PPh 25 monthly",
+        "description": "Freelancers must pay monthly PPh 25 installments (1/12 of prior year tax). Due by 15th of following month",
+        "source": "UU PPh Art. 25",
+        "year": 2025
+      },
+      {
+        "metric": "ter_system",
+        "value": "Effective since Jan 2024",
+        "description": "TER (Tarif Efektif Rata-rata) simplifies monthly withholding but final annual tax still uses progressive brackets",
+        "source": "PP 58/2023, PMK 168/2023",
+        "year": 2024
+      },
+      {
+        "metric": "umkm_final_tax",
+        "value": "0.5% of gross revenue",
+        "description": "MSME final tax rate for gross turnover under IDR 4.8 billion/year. First IDR 500 million exempt. Extended to 2029 with no time limit for individuals",
+        "source": "PP 55/2022, revised 2025",
+        "year": 2025
+      },
+      {
+        "metric": "umkm_exemption_threshold",
+        "value": "IDR 500,000,000/year",
+        "description": "First IDR 500 million (~USD 29,585) of annual turnover is tax-free under UMKM scheme",
+        "source": "PP 55/2022 Art. 60",
+        "year": 2025
+      }
+    ]
+  },
+
+  "freelancer_registration": {
+    "description": "How to register as an independent worker/freelancer in Indonesia",
+    "entries": [
+      {
+        "metric": "npwp_registration",
+        "value": "Online via Coretax DJP",
+        "description": "Register for NPWP (tax number) online at coretaxdjp.pajak.go.id. Required: KTP/passport, proof of address. Free of charge",
+        "source": "DJP Coretax",
+        "year": 2025
+      },
+      {
+        "metric": "usaha_dagang",
+        "value": "Sole proprietorship (UD)",
+        "description": "Simplest business form for freelancers. No minimum capital required. No separate legal entity created",
+        "source": "Deel Indonesia Guide",
+        "year": 2025
+      },
+      {
+        "metric": "nib_registration",
+        "value": "Via OSS RBA system",
+        "description": "Nomor Induk Berusaha (Business ID Number) obtained through Online Single Submission Risk-Based Approach at oss.go.id. Processing: 48 hours for simple businesses",
+        "source": "OSS RBA, Permen Investasi 5/2025",
+        "year": 2025
+      },
+      {
+        "metric": "oss_rba_system",
+        "value": "oss.go.id",
+        "description": "Online Single Submission with Risk-Based Approach. Classifies businesses by risk level (low/medium-low/medium-high/high) and assigns appropriate permits",
+        "source": "PP 5/2021",
+        "year": 2025
+      },
+      {
+        "metric": "klu_code_programming",
+        "value": "62010",
+        "description": "KLU (business classification) code for computer programming activities. Required for NPPN and tax filing",
+        "source": "DJP KLU Classification",
+        "year": 2025
+      },
+      {
+        "metric": "vat_registration_threshold",
+        "value": "IDR 4,800,000,000/year",
+        "description": "VAT (PPN) registration as PKP mandatory only if annual turnover exceeds IDR 4.8 billion. Optional below threshold. VAT rate: 11% (12% on luxury goods since 2025)",
+        "source": "UU HPP, PP 44/2022",
+        "year": 2025
+      },
+      {
+        "metric": "nppn_notification_deadline",
+        "value": "March 31 of tax year",
+        "description": "Must notify DJP of intent to use NPPN (Norma) method by March 31. Late notification means mandatory bookkeeping",
+        "source": "PMK 81/2024",
+        "year": 2025
+      },
+      {
+        "metric": "documents_required",
+        "value": "KTP/Passport, NPWP, NIB",
+        "description": "Minimum documents: national ID (KTP) or passport for foreigners, NPWP tax number, NIB business number. Additional: domicile letter (SKD) from local RT/RW if needed",
+        "source": "Various Indonesian government portals",
+        "year": 2025
+      }
+    ]
+  },
+
+  "foreign_income": {
+    "description": "How Upwork USD payments and other foreign-sourced income are taxed in Indonesia",
+    "entries": [
+      {
+        "metric": "worldwide_income_principle",
+        "value": "All global income taxable",
+        "description": "Indonesian tax residents are taxed on worldwide income. All Upwork/foreign platform earnings must be reported regardless of where payment is received",
+        "source": "UU PPh No. 36/2008 Art. 4",
+        "year": 2025
+      },
+      {
+        "metric": "tax_residency_rule",
+        "value": "183 days in 12 months",
+        "description": "Present in Indonesia for 183+ days in any 12-month period = tax resident. Alternatively, domiciled in Indonesia with intention to stay",
+        "source": "UU PPh Art. 2(3)",
+        "year": 2025
+      },
+      {
+        "metric": "upwork_w8ben",
+        "value": "Form W-8BEN required",
+        "description": "Non-US freelancers on Upwork must file W-8BEN to confirm non-US status and avoid US withholding tax. No US tax obligation for work performed outside US",
+        "source": "Upwork Help Center",
+        "year": 2025
+      },
+      {
+        "metric": "double_tax_treaty_us",
+        "value": "No treaty with USA",
+        "description": "Indonesia has NO double taxation treaty with the United States. However, Upwork income is not subject to US tax since work is performed outside US",
+        "source": "DJP Treaty Network",
+        "year": 2025
+      },
+      {
+        "metric": "double_tax_treaty_italy",
+        "value": "Treaty exists",
+        "description": "Indonesia-Italy DTA signed 1990. Prevents double taxation. Relevant for Italian citizen residents in Indonesia",
+        "source": "DJP Treaty Network, Italian-Indonesian DTA",
+        "year": 2025
+      },
+      {
+        "metric": "exchange_rate_for_tax",
+        "value": "KMK rate of receipt date",
+        "description": "Foreign income converted to IDR using Ministry of Finance weekly exchange rate (KMK) on the date of receipt, not market rate",
+        "source": "PMK exchange rate regulations",
+        "year": 2025
+      },
+      {
+        "metric": "reporting_enhanced_2026",
+        "value": "Stricter enforcement",
+        "description": "2026 brings enhanced reporting requirements for international digital platform payments. Stricter documentation of business expenses required",
+        "source": "Beaumont Capital Markets Indonesia Tax Guide 2026",
+        "year": 2026
+      },
+      {
+        "metric": "foreign_tax_credit",
+        "value": "Available per Art. 24",
+        "description": "If tax is withheld abroad, Indonesian residents can claim foreign tax credit (Art. 24 UU PPh) to avoid double taxation, limited to Indonesian tax on that income",
+        "source": "UU PPh Art. 24",
+        "year": 2025
+      },
+      {
+        "metric": "upwork_fee_deduction",
+        "value": "10% service fee",
+        "description": "Upwork charges freelancers 10% flat service fee. This is deducted before payment. Tax is calculated on gross income before Upwork fees under standard rules, but net amount if using NPPN/UMKM method on actual receipts",
+        "source": "Upwork fee structure 2025",
+        "year": 2025
+      }
+    ]
+  },
+
+  "payment_methods": {
+    "description": "Methods for receiving USD payments in Indonesia: platforms, fees, and conversion",
+    "entries": [
+      {
+        "metric": "wise_transfer_fee",
+        "value": "0.35-0.60% of amount",
+        "description": "Wise (TransferWise) charges low transparent fees with mid-market exchange rate. No hidden markup. USD to IDR supported. Typical fee: ~$17-30 on $5,000",
+        "source": "Wise.com 2026",
+        "year": 2026
+      },
+      {
+        "metric": "wise_delivery_speed",
+        "value": "1-2 business days",
+        "description": "USD to IDR transfers via Wise typically arrive in 1-2 business days to Indonesian bank accounts",
+        "source": "Wise.com",
+        "year": 2025
+      },
+      {
+        "metric": "payoneer_withdrawal_fee",
+        "value": "Up to 2% FX markup",
+        "description": "Payoneer charges up to 2% above mid-market rate for cross-currency withdrawals (USD to IDR). Same-currency: $1.50 flat fee",
+        "source": "Payoneer fee schedule 2025",
+        "year": 2025
+      },
+      {
+        "metric": "payoneer_annual_fee",
+        "value": "$29.95/year",
+        "description": "Annual account fee charged only if receiving less than $2,000 in payments over 12 months. Waived above $2,000",
+        "source": "Payoneer 2025",
+        "year": 2025
+      },
+      {
+        "metric": "payoneer_upwork_integration",
+        "value": "Direct withdrawal",
+        "description": "Payoneer integrates directly with Upwork. Can receive USD to Payoneer balance then withdraw to Indonesian bank. Popular choice for Indonesian freelancers",
+        "source": "Upwork payment methods",
+        "year": 2025
+      },
+      {
+        "metric": "direct_bank_wire",
+        "value": "$15-45 per transfer",
+        "description": "Direct SWIFT wire transfer from Upwork/client to Indonesian bank. Higher fees ($15-45), slower (2-5 days), but no intermediary platform needed",
+        "source": "BCA/Mandiri wire transfer fees",
+        "year": 2025
+      },
+      {
+        "metric": "usd_idr_rate_2026",
+        "value": "~16,850-17,090 IDR/USD",
+        "description": "USD/IDR exchange rate range in 2026: low 16,675, high 17,036, average ~16,848. Current April 2026: ~17,090",
+        "source": "ExchangeRates.org, Yahoo Finance",
+        "year": 2026
+      },
+      {
+        "metric": "wise_business_account",
+        "value": "Multi-currency",
+        "description": "Wise Business offers USD, EUR, GBP account details. Receive payments like a local in 10+ currencies. Monthly fee: $0. Good for multi-client freelancers",
+        "source": "Wise.com",
+        "year": 2025
+      },
+      {
+        "metric": "upwork_direct_to_bank",
+        "value": "Available",
+        "description": "Upwork supports direct transfer to local bank account (IDR). Conversion done by Upwork at their rate. Alternative to Payoneer/Wise",
+        "source": "Upwork payment settings",
+        "year": 2025
+      },
+      {
+        "metric": "recommended_method",
+        "value": "Wise for best rates",
+        "description": "For amounts >$1,000/month: Wise offers best USD-IDR rates (0.35% fee, mid-market rate). For Upwork specifically: Payoneer is most convenient (direct integration). For large amounts >$5,000: consider direct wire to BCA USD account then convert locally",
+        "source": "Nomad Labs comparison 2026",
+        "year": 2026
+      }
+    ]
+  },
+
+  "deductions": {
+    "description": "Tax deductions and expense recognition for Indonesian freelancers",
+    "entries": [
+      {
+        "metric": "nppn_method",
+        "value": "50-62.5% deemed net income",
+        "description": "NPPN (Norma) allows freelancers to calculate net income as a fixed percentage of gross revenue. For IT/programming (KLU 62010): 50% in most cities. Means 50% is automatically recognized as deductible expenses without receipts",
+        "source": "PER-17/PJ/2015, DJP Norma tables",
+        "year": 2025
+      },
+      {
+        "metric": "nppn_it_consultant",
+        "value": "50% net income ratio",
+        "description": "For IT consultants/programmers in non-Jakarta cities (like Bandung): norma is 50%. Effectively 50% of gross revenue is tax-free as deemed expenses",
+        "source": "DJP NPPN KLU 62010",
+        "year": 2025
+      },
+      {
+        "metric": "nppn_jakarta_rate",
+        "value": "Up to 62.5%",
+        "description": "Some professions in Jakarta (10 major provincial capitals) have higher norma rates up to 62.5%, meaning less deemed expenses",
+        "source": "DJP NPPN tables",
+        "year": 2025
+      },
+      {
+        "metric": "nppn_eligibility",
+        "value": "Turnover under IDR 4.8 billion",
+        "description": "NPPN available only for freelancers with annual gross revenue under IDR 4.8 billion (~USD 284,000). Must notify DJP by March 31",
+        "source": "PMK 81/2024",
+        "year": 2025
+      },
+      {
+        "metric": "bookkeeping_method",
+        "value": "Actual expenses deducted",
+        "description": "Alternative to NPPN: maintain full bookkeeping (pembukuan). Deduct actual documented business expenses. Required if turnover >IDR 4.8 billion or if NPPN notification missed",
+        "source": "UU PPh Art. 28",
+        "year": 2025
+      },
+      {
+        "metric": "deductible_home_office",
+        "value": "Proportional",
+        "description": "Home office expenses (rent, electricity, internet) deductible proportionally based on business use percentage. Must document with receipts",
+        "source": "Indonesian tax practice",
+        "year": 2025
+      },
+      {
+        "metric": "deductible_equipment",
+        "value": "Depreciated over useful life",
+        "description": "Computer, laptop, phone, software purchases: deductible via depreciation. Group 1 assets (computers): 25% per year (4 years straight-line)",
+        "source": "PMK 72/PMK.03/2023",
+        "year": 2025
+      },
+      {
+        "metric": "deductible_internet",
+        "value": "Business portion",
+        "description": "Internet and phone bills deductible for business portion. Common practice: 50-80% business use claim",
+        "source": "Indonesian tax practice",
+        "year": 2025
+      },
+      {
+        "metric": "deductible_coworking",
+        "value": "100% deductible",
+        "description": "Coworking space membership fees fully deductible as business expense if used exclusively for work",
+        "source": "Indonesian tax practice",
+        "year": 2025
+      },
+      {
+        "metric": "deductible_software",
+        "value": "100% deductible",
+        "description": "Software subscriptions (Adobe, GitHub, hosting, domains) fully deductible as business operating expenses",
+        "source": "Indonesian tax practice",
+        "year": 2025
+      },
+      {
+        "metric": "deductible_professional_dev",
+        "value": "Deductible",
+        "description": "Online courses, certifications, books, conference fees related to freelance work are deductible as professional development",
+        "source": "Indonesian tax practice",
+        "year": 2025
+      },
+      {
+        "metric": "non_deductible_personal",
+        "value": "Not deductible",
+        "description": "Personal expenses (food, clothing, entertainment, personal travel) are NOT deductible. Must separate personal and business expenses clearly",
+        "source": "UU PPh Art. 9",
+        "year": 2025
+      },
+      {
+        "metric": "umkm_vs_nppn_choice",
+        "value": "Choose one method",
+        "description": "Freelancers must choose: UMKM 0.5% final tax (simple, on gross) OR NPPN progressive tax (better if income is low/moderate). Cannot combine both. UMKM better above ~IDR 150M/year, NPPN better below",
+        "source": "Tax consultant analysis",
+        "year": 2025
+      }
+    ]
+  },
+
+  "social_security": {
+    "description": "BPJS Kesehatan and BPJS Ketenagakerjaan requirements for independent workers",
+    "entries": [
+      {
+        "metric": "bpjs_kesehatan_class_1",
+        "value": "IDR 150,000/month per person",
+        "description": "BPJS Health Class 1: best coverage, private room. Mandatory for workers, voluntary for independent. Covers hospitalization, outpatient, dental, maternity",
+        "source": "Perpres 64/2020",
+        "year": 2025
+      },
+      {
+        "metric": "bpjs_kesehatan_class_2",
+        "value": "IDR 100,000/month per person",
+        "description": "BPJS Health Class 2: shared room (2-4 beds). Good coverage at lower cost",
+        "source": "Perpres 64/2020",
+        "year": 2025
+      },
+      {
+        "metric": "bpjs_kesehatan_class_3",
+        "value": "IDR 42,000/month per person",
+        "description": "BPJS Health Class 3: shared ward. IDR 35,000 paid by participant + IDR 7,000 government subsidy",
+        "source": "Perpres 64/2020",
+        "year": 2025
+      },
+      {
+        "metric": "bpjs_kris_transition",
+        "value": "June 30, 2025",
+        "description": "Class 1/2/3 system being replaced with Standard Inpatient Class (KRIS) - single standard of care. Transition deadline June 30, 2025. New contribution rates under evaluation",
+        "source": "BPJS Kesehatan 2025",
+        "year": 2025
+      },
+      {
+        "metric": "bpjs_ketenagakerjaan_jkk",
+        "value": "1% of monthly income",
+        "description": "Work Accident Insurance (JKK) for independent workers: 1% of declared monthly income. Covers workplace accidents and occupational diseases",
+        "source": "BPJS Ketenagakerjaan",
+        "year": 2025
+      },
+      {
+        "metric": "bpjs_ketenagakerjaan_jkm",
+        "value": "IDR 6,800/month",
+        "description": "Death Benefit Insurance (JKM) for independent workers: flat IDR 6,800/month. Provides death benefit to heirs",
+        "source": "BPJS Ketenagakerjaan",
+        "year": 2025
+      },
+      {
+        "metric": "bpjs_ketenagakerjaan_jht",
+        "value": "2% of monthly income",
+        "description": "Old Age Savings (JHT) for independent workers: 2% of declared monthly income. Lump sum withdrawal at age 56 or after 5 years unemployment",
+        "source": "BPJS Ketenagakerjaan",
+        "year": 2025
+      },
+      {
+        "metric": "bpjs_ketenagakerjaan_jp",
+        "value": "Not available for independent",
+        "description": "Pension Fund (JP) program is only for formal employees, not available for independent/freelance workers",
+        "source": "BPJS Ketenagakerjaan",
+        "year": 2025
+      },
+      {
+        "metric": "bpjs_freelancer_status",
+        "value": "Voluntary but recommended",
+        "description": "BPJS Kesehatan technically mandatory for all residents. BPJS Ketenagakerjaan voluntary for independent workers. Both highly recommended for freelancers",
+        "source": "UU 24/2011 BPJS",
+        "year": 2025
+      },
+      {
+        "metric": "bpjs_foreigner_requirement",
+        "value": "Mandatory with KITAS",
+        "description": "Foreigners with KITAS/KITAP must register for BPJS Kesehatan and Ketenagakerjaan. Payment same as Indonesian citizens",
+        "source": "Perpres 20/2018",
+        "year": 2025
+      }
+    ]
+  },
+
+  "digital_nomad_visa": {
+    "description": "Visa options for foreigners working remotely in Indonesia (context: Italian-Ghanaian in Bandung)",
+    "entries": [
+      {
+        "metric": "b211a_business_visa",
+        "value": "60-180 days",
+        "description": "B211A Social/Business visa: 60 days initial, extendable twice for max 180 days. Allows attending meetings and negotiations but NOT employment. Common gray-area choice for remote workers",
+        "source": "Indonesian Immigration",
+        "year": 2025
+      },
+      {
+        "metric": "b211a_cost",
+        "value": "USD 100-300 via agent",
+        "description": "B211A visa cost: official fee ~IDR 2,000,000 + agent fees vary. Total through agent typically $100-300. Extensions: ~$50-100 each",
+        "source": "Indonesian Visas 2026",
+        "year": 2026
+      },
+      {
+        "metric": "e33g_remote_worker_visa",
+        "value": "1 year, renewable once",
+        "description": "E33G Remote Worker Visa launched April 2024. Legal framework for digital nomads. Stay 1 year + 1 year renewal. Comes with KITAS (temporary residence permit)",
+        "source": "Kemenkumham, E33G regulation",
+        "year": 2024
+      },
+      {
+        "metric": "e33g_income_requirement",
+        "value": "USD 60,000/year minimum",
+        "description": "E33G requires proof of annual income of USD 60,000+ from foreign sources. Bank statements showing consistent income required",
+        "source": "Indonesian Immigration E33G",
+        "year": 2025
+      },
+      {
+        "metric": "e33g_savings_requirement",
+        "value": "USD 2,000 minimum",
+        "description": "Must show at least USD 2,000 in savings/bank account at time of application",
+        "source": "Indonesian Immigration E33G",
+        "year": 2025
+      },
+      {
+        "metric": "e33g_tax_benefit",
+        "value": "No Indonesian income tax on foreign earnings",
+        "description": "E33G visa holders do NOT pay Indonesian income tax if all earnings come from abroad. Major tax advantage vs. resident taxpayer status",
+        "source": "E33G regulation, Bright Tax 2026",
+        "year": 2025
+      },
+      {
+        "metric": "e33g_processing_time",
+        "value": "5-10 working days",
+        "description": "E33G visa processing typically 5-10 working days. Apply online. Requires: passport (24mo+ validity), proof of employment/business, income proof, photo, health insurance",
+        "source": "Citizen Remote 2026",
+        "year": 2026
+      },
+      {
+        "metric": "e33g_benefits",
+        "value": "KITAS, bank account, drivers license",
+        "description": "E33G KITAS holders can: open local bank accounts, get Indonesian drivers license, rent property long-term, access local services",
+        "source": "Indonesian Immigration",
+        "year": 2025
+      },
+      {
+        "metric": "second_home_visa",
+        "value": "5-10 years",
+        "description": "Second Home Visa for wealthy individuals. Stay 5 years, renewable to 10 years. Requires $130,000 deposit in state bank OR equivalent property purchase",
+        "source": "Indonesian Immigration, LMI Consultancy",
+        "year": 2022
+      },
+      {
+        "metric": "second_home_visa_requirements",
+        "value": "$130,000 deposit or property",
+        "description": "Deposit $130,000 in BNI/BRI/Mandiri OR purchase property of equal value. Also: passport valid 36+ months, health insurance, clean criminal record",
+        "source": "LMI Consultancy",
+        "year": 2025
+      },
+      {
+        "metric": "b211a_2026_warning",
+        "value": "Gray area officially closed",
+        "description": "As of 2026, Indonesian Immigration has tightened digital oversight. B211A Business visa expressly prohibits working in an employment relationship. E33G is the legal option for remote workers",
+        "source": "Bali Business Consulting 2026",
+        "year": 2026
+      },
+      {
+        "metric": "italy_indonesia_visa_note",
+        "value": "VOA available for Italian passport",
+        "description": "Italian passport holders eligible for 30-day Visa on Arrival ($500,000 IDR / ~$30), extendable once for 30 more days. Not suitable for long-term freelancing",
+        "source": "Indonesian Immigration",
+        "year": 2025
+      },
+      {
+        "metric": "kitas_via_indonesian_spouse",
+        "value": "Available if married",
+        "description": "Marriage to Indonesian citizen allows KITAS application (sponsor visa). Covers stay and work permit in some cases. Note: relevant if marrying Indonesian partner",
+        "source": "Indonesian Immigration",
+        "year": 2025
+      }
+    ]
+  },
+
+  "banking": {
+    "description": "Best banks for receiving USD in Indonesia, fees, and setup",
+    "entries": [
+      {
+        "metric": "bca_usd_account",
+        "value": "Available with KITAS",
+        "description": "BCA (Bank Central Asia) offers USD savings accounts. Top-rated bank in Indonesia (Forbes). 18 foreign currencies supported. Forex Pocket fee waived until June 2026",
+        "source": "BCA, Forbes Indonesia",
+        "year": 2026
+      },
+      {
+        "metric": "bca_incoming_wire_fee",
+        "value": "~$5-10 per transfer",
+        "description": "BCA charges ~IDR 50,000-150,000 for incoming international SWIFT transfers. Same-day receipt for most currencies",
+        "source": "BCA fee schedule",
+        "year": 2025
+      },
+      {
+        "metric": "mandiri_usd_account",
+        "value": "13 currencies available",
+        "description": "Bank Mandiri (largest state bank) offers multi-currency accounts. Competitive USD-IDR exchange rates. Good for large transfers",
+        "source": "Bank Mandiri",
+        "year": 2025
+      },
+      {
+        "metric": "bank_jago_forex",
+        "value": "Digital-first, Visa debit",
+        "description": "Bank Jago offers foreign currency pocket: save, buy/sell forex, transact with Visa debit. Fully digital, no branch visit needed. Good for tech-savvy freelancers",
+        "source": "Bank Jago",
+        "year": 2025
+      },
+      {
+        "metric": "foreigner_account_requirements",
+        "value": "KITAS/KITAP + NPWP",
+        "description": "Foreigners need KITAS/KITAP (residence permit) and NPWP (tax ID) to open most bank accounts. Some banks accept passport + domicile letter for basic accounts",
+        "source": "Knowmads Bali 2025",
+        "year": 2025
+      },
+      {
+        "metric": "bca_minimum_deposit",
+        "value": "IDR 500,000",
+        "description": "BCA Tahapan account minimum opening deposit: IDR 500,000 (~$30). Monthly admin fee: IDR 15,000",
+        "source": "BCA",
+        "year": 2025
+      },
+      {
+        "metric": "recommended_setup",
+        "value": "BCA IDR + Wise USD",
+        "description": "Recommended banking setup for freelancers: BCA for local IDR transactions + Wise Business for receiving USD. Convert on Wise at mid-market rate, transfer to BCA in IDR",
+        "source": "Freelancer community consensus",
+        "year": 2025
+      },
+      {
+        "metric": "atm_withdrawal_limit",
+        "value": "IDR 10,000,000-25,000,000/day",
+        "description": "ATM daily withdrawal limits vary by bank and card type. BCA Gold: IDR 10M, BCA Platinum: IDR 25M. International cards may have lower limits",
+        "source": "BCA",
+        "year": 2025
+      },
+      {
+        "metric": "mobile_banking_quality",
+        "value": "BCA Mobile best rated",
+        "description": "BCA Mobile and Livin by Mandiri are the best-rated mobile banking apps. Support QRIS payments, bill pay, transfers. Essential for daily life in Indonesia",
+        "source": "Google Play Store ratings",
+        "year": 2025
+      }
+    ]
+  },
+
+  "cost_of_living_bandung": {
+    "description": "Monthly expenses breakdown for living in Bandung, Indonesia (not Bali/Jakarta prices)",
+    "entries": [
+      {
+        "metric": "total_monthly_single",
+        "value": "IDR 7,500,000-12,000,000 (~USD 445-710)",
+        "description": "Total monthly cost for single person in Bandung: comfortable but not luxury. Significantly cheaper than Jakarta (30-40% less) and Bali (50% less)",
+        "source": "Numbeo, LivingCost.org Bandung 2026",
+        "year": 2026
+      },
+      {
+        "metric": "rent_studio_center",
+        "value": "IDR 2,500,000-4,000,000/month",
+        "description": "Studio/1BR apartment in Bandung city center (Dago, Braga, Riau). ~USD 148-237/month. Furnished kost/apartment options available",
+        "source": "Numbeo Bandung Jan 2026",
+        "year": 2026
+      },
+      {
+        "metric": "rent_1br_outside_center",
+        "value": "IDR 1,500,000-2,500,000/month",
+        "description": "1BR apartment outside Bandung center (Buah Batu, Kopo, Cimahi area). ~USD 89-148/month",
+        "source": "Numbeo Bandung 2026",
+        "year": 2026
+      },
+      {
+        "metric": "rent_kost",
+        "value": "IDR 800,000-2,000,000/month",
+        "description": "Kost (boarding house room) in Bandung: basic (IDR 800K) to premium with AC/wifi (IDR 2M). Most affordable option for singles",
+        "source": "Mamikos, local listings",
+        "year": 2025
+      },
+      {
+        "metric": "food_local_warung",
+        "value": "IDR 15,000-25,000/meal",
+        "description": "Meal at local warung (street food/small restaurant): nasi goreng, mie ayam, bakso. ~USD 0.90-1.50 per meal",
+        "source": "Numbeo Bandung 2026",
+        "year": 2026
+      },
+      {
+        "metric": "food_mid_restaurant",
+        "value": "IDR 50,000-100,000/meal",
+        "description": "Meal at mid-range restaurant in Bandung: ~USD 3-6 per person. Bandung famous for food: Sundanese cuisine, cafes, factory outlets",
+        "source": "Numbeo, Expatistan Bandung 2026",
+        "year": 2026
+      },
+      {
+        "metric": "food_monthly_budget",
+        "value": "IDR 2,000,000-4,000,000/month",
+        "description": "Monthly food budget: IDR 2M (mostly warung) to IDR 4M (mix of warung + restaurants + groceries). ~USD 118-237",
+        "source": "Estimated from Numbeo data",
+        "year": 2026
+      },
+      {
+        "metric": "groceries_monthly",
+        "value": "IDR 1,500,000-2,500,000/month",
+        "description": "Monthly groceries (cooking at home): rice, vegetables, chicken, eggs, fruits. Supermarkets: Yogya, Borma, Superindo, Alfamart/Indomaret",
+        "source": "Numbeo Bandung 2026",
+        "year": 2026
+      },
+      {
+        "metric": "transport_grab_gojek",
+        "value": "IDR 8,000-25,000/ride",
+        "description": "Grab/Gojek motorbike ride in Bandung: IDR 8,000-25,000 depending on distance. Car ride: IDR 20,000-60,000. Very affordable transportation",
+        "source": "Grab/Gojek Bandung pricing",
+        "year": 2025
+      },
+      {
+        "metric": "transport_monthly",
+        "value": "IDR 500,000-1,000,000/month",
+        "description": "Monthly transport budget: IDR 500K (mostly motorbike/Gojek) to IDR 1M (daily car rides). Scooter rental: IDR 500K-800K/month",
+        "source": "Estimated from local pricing",
+        "year": 2025
+      },
+      {
+        "metric": "internet_home",
+        "value": "IDR 300,000-500,000/month",
+        "description": "Home internet (IndiHome/MyRepublic/Biznet): 30-100 Mbps. IDR 300K-500K/month (~USD 18-30). Biznet often fastest in Bandung",
+        "source": "ISP pricing Bandung 2025",
+        "year": 2025
+      },
+      {
+        "metric": "mobile_data",
+        "value": "IDR 50,000-150,000/month",
+        "description": "Mobile data plan: Telkomsel/XL/Indosat. 15-50GB: IDR 50K-150K/month. Telkomsel best coverage in West Java",
+        "source": "Telkomsel, XL pricing",
+        "year": 2025
+      },
+      {
+        "metric": "electricity",
+        "value": "IDR 200,000-500,000/month",
+        "description": "Electricity (PLN) for apartment with AC: IDR 200K-500K depending on usage and power capacity (900-2200 VA)",
+        "source": "PLN tariffs 2025",
+        "year": 2025
+      },
+      {
+        "metric": "water",
+        "value": "IDR 50,000-150,000/month",
+        "description": "Water bill (PDAM): IDR 50K-150K/month. Many kost include water in rent",
+        "source": "PDAM Bandung",
+        "year": 2025
+      },
+      {
+        "metric": "coworking_space",
+        "value": "IDR 500,000-2,000,000/month",
+        "description": "Coworking in Bandung: daily pass IDR 50K-100K, monthly membership IDR 500K-2M. Options: Co&Co, Eduplex, DiLo Bandung, Block71",
+        "source": "Local coworking spaces",
+        "year": 2025
+      },
+      {
+        "metric": "gym_membership",
+        "value": "IDR 200,000-500,000/month",
+        "description": "Gym membership in Bandung: local gym IDR 200K, premium (Celebrity Fitness, Fitness First) IDR 400K-800K",
+        "source": "Numbeo Bandung",
+        "year": 2025
+      },
+      {
+        "metric": "laundry",
+        "value": "IDR 7,000-10,000/kg",
+        "description": "Laundry kiloan service: IDR 7K-10K per kg. Very common and affordable in Bandung. Most kost areas have multiple options",
+        "source": "Local pricing",
+        "year": 2025
+      },
+      {
+        "metric": "coffee_cafe",
+        "value": "IDR 20,000-45,000",
+        "description": "Coffee at local cafe: IDR 20K-45K. Bandung has excellent cafe culture. Starbucks: IDR 50K-75K",
+        "source": "Local cafe pricing",
+        "year": 2025
+      }
+    ]
+  },
+
+  "geographic_arbitrage": {
+    "description": "Earning USD rates while spending IDR - the financial advantage of freelancing from Indonesia",
+    "entries": [
+      {
+        "metric": "purchasing_power_multiplier",
+        "value": "3-5x vs US",
+        "description": "USD 1,000/month in Bandung provides purchasing power equivalent to USD 3,000-5,000 in a US city. This is the core of geographic arbitrage",
+        "source": "Numbeo cost comparison, purchasing power parity",
+        "year": 2026
+      },
+      {
+        "metric": "upwork_ai_automation_rate",
+        "value": "USD 30-75/hour",
+        "description": "Upwork rates for AI automation freelancers: entry $30/hr, experienced $50-75/hr. At $50/hr full-time = $8,000/month. In Bandung this is wealthy-tier income",
+        "source": "Upwork rate surveys 2025",
+        "year": 2025
+      },
+      {
+        "metric": "bandung_avg_salary",
+        "value": "IDR 4,000,000-6,000,000/month",
+        "description": "Average Bandung salary: IDR 4-6M/month (~USD 237-355). UMK Bandung 2026: IDR 4,209,309/month. Freelancing at USD rates = 5-20x local salary",
+        "source": "BPS, UMK West Java 2026",
+        "year": 2026
+      },
+      {
+        "metric": "savings_rate_potential",
+        "value": "50-70% of income",
+        "description": "Freelancer earning $3,000/month in Bandung can save 50-70% ($1,500-2,100/month) while living comfortably. In US same earner saves 10-20%",
+        "source": "Digital nomad community data",
+        "year": 2025
+      },
+      {
+        "metric": "breakeven_bandung",
+        "value": "~USD 500/month",
+        "description": "Minimum to survive in Bandung: ~$500/month (basic kost, warung food, transport). Comfortable: $700-1,000. Very comfortable: $1,000-1,500",
+        "source": "Numbeo, LivingCost Bandung",
+        "year": 2026
+      },
+      {
+        "metric": "tax_optimized_scenario",
+        "value": "Effective rate 2.5-7.5%",
+        "description": "Scenario: $36,000/year (~IDR 608M). Using UMKM 0.5%: first IDR 500M exempt, 0.5% on IDR 108M = IDR 540K tax (~$32/year). Using NPPN: effective rate ~5-7.5%. Either way, very low effective tax rate",
+        "source": "Calculated from PP 55/2022 and NPPN tables",
+        "year": 2025
+      },
+      {
+        "metric": "e33g_zero_tax_scenario",
+        "value": "0% Indonesian tax",
+        "description": "With E33G Remote Worker Visa: 0% Indonesian income tax on all foreign-sourced earnings. Combined with no US tax (W-8BEN) = potentially 0% total tax. Requires $60K/year minimum income",
+        "source": "E33G regulation",
+        "year": 2025
+      },
+      {
+        "metric": "usd_1000_in_bandung",
+        "value": "Upper-middle class lifestyle",
+        "description": "USD 1,000/month in Bandung covers: furnished apartment (IDR 3M), all meals (IDR 3M), transport (IDR 800K), internet+phone (IDR 500K), entertainment (IDR 1M), coworking (IDR 1M), with savings left over",
+        "source": "Composite from Numbeo/local data",
+        "year": 2026
+      },
+      {
+        "metric": "usd_3000_in_bandung",
+        "value": "Top 1% lifestyle",
+        "description": "USD 3,000/month in Bandung = IDR ~50M. This puts you in top 1% income in Bandung. Affords: premium apartment, car+driver, eating out daily, travel every month, full savings",
+        "source": "BPS income distribution data",
+        "year": 2025
+      },
+      {
+        "metric": "investment_power",
+        "value": "10-year wealth acceleration",
+        "description": "Saving $2,000/month from Bandung for 10 years at 7% annual return = ~$345,000. Same savings rate nearly impossible on same income in US/EU/Australia",
+        "source": "Compound interest calculation",
+        "year": 2025
+      },
+      {
+        "metric": "risk_idr_depreciation",
+        "value": "IDR depreciates 3-5%/year vs USD",
+        "description": "IDR historically weakens against USD (16,000 in 2024 → 17,000+ in 2026). Earning in USD while spending IDR means purchasing power naturally increases over time",
+        "source": "Bank Indonesia, ExchangeRates.org historical",
+        "year": 2026
+      },
+      {
+        "metric": "arbitrage_vs_australia",
+        "value": "4-6x cost advantage",
+        "description": "Perth (Australia) avg rent: AUD 2,500/month. Bandung: USD 200/month. Same freelance work, same clients, 4-6x lower costs. Directly relevant: user lived in Perth before Bandung",
+        "source": "Numbeo Perth vs Bandung comparison",
+        "year": 2025
+      }
+    ]
+  }
+}

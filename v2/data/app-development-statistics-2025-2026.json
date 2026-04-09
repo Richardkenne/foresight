@@ -1,0 +1,438 @@
+{
+  "metadata": {
+    "collection_date": "2026-04-08",
+    "data_freshness": "2025-2026",
+    "total_metrics": 42,
+    "purpose": "Simulation template data for app development scenarios"
+  },
+  "metrics": [
+    {
+      "id": 1,
+      "category": "App Store Size",
+      "metric": "Apple App Store total apps",
+      "value": "2.42 million",
+      "year": 2025,
+      "source_name": "Business of Apps",
+      "source_url": "https://www.businessofapps.com/data/apple-app-store-statistics/"
+    },
+    {
+      "id": 2,
+      "category": "App Store Size",
+      "metric": "Apple App Store new apps submitted",
+      "value": "557,000",
+      "unit": "per year",
+      "year": 2025,
+      "growth_vs_prior": "+24%",
+      "source_name": "Business of Apps",
+      "source_url": "https://www.businessofapps.com/data/apple-app-store-statistics/"
+    },
+    {
+      "id": 3,
+      "category": "App Store Size",
+      "metric": "Google Play Store total apps",
+      "value": "3.3 million",
+      "year": 2025,
+      "source_name": "Business of Apps",
+      "source_url": "https://www.businessofapps.com/data/app-stores/"
+    },
+    {
+      "id": 4,
+      "category": "App Store Size",
+      "metric": "Apple App Store projected downloads",
+      "value": "38 billion",
+      "year": 2026,
+      "source_name": "Business of Apps",
+      "source_url": "https://www.businessofapps.com/data/apple-app-store-statistics/"
+    },
+    {
+      "id": 5,
+      "category": "App Store Size",
+      "metric": "Google Play Store projected downloads",
+      "value": "143 billion",
+      "year": 2026,
+      "source_name": "Business of Apps",
+      "source_url": "https://www.businessofapps.com/data/app-stores/"
+    },
+    {
+      "id": 6,
+      "category": "Pricing Strategy",
+      "metric": "Percentage of free apps on Google Play",
+      "value": "97%",
+      "year": 2025,
+      "source_name": "Business of Apps",
+      "source_url": "https://www.businessofapps.com/data/app-stores/"
+    },
+    {
+      "id": 7,
+      "category": "Pricing Strategy",
+      "metric": "Percentage of free apps on Apple App Store",
+      "value": "95%",
+      "year": 2025,
+      "source_name": "Business of Apps",
+      "source_url": "https://www.businessofapps.com/data/apple-app-store-statistics/"
+    },
+    {
+      "id": 8,
+      "category": "Rejection Rates",
+      "metric": "Apple app submissions rejected in 2024",
+      "value": "1,931,400",
+      "unit": "submissions",
+      "percent_of_reviewed": "25%",
+      "year": 2024,
+      "source_name": "Newly App",
+      "source_url": "https://newly.app/articles/app-store-requirements"
+    },
+    {
+      "id": 9,
+      "category": "Rejection Rates",
+      "metric": "Google Play policy-violating apps blocked in 2025",
+      "value": "1.75 million",
+      "unit": "apps",
+      "year": 2025,
+      "source_name": "Google Play",
+      "source_url": "https://primetestlab.com/blog/google-play-app-rejection-rate-2026"
+    },
+    {
+      "id": 10,
+      "category": "Rejection Reasons",
+      "metric": "Top Apple rejection reason",
+      "value": "Performance",
+      "year": 2025,
+      "source_name": "Twinr Dev",
+      "source_url": "https://twinr.dev/blogs/apple-app-store-rejection-reasons-2025/"
+    },
+    {
+      "id": 11,
+      "category": "Rejection Reasons",
+      "metric": "Top Google Play rejection reasons",
+      "value": "Crashes, thin content, permission abuse, broken privacy links, failed closed testing",
+      "year": 2025,
+      "source_name": "PrimeTestLab",
+      "source_url": "https://primetestlab.com/blog/google-play-app-rejection-rate-2026"
+    },
+    {
+      "id": 12,
+      "category": "Development Cost",
+      "metric": "Simple app development cost range",
+      "value": "$5,000 - $50,000",
+      "year": 2025,
+      "source_name": "TopFlightApps",
+      "source_url": "https://topflightapps.com/ideas/app-development-costs/"
+    },
+    {
+      "id": 13,
+      "category": "Development Cost",
+      "metric": "Medium complexity app development cost range",
+      "value": "$50,000 - $120,000",
+      "year": 2025,
+      "source_name": "TopFlightApps",
+      "source_url": "https://topflightapps.com/ideas/app-development-costs/"
+    },
+    {
+      "id": 14,
+      "category": "Development Cost",
+      "metric": "Complex app development cost range",
+      "value": "$120,000 - $300,000",
+      "year": 2025,
+      "source_name": "TopFlightApps",
+      "source_url": "https://topflightapps.com/ideas/app-development-costs/"
+    },
+    {
+      "id": 15,
+      "category": "Development Cost",
+      "metric": "Solo developer simple app cost estimate",
+      "value": "$20,000",
+      "duration": "3 months",
+      "year": 2025,
+      "source_name": "Noloco",
+      "source_url": "https://noloco.io/blog/how-much-does-app-development-cost-in-2025-a-breakdown"
+    },
+    {
+      "id": 16,
+      "category": "Development Cost",
+      "metric": "Agency simple app cost estimate",
+      "value": "$40,000 - $70,000",
+      "type": "MVP food delivery",
+      "year": 2025,
+      "source_name": "Noloco",
+      "source_url": "https://noloco.io/blog/how-much-does-app-development-cost-in-2025-a-breakdown"
+    },
+    {
+      "id": 17,
+      "category": "Development Time",
+      "metric": "Simple MVP development time",
+      "value": "6-8 weeks",
+      "features": "3-5 features",
+      "year": 2025,
+      "source_name": "Weweb",
+      "source_url": "https://www.weweb.io/blog/mvp-development-complete-guide-from-idea-to-launch/"
+    },
+    {
+      "id": 18,
+      "category": "Development Time",
+      "metric": "Standard MVP development time",
+      "value": "8-16 weeks",
+      "year": 2025,
+      "source_name": "Weweb",
+      "source_url": "https://www.weweb.io/blog/mvp-development-complete-guide-from-idea-to-launch/"
+    },
+    {
+      "id": 19,
+      "category": "Development Time",
+      "metric": "No-code MVP launch time",
+      "value": "2-4 weeks",
+      "year": 2025,
+      "source_name": "Weweb",
+      "source_url": "https://www.weweb.io/blog/mvp-development-complete-guide-from-idea-to-launch/"
+    },
+    {
+      "id": 20,
+      "category": "Development Time",
+      "metric": "Custom MVP development time",
+      "value": "12-19 weeks",
+      "year": 2025,
+      "source_name": "Weweb",
+      "source_url": "https://www.weweb.io/blog/mvp-development-complete-guide-from-idea-to-launch/"
+    },
+    {
+      "id": 21,
+      "category": "Download Distribution",
+      "metric": "Global app downloads in 2025",
+      "value": "142.2 billion",
+      "growth": "+3.1%",
+      "year": 2025,
+      "source_name": "Statista",
+      "source_url": "https://www.statista.com/statistics/271644/worldwide-free-and-paid-mobile-app-store-downloads/"
+    },
+    {
+      "id": 22,
+      "category": "Download Distribution",
+      "metric": "Google Play download share",
+      "value": "104.6 billion",
+      "percent": "73.5%",
+      "year": 2025,
+      "source_name": "Statista",
+      "source_url": "https://www.statista.com/statistics/271644/worldwide-free-and-paid-mobile-app-store-downloads/"
+    },
+    {
+      "id": 23,
+      "category": "Download Distribution",
+      "metric": "Apple App Store download share",
+      "value": "36.6 billion",
+      "percent": "26.5%",
+      "year": 2025,
+      "source_name": "Statista",
+      "source_url": "https://www.statista.com/statistics/271644/worldwide-free-and-paid-mobile-app-store-downloads/"
+    },
+    {
+      "id": 24,
+      "category": "Retention",
+      "metric": "Day 1 retention (all categories)",
+      "value": "26%",
+      "year": 2025,
+      "source_name": "Enable3",
+      "source_url": "https://enable3.io/blog/app-retention-benchmarks-2025"
+    },
+    {
+      "id": 25,
+      "category": "Retention",
+      "metric": "Day 7 retention (all categories)",
+      "value": "13%",
+      "year": 2025,
+      "source_name": "Enable3",
+      "source_url": "https://enable3.io/blog/app-retention-benchmarks-2025"
+    },
+    {
+      "id": 26,
+      "category": "Retention",
+      "metric": "Day 30 retention (all categories)",
+      "value": "7%",
+      "year": 2025,
+      "source_name": "Enable3",
+      "source_url": "https://enable3.io/blog/app-retention-benchmarks-2025"
+    },
+    {
+      "id": 27,
+      "category": "Retention",
+      "metric": "Day 1 retention iOS",
+      "value": "23.9%",
+      "year": 2025,
+      "source_name": "TechRT",
+      "source_url": "https://techrt.com/ios-app-retention-statistics/"
+    },
+    {
+      "id": 28,
+      "category": "Retention",
+      "metric": "Day 30 retention iOS",
+      "value": "3.7%",
+      "year": 2025,
+      "source_name": "TechRT",
+      "source_url": "https://techrt.com/ios-app-retention-statistics/"
+    },
+    {
+      "id": 29,
+      "category": "Retention",
+      "metric": "Day 1 retention Android",
+      "value": "21.1%",
+      "year": 2025,
+      "source_name": "TechRT",
+      "source_url": "https://techrt.com/ios-app-retention-statistics/"
+    },
+    {
+      "id": 30,
+      "category": "Retention",
+      "metric": "Day 30 retention Android",
+      "value": "2.1%",
+      "year": 2025,
+      "source_name": "TechRT",
+      "source_url": "https://techrt.com/ios-app-retention-statistics/"
+    },
+    {
+      "id": 31,
+      "category": "Retention by Category",
+      "metric": "Banking Day 1 retention",
+      "value": "30.3%",
+      "year": 2025,
+      "source_name": "Business of Apps",
+      "source_url": "https://www.businessofapps.com/data/app-retention-rates/"
+    },
+    {
+      "id": 32,
+      "category": "Retention by Category",
+      "metric": "Banking Day 30 retention",
+      "value": "11.6%",
+      "year": 2025,
+      "source_name": "Business of Apps",
+      "source_url": "https://www.businessofapps.com/data/app-retention-rates/"
+    },
+    {
+      "id": 33,
+      "category": "Retention by Category",
+      "metric": "News Day 1 retention (iOS)",
+      "value": "35.88%",
+      "year": 2025,
+      "source_name": "Business of Apps",
+      "source_url": "https://www.businessofapps.com/data/app-retention-rates/"
+    },
+    {
+      "id": 34,
+      "category": "Monetization",
+      "metric": "Percentage of apps making significant money",
+      "value": "0.5% - 1%",
+      "year": 2025,
+      "source_name": "Electroiq",
+      "source_url": "https://electroiq.com/stats/app-monetization-statistics/"
+    },
+    {
+      "id": 35,
+      "category": "Monetization",
+      "metric": "Percentage of apps with ad monetization",
+      "value": "25%",
+      "region": "USA",
+      "year": 2025,
+      "source_name": "Statista",
+      "source_url": "https://www.statista.com/statistics/1119916/app-monetization-methods-united-states-app-publishers/"
+    },
+    {
+      "id": 36,
+      "category": "Monetization",
+      "metric": "In-app purchases percentage of total mobile app earnings",
+      "value": "48.2%",
+      "year": 2025,
+      "source_name": "Electroiq",
+      "source_url": "https://electroiq.com/stats/app-monetization-statistics/"
+    },
+    {
+      "id": 37,
+      "category": "Monetization",
+      "metric": "In-app purchases percentage of gaming earnings",
+      "value": "72%",
+      "year": 2025,
+      "source_name": "Electroiq",
+      "source_url": "https://electroiq.com/stats/app-monetization-statistics/"
+    },
+    {
+      "id": 38,
+      "category": "Monetization",
+      "metric": "Annual subscription retention rate",
+      "value": "28%",
+      "year": 2025,
+      "source_name": "RevenueCat",
+      "source_url": "https://www.revenuecat.com/state-of-subscription-apps-2025/"
+    },
+    {
+      "id": 39,
+      "category": "Monetization",
+      "metric": "Monthly subscription retention rate",
+      "value": "12%",
+      "year": 2025,
+      "source_name": "RevenueCat",
+      "source_url": "https://www.revenuecat.com/state-of-subscription-apps-2025/"
+    },
+    {
+      "id": 40,
+      "category": "Monetization",
+      "metric": "Freemium to hard paywall revenue ratio",
+      "value": "1:8",
+      "description": "Hard paywall 8x higher median 14-day revenue",
+      "year": 2025,
+      "source_name": "RevenueCat",
+      "source_url": "https://www.revenuecat.com/state-of-subscription-apps-2025/"
+    },
+    {
+      "id": 41,
+      "category": "User Acquisition",
+      "metric": "Cost per install (CPI) iOS global range",
+      "value": "$1.50 - $5.00+",
+      "year": 2025,
+      "source_name": "Mapendo",
+      "source_url": "https://mapendo.co/blog/cost-per-install-2025-the-ultimate-report-to-grow-your-app-worldwide/"
+    },
+    {
+      "id": 42,
+      "category": "User Acquisition",
+      "metric": "Gaming industry user acquisition spending",
+      "value": "$25 billion",
+      "year": 2025,
+      "source_name": "Mapendo",
+      "source_url": "https://mapendo.co/blog/cost-per-install-2025-the-ultimate-report-to-grow-your-app-worldwide/"
+    }
+  ],
+  "category_breakdown": {
+    "App Store Size": 5,
+    "Pricing Strategy": 2,
+    "Rejection Rates": 2,
+    "Rejection Reasons": 2,
+    "Development Cost": 5,
+    "Development Time": 4,
+    "Download Distribution": 3,
+    "Retention": 8,
+    "Retention by Category": 3,
+    "Monetization": 8,
+    "User Acquisition": 2
+  },
+  "key_insights": {
+    "market_maturity": "2.4M apps on Apple, 3.3M on Google - plateau reached, quality over quantity",
+    "rejection_barrier": "25% rejection rate on Apple; Google blocks ~2M apps annually for policy violations",
+    "cost_spectrum": "MVP solo dev $20K-30K, agency $40K-70K; full product $50K-300K+ depending on complexity",
+    "timeline_reality": "Simple MVP 6-8 weeks, standard MVP 8-16 weeks with custom features",
+    "money_myth": "Only 0.5-1% of apps generate significant revenue; 97-95% are free",
+    "retention_crisis": "Global Day 1 = 26%, Day 7 = 13%, Day 30 = 7%; worse on Android",
+    "subscription_works": "Hard paywall generates 8x more revenue than freemium; annual subs keep 28% vs 12% monthly",
+    "acquisition_expensive": "CPI ranges $1.50-$5+ on iOS; gaming spends $25B/year on UA",
+    "update_cadence": "74-75% of top apps update monthly; 26-28% update weekly for competitive ranking"
+  },
+  "sources_summary": {
+    "primary": [
+      "https://www.businessofapps.com/",
+      "https://www.statista.com/",
+      "https://www.revenuecat.com/",
+      "https://mapendo.co/",
+      "https://enable3.io/"
+    ],
+    "framework_reports": [
+      "https://www.statista.com/ (Statista annual reports)",
+      "https://www.revenuecat.com/state-of-subscription-apps-2025/ (RevenueCat State of Subscription 2025)"
+    ]
+  }
+}

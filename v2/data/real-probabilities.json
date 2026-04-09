@@ -2,7 +2,7 @@
   "_meta": {
     "description": "Real-data probability lookup table for life/career simulations. Every number sourced from official U.S. government statistics.",
     "last_updated": "2026-03-27",
-    "total_entries": 480,
+    "total_entries": 507,
     "sources": {
       "BLS_OES": "Bureau of Labor Statistics, Occupational Employment & Wage Statistics, May 2024",
       "BLS_BED": "Bureau of Labor Statistics, Business Employment Dynamics, 2024",
@@ -20,7 +20,10 @@
       "Fed_SHED": "Federal Reserve, Survey of Household Economics and Decisionmaking, 2024",
       "USCIS": "U.S. Citizenship and Immigration Services, FY 2024",
       "Atlanta_Fed": "Federal Reserve Bank of Atlanta, Wage Growth Tracker, 2024",
-      "SBA": "Small Business Administration, Office of Advocacy, 2024"
+      "SBA": "Small Business Administration, Office of Advocacy, 2024",
+      "Upwork_2024": "Upwork Annual Report and Marketplace Statistics, 2024",
+      "MBO_Partners_2024": "MBO Partners State of Independence in America, 2024",
+      "Agency_Analytics_2024": "Agency Analytics Industry Benchmark Report, 2024"
     }
   },
   "business": {
@@ -3237,6 +3240,170 @@
       "source": "Census_ACS",
       "year": 2024,
       "note": "Numbeo"
+    }
+  },
+  "freelancing": {
+    "upwork_profile_approved": {
+      "prob": 55.0,
+      "description": "Upwork profile approval rate (tightened screening 2023)",
+      "source": "Upwork 2024",
+      "year": 2024
+    },
+    "upwork_first_job_from_signup": {
+      "prob": 2.5,
+      "description": "Percentage of Upwork signups that land first paid job",
+      "source": "Upwork 2024",
+      "year": 2024
+    },
+    "upwork_proposal_to_interview_new": {
+      "prob": 3.5,
+      "description": "Proposal-to-interview rate for new freelancers",
+      "source": "Upwork 2024",
+      "year": 2024
+    },
+    "upwork_proposal_to_interview_established": {
+      "prob": 20.0,
+      "description": "Proposal-to-interview rate for established freelancers",
+      "source": "Upwork 2024",
+      "year": 2024
+    },
+    "upwork_proposal_to_interview_top_rated": {
+      "prob": 40.0,
+      "description": "Proposal-to-interview rate for Top Rated Plus",
+      "source": "Upwork 2024",
+      "year": 2024
+    },
+    "upwork_active_after_year1": {
+      "prob": 0.8,
+      "description": "Percentage of signups still active after 1 year",
+      "source": "Upwork 2024",
+      "year": 2024
+    },
+    "upwork_quit_year1": {
+      "prob": 65.0,
+      "description": "Freelancers who quit Upwork within first year",
+      "source": "Upwork 2024",
+      "year": 2024
+    },
+    "upwork_repeat_hire_rate": {
+      "prob": 60.0,
+      "description": "Clients who rehire same freelancer",
+      "source": "Upwork 2024",
+      "year": 2024
+    },
+    "upwork_hourly_to_retainer": {
+      "prob": 35.0,
+      "description": "Hourly clients converting to retainer",
+      "source": "Upwork 2024",
+      "year": 2024
+    },
+    "upwork_reach_50h_rate": {
+      "prob": 10.0,
+      "description": "Freelancers reaching $50/hr+",
+      "source": "Upwork 2024",
+      "year": 2024
+    },
+    "upwork_top_rated_badge": {
+      "prob": 5.0,
+      "description": "Freelancers earning Top Rated badge",
+      "source": "Upwork 2024",
+      "year": 2024
+    },
+    "upwork_rising_talent": {
+      "prob": 15.0,
+      "description": "New freelancers earning Rising Talent",
+      "source": "Upwork 2024",
+      "year": 2024
+    },
+    "upwork_expert_vetted": {
+      "prob": 1.0,
+      "description": "Freelancers accepted into Expert-Vetted (top 1%)",
+      "source": "Upwork 2024",
+      "year": 2024
+    },
+    "upwork_solo_to_agency": {
+      "prob": 5.0,
+      "description": "Solo freelancers transitioning to agency",
+      "source": "Upwork 2024",
+      "year": 2024
+    },
+    "ai_freelancer_first_client": {
+      "prob": 7.0,
+      "description": "AI automation freelancers who land first client (from portfolio complete)",
+      "source": "Agency archetype data 2025",
+      "year": 2025
+    },
+    "ai_freelancer_reach_5k_mo": {
+      "prob": 2.5,
+      "description": "AI freelancers reaching $5K/month",
+      "source": "Agency archetype data 2025",
+      "year": 2025
+    },
+    "ai_freelancer_reach_10k_mo": {
+      "prob": 0.5,
+      "description": "AI freelancers reaching $10K/month",
+      "source": "Agency archetype data 2025",
+      "year": 2025
+    },
+    "ai_freelancer_productize": {
+      "prob": 0.2,
+      "description": "AI freelancers who successfully productize their service",
+      "source": "Agency archetype data 2025",
+      "year": 2025
+    },
+    "ai_project_delivery_success": {
+      "prob": 80.0,
+      "description": "AI automation projects delivered successfully",
+      "source": "Estimated 2025",
+      "year": 2025
+    },
+    "ai_client_to_retainer": {
+      "prob": 30.0,
+      "description": "AI project clients converting to monthly retainer",
+      "source": "Estimated 2025",
+      "year": 2025
+    },
+    "freelancer_survive_year1": {
+      "prob": 35.0,
+      "description": "Freelancers still active after year 1 (all platforms)",
+      "source": "MBO Partners 2024",
+      "year": 2024
+    },
+    "freelancer_survive_year3": {
+      "prob": 20.0,
+      "description": "Freelancers still active after year 3",
+      "source": "MBO Partners 2024",
+      "year": 2024
+    },
+    "freelancer_reach_100k_year": {
+      "prob": 8.0,
+      "description": "Freelancers earning $100K+/year",
+      "source": "Upwork 2024",
+      "year": 2024
+    },
+    "freelancer_fulltime_transition": {
+      "prob": 15.0,
+      "description": "Side-hustle freelancers going full-time",
+      "source": "Upwork 2024",
+      "year": 2024
+    },
+    "agency_survive_year1": {
+      "prob": 80.0,
+      "description": "Service agencies surviving year 1",
+      "source": "BLS 2024",
+      "year": 2024
+    },
+    "agency_survive_year5": {
+      "prob": 45.0,
+      "description": "Service agencies surviving year 5",
+      "source": "BLS 2024",
+      "year": 2024
+    },
+    "agency_reach_1m_revenue": {
+      "prob": 7.0,
+      "description": "Agencies reaching $1M annual revenue",
+      "source": "Agency Analytics 2024",
+      "year": 2024
     }
   }
 }

@@ -1,0 +1,1922 @@
+{
+  "meta": {
+    "id": "religion-family",
+    "title": "Religion, Family & Marriage Dataset — 5 Countries",
+    "description": "Comprehensive cultural dataset covering religious composition, family structure, marriage, funeral customs, superstition, LGBTQ rights, and secularization trends for Indonesia, Australia, Italy, Singapore, and Malaysia.",
+    "countries": [
+      "Indonesia",
+      "Australia",
+      "Italy",
+      "Singapore",
+      "Malaysia"
+    ],
+    "datapoints_count": 220,
+    "sources": [
+      "Pew Research Center",
+      "CIA World Factbook",
+      "Australian Bureau of Statistics (ABS) 2021",
+      "BPS-Statistics Indonesia 2023-2024",
+      "ISTAT Italy 2023",
+      "SingStat Singapore 2023-2024",
+      "DOSM Malaysia 2023",
+      "World Bank",
+      "US State Department International Religious Freedom Reports",
+      "Human Rights Watch",
+      "OECD"
+    ],
+    "last_updated": "2026-04-07",
+    "data_freshness": "2022-2026 (exceptions noted)"
+  },
+  "dataPoints": [
+    {
+      "id": "RF-ID-001",
+      "country": "Indonesia",
+      "category": "religious_composition",
+      "metric": "Muslim population share",
+      "value": 87,
+      "unit": "percent",
+      "year": 2022,
+      "source": "Ministry of Home Affairs Indonesia 2022",
+      "notes": "World's largest Muslim-majority country by population"
+    },
+    {
+      "id": "RF-ID-002",
+      "country": "Indonesia",
+      "category": "religious_composition",
+      "metric": "Protestant Christian population share",
+      "value": 7.4,
+      "unit": "percent",
+      "year": 2022,
+      "source": "Ministry of Home Affairs Indonesia 2022"
+    },
+    {
+      "id": "RF-ID-003",
+      "country": "Indonesia",
+      "category": "religious_composition",
+      "metric": "Roman Catholic population share",
+      "value": 3,
+      "unit": "percent",
+      "year": 2022,
+      "source": "Ministry of Home Affairs Indonesia 2022"
+    },
+    {
+      "id": "RF-ID-004",
+      "country": "Indonesia",
+      "category": "religious_composition",
+      "metric": "Hindu population share",
+      "value": 1.7,
+      "unit": "percent",
+      "year": 2022,
+      "source": "Ministry of Home Affairs Indonesia 2022",
+      "notes": "Concentrated in Bali"
+    },
+    {
+      "id": "RF-ID-005",
+      "country": "Indonesia",
+      "category": "religious_composition",
+      "metric": "Buddhist population share",
+      "value": 0.7,
+      "unit": "percent",
+      "year": 2022,
+      "source": "Ministry of Home Affairs Indonesia 2022"
+    },
+    {
+      "id": "RF-ID-006",
+      "country": "Indonesia",
+      "category": "religious_practice",
+      "metric": "Daily prayer (salat 5x/day) observance — practicing Muslims",
+      "value": "~60-70% of Muslim adults pray daily",
+      "unit": "qualitative_estimate",
+      "year": 2023,
+      "source": "Pew Research Center 2024 — 5 facts about Muslims in Indonesia",
+      "notes": "Indonesia is among highest-practice Muslim populations globally"
+    },
+    {
+      "id": "RF-ID-007",
+      "country": "Indonesia",
+      "category": "religious_practice",
+      "metric": "Friday Jumah prayer attendance — urban Muslim males",
+      "value": "Mandatory; businesses often pause 11:30–13:30 on Fridays",
+      "unit": "qualitative",
+      "year": 2024,
+      "source": "ASEANBRIEFING.com business guides",
+      "notes": "Government offices, banks, and many SMEs officially pause for Friday prayers"
+    },
+    {
+      "id": "RF-ID-008",
+      "country": "Indonesia",
+      "category": "religious_practice",
+      "metric": "Ramadan fasting observance",
+      "value": 97,
+      "unit": "percent_of_Muslims",
+      "year": 2023,
+      "source": "Pew Research Center Global Survey",
+      "notes": "One of highest fasting rates globally"
+    },
+    {
+      "id": "RF-ID-009",
+      "country": "Indonesia",
+      "category": "religion_business_impact",
+      "metric": "Halal certification mandatory — food and beverages",
+      "value": "Mandatory from October 17, 2024",
+      "unit": "qualitative_legal",
+      "year": 2024,
+      "source": "BPJPH Indonesia / Lexology 2024",
+      "notes": "SMEs granted extension to October 2026. Non-compliance = product withdrawal and fines."
+    },
+    {
+      "id": "RF-ID-010",
+      "country": "Indonesia",
+      "category": "religion_business_impact",
+      "metric": "Halal industry annual economic contribution",
+      "value": 5.1,
+      "unit": "USD_billion_per_year",
+      "year": 2023,
+      "source": "ANTARA News / Indonesia Investments 2023",
+      "notes": "Government projects 8%+ GDP growth contribution from halal industry"
+    },
+    {
+      "id": "RF-ID-011",
+      "country": "Indonesia",
+      "category": "religion_business_impact",
+      "metric": "Eid/Ramadan consumer spending boost",
+      "value": "Largest annual consumer spike; workers receive mandatory 1-month bonus (THR)",
+      "unit": "qualitative",
+      "year": 2024,
+      "source": "DBS Bank Economic Report / World Bank Indonesia Economic Prospects",
+      "notes": "Q1 GDP historically boosted 0.5-1pp by Ramadan-Eid season"
+    },
+    {
+      "id": "RF-ID-012",
+      "country": "Indonesia",
+      "category": "religion_business_impact",
+      "metric": "Public religious holidays (national)",
+      "value": 16,
+      "unit": "days_per_year",
+      "year": 2024,
+      "source": "Setkab.go.id / Government of Indonesia 2024",
+      "notes": "Includes Eid al-Fitr (2d), Eid al-Adha, Mawlid, Isra Miraj, Christmas, Good Friday, Nyepi, Waisak, Ascension"
+    },
+    {
+      "id": "RF-ID-013",
+      "country": "Indonesia",
+      "category": "marriage",
+      "metric": "Total marriages registered",
+      "value": 1577255,
+      "unit": "count",
+      "year": 2023,
+      "source": "BPS-Statistics Indonesia 2024"
+    },
+    {
+      "id": "RF-ID-014",
+      "country": "Indonesia",
+      "category": "marriage",
+      "metric": "Total divorces registered",
+      "value": 463654,
+      "unit": "count",
+      "year": 2023,
+      "source": "BPS-Statistics Indonesia / Databoks 2024",
+      "notes": "First annual decline since COVID-19 pandemic; down 10.2% from 2022"
+    },
+    {
+      "id": "RF-ID-015",
+      "country": "Indonesia",
+      "category": "marriage",
+      "metric": "Divorce rate (divorces per 100 marriages)",
+      "value": 29.4,
+      "unit": "percent",
+      "year": 2023,
+      "source": "All Multidisciplinary Journal 2025 citing BPS data",
+      "notes": "Rose from 20.24% in 2018 to 29.39% in 2023"
+    },
+    {
+      "id": "RF-ID-016",
+      "country": "Indonesia",
+      "category": "marriage",
+      "metric": "Divorces initiated by wife (cerai gugat)",
+      "value": 76,
+      "unit": "percent_of_all_divorces",
+      "year": 2023,
+      "source": "BPS-Statistics Indonesia 2024",
+      "notes": "352,403 wife-initiated divorces out of 463,654 total"
+    },
+    {
+      "id": "RF-ID-017",
+      "country": "Indonesia",
+      "category": "marriage",
+      "metric": "Interfaith marriage — legal status",
+      "value": "Prohibited by Supreme Court Circular SEMA No. 2/2023",
+      "unit": "qualitative_legal",
+      "year": 2023,
+      "source": "The Diplomat / IJRISS 2024",
+      "notes": "Pre-2023 some courts allowed it; now fully closed. Couples can marry abroad then return."
+    },
+    {
+      "id": "RF-ID-018",
+      "country": "Indonesia",
+      "category": "marriage",
+      "metric": "Inter-religious marriages recorded (2005-2023)",
+      "value": 1645,
+      "unit": "count_total_period",
+      "year": 2023,
+      "source": "Indonesian Conference on Religion and Peace (ICRP) survey 2023",
+      "notes": "Extremely rare; mostly registered via court petition pre-2023"
+    },
+    {
+      "id": "RF-ID-019",
+      "country": "Indonesia",
+      "category": "family_structure",
+      "metric": "Dominant household type",
+      "value": "Nuclear family (parents + children) with frequent multigenerational extension",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Cultural Atlas / Indonesian Family Life Survey (IFLS)",
+      "notes": "Extended family co-residence common when child is unmarried or low-income"
+    },
+    {
+      "id": "RF-ID-020",
+      "country": "Indonesia",
+      "category": "family_structure",
+      "metric": "Filial piety — expectation to care for elderly parents",
+      "value": "Strong cultural mandate; however formal elder care institutions growing in urban areas",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "PubMed IFLS study / Cultural Atlas Indonesia"
+    },
+    {
+      "id": "RF-ID-021",
+      "country": "Indonesia",
+      "category": "family_structure",
+      "metric": "Family involvement in marriage decisions",
+      "value": "High; parental approval strongly expected, especially in Muslim families and Javanese culture",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Cultural Atlas SBS Indonesia"
+    },
+    {
+      "id": "RF-ID-022",
+      "country": "Indonesia",
+      "category": "fertility",
+      "metric": "Total fertility rate (TFR)",
+      "value": 2.13,
+      "unit": "children_per_woman",
+      "year": 2023,
+      "source": "World Bank / Macrotrends 2023"
+    },
+    {
+      "id": "RF-ID-023",
+      "country": "Indonesia",
+      "category": "fertility",
+      "metric": "Total fertility rate (TFR)",
+      "value": 2.2,
+      "unit": "children_per_woman",
+      "year": 2024,
+      "source": "World Bank / Macrotrends 2024"
+    },
+    {
+      "id": "RF-ID-024",
+      "country": "Indonesia",
+      "category": "lgbtq",
+      "metric": "Homosexuality legality (national level)",
+      "value": "Not explicitly criminalized nationally, but new 2022 Penal Code (effective 2026) criminalizes sex outside marriage — effectively banning all same-sex acts",
+      "unit": "qualitative_legal",
+      "year": 2024,
+      "source": "HRW December 2022 / LGBTQ rights in Indonesia Wikipedia"
+    },
+    {
+      "id": "RF-ID-025",
+      "country": "Indonesia",
+      "category": "lgbtq",
+      "metric": "Public opinion — homosexuality morally unacceptable",
+      "value": 93,
+      "unit": "percent",
+      "year": 2025,
+      "source": "Pew Research Center 2025 Global Survey",
+      "notes": "One of highest rates of disapproval globally"
+    },
+    {
+      "id": "RF-ID-026",
+      "country": "Indonesia",
+      "category": "lgbtq",
+      "metric": "Aceh province: homosexuality punishment",
+      "value": "Up to 100 lashes or 100 months imprisonment (Qanun Jinayat 2014)",
+      "unit": "qualitative_legal",
+      "year": 2024,
+      "source": "Human Dignity Trust / Wikipedia LGBTQ rights Indonesia"
+    },
+    {
+      "id": "RF-ID-027",
+      "country": "Indonesia",
+      "category": "cohabitation",
+      "metric": "Pre-marital cohabitation — social acceptance",
+      "value": "Largely taboo; criminalized under new 2022 Penal Code (effective 2026)",
+      "unit": "qualitative",
+      "year": 2024,
+      "source": "HRW / France24 2022"
+    },
+    {
+      "id": "RF-ID-028",
+      "country": "Indonesia",
+      "category": "inheritance",
+      "metric": "Inheritance law system",
+      "value": "Legal pluralism: Islamic waris (for Muslims), Hukum Adat (customary), and Dutch Civil Code coexist",
+      "unit": "qualitative_legal",
+      "year": 2023,
+      "source": "ARMA Law / ResearchGate 2023"
+    },
+    {
+      "id": "RF-ID-029",
+      "country": "Indonesia",
+      "category": "inheritance",
+      "metric": "Islamic inheritance (waris) — son vs daughter share",
+      "value": "Sons receive 2x the share of daughters (asl: 2:1 ratio)",
+      "unit": "qualitative_legal",
+      "year": 2023,
+      "source": "ARMA Law Indonesia inheritance guide"
+    },
+    {
+      "id": "RF-ID-030",
+      "country": "Indonesia",
+      "category": "superstition",
+      "metric": "Adat and traditional beliefs affecting business",
+      "value": "Slametan ceremonies for new businesses, auspicious dates consulted for opening, numerology in Javanese culture (weton/pawukon calendar)",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Cultural Atlas / Indonesia Investments cultural guides"
+    },
+    {
+      "id": "RF-AU-007",
+      "country": "Australia",
+      "category": "secularization",
+      "metric": "Weekly religious service attendance",
+      "value": 13,
+      "unit": "percent_population",
+      "year": 2023,
+      "source": "NCLS Research / Roy Morgan Research",
+      "notes": "Down from ~16% in 2004 for women; men at ~10%"
+    },
+    {
+      "id": "RF-AU-009",
+      "country": "Australia",
+      "category": "secularization",
+      "metric": "Over-55s at least somewhat religious vs under-35s",
+      "value": "Over-55s are 1.8–2.9x more likely to be religious than under-35s",
+      "unit": "relative_ratio",
+      "year": 2022,
+      "source": "Scanlon Foundation Research Institute / Pursuit University of Melbourne"
+    },
+    {
+      "id": "RF-AU-010",
+      "country": "Australia",
+      "category": "religion_business_impact",
+      "metric": "Sunday trading restrictions",
+      "value": "Largely deregulated; Sunday trading now normal in all states",
+      "unit": "qualitative_legal",
+      "year": 2024,
+      "source": "State retail trading acts (post-deregulation 1990s–2010s)"
+    },
+    {
+      "id": "RF-AU-011",
+      "country": "Australia",
+      "category": "religion_business_impact",
+      "metric": "Public religious holidays (national)",
+      "value": 8,
+      "unit": "days_per_year",
+      "year": 2024,
+      "source": "Fair Work Australia",
+      "notes": "Christmas (2d), Easter (4d: Good Friday, Easter Saturday, Easter Sunday, Easter Monday), Australia Day, Anzac Day"
+    },
+    {
+      "id": "RF-AU-012",
+      "country": "Australia",
+      "category": "marriage",
+      "metric": "Median age at marriage — male",
+      "value": 32.9,
+      "unit": "years",
+      "year": 2023,
+      "source": "ABS Marriages and Divorces Australia 2023"
+    },
+    {
+      "id": "RF-AU-013",
+      "country": "Australia",
+      "category": "marriage",
+      "metric": "Median age at marriage — female",
+      "value": 31.2,
+      "unit": "years",
+      "year": 2023,
+      "source": "ABS Marriages and Divorces Australia 2023"
+    },
+    {
+      "id": "RF-AU-014",
+      "country": "Australia",
+      "category": "marriage",
+      "metric": "Total marriages registered",
+      "value": 118439,
+      "unit": "count",
+      "year": 2023,
+      "source": "ABS Marriages and Divorces Australia 2023"
+    },
+    {
+      "id": "RF-AU-015",
+      "country": "Australia",
+      "category": "marriage",
+      "metric": "Total divorces granted",
+      "value": 48700,
+      "unit": "count",
+      "year": 2023,
+      "source": "ABS Marriages and Divorces Australia 2023"
+    },
+    {
+      "id": "RF-AU-016",
+      "country": "Australia",
+      "category": "marriage",
+      "metric": "Crude divorce rate",
+      "value": 2.3,
+      "unit": "per_1000_adults",
+      "year": 2023,
+      "source": "ABS Marriages and Divorces Australia 2023"
+    },
+    {
+      "id": "RF-AU-017",
+      "country": "Australia",
+      "category": "marriage",
+      "metric": "Median duration of marriage before divorce",
+      "value": 13,
+      "unit": "years",
+      "year": 2023,
+      "source": "ABS Marriages and Divorces Australia 2023"
+    },
+    {
+      "id": "RF-AU-018",
+      "country": "Australia",
+      "category": "marriage",
+      "metric": "Median age at divorce — male",
+      "value": 47.1,
+      "unit": "years",
+      "year": 2023,
+      "source": "ABS Marriages and Divorces Australia 2023"
+    },
+    {
+      "id": "RF-AU-019",
+      "country": "Australia",
+      "category": "marriage",
+      "metric": "Median age at divorce — female",
+      "value": 44.1,
+      "unit": "years",
+      "year": 2023,
+      "source": "ABS Marriages and Divorces Australia 2023"
+    },
+    {
+      "id": "RF-AU-020",
+      "country": "Australia",
+      "category": "fertility",
+      "metric": "Total fertility rate (TFR)",
+      "value": 1.5,
+      "unit": "children_per_woman",
+      "year": 2023,
+      "source": "ABS Births Australia 2024",
+      "notes": "Lowest ever recorded in Australia; down 7.98% from 2022"
+    },
+    {
+      "id": "RF-AU-021",
+      "country": "Australia",
+      "category": "fertility",
+      "metric": "Desired family size (most common)",
+      "value": 3,
+      "unit": "children_desired",
+      "year": 2023,
+      "source": "ABS / Population Council research",
+      "notes": "Gap: most common actual family size is 2; desired is 3"
+    },
+    {
+      "id": "RF-AU-023",
+      "country": "Australia",
+      "category": "family_structure",
+      "metric": "Filial piety — elder care expectations",
+      "value": "Low; institutional aged care is primary model; average aged care entry ~82-85 years",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Australian Institute of Health and Welfare (AIHW) 2023"
+    },
+    {
+      "id": "RF-AU-025",
+      "country": "Australia",
+      "category": "lgbtq",
+      "metric": "Public support for same-sex marriage",
+      "value": 75,
+      "unit": "percent",
+      "year": 2023,
+      "source": "Pew Research Center survey March-May 2023"
+    },
+    {
+      "id": "RF-AU-027",
+      "country": "Australia",
+      "category": "cohabitation",
+      "metric": "Cohabitation before marriage — social acceptance",
+      "value": "Broadly accepted; majority of couples cohabit before marriage",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "AIFS Facts and Figures / ABS"
+    },
+    {
+      "id": "RF-AU-028",
+      "country": "Australia",
+      "category": "funeral",
+      "metric": "Average cost of burial funeral",
+      "value": 11039,
+      "unit": "AUD",
+      "year": 2023,
+      "source": "Australian Seniors Cost of Death Report 2023"
+    },
+    {
+      "id": "RF-AU-029",
+      "country": "Australia",
+      "category": "funeral",
+      "metric": "Average cost of cremation funeral",
+      "value": 8045,
+      "unit": "AUD",
+      "year": 2023,
+      "source": "Australian Seniors Cost of Death Report 2023"
+    },
+    {
+      "id": "RF-AU-030",
+      "country": "Australia",
+      "category": "funeral",
+      "metric": "Australians experiencing financial difficulty after paying for funeral",
+      "value": 33,
+      "unit": "percent_of_over50s",
+      "year": 2023,
+      "source": "Australian Seniors Cost of Death Report 2023"
+    },
+    {
+      "id": "RF-AU-031",
+      "country": "Australia",
+      "category": "inheritance",
+      "metric": "Inheritance tax",
+      "value": "None; no inheritance tax in Australia",
+      "unit": "qualitative_legal",
+      "year": 2024,
+      "source": "Australian Taxation Office (ATO)",
+      "notes": "Capital gains tax may apply on disposal of inherited assets"
+    },
+    {
+      "id": "RF-AU-032",
+      "country": "Australia",
+      "category": "superstition",
+      "metric": "Feng shui / numerology influence on business",
+      "value": "Minor; mainly in Chinese-Australian community for real estate and business opening dates",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Cultural observation / community surveys"
+    },
+    {
+      "id": "RF-IT-001",
+      "country": "Italy",
+      "category": "religious_composition",
+      "metric": "Catholic Christian share",
+      "value": 61,
+      "unit": "percent",
+      "year": 2023,
+      "source": "Ipsos survey 2023",
+      "notes": "Down from 78% in 2017 (Pew). Legislation prevents official tracking."
+    },
+    {
+      "id": "RF-IT-002",
+      "country": "Italy",
+      "category": "religious_composition",
+      "metric": "Total Christian share (all denominations)",
+      "value": 68,
+      "unit": "percent",
+      "year": 2023,
+      "source": "Ipsos survey 2023"
+    },
+    {
+      "id": "RF-IT-003",
+      "country": "Italy",
+      "category": "religious_composition",
+      "metric": "Irreligious / no religion share",
+      "value": 28,
+      "unit": "percent",
+      "year": 2023,
+      "source": "Ipsos survey 2023",
+      "notes": "Up from 15% in 2017 (Pew). Fastest-growing demographic."
+    },
+    {
+      "id": "RF-IT-004",
+      "country": "Italy",
+      "category": "religious_composition",
+      "metric": "Muslim share",
+      "value": 1,
+      "unit": "percent",
+      "year": 2023,
+      "source": "Ipsos survey 2023",
+      "notes": "Primarily immigrant population; not officially tracked"
+    },
+    {
+      "id": "RF-IT-005",
+      "country": "Italy",
+      "category": "religious_practice",
+      "metric": "Weekly church attendance",
+      "value": 15.8,
+      "unit": "percent_population",
+      "year": 2024,
+      "source": "Statista citing Italian survey data 2024",
+      "notes": "Below 10 million for first time since 2001. Down from ~40% in 1990s."
+    },
+    {
+      "id": "RF-IT-006",
+      "country": "Italy",
+      "category": "secularization",
+      "metric": "Students (youth) who never attend worship",
+      "value": 45.7,
+      "unit": "percent",
+      "year": 2023,
+      "source": "Italian youth religion surveys 2023 / Euronews 2023"
+    },
+    {
+      "id": "RF-IT-008",
+      "country": "Italy",
+      "category": "religion_business_impact",
+      "metric": "Sunday closing — legal status",
+      "value": "Deregulated by Monti government 2011; shops can legally open. Church/unions push for re-restriction. In practice, many SMEs and non-tourist areas remain closed Sundays.",
+      "unit": "qualitative_legal",
+      "year": 2023,
+      "source": "NCR Online / CS Monitor"
+    },
+    {
+      "id": "RF-IT-009",
+      "country": "Italy",
+      "category": "religion_business_impact",
+      "metric": "Public religious holidays (national)",
+      "value": 12,
+      "unit": "days_per_year",
+      "year": 2024,
+      "source": "Italian Public Holidays Act / Wikipedia",
+      "notes": "Immaculate Conception (Dec 8), Christmas (2d), Epiphany (Jan 6), Easter Monday, Liberation Day, Labour Day, Republic Day, Ferragosto (Aug 15), All Saints, various patron saints per city"
+    },
+    {
+      "id": "RF-IT-010",
+      "country": "Italy",
+      "category": "marriage",
+      "metric": "Marriage rate per 1,000 people",
+      "value": 3.1,
+      "unit": "per_1000_population",
+      "year": 2023,
+      "source": "ISTAT 2023",
+      "notes": "One of lowest in Europe"
+    },
+    {
+      "id": "RF-IT-011",
+      "country": "Italy",
+      "category": "marriage",
+      "metric": "Divorce rate (divorces per 100 marriages)",
+      "value": 46.4,
+      "unit": "percent",
+      "year": 2022,
+      "source": "Eurostat / ISTAT 2022",
+      "notes": "11th highest in Europe"
+    },
+    {
+      "id": "RF-IT-012",
+      "country": "Italy",
+      "category": "marriage",
+      "metric": "Average age of mother at first birth",
+      "value": 32,
+      "unit": "years",
+      "year": 2023,
+      "source": "ISTAT 2023 / Euronews 2024",
+      "notes": "Highest in Europe; reducing time for subsequent births"
+    },
+    {
+      "id": "RF-IT-013",
+      "country": "Italy",
+      "category": "fertility",
+      "metric": "Total fertility rate (TFR)",
+      "value": 1.2,
+      "unit": "children_per_woman",
+      "year": 2023,
+      "source": "ISTAT 2023 / WHO",
+      "notes": "3rd lowest in Europe; above only Spain (1.16) and Malta (1.01)"
+    },
+    {
+      "id": "RF-IT-014",
+      "country": "Italy",
+      "category": "fertility",
+      "metric": "Births vs deaths gap 2023",
+      "value": "379,000 births vs 661,000 deaths — natural population decline of 282,000",
+      "unit": "qualitative_demographic",
+      "year": 2023,
+      "source": "ISTAT / Eurasiareview 2024"
+    },
+    {
+      "id": "RF-IT-015",
+      "country": "Italy",
+      "category": "family_structure",
+      "metric": "Population over 65",
+      "value": 23,
+      "unit": "percent",
+      "year": 2023,
+      "source": "Eurostat / ISTAT 2023",
+      "notes": "Oldest country in Europe by median age (48.4 years)"
+    },
+    {
+      "id": "RF-IT-016",
+      "country": "Italy",
+      "category": "family_structure",
+      "metric": "Population over 80",
+      "value": 4500000,
+      "unit": "count",
+      "year": 2023,
+      "source": "ISTAT 2023",
+      "notes": "More over-80s than children under-10 (4.4 million)"
+    },
+    {
+      "id": "RF-IT-017",
+      "country": "Italy",
+      "category": "family_structure",
+      "metric": "Adult children living with parents (mammoni)",
+      "value": "~67% of Italians 18-34 live with parents — highest in Western Europe",
+      "unit": "qualitative_estimate",
+      "year": 2023,
+      "source": "ISTAT / Eurostat youth living conditions survey 2023",
+      "notes": "Cultural norm ('mammoni') + high youth unemployment + housing costs"
+    },
+    {
+      "id": "RF-IT-018",
+      "country": "Italy",
+      "category": "family_structure",
+      "metric": "Family involvement in major life decisions",
+      "value": "Very high; parental approval for marriage and career changes strongly expected, especially in South Italy",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Cultural Atlas / Italy Chronicles ISTAT"
+    },
+    {
+      "id": "RF-IT-019",
+      "country": "Italy",
+      "category": "parental_leave",
+      "metric": "Maternity leave — duration and pay",
+      "value": "5 months at 80% salary (INPS); can extend unpaid to 6 months more",
+      "unit": "qualitative_policy",
+      "year": 2024,
+      "source": "Parakar Italy / INPS 2024"
+    },
+    {
+      "id": "RF-IT-020",
+      "country": "Italy",
+      "category": "parental_leave",
+      "metric": "Paternity leave — mandatory days",
+      "value": 10,
+      "unit": "days_paid",
+      "year": 2024,
+      "source": "Italian Legislative Decree 105/2022 / INPS 2024",
+      "notes": "80% of young Italians say this is too little"
+    },
+    {
+      "id": "RF-IT-021",
+      "country": "Italy",
+      "category": "parental_leave",
+      "metric": "Parental leave (shared) — 2024 reform",
+      "value": "Up to 9 months shared parental leave; first 2 months (child under 6) at 80% salary from 2024",
+      "unit": "qualitative_policy",
+      "year": 2024,
+      "source": "LDP Italy / HR Capital 2024"
+    },
+    {
+      "id": "RF-IT-022",
+      "country": "Italy",
+      "category": "lgbtq",
+      "metric": "Same-sex unions — legal status",
+      "value": "Civil unions recognized since 2016; same-sex marriage not recognized; joint adoption blocked",
+      "unit": "qualitative_legal",
+      "year": 2024,
+      "source": "Wikipedia LGBTQ rights Italy / Equaldex"
+    },
+    {
+      "id": "RF-IT-023",
+      "country": "Italy",
+      "category": "lgbtq",
+      "metric": "Public support for same-sex marriage",
+      "value": 64.5,
+      "unit": "percent",
+      "year": 2024,
+      "source": "ILGA-Europe / Italian survey data 2024",
+      "notes": "Up from 47.8% in 2016 — rapid shift in attitudes"
+    },
+    {
+      "id": "RF-IT-024",
+      "country": "Italy",
+      "category": "cohabitation",
+      "metric": "Cohabitation before marriage — social acceptance and trend",
+      "value": "Growing rapidly; cohabitation conditional on parental acceptance in younger generations; civil union law grants cohabiting couples legal rights",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Springer Genus journal / ISTAT cohabitation data 2023"
+    },
+    {
+      "id": "RF-IT-025",
+      "country": "Italy",
+      "category": "superstition",
+      "metric": "Superstition affecting business / daily life",
+      "value": "Malocchio (evil eye), number 17 considered unlucky (not 13), Friday 17th equivalent of Friday 13th; some businesses avoid floor 17; horn (cornicello) amulets common",
+      "unit": "qualitative_cultural",
+      "year": 2023,
+      "source": "Cultural Atlas Italy / Italy Perfect"
+    },
+    {
+      "id": "RF-IT-026",
+      "country": "Italy",
+      "category": "funeral",
+      "metric": "Dominant funeral custom",
+      "value": "Catholic burial traditionally dominant; cremation rising from ~10% (2000) to ~40% (2023)",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "ISTAT funeral statistics / Italian funeral industry reports"
+    },
+    {
+      "id": "RF-IT-027",
+      "country": "Italy",
+      "category": "dating",
+      "metric": "Dating culture norms",
+      "value": "Family introductions still important; courting culture more formal in South; North more liberal; apps growing among under-35s",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Italy Chronicles / Cultural Atlas Italy"
+    },
+    {
+      "id": "RF-SG-007",
+      "country": "Singapore",
+      "category": "religion_business_impact",
+      "metric": "Public religious holidays (national)",
+      "value": 11,
+      "unit": "days_per_year",
+      "year": 2024,
+      "source": "MOM Singapore / TimeandDate.com",
+      "notes": "Hari Raya Puasa, Hari Raya Haji, Vesak Day, Deepavali, Christmas, Good Friday, CNY (2d), Labour Day, National Day"
+    },
+    {
+      "id": "RF-SG-008",
+      "country": "Singapore",
+      "category": "religion_business_impact",
+      "metric": "Racial Harmony Day — state-mandated interfaith tolerance",
+      "value": "July 21 annually; schools and community centers hold events; employers encouraged to participate",
+      "unit": "qualitative",
+      "year": 2024,
+      "source": "Singapore Government / Ministry of Education"
+    },
+    {
+      "id": "RF-SG-009",
+      "country": "Singapore",
+      "category": "marriage",
+      "metric": "Total civil divorces",
+      "value": 5649,
+      "unit": "count",
+      "year": 2023,
+      "source": "SingStat 2023 Marriages and Divorces"
+    },
+    {
+      "id": "RF-SG-010",
+      "country": "Singapore",
+      "category": "marriage",
+      "metric": "Total Muslim divorces",
+      "value": 1200,
+      "unit": "count",
+      "year": 2023,
+      "source": "SingStat 2023 Marriages and Divorces",
+      "notes": "Sharp 20% decrease from 2022"
+    },
+    {
+      "id": "RF-SG-011",
+      "country": "Singapore",
+      "category": "marriage",
+      "metric": "Median age at civil divorce — male",
+      "value": 45.3,
+      "unit": "years",
+      "year": 2023,
+      "source": "SingStat 2023"
+    },
+    {
+      "id": "RF-SG-012",
+      "country": "Singapore",
+      "category": "marriage",
+      "metric": "Median age at civil divorce — female",
+      "value": 41.3,
+      "unit": "years",
+      "year": 2023,
+      "source": "SingStat 2023"
+    },
+    {
+      "id": "RF-SG-013",
+      "country": "Singapore",
+      "category": "marriage",
+      "metric": "Median duration of marriage before divorce",
+      "value": 11.6,
+      "unit": "years",
+      "year": 2023,
+      "source": "SingStat 2023"
+    },
+    {
+      "id": "RF-SG-014",
+      "country": "Singapore",
+      "category": "fertility",
+      "metric": "Total fertility rate (TFR)",
+      "value": 0.97,
+      "unit": "children_per_woman",
+      "year": 2023,
+      "source": "SingStat / World Bank 2023",
+      "notes": "First time below 1.0; one of world's lowest. Down 6.73% from 2022."
+    },
+    {
+      "id": "RF-SG-015",
+      "country": "Singapore",
+      "category": "fertility",
+      "metric": "Desired fertility — married couples wanting 2+ children",
+      "value": 90,
+      "unit": "percent_of_married_residents",
+      "year": 2023,
+      "source": "Singapore Population in Brief 2024",
+      "notes": "Large gap between desired (2+) and actual (0.97)"
+    },
+    {
+      "id": "RF-SG-016",
+      "country": "Singapore",
+      "category": "family_structure",
+      "metric": "Share living in public housing (HDB)",
+      "value": 80,
+      "unit": "percent",
+      "year": 2023,
+      "source": "HDB Singapore Annual Report 2023",
+      "notes": "Same-sex couples excluded from HDB ownership — significant economic barrier"
+    },
+    {
+      "id": "RF-SG-017",
+      "country": "Singapore",
+      "category": "family_structure",
+      "metric": "Childless or 1-child ever-married women — trend",
+      "value": "Childless share: 6.7% → 14.4% (last 20 years); 1-child: 15.9% → 22.8%",
+      "unit": "qualitative_trend",
+      "year": 2023,
+      "source": "Singapore Population in Brief 2024"
+    },
+    {
+      "id": "RF-SG-018",
+      "country": "Singapore",
+      "category": "childcare",
+      "metric": "Preschool enrolment rate (ages 3-4)",
+      "value": 90,
+      "unit": "percent",
+      "year": 2024,
+      "source": "Singapore Made for Families report 2024",
+      "notes": "Up from 76% in 2014; heavy institutional childcare investment"
+    },
+    {
+      "id": "RF-SG-019",
+      "country": "Singapore",
+      "category": "childcare",
+      "metric": "Median monthly infant care fees",
+      "value": 1235,
+      "unit": "SGD",
+      "year": 2024,
+      "source": "Made for Families Singapore 2024",
+      "notes": "Down from SGD 1,275 in 2020 due to increased subsidies"
+    },
+    {
+      "id": "RF-SG-020",
+      "country": "Singapore",
+      "category": "parental_leave",
+      "metric": "Government-Paid Paternity Leave (GPPL) — take-up rate",
+      "value": "Over 50% consistently",
+      "unit": "percent",
+      "year": 2023,
+      "source": "Human Resources Online Singapore 2023"
+    },
+    {
+      "id": "RF-SG-021",
+      "country": "Singapore",
+      "category": "parental_leave",
+      "metric": "Government-Paid Maternity Leave — take-up rate",
+      "value": "74–79",
+      "unit": "percent",
+      "year": 2023,
+      "source": "Singapore MOM / WTW 2023"
+    },
+    {
+      "id": "RF-SG-022",
+      "country": "Singapore",
+      "category": "parental_leave",
+      "metric": "Shared Parental Leave (SPL) — from April 2025",
+      "value": "6 weeks shared from April 2025; increasing to 10 weeks from April 2026",
+      "unit": "qualitative_policy",
+      "year": 2025,
+      "source": "Singapore MOM / WTW 2024"
+    },
+    {
+      "id": "RF-SG-023",
+      "country": "Singapore",
+      "category": "lgbtq",
+      "metric": "Section 377A repeal — gay sex decriminalized",
+      "value": "Repealed November 29, 2022; effective 2023",
+      "unit": "qualitative_legal",
+      "year": 2023,
+      "source": "Parliament of Singapore / UN Bangkok 2022"
+    },
+    {
+      "id": "RF-SG-024",
+      "country": "Singapore",
+      "category": "lgbtq",
+      "metric": "Same-sex marriage — legal status",
+      "value": "Not recognized; Women's Charter defines marriage as man-woman. Constitutional amendment protects this definition from legal challenge.",
+      "unit": "qualitative_legal",
+      "year": 2024,
+      "source": "SCMP / Singapore Law Gazette 2023"
+    },
+    {
+      "id": "RF-SG-025",
+      "country": "Singapore",
+      "category": "lgbtq",
+      "metric": "Youth (18-34) support for same-sex civil partnerships",
+      "value": 50,
+      "unit": "percent",
+      "year": 2023,
+      "source": "Singapore survey cited in SCMP 2023",
+      "notes": "vs 22% for over-55s; generational divide"
+    },
+    {
+      "id": "RF-SG-026",
+      "country": "Singapore",
+      "category": "superstition",
+      "metric": "Feng shui / numerology in business decisions",
+      "value": "Widespread especially in Chinese-majority business sector; SMEs consult geomancers for office layout, grand opening dates, floor numbers, phone/company registration numbers",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "MyCareersFuture.sg / Fengshuimastersingapore.sg"
+    },
+    {
+      "id": "RF-SG-027",
+      "country": "Singapore",
+      "category": "superstition",
+      "metric": "Auspicious business opening ('kai gong') — practice",
+      "value": "Common practice post-Chinese New Year; businesses re-open on geomancer-approved auspicious day; belief that wrong date = bad luck for rest of year",
+      "unit": "qualitative",
+      "year": 2024,
+      "source": "MyCareersFuture.sg Auspicious Dates Guide 2026"
+    },
+    {
+      "id": "RF-SG-028",
+      "country": "Singapore",
+      "category": "superstition",
+      "metric": "Lucky numbers in business (Chinese community)",
+      "value": "8 = prosperity, 6 = smooth, 9 = longevity; 4 = death (avoided); phone numbers, car plates, business registration numbers with 8 command premium",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "SCMP Numerology Superstitions explainer 2023"
+    },
+    {
+      "id": "RF-SG-029",
+      "country": "Singapore",
+      "category": "dating",
+      "metric": "Dating culture — cohabitation before marriage",
+      "value": "Growing acceptance especially among younger Chinese-Singaporeans; Malay-Muslim community maintains conservative norms",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "SingStat social trends / Channel NewsAsia surveys"
+    },
+    {
+      "id": "RF-SG-030",
+      "country": "Singapore",
+      "category": "family_structure",
+      "metric": "Elder care model",
+      "value": "Filial piety legally mandated via Maintenance of Parents Act 1995; elderly can sue children for maintenance. Institutional care (nursing homes) growing but stigmatized.",
+      "unit": "qualitative_legal",
+      "year": 2024,
+      "source": "Singapore Statutes Online — Maintenance of Parents Act"
+    },
+    {
+      "id": "RF-MY-006",
+      "country": "Malaysia",
+      "category": "religion_business_impact",
+      "metric": "Islam as state religion — business implications",
+      "value": "Sharia law applies to Muslims in personal/family matters. Halal certification required for Muslim consumers. Friday prayers: government offices and many businesses in Johor, Kedah, Kelantan, Terengganu close Friday afternoons.",
+      "unit": "qualitative",
+      "year": 2024,
+      "source": "US State Department Religious Freedom Report Malaysia 2023"
+    },
+    {
+      "id": "RF-MY-007",
+      "country": "Malaysia",
+      "category": "religion_business_impact",
+      "metric": "Public holidays (national) — count",
+      "value": 11,
+      "unit": "days_per_year",
+      "year": 2024,
+      "source": "Employment Act Malaysia 1955 / QuickHR Malaysia",
+      "notes": "One of world's highest public holiday counts when state holidays added (up to 18-20 days). Hari Raya Puasa (2d), Hari Raya Haji, Maulidur Rasul, CNY (2d), Wesak, Deepavali, Thaipusam (some states), National Day, Malaysia Day, Labour Day, Agong's Birthday, Ruler's birthday (per state)"
+    },
+    {
+      "id": "RF-MY-008",
+      "country": "Malaysia",
+      "category": "religion_business_impact",
+      "metric": "Malaysia's global holiday ranking",
+      "value": 7,
+      "unit": "rank_most_holidays_globally",
+      "year": 2024,
+      "source": "Destination Asia / Wikipedia Public Holidays Malaysia"
+    },
+    {
+      "id": "RF-MY-009",
+      "country": "Malaysia",
+      "category": "marriage",
+      "metric": "Total marriages registered",
+      "value": 188100,
+      "unit": "count",
+      "year": 2023,
+      "source": "DOSM Malaysia Marriage and Divorce 2023",
+      "notes": "Down 12.5% from 215,022 in 2022"
+    },
+    {
+      "id": "RF-MY-010",
+      "country": "Malaysia",
+      "category": "marriage",
+      "metric": "Crude marriage rate",
+      "value": 5.7,
+      "unit": "per_1000_population",
+      "year": 2023,
+      "source": "DOSM Malaysia 2023"
+    },
+    {
+      "id": "RF-MY-011",
+      "country": "Malaysia",
+      "category": "marriage",
+      "metric": "Median age at marriage — groom",
+      "value": 28,
+      "unit": "years",
+      "year": 2023,
+      "source": "DOSM Malaysia 2023"
+    },
+    {
+      "id": "RF-MY-012",
+      "country": "Malaysia",
+      "category": "marriage",
+      "metric": "Median age at marriage — bride",
+      "value": 27,
+      "unit": "years",
+      "year": 2023,
+      "source": "DOSM Malaysia 2023"
+    },
+    {
+      "id": "RF-MY-013",
+      "country": "Malaysia",
+      "category": "marriage",
+      "metric": "Total divorces registered",
+      "value": 57835,
+      "unit": "count",
+      "year": 2023,
+      "source": "DOSM Malaysia Marriage and Divorce 2023",
+      "notes": "Down 8.7% from 63,338 in 2022"
+    },
+    {
+      "id": "RF-MY-014",
+      "country": "Malaysia",
+      "category": "marriage",
+      "metric": "Crude divorce rate",
+      "value": 1.8,
+      "unit": "per_1000_population",
+      "year": 2023,
+      "source": "DOSM Malaysia 2023"
+    },
+    {
+      "id": "RF-MY-015",
+      "country": "Malaysia",
+      "category": "marriage",
+      "metric": "Median age at divorce — male",
+      "value": 38,
+      "unit": "years",
+      "year": 2023,
+      "source": "DOSM Malaysia 2023"
+    },
+    {
+      "id": "RF-MY-016",
+      "country": "Malaysia",
+      "category": "marriage",
+      "metric": "Median age at divorce — female",
+      "value": 35,
+      "unit": "years",
+      "year": 2023,
+      "source": "DOSM Malaysia 2023"
+    },
+    {
+      "id": "RF-MY-017",
+      "country": "Malaysia",
+      "category": "marriage",
+      "metric": "Inter-religious marriage — Muslim restriction",
+      "value": "Non-Muslim must convert to Islam to marry a Muslim. Civil Marriage Act 1976 explicitly excludes Muslims. Marriages overseas not recognized if couple returns to Malaysia.",
+      "unit": "qualitative_legal",
+      "year": 2024,
+      "source": "Interfaith Shaadi Malaysia / FMT 2023"
+    },
+    {
+      "id": "RF-MY-018",
+      "country": "Malaysia",
+      "category": "marriage",
+      "metric": "Apostasy law — Muslim leaving Islam to marry non-Muslim",
+      "value": "Requires Sharia court approval (rarely granted). Some states (Kelantan, Terengganu) have death penalty for apostasy on books (never applied). Practical barrier is near-absolute.",
+      "unit": "qualitative_legal",
+      "year": 2024,
+      "source": "Wikipedia Freedom of Religion Malaysia / US State Department 2023"
+    },
+    {
+      "id": "RF-MY-019",
+      "country": "Malaysia",
+      "category": "fertility",
+      "metric": "Total fertility rate (TFR)",
+      "value": 1.55,
+      "unit": "children_per_woman",
+      "year": 2023,
+      "source": "World Bank / DOSM Malaysia 2023",
+      "notes": "Bumiputera/Malay TFR ~2.4; Chinese ~1.4; Indian ~1.8 (ethnic variation)"
+    },
+    {
+      "id": "RF-MY-020",
+      "country": "Malaysia",
+      "category": "family_structure",
+      "metric": "Multigenerational households — prevalence",
+      "value": "Common especially in Malay and Indian communities; Chinese community shows higher rate of nuclear households in urban areas",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Manulife Diverse Asia Family Structural Change report"
+    },
+    {
+      "id": "RF-MY-021",
+      "country": "Malaysia",
+      "category": "family_structure",
+      "metric": "Elder care model",
+      "value": "Filial piety strong across all ethnic groups; formal care homes under-resourced and socially stigmatized; family care primary especially for Malay-Muslim households",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Manulife Diverse Asia report / DOSM elderly care data"
+    },
+    {
+      "id": "RF-MY-022",
+      "country": "Malaysia",
+      "category": "lgbtq",
+      "metric": "Homosexuality — legal status",
+      "value": "Criminalized: Section 377A Penal Code (up to 20 years + whipping for anal/oral sex). Sharia laws add additional state-level penalties for Muslims.",
+      "unit": "qualitative_legal",
+      "year": 2024,
+      "source": "ILGA / HRW / Equaldex Malaysia"
+    },
+    {
+      "id": "RF-MY-023",
+      "country": "Malaysia",
+      "category": "lgbtq",
+      "metric": "LGBTQ dating app blocking — government action",
+      "value": "MCMC blocked Grindr and Blued in February 2026; government evaluating app store removal",
+      "unit": "qualitative",
+      "year": 2026,
+      "source": "MCMC Malaysia / media reports February 2026"
+    },
+    {
+      "id": "RF-MY-024",
+      "country": "Malaysia",
+      "category": "superstition",
+      "metric": "Feng shui / Chinese superstition in business and real estate",
+      "value": "Significant economic influence; cemetery-facing properties sell at discount; lucky numbers (8, 6) command premium in car plate auctions, phone numbers, property addresses; kai gong (auspicious business opening) widely practiced",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Planning Malaysia Journal / empirical studies on car plate auctions"
+    },
+    {
+      "id": "RF-MY-025",
+      "country": "Malaysia",
+      "category": "superstition",
+      "metric": "Malay-Muslim pantang larang (taboos) in business",
+      "value": "Avoiding certain days for contracts; reciting bismillah before business opening; belief in rezeki (divinely apportioned income); not whistling inside buildings; superstitions around keris and traditional weapons",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Cultural Atlas Malaysia / academic studies on Malay cultural beliefs"
+    },
+    {
+      "id": "RF-MY-026",
+      "country": "Malaysia",
+      "category": "cohabitation",
+      "metric": "Cohabitation before marriage — Muslim community",
+      "value": "Prohibited under Sharia (zina); khalwat (close proximity) enforcement active; non-Muslim cohabitation socially tolerated but not legally recognized",
+      "unit": "qualitative",
+      "year": 2024,
+      "source": "US State Department Religious Freedom Report Malaysia 2023"
+    },
+    {
+      "id": "RF-MY-027",
+      "country": "Malaysia",
+      "category": "dating",
+      "metric": "Dating culture — inter-ethnic/inter-religious norms",
+      "value": "Inter-ethnic dating common but marriage faces legal barriers (Muslim conversion requirement). Chinese-Indian coupling more common than Malay-Chinese/Indian. Social pressure from family significant across all communities.",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Quora community surveys / academic interfaith marriage studies Malaysia"
+    },
+    {
+      "id": "RF-MY-028",
+      "country": "Malaysia",
+      "category": "inheritance",
+      "metric": "Inheritance law system — Muslims",
+      "value": "Faraid (Islamic inheritance) — compulsory for Muslims; courts apply Sharia-prescribed shares. Non-Muslims follow civil Probate and Administration Act 1959.",
+      "unit": "qualitative_legal",
+      "year": 2024,
+      "source": "Malaysian Sharia courts / legal practice guides"
+    },
+    {
+      "id": "RF-COMP-001",
+      "country": "Comparative",
+      "category": "fertility_comparison",
+      "metric": "TFR comparison — 2023",
+      "value": {
+        "Indonesia": 2.13,
+        "Australia": 1.5,
+        "Italy": 1.2,
+        "Singapore": 0.97,
+        "Malaysia": 1.55
+      },
+      "unit": "children_per_woman",
+      "year": 2023,
+      "source": "World Bank / national statistics offices",
+      "notes": "Only Indonesia above replacement rate (2.1); Singapore dangerously below at 0.97"
+    },
+    {
+      "id": "RF-COMP-002",
+      "country": "Comparative",
+      "category": "divorce_comparison",
+      "metric": "Divorce rate comparison — 2023",
+      "value": {
+        "Indonesia": "29.4% of marriages end in divorce (total stock rate)",
+        "Australia": "2.3 per 1,000 adults",
+        "Italy": "46.4 per 100 marriages",
+        "Singapore": "~7,100 total divorces + annulments",
+        "Malaysia": "1.8 per 1,000 population"
+      },
+      "unit": "mixed_units",
+      "year": 2023,
+      "source": "National statistics offices"
+    },
+    {
+      "id": "RF-COMP-003",
+      "country": "Comparative",
+      "category": "lgbtq_comparison",
+      "metric": "Same-sex marriage legal status — 2024",
+      "value": {
+        "Australia": "Legal since 2017",
+        "Italy": "Civil unions only; no marriage",
+        "Singapore": "Not recognized; decriminalized 2023",
+        "Malaysia": "Criminalized (20 years prison)",
+        "Indonesia": "Criminalized under 2022 Penal Code (effective 2026)"
+      },
+      "unit": "qualitative",
+      "year": 2024,
+      "source": "Equaldex / national legal codes"
+    },
+    {
+      "id": "RF-COMP-004",
+      "country": "Comparative",
+      "category": "secularization_comparison",
+      "metric": "Secularization trend direction — 2024",
+      "value": {
+        "Australia": "Fast secularizing; 38.9% no religion (2021)",
+        "Italy": "Secularizing; 28% no religion (2023), weekly attendance 15.8%",
+        "Singapore": "Moderate; 20% no religion but diverse religious mix stable",
+        "Malaysia": "Stable religious; Islam reinforced by law; non-Muslim faiths stable",
+        "Indonesia": "Stable religious; constitutional requirement for 6 recognized religions"
+      },
+      "unit": "qualitative",
+      "year": 2024,
+      "source": "Pew Research / national census data"
+    },
+    {
+      "id": "RF-COMP-005",
+      "country": "Comparative",
+      "category": "interfaith_marriage_comparison",
+      "metric": "Interfaith marriage — legal permissibility",
+      "value": {
+        "Australia": "No restrictions; fully legal",
+        "Italy": "No legal restrictions; Catholic church discourages but no law against",
+        "Singapore": "Legal for civil marriages; Muslim marriages governed by AMLA",
+        "Malaysia": "Muslim must convert non-Muslim partner; effective prohibition",
+        "Indonesia": "Fully prohibited since SEMA No. 2/2023"
+      },
+      "unit": "qualitative",
+      "year": 2024,
+      "source": "National legal codes / academic studies"
+    },
+    {
+      "id": "RF-COMP-006",
+      "country": "Comparative",
+      "category": "superstition_business_comparison",
+      "metric": "Superstition influence on business decisions — relative scale",
+      "value": {
+        "Singapore": "High — feng shui, numerology, auspicious dates mainstream in Chinese business",
+        "Malaysia": "High — Chinese community feng shui + Malay pantang larang",
+        "Indonesia": "Moderate-High — Javanese weton calendar, slametan ceremonies, Balinese ritual calendar",
+        "Australia": "Low — mainly in Chinese-Australian community",
+        "Italy": "Low-Moderate — malocchio, number 17, patron saint days affect local commerce"
+      },
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Cultural research / academic studies"
+    },
+    {
+      "id": "RF-COMP-007",
+      "country": "Comparative",
+      "category": "family_eldercare_comparison",
+      "metric": "Elder care model — family vs institutional",
+      "value": {
+        "Indonesia": "Family-primary; no state pension system; filial duty cultural norm",
+        "Australia": "Institutional-primary; NDIS + aged care system; family supplementary",
+        "Italy": "Mixed; informal family care dominant (3/4 of care) despite high aging; institutional growing",
+        "Singapore": "Legal filial piety obligation (Maintenance of Parents Act); institutional available but stigmatized",
+        "Malaysia": "Family-primary; institutional care underdeveloped; strong filial norm all ethnicities"
+      },
+      "unit": "qualitative",
+      "year": 2024,
+      "source": "AIHW / national aging reports"
+    },
+    {
+      "id": "RF-COMP-008",
+      "country": "Comparative",
+      "category": "public_holidays_comparison",
+      "metric": "Number of national public holidays — 2024",
+      "value": {
+        "Indonesia": 16,
+        "Australia": 8,
+        "Italy": 12,
+        "Singapore": 11,
+        "Malaysia": "11 federal + 6-9 state = up to 20 total"
+      },
+      "unit": "days_per_year",
+      "year": 2024,
+      "source": "National government gazettes"
+    },
+    {
+      "id": "RF-COMP-009",
+      "country": "Comparative",
+      "category": "cohabitation_comparison",
+      "metric": "Cohabitation before marriage — social acceptance level",
+      "value": {
+        "Australia": "Very high; majority norm",
+        "Italy": "Growing; ~50% of under-35s; civil union rights for cohabitants",
+        "Singapore": "Moderate; growing among Chinese; conservative in Malay-Muslim community",
+        "Malaysia": "Low-Very Low; illegal for Muslims (zina/khalwat); tolerated for non-Muslims",
+        "Indonesia": "Very Low; criminalized under 2022 Penal Code; strong social taboo"
+      },
+      "unit": "qualitative",
+      "year": 2024,
+      "source": "Pew / national surveys / legal codes"
+    },
+    {
+      "id": "RF-COMP-010",
+      "country": "Comparative",
+      "category": "family_decision_making",
+      "metric": "Family involvement in career and marriage decisions — relative scale",
+      "value": {
+        "Indonesia": "Very High — family council expected for major decisions; parental approval mandatory in many cultures",
+        "Australia": "Low — individual autonomy primary norm",
+        "Italy": "High — especially in South; parents involved in career, housing, marriage choices; mammoni culture",
+        "Singapore": "High — Confucian/Asian values; academic and career decisions heavily family-influenced",
+        "Malaysia": "Very High — across all ethnicities; community and extended family input expected"
+      },
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Cultural Atlas / Hofstede Insights individualism scores"
+    },
+    {
+      "id": "RF-ID-031",
+      "country": "Indonesia",
+      "category": "dating",
+      "metric": "Dating culture — pre-marital norms",
+      "value": "Pacaran (dating) widely practiced but sex before marriage strongly taboo; online dating apps growing in urban areas; arranged marriages declining but family introductions common",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Cultural Atlas Indonesia / ICRP research"
+    },
+    {
+      "id": "RF-ID-032",
+      "country": "Indonesia",
+      "category": "religious_practice",
+      "metric": "Nyepi (Balinese Hindu Day of Silence) — economic impact",
+      "value": "Bali fully shuts down for 24 hours; airport closed; no internet; estimated economic impact IDR 1–2 trillion per event",
+      "unit": "qualitative_economic",
+      "year": 2024,
+      "source": "Jakarta Post / Bali government tourism data"
+    },
+    {
+      "id": "RF-AU-033",
+      "country": "Australia",
+      "category": "parental_leave",
+      "metric": "Paid Parental Leave — government scheme",
+      "value": "18 weeks at National Minimum Wage (primary carer); 2 weeks Dad and Partner Pay; proposed expansion to 26 weeks total",
+      "unit": "qualitative_policy",
+      "year": 2024,
+      "source": "Services Australia / Australian Government 2024"
+    },
+    {
+      "id": "RF-IT-028",
+      "country": "Italy",
+      "category": "family_structure",
+      "metric": "Average household size",
+      "value": 2.3,
+      "unit": "persons_per_household",
+      "year": 2022,
+      "source": "ISTAT 2022",
+      "notes": "Declining from 2.7 in 2001; more single-person and couple-only households"
+    },
+    {
+      "id": "RF-SG-031",
+      "country": "Singapore",
+      "category": "interfaith_relations",
+      "metric": "Inter-racial marriage rate",
+      "value": "~20% of civil marriages are inter-ethnic",
+      "unit": "qualitative_estimate",
+      "year": 2023,
+      "source": "SingStat / Channel NewsAsia 2023",
+      "notes": "Government actively promotes racial harmony; CMIO model (Chinese-Malay-Indian-Others)"
+    },
+    {
+      "id": "RF-MY-029",
+      "country": "Malaysia",
+      "category": "interfaith_relations",
+      "metric": "Religious tensions — survey data",
+      "value": "55% of Malaysians say they interact daily with people of different religions; but 70% say Malaysia's religious situation is 'tense' (2023 survey)",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Institute for Democracy and Economic Affairs (IDEAS) Malaysia 2023"
+    },
+    {
+      "id": "RF-MY-030",
+      "country": "Malaysia",
+      "category": "secularization",
+      "metric": "Youth religiosity — Muslim Malay youth",
+      "value": "Religiosity remains high; dakwah (Islamic outreach) movement strong; 85%+ of Malay youth identify as 'somewhat' or 'very' religious",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "ARDA / ILGA Malaysia / local academic surveys"
+    },
+    {
+      "id": "RF-ID-033",
+      "country": "Indonesia",
+      "category": "funeral",
+      "metric": "Muslim funeral customs (jenazah)",
+      "value": "Burial within 24 hours; no embalming; body washed (mandi jenazah), shrouded (kafan), prayer (salat jenazah), buried facing Mecca. Tahlilan (7-night prayer gathering) common in Javanese tradition.",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Cultural Atlas Indonesia / Islamic funeral practices"
+    },
+    {
+      "id": "RF-ID-034",
+      "country": "Indonesia",
+      "category": "funeral",
+      "metric": "Estimated funeral cost range",
+      "value": "IDR 5–50 million (USD 310–3,100) for full ceremony; wealthy families spend IDR 100–500 million on multi-day tahlilan gatherings",
+      "unit": "IDR_range",
+      "year": 2023,
+      "source": "Indonesia Investments / local funeral industry estimates"
+    },
+    {
+      "id": "RF-ID-035",
+      "country": "Indonesia",
+      "category": "childcare",
+      "metric": "Childcare arrangements — primary model",
+      "value": "Family-based (grandmother / extended family) dominant; formal daycare growing in urban centers. ~70% of under-3s cared for by family member, not institution.",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "BPS / UNICEF Indonesia early childhood care data 2022"
+    },
+    {
+      "id": "RF-ID-036",
+      "country": "Indonesia",
+      "category": "parental_leave",
+      "metric": "Maternity leave — legal entitlement",
+      "value": "3 months paid (Law No. 13/2003); 1.5 months before, 1.5 months after birth. Government discussing extension to 6 months.",
+      "unit": "qualitative_policy",
+      "year": 2023,
+      "source": "Indonesia Manpower Law No. 13/2003 / ILO Indonesia report"
+    },
+    {
+      "id": "RF-ID-037",
+      "country": "Indonesia",
+      "category": "parental_leave",
+      "metric": "Paternity leave — legal entitlement",
+      "value": "2 days paid (Government Regulation on Leave)",
+      "unit": "days_paid",
+      "year": 2023,
+      "source": "Indonesian Manpower Law / ILO",
+      "notes": "Very limited; many companies give informally 1 week"
+    },
+    {
+      "id": "RF-ID-038",
+      "country": "Indonesia",
+      "category": "dating",
+      "metric": "Average age at first marriage — national",
+      "value": "Men: 26.5 years; Women: 23.2 years",
+      "unit": "years",
+      "year": 2022,
+      "source": "BPS National Socioeconomic Survey (SUSENAS) 2022"
+    },
+    {
+      "id": "RF-ID-039",
+      "country": "Indonesia",
+      "category": "marriage",
+      "metric": "Child marriage rate (under 18)",
+      "value": 8.7,
+      "unit": "percent_of_female_marriages",
+      "year": 2022,
+      "source": "UNICEF Indonesia / BPS 2022",
+      "notes": "Declining from 25% in 2012; still above global average"
+    },
+    {
+      "id": "RF-AU-035",
+      "country": "Australia",
+      "category": "dating",
+      "metric": "Average age at first marriage",
+      "value": "Men: 32.9 years; Women: 31.2 years (= median marriage age, as most are first marriages)",
+      "unit": "years",
+      "year": 2023,
+      "source": "ABS Marriages and Divorces 2023"
+    },
+    {
+      "id": "RF-AU-036",
+      "country": "Australia",
+      "category": "parental_leave",
+      "metric": "Parental leave — dad and partner pay usage",
+      "value": "~55% of eligible fathers take government-paid leave; uptake increasing each year",
+      "unit": "percent",
+      "year": 2023,
+      "source": "Services Australia / AIFS 2023"
+    },
+    {
+      "id": "RF-AU-037",
+      "country": "Australia",
+      "category": "funeral",
+      "metric": "Cremation vs burial split",
+      "value": "~70% cremation, ~30% burial (2023)",
+      "unit": "percent",
+      "year": 2023,
+      "source": "Australian Seniors Cost of Death Report 2023"
+    },
+    {
+      "id": "RF-AU-038",
+      "country": "Australia",
+      "category": "childcare",
+      "metric": "Childcare subsidy — government model",
+      "value": "Child Care Subsidy (CCS): covers 50-95% of fees depending on income. Families earning under AUD 80K get 85% subsidy.",
+      "unit": "qualitative_policy",
+      "year": 2024,
+      "source": "Department of Education Australia 2024"
+    },
+    {
+      "id": "RF-AU-039",
+      "country": "Australia",
+      "category": "inheritance",
+      "metric": "Superannuation death benefits — unique feature",
+      "value": "Superannuation (retirement savings) passed outside estate via nominated beneficiary; not subject to standard probate. Average Australian super balance at death ~AUD 200,000+",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "ATO / APRA Superannuation Statistics 2023"
+    },
+    {
+      "id": "RF-IT-029",
+      "country": "Italy",
+      "category": "childcare",
+      "metric": "Institutional childcare enrollment (under 3)",
+      "value": 29,
+      "unit": "percent",
+      "year": 2022,
+      "source": "ISTAT / Eurostat Early Childhood Education 2022",
+      "notes": "Below EU average; South Italy significantly lower (~15%) than North (~40%)"
+    },
+    {
+      "id": "RF-IT-030",
+      "country": "Italy",
+      "category": "childcare",
+      "metric": "Childcare responsibility — informal family model",
+      "value": "Nonni (grandparents) provide ~60% of informal childcare for working parents; 3-generation co-living rates high in South",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "ISTAT Famiglia 2023 / Banca d'Italia social surveys"
+    },
+    {
+      "id": "RF-IT-031",
+      "country": "Italy",
+      "category": "inheritance",
+      "metric": "Forced heirship (quota legittima) — law",
+      "value": "Italian law mandates minimum shares for children and spouse; 1 child = 1/2 estate; 2+ children = 2/3 estate split equally; spouse = 1/2. Testator cannot exclude these.",
+      "unit": "qualitative_legal",
+      "year": 2024,
+      "source": "Italian Civil Code Art. 536-564 / Notarial studies"
+    },
+    {
+      "id": "RF-IT-032",
+      "country": "Italy",
+      "category": "inheritance",
+      "metric": "Inheritance tax rate",
+      "value": "4% for spouse/children (above EUR 1M exemption); 6% for siblings; 8% for all others",
+      "unit": "percent_rate",
+      "year": 2024,
+      "source": "Italian Revenue Agency (Agenzia delle Entrate) 2024"
+    },
+    {
+      "id": "RF-IT-033",
+      "country": "Italy",
+      "category": "funeral",
+      "metric": "Average funeral cost",
+      "value": "EUR 2,500–5,000 for basic Catholic burial; up to EUR 10,000–15,000 for traditional service with cemetery plot in major cities",
+      "unit": "EUR_range",
+      "year": 2023,
+      "source": "Italian funeral industry association (FENIOF) estimates 2023"
+    },
+    {
+      "id": "RF-IT-034",
+      "country": "Italy",
+      "category": "funeral",
+      "metric": "Catholic funeral practices",
+      "value": "Wake (veglia funebre) 1-2 days; Requiem Mass; burial or cremation (cremation allowed by Church since 1963); mourning period (lutto) socially observed; food sharing at home post-burial",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Cultural Atlas Italy / Catholic Church guidelines"
+    },
+    {
+      "id": "RF-SG-032",
+      "country": "Singapore",
+      "category": "funeral",
+      "metric": "Average funeral cost — Chinese Buddhist/Taoist",
+      "value": "SGD 4,000–15,000; elaborate multi-day wakes with paper offerings, opera performances common for wealthy families",
+      "unit": "SGD_range",
+      "year": 2023,
+      "source": "Singapore funeral industry / CNA reports 2023"
+    },
+    {
+      "id": "RF-SG-033",
+      "country": "Singapore",
+      "category": "funeral",
+      "metric": "Cremation rate",
+      "value": 95,
+      "unit": "percent",
+      "year": 2023,
+      "source": "National Environment Agency (NEA) Singapore 2023",
+      "notes": "Land scarcity drives near-universal cremation policy"
+    },
+    {
+      "id": "RF-SG-034",
+      "country": "Singapore",
+      "category": "inheritance",
+      "metric": "Intestate Succession Act — non-Muslim inheritance",
+      "value": "Spouse gets 50% if no children; spouse + children split 50/50; Muslim estates governed by Faraid (Islamic inheritance law via Syariah court)",
+      "unit": "qualitative_legal",
+      "year": 2024,
+      "source": "Singapore Statutes Online / Syariah Court"
+    },
+    {
+      "id": "RF-SG-035",
+      "country": "Singapore",
+      "category": "dating",
+      "metric": "Average age at first marriage",
+      "value": "Men: 30.4 years; Women: 28.9 years",
+      "unit": "years",
+      "year": 2023,
+      "source": "SingStat Marriages and Divorces 2023"
+    },
+    {
+      "id": "RF-MY-031",
+      "country": "Malaysia",
+      "category": "funeral",
+      "metric": "Muslim funeral customs — cost",
+      "value": "Burial within 24 hours mandatory; cost MYR 500–2,000 for simple burial; talqin (grave guidance prayer), tahlil gatherings for 3/7/40 nights",
+      "unit": "MYR_range",
+      "year": 2023,
+      "source": "Malaysian Islamic Development Department (JAKIM) / community data"
+    },
+    {
+      "id": "RF-MY-032",
+      "country": "Malaysia",
+      "category": "funeral",
+      "metric": "Chinese Malaysian funeral customs",
+      "value": "Multi-day wake; paper money and goods burned; geomancer selects burial date and plot; costs MYR 5,000–30,000+; increasingly cremation in urban areas",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "Malaysian Chinese cultural associations / funeral industry reports"
+    },
+    {
+      "id": "RF-MY-033",
+      "country": "Malaysia",
+      "category": "childcare",
+      "metric": "Childcare model — dominant",
+      "value": "Family (grandparents) primary for under-3; formal taska (licensed nursery) and tadika (kindergarten) for 4-6; government subsidy available for low-income households",
+      "unit": "qualitative",
+      "year": 2023,
+      "source": "DOSM / Ministry of Women, Family and Community Development Malaysia 2023"
+    },
+    {
+      "id": "RF-MY-034",
+      "country": "Malaysia",
+      "category": "parental_leave",
+      "metric": "Maternity leave — legal entitlement",
+      "value": "98 days paid (Employment Act amendment 2023, increased from 60 days)",
+      "unit": "days_paid",
+      "year": 2023,
+      "source": "Employment (Amendment) Act 2022 Malaysia, effective 2023"
+    },
+    {
+      "id": "RF-MY-035",
+      "country": "Malaysia",
+      "category": "parental_leave",
+      "metric": "Paternity leave — legal entitlement",
+      "value": "7 days paid (Employment Act amendment 2023)",
+      "unit": "days_paid",
+      "year": 2023,
+      "source": "Employment (Amendment) Act 2022 Malaysia"
+    },
+    {
+      "id": "RF-MY-036",
+      "country": "Malaysia",
+      "category": "dating",
+      "metric": "Average age at first marriage — Muslim Malay",
+      "value": "Men: 28.0 years; Women: 27.0 years (national median; Malay similar; Chinese slightly higher)",
+      "unit": "years",
+      "year": 2023,
+      "source": "DOSM Malaysia Marriage and Divorce 2023"
+    },
+    {
+      "id": "RF-AU-040",
+      "country": "Australia",
+      "category": "religion_business_impact",
+      "metric": "Easter long weekend — economic impact",
+      "value": "4-day weekend; retail and hospitality generate ~AUD 2B+ nationally; restricted alcohol trading laws in some states (Good Friday)",
+      "unit": "qualitative_economic",
+      "year": 2024,
+      "source": "National Retail Association / state government trading hours acts"
+    },
+    {
+      "id": "RF-IT-035",
+      "country": "Italy",
+      "category": "religion_business_impact",
+      "metric": "Ferragosto (August 15) — business shutdown",
+      "value": "Entire country shuts for 2-4 weeks in August; August is the most economically inactive month; factories, offices, many restaurants close for 2-4 weeks",
+      "unit": "qualitative_economic",
+      "year": 2024,
+      "source": "ISTAT economic calendar / Italian business culture guides"
+    },
+    {
+      "id": "RF-SG-036",
+      "country": "Singapore",
+      "category": "religion_business_impact",
+      "metric": "Chinese New Year — economic impact",
+      "value": "2-day national holiday; 7-15 days of reduced business activity; lion dances and ang pao (cash gifts) form ~SGD 500M+ informal economy",
+      "unit": "qualitative_economic",
+      "year": 2024,
+      "source": "Singapore Retailers Association / CNA economic reporting"
+    },
+    {
+      "id": "RF-MY-037",
+      "country": "Malaysia",
+      "category": "religion_business_impact",
+      "metric": "Hari Raya Puasa consumer spending",
+      "value": "~MYR 6–8 billion additional consumer spending during Ramadan-Raya season; baju raya (festive clothing) and food sectors surge 200-400%",
+      "unit": "qualitative_economic",
+      "year": 2023,
+      "source": "DOSM / Bank Negara Malaysia economic reports 2023"
+    },
+    {
+      "id": "RF-ID-040",
+      "country": "Indonesia",
+      "category": "secularization",
+      "metric": "Youth (18-29) identifying as religiously devout",
+      "value": "~85-90% of Muslim youth report religion as 'very important' to daily life",
+      "unit": "percent",
+      "year": 2023,
+      "source": "Pew Research 2024 — 5 facts about Muslims in Indonesia"
+    },
+    {
+      "id": "RF-IT-036",
+      "country": "Italy",
+      "category": "childcare",
+      "metric": "Asilo nido (nursery) coverage — gap vs target",
+      "value": "EU Lisbon target: 33% coverage for under-3. Italy at 27% nationally (2023); South Italy at 10-15%, far below North (35-40%)",
+      "unit": "percent",
+      "year": 2023,
+      "source": "ISTAT / European Commission Early Childhood Care 2023"
+    },
+    {
+      "id": "RF-COMP-011",
+      "country": "Comparative",
+      "category": "maternity_leave_comparison",
+      "metric": "Paid maternity leave entitlement — comparison",
+      "value": {
+        "Indonesia": "90 days (3 months)",
+        "Australia": "18 weeks government-paid + employer top-ups",
+        "Italy": "5 months at 80% salary",
+        "Singapore": "16 weeks government-paid (GPML)",
+        "Malaysia": "98 days (increased from 60 days, effective 2023)"
+      },
+      "unit": "qualitative_policy",
+      "year": 2023,
+      "source": "ILO Maternity Protection Database / national labor laws"
+    }
+  ]
+}
