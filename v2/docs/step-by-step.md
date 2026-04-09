@@ -21,7 +21,9 @@
 - [Depth Variants](#depth-variants--3-modalita-per-template-summary--analysis--full-model) — DONE (34 template × 3 = 102 varianti)
 - [Data Integrity System](#data-integrity-system--3-livelli) — TODO (3 livelli: freshness badge → source verification → auto-update agent)
 - [Fase 10: Simulation Quality](#fase-10-simulation-quality--2026-04-08) — DONE
-- [Fase 11: Beast Mode Data Expansion](#fase-11-beast-mode--data-expansion-massiva-2026-04-08-notte) — +146K DP (WHO, IMF, WB 60 paesi, 19 nuovi domini)
+- [Fase 11: Beast Mode Data Expansion](#fase-11-beast-mode--data-expansion-massiva-2026-04-08-notte) — +270K DP totali
+- [Fase 11B: Deep Web Research Round 2](#fase-11b-deep-web-research-round-2-2026-04-09) — +7,308 DP (10 domini qualitativi)
+- [Fase 11C: Deep Web Research Round 3](#fase-11c-deep-web-research-round-3-2026-04-09) — +2,148 DP (5/10 completati)
 - [UI Polish](#ui-polish)
 
 ---
@@ -550,5 +552,62 @@ Obiettivo: garantire che ogni dato nel simulatore sia verificabile, aggiornato e
 - [ ] Hofstede 6D Cultural Dimensions (102 paesi)
 - [ ] Eurostat expanded (nuovi dataset)
 - [ ] WB Round 4+ (altri 1,300+ indicatori disponibili)
+
+---
+
+## Fase 11B: Deep Web Research Round 2 (2026-04-09)
+Strategia: ricerca qualitativa profonda > API bulk. Ogni DP vale 10x un numero World Bank.
+
+### Completati (10/10)
+- [x] **Freelancing/Upwork Deep** — 470 DP (rates by skill, AI impact -30% writing, JSS, Fiverr, geo-arbitrage)
+- [x] **Personal Finance Lifecycle** — 600 DP (salary curves 20+ fields, spending by life stage, investing, debt, retirement)
+- [x] **Habits/Productivity Deep** — 519 DP (habit formation 66 days Lally, 4-day work week, sleep, willpower)
+- [x] **Parenting/Childhood Deep** — 501 DP (fertility by age, IVF, child costs by country, ACEs, Montessori)
+- [x] **Career Transitions Deep** — 502 DP (ATS rejection, layoff recovery, MBA +77%, digital nomad visas)
+- [x] **Small Business Deep** — 606 DP (survival by industry, cafe/SaaS/agency specifics, CAC by channel)
+- [x] **Wealth Building Deep** — 502 DP (millionaire demographics, FIRE, S&P 30yr, net worth percentiles)
+- [x] **Indonesia Life Deep** — 601 DP (Bandung costs, UMR, franchise Mixue/Indomaret, interfaith, KITAS)
+- [x] **Relationship Psychology Deep** — 502 DP (Gottman 93.6%, attachment, conflict, breakup recovery)
+- [x] **AI Tools Impact Deep** — 505 DP (OpenAI $157B, Copilot productivity, job displacement, API pricing)
+- **Subtotale Round 2: +5,308 DP**
+
+---
+
+## Fase 11C: Deep Web Research Round 3 (2026-04-09)
+
+### Completati (5/10 — rate limit hit)
+- [x] **Negotiation/Sales Psychology** — 606 DP (Cialdini studies, cold calling, pricing psychology, follow-up stats)
+- [x] **Aging/Retirement Life Stages** — 360 DP (milestones per eta, pension by country, cognitive decline)
+- [x] **Immigration/Visa Paths** — 398 DP (H-1B, Express Entry, KITAS, Golden Visa, digital nomad)
+- [x] **Crypto/Trading/Prediction Markets** — 368 DP (Polymarket, day trading 97% lose, Bitcoin cycles, staking)
+- [x] **Legal/Tax/Bureaucracy** — 416 DP (tax rates 20+ paesi, crypto tax, business entity comparison)
+- **Subtotale Round 3: +2,148 DP**
+
+### Da rifare (prossima sessione — 5 agenti hit rate limit)
+- [ ] **Entrepreneurship Psychology** — founder burnout, co-founder conflict, grit studies, ADHD prevalence
+- [ ] **Faith/Religion Outcomes** — church +5yr longevity, interfaith marriage, tithing outcomes
+- [ ] **Content Monetization** — YouTube CPM by niche, Substack conversion, podcast economics
+- [ ] **Social Skills/Networking** — Dunbar's 150, loneliness epidemic, EQ studies, networking ROI
+- [ ] **Fitness/Health Science** — exercise dose-response, protein studies, sarcopenia, diet RCTs
+
+---
+
+## Riepilogo Beast Mode Completo (2026-04-08/09)
+
+| Round | DP aggiunti | File | Tipo |
+|-------|-------------|------|------|
+| API Bulk (WB, WHO, IMF) | +251,431 | 95 | Quantitativo (numeri per paese/anno) |
+| Ricerca Round 1 (22 domini) | +11,000 | 22 | Qualitativo (fatti da fonti) |
+| Ricerca Round 2 (10 domini) | +5,308 | 10 | Qualitativo profondo (studi accademici) |
+| Ricerca Round 3 (5 domini) | +2,148 | 5 | Qualitativo profondo (studi accademici) |
+| **TOTALE BEAST MODE** | **+269,887** | **132** | |
+| **TOTALE PROGETTO** | **~3,470,000** | **~1,200+** | |
+
+### Prossima sessione — priorita
+1. [ ] **5 agenti mancanti Round 3** (Entrepreneurship Psychology, Faith, Content, Social, Fitness)
+2. [ ] **Embedding** tutti i nuovi file in Supabase pgvector (~270K DP → ~45K chunks)
+3. [ ] **Nuovi domini Round 4** (suggerimenti: Sleep Science, Divorce Recovery, Negotiation for Beginners, Country-Specific: Italy Life Deep, Australia Life Deep, Ghana Life Deep)
+4. [ ] FRED con API key
+5. [ ] World Values Survey Wave 7
 
 *Ultimo aggiornamento: 2026-04-09*

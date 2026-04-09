@@ -255,9 +255,20 @@
 - [x] **BottleneckCard**: primo componente card UI per Dashboard
 - [x] **Playground HTML**: layout.html per sperimentazione CSS/HTML puro (tema chiaro, resize panels)
 
+### Completato (sessione 2026-04-08/09 — BEAST MODE)
+- [x] **+269,887 nuovi data points** — da 3.2M a 3.47M totali
+- [x] **API bulk**: WB All Countries 123K (92 indicatori × 217 paesi), WHO GHO 79K (160+ indicatori), IMF WEO 31K, WB Expanded 18K (63 nuovi paesi)
+- [x] **Ricerca Round 1** (22 file): Religion, Creator Economics, AI/Remote, Vocational, Addiction, Dating, Longevity, Cost of Living, Food, Crime, Digital, Mental Health, Energy, Transport, Sports, Housing, Healthcare, Migration, Geopolitics, Startup/VC, Education — 11K DP
+- [x] **Ricerca Round 2** (10 file): Freelancing/Upwork, Personal Finance Lifecycle, Habits/Productivity, Parenting, Career Transitions, Small Business, Wealth Building, Indonesia Life, Relationship Psychology, AI Tools — 5.3K DP
+- [x] **Ricerca Round 3** (5 file): Negotiation/Sales, Aging/Retirement, Immigration/Visa, Crypto/Trading, Legal/Tax — 2.1K DP
+- [x] **15 nuovi download script** pronti per future sessioni
+- [x] **Storage optimization**: dati pesanti su iCloud Drive con symlink (1.7G → 29M locale)
+
 ### In Corso / Prossimi Step
-- [ ] Creare varianti Mid + Min per restanti 30 template business/richard/life
+- [ ] **5 agenti mancanti** Round 3: Entrepreneurship Psychology, Faith/Religion Outcomes, Content Monetization, Social Skills/Networking, Fitness/Health Science
+- [ ] **Embedding** tutti i nuovi file in Supabase pgvector (~270K DP → ~45K chunks)
 - [ ] Data Integrity System: freshness badge, source verification cron, auto-update agent
+- [ ] Creare varianti Mid + Min per restanti 30 template business/richard/life
 - [ ] Flowchart view: modalita' ritaglio (cut line orizzontale)
 - [ ] 3D mode: debug caricamento
 

@@ -26,9 +26,11 @@
 - React Flow (@xyflow/react) for node graph
 - Dagre for auto-layout
 - Claude Haiku 4.5 for AI generation (fallback: OpenAI, Groq)
-- Supabase Pro pgvector for RAG (3.35M+ dp, 145K+ chunked embeddings, 512 dim, HNSW, $25/mo)
-- Data storage: heavy files on iCloud Drive (symlink), 1,192 JSON files across 30+ domains
-- New sources (Beast Mode 2026-04-08): WHO GHO, IMF WEO, WB 80+ countries, 19 research domains
+- Supabase Pro pgvector for RAG (3.47M+ dp, 145K+ chunked embeddings — NEW FILES NOT YET EMBEDDED, 512 dim, HNSW, $25/mo)
+- Data storage: heavy files on iCloud Drive (symlink from data/cultural/), ~1,200+ JSON files across 45+ domains
+- Beast Mode (2026-04-08/09): +270K DP from WHO GHO, IMF WEO, WB 80+ countries, 37 deep research files
+- Deep research files in data/: 37 domain-specific JSON files with qualitative data (studies, reports, specific facts)
+- API bulk files on iCloud: worldbank-all (92 indicators), who-gho, imf-weo, worldbank-expanded (63 countries)
 - OpenAI Whisper for audio/video transcription
 - Web Audio API for sound design
 
