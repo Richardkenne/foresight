@@ -126,7 +126,7 @@ export interface ParticleData {
  * Create the distinctive YOU avatar SVG — gold tones, larger, crown marker
  */
 export function createYouSVG(): string {
-  const skin = '#F5D0A9';
+  const skin = '#6B4226'; // Dark skin — Ghanaian heritage
   const hair = '#1a1a1a';
   const top = '#92400e'; // Dark gold/amber top
   const bottom = '#1e293b';

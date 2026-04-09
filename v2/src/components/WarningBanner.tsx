@@ -102,7 +102,7 @@ export default function WarningBanner({ warnings, onDismiss }: WarningBannerProp
           alignItems: 'center',
           justifyContent: 'space-between',
           width: '100%',
-          padding: '8px 14px',
+          padding: 'var(--space-2) var(--space-4)',
           background: config.bg,
           border: `1px solid ${config.border}`,
           borderRadius: expanded ? '10px 10px 0 0' : '10px',
@@ -111,24 +111,24 @@ export default function WarningBanner({ warnings, onDismiss }: WarningBannerProp
           backdropFilter: 'blur(12px)',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
           <SvgIcon name={config.icon} size={14} color={config.color} />
           <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--foreground)', letterSpacing: '-0.01em' }}>
             {visible.length} warning{visible.length !== 1 ? 's' : ''} found
           </span>
-          <div style={{ display: 'flex', gap: '4px' }}>
+          <div style={{ display: 'flex', gap: 'var(--space-1)' }}>
             {criticalCount > 0 && (
-              <span style={{ fontSize: '9px', fontWeight: 700, padding: '1px 6px', borderRadius: '4px', background: 'rgba(239,68,68,0.12)', color: '#ef4444', fontFamily: 'var(--font-geist-mono), monospace' }}>
+              <span style={{ fontSize: '9px', fontWeight: 700, padding: '1px var(--space-2)', borderRadius: '4px', background: 'rgba(239,68,68,0.12)', color: '#ef4444', fontFamily: 'var(--font-geist-mono), monospace' }}>
                 {criticalCount} CRITICAL
               </span>
             )}
             {warningCount > 0 && (
-              <span style={{ fontSize: '9px', fontWeight: 700, padding: '1px 6px', borderRadius: '4px', background: 'rgba(245,158,11,0.12)', color: '#f59e0b', fontFamily: 'var(--font-geist-mono), monospace' }}>
+              <span style={{ fontSize: '9px', fontWeight: 700, padding: '1px var(--space-2)', borderRadius: '4px', background: 'rgba(245,158,11,0.12)', color: '#f59e0b', fontFamily: 'var(--font-geist-mono), monospace' }}>
                 {warningCount} WARNING
               </span>
             )}
             {infoCount > 0 && (
-              <span style={{ fontSize: '9px', fontWeight: 700, padding: '1px 6px', borderRadius: '4px', background: 'rgba(59,130,246,0.12)', color: '#3b82f6', fontFamily: 'var(--font-geist-mono), monospace' }}>
+              <span style={{ fontSize: '9px', fontWeight: 700, padding: '1px var(--space-2)', borderRadius: '4px', background: 'rgba(59,130,246,0.12)', color: '#3b82f6', fontFamily: 'var(--font-geist-mono), monospace' }}>
                 {infoCount} INFO
               </span>
             )}
@@ -159,8 +159,8 @@ export default function WarningBanner({ warnings, onDismiss }: WarningBannerProp
                 key={w.id}
                 style={{
                   display: 'flex',
-                  gap: '10px',
-                  padding: '10px 14px',
+                  gap: 'var(--space-3)',
+                  padding: 'var(--space-3) var(--space-4)',
                   borderBottom: i < visible.length - 1 ? '1px solid var(--border)' : 'none',
                   alignItems: 'flex-start',
                 }}
@@ -218,7 +218,7 @@ export function FieldWarningDot({ severity, tooltip }: { severity: 'critical' | 
         height: '6px',
         borderRadius: '50%',
         background: color,
-        marginLeft: '4px',
+        marginLeft: 'var(--space-1)',
         flexShrink: 0,
         cursor: tooltip ? 'help' : 'default',
       }}

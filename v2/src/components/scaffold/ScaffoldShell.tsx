@@ -6,7 +6,7 @@ import { useState } from 'react';
 /* ─── Shared scaffold page shell ─── */
 
 const NAV_LINKS = [
-  { href: '/sim', label: 'Simulator' },
+  { href: '/sim', label: 'Foresight' },
   { href: '/engines', label: 'Engines' },
   { href: '/marketplace', label: 'Marketplace' },
   { href: '/government', label: 'Government' },
@@ -102,8 +102,8 @@ export function ComingSoonBadge({ date }: { date: string }) {
     <span style={{
       display: 'inline-flex',
       alignItems: 'center',
-      gap: 6,
-      padding: '4px 12px',
+      gap: 'var(--space-2)',
+      padding: 'var(--space-1) var(--space-3)',
       borderRadius: 20,
       fontSize: 12,
       fontWeight: 600,
@@ -138,8 +138,8 @@ export function EmailSignup({ storageKey }: { storageKey: string }) {
       <div style={{
         display: 'flex',
         alignItems: 'center',
-        gap: 8,
-        padding: '12px 20px',
+        gap: 'var(--space-2)',
+        padding: 'var(--space-3) var(--space-6)',
         borderRadius: 8,
         background: 'color-mix(in srgb, var(--success) 10%, transparent)',
         color: 'var(--success)',
@@ -155,7 +155,7 @@ export function EmailSignup({ storageKey }: { storageKey: string }) {
   return (
     <form onSubmit={handleSubmit} style={{
       display: 'flex',
-      gap: 8,
+      gap: 'var(--space-2)',
       maxWidth: 420,
       width: '100%',
     }}>
@@ -167,7 +167,7 @@ export function EmailSignup({ storageKey }: { storageKey: string }) {
         required
         style={{
           flex: 1,
-          padding: '10px 16px',
+          padding: 'var(--space-3) var(--space-4)',
           borderRadius: 8,
           border: '1px solid var(--border)',
           background: 'var(--surface)',
@@ -179,8 +179,8 @@ export function EmailSignup({ storageKey }: { storageKey: string }) {
       <button type="submit" style={{
         display: 'flex',
         alignItems: 'center',
-        gap: 6,
-        padding: '10px 20px',
+        gap: 'var(--space-2)',
+        padding: 'var(--space-3) var(--space-6)',
         borderRadius: 8,
         border: 'none',
         background: 'var(--accent)',
@@ -214,7 +214,7 @@ function ScaffoldNav({ current }: { current: string }) {
       <div style={{
         maxWidth: 1200,
         margin: '0 auto',
-        padding: '0 24px',
+        padding: '0 var(--space-6)',
         height: 56,
         display: 'flex',
         alignItems: 'center',
@@ -223,24 +223,24 @@ function ScaffoldNav({ current }: { current: string }) {
         <Link href="/" style={{
           display: 'flex',
           alignItems: 'center',
-          gap: 8,
+          gap: 'var(--space-2)',
           textDecoration: 'none',
           color: 'var(--foreground)',
           fontWeight: 600,
           fontSize: 14,
         }}>
           {Icons.graph}
-          <span>Simulator</span>
+          <span>Foresight</span>
         </Link>
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          gap: 4,
+          gap: 'var(--space-1)',
           overflow: 'auto',
         }}>
           {NAV_LINKS.map((link) => (
             <Link key={link.href} href={link.href} style={{
-              padding: '6px 12px',
+              padding: 'var(--space-2) var(--space-3)',
               borderRadius: 6,
               fontSize: 12,
               fontWeight: 500,
@@ -263,7 +263,7 @@ function ScaffoldFooter() {
   return (
     <footer style={{
       borderTop: '1px solid var(--border)',
-      padding: '40px 24px',
+      padding: 'var(--space-10) var(--space-6)',
       marginTop: 80,
     }}>
       <div style={{
@@ -271,12 +271,12 @@ function ScaffoldFooter() {
         margin: '0 auto',
         display: 'flex',
         flexDirection: 'column',
-        gap: 24,
+        gap: 'var(--space-6)',
       }}>
         <div style={{
           display: 'flex',
           flexWrap: 'wrap',
-          gap: 12,
+          gap: 'var(--space-3)',
           justifyContent: 'center',
         }}>
           {NAV_LINKS.map((link) => (

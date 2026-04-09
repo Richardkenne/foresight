@@ -84,13 +84,13 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', overflow: 'hidden' }}>
       {/* Header */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 16px', borderBottom: '1px solid var(--border)' }}>
-        <button onClick={onBack} style={{ display: 'flex', alignItems: 'center', gap: '6px', background: 'none', border: 'none', color: 'var(--foreground)', fontSize: '13px', fontWeight: 600, cursor: 'pointer', padding: 0 }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: 'var(--space-4) var(--space-4)', borderBottom: '1px solid var(--border)' }}>
+        <button onClick={onBack} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', background: 'none', border: 'none', color: 'var(--foreground)', fontSize: '13px', fontWeight: 600, cursor: 'pointer', padding: 0 }}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5" /><path d="M12 19l-7-7 7-7" /></svg>
           Profile
         </button>
         <span style={{
-          fontSize: '9px', fontWeight: 700, padding: '2px 8px', borderRadius: '10px', letterSpacing: '0.06em', fontFamily: 'var(--font-geist-mono), monospace',
+          fontSize: '9px', fontWeight: 700, padding: '2px var(--space-2)', borderRadius: '10px', letterSpacing: '0.06em', fontFamily: 'var(--font-geist-mono), monospace',
           background: complete ? 'rgba(16,185,129,0.1)' : 'var(--surface-hover)',
           color: complete ? 'var(--success)' : 'var(--muted)',
         }}>
@@ -99,13 +99,13 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
       </div>
 
       {/* Section tabs */}
-      <div style={{ display: 'flex', gap: '2px', padding: '8px 12px', borderBottom: '1px solid var(--border)', overflowX: 'auto' }}>
+      <div style={{ display: 'flex', gap: '2px', padding: 'var(--space-2) var(--space-3)', borderBottom: '1px solid var(--border)', overflowX: 'auto' }}>
         {sections.map(s => (
           <button
             key={s.id}
             onClick={() => setActiveSection(activeSection === s.id ? null : s.id)}
             style={{
-              display: 'flex', alignItems: 'center', gap: '4px', padding: '5px 8px', borderRadius: '6px', border: 'none', cursor: 'pointer', fontSize: '10px', fontWeight: 500, whiteSpace: 'nowrap', transition: 'all 0.1s',
+              display: 'flex', alignItems: 'center', gap: 'var(--space-1)', padding: 'var(--space-1) var(--space-2)', borderRadius: '6px', border: 'none', cursor: 'pointer', fontSize: '10px', fontWeight: 500, whiteSpace: 'nowrap', transition: 'all 0.1s',
               background: activeSection === s.id ? 'var(--foreground)' : 'transparent',
               color: activeSection === s.id ? 'var(--background)' : 'var(--muted-foreground)',
             }}
@@ -117,10 +117,10 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
       </div>
 
       {/* Content */}
-      <div style={{ flex: 1, overflowY: 'auto', padding: '12px 16px' }}>
+      <div style={{ flex: 1, overflowY: 'auto', padding: 'var(--space-3) var(--space-4)' }}>
 
         {activeSection === 'context' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
             <FieldRow label="Location" value={tags.location ?? ''} placeholder="City or country..." onChange={v => updateTag('location', v)} />
             <FieldRow label="Budget" value={tags.budget ?? ''} placeholder="e.g. $5000, 10 juta..." onChange={v => updateTag('budget', v)} />
             <FieldRow label="Timeline" value={tags.timeline ?? ''} placeholder="e.g. 6 months, 2 years..." onChange={v => updateTag('timeline', v)} />
@@ -129,7 +129,7 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
         )}
 
         {activeSection === 'identity' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
             <FieldRow label="Age" value={profile.age ?? ''} type="number" placeholder="29" onChange={v => update({ age: v ? parseInt(v) : undefined })} />
             <FieldRow label="Country" value={profile.country ?? ''} placeholder="Indonesia" onChange={v => update({ country: v || undefined })} warning={fieldWarnings['country']} />
             <FieldRow label="City" value={profile.city ?? ''} placeholder="Bandung" onChange={v => update({ city: v || undefined })} />
@@ -139,7 +139,7 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
         )}
 
         {activeSection === 'financial' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
             <FieldRow label="Capital (USD)" value={profile.capital ?? ''} type="number" placeholder="5000" onChange={v => update({ capital: v ? parseInt(v) : undefined })} warning={fieldWarnings['capital']} />
             <FieldRow label="Monthly Income" value={profile.monthlyIncome ?? ''} type="number" placeholder="2000" onChange={v => update({ monthlyIncome: v ? parseInt(v) : undefined })} warning={fieldWarnings['monthlyIncome']} />
             <FieldRow label="Monthly Expenses" value={profile.monthlyExpenses ?? ''} type="number" placeholder="800" onChange={v => update({ monthlyExpenses: v ? parseInt(v) : undefined })} />
@@ -149,7 +149,7 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
         )}
 
         {activeSection === 'professional' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
             <FieldRow label="Current Role" value={profile.currentRole ?? ''} placeholder="Software Engineer" onChange={v => update({ currentRole: v || undefined })} />
             <FieldRow label="Industry" value={profile.industry ?? ''} placeholder="Tech / AI" onChange={v => update({ industry: v || undefined })} />
             <FieldRow label="Years Experience" value={profile.yearsExperience ?? ''} type="number" placeholder="3" onChange={v => update({ yearsExperience: v ? parseInt(v) : undefined })} warning={fieldWarnings['yearsExperience']} />
@@ -159,7 +159,7 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
         )}
 
         {activeSection === 'network' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
             <ChipField label="Network Size" options={['none', 'small', 'medium', 'large']} selected={profile.networkSize ? [profile.networkSize] : []} onToggle={v => update({ networkSize: profile.networkSize === v ? undefined : v as UserProfile['networkSize'] })} warning={fieldWarnings['networkSize']} />
             <ToggleField label="Has mentor/advisor" value={!!profile.hasMentor} onChange={v => update({ hasMentor: v || undefined })} />
             <ToggleField label="Has co-founder/partner" value={!!profile.hasCofounder} onChange={v => update({ hasCofounder: v || undefined })} />
@@ -168,7 +168,7 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
         )}
 
         {activeSection === 'upwork' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
             <ChipField label="Badge" options={['none', 'rising-talent', 'top-rated', 'top-rated-plus', 'expert-vetted']} selected={profile.upworkBadge ? [profile.upworkBadge] : []} onToggle={v => update({ upworkBadge: profile.upworkBadge === v ? undefined : v as UserProfile['upworkBadge'] })} />
             <FieldRow label="JSS (%)" value={profile.upworkJSS ?? ''} type="number" placeholder="92" onChange={v => update({ upworkJSS: v ? parseInt(v) : undefined })} warning={fieldWarnings['upworkJSS']} />
             <FieldRow label="Lifetime Earnings" value={profile.upworkEarnings ?? ''} type="number" placeholder="15000" onChange={v => update({ upworkEarnings: v ? parseInt(v) : undefined })} />
@@ -177,7 +177,7 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
         )}
 
         {activeSection === 'sacred' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
             <div style={{ fontSize: '10px', color: 'var(--muted)', lineHeight: 1.6 }}>
               Measure your alignment with 36 universal principles across 5 domains. Results personalize simulation probabilities.
             </div>
@@ -189,21 +189,21 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
                   const bottom = entries.filter(([, s]) => s > 0).slice(-3);
                   const avg = entries.length > 0 ? Math.round((entries.reduce((a, [, s]) => a + s, 0) / entries.length) * 10) / 10 : 0;
                   return (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <span style={{ fontSize: '9px', fontWeight: 700, color: 'var(--muted)', letterSpacing: '0.06em', fontFamily: 'var(--font-geist-mono, monospace)' }}>OVERALL SCORE</span>
                         <span style={{ fontSize: '13px', fontWeight: 700, color: avg >= 7 ? 'var(--success)' : avg >= 4 ? 'var(--accent)' : 'var(--danger)', fontFamily: 'var(--font-geist-mono, monospace)' }}>{avg.toFixed(1)}</span>
                       </div>
-                      <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                      <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
                         {top.map(([id, score]) => (
-                          <span key={id} style={{ fontSize: '9px', padding: '2px 6px', borderRadius: '4px', background: 'rgba(16,185,129,0.1)', color: 'var(--success)', fontFamily: 'var(--font-geist-mono, monospace)' }}>
+                          <span key={id} style={{ fontSize: '9px', padding: '2px var(--space-2)', borderRadius: '4px', background: 'rgba(16,185,129,0.1)', color: 'var(--success)', fontFamily: 'var(--font-geist-mono, monospace)' }}>
                             {id.replace('SR-0', '')} {score.toFixed(1)}
                           </span>
                         ))}
                       </div>
-                      <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                      <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
                         {bottom.map(([id, score]) => (
-                          <span key={id} style={{ fontSize: '9px', padding: '2px 6px', borderRadius: '4px', background: 'rgba(239,68,68,0.1)', color: 'var(--danger)', fontFamily: 'var(--font-geist-mono, monospace)' }}>
+                          <span key={id} style={{ fontSize: '9px', padding: '2px var(--space-2)', borderRadius: '4px', background: 'rgba(239,68,68,0.1)', color: 'var(--danger)', fontFamily: 'var(--font-geist-mono, monospace)' }}>
                             {id.replace('SR-0', '')} {score.toFixed(1)}
                           </span>
                         ))}
@@ -214,9 +214,9 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
                 <button
                   onClick={() => setShowSacredAssessment(true)}
                   style={{
-                    padding: '8px', border: '1px solid var(--border)', borderRadius: '6px',
+                    padding: 'var(--space-2)', border: '1px solid var(--border)', borderRadius: '6px',
                     background: 'none', color: 'var(--foreground)', fontSize: '11px', fontWeight: 500, cursor: 'pointer',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-2)',
                   }}
                 >
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
@@ -227,9 +227,9 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
               <button
                 onClick={() => setShowSacredAssessment(true)}
                 style={{
-                  padding: '10px', border: 'none', borderRadius: '6px',
+                  padding: 'var(--space-3)', border: 'none', borderRadius: '6px',
                   background: 'var(--foreground)', color: 'var(--background)', fontSize: '11px', fontWeight: 600, cursor: 'pointer',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-2)',
                 }}
               >
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" /></svg>
@@ -264,10 +264,10 @@ export default function ProfilePanel({ onBack, onProfileChange, tags: externalTa
       )}
 
       {/* Footer */}
-      <div style={{ padding: '10px 16px', borderTop: '1px solid var(--border)' }}>
+      <div style={{ padding: 'var(--space-3) var(--space-4)', borderTop: '1px solid var(--border)' }}>
         <button
           onClick={() => { setProfile({}); saveProfile({}); onProfileChange?.({}); }}
-          style={{ width: '100%', padding: '7px', border: 'none', borderRadius: '6px', background: 'none', color: 'var(--muted)', fontSize: '10px', cursor: 'pointer', transition: 'color 0.15s' }}
+          style={{ width: '100%', padding: 'var(--space-2)', border: 'none', borderRadius: '6px', background: 'none', color: 'var(--muted)', fontSize: '10px', cursor: 'pointer', transition: 'color 0.15s' }}
           onMouseEnter={e => { e.currentTarget.style.color = 'var(--danger)'; }}
           onMouseLeave={e => { e.currentTarget.style.color = 'var(--muted)'; }}
         >
@@ -299,7 +299,7 @@ function FieldRow({ label, value, type = 'text', placeholder, onChange, warning 
         placeholder={placeholder}
         onChange={e => onChange(e.target.value)}
         style={{
-          width: '100%', padding: '7px 9px', border: '1px solid var(--border)', borderRadius: '6px',
+          width: '100%', padding: 'var(--space-2) var(--space-2)', border: '1px solid var(--border)', borderRadius: '6px',
           background: 'var(--surface)', color: 'var(--foreground)', fontSize: '12px', fontFamily: 'inherit',
           outline: 'none', transition: 'border-color 0.15s',
         }}
@@ -318,7 +318,7 @@ function ChipField({ label, options, selected, onToggle, warning }: {
     warning: 'Filling this field improves simulation accuracy',
   };
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-1)' }}>
       <label style={{ display: 'flex', alignItems: 'center', fontSize: '9px', fontWeight: 700, color: 'var(--muted)', letterSpacing: '0.06em', textTransform: 'uppercase' as const, fontFamily: 'var(--font-geist-mono), monospace' }}>
         {label}
         {warning && <FieldWarningDot severity={warning} tooltip={tooltips[warning]} />}
@@ -331,7 +331,7 @@ function ChipField({ label, options, selected, onToggle, warning }: {
               key={opt}
               onClick={() => onToggle(opt)}
               style={{
-                padding: '3px 8px', borderRadius: '5px', fontSize: '10px', fontWeight: 500, cursor: 'pointer', transition: 'all 0.1s',
+                padding: '3px var(--space-2)', borderRadius: '5px', fontSize: '10px', fontWeight: 500, cursor: 'pointer', transition: 'all 0.1s',
                 border: `1px solid ${active ? 'var(--foreground)' : 'var(--border)'}`,
                 background: active ? 'var(--foreground)' : 'var(--surface)',
                 color: active ? 'var(--background)' : 'var(--muted-foreground)',
@@ -354,7 +354,7 @@ function ToggleField({ label, value, onChange }: {
       onClick={() => onChange(!value)}
       style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%',
-        padding: '6px 0', background: 'none', border: 'none', color: 'var(--foreground)',
+        padding: 'var(--space-2) 0', background: 'none', border: 'none', color: 'var(--foreground)',
         fontSize: '11px', cursor: 'pointer', textAlign: 'left' as const,
       }}
     >

@@ -279,7 +279,7 @@ function SimNodeComponent({ data }: NodeProps) {
         {isSacred ? (
           <>
             {sacredRoots.map((root, idx) => (
-              <div key={root.id} style={idx > 0 ? { marginTop: 8, paddingTop: 6, borderTop: `1px solid ${sacred.border}33` } : undefined}>
+              <div key={root.id} style={idx > 0 ? { marginTop: 'var(--space-2)', paddingTop: 'var(--space-2)', borderTop: `1px solid ${sacred.border}33` } : undefined}>
                 <div className="sim-node__header">
                   <div className="sim-node__icon" style={{ color: sacred.accent }}>{icon}</div>
                   <div className="sim-node__label" style={{ color: sacred.text }}>{root.label_positive}</div>
@@ -310,11 +310,11 @@ function SimNodeComponent({ data }: NodeProps) {
                     </div>
                   )}
                 </div>
-                <div className="sim-node__desc" style={{ fontStyle: 'italic', color: sacred.text, opacity: 0.9, marginTop: 4 }}>
+                <div className="sim-node__desc" style={{ fontStyle: 'italic', color: sacred.text, opacity: 0.9, marginTop: 'var(--space-1)' }}>
                   &ldquo;{root.bible_text}&rdquo;
                 </div>
                 <div style={{ fontSize: 8, color: sacred.accent, opacity: 0.7, marginTop: 2, fontWeight: 600 }}>{root.bible_key}</div>
-                <div className="sim-node__desc" style={{ fontStyle: 'italic', color: sacred.text, opacity: 0.7, marginTop: 4 }}>
+                <div className="sim-node__desc" style={{ fontStyle: 'italic', color: sacred.text, opacity: 0.7, marginTop: 'var(--space-1)' }}>
                   &ldquo;{root.quran_text}&rdquo;
                 </div>
                 <div style={{ fontSize: 8, color: sacred.accent, opacity: 0.7, marginTop: 2, fontWeight: 600 }}>{root.quran_key}</div>
@@ -391,7 +391,7 @@ function SimNodeComponent({ data }: NodeProps) {
                 const conf = getConfidence(sources);
                 const maxVal = Math.max(...sources.map(s => s.value), 1);
                 return (
-                  <div className="sim-node__footer" style={{ flexDirection: 'column', alignItems: 'stretch', gap: 6 }}>
+                  <div className="sim-node__footer" style={{ flexDirection: 'column', alignItems: 'stretch', gap: 'var(--space-2)' }}>
                     {/* Confidence indicator */}
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                       <div style={{ display: 'flex', gap: 2 }}>
@@ -408,7 +408,7 @@ function SimNodeComponent({ data }: NodeProps) {
                     </div>
                     {/* Source rows with bars */}
                     {sources.map((s, i) => (
-                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-1)' }}>
                         <span style={{
                           fontSize: 7, fontWeight: 700, color: tierColor(s.tier),
                           fontFamily: 'var(--font-geist-mono)', minWidth: 28, maxWidth: 80, flexShrink: 0, letterSpacing: '0.03em',
@@ -483,7 +483,7 @@ function SimNodeComponent({ data }: NodeProps) {
           background: 'var(--danger-muted)',
           border: '1px solid var(--danger)',
           borderRadius: 10,
-          padding: '1px 7px',
+          padding: '1px var(--space-2)',
           whiteSpace: 'nowrap',
         }}>
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

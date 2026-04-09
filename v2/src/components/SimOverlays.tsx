@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { useViewport, type Node as RFNode } from '@xyflow/react';
 import type { ParticleData } from './Particle';
 
@@ -43,6 +44,31 @@ export function CutLineIndicator({ cutNodeId, nodes }: { cutNodeId: string | nul
         </svg>
       </div>
     </div>
+  );
+}
+
+/** Stress test summary — shows at bottom when stress mode has results */
+export function StressOverlay({ survivalRate }: { survivalRate: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-lg"
+      style={{
+        background: survivalRate > 50 ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)',
+        border: `1px solid ${survivalRate > 50 ? 'rgba(16, 185, 129, 0.3)' : 'rgba(239, 68, 68, 0.3)'}`,
+        backdropFilter: 'blur(8px)',
+      }}
+    >
+      <div className="flex items-center gap-3">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={survivalRate > 50 ? '#10b981' : '#ef4444'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+        </svg>
+        <span className="text-[12px] font-medium" style={{ color: 'var(--foreground)', fontFamily: 'var(--font-geist-mono)' }}>
+          Stress Test: {survivalRate}% survive worst case
+        </span>
+      </div>
+    </motion.div>
   );
 }
 

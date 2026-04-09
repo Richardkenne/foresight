@@ -106,10 +106,10 @@ function ToastItemComponent({ item, onDismiss }: { item: ToastItem; onDismiss: (
   const style: React.CSSProperties = {
     display: 'flex',
     alignItems: 'center',
-    gap: '10px',
+    gap: 'var(--space-3)',
     minWidth: '280px',
     maxWidth: '360px',
-    padding: '12px 14px',
+    padding: 'var(--space-3) var(--space-4)',
     borderRadius: '12px',
     border: `1px solid ${colors.border}`,
     background: colors.bg,
@@ -180,12 +180,12 @@ export function ToastContainer() {
     <div
       style={{
         position: 'fixed',
-        bottom: '24px',
-        right: '24px',
+        bottom: 'var(--space-6)',
+        right: 'var(--space-6)',
         zIndex: 50, /* var(--z-toast) */
         display: 'flex',
         flexDirection: 'column',
-        gap: '8px',
+        gap: 'var(--space-2)',
         pointerEvents: 'none',
       }}
     >

@@ -24,15 +24,15 @@ export default function Badge({
   ...props
 }: BadgeProps) {
   const sizeStyles: React.CSSProperties = size === 'sm'
-    ? { fontSize: 'var(--text-xs)', padding: '1px 6px' }
-    : { fontSize: 'var(--text-sm)', padding: '2px 8px' };
+    ? { fontSize: 'var(--text-xs)', padding: '1px var(--space-2)' }
+    : { fontSize: 'var(--text-sm)', padding: '2px var(--space-2)' };
 
   return (
     <span
       style={{
         display: 'inline-flex',
         alignItems: 'center',
-        gap: 4,
+        gap: 'var(--space-1)',
         borderRadius: 'var(--radius-full)',
         fontWeight: 600,
         fontFamily: 'var(--font-geist-mono)',

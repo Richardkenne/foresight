@@ -155,7 +155,7 @@ export default function CrashTestPanel({
             </div>
             <button
               onClick={onClose}
-              style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 6, color: 'var(--muted)' }}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 'var(--space-2)', color: 'var(--muted)' }}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
@@ -175,7 +175,7 @@ export default function CrashTestPanel({
                 exit={{ opacity: 0 }}
                 className="px-5 py-4"
               >
-                <div style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 16 }}>
+                <div style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 'var(--space-4)' }}>
                   Enter 2-5 alternative scenarios. Same person, different choices. The simulator runs 100 people through each and shows who survives.
                 </div>
 
@@ -197,7 +197,7 @@ export default function CrashTestPanel({
                         placeholder={i === 0 ? 'e.g. Send Upwork proposals' : i === 1 ? 'e.g. Keep building Simulator' : 'e.g. Get a job in Bandung'}
                         className="flex-1"
                         style={{
-                          padding: '10px 14px',
+                          padding: 'var(--space-3) var(--space-4)',
                           borderRadius: 10,
                           border: '1px solid var(--border)',
                           background: 'transparent',
@@ -213,7 +213,7 @@ export default function CrashTestPanel({
                       {inputs.length > 2 && (
                         <button
                           onClick={() => removeInput(input.id)}
-                          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 4, color: 'var(--muted)' }}
+                          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 'var(--space-1)', color: 'var(--muted)' }}
                         >
                           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                             <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
@@ -228,11 +228,11 @@ export default function CrashTestPanel({
                   <button
                     onClick={addInput}
                     style={{
-                      marginTop: 12, padding: '8px 14px', borderRadius: 8,
+                      marginTop: 'var(--space-3)', padding: 'var(--space-2) var(--space-4)', borderRadius: 8,
                       border: '1px dashed var(--border)', background: 'transparent',
                       fontSize: 12, color: 'var(--muted)', cursor: 'pointer',
                       fontFamily: 'Inter, system-ui', width: '100%',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-2)',
                     }}
                   >
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -246,7 +246,7 @@ export default function CrashTestPanel({
                   onClick={handleRun}
                   disabled={inputs.filter(i => i.value.trim()).length < 2}
                   style={{
-                    marginTop: 20, padding: '12px 24px', borderRadius: 12, width: '100%',
+                    marginTop: 'var(--space-6)', padding: 'var(--space-3) var(--space-6)', borderRadius: 12, width: '100%',
                     background: inputs.filter(i => i.value.trim()).length >= 2
                       ? 'linear-gradient(135deg, #ef4444, #dc2626)'
                       : 'var(--border)',
@@ -256,7 +256,7 @@ export default function CrashTestPanel({
                     boxShadow: inputs.filter(i => i.value.trim()).length >= 2
                       ? '0 4px 16px rgba(239,68,68,0.3)'
                       : 'none',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-2)',
                   }}
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -309,7 +309,7 @@ export default function CrashTestPanel({
                                 {s.name}
                               </div>
                               {isError && (
-                                <div style={{ fontSize: 11, color: '#ef4444', marginTop: 4 }}>{s.error}</div>
+                                <div style={{ fontSize: 11, color: '#ef4444', marginTop: 'var(--space-1)' }}>{s.error}</div>
                               )}
                             </div>
                           </div>
@@ -339,7 +339,7 @@ export default function CrashTestPanel({
                         {isDone && s.stats && (
                           <div className="px-4 pb-3">
                             {/* Survival bar */}
-                            <div style={{ height: 4, background: 'var(--border)', borderRadius: 2, overflow: 'hidden', marginBottom: 8 }}>
+                            <div style={{ height: 4, background: 'var(--border)', borderRadius: 2, overflow: 'hidden', marginBottom: 'var(--space-2)' }}>
                               <motion.div
                                 initial={{ width: 0 }}
                                 animate={{ width: `${rate}%` }}
@@ -373,7 +373,7 @@ export default function CrashTestPanel({
                             {/* Fatal gate */}
                             {s.stats.fatalGate && (
                               <div style={{
-                                padding: '8px 10px', borderRadius: 8,
+                                padding: 'var(--space-2) var(--space-3)', borderRadius: 8,
                                 background: 'rgba(239,68,68,0.06)',
                                 border: '1px solid rgba(239,68,68,0.1)',
                               }}>
@@ -405,11 +405,11 @@ export default function CrashTestPanel({
                             <button
                               onClick={() => onLoadScenario(s)}
                               style={{
-                                marginTop: 10, padding: '7px 14px', borderRadius: 8, width: '100%',
+                                marginTop: 'var(--space-3)', padding: 'var(--space-2) var(--space-4)', borderRadius: 8, width: '100%',
                                 border: '1px solid var(--border)', background: 'transparent',
                                 fontSize: 11, fontWeight: 600, color: 'var(--foreground)',
                                 cursor: 'pointer', fontFamily: 'Inter, system-ui',
-                                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
+                                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-2)',
                               }}
                             >
                               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -430,7 +430,7 @@ export default function CrashTestPanel({
                     <button
                       onClick={handleStop}
                       style={{
-                        flex: 1, padding: '10px 16px', borderRadius: 10,
+                        flex: 1, padding: 'var(--space-3) var(--space-4)', borderRadius: 10,
                         border: '1px solid rgba(239,68,68,0.3)', background: 'rgba(239,68,68,0.06)',
                         fontSize: 12, fontWeight: 600, color: '#ef4444',
                         cursor: 'pointer', fontFamily: 'Inter, system-ui',
@@ -443,7 +443,7 @@ export default function CrashTestPanel({
                       <button
                         onClick={handleBack}
                         style={{
-                          flex: 1, padding: '10px 16px', borderRadius: 10,
+                          flex: 1, padding: 'var(--space-3) var(--space-4)', borderRadius: 10,
                           border: '1px solid var(--border)', background: 'transparent',
                           fontSize: 12, fontWeight: 600, color: 'var(--foreground)',
                           cursor: 'pointer', fontFamily: 'Inter, system-ui',
@@ -454,7 +454,7 @@ export default function CrashTestPanel({
                       <button
                         onClick={handleRun}
                         style={{
-                          flex: 1, padding: '10px 16px', borderRadius: 10,
+                          flex: 1, padding: 'var(--space-3) var(--space-4)', borderRadius: 10,
                           border: 'none', background: 'linear-gradient(135deg, #ef4444, #dc2626)',
                           fontSize: 12, fontWeight: 600, color: '#fff',
                           cursor: 'pointer', fontFamily: 'Inter, system-ui',

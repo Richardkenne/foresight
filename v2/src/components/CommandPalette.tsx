@@ -80,7 +80,7 @@ function SacredIcon() {
 
 function ShortcutBadge({ keys }: { keys: string[] }) {
   return (
-    <span style={{ display: 'flex', alignItems: 'center', gap: '3px', flexShrink: 0 }}>
+    <span style={{ display: 'flex', alignItems: 'center', gap: 3, flexShrink: 0 }}>
       {keys.map((k, i) => (
         <kbd
           key={i}
@@ -112,7 +112,7 @@ function GroupLabel({ label }: { label: string }) {
   return (
     <div
       style={{
-        padding: '6px 12px 4px',
+        padding: 'var(--space-2) var(--space-3) var(--space-1)',
         fontSize: '10px',
         fontWeight: 600,
         textTransform: 'uppercase',
@@ -284,7 +284,7 @@ export default function CommandPalette({
           zIndex: 2001,
           width: '100%',
           maxWidth: '480px',
-          padding: '0 16px',
+          padding: '0 var(--space-4)',
         }}
       >
         <div
@@ -302,8 +302,8 @@ export default function CommandPalette({
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '10px',
-              padding: '14px 16px',
+              gap: 'var(--space-3)',
+              padding: 'var(--space-4) var(--space-4)',
               borderBottom: '1px solid var(--border)',
             }}
           >
@@ -352,13 +352,13 @@ export default function CommandPalette({
             style={{
               maxHeight: '360px',
               overflowY: 'auto',
-              padding: '6px 0',
+              padding: 'var(--space-2) 0',
             }}
           >
             {filtered.length === 0 ? (
               <div
                 style={{
-                  padding: '24px 16px',
+                  padding: 'var(--space-6) var(--space-4)',
                   textAlign: 'center',
                   fontSize: '13px',
                   color: 'var(--muted)',
@@ -385,9 +385,9 @@ export default function CommandPalette({
                           style={{
                             display: 'flex',
                             alignItems: 'center',
-                            gap: '10px',
-                            padding: '9px 12px',
-                            margin: '0 6px',
+                            gap: 'var(--space-3)',
+                            padding: 'var(--space-2) var(--space-3)',
+                            margin: '0 var(--space-2)',
                             borderRadius: '8px',
                             cursor: 'pointer',
                             background: isActive ? 'var(--surface-hover)' : 'transparent',
@@ -455,18 +455,18 @@ export default function CommandPalette({
           {/* Footer hint */}
           <div
             style={{
-              padding: '8px 14px',
+              padding: 'var(--space-2) var(--space-4)',
               borderTop: '1px solid var(--border)',
               display: 'flex',
               alignItems: 'center',
-              gap: '12px',
+              gap: 'var(--space-3)',
             }}
           >
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '10px', color: 'var(--muted)' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-1)', fontSize: '10px', color: 'var(--muted)' }}>
               <ShortcutBadge keys={['↑', '↓']} />
               navigate
             </span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '10px', color: 'var(--muted)' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-1)', fontSize: '10px', color: 'var(--muted)' }}>
               <ShortcutBadge keys={['Enter']} />
               select
             </span>

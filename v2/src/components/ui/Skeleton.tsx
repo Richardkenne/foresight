@@ -40,7 +40,7 @@ export function GeneratingSkeleton() {
       <div
         style={{
           width: `${width}px`,
-          padding: '14px 16px',
+          padding: 'var(--space-4) var(--space-4)',
           borderRadius: isGate ? '4px' : '12px',
           border: '1px solid var(--border)',
           background: 'var(--surface)',
@@ -49,8 +49,8 @@ export function GeneratingSkeleton() {
           opacity: isOutcome ? 0.7 : 1,
         }}
       >
-        <Skeleton height={9} width="60%" borderRadius={4} style={{ marginBottom: '6px' }} />
-        <Skeleton height={7} width="90%" borderRadius={3} style={{ marginBottom: '4px' }} />
+        <Skeleton height={9} width="60%" borderRadius={4} style={{ marginBottom: 'var(--space-2)' }} />
+        <Skeleton height={7} width="90%" borderRadius={3} style={{ marginBottom: 'var(--space-1)' }} />
         <Skeleton height={7} width="70%" borderRadius={3} />
       </div>
     );
@@ -68,17 +68,17 @@ export function GeneratingSkeleton() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: '20px',
+        gap: 'var(--space-6)',
       }}
     >
       {/* Label */}
       <div style={{ textAlign: 'center' }}>
-        <Skeleton width={160} height={10} borderRadius={5} style={{ margin: '0 auto 6px' }} />
+        <Skeleton width={160} height={10} borderRadius={5} style={{ margin: '0 auto var(--space-2)' }} />
         <Skeleton width={100} height={8} borderRadius={4} style={{ margin: '0 auto', opacity: 0.6 }} />
       </div>
 
       {/* Node row 1: state → bottleneck → state */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
         {card(130, 'node')}
         {connector()}
         {card(40, 'gate')}
@@ -87,19 +87,19 @@ export function GeneratingSkeleton() {
       </div>
 
       {/* Node row 2: action → gate → outcomes */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
         {card(120, 'node')}
         {connector()}
         {card(36, 'gate')}
         {connector()}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
           {card(110, 'outcome')}
           {card(110, 'outcome')}
         </div>
       </div>
 
       {/* Hint text */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '4px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginTop: 'var(--space-1)' }}>
         <div
           style={{
             width: '6px',

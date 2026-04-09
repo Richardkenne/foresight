@@ -346,7 +346,7 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
       if (d.scenario) {
         const { CSS2DObject } = require('three/examples/jsm/renderers/CSS2DRenderer');
         const ctxCard = document.createElement('div');
-        ctxCard.style.cssText = 'background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);border-radius:8px;padding:6px 10px;max-width:180px;font-family:Inter,system-ui;';
+        ctxCard.style.cssText = 'background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);border-radius:8px;padding:var(--space-2) var(--space-3);max-width:180px;font-family:Inter,system-ui;';
         const ctxText = document.createElement('div');
         ctxText.style.cssText = 'font-size:10px;color:rgba(255,255,255,0.7);line-height:1.3;';
         ctxText.textContent = d.scenario.length > 60 ? d.scenario.slice(0, 60) + '...' : d.scenario;
@@ -414,7 +414,7 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
         background: rgba(255,255,255,0.06);
         border: 1px solid ${colorHex}35;
         border-radius: 6px;
-        padding: 4px 8px;
+        padding: var(--space-1) var(--space-2);
         max-width: 200px;
         font-family: 'Inter', system-ui, sans-serif;
         pointer-events: auto;
@@ -428,9 +428,9 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
 
       // Compact: type + prob on one line
       const row = document.createElement('div');
-      row.style.cssText = 'display:flex;align-items:center;gap:4px;';
+      row.style.cssText = 'display:flex;align-items:center;gap:var(--space-1);';
       const badge = document.createElement('span');
-      badge.style.cssText = `font-size:7px;font-weight:700;padding:1px 4px;border-radius:2px;background:${colorHex}20;color:${colorHex};text-transform:uppercase;letter-spacing:0.04em;`;
+      badge.style.cssText = `font-size:7px;font-weight:700;padding:1px var(--space-1);border-radius:2px;background:${colorHex}20;color:${colorHex};text-transform:uppercase;letter-spacing:0.04em;`;
       badge.textContent = n.type.replace('outcome-', '');
       row.appendChild(badge);
       if (n.prob && n.prob < 100) {
@@ -1241,11 +1241,11 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
           onClick={handleStartWalk}
           style={{
             position: 'absolute', bottom: 80, left: 'calc(50% - 80px)', transform: 'translateX(-50%)',
-            padding: '10px 24px', borderRadius: 12,
+            padding: 'var(--space-3) var(--space-6)', borderRadius: 12,
             background: 'linear-gradient(135deg, #fbbf24, #f59e0b)',
             color: '#1e293b', fontSize: 13, fontWeight: 700, border: 'none', cursor: 'pointer',
             fontFamily: 'Inter, system-ui', boxShadow: '0 4px 20px rgba(251,191,36,0.4)',
-            display: 'flex', alignItems: 'center', gap: 8,
+            display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
           }}
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/></svg>
@@ -1259,11 +1259,11 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
           onClick={handleStartSimulation}
           style={{
             position: 'absolute', bottom: 80, left: 'calc(50% + 80px)', transform: 'translateX(-50%)',
-            padding: '10px 24px', borderRadius: 12,
+            padding: 'var(--space-3) var(--space-6)', borderRadius: 12,
             background: 'linear-gradient(135deg, #3b82f6, #6366f1)',
             color: '#ffffff', fontSize: 13, fontWeight: 700, border: 'none', cursor: 'pointer',
             fontFamily: 'Inter, system-ui', boxShadow: '0 4px 20px rgba(59,130,246,0.4)',
-            display: 'flex', alignItems: 'center', gap: 8,
+            display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
           }}
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -1279,11 +1279,11 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
           onClick={handleStopSimulation}
           style={{
             position: 'absolute', bottom: 80, left: '50%', transform: 'translateX(-50%)',
-            padding: '10px 24px', borderRadius: 12,
+            padding: 'var(--space-3) var(--space-6)', borderRadius: 12,
             background: 'linear-gradient(135deg, #ef4444, #dc2626)',
             color: '#ffffff', fontSize: 13, fontWeight: 700, border: 'none', cursor: 'pointer',
             fontFamily: 'Inter, system-ui', boxShadow: '0 4px 20px rgba(239,68,68,0.4)',
-            display: 'flex', alignItems: 'center', gap: 8,
+            display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
           }}
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>
@@ -1295,11 +1295,11 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
       {simulating && (
         <div style={{
           position: 'absolute', top: 20, left: '50%', transform: 'translateX(-50%)',
-          padding: '12px 24px', borderRadius: 12,
+          padding: 'var(--space-3) var(--space-6)', borderRadius: 12,
           background: 'rgba(15, 23, 42, 0.9)', backdropFilter: 'blur(12px)',
           border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
           fontFamily: 'Inter, system-ui', textAlign: 'center',
-          display: 'flex', gap: 20, alignItems: 'center',
+          display: 'flex', gap: 'var(--space-6)', alignItems: 'center',
         }}>
           <div>
             <div style={{ fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#94a3b8', marginBottom: 2 }}>Launched</div>
@@ -1319,7 +1319,7 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
           </div>
           {simStats.total >= 100 && simStats.walking === 0 && (
             <div style={{
-              fontSize: 11, fontWeight: 700, color: '#fbbf24', padding: '4px 10px',
+              fontSize: 11, fontWeight: 700, color: '#fbbf24', padding: 'var(--space-1) var(--space-3)',
               background: 'rgba(251,191,36,0.1)', borderRadius: 6, border: '1px solid rgba(251,191,36,0.3)',
             }}>
               COMPLETE
@@ -1332,7 +1332,7 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
       {walking && currentLabel && (
         <div style={{
           position: 'absolute', top: 20, left: '50%', transform: 'translateX(-50%)',
-          padding: '12px 24px', borderRadius: 12,
+          padding: 'var(--space-3) var(--space-6)', borderRadius: 12,
           background: 'rgba(255, 255, 255, 0.95)', backdropFilter: 'blur(12px)',
           border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
           fontFamily: 'Inter, system-ui', textAlign: 'center',
@@ -1340,13 +1340,13 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
         }}>
           <div style={{ fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em',
             color: `#${(NODE_COLORS[currentType] || 0x3b82f6).toString(16).padStart(6, '0')}`,
-            marginBottom: 4,
+            marginBottom: 'var(--space-1)',
           }}>{currentType}</div>
           <div style={{ fontSize: 14, fontWeight: 700, color: '#1e293b', marginBottom: 2 }}>{currentLabel}</div>
           {currentProb !== null && currentProb < 100 && (
             <div style={{ fontSize: 12, color: '#fbbf24', fontWeight: 600 }}>{currentProb}%</div>
           )}
-          <div style={{ fontSize: 10, color: '#475569', marginTop: 4 }}>Step {walkProgress}</div>
+          <div style={{ fontSize: 10, color: '#475569', marginTop: 'var(--space-1)' }}>Step {walkProgress}</div>
         </div>
       )}
 
@@ -1356,11 +1356,11 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
           onClick={handleCameraToggle}
           style={{
             position: 'absolute', bottom: 80, right: 20,
-            padding: '8px 14px', borderRadius: 10,
+            padding: 'var(--space-2) var(--space-4)', borderRadius: 10,
             background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(8px)',
             color: '#e2e8f0', fontSize: 11, fontWeight: 600, border: '1px solid rgba(255,255,255,0.15)',
             cursor: 'pointer', fontFamily: 'Inter, system-ui',
-            display: 'flex', alignItems: 'center', gap: 6,
+            display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
           }}
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -1380,14 +1380,14 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
           onClick={handleFlyThroughToggle}
           style={{
             position: 'absolute', bottom: 120, right: 20,
-            padding: '8px 14px', borderRadius: 10,
+            padding: 'var(--space-2) var(--space-4)', borderRadius: 10,
             background: flyThrough ? 'rgba(251,191,36,0.15)' : 'rgba(255,255,255,0.08)',
             backdropFilter: 'blur(8px)',
             color: flyThrough ? '#fbbf24' : '#e2e8f0',
             fontSize: 11, fontWeight: 600,
             border: `1px solid ${flyThrough ? 'rgba(251,191,36,0.4)' : 'rgba(255,255,255,0.15)'}`,
             cursor: 'pointer', fontFamily: 'Inter, system-ui',
-            display: 'flex', alignItems: 'center', gap: 6,
+            display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
           }}
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -1401,17 +1401,17 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
       {flyThrough && (
         <div style={{
           position: 'absolute', top: 60, right: 20,
-          padding: '6px 14px', borderRadius: 8,
+          padding: 'var(--space-2) var(--space-4)', borderRadius: 8,
           background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)',
           fontFamily: 'Inter, system-ui', fontSize: 11, fontWeight: 600,
-          color: '#fbbf24', display: 'flex', alignItems: 'center', gap: 6,
+          color: '#fbbf24', display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
           animation: 'flyPulse 2s ease-in-out infinite',
         }}>
           <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
             <circle cx="12" cy="12" r="5"/>
           </svg>
           Following YOU
-          <span style={{ fontSize: 9, color: 'rgba(251,191,36,0.5)', marginLeft: 4 }}>ESC to exit</span>
+          <span style={{ fontSize: 9, color: 'rgba(251,191,36,0.5)', marginLeft: 'var(--space-1)' }}>ESC to exit</span>
           <style>{`@keyframes flyPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.7; } }`}</style>
         </div>
       )}
@@ -1419,7 +1419,7 @@ export default function Graph3DView({ nodes, edges, layoutDirection = 'LR' }: Gr
       {/* Controls hint */}
       <div style={{
         position: 'absolute', bottom: 16, left: '50%', transform: 'translateX(-50%)',
-        display: 'flex', gap: 16, fontSize: 10, color: 'rgba(255,255,255,0.25)', fontFamily: 'Inter, system-ui',
+        display: 'flex', gap: 'var(--space-4)', fontSize: 10, color: 'rgba(255,255,255,0.25)', fontFamily: 'Inter, system-ui',
         pointerEvents: 'none',
       }}>
         <span>WASD move</span>
