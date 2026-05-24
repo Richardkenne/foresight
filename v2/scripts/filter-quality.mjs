@@ -6,7 +6,7 @@
  * Rewrites files in-place, updates dataPoints count.
  */
 
-import { readFileSync, writeFileSync, readdirSync, statSync } from 'fs';
+import { readFileSync, writeFileSync, readdirSync, statSync, lstatSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -83,7 +83,15 @@ function processFile(filePath) {
 function walkDir(dir) {
   for (const f of readdirSync(dir)) {
     const full = join(dir, f);
-    const st = statSync(full);
+    // Check with lstat first to detect broken symlinks
+    let lst;
+    try { lst = lstatSync(full); } catch { console.log(`  SKIP (inaccessible): ${f}`); continue; }
+    if (lst.isSymbolicLink()) {
+      // Try to resolve — skip if broken (iCloud not available in this env)
+      try { statSync(full); } catch { console.log(`  SKIP (broken symlink): ${f}`); continue; }
+    }
+    let st;
+    try { st = statSync(full); } catch { console.log(`  SKIP (stat error): ${f}`); continue; }
     if (st.isDirectory()) walkDir(full);
     else if (f.endsWith('.json')) processFile(full);
   }
