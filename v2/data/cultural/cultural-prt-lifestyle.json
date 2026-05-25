@@ -1,0 +1,56 @@
+{
+  "_meta": {
+    "country": "PRT",
+    "country_name": "Portugal",
+    "created": "2026-05-25",
+    "source_script": "generate-cultural-lifestyle.mjs",
+    "sources": "WHO, FAO, DataReportal 2024, Numbeo, Eurostat, OECD"
+  },
+  "dataPoints": 8,
+  "food_lifestyle": {
+    "daily_calories": {
+      "value": 3461,
+      "year": 2022,
+      "source": "FAO Food Balance Sheets 2022"
+    },
+    "alcohol_liters_per_capita": {
+      "value": 10.5,
+      "year": 2022,
+      "source": "WHO Global Health Observatory 2023"
+    },
+    "obesity_pct": {
+      "value": 22.1,
+      "year": 2022,
+      "source": "WHO Global Health Observatory 2023"
+    },
+    "meat_kg_per_year": {
+      "value": 99,
+      "year": 2022,
+      "source": "FAO Food Balance Sheets 2022"
+    },
+    "coffee_cups_per_day": {
+      "value": 3.2,
+      "year": 2023,
+      "source": "Euromonitor International 2024"
+    }
+  },
+  "digital_behavior": {
+    "internet_penetration_pct": {
+      "value": 92.7,
+      "year": 2024,
+      "source": "DataReportal Digital 2024"
+    }
+  },
+  "housing": {
+    "homeownership_pct": {
+      "value": 76.6,
+      "year": 2023,
+      "source": "Eurostat 2023"
+    },
+    "avg_monthly_rent_usd_city": {
+      "value": 785,
+      "year": 2024,
+      "source": "Numbeo Quality of Life 2024"
+    }
+  }
+}
