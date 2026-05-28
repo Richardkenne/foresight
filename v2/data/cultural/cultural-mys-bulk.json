@@ -1,37 +1,21 @@
 {
-  "_meta": {
-    "country": "MYS",
-    "country_name": "Malaysia",
-    "created": "2026-05-24",
-    "categories": 11,
-    "sources": [
-      "Hofstede Insights 2023",
-      "OECD Better Life Index 2023",
-      "Pew Research Center 2023",
-      "OECD Employment Outlook 2023",
-      "DataReportal Digital 2024",
-      "Numbeo 2024",
-      "Euromonitor 2023",
-      "PISA 2022",
-      "UNESCO UIS 2023"
-    ]
-  },
+  "_meta": {"country": "MYS", "country_name": "Malaysia", "created": "2026-05-24", "categories": 11, "sources": ["Hofstede Insights 2023","OECD Better Life Index 2023","Pew Research Center 2023","OECD Employment Outlook 2023","DataReportal Digital 2024","Numbeo 2024","Euromonitor 2023","PISA 2022","UNESCO UIS 2023"], "filtered": "2026-05-28"},
   "dataPoints": 45,
   "social_norms": {
-    "hofstede_power_distance": {"value": 100, "source": "Hofstede Insights Country Comparison Tool, 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/malaysia/", "year": 2023, "note": "Power Distance Index (0=low hierarchy, 100=high hierarchy)"},
-    "hofstede_individualism": {"value": 26, "source": "Hofstede Insights Country Comparison Tool, 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/malaysia/", "year": 2023, "note": "Individualism vs Collectivism (100=highly individualist)"},
-    "hofstede_masculinity": {"value": 50, "source": "Hofstede Insights Country Comparison Tool, 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/malaysia/", "year": 2023, "note": "Masculinity vs Femininity (100=highly masculine/competitive)"},
-    "hofstede_uncertainty_avoidance": {"value": 36, "source": "Hofstede Insights Country Comparison Tool, 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/malaysia/", "year": 2023, "note": "Uncertainty Avoidance Index (100=strong need for rules/structure)"},
-    "hofstede_long_term_orientation": {"value": 41, "source": "Hofstede Insights Country Comparison Tool, 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/malaysia/", "year": 2023, "note": "Long-Term Orientation (100=pragmatic/future-oriented)"},
-    "hofstede_indulgence": {"value": 57, "source": "Hofstede Insights Country Comparison Tool, 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/malaysia/", "year": 2023, "note": "Indulgence vs Restraint (100=indulgent culture)"}
+    "hofstede_power_distance": {"value": 100, "source": "Hofstede Insights 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/malaysia/", "year": 2023},
+    "hofstede_individualism": {"value": 26, "source": "Hofstede Insights 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/malaysia/", "year": 2023},
+    "hofstede_masculinity": {"value": 50, "source": "Hofstede Insights 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/malaysia/", "year": 2023},
+    "hofstede_uncertainty_avoidance": {"value": 36, "source": "Hofstede Insights 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/malaysia/", "year": 2023},
+    "hofstede_long_term_orientation": {"value": 41, "source": "Hofstede Insights 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/malaysia/", "year": 2023},
+    "hofstede_indulgence": {"value": 57, "source": "Hofstede Insights 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/malaysia/", "year": 2023}
   },
   "religion": {
-    "pct_muslim": {"value": 63.5, "source": "Pew Research Center, Religious Landscape Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023},
-    "pct_buddhist": {"value": 18.7, "source": "Pew Research Center, Religious Landscape Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023},
-    "pct_christian": {"value": 9.1, "source": "Pew Research Center, Religious Landscape Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023},
-    "pct_hindu": {"value": 6.1, "source": "Pew Research Center, Religious Landscape Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023},
-    "prayer_daily": {"value": 74, "source": "Pew Research Center, Religious Landscape Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023},
-    "religion_important": {"value": 88, "source": "Pew Research Center, Religious Landscape Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023}
+    "pct_muslim": {"value": 63.5, "source": "Pew Research Center 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023},
+    "pct_buddhist": {"value": 18.7, "source": "Pew Research Center 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023},
+    "pct_christian": {"value": 9.1, "source": "Pew Research Center 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023},
+    "pct_hindu": {"value": 6.1, "source": "Pew Research Center 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023},
+    "prayer_daily": {"value": 74, "source": "Pew Research Center 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023},
+    "religion_important": {"value": 88, "source": "Pew Research Center 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023}
   },
   "business_culture": {
     "avg_annual_working_hours": {"value": 1971, "source": "OECD Employment Outlook 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=ANHRS", "year": 2023},
@@ -41,43 +25,39 @@
     "min_wage_usd_monthly": {"value": 275, "source": "OECD Employment Outlook 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=ANHRS", "year": 2023}
   },
   "digital_behavior": {
-    "social_media_users_pct": {"value": 79.2, "source": "DataReportal Digital 2024 Global Report", "sourceUrl": "https://datareportal.com/reports/digital-2024-malaysia", "year": 2024},
-    "internet_penetration_pct": {"value": 89.6, "source": "DataReportal Digital 2024 Global Report", "sourceUrl": "https://datareportal.com/reports/digital-2024-malaysia", "year": 2024},
-    "avg_daily_internet_hours": {"value": 7.87, "source": "DataReportal Digital 2024 Global Report", "sourceUrl": "https://datareportal.com/reports/digital-2024-malaysia", "year": 2024},
-    "smartphone_penetration_pct": {"value": 88.2, "source": "DataReportal Digital 2024 Global Report", "sourceUrl": "https://datareportal.com/reports/digital-2024-malaysia", "year": 2024},
-    "e_commerce_users_pct": {"value": 72.5, "source": "DataReportal Digital 2024 Global Report", "sourceUrl": "https://datareportal.com/reports/digital-2024-malaysia", "year": 2024},
-    "streaming_users_pct": {"value": 61, "source": "DataReportal Digital 2024 Global Report", "sourceUrl": "https://datareportal.com/reports/digital-2024-malaysia", "year": 2024},
-    "tiktok_users_millions": {"value": 15.3, "source": "DataReportal Digital 2024 Global Report", "sourceUrl": "https://datareportal.com/reports/digital-2024-malaysia", "year": 2024}
+    "social_media_users_pct": {"value": 79.2, "source": "DataReportal Digital 2024", "sourceUrl": "https://datareportal.com/reports/digital-2024-malaysia", "year": 2024},
+    "internet_penetration_pct": {"value": 89.6, "source": "DataReportal Digital 2024", "sourceUrl": "https://datareportal.com/reports/digital-2024-malaysia", "year": 2024},
+    "avg_daily_internet_hours": {"value": 7.87, "source": "DataReportal Digital 2024", "sourceUrl": "https://datareportal.com/reports/digital-2024-malaysia", "year": 2024},
+    "smartphone_penetration_pct": {"value": 88.2, "source": "DataReportal Digital 2024", "sourceUrl": "https://datareportal.com/reports/digital-2024-malaysia", "year": 2024},
+    "e_commerce_users_pct": {"value": 72.5, "source": "DataReportal Digital 2024", "sourceUrl": "https://datareportal.com/reports/digital-2024-malaysia", "year": 2024},
+    "streaming_users_pct": {"value": 61, "source": "DataReportal Digital 2024", "sourceUrl": "https://datareportal.com/reports/digital-2024-malaysia", "year": 2024},
+    "tiktok_users_millions": {"value": 15.3, "source": "DataReportal Digital 2024", "sourceUrl": "https://datareportal.com/reports/digital-2024-malaysia", "year": 2024}
   },
   "housing": {
-    "avg_rent_1br_city_usd": {"value": 350, "source": "Numbeo Quality of Life Index 2024 / Global Property Guide", "sourceUrl": "https://www.numbeo.com/property-investment/country_result.jsp?country=Malaysia", "year": 2024},
-    "homeownership_rate_pct": {"value": 75.3, "source": "Numbeo Quality of Life Index 2024 / Global Property Guide", "sourceUrl": "https://www.numbeo.com/property-investment/country_result.jsp?country=Malaysia", "year": 2024},
-    "price_to_income_ratio": {"value": 9.7, "source": "Numbeo Quality of Life Index 2024 / Global Property Guide", "sourceUrl": "https://www.numbeo.com/property-investment/country_result.jsp?country=Malaysia", "year": 2024},
-    "avg_sqm_price_city_usd": {"value": 1200, "source": "Numbeo Quality of Life Index 2024 / Global Property Guide", "sourceUrl": "https://www.numbeo.com/property-investment/country_result.jsp?country=Malaysia", "year": 2024},
-    "mortgage_as_pct_income": {"value": 49.8, "source": "Numbeo Quality of Life Index 2024 / Global Property Guide", "sourceUrl": "https://www.numbeo.com/property-investment/country_result.jsp?country=Malaysia", "year": 2024}
+    "avg_rent_1br_city_usd": {"value": 350, "source": "Numbeo 2024", "sourceUrl": "https://www.numbeo.com/property-investment/country_result.jsp?country=Malaysia", "year": 2024},
+    "homeownership_rate_pct": {"value": 75.3, "source": "Numbeo 2024", "sourceUrl": "https://www.numbeo.com/property-investment/country_result.jsp?country=Malaysia", "year": 2024},
+    "price_to_income_ratio": {"value": 9.7, "source": "Numbeo 2024", "sourceUrl": "https://www.numbeo.com/property-investment/country_result.jsp?country=Malaysia", "year": 2024},
+    "avg_sqm_price_city_usd": {"value": 1200, "source": "Numbeo 2024", "sourceUrl": "https://www.numbeo.com/property-investment/country_result.jsp?country=Malaysia", "year": 2024},
+    "mortgage_as_pct_income": {"value": 49.8, "source": "Numbeo 2024", "sourceUrl": "https://www.numbeo.com/property-investment/country_result.jsp?country=Malaysia", "year": 2024}
   },
   "spending": {
-    "avg_monthly_consumer_expenditure_usd": {"value": 780, "source": "Euromonitor International Consumer Expenditure 2023 / OECD National Accounts", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
-    "food_pct": {"value": 30.5, "source": "Euromonitor International Consumer Expenditure 2023 / OECD National Accounts", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
-    "housing_pct": {"value": 19.8, "source": "Euromonitor International Consumer Expenditure 2023 / OECD National Accounts", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
-    "transport_pct": {"value": 13.4, "source": "Euromonitor International Consumer Expenditure 2023 / OECD National Accounts", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
-    "health_pct": {"value": 4.2, "source": "Euromonitor International Consumer Expenditure 2023 / OECD National Accounts", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
-    "education_pct": {"value": 4.8, "source": "Euromonitor International Consumer Expenditure 2023 / OECD National Accounts", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
-    "recreation_pct": {"value": 4.3, "source": "Euromonitor International Consumer Expenditure 2023 / OECD National Accounts", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
-    "clothing_pct": {"value": 4.6, "source": "Euromonitor International Consumer Expenditure 2023 / OECD National Accounts", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
-    "savings_rate_pct": {"value": 25.8, "source": "Euromonitor International Consumer Expenditure 2023 / OECD National Accounts", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023}
+    "avg_monthly_consumer_expenditure_usd": {"value": 780, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
+    "food_pct": {"value": 30.5, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
+    "housing_pct": {"value": 19.8, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
+    "transport_pct": {"value": 13.4, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
+    "health_pct": {"value": 4.2, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
+    "education_pct": {"value": 4.8, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
+    "recreation_pct": {"value": 4.3, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
+    "clothing_pct": {"value": 4.6, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
+    "savings_rate_pct": {"value": 25.8, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023}
   },
   "education": {
-    "pisa_reading": {"value": 388, "source": "PISA 2022 / UNESCO Institute for Statistics / OECD Education at a Glance 2023", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
-    "pisa_math": {"value": 409, "source": "PISA 2022 / UNESCO Institute for Statistics / OECD Education at a Glance 2023", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
-    "pisa_science": {"value": 415, "source": "PISA 2022 / UNESCO Institute for Statistics / OECD Education at a Glance 2023", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
-    "avg_years_schooling": {"value": 10.4, "source": "PISA 2022 / UNESCO Institute for Statistics / OECD Education at a Glance 2023", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
-    "public_spend_pct_gdp": {"value": 3.8, "source": "PISA 2022 / UNESCO Institute for Statistics / OECD Education at a Glance 2023", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
-    "private_tuition_prevalent_pct": {"value": 55.3, "source": "PISA 2022 / UNESCO Institute for Statistics / OECD Education at a Glance 2023", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
-    "university_completion_pct": {"value": 52, "source": "PISA 2022 / UNESCO Institute for Statistics / OECD Education at a Glance 2023", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023}
-  },
-  "daily_routines": {},
-  "food_lifestyle": {},
-  "trust_governance": {},
-  "regional_variations": {}
+    "pisa_reading": {"value": 388, "source": "PISA 2022", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
+    "pisa_math": {"value": 409, "source": "PISA 2022", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
+    "pisa_science": {"value": 415, "source": "PISA 2022", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
+    "avg_years_schooling": {"value": 10.4, "source": "PISA 2022", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
+    "public_spend_pct_gdp": {"value": 3.8, "source": "PISA 2022", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
+    "private_tuition_prevalent_pct": {"value": 55.3, "source": "PISA 2022", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
+    "university_completion_pct": {"value": 52, "source": "PISA 2022", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023}
+  }
 }

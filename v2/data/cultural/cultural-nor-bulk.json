@@ -1,0 +1,77 @@
+{
+  "_meta": {
+    "country": "NOR",
+    "country_name": "Norway",
+    "created": "2026-05-24",
+    "categories": 11,
+    "sources": ["Hofstede Insights 2023","OECD Better Life Index 2023","Pew Research Center 2023","OECD Employment Outlook 2023","DataReportal Digital 2024","Numbeo 2024","Euromonitor 2023","PISA 2022","UNESCO UIS 2023"],
+    "filtered": "2026-05-28"
+  },
+  "dataPoints": 50,
+  "social_norms": {
+    "hofstede_power_distance": {"value": 31, "source": "Hofstede Insights Country Comparison Tool, 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/norway/", "year": 2023, "note": "Power Distance Index"},
+    "hofstede_individualism": {"value": 69, "source": "Hofstede Insights Country Comparison Tool, 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/norway/", "year": 2023},
+    "hofstede_masculinity": {"value": 8, "source": "Hofstede Insights Country Comparison Tool, 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/norway/", "year": 2023},
+    "hofstede_uncertainty_avoidance": {"value": 50, "source": "Hofstede Insights Country Comparison Tool, 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/norway/", "year": 2023},
+    "hofstede_long_term_orientation": {"value": 35, "source": "Hofstede Insights Country Comparison Tool, 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/norway/", "year": 2023},
+    "hofstede_indulgence": {"value": 55, "source": "Hofstede Insights Country Comparison Tool, 2023", "sourceUrl": "https://www.hofstede-insights.com/country-comparison/norway/", "year": 2023},
+    "oecd_work_life_balance": {"value": 8.8, "source": "OECD Better Life Index 2023", "sourceUrl": "https://www.oecdbetterlifeindex.org/", "year": 2023},
+    "oecd_community_score": {"value": 9.7, "source": "OECD Better Life Index 2023", "sourceUrl": "https://www.oecdbetterlifeindex.org/", "year": 2023}
+  },
+  "trust_governance": {
+    "oecd_life_satisfaction": {"value": 7.6, "source": "OECD Better Life Index 2023", "sourceUrl": "https://www.oecdbetterlifeindex.org/", "year": 2023, "note": "0-10 scale"},
+    "oecd_civic_engagement": {"value": 8.2, "source": "OECD Better Life Index 2023", "sourceUrl": "https://www.oecdbetterlifeindex.org/", "year": 2023},
+    "oecd_safety_score": {"value": 9.5, "source": "OECD Better Life Index 2023", "sourceUrl": "https://www.oecdbetterlifeindex.org/", "year": 2023}
+  },
+  "education": {
+    "oecd_education_score": {"value": 8.4, "source": "OECD Better Life Index 2023", "sourceUrl": "https://www.oecdbetterlifeindex.org/", "year": 2023},
+    "pisa_reading": {"value": 477, "source": "PISA 2022", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
+    "pisa_math": {"value": 468, "source": "PISA 2022", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
+    "pisa_science": {"value": 477, "source": "PISA 2022", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
+    "avg_years_schooling": {"value": 12.9, "source": "PISA 2022", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
+    "public_spend_pct_gdp": {"value": 6.5, "source": "PISA 2022", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
+    "private_tuition_prevalent_pct": {"value": 15, "source": "PISA 2022", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023},
+    "university_completion_pct": {"value": 67, "source": "PISA 2022", "sourceUrl": "https://www.oecd.org/education/education-at-a-glance/", "year": 2023}
+  },
+  "housing": {
+    "oecd_housing_score": {"value": 6.6, "source": "OECD Better Life Index 2023", "sourceUrl": "https://www.oecdbetterlifeindex.org/", "year": 2023},
+    "avg_rent_1br_city_usd": {"value": 1180, "source": "Numbeo 2024", "sourceUrl": "https://www.numbeo.com/property-investment/country_result.jsp?country=Norway", "year": 2024},
+    "homeownership_rate_pct": {"value": 77, "source": "Numbeo 2024", "sourceUrl": "https://www.numbeo.com/property-investment/country_result.jsp?country=Norway", "year": 2024},
+    "price_to_income_ratio": {"value": 10.8, "source": "Numbeo 2024", "sourceUrl": "https://www.numbeo.com/property-investment/country_result.jsp?country=Norway", "year": 2024},
+    "avg_sqm_price_city_usd": {"value": 7500, "source": "Numbeo 2024", "sourceUrl": "https://www.numbeo.com/property-investment/country_result.jsp?country=Norway", "year": 2024},
+    "mortgage_as_pct_income": {"value": 88, "source": "Numbeo 2024", "sourceUrl": "https://www.numbeo.com/property-investment/country_result.jsp?country=Norway", "year": 2024}
+  },
+  "religion": {
+    "pct_christian": {"value": 69, "source": "Pew Research Center 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023},
+    "pct_unaffiliated": {"value": 25, "source": "Pew Research Center 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023},
+    "pct_muslim": {"value": 3.4, "source": "Pew Research Center 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023},
+    "prayer_daily": {"value": 8, "source": "Pew Research Center 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023},
+    "religion_important": {"value": 12, "source": "Pew Research Center 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023}
+  },
+  "business_culture": {
+    "avg_annual_working_hours": {"value": 1427, "source": "OECD Employment Outlook 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=ANHRS", "year": 2023},
+    "mandatory_paid_leave_days": {"value": 25, "source": "OECD Employment Outlook 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=ANHRS", "year": 2023},
+    "parental_leave_weeks": {"value": 49, "source": "OECD Employment Outlook 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=ANHRS", "year": 2023},
+    "part_time_employment_pct": {"value": 35.5, "source": "OECD Employment Outlook 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=ANHRS", "year": 2023}
+  },
+  "digital_behavior": {
+    "social_media_users_pct": {"value": 74.2, "source": "DataReportal Digital 2024", "sourceUrl": "https://datareportal.com/reports/digital-2024-norway", "year": 2024},
+    "internet_penetration_pct": {"value": 99, "source": "DataReportal Digital 2024", "sourceUrl": "https://datareportal.com/reports/digital-2024-norway", "year": 2024},
+    "avg_daily_internet_hours": {"value": 5.2, "source": "DataReportal Digital 2024", "sourceUrl": "https://datareportal.com/reports/digital-2024-norway", "year": 2024},
+    "smartphone_penetration_pct": {"value": 93, "source": "DataReportal Digital 2024", "sourceUrl": "https://datareportal.com/reports/digital-2024-norway", "year": 2024},
+    "e_commerce_users_pct": {"value": 88.5, "source": "DataReportal Digital 2024", "sourceUrl": "https://datareportal.com/reports/digital-2024-norway", "year": 2024},
+    "streaming_users_pct": {"value": 77, "source": "DataReportal Digital 2024", "sourceUrl": "https://datareportal.com/reports/digital-2024-norway", "year": 2024},
+    "tiktok_users_millions": {"value": 2, "source": "DataReportal Digital 2024", "sourceUrl": "https://datareportal.com/reports/digital-2024-norway", "year": 2024}
+  },
+  "spending": {
+    "avg_monthly_consumer_expenditure_usd": {"value": 4350, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
+    "food_pct": {"value": 11.8, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
+    "housing_pct": {"value": 23.5, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
+    "transport_pct": {"value": 14.3, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
+    "health_pct": {"value": 3.7, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
+    "education_pct": {"value": 0.7, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
+    "recreation_pct": {"value": 9.9, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
+    "clothing_pct": {"value": 3.9, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023},
+    "savings_rate_pct": {"value": 16, "source": "Euromonitor 2023", "sourceUrl": "https://stats.oecd.org/Index.aspx?DataSetCode=SNA_TABLE5", "year": 2023}
+  }
+}
