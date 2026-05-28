@@ -5,4 +5,677 @@
     "categories": 6,
     "description": "Cross-cultural comparative data for 20 countries"
   },
-  "dataPoints": 475
+  "dataPoints": 475,
+  "comparative_work_culture": {
+    "IDN": {
+      "weekly_work_hours": { "value": 44.5, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 12, "source": "ILO Working Conditions 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 12, "source": "ILO Maternity Protection 2023", "sourceUrl": "https://ilostat.ilo.org/topics/maternity-protection/", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 20, "source": "ILO Global Wage Report 2022-23", "sourceUrl": "https://www.ilo.org/global/research/global-reports/global-wage-report/", "year": 2023 }
+    },
+    "AUS": {
+      "weekly_work_hours": { "value": 38.0, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 20, "source": "Fair Work Act Australia", "sourceUrl": "https://www.fairwork.gov.au/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 18, "source": "Services Australia Parental Leave Pay", "sourceUrl": "https://www.servicesaustralia.gov.au/", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 22, "source": "WGEA Gender Pay Gap Report 2023", "sourceUrl": "https://www.wgea.gov.au/", "year": 2023 }
+    },
+    "ITA": {
+      "weekly_work_hours": { "value": 36.3, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 20, "source": "Italian Labor Code (Codice del Lavoro)", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 22, "source": "INPS Italy Maternity Leave 2023", "sourceUrl": "https://www.inps.it/", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 15, "source": "Eurostat Gender Pay Gap 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "SGP": {
+      "weekly_work_hours": { "value": 44.1, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 14, "source": "Singapore Employment Act MOM", "sourceUrl": "https://www.mom.gov.sg/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 16, "source": "Singapore MOM Maternity Leave", "sourceUrl": "https://www.mom.gov.sg/employment-practices/leave/maternity-leave", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 16, "source": "MOM Singapore Income Statistics 2023", "sourceUrl": "https://www.mom.gov.sg/statistics-publications", "year": 2023 }
+    },
+    "MYS": {
+      "weekly_work_hours": { "value": 45.0, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 22, "source": "Malaysia Employment Act 1955 (2022 amendment)", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 12, "source": "Malaysia Employment Act Maternity 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 18, "source": "ILO Global Wage Report 2022-23", "sourceUrl": "https://www.ilo.org/global/research/global-reports/global-wage-report/", "year": 2023 }
+    },
+    "USA": {
+      "weekly_work_hours": { "value": 38.7, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 0, "source": "US FLSA – no federal paid vacation mandate", "sourceUrl": "https://www.dol.gov/general/topic/workhours/vacation", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 0, "source": "FMLA 1993 – 12 weeks unpaid only, no federal paid leave", "sourceUrl": "https://www.dol.gov/agencies/whd/fmla", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 18, "source": "BLS Highlights of Women's Earnings 2023", "sourceUrl": "https://www.bls.gov/opub/reports/womens-earnings/", "year": 2023 }
+    },
+    "DEU": {
+      "weekly_work_hours": { "value": 35.0, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 20, "source": "German Federal Holiday Act (BUrlG)", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 52, "source": "Bundeselterngeld- und Elternzeitgesetz (BEEG)", "sourceUrl": "https://www.bmfsfj.de/", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 18, "source": "Eurostat Gender Pay Gap 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "FRA": {
+      "weekly_work_hours": { "value": 36.1, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 25, "source": "French Labour Code (Code du travail)", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 16, "source": "France PAJE Maternity Leave 2023", "sourceUrl": "https://www.service-public.fr/", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 16, "source": "Eurostat Gender Pay Gap 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "GBR": {
+      "weekly_work_hours": { "value": 36.4, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 28, "source": "UK Working Time Regulations 1998", "sourceUrl": "https://www.gov.uk/holiday-entitlement-rights", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 52, "source": "UK Maternity Allowance / SMP 2023", "sourceUrl": "https://www.gov.uk/maternity-pay-leave", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 15, "source": "ONS Gender Pay Gap 2023", "sourceUrl": "https://www.ons.gov.uk/", "year": 2023 }
+    },
+    "ESP": {
+      "weekly_work_hours": { "value": 37.8, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 22, "source": "Spanish Workers' Statute (Estatuto de los Trabajadores)", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 16, "source": "Spain INSS Maternity Leave 2023", "sourceUrl": "https://www.seg-social.es/", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 14, "source": "Eurostat Gender Pay Gap 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "NLD": {
+      "weekly_work_hours": { "value": 33.2, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 20, "source": "Dutch Civil Code (BW) Art. 7:634", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 16, "source": "UWV Netherlands Maternity Leave 2023", "sourceUrl": "https://www.uwv.nl/", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 14, "source": "Eurostat Gender Pay Gap 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "CHE": {
+      "weekly_work_hours": { "value": 41.6, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 20, "source": "Swiss Code of Obligations (OR) Art. 329a", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 14, "source": "Swiss EOC Maternity Insurance 2023", "sourceUrl": "https://www.ahv-iv.ch/", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 18, "source": "Swiss FSO Gender Pay Gap 2022", "sourceUrl": "https://www.bfs.admin.ch/", "year": 2022 }
+    },
+    "SWE": {
+      "weekly_work_hours": { "value": 36.3, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 25, "source": "Swedish Annual Leave Act (Semesterlagen)", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 68, "source": "Swedish Social Insurance Agency – 480 days parental leave", "sourceUrl": "https://www.forsakringskassan.se/", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 11, "source": "Eurostat Gender Pay Gap 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "POL": {
+      "weekly_work_hours": { "value": 40.4, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 20, "source": "Polish Labour Code (Kodeks pracy)", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 52, "source": "ZUS Poland Maternity Leave 2023", "sourceUrl": "https://www.zus.pl/", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 12, "source": "Eurostat Gender Pay Gap 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "BEL": {
+      "weekly_work_hours": { "value": 36.4, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 20, "source": "Belgian Employment Act / CCT nr.94", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 15, "source": "INAMI Belgium Maternity Leave 2023", "sourceUrl": "https://www.inami.fgov.be/", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 9, "source": "Eurostat Gender Pay Gap 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "AUT": {
+      "weekly_work_hours": { "value": 36.9, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 25, "source": "Austrian Holiday Act (Urlaubsgesetz)", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 52, "source": "Austrian FLAF Childcare Allowance 2023", "sourceUrl": "https://www.bmf.gv.at/", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 19, "source": "Eurostat Gender Pay Gap 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "NOR": {
+      "weekly_work_hours": { "value": 33.8, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 25, "source": "Norwegian Holiday Act (Ferieloven)", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 49, "source": "NAV Norway Parental Benefit 2023", "sourceUrl": "https://www.nav.no/", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 14, "source": "Statistics Norway SSB 2023", "sourceUrl": "https://www.ssb.no/", "year": 2023 }
+    },
+    "DNK": {
+      "weekly_work_hours": { "value": 32.4, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 25, "source": "Danish Holiday Act (Ferieloven 2020)", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 52, "source": "Borger.dk Denmark Parental Leave 2023", "sourceUrl": "https://www.borger.dk/", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 14, "source": "Statistics Denmark DST 2023", "sourceUrl": "https://www.dst.dk/", "year": 2023 }
+    },
+    "IRL": {
+      "weekly_work_hours": { "value": 36.3, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 20, "source": "Irish Organisation of Working Time Act 1997", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 26, "source": "Ireland DEASP Maternity Benefit 2023", "sourceUrl": "https://www.gov.ie/en/service/apply-for-maternity-benefit/", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 14, "source": "CSO Ireland Gender Pay Gap 2023", "sourceUrl": "https://www.cso.ie/", "year": 2023 }
+    },
+    "PRT": {
+      "weekly_work_hours": { "value": 39.2, "source": "ILO ILOSTAT 2023", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "mandatory_vacation_days": { "value": 22, "source": "Portuguese Labour Code (Código do Trabalho)", "sourceUrl": "https://ilostat.ilo.org/", "year": 2023 },
+      "paid_parental_leave_weeks": { "value": 22, "source": "Segurança Social Portugal Maternity 2023", "sourceUrl": "https://www.seg-social.pt/", "year": 2023 },
+      "gender_pay_gap_pct": { "value": 13, "source": "Eurostat Gender Pay Gap 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    }
+  },
+  "comparative_spending": {
+    "IDN": {
+      "gdp_per_capita_usd_2023": { "value": 4941, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 22, "source": "BPS Indonesia / World Bank 2023", "sourceUrl": "https://data.worldbank.org/", "year": 2023 },
+      "food_spend_pct_income": { "value": 45, "source": "BPS Indonesia Susenas 2023", "sourceUrl": "https://www.bps.go.id/", "year": 2023 },
+      "savings_rate_pct": { "value": 35, "source": "World Bank Gross Savings 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GNS.ICTR.ZS", "year": 2023 }
+    },
+    "AUS": {
+      "gdp_per_capita_usd_2023": { "value": 64491, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 32, "source": "ABS Housing Costs 2023", "sourceUrl": "https://www.abs.gov.au/", "year": 2023 },
+      "food_spend_pct_income": { "value": 12, "source": "ABS Household Expenditure Survey 2022", "sourceUrl": "https://www.abs.gov.au/", "year": 2022 },
+      "savings_rate_pct": { "value": 7, "source": "RBA Australian Household Saving Ratio 2023", "sourceUrl": "https://www.rba.gov.au/", "year": 2023 }
+    },
+    "ITA": {
+      "gdp_per_capita_usd_2023": { "value": 35551, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 27, "source": "Eurostat Housing Cost Overburden 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "food_spend_pct_income": { "value": 14, "source": "Eurostat HBS Italy 2022", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2022 },
+      "savings_rate_pct": { "value": 9, "source": "Eurostat Household Saving Rate 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "SGP": {
+      "gdp_per_capita_usd_2023": { "value": 84500, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 25, "source": "Singapore DOS Household Expenditure Survey 2022", "sourceUrl": "https://www.singstat.gov.sg/", "year": 2022 },
+      "food_spend_pct_income": { "value": 13, "source": "Singapore DOS HES 2022", "sourceUrl": "https://www.singstat.gov.sg/", "year": 2022 },
+      "savings_rate_pct": { "value": 27, "source": "World Bank Gross Savings SGP 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GNS.ICTR.ZS", "year": 2023 }
+    },
+    "MYS": {
+      "gdp_per_capita_usd_2023": { "value": 13122, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 25, "source": "DOSM Malaysia HIS 2022", "sourceUrl": "https://www.dosm.gov.my/", "year": 2022 },
+      "food_spend_pct_income": { "value": 35, "source": "DOSM Malaysia HES 2022", "sourceUrl": "https://www.dosm.gov.my/", "year": 2022 },
+      "savings_rate_pct": { "value": 28, "source": "World Bank Gross Savings MYS 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GNS.ICTR.ZS", "year": 2023 }
+    },
+    "USA": {
+      "gdp_per_capita_usd_2023": { "value": 80412, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 35, "source": "US Census Bureau American Housing Survey 2023", "sourceUrl": "https://www.census.gov/programs-surveys/ahs.html", "year": 2023 },
+      "food_spend_pct_income": { "value": 11, "source": "USDA ERS Food Expenditure Series 2023", "sourceUrl": "https://www.ers.usda.gov/", "year": 2023 },
+      "savings_rate_pct": { "value": 4, "source": "BEA US Personal Saving Rate 2023", "sourceUrl": "https://www.bea.gov/", "year": 2023 }
+    },
+    "DEU": {
+      "gdp_per_capita_usd_2023": { "value": 50794, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 28, "source": "Eurostat Housing Cost Overburden DEU 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "food_spend_pct_income": { "value": 13, "source": "Eurostat HBS Germany 2022", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2022 },
+      "savings_rate_pct": { "value": 18, "source": "Eurostat Household Saving Rate DEU 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "FRA": {
+      "gdp_per_capita_usd_2023": { "value": 43658, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 30, "source": "Eurostat Housing Cost Overburden FRA 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "food_spend_pct_income": { "value": 15, "source": "Eurostat HBS France 2022", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2022 },
+      "savings_rate_pct": { "value": 15, "source": "Eurostat Household Saving Rate FRA 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "GBR": {
+      "gdp_per_capita_usd_2023": { "value": 46125, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 35, "source": "ONS UK Housing Affordability 2023", "sourceUrl": "https://www.ons.gov.uk/", "year": 2023 },
+      "food_spend_pct_income": { "value": 11, "source": "ONS UK Family Spending Survey 2022", "sourceUrl": "https://www.ons.gov.uk/", "year": 2022 },
+      "savings_rate_pct": { "value": 8, "source": "ONS UK Household Saving Ratio 2023", "sourceUrl": "https://www.ons.gov.uk/", "year": 2023 }
+    },
+    "ESP": {
+      "gdp_per_capita_usd_2023": { "value": 31729, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 29, "source": "Eurostat Housing Cost Overburden ESP 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "food_spend_pct_income": { "value": 14, "source": "Eurostat HBS Spain 2022", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2022 },
+      "savings_rate_pct": { "value": 10, "source": "Eurostat Household Saving Rate ESP 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "NLD": {
+      "gdp_per_capita_usd_2023": { "value": 57880, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 32, "source": "Eurostat Housing Cost Overburden NLD 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "food_spend_pct_income": { "value": 12, "source": "Eurostat HBS Netherlands 2022", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2022 },
+      "savings_rate_pct": { "value": 15, "source": "Eurostat Household Saving Rate NLD 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "CHE": {
+      "gdp_per_capita_usd_2023": { "value": 98767, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 30, "source": "Swiss FSO Housing Expenditure 2022", "sourceUrl": "https://www.bfs.admin.ch/", "year": 2022 },
+      "food_spend_pct_income": { "value": 10, "source": "Swiss FSO Household Budget Survey 2022", "sourceUrl": "https://www.bfs.admin.ch/", "year": 2022 },
+      "savings_rate_pct": { "value": 19, "source": "Swiss National Bank Household Savings 2023", "sourceUrl": "https://www.snb.ch/", "year": 2023 }
+    },
+    "SWE": {
+      "gdp_per_capita_usd_2023": { "value": 55389, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 28, "source": "Eurostat Housing Cost Overburden SWE 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "food_spend_pct_income": { "value": 12, "source": "Statistics Sweden SCB HBS 2022", "sourceUrl": "https://www.scb.se/", "year": 2022 },
+      "savings_rate_pct": { "value": 18, "source": "Eurostat Household Saving Rate SWE 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "POL": {
+      "gdp_per_capita_usd_2023": { "value": 19252, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 24, "source": "Eurostat Housing Cost Overburden POL 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "food_spend_pct_income": { "value": 22, "source": "Eurostat HBS Poland 2022", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2022 },
+      "savings_rate_pct": { "value": 12, "source": "Eurostat Household Saving Rate POL 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "BEL": {
+      "gdp_per_capita_usd_2023": { "value": 47648, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 26, "source": "Eurostat Housing Cost Overburden BEL 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "food_spend_pct_income": { "value": 13, "source": "Eurostat HBS Belgium 2022", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2022 },
+      "savings_rate_pct": { "value": 14, "source": "Eurostat Household Saving Rate BEL 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "AUT": {
+      "gdp_per_capita_usd_2023": { "value": 53637, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 27, "source": "Eurostat Housing Cost Overburden AUT 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "food_spend_pct_income": { "value": 12, "source": "Eurostat HBS Austria 2022", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2022 },
+      "savings_rate_pct": { "value": 12, "source": "Eurostat Household Saving Rate AUT 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "NOR": {
+      "gdp_per_capita_usd_2023": { "value": 93010, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 27, "source": "Statistics Norway SSB Housing 2023", "sourceUrl": "https://www.ssb.no/", "year": 2023 },
+      "food_spend_pct_income": { "value": 12, "source": "Statistics Norway SSB HBS 2022", "sourceUrl": "https://www.ssb.no/", "year": 2022 },
+      "savings_rate_pct": { "value": 20, "source": "Statistics Norway SSB Saving Rate 2023", "sourceUrl": "https://www.ssb.no/", "year": 2023 }
+    },
+    "DNK": {
+      "gdp_per_capita_usd_2023": { "value": 67790, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 28, "source": "Statistics Denmark DST Housing 2023", "sourceUrl": "https://www.dst.dk/", "year": 2023 },
+      "food_spend_pct_income": { "value": 12, "source": "Statistics Denmark DST HBS 2022", "sourceUrl": "https://www.dst.dk/", "year": 2022 },
+      "savings_rate_pct": { "value": 16, "source": "Statistics Denmark DST Saving Rate 2023", "sourceUrl": "https://www.dst.dk/", "year": 2023 }
+    },
+    "IRL": {
+      "gdp_per_capita_usd_2023": { "value": 102217, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 35, "source": "CSO Ireland Housing Costs 2023", "sourceUrl": "https://www.cso.ie/", "year": 2023 },
+      "food_spend_pct_income": { "value": 10, "source": "CSO Ireland HBS 2022", "sourceUrl": "https://www.cso.ie/", "year": 2022 },
+      "savings_rate_pct": { "value": 14, "source": "Eurostat Household Saving Rate IRL 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    },
+    "PRT": {
+      "gdp_per_capita_usd_2023": { "value": 25463, "source": "World Bank WDI 2023", "sourceUrl": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD", "year": 2023 },
+      "housing_cost_pct_income": { "value": 30, "source": "Eurostat Housing Cost Overburden PRT 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "food_spend_pct_income": { "value": 16, "source": "Eurostat HBS Portugal 2022", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2022 },
+      "savings_rate_pct": { "value": 9, "source": "Eurostat Household Saving Rate PRT 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 }
+    }
+  },
+  "comparative_digital_adoption": {
+    "IDN": {
+      "internet_penetration_pct": { "value": 78, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 67, "source": "GSMA Mobile Economy Southeast Asia 2023", "sourceUrl": "https://www.gsma.com/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 45, "source": "Bank Indonesia Fintech Survey 2023", "sourceUrl": "https://www.bi.go.id/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 55, "source": "Google Temasek e-Conomy SEA 2023", "sourceUrl": "https://economysea.withgoogle.com/", "year": 2023 },
+      "social_media_daily_hours": { "value": 3.4, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "AUS": {
+      "internet_penetration_pct": { "value": 91, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 88, "source": "ACMA Communications Report 2023", "sourceUrl": "https://www.acma.gov.au/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 35, "source": "RBA Consumer Payments Survey 2022", "sourceUrl": "https://www.rba.gov.au/", "year": 2022 },
+      "ecommerce_penetration_pct": { "value": 72, "source": "Australia Post eCommerce Report 2023", "sourceUrl": "https://auspost.com.au/", "year": 2023 },
+      "social_media_daily_hours": { "value": 2.1, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "ITA": {
+      "internet_penetration_pct": { "value": 85, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 80, "source": "GSMA Mobile Economy Europe 2023", "sourceUrl": "https://www.gsma.com/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 35, "source": "Banca d'Italia Payments Survey 2023", "sourceUrl": "https://www.bancaditalia.it/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 62, "source": "Eurostat E-commerce Statistics ITA 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "social_media_daily_hours": { "value": 2.3, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "SGP": {
+      "internet_penetration_pct": { "value": 97, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 92, "source": "IMDA Singapore Digital Economy 2023", "sourceUrl": "https://www.imda.gov.sg/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 80, "source": "MAS Singapore Payments Report 2023", "sourceUrl": "https://www.mas.gov.sg/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 78, "source": "Statista Singapore E-commerce 2023", "sourceUrl": "https://www.statista.com/", "year": 2023 },
+      "social_media_daily_hours": { "value": 2.3, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "MYS": {
+      "internet_penetration_pct": { "value": 97, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 97, "source": "MCMC Malaysia Internet Users Survey 2023", "sourceUrl": "https://www.mcmc.gov.my/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 50, "source": "Bank Negara Malaysia Payment System Report 2023", "sourceUrl": "https://www.bnm.gov.my/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 65, "source": "Google Temasek e-Conomy SEA 2023", "sourceUrl": "https://economysea.withgoogle.com/", "year": 2023 },
+      "social_media_daily_hours": { "value": 3.1, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "USA": {
+      "internet_penetration_pct": { "value": 93, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 85, "source": "Pew Research Center Smartphone Ownership 2023", "sourceUrl": "https://www.pewresearch.org/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 45, "source": "Federal Reserve Diary of Consumer Payment Choice 2023", "sourceUrl": "https://www.federalreserve.gov/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 78, "source": "US Census Bureau E-commerce Statistics 2023", "sourceUrl": "https://www.census.gov/", "year": 2023 },
+      "social_media_daily_hours": { "value": 2.4, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "DEU": {
+      "internet_penetration_pct": { "value": 90, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 85, "source": "Statista Germany Smartphone Users 2023", "sourceUrl": "https://www.statista.com/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 32, "source": "Deutsche Bundesbank Payment Survey 2023", "sourceUrl": "https://www.bundesbank.de/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 76, "source": "Eurostat E-commerce Statistics DEU 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "social_media_daily_hours": { "value": 1.7, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "FRA": {
+      "internet_penetration_pct": { "value": 92, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 84, "source": "ARCEP France Digital Barometer 2023", "sourceUrl": "https://www.arcep.fr/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 60, "source": "Banque de France Payments Report 2023", "sourceUrl": "https://www.banque-france.fr/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 70, "source": "Eurostat E-commerce Statistics FRA 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "social_media_daily_hours": { "value": 1.9, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "GBR": {
+      "internet_penetration_pct": { "value": 97, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 88, "source": "Ofcom Communications Market Report 2023", "sourceUrl": "https://www.ofcom.org.uk/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 55, "source": "UK Finance Payments Market Report 2023", "sourceUrl": "https://www.ukfinance.org.uk/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 82, "source": "ONS UK E-commerce Survey 2023", "sourceUrl": "https://www.ons.gov.uk/", "year": 2023 },
+      "social_media_daily_hours": { "value": 2.1, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "ESP": {
+      "internet_penetration_pct": { "value": 93, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 87, "source": "CNMC Spain Digital Report 2023", "sourceUrl": "https://www.cnmc.es/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 45, "source": "Banco de España Payment Systems Report 2023", "sourceUrl": "https://www.bde.es/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 68, "source": "Eurostat E-commerce Statistics ESP 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "social_media_daily_hours": { "value": 2.3, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "NLD": {
+      "internet_penetration_pct": { "value": 98, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 93, "source": "CBS Netherlands ICT Usage 2023", "sourceUrl": "https://www.cbs.nl/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 85, "source": "De Nederlandsche Bank Payments Monitor 2023", "sourceUrl": "https://www.dnb.nl/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 80, "source": "Eurostat E-commerce Statistics NLD 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "social_media_daily_hours": { "value": 1.9, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "CHE": {
+      "internet_penetration_pct": { "value": 97, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 90, "source": "Swiss FSO ICT Survey 2023", "sourceUrl": "https://www.bfs.admin.ch/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 70, "source": "Swiss National Bank Payments Report 2023", "sourceUrl": "https://www.snb.ch/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 75, "source": "Swiss Post E-commerce Monitor 2023", "sourceUrl": "https://www.post.ch/", "year": 2023 },
+      "social_media_daily_hours": { "value": 1.8, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "SWE": {
+      "internet_penetration_pct": { "value": 99, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 91, "source": "Statistics Sweden SCB ICT Survey 2023", "sourceUrl": "https://www.scb.se/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 80, "source": "Riksbank Payments Report 2023", "sourceUrl": "https://www.riksbank.se/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 83, "source": "Eurostat E-commerce Statistics SWE 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "social_media_daily_hours": { "value": 2.0, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "POL": {
+      "internet_penetration_pct": { "value": 87, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 83, "source": "GUS Poland ICT Survey 2023", "sourceUrl": "https://stat.gov.pl/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 38, "source": "NBP Poland Payment Report 2023", "sourceUrl": "https://www.nbp.pl/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 72, "source": "Eurostat E-commerce Statistics POL 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "social_media_daily_hours": { "value": 2.6, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "BEL": {
+      "internet_penetration_pct": { "value": 91, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 88, "source": "Statbel Belgium ICT Survey 2023", "sourceUrl": "https://statbel.fgov.be/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 40, "source": "NBB Belgium Payments Report 2023", "sourceUrl": "https://www.nbb.be/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 68, "source": "Eurostat E-commerce Statistics BEL 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "social_media_daily_hours": { "value": 2.1, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "AUT": {
+      "internet_penetration_pct": { "value": 91, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 88, "source": "Statistik Austria ICT Survey 2023", "sourceUrl": "https://www.statistik.at/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 38, "source": "OeNB Austria Payments Report 2023", "sourceUrl": "https://www.oenb.at/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 72, "source": "Eurostat E-commerce Statistics AUT 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "social_media_daily_hours": { "value": 1.9, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "NOR": {
+      "internet_penetration_pct": { "value": 99, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 97, "source": "Statistics Norway SSB ICT Survey 2023", "sourceUrl": "https://www.ssb.no/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 75, "source": "Norges Bank Payments Report 2023", "sourceUrl": "https://www.norges-bank.no/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 85, "source": "Statistics Norway SSB E-commerce 2023", "sourceUrl": "https://www.ssb.no/", "year": 2023 },
+      "social_media_daily_hours": { "value": 1.9, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "DNK": {
+      "internet_penetration_pct": { "value": 99, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 97, "source": "Statistics Denmark DST ICT Survey 2023", "sourceUrl": "https://www.dst.dk/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 80, "source": "Danmarks Nationalbank Payments Report 2023", "sourceUrl": "https://www.nationalbanken.dk/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 87, "source": "Eurostat E-commerce Statistics DNK 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "social_media_daily_hours": { "value": 1.8, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "IRL": {
+      "internet_penetration_pct": { "value": 96, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 91, "source": "ComReg Ireland Digital Report 2023", "sourceUrl": "https://www.comreg.ie/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 50, "source": "Central Bank of Ireland Payments Report 2023", "sourceUrl": "https://www.centralbank.ie/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 74, "source": "Eurostat E-commerce Statistics IRL 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "social_media_daily_hours": { "value": 2.2, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    },
+    "PRT": {
+      "internet_penetration_pct": { "value": 91, "source": "ITU ICT Statistics 2023", "sourceUrl": "https://www.itu.int/en/ITU-D/Statistics/", "year": 2023 },
+      "smartphone_penetration_pct": { "value": 83, "source": "ANACOM Portugal Digital Report 2023", "sourceUrl": "https://www.anacom.pt/", "year": 2023 },
+      "mobile_payment_adoption_pct": { "value": 38, "source": "Banco de Portugal Payments Report 2023", "sourceUrl": "https://www.bportugal.pt/", "year": 2023 },
+      "ecommerce_penetration_pct": { "value": 60, "source": "Eurostat E-commerce Statistics PRT 2023", "sourceUrl": "https://ec.europa.eu/eurostat/", "year": 2023 },
+      "social_media_daily_hours": { "value": 2.5, "source": "DataReportal Global Digital Report 2023", "sourceUrl": "https://datareportal.com/", "year": 2023 }
+    }
+  },
+  "comparative_social_trust": {
+    "IDN": {
+      "govt_trust_pct": { "value": 73, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 30, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 34, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 50, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "AUS": {
+      "govt_trust_pct": { "value": 35, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 50, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 75, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 71, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "ITA": {
+      "govt_trust_pct": { "value": 24, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 29, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 56, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 65, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "SGP": {
+      "govt_trust_pct": { "value": 73, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 40, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 83, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 88, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "MYS": {
+      "govt_trust_pct": { "value": 45, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 25, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 50, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 54, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "USA": {
+      "govt_trust_pct": { "value": 20, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 36, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 69, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 51, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "DEU": {
+      "govt_trust_pct": { "value": 39, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 45, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 78, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 72, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "FRA": {
+      "govt_trust_pct": { "value": 26, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 24, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 71, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 55, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "GBR": {
+      "govt_trust_pct": { "value": 35, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 45, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 71, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 64, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "ESP": {
+      "govt_trust_pct": { "value": 28, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 25, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 60, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 66, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "NLD": {
+      "govt_trust_pct": { "value": 48, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 58, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 79, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 73, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "CHE": {
+      "govt_trust_pct": { "value": 75, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 58, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 82, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 79, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "SWE": {
+      "govt_trust_pct": { "value": 60, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 65, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 85, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 68, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "POL": {
+      "govt_trust_pct": { "value": 35, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 22, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 55, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 63, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "BEL": {
+      "govt_trust_pct": { "value": 40, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 40, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 73, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 62, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "AUT": {
+      "govt_trust_pct": { "value": 47, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 44, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 71, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 70, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "NOR": {
+      "govt_trust_pct": { "value": 65, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 65, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 84, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 78, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "DNK": {
+      "govt_trust_pct": { "value": 68, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 75, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 90, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 80, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "IRL": {
+      "govt_trust_pct": { "value": 44, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 52, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 77, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 75, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "PRT": {
+      "govt_trust_pct": { "value": 32, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 },
+      "interpersonal_trust_pct": { "value": 28, "source": "World Values Survey Wave 7 (2017-2022)", "sourceUrl": "https://www.worldvaluessurvey.org/", "year": 2022 },
+      "corruption_perception_index": { "value": 62, "source": "Transparency International CPI 2023", "sourceUrl": "https://www.transparency.org/en/cpi/", "year": 2023 },
+      "police_trust_pct": { "value": 68, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    }
+  },
+  "comparative_happiness": {
+    "IDN": {
+      "happiness_score": { "value": 5.277, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 5.3, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "AUS": {
+      "happiness_score": { "value": 7.057, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 7.3, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "ITA": {
+      "happiness_score": { "value": 6.324, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 6.5, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "SGP": {
+      "happiness_score": { "value": 6.523, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 6.8, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "MYS": {
+      "happiness_score": { "value": 5.975, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 6.1, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "USA": {
+      "happiness_score": { "value": 6.725, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 7.0, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "DEU": {
+      "happiness_score": { "value": 6.719, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 7.1, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "FRA": {
+      "happiness_score": { "value": 6.609, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 6.7, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "GBR": {
+      "happiness_score": { "value": 6.749, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 7.0, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "ESP": {
+      "happiness_score": { "value": 6.421, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 6.6, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "NLD": {
+      "happiness_score": { "value": 7.319, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 7.5, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "CHE": {
+      "happiness_score": { "value": 7.571, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 7.8, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "SWE": {
+      "happiness_score": { "value": 7.395, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 7.5, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "POL": {
+      "happiness_score": { "value": 6.144, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 6.3, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "BEL": {
+      "happiness_score": { "value": 6.894, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 7.0, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "AUT": {
+      "happiness_score": { "value": 7.007, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 7.2, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "NOR": {
+      "happiness_score": { "value": 7.302, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 7.6, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "DNK": {
+      "happiness_score": { "value": 7.586, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 7.8, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "IRL": {
+      "happiness_score": { "value": 6.977, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 7.1, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    },
+    "PRT": {
+      "happiness_score": { "value": 6.125, "source": "World Happiness Report 2024", "sourceUrl": "https://worldhappiness.report/ed/2024/", "year": 2024 },
+      "life_satisfaction_1_10": { "value": 6.3, "source": "Gallup World Poll 2023", "sourceUrl": "https://www.gallup.com/analytics/349487/gallup-global-advisor.aspx", "year": 2023 }
+    }
+  },
+  "comparative_religion": {
+    "IDN": {
+      "non_religious_pct": { "value": 1, "source": "Pew Research Center Global Religious Futures 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 },
+      "prayer_daily_pct": { "value": 96, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "AUS": {
+      "non_religious_pct": { "value": 39, "source": "Australian Bureau of Statistics Census 2021", "sourceUrl": "https://www.abs.gov.au/", "year": 2021 },
+      "prayer_daily_pct": { "value": 27, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "ITA": {
+      "non_religious_pct": { "value": 31, "source": "ISTAT Multiscopo Survey 2023", "sourceUrl": "https://www.istat.it/", "year": 2023 },
+      "prayer_daily_pct": { "value": 39, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "SGP": {
+      "non_religious_pct": { "value": 18, "source": "Singapore DOS Census 2020", "sourceUrl": "https://www.singstat.gov.sg/", "year": 2020 },
+      "prayer_daily_pct": { "value": 45, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "MYS": {
+      "non_religious_pct": { "value": 1, "source": "DOSM Malaysia Census 2020", "sourceUrl": "https://www.dosm.gov.my/", "year": 2020 },
+      "prayer_daily_pct": { "value": 85, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "USA": {
+      "non_religious_pct": { "value": 28, "source": "Pew Research Center Religious Landscape Study 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 },
+      "prayer_daily_pct": { "value": 45, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "DEU": {
+      "non_religious_pct": { "value": 42, "source": "Forschungsgruppe Weltanschauungen in Deutschland 2023", "sourceUrl": "https://fowid.de/", "year": 2023 },
+      "prayer_daily_pct": { "value": 18, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "FRA": {
+      "non_religious_pct": { "value": 53, "source": "IFOP France Religiosity Survey 2023", "sourceUrl": "https://www.ifop.com/", "year": 2023 },
+      "prayer_daily_pct": { "value": 15, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "GBR": {
+      "non_religious_pct": { "value": 37, "source": "ONS UK Census 2021", "sourceUrl": "https://www.ons.gov.uk/", "year": 2021 },
+      "prayer_daily_pct": { "value": 18, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "ESP": {
+      "non_religious_pct": { "value": 40, "source": "CIS Spain Barometro Sociologico 2023", "sourceUrl": "https://www.cis.es/", "year": 2023 },
+      "prayer_daily_pct": { "value": 21, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "NLD": {
+      "non_religious_pct": { "value": 55, "source": "CBS Netherlands Kerncijfers 2023", "sourceUrl": "https://www.cbs.nl/", "year": 2023 },
+      "prayer_daily_pct": { "value": 15, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "CHE": {
+      "non_religious_pct": { "value": 34, "source": "Swiss FSO Religion Survey 2022", "sourceUrl": "https://www.bfs.admin.ch/", "year": 2022 },
+      "prayer_daily_pct": { "value": 17, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "SWE": {
+      "non_religious_pct": { "value": 55, "source": "SCB Sweden Religion Survey 2023", "sourceUrl": "https://www.scb.se/", "year": 2023 },
+      "prayer_daily_pct": { "value": 10, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "POL": {
+      "non_religious_pct": { "value": 13, "source": "CBOS Poland Religiosity Survey 2023", "sourceUrl": "https://www.cbos.pl/", "year": 2023 },
+      "prayer_daily_pct": { "value": 52, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "BEL": {
+      "non_religious_pct": { "value": 48, "source": "IPSOS Belgium Religion Survey 2023", "sourceUrl": "https://www.ipsos.com/", "year": 2023 },
+      "prayer_daily_pct": { "value": 16, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "AUT": {
+      "non_religious_pct": { "value": 35, "source": "Statistik Austria Religion Survey 2022", "sourceUrl": "https://www.statistik.at/", "year": 2022 },
+      "prayer_daily_pct": { "value": 20, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "NOR": {
+      "non_religious_pct": { "value": 52, "source": "Statistics Norway SSB Religion 2023", "sourceUrl": "https://www.ssb.no/", "year": 2023 },
+      "prayer_daily_pct": { "value": 12, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "DNK": {
+      "non_religious_pct": { "value": 45, "source": "Statistics Denmark DST Religion 2023", "sourceUrl": "https://www.dst.dk/", "year": 2023 },
+      "prayer_daily_pct": { "value": 11, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "IRL": {
+      "non_religious_pct": { "value": 14, "source": "CSO Ireland Census 2022", "sourceUrl": "https://www.cso.ie/", "year": 2022 },
+      "prayer_daily_pct": { "value": 30, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    },
+    "PRT": {
+      "non_religious_pct": { "value": 22, "source": "INE Portugal Religion Survey 2021", "sourceUrl": "https://www.ine.pt/", "year": 2021 },
+      "prayer_daily_pct": { "value": 30, "source": "Pew Research Center Prayer Survey 2023", "sourceUrl": "https://www.pewresearch.org/religion/", "year": 2023 }
+    }
+  }
+}
